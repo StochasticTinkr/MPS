@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
@@ -233,6 +233,7 @@
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
+      <concept id="7771219649169826771" name="jetbrains.mps.lang.generator.structure.TemplateCall" flags="ng" index="2f_kzb" />
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
         <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
@@ -286,7 +287,7 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1169569792945" name="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" flags="lg" index="1fMGax">
-        <reference id="1169569853122" name="template" index="1fMUZi" />
+        <child id="7771219649169827299" name="templateCall" index="2f_kVV" />
         <child id="1169569939267" name="sourceNodesQuery" index="1fNfTj" />
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
@@ -2824,7 +2825,6 @@
     <node concept="30QchW" id="i1POn9f" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fz12cDA" resolve="ClassConcept" />
       <node concept="1fMGax" id="i1POymQ" role="1fOSGc">
-        <ref role="1fMUZi" node="i1PMogy" resolve="weave_tupleImplementation" />
         <node concept="3JmXsc" id="i1POymR" role="1fNfTj">
           <node concept="3clFbS" id="i1POymS" role="2VODD2">
             <node concept="3cpWs8" id="i1PO$_d" role="3cqZAp">
@@ -2917,6 +2917,9 @@
             </node>
           </node>
         </node>
+        <node concept="2f_kzb" id="6JoULz$lSXi" role="2f_kVV">
+          <ref role="v9R2y" node="i1PMogy" resolve="weave_tupleImplementation" />
+        </node>
       </node>
       <node concept="3gB$ML" id="i1POn9h" role="3gCiVm">
         <node concept="3clFbS" id="i1POn9i" role="2VODD2">
@@ -2984,7 +2987,6 @@
     <node concept="30QchW" id="i1Q5wVM" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fz12cDA" resolve="ClassConcept" />
       <node concept="1fMGax" id="i1Q5wVN" role="1fOSGc">
-        <ref role="1fMUZi" node="i1Q1vb8" resolve="weave_tupleFromObjects" />
         <node concept="3JmXsc" id="i1Q5wVO" role="1fNfTj">
           <node concept="3clFbS" id="i1Q5wVP" role="2VODD2">
             <node concept="3cpWs8" id="i1Q5wVQ" role="3cqZAp">
@@ -3077,6 +3079,9 @@
             </node>
           </node>
         </node>
+        <node concept="2f_kzb" id="6JoULz$lSXj" role="2f_kVV">
+          <ref role="v9R2y" node="i1Q1vb8" resolve="weave_tupleFromObjects" />
+        </node>
       </node>
       <node concept="3gB$ML" id="i1Q5wWq" role="3gCiVm">
         <node concept="3clFbS" id="i1Q5wWr" role="2VODD2">
@@ -3144,7 +3149,6 @@
     <node concept="30QchW" id="i1RcRkg" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fz12cDA" resolve="ClassConcept" />
       <node concept="1fMGax" id="i1RcRkh" role="1fOSGc">
-        <ref role="1fMUZi" node="i1Rav9g" resolve="weave_tupleCreateEmpty" />
         <node concept="3JmXsc" id="i1RcRki" role="1fNfTj">
           <node concept="3clFbS" id="i1RcRkj" role="2VODD2">
             <node concept="3cpWs8" id="i1RcRkk" role="3cqZAp">
@@ -3236,6 +3240,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSXk" role="2f_kVV">
+          <ref role="v9R2y" node="i1Rav9g" resolve="weave_tupleCreateEmpty" />
         </node>
       </node>
       <node concept="3gB$ML" id="i1RcRkT" role="3gCiVm">

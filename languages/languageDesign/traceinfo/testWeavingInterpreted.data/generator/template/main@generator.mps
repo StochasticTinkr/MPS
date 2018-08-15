@@ -2,7 +2,7 @@
 <model ref="r:20c104f4-7403-4c4b-971c-4b522d7be4fb(jetbrains.mps.traceInfo.testWeavingInterpreted.data.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -74,6 +74,7 @@
         <child id="1167172143858" name="weavingMappingRule" index="30SoJX" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
+      <concept id="7771219649169826771" name="jetbrains.mps.lang.generator.structure.TemplateCall" flags="ng" index="2f_kzb" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -81,6 +82,9 @@
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
         <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
+      <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
+        <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -99,7 +103,7 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1169569792945" name="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" flags="lg" index="1fMGax">
-        <reference id="1169569853122" name="template" index="1fMUZi" />
+        <child id="7771219649169827299" name="templateCall" index="2f_kVV" />
         <child id="1169569939267" name="sourceNodesQuery" index="1fNfTj" />
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
@@ -174,7 +178,6 @@
     <node concept="30QchW" id="5nqBR0spQ_x" role="30SoJX">
       <ref role="30HIoZ" to="a2l1:5nqBR0spfes" resolve="ChildConceptWeave" />
       <node concept="1fMGax" id="5nqBR0spQ__" role="1fOSGc">
-        <ref role="1fMUZi" node="5nqBR0spYse" resolve="weave_ChildConceptWeave" />
         <node concept="3JmXsc" id="5nqBR0spQ_A" role="1fNfTj">
           <node concept="3clFbS" id="5nqBR0spQ_B" role="2VODD2">
             <node concept="3clFbF" id="5nqBR0spYs6" role="3cqZAp">
@@ -188,6 +191,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSX$" role="2f_kVV">
+          <ref role="v9R2y" node="5nqBR0spYse" resolve="weave_ChildConceptWeave" />
         </node>
       </node>
       <node concept="3gB$ML" id="5nqBR0spQ_z" role="3gCiVm">
@@ -215,7 +221,6 @@
     <node concept="30QchW" id="5nqBR0spYsv" role="30SoJX">
       <ref role="30HIoZ" to="a2l1:5nqBR0spcFc" resolve="RootConcept" />
       <node concept="1fMGax" id="5nqBR0spYsz" role="1fOSGc">
-        <ref role="1fMUZi" node="5nqBR0spYse" resolve="weave_ChildConceptWeave" />
         <node concept="3JmXsc" id="5nqBR0spYs$" role="1fNfTj">
           <node concept="3clFbS" id="5nqBR0spYs_" role="2VODD2">
             <node concept="3clFbF" id="5nqBR0spYsA" role="3cqZAp">
@@ -227,6 +232,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSX_" role="2f_kVV">
+          <ref role="v9R2y" node="5nqBR0spYse" resolve="weave_ChildConceptWeave" />
         </node>
       </node>
       <node concept="3gB$ML" id="5nqBR0spYsx" role="3gCiVm">
@@ -246,7 +254,6 @@
     <node concept="30QchW" id="5nqBR0sq15Z" role="30SoJX">
       <ref role="30HIoZ" to="a2l1:5nqBR0sq15p" resolve="ChildConceptWeaveMany" />
       <node concept="1fMGax" id="5nqBR0sq160" role="1fOSGc">
-        <ref role="1fMUZi" node="5nqBR0sq16j" resolve="weave_ChildConceptWeaveMany" />
         <node concept="3JmXsc" id="5nqBR0sq161" role="1fNfTj">
           <node concept="3clFbS" id="5nqBR0sq162" role="2VODD2">
             <node concept="3clFbF" id="5nqBR0sq163" role="3cqZAp">
@@ -260,6 +267,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSXA" role="2f_kVV">
+          <ref role="v9R2y" node="5nqBR0sq16j" resolve="weave_ChildConceptWeaveMany" />
         </node>
       </node>
       <node concept="3gB$ML" id="5nqBR0sq168" role="3gCiVm">
@@ -287,7 +297,6 @@
     <node concept="30QchW" id="5nqBR0sq15K" role="30SoJX">
       <ref role="30HIoZ" to="a2l1:5nqBR0spcFc" resolve="RootConcept" />
       <node concept="1fMGax" id="5nqBR0sq15L" role="1fOSGc">
-        <ref role="1fMUZi" node="5nqBR0sq16j" resolve="weave_ChildConceptWeaveMany" />
         <node concept="3JmXsc" id="5nqBR0sq15M" role="1fNfTj">
           <node concept="3clFbS" id="5nqBR0sq15N" role="2VODD2">
             <node concept="3clFbF" id="5nqBR0sq15O" role="3cqZAp">
@@ -299,6 +308,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSXB" role="2f_kVV">
+          <ref role="v9R2y" node="5nqBR0sq16j" resolve="weave_ChildConceptWeaveMany" />
         </node>
       </node>
       <node concept="3gB$ML" id="5nqBR0sq15S" role="3gCiVm">

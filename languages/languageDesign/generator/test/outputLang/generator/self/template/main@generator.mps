@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="157a9668-bf58-417b-893e-53d86388dc56" name="jetbrains.mps.transformation.test.outputLang" version="0" />
@@ -155,6 +155,7 @@
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
         <child id="1805153994416813171" name="patternReductionRule" index="1N6$md" />
       </concept>
+      <concept id="7771219649169826771" name="jetbrains.mps.lang.generator.structure.TemplateCall" flags="ng" index="2f_kzb" />
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
         <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
@@ -218,7 +219,7 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1169569792945" name="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" flags="lg" index="1fMGax">
-        <reference id="1169569853122" name="template" index="1fMUZi" />
+        <child id="7771219649169827299" name="templateCall" index="2f_kVV" />
         <child id="1169569939267" name="sourceNodesQuery" index="1fNfTj" />
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
@@ -364,7 +365,6 @@
     <node concept="30QchW" id="36hYR6_BfxK" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fK9aQHR" resolve="BlockStatement" />
       <node concept="1fMGax" id="36hYR6_BfxO" role="1fOSGc">
-        <ref role="1fMUZi" node="36hYR6_BjCw" resolve="weave_Statement" />
         <node concept="3JmXsc" id="36hYR6_BfxP" role="1fNfTj">
           <node concept="3clFbS" id="36hYR6_BfxQ" role="2VODD2">
             <node concept="3clFbF" id="36hYR6_BjCk" role="3cqZAp">
@@ -381,6 +381,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSXo" role="2f_kVV">
+          <ref role="v9R2y" node="36hYR6_BjCw" resolve="weave_Statement" />
         </node>
       </node>
       <node concept="3gB$ML" id="36hYR6_BfxM" role="3gCiVm">
@@ -428,7 +431,6 @@
     <node concept="30QchW" id="5AyHvbfOr1G" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fK9aQHR" resolve="BlockStatement" />
       <node concept="1fMGax" id="5AyHvbfOwVX" role="1fOSGc">
-        <ref role="1fMUZi" node="5AyHvbfOxs5" resolve="weave_StmtToCons" />
         <node concept="3JmXsc" id="5AyHvbfOwVZ" role="1fNfTj">
           <node concept="3clFbS" id="5AyHvbfOwW1" role="2VODD2">
             <node concept="3clFbF" id="5AyHvbfOA22" role="3cqZAp">
@@ -445,6 +447,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2f_kzb" id="6JoULz$lSXp" role="2f_kVV">
+          <ref role="v9R2y" node="5AyHvbfOxs5" resolve="weave_StmtToCons" />
         </node>
       </node>
       <node concept="3gB$ML" id="5AyHvbfOr1I" role="3gCiVm">
