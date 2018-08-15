@@ -274,10 +274,8 @@ public abstract class RuleConsequenceProcessor {
 
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
-      // XXX the reason we don't use TemplateDeclarationInterpreted here seems to be
-      // limitation of the TemplateDeclarationInterpreted - the way arguments are supplied there is different
-      // from the one we use here (latter evaluates, while former get actual values)
-      SNode templateDeclNode = RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence);
+      // node<TemplateDeclarationReference> ruleConsequence, concept TemplateDeclarationReference implements ITemplateCall
+      SNode templateDeclNode = RuleUtil.getTemplateCall_Template(ruleConsequence);
       if (templateDeclNode == null) {
         myConsequence = new BadConsequence(ruleConsequence, "error processing template consequence: no 'template'");
       } else {

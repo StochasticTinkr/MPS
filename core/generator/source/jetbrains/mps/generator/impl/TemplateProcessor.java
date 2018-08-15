@@ -472,7 +472,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
           throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no consequence", GeneratorUtil.describeInput(templateContext));
         }
 
-        SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
+        SNode template = RuleUtil.getTemplateCall_Template(consequence);
         if (template == null) {
           throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no template", GeneratorUtil.describeInput(templateContext));
         }

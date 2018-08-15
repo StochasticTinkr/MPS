@@ -19,6 +19,13 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -843,6 +850,9 @@
     <node concept="PrWs8" id="1vDgt48Nz4$" role="PzmwI">
       <ref role="PrY4T" node="1vDgt48Nz4w" resolve="ITemplateCall" />
     </node>
+    <node concept="t5JxF" id="6JoULz$jqnx" role="lGtFl">
+      <property role="t5JxN" value="In fact, this is a RuleConsequence subclass that shall hold TemplateCall child" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h0j$LEX">
     <property role="R5$K7" value="false" />
@@ -889,9 +899,13 @@
     <ref role="1TJDcQ" node="h0jzcLb" resolve="RuleConsequence" />
     <node concept="1TJgyj" id="h1fMUV2" role="1TKVEi">
       <property role="20kJfa" value="template" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="1169569853122" />
       <ref role="20lvS9" node="fT3MO7g" resolve="TemplateDeclaration" />
+      <node concept="asaX9" id="6JoULz$jqnD" role="lGtFl">
+        <property role="YLQ7P" value="Replaced with templateCall" />
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="h1fNfX3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -899,6 +913,15 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1169569939267" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
+    </node>
+    <node concept="1TJgyj" id="6JoULz$jqnz" role="1TKVEi">
+      <property role="IQ2ns" value="7771219649169827299" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="templateCall" />
+      <ref role="20lvS9" node="6JoULz$jqfj" resolve="TemplateCall" />
+      <node concept="t5JxF" id="6JoULz$jqnB" role="lGtFl">
+        <property role="t5JxN" value="FIXME change to [1] once template:TD reference gone" />
+      </node>
     </node>
     <node concept="PrWs8" id="1653mnvB2PX" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -2028,6 +2051,18 @@
     <property role="3GE5qa" value="crossmodel.vault" />
     <property role="TrG5h" value="NodeIdentity" />
     <property role="EcuMT" value="9032177546941555544" />
+  </node>
+  <node concept="1TIwiD" id="6JoULz$jqfj">
+    <property role="EcuMT" value="7771219649169826771" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="TemplateCall" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="6JoULz$jqfk" role="PzmwI">
+      <ref role="PrY4T" node="1vDgt48Nz4w" resolve="ITemplateCall" />
+    </node>
+    <node concept="t5JxF" id="6JoULz$jqnv" role="lGtFl">
+      <property role="t5JxN" value="A reference to template declaration along with actual arguments, not bound to RuleConsequence hierarchy unlike TemplateDeclarationReference." />
+    </node>
   </node>
 </model>
 
