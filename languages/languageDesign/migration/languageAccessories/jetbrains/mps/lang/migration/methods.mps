@@ -277,11 +277,14 @@
         <property role="QcwnP" value="&lt;no required data&gt;" />
       </node>
     </node>
-    <node concept="QcwwW" id="536fTXa4WHO" role="QNr5C">
-      <ref role="QcwwZ" to="53vh:536fTXa3qNV" resolve="ProducedDataDeclaration" />
-      <node concept="QcxE9" id="536fTXa5131" role="2IRzpu">
+    <node concept="QcwwW" id="5TUCQr2C271" role="QNr5C">
+      <ref role="QcwwZ" to="53vh:5TUCQr2C1Ad" resolve="ProducedAnnotationDataDeclaration" />
+      <node concept="QcxE9" id="5TUCQr2DWfD" role="2IRzpu">
         <property role="QcwnP" value="&lt;no produced data&gt;" />
       </node>
+    </node>
+    <node concept="QcwwW" id="536fTXa4WHO" role="QNr5C">
+      <ref role="QcwwZ" to="53vh:536fTXa3qNV" resolve="ProducedDataDeclaration" />
     </node>
     <node concept="qMXn0" id="536fTXa4ZaL" role="QNr5C" />
     <node concept="QNuUh" id="1JWcQ2VeWIs" role="QNr5C">

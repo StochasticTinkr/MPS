@@ -32,10 +32,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MoveReferenceLink;
   private ConceptPresentation props_NodePatternVariableReference;
   private ConceptPresentation props_OrderDependency;
+  private ConceptPresentation props_ProducedAnnotationDataDeclaration;
   private ConceptPresentation props_ProducedDataDeclaration;
   private ConceptPresentation props_PropertyPatternVariableReference;
   private ConceptPresentation props_PureMigrationPart;
   private ConceptPresentation props_PureMigrationScript;
+  private ConceptPresentation props_PutDataExpression;
   private ConceptPresentation props_QuotationConsequence;
   private ConceptPresentation props_RefactoringLog;
   private ConceptPresentation props_RefactoringOption;
@@ -138,7 +140,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MigrationScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a21b0mb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a21b0ob);
           props_MigrationScript = cpb.create();
         }
         return props_MigrationScript;
@@ -210,6 +212,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OrderDependency = cpb.create();
         }
         return props_OrderDependency;
+      case LanguageConceptSwitch.ProducedAnnotationDataDeclaration:
+        if (props_ProducedAnnotationDataDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("produces annotation data");
+          props_ProducedAnnotationDataDeclaration = cpb.create();
+        }
+        return props_ProducedAnnotationDataDeclaration;
       case LanguageConceptSwitch.ProducedDataDeclaration:
         if (props_ProducedDataDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -237,6 +246,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PureMigrationScript = cpb.create();
         }
         return props_PureMigrationScript;
+      case LanguageConceptSwitch.PutDataExpression:
+        if (props_PutDataExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("insert migration data into the model");
+          cpb.rawPresentation("putData");
+          props_PutDataExpression = cpb.create();
+        }
+        return props_PutDataExpression;
       case LanguageConceptSwitch.QuotationConsequence:
         if (props_QuotationConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

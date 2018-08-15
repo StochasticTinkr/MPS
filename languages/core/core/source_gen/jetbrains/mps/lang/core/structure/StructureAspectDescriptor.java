@@ -381,11 +381,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForMigrationDataAnnotation() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationDataAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L);
-    b.class_(false, true, false);
+    b.class_(false, false, true);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436978668945");
     b.version(2);
+    b.aggregate("dataNode", 0x5e7aa366c292fcceL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).ordered(true).multiple(false).origin("6807933448470330574").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeAttribute() {

@@ -54,7 +54,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForDeclMigrationData() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("decl", "DeclMigrationData", 0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x2274019e61e234c9L);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.core.structure.MigrationDataAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L);
     b.origin("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)/2482611074346661065");
     b.version(2);
     b.prop("oldId", 0x3abe707a89857bdeL, "4232944371370392542");

@@ -240,6 +240,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MigrationDataAnnotation:
         if (props_MigrationDataAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MigrationDataAnnotation");
           props_MigrationDataAnnotation = cpb.create();
         }
         return props_MigrationDataAnnotation;

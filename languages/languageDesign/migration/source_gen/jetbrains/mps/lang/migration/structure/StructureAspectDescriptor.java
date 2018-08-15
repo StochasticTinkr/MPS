@@ -37,10 +37,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoveReferenceLink = createDescriptorForMoveReferenceLink();
   /*package*/ final ConceptDescriptor myConceptNodePatternVariableReference = createDescriptorForNodePatternVariableReference();
   /*package*/ final ConceptDescriptor myConceptOrderDependency = createDescriptorForOrderDependency();
+  /*package*/ final ConceptDescriptor myConceptProducedAnnotationDataDeclaration = createDescriptorForProducedAnnotationDataDeclaration();
   /*package*/ final ConceptDescriptor myConceptProducedDataDeclaration = createDescriptorForProducedDataDeclaration();
   /*package*/ final ConceptDescriptor myConceptPropertyPatternVariableReference = createDescriptorForPropertyPatternVariableReference();
   /*package*/ final ConceptDescriptor myConceptPureMigrationPart = createDescriptorForPureMigrationPart();
   /*package*/ final ConceptDescriptor myConceptPureMigrationScript = createDescriptorForPureMigrationScript();
+  /*package*/ final ConceptDescriptor myConceptPutDataExpression = createDescriptorForPutDataExpression();
   /*package*/ final ConceptDescriptor myConceptQuotationConsequence = createDescriptorForQuotationConsequence();
   /*package*/ final ConceptDescriptor myConceptRefactoringLog = createDescriptorForRefactoringLog();
   /*package*/ final ConceptDescriptor myConceptRefactoringOption = createDescriptorForRefactoringOption();
@@ -59,7 +61,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractNodeReference, myConceptClassifierMemberData, myConceptConceptMigrationReference, myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptDirectNodeReference, myConceptExecuteAfterDeclaration, myConceptIMigrationUnit, myConceptIncludeMigrationPart, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrationScript, myConceptMigrationScriptReference, myConceptMoveConcept, myConceptMoveConceptMember, myConceptMoveContainmentLink, myConceptMoveNodeMigrationPart, myConceptMoveNodeSpecialization, myConceptMoveProperty, myConceptMoveReferenceLink, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptPureMigrationPart, myConceptPureMigrationScript, myConceptQuotationConsequence, myConceptRefactoringLog, myConceptRefactoringOption, myConceptRefactoringOptions, myConceptRefactoringOrderDependency, myConceptRefactoringPart, myConceptReflectionNodeReference, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
+    return Arrays.asList(myConceptAbstractNodeReference, myConceptClassifierMemberData, myConceptConceptMigrationReference, myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptDirectNodeReference, myConceptExecuteAfterDeclaration, myConceptIMigrationUnit, myConceptIncludeMigrationPart, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrationScript, myConceptMigrationScriptReference, myConceptMoveConcept, myConceptMoveConceptMember, myConceptMoveContainmentLink, myConceptMoveNodeMigrationPart, myConceptMoveNodeSpecialization, myConceptMoveProperty, myConceptMoveReferenceLink, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedAnnotationDataDeclaration, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptPureMigrationPart, myConceptPureMigrationScript, myConceptPutDataExpression, myConceptQuotationConsequence, myConceptRefactoringLog, myConceptRefactoringOption, myConceptRefactoringOptions, myConceptRefactoringOrderDependency, myConceptRefactoringPart, myConceptReflectionNodeReference, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
   }
 
   @Override
@@ -112,6 +114,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNodePatternVariableReference;
       case LanguageConceptSwitch.OrderDependency:
         return myConceptOrderDependency;
+      case LanguageConceptSwitch.ProducedAnnotationDataDeclaration:
+        return myConceptProducedAnnotationDataDeclaration;
       case LanguageConceptSwitch.ProducedDataDeclaration:
         return myConceptProducedDataDeclaration;
       case LanguageConceptSwitch.PropertyPatternVariableReference:
@@ -120,6 +124,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPureMigrationPart;
       case LanguageConceptSwitch.PureMigrationScript:
         return myConceptPureMigrationScript;
+      case LanguageConceptSwitch.PutDataExpression:
+        return myConceptPutDataExpression;
       case LanguageConceptSwitch.QuotationConsequence:
         return myConceptQuotationConsequence;
       case LanguageConceptSwitch.RefactoringLog:
@@ -367,6 +373,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("script", 0x398343344f099b7bL).target(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L).optional(false).origin("4144229974054378363").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForProducedAnnotationDataDeclaration() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.migration", "ProducedAnnotationDataDeclaration", 0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2a0198dL);
+    b.class_(false, false, false);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL);
+    b.parent(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L);
+    b.origin("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)/6807933448471189901");
+    b.version(2);
+    b.associate("dataType", 0x5e7aa366c2a0198eL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(false).origin("6807933448471189902").done();
+    b.alias("produces annotation data");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForProducedDataDeclaration() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.migration", "ProducedDataDeclaration", 0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL);
     b.class_(false, false, false);
@@ -405,6 +422,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("fromVersion", 0x67236d4a5836cabcL, "7431903976166443708");
     b.aggregate("executeAfter", 0x47bb811da2d68dd0L).target(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL).optional(true).ordered(true).multiple(true).origin("5168866961623780816").done();
     b.aggregate("part", 0x67236d4a5836d7f3L).target(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b902L).optional(true).ordered(true).multiple(true).origin("7431903976166447091").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPutDataExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.migration", "PutDataExpression", 0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c28dce2dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)/6807933448469990957");
+    b.version(2);
+    b.aggregate("dataNode", 0x5e7aa366c28dcff3L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6807933448469991411").done();
+    b.aggregate("contextNode", 0x5e7aa366c28dcff5L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("6807933448469991413").done();
+    b.alias("putData");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForQuotationConsequence() {

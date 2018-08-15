@@ -54,6 +54,7 @@
       </concept>
       <concept id="1083243159079" name="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" flags="ng" index="QkHVr" />
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -493,9 +494,17 @@
     <property role="EcuMT" value="8703179436978668945" />
     <property role="3GE5qa" value="attributes.migration" />
     <property role="TrG5h" value="MigrationDataAnnotation" />
-    <property role="R5$K7" value="true" />
+    <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
+    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="5TUCQr2$JNe" role="1TKVEi">
+      <property role="IQ2ns" value="6807933448470330574" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dataNode" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gw2VY9q" resolve="BaseConcept" />
+    </node>
     <node concept="M6xJ_" id="7z7TTo_AgKw" role="lGtFl">
       <property role="Hh88m" value="migrationData" />
       <node concept="tn0Fv" id="7z7TTo_AgVO" role="HhnKV">
