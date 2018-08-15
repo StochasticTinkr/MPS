@@ -29,12 +29,13 @@ public final class IMigrationUnit__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> isVersionSet_id4uVwhQyFpOe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isVersionSet").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFpOe").registry(REGISTRY).build();
   public static final SMethod<Iterable<SNode>> getExecuteAfter_id2bWK$jI6RRp = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getExecuteAfter").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2bWK$jI6RRp").registry(REGISTRY).build();
   public static final SMethod<Iterable<SNode>> getRequiredData_id7s$_UJMVosT = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getRequiredData").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7s$_UJMVosT").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getRequiredAnnotationData_id5TUCQr2Pzjk = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getRequiredAnnotationData").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5TUCQr2Pzjk").registry(REGISTRY).build();
   public static final SMethod<SNode> getProducedData_id7s$_UJMVDH8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getProducedData").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7s$_UJMVDH8").registry(REGISTRY).build();
   public static final SMethod<SNode> getProducedAnnotationData_id5TUCQr2CN0$ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getProducedAnnotationData").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5TUCQr2CN0$").registry(REGISTRY).build();
   public static final SMethod<String> getVersionedName_id5T5Tgcp0u0A = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVersionedName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5T5Tgcp0u0A").registry(REGISTRY).build();
   public static final SMethod<String> getClassName_id5Fumpqe4XH$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Fumpqe4XH$").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getProducedData_id7s$_UJMVDH8, getProducedAnnotationData_id5TUCQr2CN0$, getVersionedName_id5T5Tgcp0u0A, getClassName_id5Fumpqe4XH$);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getRequiredAnnotationData_id5TUCQr2Pzjk, getProducedData_id7s$_UJMVDH8, getProducedAnnotationData_id5TUCQr2CN0$, getVersionedName_id5T5Tgcp0u0A, getClassName_id5Fumpqe4XH$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -62,9 +63,9 @@ public final class IMigrationUnit__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 6:
-        return (T) ((String) getVersionedName_id5T5Tgcp0u0A(node));
       case 7:
+        return (T) ((String) getVersionedName_id5T5Tgcp0u0A(node));
+      case 8:
         return (T) ((String) getClassName_id5Fumpqe4XH$(node));
       default:
         throw new BHMethodNotFoundException(this, method);

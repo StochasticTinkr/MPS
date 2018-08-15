@@ -43,15 +43,15 @@ public class Migration_Queries {
   }
   public static SNode execute_ret(SNode point) {
     SNode typeNode = IMigrationUnit__BehaviorDescriptor.getProducedData_id7s$_UJMVDH8.invoke(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
-    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0h() : _quotation_createNode_9iwezb_a0b0a0h_0(typeNode));
+    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0i() : _quotation_createNode_9iwezb_a0b0a0i_0(typeNode));
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0h() {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc6bf96dL, "VoidType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0h_0(Object parameter_1) {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0i_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x108f968b3caL, "SNodeType"), null, null, false);

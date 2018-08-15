@@ -29,6 +29,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myQuotationConsequence__BehaviorDescriptor = new QuotationConsequence__BehaviorDescriptor();
   private final BHDescriptor myProducedDataDeclaration__BehaviorDescriptor = new ProducedDataDeclaration__BehaviorDescriptor();
   private final BHDescriptor myProducedAnnotationDataDeclaration__BehaviorDescriptor = new ProducedAnnotationDataDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myRequiredAnnotationDataDeclaration__BehaviorDescriptor = new RequiredAnnotationDataDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myAnnotationDataDependency__BehaviorDescriptor = new AnnotationDataDependency__BehaviorDescriptor();
+  private final BHDescriptor myGetDataExpression__BehaviorDescriptor = new GetDataExpression__BehaviorDescriptor();
   private final BHDescriptor myDataDependencyReference__BehaviorDescriptor = new DataDependencyReference__BehaviorDescriptor();
   private final BHDescriptor myDirectNodeReference__BehaviorDescriptor = new DirectNodeReference__BehaviorDescriptor();
   private final BHDescriptor myPureMigrationScript__BehaviorDescriptor = new PureMigrationScript__BehaviorDescriptor();
@@ -44,48 +47,54 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myAbstractNodeReference__BehaviorDescriptor;
       case 1:
-        return myDataDependency__BehaviorDescriptor;
+        return myAnnotationDataDependency__BehaviorDescriptor;
       case 2:
-        return myDataDependencyReference__BehaviorDescriptor;
+        return myDataDependency__BehaviorDescriptor;
       case 3:
-        return myDirectNodeReference__BehaviorDescriptor;
+        return myDataDependencyReference__BehaviorDescriptor;
       case 4:
-        return myExecuteAfterDeclaration__BehaviorDescriptor;
+        return myDirectNodeReference__BehaviorDescriptor;
       case 5:
-        return myIMigrationUnit__BehaviorDescriptor;
+        return myExecuteAfterDeclaration__BehaviorDescriptor;
       case 6:
-        return myMigrationScript__BehaviorDescriptor;
+        return myGetDataExpression__BehaviorDescriptor;
       case 7:
-        return myMoveConcept__BehaviorDescriptor;
+        return myIMigrationUnit__BehaviorDescriptor;
       case 8:
-        return myMoveConceptMember__BehaviorDescriptor;
+        return myMigrationScript__BehaviorDescriptor;
       case 9:
-        return myMoveContainmentLink__BehaviorDescriptor;
+        return myMoveConcept__BehaviorDescriptor;
       case 10:
-        return myMoveNodeSpecialization__BehaviorDescriptor;
+        return myMoveConceptMember__BehaviorDescriptor;
       case 11:
-        return myMoveProperty__BehaviorDescriptor;
+        return myMoveContainmentLink__BehaviorDescriptor;
       case 12:
-        return myMoveReferenceLink__BehaviorDescriptor;
+        return myMoveNodeSpecialization__BehaviorDescriptor;
       case 13:
-        return myProducedAnnotationDataDeclaration__BehaviorDescriptor;
+        return myMoveProperty__BehaviorDescriptor;
       case 14:
-        return myProducedDataDeclaration__BehaviorDescriptor;
+        return myMoveReferenceLink__BehaviorDescriptor;
       case 15:
-        return myPureMigrationScript__BehaviorDescriptor;
+        return myProducedAnnotationDataDeclaration__BehaviorDescriptor;
       case 16:
-        return myQuotationConsequence__BehaviorDescriptor;
+        return myProducedDataDeclaration__BehaviorDescriptor;
       case 17:
-        return myRefactoringLog__BehaviorDescriptor;
+        return myPureMigrationScript__BehaviorDescriptor;
       case 18:
-        return myReflectionNodeReference__BehaviorDescriptor;
+        return myQuotationConsequence__BehaviorDescriptor;
       case 19:
-        return myRequiredDataDeclaration__BehaviorDescriptor;
+        return myRefactoringLog__BehaviorDescriptor;
       case 20:
+        return myReflectionNodeReference__BehaviorDescriptor;
+      case 21:
+        return myRequiredAnnotationDataDeclaration__BehaviorDescriptor;
+      case 22:
+        return myRequiredDataDeclaration__BehaviorDescriptor;
+      case 23:
         return myTransformStatement__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b8L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741baL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2a0198dL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2b3ece9L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2ba2c81L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b8L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741baL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2a0198dL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x5e7aa366c2ad9bc0L), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL), MetaIdFactory.conceptId(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L)).seal();
 }

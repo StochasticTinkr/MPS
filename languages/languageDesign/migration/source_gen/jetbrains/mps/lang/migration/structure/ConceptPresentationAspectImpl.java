@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AbstractNodeReference;
+  private ConceptPresentation props_AnnotationDataDependency;
   private ConceptPresentation props_ClassifierMemberData;
   private ConceptPresentation props_ConceptMigrationReference;
   private ConceptPresentation props_ConsequenceFunction;
@@ -17,6 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DataDependencyReference;
   private ConceptPresentation props_DirectNodeReference;
   private ConceptPresentation props_ExecuteAfterDeclaration;
+  private ConceptPresentation props_GetDataExpression;
   private ConceptPresentation props_IMigrationUnit;
   private ConceptPresentation props_IncludeMigrationPart;
   private ConceptPresentation props_LinkPatternVariableReference;
@@ -45,6 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_RefactoringOrderDependency;
   private ConceptPresentation props_RefactoringPart;
   private ConceptPresentation props_ReflectionNodeReference;
+  private ConceptPresentation props_RequiredAnnotationDataDeclaration;
   private ConceptPresentation props_RequiredDataDeclaration;
   private ConceptPresentation props_TransformConsequence;
   private ConceptPresentation props_TransformStatement;
@@ -60,6 +63,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AbstractNodeReference = cpb.create();
         }
         return props_AbstractNodeReference;
+      case LanguageConceptSwitch.AnnotationDataDependency:
+        if (props_AnnotationDataDependency == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_AnnotationDataDependency = cpb.create();
+        }
+        return props_AnnotationDataDependency;
       case LanguageConceptSwitch.ClassifierMemberData:
         if (props_ClassifierMemberData == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -109,6 +119,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ExecuteAfterDeclaration = cpb.create();
         }
         return props_ExecuteAfterDeclaration;
+      case LanguageConceptSwitch.GetDataExpression:
+        if (props_GetDataExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("getData");
+          props_GetDataExpression = cpb.create();
+        }
+        return props_GetDataExpression;
       case LanguageConceptSwitch.IMigrationUnit:
         if (props_IMigrationUnit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -140,7 +157,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MigrationScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a21b0ob);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a41b0rb);
           props_MigrationScript = cpb.create();
         }
         return props_MigrationScript;
@@ -303,6 +320,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ReflectionNodeReference = cpb.create();
         }
         return props_ReflectionNodeReference;
+      case LanguageConceptSwitch.RequiredAnnotationDataDeclaration:
+        if (props_RequiredAnnotationDataDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("requires annotation data");
+          props_RequiredAnnotationDataDeclaration = cpb.create();
+        }
+        return props_RequiredAnnotationDataDeclaration;
       case LanguageConceptSwitch.RequiredDataDeclaration:
         if (props_RequiredDataDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

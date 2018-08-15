@@ -273,7 +273,10 @@
     </node>
     <node concept="QcwwW" id="3A3gNhf1WPI" role="QNr5C">
       <ref role="QcwwZ" to="53vh:3QgUde4x5Ef" resolve="RequiredDataDeclaration" />
-      <node concept="QcxE9" id="3A3gNhf1WPJ" role="2IRzpu">
+    </node>
+    <node concept="QcwwW" id="5TUCQr2FPTh" role="QNr5C">
+      <ref role="QcwwZ" to="53vh:5TUCQr2FpJ0" resolve="RequiredAnnotationDataDeclaration" />
+      <node concept="QcxE9" id="5TUCQr2FPTi" role="2IRzpu">
         <property role="QcwnP" value="&lt;no required data&gt;" />
       </node>
     </node>

@@ -756,5 +756,66 @@
       <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5TUCQr2FpJ0">
+    <property role="TrG5h" value="RequiredAnnotationDataDeclaration" />
+    <property role="34LRSv" value="requires annotation data" />
+    <property role="3GE5qa" value="member" />
+    <property role="EcuMT" value="6807933448472075200" />
+    <node concept="1TJgyj" id="5TUCQr2FpJ1" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dependencies" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="6807933448472075201" />
+      <ref role="20lvS9" node="5TUCQr2GYND" resolve="AnnotationDataDependency" />
+    </node>
+    <node concept="PrWs8" id="5TUCQr2FpJ2" role="PzmwI">
+      <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="PrWs8" id="5TUCQr2FpJ3" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5TUCQr2GYND">
+    <property role="TrG5h" value="AnnotationDataDependency" />
+    <property role="3GE5qa" value="member" />
+    <property role="EcuMT" value="6807933448472489193" />
+    <node concept="1TJgyj" id="5TUCQr2GYNE" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="script" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6807933448472489194" />
+      <ref role="20lvS9" node="4uVwhQyFcjm" resolve="IMigrationUnit" />
+    </node>
+    <node concept="PrWs8" id="5TUCQr2GYNF" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="5TUCQr2GYNH" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
+    </node>
+    <node concept="PrWs8" id="5TUCQr2GYNI" role="PzmwI">
+      <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5TUCQr2IyM1">
+    <property role="EcuMT" value="6807933448472898689" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="GetDataExpression" />
+    <property role="34LRSv" value="getData" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5TUCQr2NkU7" role="1TKVEi">
+      <property role="IQ2ns" value="6807933448474152583" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="module" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="5TUCQr2Iz4A" role="1TKVEi">
+      <property role="IQ2ns" value="6807933448472899878" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="requiredDataDeclararion" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5TUCQr2GYND" resolve="AnnotationDataDependency" />
+    </node>
+  </node>
 </model>
 
