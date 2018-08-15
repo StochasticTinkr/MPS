@@ -6,6 +6,9 @@
     <use id="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad" name="decl" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,6 +20,7 @@
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -35,6 +39,9 @@
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -427,16 +434,9 @@
                     <node concept="37vLTI" id="5TUCQr2x5f6" role="3clFbG">
                       <node concept="2OqwBi" id="5TUCQr2xiiF" role="37vLTx">
                         <node concept="2OqwBi" id="5TUCQr2xgtL" role="2Oq$k0">
-                          <node concept="1eOMI4" id="5TUCQr2xe24" role="2Oq$k0">
-                            <node concept="10QFUN" id="5TUCQr2xe21" role="1eOMHV">
-                              <node concept="3uibUv" id="5TUCQr2xfVg" role="10QFUM">
-                                <ref role="3uigEE" to="6f4m:2RG318eVG1Z" resolve="MigrationScript" />
-                              </node>
-                              <node concept="Xjq3P" id="5TUCQr2xgaE" role="10QFUP" />
-                            </node>
-                          </node>
+                          <node concept="Xjq3P" id="5TUCQr2xgaE" role="2Oq$k0" />
                           <node concept="liA8E" id="5TUCQr2xgNh" role="2OqNvi">
-                            <ref role="37wK5l" to="6f4m:4F5w8gPX8b4" resolve="getReference" />
+                            <ref role="37wK5l" to="slm6:5TUCQr2ybCQ" resolve="getReference" />
                           </node>
                         </node>
                         <node concept="liA8E" id="5TUCQr2xiIN" role="2OqNvi">
@@ -558,6 +558,9 @@
         <ref role="q3mfh" to="slm6:4F5w8gPXEEe" />
         <ref role="1QQUv3" node="1Ij79tqp1gE" resolve="execute" />
       </node>
+    </node>
+    <node concept="3uibUv" id="5TUCQr2yTnh" role="1zkMxy">
+      <ref role="3uigEE" to="slm6:5TUCQr2ybBO" resolve="HasMigrationScriptReference" />
     </node>
   </node>
 </model>
