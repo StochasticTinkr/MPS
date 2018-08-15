@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -33,7 +34,7 @@ import java.util.Collection;
  * @since 2018.3
  */
 public interface ApplySink {
-  void add(SNode node);
-  void add(/*nullable to handle in-line templates*/ SContainmentLink aggregation, SNode node);
-  void add(/*nullable to handle in-line templates*/ SContainmentLink aggregation, Collection<SNode> nodes);
+  void add(SNode node) throws GenerationFailureException;
+  void add(/*nullable to handle in-line templates*/ SContainmentLink aggregation, SNode node) throws GenerationFailureException;
+  void add(/*nullable to handle in-line templates*/ SContainmentLink aggregation, Collection<SNode> nodes) throws GenerationFailureException;
 }

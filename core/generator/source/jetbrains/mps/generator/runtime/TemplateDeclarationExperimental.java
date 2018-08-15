@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * See {@link TemplateDeclarationWeavingAware2} for design considerations
  *
@@ -23,6 +25,8 @@ package jetbrains.mps.generator.runtime;
  */
 public interface TemplateDeclarationExperimental extends TemplateDeclaration {
   default void apply(ApplySink sink, TemplateContext templateContext) throws GenerationException {
-    apply(templateContext.getEnvironment(), templateContext).forEach(sink::add);
+    for (SNode n : apply(templateContext.getEnvironment(), templateContext)) {
+      sink.add(n);
+    }
   }
 }

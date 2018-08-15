@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateProcessor;
@@ -44,11 +44,11 @@ public class WeaveTemplateContainer {
     myTemplateNode = templateContainer;
   }
 
-  public void apply(NodeWeaveFacility weaveSupport) throws GenerationException {
+  // intentionally almost identical to TemplateContainer#apply(sink, context) as I'm going to merge the two
+  public void apply(ApplySink sink, TemplateContext context) throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
     if (myFragments == null) {
       myFragments = extractTemplateFragmentsForWeaving();
     }
-    TemplateContext context = weaveSupport.getTemplateContext();
     // for each template fragment create output nodes
     TemplateExecutionEnvironment env = context.getEnvironment();
     ITemplateProcessor templateProcessor = env.getTemplateProcessor();
@@ -60,9 +60,8 @@ public class WeaveTemplateContainer {
       final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
       assert childRole != null;
 
-      for (SNode outputNodeToWeave : outputNodesToWeave) {
-        weaveSupport.weaveNode(childRole, outputNodeToWeave);
-      }
+      sink.add(childRole, outputNodesToWeave);
+
       // XXX why does not TemplateContainer does the same (i.e. recordTransformInputTrace)?
       env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
       env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());

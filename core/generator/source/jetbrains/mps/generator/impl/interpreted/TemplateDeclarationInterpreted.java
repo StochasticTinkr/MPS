@@ -16,9 +16,12 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.CollectorSink;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.WeaveTemplateContainer;
+import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
@@ -29,6 +32,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -86,12 +90,34 @@ public final class TemplateDeclarationInterpreted extends TemplateDeclarationBas
   }
 
   @Override
-  public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
-    // FIXME weaveFacility has TemplateContext, but what about template arguments?
-    //       We need to use myCallSite.prepareCallContext here, but how would I pass new TC down to the template container then?
-    //       Note, use of myCallSite makes sense only unless we move responsibility to configure arguments to a calling code
+  public Collection<SNode> weave(@NotNull WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+    // Calling code is responsible to configure arguments
+    WeaveTemplateContainer tc = new WeaveTemplateContainer(myTemplateNode);
+    ArrayList<SNode> allWeavedNodes = new ArrayList<>();
+    ApplySink s = new ApplySink() {
 
-    new WeaveTemplateContainer(myTemplateNode).apply(weaveFacility);
+      @Override
+      public void add(SNode node) throws GenerationFailureException {
+        throw new TemplateProcessingFailureException(myTemplateNode, "Templates with fragments (TF) at the top are not supported for weaving");
+      }
+
+      @Override
+      public void add(SContainmentLink aggregation, SNode outputNodeToWeave) throws GenerationFailureException {
+        allWeavedNodes.add(outputNodeToWeave);
+        weaveFacility.weaveNode(aggregation, outputNodeToWeave);
+      }
+
+      @Override
+      public void add(SContainmentLink aggregation, Collection<SNode> outputNodesToWeave) throws GenerationFailureException {
+        allWeavedNodes.addAll(outputNodesToWeave);
+        for (SNode outputNodeToWeave : outputNodesToWeave) {
+          weaveFacility.weaveNode(aggregation, outputNodeToWeave);
+        }
+      }
+    };
+    TemplateContext context = weaveFacility.getTemplateContext();
+    tc.apply(s, context);
+
     return Collections.emptyList();
   }
 }
