@@ -118,7 +118,11 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
   @Override
   public Collection<SNode> weaveTemplate(@NotNull TemplateDeclaration templateDeclaration) throws GenerationException {
     // legacy generated templates invoking weaving from the same generator module. It's ok as we don't need to bother about the way arguments get
-    // passed to a template. New, 2018.3 code shall use findTemplate().weave() directly instead of NWF
+    // passed to a template.
+    // New, 2018.3 code uses this method as well, with env.findTemplate() for argument. Assumption of argument values being available to template
+    // (in this case set by calling code) holds true and we don't need to do anything extra here. The reasons I decided to reuse this method are:
+    // (a) easier to change TD.weave signature afterwards (it's ugly)
+    // (b) generated code needed NWF instance anyway, and looked ugly with env.findTemplate().weave(wc, environment.prepareWeave(wc, ptr))).
     return templateDeclaration.weave(myWeaveContext, this);
   }
 }

@@ -175,4 +175,25 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   @NotNull
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
+
+  // I
+  //   env.weave(TemplateDeclaration, ApplySink, TemplateContext)
+  //   env.apply(TemplateDeclaration, ApplySink, TemplateContext)
+  //   where TD either new GeneratedTD, or env.findTemplate()
+  // II
+  //   env.prepare(aTD).apply(ApplySink, TemplateContext), with WeaveSinkImpl(parent, anchorFunction) in case of weaving
+  //   env.prepare(aTD):TD
+  //   where aTD is either new or findTemplate()
+  // WeaveSink needs call site information to report errors, and findTemplate() needs one, so it looks ugly in generated code
+  // III
+  //   env.prepareWeave(callSite): NWF
+  //   nwf.weave(TD, TemplateContext)
+  //   nwf.weave(TemplateDeclarationKey, TemplateContext)
+  //   env.prepareApply(callSite):NodeApplyFacility
+  //   naf.apply(TD, TemplateContext)
+  //   naf.apply(TemplateDeclarationKey, TemplateContext)
+  // NAF and NWF could be the same, TemplateCallSite. What I don't like is new object instantiation for each call
+  // Not clear how interpreted code invokes templates, directly through TD.apply or through TemplateCallSite facility. How/when do we wrap TD instances with tracing
+  //   or we support tracing in the facility object? If latter, what do we cache, TD ot TCS?
+  //   From this perspective, env.findTemplate(TDK, node-ptr) combines both call site and target and can be cached
 }

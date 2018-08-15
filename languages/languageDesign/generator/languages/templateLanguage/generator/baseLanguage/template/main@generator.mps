@@ -27407,23 +27407,25 @@
                 </node>
               </node>
               <node concept="gft3U" id="74$JSv7tz4L" role="UU_$l">
-                <node concept="2OqwBi" id="6iz92foNP5Z" role="gfFT$">
-                  <node concept="2OqwBi" id="6iz92foNOAJ" role="2Oq$k0">
+                <node concept="2OqwBi" id="w3LUXM4ciL" role="gfFT$">
+                  <node concept="2OqwBi" id="w3LUXM4br8" role="2Oq$k0">
                     <node concept="37vLTw" id="74$JSv7tzlM" role="2Oq$k0">
                       <ref role="3cqZAo" node="PAtyGgmZz$" resolve="environment" />
                     </node>
-                    <node concept="liA8E" id="6iz92foNOTC" role="2OqNvi">
-                      <ref role="37wK5l" to="r99j:~TemplateExecutionEnvironment.findTemplate(jetbrains.mps.generator.runtime.TemplateDeclarationKey,org.jetbrains.mps.openapi.model.SNodeReference):jetbrains.mps.generator.runtime.TemplateDeclaration" resolve="findTemplate" />
-                      <node concept="10Nm6u" id="6iz92foO481" role="37wK5m">
-                        <node concept="5jKBG" id="6iz92foO482" role="lGtFl">
-                          <ref role="v9R2y" node="6jQGDE8FIHN" resolve="reduce_toTemplateDeclarationKey" />
-                          <node concept="3NFfHV" id="6iz92foO483" role="5jGum">
-                            <node concept="3clFbS" id="6iz92foO484" role="2VODD2">
-                              <node concept="3clFbF" id="6iz92foO485" role="3cqZAp">
-                                <node concept="2OqwBi" id="6iz92foO486" role="3clFbG">
-                                  <node concept="1iwH7S" id="6iz92foO487" role="2Oq$k0" />
-                                  <node concept="3cR$yn" id="6iz92foO488" role="2OqNvi">
-                                    <ref role="3cRzXn" node="PAtyGgmYLK" resolve="template" />
+                    <node concept="liA8E" id="w3LUXM4bIs" role="2OqNvi">
+                      <ref role="37wK5l" to="r99j:~TemplateExecutionEnvironment.prepareWeave(jetbrains.mps.generator.runtime.NodeWeaveFacility$WeaveContext,org.jetbrains.mps.openapi.model.SNodeReference):jetbrains.mps.generator.runtime.NodeWeaveFacility" resolve="prepareWeave" />
+                      <node concept="37vLTw" id="6iz92foNRiR" role="37wK5m">
+                        <ref role="3cqZAo" node="PAtyGgmZRm" resolve="ctx" />
+                        <node concept="1ZhdrF" id="6iz92foNRiS" role="lGtFl">
+                          <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                          <property role="2qtEX8" value="variableDeclaration" />
+                          <node concept="3$xsQk" id="6iz92foNRiT" role="3$ytzL">
+                            <node concept="3clFbS" id="6iz92foNRiU" role="2VODD2">
+                              <node concept="3clFbF" id="6iz92foNRiV" role="3cqZAp">
+                                <node concept="2OqwBi" id="6iz92foNRiW" role="3clFbG">
+                                  <node concept="1iwH7S" id="6iz92foNRiX" role="2Oq$k0" />
+                                  <node concept="3cR$yn" id="6iz92foNRiY" role="2OqNvi">
+                                    <ref role="3cRzXn" node="H5vvw4nzrI" resolve="weaveContextVar" />
                                   </node>
                                 </node>
                               </node>
@@ -27431,52 +27433,31 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="10Nm6u" id="6iz92foNYzM" role="37wK5m">
-                        <node concept="5jKBG" id="6iz92foNYzN" role="lGtFl">
+                      <node concept="10Nm6u" id="6iz92foNRw0" role="37wK5m">
+                        <node concept="5jKBG" id="6iz92foNRw1" role="lGtFl">
                           <ref role="v9R2y" node="7RzTOCfxTnB" resolve="reduce_toSNodePointer" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="6iz92foNPij" role="2OqNvi">
-                    <ref role="37wK5l" to="r99j:~TemplateDeclarationWeavingAware2.weave(jetbrains.mps.generator.runtime.NodeWeaveFacility$WeaveContext,jetbrains.mps.generator.runtime.NodeWeaveFacility):java.util.Collection" resolve="weave" />
-                    <node concept="37vLTw" id="74$JSv7t$yE" role="37wK5m">
-                      <ref role="3cqZAo" node="PAtyGgmZRm" resolve="ctx" />
-                      <node concept="1ZhdrF" id="74$JSv7tJZU" role="lGtFl">
-                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                        <property role="2qtEX8" value="variableDeclaration" />
-                        <node concept="3$xsQk" id="74$JSv7tJZV" role="3$ytzL">
-                          <node concept="3clFbS" id="74$JSv7tJZW" role="2VODD2">
-                            <node concept="3clFbF" id="74$JSv7tK1C" role="3cqZAp">
-                              <node concept="2OqwBi" id="74$JSv7tK3i" role="3clFbG">
-                                <node concept="1iwH7S" id="74$JSv7tK1B" role="2Oq$k0" />
-                                <node concept="3cR$yn" id="74$JSv7tK55" role="2OqNvi">
-                                  <ref role="3cRzXn" node="H5vvw4nzrI" resolve="weaveContextVar" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="6iz92foNQLq" role="37wK5m">
-                      <node concept="37vLTw" id="6iz92foNQpR" role="2Oq$k0">
+                  <node concept="liA8E" id="w3LUXM4c$Z" role="2OqNvi">
+                    <ref role="37wK5l" to="r99j:~NodeWeaveFacility.weaveTemplate(jetbrains.mps.generator.runtime.TemplateDeclaration):java.util.Collection" resolve="weaveTemplate" />
+                    <node concept="2OqwBi" id="w3LUXM4dgL" role="37wK5m">
+                      <node concept="37vLTw" id="w3LUXM4cZm" role="2Oq$k0">
                         <ref role="3cqZAo" node="PAtyGgmZz$" resolve="environment" />
                       </node>
-                      <node concept="liA8E" id="6iz92foNRfU" role="2OqNvi">
-                        <ref role="37wK5l" to="r99j:~TemplateExecutionEnvironment.prepareWeave(jetbrains.mps.generator.runtime.NodeWeaveFacility$WeaveContext,org.jetbrains.mps.openapi.model.SNodeReference):jetbrains.mps.generator.runtime.NodeWeaveFacility" resolve="prepareWeave" />
-                        <node concept="37vLTw" id="6iz92foNRiR" role="37wK5m">
-                          <ref role="3cqZAo" node="PAtyGgmZRm" resolve="ctx" />
-                          <node concept="1ZhdrF" id="6iz92foNRiS" role="lGtFl">
-                            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                            <property role="2qtEX8" value="variableDeclaration" />
-                            <node concept="3$xsQk" id="6iz92foNRiT" role="3$ytzL">
-                              <node concept="3clFbS" id="6iz92foNRiU" role="2VODD2">
-                                <node concept="3clFbF" id="6iz92foNRiV" role="3cqZAp">
-                                  <node concept="2OqwBi" id="6iz92foNRiW" role="3clFbG">
-                                    <node concept="1iwH7S" id="6iz92foNRiX" role="2Oq$k0" />
-                                    <node concept="3cR$yn" id="6iz92foNRiY" role="2OqNvi">
-                                      <ref role="3cRzXn" node="H5vvw4nzrI" resolve="weaveContextVar" />
+                      <node concept="liA8E" id="w3LUXM4dGf" role="2OqNvi">
+                        <ref role="37wK5l" to="r99j:~TemplateExecutionEnvironment.findTemplate(jetbrains.mps.generator.runtime.TemplateDeclarationKey,org.jetbrains.mps.openapi.model.SNodeReference):jetbrains.mps.generator.runtime.TemplateDeclaration" resolve="findTemplate" />
+                        <node concept="10Nm6u" id="6iz92foO481" role="37wK5m">
+                          <node concept="5jKBG" id="6iz92foO482" role="lGtFl">
+                            <ref role="v9R2y" node="6jQGDE8FIHN" resolve="reduce_toTemplateDeclarationKey" />
+                            <node concept="3NFfHV" id="6iz92foO483" role="5jGum">
+                              <node concept="3clFbS" id="6iz92foO484" role="2VODD2">
+                                <node concept="3clFbF" id="6iz92foO485" role="3cqZAp">
+                                  <node concept="2OqwBi" id="6iz92foO486" role="3clFbG">
+                                    <node concept="1iwH7S" id="6iz92foO487" role="2Oq$k0" />
+                                    <node concept="3cR$yn" id="6iz92foO488" role="2OqNvi">
+                                      <ref role="3cRzXn" node="PAtyGgmYLK" resolve="template" />
                                     </node>
                                   </node>
                                 </node>
@@ -27484,8 +27465,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="10Nm6u" id="6iz92foNRw0" role="37wK5m">
-                          <node concept="5jKBG" id="6iz92foNRw1" role="lGtFl">
+                        <node concept="10Nm6u" id="6iz92foNYzM" role="37wK5m">
+                          <node concept="5jKBG" id="6iz92foNYzN" role="lGtFl">
                             <ref role="v9R2y" node="7RzTOCfxTnB" resolve="reduce_toSNodePointer" />
                           </node>
                         </node>
