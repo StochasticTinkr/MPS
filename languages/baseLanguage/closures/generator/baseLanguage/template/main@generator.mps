@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
@@ -303,6 +303,9 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG">
+        <child id="1510949579266801461" name="sourceNodeQuery" index="5jGum" />
+      </concept>
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
@@ -345,10 +348,6 @@
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
         <child id="1722980698497626405" name="actualArgument" index="v9R3O" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
-        <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
@@ -2015,8 +2014,8 @@
             <node concept="3cpWsn" id="1acsgWTSJqh" role="3cpWs9">
               <property role="TrG5h" value="a" />
               <node concept="10Oyi0" id="1acsgWTSJqc" role="1tU5fm" />
-              <node concept="xERo3" id="1acsgWTT2_2" role="lGtFl">
-                <ref role="xH3mL" node="1BMPYHmppfH" resolve="insert_WrapperVariable" />
+              <node concept="5jKBG" id="za$VMvkNFp" role="lGtFl">
+                <ref role="v9R2y" node="1BMPYHmppfH" resolve="insert_WrapperVariable" />
               </node>
             </node>
             <node concept="1WS0z7" id="1acsgWTT24p" role="lGtFl">
@@ -2830,9 +2829,9 @@
         </node>
         <node concept="gft3U" id="Kspy4y26Jg" role="14YRTM">
           <node concept="3clFbH" id="Kspy4y26Ji" role="gfFT$">
-            <node concept="xERo3" id="Kspy4y26Jk" role="lGtFl">
-              <ref role="xH3mL" node="6ifnPMmQQcR" resolve="reduce_compactInvokeUnrestricted" />
-              <node concept="3NFfHV" id="Kspy4y26Jl" role="xEYEz">
+            <node concept="5jKBG" id="za$VMvkNFq" role="lGtFl">
+              <ref role="v9R2y" node="6ifnPMmQQcR" resolve="reduce_compactInvokeUnrestricted" />
+              <node concept="3NFfHV" id="Kspy4y26Jl" role="5jGum">
                 <node concept="3clFbS" id="Kspy4y26Jm" role="2VODD2">
                   <node concept="3clFbF" id="Kspy4y26Jn" role="3cqZAp">
                     <node concept="1PxgMI" id="3612de$feI5" role="3clFbG">
@@ -3010,9 +3009,9 @@
       <ref role="30HIoZ" to="tp2c:hT9NYQp" resolve="ClosureControlStatement" />
       <node concept="gft3U" id="hVOUqY1" role="1lVwrX">
         <node concept="3clFbH" id="hVOUswE" role="gfFT$">
-          <node concept="xERo3" id="hVOUtzb" role="lGtFl">
-            <ref role="xH3mL" node="7x3uFEldFzc" resolve="replace_ControlClosureStatement_UnrestrictedClosureLiteral" />
-            <node concept="3NFfHV" id="hVOUxvm" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkNFr" role="lGtFl">
+            <ref role="v9R2y" node="7x3uFEldFzc" resolve="replace_ControlClosureStatement_UnrestrictedClosureLiteral" />
+            <node concept="3NFfHV" id="hVOUxvm" role="5jGum">
               <node concept="3clFbS" id="hVOUxvn" role="2VODD2">
                 <node concept="3clFbF" id="hZPSCmM" role="3cqZAp">
                   <node concept="2OqwBi" id="hZPSCnL" role="3clFbG">
@@ -3239,9 +3238,9 @@
       </node>
       <node concept="gft3U" id="a47zO_iAeN" role="1lVwrX">
         <node concept="3clFbH" id="a47zO_iAeO" role="gfFT$">
-          <node concept="xERo3" id="a47zO_iAeP" role="lGtFl">
-            <ref role="xH3mL" node="6ifnPMmQP$Q" resolve="reduce_invokeUnrestricted" />
-            <node concept="3NFfHV" id="a47zO_iAeQ" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkpvh" role="lGtFl">
+            <ref role="v9R2y" node="6ifnPMmQP$Q" resolve="reduce_invokeUnrestricted" />
+            <node concept="3NFfHV" id="a47zO_iAeQ" role="5jGum">
               <node concept="3clFbS" id="a47zO_iAeR" role="2VODD2">
                 <node concept="3clFbF" id="a47zO_iAeS" role="3cqZAp">
                   <node concept="2OqwBi" id="a47zO_iAeT" role="3clFbG">
@@ -3261,9 +3260,9 @@
       <ref role="30HIoZ" to="tpee:fzclF8j" resolve="ExpressionStatement" />
       <node concept="gft3U" id="a47zO_iAeY" role="1lVwrX">
         <node concept="3clFbH" id="a47zO_iAeZ" role="gfFT$">
-          <node concept="xERo3" id="a47zO_iAf0" role="lGtFl">
-            <ref role="xH3mL" node="6ifnPMmQP$Q" resolve="reduce_invokeUnrestricted" />
-            <node concept="3NFfHV" id="a47zO_iAf1" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkNFs" role="lGtFl">
+            <ref role="v9R2y" node="6ifnPMmQP$Q" resolve="reduce_invokeUnrestricted" />
+            <node concept="3NFfHV" id="a47zO_iAf1" role="5jGum">
               <node concept="3clFbS" id="a47zO_iAf2" role="2VODD2">
                 <node concept="3clFbF" id="a47zO_iAf3" role="3cqZAp">
                   <node concept="2OqwBi" id="a47zO_iAf4" role="3clFbG">
@@ -7469,9 +7468,9 @@
                                   <ref role="1Y3XeK" node="hvfPDEP" resolve="AClass.YieldingIterator" />
                                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                   <node concept="3Tm1VV" id="hvkBivU" role="1B3o_S" />
-                                  <node concept="xERo3" id="hvkBkoj" role="lGtFl">
+                                  <node concept="5jKBG" id="za$VMvkNFt" role="lGtFl">
+                                    <ref role="v9R2y" node="hvkCKfS" resolve="frag_YieldingIterator_anonymous_class" />
                                     <ref role="2rW$FS" node="hvkBC4C" resolve="closure_yieldIt" />
-                                    <ref role="xH3mL" node="hvkCKfS" resolve="frag_YieldingIterator_anonymous_class" />
                                   </node>
                                 </node>
                               </node>
@@ -12699,8 +12698,8 @@
                   <node concept="3KaCP$" id="hvkDaoE" role="3cqZAp">
                     <node concept="33vP2n" id="hvkDaoF" role="3KbGdf" />
                     <node concept="3clFbS" id="hvkDaoG" role="3Kb1Dw" />
-                    <node concept="xERo3" id="hvkDhc4" role="lGtFl">
-                      <ref role="xH3mL" node="huMyoh8" resolve="frag_ClosureLiteral_yield_switch" />
+                    <node concept="5jKBG" id="za$VMvkaMS" role="lGtFl">
+                      <ref role="v9R2y" node="huMyoh8" resolve="frag_ClosureLiteral_yield_switch" />
                       <ref role="2rW$FS" node="huMz47p" resolve="closure_switch" />
                     </node>
                   </node>
@@ -23693,8 +23692,8 @@
                 </node>
               </node>
             </node>
-            <node concept="xERo3" id="4m3yGO2$CCf" role="lGtFl">
-              <ref role="xH3mL" node="3V7xJzn2mRg" resolve="frag_AdaptableTypeParameters" />
+            <node concept="5jKBG" id="za$VMvkNFu" role="lGtFl">
+              <ref role="v9R2y" node="3V7xJzn2mRg" resolve="frag_AdaptableTypeParameters" />
             </node>
           </node>
         </node>
@@ -23810,8 +23809,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="xERo3" id="4m3yGO2$CEV" role="lGtFl">
-                <ref role="xH3mL" node="3V7xJzn2mRg" resolve="frag_AdaptableTypeParameters" />
+              <node concept="5jKBG" id="za$VMvkNFv" role="lGtFl">
+                <ref role="v9R2y" node="3V7xJzn2mRg" resolve="frag_AdaptableTypeParameters" />
               </node>
             </node>
           </node>

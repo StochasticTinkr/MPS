@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
@@ -202,7 +202,9 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG" />
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG">
+        <child id="1510949579266801461" name="sourceNodeQuery" index="5jGum" />
+      </concept>
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
@@ -237,10 +239,6 @@
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
         <child id="1722980698497626405" name="actualArgument" index="v9R3O" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
-        <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1200923511980" name="label" index="2sBCQV" />
@@ -934,9 +932,9 @@
         <node concept="XkiVB" id="3g99cIN5jgI" role="3cqZAp">
           <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
           <node concept="10Nm6u" id="23CHI7KI1sl" role="37wK5m">
-            <node concept="xERo3" id="23CHI7KI21U" role="lGtFl">
-              <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
-              <node concept="3NFfHV" id="23CHI7KI22f" role="xEYEz">
+            <node concept="5jKBG" id="za$VMvkNMD" role="lGtFl">
+              <ref role="v9R2y" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
+              <node concept="3NFfHV" id="23CHI7KI22f" role="5jGum">
                 <node concept="3clFbS" id="23CHI7KI22g" role="2VODD2">
                   <node concept="3clFbF" id="23CHI7KI23$" role="3cqZAp">
                     <node concept="2OqwBi" id="23CHI7KI2om" role="3clFbG">
@@ -1081,9 +1079,9 @@
       <node concept="3clFbS" id="7V0VIKu6wNk" role="3clF47">
         <node concept="3clFbF" id="7V0VIKu6wNl" role="3cqZAp">
           <node concept="10Nm6u" id="7V0VIKu6wNm" role="3clFbG">
-            <node concept="xERo3" id="7V0VIKu6wNn" role="lGtFl">
-              <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
-              <node concept="3NFfHV" id="7V0VIKu6wNo" role="xEYEz">
+            <node concept="5jKBG" id="za$VMvkNME" role="lGtFl">
+              <ref role="v9R2y" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
+              <node concept="3NFfHV" id="7V0VIKu6wNo" role="5jGum">
                 <node concept="3clFbS" id="7V0VIKu6wNp" role="2VODD2">
                   <node concept="3clFbF" id="7V0VIKu6wNq" role="3cqZAp">
                     <node concept="2OqwBi" id="7V0VIKu6wNr" role="3clFbG">
@@ -2215,9 +2213,9 @@
             <node concept="liA8E" id="3g99cIN5jiW" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
               <node concept="10Nm6u" id="23CHI7KNh94" role="37wK5m">
-                <node concept="xERo3" id="23CHI7KNjmV" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:5DcBNiM88Ty" resolve="reduce_PropertyDeclaration_SProperty" />
-                  <node concept="3NFfHV" id="23CHI7KNkua" role="xEYEz">
+                <node concept="5jKBG" id="za$VMvkNMF" role="lGtFl">
+                  <ref role="v9R2y" to="tp27:5DcBNiM88Ty" resolve="reduce_PropertyDeclaration_SProperty" />
+                  <node concept="3NFfHV" id="23CHI7KNkua" role="5jGum">
                     <node concept="3clFbS" id="23CHI7KNkub" role="2VODD2">
                       <node concept="3clFbF" id="23CHI7KNkw1" role="3cqZAp">
                         <node concept="2OqwBi" id="23CHI7KNkym" role="3clFbG">
@@ -2238,9 +2236,9 @@
                     <ref role="1Y3XeK" to="79pl:~BasePropertyConstraintsDescriptor" resolve="BasePropertyConstraintsDescriptor" />
                     <ref role="37wK5l" to="79pl:~BasePropertyConstraintsDescriptor.&lt;init&gt;(jetbrains.mps.smodel.adapter.ids.SPropertyId,jetbrains.mps.smodel.runtime.ConstraintsDescriptor)" resolve="BasePropertyConstraintsDescriptor" />
                     <node concept="10Nm6u" id="23CHI7KNqJs" role="37wK5m">
-                      <node concept="xERo3" id="23CHI7KNqJt" role="lGtFl">
-                        <ref role="xH3mL" to="tp27:1TWFJuLBK2f" resolve="reduce_Property2Id" />
-                        <node concept="3NFfHV" id="23CHI7KNqJu" role="xEYEz">
+                      <node concept="5jKBG" id="za$VMvkNMG" role="lGtFl">
+                        <ref role="v9R2y" to="tp27:1TWFJuLBK2f" resolve="reduce_Property2Id" />
+                        <node concept="3NFfHV" id="23CHI7KNqJu" role="5jGum">
                           <node concept="3clFbS" id="23CHI7KNqJv" role="2VODD2">
                             <node concept="3clFbF" id="23CHI7KNqJw" role="3cqZAp">
                               <node concept="2OqwBi" id="23CHI7KNqJx" role="3clFbG">
@@ -2787,9 +2785,9 @@
             <node concept="liA8E" id="3g99cIN5jo_" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
               <node concept="10Nm6u" id="23CHI7KNLM$" role="37wK5m">
-                <node concept="xERo3" id="23CHI7KNO5f" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
-                  <node concept="3NFfHV" id="23CHI7KNPcP" role="xEYEz">
+                <node concept="5jKBG" id="za$VMvkNMH" role="lGtFl">
+                  <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+                  <node concept="3NFfHV" id="23CHI7KNPcP" role="5jGum">
                     <node concept="3clFbS" id="23CHI7KNPcQ" role="2VODD2">
                       <node concept="3clFbF" id="1TWFJuLEg19" role="3cqZAp">
                         <node concept="2YIFZM" id="1TWFJuLEg1a" role="3clFbG">
@@ -2814,9 +2812,9 @@
                     <ref role="1Y3XeK" to="79pl:~BaseReferenceConstraintsDescriptor" resolve="BaseReferenceConstraintsDescriptor" />
                     <ref role="37wK5l" to="79pl:~BaseReferenceConstraintsDescriptor.&lt;init&gt;(jetbrains.mps.smodel.adapter.ids.SReferenceLinkId,jetbrains.mps.smodel.runtime.ConstraintsDescriptor)" resolve="BaseReferenceConstraintsDescriptor" />
                     <node concept="10Nm6u" id="23CHI7KNRy7" role="37wK5m">
-                      <node concept="xERo3" id="23CHI7KNRy8" role="lGtFl">
-                        <ref role="xH3mL" to="tp27:1TWFJuLBP0u" resolve="reduce_Link2Id" />
-                        <node concept="3NFfHV" id="23CHI7KNRy9" role="xEYEz">
+                      <node concept="5jKBG" id="za$VMvkNMI" role="lGtFl">
+                        <ref role="v9R2y" to="tp27:1TWFJuLBP0u" resolve="reduce_Link2Id" />
+                        <node concept="3NFfHV" id="23CHI7KNRy9" role="5jGum">
                           <node concept="3clFbS" id="23CHI7KNRya" role="2VODD2">
                             <node concept="3clFbF" id="23CHI7KNRyb" role="3cqZAp">
                               <node concept="2YIFZM" id="23CHI7KNRyc" role="3clFbG">

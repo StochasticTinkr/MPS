@@ -281,10 +281,11 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
                             TemplateContext context19 = context18.subContext();
                             {
                               Collection<SNode> tlist34 = null;
-                              SNode callInputNode34 = QueriesGenerated.sourceNodeQuery_2_1(new SourceSubstituteMacroNodeContext(context19, includeMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a6));
-                              TemplateContext context20 = context19.subContext(null, callInputNode34);
+                              SNode callInputNode34 = QueriesGenerated.sourceNodeQuery_2_1(new SourceSubstituteMacroNodeContext(context19, callMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a6));
+                              TemplateContext context20;
+                              context20 = context19.subContext(null, callInputNode34);
                               if (callInputNode34 != null) {
-                                tlist34 = environment.findTemplate(environment.createTemplateKey("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319222074", "reduce_LinkDeclaration_SLink"), new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2038730470045399544")).apply(environment, context20);
+                                tlist34 = environment.findTemplate(environment.createTemplateKey("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319222074", "reduce_LinkDeclaration_SLink"), new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "633481135935144945")).apply(environment, context20);
                               }
                               for (SNode child35 : TemplateUtil.asNotNull(tlist34)) {
                                 tnode33.addChild(myAggregationLinks[0], child35);
@@ -448,5 +449,5 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
   private static SNodePointer propertyMacro_6fpfng_c0a0c0b0d0b0d0c0c0b0g0b0c0f0g = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396681225");
   private static SNodePointer callMacro_6fpfng_b0a0a1a1a1a3a1a6a1a2a5a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977424627382");
   private static SNodePointer loopMacroRef_6fpfng_b0a0a1a4a1a6a1a2a5a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2038730470042886541");
-  private static SNodePointer includeMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2038730470045399544");
+  private static SNodePointer callMacro_6fpfng_b0a0a1a2a1a2a1a1a3a2a4a1a6a1a2a5a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "633481135935144945");
 }

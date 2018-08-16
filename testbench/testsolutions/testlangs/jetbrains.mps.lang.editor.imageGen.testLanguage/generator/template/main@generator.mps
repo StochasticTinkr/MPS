@@ -2,7 +2,7 @@
 <model ref="r:f1532bec-1ca0-47ff-a389-b3d97554a18c(jetbrains.mps.lang.editor.imageGen.testLanguage.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="9bcd3d4b-c789-4f70-85e4-038ea20762b9" name="jetbrains.mps.lang.editor.imageGen.testLanguage" version="0" />
     <use id="1839bec5-cea6-41df-b9e0-c405ff35c41e" name="jetbrains.mps.lang.editor.imageGen" version="0" />

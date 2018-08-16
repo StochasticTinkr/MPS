@@ -67,8 +67,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
           }
           {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2d));
-            TemplateContext context2 = context1.subContext(null, callInputNode5);
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_1(new SourceSubstituteMacroNodeContext(context1, callMacro_b1hjv9_b0a0a1a4a1a2a2d));
+            TemplateContext context2;
+            context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
@@ -106,8 +107,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
           }
           {
             Collection<SNode> tlist12 = null;
-            SNode callInputNode12 = QueriesGenerated.sourceNodeQuery_53_4(new SourceSubstituteMacroNodeContext(context3, includeMacro_b1hjv9_b0a0a1a4a1a0c0c3));
-            TemplateContext context4 = context3.subContext(null, callInputNode12);
+            SNode callInputNode12 = QueriesGenerated.sourceNodeQuery_53_4(new SourceSubstituteMacroNodeContext(context3, callMacro_b1hjv9_b0a0a1a4a1a0c0c3));
+            TemplateContext context4;
+            context4 = context3.subContext(null, callInputNode12);
             if (callInputNode12 != null) {
               tlist12 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context4);
             }
@@ -188,8 +190,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
           }
           {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_7(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2e));
-            TemplateContext context2 = context1.subContext(null, callInputNode5);
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_7(new SourceSubstituteMacroNodeContext(context1, callMacro_b1hjv9_b0a0a1a4a1a2a2e));
+            TemplateContext context2;
+            context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
@@ -219,8 +222,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                   }
                   {
                     Collection<SNode> tlist11 = null;
-                    SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_53_9(new SourceSubstituteMacroNodeContext(context4, includeMacro_b1hjv9_b0a0a1a4a1a1a1a5a1a2a2e));
-                    TemplateContext context5 = context4.subContext(null, callInputNode11);
+                    SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_53_9(new SourceSubstituteMacroNodeContext(context4, callMacro_b1hjv9_b0a0a1a4a1a1a1a5a1a2a2e));
+                    TemplateContext context5;
+                    context5 = context4.subContext(null, callInputNode11);
                     if (callInputNode11 != null) {
                       tlist11 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context5);
                     }
@@ -277,8 +281,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
           }
           {
             Collection<SNode> tlist19 = null;
-            SNode callInputNode19 = QueriesGenerated.sourceNodeQuery_53_12(new SourceSubstituteMacroNodeContext(context6, includeMacro_b1hjv9_b0a0a1a4a1a0c0c4));
-            TemplateContext context7 = context6.subContext(null, callInputNode19);
+            SNode callInputNode19 = QueriesGenerated.sourceNodeQuery_53_12(new SourceSubstituteMacroNodeContext(context6, callMacro_b1hjv9_b0a0a1a4a1a0c0c4));
+            TemplateContext context7;
+            context7 = context6.subContext(null, callInputNode19);
             if (callInputNode19 != null) {
               tlist19 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context7);
             }
@@ -325,8 +330,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                           }
                           {
                             Collection<SNode> tlist28 = null;
-                            SNode callInputNode28 = QueriesGenerated.sourceNodeQuery_53_14(new SourceSubstituteMacroNodeContext(context11, includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a0c0c4));
-                            TemplateContext context12 = context11.subContext(null, callInputNode28);
+                            SNode callInputNode28 = QueriesGenerated.sourceNodeQuery_53_14(new SourceSubstituteMacroNodeContext(context11, callMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a0c0c4));
+                            TemplateContext context12;
+                            context12 = context11.subContext(null, callInputNode28);
                             if (callInputNode28 != null) {
                               tlist28 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context12);
                             }
@@ -405,8 +411,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
           }
           {
             Collection<SNode> tlist5 = null;
-            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_17(new SourceSubstituteMacroNodeContext(context1, includeMacro_b1hjv9_b0a0a1a4a1a2a2f));
-            TemplateContext context2 = context1.subContext(null, callInputNode5);
+            SNode callInputNode5 = QueriesGenerated.sourceNodeQuery_53_17(new SourceSubstituteMacroNodeContext(context1, callMacro_b1hjv9_b0a0a1a4a1a2a2f));
+            TemplateContext context2;
+            context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
             }
@@ -453,8 +460,9 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
                           }
                           {
                             Collection<SNode> tlist14 = null;
-                            SNode callInputNode14 = QueriesGenerated.sourceNodeQuery_53_19(new SourceSubstituteMacroNodeContext(context6, includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a2a2f));
-                            TemplateContext context7 = context6.subContext(null, callInputNode14);
+                            SNode callInputNode14 = QueriesGenerated.sourceNodeQuery_53_19(new SourceSubstituteMacroNodeContext(context6, callMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a2a2f));
+                            TemplateContext context7;
+                            context7 = context6.subContext(null, callInputNode14);
                             if (callInputNode14 != null) {
                               tlist14 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context7);
                             }
@@ -572,27 +580,27 @@ public class Mapping_mc_assignmentStatement extends MapConfigBase implements Tem
   }
   private static SNodePointer rule_b1hjv9_b0a0c0c3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1206552028913");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0c0c3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225962800");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a2a2d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225962812");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a2a2d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145307");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0f0b0c0c3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225962838");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0a2a2d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225963985");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a0c0c3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225963997");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a0c0c3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145308");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0b0b0c0b0f0b0a2a2d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225964026");
   private static SNodePointer rule_b1hjv9_b0a0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229466109664");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225965450");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225965462");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145309");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0b0b0f0b0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225965480");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a1a1a5a1a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225965492");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a1a1a5a1a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145310");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0c0b0f0b0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225965509");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225967133");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225967145");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145311");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0b0b0b0b0c0b0f0b0a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225967166");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225967178");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145312");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0c0b0b0b0c0b0f0b0a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225967194");
   private static SNodePointer rule_b1hjv9_b0a0c0c5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1229469897040");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0c0c5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225969832");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225969844");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145313");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0b0b0b0b0b0c0b0f0b0c0c5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225969865");
-  private static SNodePointer includeMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225969877");
+  private static SNodePointer callMacro_b1hjv9_b0a0a1a4a1a1a1a1a1a2a1a5a1a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145314");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0c0b0b0b0c0b0f0b0c0c5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3253136186225969893");
   private static SNodePointer copySrcMacro_b1hjv9_b0a0c0d0c0c6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8389748773580306851");
   private static SNodePointer switchMacroRef_b1hjv9_b0a0a0a1a4a2a2g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2238065674976419994");

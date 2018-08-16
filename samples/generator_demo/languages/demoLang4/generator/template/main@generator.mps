@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
@@ -106,6 +106,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG" />
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
@@ -132,9 +133,6 @@
       </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
@@ -803,8 +801,8 @@
             </node>
           </node>
           <node concept="3clFbH" id="4$J9ZLeYV9K" role="3cqZAp">
-            <node concept="xERo3" id="4$J9ZLeYV9M" role="lGtFl">
-              <ref role="xH3mL" node="hSiXu_e" resolve="include_ComponentProperties" />
+            <node concept="5jKBG" id="za$VMvkORN" role="lGtFl">
+              <ref role="v9R2y" node="hSiXu_e" resolve="include_ComponentProperties" />
             </node>
           </node>
           <node concept="3cpWs6" id="hSiXuCl" role="3cqZAp">
@@ -978,8 +976,8 @@
             </node>
           </node>
           <node concept="3clFbH" id="4$J9ZLeYV9N" role="3cqZAp">
-            <node concept="xERo3" id="4$J9ZLeYV9P" role="lGtFl">
-              <ref role="xH3mL" node="hSiXu_e" resolve="include_ComponentProperties" />
+            <node concept="5jKBG" id="za$VMvkORO" role="lGtFl">
+              <ref role="v9R2y" node="hSiXu_e" resolve="include_ComponentProperties" />
             </node>
           </node>
           <node concept="3cpWs6" id="hSiXuEa" role="3cqZAp">
@@ -1042,8 +1040,8 @@
             </node>
           </node>
           <node concept="3clFbH" id="4$J9ZLeYT5k" role="3cqZAp">
-            <node concept="xERo3" id="4$J9ZLeYV9G" role="lGtFl">
-              <ref role="xH3mL" node="hSiXu_e" resolve="include_ComponentProperties" />
+            <node concept="5jKBG" id="za$VMvkORP" role="lGtFl">
+              <ref role="v9R2y" node="hSiXu_e" resolve="include_ComponentProperties" />
             </node>
           </node>
           <node concept="3SKdUt" id="6pumIWoCG55" role="3cqZAp">

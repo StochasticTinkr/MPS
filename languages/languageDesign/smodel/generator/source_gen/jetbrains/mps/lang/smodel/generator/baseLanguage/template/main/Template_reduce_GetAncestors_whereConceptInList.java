@@ -83,8 +83,9 @@ public class Template_reduce_GetAncestors_whereConceptInList extends TemplateDec
                   }
                   TemplateContext context4 = context3.subContext(itnode7);
                   Collection<SNode> tlist8 = null;
-                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_44_1(new SourceSubstituteMacroNodeContext(context4, includeMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a6));
-                  TemplateContext context5 = context4.subContext(null, callInputNode8);
+                  SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_44_1(new SourceSubstituteMacroNodeContext(context4, callMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a6));
+                  TemplateContext context5;
+                  context5 = context4.subContext(null, callInputNode8);
                   if (callInputNode8 != null) {
                     tlist8 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context5);
                   }
@@ -170,6 +171,6 @@ public class Template_reduce_GetAncestors_whereConceptInList extends TemplateDec
   }
   private static SNodePointer copySrcMacro_tfk7rm_b0a0c0d0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1173123284727");
   private static SNodePointer loopMacroRef_tfk7rm_b0a0a1a2a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653993422");
-  private static SNodePointer includeMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653993428");
+  private static SNodePointer callMacro_tfk7rm_b0a0a3a2a2a1a1a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145300");
   private static SNodePointer propertyMacro_tfk7rm_c0a0c0a0b0f0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1173123508504");
 }

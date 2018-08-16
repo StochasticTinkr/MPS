@@ -54,8 +54,9 @@ public class Template_reduce_Model_NodesIncludingImportedOperation_hasConcept ex
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_50_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_ibx6es_b0a0a1a4a2a6));
-        TemplateContext context2 = context1.subContext(null, callInputNode4);
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_50_1(new SourceSubstituteMacroNodeContext(context1, callMacro_ibx6es_b0a0a1a4a2a6));
+        TemplateContext context2;
+        context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
         }
@@ -103,5 +104,5 @@ public class Template_reduce_Model_NodesIncludingImportedOperation_hasConcept ex
     return rv;
   }
   private static SNodePointer copySrcMacro_ibx6es_b0a0c0d0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1182511526040");
-  private static SNodePointer includeMacro_ibx6es_b0a0a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2702976628215322270");
+  private static SNodePointer callMacro_ibx6es_b0a0a1a4a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145303");
 }

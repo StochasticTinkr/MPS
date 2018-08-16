@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
@@ -102,6 +102,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG" />
       <concept id="1219952072943" name="jetbrains.mps.lang.generator.structure.DropRootRule" flags="lg" index="aNPBN">
         <reference id="1219952338328" name="applicableConcept" index="aOQi4" />
       </concept>
@@ -123,9 +124,6 @@
       </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
@@ -595,8 +593,8 @@
             </node>
           </node>
           <node concept="3clFbH" id="4$J9ZLeZ5WI" role="3cqZAp">
-            <node concept="xERo3" id="4$J9ZLeZ5WK" role="lGtFl">
-              <ref role="xH3mL" node="hSadXA1" resolve="include_ComponentProperties" />
+            <node concept="5jKBG" id="za$VMvkORJ" role="lGtFl">
+              <ref role="v9R2y" node="hSadXA1" resolve="include_ComponentProperties" />
             </node>
           </node>
           <node concept="3cpWs6" id="hSa8BnZ" role="3cqZAp">
@@ -770,8 +768,8 @@
             </node>
           </node>
           <node concept="3clFbH" id="4$J9ZLeZ5WT" role="3cqZAp">
-            <node concept="xERo3" id="4$J9ZLeZ5WV" role="lGtFl">
-              <ref role="xH3mL" node="hSadXA1" resolve="include_ComponentProperties" />
+            <node concept="5jKBG" id="za$VMvkORK" role="lGtFl">
+              <ref role="v9R2y" node="hSadXA1" resolve="include_ComponentProperties" />
             </node>
           </node>
           <node concept="3cpWs6" id="hSa9z9E" role="3cqZAp">
