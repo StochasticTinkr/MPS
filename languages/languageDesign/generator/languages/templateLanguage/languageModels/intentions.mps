@@ -323,6 +323,9 @@
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
+      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
+        <reference id="1139877738879" name="concept" index="1A0vxQ" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
@@ -431,6 +434,7 @@
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
+      <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
@@ -8334,6 +8338,221 @@
                   <ref role="cht4Q" to="tpee:fzclF8j" resolve="ExpressionStatement" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="za$VMvir6Z">
+    <property role="TrG5h" value="ReplaceIncludeWithCall" />
+    <ref role="2ZfgGC" to="tpf8:hoxERsl" resolve="IncludeMacro" />
+    <node concept="2S6ZIM" id="za$VMvir70" role="2ZfVej">
+      <node concept="3clFbS" id="za$VMvir71" role="2VODD2">
+        <node concept="3clFbF" id="za$VMvitGf" role="3cqZAp">
+          <node concept="Xl_RD" id="za$VMvitGe" role="3clFbG">
+            <property role="Xl_RC" value="Replace $INCLUDE$ with $CALL$" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="za$VMvir72" role="2ZfgGD">
+      <node concept="3clFbS" id="za$VMvir73" role="2VODD2">
+        <node concept="3cpWs8" id="za$VMvhamc" role="3cqZAp">
+          <node concept="3cpWsn" id="za$VMvhamf" role="3cpWs9">
+            <property role="TrG5h" value="containingTemplate" />
+            <node concept="3Tqbb2" id="za$VMvhama" role="1tU5fm">
+              <ref role="ehGHo" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
+            </node>
+            <node concept="2OqwBi" id="za$VMvhaFc" role="33vP2m">
+              <node concept="2Sf5sV" id="za$VMviGBL" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="za$VMvhbaP" role="2OqNvi">
+                <node concept="1xMEDy" id="za$VMvhbaR" role="1xVPHs">
+                  <node concept="chp4Y" id="za$VMvhbd1" role="ri$Ld">
+                    <ref role="cht4Q" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="za$VMvh3UP" role="3cqZAp">
+          <node concept="3cpWsn" id="za$VMvh3UQ" role="3cpWs9">
+            <property role="TrG5h" value="callMacro" />
+            <node concept="3Tqbb2" id="za$VMvh3UO" role="1tU5fm">
+              <ref role="ehGHo" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
+            </node>
+            <node concept="2OqwBi" id="za$VMvh3UR" role="33vP2m">
+              <node concept="2Sf5sV" id="za$VMviwI3" role="2Oq$k0" />
+              <node concept="1_qnLN" id="za$VMvh3UT" role="2OqNvi">
+                <ref role="1_rbq0" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="za$VMvgQAg" role="3cqZAp">
+          <node concept="37vLTI" id="za$VMvh5Sy" role="3clFbG">
+            <node concept="2OqwBi" id="za$VMvh6oC" role="37vLTx">
+              <node concept="2Sf5sV" id="za$VMviwI1" role="2Oq$k0" />
+              <node concept="3TrEf2" id="za$VMvh6X9" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:hoxH3iB" resolve="includeTemplate" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="za$VMvh4Qt" role="37vLTJ">
+              <node concept="37vLTw" id="za$VMvh3UU" role="2Oq$k0">
+                <ref role="3cqZAo" node="za$VMvh3UQ" resolve="callMacro" />
+              </node>
+              <node concept="3TrEf2" id="za$VMvh5ik" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:1vDgt48Nz5N" resolve="template" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="za$VMvin$G" role="3cqZAp">
+          <node concept="37vLTI" id="za$VMvipjd" role="3clFbG">
+            <node concept="2OqwBi" id="za$VMvipDb" role="37vLTx">
+              <node concept="2Sf5sV" id="za$VMviwI0" role="2Oq$k0" />
+              <node concept="3TrEf2" id="za$VMviq_P" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:hurW$JJ" resolve="mappingLabel" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="za$VMvinOl" role="37vLTJ">
+              <node concept="37vLTw" id="za$VMvin$E" role="2Oq$k0">
+                <ref role="3cqZAo" node="za$VMvh3UQ" resolve="callMacro" />
+              </node>
+              <node concept="3TrEf2" id="za$VMvioF$" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:hurW$JJ" resolve="mappingLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="za$VMvi8vu" role="3cqZAp">
+          <node concept="37vLTI" id="za$VMviarG" role="3clFbG">
+            <node concept="2OqwBi" id="za$VMviaMi" role="37vLTx">
+              <node concept="2Sf5sV" id="za$VMviwI2" role="2Oq$k0" />
+              <node concept="3TrEf2" id="za$VMvibnK" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:hoxEYIP" resolve="sourceNodeQuery" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="za$VMvi8IR" role="37vLTJ">
+              <node concept="37vLTw" id="za$VMvi8vs" role="2Oq$k0">
+                <ref role="3cqZAo" node="za$VMvh3UQ" resolve="callMacro" />
+              </node>
+              <node concept="3TrEf2" id="za$VMvi9KL" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:1jRYachIjWP" resolve="sourceNodeQuery" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="za$VMvibIC" role="3cqZAp">
+          <node concept="37vLTI" id="za$VMvimfZ" role="3clFbG">
+            <node concept="2OqwBi" id="za$VMvimMu" role="37vLTx">
+              <node concept="2Sf5sV" id="za$VMviwHZ" role="2Oq$k0" />
+              <node concept="3TrcHB" id="za$VMvinpq" role="2OqNvi">
+                <ref role="3TsBF5" to="tpf8:2Pi793Do1U8" resolve="comment" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="za$VMvibY9" role="37vLTJ">
+              <node concept="37vLTw" id="za$VMvibIA" role="2Oq$k0">
+                <ref role="3cqZAo" node="za$VMvh3UQ" resolve="callMacro" />
+              </node>
+              <node concept="3TrcHB" id="za$VMvicPl" role="2OqNvi">
+                <ref role="3TsBF5" to="tpf8:2Pi793Do1U8" resolve="comment" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="za$VMvhed2" role="3cqZAp">
+          <node concept="3clFbS" id="za$VMvhed5" role="2LFqv$">
+            <node concept="3cpWs8" id="za$VMvhYev" role="3cqZAp">
+              <node concept="3cpWsn" id="za$VMvhYew" role="3cpWs9">
+                <property role="TrG5h" value="argExpr" />
+                <node concept="3Tqbb2" id="za$VMvhYeq" role="1tU5fm">
+                  <ref role="ehGHo" to="tpf8:4lQlo5qukTT" resolve="TemplateArgumentParameterExpression" />
+                </node>
+                <node concept="2OqwBi" id="za$VMvhYex" role="33vP2m">
+                  <node concept="2OqwBi" id="za$VMvhYey" role="2Oq$k0">
+                    <node concept="37vLTw" id="za$VMvhYez" role="2Oq$k0">
+                      <ref role="3cqZAo" node="za$VMvh3UQ" resolve="callMacro" />
+                    </node>
+                    <node concept="3Tsc0h" id="za$VMvhYe$" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpf8:1vDgt48Nz4_" resolve="actualArgument" />
+                    </node>
+                  </node>
+                  <node concept="WFELt" id="za$VMvhYe_" role="2OqNvi">
+                    <ref role="1A0vxQ" to="tpf8:4lQlo5qukTT" resolve="TemplateArgumentParameterExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="za$VMvhlF6" role="3cqZAp">
+              <node concept="37vLTI" id="za$VMvhZeW" role="3clFbG">
+                <node concept="2OqwBi" id="za$VMvi2z_" role="37vLTx">
+                  <node concept="2OqwBi" id="za$VMvhZw$" role="2Oq$k0">
+                    <node concept="37vLTw" id="za$VMviICn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="za$VMvhamf" resolve="containingTemplate" />
+                    </node>
+                    <node concept="3Tsc0h" id="za$VMvi07i" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" resolve="parameter" />
+                    </node>
+                  </node>
+                  <node concept="1z4cxt" id="za$VMvi4T3" role="2OqNvi">
+                    <node concept="1bVj0M" id="za$VMvi4T5" role="23t8la">
+                      <node concept="3clFbS" id="za$VMvi4T6" role="1bW5cS">
+                        <node concept="3clFbF" id="za$VMvi56t" role="3cqZAp">
+                          <node concept="17R0WA" id="za$VMvi6EG" role="3clFbG">
+                            <node concept="2OqwBi" id="za$VMvi7mN" role="3uHU7w">
+                              <node concept="37vLTw" id="za$VMvi6RC" role="2Oq$k0">
+                                <ref role="3cqZAo" node="za$VMvhed6" resolve="pd" />
+                              </node>
+                              <node concept="3TrcHB" id="za$VMvi7Sm" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="za$VMvi5jL" role="3uHU7B">
+                              <node concept="37vLTw" id="za$VMvi56s" role="2Oq$k0">
+                                <ref role="3cqZAo" node="za$VMvi4T7" resolve="it" />
+                              </node>
+                              <node concept="3TrcHB" id="za$VMvi5C7" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="za$VMvi4T7" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="za$VMvi4T8" role="1tU5fm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="za$VMvhYGK" role="37vLTJ">
+                  <node concept="37vLTw" id="za$VMvhYeA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="za$VMvhYew" resolve="argExpr" />
+                  </node>
+                  <node concept="3TrEf2" id="za$VMvhYSR" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpf8:4lQlo5qukTU" resolve="parameter" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="za$VMvhed6" role="1Duv9x">
+            <property role="TrG5h" value="pd" />
+            <node concept="3Tqbb2" id="za$VMvhfRK" role="1tU5fm">
+              <ref role="ehGHo" to="tpf8:1$dcvTE2mbA" resolve="TemplateParameterDeclaration" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="za$VMvhedb" role="1DdaDG">
+            <node concept="2OqwBi" id="za$VMvhedc" role="2Oq$k0">
+              <node concept="2Sf5sV" id="za$VMvi_6q" role="2Oq$k0" />
+              <node concept="3TrEf2" id="za$VMvhede" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:hoxH3iB" resolve="includeTemplate" />
+              </node>
+            </node>
+            <node concept="3Tsc0h" id="za$VMvhedf" role="2OqNvi">
+              <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" resolve="parameter" />
             </node>
           </node>
         </node>

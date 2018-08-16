@@ -335,7 +335,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IncludeMacro:
         if (props_IncludeMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("include template macro");
+          cpb.deprecated(true);
+          cpb.shortDesc("include template macro (deprecated)");
           cpb.rawPresentation("$INCLUDE$");
           props_IncludeMacro = cpb.create();
         }

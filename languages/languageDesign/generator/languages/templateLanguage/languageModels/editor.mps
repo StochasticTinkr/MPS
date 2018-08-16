@@ -215,6 +215,7 @@
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -4119,6 +4120,9 @@
         <node concept="11LMrY" id="1x7fy1yccfa" role="3F10Kt" />
         <node concept="3CIbrd" id="1x7fy1yccfb" role="3F10Kt">
           <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3nxI2P" id="za$VMviYPh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
         <node concept="A1WHu" id="6GI$fc4d6MY" role="3vIgyS">
           <ref role="A1WHt" node="6GI$fc4bPsN" resolve="ReplaceNodeMacro" />
