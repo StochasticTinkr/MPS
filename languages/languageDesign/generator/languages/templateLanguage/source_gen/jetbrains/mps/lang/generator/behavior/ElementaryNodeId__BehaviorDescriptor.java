@@ -30,17 +30,21 @@ public final class ElementaryNodeId__BehaviorDescriptor extends BaseBHDescriptor
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> create_id39TODbGtcWK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("create").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("39TODbGtcWK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> create_id6UZRahyzeh3 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("create").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6UZRahyzeh3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SNodeId.class, ""));
   public static final SMethod<SNodeId> getNodeId_id39TODbGsIdf = new SMethodBuilder<SNodeId>(new SJavaCompoundTypeImpl(SNodeId.class)).name("getNodeId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("39TODbGsIdf").registry(REGISTRY).build();
   public static final SMethod<Boolean> match_id1si_nSrb46O = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("match").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1si_nSrb46O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(create_id39TODbGtcWK, getNodeId_id39TODbGsIdf, match_id1si_nSrb46O);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(create_id39TODbGtcWK, create_id6UZRahyzeh3, getNodeId_id39TODbGsIdf, match_id1si_nSrb46O);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode create_id39TODbGtcWK(@NotNull SAbstractConcept __thisConcept__, SModel where, SNode n) {
+    return ElementaryNodeId__BehaviorDescriptor.create_id6UZRahyzeh3.invoke(__thisConcept__, where, n.getNodeId());
+  }
+  /*package*/ static SNode create_id6UZRahyzeh3(@NotNull SAbstractConcept __thisConcept__, SModel where, SNodeId nid) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3279d292ec74a708L, "jetbrains.mps.lang.generator.structure.ElementaryNodeId"));
-    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3279d292ec74a708L, 0x3279d292ec74a70dL, "nodeId"), n.getNodeId().toString());
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3279d292ec74a708L, 0x3279d292ec74a70dL, "nodeId"), nid.toString());
     return rv;
   }
   /*package*/ static SNodeId getNodeId_id39TODbGsIdf(@NotNull SNode __thisNode__) {
@@ -66,9 +70,9 @@ public final class ElementaryNodeId__BehaviorDescriptor extends BaseBHDescriptor
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 1:
-        return (T) ((SNodeId) getNodeId_id39TODbGsIdf(node));
       case 2:
+        return (T) ((SNodeId) getNodeId_id39TODbGsIdf(node));
+      case 3:
         return (T) ((Boolean) match_id1si_nSrb46O(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -84,6 +88,8 @@ public final class ElementaryNodeId__BehaviorDescriptor extends BaseBHDescriptor
     switch (methodIndex) {
       case 0:
         return (T) ((SNode) create_id39TODbGtcWK(concept, (SModel) parameters[0], (SNode) parameters[1]));
+      case 1:
+        return (T) ((SNode) create_id6UZRahyzeh3(concept, (SModel) parameters[0], (SNodeId) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -2063,5 +2063,32 @@
       <property role="t5JxN" value="Nothing but SNodeId serialization" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6UZRahyyZP8">
+    <property role="EcuMT" value="7980339663309897032" />
+    <property role="3GE5qa" value="crossmodel" />
+    <property role="TrG5h" value="OriginTrace" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="6UZRahyyZPd" role="1TKVEi">
+      <property role="IQ2ns" value="7980339663309897037" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+    <node concept="M6xJ_" id="6UZRahyyZP9" role="lGtFl">
+      <property role="Hh88m" value="originTrace" />
+      <node concept="tn0Fv" id="6UZRahyyZPb" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="6UZRahyzDdq" role="EQaZv">
+        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="t5JxF" id="6UZRahyyZPf" role="lGtFl">
+      <property role="t5JxN" value="We use this attribute to persist information about origin of a node in a checkpoint model (i.e. a node from previous CP that served as its source)" />
+    </node>
+  </node>
 </model>
 
