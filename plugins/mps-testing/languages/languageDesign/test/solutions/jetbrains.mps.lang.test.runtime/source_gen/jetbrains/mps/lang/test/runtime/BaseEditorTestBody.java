@@ -160,7 +160,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
                 SNode editedNode = myBefore;
                 NodesMatcher nm = new NodesMatcher(editedNode, myResult);
                 List<NodeDifference> diff = nm.diff();
-                Assert.assertTrue(diff.isEmpty());
+                if (!(diff.isEmpty())) {
+                  StringBuilder sb = new StringBuilder();
+                  for (NodeDifference nd : diff) {
+                    sb.append(nd.print());
+                  }
+                  Assert.fail(sb.toString());
+                }
                 if (myFinish != null) {
                   myFinish.assertSelectionIsTheSame(myCurrentEditorComponent, (Map<SNode, SNode>) nm.getMap());
                 }
