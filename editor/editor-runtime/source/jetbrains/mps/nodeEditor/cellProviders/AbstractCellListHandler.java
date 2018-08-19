@@ -44,7 +44,7 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   //use getLink/getReference instead
   public String getElementRole(){
     return null;
