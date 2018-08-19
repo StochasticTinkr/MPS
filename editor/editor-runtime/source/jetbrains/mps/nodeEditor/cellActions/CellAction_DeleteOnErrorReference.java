@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,23 +25,17 @@ import java.util.List;
 
 public class CellAction_DeleteOnErrorReference extends AbstractCellAction {
   private SNode mySource;
-  private String myRole;
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public CellAction_DeleteOnErrorReference(SNode source, String role) {
-    mySource = source;
-    myRole = role;
-  }
+  private SReferenceLink myLink;
 
   public CellAction_DeleteOnErrorReference(SNode source, SReferenceLink link) {
-    this(source, link.getName());
+    mySource = source;
+    myLink = link;
   }
 
   @Override
   public void execute(EditorContext context) {
-    if (mySource.getReference(myRole) != null && mySource.getReferenceTarget(myRole) == null) {
-      mySource.setReference(myRole, null);
+    if (mySource.getReference(myLink) != null && mySource.getReferenceTarget(myLink) == null) {
+      mySource.setReference(myLink, null);
     } else {
       List<SNode> nodes = new ArrayList<>();
       nodes.add(mySource);

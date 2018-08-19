@@ -61,7 +61,7 @@ public class BasicPropertiesContributor implements CellTreeContributor {
     basicProperties
         .property("id", cell.getCellId())
         .property("class", cell.getClass().getName())
-        .property("role", cell.getRole())
+        .property("role", cell.getSRole().getName())
         .property("x", cell.getX())
         .property("y", cell.getY())
         .property("width", cell.getWidth())

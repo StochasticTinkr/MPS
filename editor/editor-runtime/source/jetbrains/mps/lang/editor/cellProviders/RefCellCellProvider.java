@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorSReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -70,7 +71,7 @@ public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     if (!getLink().isOptional()) {
-      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(node.getConcept()) != null) {
         errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         return errorCell;
@@ -78,8 +79,8 @@ public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
     }
 
     SReferenceLink rl = (SReferenceLink) getLink();
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, rl));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, rl));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorSReference(node, rl));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorSReference(node, rl));
     return errorCell;
   }
 }

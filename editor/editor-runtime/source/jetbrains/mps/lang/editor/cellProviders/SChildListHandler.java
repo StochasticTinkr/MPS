@@ -84,7 +84,7 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), myLink, getEditorContext()));
     emptyCell.setSRole(getElementSRole());
-    emptyCell.setCellId("empty_" + getElementRole());
+    emptyCell.setCellId("empty_" + getElementSRole().getName());
     return emptyCell;
   }
 

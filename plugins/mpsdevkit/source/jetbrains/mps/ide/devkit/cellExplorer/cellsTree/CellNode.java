@@ -138,7 +138,7 @@ class CellNode extends MPSTreeNode {
   private String calculateNodeIdentifier() {
     String className = myCell.getClass().getSimpleName();
     if (myCell.getSRole() != null) {
-      return String.format("%s[%s#%s]", className, myCell.getRole(), myCell.getCellId());
+      return String.format("%s[%s#%s]", className, myCell.getSRole().getName(), myCell.getCellId());
     } else {
       return String.format("%s[%s]", className, myCell.getCellId());
     }
