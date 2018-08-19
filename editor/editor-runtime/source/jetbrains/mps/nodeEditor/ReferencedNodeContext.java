@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -73,10 +74,17 @@ public class ReferencedNodeContext {
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = new ReferencedNodeContext(node, this);
     result.addContextRole(contextRole);
+    result.addContextRefererNode(contextRefererNode);
+    return result;
+  }
+
+  public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, SReferenceLink refLink) {
+    ReferencedNodeContext result = new ReferencedNodeContext(node, this);
+    result.addContextRole(refLink.getName());
     result.addContextRefererNode(contextRefererNode);
     return result;
   }

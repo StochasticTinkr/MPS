@@ -38,6 +38,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -281,10 +282,21 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
     ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), role);
+    myCurrentUpdateInfo = new UpdateInfoNode(newContext, myCurrentUpdateInfo);
+    try {
+      return update.compute();
+    } finally {
+      myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
+    }
+  }
+
+  @Override
+  public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, SReferenceLink refLink) {
+    ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), refLink);
     myCurrentUpdateInfo = new UpdateInfoNode(newContext, myCurrentUpdateInfo);
     try {
       return update.compute();
