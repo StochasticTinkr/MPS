@@ -63,7 +63,7 @@
       <node id="1094405431463761909" at="66,48,67,22" concept="8" />
       <node id="1094405431463761909" at="69,40,70,169" concept="7" />
       <node id="1094405431463761909" at="74,39,75,135" concept="8" />
-      <node id="1094405431463761909" at="77,33,78,60" concept="2" />
+      <node id="1094405431463761909" at="77,152,78,60" concept="2" />
       <node id="1094405431463761909" at="78,60,79,48" concept="2" />
       <node id="1094405431463761909" at="79,48,80,58" concept="2" />
       <node id="1094405431463761909" at="80,58,81,20" concept="8" />
@@ -118,7 +118,7 @@
       <node id="1094405431463761909" at="46,0,50,0" concept="1" trace="ExternalFigureReference_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1094405431463761909" at="94,0,98,5" concept="5" />
       <node id="1094405431463761909" at="51,0,56,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1094405431463761909" at="72,72,77,33" concept="7" />
+      <node id="1094405431463761909" at="72,72,77,152" concept="7" />
       <node id="1094405431463761909" at="100,301,105,7" concept="7" />
       <node id="1094405431463761909" at="105,7,110,22" concept="5" />
       <node id="1094405431463762052" at="117,0,122,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1673,7 +1673,7 @@
       <node id="2154068179221032252" at="185,34,186,22" concept="8" />
       <node id="2154068179221015239" at="188,40,189,172" concept="7" />
       <node id="2154068179221015239" at="193,39,194,135" concept="8" />
-      <node id="2154068179221015239" at="196,34,197,60" concept="2" />
+      <node id="2154068179221015239" at="196,155,197,60" concept="2" />
       <node id="2154068179221015239" at="197,60,198,48" concept="2" />
       <node id="2154068179221015239" at="198,48,199,54" concept="2" />
       <node id="2154068179221015239" at="199,54,200,20" concept="8" />
@@ -1736,7 +1736,7 @@
       <node id="9069239899234205301" at="103,306,108,9" concept="7" />
       <node id="9069239899234205301" at="108,9,113,24" concept="5" />
       <node id="2154068179221015239" at="137,0,142,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2154068179221015239" at="191,72,196,34" concept="7" />
+      <node id="2154068179221015239" at="191,72,196,155" concept="7" />
       <node id="2154068179221015239" at="212,301,217,7" concept="7" />
       <node id="2154068179221015239" at="217,7,222,22" concept="5" />
       <node id="2154068179221032254" at="229,0,234,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2698,7 +2698,7 @@
       <node id="285670992213637567" at="74,48,75,22" concept="8" />
       <node id="285670992213637567" at="77,40,78,167" concept="7" />
       <node id="285670992213637567" at="82,39,83,124" concept="8" />
-      <node id="285670992213637567" at="85,31,86,60" concept="2" />
+      <node id="285670992213637567" at="85,150,86,60" concept="2" />
       <node id="285670992213637567" at="86,60,87,48" concept="2" />
       <node id="285670992213637567" at="87,48,88,58" concept="2" />
       <node id="285670992213637567" at="88,58,89,20" concept="8" />
@@ -2758,7 +2758,7 @@
       <node id="285670992213637567" at="102,0,106,5" concept="5" />
       <node id="285670992217679463" at="178,0,182,0" concept="6" trace="createEditorMenuDescriptor#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/menus/EditorMenuDescriptor;" />
       <node id="285670992213637567" at="59,0,64,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="285670992213637567" at="80,72,85,31" concept="7" />
+      <node id="285670992213637567" at="80,72,85,150" concept="7" />
       <node id="285670992213637567" at="108,301,113,7" concept="7" />
       <node id="285670992213637567" at="113,7,118,22" concept="5" />
       <node id="285670992217679464" at="125,0,130,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2884,7 +2884,7 @@
       <node id="285670992217689760" at="74,48,75,22" concept="8" />
       <node id="285670992217689760" at="77,40,78,171" concept="7" />
       <node id="285670992217689760" at="82,39,83,128" concept="8" />
-      <node id="285670992217689760" at="85,35,86,60" concept="2" />
+      <node id="285670992217689760" at="85,154,86,60" concept="2" />
       <node id="285670992217689760" at="86,60,87,48" concept="2" />
       <node id="285670992217689760" at="87,48,88,58" concept="2" />
       <node id="285670992217689760" at="88,58,89,20" concept="8" />
@@ -2944,7 +2944,7 @@
       <node id="285670992217689760" at="102,0,106,5" concept="5" />
       <node id="285670992217689798" at="178,0,182,0" concept="6" trace="createEditorMenuDescriptor#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/menus/EditorMenuDescriptor;" />
       <node id="285670992217689760" at="59,0,64,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="285670992217689760" at="80,72,85,35" concept="7" />
+      <node id="285670992217689760" at="80,72,85,154" concept="7" />
       <node id="285670992217689760" at="108,301,113,7" concept="7" />
       <node id="285670992217689760" at="113,7,118,22" concept="5" />
       <node id="285670992217689799" at="125,0,130,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3765,7 +3765,7 @@
       <node id="5422656561932452469" at="65,48,66,22" concept="8" />
       <node id="5422656561932452469" at="68,40,69,180" concept="7" />
       <node id="5422656561932452469" at="73,39,74,137" concept="8" />
-      <node id="5422656561932452469" at="76,42,77,60" concept="2" />
+      <node id="5422656561932452469" at="76,163,77,60" concept="2" />
       <node id="5422656561932452469" at="77,60,78,48" concept="2" />
       <node id="5422656561932452469" at="78,48,79,58" concept="2" />
       <node id="5422656561932452469" at="79,58,80,20" concept="8" />
@@ -3813,7 +3813,7 @@
       <node id="5422656561932452469" at="45,0,49,0" concept="1" trace="AttributedFigureReference_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5422656561932452469" at="93,0,97,5" concept="5" />
       <node id="5422656561932452469" at="50,0,55,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5422656561932452469" at="71,72,76,42" concept="7" />
+      <node id="5422656561932452469" at="71,72,76,163" concept="7" />
       <node id="5422656561932452469" at="99,301,104,7" concept="7" />
       <node id="5422656561932452469" at="104,7,109,22" concept="5" />
       <node id="5422656561932452960" at="116,0,121,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -4881,7 +4881,7 @@
       <node id="6619018968336115621" at="69,34,70,22" concept="8" />
       <node id="6619018968336115616" at="72,40,73,181" concept="7" />
       <node id="6619018968336115616" at="77,39,78,135" concept="8" />
-      <node id="6619018968336115616" at="80,43,81,60" concept="2" />
+      <node id="6619018968336115616" at="80,164,81,60" concept="2" />
       <node id="6619018968336115616" at="81,60,82,48" concept="2" />
       <node id="6619018968336115616" at="82,48,83,43" concept="2" />
       <node id="6619018968336115616" at="83,43,84,20" concept="8" />
@@ -4929,7 +4929,7 @@
       <node id="6619018968336115616" at="42,0,46,0" concept="1" trace="CreationActionReference_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6619018968336115616" at="90,0,94,5" concept="5" />
       <node id="6619018968336115616" at="47,0,52,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6619018968336115616" at="75,72,80,43" concept="7" />
+      <node id="6619018968336115616" at="75,72,80,164" concept="7" />
       <node id="6619018968336115616" at="96,301,101,7" concept="7" />
       <node id="6619018968336115616" at="101,7,106,22" concept="5" />
       <node id="6619018968336115634" at="113,0,118,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -5240,7 +5240,7 @@
       <node id="6619018968336116573" at="69,34,70,22" concept="8" />
       <node id="6619018968336116548" at="72,40,73,178" concept="7" />
       <node id="6619018968336116548" at="77,39,78,134" concept="8" />
-      <node id="6619018968336116548" at="80,40,81,60" concept="2" />
+      <node id="6619018968336116548" at="80,161,81,60" concept="2" />
       <node id="6619018968336116548" at="81,60,82,48" concept="2" />
       <node id="6619018968336116548" at="82,48,83,43" concept="2" />
       <node id="6619018968336116548" at="83,43,84,20" concept="8" />
@@ -5288,7 +5288,7 @@
       <node id="6619018968336116548" at="42,0,46,0" concept="1" trace="CustomElementReference_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6619018968336116548" at="90,0,94,5" concept="5" />
       <node id="6619018968336116548" at="47,0,52,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6619018968336116548" at="75,72,80,40" concept="7" />
+      <node id="6619018968336116548" at="75,72,80,161" concept="7" />
       <node id="6619018968336116548" at="96,301,101,7" concept="7" />
       <node id="6619018968336116548" at="101,7,106,22" concept="5" />
       <node id="6619018968336116558" at="113,0,118,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -94,7 +94,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
           public EditorCell compute() {
             return new CommandType_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "classifier");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, 0xbe3a0d5ba1a2bd7L, "command"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);

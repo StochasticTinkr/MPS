@@ -85,7 +85,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
           public EditorCell compute() {
             return new TemplatePersistentConfigurationType_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "persistentConfiguration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, 0xd244b712f9100feL, "template"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);
@@ -174,7 +174,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
           public EditorCell compute() {
             return new TemplatePersistentConfigurationType_EditorBuilder_a.Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "persistentConfiguration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, 0xd244b712f9100feL, "template"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);
