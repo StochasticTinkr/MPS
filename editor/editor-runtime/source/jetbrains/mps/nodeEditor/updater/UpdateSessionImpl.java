@@ -31,6 +31,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -285,13 +287,7 @@ public class UpdateSessionImpl implements UpdateSession {
   @ToRemove(version = 2018.3)
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
-    ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), role);
-    myCurrentUpdateInfo = new UpdateInfoNode(newContext, myCurrentUpdateInfo);
-    try {
-      return update.compute();
-    } finally {
-      myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
-    }
+    return updateReferencedNodeCell(update, node, MetaAdapterByDeclaration.getReferenceLink(new SNodeLegacy(node).getLinkDeclaration(role)));
   }
 
   @Override
