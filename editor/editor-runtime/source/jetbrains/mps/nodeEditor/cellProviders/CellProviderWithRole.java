@@ -52,8 +52,10 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   //sets a role object for this provider
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   //use setProperty/setLink instead
+  //todo: this should be removed from generators in 2018.2, then we could remove it in 2018.3.
+  //todo: Non-generated occurences are already removed. The generator needed to generate it for compatibility reasons
   public abstract void setRole(Object role);
 
   //gets an attribute for this provider's node hanging on this provider's role

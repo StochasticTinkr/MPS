@@ -49,7 +49,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   private SProperty myProperty;
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   @Override
   public void setRole(Object role) {
     if (myProperty != null) {

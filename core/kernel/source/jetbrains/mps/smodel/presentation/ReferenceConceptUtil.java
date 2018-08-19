@@ -47,7 +47,8 @@ public class ReferenceConceptUtil {
    * @return characteristic reference or NULL
    */
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
+  //we need to provide generated variant of specialized refs before removing this (see MPS-23362)
   public static SNode getCharacteristicReference(final SNode concept) {
     SAbstractConcept sConcept = MetaAdapterByDeclaration.getConcept(concept);
     if (sConcept != null) {

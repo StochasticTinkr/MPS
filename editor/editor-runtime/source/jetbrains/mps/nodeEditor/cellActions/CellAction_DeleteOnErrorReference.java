@@ -17,16 +17,22 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
+@ToRemove(version = 2018.3)
+//use CellAction_DeleteOnErrorSReference instead
 public class CellAction_DeleteOnErrorReference extends AbstractCellAction {
   private SNode mySource;
   private SReferenceLink myLink;
 
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public CellAction_DeleteOnErrorReference(SNode source, SReferenceLink link) {
     mySource = source;
     myLink = link;

@@ -33,7 +33,7 @@ public class ReferenceCellContext extends BasicCellContext {
   public static final EditorContextKey<SAbstractConcept> LINK_TARGET = new EditorContextKey<>();
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SReferenceLink link) {
     this(referenceNode, currentReferent, link, link.getTargetConcept());
   }

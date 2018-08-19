@@ -52,7 +52,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   @Override
   public String getElementRole() {
     return getSLink().getName();

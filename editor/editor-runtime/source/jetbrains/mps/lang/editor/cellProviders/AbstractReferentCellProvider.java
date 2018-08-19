@@ -66,7 +66,10 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
+  //use setProperty/setLink instead
+  //todo: this should be removed from generators in 2018.2, then we could remove it in 2018.3.
+  //todo: Non-generated occurences are already removed. The generator needed to generate it for compatibility reasons
   @Override
   public void setRole(final Object role) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
