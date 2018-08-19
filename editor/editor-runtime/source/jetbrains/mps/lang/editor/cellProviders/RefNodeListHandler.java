@@ -59,6 +59,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   @Override
+  //todo [MM] merge with getLink()
   public SConceptFeature getElementSRole() {
     return getSLink();
   }
@@ -105,8 +106,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @Override
   protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
-    getNode().insertChildBefore(getElementRole(), nodeToInsert,
-                                insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling());
+    SNode anchor = insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling();
+    getNode().insertChildBefore(getSLink(), nodeToInsert, anchor);
   }
 
   @Override
