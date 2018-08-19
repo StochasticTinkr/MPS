@@ -15,11 +15,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.DataTransferUtil" file="DataTransferUtil.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" file="LanguagesKeymapManager.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />

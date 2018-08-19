@@ -1422,37 +1422,5 @@
       <ref role="3uigEE" to="1m72:~ApplicationComponent" resolve="ApplicationComponent" />
     </node>
   </node>
-  <node concept="312cEu" id="1ihbBywx_Oy">
-    <property role="TrG5h" value="DataTransferUtil" />
-    <node concept="3clFbW" id="1ihbBywx_O$" role="jymVt">
-      <node concept="3cqZAl" id="1ihbBywx_O_" role="3clF45" />
-      <node concept="3clFbS" id="1ihbBywx_OB" role="3clF47" />
-      <node concept="3Tm1VV" id="1ihbBywx_OA" role="1B3o_S" />
-    </node>
-    <node concept="2YIFZL" id="1ihbBywxAg2" role="jymVt">
-      <property role="TrG5h" value="isAbstract" />
-      <node concept="10P_77" id="1ihbBywxAg6" role="3clF45" />
-      <node concept="37vLTG" id="1ihbBywxAg7" role="3clF46">
-        <property role="TrG5h" value="conceptDeclaration" />
-        <node concept="3Tqbb2" id="1ihbBywxAg9" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1ihbBywxAg4" role="1B3o_S" />
-      <node concept="3clFbS" id="1ihbBywxAg5" role="3clF47">
-        <node concept="3cpWs6" id="1ihbBywxAga" role="3cqZAp">
-          <node concept="2OqwBi" id="2wdLO7KeHiV" role="3cqZAk">
-            <node concept="3TrcHB" id="2wdLO7KeHiW" role="2OqNvi">
-              <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxglRKV" role="2Oq$k0">
-              <ref role="3cqZAo" node="1ihbBywxAg7" resolve="conceptDeclaration" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="1ihbBywx_Oz" role="1B3o_S" />
-  </node>
 </model>
 

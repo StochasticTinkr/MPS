@@ -18,12 +18,10 @@ package jetbrains.mps.nodeEditor.datatransfer;
 import jetbrains.mps.datatransfer.DataTransferManager;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.datatransfer.PastePlaceHint;
-import jetbrains.mps.editor.runtime.impl.DataTransferUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
@@ -239,7 +237,7 @@ public class NodePaster {
     }
 
     // delete original anchor if it was abstract concept
-    if (anchorNode != null && DataTransferUtil.isAbstract(new SNodeLegacy(anchorNode).getConceptDeclarationNode())) {
+    if (anchorNode != null && anchorNode.getConcept().isAbstract()) {
       anchorNode.delete();
     }
   }
