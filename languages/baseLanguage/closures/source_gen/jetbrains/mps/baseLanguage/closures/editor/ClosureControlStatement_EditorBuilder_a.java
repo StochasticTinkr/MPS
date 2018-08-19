@@ -229,7 +229,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
         return cell;
       }
     };
-    provider.setRole("controlClosure");
     provider.setNoTargetText("<no controlClosure>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

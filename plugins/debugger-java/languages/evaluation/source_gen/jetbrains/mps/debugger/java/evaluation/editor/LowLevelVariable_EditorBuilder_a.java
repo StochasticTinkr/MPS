@@ -98,7 +98,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
         return cell;
       }
     };
-    provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -252,7 +251,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
         return cell;
       }
     };
-    provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

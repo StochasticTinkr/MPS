@@ -280,7 +280,6 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
         return cell;
       }
     };
-    provider.setRole("editorComponent");
     provider.setNoTargetText("error! no editor component");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
