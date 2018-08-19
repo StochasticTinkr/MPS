@@ -5502,40 +5502,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="i0tV1Dk" role="3cqZAp">
-            <node concept="2OqwBi" id="i0tV1Dl" role="3clFbG">
-              <node concept="37vLTw" id="1hvIhGaNz2l" role="2Oq$k0">
-                <ref role="3cqZAo" node="g_Cet49" resolve="provider" />
-              </node>
-              <node concept="liA8E" id="i0tV1Dn" role="2OqNvi">
-                <ref role="37wK5l" to="emqf:~CellProviderWithRole.setRole(java.lang.Object):void" resolve="setRole" />
-                <node concept="Xl_RD" id="i0tV1Do" role="37wK5m">
-                  <property role="Xl_RC" value="role" />
-                  <node concept="17Uvod" id="i0tV1Dp" role="lGtFl">
-                    <property role="2qtEX9" value="value" />
-                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                    <node concept="3zFVjK" id="i0tV1Dq" role="3zH0cK">
-                      <node concept="3clFbS" id="i0tV1Dr" role="2VODD2">
-                        <node concept="3clFbF" id="i0tV1Ds" role="3cqZAp">
-                          <node concept="2OqwBi" id="i0tXMZY" role="3clFbG">
-                            <node concept="3TrcHB" id="1hvIhGaNFOS" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                            </node>
-                            <node concept="2OqwBi" id="i0tV1Dt" role="2Oq$k0">
-                              <node concept="2qgKlT" id="1hvIhGaNEZt" role="2OqNvi">
-                                <ref role="37wK5l" to="tpcb:4YnqLFjkxyn" resolve="getFeatureForCell" />
-                              </node>
-                              <node concept="30H73N" id="i0tV1Du" role="2Oq$k0" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="g_Cf8_z" role="3cqZAp">
             <node concept="1W57fq" id="hF5sZoj" role="lGtFl">
               <node concept="3IZrLx" id="hF5sZok" role="3IZSJc">
