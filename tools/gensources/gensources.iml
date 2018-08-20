@@ -363,10 +363,14 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages.test">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest.extension/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest.extension/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.ide.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.test.generation/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.test.generation/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest.extension/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest.extension/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.ide.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.test.generation/classes_gen" />

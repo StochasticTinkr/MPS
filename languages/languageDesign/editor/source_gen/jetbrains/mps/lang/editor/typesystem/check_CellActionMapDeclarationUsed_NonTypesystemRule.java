@@ -31,10 +31,14 @@ public class check_CellActionMapDeclarationUsed_NonTypesystemRule extends Abstra
       public boolean accept(SNode it) {
         return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x11126d75849L, "elementActionMap")), cellActionMapDeclaration);
       }
+    }) == null) && (ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(cellActionMapDeclaration), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x765abcb2949869d7L, "jetbrains.mps.lang.editor.structure.CellActionMapImport"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x765abcb2949869d7L, 0x765abcb2949869d8L, "cellActionMap")), cellActionMapDeclaration);
+      }
     }) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(cellActionMapDeclaration, "Unused action map", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "7942833282342537270", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(cellActionMapDeclaration, "Action map unused in its containing model", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6782712264223022226", null, errorTarget);
       }
     }
   }

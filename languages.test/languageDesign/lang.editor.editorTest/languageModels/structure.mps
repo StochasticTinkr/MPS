@@ -10,6 +10,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -1642,6 +1645,56 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childWithErrorCell" />
       <ref role="20lvS9" node="6BUu6R_5MeQ" resolve="AutoResolveChildWithErrorCell" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3Ds1Q8AqcM3">
+    <property role="EcuMT" value="4205244270189792387" />
+    <property role="TrG5h" value="ActionMapImportTester" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="actionMapImports" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3Ds1Q8AqcM4" role="1TKVEl">
+      <property role="IQ2nx" value="4205244270189792388" />
+      <property role="TrG5h" value="result" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="t5JxF" id="3Ds1Q8AqcMV" role="lGtFl">
+      <property role="t5JxN" value="Used for testing action map imports. Editor has cells with various action maps. Actions in those action maps will write to the `result` property, which can then be inspected to check that the correct action was executed." />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2lc36UC2R2m">
+    <property role="EcuMT" value="2687536747038601366" />
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="Foo" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2lc36UC2R2n">
+    <property role="EcuMT" value="2687536747038601367" />
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="Bar" />
+    <ref role="1TJDcQ" node="2lc36UC2R2m" resolve="Foo" />
+  </node>
+  <node concept="1TIwiD" id="1hkJY7gLVzP">
+    <property role="EcuMT" value="1465006755393550581" />
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="ActionMapIndividualImportTester" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1hkJY7gLVzQ" role="1TKVEl">
+      <property role="IQ2nx" value="1465006755393550582" />
+      <property role="TrG5h" value="result" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5DMYqHh8L$r">
+    <property role="EcuMT" value="6517546124954507547" />
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMapDeleteBackspaceTester" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5DMYqHh8L$N" role="1TKVEl">
+      <property role="IQ2nx" value="6517546124954507571" />
+      <property role="TrG5h" value="result" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

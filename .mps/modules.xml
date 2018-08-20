@@ -42,6 +42,7 @@
       <modulePath path="$PROJECT_DIR$/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest.extension/jetbrains.mps.lang.editor.editorTest.extension.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest/jetbrains.mps.lang.editor.editorTest.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.ide.tests/module.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.test.generation/module.mpl" folder="core.aspects.editor" />
