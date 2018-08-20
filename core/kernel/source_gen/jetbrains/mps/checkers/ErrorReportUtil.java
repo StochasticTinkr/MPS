@@ -58,6 +58,9 @@ public class ErrorReportUtil {
     return true;
   }
 
+  /**
+   * used in tests only
+   */
   public static boolean manuallySuppressed(SNode node) {
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

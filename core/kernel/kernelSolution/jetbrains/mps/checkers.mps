@@ -5300,6 +5300,13 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="5TUCQr3c5O8" role="lGtFl">
+        <node concept="TZ5HA" id="5TUCQr3c5O9" role="TZ5H$">
+          <node concept="1dT_AC" id="5TUCQr3c5Oa" role="1dT_Ay">
+            <property role="1dT_AB" value="used in tests only" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="3TJpIwQlqFz">
@@ -6726,8 +6733,8 @@
                     <ref role="37wK5l" node="320sejm8pZh" resolve="wrapToModelChecker" />
                     <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
                     <node concept="2YIFZM" id="3612de_zVXj" role="37wK5m">
-                      <ref role="37wK5l" node="3612de_xJsP" resolve="wrapToRootChecker" />
                       <ref role="1Pybhc" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                      <ref role="37wK5l" node="320sejm7kBI" resolve="wrapToRootChecker" />
                       <node concept="10QFUN" id="3612de_zVXk" role="37wK5m">
                         <node concept="37vLTw" id="3612de_zVXl" role="10QFUP">
                           <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
