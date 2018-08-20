@@ -47,6 +47,7 @@
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)" version="0" />
     <module reference="9882f4ad-1955-46fe-8269-94189e5dbbf2(jetbrains.mps.lang.migration.util)" version="0" />
+    <module reference="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.lang.smodel.query)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
   </dependencyVersions>
   <extendedLanguages />
