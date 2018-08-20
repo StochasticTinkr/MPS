@@ -92,6 +92,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IAntisuppressErrors:
         if (props_IAntisuppressErrors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           props_IAntisuppressErrors = cpb.create();
         }
         return props_IAntisuppressErrors;

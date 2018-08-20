@@ -16,19 +16,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
-import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.checkers.IChecker;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
-import jetbrains.mps.checkers.ModelCheckerBuilder;
-import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.errors.item.NodeFlavouredItem;
+import jetbrains.mps.smodel.references.ImmatureReferences;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import java.util.Collection;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem;
 import java.util.Objects;
@@ -71,7 +73,7 @@ public class SuppressErrorsTest_Test extends BaseTransformationTest {
       addNodeById("6807933448480841930");
       addNodeById("6807933448482335857");
       SNode nodeToCheck = SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("6807933448480843367"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test"), 0x11b5a38fc01L, "TestNode"))), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck"));
-      List<IssueKindReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
+      List<NodeReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
       Assert.assertTrue(ListSequence.fromList(errors).count() == 1 && this.isOurError(ListSequence.fromList(errors).first()));
     }
     public void test_quotationSuppress() throws Exception {
@@ -79,7 +81,7 @@ public class SuppressErrorsTest_Test extends BaseTransformationTest {
       addNodeById("6807933448480841930");
       addNodeById("6807933448482335857");
       SNode nodeToCheck = SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("6807933448480841930"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test"), 0x11b5a38fc01L, "TestNode"))), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck"));
-      List<IssueKindReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
+      List<NodeReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
       Assert.assertTrue(ListSequence.fromList(errors).isEmpty());
     }
     public void test_antiquotationNoSuppress() throws Exception {
@@ -87,26 +89,20 @@ public class SuppressErrorsTest_Test extends BaseTransformationTest {
       addNodeById("6807933448480841930");
       addNodeById("6807933448482335857");
       SNode nodeToCheck = SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("6807933448482335857"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test"), 0x11b5a38fc01L, "TestNode"))), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck"));
-      List<IssueKindReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
+      List<NodeReportItem> errors = this.runChecker(new TypesystemChecker(), nodeToCheck);
       Assert.assertTrue(ListSequence.fromList(errors).count() == 1 && this.isOurError(ListSequence.fromList(errors).first()));
     }
 
 
-    public List<IssueKindReportItem> runChecker(IChecker<?, ? extends IssueKindReportItem> checker, final SNode root) {
-      SModule module = SNodeOperations.getModel(root).getModule();
-      final SRepository repository = module.getRepository();
-      final List<IssueKindReportItem> result = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
-      new ModelCheckerBuilder(false).createChecker(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), checker)).check(ModelCheckerBuilder.ItemsToCheck.forSingleModule(module), repository, new Consumer<IssueKindReportItem>() {
-        public void consume(IssueKindReportItem reportItem) {
-          ListSequence.fromList(result).addElement(reportItem);
-        }
-      }, new EmptyProgressMonitor());
-      return ListSequence.fromList(result).where(new IWhereFilter<IssueKindReportItem>() {
-        public boolean accept(IssueKindReportItem it) {
-          SNode node = check_nwqyf3_a0a0a0a0e0i9(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(it), repository);
-          return node != null && ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).contains(root);
-        }
-      }).toListSequence();
+    public List<NodeReportItem> runChecker(IChecker.AbstractRootChecker<? extends NodeReportItem> checker, SNode root) {
+      SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+      SModelOperations.addRootNode(model, SNodeOperations.copyNode(root));
+      List<NodeReportItem> result = ListSequence.fromList(new ArrayList<NodeReportItem>());
+      checker.check(root, model.getRepository(), new CollectConsumer<NodeReportItem>(result), new EmptyProgressMonitor());
+      ImmatureReferences.getInstance().cleanup();
+      UnregisteredNodes.instance().clear();
+      TemporaryModels.getInstance().dispose(model);
+      return result;
     }
     public boolean isOurError(IssueKindReportItem reportItem) {
       Collection<RuleIdFlavouredItem.TypesystemRuleId> errorRules = RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(reportItem);
@@ -115,12 +111,6 @@ public class SuppressErrorsTest_Test extends BaseTransformationTest {
           return it.getSourceNode();
         }
       })), ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), SNodeOperations.getParent(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8292998349249062282")).getReference()));
-    }
-    private static SNode check_nwqyf3_a0a0a0a0e0i9(SNodeReference checkedDotOperand, SRepository repository) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.resolve(repository);
-      }
-      return null;
     }
   }
 }
