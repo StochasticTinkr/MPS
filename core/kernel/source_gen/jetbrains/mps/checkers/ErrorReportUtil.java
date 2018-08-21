@@ -17,6 +17,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.apache.log4j.Level;
+import jetbrains.mps.errors.item.NodeReportItem;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class ErrorReportUtil {
   private static final Logger LOG = LogManager.getLogger(ErrorReportUtil.class);
@@ -39,6 +41,43 @@ public class ErrorReportUtil {
           boolean res = false;
           try {
             res = ((boolean) (Boolean) BHReflection.invoke0(attr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), SMethodTrimmedId.create("suppress", null, "2WmWrdnSpX7"), node));
+          } catch (Throwable t) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Exception while invoking suppress() on node " + node, t);
+            }
+          }
+          return res;
+        }
+      })) {
+        return false;
+      }
+      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xe8924c64a55a26fL, "jetbrains.mps.lang.core.structure.IAntisuppressErrors"))) {
+        return true;
+      }
+
+      current = SNodeOperations.getParent(current);
+    }
+    return true;
+  }
+
+  public static boolean shouldReportError(final NodeReportItem reportItem, SRepository repository) {
+    final SNode node = reportItem.getNode().resolve(repository);
+    SModel model = node.getModel();
+    if (model == null) {
+      return false;
+    }
+    if (SModelStereotype.isStubModel(model)) {
+      return false;
+    }
+    SNode current = node;
+    while (current != null) {
+      Iterable<SNode> possibleSuppressors = ListSequence.fromList(AttributeOperations.getAttributeList(current, new IAttributeDescriptor.AllAttributes())).union(Sequence.fromIterable(Sequence.<SNode>singleton(current)));
+
+      if (Sequence.fromIterable(SNodeOperations.ofConcept(possibleSuppressors, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"))).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode attr) {
+          boolean res = false;
+          try {
+            res = ((boolean) (Boolean) BHReflection.invoke0(attr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), SMethodTrimmedId.create("suppress", null, "3612de_vrfV"), reportItem));
           } catch (Throwable t) {
             if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Exception while invoking suppress() on node " + node, t);

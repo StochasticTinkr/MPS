@@ -66,6 +66,9 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
     }
   }
 
+  /**
+   * returned errors are expected to belong to nodes under given root
+   */
   abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
     public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker<?, I> checker) {
       if (checker instanceof IChecker.AbstractRootChecker) {
@@ -111,6 +114,9 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
     }
   }
 
+  /**
+   * returned errors are expected to belong to given node
+   */
   abstract class AbstractNodeChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
     public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
       return SKIP_NOTHING_CONDITION;

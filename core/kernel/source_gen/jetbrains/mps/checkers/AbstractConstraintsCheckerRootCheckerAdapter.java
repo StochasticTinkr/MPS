@@ -32,16 +32,6 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
     }
   };
 
-
-  public static final IChecker.AbstractNodeChecker.ErrorSkipCondition SUPPRESS_ERRORS_CONDITION = new IChecker.AbstractNodeChecker.ErrorSkipCondition() {
-    public boolean skipSingleNode(SNode node) {
-      return !(ErrorReportUtil.shouldReportError(node));
-    }
-    public boolean skipSubtree(SNode root) {
-      return false;
-    }
-  };
-
   public static List<IChecker<SNode, NodeReportItem>> createList(@NotNull final IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor... rules) {
     return Sequence.fromIterable(Sequence.fromArray(rules)).select(new ISelector<AbstractNodeCheckerInEditor, IChecker<SNode, NodeReportItem>>() {
       public IChecker<SNode, NodeReportItem> select(AbstractNodeCheckerInEditor rule) {

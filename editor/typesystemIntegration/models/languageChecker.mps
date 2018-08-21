@@ -1400,10 +1400,18 @@
             <node concept="3clFbJ" id="2v0ve8x$phv" role="3cqZAp">
               <node concept="3fqX7Q" id="2v0ve8x$phw" role="3clFbw">
                 <node concept="2YIFZM" id="2v0ve8x$phx" role="3fr31v">
-                  <ref role="37wK5l" to="wsw7:5TGjZPCODy5" resolve="shouldReportError" />
                   <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
-                  <node concept="37vLTw" id="u6B29mCFas" role="37wK5m">
-                    <ref role="3cqZAo" node="u6B29mCFai" resolve="nodeWithError" />
+                  <ref role="37wK5l" to="wsw7:2I7VK7MzSVd" resolve="shouldReportError" />
+                  <node concept="37vLTw" id="2I7VK7M$SCo" role="37wK5m">
+                    <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
+                  </node>
+                  <node concept="2OqwBi" id="2I7VK7M$SYQ" role="37wK5m">
+                    <node concept="37vLTw" id="2I7VK7M$SRp" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="2I7VK7M$T6G" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
                   </node>
                 </node>
               </node>
