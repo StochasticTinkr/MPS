@@ -1748,46 +1748,6 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="hHKT0OE" role="3acgRq">
-      <ref role="30HIoZ" to="tpf3:hHKSx_M" resolve="GenerationContextOp_GetTemplateNode" />
-      <node concept="gft3U" id="hHKT0OF" role="1lVwrX">
-        <node concept="2OqwBi" id="hHKT0OG" role="gfFT$">
-          <node concept="1eOMI4" id="hHKT0OH" role="2Oq$k0">
-            <node concept="10QFUN" id="hHKT0OI" role="1eOMHV">
-              <node concept="10Nm6u" id="hHKT0OJ" role="10QFUP" />
-              <node concept="3uibUv" id="hHKT0OK" role="10QFUM">
-                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-              </node>
-            </node>
-            <node concept="29HgVG" id="hHKT0OL" role="lGtFl">
-              <node concept="3NFfHV" id="hHKT0OM" role="3NFExx">
-                <node concept="3clFbS" id="hHKT0ON" role="2VODD2">
-                  <node concept="3clFbF" id="hHKT0OO" role="3cqZAp">
-                    <node concept="2OqwBi" id="hHKT0OP" role="3clFbG">
-                      <node concept="1PxgMI" id="hHKT0OQ" role="2Oq$k0">
-                        <node concept="2OqwBi" id="hHKT0OR" role="1m5AlR">
-                          <node concept="30H73N" id="hHKT0OS" role="2Oq$k0" />
-                          <node concept="1mfA1w" id="hHKT0OT" role="2OqNvi" />
-                        </node>
-                        <node concept="chp4Y" id="714IaVdH05g" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="hHKT0OU" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="liA8E" id="hHKT0OV" role="2OqNvi">
-            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getTemplateNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTemplateNode" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="hIprPIZ" role="3acgRq">
       <ref role="30HIoZ" to="tpf3:hIpiZCf" resolve="GenerationContextOp_CreateUniqueName" />
       <node concept="gft3U" id="hIps2IA" role="1lVwrX">

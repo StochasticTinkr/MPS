@@ -1180,29 +1180,6 @@
       <ref role="1YaFvo" to="tpf3:hHFEO4U" resolve="GenerationContextOp_GetOutputModel" />
     </node>
   </node>
-  <node concept="1YbPZF" id="$lsh0EhCzH">
-    <property role="TrG5h" value="typeof_GenerationContextOp_GetTemplateNode" />
-    <node concept="3clFbS" id="$lsh0EhCzI" role="18ibNy">
-      <node concept="1Z5TYs" id="$lsh0EhC_d" role="3cqZAp">
-        <node concept="mw_s8" id="$lsh0EhC_e" role="1ZfhKB">
-          <node concept="2c44tf" id="$lsh0EhC_f" role="mwGJk">
-            <node concept="3Tqbb2" id="$lsh0EhCEy" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="$lsh0EhC_h" role="1ZfhK$">
-          <node concept="1Z2H0r" id="$lsh0EhC_i" role="mwGJk">
-            <node concept="1YBJjd" id="$lsh0EhC_j" role="1Z2MuG">
-              <ref role="1YBMHb" node="$lsh0EhCzK" resolve="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="$lsh0EhCzK" role="1YuTPh">
-      <property role="TrG5h" value="operation" />
-      <ref role="1YaFvo" to="tpf3:hHKSx_M" resolve="GenerationContextOp_GetTemplateNode" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="$lsh0EhDke">
     <property role="TrG5h" value="typeof_GenerationContextOp_UserObjectAccessBase" />
     <node concept="3clFbS" id="$lsh0EhDkf" role="18ibNy">

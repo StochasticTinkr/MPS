@@ -12,10 +12,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -46,9 +42,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -175,20 +168,6 @@
     <property role="34LRSv" value="outputModel" />
     <property role="EcuMT" value="1217282130234" />
     <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-  </node>
-  <node concept="1TIwiD" id="hHKSx_M">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="template node under macro" />
-    <property role="TrG5h" value="GenerationContextOp_GetTemplateNode" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="templateNode" />
-    <property role="EcuMT" value="1217369610610" />
-    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-    <node concept="asaX9" id="7cQeykxEBt_" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="With generated templates, access to templateNode doesn't make sense - there's no template model at all. Perhaps, we could leave this as an optional operation (i.e. != null for interpreted templates only), though this approach is questionable." />
-    </node>
   </node>
   <node concept="1TIwiD" id="hIfr3z2">
     <property role="R5$K7" value="false" />

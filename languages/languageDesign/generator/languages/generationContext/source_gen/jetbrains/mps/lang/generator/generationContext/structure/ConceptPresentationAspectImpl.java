@@ -26,7 +26,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GenerationContextOp_GetOutputListByLabelAndInput;
   private ConceptPresentation props_GenerationContextOp_GetOutputModel;
   private ConceptPresentation props_GenerationContextOp_GetPrevInputByLabel;
-  private ConceptPresentation props_GenerationContextOp_GetTemplateNode;
   private ConceptPresentation props_GenerationContextOp_LinkPatternRef;
   private ConceptPresentation props_GenerationContextOp_NodePatternRef;
   private ConceptPresentation props_GenerationContextOp_ParameterRef;
@@ -182,15 +181,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GenerationContextOp_GetPrevInputByLabel = cpb.create();
         }
         return props_GenerationContextOp_GetPrevInputByLabel;
-      case LanguageConceptSwitch.GenerationContextOp_GetTemplateNode:
-        if (props_GenerationContextOp_GetTemplateNode == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("template node under macro");
-          cpb.rawPresentation("templateNode");
-          props_GenerationContextOp_GetTemplateNode = cpb.create();
-        }
-        return props_GenerationContextOp_GetTemplateNode;
       case LanguageConceptSwitch.GenerationContextOp_LinkPatternRef:
         if (props_GenerationContextOp_LinkPatternRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

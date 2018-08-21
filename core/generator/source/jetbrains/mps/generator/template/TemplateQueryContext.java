@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -239,20 +238,6 @@ public class TemplateQueryContext {
     SNodeReference rnr = getRuleNode();
     myGenerator.getLogger().error(rnr == null ? tn : rnr, message,
         GeneratorUtil.describeIfExists(inputNode, "input node"), GeneratorUtil.describeIfExists(tn, "template node"));
-  }
-
-  /**
-   * Node in template model most close to the query being evaluated. For macro nodes, however
-   * shall point to macro's parent node (genContext.templateNode op contract)
-   * @deprecated  doesn't make sense for generated templates. Switch to {@link #getTemplateReference()}
-   *
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode getTemplateNode() {
-    SNodeReference tnr = getTemplateNodeRef();
-    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
-    return tnr == null ? null : tnr.resolve(repo);
   }
 
   /**
