@@ -13,9 +13,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590332(jetbrains.mps.baseLanguage.closures.actions)/1232132203778">
     <file name="initialize_UnrestrictedFunctionType.java">
-      <node id="1232132233700" at="13,91,14,356" concept="0" />
+      <node id="1232132233700" at="13,91,14,314" concept="0" />
       <node id="1232132222404" at="13,0,16,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1232132222404" at="13,91,14,356" />
+      <scope id="1232132222404" at="13,91,14,314" />
       <scope id="1232132222404" at="13,0,16,0">
         <var name="enclosingNode" id="1232132222404" />
         <var name="model" id="1232132222404" />
@@ -34,8 +34,8 @@
       <node id="876385242039344510" at="27,199,28,426" concept="4" />
       <node id="876385242039344548" at="29,64,30,71" concept="4" />
       <node id="7376433222636454461" at="30,71,31,44" concept="5" />
-      <node id="876385242039365536" at="32,202,33,461" concept="4" />
-      <node id="876385242039365549" at="33,461,34,319" concept="0" />
+      <node id="876385242039365536" at="32,202,33,419" concept="4" />
+      <node id="876385242039365549" at="33,419,34,319" concept="0" />
       <node id="876385242039365573" at="34,319,35,348" concept="0" />
       <node id="876385242039344559" at="31,44,36,17" concept="1" />
       <node id="876385242039344520" at="28,426,37,15" concept="2" />

@@ -637,9 +637,9 @@
       <node id="1166649120572" at="22,332,23,218" concept="5" />
       <node id="1166649120578" at="23,218,24,485" concept="5" />
       <node id="1180648478076" at="26,38,27,197" concept="5" />
-      <node id="1181945517587" at="27,197,28,252" concept="5" />
-      <node id="1181950351648" at="28,252,29,233" concept="5" />
-      <node id="1181950717271" at="29,233,30,252" concept="5" />
+      <node id="1181945517587" at="27,197,28,210" concept="5" />
+      <node id="1181950351648" at="28,210,29,233" concept="5" />
+      <node id="1181950717271" at="29,233,30,210" concept="5" />
       <node id="1146260830963" at="15,0,20,0" concept="4" trace="newNode1#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1166649120551" at="20,0,26,0" concept="4" trace="newNode2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1180648407741" at="26,0,32,0" concept="4" trace="newNode3#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -652,7 +652,7 @@
         <var name="newIfStatement" id="1166649120557" />
         <var name="newStatement" id="1166649120579" />
       </scope>
-      <scope id="1180648407744" at="26,38,30,252">
+      <scope id="1180648407744" at="26,38,30,210">
         <var name="ifStatement" id="1180648478077" />
         <var name="ifStatement1" id="1181945517588" />
         <var name="ifStatement2" id="1181950351649" />

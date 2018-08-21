@@ -12365,8 +12365,8 @@
     <file name="AddMissingParensToNotExpression_QuickFix.java">
       <node id="1608369703317037455" at="14,53,15,132" concept="18" />
       <node id="1608369703317038333" at="17,44,18,32" concept="13" />
-      <node id="1608369703317098254" at="20,35,21,256" concept="12" />
-      <node id="1608369703317094111" at="21,256,22,485" concept="6" />
+      <node id="1608369703317098254" at="20,35,21,214" concept="12" />
+      <node id="1608369703317094111" at="21,214,22,485" concept="6" />
       <node id="1608369703317043068" at="22,485,23,333" concept="6" />
       <node id="1608369703317037455" at="14,0,17,0" concept="3" trace="AddMissingParensToNotExpression_QuickFix#()V" />
       <node id="1608369703317037455" at="17,0,20,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -15158,8 +15158,8 @@
       <node id="2857825852301222869" at="18,44,19,105" concept="13" />
       <node id="2857825852301232953" at="21,35,22,183" concept="12" />
       <node id="6205351058567191973" at="22,183,23,145" concept="12" />
-      <node id="6205351058567194447" at="24,35,25,251" concept="12" />
-      <node id="6205351058567192409" at="25,251,26,190" concept="6" />
+      <node id="6205351058567194447" at="24,35,25,209" concept="12" />
+      <node id="6205351058567192409" at="25,209,26,190" concept="6" />
       <node id="2857825852301220711" at="15,0,18,0" concept="3" trace="SimplifyCondition_QuickFix#()V" />
       <node id="2857825852301220711" at="18,0,21,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6205351058571603427" at="23,145,27,5" concept="10" />
@@ -17448,10 +17448,10 @@
       <node id="2857825852308853674" at="60,69,61,35" concept="6" />
       <node id="3832376534028355046" at="61,35,62,27" concept="6" />
       <node id="3832376534028359242" at="63,12,64,13" concept="13" />
-      <node id="875204272654295892" at="66,210,67,251" concept="6" />
-      <node id="875204272654295885" at="67,251,68,341" concept="6" />
-      <node id="875204272654285844" at="69,213,70,251" concept="6" />
-      <node id="875204272654291505" at="70,251,71,340" concept="6" />
+      <node id="875204272654295892" at="66,210,67,209" concept="6" />
+      <node id="875204272654295885" at="67,209,68,341" concept="6" />
+      <node id="875204272654285844" at="69,213,70,209" concept="6" />
+      <node id="875204272654291505" at="70,209,71,340" concept="6" />
       <node id="875204272654302700" at="72,5,73,0" concept="15" />
       <node id="3832376534028382760" at="74,5,75,58" concept="12" />
       <node id="3832376534028382760" at="75,58,76,347" concept="12" />
@@ -17703,8 +17703,8 @@
     <file name="SimplifyNotExpression_QuickFix.java">
       <node id="3832376534031039937" at="13,43,14,132" concept="18" />
       <node id="3832376534031111395" at="16,44,17,37" concept="13" />
-      <node id="8626468694778190671" at="19,35,20,256" concept="12" />
-      <node id="3832376534031105964" at="20,256,21,234" concept="6" />
+      <node id="8626468694778190671" at="19,35,20,214" concept="12" />
+      <node id="3832376534031105964" at="20,214,21,234" concept="6" />
       <node id="3832376534031039937" at="13,0,16,0" concept="3" trace="SimplifyNotExpression_QuickFix#()V" />
       <node id="3832376534031039937" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="3832376534031039937" at="19,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -25107,8 +25107,8 @@
     <file name="wrapMisplacedTernaryOperatorInParens_QuickFix.java">
       <node id="818296778583740905" at="13,58,14,131" concept="18" />
       <node id="818296778583745788" at="16,44,17,57" concept="13" />
-      <node id="818296778583741834" at="19,35,20,262" concept="12" />
-      <node id="818296778583740915" at="20,262,21,169" concept="6" />
+      <node id="818296778583741834" at="19,35,20,220" concept="12" />
+      <node id="818296778583740915" at="20,220,21,169" concept="6" />
       <node id="818296778583740905" at="13,0,16,0" concept="3" trace="wrapMisplacedTernaryOperatorInParens_QuickFix#()V" />
       <node id="818296778583740905" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="818296778583740905" at="19,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -26270,8 +26270,8 @@
       <node id="8526811989163734848" at="20,471,21,202" concept="6" />
       <node id="8526811989163728456" at="21,202,22,315" concept="6" />
       <node id="8526811989163703326" at="22,315,23,129" concept="6" />
-      <node id="8526811989163808621" at="24,336,25,337" concept="12" />
-      <node id="8526811989163802043" at="25,337,26,244" concept="6" />
+      <node id="8526811989163808621" at="24,336,25,295" concept="12" />
+      <node id="8526811989163802043" at="25,295,26,244" concept="6" />
       <node id="8526811989163701675" at="15,0,18,0" concept="3" trace="RebalanceBaseAssignmentExpression_QuickFix#()V" />
       <node id="8526811989163703312" at="18,35,27,5" concept="10" />
       <node id="8526811989163701675" at="18,0,29,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -26530,8 +26530,8 @@
     <file name="SimplifyWholeBinaryLogicalExpressionWithBooleanConstant_QuickFix.java">
       <node id="8626468694779185704" at="13,77,14,132" concept="18" />
       <node id="8626468694779185789" at="16,44,17,210" concept="13" />
-      <node id="8626468694779190856" at="19,35,20,356" concept="12" />
-      <node id="8626468694779188138" at="20,356,21,265" concept="6" />
+      <node id="8626468694779190856" at="19,35,20,314" concept="12" />
+      <node id="8626468694779188138" at="20,314,21,265" concept="6" />
       <node id="8626468694779185704" at="13,0,16,0" concept="3" trace="SimplifyWholeBinaryLogicalExpressionWithBooleanConstant_QuickFix#()V" />
       <node id="8626468694779185704" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8626468694779185704" at="19,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

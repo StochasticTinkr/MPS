@@ -140,7 +140,7 @@ public class AndOrTransforms_Looking_Contribution extends TransformationMenuBase
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameterObject), null);
+          SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(myParameterObject, null);
           SLinkOperations.setTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, 0x1a6f404e630a460cL, "left"), SNodeOperations.copyNode(_context.getNode()));
           SNodeOperations.replaceWithAnother(_context.getNode(), newInitializedInstance);
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, 0x1a6f404e630a460dL, "right")), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);

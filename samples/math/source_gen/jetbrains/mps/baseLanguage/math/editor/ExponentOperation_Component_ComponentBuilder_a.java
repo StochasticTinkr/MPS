@@ -170,7 +170,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       this.handleAction_impl((SConcept) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, 0x64b1e972e6443a22L, "expr"))));
+      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(parameterObject, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, 0x64b1e972e6443a22L, "expr"))));
     }
     public boolean isReferentPresentation() {
       return false;

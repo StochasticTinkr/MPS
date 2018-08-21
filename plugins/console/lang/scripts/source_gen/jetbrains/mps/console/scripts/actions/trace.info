@@ -14,15 +14,15 @@
     <file name="closure_operations.java">
       <node id="7973341469126608118" at="17,220,18,547" concept="1" />
       <node id="1225118885948" at="19,14,20,179" concept="4" />
-      <node id="1225118893832" at="21,28,22,379" concept="1" />
-      <node id="1225118980127" at="23,9,24,576" concept="4" />
-      <node id="1225118982824" at="24,576,25,158" concept="1" />
+      <node id="1225118893832" at="21,28,22,337" concept="1" />
+      <node id="1225118980127" at="23,9,24,534" concept="4" />
+      <node id="1225118982824" at="24,534,25,158" concept="1" />
       <node id="1225118888423" at="20,179,23,9" concept="2" />
       <node id="7973341469126608114" at="19,12,26,7" concept="0" />
       <node id="7973341469126606996" at="16,91,26,7" concept="2" />
       <node id="1225118817881" at="16,0,28,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="7973341469126606997" at="17,220,18,547" />
-      <scope id="1225118888424" at="21,28,22,379" />
+      <scope id="1225118888424" at="21,28,22,337" />
       <scope id="7973341469126608115" at="19,14,25,158">
         <var name="pd" id="1225118980128" />
         <var name="sel" id="1225118885949" />

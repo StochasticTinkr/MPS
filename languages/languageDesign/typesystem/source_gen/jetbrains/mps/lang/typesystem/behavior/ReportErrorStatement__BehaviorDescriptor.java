@@ -38,7 +38,7 @@ public final class ReportErrorStatement__BehaviorDescriptor extends BaseBHDescri
   }
 
   /*package*/ static void attachNewMessageAnnotation_id7nf9pEwlup1(@NotNull SNode __thisNode__) {
-    SNode newAnnotation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f2eL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation")), null);
+    SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f2eL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), null);
     AttributeOperations.setAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), newAnnotation);
   }
   /*package*/ static String getName_id1oFBbRehoLP(@NotNull SNode __thisNode__) {

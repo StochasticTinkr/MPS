@@ -111,7 +111,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Override
   protected SNode createEvaluatorNode() {
-    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept")), null);
+    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), null);
     SPropertyOperations.set(evaluatorConcept, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x53c5060c6b19c79bL, "isShowContext"), "" + (myIsInWatch));
     return evaluatorConcept;
   }

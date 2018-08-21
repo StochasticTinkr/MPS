@@ -113,7 +113,7 @@ public class BuildSource_JavaContentFolder_SubstituteMenu extends SubstituteMenu
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder")), null);
+          SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder"), null);
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, 0x48d5d03db92974fbL, "kind"), myParameterObject);
           return node;
         }

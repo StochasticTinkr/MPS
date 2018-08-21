@@ -103,8 +103,8 @@
       <node id="3514655265371756788" at="66,78,67,56" concept="6" />
       <node id="8843103228116965300" at="67,56,68,39" concept="6" />
       <node id="2617465934950238329" at="68,39,69,81" concept="6" />
-      <node id="7233072556140767438" at="69,81,70,507" concept="6" />
-      <node id="8843103228116965308" at="70,507,71,116" concept="1" />
+      <node id="7233072556140767438" at="69,81,70,465" concept="6" />
+      <node id="8843103228116965308" at="70,465,71,116" concept="1" />
       <node id="3514655265371724198" at="74,48,75,58" concept="7" />
       <node id="3600862488396986371" at="79,36,80,49" concept="7" />
       <node id="3600862488396986371" at="81,5,82,16" concept="7" />
@@ -213,14 +213,14 @@
       <node id="3514655265371789393" at="57,87,58,35" concept="7" />
       <node id="8134378564421757189" at="61,78,62,58" concept="6" />
       <node id="3514655265371789412" at="62,58,63,80" concept="6" />
-      <node id="3514655265371789418" at="63,80,64,420" concept="1" />
+      <node id="3514655265371789418" at="63,80,64,378" concept="1" />
       <node id="3514655265371789430" at="65,38,66,44" concept="1" />
       <node id="3514655265371785881" at="70,48,71,46" concept="7" />
       <node id="3514655265371785881" at="54,0,56,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="3514655265371785881" at="25,0,28,0" concept="0" trace="CreateListPattern_Intention#()V" />
       <node id="3514655265371785881" at="33,84,36,5" concept="4" />
       <node id="3514655265371785881" at="47,99,50,5" concept="4" />
-      <node id="3514655265371789425" at="64,420,67,7" concept="3" />
+      <node id="3514655265371789425" at="64,378,67,7" concept="3" />
       <node id="3514655265371785881" at="28,0,32,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="3514655265371785881" at="39,0,43,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3514655265371785881" at="43,0,47,0" concept="5" trace="isSurroundWith#()Z" />
@@ -243,7 +243,7 @@
       </scope>
       <scope id="3514655265371785881" at="54,0,56,0" />
       <scope id="3514655265371785881" at="25,0,28,0" />
-      <scope id="3514655265371789425" at="64,420,67,7">
+      <scope id="3514655265371789425" at="64,378,67,7">
         <var name="sibling" id="3514655265371789427" />
       </scope>
       <scope id="3514655265371785881" at="28,0,32,0" />
@@ -296,7 +296,7 @@
       <node id="3514655265371789444" at="47,5,48,30" concept="7" />
       <node id="3514655265371789449" at="54,87,55,31" concept="7" />
       <node id="8134378564421759415" at="58,78,59,58" concept="6" />
-      <node id="8843103228116876382" at="59,58,60,422" concept="1" />
+      <node id="8843103228116876382" at="59,58,60,380" concept="1" />
       <node id="3514655265371789444" at="63,48,64,50" concept="7" />
       <node id="3514655265371789444" at="51,0,53,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="3514655265371789444" at="23,0,26,0" concept="0" trace="CreateWildcardPattern_Intention#()V" />
@@ -320,7 +320,7 @@
       <scope id="3514655265371789446" at="54,87,55,31" />
       <scope id="3514655265371789444" at="63,48,64,50" />
       <scope id="3514655265371789444" at="51,0,53,0" />
-      <scope id="3514655265371789448" at="58,78,60,422">
+      <scope id="3514655265371789448" at="58,78,60,380">
         <var name="currentNode" id="8134378564421759416" />
       </scope>
       <scope id="3514655265371789444" at="23,0,26,0" />
@@ -370,7 +370,7 @@
       <node id="3514655265371789469" at="47,5,48,30" concept="7" />
       <node id="3514655265371789474" at="54,87,55,33" concept="7" />
       <node id="8134378564421759406" at="58,78,59,58" concept="6" />
-      <node id="3514655265371789481" at="59,58,60,418" concept="1" />
+      <node id="3514655265371789481" at="59,58,60,376" concept="1" />
       <node id="3514655265371789469" at="63,48,64,44" concept="7" />
       <node id="3514655265371789469" at="51,0,53,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="3514655265371789469" at="23,0,26,0" concept="0" trace="CreateAsPattern_Intention#()V" />
@@ -394,7 +394,7 @@
       <scope id="3514655265371789471" at="54,87,55,33" />
       <scope id="3514655265371789469" at="63,48,64,44" />
       <scope id="3514655265371789469" at="51,0,53,0" />
-      <scope id="3514655265371789473" at="58,78,60,418">
+      <scope id="3514655265371789473" at="58,78,60,376">
         <var name="currentNode" id="8134378564421759407" />
       </scope>
       <scope id="3514655265371789469" at="23,0,26,0" />
@@ -444,8 +444,8 @@
       <node id="4413230749907735528" at="49,5,50,30" concept="7" />
       <node id="4413230749907743482" at="56,87,57,37" concept="7" />
       <node id="4413230749907743485" at="60,78,61,58" concept="6" />
-      <node id="4413230749907743491" at="61,58,62,429" concept="1" />
-      <node id="1508313647019622814" at="62,429,63,428" concept="1" />
+      <node id="4413230749907743491" at="61,58,62,387" concept="1" />
+      <node id="1508313647019622814" at="62,387,63,428" concept="1" />
       <node id="4413230749907735528" at="66,48,67,50" concept="7" />
       <node id="4413230749907735528" at="53,0,55,0" concept="0" trace="IntentionImplementation#()V" />
       <node id="4413230749907735528" at="25,0,28,0" concept="0" trace="CreateActionAsPattern_Intention#()V" />
@@ -520,8 +520,8 @@
       <node id="8263735385373627208" at="52,5,53,30" concept="7" />
       <node id="8263735385373638271" at="59,87,60,32" concept="7" />
       <node id="8297918475033170221" at="63,78,64,58" concept="6" />
-      <node id="8297918475033129308" at="64,58,65,253" concept="6" />
-      <node id="8297918475033129314" at="65,253,66,143" concept="1" />
+      <node id="8297918475033129308" at="64,58,65,211" concept="6" />
+      <node id="8297918475033129314" at="65,211,66,143" concept="1" />
       <node id="8297918475033129319" at="66,143,67,629" concept="1" />
       <node id="8263735385373627208" at="70,48,71,44" concept="7" />
       <node id="8263735385373627208" at="56,0,58,0" concept="0" trace="IntentionImplementation#()V" />

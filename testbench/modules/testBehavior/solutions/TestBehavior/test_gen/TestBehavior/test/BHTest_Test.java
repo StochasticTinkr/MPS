@@ -241,7 +241,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   public void test_constructorInvocation1() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2c627L, "BHL5.structure.C0")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2c627L, "BHL5.structure.C0"), null);
         Assert.assertEquals(TestResults.I1_DEFAULT_VALUE, SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
     });
@@ -249,7 +249,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   public void test_constructorInvocation2() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba23bc7L, "BHL5.structure.C1")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba23bc7L, "BHL5.structure.C1"), null);
         Assert.assertEquals(TestResults.C1_DEFAULT_VALUE, SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
     });
@@ -258,7 +258,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
     // test checks that I2 constructor overrides I1 constructor 
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2f187L, "BHL5.structure.C2")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2f187L, "BHL5.structure.C2"), null);
         Assert.assertEquals(TestResults.I2_DEFAULT_VALUE, SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
     });
@@ -267,7 +267,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
     // test checks that all super constructors are invoked 
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeC5 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, "BHL5.structure.C5")), null);
+        SNode nodeC5 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, "BHL5.structure.C5"), null);
         Assert.assertSame(true, SPropertyOperations.getBoolean(nodeC5, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, 0x3f852a67e913151eL, "b")));
         Assert.assertEquals(TestResults.C3_DEFAULT_VALUE, SPropertyOperations.getString(nodeC5, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
@@ -276,7 +276,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   public void test_constructorInvocationDiamond() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba30886L, "BHL5.structure.C4")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba30886L, "BHL5.structure.C4"), null);
         Assert.assertEquals(TestResults.C3_DEFAULT_VALUE, SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
     });
@@ -284,7 +284,7 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   public void test_constructorInvocationSuper1() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1aaedL, "BHL5.structure.C6")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1aaedL, "BHL5.structure.C6"), null);
         Assert.assertEquals("C6", SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
       }
     });
@@ -292,9 +292,9 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   public void test_constructorInvocationSuper2() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode nodeI1 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7")), null);
+        SNode nodeI1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7"), null);
         Assert.assertEquals("c6", SPropertyOperations.getString(nodeI1, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, 0x355d469f0ba114e9L, "a")));
-        SNode nodeI3 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7")), null);
+        SNode nodeI3 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7"), null);
         Assert.assertEquals("set", SPropertyOperations.getString(nodeI3, MetaAdapterFactory.getProperty(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x25076477397e4c6fL, 0x6c4ee9d44295ea26L, "c")));
       }
     });

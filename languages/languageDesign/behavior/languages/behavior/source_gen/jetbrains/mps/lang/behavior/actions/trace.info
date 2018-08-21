@@ -12,10 +12,10 @@
   <root nodeRef="r:88d422f8-169d-45a0-bc07-791cf8753838(jetbrains.mps.lang.behavior.actions)/1238617792577">
     <file name="ConceptMethod.java">
       <node id="1238617792581" at="17,91,18,241" concept="3" />
-      <node id="1238617792588" at="18,241,19,365" concept="0" />
+      <node id="1238617792588" at="18,241,19,323" concept="0" />
       <node id="1238617792603" at="20,416,21,174" concept="0" />
       <node id="1238617792610" at="21,174,22,173" concept="0" />
-      <node id="1238617792594" at="19,365,23,7" concept="1" />
+      <node id="1238617792594" at="19,323,23,7" concept="1" />
       <node id="1238617792578" at="17,0,25,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="1238617792602" at="20,416,22,173" />
       <scope id="1238617792578" at="17,91,23,7">

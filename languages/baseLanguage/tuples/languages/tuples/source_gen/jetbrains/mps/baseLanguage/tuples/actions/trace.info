@@ -12,12 +12,12 @@
   <root nodeRef="r:838e2cf6-ab53-4d74-b51a-1c68353cb80b(jetbrains.mps.baseLanguage.tuples.actions)/1239567468054">
     <file name="tupleLiteral_init.java">
       <node id="2912004279740771390" at="19,53,20,176" concept="3" />
-      <node id="1239567537226" at="22,11,23,625" concept="0" />
+      <node id="1239567537226" at="22,11,23,583" concept="0" />
       <node id="2912004279740771246" at="19,0,22,0" concept="2" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1239567501524" at="17,91,24,7" concept="1" />
       <node id="1239567483800" at="17,0,26,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="2912004279740771247" at="19,53,20,176" />
-      <scope id="1239567501528" at="22,11,23,625" />
+      <scope id="1239567501528" at="22,11,23,583" />
       <scope id="2912004279740771246" at="19,0,22,0">
         <var name="ntd" id="2912004279740771246" />
       </scope>

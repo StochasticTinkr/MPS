@@ -41,7 +41,7 @@ public class CreatePort_Test extends BaseTransformationTest {
       initEditorComponent("2278461409093572745", "2278461409093572838");
       getEditorComponent().getEditorContext().getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
-          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(getNodeById("2278461409093572746"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71d1L, "NodeWithPorts"))), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
+          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(getNodeById("2278461409093572746"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71d1L, "NodeWithPorts"))), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"));
         }
       });
       // FIXME flushEventQueue seems useless here, press mouse would post its own events to EDT, so that by the time events are processed, the command  

@@ -378,7 +378,7 @@ public class AddMethodModifiersOnTypes extends TransformationMenuBase {
         @Override
         public void execute(@NotNull String pattern) {
           SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-          SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+          SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
           MemberDeclarationRefactoringUtil.rewireMethodReferences(method, staticMethod);
 
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), staticMethod, "staticModifier", -1);

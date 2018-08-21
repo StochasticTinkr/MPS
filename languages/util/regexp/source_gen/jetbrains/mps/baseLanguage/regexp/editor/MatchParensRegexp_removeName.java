@@ -29,7 +29,7 @@ public class MatchParensRegexp_removeName {
       if (DeletionApproverUtil.approve(editorContext, node, "*" + CellIdManager.createPropertyId("name"))) {
         return;
       }
-      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
     }
   }
   public static class MatchParensRegexp_removeName_BACKSPACE extends AbstractCellAction {
@@ -44,7 +44,7 @@ public class MatchParensRegexp_removeName {
       if (DeletionApproverUtil.approve(editorContext, node, "*" + CellIdManager.createPropertyId("name"))) {
         return;
       }
-      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
     }
   }
 }

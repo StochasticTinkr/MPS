@@ -121,7 +121,7 @@ public class LogicalOperator_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameterObject), _context.getCurrentTargetNode());
+          SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(myParameterObject, _context.getCurrentTargetNode());
           return newInitializedInstance;
         }
 

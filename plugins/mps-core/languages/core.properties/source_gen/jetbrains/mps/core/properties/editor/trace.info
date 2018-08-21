@@ -48,7 +48,7 @@
       <node id="1741258697587118862" at="96,50,97,258" concept="9" />
       <node id="1741258697587118862" at="97,258,98,27" concept="1" />
       <node id="1741258697587118862" at="101,64,102,32" concept="1" />
-      <node id="1741258697587118938" at="107,56,108,284" concept="5" />
+      <node id="1741258697587118938" at="107,56,108,242" concept="5" />
       <node id="1741258697587118946" at="109,60,110,32" concept="5" />
       <node id="1741258697587118952" at="111,38,112,56" concept="1" />
       <node id="1741258697587118968" at="113,11,114,161" concept="1" />
@@ -76,7 +76,7 @@
       <node id="1741258697587119012" at="145,271,150,7" concept="11" />
       <node id="1741258697587118862" at="75,25,81,7" concept="10" />
       <node id="1741258697587118862" at="83,52,89,7" concept="11" />
-      <node id="1741258697587118944" at="108,284,115,9" concept="3" />
+      <node id="1741258697587118944" at="108,242,115,9" concept="3" />
       <node id="1741258697587118866" at="125,62,132,9" concept="3" />
       <node id="1741258697587119013" at="41,0,52,0" concept="4" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1741258697587118860" at="56,0,67,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />

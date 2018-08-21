@@ -37,7 +37,7 @@ public final class ShiftLeftExpression__BehaviorDescriptor extends BaseBHDescrip
     return 9;
   }
   /*package*/ static SNode getFlippedOperator_id14Lzlw0K236(@NotNull SNode __thisNode__) {
-    return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6ce051dfL, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression")), __thisNode__);
+    return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6ce051dfL, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression"), __thisNode__);
   }
 
   /*package*/ ShiftLeftExpression__BehaviorDescriptor() {

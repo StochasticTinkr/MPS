@@ -106,7 +106,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
               }
               @Override
               public SNode createNodeToInsert(EditorContext p0) {
-                return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), null);
+                return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null);
               }
 
               @Override

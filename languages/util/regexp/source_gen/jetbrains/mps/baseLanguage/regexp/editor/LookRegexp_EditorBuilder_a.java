@@ -105,7 +105,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return createReplacementNode_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
+      return SNodeFactoryOperations.createNewNode(parameterObject, node);
     }
     public boolean isReferentPresentation() {
       return false;

@@ -338,7 +338,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode expr = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression")), null);
+      SNode expr = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), null);
       SLinkOperations.setTarget(expr, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")));
       SNodeOperations.replaceWithAnother(node, expr);
     }
@@ -366,7 +366,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     }
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))))) {
-        SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall")), null);
+        SNode newNode = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"), null);
         return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), node);
 
       }

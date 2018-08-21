@@ -33,7 +33,7 @@ public class DeleteStaticInField {
         editorContext.flushEvents();
         return;
       }
-      SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
+      SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
       MemberDeclarationRefactoringUtil.rewireFieldReferences(node, replacing);
 
       if (SPropertyOperations.getBoolean(replacing, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"))) {
@@ -60,7 +60,7 @@ public class DeleteStaticInField {
         editorContext.flushEvents();
         return;
       }
-      SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
+      SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
       MemberDeclarationRefactoringUtil.rewireFieldReferences(node, replacing);
 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, SelectionManager.FIRST_EDITABLE_CELL, -1);

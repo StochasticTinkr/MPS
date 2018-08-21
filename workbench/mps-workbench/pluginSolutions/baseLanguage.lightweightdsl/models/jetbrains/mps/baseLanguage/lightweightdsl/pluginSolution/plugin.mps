@@ -834,23 +834,16 @@
                 <node concept="37vLTI" id="17H9dI4GOl0" role="3clFbG">
                   <node concept="1PxgMI" id="6f4jbghVMYl" role="37vLTx">
                     <node concept="2YIFZM" id="6f4jbghVLu$" role="1m5AlR">
-                      <ref role="37wK5l" to="zce0:~SNodeFactoryOperations.createNewRootNode(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.language.SConcept,org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="createNewRootNode" />
                       <ref role="1Pybhc" to="zce0:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
+                      <ref role="37wK5l" to="zce0:~SNodeFactoryOperations.createNewRootNode(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="createNewRootNode" />
                       <node concept="2OqwBi" id="UBgfI9f$SK" role="37wK5m">
                         <node concept="2WthIp" id="UBgfI9f$SL" role="2Oq$k0" />
                         <node concept="1DTwFV" id="UBgfI9f$SM" role="2OqNvi">
                           <ref role="2WH_rO" node="2WSWNq1Rs9v" resolve="model" />
                         </node>
                       </node>
-                      <node concept="1eOMI4" id="6f4jbghVXS3" role="37wK5m">
-                        <node concept="10QFUN" id="6f4jbghVXS4" role="1eOMHV">
-                          <node concept="37vLTw" id="17H9dI4GNlE" role="10QFUP">
-                            <ref role="3cqZAo" node="17H9dI4GNly" resolve="c" />
-                          </node>
-                          <node concept="3uibUv" id="6f4jbghVXRV" role="10QFUM">
-                            <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="5wQOItBweTj" role="37wK5m">
+                        <ref role="3cqZAo" node="17H9dI4GNly" resolve="c" />
                       </node>
                       <node concept="10Nm6u" id="6f4jbghVMse" role="37wK5m" />
                     </node>
