@@ -80,8 +80,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BasePlaceholder;
       case LanguageConceptSwitch.ChildAttribute:
         if (props_ChildAttribute == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL);
-          cpb.deprecateProperty(0x9d98713f249b585L, "linkRole");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("ChildAttribute");
           props_ChildAttribute = cpb.create();
         }

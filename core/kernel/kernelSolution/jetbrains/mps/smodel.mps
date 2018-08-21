@@ -2142,6 +2142,36 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="4hzFhgYG2tV" role="jymVt">
+      <property role="TrG5h" value="getChildLink" />
+      <node concept="3uibUv" id="4hzFhgYG5Eq" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+      </node>
+      <node concept="3Tm1VV" id="4hzFhgYG2tX" role="1B3o_S" />
+      <node concept="3clFbS" id="4hzFhgYG2tY" role="3clF47">
+        <node concept="3clFbF" id="5gACAVBz852" role="3cqZAp">
+          <node concept="2OqwBi" id="5gACAVBz8nd" role="3clFbG">
+            <node concept="1PxgMI" id="5gACAVBz8eb" role="2Oq$k0">
+              <node concept="chp4Y" id="5gACAVBz8eC" role="3oSUPX">
+                <ref role="cht4Q" to="tpck:BpxLfMhSxq" resolve="ChildAttribute" />
+              </node>
+              <node concept="37vLTw" id="5gACAVBz851" role="1m5AlR">
+                <ref role="3cqZAo" node="4hzFhgYG2uB" resolve="attribute" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="5gACAVBz8wC" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:BpxLfMirzf" resolve="getLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4hzFhgYG2uB" role="3clF46">
+        <property role="TrG5h" value="attribute" />
+        <node concept="3uibUv" id="4hzFhgYG2uC" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="2g2TIDe2U21" role="jymVt">
       <property role="TrG5h" value="getConceptDeclaration_Implements" />
       <node concept="3Tm1VV" id="2g2TIDe2U23" role="1B3o_S" />

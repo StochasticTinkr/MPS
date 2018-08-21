@@ -387,11 +387,11 @@
     <property role="EcuMT" value="709746936026466394" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="BpxLfMirm5" role="1TKVEl">
-      <property role="TrG5h" value="linkRole" />
+      <property role="TrG5h" value="role_DebugInfo" />
       <property role="IQ2nx" value="709746936026609029" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="BpxLfMirm6" role="lGtFl">
-        <property role="YLQ7P" value="linkRole and linkId should not be used directly. Use getLink() behaviour method" />
+      <node concept="t5JxF" id="5gACAVByXnk" role="lGtFl">
+        <property role="t5JxN" value="This property should not be used directly, use behavior method. The value is only used for reporting purposes when no role name can be extracted by id." />
       </node>
     </node>
     <node concept="1TJgyi" id="BpxLfMirm7" role="1TKVEl">
