@@ -89,6 +89,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GenerationContextOp_DirtyNode:
         if (props_GenerationContextOp_DirtyNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.shortDesc("checks if node is not ignored by generator");
           cpb.rawPresentation("is dirty");
           props_GenerationContextOp_DirtyNode = cpb.create();

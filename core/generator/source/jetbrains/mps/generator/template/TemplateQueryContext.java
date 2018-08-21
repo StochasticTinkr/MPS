@@ -18,6 +18,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -84,8 +85,15 @@ public class TemplateQueryContext {
     return myGenerator.getInputModel();
   }
 
+  /**
+   * @deprecated left for compatibility with 2018.2-generated code, to be removed once 2018.3 is out.
+   *             Code generated with 2018.3 injects 'true' constant and doesn't depend on the method.
+   *             fwiw, there are no uses in mps-extensions and mbeddr, nor it has been mentioned in the 2018.2 documentation.
+   */
+  @ToRemove(version = 2018.3)
+  @Deprecated
   public boolean isDirty(SNode node) {
-    return myGenerator.isDirty(node);
+    return true;
   }
 
   public SModel getOutputModel() {

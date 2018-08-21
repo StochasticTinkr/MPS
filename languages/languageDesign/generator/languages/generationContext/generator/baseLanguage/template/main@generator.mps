@@ -399,56 +399,8 @@
     <node concept="3aamgX" id="4FXH7d67CMe" role="3acgRq">
       <ref role="30HIoZ" to="tpf3:4FXH7d67CLT" resolve="GenerationContextOp_DirtyNode" />
       <node concept="gft3U" id="4FXH7d67CMk" role="1lVwrX">
-        <node concept="2OqwBi" id="4FXH7d67CMm" role="gfFT$">
-          <node concept="1eOMI4" id="4FXH7d67CMn" role="2Oq$k0">
-            <node concept="10QFUN" id="4FXH7d67CMo" role="1eOMHV">
-              <node concept="10Nm6u" id="4FXH7d67CMp" role="10QFUP" />
-              <node concept="3uibUv" id="4FXH7d67CMq" role="10QFUM">
-                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-              </node>
-            </node>
-            <node concept="29HgVG" id="4FXH7d67CMr" role="lGtFl">
-              <node concept="3NFfHV" id="4FXH7d67CMs" role="3NFExx">
-                <node concept="3clFbS" id="4FXH7d67CMt" role="2VODD2">
-                  <node concept="3clFbF" id="4FXH7d67CMu" role="3cqZAp">
-                    <node concept="2OqwBi" id="4FXH7d67CMv" role="3clFbG">
-                      <node concept="1PxgMI" id="4FXH7d67CMw" role="2Oq$k0">
-                        <node concept="2OqwBi" id="4FXH7d67CMx" role="1m5AlR">
-                          <node concept="30H73N" id="4FXH7d67CMy" role="2Oq$k0" />
-                          <node concept="1mfA1w" id="4FXH7d67CMz" role="2OqNvi" />
-                        </node>
-                        <node concept="chp4Y" id="714IaVdH05A" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="4FXH7d67CM$" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="liA8E" id="4FXH7d67CM_" role="2OqNvi">
-            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.isDirty(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDirty" />
-            <node concept="10Nm6u" id="4FXH7d67CMA" role="37wK5m">
-              <node concept="29HgVG" id="4FXH7d67CMB" role="lGtFl">
-                <node concept="3NFfHV" id="4FXH7d67CMC" role="3NFExx">
-                  <node concept="3clFbS" id="4FXH7d67CMD" role="2VODD2">
-                    <node concept="3clFbF" id="4FXH7d67CME" role="3cqZAp">
-                      <node concept="2OqwBi" id="4FXH7d67CMF" role="3clFbG">
-                        <node concept="30H73N" id="4FXH7d67CMG" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="4FXH7d67D4A" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpf3:4FXH7d67CLU" resolve="nodeToCheck" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node concept="3clFbT" id="3xsoX6o_Wog" role="gfFT$">
+          <property role="3clFbU" value="true" />
         </node>
       </node>
     </node>
