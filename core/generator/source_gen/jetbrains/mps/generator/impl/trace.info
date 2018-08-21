@@ -950,7 +950,7 @@
       <node id="5808518347810660565" at="40,100,41,106" concept="13" />
       <node id="2703081165527358060" at="41,106,42,341" concept="11" />
       <node id="2703081165527362741" at="42,341,43,46" concept="5" />
-      <node id="5808518347810619336" at="44,16,45,620" concept="5" />
+      <node id="5808518347810619336" at="44,16,45,602" concept="5" />
       <node id="2703081165527389074" at="46,9,47,112" concept="13" />
       <node id="7323318257883041364" at="48,222,49,436" concept="5" />
       <node id="7323318257883065470" at="50,16,51,49" concept="11" />
@@ -968,7 +968,7 @@
       <node id="2703081165527278114" at="29,198,57,7" concept="8" />
       <node id="2703081165527280859" at="27,47,58,5" concept="8" />
       <node id="2703081165527242747" at="26,0,61,0" concept="10" trace="restore#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/impl/cache/MappingsMemento;" />
-      <scope id="5808518347810619335" at="44,16,45,620" />
+      <scope id="5808518347810619335" at="44,16,45,602" />
       <scope id="7323318257883019296" at="48,222,49,436" />
       <scope id="7323318257883079742" at="52,223,53,208" />
       <scope id="404112845802956103" at="62,53,63,234" />
@@ -1004,6 +1004,59 @@
         <var name="debugNode" id="2703081165527243975" />
       </scope>
       <unit id="404112845802897353" at="20,0,66,0" name="jetbrains.mps.generator.impl.MappingLabelExtractor" />
+    </file>
+  </root>
+  <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/7980339663309897062">
+    <file name="TransitionTracePersistence.java">
+      <node id="7980339663309898318" at="24,0,25,0" concept="6" trace="myCheckpointModel" />
+      <node id="7980339663309898322" at="26,61,27,40" concept="5" />
+      <node id="7980339663309936204" at="30,49,31,47" concept="13" />
+      <node id="7980339663310091126" at="33,40,34,17" concept="4" />
+      <node id="7980339663309949643" at="35,7,36,48" concept="11" />
+      <node id="7980339663309949806" at="36,48,37,613" concept="11" />
+      <node id="7980339663310084867" at="37,613,38,398" concept="11" />
+      <node id="7980339663310081975" at="38,398,39,174" concept="5" />
+      <node id="7980339663310096836" at="44,65,45,250" concept="11" />
+      <node id="7980339663310092543" at="46,34,47,17" concept="4" />
+      <node id="7980339663310106493" at="48,7,49,445" concept="11" />
+      <node id="7980339663310100808" at="49,445,50,31" concept="5" />
+      <node id="7980339663309898267" at="26,0,29,0" concept="3" trace="TransitionTracePersistence#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="7980339663309947953" at="32,65,35,7" concept="9" />
+      <node id="7980339663310092536" at="45,250,48,7" concept="9" />
+      <node id="7980339663310092534" at="43,42,51,5" concept="8" />
+      <node id="7980339663309902761" at="31,47,40,5" concept="8" />
+      <node id="7980339663309899303" at="43,0,53,0" concept="10" trace="load#(Ljetbrains/mps/generator/impl/TransitionTrace;)V" />
+      <node id="7980339663309898759" at="30,0,42,0" concept="10" trace="save#(Ljetbrains/mps/generator/impl/TransitionTrace;)V" />
+      <scope id="7980339663309898271" at="26,61,27,40" />
+      <scope id="7980339663309947955" at="33,40,34,17" />
+      <scope id="7980339663310092542" at="46,34,47,17" />
+      <scope id="7980339663309898267" at="26,0,29,0">
+        <var name="checkpointModel" id="7980339663309898290" />
+      </scope>
+      <scope id="7980339663310092535" at="44,65,50,31">
+        <var name="originTrace" id="7980339663310096837" />
+        <var name="value" id="7980339663310106494" />
+      </scope>
+      <scope id="7980339663309902764" at="32,65,39,174">
+        <var name="nid" id="7980339663309949809" />
+        <var name="origin" id="7980339663309949644" />
+        <var name="ot" id="7980339663310084868" />
+      </scope>
+      <scope id="7980339663309899307" at="43,42,51,5" />
+      <scope id="7980339663310092534" at="43,42,51,5">
+        <var name="n" id="7980339663310092574" />
+      </scope>
+      <scope id="7980339663309902761" at="31,47,40,5">
+        <var name="n" id="7980339663309902765" />
+      </scope>
+      <scope id="7980339663309898763" at="30,49,40,5" />
+      <scope id="7980339663309899303" at="43,0,53,0">
+        <var name="into" id="7980339663309899567" />
+      </scope>
+      <scope id="7980339663309898759" at="30,0,42,0">
+        <var name="originTrace" id="7980339663309898862" />
+      </scope>
+      <unit id="7980339663309897062" at="23,0,54,0" name="jetbrains.mps.generator.impl.TransitionTracePersistence" />
     </file>
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/894226751621690778">

@@ -99,6 +99,9 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="7980339663309897032" name="jetbrains.mps.lang.generator.structure.OriginTrace" flags="ng" index="cd27G">
+        <child id="7980339663309897037" name="origin" index="cd27D" />
+      </concept>
       <concept id="9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" flags="nn" index="2$VJBW">
         <property id="9032177546941580392" name="nodeId" index="2$VJBR" />
         <child id="8557539026538618631" name="cncpt" index="3iCydw" />
@@ -122,6 +125,9 @@
       </concept>
       <concept id="3864140621129713362" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeRef" flags="nn" index="39e2AT">
         <reference id="3864140621129713363" name="node" index="39e2AS" />
+      </concept>
+      <concept id="3637169702552512264" name="jetbrains.mps.lang.generator.structure.ElementaryNodeId" flags="ng" index="3u3nmq">
+        <property id="3637169702552512269" name="nodeId" index="3u3nmv" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -153,6 +159,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -162,49 +169,41 @@
   <node concept="312cEu" id="0">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="EvaluationTextGen" />
-    <node concept="3Tm1VV" id="1" role="1B3o_S" />
-    <node concept="2eloPW" id="2" role="1zkMxy">
-      <property role="2ely0U" value="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
-      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-    </node>
-  </node>
-  <node concept="39dXUE" id="3">
-    <node concept="39e2AJ" id="4" role="39e2AI">
-      <property role="39e3Y2" value="LanguageUtilityClass" />
-      <node concept="39e2AG" id="7" role="39e3Y0">
-        <ref role="39e2AK" to="vn0r:OEyzfTAyCl" resolve="EvaluationTextGen" />
-        <node concept="385nmt" id="8" role="385vvn">
-          <property role="385vuF" value="EvaluationTextGen" />
-          <node concept="2$VJBW" id="a" role="385v07">
-            <property role="2$VJBR" value="948722627350506005" />
-            <node concept="2x4n5u" id="b" role="3iCydw">
-              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqusxd7j" />
-              <node concept="2V$Bhx" id="c" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="9" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="EvaluationTextGen" />
+    <node concept="3Tm1VV" id="1" role="1B3o_S">
+      <node concept="cd27G" id="4" role="lGtFl">
+        <node concept="3u3nmq" id="5" role="cd27D">
+          <property role="3u3nmv" value="948722627350506005" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="5" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+    <node concept="2eloPW" id="2" role="1zkMxy">
+      <property role="2ely0U" value="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
+      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      <node concept="cd27G" id="6" role="lGtFl">
+        <node concept="3u3nmq" id="7" role="cd27D">
+          <property role="3u3nmv" value="948722627350506005" />
+        </node>
+      </node>
+    </node>
+    <node concept="cd27G" id="3" role="lGtFl">
+      <node concept="3u3nmq" id="8" role="cd27D">
+        <property role="3u3nmv" value="948722627350506005" />
+      </node>
+    </node>
+  </node>
+  <node concept="39dXUE" id="9">
+    <node concept="39e2AJ" id="a" role="39e2AI">
+      <property role="39e3Y2" value="LanguageUtilityClass" />
       <node concept="39e2AG" id="d" role="39e3Y0">
-        <ref role="39e2AK" to="vn0r:OEyzfTAyzE" resolve="LowLevelVariable_TextGen" />
+        <ref role="39e2AK" to="vn0r:OEyzfTAyCl" resolve="EvaluationTextGen" />
         <node concept="385nmt" id="e" role="385vvn">
-          <property role="385vuF" value="LowLevelVariable_TextGen" />
+          <property role="385vuF" value="EvaluationTextGen" />
           <node concept="2$VJBW" id="g" role="385v07">
-            <property role="2$VJBR" value="948722627350505706" />
+            <property role="2$VJBR" value="948722627350506005" />
             <node concept="2x4n5u" id="h" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
+              <property role="2x4n5l" value="fqusxd7j" />
               <node concept="2V$Bhx" id="i" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
@@ -213,150 +212,257 @@
           </node>
         </node>
         <node concept="39e2AT" id="f" role="39e2AY">
-          <ref role="39e2AS" node="l" resolve="LowLevelVariable_TextGen" />
+          <ref role="39e2AS" node="0" resolve="EvaluationTextGen" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="6" role="39e2AI">
-      <property role="39e3Y2" value="TextGenAspectDescriptorCons" />
+    <node concept="39e2AJ" id="b" role="39e2AI">
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="j" role="39e3Y0">
-        <property role="2mV_xN" value="true" />
-        <node concept="39e2AT" id="k" role="39e2AY">
-          <ref role="39e2AS" node="C" resolve="TextGenAspectDescriptor" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="l">
-    <property role="1sVAO0" value="false" />
-    <property role="TrG5h" value="LowLevelVariable_TextGen" />
-    <property role="3GE5qa" value="old" />
-    <node concept="3Tm1VV" id="m" role="1B3o_S" />
-    <node concept="3uibUv" id="n" role="1zkMxy">
-      <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
-    </node>
-    <node concept="3clFb_" id="o" role="jymVt">
-      <property role="TrG5h" value="generateText" />
-      <node concept="3cqZAl" id="p" role="3clF45" />
-      <node concept="3Tm1VV" id="q" role="1B3o_S" />
-      <node concept="3clFbS" id="r" role="3clF47">
-        <node concept="3cpWs8" id="u" role="3cqZAp">
-          <node concept="3cpWsn" id="v" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="tgs" />
-            <node concept="3uibUv" id="w" role="1tU5fm">
-              <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
-            </node>
-            <node concept="2ShNRf" id="x" role="33vP2m">
-              <node concept="1pGfFk" id="y" role="2ShVmc">
-                <ref role="37wK5l" to="kpbf:~TextGenSupport.&lt;init&gt;(jetbrains.mps.text.rt.TextGenContext)" resolve="TextGenSupport" />
-                <node concept="37vLTw" id="z" role="37wK5m">
-                  <ref role="3cqZAo" node="s" resolve="ctx" />
-                </node>
+        <ref role="39e2AK" to="vn0r:OEyzfTAyzE" resolve="LowLevelVariable_TextGen" />
+        <node concept="385nmt" id="k" role="385vvn">
+          <property role="385vuF" value="LowLevelVariable_TextGen" />
+          <node concept="2$VJBW" id="m" role="385v07">
+            <property role="2$VJBR" value="948722627350505706" />
+            <node concept="2x4n5u" id="n" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="o" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="37vLTG" id="s" role="3clF46">
-        <property role="TrG5h" value="ctx" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="$" role="1tU5fm">
-          <ref role="3uigEE" to="yfwt:~TextGenContext" resolve="TextGenContext" />
+        <node concept="39e2AT" id="l" role="39e2AY">
+          <ref role="39e2AS" node="r" resolve="LowLevelVariable_TextGen" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="t" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+    </node>
+    <node concept="39e2AJ" id="c" role="39e2AI">
+      <property role="39e3Y2" value="TextGenAspectDescriptorCons" />
+      <node concept="39e2AG" id="p" role="39e3Y0">
+        <property role="2mV_xN" value="true" />
+        <node concept="39e2AT" id="q" role="39e2AY">
+          <ref role="39e2AS" node="1e" resolve="TextGenAspectDescriptor" />
+        </node>
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="_">
+  <node concept="312cEu" id="r">
+    <property role="1sVAO0" value="false" />
+    <property role="TrG5h" value="LowLevelVariable_TextGen" />
+    <property role="3GE5qa" value="old" />
+    <node concept="3Tm1VV" id="s" role="1B3o_S">
+      <node concept="cd27G" id="w" role="lGtFl">
+        <node concept="3u3nmq" id="x" role="cd27D">
+          <property role="3u3nmv" value="948722627350505706" />
+        </node>
+      </node>
+    </node>
+    <node concept="3uibUv" id="t" role="1zkMxy">
+      <ref role="3uigEE" to="yfwt:~TextGenDescriptorBase" resolve="TextGenDescriptorBase" />
+      <node concept="cd27G" id="y" role="lGtFl">
+        <node concept="3u3nmq" id="z" role="cd27D">
+          <property role="3u3nmv" value="948722627350505706" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="u" role="jymVt">
+      <property role="TrG5h" value="generateText" />
+      <node concept="3cqZAl" id="$" role="3clF45">
+        <node concept="cd27G" id="E" role="lGtFl">
+          <node concept="3u3nmq" id="F" role="cd27D">
+            <property role="3u3nmv" value="948722627350505706" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="_" role="1B3o_S">
+        <node concept="cd27G" id="G" role="lGtFl">
+          <node concept="3u3nmq" id="H" role="cd27D">
+            <property role="3u3nmv" value="948722627350505706" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="A" role="3clF47">
+        <node concept="3cpWs8" id="I" role="3cqZAp">
+          <node concept="3cpWsn" id="K" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="tgs" />
+            <node concept="3uibUv" id="M" role="1tU5fm">
+              <ref role="3uigEE" to="kpbf:~TextGenSupport" resolve="TextGenSupport" />
+              <node concept="cd27G" id="P" role="lGtFl">
+                <node concept="3u3nmq" id="Q" role="cd27D">
+                  <property role="3u3nmv" value="948722627350505706" />
+                </node>
+              </node>
+            </node>
+            <node concept="2ShNRf" id="N" role="33vP2m">
+              <node concept="1pGfFk" id="R" role="2ShVmc">
+                <ref role="37wK5l" to="kpbf:~TextGenSupport.&lt;init&gt;(jetbrains.mps.text.rt.TextGenContext)" resolve="TextGenSupport" />
+                <node concept="37vLTw" id="T" role="37wK5m">
+                  <ref role="3cqZAo" node="B" resolve="ctx" />
+                  <node concept="cd27G" id="V" role="lGtFl">
+                    <node concept="3u3nmq" id="W" role="cd27D">
+                      <property role="3u3nmv" value="948722627350505706" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="cd27G" id="U" role="lGtFl">
+                  <node concept="3u3nmq" id="X" role="cd27D">
+                    <property role="3u3nmv" value="948722627350505706" />
+                  </node>
+                </node>
+              </node>
+              <node concept="cd27G" id="S" role="lGtFl">
+                <node concept="3u3nmq" id="Y" role="cd27D">
+                  <property role="3u3nmv" value="948722627350505706" />
+                </node>
+              </node>
+            </node>
+            <node concept="cd27G" id="O" role="lGtFl">
+              <node concept="3u3nmq" id="Z" role="cd27D">
+                <property role="3u3nmv" value="948722627350505706" />
+              </node>
+            </node>
+          </node>
+          <node concept="cd27G" id="L" role="lGtFl">
+            <node concept="3u3nmq" id="10" role="cd27D">
+              <property role="3u3nmv" value="948722627350505706" />
+            </node>
+          </node>
+        </node>
+        <node concept="cd27G" id="J" role="lGtFl">
+          <node concept="3u3nmq" id="11" role="cd27D">
+            <property role="3u3nmv" value="948722627350505706" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="B" role="3clF46">
+        <property role="TrG5h" value="ctx" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="12" role="1tU5fm">
+          <ref role="3uigEE" to="yfwt:~TextGenContext" resolve="TextGenContext" />
+          <node concept="cd27G" id="14" role="lGtFl">
+            <node concept="3u3nmq" id="15" role="cd27D">
+              <property role="3u3nmv" value="948722627350505706" />
+            </node>
+          </node>
+        </node>
+        <node concept="cd27G" id="13" role="lGtFl">
+          <node concept="3u3nmq" id="16" role="cd27D">
+            <property role="3u3nmv" value="948722627350505706" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="C" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        <node concept="cd27G" id="17" role="lGtFl">
+          <node concept="3u3nmq" id="18" role="cd27D">
+            <property role="3u3nmv" value="948722627350505706" />
+          </node>
+        </node>
+      </node>
+      <node concept="cd27G" id="D" role="lGtFl">
+        <node concept="3u3nmq" id="19" role="cd27D">
+          <property role="3u3nmv" value="948722627350505706" />
+        </node>
+      </node>
+    </node>
+    <node concept="cd27G" id="v" role="lGtFl">
+      <node concept="3u3nmq" id="1a" role="cd27D">
+        <property role="3u3nmv" value="948722627350505706" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="1b">
     <property role="TrG5h" value="TextGenAspectDescriptor" />
-    <node concept="312cEg" id="A" role="jymVt">
+    <node concept="312cEg" id="1c" role="jymVt">
       <property role="TrG5h" value="myIndex" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="I" role="1B3o_S" />
-      <node concept="2eloPW" id="J" role="1tU5fm">
+      <node concept="3Tm6S6" id="1k" role="1B3o_S" />
+      <node concept="2eloPW" id="1l" role="1tU5fm">
         <property role="2ely0U" value="jetbrains.mps.debugger.java.evaluation.structure.LanguageConceptSwitch" />
         <ref role="3uigEE" to="tpcf:1OW7rNmnulT" resolve="LanguageConceptSwitch" />
       </node>
-      <node concept="2ShNRf" id="K" role="33vP2m">
-        <node concept="xCZzO" id="L" role="2ShVmc">
+      <node concept="2ShNRf" id="1m" role="33vP2m">
+        <node concept="xCZzO" id="1n" role="2ShVmc">
           <property role="xCZzQ" value="jetbrains.mps.debugger.java.evaluation.structure.LanguageConceptSwitch" />
-          <node concept="3uibUv" id="M" role="xCZzL">
+          <node concept="3uibUv" id="1o" role="xCZzL">
             <ref role="3uigEE" to="tpcf:1OW7rNmnulT" resolve="LanguageConceptSwitch" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="B" role="jymVt" />
-    <node concept="3clFbW" id="C" role="jymVt">
-      <node concept="3cqZAl" id="N" role="3clF45" />
-      <node concept="3clFbS" id="O" role="3clF47" />
-      <node concept="3Tm1VV" id="P" role="1B3o_S" />
+    <node concept="2tJIrI" id="1d" role="jymVt" />
+    <node concept="3clFbW" id="1e" role="jymVt">
+      <node concept="3cqZAl" id="1p" role="3clF45" />
+      <node concept="3clFbS" id="1q" role="3clF47" />
+      <node concept="3Tm1VV" id="1r" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="D" role="jymVt" />
-    <node concept="3Tm1VV" id="E" role="1B3o_S" />
-    <node concept="3uibUv" id="F" role="1zkMxy">
+    <node concept="2tJIrI" id="1f" role="jymVt" />
+    <node concept="3Tm1VV" id="1g" role="1B3o_S" />
+    <node concept="3uibUv" id="1h" role="1zkMxy">
       <ref role="3uigEE" to="yfwt:~TextGenAspectBase" resolve="TextGenAspectBase" />
     </node>
-    <node concept="3clFb_" id="G" role="jymVt">
+    <node concept="3clFb_" id="1i" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDescriptor" />
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="Q" role="1B3o_S" />
-      <node concept="3uibUv" id="R" role="3clF45">
+      <node concept="3Tm1VV" id="1s" role="1B3o_S" />
+      <node concept="3uibUv" id="1t" role="3clF45">
         <ref role="3uigEE" to="yfwt:~TextGenDescriptor" resolve="TextGenDescriptor" />
       </node>
-      <node concept="37vLTG" id="S" role="3clF46">
+      <node concept="37vLTG" id="1u" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3bZ5Sz" id="W" role="1tU5fm" />
-        <node concept="2AHcQZ" id="X" role="2AJF6D">
+        <node concept="3bZ5Sz" id="1y" role="1tU5fm" />
+        <node concept="2AHcQZ" id="1z" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="T" role="2AJF6D">
+      <node concept="2AHcQZ" id="1v" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
-      <node concept="3clFbS" id="U" role="3clF47">
-        <node concept="3KaCP$" id="Y" role="3cqZAp">
-          <node concept="2OqwBi" id="10" role="3KbGdf">
-            <node concept="37vLTw" id="12" role="2Oq$k0">
-              <ref role="3cqZAo" node="A" resolve="myIndex" />
+      <node concept="3clFbS" id="1w" role="3clF47">
+        <node concept="3KaCP$" id="1$" role="3cqZAp">
+          <node concept="2OqwBi" id="1A" role="3KbGdf">
+            <node concept="37vLTw" id="1C" role="2Oq$k0">
+              <ref role="3cqZAo" node="1c" resolve="myIndex" />
             </node>
-            <node concept="liA8E" id="13" role="2OqNvi">
+            <node concept="liA8E" id="1D" role="2OqNvi">
               <ref role="37wK5l" to="tpcf:1OW7rNmnuDr" resolve="index" />
-              <node concept="37vLTw" id="14" role="37wK5m">
-                <ref role="3cqZAo" node="S" resolve="concept" />
+              <node concept="37vLTw" id="1E" role="37wK5m">
+                <ref role="3cqZAo" node="1u" resolve="concept" />
               </node>
             </node>
           </node>
-          <node concept="3KbdKl" id="11" role="3KbHQx">
-            <node concept="1n$iZg" id="15" role="3Kbmr1">
+          <node concept="3KbdKl" id="1B" role="3KbHQx">
+            <node concept="1n$iZg" id="1F" role="3Kbmr1">
               <property role="1n_iUB" value="LowLevelVariable" />
               <property role="1n_ezw" value="jetbrains.mps.debugger.java.evaluation.structure.LanguageConceptSwitch" />
             </node>
-            <node concept="3clFbS" id="16" role="3Kbo56">
-              <node concept="3cpWs6" id="17" role="3cqZAp">
-                <node concept="2ShNRf" id="18" role="3cqZAk">
-                  <node concept="HV5vD" id="19" role="2ShVmc">
-                    <ref role="HV5vE" node="l" resolve="LowLevelVariable_TextGen" />
+            <node concept="3clFbS" id="1G" role="3Kbo56">
+              <node concept="3cpWs6" id="1H" role="3cqZAp">
+                <node concept="2ShNRf" id="1I" role="3cqZAk">
+                  <node concept="HV5vD" id="1J" role="2ShVmc">
+                    <ref role="HV5vE" node="r" resolve="LowLevelVariable_TextGen" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="Z" role="3cqZAp">
-          <node concept="10Nm6u" id="1a" role="3cqZAk" />
+        <node concept="3cpWs6" id="1_" role="3cqZAp">
+          <node concept="10Nm6u" id="1K" role="3cqZAk" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="V" role="2AJF6D">
+      <node concept="2AHcQZ" id="1x" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="H" role="jymVt" />
+    <node concept="2tJIrI" id="1j" role="jymVt" />
   </node>
 </model>
 
