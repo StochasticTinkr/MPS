@@ -90,10 +90,6 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -102,12 +98,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
@@ -115,10 +105,6 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
@@ -128,12 +114,6 @@
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
-      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
-        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
-      </concept>
-      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
-        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -172,60 +152,6 @@
       <node concept="3clFbS" id="L0xQjiTXbs" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="XZsBAoV_cZ" role="jymVt" />
-    <node concept="2YIFZL" id="L0xQjiTXbx" role="jymVt">
-      <property role="TrG5h" value="getProjectPath" />
-      <node concept="17QB3L" id="L0xQjiTXb_" role="3clF45" />
-      <node concept="3Tm1VV" id="L0xQjiTXbz" role="1B3o_S" />
-      <node concept="3clFbS" id="L0xQjiTXb$" role="3clF47">
-        <node concept="3SKdUt" id="7v5ch11E_LU" role="3cqZAp">
-          <node concept="3SKdUq" id="7v5ch11E_LW" role="3SKWNk">
-            <property role="3SKdUp" value="drop once there's mbeddr branch for 2017.2 and use of the method in com.mbeddr.debugger.tests gone" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7v5ch11EsnI" role="3cqZAp">
-          <node concept="1rXfSq" id="7v5ch11EsMa" role="3cqZAk">
-            <ref role="37wK5l" node="7v5ch11EroR" resolve="getProjectPath" />
-            <node concept="37vLTw" id="7v5ch11Etsu" role="37wK5m">
-              <ref role="3cqZAo" node="L0xQjiTXck" resolve="model" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="L0xQjiTXck" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="L0xQjiTXcl" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="7v5ch11ErVH" role="3clF46">
-        <property role="TrG5h" value="unused" />
-        <node concept="3uibUv" id="7v5ch11Es8r" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="7v5ch11Ettc" role="lGtFl">
-        <node concept="TZ5HI" id="7v5ch11Ettd" role="3nqlJM">
-          <node concept="TZ5HA" id="7v5ch11Ette" role="3HnX3l">
-            <node concept="1dT_AC" id="7v5ch11EttS" role="1dT_Ay">
-              <property role="1dT_AB" value="use " />
-            </node>
-            <node concept="1dT_AA" id="7v5ch11EttV" role="1dT_Ay">
-              <node concept="92FcH" id="7v5ch11Etu1" role="qph3F">
-                <node concept="TZ5HA" id="7v5ch11Etu3" role="2XjZqd" />
-                <node concept="VXe0Z" id="7v5ch11Exjp" role="92FcQ">
-                  <ref role="VXe0S" node="7v5ch11EroR" resolve="getProjectPath" />
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="7v5ch11EttU" role="1dT_Ay">
-              <property role="1dT_AB" value=" instead. This method is left for compatibility with mbeddr code that needs to compile against both 2017.1 and 2017.2." />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7v5ch11Ettf" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7v5ch11EqYV" role="jymVt" />
     <node concept="2YIFZL" id="7v5ch11EroR" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />

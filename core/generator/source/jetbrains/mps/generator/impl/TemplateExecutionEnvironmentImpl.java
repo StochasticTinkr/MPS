@@ -44,7 +44,6 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.trace.RuleTrace;
 import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -79,11 +78,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     myExecutionContext = executionContext;
     myTemplateProcessor = templateProcessor;
     myReductionTrack = reductionTrack;
-  }
-
-  @Override
-  public IOperationContext getOperationContext() {
-    return generator.getGeneratorSessionContext();
   }
 
   @Override
