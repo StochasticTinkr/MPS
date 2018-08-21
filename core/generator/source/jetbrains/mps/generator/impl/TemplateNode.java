@@ -188,7 +188,7 @@ class TemplateNode {
         SConcept templateChildNodeConcept = templateChildNode.getConcept();
         if (RuleUtil.isTemplateLanguageElement(templateChildNodeConcept)) {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
-            final SProperty propertyName = AttributeOperations.getProperty(templateChildNode);
+            final SProperty propertyName = SNodeUtil.getProperty(templateChildNode);
             propsHandledWithMacro.add(propertyName);
             SNode function = RuleUtil.getPropertyMacro_ValueFunction(templateChildNode);
             QueryKey qk = new QueryKeyImpl(templateChildNode.getReference(), function.getNodeId());

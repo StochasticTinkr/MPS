@@ -2172,6 +2172,36 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="1avfQ4BDxwU" role="jymVt">
+      <property role="TrG5h" value="getProperty" />
+      <node concept="3uibUv" id="1avfQ4BDxwV" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+      </node>
+      <node concept="3Tm1VV" id="1avfQ4BDxwW" role="1B3o_S" />
+      <node concept="3clFbS" id="1avfQ4BDxwX" role="3clF47">
+        <node concept="3clFbF" id="5gACAVBzPJU" role="3cqZAp">
+          <node concept="2OqwBi" id="5gACAVBzQ25" role="3clFbG">
+            <node concept="1PxgMI" id="5gACAVBzPT3" role="2Oq$k0">
+              <node concept="chp4Y" id="5gACAVBzPTw" role="3oSUPX">
+                <ref role="cht4Q" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
+              </node>
+              <node concept="37vLTw" id="5gACAVBzPJT" role="1m5AlR">
+                <ref role="3cqZAo" node="1avfQ4BDxxy" resolve="attribute" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="5gACAVBzQbw" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1avfQ4BDxxy" role="3clF46">
+        <property role="TrG5h" value="attribute" />
+        <node concept="3uibUv" id="1avfQ4BFmjT" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="2g2TIDe2U21" role="jymVt">
       <property role="TrG5h" value="getConceptDeclaration_Implements" />
       <node concept="3Tm1VV" id="2g2TIDe2U23" role="1B3o_S" />

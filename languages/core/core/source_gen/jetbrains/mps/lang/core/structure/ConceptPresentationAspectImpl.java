@@ -235,8 +235,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeAttribute;
       case LanguageConceptSwitch.PropertyAttribute:
         if (props_PropertyAttribute == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L);
-          cpb.deprecateProperty(0x18649a5c82123515L, "propertyName");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("PropertyAttribute");
           props_PropertyAttribute = cpb.create();
         }

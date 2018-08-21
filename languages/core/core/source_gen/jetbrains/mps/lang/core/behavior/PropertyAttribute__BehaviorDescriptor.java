@@ -18,8 +18,6 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -32,22 +30,27 @@ public final class PropertyAttribute__BehaviorDescriptor extends BaseBHDescripto
 
   public static final SMethod<SProperty> getProperty_id1avfQ4BBzOo = new SMethodBuilder<SProperty>(new SJavaCompoundTypeImpl(SProperty.class)).name("getProperty").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1avfQ4BBzOo").registry(REGISTRY).build();
   public static final SMethod<Void> setProperty_id6Gg5Klvu8CV = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setProperty").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Gg5Klvu8CV").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SProperty.class, ""));
+  public static final SMethod<String> getNameForReporting_id5gACAVBzOt1 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNameForReporting").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5gACAVBzOt1").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getProperty_id1avfQ4BBzOo, setProperty_id6Gg5Klvu8CV);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getProperty_id1avfQ4BBzOo, setProperty_id6Gg5Klvu8CV, getNameForReporting_id5gACAVBzOt1);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SProperty getProperty_id1avfQ4BBzOo(@NotNull SNode __thisNode__) {
-    String nonEmptyName = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")));
-    if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")))) {
-      return ((ConceptMetaInfoConverter) SNodeOperations.getParent(__thisNode__).getConcept()).convertProperty(nonEmptyName);
-    }
+    String nonEmptyName = (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")));
     return MetaAdapterFactory.getProperty(SPropertyId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"))), nonEmptyName);
   }
   /*package*/ static void setProperty_id6Gg5Klvu8CV(@NotNull SNode __thisNode__, SProperty metaProperty) {
-    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), metaProperty.getName());
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo"), metaProperty.getName());
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), MetaIdHelper.getProperty(metaProperty).serialize());
+  }
+  /*package*/ static String getNameForReporting_id5gACAVBzOt1(@NotNull SNode __thisNode__) {
+    SProperty l = PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(__thisNode__);
+    if (l.isValid()) {
+      return l.getName();
+    }
+    return (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")) == null ? "" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "name_DebugInfo")));
   }
 
   /*package*/ PropertyAttribute__BehaviorDescriptor() {
@@ -71,6 +74,8 @@ public final class PropertyAttribute__BehaviorDescriptor extends BaseBHDescripto
       case 1:
         setProperty_id6Gg5Klvu8CV(node, (SProperty) parameters[0]);
         return null;
+      case 2:
+        return (T) ((String) getNameForReporting_id5gACAVBzOt1(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -98,8 +103,5 @@ public final class PropertyAttribute__BehaviorDescriptor extends BaseBHDescripto
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

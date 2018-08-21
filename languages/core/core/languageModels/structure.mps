@@ -216,11 +216,11 @@
     <property role="EcuMT" value="3364660638048049750" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
-      <property role="TrG5h" value="propertyName" />
+      <property role="TrG5h" value="name_DebugInfo" />
       <property role="IQ2nx" value="1757699476691236117" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="7R2Gq48DzZK" role="lGtFl">
-        <property role="YLQ7P" value="propertyName and propertyId should not be used directly. Use getProperty() behaviour method or AttributeOperations.getProperty(node&lt;PropertyAttribute&gt;)" />
+      <node concept="t5JxF" id="5gACAVBzNZt" role="lGtFl">
+        <property role="t5JxN" value="This property should not be used directly, use behavior method. The value is only used for reporting purposes when no role name can be extracted by id." />
       </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4BzllH" role="1TKVEl">

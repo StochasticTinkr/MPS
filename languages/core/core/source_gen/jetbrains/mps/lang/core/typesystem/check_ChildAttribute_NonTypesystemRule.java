@@ -53,7 +53,7 @@ public class check_ChildAttribute_NonTypesystemRule extends AbstractNonTypesyste
     } else if (!(Objects.equals(existingLink.getName(), reportName))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(childAttribute, "Incorrect aggregation link name: " + reportName, "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545515834520", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(childAttribute, "Incorrect aggregation link name: " + reportName, "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6063712545516066366", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.fix_ChildAttribute_name_QuickFix", false);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
