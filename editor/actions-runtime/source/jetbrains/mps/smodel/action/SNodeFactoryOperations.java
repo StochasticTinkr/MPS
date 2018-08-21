@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
@@ -42,12 +42,14 @@ public class SNodeFactoryOperations {
     return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
 
-  public static SNode createNewNode(SConcept concept, SNode prototypeNode) {
-    if (concept == null) return null;
+  public static SNode createNewNode(SAbstractConcept concept, SNode prototypeNode) {
+    if (concept == null) {
+      return null;
+    }
     return NodeFactoryManager.createNode(concept, prototypeNode, null, null);
   }
 
-  public static SNode createNewNode(SModel model, SConcept concept, SNode prototypeNode) {
+  public static SNode createNewNode(SModel model, SAbstractConcept concept, SNode prototypeNode) {
     SNode enclosingNode = null;
     if (prototypeNode != null) {
       enclosingNode = prototypeNode.getParent();
@@ -56,13 +58,13 @@ public class SNodeFactoryOperations {
     return NodeFactoryManager.createNode(concept, prototypeNode, enclosingNode, model);
   }
 
-  public static SNode createNewRootNode(SModel model, SConcept concept, SNode prototypeNode) {
+  public static SNode createNewRootNode(SModel model, SAbstractConcept concept, SNode prototypeNode) {
     SNode newNode = NodeFactoryManager.createNode(concept, prototypeNode, null, model);
     model.addRootNode(newNode);
     return newNode;
   }
 
-  public static SNode addNewChild(SNode node, SContainmentLink role, SConcept childConcept) {
+  public static SNode addNewChild(SNode node, SContainmentLink role, SAbstractConcept childConcept) {
     if (node != null) {
       SNode newChild = NodeFactoryManager.createNode(childConcept, null, node, node.getModel());
       node.addChild(role, newChild);
@@ -71,7 +73,7 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, SConcept childConcept) {
+  public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, SAbstractConcept childConcept) {
     if (node != null) {
       SNode newChild = NodeFactoryManager.createNode(childConcept, null, node, node.getModel());
       AttributeOperations.addAttribute(node, descriptor, newChild);
@@ -80,7 +82,7 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  public static SNode setNewChild(SNode node, SContainmentLink role, SConcept childConcept) {
+  public static SNode setNewChild(SNode node, SContainmentLink role, SAbstractConcept childConcept) {
     if (node != null) {
       Iterable<? extends SNode> ch = node.getChildren(role);
       SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
@@ -91,7 +93,7 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, SConcept childConcept) {
+  public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, SAbstractConcept childConcept) {
     if (node != null) {
       SNode prototypeNode = AttributeOperations.getAttribute(node, descriptor);
       SNode newChild = NodeFactoryManager.createNode(childConcept, prototypeNode, node, node.getModel());
@@ -101,7 +103,7 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  public static SNode replaceWithNewChild(SNode oldChild, SConcept concept) {
+  public static SNode replaceWithNewChild(SNode oldChild, SAbstractConcept concept) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
     if (oldChildParent == null && !(oldChild.getModel() != null && oldChild.getParent() == null)) {
@@ -133,22 +135,32 @@ public class SNodeFactoryOperations {
     }
   }
 
-  public static SNode insertNewNextSiblingChild(SNode node, SConcept concept) {
-    if (node == null || node.getParent() == null) return null;
+  public static SNode insertNewNextSiblingChild(SNode node, SAbstractConcept concept) {
+    if (node == null || node.getParent() == null) {
+      return null;
+    }
     SNode parent = node.getParent();
     SNode newChild = NodeFactoryManager.createNode(concept, null, parent, node.getModel());
-    if (newChild == null) return null;
+    if (newChild == null) {
+      return null;
+    }
     SContainmentLink role = node.getContainmentLink();
     parent.insertChildAfter(role, newChild, node);
     return newChild;
   }
 
-  public static SNode insertNewPrevSiblingChild(SNode node, SConcept concept) {
-    if (node == null) return null;
+  public static SNode insertNewPrevSiblingChild(SNode node, SAbstractConcept concept) {
+    if (node == null) {
+      return null;
+    }
     SNode parent = node.getParent();
-    if (parent == null) return null;
+    if (parent == null) {
+      return null;
+    }
     SNode newChild = NodeFactoryManager.createNode(concept, null, parent, node.getModel());
-    if (newChild == null) return null;
+    if (newChild == null) {
+      return null;
+    }
     SContainmentLink role = node.getContainmentLink();
     parent.insertChildBefore(role, newChild, node);
     return newChild;
