@@ -241,6 +241,9 @@ public final class SNodeUtil {
     cardinality = defaultCardinalityIfNotSet(cardinality);
     return "1".equals(cardinality) || "0..1".equals(cardinality);
   }
+  public static SReferenceLink getLink(SNode attribute) {
+    return ((SReferenceLink) (SReferenceLink) BHReflection.invoke0(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "1avfQ4BEFo6")));
+  }
   private static String defaultCardinalityIfNotSet(String cardinality) {
     // couldn't use type for cardinality (enummember<Cardinality> is SNode) 
     // can't use link.sourceCardinality.is because I need sourceCardinality to be *bootstrap* property, which is possible at the moment 

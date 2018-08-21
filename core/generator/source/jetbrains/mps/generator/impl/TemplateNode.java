@@ -195,7 +195,7 @@ class TemplateNode {
             final PropertyValueQuery q = queryProvider.getPropertyValueQuery(qk);
             propertyMacros.add(new PropertyMacro(q, templateChildNode.getReference()));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
-            final SReferenceLink refMacroRole = AttributeOperations.getLink(templateChildNode);
+            final SReferenceLink refMacroRole = SNodeUtil.getLink(templateChildNode);
             SNode function = RuleUtil.getReferenceMacro_GetReferent(templateChildNode);
             if (function == null) {
               log.error(templateChildNode.getReference(), "No query function for reference macro, reference would be copied as is");

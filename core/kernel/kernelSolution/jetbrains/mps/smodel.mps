@@ -3005,6 +3005,36 @@
         <node concept="17QB3L" id="3J7Gt$oFShN" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2YIFZL" id="1avfQ4BFueW" role="jymVt">
+      <property role="TrG5h" value="getLink" />
+      <node concept="3uibUv" id="1avfQ4BFueX" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+      </node>
+      <node concept="3Tm1VV" id="1avfQ4BFueY" role="1B3o_S" />
+      <node concept="3clFbS" id="1avfQ4BFueZ" role="3clF47">
+        <node concept="3clFbF" id="5gACAVBwFzw" role="3cqZAp">
+          <node concept="2OqwBi" id="5gACAVBwFP$" role="3clFbG">
+            <node concept="1PxgMI" id="5gACAVBwFGD" role="2Oq$k0">
+              <node concept="chp4Y" id="5gACAVBwFH6" role="3oSUPX">
+                <ref role="cht4Q" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
+              </node>
+              <node concept="37vLTw" id="5gACAVBwFzv" role="1m5AlR">
+                <ref role="3cqZAo" node="1avfQ4BFuf$" resolve="attribute" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="5gACAVBwFYS" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:1avfQ4BEFo6" resolve="getLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1avfQ4BFuf$" role="3clF46">
+        <property role="TrG5h" value="attribute" />
+        <node concept="3uibUv" id="1avfQ4BFuf_" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="4teNS_e27LP" role="jymVt">
       <property role="TrG5h" value="defaultCardinalityIfNotSet" />
       <node concept="17QB3L" id="4teNS_e28Y7" role="3clF45" />

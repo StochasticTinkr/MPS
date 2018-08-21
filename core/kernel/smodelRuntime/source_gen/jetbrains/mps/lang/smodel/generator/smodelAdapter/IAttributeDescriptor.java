@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
@@ -45,11 +48,11 @@ public interface IAttributeDescriptor {
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getLink(attribute)));
+      return super.match(attribute) && (myLink == null || myLink.equals(((SReferenceLink) BHReflection.invoke0(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "1avfQ4BEFo6")))));
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      AttributeOperations.setLink(attribute, myLink);
+      BHReflection.invoke0(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), SMethodTrimmedId.create("setLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "6Gg5KlvuxxF"), myLink);
     }
   }
   class ChildAttribute extends IAttributeDescriptor.AttributeDescriptor {

@@ -216,8 +216,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InterfacePart;
       case LanguageConceptSwitch.LinkAttribute:
         if (props_LinkAttribute == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L);
-          cpb.deprecateProperty(0x18649a5c82123514L, "linkRole");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("LinkAttribute");
           props_LinkAttribute = cpb.create();
         }

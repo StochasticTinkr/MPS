@@ -301,7 +301,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return ((MetaObjectGenerationHelper) _context.getVariable("mogh")).record(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(_context.getNode()));
   }
   public static Object propertyMacro_GetValue_10_15(final PropertyMacroContext _context) {
-    SReference ref = SNodeOperations.getParent(_context.getNode()).getReference(AttributeOperations.getLink(_context.getNode()));
+    SReference ref = SNodeOperations.getParent(_context.getNode()).getReference(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(_context.getNode()));
     if (ref == null) {
       return "";
     }

@@ -608,19 +608,25 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="5gACAVBvuUh" role="3cqZAp">
+          <node concept="3SKdUq" id="5gACAVBvuUj" role="3SKWNk">
+            <property role="3SKdUp" value="todo rewrite using S-entities" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="2I_OWQO_euR" role="3cqZAp">
           <node concept="3cpWsn" id="2I_OWQO_euS" role="3cpWs9">
             <property role="TrG5h" value="linkRole" />
             <node concept="17QB3L" id="2I_OWQO_euT" role="1tU5fm" />
-            <node concept="2OqwBi" id="2I_OWQO_euU" role="33vP2m">
-              <node concept="2YIFZM" id="2I_OWQO_euV" role="2Oq$k0">
-                <ref role="37wK5l" to="i8bi:1avfQ4BFueW" resolve="getLink" />
-                <ref role="1Pybhc" to="i8bi:5zEkxuKh8vS" resolve="AttributeOperations" />
-                <node concept="37vLTw" id="2I_OWQO_euW" role="37wK5m">
+            <node concept="2OqwBi" id="5gACAVBvtS9" role="33vP2m">
+              <node concept="2OqwBi" id="5gACAVBvsyR" role="2Oq$k0">
+                <node concept="37vLTw" id="5gACAVBvsh9" role="2Oq$k0">
                   <ref role="3cqZAo" node="2I_OWQO_dLk" resolve="refMacro" />
                 </node>
+                <node concept="2qgKlT" id="5gACAVBvtq3" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:1avfQ4BEFo6" resolve="getLink" />
+                </node>
               </node>
-              <node concept="liA8E" id="2I_OWQO_euX" role="2OqNvi">
+              <node concept="liA8E" id="5gACAVBvuti" role="2OqNvi">
                 <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
               </node>
             </node>

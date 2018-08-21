@@ -494,7 +494,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_0_3(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
+        return (String) LinkAttribute__BehaviorDescriptor.getRoleNameForReporting_id5gACAVBuLQd.invoke(it);
       }
     }, true);
   }
