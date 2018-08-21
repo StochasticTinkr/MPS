@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -54,7 +54,8 @@ public class CopyIconsToResources extends MigrationScriptBase {
       }).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           // we re-shrink paths to convert ${language_descriptoe} to ${module} at the same time 
-          String newPath = MacrosFactory.forModule((AbstractModule) m).shrinkPath(MacrosFactory.forModule((AbstractModule) m).expandPath(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"))));
+          MacroHelper macros = MacrosFactory.forModule(m);
+          String newPath = macros.shrinkPath(macros.expandPath(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"))));
           SPropertyOperations.assign(SLinkOperations.setNewChild(it, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x57cf4eb14c4f9ef5L, "icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon")), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file"), newPath);
           it.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"), null);
         }

@@ -8,7 +8,6 @@
   </languages>
   <imports>
     <import index="kisg" ref="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -96,15 +95,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -214,28 +205,15 @@
                 </node>
               </node>
               <node concept="3clFbJ" id="4s4uRp_lDgd" role="3cqZAp">
-                <node concept="2ZW3vV" id="6tm98vZdEsG" role="3clFbw">
-                  <node concept="3uibUv" id="6tm98vZdGoD" role="2ZW6by">
-                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                  </node>
-                  <node concept="37vLTw" id="6tm98vZdDFi" role="2ZW6bz">
-                    <ref role="3cqZAo" node="4s4uRp_lDg9" resolve="module" />
-                  </node>
-                </node>
                 <node concept="3clFbS" id="4s4uRp_lDge" role="3clFbx">
                   <node concept="3clFbF" id="4s4uRp_lDgf" role="3cqZAp">
                     <node concept="37vLTI" id="4s4uRp_lDgg" role="3clFbG">
                       <node concept="2OqwBi" id="5vviDNw7mx8" role="37vLTx">
-                        <node concept="2YIFZM" id="6tm98vZdwCc" role="2Oq$k0">
-                          <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                        <node concept="2YIFZM" id="3xsoX6o$itz" role="2Oq$k0">
+                          <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                           <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                          <node concept="10QFUN" id="6tm98vZdLh0" role="37wK5m">
-                            <node concept="37vLTw" id="3GM_nagTyCK" role="10QFUP">
-                              <ref role="3cqZAo" node="4s4uRp_lDg9" resolve="module" />
-                            </node>
-                            <node concept="3uibUv" id="6tm98vZdLgX" role="10QFUM">
-                              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                            </node>
+                          <node concept="37vLTw" id="3xsoX6o$it$" role="37wK5m">
+                            <ref role="3cqZAo" node="4s4uRp_lDg9" resolve="module" />
                           </node>
                         </node>
                         <node concept="liA8E" id="5vviDNw7mxd" role="2OqNvi">
@@ -252,6 +230,12 @@
                         <ref role="3cqZAo" node="4s4uRp_lDg5" resolve="path" />
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="3y3z36" id="3xsoX6o$gXQ" role="3clFbw">
+                  <node concept="10Nm6u" id="3xsoX6o$hd$" role="3uHU7w" />
+                  <node concept="37vLTw" id="3xsoX6o$gCQ" role="3uHU7B">
+                    <ref role="3cqZAo" node="4s4uRp_lDg9" resolve="module" />
                   </node>
                 </node>
               </node>

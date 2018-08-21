@@ -25,7 +25,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
@@ -38,7 +37,6 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="eh3q" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.text(MPS.Editor/)" />
@@ -9550,25 +9548,20 @@
                             <node concept="3cpWs8" id="6UDbxo8i0Rp" role="3cqZAp">
                               <node concept="3cpWsn" id="6UDbxo8i0Rq" role="3cpWs9">
                                 <property role="TrG5h" value="module" />
-                                <node concept="3uibUv" id="6tm98vZkUIT" role="1tU5fm">
-                                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                                <node concept="3uibUv" id="3xsoX6oxgbG" role="1tU5fm">
+                                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                                 </node>
-                                <node concept="10QFUN" id="6tm98vZkTXl" role="33vP2m">
-                                  <node concept="3uibUv" id="6tm98vZkU8T" role="10QFUM">
-                                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                                  </node>
-                                  <node concept="2OqwBi" id="6tm98vZkTXf" role="10QFUP">
-                                    <node concept="2JrnkZ" id="5wRUlvn8_cc" role="2Oq$k0">
-                                      <node concept="2OqwBi" id="6tm98vZkTXg" role="2JrQYb">
-                                        <node concept="37vLTw" id="5wRUlvn8$AN" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="i2lEbZl" resolve="myNode" />
-                                        </node>
-                                        <node concept="I4A8Y" id="5wRUlvn8$ZR" role="2OqNvi" />
+                                <node concept="2OqwBi" id="6tm98vZkTXf" role="33vP2m">
+                                  <node concept="2JrnkZ" id="5wRUlvn8_cc" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="6tm98vZkTXg" role="2JrQYb">
+                                      <node concept="37vLTw" id="5wRUlvn8$AN" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="i2lEbZl" resolve="myNode" />
                                       </node>
+                                      <node concept="I4A8Y" id="5wRUlvn8$ZR" role="2OqNvi" />
                                     </node>
-                                    <node concept="liA8E" id="6tm98vZkTXj" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="6tm98vZkTXj" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                                   </node>
                                 </node>
                               </node>
@@ -9579,10 +9572,10 @@
                                 <node concept="3uibUv" id="5wRUlvn8AQh" role="1tU5fm">
                                   <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
                                 </node>
-                                <node concept="2YIFZM" id="5wRUlvn8AQq" role="33vP2m">
+                                <node concept="2YIFZM" id="3xsoX6oxgOw" role="33vP2m">
+                                  <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                                   <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                                  <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                                  <node concept="37vLTw" id="5wRUlvn8AQr" role="37wK5m">
+                                  <node concept="37vLTw" id="3xsoX6oxgOx" role="37wK5m">
                                     <ref role="3cqZAo" node="6UDbxo8i0Rq" resolve="module" />
                                   </node>
                                 </node>

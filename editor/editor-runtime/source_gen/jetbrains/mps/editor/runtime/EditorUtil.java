@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
@@ -31,6 +30,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.fileChooser.FileChooser;
 import jetbrains.mps.vfs.FileSystems;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFileUtils;
@@ -55,7 +55,7 @@ public class EditorUtil {
   }
 
   public static JComponent createSelectImageButton(final SNode sourceNode, final SProperty property, final EditorContext context) {
-    final MacroHelper macros = MacrosFactory.forModule((AbstractModule) sourceNode.getModel().getModule());
+    final MacroHelper macros = MacrosFactory.forModule(sourceNode.getModel().getModule());
     return createSelectImageButton(sourceNode, property, context, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
         return check_3m4h3r_a0a3a1a4(macros, fullPath);

@@ -24,15 +24,13 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="wzm8" ref="r:c38b095a-620d-449b-83bf-eebdb57fa62c(jetbrains.mps.lang.plugin.generator.util)" />
     <import index="3s15" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench(MPS.Platform/)" />
     <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
-    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="8rsk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem.ex(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="z0rn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb.annotations(MPS.IDEA/)" />
@@ -41,7 +39,6 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="hq8m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.options(MPS.IDEA/)" />
-    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
     <import index="3767" ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" />
     <import index="obo9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins.actions(MPS.Platform/)" />
@@ -5514,7 +5511,7 @@
       <node concept="37vLTG" id="hIjt8qr" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="hIjt8qs" role="1tU5fm">
-          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+          <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="3Tm1VV" id="hIjt1Ag" role="1B3o_S" />
@@ -5586,7 +5583,7 @@
       <node concept="37vLTG" id="hIjtbzX" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="hIjtbzY" role="1tU5fm">
-          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+          <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
     </node>
@@ -13023,7 +13020,7 @@
         <node concept="37vLTG" id="h$fwtUa" role="3clF46">
           <property role="TrG5h" value="project" />
           <node concept="3uibUv" id="h$fwtUb" role="1tU5fm">
-            <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+            <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
           </node>
         </node>
         <node concept="3cqZAl" id="h$fwtQh" role="3clF45" />
@@ -13614,15 +13611,10 @@
                   <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
                 </node>
                 <node concept="2YIFZM" id="13TYo4FAzD1" role="33vP2m">
-                  <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                   <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                  <node concept="10QFUN" id="13TYo4FAzD2" role="37wK5m">
-                    <node concept="37vLTw" id="13TYo4FAzD3" role="10QFUP">
-                      <ref role="3cqZAo" node="13TYo4FAzCJ" resolve="module" />
-                    </node>
-                    <node concept="3uibUv" id="13TYo4FAzD4" role="10QFUM">
-                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                    </node>
+                  <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                  <node concept="37vLTw" id="13TYo4FAzD3" role="37wK5m">
+                    <ref role="3cqZAo" node="13TYo4FAzCJ" resolve="module" />
                   </node>
                 </node>
               </node>
@@ -13714,11 +13706,9 @@
               </node>
             </node>
             <node concept="3cpWs6" id="13TYo4FAlsC" role="3cqZAp">
-              <node concept="2ZW3vV" id="13TYo4FAjYX" role="3cqZAk">
-                <node concept="3uibUv" id="13TYo4FAjYY" role="2ZW6by">
-                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                </node>
-                <node concept="37vLTw" id="13TYo4FAjYZ" role="2ZW6bz">
+              <node concept="3y3z36" id="3xsoX6ovdK9" role="3cqZAk">
+                <node concept="10Nm6u" id="3xsoX6ovdUs" role="3uHU7w" />
+                <node concept="37vLTw" id="3xsoX6ovdp7" role="3uHU7B">
                   <ref role="3cqZAo" node="13TYo4FAjYL" resolve="module" />
                 </node>
               </node>

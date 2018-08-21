@@ -14,7 +14,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
@@ -1185,6 +1184,21 @@
                           <property role="3SKdUp" value="we re-shrink paths to convert ${language_descriptoe} to ${module} at the same time" />
                         </node>
                       </node>
+                      <node concept="3cpWs8" id="3xsoX6ouohQ" role="3cqZAp">
+                        <node concept="3cpWsn" id="3xsoX6ouohR" role="3cpWs9">
+                          <property role="TrG5h" value="macros" />
+                          <node concept="3uibUv" id="3xsoX6ouohO" role="1tU5fm">
+                            <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+                          </node>
+                          <node concept="2YIFZM" id="3xsoX6ouohS" role="33vP2m">
+                            <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+                            <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                            <node concept="37vLTw" id="3xsoX6ouohT" role="37wK5m">
+                              <ref role="3cqZAo" node="4qBHWh_rspt" resolve="m" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3cpWs8" id="4qBHWh_ssB9" role="3cqZAp">
                         <node concept="3cpWsn" id="4qBHWh_ssBa" role="3cpWs9">
                           <property role="TrG5h" value="newPath" />
@@ -1192,32 +1206,14 @@
                             <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                           </node>
                           <node concept="2OqwBi" id="4qBHWh_suit" role="33vP2m">
-                            <node concept="2YIFZM" id="4qBHWh_ssBc" role="2Oq$k0">
-                              <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                              <node concept="10QFUN" id="4qBHWh_ssBe" role="37wK5m">
-                                <node concept="37vLTw" id="4qBHWh_ssBf" role="10QFUP">
-                                  <ref role="3cqZAo" node="4qBHWh_rspt" resolve="m" />
-                                </node>
-                                <node concept="3uibUv" id="4qBHWh_ssBg" role="10QFUM">
-                                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                                </node>
-                              </node>
+                            <node concept="37vLTw" id="3xsoX6ouohU" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3xsoX6ouohR" resolve="macros" />
                             </node>
                             <node concept="liA8E" id="4qBHWh_ssBh" role="2OqNvi">
                               <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
                               <node concept="2OqwBi" id="4qBHWh_suTY" role="37wK5m">
-                                <node concept="2YIFZM" id="4qBHWh_stFf" role="2Oq$k0">
-                                  <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                                  <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                                  <node concept="10QFUN" id="4qBHWh_su8w" role="37wK5m">
-                                    <node concept="37vLTw" id="4qBHWh_su8x" role="10QFUP">
-                                      <ref role="3cqZAo" node="4qBHWh_rspt" resolve="m" />
-                                    </node>
-                                    <node concept="3uibUv" id="4qBHWh_su8y" role="10QFUM">
-                                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                                    </node>
-                                  </node>
+                                <node concept="37vLTw" id="3xsoX6ouohV" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3xsoX6ouohR" resolve="macros" />
                                 </node>
                                 <node concept="liA8E" id="4qBHWh_svg_" role="2OqNvi">
                                   <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />

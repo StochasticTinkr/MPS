@@ -2114,23 +2114,18 @@
             </node>
             <node concept="2YIFZM" id="LiJMKzasLJ" role="33vP2m">
               <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-              <node concept="10QFUN" id="LiJMKzau0Z" role="37wK5m">
-                <node concept="3uibUv" id="LiJMKzau10" role="10QFUM">
-                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+              <node concept="2OqwBi" id="LiJMKzau11" role="37wK5m">
+                <node concept="2OqwBi" id="LiJMKzau12" role="2Oq$k0">
+                  <node concept="37vLTw" id="AN0tL0lA8P" role="2Oq$k0">
+                    <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
+                  </node>
+                  <node concept="liA8E" id="LiJMKzau14" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                  </node>
                 </node>
-                <node concept="2OqwBi" id="LiJMKzau11" role="10QFUP">
-                  <node concept="2OqwBi" id="LiJMKzau12" role="2Oq$k0">
-                    <node concept="37vLTw" id="AN0tL0lA8P" role="2Oq$k0">
-                      <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
-                    </node>
-                    <node concept="liA8E" id="LiJMKzau14" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="LiJMKzau15" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                  </node>
+                <node concept="liA8E" id="LiJMKzau15" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                 </node>
               </node>
             </node>

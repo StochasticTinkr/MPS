@@ -5805,13 +5805,13 @@
       <node id="6547237850567463421" at="45,0,46,0" concept="9" trace="getPropertyToCheck_id4cWf37B8oYh" />
       <node id="6547237850567463421" at="47,0,48,0" concept="9" trace="BH_METHODS" />
       <node id="6547237850567463430" at="52,89,53,207" concept="6" />
-      <node id="6547237850567463441" at="55,96,56,234" concept="6" />
+      <node id="6547237850567463441" at="55,96,56,218" concept="6" />
       <node id="6547237850567463458" at="60,83,61,189" concept="6" />
       <node id="862470364181513535" at="63,78,64,59" concept="6" />
       <node id="6547237850567463487" at="66,83,67,47" concept="6" />
-      <node id="1161951617348743399" at="69,92,70,122" concept="5" />
-      <node id="6547237850567463505" at="71,46,72,18" concept="6" />
-      <node id="6547237850567463507" at="73,5,74,240" concept="6" />
+      <node id="1161951617348743399" at="69,92,70,72" concept="5" />
+      <node id="6547237850567463505" at="71,25,72,18" concept="6" />
+      <node id="6547237850567463507" at="73,5,74,223" concept="6" />
       <node id="6547237850567463521" at="76,102,77,58" concept="6" />
       <node id="6547237850567463421" at="80,57,81,20" concept="11" />
       <node id="6547237850567463421" at="85,114,86,21" concept="2" />
@@ -5845,7 +5845,7 @@
       <node id="6547237850567463421" at="55,0,58,0" concept="10" trace="getGeneratedClassFQName_id5FstybB4d8e#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6547237850567463421" at="63,0,66,0" concept="10" trace="createType_idhEwJimy#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6547237850567463421" at="66,0,69,0" concept="10" trace="createSuperType_idhHOGPWW#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6547237850567463500" at="70,122,73,5" concept="3" />
+      <node id="6547237850567463500" at="70,72,73,5" concept="3" />
       <node id="6547237850567463421" at="76,0,79,0" concept="10" trace="getPropertyToCheck_id4cWf37B8oYh#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
       <node id="6547237850567463421" at="80,0,83,0" concept="1" trace="BaseToolDeclaration__BehaviorDescriptor#()V" />
       <node id="6547237850567463421" at="91,49,94,5" concept="3" />
@@ -5863,11 +5863,11 @@
       <node id="6547237850567463421" at="89,0,114,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6547237850567463421" at="49,63,49,63" />
       <scope id="6547237850567463429" at="52,89,53,207" />
-      <scope id="6547237850567463440" at="55,96,56,234" />
+      <scope id="6547237850567463440" at="55,96,56,218" />
       <scope id="6547237850567463457" at="60,83,61,189" />
       <scope id="6547237850567463468" at="63,78,64,59" />
       <scope id="6547237850567463486" at="66,83,67,47" />
-      <scope id="6547237850567463504" at="71,46,72,18" />
+      <scope id="6547237850567463504" at="71,25,72,18" />
       <scope id="6547237850567463520" at="76,102,77,58" />
       <scope id="6547237850567463421" at="80,57,81,20" />
       <scope id="6547237850567463421" at="85,114,86,21" />
@@ -5911,7 +5911,7 @@
       <scope id="6547237850567463421" at="58,0,63,0">
         <var name="__thisNode__" id="6547237850567463421" />
       </scope>
-      <scope id="6547237850567463494" at="69,92,74,240">
+      <scope id="6547237850567463494" at="69,92,74,223">
         <var name="module" id="1161951617348743400" />
       </scope>
       <scope id="6547237850567463421" at="127,0,132,0" />
