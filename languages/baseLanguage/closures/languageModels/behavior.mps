@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -41,7 +41,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -329,7 +328,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -375,7 +374,6 @@
   <node concept="13h7C7" id="hEwI$67">
     <ref role="13h7C2" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     <node concept="13i0hz" id="hEwI$68" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3clFbS" id="hEwI$69" role="3clF47">
@@ -479,7 +477,6 @@
       <node concept="3Tm1VV" id="hJrm0CJ" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwI$6K" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getFunctionInterfaceName" />
       <node concept="17QB3L" id="4fkVwthkLzb" role="3clF45" />
       <node concept="3clFbS" id="hEwI$6M" role="3clF47">
@@ -762,7 +759,6 @@
   <node concept="13h7C7" id="hEwIOj4">
     <ref role="13h7C2" to="tp2c:htajhBZ" resolve="FunctionType" />
     <node concept="13i0hz" id="hEwIOj5" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3clFbS" id="hEwIOj6" role="3clF47">
@@ -894,7 +890,6 @@
     </node>
     <node concept="13i0hz" id="4Y6dJjrkGB" role="13h7CS">
       <property role="13i0iv" value="false" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getVariableSuffixes" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpek:hEwIzNo" resolve="getVariableSuffixes" />
@@ -915,7 +910,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="hEwIOjT" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getClassExpression" />
       <ref role="13i0hy" to="tpek:hEwIzOd" resolve="getClassExpression" />
       <node concept="3clFbS" id="hEwIOjU" role="3clF47">
@@ -933,7 +927,6 @@
       <node concept="3Tm1VV" id="hJrm0th" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIOjZ" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRuntimeSignature" />
       <property role="13i0it" value="true" />
       <node concept="17QB3L" id="4fkVwthkL$w" role="3clF45" />
@@ -2404,7 +2397,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="hEwIOp4" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getNormalizedReturnType" />
       <node concept="3Tqbb2" id="hEwIOp5" role="3clF45">
         <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
@@ -2720,7 +2712,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="hEwIOpc" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getNormalizedSequenceParameterReturnType" />
       <node concept="3Tqbb2" id="hEwIOpd" role="3clF45">
         <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
@@ -2774,7 +2765,6 @@
       <node concept="3Tm1VV" id="hJrm0Ge" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIOps" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getNormalizedParameterTypes" />
       <node concept="2I9FWS" id="hEwIOpt" role="3clF45">
         <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
@@ -3988,7 +3978,6 @@
   <node concept="13h7C7" id="hTgOzBl">
     <ref role="13h7C2" to="tp2c:hTgmTQ3" resolve="UnrestrictedFunctionType" />
     <node concept="13i0hz" id="hTgOUS4" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3clFbS" id="hTgOUS5" role="3clF47">
@@ -4132,7 +4121,6 @@
       <node concept="3Tm1VV" id="hTY575p" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="3leXpFr52JM" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRuntimeSignature" />
       <property role="13i0it" value="true" />
       <ref role="13i0hy" node="hEwIOjZ" resolve="getRuntimeSignature" />
@@ -4709,7 +4697,6 @@
   <node concept="13h7C7" id="4RyexnR78v3">
     <ref role="13h7C2" to="tp2c:4RyexnR6jlX" resolve="AbstractFunctionType" />
     <node concept="13i0hz" id="4RyexnR78v6" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3clFbS" id="4RyexnR78v7" role="3clF47">
@@ -4877,7 +4864,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAmCO" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="legalAsStatement" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpek:1653mnvAgqK" resolve="legalAsStatement" />
@@ -4899,7 +4885,6 @@
     </node>
     <node concept="13i0hz" id="U7sbC7HC1$" role="13h7CS">
       <property role="13i0iv" value="false" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPublicType" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpek:hEwIXGa" resolve="getPublicType" />

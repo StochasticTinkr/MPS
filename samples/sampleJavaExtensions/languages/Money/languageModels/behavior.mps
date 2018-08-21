@@ -2,7 +2,7 @@
 <model ref="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -28,7 +28,6 @@
       </concept>
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -190,7 +189,6 @@
     <node concept="13i0hz" id="5A8yV0Pe14_" role="13h7CS">
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getVariableSuffixes" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <ref role="13i0hy" to="tpek:hEwIzNo" resolve="getVariableSuffixes" />
       <node concept="3Tm1VV" id="5A8yV0Pe14A" role="1B3o_S" />
@@ -228,7 +226,6 @@
     <node concept="13i0hz" id="5A8yV0Pe4j4" role="13h7CS">
       <property role="TrG5h" value="getVariableExpectedName" />
       <property role="13i0it" value="false" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <ref role="13i0hy" to="tpek:hEwJgm_" resolve="getVariableExpectedName" />
       <node concept="3Tm1VV" id="5A8yV0Pe4j5" role="1B3o_S" />

@@ -2,7 +2,7 @@
 <model ref="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -24,7 +24,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -201,7 +200,6 @@
     <node concept="13i0hz" id="5xDtKQA8ea0" role="13h7CS">
       <property role="TrG5h" value="getFqName" />
       <property role="13i0it" value="true" />
-      <property role="13i0is" value="false" />
       <ref role="13i0hy" to="tpcu:hEwIO9y" resolve="getFqName" />
       <node concept="3Tm1VV" id="5xDtKQA8ea1" role="1B3o_S" />
       <node concept="3clFbS" id="5xDtKQA8ea2" role="3clF47">
@@ -219,7 +217,6 @@
     <node concept="13i0hz" id="5xDtKQA8eak" role="13h7CS">
       <property role="13i0it" value="true" />
       <property role="TrG5h" value="getPresentation" />
-      <property role="13i0is" value="false" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3Tm1VV" id="5xDtKQA8eal" role="1B3o_S" />
       <node concept="3clFbS" id="5xDtKQA8eam" role="3clF47">
