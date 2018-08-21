@@ -387,7 +387,7 @@
       <node id="8519076342981064186" at="28,243,29,13" concept="7" />
       <node id="5394253938404193155" at="30,5,31,126" concept="6" />
       <node id="5394253938404275998" at="33,48,34,113" concept="7" />
-      <node id="6063712545515015096" at="36,7,37,118" concept="6" />
+      <node id="6063712545515015096" at="36,7,37,114" concept="6" />
       <node id="6063712545515033463" at="39,7,40,60" concept="6" />
       <node id="6063712545515033463" at="40,60,41,255" concept="6" />
       <node id="6063712545515033467" at="42,9,43,151" concept="6" />
@@ -416,7 +416,7 @@
       <node id="6063712545515033463" at="38,189,46,7" concept="0" />
       <node id="5394253938404265823" at="47,38,55,7" concept="0" />
       <node id="6063712545515037085" at="56,71,64,7" concept="0" />
-      <node id="5394253938404264660" at="37,118,65,5" concept="4" />
+      <node id="5394253938404264660" at="37,114,65,5" concept="4" />
       <node id="5394253938404192056" at="27,0,67,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="5394253938404192056" at="25,50,25,50" />
       <scope id="8519076342981057645" at="28,243,29,13" />
@@ -621,7 +621,7 @@
     <file name="check_ChildAttribute_NonTypesystemRule.java">
       <node id="709746936026611104" at="27,127,28,131" concept="6" />
       <node id="709746936026611123" at="30,50,31,114" concept="7" />
-      <node id="6063712545515847639" at="33,7,34,120" concept="6" />
+      <node id="6063712545515847639" at="33,7,34,116" concept="6" />
       <node id="6063712545515824603" at="36,7,37,60" concept="6" />
       <node id="6063712545515824603" at="37,60,38,257" concept="6" />
       <node id="6063712545515824607" at="39,9,40,152" concept="6" />
@@ -649,7 +649,7 @@
       <node id="6063712545515824603" at="35,188,43,7" concept="0" />
       <node id="709746936026611133" at="44,38,52,7" concept="0" />
       <node id="6063712545516066366" at="53,71,61,7" concept="0" />
-      <node id="6063712545515822547" at="34,120,62,5" concept="4" />
+      <node id="6063712545515822547" at="34,116,62,5" concept="4" />
       <node id="709746936026611097" at="27,0,64,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="709746936026611097" at="25,51,25,51" />
       <scope id="709746936026611122" at="30,50,31,114" />

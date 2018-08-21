@@ -31,7 +31,7 @@ public class check_ChildAttribute_NonTypesystemRule extends AbstractNonTypesyste
         return Objects.equals(it, ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(childAttribute));
       }
     });
-    String reportName = ChildAttribute__BehaviorDescriptor.getRoleNameForReporting_id5gACAVBz6xW.invoke(childAttribute);
+    String reportName = ChildAttribute__BehaviorDescriptor.getNameForReporting_id5gACAVBz6xW.invoke(childAttribute);
     if (SPropertyOperations.getString(childAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId")) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

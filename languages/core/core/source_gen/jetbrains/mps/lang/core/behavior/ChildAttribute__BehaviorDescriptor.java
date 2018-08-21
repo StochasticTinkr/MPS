@@ -30,9 +30,9 @@ public final class ChildAttribute__BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<SContainmentLink> getLink_idBpxLfMirzf = new SMethodBuilder<SContainmentLink>(new SJavaCompoundTypeImpl(SContainmentLink.class)).name("getLink").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BpxLfMirzf").registry(REGISTRY).build();
   public static final SMethod<Void> setLink_idBpxLfMirzM = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setLink").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BpxLfMirzM").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SContainmentLink.class, ""));
-  public static final SMethod<String> getRoleNameForReporting_id5gACAVBz6xW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRoleNameForReporting").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5gACAVBz6xW").registry(REGISTRY).build();
+  public static final SMethod<String> getNameForReporting_id5gACAVBz6xW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNameForReporting").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5gACAVBz6xW").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLink_idBpxLfMirzf, setLink_idBpxLfMirzM, getRoleNameForReporting_id5gACAVBz6xW);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLink_idBpxLfMirzf, setLink_idBpxLfMirzM, getNameForReporting_id5gACAVBz6xW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -45,7 +45,7 @@ public final class ChildAttribute__BehaviorDescriptor extends BaseBHDescriptor {
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "role_DebugInfo"), metaLink.getName());
     SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"), MetaIdHelper.getAggregation(metaLink).serialize());
   }
-  /*package*/ static String getRoleNameForReporting_id5gACAVBz6xW(@NotNull SNode __thisNode__) {
+  /*package*/ static String getNameForReporting_id5gACAVBz6xW(@NotNull SNode __thisNode__) {
     SContainmentLink l = ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(__thisNode__);
     if (l.isValid()) {
       return l.getName();
@@ -75,7 +75,7 @@ public final class ChildAttribute__BehaviorDescriptor extends BaseBHDescriptor {
         setLink_idBpxLfMirzM(node, (SContainmentLink) parameters[0]);
         return null;
       case 2:
-        return (T) ((String) getRoleNameForReporting_id5gACAVBz6xW(node));
+        return (T) ((String) getNameForReporting_id5gACAVBz6xW(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

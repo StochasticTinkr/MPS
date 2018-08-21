@@ -1229,7 +1229,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="5gACAVBuLQd" role="13h7CS">
-      <property role="TrG5h" value="getRoleNameForReporting" />
+      <property role="TrG5h" value="getNameForReporting" />
       <node concept="3Tm1VV" id="5gACAVBuLQe" role="1B3o_S" />
       <node concept="3uibUv" id="5gACAVBuMiT" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -1414,7 +1414,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="5gACAVBz6xW" role="13h7CS">
-      <property role="TrG5h" value="getRoleNameForReporting" />
+      <property role="TrG5h" value="getNameForReporting" />
       <node concept="3Tm1VV" id="5gACAVBz6xX" role="1B3o_S" />
       <node concept="3uibUv" id="5gACAVBz6xY" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />

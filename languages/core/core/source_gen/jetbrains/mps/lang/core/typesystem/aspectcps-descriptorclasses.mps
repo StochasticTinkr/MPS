@@ -2385,7 +2385,7 @@
                 <ref role="3cqZAo" node="bW" resolve="childAttribute" />
               </node>
               <node concept="2qgKlT" id="c_" role="2OqNvi">
-                <ref role="37wK5l" to="tpcu:5gACAVBz6xW" resolve="getRoleNameForReporting" />
+                <ref role="37wK5l" to="tpcu:5gACAVBz6xW" resolve="getNameForReporting" />
               </node>
             </node>
           </node>
@@ -3610,7 +3610,7 @@
                 <ref role="3cqZAo" node="jM" resolve="linkAttribute" />
               </node>
               <node concept="2qgKlT" id="kC" role="2OqNvi">
-                <ref role="37wK5l" to="tpcu:5gACAVBuLQd" resolve="getRoleNameForReporting" />
+                <ref role="37wK5l" to="tpcu:5gACAVBuLQd" resolve="getNameForReporting" />
               </node>
             </node>
           </node>
