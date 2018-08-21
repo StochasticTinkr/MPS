@@ -18,7 +18,7 @@ import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
-import jetbrains.mps.checkers.IChecker;
+import jetbrains.mps.checkers.IAbstractChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
@@ -103,10 +103,10 @@ public class TestsErrorsChecker {
         SetSequence.fromSet(result).addElement(reportItem);
       }
     };
-    List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IChecker<SNode, NodeReportItem>>());
+    List<IAbstractChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IAbstractChecker<SNode, NodeReportItem>>());
     // todo: add UsedLanguageChecker? 
     ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
-    for (IChecker<SNode, NodeReportItem> checker : ListSequence.fromList(checkers)) {
+    for (IAbstractChecker<SNode, NodeReportItem> checker : ListSequence.fromList(checkers)) {
       checker.check(myRoot, myRoot.getModel().getRepository(), errorCollector, new EmptyProgressMonitor());
     }
     ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeReportItem>() {

@@ -360,7 +360,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.checkers.ConstraintsChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
-    <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
+    <classNode dependClassName="jetbrains.mps.checkers.IAbstractChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.RefScopeChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />

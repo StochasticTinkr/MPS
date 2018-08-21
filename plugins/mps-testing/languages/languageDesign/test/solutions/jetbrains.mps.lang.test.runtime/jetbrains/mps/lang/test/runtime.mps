@@ -8805,7 +8805,7 @@
             <property role="TrG5h" value="checkers" />
             <node concept="_YKpA" id="dTvp$Z1z6w" role="1tU5fm">
               <node concept="3uibUv" id="1valgbdIoDS" role="_ZDj9">
-                <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
+                <ref role="3uigEE" to="wsw7:3xfDcbRbJai" resolve="IAbstractChecker" />
                 <node concept="3uibUv" id="1valgbdIpjb" role="11_B2D">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                 </node>
@@ -8817,7 +8817,7 @@
             <node concept="2ShNRf" id="dTvp$Z1CAH" role="33vP2m">
               <node concept="Tc6Ow" id="dTvp$Z1_M0" role="2ShVmc">
                 <node concept="3uibUv" id="1valgbdO5Rf" role="HW$YZ">
-                  <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
+                  <ref role="3uigEE" to="wsw7:3xfDcbRbJai" resolve="IAbstractChecker" />
                   <node concept="3uibUv" id="1valgbdO5Rg" role="11_B2D">
                     <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>

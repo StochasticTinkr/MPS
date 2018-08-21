@@ -45,14 +45,14 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractModelChecker.class.getName());
     }
     private static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
-      final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
+      final IAbstractChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
         }
       });
       return new IChecker.AbstractModelChecker<I>() {
         public String getCategory() {
-          return result.getCategory();
+          return rootChecker.getCategory();
         }
         @Override
         public String toString() {
@@ -100,7 +100,7 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       });
       return new IChecker.AbstractRootChecker<I>() {
         public String getCategory() {
-          return skippingChecker.getCategory();
+          return nodeChecker.getCategory();
         }
         @Override
         public String toString() {
