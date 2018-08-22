@@ -3036,8 +3036,8 @@
       <property role="IQ2nx" value="1224848525476" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="5u2GAt806ms" role="lGtFl">
-        <property role="YLPcu" value="3.3" />
         <property role="YLQ7P" value="BaseLanguage elements are now considerred deprecated solely based on the presence of the @Deprecated annotation on them" />
+        <property role="YLPcu" value="2018.3" />
       </node>
     </node>
     <node concept="PrWs8" id="hOIEijf" role="PrDN$">
