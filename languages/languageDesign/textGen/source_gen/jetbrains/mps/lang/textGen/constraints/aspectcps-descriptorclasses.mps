@@ -52,9 +52,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -1661,7 +1658,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5g" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
@@ -1890,7 +1886,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="9z" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnGetter" />
                       <property role="DiZV1" value="false" />
@@ -1945,7 +1940,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="9$" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getValue" />
                       <property role="DiZV1" value="false" />
@@ -2292,7 +2286,6 @@
     </node>
     <node concept="2tJIrI" id="c4" role="jymVt" />
     <node concept="3clFb_" id="c5" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getConstraints" />
       <property role="DiZV1" value="false" />
@@ -2565,7 +2558,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="dh" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
@@ -2794,7 +2786,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="f5" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnValidator" />
                       <property role="DiZV1" value="false" />
@@ -2849,7 +2840,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="f6" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="validateValue" />
                       <property role="DiZV1" value="false" />
@@ -4223,7 +4213,6 @@
                               </node>
                             </node>
                             <node concept="3clFb_" id="nF" role="jymVt">
-                              <property role="IEkAT" value="false" />
                               <property role="1EzhhJ" value="false" />
                               <property role="TrG5h" value="createScope" />
                               <property role="DiZV1" value="false" />
@@ -4633,7 +4622,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="m1" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
@@ -4862,7 +4850,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="rD" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnGetter" />
                       <property role="DiZV1" value="false" />
@@ -4917,7 +4904,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="rE" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getValue" />
                       <property role="DiZV1" value="false" />
@@ -5692,7 +5678,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="wj" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedReferences" />
       <property role="DiZV1" value="false" />
@@ -5921,7 +5906,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="y7" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnScopeProvider" />
                       <property role="DiZV1" value="false" />
@@ -5976,7 +5960,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="y8" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getScopeProvider" />
                       <property role="DiZV1" value="false" />
@@ -6104,7 +6087,6 @@
                                   </node>
                                 </node>
                                 <node concept="3clFb_" id="z6" role="jymVt">
-                                  <property role="IEkAT" value="false" />
                                   <property role="1EzhhJ" value="false" />
                                   <property role="TrG5h" value="createScope" />
                                   <property role="DiZV1" value="false" />
@@ -6455,7 +6437,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="$P" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedProperties" />
       <property role="DiZV1" value="false" />
@@ -6684,7 +6665,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="AD" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnGetter" />
                       <property role="DiZV1" value="false" />
@@ -6739,7 +6719,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="AE" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getValue" />
                       <property role="DiZV1" value="false" />
@@ -7602,7 +7581,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="CS" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSpecifiedReferences" />
       <property role="DiZV1" value="false" />
@@ -7831,7 +7809,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="HA" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="hasOwnScopeProvider" />
                       <property role="DiZV1" value="false" />
@@ -7886,7 +7863,6 @@
                       </node>
                     </node>
                     <node concept="3clFb_" id="HB" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getScopeProvider" />
                       <property role="DiZV1" value="false" />
@@ -8014,7 +7990,6 @@
                                   </node>
                                 </node>
                                 <node concept="3clFb_" id="I_" role="jymVt">
-                                  <property role="IEkAT" value="false" />
                                   <property role="1EzhhJ" value="false" />
                                   <property role="TrG5h" value="createScope" />
                                   <property role="DiZV1" value="false" />
@@ -8777,7 +8752,6 @@
                               </node>
                             </node>
                             <node concept="3clFb_" id="N8" role="jymVt">
-                              <property role="IEkAT" value="false" />
                               <property role="1EzhhJ" value="false" />
                               <property role="TrG5h" value="createScope" />
                               <property role="DiZV1" value="false" />
