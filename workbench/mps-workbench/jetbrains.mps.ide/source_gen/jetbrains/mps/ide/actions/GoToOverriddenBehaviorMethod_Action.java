@@ -18,7 +18,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
-import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.ide.editor.util.GoToContextMenuHelper;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -77,7 +77,7 @@ public class GoToOverriddenBehaviorMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriddenMethod");
     EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), GoToOverriddenBehaviorMethod_Action.this.calcTitle(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.showPopupAndSearchNodeInBackground(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), GoToOverriddenBehaviorMethod_Action.this.calcTitle(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder"), GoToContextMenuHelper.getRelativePoint(selectedCell, inputEvent));
   }
   private String calcTitle(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {
     return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {

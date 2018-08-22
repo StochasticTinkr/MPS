@@ -43,7 +43,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.ide.editor.util.GoToContextMenuHelper;
 import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
@@ -182,9 +182,9 @@ public class GoToInheritedClassifier_Action extends BaseAction {
 
       @Override
       public void onSuccess() {
-        RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
+        RelativePoint relativePoint = GoToContextMenuHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
         String title = "Choose inherited class to navigate to";
-        GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
+        new GoToContextMenuHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository())).showMenuWithNodes(SetSequence.fromSet(nodes).toListSequence(), relativePoint);
       }
     };
     ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));

@@ -31,7 +31,7 @@ import java.awt.event.InputEvent;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import jetbrains.mps.ide.editor.util.GoToContextMenuHelper;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
@@ -129,9 +129,9 @@ public class GoToOverridenClassMethod_Action extends BaseAction {
             return it._0();
           }
         }).toListSequence();
-        RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent);
+        RelativePoint relativePoint = GoToContextMenuHelper.getRelativePoint(selectedCell, inputEvent);
         String title = "Choose super method of " + methodName[0] + "()";
-        GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, methods, new DefaultMethodRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
+        new GoToContextMenuHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, new DefaultMethodRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository())).showMenuWithNodes(methods, relativePoint);
       }
     };
     ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
