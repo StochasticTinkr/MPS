@@ -183,7 +183,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       @Override
       public void onSuccess() {
         RelativePoint relativePoint = GoToContextMenuHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
-        String title = "Choose inherited class to navigate to";
+        String title = "Choose an inherited class to navigate to";
         new GoToContextMenuHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository())).showMenuWithNodes(SetSequence.fromSet(nodes).toListSequence(), relativePoint);
       }
     };
