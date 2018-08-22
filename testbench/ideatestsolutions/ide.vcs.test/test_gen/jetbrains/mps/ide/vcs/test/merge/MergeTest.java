@@ -4,7 +4,7 @@ package jetbrains.mps.ide.vcs.test.merge;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.Before;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.junit.BeforeClass;
 import jetbrains.mps.RuntimeFlags;
@@ -22,8 +22,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -33,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -47,8 +47,10 @@ public class MergeTest extends ChangesTestBase {
 
   public MergeTest() {
   }
-  protected SModel myMineModel;
-  protected SModel myTheirsModel;
+
+  private SModel myBaseModel;
+  private SModel myMineModel;
+  private SModel myTheirsModel;
 
 
 
@@ -56,13 +58,17 @@ public class MergeTest extends ChangesTestBase {
   @Override
   public void init() {
     super.init();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    // it's only test model we need read access for, then, we deal with a detached model and shall not care about model access any longer. 
+    getProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        String baseString = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
-        myMineModel = PersistenceUtil.loadModel(baseString);
-        myTheirsModel = PersistenceUtil.loadModel(baseString);
+        myBaseModel = MergeTemporaryModel.readonlyCloneOf(getTestModel());
       }
     });
+    // FIXME is there real need to go through String when we can use MTM.writeableCloneOf()? 
+    //       I left strings for now just to make sure persistance of a detached model doesn't need model access! 
+    String baseString = PersistenceUtil.saveModel(myBaseModel, getDefaultExt());
+    myMineModel = PersistenceUtil.loadModel(baseString);
+    myTheirsModel = PersistenceUtil.loadModel(baseString);
   }
 
   @BeforeClass
@@ -100,7 +106,7 @@ public class MergeTest extends ChangesTestBase {
   public void testSymmetricChanges_AddRoot() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SNode newRoot = createClassConcept_u0wfvp_a0a0a0a0s();
+        SNode newRoot = createClassConcept_u0wfvp_a0a0a0a0u();
         SModelOperations.addRootNode(myTheirsModel, newRoot);
         SModelOperations.addRootNode(myMineModel, CopyUtil.copyAndPreserveId(newRoot));
         return myMineModel;
@@ -123,7 +129,7 @@ public class MergeTest extends ChangesTestBase {
   public void testSymmetricChanges_AddChild() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0w();
+        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0y();
         insertMemberPreservingId(getMineClassRoot(), newChild, -1);
         insertMemberPreservingId(getTheirsClassRoot(), newChild, -1);
         return myMineModel;
@@ -190,9 +196,10 @@ public class MergeTest extends ChangesTestBase {
   public void testSymmetricChanges_Link() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SNodeId returnTypeId = SLinkOperations.getTarget(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "8885850892994216610"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")).getNodeId();
-        SLinkOperations.setPointer(((SNode) myMineModel.getNode(returnTypeId)), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"));
-        SLinkOperations.setPointer(((SNode) myTheirsModel.getNode(returnTypeId)), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"));
+        SNodeReference method1Decl = new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "8885850892994216610");
+        SNodeId method1NodeId = method1Decl.getNodeId();
+        SLinkOperations.setPointer(SNodeOperations.cast(SLinkOperations.getTarget(((SNode) myMineModel.getNode(method1NodeId)), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"));
+        SLinkOperations.setPointer(SNodeOperations.cast(SLinkOperations.getTarget(((SNode) myTheirsModel.getNode(method1NodeId)), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"));
         return myMineModel;
       }
     });
@@ -314,7 +321,7 @@ public class MergeTest extends ChangesTestBase {
   public void testAddChildAndSetPropertyDontConflict() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelChanger() {
       public void changeModel(SModel expectedModel) {
-        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a94();
+        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a15();
         SPropertyOperations.assign(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         insertMemberPreservingId(getTheirsClassRoot(), newChild, -1);
 
@@ -349,50 +356,41 @@ public class MergeTest extends ChangesTestBase {
   }
 
 
-  private void testMergeNumberOfConflictingChanges(final _FunctionTypes._void_P0_E0 change, final int numberOfConflictingChanges) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        change.invoke();
-        final MergeSession session = MergeSession.createMergeSession(getTestModel(), myMineModel, myTheirsModel);
+  private void testMergeNumberOfConflictingChanges(_FunctionTypes._void_P0_E0 change, int numberOfConflictingChanges) {
+    change.invoke();
+    final MergeSession session = MergeSession.createMergeSession(myBaseModel, myMineModel, myTheirsModel);
 
-        Assert.assertSame(Sequence.fromIterable(session.getAllChanges()).where(new IWhereFilter<ModelChange>() {
-          public boolean accept(ModelChange change) {
-            return Sequence.fromIterable(session.getConflictedWith(change)).isNotEmpty();
-          }
-        }).count(), numberOfConflictingChanges);
+    Assert.assertSame(Sequence.fromIterable(session.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange change) {
+        return Sequence.fromIterable(session.getConflictedWith(change)).isNotEmpty();
       }
-    });
+    }).count(), numberOfConflictingChanges);
   }
 
   private void testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(final MergeTest.ModelChanger changer) {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SModel expectedModel = loadBaseModel();
+        SModel expectedModel = MergeTemporaryModel.writableCloneOf(myBaseModel);
         changer.changeModel(expectedModel);
         return expectedModel;
       }
     });
   }
-  private void testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(final MergeTest.ModelCreator creator) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+  private void testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(MergeTest.ModelCreator creator) {
+    SModel expectedModel = creator.createModel();
 
-        SModel expectedModel = creator.createModel();
+    final MergeSession session = MergeSession.createMergeSession(myBaseModel, myMineModel, myTheirsModel);
 
-        final MergeSession session = MergeSession.createMergeSession(getTestModel(), myMineModel, myTheirsModel);
-
-        org.junit.Assert.assertTrue(Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
-          public boolean accept(ModelChange c) {
-            return Sequence.fromIterable(session.getConflictedWith(c)).isEmpty();
-          }
-        }));
-
-        session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
-        ModelChangeSet changes = ChangeSetBuilder.buildChangeSet(expectedModel, session.getResultModel());
-
-        org.junit.Assert.assertTrue(dumpChangeSet(changes, session), ListSequence.fromList(changes.getModelChanges()).isEmpty());
+    org.junit.Assert.assertTrue(Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange c) {
+        return Sequence.fromIterable(session.getConflictedWith(c)).isEmpty();
       }
-    });
+    }));
+
+    session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
+    ModelChangeSet changes = ChangeSetBuilder.buildChangeSet(expectedModel, session.getResultModel());
+
+    org.junit.Assert.assertTrue(dumpChangeSet(changes, session), ListSequence.fromList(changes.getModelChanges()).isEmpty());
   }
 
   private void testMergeNoConflictingChanges(_FunctionTypes._void_P0_E0 change) {
@@ -409,17 +407,6 @@ public class MergeTest extends ChangesTestBase {
   private SNode getTheirsClassRoot() {
     return getClassRoot(myTheirsModel);
   }
-  private SModel loadBaseModel() {
-    final Wrappers._T<SModel> baseModel = new Wrappers._T<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        String baseString = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
-        baseModel.value = PersistenceUtil.loadModel(baseString);
-      }
-    });
-    return baseModel.value;
-  }
-
 
 
   private static String dumpChangeSet(ChangeSet changeSet, MergeSession session) {
@@ -447,12 +434,12 @@ public class MergeTest extends ChangesTestBase {
   /*package*/ interface ModelCreator {
     SModel createModel();
   }
-  private static SNode createClassConcept_u0wfvp_a0a0a0a0s() {
+  private static SNode createClassConcept_u0wfvp_a0a0a0a0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), null, null, false);
     return n1;
   }
-  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0w() {
+  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0y() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null, null, false);
     {
@@ -464,7 +451,7 @@ public class MergeTest extends ChangesTestBase {
     }
     return n1;
   }
-  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a94() {
+  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a15() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null, null, false);
     {
