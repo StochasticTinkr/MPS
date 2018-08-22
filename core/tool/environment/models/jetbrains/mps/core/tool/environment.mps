@@ -64,9 +64,6 @@
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -329,7 +326,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -389,7 +386,6 @@
   </registry>
   <node concept="312cEu" id="3Pdq2IL$qR3">
     <property role="TrG5h" value="EnvironmentContainer" />
-    <property role="IEkAT" value="false" />
     <property role="1EXbeo" value="true" />
     <node concept="Wx3nA" id="3Pdq2IL$rf2" role="jymVt">
       <property role="TrG5h" value="ourCurrent" />
@@ -554,7 +550,6 @@
   </node>
   <node concept="3HP615" id="HKKzfMjqRV">
     <property role="TrG5h" value="Environment" />
-    <property role="IEkAT" value="false" />
     <node concept="3clFb_" id="2BGPXkEw$sz" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createEmptyProject" />
@@ -613,7 +608,6 @@
     <node concept="3clFb_" id="6rx4kZDjWg4" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="openProject" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="6rx4kZDk2U6" role="3clF46">
         <property role="TrG5h" value="projectFile" />
         <node concept="3uibUv" id="6rx4kZDk5o3" role="1tU5fm">
@@ -1989,7 +1983,6 @@
                                   <property role="1EzhhJ" value="false" />
                                   <property role="TrG5h" value="getClassLoader" />
                                   <property role="DiZV1" value="false" />
-                                  <property role="IEkAT" value="false" />
                                   <node concept="3Tm1VV" id="2hWPXztVkzc" role="1B3o_S" />
                                   <node concept="3uibUv" id="2hWPXztVkze" role="3clF45">
                                     <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
@@ -2219,7 +2212,6 @@
       <property role="TrG5h" value="getPlatform" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3clFbS" id="8PnvxglhX8" role="3clF47">
         <node concept="3cpWs6" id="8PnvxglhX9" role="3cqZAp">
           <node concept="37vLTw" id="8PnvxglhXa" role="3cqZAk">
@@ -2430,7 +2422,6 @@
       <property role="TrG5h" value="getProject" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3clFbS" id="yBZlauH8$W" role="3clF47">
         <node concept="1gVbGN" id="2BGPXkEvLgY" role="3cqZAp">
           <node concept="3y3z36" id="2BGPXkEvLgZ" role="1gVkn0">
@@ -4199,7 +4190,6 @@
     <node concept="2tJIrI" id="5A5jZrz7wfO" role="jymVt" />
     <node concept="2YIFZL" id="1d7Yb5MjouE" role="jymVt">
       <property role="TrG5h" value="setIdeaPluginsToLoad" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6z7xhWktWXe" role="3clF47">
@@ -4705,7 +4695,6 @@
     <node concept="2tJIrI" id="3eUNqOk8Zx4" role="jymVt" />
     <node concept="3clFb_" id="3eUNqOk927J" role="jymVt">
       <property role="TrG5h" value="getPluginLibDescriptors" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4937uxYQnrs" role="3clF47">
@@ -5263,7 +5252,6 @@
     <node concept="2tJIrI" id="3eUNqOk8ZeV" role="jymVt" />
     <node concept="3clFb_" id="3eUNqOk8kWA" role="jymVt">
       <property role="TrG5h" value="createLibContributorForPlugins" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2Koq9V0qGPu" role="3clF47">
@@ -5288,7 +5276,6 @@
     <node concept="2tJIrI" id="3eUNqOk8hTw" role="jymVt" />
     <node concept="3clFb_" id="3eUNqOk8lkP" role="jymVt">
       <property role="TrG5h" value="createLibContributorForLibs" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5mza6QqledO" role="3clF47">
@@ -5644,7 +5631,6 @@
     <node concept="2tJIrI" id="2BGPXkEw870" role="jymVt" />
     <node concept="3clFb_" id="2BGPXkEwDKI" role="jymVt">
       <property role="TrG5h" value="loadProjectFromModuleHandles" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="7fR23Zqlerc" role="2AJF6D">
@@ -5790,7 +5776,6 @@
     <node concept="2tJIrI" id="5A5jZrz7fbw" role="jymVt" />
     <node concept="3clFb_" id="2BGPXkEwSeK" role="jymVt">
       <property role="TrG5h" value="makeOnFirstTimeOpened" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="5ICuv4IIkm0" role="2AJF6D">
@@ -6874,7 +6859,6 @@
     <node concept="3clFb_" id="1_D5Bk1O3RF" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="openProject" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="1_D5Bk1O3RG" role="3clF46">
         <property role="TrG5h" value="projectFile" />
         <node concept="3uibUv" id="1_D5Bk1O3RH" role="1tU5fm">

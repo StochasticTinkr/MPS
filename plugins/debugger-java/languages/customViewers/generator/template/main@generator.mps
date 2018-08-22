@@ -62,9 +62,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -380,11 +377,11 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -721,7 +718,6 @@
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                   <ref role="1Y3XeK" to="qgwr:4jzwNwQQ6gT" resolve="EvaluationUtils.EvaluationInvocatable" />
                   <node concept="3clFb_" id="4KY3GK1Br74" role="jymVt">
-                    <property role="IEkAT" value="false" />
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="invoke" />
                     <property role="DiZV1" value="false" />
@@ -1194,7 +1190,6 @@
                     <ref role="1Y3XeK" to="qgwr:4jzwNwQQ6gT" resolve="EvaluationUtils.EvaluationInvocatable" />
                     <node concept="3Tm1VV" id="4KY3GK1Br4A" role="1B3o_S" />
                     <node concept="3clFb_" id="4KY3GK1Br4B" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="invoke" />
                       <property role="DiZV1" value="false" />
@@ -1364,7 +1359,6 @@
                     <ref role="1Y3XeK" to="qgwr:4jzwNwQQ6gT" resolve="EvaluationUtils.EvaluationInvocatable" />
                     <node concept="3Tm1VV" id="4KY3GK1Br8C" role="1B3o_S" />
                     <node concept="3clFb_" id="4KY3GK1Br8D" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="invoke" />
                       <property role="DiZV1" value="false" />
@@ -1571,7 +1565,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="69wAzy9Mnf" role="1B3o_S" />
       <node concept="3uibUv" id="69wAzy9Mnh" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />

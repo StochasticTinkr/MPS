@@ -12,7 +12,7 @@
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
@@ -332,9 +332,6 @@
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -5658,7 +5655,6 @@
                     <ref role="1Y3XeK" to="mnlj:~PropertyChangeListener" resolve="PropertyChangeListener" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3clFb_" id="2cRxHo3XlXE" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="propertyChange" />
                       <property role="DiZV1" value="false" />
@@ -5782,7 +5778,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="editorComponentCreated" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="6adHiaZW6r$" role="1B3o_S" />
                       <node concept="3cqZAl" id="6adHiaZW6r_" role="3clF45" />
@@ -5801,7 +5796,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="editorComponentDisposed" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="6adHiaZW6rF" role="1B3o_S" />
                       <node concept="3cqZAl" id="6adHiaZW6rG" role="3clF45" />
@@ -11897,7 +11891,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getIntentionActions" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Szoie_lL$9" role="1B3o_S" />
       <node concept="10Q1$e" id="5Szoie_lL$b" role="3clF45">
         <node concept="3uibUv" id="5Szoie_lL$c" role="10Q1$1">

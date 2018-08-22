@@ -134,9 +134,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <property id="1199465379613" name="label" index="15Hjoa" />
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -18213,7 +18210,6 @@
       <node concept="3Tm1VV" id="hJrm0vK" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIAXq" role="13h7CS">
-      <property role="IEkAT" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
       <node concept="3clFbS" id="hEwIAXr" role="3clF47">
@@ -24901,7 +24897,6 @@
     <property role="3GE5qa" value="classifiers.classifiers" />
     <ref role="13h7C2" to="tpee:hiABswc" resolve="Annotation" />
     <node concept="13i0hz" id="hEwIF4f" role="13h7CS">
-      <property role="IEkAT" value="false" />
       <property role="TrG5h" value="getMembers" />
       <ref role="13i0hy" node="hEwJjl2" resolve="getMembers" />
       <node concept="3clFbS" id="hEwIF4g" role="3clF47">
@@ -37553,7 +37548,6 @@
       <node concept="3clFbS" id="hEwJkut" role="2VODD2" />
     </node>
     <node concept="13i0hz" id="hWp5QmI" role="13h7CS">
-      <property role="IEkAT" value="false" />
       <property role="TrG5h" value="canBeAnnotated" />
       <ref role="13i0hy" node="hWp4PwP" resolve="canBeAnnotated" />
       <node concept="3clFbS" id="hWp5QmK" role="3clF47">
@@ -50457,7 +50451,6 @@
     <node concept="2tJIrI" id="2RUTuWCZZa$" role="jymVt" />
     <node concept="2YIFZL" id="6im1NnK53zd" role="jymVt">
       <property role="TrG5h" value="descendInto" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6im1NnK4fob" role="3clF47">
@@ -51186,7 +51179,6 @@
     <node concept="2tJIrI" id="4kJwM8twclL" role="jymVt" />
     <node concept="2YIFZL" id="1wHCnslhrMu" role="jymVt">
       <property role="TrG5h" value="rebalanceIBinaryLikeAfterParenthing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1wHCnslhnFY" role="3clF47">
@@ -51459,7 +51451,6 @@
     <node concept="2tJIrI" id="1wHCnslhn3w" role="jymVt" />
     <node concept="2YIFZL" id="1wHCnsliLx8" role="jymVt">
       <property role="TrG5h" value="rebalanceTernaryOpAfterParenthing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4kJwM8t7aKp" role="3clF47">
@@ -51699,7 +51690,6 @@
     <node concept="2tJIrI" id="1wHCnsliexa" role="jymVt" />
     <node concept="2YIFZL" id="1wHCnsliEEI" role="jymVt">
       <property role="TrG5h" value="findBottomMostTernary" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4kJwM8t72hV" role="3clF47">
@@ -67083,7 +67073,6 @@
     </node>
     <node concept="3clFb_" id="1e$ObwPEu3w" role="jymVt">
       <property role="TrG5h" value="withJump" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1e$ObwPEnsC" role="3clF47">

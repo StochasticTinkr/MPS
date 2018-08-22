@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="vq2z" ref="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)" />
@@ -49,9 +49,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1181,7 +1178,6 @@
     <node concept="2tJIrI" id="Z_z4A2aZTB" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwHY" role="jymVt">
       <property role="TrG5h" value="fromDeque" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUwHZ" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUwI0" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -1520,7 +1516,6 @@
     <node concept="2tJIrI" id="Z_z4A2azcY" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwJP" role="jymVt">
       <property role="TrG5h" value="fromDequeAndArray" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUwJQ" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUwJR" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -1570,7 +1565,6 @@
     <node concept="2tJIrI" id="3lc436X5a0d" role="jymVt" />
     <node concept="2YIFZL" id="3lc436X4UoP" role="jymVt">
       <property role="TrG5h" value="fromDequeAndArrayNew" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3lc436X4UoQ" role="1B3o_S" />
       <node concept="16euLQ" id="3lc436X4UoR" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -1862,7 +1856,6 @@
     <node concept="2tJIrI" id="Z_z4A2cu0q" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwLF" role="jymVt">
       <property role="TrG5h" value="fromDequeWithValues" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUwLG" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUwLH" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -1914,7 +1907,6 @@
     </node>
     <node concept="2YIFZL" id="3lc436X5lTM" role="jymVt">
       <property role="TrG5h" value="fromDequeWithValuesNew" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3lc436X5lTN" role="1B3o_S" />
       <node concept="16euLQ" id="3lc436X5lTO" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -11499,7 +11491,6 @@
     </node>
     <node concept="2YIFZL" id="5Ffu4tBUyzE" role="jymVt">
       <property role="TrG5h" value="fromLinkedList" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUyzF" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUyzG" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -11537,7 +11528,6 @@
     </node>
     <node concept="2YIFZL" id="6gPw0iAREgp" role="jymVt">
       <property role="TrG5h" value="fromLinkedListNew" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6gPw0iAREgq" role="1B3o_S" />
       <node concept="16euLQ" id="6gPw0iAREgr" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -11869,7 +11859,6 @@
     <node concept="2tJIrI" id="Z_z4A2dssN" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUy_I" role="jymVt">
       <property role="TrG5h" value="fromListAndArray" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUy_J" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUy_K" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -12211,7 +12200,6 @@
     <node concept="2tJIrI" id="Z_z4A2eym2" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUyBA" role="jymVt">
       <property role="TrG5h" value="fromListWithValues" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Ffu4tBUyBB" role="1B3o_S" />
       <node concept="16euLQ" id="5Ffu4tBUyBC" role="16eVyc">
         <property role="TrG5h" value="U" />
@@ -26131,7 +26119,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="2uw4Ef3uMtj" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="add" />
       <property role="DiZV1" value="false" />
@@ -26160,7 +26147,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="2uw4Ef3uMtV" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="remove" />
       <property role="DiZV1" value="false" />

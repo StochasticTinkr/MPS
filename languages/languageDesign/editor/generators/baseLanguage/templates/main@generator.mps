@@ -215,9 +215,6 @@
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -877,11 +874,11 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1044,7 +1041,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getContextHints" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="1W57fq" id="6xjWUW6Y23N" role="lGtFl">
         <node concept="3IZrLx" id="6xjWUW6Y23P" role="3IZSJc">
           <node concept="3clFbS" id="6xjWUW6Y23R" role="2VODD2">
@@ -2330,7 +2326,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getContextHints" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="xXGiAalDbe" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
@@ -3227,7 +3222,6 @@
           </node>
         </node>
         <node concept="3clFb_" id="2WcEKA83OE7" role="jymVt">
-          <property role="IEkAT" value="false" />
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getAnchorNode" />
           <property role="DiZV1" value="false" />
@@ -3279,7 +3273,6 @@
           </node>
         </node>
         <node concept="3clFb_" id="bZz9sGBtcj" role="jymVt">
-          <property role="IEkAT" value="false" />
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getNodesForList" />
           <property role="DiZV1" value="false" />
@@ -3298,7 +3291,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createNodeCell" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="4AmByE8ROYd" role="1B3o_S" />
           <node concept="3uibUv" id="4AmByE8ROYf" role="3clF45">
             <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
@@ -3325,7 +3317,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createEmptyCell" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tmbuc" id="4AmByE8ROYo" role="1B3o_S" />
           <node concept="3uibUv" id="4AmByE8ROYq" role="3clF45">
             <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
@@ -3346,7 +3337,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createNodeToInsert" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="4AmByE8ROYx" role="1B3o_S" />
           <node concept="3uibUv" id="4AmByE8ROYz" role="3clF45">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -6302,7 +6292,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="canExecute" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="301qoOzKywt" role="1B3o_S" />
         <node concept="10P_77" id="301qoOzKywv" role="3clF45" />
         <node concept="37vLTG" id="301qoOzKyww" role="3clF46">
@@ -6838,7 +6827,6 @@
       <node concept="3Tm1VV" id="h9AO$xP" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="42Cv_c9rGVK" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createActions" />
       <property role="DiZV1" value="false" />
@@ -7383,7 +7371,6 @@
         <ref role="3uigEE" to="6lvu:~SubstituteInfoPartExt" resolve="SubstituteInfoPartExt" />
       </node>
       <node concept="3clFb_" id="6lizslHiH8r" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="createActions" />
         <property role="DiZV1" value="false" />
@@ -8838,7 +8825,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createCell" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="1W57fq" id="4R_sg7WG5ko" role="lGtFl">
             <node concept="3IZrLx" id="4R_sg7WG5kq" role="3IZSJc">
               <node concept="3clFbS" id="4R_sg7WG5ks" role="2VODD2">
@@ -9013,7 +8999,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createEmptyCell" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tmbuc" id="4yOeMfyMZz1" role="1B3o_S" />
           <node concept="3uibUv" id="4yOeMfyMZz3" role="3clF45">
             <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
@@ -9295,7 +9280,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getNoTargetText" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="1W57fq" id="1_nYtus_$Up" role="lGtFl">
             <node concept="3IZrLx" id="1_nYtus_$Us" role="3IZSJc">
               <node concept="3clFbS" id="1_nYtus_$Ut" role="2VODD2">
@@ -10267,7 +10251,6 @@
           </node>
         </node>
         <node concept="3clFb_" id="6lizslFdYjw" role="jymVt">
-          <property role="IEkAT" value="false" />
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="isReferentPresentation" />
           <property role="DiZV1" value="false" />
@@ -11267,7 +11250,6 @@
           </node>
         </node>
         <node concept="3clFb_" id="6lizslFdDWs" role="jymVt">
-          <property role="IEkAT" value="false" />
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="isReferentPresentation" />
           <property role="DiZV1" value="false" />
@@ -12521,7 +12503,6 @@
           </node>
         </node>
         <node concept="3clFb_" id="6lizslFd1kG" role="jymVt">
-          <property role="IEkAT" value="false" />
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="isReferentPresentation" />
           <property role="DiZV1" value="false" />
@@ -19071,7 +19052,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="createEditorCell" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="4AmByE8SpPZ" role="1B3o_S" />
         <node concept="3uibUv" id="4AmByE8SpQ1" role="3clF45">
           <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
@@ -22494,7 +22474,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7GwiKMqakkE" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDeclaredEditors" />
       <property role="DiZV1" value="false" />
@@ -23500,7 +23479,6 @@
     </node>
     <node concept="2tJIrI" id="6yV131udnVG" role="jymVt" />
     <node concept="3clFb_" id="4hRXeBhey$B" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getStyleAttribute" />
       <property role="DiZV1" value="false" />
@@ -29887,7 +29865,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createInnerCells" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="1W57fq" id="XrrhtvD5FO" role="lGtFl">
             <node concept="3IZrLx" id="XrrhtvD5FP" role="3IZSJc">
               <node concept="3clFbS" id="XrrhtvD5FQ" role="2VODD2">
@@ -30128,7 +30105,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="accept" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="XrrhtvD5Hp" role="1B3o_S" />
           <node concept="10P_77" id="XrrhtvD5Hq" role="3clF45" />
           <node concept="37vLTG" id="XrrhtvD5Hr" role="3clF46">
@@ -30173,7 +30149,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getModuleReference" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="XrrhtvD5HG" role="1B3o_S" />
           <node concept="17QB3L" id="XrrhtvD5HH" role="3clF45" />
           <node concept="3clFbS" id="XrrhtvD5HI" role="3clF47">
@@ -34588,7 +34563,6 @@
                         </node>
                         <node concept="3Tm1VV" id="u0TBa47Gx_" role="1B3o_S" />
                         <node concept="3clFb_" id="u0TBa47GxA" role="jymVt">
-                          <property role="IEkAT" value="false" />
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="compute" />
                           <property role="DiZV1" value="false" />
@@ -40306,7 +40280,6 @@
                         </node>
                         <node concept="3Tm1VV" id="NO$Q1fcTIi" role="1B3o_S" />
                         <node concept="3clFb_" id="NO$Q1fcTIj" role="jymVt">
-                          <property role="IEkAT" value="false" />
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="compute" />
                           <property role="DiZV1" value="false" />
@@ -50290,7 +50263,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="setRole" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku8Y" role="1B3o_S" />
           <node concept="3cqZAl" id="ntKIfKku8Z" role="3clF45" />
           <node concept="37vLTG" id="ntKIfKku90" role="3clF46">
@@ -50305,7 +50277,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getRoleAttributes" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku94" role="1B3o_S" />
           <node concept="3uibUv" id="ntKIfKku95" role="3clF45">
             <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
@@ -50341,7 +50312,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getRoleAttribute" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku9i" role="1B3o_S" />
           <node concept="3uibUv" id="ntKIfKku9j" role="3clF45">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -50356,7 +50326,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getRoleAttributeClass" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku9o" role="1B3o_S" />
           <node concept="3uibUv" id="ntKIfKku9p" role="3clF45">
             <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
@@ -50371,7 +50340,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createDefaultSubstituteInfo" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku9u" role="1B3o_S" />
           <node concept="3uibUv" id="ntKIfKku9v" role="3clF45">
             <ref role="3uigEE" to="f4zo:~SubstituteInfo" resolve="SubstituteInfo" />
@@ -50386,7 +50354,6 @@
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="createEditorCell" />
           <property role="DiZV1" value="false" />
-          <property role="IEkAT" value="false" />
           <node concept="3Tm1VV" id="ntKIfKku9$" role="1B3o_S" />
           <node concept="3uibUv" id="ntKIfKku9_" role="3clF45">
             <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />

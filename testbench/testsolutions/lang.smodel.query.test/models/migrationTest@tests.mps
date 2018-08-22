@@ -4,7 +4,7 @@
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
   </languages>
@@ -178,7 +178,7 @@
                         <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                         <node concept="2ShNRf" id="3eDPCSVuh7y" role="37wK5m">
                           <node concept="1pGfFk" id="3eDPCSVuh7z" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
                             <node concept="BaHAS" id="3eDPCSVuh7$" role="37wK5m">
                               <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
                               <property role="BaGAP" value="tests" />
@@ -199,7 +199,7 @@
                   <node concept="psT0i" id="3eDPCSVuh7D" role="psT0v">
                     <node concept="2ShNRf" id="3eDPCSVuh7E" role="psT0h">
                       <node concept="1pGfFk" id="3eDPCSVuh7F" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
                         <node concept="BaHAS" id="3eDPCSVuh7G" role="37wK5m">
                           <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
                           <property role="BaGAP" value="tests" />
@@ -229,7 +229,7 @@
                                     <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                                     <node concept="2ShNRf" id="3eDPCSVuh7V" role="37wK5m">
                                       <node concept="1pGfFk" id="3eDPCSVuh7W" role="2ShVmc">
-                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
                                         <node concept="2OqwBi" id="3eDPCSVuh7X" role="37wK5m">
                                           <node concept="EZOir" id="3eDPCSVuh7Y" role="2Oq$k0" />
                                           <node concept="1uHKPH" id="3eDPCSVuh7Z" role="2OqNvi" />
@@ -260,7 +260,7 @@
                   <node concept="psT0i" id="3eDPCSVuh86" role="psT0v">
                     <node concept="2ShNRf" id="3eDPCSVuh87" role="psT0h">
                       <node concept="1pGfFk" id="3eDPCSVuh88" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
                         <node concept="3rM5sP" id="3eDPCSVuh89" role="37wK5m">
                           <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
                         </node>
@@ -281,7 +281,7 @@
                         <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                         <node concept="2ShNRf" id="3eDPCSVuh8h" role="37wK5m">
                           <node concept="1pGfFk" id="3eDPCSVuh8i" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
                             <node concept="3rM5sP" id="3eDPCSVuh8j" role="37wK5m">
                               <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
                             </node>

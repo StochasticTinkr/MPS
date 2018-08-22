@@ -8,7 +8,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="btf5" ref="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
@@ -69,9 +69,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -5647,7 +5644,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZP5O" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="referenceModified" />
         <property role="DiZV1" value="false" />
@@ -5756,7 +5752,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZPke" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="referenceRemoved" />
         <property role="DiZV1" value="false" />
@@ -5783,7 +5778,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZP5U" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="referenceAdded" />
         <property role="DiZV1" value="false" />
@@ -6458,7 +6452,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZP60" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeChildRemoved" />
         <property role="DiZV1" value="false" />
@@ -6509,7 +6502,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZP66" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="childAdded" />
         <property role="DiZV1" value="false" />
@@ -6558,7 +6550,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZP6c" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="propertyChanged" />
         <property role="DiZV1" value="false" />
@@ -6660,7 +6651,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UEHyztZPpj" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeRootRemoved" />
         <property role="DiZV1" value="false" />
@@ -7127,7 +7117,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createModel" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tmbuc" id="jzhoHG37qS" role="1B3o_S" />
       <node concept="3uibUv" id="jzhoHG37qU" role="3clF45">
@@ -7245,7 +7234,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="save" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="jzhoHG2PBE" role="1B3o_S" />
       <node concept="3cqZAl" id="jzhoHG2PBG" role="3clF45" />
@@ -7315,7 +7303,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="reloadFromSource" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="jzhoHG2RrD" role="1B3o_S" />
       <node concept="3cqZAl" id="jzhoHG2RrF" role="3clF45" />
@@ -7337,7 +7324,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="updateTimestamp" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="jzhoHG2S$8" role="1B3o_S" />
       <node concept="3cqZAl" id="jzhoHG2S$a" role="3clF45" />
@@ -7356,7 +7342,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="needsReloading" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="jzhoHG2S$f" role="1B3o_S" />
       <node concept="10P_77" id="jzhoHG2S$h" role="3clF45" />
@@ -7371,7 +7356,6 @@
     </node>
     <node concept="2tJIrI" id="jzhoHG2R57" role="jymVt" />
     <node concept="3clFb_" id="2ezzEn64cpT" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setPersistenceVersion" />
       <property role="DiZV1" value="false" />
@@ -7422,7 +7406,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="2ezzEn64cq2" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPersistenceVersion" />
       <property role="DiZV1" value="false" />
@@ -7472,7 +7455,6 @@
     </node>
     <node concept="2tJIrI" id="jzhoHG2S36" role="jymVt" />
     <node concept="3clFb_" id="5pHon0g$BVt" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModelFactory" />
       <property role="DiZV1" value="false" />

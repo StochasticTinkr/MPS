@@ -95,9 +95,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -365,7 +362,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="paintComponent" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tmbuc" id="3u6SZi0viWl" role="1B3o_S" />
                       <node concept="3cqZAl" id="3u6SZi0viWm" role="3clF45" />
                       <node concept="37vLTG" id="3u6SZi0viWn" role="3clF46">
@@ -444,7 +440,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getPreferredSize" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="3u6SZi0viWQ" role="1B3o_S" />
                       <node concept="3uibUv" id="3u6SZi0viWR" role="3clF45">
                         <ref role="3uigEE" to="z60i:~Dimension" resolve="Dimension" />
@@ -619,7 +614,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="paintComponent" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tmbuc" id="3u6SZi0vt1m" role="1B3o_S" />
                       <node concept="3cqZAl" id="3u6SZi0vt1n" role="3clF45" />
                       <node concept="37vLTG" id="3u6SZi0vt1o" role="3clF46">
@@ -700,7 +694,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="getPreferredSize" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="3u6SZi0vt1R" role="1B3o_S" />
                       <node concept="3uibUv" id="3u6SZi0vt1S" role="3clF45">
                         <ref role="3uigEE" to="z60i:~Dimension" resolve="Dimension" />

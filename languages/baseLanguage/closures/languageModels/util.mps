@@ -6,7 +6,7 @@
     <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -22,9 +22,6 @@
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -206,7 +203,6 @@
     <node concept="2tJIrI" id="7Qab_gm9Nk3" role="jymVt" />
     <node concept="2YIFZL" id="7Qab_gm9Nk4" role="jymVt">
       <property role="TrG5h" value="functionClassifier" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="7Qab_gm9Nk5" role="3clF46">
         <property role="TrG5h" value="fnClassifierName" />
         <node concept="17QB3L" id="7Qab_gmbI9Q" role="1tU5fm" />
@@ -335,7 +331,6 @@
     <node concept="2tJIrI" id="77D_s0m0eJ6" role="jymVt" />
     <node concept="2YIFZL" id="7Qab_gmkFL3" role="jymVt">
       <property role="TrG5h" value="functionClassifierContainer" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tqbb2" id="7Qab_gmkFND" role="3clF45">
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>

@@ -57,9 +57,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -455,7 +452,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -7659,7 +7656,6 @@
     <node concept="2tJIrI" id="qIwpvNWaYl" role="jymVt" />
     <node concept="2YIFZL" id="qIwpvNWfTr" role="jymVt">
       <property role="TrG5h" value="needsParensInsideCastExpression" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="qIwpvNW9Xd" role="3clF47">
@@ -7772,7 +7768,6 @@
     <node concept="2tJIrI" id="2iI3$d2corb" role="jymVt" />
     <node concept="2YIFZL" id="3VO0F5J53_2" role="jymVt">
       <property role="TrG5h" value="needsParensAroundNotExpression" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3VO0F5J53_3" role="3clF47">
@@ -7882,7 +7877,6 @@
     <node concept="2tJIrI" id="3VO0F5J53a5" role="jymVt" />
     <node concept="2YIFZL" id="2iI3$d2iOv8" role="jymVt">
       <property role="TrG5h" value="findDesiredInstanceOfExpressionRoot" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2iI3$d2iOv9" role="3clF47">
@@ -11070,7 +11064,6 @@
     <property role="TrG5h" value="ModuleDependencyUtils" />
     <node concept="2YIFZL" id="v01Wj46Hrq" role="jymVt">
       <property role="TrG5h" value="addDependencyOnJDKIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="v01Wj46Dqv" role="3clF47">
@@ -11124,7 +11117,6 @@
     </node>
     <node concept="2YIFZL" id="6BkpuGOYpXd" role="jymVt">
       <property role="TrG5h" value="addDependencyOnJavaDocIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6BkpuGOYpXe" role="3clF47">
@@ -11206,7 +11198,6 @@
     </node>
     <node concept="2YIFZL" id="54GdGFn5FyU" role="jymVt">
       <property role="TrG5h" value="addDependencyOnCoreIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="54GdGFn5FyV" role="3clF47">

@@ -18,7 +18,7 @@
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="4dtg" ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" />
@@ -245,9 +245,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -726,7 +723,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -5405,7 +5402,6 @@
                             <property role="1EzhhJ" value="false" />
                             <property role="TrG5h" value="processTerminated" />
                             <property role="DiZV1" value="false" />
-                            <property role="IEkAT" value="false" />
                             <node concept="3Tm1VV" id="6rKhdYuSB4d" role="1B3o_S" />
                             <node concept="3cqZAl" id="6rKhdYuSB4e" role="3clF45" />
                             <node concept="37vLTG" id="6rKhdYuSB4f" role="3clF46">
@@ -6429,7 +6425,6 @@
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3Tm1VV" id="1NEaIjwS1oO" role="1B3o_S" />
                     <node concept="3clFb_" id="1NEaIjwS1oP" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="actionPerformed" />
                       <property role="DiZV1" value="false" />
@@ -7834,7 +7829,6 @@
     <node concept="2tJIrI" id="3m2egpBKEGT" role="jymVt" />
     <node concept="3clFb_" id="_Qgg$$umEy" role="jymVt">
       <property role="TrG5h" value="createNodeChooserDialog" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -8508,7 +8502,6 @@
     </node>
     <node concept="2YIFZL" id="1QpbsT0v3T" role="jymVt">
       <property role="TrG5h" value="createPathFromFullPath" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="7vf_vNz3Sts" role="3clF47">
@@ -8549,7 +8542,6 @@
     </node>
     <node concept="2YIFZL" id="1QpbsT0wRT" role="jymVt">
       <property role="TrG5h" value="createPath" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="7vf_vNz3RH6" role="3clF47">
@@ -8684,7 +8676,6 @@
     </node>
     <node concept="2YIFZL" id="1QpbsT0A4T" role="jymVt">
       <property role="TrG5h" value="makeRelative" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5iAPpylXsc$" role="3clF47">
@@ -11105,7 +11096,6 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="processTerminated" />
                         <property role="DiZV1" value="false" />
-                        <property role="IEkAT" value="false" />
                         <node concept="3Tm1VV" id="5UUV8nCoN8g" role="1B3o_S" />
                         <node concept="3cqZAl" id="5UUV8nCoN8h" role="3clF45" />
                         <node concept="37vLTG" id="5UUV8nCoN8i" role="3clF46">
@@ -11662,7 +11652,6 @@
     </node>
     <node concept="2YIFZL" id="6RaoPJosfox" role="jymVt">
       <property role="TrG5h" value="put" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="true" />
       <node concept="3clFbS" id="6RaoPJos6MT" role="3clF47">
@@ -11710,7 +11699,6 @@
     </node>
     <node concept="2YIFZL" id="6RaoPJosfqu" role="jymVt">
       <property role="TrG5h" value="get" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="true" />
       <node concept="2AHcQZ" id="6RaoPJosfkO" role="2AJF6D">
@@ -11749,7 +11737,6 @@
     </node>
     <node concept="2YIFZL" id="6RaoPJosfuS" role="jymVt">
       <property role="TrG5h" value="remove" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="true" />
       <node concept="3clFbS" id="6RaoPJosfbq" role="3clF47">
@@ -12088,7 +12075,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="destroy" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6I" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12205,7 +12191,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="exitValue" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6M" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12224,7 +12209,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getErrorStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6K" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12245,7 +12229,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getInputStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6L" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12266,7 +12249,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getOutputStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6H" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12292,7 +12274,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="waitFor" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="3L_EFdm_Y6J" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -12314,7 +12295,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="condition" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tmbuc" id="6Aw2OSzjTJc" role="1B3o_S" />
                   <node concept="10P_77" id="6Aw2OSzjTJe" role="3clF45" />
                   <node concept="3clFbS" id="6Aw2OSzjTJf" role="3clF47">
@@ -12611,7 +12591,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="processTerminated" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="1b7CZFPOXrh" role="1B3o_S" />
                       <node concept="3cqZAl" id="1b7CZFPOXri" role="3clF45" />
                       <node concept="37vLTG" id="1b7CZFPOXrj" role="3clF46">
@@ -13295,7 +13274,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="destroyProcessImpl" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="53lh2wVpDoC" role="1B3o_S" />
       <node concept="3cqZAl" id="53lh2wVpDoE" role="3clF45" />
       <node concept="3clFbS" id="53lh2wVpDoF" role="3clF47">
@@ -13376,7 +13354,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getProcessInput" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6aXQB014oF" role="1B3o_S" />
       <node concept="3uibUv" id="6aXQB014oH" role="3clF45">
         <ref role="3uigEE" to="guwi:~OutputStream" resolve="OutputStream" />
@@ -14126,7 +14103,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="run" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="4YWiRa6t9vz" role="1B3o_S" />
                       <node concept="3cqZAl" id="4YWiRa6t9v_" role="3clF45" />
                       <node concept="3clFbS" id="4YWiRa6t9vA" role="3clF47">
@@ -14605,7 +14581,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="destroyProcessImpl" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tmbuc" id="6UQGdBmxSZQ" role="1B3o_S" />
         <node concept="3cqZAl" id="6UQGdBmxSZS" role="3clF45" />
         <node concept="3clFbS" id="6UQGdBmxSZT" role="3clF47">
@@ -14621,7 +14596,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="detachProcessImpl" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tmbuc" id="6UQGdBmxSZW" role="1B3o_S" />
         <node concept="3cqZAl" id="6UQGdBmxSZY" role="3clF45" />
         <node concept="3clFbS" id="6UQGdBmxSZZ" role="3clF47">
@@ -14637,7 +14611,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="detachIsDefault" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="6UQGdBmxT02" role="1B3o_S" />
         <node concept="10P_77" id="6UQGdBmxT04" role="3clF45" />
         <node concept="3clFbS" id="6UQGdBmxT05" role="3clF47">
@@ -14651,7 +14624,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getProcessInput" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="6UQGdBmxT08" role="1B3o_S" />
         <node concept="3uibUv" id="6UQGdBmxT0a" role="3clF45">
           <ref role="3uigEE" to="guwi:~OutputStream" resolve="OutputStream" />
@@ -14670,7 +14642,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="isProcessTerminated" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="7SkPM8aVWI5" role="1B3o_S" />
         <node concept="10P_77" id="7SkPM8aVWI7" role="3clF45" />
         <node concept="3clFbS" id="7SkPM8aVWI9" role="3clF47">
@@ -14689,7 +14660,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="startNotify" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="7SkPM8aXgW8" role="1B3o_S" />
         <node concept="3cqZAl" id="7SkPM8aXgWa" role="3clF45" />
         <node concept="3clFbS" id="7SkPM8aXgWc" role="3clF47">

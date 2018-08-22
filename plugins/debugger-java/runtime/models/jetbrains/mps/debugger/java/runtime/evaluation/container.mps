@@ -10,7 +10,7 @@
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -91,9 +91,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1164,7 +1161,6 @@
                     <node concept="3Tm1VV" id="7XaAmAsUAWT" role="1B3o_S" />
                     <node concept="17QB3L" id="7XaAmAsUAWZ" role="2Ghqu4" />
                     <node concept="3clFb_" id="7XaAmAsUAWU" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="compute" />
                       <property role="DiZV1" value="false" />
@@ -1571,7 +1567,6 @@
       </node>
     </node>
     <node concept="Wx3nA" id="4kSix$ymNst" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="TrG5h" value="LOG" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="4kSix$yn5nU" role="1tU5fm">
@@ -1724,7 +1719,6 @@
     </node>
     <node concept="2tJIrI" id="4AqxpFyU5M" role="jymVt" />
     <node concept="3clFb_" id="29Pb3oJpRIW" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModuleDescriptor" />
       <property role="DiZV1" value="false" />
@@ -1745,7 +1739,6 @@
     </node>
     <node concept="2tJIrI" id="5$fHs$AvxAx" role="jymVt" />
     <node concept="3clFb_" id="15fzu3GFzl0" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="loadRoots" />
       <property role="DiZV1" value="false" />
@@ -2009,7 +2002,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDeclaredDependencies" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="2LPTy715dkf" role="1B3o_S" />
       <node concept="3uibUv" id="2LPTy715dkh" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
@@ -2119,7 +2111,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1tJ4mqhttG2" role="1B3o_S" />
       <node concept="3uibUv" id="1tJ4mqhttG4" role="3clF45">
         <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
@@ -2980,7 +2971,6 @@
         <node concept="3clFbS" id="IYmOvntYjo" role="3clF47" />
       </node>
       <node concept="3clFb_" id="IYmOvntYjp" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="onCompilationResult" />
         <property role="DiZV1" value="false" />

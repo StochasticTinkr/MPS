@@ -12,7 +12,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
@@ -159,9 +159,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1236,7 +1233,6 @@
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="met" />
               <property role="DiZV1" value="false" />
-              <property role="IEkAT" value="false" />
               <node concept="3Tm1VV" id="41oOO0GfmWV" role="1B3o_S" />
               <node concept="10P_77" id="41oOO0GfmWW" role="3clF45" />
               <node concept="37vLTG" id="41oOO0GfmWX" role="3clF46">
@@ -1955,7 +1951,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getIcon" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1aVHDCk5gjU" role="1B3o_S" />
       <node concept="3uibUv" id="1aVHDCk5gjW" role="3clF45">
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
@@ -1974,7 +1969,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getType" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1aVHDCk5gk5" role="1B3o_S" />
       <node concept="3uibUv" id="1aVHDCk5gk7" role="3clF45">
         <ref role="3uigEE" to="exr9:~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
@@ -1993,7 +1987,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getAnchorCell" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1aVHDCk5gkg" role="1B3o_S" />
       <node concept="3uibUv" id="1aVHDCk5gki" role="3clF45">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
@@ -2077,7 +2070,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getClickAction" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1aVHDCk5gkt" role="1B3o_S" />
       <node concept="3uibUv" id="1aVHDCk5gkv" role="3clF45">
         <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />

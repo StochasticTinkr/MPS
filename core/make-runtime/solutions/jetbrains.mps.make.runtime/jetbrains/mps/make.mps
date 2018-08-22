@@ -6,7 +6,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
@@ -39,9 +39,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -900,7 +897,6 @@
     <node concept="2tJIrI" id="3RANN3aP9FN" role="jymVt" />
     <node concept="3clFb_" id="1AfPmE4tJU7" role="jymVt">
       <property role="TrG5h" value="isSticky" />
-      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="1AfPmE4tJUc" role="3clF45" />
       <node concept="3Tm1VV" id="1AfPmE4tJU9" role="1B3o_S" />
       <node concept="3clFbS" id="1AfPmE4tJUa" role="3clF47">
@@ -1034,7 +1030,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7lTD6YZthQH" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSource" />
       <property role="DiZV1" value="false" />

@@ -11,7 +11,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -74,9 +74,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -401,11 +398,11 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -2223,7 +2220,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getPresentableAspectName" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Y$EcRKMn5j" role="1B3o_S" />
                   <node concept="3uibUv" id="2Y$EcRKMn5l" role="3clF45">
                     <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -2381,7 +2377,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="hasAspect" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="4r8JClTmVGo" role="1B3o_S" />
                   <node concept="10P_77" id="4r8JClTmVGq" role="3clF45" />
                   <node concept="37vLTG" id="4r8JClTmVGr" role="3clF46">
@@ -2450,7 +2445,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getAspectModels" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Sw9hCAHQcg" role="1B3o_S" />
                   <node concept="3uibUv" id="2Sw9hCAHQci" role="3clF45">
                     <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
@@ -2502,7 +2496,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getDefaultDevkit" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Sw9hCAHQcp" role="1B3o_S" />
                   <node concept="3uibUv" id="78qQRpbiL1h" role="3clF45">
                     <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
@@ -2565,7 +2558,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getMainLanguages" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="78qQRpbiHuU" role="1B3o_S" />
                   <node concept="3uibUv" id="78qQRpbiHuV" role="3clF45">
                     <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
@@ -2611,7 +2603,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getGenerator" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="4r8JClTmUy2" role="1B3o_S" />
                   <node concept="3uibUv" id="4YpmBa67gWg" role="3clF45">
                     <ref role="3uigEE" to="vndm:~LanguageAspectGenerator" resolve="LanguageAspectGenerator" />
@@ -2654,7 +2645,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getAdditionalLanguages" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Sw9hCAHQr1" role="1B3o_S" />
                   <node concept="3uibUv" id="2Sw9hCAHQr3" role="3clF45">
                     <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
@@ -2720,7 +2710,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getIcon" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Sw9hCAHQrb" role="1B3o_S" />
                   <node concept="3uibUv" id="2Sw9hCAHQrd" role="3clF45">
                     <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
@@ -2783,7 +2772,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getIconResource" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2DdXZ8RCVwO" role="1B3o_S" />
                   <node concept="3uibUv" id="2DdXZ8RD0E5" role="3clF45">
                     <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
@@ -2846,7 +2834,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getHelpUrl" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="2Sw9hCAHQrl" role="1B3o_S" />
                   <node concept="3uibUv" id="2Sw9hCAHQrn" role="3clF45">
                     <ref role="3uigEE" to="wyt6:~String" resolve="String" />

@@ -86,9 +86,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -15035,7 +15032,6 @@
     </node>
     <node concept="2YIFZL" id="_dGddVGbND" role="jymVt">
       <property role="TrG5h" value="forNamedElements" />
-      <property role="IEkAT" value="false" />
       <node concept="3clFbS" id="_dGddVGbNE" role="3clF47">
         <node concept="3cpWs6" id="_dGddVGbNF" role="3cqZAp">
           <node concept="2ShNRf" id="_dGddVGbNG" role="3cqZAk">

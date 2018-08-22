@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
@@ -95,9 +95,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -589,7 +586,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7mrRUyVUv3h" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
@@ -674,7 +670,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7mrRUyVUv3q" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
@@ -718,7 +713,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7mrRUyVUv3z" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />
@@ -780,7 +774,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7mrRUyVUv1X" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeFileMovement" />
         <property role="DiZV1" value="false" />
@@ -847,7 +840,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7mrRUyVUv27" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeFileDeletion" />
         <property role="DiZV1" value="false" />
@@ -914,7 +906,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7mrRUyVUv2h" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="fileCreated" />
         <property role="DiZV1" value="false" />
@@ -941,7 +932,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7mrRUyVUv2r" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="contentsChanged" />
         <property role="DiZV1" value="false" />
@@ -3984,7 +3974,6 @@
       </node>
       <node concept="2tJIrI" id="15VbAzMDwEY" role="jymVt" />
       <node concept="3clFb_" id="4kWM61TLH_l" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getCreated" />
         <property role="DiZV1" value="false" />
@@ -4008,7 +3997,6 @@
       </node>
       <node concept="2tJIrI" id="15VbAzMDvYr" role="jymVt" />
       <node concept="3clFb_" id="4kWM61TLH_t" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getRemoved" />
         <property role="DiZV1" value="false" />
@@ -4032,7 +4020,6 @@
       </node>
       <node concept="2tJIrI" id="15VbAzMDtQV" role="jymVt" />
       <node concept="3clFb_" id="4kWM61TLH__" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getChanged" />
         <property role="DiZV1" value="false" />
@@ -4056,7 +4043,6 @@
       </node>
       <node concept="2tJIrI" id="15VbAzMDy2V" role="jymVt" />
       <node concept="3clFb_" id="4kWM61TLH_H" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="notify" />
         <property role="DiZV1" value="false" />
@@ -6615,7 +6601,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="491od_XFHff" role="1B3o_S" />
       <node concept="3cqZAl" id="491od_XFHfh" role="3clF45" />
       <node concept="3clFbS" id="491od_XFHfj" role="3clF47">
@@ -6639,7 +6624,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="491od_XFHfl" role="1B3o_S" />
       <node concept="3cqZAl" id="491od_XFHfn" role="3clF45" />
       <node concept="3clFbS" id="491od_XFHfp" role="3clF47">
@@ -6663,7 +6647,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="491od_XFHfr" role="1B3o_S" />
       <node concept="17QB3L" id="7f2aAtsRXD" role="3clF45" />
       <node concept="2AHcQZ" id="491od_XFHfu" role="2AJF6D">
@@ -7237,7 +7220,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="run" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="491od_XOB1j" role="1B3o_S" />
                       <node concept="3cqZAl" id="491od_XOB1l" role="3clF45" />
                       <node concept="3clFbS" id="491od_XOB1m" role="3clF47">
@@ -8199,7 +8181,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="501K0YLMPT2" role="1B3o_S" />
       <node concept="3cqZAl" id="501K0YLMPT3" role="3clF45" />
       <node concept="3clFbS" id="501K0YLMPT4" role="3clF47" />
@@ -8212,7 +8193,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="501K0YLMPTa" role="1B3o_S" />
       <node concept="3cqZAl" id="501K0YLMPTb" role="3clF45" />
       <node concept="3clFbS" id="501K0YLMPTc" role="3clF47" />
@@ -8225,7 +8205,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="501K0YLMPTh" role="1B3o_S" />
       <node concept="3uibUv" id="501K0YLMPTi" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />

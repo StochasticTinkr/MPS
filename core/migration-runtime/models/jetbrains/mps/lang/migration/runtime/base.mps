@@ -8,7 +8,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
@@ -78,9 +78,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -860,7 +857,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1NDJCs$tU9G" role="1B3o_S" />
       <node concept="3uibUv" id="1NDJCs$tU9I" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -1388,7 +1384,6 @@
     </node>
     <node concept="2YIFZL" id="1xD045lUzw4" role="jymVt">
       <property role="TrG5h" value="createSNodePlacePointer" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1xD045lUzeo" role="3clF47">
@@ -4242,7 +4237,6 @@
     <property role="TrG5h" value="MigrationModuleUtil" />
     <node concept="2YIFZL" id="3UfGsecu96H" role="jymVt">
       <property role="TrG5h" value="getMigrateableModulesFromProject" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3UfGsecu96I" role="3clF47">
@@ -4410,7 +4404,6 @@
     <node concept="2tJIrI" id="421YN4uWqcq" role="jymVt" />
     <node concept="2YIFZL" id="3UfGsecu9ay" role="jymVt">
       <property role="TrG5h" value="getModuleDependencies" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3UfGsecu9az" role="3clF47">
@@ -4482,7 +4475,6 @@
     <node concept="2tJIrI" id="421YN4uWqcr" role="jymVt" />
     <node concept="2YIFZL" id="79xDgbhf49e" role="jymVt">
       <property role="TrG5h" value="getUsedLanguages" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="79xDgbhf49f" role="3clF47">
@@ -5429,7 +5421,6 @@
     <node concept="3clFb_" id="6fMyXCHoysg" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="execute" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="6fMyXCHoysh" role="3clF46">
         <property role="TrG5h" value="module" />
         <node concept="3uibUv" id="6fMyXCHoysi" role="1tU5fm">
@@ -6374,7 +6365,6 @@
     <node concept="3clFb_" id="4uVwhQyPD5m" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="execute" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="4uVwhQyPD5n" role="3clF46">
         <property role="TrG5h" value="module" />
         <node concept="3uibUv" id="4uVwhQyPD5o" role="1tU5fm">

@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="bfxj" ref="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" />
@@ -73,9 +73,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1338,7 +1335,6 @@
         <node concept="3clFbS" id="7YINie3ra30" role="3clF47" />
       </node>
       <node concept="3clFb_" id="7YINie3rdgK" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="counterZero" />
         <property role="DiZV1" value="false" />
@@ -1368,7 +1364,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7YINie3rdgD" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="counterNonZero" />
         <property role="DiZV1" value="false" />
@@ -1525,7 +1520,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="4oT3Lbm4LSE" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
@@ -1551,7 +1545,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="4oT3Lbm4LSA" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
@@ -3316,7 +3309,6 @@
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="compute" />
                     <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
                     <node concept="3Tmbuc" id="4Ji_XZ8eDAV" role="1B3o_S" />
                     <node concept="3uibUv" id="4Ji_XZ8eDB3" role="3clF45">
                       <ref role="3uigEE" to="7e8u:~TreeMessage" resolve="TreeMessage" />
@@ -4031,7 +4023,6 @@
             <node concept="3Tm1VV" id="3KFSf9tVBPw" role="1B3o_S" />
             <node concept="Xjq3P" id="3KFSf9tVQKX" role="37wK5m" />
             <node concept="3clFb_" id="3KFSf9tVBPy" role="jymVt">
-              <property role="IEkAT" value="false" />
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="run" />
               <property role="DiZV1" value="false" />
@@ -4753,7 +4744,6 @@
         <node concept="3clFbS" id="7YINie3rltD" role="3clF47" />
       </node>
       <node concept="3clFb_" id="7YINie3rltX" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="treeNodeAdded" />
         <property role="DiZV1" value="false" />
@@ -4786,7 +4776,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7YINie3rltP" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="treeNodeRemoved" />
         <property role="DiZV1" value="false" />
@@ -4819,7 +4808,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7YINie3rltH" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="treeNodeUpdated" />
         <property role="DiZV1" value="false" />
@@ -4932,7 +4920,6 @@
         <node concept="3clFbS" id="X3XwAyv_W" role="3clF47" />
       </node>
       <node concept="3clFb_" id="X3XwAyv_Z" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="fileStatusChanged" />
         <property role="DiZV1" value="false" />
@@ -5020,7 +5007,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="X3XwAyvA6" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="fileStatusesChanged" />
         <property role="DiZV1" value="false" />
@@ -5046,7 +5032,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="isIncluded" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tmbuc" id="tk8S9S$koY" role="1B3o_S" />
         <node concept="10P_77" id="tk8S9S$kp0" role="3clF45" />
         <node concept="37vLTG" id="tk8S9S$kp1" role="3clF46">
@@ -5077,7 +5062,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeModelRemoved" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="tk8S9S$6Jp" role="1B3o_S" />
         <node concept="3cqZAl" id="tk8S9S$6Jr" role="3clF45" />
         <node concept="37vLTG" id="tk8S9S$6Js" role="3clF46">
@@ -6527,7 +6511,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="32hQGdSIr4T" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="attach" />
       <property role="DiZV1" value="false" />

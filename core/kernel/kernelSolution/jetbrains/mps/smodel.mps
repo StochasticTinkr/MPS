@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -51,9 +51,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -366,7 +363,6 @@
   </registry>
   <node concept="312cEu" id="4pBxc6EfAk4">
     <property role="TrG5h" value="BootstrapLanguages" />
-    <property role="IEkAT" value="false" />
     <node concept="3Tm1VV" id="4pBxc6EfAk5" role="1B3o_S" />
     <node concept="3clFbW" id="4pBxc6EfAk6" role="jymVt">
       <node concept="3Tm6S6" id="6jj_XLNiMIA" role="1B3o_S" />
@@ -1880,7 +1876,6 @@
     </node>
     <node concept="2YIFZL" id="7vc5PjWu3AY" role="jymVt">
       <property role="TrG5h" value="isDefaultSubstitutable" />
-      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="7vc5PjWu3AZ" role="3clF45" />
       <node concept="3Tm1VV" id="7vc5PjWu3B0" role="1B3o_S" />
       <node concept="3clFbS" id="7vc5PjWu3B1" role="3clF47">
@@ -2932,7 +2927,6 @@
       </node>
     </node>
     <node concept="2YIFZL" id="5hkhCOa5zXt" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="isSideTransformInfo" />

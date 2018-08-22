@@ -7,7 +7,7 @@
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -100,9 +100,6 @@
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -765,7 +762,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLk_LM" role="1B3o_S" />
       <node concept="3uibUv" id="5$tYEQLk_LO" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -1688,7 +1684,6 @@
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3Tm1VV" id="3UdhnxHunsV" role="1B3o_S" />
                     <node concept="3clFb_" id="3UdhnxHunsW" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="stateChanged" />
                       <property role="DiZV1" value="false" />
@@ -2977,7 +2972,6 @@
                     <ref role="1Y3XeK" to="hyam:~ItemListener" resolve="ItemListener" />
                     <node concept="3Tm1VV" id="3UdhnxHun_3" role="1B3o_S" />
                     <node concept="3clFb_" id="3UdhnxHun_4" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="itemStateChanged" />
                       <property role="DiZV1" value="false" />
@@ -3565,7 +3559,6 @@
     <node concept="2tJIrI" id="3LDnrFijdeK" role="jymVt" />
     <node concept="2tJIrI" id="3LDnrFij8Uq" role="jymVt" />
     <node concept="3clFb_" id="3UdhnxHunCG" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDimensionServiceKey" />
       <property role="DiZV1" value="false" />
@@ -4133,7 +4126,6 @@
                       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                       <node concept="3Tm1VV" id="3UdhnxHuniY" role="1B3o_S" />
                       <node concept="3clFb_" id="3UdhnxHuniZ" role="jymVt">
-                        <property role="IEkAT" value="false" />
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="actionPerformed" />
                         <property role="DiZV1" value="false" />
@@ -4313,7 +4305,6 @@
                       <ref role="1Y3XeK" to="hyam:~ActionListener" resolve="ActionListener" />
                       <node concept="3Tm1VV" id="3UdhnxHunk5" role="1B3o_S" />
                       <node concept="3clFb_" id="3UdhnxHunk6" role="jymVt">
-                        <property role="IEkAT" value="false" />
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="actionPerformed" />
                         <property role="DiZV1" value="false" />
@@ -6684,7 +6675,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuoJZ" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -6865,7 +6855,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuoL0" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createActions" />
       <property role="DiZV1" value="false" />
@@ -6900,7 +6889,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuoLc" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createDefaultActions" />
       <property role="DiZV1" value="false" />
@@ -6925,7 +6913,6 @@
                     <property role="Xl_RC" value="Ignore" />
                   </node>
                   <node concept="3clFb_" id="3UdhnxHuoLo" role="jymVt">
-                    <property role="IEkAT" value="false" />
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="doAction" />
                     <property role="DiZV1" value="false" />
@@ -7152,7 +7139,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLkTgJ" role="1B3o_S" />
       <node concept="17QB3L" id="6IL1Wh7vLjm" role="3clF45" />
       <node concept="2AHcQZ" id="5$tYEQLkTgM" role="2AJF6D">
@@ -7645,7 +7631,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuoPB" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -8286,7 +8271,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuoQV" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createNorthPanel" />
       <property role="DiZV1" value="false" />
@@ -8521,7 +8505,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UdhnxHuoQH" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="doAction" />
         <property role="DiZV1" value="false" />
@@ -10120,7 +10103,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuqRv" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -10283,7 +10265,6 @@
                                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                     <node concept="3Tm1VV" id="3UdhnxHuqSw" role="1B3o_S" />
                                     <node concept="3clFb_" id="3UdhnxHuqSx" role="jymVt">
-                                      <property role="IEkAT" value="false" />
                                       <property role="1EzhhJ" value="false" />
                                       <property role="TrG5h" value="run" />
                                       <property role="DiZV1" value="false" />
@@ -10479,7 +10460,6 @@
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3Tm1VV" id="3UdhnxHuqTF" role="1B3o_S" />
                     <node concept="3clFb_" id="3UdhnxHuqTG" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="valueChanged" />
                       <property role="DiZV1" value="false" />
@@ -10676,7 +10656,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHuqUP" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDimensionServiceKey" />
       <property role="DiZV1" value="false" />
@@ -11430,7 +11409,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHurrU" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -11484,7 +11462,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHursd" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createActions" />
       <property role="DiZV1" value="false" />
@@ -11546,7 +11523,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="3UdhnxHursy" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doCancelAction" />
       <property role="DiZV1" value="false" />
@@ -11657,7 +11633,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="3UdhnxHurr2" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="doAction" />
         <property role="DiZV1" value="false" />
@@ -11806,7 +11781,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="8qS5$Sa7F" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -12005,7 +11979,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLlmnh" role="1B3o_S" />
       <node concept="3uibUv" id="5$tYEQLlmni" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -12145,7 +12118,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLlrhf" role="1B3o_S" />
       <node concept="3uibUv" id="5$tYEQLlrhg" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -12633,7 +12605,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="8qS5$Sacq" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -13135,7 +13106,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLlgPy" role="1B3o_S" />
       <node concept="3uibUv" id="5$tYEQLlgP$" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -14228,7 +14198,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="20bjHOQZ_G9" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPreferredFocusedComponent" />
       <property role="DiZV1" value="false" />
@@ -14916,7 +14885,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="actionPerformed" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="AHtc5B5S74" role="1B3o_S" />
         <node concept="3cqZAl" id="AHtc5B5S76" role="3clF45" />
         <node concept="37vLTG" id="AHtc5B5S77" role="3clF46">

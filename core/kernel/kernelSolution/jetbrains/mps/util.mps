@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
@@ -76,9 +76,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -3200,7 +3197,6 @@
     </node>
     <node concept="2YIFZL" id="1NYD3hytmTb" role="jymVt">
       <property role="TrG5h" value="isAncestor" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwESt" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3279,7 +3275,6 @@
     </node>
     <node concept="2YIFZL" id="1NYD3hytmTx" role="jymVt">
       <property role="TrG5h" value="getChildren" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwF6x" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3401,7 +3396,6 @@
     </node>
     <node concept="2YIFZL" id="1NYD3hytmUm" role="jymVt">
       <property role="TrG5h" value="findParent" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwHoF" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3518,7 +3512,6 @@
     </node>
     <node concept="2YIFZL" id="1NYD3hytmUG" role="jymVt">
       <property role="TrG5h" value="getProperties" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwHrt" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3626,7 +3619,6 @@
     </node>
     <node concept="2YIFZL" id="1GH7SoqRSvj" role="jymVt">
       <property role="TrG5h" value="getChildRoles" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwIOU" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3717,7 +3709,6 @@
     </node>
     <node concept="2YIFZL" id="1GH7SoqRZJd" role="jymVt">
       <property role="TrG5h" value="getReferences" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwIRF" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3806,7 +3797,6 @@
     </node>
     <node concept="2YIFZL" id="1GH7SoqS5UT" role="jymVt">
       <property role="TrG5h" value="getChildren" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwK2l" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3857,7 +3847,6 @@
     </node>
     <node concept="2YIFZL" id="1GH7SoqTdh9" role="jymVt">
       <property role="TrG5h" value="getReferenceRoles" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwK4N" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -3951,7 +3940,6 @@
     </node>
     <node concept="2YIFZL" id="2k9fL4dNTIq" role="jymVt">
       <property role="TrG5h" value="isRoot" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwKHj" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4009,7 +3997,6 @@
     </node>
     <node concept="2YIFZL" id="7U87j6$6ALH" role="jymVt">
       <property role="TrG5h" value="getDebugText" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwPiH" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4465,7 +4452,6 @@
       <property role="TrG5h" value="getChildRoles" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwQdP" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4584,7 +4570,6 @@
       <property role="TrG5h" value="getChild" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwQkL" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4682,7 +4667,6 @@
       <property role="TrG5h" value="getChild" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwQss" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4778,7 +4762,6 @@
     </node>
     <node concept="2YIFZL" id="5T4fSAVTi9j" role="jymVt">
       <property role="TrG5h" value="getResolveInfo" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwYaH" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4864,7 +4847,6 @@
     </node>
     <node concept="2YIFZL" id="7k$Fr3Jva2a" role="jymVt">
       <property role="TrG5h" value="copyProperties" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwXdP" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -4936,7 +4918,6 @@
     </node>
     <node concept="2YIFZL" id="7k$Fr3Jvi56" role="jymVt">
       <property role="TrG5h" value="copyUserObjects" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezwQBP" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5011,7 +4992,6 @@
     <node concept="2YIFZL" id="7Yvyxcb_4ZV" role="jymVt">
       <property role="TrG5h" value="getTargetNodeSilently" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx05$" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5089,7 +5069,6 @@
     <node concept="2YIFZL" id="7WvVJ3rO1Xl" role="jymVt">
       <property role="TrG5h" value="getModelStereotype" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx07I" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5136,7 +5115,6 @@
     <node concept="2YIFZL" id="7WvVJ3rORmu" role="jymVt">
       <property role="TrG5h" value="getModelLongName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx09I" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5187,7 +5165,6 @@
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="isModelDisposed" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx0bE" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5234,7 +5211,6 @@
     <node concept="2YIFZL" id="7wd6Nbj7B3L" role="jymVt">
       <property role="TrG5h" value="nodesCount" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx0ee" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5279,7 +5255,6 @@
     <node concept="2YIFZL" id="4jWopqr7edM" role="jymVt">
       <property role="TrG5h" value="isRegistered" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx0hR" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
@@ -5320,7 +5295,6 @@
       <property role="TrG5h" value="isGeneratable" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="2AHcQZ" id="2DYuqezx0jX" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>

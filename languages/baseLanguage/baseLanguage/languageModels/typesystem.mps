@@ -95,9 +95,6 @@
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
         <child id="2820489544402271667" name="typeParameter" index="HU9BZ" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
         <child id="363746191845183793" name="loopLabel" index="3Wmhwa" />
@@ -735,11 +732,11 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -747,7 +744,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -30723,7 +30720,7 @@
                   <ref role="3cqZAo" node="2r0d$DFaQc0" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="2r0d$DFaQcs" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="2r0d$DFaQct" role="37wK5m">
                     <ref role="2Gs0qQ" node="2r0d$DFaQc6" resolve="overridingMethod" />
                   </node>
@@ -31089,7 +31086,7 @@
                   <ref role="3cqZAo" node="1oBkklPU9ei" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="1oBkklPU9e_" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="1oBkklPU9eA" role="37wK5m">
                     <ref role="2Gs0qQ" node="1oBkklPU9eo" resolve="overridingMethod" />
                   </node>
@@ -45823,7 +45820,7 @@
                   <ref role="3cqZAo" node="7LqRtP_PkRE" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="7LqRtP_PkRX" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="7LqRtP_PkRY" role="37wK5m">
                     <ref role="2Gs0qQ" node="7LqRtP_PkRK" resolve="overridingMethod" />
                   </node>
@@ -49523,7 +49520,6 @@
     <property role="1EXbeo" value="true" />
     <node concept="2YIFZL" id="3t6zZhSY0FH" role="jymVt">
       <property role="TrG5h" value="retrieveClassifier" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3t6zZhSXPue" role="3clF47">

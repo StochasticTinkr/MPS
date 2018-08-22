@@ -9,7 +9,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="sfqd" ref="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)" />
@@ -60,9 +60,6 @@
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -1053,7 +1050,6 @@
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="processTerminated" />
                           <property role="DiZV1" value="false" />
-                          <property role="IEkAT" value="false" />
                           <node concept="3Tm1VV" id="5vTxdEzAlxN" role="1B3o_S" />
                           <node concept="3cqZAl" id="5vTxdEzAlxP" role="3clF45" />
                           <node concept="37vLTG" id="5vTxdEzAlxQ" role="3clF46">
@@ -1327,7 +1323,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="condition" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tmbuc" id="xTUx3Lkz22" role="1B3o_S" />
                   <node concept="10P_77" id="xTUx3Lkz23" role="3clF45" />
                   <node concept="3clFbS" id="xTUx3Lkz24" role="3clF47">
@@ -1358,7 +1353,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="condition" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tmbuc" id="7iQDiGjjSJo" role="1B3o_S" />
                   <node concept="10P_77" id="7iQDiGjjSJp" role="3clF45" />
                   <node concept="3clFbS" id="7iQDiGjjSJq" role="3clF47">

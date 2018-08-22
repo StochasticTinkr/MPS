@@ -8,7 +8,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -80,9 +80,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1831,7 +1828,6 @@
     </node>
     <node concept="13i0hz" id="7g4OXB0yli3" role="13h7CS">
       <property role="TrG5h" value="getAspectModel" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="7g4OXB0yljp" role="3clF46">
         <property role="TrG5h" value="aspect" />
         <node concept="3uibUv" id="7g4OXB0yljq" role="1tU5fm">
@@ -2007,7 +2003,6 @@
     </node>
     <node concept="13i0hz" id="7g4OXB0ykew" role="13h7CS">
       <property role="TrG5h" value="findConceptAspect" />
-      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="7g4OXB0ykgT" role="3clF46">
         <property role="TrG5h" value="aspect" />
         <node concept="3uibUv" id="7g4OXB0ykgU" role="1tU5fm">
@@ -5086,7 +5081,6 @@
     <node concept="13i0hz" id="6NcFj35FbEV" role="13h7CS">
       <property role="TrG5h" value="isApplicable" />
       <property role="13i0it" value="true" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="6NcFj35FbEW" role="1B3o_S" />
       <node concept="10P_77" id="6NcFj35Feng" role="3clF45" />
       <node concept="3clFbS" id="6NcFj35FbEY" role="3clF47">
