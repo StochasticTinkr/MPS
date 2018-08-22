@@ -333,6 +333,10 @@
     <node concept="PrWs8" id="1653mnvB6BZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="6NfPCDKtfEC" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+      <property role="YLQ7P" value="IOperationContext has been deprecated for years, don't use it." />
+    </node>
   </node>
   <node concept="1TIwiD" id="hxESbW1">
     <property role="19KtqR" value="true" />
