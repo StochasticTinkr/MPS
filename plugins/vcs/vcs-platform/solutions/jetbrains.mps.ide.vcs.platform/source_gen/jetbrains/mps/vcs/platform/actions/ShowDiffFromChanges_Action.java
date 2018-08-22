@@ -10,17 +10,13 @@ import java.util.Map;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
@@ -47,13 +43,6 @@ public class ShowDiffFromChanges_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
@@ -67,11 +56,11 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     final Bounds bounds = new ChangesStripActionsHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))).getCurrentChangeGroupPositionAndHidePopup();
     ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
-        final SModel model = editedNode.getModel();
+        SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
+        final VcsActionsUtil vau = new VcsActionsUtil(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), editedNode, editedNode.getContainingRoot().getName());
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            VcsActionsUtil.showRootDifference((EditableSModel) model, editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
+            vau.showRootDifference(bounds);
           }
         });
       }

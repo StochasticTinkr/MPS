@@ -4,32 +4,29 @@ package jetbrains.mps.vcs.platform.actions;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.diff.ui.common.Bounds;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.MPSExtentions;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import com.intellij.diff.DiffContentFactory;
 import java.util.List;
 import com.intellij.diff.contents.DiffContent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.diff.DiffContentFactory;
 import com.intellij.diff.requests.DiffRequest;
 import com.intellij.diff.requests.SimpleDiffRequest;
 import jetbrains.mps.vcs.platform.integration.ModelDiffViewer;
@@ -49,57 +46,61 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
-public class VcsActionsUtil {
+public final class VcsActionsUtil {
   private static final Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
-  private VcsActionsUtil() {
+  private final MPSProject myProject;
+  private final SNode myNode;
+  private final String myContainingRootName;
+
+  public VcsActionsUtil(MPSProject mpsProject, SNode node, String containingRootName) {
+    myProject = mpsProject;
+    myNode = node;
+    myContainingRootName = containingRootName;
   }
-  public static void showRootDifference(SModel model, final SNode node, Project project, @Nullable Bounds bounds) {
+
+  @Nullable
+  public VirtualFile detectVirtualFile() {
+    DataSource source = myNode.getModel().getSource();
+    IFile iFile;
+    if (source instanceof FileDataSource) {
+      iFile = ((FileDataSource) source).getFile();
+    } else if (source instanceof FilePerRootDataSource) {
+      iFile = ((FilePerRootDataSource) source).getFile(myContainingRootName + '.' + MPSExtentions.MODEL_ROOT);
+    } else {
+      return null;
+    }
+    return VirtualFileUtils.getProjectVirtualFile(iFile);
+  }
+
+  public void showRootDifference(@Nullable Bounds bounds) {
+    final Project ideaProject = myProject.getProject();
     try {
-      DataSource source = model.getSource();
-      IFile iFile = null;
-      if (source instanceof FileDataSource) {
-        iFile = ((FileDataSource) source).getFile();
-      } else if (source instanceof FilePerRootDataSource) {
-        String rootName = ModelAccess.instance().runReadAction(new Computable<String>() {
-          public String compute() {
-            return node.getName();
-          }
-        });
-        iFile = ((FilePerRootDataSource) source).getFile(rootName + "." + MPSExtentions.MODEL_ROOT);
-      }
-      VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(iFile);
+      VirtualFile vFile = detectVirtualFile();
       assert vFile != null;
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile);
+      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(ideaProject).getVcsFor(vFile);
       assert vcs != null;
       DiffProvider diffProvider = vcs.getDiffProvider();
       assert diffProvider != null;
       VcsRevisionNumber revisionNumber = diffProvider.getCurrentRevision(vFile);
       ContentRevision revision = diffProvider.createFileContent(revisionNumber, vFile);
-      final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
-      final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
-      final Wrappers._T<String> title = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          newModel.value = node.getModel();
-          id.value = node.getNodeId();
-          title.value = node.getName();
-        }
-      });
+      final SNodeId id = myNode.getNodeId();
 
-      List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), DiffContentFactory.getInstance().create(revision.getContent(), vFile.getFileType()), DiffContentFactory.getInstance().create(project, vFile));
+      DiffContentFactory diffContentFactory = DiffContentFactory.getInstance();
+      List<DiffContent> contents = ListSequence.fromListAndArray(new ArrayList<DiffContent>(), diffContentFactory.create(revision.getContent(), vFile.getFileType()), diffContentFactory.create(ideaProject, vFile));
       List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), revisionNumber.asString() + " (Read-Only)", "Your Version");
-      DiffRequest request = new SimpleDiffRequest(title.value, contents, titles);
+      DiffRequest request = new SimpleDiffRequest(myContainingRootName, contents, titles);
       // put hint to show only one root and navigate 
-      request.putUserData(ModelDiffViewer.DIFF_SHOW_ROOTID, id.value);
+      request.putUserData(ModelDiffViewer.DIFF_SHOW_ROOTID, id);
       request.putUserData(ModelDiffViewer.DIFF_NAVIGATE_TO, bounds);
-      DiffManager.getInstance().showDiff(project, request);
+      DiffManager.getInstance().showDiff(ideaProject, request);
     } catch (VcsException e) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("", e);
       }
-      Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
+      Messages.showErrorDialog(ideaProject, "Can't show difference due to the following error: " + e.getMessage(), "Error");
     }
   }
+
   private static Iterable<VirtualFile> collectUnversionedFiles(final VcsFileStatusProvider fileStatusProvider, @NotNull final VirtualFile dir) {
     return new _FunctionTypes._return_P0_E0<Iterable<VirtualFile>>() {
       public Iterable<VirtualFile> invoke() {
@@ -126,13 +127,13 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      this._8__yield_brpb5o_a0b0a0a0c_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
+                      this._8__yield_brpb5o_a0b0a0a0k_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
                     case 9:
-                      if (!(this._8__yield_brpb5o_a0b0a0a0c_it.hasNext())) {
+                      if (!(this._8__yield_brpb5o_a0b0a0a0k_it.hasNext())) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this._8__yield_brpb5o_a0b0a0a0c = this._8__yield_brpb5o_a0b0a0a0c_it.next();
+                      this._8__yield_brpb5o_a0b0a0a0k = this._8__yield_brpb5o_a0b0a0a0k_it.next();
                       this.__CP__ = 10;
                       break;
                     case 2:
@@ -148,7 +149,7 @@ __switch__:
                       return true;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(_8__yield_brpb5o_a0b0a0a0c);
+                      this.yield(_8__yield_brpb5o_a0b0a0a0k);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -170,14 +171,15 @@ __switch__:
               }
               private VirtualFile _5_child;
               private Iterator<VirtualFile> _5_child_it;
-              private VirtualFile _8__yield_brpb5o_a0b0a0a0c;
-              private Iterator<VirtualFile> _8__yield_brpb5o_a0b0a0a0c_it;
+              private VirtualFile _8__yield_brpb5o_a0b0a0a0k;
+              private Iterator<VirtualFile> _8__yield_brpb5o_a0b0a0a0k_it;
             };
           }
         };
       }
     }.invoke();
   }
+
   public static Iterable<VirtualFile> getUnversionedFilesForModule(@NotNull Project project, @NotNull SModule module) {
     IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
     if (descriptorFile == null) {
