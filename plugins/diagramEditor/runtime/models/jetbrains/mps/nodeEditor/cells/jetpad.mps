@@ -47,7 +47,6 @@
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
     <import index="hhnx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime(MPS.Editor/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -8278,6 +8277,14 @@
       <node concept="3cqZAl" id="4YVOMGLS64$" role="3clF45" />
       <node concept="3Tm1VV" id="4YVOMGLS64_" role="1B3o_S" />
       <node concept="3clFbS" id="4YVOMGLS64A" role="3clF47">
+        <node concept="1gVbGN" id="523_aD7ZY$8" role="3cqZAp">
+          <node concept="3y3z36" id="523_aD7ZZ2I" role="1gVkn0">
+            <node concept="10Nm6u" id="523_aD7ZZaY" role="3uHU7w" />
+            <node concept="37vLTw" id="523_aD7ZYPf" role="3uHU7B">
+              <ref role="3cqZAo" node="4YVOMGLS6RQ" resolve="editorContext" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4YVOMGLS6TT" role="3cqZAp">
           <node concept="37vLTI" id="4YVOMGLS6TV" role="3clFbG">
             <node concept="37vLTw" id="4YVOMGLS6TY" role="37vLTJ">
@@ -8310,32 +8317,15 @@
             <node concept="3uibUv" id="4YVOMGLSw1z" role="1tU5fm">
               <ref role="3uigEE" to="w1kc:~ModelAccessHelper" resolve="ModelAccessHelper" />
             </node>
-            <node concept="3K4zz7" id="4YVOMGLSuc2" role="33vP2m">
-              <node concept="3clFbC" id="4YVOMGLStKq" role="3K4Cdx">
-                <node concept="10Nm6u" id="4YVOMGLStYZ" role="3uHU7w" />
-                <node concept="37vLTw" id="4YVOMGLStyi" role="3uHU7B">
-                  <ref role="3cqZAo" node="4YVOMGLS6TP" resolve="myEditorContext" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="4YVOMGLSwn8" role="3K4E3e">
-                <node concept="1pGfFk" id="4YVOMGLSKFA" role="2ShVmc">
-                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
-                  <node concept="2YIFZM" id="1xt3dAOkPNa" role="37wK5m">
-                    <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                    <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+            <node concept="2ShNRf" id="4YVOMGLSLt4" role="33vP2m">
+              <node concept="1pGfFk" id="4YVOMGLSMBO" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="4YVOMGLSv9B" role="37wK5m">
+                  <node concept="37vLTw" id="4YVOMGLSuTT" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4YVOMGLS6TP" resolve="myEditorContext" />
                   </node>
-                </node>
-              </node>
-              <node concept="2ShNRf" id="4YVOMGLSLt4" role="3K4GZi">
-                <node concept="1pGfFk" id="4YVOMGLSMBO" role="2ShVmc">
-                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
-                  <node concept="2OqwBi" id="4YVOMGLSv9B" role="37wK5m">
-                    <node concept="37vLTw" id="4YVOMGLSuTT" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4YVOMGLS6TP" resolve="myEditorContext" />
-                    </node>
-                    <node concept="liA8E" id="4YVOMGLSvhQ" role="2OqNvi">
-                      <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
+                  <node concept="liA8E" id="4YVOMGLSvhQ" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>

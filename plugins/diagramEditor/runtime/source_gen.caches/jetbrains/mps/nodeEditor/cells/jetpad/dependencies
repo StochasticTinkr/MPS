@@ -207,7 +207,6 @@
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" file="ReadableModelProperty.java">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
