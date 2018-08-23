@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,6 +29,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -158,6 +162,13 @@ public final class StaticReference extends SReferenceBase {
     return targetNode;
   }
 
+  /**
+   * @deprecated (1) Implementation detail, shall be private. However, ClassCreator does cast to StaticReference to access this method
+   *             (2) Is flawed with respect to global repository assumption, references are resolved with null repository
+   *             To be replaced with #getTargetModel_Fair
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
     if (current != null && current.getReference().equals(getTargetSModelReference())) return current;
@@ -174,20 +185,7 @@ public final class StaticReference extends SReferenceBase {
       // likely, shall change once SRepository story is complete
       modelDescriptor = targetModelReference.resolve(current.getRepository());
       if (modelDescriptor == null && current.getModule() != null) {
-        // FIXME this hack is a replacement for deprecated SModule.resolveInDependencies
-        // which used to help in resolution of transient proxy models. Transient models are not
-        // available in a repository unless published, and regular model id we use for them are
-        // globally unique, thus resolution through SModelReference.resolve() fails.
-        // For regular transient models, resolution works as we use transient module id as part of the reference,
-        // while for proxy models we use ModelFactory.create API which doesn't provide mechanism to specify model reference yet,
-        // and generates one without module id.
-        // Even if there's mechanism to specify module id for proxy model, shall decide how to approach greater control of a module
-        // over resolution of its models, whether it should be new resolveInDependencies(SModelReference) or a dedicated SRepository with
-        // transient/proxy models.
-        // Perhaps, immature references in transient models would be even better way to go.
-        // In fact, that's how proxy resolution works in in-place == true mode, as source nodes the moment their references got replaced
-        // are free-floating (without in-place, they are part of output model), and references get created with immature target node.
-        modelDescriptor = current.getModule().getModel(targetModelReference.getModelId());
+        modelDescriptor = resolveModuleOwnModelHack(current.getModule(), targetModelReference);
       }
     } else if (!RuntimeFlags.isMergeDriverMode()) {
       // [artem] here comes essential piece of MPS functionality - one can create node hanging in the thin air
@@ -196,6 +194,80 @@ public final class StaticReference extends SReferenceBase {
       modelDescriptor = targetModelReference.resolve(null);
     }
     return modelDescriptor;
+  }
+
+  // XXX as there are no longer 'proxy' models, not sure there's need in this hack. OTOH, the idea to give module
+  // some degree of control over model resolution looks appealing to me
+  private static SModel resolveModuleOwnModelHack(SModule module, SModelReference targetModelReference) {
+    // FIXME this hack is a replacement for deprecated SModule.resolveInDependencies
+    // which used to help in resolution of transient proxy models. Transient models are not
+    // available in a repository unless published, and regular model id we use for them are
+    // globally unique, thus resolution through SModelReference.resolve() fails.
+    // For regular transient models, resolution works as we use transient module id as part of the reference,
+    // while for proxy models we use ModelFactory.create API which doesn't provide mechanism to specify model reference yet,
+    // and generates one without module id.
+    // Even if there's mechanism to specify module id for proxy model, shall decide how to approach greater control of a module
+    // over resolution of its models, whether it should be new resolveInDependencies(SModelReference) or a dedicated SRepository with
+    // transient/proxy models.
+    // Perhaps, immature references in transient models would be even better way to go.
+    // In fact, that's how proxy resolution works in in-place == true mode, as source nodes the moment their references got replaced
+    // are free-floating (without in-place, they are part of output model), and references get created with immature target node.
+    return module.getModel(targetModelReference.getModelId());
+  }
+
+  /**
+   * replacement for #getTargetSModel() that fairly handles scenario of a detached model/node (not from a repository)
+   */
+  private SModel getTargetModel_Fair() {
+    final SModelReference targetModelReference = getTargetSModelReference();
+    // 'unresolved' actually.
+    // It can be tmp reference created while copy/pasting a node
+    if (targetModelReference == null) {
+      return null;
+    }
+    final SModel current = getSourceNode().getModel();
+    // target points to the same model
+    if (current != null && current.getReference().equals(targetModelReference)) {
+      return current;
+    }
+    if (current == null) {
+      return null;
+    }
+
+    // external
+    SModel modelDescriptor = null;
+    final SRepository repo = current.getRepository();
+    // repository may be null
+    if (repo != null) {
+      modelDescriptor = targetModelReference.resolve(repo);
+    }
+    if (modelDescriptor == null && current.getModule() != null) {
+      modelDescriptor = resolveModuleOwnModelHack(current.getModule(), targetModelReference);
+    }
+    return modelDescriptor;
+  }
+
+  @Override
+  public void makeDirect() {
+    if (myImmatureTargetNode != null) {
+      return;
+    }
+    final SNodeId targetNodeId = myTargetNodeId;
+    if (targetNodeId == null) {
+      return;
+    }
+    final SModel targetModel = getTargetModel_Fair();
+    if (targetModel == null) {
+      return;
+    }
+    SNode targetNode = targetModel.getNode(targetNodeId);
+    if (targetNode == null) {
+      targetNode = UnregisteredNodes.instance().get(targetModel.getReference(), targetNodeId);
+    }
+    myImmatureTargetNode = targetNode;
+    if (myImmatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
   }
 
   @Override

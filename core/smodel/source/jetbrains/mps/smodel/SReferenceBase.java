@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,17 +87,6 @@ public abstract class SReferenceBase extends SReference {
   @Override
   public final boolean makeIndirect() {
     return makeIndirect(false);
-  }
-
-  @Override
-  public void makeDirect() {
-    if (myImmatureTargetNode != null) {
-      return;
-    }
-    myImmatureTargetNode = SReference.getTargetNodeSilently(this);
-    if (myImmatureTargetNode != null) {
-      ImmatureReferences.getInstance().add(this);
-    }
   }
 
   public synchronized final boolean makeIndirect(boolean force) {
