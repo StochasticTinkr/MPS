@@ -863,6 +863,7 @@ public class SModel implements SModelData, UpdateModeSupport {
         }
         // there's RefUpdateUtil.updateModelRef() that could have been used here, it it was in [smodel].
         // But it's in [project] now, and needs refactoring to relocate.
+        // Besides, there's also similar code in vcs.DiffModelUtil
         final org.jetbrains.mps.openapi.model.SModel resolved = oldReference.resolve(repository);
         if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), oldReference)) {
           changed = true;
@@ -894,12 +895,12 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
-    SModelReference oldReference = myReference;
+    final SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetSModelReference())) {
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
+        if (reference instanceof SReferenceBase && oldReference.equals(reference.getTargetSModelReference())) {
+          ((SReferenceBase) reference).setTargetSModelReference(newModelReference);
         }
       }
     }

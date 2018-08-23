@@ -72,7 +72,6 @@ public abstract class SReferenceBase extends SReference {
     return model == null ? null : model.getReference();
   }
 
-  @Override
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!makeIndirect()) {
       makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.

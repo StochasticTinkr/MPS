@@ -7155,8 +7155,8 @@
       <node id="2941496348504963357" at="110,10,111,22" concept="13" />
       <node id="2941496348504906051" at="116,144,117,83" concept="12" />
       <node id="2941496348504906068" at="119,55,120,49" concept="13" />
-      <node id="2941496348504906077" at="123,44,124,80" concept="13" />
-      <node id="2941496348504906088" at="127,40,128,87" concept="6" />
+      <node id="2941496348504906077" at="123,48,124,80" concept="13" />
+      <node id="2941496348504906088" at="127,44,128,55" concept="6" />
       <node id="2941496348504906100" at="130,7,131,32" concept="6" />
       <node id="5883753008207004942" at="46,0,49,0" concept="4" trace="UpdateDependentModelsRefactoringParticipant_extension#()V" />
       <node id="5883753008207004949" at="49,0,52,0" concept="0" trace="get#()Ljetbrains/mps/refactoring/participant/MoveModelRefactoringParticipant;" />
@@ -7166,8 +7166,8 @@
       <node id="2941496348503738979" at="75,274,78,5" concept="10" />
       <node id="2941496348504975535" at="95,0,98,0" concept="11" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="2941496348504906066" at="119,0,122,0" concept="11" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2941496348504906075" at="123,0,126,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
-      <node id="2941496348504906086" at="127,0,130,0" concept="11" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
+      <node id="2941496348504906075" at="123,0,126,0" concept="11" trace="accept#(Ljetbrains/mps/smodel/SReferenceBase;)Z" />
+      <node id="2941496348504906086" at="127,0,130,0" concept="11" trace="visit#(Ljetbrains/mps/smodel/SReferenceBase;)V" />
       <node id="2941496348503616735" at="69,0,73,0" concept="11" trace="getAvailableOptions#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <node id="2941496348503811761" at="84,0,88,0" concept="11" trace="run#()V" />
       <node id="2941496348504953866" at="101,60,106,17" concept="10" />
@@ -7191,8 +7191,8 @@
       <scope id="2941496348503738980" at="76,71,77,117" />
       <scope id="2941496348504975542" at="95,51,96,33" />
       <scope id="2941496348504906067" at="119,55,120,49" />
-      <scope id="2941496348504906076" at="123,44,124,80" />
-      <scope id="2941496348504906087" at="127,40,128,87" />
+      <scope id="2941496348504906076" at="123,48,124,80" />
+      <scope id="2941496348504906087" at="127,44,128,55" />
       <scope id="2941496348503811763" at="84,25,86,61" />
       <scope id="5883753008207004942" at="46,0,49,0" />
       <scope id="5883753008207004949" at="49,0,52,0" />
@@ -7257,7 +7257,7 @@
         <var name="selectedOptions" id="2941496348503659443" />
       </scope>
       <unit id="2941496348504906066" at="118,47,122,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
-      <unit id="2941496348504906075" at="122,17,126,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
+      <unit id="2941496348504906075" at="122,46,126,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
       <unit id="2941496348504906086" at="126,20,130,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$6" />
       <unit id="2941496348503811761" at="83,50,88,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$2" />
       <unit id="2941496348503414671" at="54,136,61,3" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$1" />

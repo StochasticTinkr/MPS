@@ -35,10 +35,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SReferenceBase;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SReferenceBase;
 
 public class UpdateDependentModelsRefactoringParticipant extends RefactoringParticipantBase<SModelReference, SModelReference, SModel, SModel> implements MoveModelRefactoringParticipant<SModelReference, SModelReference> {
 
@@ -119,13 +119,13 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
-    }).where(new IWhereFilter<SReference>() {
-      public boolean accept(SReference it) {
+    }).ofType(SReferenceBase.class).where(new IWhereFilter<SReferenceBase>() {
+      public boolean accept(SReferenceBase it) {
         return Objects.equals(it.getTargetSModelReference(), oldModelReference);
       }
-    }).visitAll(new IVisitor<SReference>() {
-      public void visit(SReference it) {
-        ((SReferenceBase) (SReference) it).setTargetSModelReference(newModelReference);
+    }).visitAll(new IVisitor<SReferenceBase>() {
+      public void visit(SReferenceBase it) {
+        it.setTargetSModelReference(newModelReference);
       }
     });
     usageModel.setChanged(true);

@@ -37,9 +37,11 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * FIXME Either stop extending SReferenceBase (there's no use of its mature/young myImmatureTargetNode and myTargetModelReference)
- *       or move respective fields/code into StaticReference subclass (then, j.m.smodel.SReference shall cease as it
- *       (a) confusing with openapi counterpart; (b) duplicates SReferenceBase
+ * FIXME Either stop extending {@code SReferenceBase} (there's no use of its mature/young myImmatureTargetNode and myTargetModelReference)
+ *       or move respective fields/code into {@code StaticReference} subclass (then, j.m.smodel.SReference shall cease as it
+ *       (a) confusing with openapi counterpart; (b) duplicates {@code SReferenceBase}
+ * JFI, there's code that filters node references based on {@code SReferenceBase} e.g. to setTargetSModelReference, shall decide if it's correct with respect
+ *      to the aforementioned change in superclass
  *
  * Igor Alshannikov
  * Dec 10, 2007
@@ -111,7 +113,14 @@ public class DynamicReference extends SReferenceBase {
     //       Besides, one of the uses of the method is to refresh node's references the moment model reference changes,
     //       and to support it properly we shall override setTargetSModelReference to no-op instead. The problem is #getTargetSModelReference
     //       might be quite expensive for dynamic nodes during bulk updates.
+    //
+
     return null;
+  }
+
+  @Override
+  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
+    // no-op, synchronized of super has been removed intentionally
   }
 
   @Override

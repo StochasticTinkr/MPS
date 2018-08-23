@@ -498,6 +498,9 @@
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
+        <child id="4611582986551314344" name="requestedType" index="UnYnz" />
+      </concept>
       <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" flags="nn" index="32Fmki" />
@@ -13406,14 +13409,31 @@
             <property role="TrG5h" value="node" />
           </node>
           <node concept="3clFbS" id="2pkw$wNvBOl" role="2LFqv$">
+            <node concept="3SKdUt" id="3A_Idj$_OZs" role="3cqZAp">
+              <node concept="3SKdUq" id="3A_Idj$_OZu" role="3SKWNk">
+                <property role="3SKdUp" value="XXX FWIW, there's similar code in smodel.SModel.updateExternalReferences()" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3A_Idj$_Pbl" role="3cqZAp">
+              <node concept="3SKdUq" id="3A_Idj$_Pbn" role="3SKWNk">
+                <property role="3SKdUp" value="    Would be great to keep it in a single place" />
+              </node>
+            </node>
             <node concept="3clFbF" id="2pkw$wNvJxM" role="3cqZAp">
               <node concept="2OqwBi" id="2pkw$wNwtR6" role="3clFbG">
                 <node concept="2OqwBi" id="2pkw$wNwgXw" role="2Oq$k0">
-                  <node concept="2OqwBi" id="2pkw$wNvJU8" role="2Oq$k0">
-                    <node concept="2GrUjf" id="2pkw$wNvJxL" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="2pkw$wNvBOh" resolve="node" />
+                  <node concept="2OqwBi" id="3A_Idj$$Q3V" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2pkw$wNvJU8" role="2Oq$k0">
+                      <node concept="2GrUjf" id="2pkw$wNvJxL" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="2pkw$wNvBOh" resolve="node" />
+                      </node>
+                      <node concept="2z74zc" id="2pkw$wNvN3E" role="2OqNvi" />
                     </node>
-                    <node concept="2z74zc" id="2pkw$wNvN3E" role="2OqNvi" />
+                    <node concept="UnYns" id="3A_Idj$$Qsr" role="2OqNvi">
+                      <node concept="3uibUv" id="3A_Idj$$VBD" role="UnYnz">
+                        <ref role="3uigEE" to="w1kc:~SReferenceBase" resolve="SReferenceBase" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="3zZkjj" id="2pkw$wNwiMZ" role="2OqNvi">
                     <node concept="1bVj0M" id="2pkw$wNwiN1" role="23t8la">
@@ -13430,7 +13450,7 @@
                                   <ref role="3cqZAo" node="2pkw$wNwiN3" resolve="it" />
                                 </node>
                                 <node concept="liA8E" id="2pkw$wNwm1g" role="2OqNvi">
-                                  <ref role="37wK5l" to="mhbf:~SReference.getTargetSModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getTargetSModelReference" />
+                                  <ref role="37wK5l" to="w1kc:~SReferenceBase.getTargetSModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getTargetSModelReference" />
                                 </node>
                               </node>
                             </node>
@@ -13449,13 +13469,8 @@
                     <node concept="3clFbS" id="2pkw$wNwwFT" role="1bW5cS">
                       <node concept="3clFbF" id="2pkw$wNwxPa" role="3cqZAp">
                         <node concept="2OqwBi" id="2pkw$wNwMBM" role="3clFbG">
-                          <node concept="0kSF2" id="2pkw$wNwEzv" role="2Oq$k0">
-                            <node concept="3uibUv" id="2pkw$wNwMyw" role="0kSFW">
-                              <ref role="3uigEE" to="w1kc:~SReferenceBase" resolve="SReferenceBase" />
-                            </node>
-                            <node concept="37vLTw" id="2pkw$wNwxP9" role="0kSFX">
-                              <ref role="3cqZAo" node="2pkw$wNwwFU" resolve="it" />
-                            </node>
+                          <node concept="37vLTw" id="2pkw$wNwxP9" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2pkw$wNwwFU" resolve="it" />
                           </node>
                           <node concept="liA8E" id="2pkw$wNwOZq" role="2OqNvi">
                             <ref role="37wK5l" to="w1kc:~SReferenceBase.setTargetSModelReference(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="setTargetSModelReference" />
