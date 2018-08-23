@@ -10,7 +10,7 @@ Useful links
 ------------
 
 - [Home page](http://www.jetbrains.com/mps/)
-- [Documentation](http://confluence.jetbrains.net/display/MPSD20182/MPS+User%27s+Guide)
+- [Documentation](https://www.jetbrains.com/mps/learn/)
 - [JetBrains MPS wiki space](http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space)
 - [Issue tracker](http://www.jetbrains.net/tracker/issues/MPS)
 - [Forum](https://mps-support.jetbrains.com/hc/en-us/community/topics)
@@ -39,7 +39,16 @@ _MPS is licensed under the Apache 2 open-source license. See the [complete MPS l
 System requirements
 -------------------
 
-To build JetBrains MPS from sources you need JDK 8. Other JDK versions are currently not supported for building MPS from sources.
+To build JetBrains MPS from sources you need JDK 8. Older JDK versions are currently not supported for building MPS from sources.
+
+IntelliJ IDEA Community or Ultimate edition shall be used to open the project. The versions of IntelliJ IDEA must reflect the version (branch) of the MPS project that you are opening:
+* IDEA 2018.2.* for MPS 2018.2 and the 182.* branches
+* The latest Idea EAP for the MPS master branch
+
+*For MacOS* users it is required to use the JetBrains JDK (https://bintray.com/jetbrains/intellij-jdk/).
+The JetBrains JDK must be added in the IntelliJ IDEA's "Project Settings" in the "Platform Settings" section. The name of this SDK must be "IDEA IC".
+The ideaIntegrationCommon and IDEAPlugin modules need this SDK and they will be using automatically as soon as you create it and give it the "IDEA IC" name.
+
 
 
 ----------------------
