@@ -45,10 +45,10 @@ IntelliJ IDEA Community or Ultimate edition shall be used to open the project. T
 * IDEA 2018.2.* for MPS 2018.2 and the 182.* branches
 * The latest Idea EAP for the MPS master branch
 
-*For MacOS* users it is required to use the JetBrains JDK (https://bintray.com/jetbrains/intellij-jdk/).
-The JetBrains JDK must be added in the IntelliJ IDEA's "Project Settings" in the "Platform Settings" section. The name of this SDK must be "IDEA IC".
-The ideaIntegrationCommon and IDEAPlugin modules need this SDK and they will be using automatically as soon as you create it and give it the "IDEA IC" name.
+For *MacOS* users it is required to use the JetBrains JDK (https://bintray.com/jetbrains/intellij-jdk/).
 
+Additionally, the *IntelliJ Platform Plugin SDK* must be added in the IntelliJ IDEA's "Project Settings" in the "Platform Settings" section. The name of this SDK must be "IDEA IC".
+The *ideaIntegrationCommon* and *IDEAPlugin* modules need this SDK and they will be using automatically as soon as you create it and give it the "IDEA IC" name.
 
 
 ----------------------
