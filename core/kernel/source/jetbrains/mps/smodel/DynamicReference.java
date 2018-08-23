@@ -20,7 +20,6 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -38,6 +37,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * FIXME Either stop extending SReferenceBase (there's no use of its mature/young myImmatureTargetNode and myTargetModelReference)
+ *       or move respective fields/code into StaticReference subclass (then, j.m.smodel.SReference shall cease as it
+ *       (a) confusing with openapi counterpart; (b) duplicates SReferenceBase
+ *
  * Igor Alshannikov
  * Dec 10, 2007
  */
@@ -68,16 +71,8 @@ public class DynamicReference extends SReferenceBase {
   private SNode myCachedTargetNode;
 
   /*
-   * create 'young' reference
-   */
-  @Deprecated
-  @ToRemove(version = 3.5) //maybe possible to remove in 3.4
-  public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
-    super(role, sourceNode, null, immatureTargetNode);
-  }
-
-  /*
    * create 'mature' reference
+   * Left for compatibility with legacy persistence code
    */
   @Deprecated
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
@@ -108,6 +103,18 @@ public class DynamicReference extends SReferenceBase {
   }
 
   @Override
+  public SModelReference getTargetSModelReference() {
+    // don't be shy, tell there's no target model reference right away, rather than let superclass to try to make it indirect
+    // with no-op #makeMature().
+    //
+    // FWIW, I don't quite get the idea of null target model of DynamicReferences, however, it's the way it was.
+    //       Besides, one of the uses of the method is to refresh node's references the moment model reference changes,
+    //       and to support it properly we shall override setTargetSModelReference to no-op instead. The problem is #getTargetSModelReference
+    //       might be quite expensive for dynamic nodes during bulk updates.
+    return null;
+  }
+
+  @Override
   protected SNode getTargetNode_internal() {
     // seems like getTargetNode() doesn't make sense if source node is detached
     if (mySourceNode.getModel() == null) {
@@ -129,13 +136,6 @@ public class DynamicReference extends SReferenceBase {
 
     currentRefs.add(this);
     try {
-      if (myImmatureTargetNode != null) {
-        synchronized (this) {
-          if (!makeIndirect()) {
-            return myImmatureTargetNode;
-          }
-        }
-      }
 
       if (getResolveInfo() == null) {
         reportErrorWithOrigin("bad reference: no resolve info");
