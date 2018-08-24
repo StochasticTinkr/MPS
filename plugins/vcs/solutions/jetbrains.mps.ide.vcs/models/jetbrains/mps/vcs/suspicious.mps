@@ -2962,47 +2962,13 @@
       <node concept="3Tm1VV" id="3zgutK7osEz" role="1B3o_S" />
       <node concept="10P_77" id="3zgutK7osE$" role="3clF45" />
       <node concept="3clFbS" id="3zgutK7osE_" role="3clF47">
-        <node concept="3cpWs8" id="5dpjLLaXbtK" role="3cqZAp">
-          <node concept="3cpWsn" id="5dpjLLaXbtN" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <node concept="10P_77" id="5dpjLLaXbtI" role="1tU5fm" />
-            <node concept="3clFbT" id="5dpjLLaXcCQ" role="33vP2m">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1vBk8n3SULC" role="3cqZAp">
-          <node concept="2OqwBi" id="1vBk8n3SWpE" role="3clFbG">
-            <node concept="2YIFZM" id="6Th6Oi738tT" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="1vBk8n3SZEI" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="1vBk8n3SZLy" role="37wK5m">
-                <node concept="3clFbS" id="1vBk8n3SZLz" role="1bW5cS">
-                  <node concept="3clFbF" id="1vBk8n3T0hw" role="3cqZAp">
-                    <node concept="37vLTI" id="5dpjLLaXbAu" role="3clFbG">
-                      <node concept="37vLTw" id="5dpjLLaXbF$" role="37vLTJ">
-                        <ref role="3cqZAo" node="5dpjLLaXbtN" resolve="result" />
-                      </node>
-                      <node concept="2YIFZM" id="28v4QBO0Sto" role="37vLTx">
-                        <ref role="37wK5l" to="z1c3:~SModuleOperations.needReloading(jetbrains.mps.project.AbstractModule):boolean" resolve="needReloading" />
-                        <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
-                        <node concept="37vLTw" id="28v4QBO0Sya" role="37wK5m">
-                          <ref role="3cqZAo" node="3zgutK7osDP" resolve="myModule" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="5dpjLLaXc2R" role="3cqZAp">
-          <node concept="37vLTw" id="5dpjLLaXcbe" role="3cqZAk">
-            <ref role="3cqZAo" node="5dpjLLaXbtN" resolve="result" />
+          <node concept="2YIFZM" id="28v4QBO0Sto" role="3cqZAk">
+            <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
+            <ref role="37wK5l" to="z1c3:~SModuleOperations.needReloading(jetbrains.mps.project.AbstractModule):boolean" resolve="needReloading" />
+            <node concept="37vLTw" id="28v4QBO0Sya" role="37wK5m">
+              <ref role="3cqZAo" node="3zgutK7osDP" resolve="myModule" />
+            </node>
           </node>
         </node>
       </node>
