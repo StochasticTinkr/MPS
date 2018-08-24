@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.PropertySupport;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 
-public class ConstraintsChecker extends AbstractNodeCheckerInEditor {
+public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   public ConstraintsChecker() {
   }
 
