@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
@@ -66,37 +65,6 @@ class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  private void assertNotWriteFromRead() {
-    assert !canRead() : "Deadlock: Write action should not be executed from within read.";
-  }
-
-  @Override
-  public <T> T runReadAction(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-    getReadLock().lock();
-    try {
-      return c.compute();
-    } finally {
-      getReadLock().unlock();
-    }
-  }
-
-  @Override
-  public <T> T runWriteAction(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-    getWriteLock().lock();
-    try {
-      clearRepositoryStateCaches();
-      return myWriteActionDispatcher.compute(c);
-    } finally {
-      getWriteLock().unlock();
-    }
-  }
-
   @Override
   public void flushEventQueue() {
   }
@@ -114,19 +82,6 @@ class DefaultModelAccess extends ModelAccess {
   @Override
   public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
     runWriteInEDT(r);
-  }
-
-  @Override
-  public <T> T tryRead(final Computable<T> c) {
-    if (getReadLock().tryLock()) {
-      try {
-        return c.compute();
-      } finally {
-        getReadLock().unlock();
-      }
-    } else {
-      return null;
-    }
   }
 
   @Override

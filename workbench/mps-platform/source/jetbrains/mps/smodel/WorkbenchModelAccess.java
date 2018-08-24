@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,16 +82,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   }
 
   @Override
-  public <T> T runReadAction(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    runReadAction(r);
-    return r.getResult();
-  }
-
-  @Override
   public void runWriteAction(final Runnable r) {
     if (canWrite()) {
       r.run();
@@ -120,23 +110,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   }
 
   @Override
-  public <T> T runWriteAction(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-    assertNotWriteFromRead();
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    runWriteAction(r);
-    return r.getResult();
-  }
-
-  private void assertNotWriteFromRead() {
-    if (canRead()) {
-      throw new IllegalStateException("deadlock prevention: do not start write action from read");
-    }
-  }
-
-  @Override
   public void flushEventQueue() {
     myEDTExecutor.flushEventsQueue();
   }
@@ -156,7 +129,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, (MPSProject) project), project);
   }
 
-  public boolean isInEDT() {
+  private boolean isInEDT() {
     return ApplicationManager.getApplication().isDispatchThread();
   }
 
@@ -179,19 +152,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         return false;
       }
     });
-  }
-
-  @Override
-  public <T> T tryRead(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    if (tryRead(r)) {
-      return r.getResult();
-    }
-    return null;
   }
 
   private boolean tryWrite(final Runnable r) {

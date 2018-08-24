@@ -39,6 +39,12 @@ interface ModelCommandProjectExecutor extends ModelCommandExecutor {
     // used in templates, ExecuteCommandInEDTStatement with repo == null
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
+
+  // Next 2 methods are sort of smodel.ModelAccess implementation API and therefore shall be protected methods of the class itself,
+  // rather than kept here. They are not referenced from templates of j.m.lang.access now.
+  // I plan to move project-related implementations out of WMA into MA of a repository associated with a project and then remove these methods altogether
+  // as there would be no need for them to be in neither DefaultModelAccess nor in WorkbenchModelAccess
+
   @ToRemove(version = 3.2)
   @Deprecated
   void executeCommand(Runnable r, Project project);
