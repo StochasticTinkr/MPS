@@ -214,7 +214,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F0ifn" id="hJh91Lt" role="3EZMnx">
-          <property role="3F0ifm" value="simple finder" />
+          <property role="3F0ifm" value="finder" />
         </node>
         <node concept="3F0A7n" id="hJh91Lv" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
