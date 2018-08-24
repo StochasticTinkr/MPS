@@ -6,7 +6,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
@@ -33,12 +35,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.vcs.MPSVcsManager;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
@@ -46,11 +49,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private PlatformActivityTracker myPlatformWatcher;
   private SuspiciousModelIndex.MyTaskQueue myTaskQueue;
   private ReloadManagerComponent myReloadManager;
-  public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager) {
+  private Platform myMPSPlatform;
+
+  public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager, MPSCoreComponents mpsCore) {
     myProjectManager = manager;
     myReloadManager = reloadManager;
     myVirtualFileManager = vfManager;
     myPlatformWatcher = new PlatformActivityTracker(manager, vfManager, reloadManager);
+    myMPSPlatform = mpsCore.getPlatform();
   }
 
   public void addModel(SModel model, boolean isInConflict) {
@@ -62,6 +68,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   public void addModule(AbstractModule abstractModule, boolean inConflict) {
     myTaskQueue.addTask(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
+
   @NonNls
   @NotNull
   @Override
@@ -152,7 +159,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
           }
         }
         // XXX no idea what to do with conflicts not from a project 
-        ModelAccess.instance().executeCommand(new Runnable() {
+        // For now, use global repository with deployed modules. Note, it's not capable of commands, hence just write access 
+        myMPSPlatform.findComponent(MPSModuleRepository.class).getModelAccess().runWriteAction(new Runnable() {
           public void run() {
             for (Conflictable conflictable : toReload) {
               conflictable.reloadFromDisk();

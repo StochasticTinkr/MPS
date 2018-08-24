@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,8 +87,9 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
     getDelegate().removeWriteActionListener(listener);
   }
 
-  @NotNull
-  private ModelAccess getDelegate() {
+  // not null
+  protected final ModelAccess getDelegate() {
+    // Can't be cons argument as subclasses might get instantiated BEFORE WorkbenchModelAccess had a chance to register itself as a global MA.
     return ModelAccess.instance();
   }
 }

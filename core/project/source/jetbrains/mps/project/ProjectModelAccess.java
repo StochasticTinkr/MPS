@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessBase;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * This class represents a ModelAccess for cases when there is an available project in scope.
  * Currently it delegates all command execution to the class {@link jetbrains.mps.smodel.ModelAccess}
+ *
+ * FIXME Instead, shall implement executeCommand methods in this class and delegate here from respective smodel.ModelAccess methods
+ *       Can use project.getRepo().getModelAccess to get here. What's tough, though, is that there is need for IDE-aware (aka workbench)
+ *       model access implementation (the one that knows about undo manager and other IDEA stuff)
  *
  * Created by Alex Pyshkin on 9/2/14.
  */
@@ -30,11 +32,6 @@ public class ProjectModelAccess extends ModelAccessBase {
 
   public ProjectModelAccess(Project project) {
     myProject = project;
-  }
-
-  @NotNull
-  private ModelAccess getDelegate() {
-    return ModelAccess.instance();
   }
 
   @Override

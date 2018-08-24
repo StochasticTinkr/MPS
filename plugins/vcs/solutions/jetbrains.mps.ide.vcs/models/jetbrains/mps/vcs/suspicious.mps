@@ -30,6 +30,9 @@
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="hlw7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.save(MPS.Platform/)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1238,6 +1241,14 @@
         <ref role="3uigEE" to="2eq1:491od_XFyVl" resolve="ReloadManagerComponent" />
       </node>
     </node>
+    <node concept="312cEg" id="1ob_8dNRK$B" role="jymVt">
+      <property role="TrG5h" value="myMPSPlatform" />
+      <node concept="3Tm6S6" id="1ob_8dNRK$C" role="1B3o_S" />
+      <node concept="3uibUv" id="1ob_8dNRN7o" role="1tU5fm">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1ob_8dNRAPs" role="jymVt" />
     <node concept="3clFbW" id="3zgutK7osx9" role="jymVt">
       <node concept="3Tm1VV" id="3zgutK7osxa" role="1B3o_S" />
       <node concept="3cqZAl" id="3zgutK7osxb" role="3clF45" />
@@ -1263,6 +1274,12 @@
         <property role="TrG5h" value="reloadManager" />
         <node concept="3uibUv" id="491od_Zei$w" role="1tU5fm">
           <ref role="3uigEE" to="2eq1:491od_XFyVl" resolve="ReloadManagerComponent" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1ob_8dNRDeD" role="3clF46">
+        <property role="TrG5h" value="mpsCore" />
+        <node concept="3uibUv" id="1ob_8dNRKzk" role="1tU5fm">
+          <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
         </node>
       </node>
       <node concept="3clFbS" id="3zgutK7osxi" role="3clF47">
@@ -1314,6 +1331,21 @@
             </node>
             <node concept="37vLTw" id="485yxDrpD$s" role="37vLTJ">
               <ref role="3cqZAo" node="3zgutK7oswW" resolve="myPlatformWatcher" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1ob_8dNRK$F" role="3cqZAp">
+          <node concept="37vLTI" id="1ob_8dNRK$H" role="3clFbG">
+            <node concept="37vLTw" id="1ob_8dNRK$K" role="37vLTJ">
+              <ref role="3cqZAo" node="1ob_8dNRK$B" resolve="myMPSPlatform" />
+            </node>
+            <node concept="2OqwBi" id="1ob_8dNRLu3" role="37vLTx">
+              <node concept="37vLTw" id="1ob_8dNRK$L" role="2Oq$k0">
+                <ref role="3cqZAo" node="1ob_8dNRDeD" resolve="mpsCore" />
+              </node>
+              <node concept="liA8E" id="1ob_8dNRLBn" role="2OqNvi">
+                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+              </node>
             </node>
           </node>
         </node>
@@ -1426,6 +1458,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1ob_8dNRB$Y" role="jymVt" />
     <node concept="3clFb_" id="3zgutK7osxZ" role="jymVt">
       <property role="TrG5h" value="getComponentName" />
       <node concept="17QB3L" id="6sqsxb$$CTF" role="3clF45" />
@@ -2186,14 +2219,31 @@
                     <property role="3SKdUp" value="XXX no idea what to do with conflicts not from a project" />
                   </node>
                 </node>
+                <node concept="3SKdUt" id="1ob_8dNS06p" role="3cqZAp">
+                  <node concept="3SKdUq" id="1ob_8dNS06r" role="3SKWNk">
+                    <property role="3SKdUp" value="For now, use global repository with deployed modules. Note, it's not capable of commands, hence just write access" />
+                  </node>
+                </node>
                 <node concept="3clFbF" id="1KUoCiqb7nb" role="3cqZAp">
                   <node concept="2OqwBi" id="1KUoCiqb7nc" role="3clFbG">
-                    <node concept="2YIFZM" id="1KUoCiqb7nd" role="2Oq$k0">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                      <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                    <node concept="2OqwBi" id="1ob_8dNRUP2" role="2Oq$k0">
+                      <node concept="2OqwBi" id="1ob_8dNRPNE" role="2Oq$k0">
+                        <node concept="37vLTw" id="1ob_8dNROy3" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1ob_8dNRK$B" resolve="myMPSPlatform" />
+                        </node>
+                        <node concept="liA8E" id="1ob_8dNRR5y" role="2OqNvi">
+                          <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                          <node concept="3VsKOn" id="1ob_8dNRTwI" role="37wK5m">
+                            <ref role="3VsUkX" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1ob_8dNRWpQ" role="2OqNvi">
+                        <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                      </node>
                     </node>
                     <node concept="liA8E" id="1KUoCiqb7ne" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                      <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                       <node concept="1bVj0M" id="1KUoCiqb7nf" role="37wK5m">
                         <node concept="3clFbS" id="1KUoCiqb7ng" role="1bW5cS">
                           <node concept="1DcWWT" id="1KUoCiqb7nh" role="3cqZAp">
