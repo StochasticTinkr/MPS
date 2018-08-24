@@ -34,6 +34,7 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.List;
 import java.util.ArrayList;
@@ -103,7 +104,7 @@ public class ModelDifferenceViewer implements DataProvider {
 
     myPanel.setSecondComponent(myNoRootPanel);
     if (showTree) {
-      myTree = new ModelDifferenceViewer.ModelDifferenceTree();
+      myTree = new ModelDifferenceViewer.ModelDifferenceTree(project.getRepository());
       myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myTree));
 
       // actions connected to model tree 
@@ -268,7 +269,8 @@ public class ModelDifferenceViewer implements DataProvider {
   }
 
   private class ModelDifferenceTree extends DiffModelTree {
-    private ModelDifferenceTree() {
+    private ModelDifferenceTree(SRepository repo) {
+      super(repo);
     }
     @Override
     protected Iterable<BaseAction> getRootActions() {

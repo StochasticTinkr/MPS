@@ -4018,6 +4018,14 @@
             <node concept="2ShNRf" id="7DvDtq9OdRD" role="33vP2m">
               <node concept="1pGfFk" id="7DvDtq9OdRE" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaud" resolve="DiffEditorSeparator" />
+                <node concept="2OqwBi" id="2l91Uwxw4o" role="37wK5m">
+                  <node concept="37vLTw" id="2l91Uwxv3b" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3SMO48FTf02" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="2l91UwxwSX" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="3GM_nagTrqe" role="37wK5m">
                   <ref role="3cqZAo" node="7DvDtq9OdRl" resolve="layout" />
                 </node>
@@ -5394,6 +5402,14 @@
                 <node concept="2ShNRf" id="5zPLqcHK30q" role="37vLTx">
                   <node concept="1pGfFk" id="5zPLqcHK30r" role="2ShVmc">
                     <ref role="37wK5l" node="5zPLqcHJBnr" resolve="ModelDifferenceViewer.ModelDifferenceTree" />
+                    <node concept="2OqwBi" id="QicWNw6d22" role="37wK5m">
+                      <node concept="37vLTw" id="QicWNw6ci6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
+                      </node>
+                      <node concept="liA8E" id="QicWNw6ek2" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="5zPLqcHK30s" role="37vLTJ">
@@ -6710,9 +6726,22 @@
       <property role="TrG5h" value="ModelDifferenceTree" />
       <property role="2bfB8j" value="true" />
       <node concept="3clFbW" id="5zPLqcHJBnr" role="jymVt">
-        <node concept="3clFbS" id="5zPLqcHJBns" role="3clF47" />
+        <node concept="3clFbS" id="5zPLqcHJBns" role="3clF47">
+          <node concept="XkiVB" id="QicWNw8va8" role="3cqZAp">
+            <ref role="37wK5l" to="hdhb:42hl10VHaPj" resolve="DiffModelTree" />
+            <node concept="37vLTw" id="QicWNw8xb_" role="37wK5m">
+              <ref role="3cqZAo" node="QicWNw69$z" resolve="repo" />
+            </node>
+          </node>
+        </node>
         <node concept="3Tm6S6" id="5zPLqcHJBnt" role="1B3o_S" />
         <node concept="3cqZAl" id="5zPLqcHJBnu" role="3clF45" />
+        <node concept="37vLTG" id="QicWNw69$z" role="3clF46">
+          <property role="TrG5h" value="repo" />
+          <node concept="3uibUv" id="QicWNw69$y" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm6S6" id="5zPLqcHJBnv" role="1B3o_S" />
       <node concept="3uibUv" id="5zPLqcHJBnw" role="1zkMxy">
@@ -8416,6 +8445,13 @@
             <node concept="2ShNRf" id="42UviMImjKJ" role="33vP2m">
               <node concept="1pGfFk" id="42UviMImjKK" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaud" resolve="DiffEditorSeparator" />
+                <node concept="2YIFZM" id="2l91Uwx_eF" role="37wK5m">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.getProjectRepository(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.SRepository" resolve="getProjectRepository" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="37vLTw" id="2l91Uwx_Bw" role="37wK5m">
+                    <ref role="3cqZAo" node="42UviMImjCW" resolve="myProject" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="42UviMImjKL" role="37wK5m">
                   <ref role="3cqZAo" node="42UviMImjKr" resolve="layout" />
                 </node>

@@ -6,6 +6,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SRepository;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.Dimension;
@@ -14,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -31,8 +31,16 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
   private ChangeGroupLayout myChangeGroupLayout;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
   private Map<ChangeGroup, String> myChangeGroupDescriptions;
-  public DiffEditorSeparator(ChangeGroupLayout changeGroupLayout) {
+  private final SRepository myRepoWithChanges;
+
+  public DiffEditorSeparator(SRepository repoWithChanges, ChangeGroupLayout changeGroupLayout) {
     myChangeGroupLayout = changeGroupLayout;
+    // FIXME It seems that changes in ChangeGroupLayout may be tied to live models in a repository, therfore, access to model 
+    //       properties e.g. in ModelChange.getDescription() shall be guarded by model read. It's odd to guard each distinct getDescription 
+    //       from within ModelChange, therefore looks reasonable to do it at this level, where we do bulk analyze of all the changes. However, 
+    //       EditorSeparator doesn't sound like a proper place to require some SRepository, and I wonder if we can make ModelChange to be 'weakly' 
+    //       tied to attached models or otherwise relax requirement to have model read for them. 
+    myRepoWithChanges = repoWithChanges;
     ChangeListener viewportListener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         invalidateAndRepaint();
@@ -49,6 +57,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     });
     MPSToolTipManager.getInstance().registerComponent(this);
   }
+
   private void ensureBoundsCalculated() {
     if (myGroupsWithBounds != null) {
       return;
@@ -65,7 +74,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
       MapSequence.fromMap(myGroupsWithBounds).put(group, MultiTuple.<Bounds,Bounds>from(new Bounds(leftStart, leftEnd), new Bounds(rightStart, rightEnd)));
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myRepoWithChanges.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myChangeGroupDescriptions = MapSequence.fromMap(new HashMap<ChangeGroup, String>());
         for (ChangeGroup group : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {

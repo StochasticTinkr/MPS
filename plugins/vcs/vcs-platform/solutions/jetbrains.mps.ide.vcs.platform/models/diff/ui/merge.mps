@@ -4256,6 +4256,13 @@
             <node concept="2ShNRf" id="2jv$fqwevj9" role="33vP2m">
               <node concept="1pGfFk" id="2jv$fqwevja" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaud" resolve="DiffEditorSeparator" />
+                <node concept="2YIFZM" id="2l91UwxDVD" role="37wK5m">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.getProjectRepository(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.SRepository" resolve="getProjectRepository" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="37vLTw" id="2l91UwxEe5" role="37wK5m">
+                    <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="3GM_nagTsNo" role="37wK5m">
                   <ref role="3cqZAo" node="2jv$fqweviT" resolve="layout" />
                 </node>
@@ -5948,6 +5955,9 @@
             <node concept="2ShNRf" id="2jv$fqwD$sJ" role="37vLTx">
               <node concept="1pGfFk" id="2jv$fqwD$sK" role="2ShVmc">
                 <ref role="37wK5l" node="2jv$fqwD$F2" resolve="MergeModelsPanel.MergeModelsTree" />
+                <node concept="37vLTw" id="QicWNw6rKb" role="37wK5m">
+                  <ref role="3cqZAo" node="4tEWdMGIY0C" resolve="myProjectRepository" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxeuogb" role="37vLTJ">
@@ -8279,9 +8289,21 @@
         <ref role="3uigEE" to="hdhb:42hl10VHaI8" resolve="DiffModelTree" />
       </node>
       <node concept="3clFbW" id="2jv$fqwD$F2" role="jymVt">
+        <node concept="37vLTG" id="QicWNw69$z" role="3clF46">
+          <property role="TrG5h" value="repo" />
+          <node concept="3uibUv" id="QicWNw69$y" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
         <node concept="3cqZAl" id="2jv$fqwD$F3" role="3clF45" />
         <node concept="3Tm6S6" id="2jv$fqwD$F4" role="1B3o_S" />
         <node concept="3clFbS" id="2jv$fqwD$F5" role="3clF47">
+          <node concept="XkiVB" id="QicWNw8Fc8" role="3cqZAp">
+            <ref role="37wK5l" to="hdhb:42hl10VHaPj" resolve="DiffModelTree" />
+            <node concept="37vLTw" id="QicWNw8GYW" role="37wK5m">
+              <ref role="3cqZAo" node="QicWNw69$z" resolve="repo" />
+            </node>
+          </node>
           <node concept="3clFbF" id="2jv$fqwD$Fc" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyz9Zb" role="3clFbG">
               <ref role="37wK5l" to="dxuu:~JTree.addTreeSelectionListener(javax.swing.event.TreeSelectionListener):void" resolve="addTreeSelectionListener" />
