@@ -163,7 +163,8 @@ public final class StaticReference extends SReferenceBase {
   }
 
   /**
-   * @deprecated (1) Implementation detail, shall be private. However, ClassCreator does cast to StaticReference to access this method
+   * @deprecated (1) Implementation detail, shall be private. Now, with ClassCreator that no longer casts to StaticReference to access this method, can be
+   *                 made private. LEAVE as public till the end of 2018.3 release cycle to give clients time to update, just in case, make private once 2018.3 is out
    *             (2) Is flawed with respect to global repository assumption, references are resolved with null repository
    *             To be replaced with #getTargetModel_Fair
    */

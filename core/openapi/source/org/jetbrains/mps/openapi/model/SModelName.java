@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,18 @@ public final class SModelName {
    */
   public boolean hasStereotype() {
     return myValue.lastIndexOf('@') > 0;
+  }
+
+  /**
+   * @return <code>true</code> iff {@link #getStereotype() stereotype} matches the argument. Name without stereotype matches both {@code null} and
+   * {@code ""} argument values.
+   * @since 2018.3
+   */
+  public boolean hasStereotype(@Nullable CharSequence stereotype) {
+    if (stereotype == null || stereotype.length() == 0) {
+      return !hasStereotype();
+    }
+    return getStereotype().contentEquals(stereotype);
   }
 
   @NotNull

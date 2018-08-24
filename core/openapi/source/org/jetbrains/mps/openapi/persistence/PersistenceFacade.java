@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -201,6 +202,18 @@ public abstract class PersistenceFacade {
    * @param factory The factory to register, null to clear the registration for the given type.
    */
   public abstract void setModelIdFactory(String type, SModelIdFactory factory);
+
+  /**
+   * Serialize counterpart for {@link #createNodeId(String)}, persistence-ready presentation of a node identity.
+   * @param nodeId identity of a node, see {@link SNode#getNodeId()}
+   * @return textual representation of a node identity value
+   * @since 2018.3
+   */
+  public String asString(@NotNull SNodeId nodeId) {
+    // there's a lot of code that does SNodeId.toString(), and unless we get rid of it, there's no reason to bother with implementation of the method
+    // in PersistenceRegistry class as there's no chances for any extensibility.
+    return nodeId.toString();
+  }
 
   /**
    * Creates an SNodeId from a given text identifier.
