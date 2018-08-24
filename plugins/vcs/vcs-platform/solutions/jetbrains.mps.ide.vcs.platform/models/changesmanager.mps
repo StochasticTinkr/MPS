@@ -3072,11 +3072,6 @@
       <node concept="3uibUv" id="6h1S4muFPhI" role="1tU5fm">
         <ref role="3uigEE" node="6h1S4muEXWg" resolve="CurrentDifferenceRegistry.MyEventsCollector" />
       </node>
-      <node concept="2ShNRf" id="2QnDi8Qvca1" role="33vP2m">
-        <node concept="HV5vD" id="6h1S4muFJEZ" role="2ShVmc">
-          <ref role="HV5vE" node="6h1S4muEXWg" resolve="CurrentDifferenceRegistry.MyEventsCollector" />
-        </node>
-      </node>
     </node>
     <node concept="312cEg" id="7sg$kIGF7TC" role="jymVt">
       <property role="TrG5h" value="myGlobalBroadcaster" />
@@ -3154,6 +3149,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3ReTDvBuftT" role="3cqZAp">
+          <node concept="37vLTI" id="3ReTDvBufL6" role="3clFbG">
+            <node concept="37vLTw" id="3ReTDvBuftR" role="37vLTJ">
+              <ref role="3cqZAo" node="2QnDi8Qvc9P" resolve="myEventsCollector" />
+            </node>
+            <node concept="2ShNRf" id="2QnDi8Qvca1" role="37vLTx">
+              <node concept="1pGfFk" id="3ReTDvBuO2L" role="2ShVmc">
+                <ref role="37wK5l" node="3ReTDvBujZC" resolve="CurrentDifferenceRegistry.MyEventsCollector" />
+                <node concept="2OqwBi" id="3ReTDvBuOQc" role="37wK5m">
+                  <node concept="37vLTw" id="3ReTDvBuOl_" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6y_kxB1UvNc" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="3ReTDvBuPOt" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="2JwSLRbyYWR" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -3183,6 +3198,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3ReTDvBuPRA" role="jymVt" />
     <node concept="3clFb_" id="2JwSLRbyYPJ" role="jymVt">
       <property role="TrG5h" value="projectOpened" />
       <node concept="3Tm1VV" id="2JwSLRbyYPK" role="1B3o_S" />
@@ -4342,6 +4358,30 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="3ReTDvBugsk" role="jymVt" />
+      <node concept="3clFbW" id="3ReTDvBujZC" role="jymVt">
+        <node concept="3cqZAl" id="3ReTDvBujZE" role="3clF45" />
+        <node concept="3clFbS" id="3ReTDvBujZG" role="3clF47">
+          <node concept="XkiVB" id="3ReTDvBumAL" role="3cqZAp">
+            <ref role="37wK5l" to="w1kc:~ModelsEventsCollector.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelsEventsCollector" />
+            <node concept="2OqwBi" id="3ReTDvBumL4" role="37wK5m">
+              <node concept="37vLTw" id="3ReTDvBumED" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ReTDvBukIG" resolve="repo" />
+              </node>
+              <node concept="liA8E" id="3ReTDvBumXH" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="3ReTDvBukIG" role="3clF46">
+          <property role="TrG5h" value="repo" />
+          <node concept="3uibUv" id="3ReTDvBukIF" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3ReTDvBuh9o" role="jymVt" />
       <node concept="3clFb_" id="6h1S4muEZJH" role="jymVt">
         <property role="TrG5h" value="addListener" />
         <node concept="3cqZAl" id="6h1S4muEZJJ" role="3clF45" />

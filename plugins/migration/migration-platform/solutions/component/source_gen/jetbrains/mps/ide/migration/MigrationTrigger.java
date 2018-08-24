@@ -71,6 +71,7 @@ import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.ModelsEventsCollector;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
@@ -519,16 +520,33 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         updateSingleModuleDescriptorSilently(event.getModel().getModule());
       }
     };
-    private ModelsEventsCollector myModelListener = new ModelsEventsCollector() {
-      @Override
-      protected void eventsHappened(List<SModelEvent> events) {
-        ListSequence.fromList(events).visitAll(new IVisitor<SModelEvent>() {
-          public void visit(SModelEvent it) {
-            it.accept(myVisitor);
-          }
-        });
-      }
-    };
+    private ModelsEventsCollector myModelListener;
+
+
+    @Override
+    public void startListening(@NotNull SRepository repository) {
+      // Here we imply MyRepoListener is attached to a single repository. Otherwise, 
+      // each next repo it starts listening to would override myModelListener value 
+      assert myModelListener == null;
+      myModelListener = new ModelsEventsCollector(repository.getModelAccess()) {
+        @Override
+        protected void eventsHappened(List<SModelEvent> events) {
+          ListSequence.fromList(events).visitAll(new IVisitor<SModelEvent>() {
+            public void visit(SModelEvent it) {
+              it.accept(myVisitor);
+            }
+          });
+        }
+      };
+      super.startListening(repository);
+    }
+    @Override
+    public void stopListening(@NotNull SRepository repository) {
+      myModelListener.dispose();
+      myModelListener = null;
+      super.stopListening(repository);
+    }
+
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
