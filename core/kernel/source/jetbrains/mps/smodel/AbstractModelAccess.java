@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.ActionDispatcher.DispatchController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -43,7 +44,17 @@ public abstract class AbstractModelAccess implements ModelAccess {
   protected final ActionDispatcher<WriteActionListener> myWriteActionDispatcher;
 
   public AbstractModelAccess() {
-    myCommandActionDispatcher = new ActionDispatcher<>(CommandListener::commandStarted, CommandListener::commandFinished);
+    myCommandActionDispatcher = new ActionDispatcher<>(new DispatchController() {
+      @Override
+      public void onActionStart() {
+        onCommandStarted();
+      }
+
+      @Override
+      public void onActionFinish() {
+        onCommandFinished();
+      }
+    }, CommandListener::commandStarted, CommandListener::commandFinished);
     myWriteActionDispatcher = new ActionDispatcher<>(WriteActionListener::actionStarted, WriteActionListener::actionFinished);
   }
 
@@ -59,6 +70,14 @@ public abstract class AbstractModelAccess implements ModelAccess {
     if (!canWrite()) {
       throw new IllegalModelAccessError("You can write model only inside write actions");
     }
+  }
+
+  protected void onCommandStarted() {
+    // no-op
+  }
+
+  protected void onCommandFinished() {
+    // no-op
   }
 
   @Override
