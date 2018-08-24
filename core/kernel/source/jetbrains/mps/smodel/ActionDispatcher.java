@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,13 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 /**
  * Reentrant action execution, with notification on first and last action.
+ * Note, implementation assumes it's a single thread that {@linkplain #dispatch(Runnable) dispatches} actions.
+ * This is true for write and command actions of ModelAccess, but not necessarily true for any other possible use.
+ * However, 'first' and 'last' for multi-threaded use would need a re-definition anyway.
  *
  * Use {@link #dispatch(Runnable)} to execute {@link Runnable action} with proper event dispatching.
  * If you need to postpone execution (and event dispatching), you can get appropriate runnable with {@link #wrap(Runnable)}.
@@ -39,7 +41,7 @@ import java.util.function.Consumer;
   private final List<T> myListeners = new CopyOnWriteArrayList<>();
   private final Consumer<T> myOnActionStart;
   private final Consumer<T> myOnActionFinish;
-  private final AtomicInteger myActionLevel = new AtomicInteger(0);
+  private int myActionLevel = 0; // not volatile as we don't expect multiple threads, why bother then?
 
   public ActionDispatcher(Consumer<T> onActionStart, Consumer<T> onActionFinish) {
     myOnActionStart = onActionStart;
@@ -51,7 +53,7 @@ import java.util.function.Consumer;
    * @param r action to execute
    */
   public void dispatch(Runnable r) {
-    if (myActionLevel.getAndIncrement() == 0) {
+    if (myActionLevel++ == 0) {
       onActionStarted();
     }
     final boolean traceEnabled = LOG.isTraceEnabled();
@@ -64,7 +66,7 @@ import java.util.function.Consumer;
       if (traceEnabled) {
         LOG.trace(String.format("Action finished (level:%d)", myActionLevel));
       }
-      if (myActionLevel.decrementAndGet() == 0) {
+      if (--myActionLevel == 0) {
         onActionFinished();
       }
     }
@@ -87,7 +89,7 @@ import java.util.function.Consumer;
   }
 
   public boolean isInsideAction() {
-    return myActionLevel.get() > 0;
+    return myActionLevel > 0;
   }
 
   /**
