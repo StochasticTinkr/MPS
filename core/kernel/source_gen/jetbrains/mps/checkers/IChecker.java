@@ -45,14 +45,14 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractModelChecker.class.getName());
     }
     private static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
-      final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
+      final IAbstractChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
         }
       });
       return new IChecker.AbstractModelChecker<I>() {
         public String getCategory() {
-          return result.getCategory();
+          return rootChecker.getCategory();
         }
         @Override
         public String toString() {
@@ -66,6 +66,9 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
     }
   }
 
+  /**
+   * returned errors are expected to belong to nodes under given root
+   */
   abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
     public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker<?, I> checker) {
       if (checker instanceof IChecker.AbstractRootChecker) {
@@ -97,7 +100,7 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       });
       return new IChecker.AbstractRootChecker<I>() {
         public String getCategory() {
-          return skippingChecker.getCategory();
+          return nodeChecker.getCategory();
         }
         @Override
         public String toString() {
@@ -111,6 +114,9 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
     }
   }
 
+  /**
+   * returned errors are expected to belong to given node
+   */
   abstract class AbstractNodeChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
     public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
       return SKIP_NOTHING_CONDITION;

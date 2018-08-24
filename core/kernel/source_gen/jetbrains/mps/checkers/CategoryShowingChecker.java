@@ -16,23 +16,6 @@ public class CategoryShowingChecker<O, I extends IssueKindReportItem> implements
     myCategory = origin.getCategory();
   }
 
-  public static class CategoryWrapper<O, I extends IssueKindReportItem> implements IChecker<O, I> {
-    private IAbstractChecker<O, I> myOrigin;
-    private String myCategory;
-    public CategoryWrapper(IAbstractChecker<O, I> origin, String category) {
-      myOrigin = origin;
-      myCategory = category;
-    }
-    @Override
-    public String getCategory() {
-      return myCategory;
-    }
-    @Override
-    public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-      myOrigin.check(toCheck, repository, errorCollector, monitor);
-    }
-  }
-
   @Override
   public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
     monitor.start(myCategory, 1);

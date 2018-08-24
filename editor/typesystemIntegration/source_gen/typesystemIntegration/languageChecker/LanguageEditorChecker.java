@@ -163,7 +163,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     for (NodeReportItem errorReporter : errorsComponent.getErrors()) {
       // todo here should be processor-based architecture, like in other checkers 
       SNode nodeWithError = errorReporter.getNode().resolve(editorContext.getRepository());
-      if (!(ErrorReportUtil.shouldReportError(nodeWithError))) {
+      if (!(ErrorReportUtil.shouldReportError(errorReporter, editorContext.getRepository()))) {
         continue;
       }
 

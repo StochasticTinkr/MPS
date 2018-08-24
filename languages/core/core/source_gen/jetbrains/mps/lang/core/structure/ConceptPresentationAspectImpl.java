@@ -37,9 +37,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_InterfacePart;
   private ConceptPresentation props_LinkAttribute;
   private ConceptPresentation props_MigrationAnnotation;
+  private ConceptPresentation props_MigrationAnnotation_old;
+  private ConceptPresentation props_MigrationDataAnnotation;
   private ConceptPresentation props_NodeAttribute;
   private ConceptPresentation props_PropertyAttribute;
   private ConceptPresentation props_ReviewMigration;
+  private ConceptPresentation props_ReviewMigration_old;
   private ConceptPresentation props_ScopeFacade;
   private ConceptPresentation props_ScopeProvider;
   private ConceptPresentation props_SideTransformInfo;
@@ -53,7 +56,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Attribute:
         if (props_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0kb);
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0nb);
           props_Attribute = cpb.create();
         }
         return props_Attribute;
@@ -88,6 +91,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IAntisuppressErrors:
         if (props_IAntisuppressErrors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           props_IAntisuppressErrors = cpb.create();
         }
         return props_IAntisuppressErrors;
@@ -226,6 +230,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MigrationAnnotation = cpb.create();
         }
         return props_MigrationAnnotation;
+      case LanguageConceptSwitch.MigrationAnnotation_old:
+        if (props_MigrationAnnotation_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MigrationAnnotation_old = cpb.create();
+        }
+        return props_MigrationAnnotation_old;
+      case LanguageConceptSwitch.MigrationDataAnnotation:
+        if (props_MigrationDataAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MigrationDataAnnotation");
+          props_MigrationDataAnnotation = cpb.create();
+        }
+        return props_MigrationDataAnnotation;
       case LanguageConceptSwitch.NodeAttribute:
         if (props_NodeAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -247,6 +264,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ReviewMigration = cpb.create();
         }
         return props_ReviewMigration;
+      case LanguageConceptSwitch.ReviewMigration_old:
+        if (props_ReviewMigration_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.rawPresentation("ReviewMigration_old");
+          props_ReviewMigration_old = cpb.create();
+        }
+        return props_ReviewMigration_old;
       case LanguageConceptSwitch.ScopeFacade:
         if (props_ScopeFacade == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -79,9 +79,6 @@
     <node concept="PrWs8" id="bc0iGlx_Q5" role="PrDN$">
       <ref role="PrY4T" to="tpck:bc0iGlxbOU" resolve="IMetaLevelChanger" />
     </node>
-    <node concept="PrWs8" id="U99cpalq9L" role="PrDN$">
-      <ref role="PrY4T" to="tpck:U99cpalq9J" resolve="IAntisuppressErrors" />
-    </node>
     <node concept="PrWs8" id="6SHIBw3Z3Vk" role="PrDN$">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>

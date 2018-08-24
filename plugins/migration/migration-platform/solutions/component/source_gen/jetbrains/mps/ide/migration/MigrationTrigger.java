@@ -337,55 +337,58 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Synchronizing Files...", false) {
-              public void run(@NotNull ProgressIndicator pi) {
-                pi.setIndeterminate(true);
-                myReloadManager.flush();
-                syncRefresh();
-              }
-            });
-            final Wrappers._T<MigrationTrigger.PostponedState> newState = new Wrappers._T<MigrationTrigger.PostponedState>();
-            myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-              public void run() {
-                Iterable<SModule> modules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
-                newState.value = MigrationTrigger.PostponedState.current(myMigrationRegistry, modules);
-              }
-            });
-
-            if (myPostponedState == null || forceAssistant) {
-              boolean hasSomethingToApply = newState.value.hasSomethingToApply();
-              if (hasSomethingToApply) {
-                boolean migrate = CollectionSequence.fromCollection(newState.value.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.value.projectMigrations).isNotEmpty();
-                if (runMigration(newState.value.versionUpdate, migrate)) {
-                  myPostponedState = (myPostponedState == null ? newState.value : myPostponedState.add(newState.value));
-                }
-              } else if (forceAssistant) {
-                Messages.showMessageDialog(myProject, "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
-              }
-            } else {
-              if (myLastNotification != null && !(myLastNotification.isExpired())) {
-                return;
-              }
-              myLastNotification = new Notification("Migration", "Migration required", "<p>This project requires migration.</p><p><a href=\"migrate\">Migrate</a></p>", NotificationType.INFORMATION, new NotificationListener() {
-                @Override
-                public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
-                  if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
-                    return;
-                  }
-                  if ("migrate".equals(e.getDescription())) {
-                    synchronized (MigrationTrigger.this) {
-                      myPostponedState = null;
-                    }
-                    postponeMigration(true);
-                  }
-                  notification.expire();
+            try {
+              ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Synchronizing Files...", false) {
+                public void run(@NotNull ProgressIndicator pi) {
+                  pi.setIndeterminate(true);
+                  myReloadManager.flush();
+                  syncRefresh();
                 }
               });
-              Notifications.Bus.notify(myLastNotification, myProject);
-              myPostponedState = myPostponedState.add(newState.value);
+              final Wrappers._T<MigrationTrigger.PostponedState> newState = new Wrappers._T<MigrationTrigger.PostponedState>();
+              myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+                public void run() {
+                  Iterable<SModule> modules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
+                  newState.value = MigrationTrigger.PostponedState.current(myMigrationRegistry, modules);
+                }
+              });
+
+              if (myPostponedState == null || forceAssistant) {
+                boolean hasSomethingToApply = newState.value.hasSomethingToApply();
+                if (hasSomethingToApply) {
+                  boolean migrate = CollectionSequence.fromCollection(newState.value.scripts).isNotEmpty() || CollectionSequence.fromCollection(newState.value.projectMigrations).isNotEmpty();
+                  if (runMigration(newState.value.versionUpdate, migrate)) {
+                    myPostponedState = (myPostponedState == null ? newState.value : myPostponedState.add(newState.value));
+                  }
+                } else if (forceAssistant) {
+                  Messages.showMessageDialog(myProject, "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
+                }
+              } else {
+                if (myLastNotification != null && !(myLastNotification.isExpired())) {
+                  return;
+                }
+                myLastNotification = new Notification("Migration", "Migration required", "<p>This project requires migration.</p><p><a href=\"migrate\">Migrate</a></p>", NotificationType.INFORMATION, new NotificationListener() {
+                  @Override
+                  public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
+                    if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
+                      return;
+                    }
+                    if ("migrate".equals(e.getDescription())) {
+                      synchronized (MigrationTrigger.this) {
+                        myPostponedState = null;
+                      }
+                      postponeMigration(true);
+                    }
+                    notification.expire();
+                  }
+                });
+                Notifications.Bus.notify(myLastNotification, myProject);
+                myPostponedState = myPostponedState.add(newState.value);
+              }
+            } finally {
+              myMigrationForbidden = false;
+              myMigrationForbiddenMessage = null;
             }
-            myMigrationForbidden = false;
-            myMigrationForbiddenMessage = null;
           }
         }, ModalityState.NON_MODAL);
       }

@@ -344,7 +344,7 @@ public class UsagesView implements IExternalizeable {
   /**
    * This SearchTask executes SearchQuery with a read lock for a project repository.
    */
-  public static final class SearchTaskImpl implements SearchTask, Runnable {
+  public static final class SearchTaskImpl implements SearchTask {
     private final Project myProject;
     private final IResultProvider myResultProvider;
     private final SearchQuery mySearchQuery;
@@ -375,15 +375,12 @@ public class UsagesView implements IExternalizeable {
 
     public SearchResults execute(ProgressMonitor progressMonitor) {
       myProgress = progressMonitor;
-      myProject.getModelAccess().runReadAction(this);
+      myProject.getModelAccess().runReadAction(() -> {
+        SearchResults results = myResultProvider.getResults(mySearchQuery, myProgress);
+        SearchResultsSorter sorter = new SearchResultsSorter(results);
+        myLastResults = sorter.sortNodeResultsByLocationInTheEditor();
+      });
       return getSearchResults();
-    }
-
-    @Override
-    public void run() {
-      SearchResults results = myResultProvider.getResults(mySearchQuery, myProgress);
-      SearchResultsSorter sorter = new SearchResultsSorter(results);
-      myLastResults = sorter.sortNodeResultsByLocationInTheEditor();
     }
 
     public SearchResults getSearchResults() {

@@ -37,13 +37,16 @@ public final class LanguageConceptSwitch {
   public static final int InterfacePart = 25;
   public static final int LinkAttribute = 26;
   public static final int MigrationAnnotation = 27;
-  public static final int NodeAttribute = 28;
-  public static final int PropertyAttribute = 29;
-  public static final int ReviewMigration = 30;
-  public static final int ScopeFacade = 31;
-  public static final int ScopeProvider = 32;
-  public static final int SideTransformInfo = 33;
-  public static final int SuppressErrorsAnnotation = 34;
+  public static final int MigrationAnnotation_old = 28;
+  public static final int MigrationDataAnnotation = 29;
+  public static final int NodeAttribute = 30;
+  public static final int PropertyAttribute = 31;
+  public static final int ReviewMigration = 32;
+  public static final int ReviewMigration_old = 33;
+  public static final int ScopeFacade = 34;
+  public static final int ScopeProvider = 35;
+  public static final int SideTransformInfo = 36;
+  public static final int SuppressErrorsAnnotation = 37;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL);
@@ -74,10 +77,13 @@ public final class LanguageConceptSwitch {
     builder.put(0x612410e32cf46136L, ImplementationWithStubPart);
     builder.put(0x12509ddfaa98f128L, InterfacePart);
     builder.put(0x2eb1ad060897da51L, LinkAttribute);
-    builder.put(0x2274019e61f0c2c8L, MigrationAnnotation);
+    builder.put(0x78c7e79625a38e13L, MigrationAnnotation);
+    builder.put(0x2274019e61f0c2c8L, MigrationAnnotation_old);
+    builder.put(0x78c7e79625990591L, MigrationDataAnnotation);
     builder.put(0x2eb1ad060897da54L, NodeAttribute);
     builder.put(0x2eb1ad060897da56L, PropertyAttribute);
-    builder.put(0x2274019e61e234c9L, ReviewMigration);
+    builder.put(0x78c7e79625a38e06L, ReviewMigration);
+    builder.put(0x2274019e61e234c9L, ReviewMigration_old);
     builder.put(0x2ea65c0b397bd5beL, ScopeFacade);
     builder.put(0x33d23ee961a0cbf3L, ScopeProvider);
     builder.put(0xad0053c7ae9194dL, SideTransformInfo);
