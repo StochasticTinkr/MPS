@@ -22,6 +22,7 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
@@ -53,8 +54,10 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
   private final WriteActionTracker myWriteActionTracker;
   private final TryRunPlatformWriteHelper myTryPlatformWriteHelper;
+  private final WorkbenchUndoHandler myUndoHandler;
 
-  protected WorkbenchModelAccess() {
+  public WorkbenchModelAccess(WorkbenchUndoHandler undoHandler) {
+    myUndoHandler = undoHandler;
     myWriteActionTracker = new WriteActionTracker();
     myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myWriteActionTracker);
     Disposer.register(this, myEDTExecutor);
@@ -311,7 +314,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       } else {
         context = new DefaultUndoContext(repository);
       }
-      UndoHelper.getInstance().startCommand(context);
+      myUndoHandler.startCommand(context);
       onCommandStarted();
     }
     myCommandLevel++;
@@ -321,7 +324,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     checkWriteAccess();
     myCommandLevel--;
     if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand();
+      myUndoHandler.flushCommand();
       onCommandFinished();
     }
   }
