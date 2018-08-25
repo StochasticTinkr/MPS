@@ -164,20 +164,6 @@ public class IncrementalTypecheckingContext extends ReportingTypecheckingContext
     return myIsNonTypesystemComputation;
   }
 
-  @Nullable
-  public SimpleErrorReporter createErrorReporter(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget, MessageStatus severity) {
-    if (nodeWithError == null) {
-      LOG.error("Node used to report an error is null. Error was not added. Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
-      return null;
-    } else if (nodeWithError.getModel() == null) {
-      LOG.error("Node used to report an error is not in a model. Error was not added. Node=" + SNodeOperations.getDebugText(nodeWithError) + ". Reported from model " + ruleModel + " by rule " + ruleId + ".", new Throwable());
-      return null;
-    }
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, severity, errorTarget);
-    reporter.addIntentionProvider(intentionProvider);
-    return reporter;
-  }
-
   @Override
   protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     IncrementalTypechecking currentTypesComponent = getTypechecking();
