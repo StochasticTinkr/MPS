@@ -34,7 +34,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.project.validation.StructureChecker;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
@@ -155,7 +154,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
             // find missing concept features when concept's not missing 
             for (EditableSModel model : ListSequence.fromList(models)) {
               final Wrappers._boolean stop = new Wrappers._boolean(false);
-              IChecker.AbstractModelChecker<NodeReportItem> checker = IChecker.AbstractModelChecker.wrapToModelChecker(IChecker.AbstractRootChecker.wrapToRootChecker((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(false, true, false, true)));
+              IChecker.AbstractModelChecker<NodeReportItem> checker = new StructureChecker(false, true, false, true).asModelChecker();
               checker.check(model, myProject.getRepository(), new Consumer<NodeReportItem>() {
                 public void consume(NodeReportItem vp) {
                   if (!(vp instanceof UnresolvedReferenceReportItem)) {

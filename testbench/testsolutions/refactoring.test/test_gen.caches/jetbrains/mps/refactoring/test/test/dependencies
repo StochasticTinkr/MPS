@@ -93,6 +93,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant" />
     <classNode dependClassName="jetbrains.mps.model.ModelDeleteHelper" />
+    <classNode dependClassName="jetbrains.mps.project.validation.StructureChecker" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" />
@@ -157,6 +158,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant" />
+    <classNode dependClassName="jetbrains.mps.project.validation.StructureChecker" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" />

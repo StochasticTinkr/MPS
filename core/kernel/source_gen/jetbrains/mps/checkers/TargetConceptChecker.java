@@ -25,7 +25,7 @@ public class TargetConceptChecker extends AbstractNodeCheckerInEditor implements
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+    return AbstractNodeCheckerInEditor.SKIP_CONSTRAINTS_CONDITION;
   }
   @Override
   public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {

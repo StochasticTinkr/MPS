@@ -32,31 +32,25 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
   }
 
   abstract class AbstractModelChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModel, I> {
-    public static <I extends IssueKindReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker<?, I> checker) {
-      if (checker instanceof IChecker.AbstractModelChecker) {
-        return (IChecker.AbstractModelChecker) checker;
-      }
-      if (checker instanceof IChecker.AbstractRootChecker) {
-        return (IChecker.AbstractModelChecker<I>) IChecker.AbstractModelChecker.wrapToModelChecker((IChecker.AbstractRootChecker<?>) checker);
-      }
-      if (checker instanceof IChecker.AbstractNodeChecker) {
-        return (IChecker.AbstractModelChecker<I>) IChecker.AbstractModelChecker.wrapToModelChecker(IChecker.AbstractRootChecker.wrapToRootChecker((IChecker.AbstractNodeChecker<?>) checker));
-      }
-      throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractModelChecker.class.getName());
-    }
-    private static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
-      final IAbstractChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
+  }
+
+  /**
+   * returned errors are expected to belong to nodes under given root
+   */
+  abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
+    public IChecker.AbstractModelChecker<I> asModelChecker() {
+      final IAbstractChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(this, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
         }
       });
       return new IChecker.AbstractModelChecker<I>() {
         public String getCategory() {
-          return rootChecker.getCategory();
+          return this.getCategory();
         }
         @Override
         public String toString() {
-          return rootChecker.toString();
+          return this.toString();
         }
         @Override
         public void check(SModel model, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
@@ -67,30 +61,21 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
   }
 
   /**
-   * returned errors are expected to belong to nodes under given root
+   * returned errors are expected to belong to given node
    */
-  abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
-    public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker<?, I> checker) {
-      if (checker instanceof IChecker.AbstractRootChecker) {
-        return (IChecker.AbstractRootChecker<I>) checker;
-      }
-      if (checker instanceof IChecker.AbstractNodeChecker) {
-        return IChecker.AbstractRootChecker.wrapToRootChecker((IChecker.AbstractNodeChecker<I>) checker);
-      }
-      throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractRootChecker.class.getName());
-    }
-    private static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker.AbstractNodeChecker<I> nodeChecker) {
-      final IteratingChecker<SNode, SNode, I> skippingChecker = new IteratingChecker<SNode, SNode, I>(nodeChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
+  abstract class AbstractNodeChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
+    public IChecker.AbstractRootChecker<I> asRootChecker() {
+      final IteratingChecker<SNode, SNode, I> skippingChecker = new IteratingChecker<SNode, SNode, I>(this, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
           List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());
           DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(root);
           while (fullCheckIterator.hasNext()) {
             SNode node = fullCheckIterator.next();
-            if (nodeChecker.skipCondition().skipSubtree(node)) {
+            if (AbstractNodeChecker.this.skipCondition().skipSubtree(node)) {
               fullCheckIterator.skipChildren();
               continue;
             }
-            if (nodeChecker.skipCondition().skipSingleNode(node)) {
+            if (AbstractNodeChecker.this.skipCondition().skipSingleNode(node)) {
               continue;
             }
             ListSequence.fromList(toCheck).addElement(node);
@@ -100,11 +85,11 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       });
       return new IChecker.AbstractRootChecker<I>() {
         public String getCategory() {
-          return nodeChecker.getCategory();
+          return this.getCategory();
         }
         @Override
         public String toString() {
-          return nodeChecker.toString();
+          return this.toString();
         }
         @Override
         public void check(SNode root, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
@@ -112,12 +97,9 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
         }
       };
     }
-  }
-
-  /**
-   * returned errors are expected to belong to given node
-   */
-  abstract class AbstractNodeChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
+    public IChecker.AbstractModelChecker<I> asModelChecker() {
+      return this.asRootChecker().asModelChecker();
+    }
     public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
       return SKIP_NOTHING_CONDITION;
     }

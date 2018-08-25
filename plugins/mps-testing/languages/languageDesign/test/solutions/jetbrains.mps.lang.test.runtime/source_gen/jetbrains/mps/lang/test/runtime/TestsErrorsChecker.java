@@ -14,19 +14,14 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.List;
-import jetbrains.mps.checkers.IAbstractChecker;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
-import jetbrains.mps.project.validation.ValidationUtil;
-import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.project.validation.StructureChecker;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
@@ -93,33 +88,23 @@ public class TestsErrorsChecker {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
     final Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
-    new TypesystemChecker().check(myRoot, myRoot.getModel().getRepository(), new Consumer<NodeReportItem>() {
-      public void consume(NodeReportItem reportItem) {
-        SetSequence.fromSet(result).addElement(reportItem);
-      }
-    }, new EmptyProgressMonitor());
     Consumer<NodeReportItem> errorCollector = new Consumer<NodeReportItem>() {
       public void consume(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
       }
     };
-    List<IAbstractChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IAbstractChecker<SNode, NodeReportItem>>());
-    // todo: add UsedLanguageChecker? 
-    ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
-    for (IAbstractChecker<SNode, NodeReportItem> checker : ListSequence.fromList(checkers)) {
-      checker.check(myRoot, myRoot.getModel().getRepository(), errorCollector, new EmptyProgressMonitor());
-    }
-    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem vp) {
-        SetSequence.fromSet(result).addElement(vp);
-        return true;
-      }
-    });
+    final SRepository repository = myRoot.getModel().getRepository();
+
+    new TypesystemChecker().check(myRoot, repository, errorCollector, new EmptyProgressMonitor());
+    new ConstraintsChecker().asRootChecker().check(myRoot, repository, errorCollector, new EmptyProgressMonitor());
+    new RefScopeChecker().asRootChecker().check(myRoot, repository, errorCollector, new EmptyProgressMonitor());
+    new TargetConceptChecker().asRootChecker().check(myRoot, repository, errorCollector, new EmptyProgressMonitor());
+    new StructureChecker().asRootChecker().check(myRoot, repository, errorCollector, new EmptyProgressMonitor());
 
     Set<NodeReportItem> res = SetSequence.fromSetWithValues(new HashSet<NodeReportItem>(), SetSequence.fromSet(result).where(new IWhereFilter<NodeReportItem>() {
       public boolean accept(NodeReportItem it) {
         SNodeReference node = NodeReportItem.FLAVOUR_NODE.tryToGet(it);
-        return node == null || !(ErrorReportUtil.manuallySuppressed(node.resolve(myRoot.getModel().getRepository())));
+        return node == null || !(ErrorReportUtil.manuallySuppressed(node.resolve(repository)));
       }
     }));
     ourModelErrorsHolder.set(myRoot, res);

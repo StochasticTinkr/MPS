@@ -37,7 +37,7 @@ public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements I
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+    return AbstractNodeCheckerInEditor.SKIP_CONSTRAINTS_CONDITION;
   }
   private void runCheck(LanguageErrorsCollector errorsCollector, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super CheckingNodeContext> check, _FunctionTypes._return_P1_E0<? extends NodeReportItem, ? super RuleIdFlavouredItem.TypesystemRuleId> reportItem) {
     final CheckingNodeContextImpl context = new CheckingNodeContextImpl();

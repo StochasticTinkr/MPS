@@ -42,6 +42,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.StructureChecker;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.ide.ThreadUtils;
@@ -162,9 +163,9 @@ public class Refactoring_Test extends AbstractRefactoringTest {
     super(PROJECT_PATH);
   }
 
-  public static Collection<ReportItem> getErrors(Iterable<SNode> roots) {
+  public Collection<ReportItem> getErrors(Iterable<SNode> roots) {
     final List<ReportItem> result = ListSequence.fromList(new ArrayList<ReportItem>());
-    ValidationUtil.validateModelContent(roots, new Processor<ReportItem>() {
+    ValidationUtil.runChecker(new StructureChecker().asRootChecker(), roots, this.project.getRepository(), new Processor<ReportItem>() {
       public boolean process(ReportItem problem) {
         ListSequence.fromList(result).addElement(problem);
         return true;
