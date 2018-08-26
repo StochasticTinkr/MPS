@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -69,6 +70,13 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.4)
   boolean setReadEnabledFlag(boolean flag);
 
+  // there's 1 use in mbeddr
+
+  /**
+   * @deprecated Use {@link ModelAccess#isCommandAction()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   boolean isInsideCommand(); // openapi.ModelAccess#isCommandAction
 
   /**
