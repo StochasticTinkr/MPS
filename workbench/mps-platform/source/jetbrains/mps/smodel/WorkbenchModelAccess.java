@@ -27,9 +27,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -41,7 +38,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.math.BigDecimal.valueOf;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -52,14 +48,15 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private static final String IDEA_WRITE_LOCK_FAIL = "Failed to acquire the IDEA write lock after having waited for %.3f s";
 
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
-  private final WriteActionTracker myWriteActionTracker;
+  // track attempts to grab IDEA platform write lock
+  private final WriteActionTracker myPlatformWriteActionTracker;
   private final TryRunPlatformWriteHelper myTryPlatformWriteHelper;
   private final WorkbenchUndoHandler myUndoHandler;
 
   public WorkbenchModelAccess(WorkbenchUndoHandler undoHandler) {
     myUndoHandler = undoHandler;
-    myWriteActionTracker = new WriteActionTracker();
-    myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myWriteActionTracker);
+    myPlatformWriteActionTracker = new WriteActionTracker();
+    myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myPlatformWriteActionTracker);
     Disposer.register(this, myEDTExecutor);
     Disposer.register(this, myTryPlatformWriteHelper);
   }
@@ -91,25 +88,27 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     assertNotWriteFromRead();
-    Runnable runnable = () -> {
-      getWriteLock().lock();
-      try {
-        clearRepositoryStateCaches();
-        myWriteActionDispatcher.run(r);
-      } finally {
-        getWriteLock().unlock();
-      }
-    };
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(r));
     if (isInEDT()) {
       try {
-        myWriteActionTracker.writeActionScheduled();
-        ApplicationManager.getApplication().runWriteAction(runnable);
+        myPlatformWriteActionTracker.writeActionScheduled();
+        ApplicationManager.getApplication().runWriteAction(lockRunnable);
       } finally {
-        myWriteActionTracker.writeActionProcessed();
+        myPlatformWriteActionTracker.writeActionProcessed();
       }
     } else {
-      ApplicationManager.getApplication().runReadAction(runnable);
+      ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
+  }
+
+  // to cease once clearRepositoryStateCache gone
+  // The easiest way is to have onActionStart (much like onCommandStart) and do it there
+  // Smartest way is to drop these caches altogether.
+  private Runnable clearCachesAndDispatchWrite(Runnable r) {
+    return () -> {
+      clearRepositoryStateCaches();
+      myWriteActionDispatcher.run(r);
+    };
   }
 
   @Override
@@ -124,6 +123,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runWriteInEDT(Runnable r) {
+    // XXX tryWrite() doesn't clear repository caches like runWriteAction() does!
+    //     I don't want to fix this as I'm going to
     myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
@@ -143,66 +144,31 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return true;
     }
 
-    return ApplicationManager.getApplication().runReadAction((com.intellij.openapi.util.Computable<Boolean>) () -> {
-      if (getReadLock().tryLock()) {
-        try {
-          r.run();
-        } finally {
-          getReadLock().unlock();
-        }
-        return true;
-      } else {
-        return false;
-      }
-    });
+    // 1 ms is pretty short to be considered 'try'
+    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, r);
+    // XXX likely, shall try to grab IDEA's read lock much like tryWrite does
+    ApplicationManager.getApplication().runReadAction(lockRunnable);
+    return lockRunnable.wasExecuted();
   }
 
   private boolean tryWrite(final Runnable r) {
-    Computable<Boolean> c = () -> {
-      r.run();
-      return true;
-    };
-    Boolean res = tryWrite(c);
-    return res != null ? res : false;
-  }
-
-
-  private <T> T tryWrite(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-
-    // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
-    com.intellij.openapi.util.Computable<T> computable = () -> {
-      try {
-        if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-          try {
-            clearRepositoryStateCaches();
-            return myWriteActionDispatcher.compute(c);
-          } finally {
-            getWriteLock().unlock();
-          }
-        } else {
-          return null;
-        }
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        LOG.error("Interrupted while trying to access the MPS write lock", e);
-        return null;
-      }
-    };
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, r);
 
     if (isInEDT()) {
       TaskTimer taskTimer = new TaskTimer();
       taskTimer.start();
       try {
-        return myTryPlatformWriteHelper.tryWrite(computable);
+        // in fact, there are 2 lock attempts, one to grab IDEA's platform lock (myTryPlatformWriteHelper.tryWrite),
+        // and another is to grab MPS write lock with lockRunnable
+        myTryPlatformWriteHelper.tryWrite(lockRunnable);
       } catch (WriteTimeOutException e) {
         throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
       }
     } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
+      // unlike myTryPlatformWriteHelper.tryWrite() above, here we don't care to tryLock IDEA's read, why?
+      ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
+    return lockRunnable.wasExecuted();
   }
 
   /**
@@ -226,32 +192,15 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private boolean tryWriteInCommand(final Runnable r, @NotNull final MPSProject project) {
     ApplicationManager.getApplication().assertIsDispatchThread();
 
-    Reference<Boolean> lockGranted = new Reference<>();
     com.intellij.openapi.project.Project ideaProject = project.getProject();
     TaskTimer taskTimer = new TaskTimer();
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
     try {
-      myTryPlatformWriteHelper.tryCommand(ideaProject, () -> {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              myWriteActionDispatcher.run(() -> {
-                new CommandRunnable(r, project).run();
-                lockGranted.set(true);
-              });
-            } finally {
-              getWriteLock().unlock();
-            }
-          }
-        } catch (InterruptedException ie) {
-          Thread.currentThread().interrupt();
-          LOG.error("Interrupted while trying to access the MPS write lock", ie);
-        }
-      });
+      myTryPlatformWriteHelper.tryCommand(ideaProject, lockRunnable);
     } catch (WriteTimeOutException e) {
       throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
     }
-    return lockGranted.get();
+    return lockRunnable.wasExecuted();
   }
 
   @Override
@@ -293,7 +242,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public boolean hasScheduledWrites() {
-    return myWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
+    return myPlatformWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
   }
 
   //--------command events listening

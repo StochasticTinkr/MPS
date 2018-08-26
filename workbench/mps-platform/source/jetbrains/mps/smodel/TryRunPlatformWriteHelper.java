@@ -21,7 +21,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -116,10 +115,9 @@ final class TryRunPlatformWriteHelper implements Disposable {
         UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
-  <T> T tryWrite(Computable<T> computable) throws WriteTimeOutException {
-    ComputeRunnable<T> toCompute = new ComputeRunnable<>(computable::compute);
-    new TryWriteActionRunnable(toCompute).tryWrite();
-    return toCompute.getResult();
+  // makes an attempt to grab IDEA's write action and executes a runnable if succeeds.
+  void tryWrite(Runnable r) throws WriteTimeOutException {
+    new TryWriteActionRunnable(r).tryWrite();
   }
 
   @Immutable
