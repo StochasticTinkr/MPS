@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,13 @@ public abstract class ProjectBase extends Project {
   private final ProjectModuleLoader myModuleLoader;
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull Platform mpsPlatform) {
-    super(projectDescriptor.getName(), mpsPlatform);
+    this(projectDescriptor, mpsPlatform, false);
+    initRepositoryDefault(mpsPlatform);
+  }
+
+  // FIXME refactor other subclasses and pass boolean initDefaultRepo == true|false
+  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull Platform mpsPlatform, boolean unusedJustIndicatorOfNoRepository) {
+    super(projectDescriptor.getName());
     myProjectDescriptor = projectDescriptor;
     myModuleLoader = new ProjectModuleLoader(this); // fixme: avoid
     myPlatform = mpsPlatform;

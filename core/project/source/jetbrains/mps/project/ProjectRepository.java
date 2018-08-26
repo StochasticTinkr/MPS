@@ -43,13 +43,19 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
  */
 public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
   private final Project myProject;
-  private final ProjectModelAccess myProjectModelAccess;
+  private final ModelAccess myProjectModelAccess;
   private final SRepositoryExt myRootRepo;
 
   public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry) {
+    this(project, rootRepo, repositoryRegistry, new ProjectModelAccess(project));
+  }
+
+  // XXX in fact, the only reason to pass project here is to provide it from #getProject()
+  //     there are very few uses of this knowledge, likely can get rid of it.
+  public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry, @NotNull ModelAccess projectModelAccess) {
     super(repositoryRegistry);
     myProject = project;
-    myProjectModelAccess = new ProjectModelAccess(project);
+    myProjectModelAccess = projectModelAccess;
     myRootRepo = rootRepo;
   }
 

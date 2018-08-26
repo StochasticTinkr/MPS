@@ -80,11 +80,6 @@ class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
-    runWriteInEDT(r);
-  }
-
-  @Override
   public boolean tryRead(Runnable r) {
     if (getReadLock().tryLock()) {
       try {
@@ -99,13 +94,8 @@ class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void executeCommand(Runnable r, Project project) {
+  public void executeCommand(Runnable r) {
     runWriteAction(r);
-  }
-
-  @Override
-  public void runUndoTransparentCommand(Runnable r, Project project) {
-    r.run();
   }
 
   @Override

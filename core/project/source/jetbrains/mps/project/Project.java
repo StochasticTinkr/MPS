@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 
 /**
  * MPS Project abstraction. Project may rely on the idea Project or it may not.
@@ -39,14 +40,32 @@ import java.util.List;
 public abstract class Project implements MPSModuleOwner, IProject {
   private final String myName;
   private final ProjectScope myScope = new ProjectScope();
-  private final ProjectRepository myRepository;
+  private ProjectRepository myRepository;
 
   private boolean myDisposed;
 
-  protected Project(String name, Platform mpsPlatform) {
+  // IMPORTANT. Subclasses shall invoke either #initRepositoryDefault() or #initRepository(ProjectRepository) right after construction.
+  //            I know it's ugly, just can't make final fields in two classes that demand each other, and got other important tasks at hand
+  //            than to refactor this.
+  protected Project(String name) {
     myName = name;
+  }
+
+  protected Project(String name, @NotNull Platform mpsPlatform, @NotNull BiFunction<Project, Platform, ProjectRepository> repoFactory) {
+    myName = name;
+    myRepository = repoFactory.apply(this, mpsPlatform);
+  }
+
+  //
+  protected final void initRepositoryDefault(@NotNull Platform mpsPlatform) {
     myRepository = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     myRepository.init();
+  }
+
+  // not sure I need exactly ProjectRepository, not e.g SRepositoryExt or plain SRepository
+  // just don't want to deal with exact type of myRepository field right now
+  protected final void initRepository(@NotNull ProjectRepository repository) {
+    myRepository = repository;
   }
 
   @NotNull

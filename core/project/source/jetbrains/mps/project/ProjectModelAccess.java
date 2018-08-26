@@ -36,17 +36,21 @@ public class ProjectModelAccess extends ModelAccessBase {
 
   @Override
   public void executeCommand(Runnable r) {
-    getDelegate().executeCommand(r, myProject);
+    // this is what DefaultModelAccess used to do for executeCommand(r, myProject).
+    // MA for a repository associated with an MPSProject has different implementation that interacts with IDEA Platform undo mechanism
+    getDelegate().runWriteAction(r);
   }
 
   @Override
   public void executeCommandInEDT(Runnable r) {
-    getDelegate().runCommandInEDT(r, myProject);
+    // see #executeCommand(Runnable) above why we don't use myProject
+    getDelegate().runWriteInEDT(r);
   }
 
   @Override
   public void executeUndoTransparentCommand(Runnable r) {
-    getDelegate().runUndoTransparentCommand(r, myProject);
+    // see #executeCommand(Runnable) above why we don't delegate anywhere
+    r.run();
   }
 
   @Override

@@ -28,7 +28,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -59,6 +58,11 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myPlatformWriteActionTracker);
     Disposer.register(this, myEDTExecutor);
     Disposer.register(this, myTryPlatformWriteHelper);
+  }
+
+  // implementation detail, public just to overcome package boundaries j.m.smodel and j.m.project
+  public org.jetbrains.mps.openapi.module.ModelAccess createForProject(MPSProject mpsProject) {
+    return new ProjectModelAccess2(mpsProject, this);
   }
 
   @Override
@@ -128,9 +132,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
-  @Override
-  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project project) {
-    myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, (MPSProject) project), project);
+  /*package*/ void runCommandInEDT_(@NotNull Runnable r, @NotNull MPSProject project) {
+    myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, project), project);
   }
 
   private boolean isInEDT() {
@@ -204,10 +207,14 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   }
 
   @Override
-  public void executeCommand(Runnable r, @Nullable Project project) {
-    if (project == null) {
-      project = CurrentProjectAccessUtil.getMPSProjectFromUI();
-    }
+  public void executeCommand(Runnable r) {
+    executeCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
+  }
+
+  /*package*/ void executeCommand(Runnable r, MPSProject project) {
+    assert r != null;
+    assert project != null;
+
     String name = "MPS Execute Command", groupId = null;
     boolean confirmUndo = false;
     if (r instanceof UndoRunnable) {
@@ -226,8 +233,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
                                                                           : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
-  @Override
-  public void runUndoTransparentCommand(Runnable r, Project project) {
+  /*package*/ void runUndoTransparentCommand(Runnable r, Project project) {
     if (myCommandLevel > 0) {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }

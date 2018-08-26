@@ -22,13 +22,16 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
-import jetbrains.mps.library.Library;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.WorkbenchModelAccess;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,9 +48,18 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
 
-  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
-    super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform());
+  // WorkbenchModelAccess is provisional argument. Now it provides implementation of executeCommand method
+  // with respect to shared model lock object from its smodel.ModelAccess superclass. Once each MA has own
+  // model lock object and executeCommand* implementations, we won't need this WMA parameter
+  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore, WorkbenchModelAccess wma) {
+    super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform(), false);
     myProject = project;
+    final MPSModuleRepository extRepo = mpsCore.getPlatform().findComponent(MPSModuleRepository.class);
+    final SRepositoryRegistry registry = mpsCore.getPlatform().findComponent(SRepositoryRegistry.class);
+    final ModelAccess projectMA = wma.createForProject(MPSProject.this);
+    final ProjectRepository repo = new ProjectRepository(this, extRepo, registry, projectMA);
+    repo.init();
+    initRepository(repo);
   }
 
   @Override

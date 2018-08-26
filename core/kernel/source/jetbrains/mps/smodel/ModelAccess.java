@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.Computable;
@@ -23,6 +24,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -167,10 +169,16 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   }
 
   @Override
-  public void executeCommand(Runnable r) {
-    // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)
-    executeCommand(r, null);
+  public final void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
+    // re-dispatch to proper MA implementation
+    // this is compatibility code for legacy templates generating code that uses ModelCommandProjectExecutor#runCommandInEDT
+    p.getModelAccess().executeCommandInEDT(r);
   }
+
+  // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)
+  // left abstract method (though could have deleted method) as there might be references from MPS code to the implementation that used to be here
+  @Override
+  public abstract void executeCommand(Runnable r);
 
   @Override
   public final void executeCommandInEDT(Runnable r) {
