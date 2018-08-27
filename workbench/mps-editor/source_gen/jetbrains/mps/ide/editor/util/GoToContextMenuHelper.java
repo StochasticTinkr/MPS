@@ -7,15 +7,13 @@ import java.util.Comparator;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.util.Function;
 import jetbrains.mps.ide.editor.util.renderer.BaseRenderer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.SortedListModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.ModelComputeRunnable;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.event.InputEvent;
@@ -24,6 +22,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import javax.swing.ListSelectionModel;
 import jetbrains.mps.classloading.ModuleClassLoader;
@@ -32,16 +32,17 @@ public final class GoToContextMenuHelper {
   private final Project myProject;
   private final String myTitle;
   private final Comparator<NodeNavigatable> myComparator;
-  private final Function<NodeNavigatable, String> myNamerForNavigatable;
+  private final Function<NodeNavigatable, String> myNamerForFiltering;
   private final BaseRenderer myRenderer;
 
-  private static final Comparator<NodeNavigatable> DEFAULT_COMPARATOR = new Comparator<NodeNavigatable>() {
+  private static final Comparator<SNodeReference> DEFAULT_COMPARATOR = new Comparator<SNodeReference>() {
     @Override
-    public int compare(NodeNavigatable o1, NodeNavigatable o2) {
-      return getText(o1).compareTo(getText(o2));
+    public int compare(SNodeReference n1, SNodeReference n2) {
+      return getText(n1).compareTo(getText(n2));
     }
-    private String getText(NodeNavigatable element) {
-      return element.getNodePointer().toString();
+
+    private String getText(SNodeReference ptr) {
+      return ptr + "";
     }
   };
 
@@ -56,36 +57,23 @@ public final class GoToContextMenuHelper {
     }
   }
 
-  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull String title, @NotNull Comparator<NodeNavigatable> comparator, @NotNull BaseRenderer renderer) {
+  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull String title, @NotNull BaseRenderer renderer, @Nullable Comparator<SNodeReference> comparator, @Nullable Function<SNodeReference, String> namer) {
     myProject = project;
     myTitle = title;
-    myComparator = comparator;
     myRenderer = renderer;
-    // invoke #getRoot#getName 
-    myNamerForNavigatable = new Function<NodeNavigatable, String>() {
-      @Override
-      public String fun(NodeNavigatable navigatable) {
-        final SNodeReference nodePointer = navigatable.getNodePointer();
-        String name = new ModelComputeRunnable<String>(new Computable<String>() {
-          @Override
-          public String compute() {
-            SNode resolved = nodePointer.resolve(myProject.getRepository());
-            // invoke #getRoot#getName 
-            if (resolved != null) {
-              return resolved.getName();
-            }
-            return nodePointer.toString();
-          }
-        }).runRead(myProject.getModelAccess());
-        return name;
-      }
-    };
+    if (comparator == null) {
+      comparator = DEFAULT_COMPARATOR;
+    }
+    if (namer == null) {
+      namer = NamerFactory.DEFAULT_NAMER_FACTORY.create(project.getRepository());
+    }
+    myComparator = adaptComparatorForNavigatable(comparator);
+    myNamerForFiltering = adaptNamerForNavigatable(namer);
   }
 
   public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull String title, @NotNull BaseRenderer renderer) {
-    this(project, title, DEFAULT_COMPARATOR, renderer);
+    this(project, title, renderer, null, null);
   }
-
 
   public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {
     if (inputEvent instanceof MouseEvent) {
@@ -114,11 +102,18 @@ public final class GoToContextMenuHelper {
     return menu;
   }
 
-
   @NotNull
   public GoToContextMenuHelper.ContextMenuComposite buildPopup() {
+    return buildPopup(Collections.<SNodeReference>emptyList());
+  }
+
+  @NotNull
+  public GoToContextMenuHelper.ContextMenuComposite buildPopup(@NotNull List<SNodeReference> foundUsages) {
     checkClassLoader();
     SortedListModel<NodeNavigatable> listModel = new SortedListModel(myComparator);
+    for (SNodeReference usage : ListSequence.fromList(foundUsages)) {
+      listModel.add(new NodeNavigatable(myProject, usage));
+    }
     final JBList<NodeNavigatable> list = new JBList(listModel);
     JBPopup popup = new PopupChooserBuilder<NodeNavigatable>(list).setTitle(myTitle).setMovable(true).setItemChoosenCallback(new Runnable() {
       @Override
@@ -131,8 +126,26 @@ public final class GoToContextMenuHelper {
           selected.navigate(true);
         }
       }
-    }).setRenderer(myRenderer).setSelectionMode(ListSelectionModel.SINGLE_SELECTION).setNamerForFiltering(myNamerForNavigatable).createPopup();
+    }).setRenderer(myRenderer).setSelectionMode(ListSelectionModel.SINGLE_SELECTION).setNamerForFiltering(myNamerForFiltering).createPopup();
     return new GoToContextMenuHelper.ContextMenuComposite(popup, list, listModel);
+  }
+
+  private static Function<NodeNavigatable, String> adaptNamerForNavigatable(final Function<SNodeReference, String> namer) {
+    return new Function<NodeNavigatable, String>() {
+      public String fun(NodeNavigatable p0) {
+        SNodeReference nodePointer = p0.getNodePointer();
+        return namer.fun(nodePointer);
+      }
+    };
+  }
+
+  private static Comparator<NodeNavigatable> adaptComparatorForNavigatable(final Comparator<SNodeReference> comparator) {
+    return new Comparator<NodeNavigatable>() {
+      @Override
+      public int compare(NodeNavigatable n1, NodeNavigatable n2) {
+        return comparator.compare(n1.getNodePointer(), n2.getNodePointer());
+      }
+    };
   }
 
   private static void checkClassLoader() {
