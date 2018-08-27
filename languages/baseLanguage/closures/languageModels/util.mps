@@ -122,7 +122,6 @@
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
-      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7">
       <concept id="400642802549924137" name="jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement" flags="nn" index="2ignYC" />
@@ -292,7 +291,7 @@
             <node concept="3clFbS" id="7Qab_gmbALp" role="3eOfB_">
               <node concept="3cpWs6" id="7Qab_gmmOZJ" role="3cqZAp">
                 <node concept="1rXfSq" id="7Qab_gmmPdz" role="3cqZAk">
-                  <ref role="37wK5l" node="7Qab_gmdGgA" resolve="ufunction" />
+                  <ref role="37wK5l" node="7Qab_gmdGgA" resolve="unrestricted_function" />
                   <node concept="37vLTw" id="i$$tvcA6kh" role="37wK5m">
                     <ref role="3cqZAo" node="48g_2rFssG3" resolve="fnSignature" />
                   </node>
@@ -378,7 +377,7 @@
       <node concept="3Tqbb2" id="7Qab_gmdscS" role="3clF45">
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
-      <node concept="3Tm6S6" id="SAe$kTURZs" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6GFpWnVlGso" role="1B3o_S" />
       <node concept="3clFbS" id="7Qab_gmbI0X" role="3clF47">
         <node concept="2ignYC" id="1IrPViTIf$W" role="3cqZAp">
           <node concept="37vLTw" id="1IrPViTIf$X" role="3KbGdf">
@@ -6219,7 +6218,7 @@
     </node>
     <node concept="2tJIrI" id="7Qab_gmdGqD" role="jymVt" />
     <node concept="2YIFZL" id="7Qab_gmdGgA" role="jymVt">
-      <property role="TrG5h" value="ufunction" />
+      <property role="TrG5h" value="unrestricted_function" />
       <node concept="37vLTG" id="7Qab_gmdGgB" role="3clF46">
         <property role="TrG5h" value="fnsignature" />
         <node concept="17QB3L" id="7Qab_gmdGgC" role="1tU5fm" />
@@ -6227,7 +6226,7 @@
       <node concept="3Tqbb2" id="7Qab_gmdGgD" role="3clF45">
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
-      <node concept="3Tm6S6" id="SAe$kTVcug" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6GFpWnVlI87" role="1B3o_S" />
       <node concept="3clFbS" id="7Qab_gmdGgF" role="3clF47">
         <node concept="2ignYC" id="7Qab_gmdGgG" role="3cqZAp">
           <node concept="37vLTw" id="7Qab_gmdGgM" role="3KbGdf">

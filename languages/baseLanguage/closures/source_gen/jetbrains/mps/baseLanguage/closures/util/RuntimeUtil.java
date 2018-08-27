@@ -26,7 +26,7 @@ public class RuntimeUtil {
       return function(fnSignature);
 
     } else if (SPropertyOperations.getString(unftypes, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(fnClassifierName)) {
-      return ufunction(fnSignature);
+      return unrestricted_function(fnSignature);
 
     } else {
       if (LOG.isEnabledFor(Level.WARN)) {
@@ -47,7 +47,7 @@ public class RuntimeUtil {
     return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes");
   }
 
-  private static SNode function(String fnsignature) {
+  public static SNode function(String fnsignature) {
     switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0h, fnsignature)) {
       case 13:
         return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E10");
@@ -542,7 +542,7 @@ public class RuntimeUtil {
 
   }
 
-  private static SNode ufunction(String fnsignature) {
+  public static SNode unrestricted_function(String fnsignature) {
     switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0j, fnsignature)) {
       case 376:
         return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E10");

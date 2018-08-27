@@ -31,8 +31,8 @@
       <node id="9046093740211304597" at="23,52,24,0" concept="7" />
       <node id="9046093740214272157" at="25,187,26,35" concept="5" />
       <node id="9046093740214281629" at="26,35,27,0" concept="7" />
-      <node id="9046093740214276079" at="28,196,29,36" concept="5" />
-      <node id="9046093740214283519" at="29,36,30,0" concept="7" />
+      <node id="9046093740214276079" at="28,196,29,48" concept="5" />
+      <node id="9046093740214283519" at="29,48,30,0" concept="7" />
       <node id="3818729150937334303" at="32,41,33,68" concept="2" />
       <node id="1019566434643866577" at="35,5,36,0" concept="7" />
       <node id="9046093740211354216" at="36,0,37,16" concept="5" />
@@ -781,10 +781,10 @@
       <node id="9046093740213744241" at="45,0,49,0" concept="9" trace="ufunctionClassifierContainer#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="9046093740211308509" at="24,0,35,5" concept="3" />
       <node id="9046093740210861316" at="20,0,39,0" concept="9" trace="functionClassifier#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1989420831624198460" at="50,53,541,5" concept="10" />
+      <node id="1989420831624198460" at="50,52,541,5" concept="10" />
       <node id="9046093740211363897" at="50,0,544,0" concept="9" trace="function#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="9046093740211881004" at="545,54,1520,5" concept="10" />
-      <node id="9046093740211880998" at="545,0,1522,0" concept="9" trace="ufunction#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="9046093740211881004" at="545,65,1520,5" concept="10" />
+      <node id="9046093740211880998" at="545,0,1522,0" concept="9" trace="unrestricted_function#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3818729150937334303" at="32,41,33,68" />
       <scope id="492304438170537759" at="52,14,53,182" />
       <scope id="492304438170537768" at="54,14,55,181" />
@@ -1531,11 +1531,11 @@
         <var name="fnClassifierName" id="9046093740210861317" />
         <var name="fnSignature" id="4760467701010385667" />
       </scope>
-      <scope id="9046093740211363901" at="50,53,542,0" />
+      <scope id="9046093740211363901" at="50,52,542,0" />
       <scope id="9046093740211363897" at="50,0,544,0">
         <var name="fnsignature" id="9046093740211364451" />
       </scope>
-      <scope id="9046093740211881003" at="545,54,1520,5" />
+      <scope id="9046093740211881003" at="545,65,1520,5" />
       <scope id="9046093740211880998" at="545,0,1522,0">
         <var name="fnsignature" id="9046093740211880999" />
       </scope>
