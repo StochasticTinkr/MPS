@@ -10,7 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +41,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).isEmpty()) {
@@ -49,15 +50,16 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
       SNode current = node;
       for (SNode ancestor : ListSequence.fromList(SLinkOperations.getChildren(current, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
         SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-        ListSequence.fromList(_results).addElement(ancestorNode);
+        callback.onUsageFound(createSingleResult(ancestorNode));
         for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, monitor.subTask(1)))) {
-          ListSequence.fromList(_results).addElement(ancestorAncestor);
+          callback.onUsageFound(createSingleResult(ancestorAncestor));
         }
       }
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";

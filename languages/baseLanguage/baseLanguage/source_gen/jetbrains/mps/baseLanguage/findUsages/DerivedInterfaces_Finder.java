@@ -5,10 +5,12 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -33,7 +35,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
       List<SNode> derived = new ArrayList<SNode>();
@@ -48,7 +50,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
           }
         }
         if (passingNode != node) {
-          ListSequence.fromList(_results).addElement(passingNode);
+          callback.onUsageFound(createSingleResult(passingNode));
         }
         passed++;
       }
@@ -56,6 +58,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Derived Interfaces";

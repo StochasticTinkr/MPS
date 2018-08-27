@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierSuccessors;
@@ -42,19 +43,22 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, final List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
       SNode classifier = (SNode) SNodeOperations.getParent(node);
       final SNode instanceMethod = node;
       for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessors.getInstance().getDerivedClassifiers(classifier, scope))) {
+        if (monitor.isCanceled()) {
+          return;
+        }
         Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(derivedClassifier)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(instanceMethod, it);
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.fromList(_results).addElement(it);
+            callback.onUsageFound(createSingleResult(it));
           }
         });
         if (SNodeOperations.isInstanceOf(derivedClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
@@ -65,7 +69,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
               }
             }).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                ListSequence.fromList(_results).addElement(it);
+                callback.onUsageFound(createSingleResult(it));
               }
             });
           }
@@ -79,16 +83,16 @@ public class DerivedMethods_Finder extends GeneratedFinder {
             }
           }).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
-              ListSequence.fromList(_results).addElement(it);
+              callback.onUsageFound(createSingleResult(it));
             }
           });
         }
-
       }
     } finally {
       monitor.done();
     }
   }
+
 
   @Nullable
   @Override
