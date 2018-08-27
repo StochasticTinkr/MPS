@@ -21,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import org.apache.log4j.Level;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
-import org.apache.log4j.Level;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
@@ -91,6 +91,12 @@ public abstract class MergeDriverPacker {
     Map<String, File> files = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
     for (String basePath : classpathDirs) {
       File baseDir = new File(basePath);
+      if (!(baseDir.exists())) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(String.format("Bad classpath location %s, file doesn't exist", basePath));
+        }
+        continue;
+      }
       Queue<String> pathQueue = QueueSequence.fromQueueAndArray(new LinkedList<String>(), baseDir.list());
       while (QueueSequence.fromQueue(pathQueue).isNotEmpty()) {
         String path = QueueSequence.fromQueue(pathQueue).removeFirstElement();

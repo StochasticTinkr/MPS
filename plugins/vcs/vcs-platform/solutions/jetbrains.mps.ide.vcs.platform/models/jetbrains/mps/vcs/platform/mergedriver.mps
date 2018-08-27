@@ -279,6 +279,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -8225,6 +8226,34 @@
                     <node concept="2GrUjf" id="2ouftQnoDib" role="37wK5m">
                       <ref role="2Gs0qQ" node="2ouftQnooKq" resolve="basePath" />
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="6ZJWS$QPIkk" role="3cqZAp">
+              <node concept="3clFbS" id="6ZJWS$QPIkm" role="3clFbx">
+                <node concept="RRSsy" id="6ZJWS$QPNEP" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="2YIFZM" id="6ZJWS$QPNZD" role="RRSoy">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <node concept="Xl_RD" id="6ZJWS$QPO5J" role="37wK5m">
+                      <property role="Xl_RC" value="Bad classpath location %s, file doesn't exist" />
+                    </node>
+                    <node concept="2GrUjf" id="6ZJWS$QPOmW" role="37wK5m">
+                      <ref role="2Gs0qQ" node="2ouftQnooKq" resolve="basePath" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3N13vt" id="6ZJWS$QPNT3" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="6ZJWS$QPLKY" role="3clFbw">
+                <node concept="2OqwBi" id="6ZJWS$QPLL0" role="3fr31v">
+                  <node concept="37vLTw" id="6ZJWS$QPLL1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ouftQnoCV_" resolve="baseDir" />
+                  </node>
+                  <node concept="liA8E" id="6ZJWS$QPLL2" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
                   </node>
                 </node>
               </node>

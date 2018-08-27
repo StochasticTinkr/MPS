@@ -2893,27 +2893,17 @@
               <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
             </node>
             <node concept="TSZUe" id="6kmsk4KDJ1F" role="2OqNvi">
-              <node concept="3cpWs3" id="6kmsk4KDJ3M" role="25WWJ7">
-                <node concept="3cpWs3" id="6kmsk4KDJ3w" role="3uHU7B">
-                  <node concept="3cpWs3" id="6kmsk4KDJ3d" role="3uHU7B">
-                    <node concept="3cpWs3" id="6kmsk4KDJ1G" role="3uHU7B">
-                      <node concept="1rXfSq" id="4hiugqyz8vf" role="3uHU7B">
-                        <ref role="37wK5l" to="80f9:7cEItjJE$3d" resolve="getVCSCorePluginPath" />
-                      </node>
-                      <node concept="37vLTw" id="19ElvrpZnoB" role="3uHU7w">
-                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="6kmsk4KDJ3h" role="3uHU7w">
-                      <property role="Xl_RC" value="lib" />
-                    </node>
+              <node concept="3cpWs3" id="6kmsk4KDJ3d" role="25WWJ7">
+                <node concept="3cpWs3" id="6kmsk4KDJ1G" role="3uHU7B">
+                  <node concept="1rXfSq" id="4hiugqyz8vf" role="3uHU7B">
+                    <ref role="37wK5l" to="80f9:7cEItjJE$3d" resolve="getVCSCorePluginPath" />
                   </node>
-                  <node concept="37vLTw" id="19ElvrpZnoC" role="3uHU7w">
+                  <node concept="37vLTw" id="19ElvrpZnoB" role="3uHU7w">
                     <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
                   </node>
                 </node>
-                <node concept="Xl_RD" id="6kmsk4KDJ1H" role="3uHU7w">
-                  <property role="Xl_RC" value="classes" />
+                <node concept="Xl_RD" id="6kmsk4KDJ3h" role="3uHU7w">
+                  <property role="Xl_RC" value="lib" />
                 </node>
               </node>
             </node>
