@@ -5,11 +5,10 @@ package jetbrains.mps.baseLanguage.closures.util;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Arrays;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * This class is generated with the "UpdateRuntimeUtil" script.
@@ -18,521 +17,502 @@ public class RuntimeUtil {
   private static final Logger LOG = LogManager.getLogger(RuntimeUtil.class);
 
   public static SNode functionClassifier(String fnClassifierName, String fnSignature) {
-    // these references must point to the @java_stub models 
-    SNode ftypes = functionClassifierContainer();
-    SNode unftypes = ufunctionClassifierContainer();
-
-    if (SPropertyOperations.getString(ftypes, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(fnClassifierName)) {
-      return function(fnSignature);
-
-    } else if (SPropertyOperations.getString(unftypes, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(fnClassifierName)) {
-      return unrestricted_function(fnSignature);
-
-    } else {
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("unknown classifier \"" + fnClassifierName + "\"");
-      }
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("unknown classifier \"" + fnClassifierName + "\"");
     }
 
     return null;
   }
 
-  public static SNode functionClassifierContainer() {
-    // these references must point to the @java_stub models 
-    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes");
-  }
-
-  public static SNode ufunctionClassifierContainer() {
-    // these references must point to the @java_stub models 
-    return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes");
-  }
-
-  public static SNode function(String fnsignature) {
-    switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0h, fnsignature)) {
+  /**
+   * these references must point to the @java_stub models
+   */
+  public static SNodeReference function(String fnsignature) {
+    switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0d, fnsignature)) {
       case 13:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E10");
       case 21:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E9");
       case 20:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E8");
       case 19:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E7");
       case 18:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E6");
       case 17:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E5");
       case 16:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E4");
       case 15:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E3");
       case 14:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E2");
       case 12:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E1");
       case 11:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P10_E0");
       case 112:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E10");
       case 120:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E9");
       case 119:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E8");
       case 118:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E7");
       case 117:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E6");
       case 116:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E5");
       case 115:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E4");
       case 114:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E3");
       case 113:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E2");
       case 111:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E1");
       case 110:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P9_E0");
       case 101:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E10");
       case 109:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E9");
       case 108:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E8");
       case 107:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E7");
       case 106:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E6");
       case 105:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E5");
       case 104:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E4");
       case 103:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E3");
       case 102:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E2");
       case 100:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E1");
       case 99:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P8_E0");
       case 90:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E10");
       case 98:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E9");
       case 97:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E8");
       case 96:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E7");
       case 95:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E6");
       case 94:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E5");
       case 93:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E4");
       case 92:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E3");
       case 91:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E2");
       case 89:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E1");
       case 88:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P7_E0");
       case 79:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E10");
       case 87:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E9");
       case 86:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E8");
       case 85:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E7");
       case 84:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E6");
       case 83:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E5");
       case 82:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E4");
       case 81:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E3");
       case 80:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E2");
       case 78:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E1");
       case 77:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P6_E0");
       case 68:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E10");
       case 76:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E9");
       case 75:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E8");
       case 74:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E7");
       case 73:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E6");
       case 72:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E5");
       case 71:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E4");
       case 70:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E3");
       case 69:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E2");
       case 67:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E1");
       case 66:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P5_E0");
       case 57:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E10");
       case 65:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E9");
       case 64:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E8");
       case 63:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E7");
       case 62:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E6");
       case 61:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E5");
       case 60:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E4");
       case 59:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E3");
       case 58:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E2");
       case 56:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E1");
       case 55:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P4_E0");
       case 46:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E10");
       case 54:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E9");
       case 53:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E8");
       case 52:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E7");
       case 51:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E6");
       case 50:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E5");
       case 49:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E4");
       case 48:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E3");
       case 47:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E2");
       case 45:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E1");
       case 44:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P3_E0");
       case 35:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E10");
       case 43:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E9");
       case 42:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E8");
       case 41:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E7");
       case 40:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E6");
       case 39:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E5");
       case 38:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E4");
       case 37:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E3");
       case 36:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E2");
       case 34:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E1");
       case 33:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P2_E0");
       case 24:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E10");
       case 32:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E9");
       case 31:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E8");
       case 30:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E7");
       case 29:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E6");
       case 28:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E5");
       case 27:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E4");
       case 26:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E3");
       case 25:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E2");
       case 23:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E1");
       case 22:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P1_E0");
       case 2:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E10");
       case 10:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E9");
       case 9:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E8");
       case 8:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E7");
       case 7:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E6");
       case 6:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E5");
       case 5:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E4");
       case 4:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E3");
       case 3:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E2");
       case 1:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E1");
       case 0:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_return_P0_E0");
       case 134:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E10");
       case 142:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E9");
       case 141:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E8");
       case 140:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E7");
       case 139:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E6");
       case 138:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E5");
       case 137:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E4");
       case 136:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E3");
       case 135:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E2");
       case 133:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E1");
       case 132:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P10_E0");
       case 233:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E10");
       case 241:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E9");
       case 240:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E8");
       case 239:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E7");
       case 238:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E6");
       case 237:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E5");
       case 236:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E4");
       case 235:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E3");
       case 234:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E2");
       case 232:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E1");
       case 231:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P9_E0");
       case 222:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E10");
       case 230:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E9");
       case 229:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E8");
       case 228:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E7");
       case 227:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E6");
       case 226:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E5");
       case 225:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E4");
       case 224:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E3");
       case 223:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E2");
       case 221:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E1");
       case 220:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P8_E0");
       case 211:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E10");
       case 219:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E9");
       case 218:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E8");
       case 217:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E7");
       case 216:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E6");
       case 215:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E5");
       case 214:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E4");
       case 213:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E3");
       case 212:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E2");
       case 210:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E1");
       case 209:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P7_E0");
       case 200:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E10");
       case 208:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E9");
       case 207:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E8");
       case 206:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E7");
       case 205:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E6");
       case 204:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E5");
       case 203:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E4");
       case 202:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E3");
       case 201:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E2");
       case 199:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E1");
       case 198:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P6_E0");
       case 189:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E10");
       case 197:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E9");
       case 196:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E8");
       case 195:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E7");
       case 194:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E6");
       case 193:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E5");
       case 192:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E4");
       case 191:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E3");
       case 190:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E2");
       case 188:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E1");
       case 187:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P5_E0");
       case 178:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E10");
       case 186:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E9");
       case 185:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E8");
       case 184:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E7");
       case 183:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E6");
       case 182:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E5");
       case 181:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E4");
       case 180:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E3");
       case 179:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E2");
       case 177:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E1");
       case 176:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P4_E0");
       case 167:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E10");
       case 175:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E9");
       case 174:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E8");
       case 173:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E7");
       case 172:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E6");
       case 171:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E5");
       case 170:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E4");
       case 169:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E3");
       case 168:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E2");
       case 166:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E1");
       case 165:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P3_E0");
       case 156:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E10");
       case 164:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E9");
       case 163:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E8");
       case 162:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E7");
       case 161:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E6");
       case 160:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E5");
       case 159:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E4");
       case 158:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E3");
       case 157:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E2");
       case 155:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E1");
       case 154:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P2_E0");
       case 145:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E10");
       case 153:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E9");
       case 152:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E8");
       case 151:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E7");
       case 150:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E6");
       case 149:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E5");
       case 148:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E4");
       case 147:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E3");
       case 146:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E2");
       case 144:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E1");
       case 143:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P1_E0");
       case 123:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E10");
       case 131:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E9");
       case 130:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E8");
       case 129:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E7");
       case 128:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E6");
       case 127:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E5");
       case 126:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E4");
       case 125:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E3");
       case 124:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E2");
       case 122:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E1");
       case 121:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_FunctionTypes$_void_P0_E0");
       default:
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("unknown function signature \"" + fnsignature + "\"");
@@ -542,976 +522,979 @@ public class RuntimeUtil {
 
   }
 
-  public static SNode unrestricted_function(String fnsignature) {
-    switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0j, fnsignature)) {
+  /**
+   * these references must point to the @java_stub models
+   */
+  public static SNodeReference unrestricted_function(String fnsignature) {
+    switch (Arrays.binarySearch(stringSwitchCases_k17xt9_a0a0f, fnsignature)) {
       case 376:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E10");
       case 384:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E9");
       case 383:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E8");
       case 382:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E7");
       case 381:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E6");
       case 380:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E5");
       case 379:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E4");
       case 378:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E3");
       case 377:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E2");
       case 375:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E1");
       case 374:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P10_E0");
       case 475:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E10");
       case 483:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E9");
       case 482:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E8");
       case 481:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E7");
       case 480:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E6");
       case 479:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E5");
       case 478:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E4");
       case 477:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E3");
       case 476:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E2");
       case 474:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E1");
       case 473:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P9_E0");
       case 464:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E10");
       case 472:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E9");
       case 471:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E8");
       case 470:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E7");
       case 469:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E6");
       case 468:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E5");
       case 467:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E4");
       case 466:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E3");
       case 465:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E2");
       case 463:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E1");
       case 462:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P8_E0");
       case 453:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E10");
       case 461:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E9");
       case 460:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E8");
       case 459:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E7");
       case 458:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E6");
       case 457:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E5");
       case 456:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E4");
       case 455:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E3");
       case 454:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E2");
       case 452:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E1");
       case 451:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P7_E0");
       case 442:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E10");
       case 450:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E9");
       case 449:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E8");
       case 448:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E7");
       case 447:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E6");
       case 446:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E5");
       case 445:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E4");
       case 444:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E3");
       case 443:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E2");
       case 441:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E1");
       case 440:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P6_E0");
       case 431:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E10");
       case 439:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E9");
       case 438:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E8");
       case 437:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E7");
       case 436:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E6");
       case 435:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E5");
       case 434:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E4");
       case 433:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E3");
       case 432:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E2");
       case 430:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E1");
       case 429:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P5_E0");
       case 420:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E10");
       case 428:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E9");
       case 427:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E8");
       case 426:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E7");
       case 425:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E6");
       case 424:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E5");
       case 423:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E4");
       case 422:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E3");
       case 421:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E2");
       case 419:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E1");
       case 418:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P4_E0");
       case 409:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E10");
       case 417:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E9");
       case 416:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E8");
       case 415:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E7");
       case 414:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E6");
       case 413:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E5");
       case 412:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E4");
       case 411:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E3");
       case 410:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E2");
       case 408:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E1");
       case 407:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P3_E0");
       case 398:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E10");
       case 406:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E9");
       case 405:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E8");
       case 404:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E7");
       case 403:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E6");
       case 402:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E5");
       case 401:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E4");
       case 400:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E3");
       case 399:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E2");
       case 397:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E1");
       case 396:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P2_E0");
       case 387:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E10");
       case 395:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E9");
       case 394:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E8");
       case 393:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E7");
       case 392:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E6");
       case 391:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E5");
       case 390:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E4");
       case 389:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E3");
       case 388:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E2");
       case 386:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E1");
       case 385:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P1_E0");
       case 365:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E10");
       case 373:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E9");
       case 372:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E8");
       case 371:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E7");
       case 370:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E6");
       case 369:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E5");
       case 368:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E4");
       case 367:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E3");
       case 366:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E2");
       case 364:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E1");
       case 363:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_void_P0_E0");
       case 134:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E10");
       case 142:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E9");
       case 141:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E8");
       case 140:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E7");
       case 139:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E6");
       case 138:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E5");
       case 137:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E4");
       case 136:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E3");
       case 135:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E2");
       case 133:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E1");
       case 132:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P10_E0");
       case 233:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E10");
       case 241:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E9");
       case 240:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E8");
       case 239:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E7");
       case 238:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E6");
       case 237:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E5");
       case 236:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E4");
       case 235:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E3");
       case 234:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E2");
       case 232:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E1");
       case 231:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P9_E0");
       case 222:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E10");
       case 230:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E9");
       case 229:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E8");
       case 228:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E7");
       case 227:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E6");
       case 226:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E5");
       case 225:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E4");
       case 224:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E3");
       case 223:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E2");
       case 221:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E1");
       case 220:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P8_E0");
       case 211:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E10");
       case 219:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E9");
       case 218:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E8");
       case 217:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E7");
       case 216:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E6");
       case 215:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E5");
       case 214:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E4");
       case 213:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E3");
       case 212:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E2");
       case 210:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E1");
       case 209:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P7_E0");
       case 200:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E10");
       case 208:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E9");
       case 207:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E8");
       case 206:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E7");
       case 205:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E6");
       case 204:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E5");
       case 203:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E4");
       case 202:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E3");
       case 201:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E2");
       case 199:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E1");
       case 198:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P6_E0");
       case 189:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E10");
       case 197:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E9");
       case 196:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E8");
       case 195:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E7");
       case 194:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E6");
       case 193:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E5");
       case 192:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E4");
       case 191:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E3");
       case 190:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E2");
       case 188:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E1");
       case 187:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P5_E0");
       case 178:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E10");
       case 186:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E9");
       case 185:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E8");
       case 184:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E7");
       case 183:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E6");
       case 182:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E5");
       case 181:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E4");
       case 180:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E3");
       case 179:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E2");
       case 177:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E1");
       case 176:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P4_E0");
       case 167:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E10");
       case 175:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E9");
       case 174:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E8");
       case 173:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E7");
       case 172:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E6");
       case 171:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E5");
       case 170:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E4");
       case 169:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E3");
       case 168:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E2");
       case 166:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E1");
       case 165:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P3_E0");
       case 156:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E10");
       case 164:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E9");
       case 163:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E8");
       case 162:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E7");
       case 161:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E6");
       case 160:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E5");
       case 159:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E4");
       case 158:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E3");
       case 157:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E2");
       case 155:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E1");
       case 154:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P2_E0");
       case 145:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E10");
       case 153:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E9");
       case 152:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E8");
       case 151:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E7");
       case 150:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E6");
       case 149:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E5");
       case 148:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E4");
       case 147:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E3");
       case 146:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E2");
       case 144:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E1");
       case 143:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P1_E0");
       case 123:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E10");
       case 131:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E9");
       case 130:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E8");
       case 129:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E7");
       case 128:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E6");
       case 127:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E5");
       case 126:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E4");
       case 125:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E3");
       case 124:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E2");
       case 122:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E1");
       case 121:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_void_P0_E0");
       case 255:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E10");
       case 263:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E9");
       case 262:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E8");
       case 261:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E7");
       case 260:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E6");
       case 259:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E5");
       case 258:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E4");
       case 257:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E3");
       case 256:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E2");
       case 254:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E1");
       case 253:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P10_E0");
       case 354:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E10");
       case 362:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E9");
       case 361:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E8");
       case 360:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E7");
       case 359:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E6");
       case 358:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E5");
       case 357:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E4");
       case 356:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E3");
       case 355:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E2");
       case 353:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E1");
       case 352:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P9_E0");
       case 343:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E10");
       case 351:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E9");
       case 350:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E8");
       case 349:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E7");
       case 348:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E6");
       case 347:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E5");
       case 346:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E4");
       case 345:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E3");
       case 344:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E2");
       case 342:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E1");
       case 341:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P8_E0");
       case 332:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E10");
       case 340:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E9");
       case 339:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E8");
       case 338:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E7");
       case 337:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E6");
       case 336:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E5");
       case 335:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E4");
       case 334:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E3");
       case 333:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E2");
       case 331:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E1");
       case 330:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P7_E0");
       case 321:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E10");
       case 329:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E9");
       case 328:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E8");
       case 327:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E7");
       case 326:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E6");
       case 325:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E5");
       case 324:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E4");
       case 323:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E3");
       case 322:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E2");
       case 320:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E1");
       case 319:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P6_E0");
       case 310:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E10");
       case 318:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E9");
       case 317:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E8");
       case 316:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E7");
       case 315:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E6");
       case 314:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E5");
       case 313:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E4");
       case 312:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E3");
       case 311:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E2");
       case 309:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E1");
       case 308:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P5_E0");
       case 299:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E10");
       case 307:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E9");
       case 306:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E8");
       case 305:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E7");
       case 304:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E6");
       case 303:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E5");
       case 302:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E4");
       case 301:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E3");
       case 300:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E2");
       case 298:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E1");
       case 297:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P4_E0");
       case 288:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E10");
       case 296:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E9");
       case 295:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E8");
       case 294:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E7");
       case 293:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E6");
       case 292:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E5");
       case 291:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E4");
       case 290:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E3");
       case 289:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E2");
       case 287:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E1");
       case 286:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P3_E0");
       case 277:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E10");
       case 285:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E9");
       case 284:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E8");
       case 283:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E7");
       case 282:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E6");
       case 281:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E5");
       case 280:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E4");
       case 279:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E3");
       case 278:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E2");
       case 276:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E1");
       case 275:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P2_E0");
       case 266:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E10");
       case 274:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E9");
       case 273:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E8");
       case 272:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E7");
       case 271:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E6");
       case 270:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E5");
       case 269:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E4");
       case 268:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E3");
       case 267:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E2");
       case 265:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E1");
       case 264:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P1_E0");
       case 244:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E10");
       case 252:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E9");
       case 251:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E8");
       case 250:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E7");
       case 249:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E6");
       case 248:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E5");
       case 247:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E4");
       case 246:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E3");
       case 245:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E2");
       case 243:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E1");
       case 242:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_void_terminate_P0_E0");
       case 13:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E10");
       case 21:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E9");
       case 20:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E8");
       case 19:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E7");
       case 18:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E6");
       case 17:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E5");
       case 16:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E4");
       case 15:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E3");
       case 14:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E2");
       case 12:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E1");
       case 11:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P10_E0");
       case 112:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E10");
       case 120:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E9");
       case 119:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E8");
       case 118:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E7");
       case 117:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E6");
       case 116:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E5");
       case 115:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E4");
       case 114:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E3");
       case 113:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E2");
       case 111:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E1");
       case 110:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P9_E0");
       case 101:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E10");
       case 109:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E9");
       case 108:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E8");
       case 107:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E7");
       case 106:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E6");
       case 105:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E5");
       case 104:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E4");
       case 103:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E3");
       case 102:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E2");
       case 100:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E1");
       case 99:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P8_E0");
       case 90:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E10");
       case 98:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E9");
       case 97:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E8");
       case 96:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E7");
       case 95:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E6");
       case 94:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E5");
       case 93:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E4");
       case 92:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E3");
       case 91:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E2");
       case 89:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E1");
       case 88:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P7_E0");
       case 79:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E10");
       case 87:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E9");
       case 86:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E8");
       case 85:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E7");
       case 84:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E6");
       case 83:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E5");
       case 82:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E4");
       case 81:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E3");
       case 80:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E2");
       case 78:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E1");
       case 77:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P6_E0");
       case 68:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E10");
       case 76:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E9");
       case 75:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E8");
       case 74:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E7");
       case 73:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E6");
       case 72:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E5");
       case 71:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E4");
       case 70:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E3");
       case 69:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E2");
       case 67:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E1");
       case 66:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P5_E0");
       case 57:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E10");
       case 65:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E9");
       case 64:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E8");
       case 63:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E7");
       case 62:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E6");
       case 61:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E5");
       case 60:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E4");
       case 59:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E3");
       case 58:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E2");
       case 56:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E1");
       case 55:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P4_E0");
       case 46:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E10");
       case 54:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E9");
       case 53:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E8");
       case 52:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E7");
       case 51:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E6");
       case 50:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E5");
       case 49:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E4");
       case 48:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E3");
       case 47:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E2");
       case 45:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E1");
       case 44:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P3_E0");
       case 35:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E10");
       case 43:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E9");
       case 42:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E8");
       case 41:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E7");
       case 40:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E6");
       case 39:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E5");
       case 38:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E4");
       case 37:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E3");
       case 36:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E2");
       case 34:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E1");
       case 33:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P2_E0");
       case 24:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E10");
       case 32:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E9");
       case 31:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E8");
       case 30:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E7");
       case 29:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E6");
       case 28:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E5");
       case 27:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E4");
       case 26:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E3");
       case 25:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E2");
       case 23:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E1");
       case 22:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P1_E0");
       case 2:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E10");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E10");
       case 10:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E9");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E9");
       case 9:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E8");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E8");
       case 8:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E7");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E7");
       case 7:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E6");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E6");
       case 6:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E5");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E5");
       case 5:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E4");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E4");
       case 4:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E3");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E3");
       case 3:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E2");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E2");
       case 1:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E1");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E1");
       case 0:
-        return (SNode) SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E0");
+        return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes$_return_terminate_P0_E0");
       default:
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("unknown function signature \"" + fnsignature + "\"");
@@ -1519,6 +1502,6 @@ public class RuntimeUtil {
         return null;
     }
   }
-  private static String[] stringSwitchCases_k17xt9_a0a0h = new String[]{"_return_P0_E0", "_return_P0_E1", "_return_P0_E10", "_return_P0_E2", "_return_P0_E3", "_return_P0_E4", "_return_P0_E5", "_return_P0_E6", "_return_P0_E7", "_return_P0_E8", "_return_P0_E9", "_return_P10_E0", "_return_P10_E1", "_return_P10_E10", "_return_P10_E2", "_return_P10_E3", "_return_P10_E4", "_return_P10_E5", "_return_P10_E6", "_return_P10_E7", "_return_P10_E8", "_return_P10_E9", "_return_P1_E0", "_return_P1_E1", "_return_P1_E10", "_return_P1_E2", "_return_P1_E3", "_return_P1_E4", "_return_P1_E5", "_return_P1_E6", "_return_P1_E7", "_return_P1_E8", "_return_P1_E9", "_return_P2_E0", "_return_P2_E1", "_return_P2_E10", "_return_P2_E2", "_return_P2_E3", "_return_P2_E4", "_return_P2_E5", "_return_P2_E6", "_return_P2_E7", "_return_P2_E8", "_return_P2_E9", "_return_P3_E0", "_return_P3_E1", "_return_P3_E10", "_return_P3_E2", "_return_P3_E3", "_return_P3_E4", "_return_P3_E5", "_return_P3_E6", "_return_P3_E7", "_return_P3_E8", "_return_P3_E9", "_return_P4_E0", "_return_P4_E1", "_return_P4_E10", "_return_P4_E2", "_return_P4_E3", "_return_P4_E4", "_return_P4_E5", "_return_P4_E6", "_return_P4_E7", "_return_P4_E8", "_return_P4_E9", "_return_P5_E0", "_return_P5_E1", "_return_P5_E10", "_return_P5_E2", "_return_P5_E3", "_return_P5_E4", "_return_P5_E5", "_return_P5_E6", "_return_P5_E7", "_return_P5_E8", "_return_P5_E9", "_return_P6_E0", "_return_P6_E1", "_return_P6_E10", "_return_P6_E2", "_return_P6_E3", "_return_P6_E4", "_return_P6_E5", "_return_P6_E6", "_return_P6_E7", "_return_P6_E8", "_return_P6_E9", "_return_P7_E0", "_return_P7_E1", "_return_P7_E10", "_return_P7_E2", "_return_P7_E3", "_return_P7_E4", "_return_P7_E5", "_return_P7_E6", "_return_P7_E7", "_return_P7_E8", "_return_P7_E9", "_return_P8_E0", "_return_P8_E1", "_return_P8_E10", "_return_P8_E2", "_return_P8_E3", "_return_P8_E4", "_return_P8_E5", "_return_P8_E6", "_return_P8_E7", "_return_P8_E8", "_return_P8_E9", "_return_P9_E0", "_return_P9_E1", "_return_P9_E10", "_return_P9_E2", "_return_P9_E3", "_return_P9_E4", "_return_P9_E5", "_return_P9_E6", "_return_P9_E7", "_return_P9_E8", "_return_P9_E9", "_void_P0_E0", "_void_P0_E1", "_void_P0_E10", "_void_P0_E2", "_void_P0_E3", "_void_P0_E4", "_void_P0_E5", "_void_P0_E6", "_void_P0_E7", "_void_P0_E8", "_void_P0_E9", "_void_P10_E0", "_void_P10_E1", "_void_P10_E10", "_void_P10_E2", "_void_P10_E3", "_void_P10_E4", "_void_P10_E5", "_void_P10_E6", "_void_P10_E7", "_void_P10_E8", "_void_P10_E9", "_void_P1_E0", "_void_P1_E1", "_void_P1_E10", "_void_P1_E2", "_void_P1_E3", "_void_P1_E4", "_void_P1_E5", "_void_P1_E6", "_void_P1_E7", "_void_P1_E8", "_void_P1_E9", "_void_P2_E0", "_void_P2_E1", "_void_P2_E10", "_void_P2_E2", "_void_P2_E3", "_void_P2_E4", "_void_P2_E5", "_void_P2_E6", "_void_P2_E7", "_void_P2_E8", "_void_P2_E9", "_void_P3_E0", "_void_P3_E1", "_void_P3_E10", "_void_P3_E2", "_void_P3_E3", "_void_P3_E4", "_void_P3_E5", "_void_P3_E6", "_void_P3_E7", "_void_P3_E8", "_void_P3_E9", "_void_P4_E0", "_void_P4_E1", "_void_P4_E10", "_void_P4_E2", "_void_P4_E3", "_void_P4_E4", "_void_P4_E5", "_void_P4_E6", "_void_P4_E7", "_void_P4_E8", "_void_P4_E9", "_void_P5_E0", "_void_P5_E1", "_void_P5_E10", "_void_P5_E2", "_void_P5_E3", "_void_P5_E4", "_void_P5_E5", "_void_P5_E6", "_void_P5_E7", "_void_P5_E8", "_void_P5_E9", "_void_P6_E0", "_void_P6_E1", "_void_P6_E10", "_void_P6_E2", "_void_P6_E3", "_void_P6_E4", "_void_P6_E5", "_void_P6_E6", "_void_P6_E7", "_void_P6_E8", "_void_P6_E9", "_void_P7_E0", "_void_P7_E1", "_void_P7_E10", "_void_P7_E2", "_void_P7_E3", "_void_P7_E4", "_void_P7_E5", "_void_P7_E6", "_void_P7_E7", "_void_P7_E8", "_void_P7_E9", "_void_P8_E0", "_void_P8_E1", "_void_P8_E10", "_void_P8_E2", "_void_P8_E3", "_void_P8_E4", "_void_P8_E5", "_void_P8_E6", "_void_P8_E7", "_void_P8_E8", "_void_P8_E9", "_void_P9_E0", "_void_P9_E1", "_void_P9_E10", "_void_P9_E2", "_void_P9_E3", "_void_P9_E4", "_void_P9_E5", "_void_P9_E6", "_void_P9_E7", "_void_P9_E8", "_void_P9_E9"};
-  private static String[] stringSwitchCases_k17xt9_a0a0j = new String[]{"_return_terminate_P0_E0", "_return_terminate_P0_E1", "_return_terminate_P0_E10", "_return_terminate_P0_E2", "_return_terminate_P0_E3", "_return_terminate_P0_E4", "_return_terminate_P0_E5", "_return_terminate_P0_E6", "_return_terminate_P0_E7", "_return_terminate_P0_E8", "_return_terminate_P0_E9", "_return_terminate_P10_E0", "_return_terminate_P10_E1", "_return_terminate_P10_E10", "_return_terminate_P10_E2", "_return_terminate_P10_E3", "_return_terminate_P10_E4", "_return_terminate_P10_E5", "_return_terminate_P10_E6", "_return_terminate_P10_E7", "_return_terminate_P10_E8", "_return_terminate_P10_E9", "_return_terminate_P1_E0", "_return_terminate_P1_E1", "_return_terminate_P1_E10", "_return_terminate_P1_E2", "_return_terminate_P1_E3", "_return_terminate_P1_E4", "_return_terminate_P1_E5", "_return_terminate_P1_E6", "_return_terminate_P1_E7", "_return_terminate_P1_E8", "_return_terminate_P1_E9", "_return_terminate_P2_E0", "_return_terminate_P2_E1", "_return_terminate_P2_E10", "_return_terminate_P2_E2", "_return_terminate_P2_E3", "_return_terminate_P2_E4", "_return_terminate_P2_E5", "_return_terminate_P2_E6", "_return_terminate_P2_E7", "_return_terminate_P2_E8", "_return_terminate_P2_E9", "_return_terminate_P3_E0", "_return_terminate_P3_E1", "_return_terminate_P3_E10", "_return_terminate_P3_E2", "_return_terminate_P3_E3", "_return_terminate_P3_E4", "_return_terminate_P3_E5", "_return_terminate_P3_E6", "_return_terminate_P3_E7", "_return_terminate_P3_E8", "_return_terminate_P3_E9", "_return_terminate_P4_E0", "_return_terminate_P4_E1", "_return_terminate_P4_E10", "_return_terminate_P4_E2", "_return_terminate_P4_E3", "_return_terminate_P4_E4", "_return_terminate_P4_E5", "_return_terminate_P4_E6", "_return_terminate_P4_E7", "_return_terminate_P4_E8", "_return_terminate_P4_E9", "_return_terminate_P5_E0", "_return_terminate_P5_E1", "_return_terminate_P5_E10", "_return_terminate_P5_E2", "_return_terminate_P5_E3", "_return_terminate_P5_E4", "_return_terminate_P5_E5", "_return_terminate_P5_E6", "_return_terminate_P5_E7", "_return_terminate_P5_E8", "_return_terminate_P5_E9", "_return_terminate_P6_E0", "_return_terminate_P6_E1", "_return_terminate_P6_E10", "_return_terminate_P6_E2", "_return_terminate_P6_E3", "_return_terminate_P6_E4", "_return_terminate_P6_E5", "_return_terminate_P6_E6", "_return_terminate_P6_E7", "_return_terminate_P6_E8", "_return_terminate_P6_E9", "_return_terminate_P7_E0", "_return_terminate_P7_E1", "_return_terminate_P7_E10", "_return_terminate_P7_E2", "_return_terminate_P7_E3", "_return_terminate_P7_E4", "_return_terminate_P7_E5", "_return_terminate_P7_E6", "_return_terminate_P7_E7", "_return_terminate_P7_E8", "_return_terminate_P7_E9", "_return_terminate_P8_E0", "_return_terminate_P8_E1", "_return_terminate_P8_E10", "_return_terminate_P8_E2", "_return_terminate_P8_E3", "_return_terminate_P8_E4", "_return_terminate_P8_E5", "_return_terminate_P8_E6", "_return_terminate_P8_E7", "_return_terminate_P8_E8", "_return_terminate_P8_E9", "_return_terminate_P9_E0", "_return_terminate_P9_E1", "_return_terminate_P9_E10", "_return_terminate_P9_E2", "_return_terminate_P9_E3", "_return_terminate_P9_E4", "_return_terminate_P9_E5", "_return_terminate_P9_E6", "_return_terminate_P9_E7", "_return_terminate_P9_E8", "_return_terminate_P9_E9", "_return_void_P0_E0", "_return_void_P0_E1", "_return_void_P0_E10", "_return_void_P0_E2", "_return_void_P0_E3", "_return_void_P0_E4", "_return_void_P0_E5", "_return_void_P0_E6", "_return_void_P0_E7", "_return_void_P0_E8", "_return_void_P0_E9", "_return_void_P10_E0", "_return_void_P10_E1", "_return_void_P10_E10", "_return_void_P10_E2", "_return_void_P10_E3", "_return_void_P10_E4", "_return_void_P10_E5", "_return_void_P10_E6", "_return_void_P10_E7", "_return_void_P10_E8", "_return_void_P10_E9", "_return_void_P1_E0", "_return_void_P1_E1", "_return_void_P1_E10", "_return_void_P1_E2", "_return_void_P1_E3", "_return_void_P1_E4", "_return_void_P1_E5", "_return_void_P1_E6", "_return_void_P1_E7", "_return_void_P1_E8", "_return_void_P1_E9", "_return_void_P2_E0", "_return_void_P2_E1", "_return_void_P2_E10", "_return_void_P2_E2", "_return_void_P2_E3", "_return_void_P2_E4", "_return_void_P2_E5", "_return_void_P2_E6", "_return_void_P2_E7", "_return_void_P2_E8", "_return_void_P2_E9", "_return_void_P3_E0", "_return_void_P3_E1", "_return_void_P3_E10", "_return_void_P3_E2", "_return_void_P3_E3", "_return_void_P3_E4", "_return_void_P3_E5", "_return_void_P3_E6", "_return_void_P3_E7", "_return_void_P3_E8", "_return_void_P3_E9", "_return_void_P4_E0", "_return_void_P4_E1", "_return_void_P4_E10", "_return_void_P4_E2", "_return_void_P4_E3", "_return_void_P4_E4", "_return_void_P4_E5", "_return_void_P4_E6", "_return_void_P4_E7", "_return_void_P4_E8", "_return_void_P4_E9", "_return_void_P5_E0", "_return_void_P5_E1", "_return_void_P5_E10", "_return_void_P5_E2", "_return_void_P5_E3", "_return_void_P5_E4", "_return_void_P5_E5", "_return_void_P5_E6", "_return_void_P5_E7", "_return_void_P5_E8", "_return_void_P5_E9", "_return_void_P6_E0", "_return_void_P6_E1", "_return_void_P6_E10", "_return_void_P6_E2", "_return_void_P6_E3", "_return_void_P6_E4", "_return_void_P6_E5", "_return_void_P6_E6", "_return_void_P6_E7", "_return_void_P6_E8", "_return_void_P6_E9", "_return_void_P7_E0", "_return_void_P7_E1", "_return_void_P7_E10", "_return_void_P7_E2", "_return_void_P7_E3", "_return_void_P7_E4", "_return_void_P7_E5", "_return_void_P7_E6", "_return_void_P7_E7", "_return_void_P7_E8", "_return_void_P7_E9", "_return_void_P8_E0", "_return_void_P8_E1", "_return_void_P8_E10", "_return_void_P8_E2", "_return_void_P8_E3", "_return_void_P8_E4", "_return_void_P8_E5", "_return_void_P8_E6", "_return_void_P8_E7", "_return_void_P8_E8", "_return_void_P8_E9", "_return_void_P9_E0", "_return_void_P9_E1", "_return_void_P9_E10", "_return_void_P9_E2", "_return_void_P9_E3", "_return_void_P9_E4", "_return_void_P9_E5", "_return_void_P9_E6", "_return_void_P9_E7", "_return_void_P9_E8", "_return_void_P9_E9", "_void_terminate_P0_E0", "_void_terminate_P0_E1", "_void_terminate_P0_E10", "_void_terminate_P0_E2", "_void_terminate_P0_E3", "_void_terminate_P0_E4", "_void_terminate_P0_E5", "_void_terminate_P0_E6", "_void_terminate_P0_E7", "_void_terminate_P0_E8", "_void_terminate_P0_E9", "_void_terminate_P10_E0", "_void_terminate_P10_E1", "_void_terminate_P10_E10", "_void_terminate_P10_E2", "_void_terminate_P10_E3", "_void_terminate_P10_E4", "_void_terminate_P10_E5", "_void_terminate_P10_E6", "_void_terminate_P10_E7", "_void_terminate_P10_E8", "_void_terminate_P10_E9", "_void_terminate_P1_E0", "_void_terminate_P1_E1", "_void_terminate_P1_E10", "_void_terminate_P1_E2", "_void_terminate_P1_E3", "_void_terminate_P1_E4", "_void_terminate_P1_E5", "_void_terminate_P1_E6", "_void_terminate_P1_E7", "_void_terminate_P1_E8", "_void_terminate_P1_E9", "_void_terminate_P2_E0", "_void_terminate_P2_E1", "_void_terminate_P2_E10", "_void_terminate_P2_E2", "_void_terminate_P2_E3", "_void_terminate_P2_E4", "_void_terminate_P2_E5", "_void_terminate_P2_E6", "_void_terminate_P2_E7", "_void_terminate_P2_E8", "_void_terminate_P2_E9", "_void_terminate_P3_E0", "_void_terminate_P3_E1", "_void_terminate_P3_E10", "_void_terminate_P3_E2", "_void_terminate_P3_E3", "_void_terminate_P3_E4", "_void_terminate_P3_E5", "_void_terminate_P3_E6", "_void_terminate_P3_E7", "_void_terminate_P3_E8", "_void_terminate_P3_E9", "_void_terminate_P4_E0", "_void_terminate_P4_E1", "_void_terminate_P4_E10", "_void_terminate_P4_E2", "_void_terminate_P4_E3", "_void_terminate_P4_E4", "_void_terminate_P4_E5", "_void_terminate_P4_E6", "_void_terminate_P4_E7", "_void_terminate_P4_E8", "_void_terminate_P4_E9", "_void_terminate_P5_E0", "_void_terminate_P5_E1", "_void_terminate_P5_E10", "_void_terminate_P5_E2", "_void_terminate_P5_E3", "_void_terminate_P5_E4", "_void_terminate_P5_E5", "_void_terminate_P5_E6", "_void_terminate_P5_E7", "_void_terminate_P5_E8", "_void_terminate_P5_E9", "_void_terminate_P6_E0", "_void_terminate_P6_E1", "_void_terminate_P6_E10", "_void_terminate_P6_E2", "_void_terminate_P6_E3", "_void_terminate_P6_E4", "_void_terminate_P6_E5", "_void_terminate_P6_E6", "_void_terminate_P6_E7", "_void_terminate_P6_E8", "_void_terminate_P6_E9", "_void_terminate_P7_E0", "_void_terminate_P7_E1", "_void_terminate_P7_E10", "_void_terminate_P7_E2", "_void_terminate_P7_E3", "_void_terminate_P7_E4", "_void_terminate_P7_E5", "_void_terminate_P7_E6", "_void_terminate_P7_E7", "_void_terminate_P7_E8", "_void_terminate_P7_E9", "_void_terminate_P8_E0", "_void_terminate_P8_E1", "_void_terminate_P8_E10", "_void_terminate_P8_E2", "_void_terminate_P8_E3", "_void_terminate_P8_E4", "_void_terminate_P8_E5", "_void_terminate_P8_E6", "_void_terminate_P8_E7", "_void_terminate_P8_E8", "_void_terminate_P8_E9", "_void_terminate_P9_E0", "_void_terminate_P9_E1", "_void_terminate_P9_E10", "_void_terminate_P9_E2", "_void_terminate_P9_E3", "_void_terminate_P9_E4", "_void_terminate_P9_E5", "_void_terminate_P9_E6", "_void_terminate_P9_E7", "_void_terminate_P9_E8", "_void_terminate_P9_E9", "_void_void_P0_E0", "_void_void_P0_E1", "_void_void_P0_E10", "_void_void_P0_E2", "_void_void_P0_E3", "_void_void_P0_E4", "_void_void_P0_E5", "_void_void_P0_E6", "_void_void_P0_E7", "_void_void_P0_E8", "_void_void_P0_E9", "_void_void_P10_E0", "_void_void_P10_E1", "_void_void_P10_E10", "_void_void_P10_E2", "_void_void_P10_E3", "_void_void_P10_E4", "_void_void_P10_E5", "_void_void_P10_E6", "_void_void_P10_E7", "_void_void_P10_E8", "_void_void_P10_E9", "_void_void_P1_E0", "_void_void_P1_E1", "_void_void_P1_E10", "_void_void_P1_E2", "_void_void_P1_E3", "_void_void_P1_E4", "_void_void_P1_E5", "_void_void_P1_E6", "_void_void_P1_E7", "_void_void_P1_E8", "_void_void_P1_E9", "_void_void_P2_E0", "_void_void_P2_E1", "_void_void_P2_E10", "_void_void_P2_E2", "_void_void_P2_E3", "_void_void_P2_E4", "_void_void_P2_E5", "_void_void_P2_E6", "_void_void_P2_E7", "_void_void_P2_E8", "_void_void_P2_E9", "_void_void_P3_E0", "_void_void_P3_E1", "_void_void_P3_E10", "_void_void_P3_E2", "_void_void_P3_E3", "_void_void_P3_E4", "_void_void_P3_E5", "_void_void_P3_E6", "_void_void_P3_E7", "_void_void_P3_E8", "_void_void_P3_E9", "_void_void_P4_E0", "_void_void_P4_E1", "_void_void_P4_E10", "_void_void_P4_E2", "_void_void_P4_E3", "_void_void_P4_E4", "_void_void_P4_E5", "_void_void_P4_E6", "_void_void_P4_E7", "_void_void_P4_E8", "_void_void_P4_E9", "_void_void_P5_E0", "_void_void_P5_E1", "_void_void_P5_E10", "_void_void_P5_E2", "_void_void_P5_E3", "_void_void_P5_E4", "_void_void_P5_E5", "_void_void_P5_E6", "_void_void_P5_E7", "_void_void_P5_E8", "_void_void_P5_E9", "_void_void_P6_E0", "_void_void_P6_E1", "_void_void_P6_E10", "_void_void_P6_E2", "_void_void_P6_E3", "_void_void_P6_E4", "_void_void_P6_E5", "_void_void_P6_E6", "_void_void_P6_E7", "_void_void_P6_E8", "_void_void_P6_E9", "_void_void_P7_E0", "_void_void_P7_E1", "_void_void_P7_E10", "_void_void_P7_E2", "_void_void_P7_E3", "_void_void_P7_E4", "_void_void_P7_E5", "_void_void_P7_E6", "_void_void_P7_E7", "_void_void_P7_E8", "_void_void_P7_E9", "_void_void_P8_E0", "_void_void_P8_E1", "_void_void_P8_E10", "_void_void_P8_E2", "_void_void_P8_E3", "_void_void_P8_E4", "_void_void_P8_E5", "_void_void_P8_E6", "_void_void_P8_E7", "_void_void_P8_E8", "_void_void_P8_E9", "_void_void_P9_E0", "_void_void_P9_E1", "_void_void_P9_E10", "_void_void_P9_E2", "_void_void_P9_E3", "_void_void_P9_E4", "_void_void_P9_E5", "_void_void_P9_E6", "_void_void_P9_E7", "_void_void_P9_E8", "_void_void_P9_E9"};
+  private static String[] stringSwitchCases_k17xt9_a0a0d = new String[]{"_return_P0_E0", "_return_P0_E1", "_return_P0_E10", "_return_P0_E2", "_return_P0_E3", "_return_P0_E4", "_return_P0_E5", "_return_P0_E6", "_return_P0_E7", "_return_P0_E8", "_return_P0_E9", "_return_P10_E0", "_return_P10_E1", "_return_P10_E10", "_return_P10_E2", "_return_P10_E3", "_return_P10_E4", "_return_P10_E5", "_return_P10_E6", "_return_P10_E7", "_return_P10_E8", "_return_P10_E9", "_return_P1_E0", "_return_P1_E1", "_return_P1_E10", "_return_P1_E2", "_return_P1_E3", "_return_P1_E4", "_return_P1_E5", "_return_P1_E6", "_return_P1_E7", "_return_P1_E8", "_return_P1_E9", "_return_P2_E0", "_return_P2_E1", "_return_P2_E10", "_return_P2_E2", "_return_P2_E3", "_return_P2_E4", "_return_P2_E5", "_return_P2_E6", "_return_P2_E7", "_return_P2_E8", "_return_P2_E9", "_return_P3_E0", "_return_P3_E1", "_return_P3_E10", "_return_P3_E2", "_return_P3_E3", "_return_P3_E4", "_return_P3_E5", "_return_P3_E6", "_return_P3_E7", "_return_P3_E8", "_return_P3_E9", "_return_P4_E0", "_return_P4_E1", "_return_P4_E10", "_return_P4_E2", "_return_P4_E3", "_return_P4_E4", "_return_P4_E5", "_return_P4_E6", "_return_P4_E7", "_return_P4_E8", "_return_P4_E9", "_return_P5_E0", "_return_P5_E1", "_return_P5_E10", "_return_P5_E2", "_return_P5_E3", "_return_P5_E4", "_return_P5_E5", "_return_P5_E6", "_return_P5_E7", "_return_P5_E8", "_return_P5_E9", "_return_P6_E0", "_return_P6_E1", "_return_P6_E10", "_return_P6_E2", "_return_P6_E3", "_return_P6_E4", "_return_P6_E5", "_return_P6_E6", "_return_P6_E7", "_return_P6_E8", "_return_P6_E9", "_return_P7_E0", "_return_P7_E1", "_return_P7_E10", "_return_P7_E2", "_return_P7_E3", "_return_P7_E4", "_return_P7_E5", "_return_P7_E6", "_return_P7_E7", "_return_P7_E8", "_return_P7_E9", "_return_P8_E0", "_return_P8_E1", "_return_P8_E10", "_return_P8_E2", "_return_P8_E3", "_return_P8_E4", "_return_P8_E5", "_return_P8_E6", "_return_P8_E7", "_return_P8_E8", "_return_P8_E9", "_return_P9_E0", "_return_P9_E1", "_return_P9_E10", "_return_P9_E2", "_return_P9_E3", "_return_P9_E4", "_return_P9_E5", "_return_P9_E6", "_return_P9_E7", "_return_P9_E8", "_return_P9_E9", "_void_P0_E0", "_void_P0_E1", "_void_P0_E10", "_void_P0_E2", "_void_P0_E3", "_void_P0_E4", "_void_P0_E5", "_void_P0_E6", "_void_P0_E7", "_void_P0_E8", "_void_P0_E9", "_void_P10_E0", "_void_P10_E1", "_void_P10_E10", "_void_P10_E2", "_void_P10_E3", "_void_P10_E4", "_void_P10_E5", "_void_P10_E6", "_void_P10_E7", "_void_P10_E8", "_void_P10_E9", "_void_P1_E0", "_void_P1_E1", "_void_P1_E10", "_void_P1_E2", "_void_P1_E3", "_void_P1_E4", "_void_P1_E5", "_void_P1_E6", "_void_P1_E7", "_void_P1_E8", "_void_P1_E9", "_void_P2_E0", "_void_P2_E1", "_void_P2_E10", "_void_P2_E2", "_void_P2_E3", "_void_P2_E4", "_void_P2_E5", "_void_P2_E6", "_void_P2_E7", "_void_P2_E8", "_void_P2_E9", "_void_P3_E0", "_void_P3_E1", "_void_P3_E10", "_void_P3_E2", "_void_P3_E3", "_void_P3_E4", "_void_P3_E5", "_void_P3_E6", "_void_P3_E7", "_void_P3_E8", "_void_P3_E9", "_void_P4_E0", "_void_P4_E1", "_void_P4_E10", "_void_P4_E2", "_void_P4_E3", "_void_P4_E4", "_void_P4_E5", "_void_P4_E6", "_void_P4_E7", "_void_P4_E8", "_void_P4_E9", "_void_P5_E0", "_void_P5_E1", "_void_P5_E10", "_void_P5_E2", "_void_P5_E3", "_void_P5_E4", "_void_P5_E5", "_void_P5_E6", "_void_P5_E7", "_void_P5_E8", "_void_P5_E9", "_void_P6_E0", "_void_P6_E1", "_void_P6_E10", "_void_P6_E2", "_void_P6_E3", "_void_P6_E4", "_void_P6_E5", "_void_P6_E6", "_void_P6_E7", "_void_P6_E8", "_void_P6_E9", "_void_P7_E0", "_void_P7_E1", "_void_P7_E10", "_void_P7_E2", "_void_P7_E3", "_void_P7_E4", "_void_P7_E5", "_void_P7_E6", "_void_P7_E7", "_void_P7_E8", "_void_P7_E9", "_void_P8_E0", "_void_P8_E1", "_void_P8_E10", "_void_P8_E2", "_void_P8_E3", "_void_P8_E4", "_void_P8_E5", "_void_P8_E6", "_void_P8_E7", "_void_P8_E8", "_void_P8_E9", "_void_P9_E0", "_void_P9_E1", "_void_P9_E10", "_void_P9_E2", "_void_P9_E3", "_void_P9_E4", "_void_P9_E5", "_void_P9_E6", "_void_P9_E7", "_void_P9_E8", "_void_P9_E9"};
+  private static String[] stringSwitchCases_k17xt9_a0a0f = new String[]{"_return_terminate_P0_E0", "_return_terminate_P0_E1", "_return_terminate_P0_E10", "_return_terminate_P0_E2", "_return_terminate_P0_E3", "_return_terminate_P0_E4", "_return_terminate_P0_E5", "_return_terminate_P0_E6", "_return_terminate_P0_E7", "_return_terminate_P0_E8", "_return_terminate_P0_E9", "_return_terminate_P10_E0", "_return_terminate_P10_E1", "_return_terminate_P10_E10", "_return_terminate_P10_E2", "_return_terminate_P10_E3", "_return_terminate_P10_E4", "_return_terminate_P10_E5", "_return_terminate_P10_E6", "_return_terminate_P10_E7", "_return_terminate_P10_E8", "_return_terminate_P10_E9", "_return_terminate_P1_E0", "_return_terminate_P1_E1", "_return_terminate_P1_E10", "_return_terminate_P1_E2", "_return_terminate_P1_E3", "_return_terminate_P1_E4", "_return_terminate_P1_E5", "_return_terminate_P1_E6", "_return_terminate_P1_E7", "_return_terminate_P1_E8", "_return_terminate_P1_E9", "_return_terminate_P2_E0", "_return_terminate_P2_E1", "_return_terminate_P2_E10", "_return_terminate_P2_E2", "_return_terminate_P2_E3", "_return_terminate_P2_E4", "_return_terminate_P2_E5", "_return_terminate_P2_E6", "_return_terminate_P2_E7", "_return_terminate_P2_E8", "_return_terminate_P2_E9", "_return_terminate_P3_E0", "_return_terminate_P3_E1", "_return_terminate_P3_E10", "_return_terminate_P3_E2", "_return_terminate_P3_E3", "_return_terminate_P3_E4", "_return_terminate_P3_E5", "_return_terminate_P3_E6", "_return_terminate_P3_E7", "_return_terminate_P3_E8", "_return_terminate_P3_E9", "_return_terminate_P4_E0", "_return_terminate_P4_E1", "_return_terminate_P4_E10", "_return_terminate_P4_E2", "_return_terminate_P4_E3", "_return_terminate_P4_E4", "_return_terminate_P4_E5", "_return_terminate_P4_E6", "_return_terminate_P4_E7", "_return_terminate_P4_E8", "_return_terminate_P4_E9", "_return_terminate_P5_E0", "_return_terminate_P5_E1", "_return_terminate_P5_E10", "_return_terminate_P5_E2", "_return_terminate_P5_E3", "_return_terminate_P5_E4", "_return_terminate_P5_E5", "_return_terminate_P5_E6", "_return_terminate_P5_E7", "_return_terminate_P5_E8", "_return_terminate_P5_E9", "_return_terminate_P6_E0", "_return_terminate_P6_E1", "_return_terminate_P6_E10", "_return_terminate_P6_E2", "_return_terminate_P6_E3", "_return_terminate_P6_E4", "_return_terminate_P6_E5", "_return_terminate_P6_E6", "_return_terminate_P6_E7", "_return_terminate_P6_E8", "_return_terminate_P6_E9", "_return_terminate_P7_E0", "_return_terminate_P7_E1", "_return_terminate_P7_E10", "_return_terminate_P7_E2", "_return_terminate_P7_E3", "_return_terminate_P7_E4", "_return_terminate_P7_E5", "_return_terminate_P7_E6", "_return_terminate_P7_E7", "_return_terminate_P7_E8", "_return_terminate_P7_E9", "_return_terminate_P8_E0", "_return_terminate_P8_E1", "_return_terminate_P8_E10", "_return_terminate_P8_E2", "_return_terminate_P8_E3", "_return_terminate_P8_E4", "_return_terminate_P8_E5", "_return_terminate_P8_E6", "_return_terminate_P8_E7", "_return_terminate_P8_E8", "_return_terminate_P8_E9", "_return_terminate_P9_E0", "_return_terminate_P9_E1", "_return_terminate_P9_E10", "_return_terminate_P9_E2", "_return_terminate_P9_E3", "_return_terminate_P9_E4", "_return_terminate_P9_E5", "_return_terminate_P9_E6", "_return_terminate_P9_E7", "_return_terminate_P9_E8", "_return_terminate_P9_E9", "_return_void_P0_E0", "_return_void_P0_E1", "_return_void_P0_E10", "_return_void_P0_E2", "_return_void_P0_E3", "_return_void_P0_E4", "_return_void_P0_E5", "_return_void_P0_E6", "_return_void_P0_E7", "_return_void_P0_E8", "_return_void_P0_E9", "_return_void_P10_E0", "_return_void_P10_E1", "_return_void_P10_E10", "_return_void_P10_E2", "_return_void_P10_E3", "_return_void_P10_E4", "_return_void_P10_E5", "_return_void_P10_E6", "_return_void_P10_E7", "_return_void_P10_E8", "_return_void_P10_E9", "_return_void_P1_E0", "_return_void_P1_E1", "_return_void_P1_E10", "_return_void_P1_E2", "_return_void_P1_E3", "_return_void_P1_E4", "_return_void_P1_E5", "_return_void_P1_E6", "_return_void_P1_E7", "_return_void_P1_E8", "_return_void_P1_E9", "_return_void_P2_E0", "_return_void_P2_E1", "_return_void_P2_E10", "_return_void_P2_E2", "_return_void_P2_E3", "_return_void_P2_E4", "_return_void_P2_E5", "_return_void_P2_E6", "_return_void_P2_E7", "_return_void_P2_E8", "_return_void_P2_E9", "_return_void_P3_E0", "_return_void_P3_E1", "_return_void_P3_E10", "_return_void_P3_E2", "_return_void_P3_E3", "_return_void_P3_E4", "_return_void_P3_E5", "_return_void_P3_E6", "_return_void_P3_E7", "_return_void_P3_E8", "_return_void_P3_E9", "_return_void_P4_E0", "_return_void_P4_E1", "_return_void_P4_E10", "_return_void_P4_E2", "_return_void_P4_E3", "_return_void_P4_E4", "_return_void_P4_E5", "_return_void_P4_E6", "_return_void_P4_E7", "_return_void_P4_E8", "_return_void_P4_E9", "_return_void_P5_E0", "_return_void_P5_E1", "_return_void_P5_E10", "_return_void_P5_E2", "_return_void_P5_E3", "_return_void_P5_E4", "_return_void_P5_E5", "_return_void_P5_E6", "_return_void_P5_E7", "_return_void_P5_E8", "_return_void_P5_E9", "_return_void_P6_E0", "_return_void_P6_E1", "_return_void_P6_E10", "_return_void_P6_E2", "_return_void_P6_E3", "_return_void_P6_E4", "_return_void_P6_E5", "_return_void_P6_E6", "_return_void_P6_E7", "_return_void_P6_E8", "_return_void_P6_E9", "_return_void_P7_E0", "_return_void_P7_E1", "_return_void_P7_E10", "_return_void_P7_E2", "_return_void_P7_E3", "_return_void_P7_E4", "_return_void_P7_E5", "_return_void_P7_E6", "_return_void_P7_E7", "_return_void_P7_E8", "_return_void_P7_E9", "_return_void_P8_E0", "_return_void_P8_E1", "_return_void_P8_E10", "_return_void_P8_E2", "_return_void_P8_E3", "_return_void_P8_E4", "_return_void_P8_E5", "_return_void_P8_E6", "_return_void_P8_E7", "_return_void_P8_E8", "_return_void_P8_E9", "_return_void_P9_E0", "_return_void_P9_E1", "_return_void_P9_E10", "_return_void_P9_E2", "_return_void_P9_E3", "_return_void_P9_E4", "_return_void_P9_E5", "_return_void_P9_E6", "_return_void_P9_E7", "_return_void_P9_E8", "_return_void_P9_E9", "_void_terminate_P0_E0", "_void_terminate_P0_E1", "_void_terminate_P0_E10", "_void_terminate_P0_E2", "_void_terminate_P0_E3", "_void_terminate_P0_E4", "_void_terminate_P0_E5", "_void_terminate_P0_E6", "_void_terminate_P0_E7", "_void_terminate_P0_E8", "_void_terminate_P0_E9", "_void_terminate_P10_E0", "_void_terminate_P10_E1", "_void_terminate_P10_E10", "_void_terminate_P10_E2", "_void_terminate_P10_E3", "_void_terminate_P10_E4", "_void_terminate_P10_E5", "_void_terminate_P10_E6", "_void_terminate_P10_E7", "_void_terminate_P10_E8", "_void_terminate_P10_E9", "_void_terminate_P1_E0", "_void_terminate_P1_E1", "_void_terminate_P1_E10", "_void_terminate_P1_E2", "_void_terminate_P1_E3", "_void_terminate_P1_E4", "_void_terminate_P1_E5", "_void_terminate_P1_E6", "_void_terminate_P1_E7", "_void_terminate_P1_E8", "_void_terminate_P1_E9", "_void_terminate_P2_E0", "_void_terminate_P2_E1", "_void_terminate_P2_E10", "_void_terminate_P2_E2", "_void_terminate_P2_E3", "_void_terminate_P2_E4", "_void_terminate_P2_E5", "_void_terminate_P2_E6", "_void_terminate_P2_E7", "_void_terminate_P2_E8", "_void_terminate_P2_E9", "_void_terminate_P3_E0", "_void_terminate_P3_E1", "_void_terminate_P3_E10", "_void_terminate_P3_E2", "_void_terminate_P3_E3", "_void_terminate_P3_E4", "_void_terminate_P3_E5", "_void_terminate_P3_E6", "_void_terminate_P3_E7", "_void_terminate_P3_E8", "_void_terminate_P3_E9", "_void_terminate_P4_E0", "_void_terminate_P4_E1", "_void_terminate_P4_E10", "_void_terminate_P4_E2", "_void_terminate_P4_E3", "_void_terminate_P4_E4", "_void_terminate_P4_E5", "_void_terminate_P4_E6", "_void_terminate_P4_E7", "_void_terminate_P4_E8", "_void_terminate_P4_E9", "_void_terminate_P5_E0", "_void_terminate_P5_E1", "_void_terminate_P5_E10", "_void_terminate_P5_E2", "_void_terminate_P5_E3", "_void_terminate_P5_E4", "_void_terminate_P5_E5", "_void_terminate_P5_E6", "_void_terminate_P5_E7", "_void_terminate_P5_E8", "_void_terminate_P5_E9", "_void_terminate_P6_E0", "_void_terminate_P6_E1", "_void_terminate_P6_E10", "_void_terminate_P6_E2", "_void_terminate_P6_E3", "_void_terminate_P6_E4", "_void_terminate_P6_E5", "_void_terminate_P6_E6", "_void_terminate_P6_E7", "_void_terminate_P6_E8", "_void_terminate_P6_E9", "_void_terminate_P7_E0", "_void_terminate_P7_E1", "_void_terminate_P7_E10", "_void_terminate_P7_E2", "_void_terminate_P7_E3", "_void_terminate_P7_E4", "_void_terminate_P7_E5", "_void_terminate_P7_E6", "_void_terminate_P7_E7", "_void_terminate_P7_E8", "_void_terminate_P7_E9", "_void_terminate_P8_E0", "_void_terminate_P8_E1", "_void_terminate_P8_E10", "_void_terminate_P8_E2", "_void_terminate_P8_E3", "_void_terminate_P8_E4", "_void_terminate_P8_E5", "_void_terminate_P8_E6", "_void_terminate_P8_E7", "_void_terminate_P8_E8", "_void_terminate_P8_E9", "_void_terminate_P9_E0", "_void_terminate_P9_E1", "_void_terminate_P9_E10", "_void_terminate_P9_E2", "_void_terminate_P9_E3", "_void_terminate_P9_E4", "_void_terminate_P9_E5", "_void_terminate_P9_E6", "_void_terminate_P9_E7", "_void_terminate_P9_E8", "_void_terminate_P9_E9", "_void_void_P0_E0", "_void_void_P0_E1", "_void_void_P0_E10", "_void_void_P0_E2", "_void_void_P0_E3", "_void_void_P0_E4", "_void_void_P0_E5", "_void_void_P0_E6", "_void_void_P0_E7", "_void_void_P0_E8", "_void_void_P0_E9", "_void_void_P10_E0", "_void_void_P10_E1", "_void_void_P10_E10", "_void_void_P10_E2", "_void_void_P10_E3", "_void_void_P10_E4", "_void_void_P10_E5", "_void_void_P10_E6", "_void_void_P10_E7", "_void_void_P10_E8", "_void_void_P10_E9", "_void_void_P1_E0", "_void_void_P1_E1", "_void_void_P1_E10", "_void_void_P1_E2", "_void_void_P1_E3", "_void_void_P1_E4", "_void_void_P1_E5", "_void_void_P1_E6", "_void_void_P1_E7", "_void_void_P1_E8", "_void_void_P1_E9", "_void_void_P2_E0", "_void_void_P2_E1", "_void_void_P2_E10", "_void_void_P2_E2", "_void_void_P2_E3", "_void_void_P2_E4", "_void_void_P2_E5", "_void_void_P2_E6", "_void_void_P2_E7", "_void_void_P2_E8", "_void_void_P2_E9", "_void_void_P3_E0", "_void_void_P3_E1", "_void_void_P3_E10", "_void_void_P3_E2", "_void_void_P3_E3", "_void_void_P3_E4", "_void_void_P3_E5", "_void_void_P3_E6", "_void_void_P3_E7", "_void_void_P3_E8", "_void_void_P3_E9", "_void_void_P4_E0", "_void_void_P4_E1", "_void_void_P4_E10", "_void_void_P4_E2", "_void_void_P4_E3", "_void_void_P4_E4", "_void_void_P4_E5", "_void_void_P4_E6", "_void_void_P4_E7", "_void_void_P4_E8", "_void_void_P4_E9", "_void_void_P5_E0", "_void_void_P5_E1", "_void_void_P5_E10", "_void_void_P5_E2", "_void_void_P5_E3", "_void_void_P5_E4", "_void_void_P5_E5", "_void_void_P5_E6", "_void_void_P5_E7", "_void_void_P5_E8", "_void_void_P5_E9", "_void_void_P6_E0", "_void_void_P6_E1", "_void_void_P6_E10", "_void_void_P6_E2", "_void_void_P6_E3", "_void_void_P6_E4", "_void_void_P6_E5", "_void_void_P6_E6", "_void_void_P6_E7", "_void_void_P6_E8", "_void_void_P6_E9", "_void_void_P7_E0", "_void_void_P7_E1", "_void_void_P7_E10", "_void_void_P7_E2", "_void_void_P7_E3", "_void_void_P7_E4", "_void_void_P7_E5", "_void_void_P7_E6", "_void_void_P7_E7", "_void_void_P7_E8", "_void_void_P7_E9", "_void_void_P8_E0", "_void_void_P8_E1", "_void_void_P8_E10", "_void_void_P8_E2", "_void_void_P8_E3", "_void_void_P8_E4", "_void_void_P8_E5", "_void_void_P8_E6", "_void_void_P8_E7", "_void_void_P8_E8", "_void_void_P8_E9", "_void_void_P9_E0", "_void_void_P9_E1", "_void_void_P9_E10", "_void_void_P9_E2", "_void_void_P9_E3", "_void_void_P9_E4", "_void_void_P9_E5", "_void_void_P9_E6", "_void_void_P9_E7", "_void_void_P9_E8", "_void_void_P9_E9"};
 }

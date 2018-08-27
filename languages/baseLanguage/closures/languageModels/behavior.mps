@@ -17,21 +17,14 @@
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="ggp6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern.util(MPS.Core/)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="tp2d" ref="r:00000000-0000-4000-0000-011c89590339(jetbrains.mps.baseLanguage.closures.helper)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="v7n5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="faxn" ref="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
-    <import index="qbve" ref="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -312,7 +305,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU">
         <reference id="7400021826771268269" name="concept" index="2sp9C9" />
@@ -1103,15 +1095,12 @@
       </node>
       <node concept="3clFbS" id="6GFpWnVllMf" role="3clF47">
         <node concept="3clFbF" id="6GFpWnVluxp" role="3cqZAp">
-          <node concept="2OqwBi" id="6GFpWnVmDg_" role="3clFbG">
-            <node concept="2YIFZM" id="6GFpWnVmCTz" role="2Oq$k0">
-              <ref role="37wK5l" to="faxn:7Qab_gmbI0T" resolve="function" />
-              <ref role="1Pybhc" to="faxn:7Qab_gm9Nk2" resolve="RuntimeUtil" />
-              <node concept="BsUDl" id="6GFpWnVmCX7" role="37wK5m">
-                <ref role="37wK5l" node="hEwIOjZ" resolve="getRuntimeSignature" />
-              </node>
+          <node concept="2YIFZM" id="6GFpWnVmCTz" role="3clFbG">
+            <ref role="37wK5l" to="faxn:7Qab_gmbI0T" resolve="function" />
+            <ref role="1Pybhc" to="faxn:7Qab_gm9Nk2" resolve="RuntimeUtil" />
+            <node concept="BsUDl" id="6GFpWnVmCX7" role="37wK5m">
+              <ref role="37wK5l" node="hEwIOjZ" resolve="getRuntimeSignature" />
             </node>
-            <node concept="iZEcu" id="6GFpWnVmDGg" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -4160,15 +4149,12 @@
       <node concept="3Tm1VV" id="6GFpWnVl$xv" role="1B3o_S" />
       <node concept="3clFbS" id="6GFpWnVl$x_" role="3clF47">
         <node concept="3clFbF" id="6GFpWnVmEoT" role="3cqZAp">
-          <node concept="2OqwBi" id="6GFpWnVmEoU" role="3clFbG">
-            <node concept="2YIFZM" id="6GFpWnVmEr2" role="2Oq$k0">
-              <ref role="37wK5l" to="faxn:7Qab_gmdGgA" resolve="unrestricted_function" />
-              <ref role="1Pybhc" to="faxn:7Qab_gm9Nk2" resolve="RuntimeUtil" />
-              <node concept="BsUDl" id="6GFpWnVmEr3" role="37wK5m">
-                <ref role="37wK5l" node="hEwIOjZ" resolve="getRuntimeSignature" />
-              </node>
+          <node concept="2YIFZM" id="6GFpWnVmEr2" role="3clFbG">
+            <ref role="37wK5l" to="faxn:7Qab_gmdGgA" resolve="unrestricted_function" />
+            <ref role="1Pybhc" to="faxn:7Qab_gm9Nk2" resolve="RuntimeUtil" />
+            <node concept="BsUDl" id="6GFpWnVmEr3" role="37wK5m">
+              <ref role="37wK5l" node="hEwIOjZ" resolve="getRuntimeSignature" />
             </node>
-            <node concept="iZEcu" id="6GFpWnVmEoX" role="2OqNvi" />
           </node>
         </node>
       </node>

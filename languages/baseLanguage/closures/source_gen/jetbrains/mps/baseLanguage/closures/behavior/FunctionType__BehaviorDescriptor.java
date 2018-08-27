@@ -22,8 +22,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.util.RuntimeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
@@ -97,7 +97,7 @@ public final class FunctionType__BehaviorDescriptor extends BaseBHDescriptor {
     return sb.toString();
   }
   /*package*/ static SNodeReference getRuntimeClassifier_id6GFpWnVllMc(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getPointer(RuntimeUtil.function(FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__)));
+    return RuntimeUtil.function(FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
   }
   /*package*/ static SNode getResultType_idhTY4wo3(@NotNull SNode __thisNode__) {
     SNode rt = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType"));
