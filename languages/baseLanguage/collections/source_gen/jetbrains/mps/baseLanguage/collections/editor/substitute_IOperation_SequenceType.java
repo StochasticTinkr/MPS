@@ -156,12 +156,6 @@ public class substitute_IOperation_SequenceType extends SubstituteMenuBase {
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(opndType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType")), false) != null) {
           ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSetOp));
         }
-        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(opndType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4067207L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType")), false) != null) {
-          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSortedMapOp));
-        }
-        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(opndType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType")), false) != null) {
-          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfMapOp));
-        }
         ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfIATN).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
             return SetSequence.fromSet(IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(it))).any(new IWhereFilter<SNode>() {
