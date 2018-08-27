@@ -884,6 +884,9 @@
             </node>
             <node concept="1rXfSq" id="4hiugqysgtm" role="33vP2m">
               <ref role="37wK5l" node="2TzypFyLI8v" resolve="selectMerger" />
+              <node concept="37vLTw" id="6ZJWS$QOiHp" role="37wK5m">
+                <ref role="3cqZAo" node="Y1BBlv$vrg" resolve="platform" />
+              </node>
               <node concept="37vLTw" id="7zbsrrw6rnz" role="37wK5m">
                 <ref role="3cqZAo" node="7zbsrrw64Jb" resolve="filetype" />
               </node>
@@ -1327,6 +1330,9 @@
                     <node concept="2ShNRf" id="7zbsrrwlmev" role="37wK5m">
                       <node concept="1pGfFk" id="7zbsrrwlmew" role="2ShVmc">
                         <ref role="37wK5l" node="7zbsrrwd9ry" resolve="ModelMerger" />
+                        <node concept="37vLTw" id="6ZJWS$QOifi" role="37wK5m">
+                          <ref role="3cqZAo" node="6ZJWS$QOgrU" resolve="mpsPlatform" />
+                        </node>
                         <node concept="3K4zz7" id="2QO5PxJ6GBx" role="37wK5m">
                           <node concept="37vLTw" id="2QO5PxJ6KW_" role="3K4E3e">
                             <ref role="3cqZAo" node="7zbsrrw6uaL" resolve="filetype" />
@@ -1453,6 +1459,12 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6ZJWS$QOgrU" role="3clF46">
+        <property role="TrG5h" value="mpsPlatform" />
+        <node concept="3uibUv" id="6ZJWS$QOgQy" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
         </node>
       </node>
       <node concept="37vLTG" id="7zbsrrw6uaL" role="3clF46">
@@ -2735,7 +2747,22 @@
       <node concept="3Tm6S6" id="7zbsrrwdKiM" role="1B3o_S" />
       <node concept="17QB3L" id="7zbsrrwe8ss" role="1tU5fm" />
     </node>
+    <node concept="312cEg" id="6ZJWS$QOc4j" role="jymVt">
+      <property role="TrG5h" value="myPlatform" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6ZJWS$QOc4k" role="1B3o_S" />
+      <node concept="3uibUv" id="6ZJWS$QOc4m" role="1tU5fm">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6ZJWS$QOdRN" role="jymVt" />
     <node concept="3clFbW" id="7zbsrrwd9ry" role="jymVt">
+      <node concept="37vLTG" id="6ZJWS$QObWC" role="3clF46">
+        <property role="TrG5h" value="mpsPlatform" />
+        <node concept="3uibUv" id="6ZJWS$QOc2R" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+        </node>
+      </node>
       <node concept="37vLTG" id="7zbsrrwdmqL" role="3clF46">
         <property role="TrG5h" value="extension" />
         <node concept="17QB3L" id="7zbsrrwdziG" role="1tU5fm" />
@@ -2749,6 +2776,16 @@
             </node>
             <node concept="37vLTw" id="7zbsrrweyiS" role="37vLTJ">
               <ref role="3cqZAo" node="7zbsrrwelkx" resolve="myExtension" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6ZJWS$QOc4n" role="3cqZAp">
+          <node concept="37vLTI" id="6ZJWS$QOc4p" role="3clFbG">
+            <node concept="37vLTw" id="6ZJWS$QOc4s" role="37vLTJ">
+              <ref role="3cqZAo" node="6ZJWS$QOc4j" resolve="myPlatform" />
+            </node>
+            <node concept="37vLTw" id="6ZJWS$QOc4t" role="37vLTx">
+              <ref role="3cqZAo" node="6ZJWS$QObWC" resolve="mpsPlatform" />
             </node>
           </node>
         </node>
@@ -3162,40 +3199,17 @@
                 <node concept="3uibUv" id="2TzypFyLJgK" role="1tU5fm">
                   <ref role="3uigEE" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
                 </node>
-                <node concept="10Nm6u" id="6Bj_f7BHrPV" role="33vP2m" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="2TzypFyLJhK" role="3cqZAp">
-              <node concept="2OqwBi" id="2TzypFyLJhL" role="3clFbG">
-                <node concept="2YIFZM" id="2TzypFyLJhM" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                </node>
-                <node concept="liA8E" id="2TzypFyLJhN" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-                  <node concept="1bVj0M" id="13cOvvwEysu" role="37wK5m">
-                    <node concept="3clFbS" id="13cOvvwEysv" role="1bW5cS">
-                      <node concept="3clFbF" id="6Bj_f7BHsOc" role="3cqZAp">
-                        <node concept="37vLTI" id="6Bj_f7BHtP7" role="3clFbG">
-                          <node concept="37vLTw" id="6Bj_f7BIdWz" role="37vLTJ">
-                            <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                          </node>
-                          <node concept="2YIFZM" id="4p8hmpPbxzN" role="37vLTx">
-                            <ref role="37wK5l" to="bmv6:62HG2toA5Tc" resolve="createMergeSession" />
-                            <ref role="1Pybhc" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
-                            <node concept="37vLTw" id="3GM_nagTu6z" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJey" resolve="baseModel" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTt2G" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJe_" resolve="localModel" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTrLy" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJeC" resolve="latestModel" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+                <node concept="2YIFZM" id="4p8hmpPbxzN" role="33vP2m">
+                  <ref role="37wK5l" to="bmv6:62HG2toA5Tc" resolve="createMergeSession" />
+                  <ref role="1Pybhc" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
+                  <node concept="37vLTw" id="3GM_nagTu6z" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJey" resolve="baseModel" />
+                  </node>
+                  <node concept="37vLTw" id="3GM_nagTt2G" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJe_" resolve="localModel" />
+                  </node>
+                  <node concept="37vLTw" id="3GM_nagTrLy" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJeC" resolve="latestModel" />
                   </node>
                 </node>
               </node>
@@ -3303,34 +3317,19 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="578xxC4yaI0" role="3cqZAp">
-                  <node concept="2OqwBi" id="578xxC4yd15" role="3clFbG">
-                    <node concept="2YIFZM" id="578xxC4yb$t" role="2Oq$k0">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                      <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                <node concept="3clFbF" id="578xxC4yejq" role="3cqZAp">
+                  <node concept="2OqwBi" id="578xxC4yejr" role="3clFbG">
+                    <node concept="37vLTw" id="578xxC4yejs" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
                     </node>
-                    <node concept="liA8E" id="578xxC4ydx_" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-                      <node concept="1bVj0M" id="578xxC4ydOL" role="37wK5m">
-                        <node concept="3clFbS" id="578xxC4ydOM" role="1bW5cS">
-                          <node concept="3clFbF" id="578xxC4yejq" role="3cqZAp">
-                            <node concept="2OqwBi" id="578xxC4yejr" role="3clFbG">
-                              <node concept="37vLTw" id="578xxC4yejs" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                              </node>
-                              <node concept="liA8E" id="578xxC4yejt" role="2OqNvi">
-                                <ref role="37wK5l" to="bmv6:3$YpntjF4oh" resolve="applyChanges" />
-                                <node concept="2OqwBi" id="578xxC4yeju" role="37wK5m">
-                                  <node concept="37vLTw" id="578xxC4yejv" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                                  </node>
-                                  <node concept="liA8E" id="578xxC4yejw" role="2OqNvi">
-                                    <ref role="37wK5l" to="bmv6:3$YpntjF4n8" resolve="getAllChanges" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
+                    <node concept="liA8E" id="578xxC4yejt" role="2OqNvi">
+                      <ref role="37wK5l" to="bmv6:3$YpntjF4oh" resolve="applyChanges" />
+                      <node concept="2OqwBi" id="578xxC4yeju" role="37wK5m">
+                        <node concept="37vLTw" id="578xxC4yejv" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
+                        </node>
+                        <node concept="liA8E" id="578xxC4yejw" role="2OqNvi">
+                          <ref role="37wK5l" to="bmv6:3$YpntjF4n8" resolve="getAllChanges" />
                         </node>
                       </node>
                     </node>
