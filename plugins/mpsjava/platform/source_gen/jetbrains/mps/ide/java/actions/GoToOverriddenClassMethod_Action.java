@@ -26,11 +26,11 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class GoToOverridingClassMethod_Action extends BaseAction {
+public class GoToOverriddenClassMethod_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public GoToOverridingClassMethod_Action() {
-    super("Go to Overriding Methods", "", ICON);
+  public GoToOverriddenClassMethod_Action() {
+    super("Go to Overridden Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -40,7 +40,7 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
+    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
     return finder != null && finder.isApplicable(((SNode) MapSequence.fromMap(_params).get("methodNode")));
   }
   @Override
@@ -80,20 +80,19 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverridden");
     InputEvent inputEvent = event.getInputEvent();
     final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
-    String title = GoToOverridingClassMethod_Action.this.calcTitle(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params);
+    String title = GoToOverriddenClassMethod_Action.this.calcTitle(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params);
     DefaultBLMethodComparator comparator = new DefaultBLMethodComparator(repository);
     DefaultBLMethodNameFilter nameFilter = new DefaultBLMethodNameFilter(repository);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finder(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder")).title(title).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(selectedCell, inputEvent).comparator(comparator).nameFilter(nameFilter);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finder(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder")).title(title).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
   private String calcTitle(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
     return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
       public String compute() {
-        return "Choose an overridden method of '" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "()' to navigate to";
+        return "Choose super method of '" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "()'";
       }
     });
   }
