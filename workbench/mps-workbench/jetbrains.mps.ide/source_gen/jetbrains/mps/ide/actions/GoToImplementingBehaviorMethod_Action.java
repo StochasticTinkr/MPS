@@ -16,9 +16,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import java.awt.event.InputEvent;
-import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.editor.util.GoToContextMenuHelper;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -76,11 +75,12 @@ public class GoToImplementingBehaviorMethod_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
-    InputEvent inputEvent = event.getInputEvent();
     String title = GoToImplementingBehaviorMethod_Action.this.calcTitle(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event);
-    RelativePoint relativePoint = GoToContextMenuHelper.getRelativePoint(selectedCell, inputEvent);
-    GoToHelper.showPopupAndSearchNodeInBackground(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), title, FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder"), relativePoint);
+    SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+    DefaultBHMethodComparator comparator = new DefaultBHMethodComparator(repository);
+    DefaultBHMethodNameFilter nameFilter = new DefaultBHMethodNameFilter(repository);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finder(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder")).title(title).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getInputEvent()).comparator(comparator).nameFilter(nameFilter);
+    GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
   private String calcTitle(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {
     return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
