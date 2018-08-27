@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,43,0" name="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)/1213104847098">
@@ -232,6 +232,52 @@
       <unit id="9034802358628290360" at="45,19,57,9" name="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$1$1" />
       <unit id="9034802358628290360" at="37,168,59,5" name="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints$1" />
       <unit id="1576845966386891452" at="29,0,64,0" name="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)/2879969100346192014">
+    <file name="IApplicableToNothing_Constraints.java">
+      <node id="2879969100346192014" at="24,45,25,186" concept="11" />
+      <node id="2879969100346192014" at="32,127,33,128" concept="6" />
+      <node id="2879969100346192014" at="33,128,34,0" concept="8" />
+      <node id="2879969100346192014" at="35,55,36,71" concept="2" />
+      <node id="2879969100346192014" at="37,9,38,0" concept="8" />
+      <node id="2879969100346192014" at="38,0,39,22" concept="7" />
+      <node id="1741258697586932691" at="45,39,46,447" concept="7" />
+      <node id="2879969100346192014" at="50,0,51,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="2879969100346192014" at="24,0,27,0" concept="1" trace="IApplicableToNothing_Constraints#()V" />
+      <node id="2879969100346192014" at="34,0,37,9" concept="4" />
+      <node id="2879969100346229926" at="45,0,48,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2879969100346213218" at="43,134,48,7" concept="7" />
+      <node id="2879969100346192014" at="43,0,50,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="2879969100346192014" at="31,0,41,0" concept="5" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="2879969100346192014" at="29,103,41,6" concept="7" />
+      <node id="2879969100346192014" at="28,0,43,0" concept="5" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="2879969100346192014" at="24,45,25,186" />
+      <scope id="2879969100346192014" at="35,55,36,71" />
+      <scope id="2879969100346229927" at="45,39,46,447" />
+      <scope id="2879969100346192014" at="24,0,27,0" />
+      <scope id="2879969100346229926" at="45,0,48,0">
+        <var name="it" id="2879969100346229926" />
+      </scope>
+      <scope id="2879969100346192022" at="43,134,48,7" />
+      <scope id="2879969100346192014" at="32,127,39,22">
+        <var name="result" id="2879969100346192014" />
+      </scope>
+      <scope id="2879969100346192014" at="43,0,50,0">
+        <var name="childConcept" id="2879969100346192014" />
+        <var name="link" id="2879969100346192014" />
+        <var name="node" id="2879969100346192014" />
+        <var name="parentNode" id="2879969100346192014" />
+      </scope>
+      <scope id="2879969100346192014" at="31,0,41,0">
+        <var name="checkingNodeContext" id="2879969100346192014" />
+        <var name="context" id="2879969100346192014" />
+      </scope>
+      <scope id="2879969100346192014" at="29,103,41,6" />
+      <scope id="2879969100346192014" at="28,0,43,0" />
+      <unit id="2879969100346229926" at="44,371,48,5" name="jetbrains.mps.baseLanguage.collections.constraints.IApplicableToNothing_Constraints$2" />
+      <unit id="2879969100346192014" at="30,15,41,5" name="jetbrains.mps.baseLanguage.collections.constraints.IApplicableToNothing_Constraints$1" />
+      <unit id="2879969100346192014" at="23,0,52,0" name="jetbrains.mps.baseLanguage.collections.constraints.IApplicableToNothing_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)/6099516049395208152">
