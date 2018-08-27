@@ -15,32 +15,18 @@ import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
-import com.intellij.openapi.ui.popup.JBPopup;
-import com.intellij.ui.components.JBList;
-import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.openapi.progress.Task;
-import java.util.Collections;
-import com.intellij.util.Alarm;
-import com.intellij.openapi.util.Ref;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.ui.SortedListModel;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.find.FindBundle;
 import com.intellij.openapi.progress.ProgressManager;
 
 public final class GoToHelper {
   private GoToHelper() {
   }
 
-  public static void showPopupAndSearchNodeInBackground(final SNode node, final MPSProject project, final String title, final Finder finder, final RelativePoint point) {
+  @Deprecated
+  public static void showPopupAndSearchNodeInBackground(final SNode node, final MPSProject project, final CaptionFunction captionFun, final Finder finder, final RelativePoint point) {
     SearchQuery query = createNodeQuery(project.getRepository(), node, null);
     PopupSettingsBuilder settings = new PopupSettingsBuilder(project);
-    settings.query(query).title(title).finder(finder).point(point);
+    settings.query(query).captionFun(captionFun).finder(finder).point(point);
     showPopupAndSearchInBackground(settings);
   }
 
@@ -63,87 +49,7 @@ public final class GoToHelper {
   }
 
   public static void showPopupAndSearchInBackground(@NotNull final PopupSettingsBuilder settings) {
-    DefaultMethodRenderer renderer = new DefaultMethodRenderer(settings.myProject.getRepository());
-    final GoToContextMenuHelper.ContextMenuComposite contextMenuComposite = new GoToContextMenuHelper(settings.myProject, settings.title, renderer, settings.comparator, settings.nameFilter).buildPopup();
-    final JBPopup popup = contextMenuComposite.myPopup;
-    final JBList<NodeNavigatable> list = contextMenuComposite.myJBList;
-    list.setPaintBusy(true);
-    Task.Backgroundable task = new BackgroundSearchTask(settings.myProject, settings.query, Collections.singletonList(settings.finder), "Searching...") {
-      private final Alarm myAlarm = new Alarm(Alarm.ThreadToUse.SWING_THREAD);
-      private final Ref<Boolean> myShown = new Ref<Boolean>(false);
-      private final Object LOCK = new Object();
-      private final List<NodeNavigatable> myCurrentResults = new ArrayList<NodeNavigatable>();
-
-      @Override
-      public void onUsageFound(@NotNull SearchResult<?> result) {
-        if (popup.isDisposed()) {
-          return;
-        }
-        Object object = result.getObject();
-        if (object instanceof SNode) {
-          synchronized (LOCK) {
-            SNodeReference pointer = ((SNode) object).getReference();
-            if (!(myCurrentResults.add(new NodeNavigatable(settings.myProject, pointer)))) {
-              return;
-            }
-          }
-          myAlarm.addRequest(new Runnable() {
-            @Override
-            public void run() {
-              myAlarm.cancelAllRequests();
-              refresh();
-            }
-          }, 50, ModalityState.stateForComponent(popup.getContent()));
-        }
-      }
-
-      private void refresh() {
-        if (isCancelled()) {
-          return;
-        }
-        if (popup.isDisposed()) {
-          return;
-        }
-        final List<NodeNavigatable> newData;
-        synchronized (LOCK) {
-          newData = new ArrayList<NodeNavigatable>(myCurrentResults);
-        }
-        settings.myProject.getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            for (NodeNavigatable newElement : newData) {
-              SortedListModel<NodeNavigatable> listModel = contextMenuComposite.myListModel;
-              if (!(listModel.getItems().contains(newElement))) {
-                listModel.add(newElement);
-              }
-            }
-          }
-        });
-        popup.pack(true, true);
-        if (!(myShown.get())) {
-          myShown.set(true);
-          popup.show(settings.point);
-        }
-      }
-
-      @Override
-      public void onFinished() {
-        if (isCancelled()) {
-          return;
-        }
-        if (popup.isDisposed()) {
-          return;
-        }
-        list.setPaintBusy(false);
-        if (myCurrentResults.isEmpty()) {
-          Messages.showInfoMessage(settings.point.getComponent(), FindBundle.message("find.usage.view.no.usages.text"), FindBundle.message("find.pointcut.applications.not.found.title"));
-        }
-        if (myCurrentResults.size() == 1) {
-          popup.cancel();
-          NodeNavigatable navigatable = myCurrentResults.get(0);
-          navigatable.navigate(true);
-        }
-      }
-    };
+    Task.Backgroundable task = new BackgroundUsageWithPopupTask(settings);
     ProgressManager.getInstance().run(task);
   }
 }

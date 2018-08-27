@@ -24,7 +24,7 @@ public final class PopupSettingsBuilder {
   /*package*/ final MPSProject myProject;
   /*package*/ SearchQuery query;
   /*package*/ Finder finder;
-  /*package*/ String title;
+  /*package*/ CaptionFunction captionFun;
   /*package*/ RelativePoint point;
   /*package*/ List<SNodeReference> foundUsages = new ArrayList<SNodeReference>();
   /*package*/ Function<SNodeReference, String> nameFilter;
@@ -53,8 +53,8 @@ public final class PopupSettingsBuilder {
     return this;
   }
 
-  public PopupSettingsBuilder title(@NotNull String title) {
-    this.title = title;
+  public PopupSettingsBuilder captionFun(@NotNull CaptionFunction captionFun) {
+    this.captionFun = captionFun;
     return this;
   }
 

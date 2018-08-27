@@ -22,14 +22,16 @@ import java.awt.event.InputEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
 import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.MPSCodeInsightBundle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class GoToOverriddenClassMethod_Action extends BaseAction {
+public class GoToSuperClassMethod_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public GoToOverriddenClassMethod_Action() {
+  public GoToSuperClassMethod_Action() {
     super("Go to Overridden Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -83,17 +85,20 @@ public class GoToOverriddenClassMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverridden");
     InputEvent inputEvent = event.getInputEvent();
     final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
-    String title = GoToOverriddenClassMethod_Action.this.calcTitle(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params);
     DefaultBLMethodComparator comparator = new DefaultBLMethodComparator(repository);
     DefaultBLMethodNameFilter nameFilter = new DefaultBLMethodNameFilter(repository);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finder(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder")).title(title).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finder(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder")).captionFun(GoToSuperClassMethod_Action.this.captionFun(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params)).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
-  private String calcTitle(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
-    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
-      public String compute() {
-        return "Choose super method of '" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "()'";
+  private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
+    return new CaptionFunction() {
+      public String caption(final int usagesFound, final boolean finished) {
+        return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+          public String compute() {
+            return MPSCodeInsightBundle.message("goto.super.method.of.chooser.title", SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          }
+        });
       }
-    });
+    };
   }
 }

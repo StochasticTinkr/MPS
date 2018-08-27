@@ -50,12 +50,12 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixModuleImportsInProject_Action());
     addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
-    addAction(new GoToImplementingBehaviorMethod_Action());
+    addAction(new GoToImplementationBehaviorMethod_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
-    addAction(new GoToOverriddenBehaviorMethod_Action());
     addAction(new GoToRule_Action());
+    addAction(new GoToSuperBehaviorMethod_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());

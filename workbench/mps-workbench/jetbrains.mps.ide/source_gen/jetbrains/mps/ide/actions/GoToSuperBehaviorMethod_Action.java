@@ -16,18 +16,21 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import java.awt.event.InputEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
 import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.MPSCodeInsightBundle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class GoToImplementingBehaviorMethod_Action extends BaseAction {
+public class GoToSuperBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public GoToImplementingBehaviorMethod_Action() {
-    super("Go to Implementing Methods", "", ICON);
+  public GoToSuperBehaviorMethod_Action() {
+    super("Go to Overridden Methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -37,7 +40,7 @@ public class GoToImplementingBehaviorMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder");
+    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder");
     return finder != null && finder.isApplicable(event.getData(MPSCommonDataKeys.NODE));
   }
   @Override
@@ -74,19 +77,23 @@ public class GoToImplementingBehaviorMethod_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    String title = GoToImplementingBehaviorMethod_Action.this.calcTitle(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event);
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriddenMethod");
+    InputEvent inputEvent = event.getInputEvent();
     SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     DefaultBHMethodComparator comparator = new DefaultBHMethodComparator(repository);
     DefaultBHMethodNameFilter nameFilter = new DefaultBHMethodNameFilter(repository);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finder(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder")).title(title).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getInputEvent()).comparator(comparator).nameFilter(nameFilter);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finder(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder")).captionFun(GoToSuperBehaviorMethod_Action.this.captionFun(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event)).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), inputEvent).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
-  private String calcTitle(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {
-    return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
-      public String compute() {
-        return "Choose an overriding method of '" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "()' to navigate to";
+  private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {
+    return new CaptionFunction() {
+      public String caption(final int usagesFound, final boolean finished) {
+        return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+          public String compute() {
+            return MPSCodeInsightBundle.message("goto.super.method.of.chooser.title", SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          }
+        });
       }
-    });
+    };
   }
 }

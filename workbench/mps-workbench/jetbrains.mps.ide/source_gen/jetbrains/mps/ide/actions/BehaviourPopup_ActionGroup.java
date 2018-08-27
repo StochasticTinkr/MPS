@@ -10,7 +10,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
     super("BehaviourPopup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToImplementingBehaviorMethod_Action");
-    BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToOverriddenBehaviorMethod_Action");
+    BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToImplementationBehaviorMethod_Action");
+    BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToSuperBehaviorMethod_Action");
   }
 }

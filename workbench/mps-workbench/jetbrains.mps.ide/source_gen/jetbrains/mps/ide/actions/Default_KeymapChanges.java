@@ -27,10 +27,10 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.FindConceptInstances_Action", getShortcut("alt F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindModelUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("ctrl alt shift F7"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToImplementingBehaviorMethod_Action", getShortcut("ctrl alt B"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.GoToImplementationBehaviorMethod_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModel_Action", getShortcut("ctrl alt shift M"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModule_Action", getShortcut("ctrl alt shift S"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToOverriddenBehaviorMethod_Action", getShortcut("ctrl alt U"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.GoToSuperBehaviorMethod_Action", getShortcut("ctrl alt U"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightInstances_Action", getShortcut("ctrl shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightUsages_Action", getShortcut("ctrl shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MPSProjectPaths_Action", getShortcut("alt ENTER"));

@@ -30,7 +30,7 @@ import jetbrains.mps.classloading.ModuleClassLoader;
 
 public final class GoToContextMenuHelper {
   private final Project myProject;
-  private final String myTitle;
+  private final CaptionFunction myCaptionFun;
   private final Comparator<NodeNavigatable> myComparator;
   private final Function<NodeNavigatable, String> myNamerForFiltering;
   private final BaseRenderer myRenderer;
@@ -57,9 +57,9 @@ public final class GoToContextMenuHelper {
     }
   }
 
-  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull String title, @NotNull BaseRenderer renderer, @Nullable Comparator<SNodeReference> comparator, @Nullable Function<SNodeReference, String> namer) {
+  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull CaptionFunction captionFun, @NotNull BaseRenderer renderer, @Nullable Comparator<SNodeReference> comparator, @Nullable Function<SNodeReference, String> namer) {
     myProject = project;
-    myTitle = title;
+    myCaptionFun = captionFun;
     myRenderer = renderer;
     if (comparator == null) {
       comparator = DEFAULT_COMPARATOR;
@@ -71,8 +71,8 @@ public final class GoToContextMenuHelper {
     myNamerForFiltering = adaptNamerForNavigatable(namer);
   }
 
-  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull String title, @NotNull BaseRenderer renderer) {
-    this(project, title, renderer, null, null);
+  public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull CaptionFunction captionFun, @NotNull BaseRenderer renderer) {
+    this(project, captionFun, renderer, null, null);
   }
 
   public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {
@@ -115,7 +115,8 @@ public final class GoToContextMenuHelper {
       listModel.add(new NodeNavigatable(myProject, usage));
     }
     final JBList<NodeNavigatable> list = new JBList(listModel);
-    JBPopup popup = new PopupChooserBuilder<NodeNavigatable>(list).setTitle(myTitle).setMovable(true).setItemChoosenCallback(new Runnable() {
+    String startingCaption = myCaptionFun.caption(0, false);
+    JBPopup popup = new PopupChooserBuilder<NodeNavigatable>(list).setTitle(startingCaption).setMovable(true).setItemChoosenCallback(new Runnable() {
       @Override
       public void run() {
         int[] ids = list.getSelectedIndices();

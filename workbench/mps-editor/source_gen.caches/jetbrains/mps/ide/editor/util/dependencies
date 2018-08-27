@@ -17,6 +17,37 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.progress.Task" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.editor.util.BackgroundUsageWithPopupTask" file="BackgroundUsageWithPopupTask.java">
+    <classNode dependClassName="com.intellij.find.FindBundle" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
+    <classNode dependClassName="com.intellij.openapi.util.Ref" />
+    <classNode dependClassName="com.intellij.ui.SortedListModel" />
+    <classNode dependClassName="com.intellij.ui.components.JBList" />
+    <classNode dependClassName="com.intellij.util.Alarm" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.ide.editor.util.BackgroundSearchTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.editor.util.CaptionFunction" file="CaptionFunction.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.editor.util.EditorComponentUtil" file="EditorComponentUtil.java">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -56,6 +87,7 @@
     <classNode dependClassName="java.util.function.Function" />
     <classNode dependClassName="javax.swing.ListSelectionModel" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.NamerFactory" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.BaseRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
@@ -69,33 +101,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.util.GoToHelper" file="GoToHelper.java">
-    <classNode dependClassName="com.intellij.find.FindBundle" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
-    <classNode dependClassName="com.intellij.openapi.util.Ref" />
-    <classNode dependClassName="com.intellij.ui.SortedListModel" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
-    <classNode dependClassName="com.intellij.ui.components.JBList" />
-    <classNode dependClassName="com.intellij.util.Alarm" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.BackgroundSearchTask" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.BackgroundUsageWithPopupTask" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
@@ -103,7 +118,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
@@ -134,6 +148,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToHelper" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
