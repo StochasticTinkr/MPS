@@ -12,7 +12,5 @@ public class Replace_Test extends TestCase {
     String s = RegexpOperations.replace("Manny goes home", REGEXP_55w9mm_b0a0a0, new _Replacer_55w9mm_a0a0a0(Replace_Test.this));
     Assert.assertEquals("<Manny> <goes> <home>", s);
   }
-  public Replace_Test() {
-  }
   private static Pattern REGEXP_55w9mm_b0a0a0 = Pattern.compile("(\\w+)", 0);
 }

@@ -187,7 +187,6 @@
       <node id="8128243960970299036" at="24,54,25,244" concept="2" />
       <node id="8128243960970299052" at="27,59,28,205" concept="2" />
       <node id="8128243960970299067" at="30,57,31,221" concept="2" />
-      <node id="8128243960970298961" at="33,0,35,0" concept="1" trace="SplitCommandInParts_Test#()V" />
       <node id="8128243960970298966" at="12,0,15,0" concept="6" trace="test_withoutSpaces#()V" />
       <node id="8128243960970298980" at="15,0,18,0" concept="6" trace="test_withSpaces#()V" />
       <node id="8128243960970298996" at="18,0,21,0" concept="6" trace="test_javaProperties#()V" />
@@ -195,7 +194,6 @@
       <node id="8128243960970299032" at="24,0,27,0" concept="6" trace="test_quotsInCommand#()V" />
       <node id="8128243960970299048" at="27,0,30,0" concept="6" trace="test_quotsInCommandStart#()V" />
       <node id="8128243960970299063" at="30,0,33,0" concept="6" trace="test_quotsInCommandEnd#()V" />
-      <scope id="8128243960970298964" at="33,37,33,37" />
       <scope id="8128243960970298969" at="12,53,13,194" />
       <scope id="8128243960970298983" at="15,50,16,199" />
       <scope id="8128243960970298999" at="18,54,19,236" />
@@ -203,7 +201,6 @@
       <scope id="8128243960970299035" at="24,54,25,244" />
       <scope id="8128243960970299051" at="27,59,28,205" />
       <scope id="8128243960970299066" at="30,57,31,221" />
-      <scope id="8128243960970298961" at="33,0,35,0" />
       <scope id="8128243960970298966" at="12,0,15,0" />
       <scope id="8128243960970298980" at="15,0,18,0" />
       <scope id="8128243960970298996" at="18,0,21,0" />
@@ -211,7 +208,7 @@
       <scope id="8128243960970299032" at="24,0,27,0" />
       <scope id="8128243960970299048" at="27,0,30,0" />
       <scope id="8128243960970299063" at="30,0,33,0" />
-      <unit id="8128243960970298959" at="11,0,36,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
+      <unit id="8128243960970298959" at="11,0,34,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
     </file>
   </root>
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970299735">

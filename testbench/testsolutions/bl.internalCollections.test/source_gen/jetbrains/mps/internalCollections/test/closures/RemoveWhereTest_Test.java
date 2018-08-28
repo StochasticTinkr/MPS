@@ -33,6 +33,4 @@ public class RemoveWhereTest_Test extends Util_Test {
     Assert.assertEquals("b", QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
-  public RemoveWhereTest_Test() {
-  }
 }

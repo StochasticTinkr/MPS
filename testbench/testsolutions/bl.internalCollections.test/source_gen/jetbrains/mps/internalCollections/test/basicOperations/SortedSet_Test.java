@@ -80,6 +80,4 @@ public class SortedSet_Test extends Util_Test {
       // expected exception 
     }
   }
-  public SortedSet_Test() {
-  }
 }

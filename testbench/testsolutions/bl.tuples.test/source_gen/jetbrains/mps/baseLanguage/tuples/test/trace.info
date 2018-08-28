@@ -174,15 +174,14 @@
       <node id="8836955480108810678" at="183,35,184,34" concept="5" />
       <node id="8836955480108779030" at="184,34,185,38" concept="11" />
       <node id="8836955480108810684" at="185,38,186,29" concept="5" />
-      <node id="1238953797570" at="190,65,191,51" concept="12" />
+      <node id="1238953797570" at="188,65,189,51" concept="12" />
       <node id="8209339320719817969" at="129,0,131,0" concept="10" trace="invoke#()V" />
-      <node id="1238952260517" at="188,0,190,0" concept="3" trace="IndexedTuples_Test#()V" />
       <node id="974579920306757552" at="90,0,93,0" concept="10" trace="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
       <node id="8755343252889990278" at="108,38,111,5" concept="7" />
       <node id="8209339320719820943" at="125,0,128,0" concept="10" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="3340526992428338502" at="137,0,140,0" concept="10" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="6395420914225306523" at="149,48,152,5" concept="8" />
-      <node id="1238953768403" at="190,0,193,0" concept="10" trace="toTuple#(Ljava/lang/String;C)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+      <node id="1238953768403" at="188,0,191,0" concept="10" trace="toTuple#(Ljava/lang/String;C)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
       <node id="1238953073445" at="46,10,50,5" concept="1" />
       <node id="429408675341322665" at="161,0,165,0" concept="10" trace="test_mps6985#()V" />
       <node id="1238952264871" at="23,0,28,0" concept="10" trace="test_empty#()V" />
@@ -209,13 +208,12 @@
       <node id="1238952459235" at="28,0,45,0" concept="10" trace="test_creatingAndAssigning#()V" />
       <node id="8084779556530417847" at="100,0,117,0" concept="10" trace="test_arrayOfTuples#()V" />
       <scope id="8209339320719817970" at="129,28,129,28" />
-      <scope id="1238952260520" at="188,31,188,31" />
       <scope id="974579920306757553" at="90,60,91,31" />
       <scope id="8755343252889990279" at="109,49,110,28" />
       <scope id="8209339320719820944" at="125,31,126,20" />
       <scope id="3340526992428338503" at="137,31,138,21" />
       <scope id="6395420914225306519" at="150,67,151,31" />
-      <scope id="1238953768406" at="190,65,191,51" />
+      <scope id="1238953768406" at="188,65,189,51" />
       <scope id="1238953073445" at="47,5,49,32">
         <var name="_tmp_3wrel6_b0c0" id="1238953073445" />
       </scope>
@@ -223,7 +221,6 @@
       <scope id="429408675341322668" at="161,47,163,54">
         <var name="pair" id="429408675341322687" />
       </scope>
-      <scope id="1238952260517" at="188,0,190,0" />
       <scope id="1238952264873" at="23,45,26,31">
         <var name="empty" id="1238952304221" />
         <var name="emptyToo" id="1238952432698" />
@@ -255,7 +252,7 @@
       <scope id="6395420914225306523" at="149,48,152,5">
         <var name="tt" id="6395420914225306532" />
       </scope>
-      <scope id="1238953768403" at="190,0,193,0">
+      <scope id="1238953768403" at="188,0,191,0">
         <var name="c" id="1238953791942" />
         <var name="s" id="1238953789187" />
       </scope>
@@ -330,7 +327,7 @@
       <unit id="974579920306757552" at="89,62,93,5" name="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test$1" />
       <unit id="8209339320719820943" at="124,193,128,5" name="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test$2" />
       <unit id="3340526992428338502" at="136,136,140,5" name="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test$4" />
-      <unit id="1238952260515" at="22,0,194,0" name="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test" />
+      <unit id="1238952260515" at="22,0,192,0" name="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239714501613">
@@ -435,29 +432,28 @@
       <node id="662424709864545194" at="170,39,171,45" concept="11" />
       <node id="662424709864546338" at="171,45,172,37" concept="5" />
       <node id="662424709864954849" at="172,37,173,44" concept="5" />
-      <node id="1241009587750" at="179,52,180,44" concept="12" />
-      <node id="668576388509553871" at="186,64,187,44" concept="12" />
-      <node id="1239719980559" at="191,25,192,34" concept="12" />
-      <node id="1239720100328" at="200,0,201,0" concept="6" trace="__CP__" />
-      <node id="1239720100328" at="206,28,207,54" concept="0" />
-      <node id="1239720100328" at="207,54,208,35" concept="12" />
-      <node id="1239720102562" at="209,27,210,38" concept="5" />
-      <node id="1239720102562" at="210,38,211,57" concept="5" />
-      <node id="1239720102562" at="211,57,212,34" concept="12" />
-      <node id="1239720114071" at="213,27,214,38" concept="5" />
-      <node id="1239720114071" at="214,38,215,57" concept="5" />
-      <node id="1239720114071" at="215,57,216,34" concept="12" />
-      <node id="1239720100329" at="217,27,218,38" concept="5" />
-      <node id="1239720100329" at="218,38,219,28" concept="2" />
-      <node id="1239720100328" at="220,28,221,37" concept="2" />
-      <node id="1239720100328" at="223,31,224,29" concept="12" />
-      <node id="1239714501615" at="175,0,177,0" concept="3" trace="NamedTuples_Test#()V" />
+      <node id="1241009587750" at="177,52,178,44" concept="12" />
+      <node id="668576388509553871" at="184,64,185,44" concept="12" />
+      <node id="1239719980559" at="189,25,190,34" concept="12" />
+      <node id="1239720100328" at="198,0,199,0" concept="6" trace="__CP__" />
+      <node id="1239720100328" at="204,28,205,54" concept="0" />
+      <node id="1239720100328" at="205,54,206,35" concept="12" />
+      <node id="1239720102562" at="207,27,208,38" concept="5" />
+      <node id="1239720102562" at="208,38,209,57" concept="5" />
+      <node id="1239720102562" at="209,57,210,34" concept="12" />
+      <node id="1239720114071" at="211,27,212,38" concept="5" />
+      <node id="1239720114071" at="212,38,213,57" concept="5" />
+      <node id="1239720114071" at="213,57,214,34" concept="12" />
+      <node id="1239720100329" at="215,27,216,38" concept="5" />
+      <node id="1239720100329" at="216,38,217,28" concept="2" />
+      <node id="1239720100328" at="218,28,219,37" concept="2" />
+      <node id="1239720100328" at="221,31,222,29" concept="12" />
       <node id="6278501903477416704" at="24,35,27,5" concept="9" />
       <node id="1240933105391" at="95,0,98,0" concept="10" trace="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
       <node id="8755343252890010279" at="132,98,135,5" concept="7" />
-      <node id="1241009587748" at="179,0,182,0" concept="10" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1241009714386" at="186,0,189,0" concept="10" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-      <node id="1239719969664" at="191,0,194,0" concept="10" trace="getData#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="1241009587748" at="177,0,180,0" concept="10" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1241009714386" at="184,0,187,0" concept="10" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+      <node id="1239719969664" at="189,0,192,0" concept="10" trace="getData#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="1239720139050" at="56,44,60,5" concept="8" />
       <node id="1240574553396" at="88,0,92,0" concept="10" trace="test_boolean#()V" />
       <node id="1241009525853" at="115,0,119,0" concept="10" trace="test_vararg1#()V" />
@@ -467,8 +463,8 @@
       <node id="1239722532676" at="62,0,67,0" concept="10" trace="test_assignToIndexedTupleType#()V" />
       <node id="1239722643439" at="69,15,74,5" concept="1" />
       <node id="1240933104041" at="93,44,98,7" concept="5" />
-      <node id="1241009587741" at="177,59,182,14" concept="12" />
-      <node id="1241009714379" at="184,71,189,14" concept="12" />
+      <node id="1241009587741" at="175,59,180,14" concept="12" />
+      <node id="1241009714379" at="182,71,187,14" concept="12" />
       <node id="4817470067537861870" at="140,0,146,0" concept="10" trace="test_tupleDecl#()V" />
       <node id="7781156898616395644" at="150,0,156,0" concept="10" trace="test_mps11134#()V" />
       <node id="1839439077527302410" at="156,0,162,0" concept="10" trace="test_nulls#()V" />
@@ -477,31 +473,30 @@
       <node id="1823663182164682391" at="108,0,115,0" concept="10" trace="test_valueOfAssignment#()V" />
       <node id="4817470067537861733" at="123,0,130,0" concept="10" trace="test_listOfTuples#()V" />
       <node id="6562295948842607129" at="162,0,169,0" concept="10" trace="test_implementsInterface#()V" />
-      <node id="1241009559927" at="177,0,184,0" concept="10" trace="getString#(null)Ljava/lang/String;" />
-      <node id="1241009714371" at="184,0,191,0" concept="10" trace="getString#(null)Ljava/lang/String;" />
+      <node id="1241009559927" at="175,0,182,0" concept="10" trace="getString#(null)Ljava/lang/String;" />
+      <node id="1241009714371" at="182,0,189,0" concept="10" trace="getString#(null)Ljava/lang/String;" />
       <node id="1240933085547" at="92,0,100,0" concept="10" trace="test_filter#()V" />
       <node id="1240940185105" at="100,0,108,0" concept="10" trace="test_pair#()V" />
       <node id="1239725291893" at="78,0,88,0" concept="10" trace="test_equalsOperator#()V" />
       <node id="8755343252890002865" at="130,0,140,0" concept="10" trace="test_arrayOfTuples#()V" />
       <node id="1239722626730" at="67,0,78,0" concept="10" trace="test_patternMatching#()V" />
-      <node id="1239720100328" at="203,20,222,19" concept="16" />
-      <node id="1239720100328" at="201,46,223,31" concept="4" />
-      <node id="1239720100328" at="201,0,226,0" concept="10" trace="moveToNext#()Z" />
+      <node id="1239720100328" at="201,20,220,19" concept="16" />
+      <node id="1239720100328" at="199,46,221,31" concept="4" />
+      <node id="1239720100328" at="199,0,224,0" concept="10" trace="moveToNext#()Z" />
       <node id="1239718482269" at="23,0,50,0" concept="10" trace="test_createAndAssign#()V" />
-      <node id="1239720100328" at="198,44,226,14" concept="12" />
-      <node id="1239720100328" at="198,0,228,0" concept="10" trace="iterator#()Ljava/util/Iterator;" />
-      <node id="1239720100328" at="196,40,228,10" concept="12" />
-      <node id="1239720100328" at="196,0,230,0" concept="10" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1239720095043" at="194,39,230,7" concept="12" />
-      <node id="1239720061720" at="194,0,232,0" concept="10" trace="getSequence#()Ljava/lang/Iterable;" />
-      <scope id="1239714501618" at="175,29,175,29" />
+      <node id="1239720100328" at="196,44,224,14" concept="12" />
+      <node id="1239720100328" at="196,0,226,0" concept="10" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="1239720100328" at="194,40,226,10" concept="12" />
+      <node id="1239720100328" at="194,0,228,0" concept="10" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="1239720095043" at="192,39,228,7" concept="12" />
+      <node id="1239720061720" at="192,0,230,0" concept="10" trace="getSequence#()Ljava/lang/Iterable;" />
       <scope id="6278501903477416705" at="25,23,26,13" />
       <scope id="1240933105392" at="95,38,96,36" />
       <scope id="8755343252890010280" at="133,49,134,28" />
-      <scope id="1241009587749" at="179,52,180,44" />
-      <scope id="1241009714387" at="186,64,187,44" />
-      <scope id="1239719969667" at="191,25,192,34" />
-      <scope id="1239720100328" at="220,28,221,37" />
+      <scope id="1241009587749" at="177,52,178,44" />
+      <scope id="1241009714387" at="184,64,185,44" />
+      <scope id="1239719969667" at="189,25,190,34" />
+      <scope id="1239720100328" at="218,28,219,37" />
       <scope id="1239720139053" at="57,49,59,59" />
       <scope id="1240574553398" at="88,47,90,48">
         <var name="truth" id="1240574562854" />
@@ -515,9 +510,8 @@
       <scope id="1157155146536637813" at="146,46,148,53">
         <var name="r" id="1157155146536637828" />
       </scope>
-      <scope id="1239714501615" at="175,0,177,0" />
-      <scope id="1239720100328" at="206,28,208,35" />
-      <scope id="1239720100329" at="217,27,219,28" />
+      <scope id="1239720100328" at="204,28,206,35" />
+      <scope id="1239720100329" at="215,27,217,28" />
       <scope id="1239719999843" at="50,51,53,43">
         <var name="data" id="1239720006877" />
       </scope>
@@ -533,15 +527,15 @@
       <scope id="8755343252890010279" at="132,98,135,5">
         <var name="idx" id="8755343252890010282" />
       </scope>
-      <scope id="1241009587748" at="179,0,182,0">
+      <scope id="1241009587748" at="177,0,180,0">
         <var name="t" id="1241009587748" />
       </scope>
-      <scope id="1241009714386" at="186,0,189,0">
+      <scope id="1241009714386" at="184,0,187,0">
         <var name="t" id="1241009714386" />
       </scope>
-      <scope id="1239719969664" at="191,0,194,0" />
-      <scope id="1239720102562" at="209,27,212,34" />
-      <scope id="1239720114071" at="213,27,216,34" />
+      <scope id="1239719969664" at="189,0,192,0" />
+      <scope id="1239720102562" at="207,27,210,34" />
+      <scope id="1239720114071" at="211,27,214,34" />
       <scope id="1239720139050" at="56,44,60,5">
         <var name="tpl" id="1239720139051" />
       </scope>
@@ -580,8 +574,8 @@
         <var name="s" id="6562295948842607148" />
         <var name="sample" id="6562295948842607139" />
       </scope>
-      <scope id="1241009559930" at="177,59,182,14" />
-      <scope id="1241009714378" at="184,71,189,14" />
+      <scope id="1241009559930" at="175,59,180,14" />
+      <scope id="1241009714378" at="182,71,187,14" />
       <scope id="1240933085549" at="92,46,98,7">
         <var name="seq" id="1240933099760" />
       </scope>
@@ -597,10 +591,10 @@
       <scope id="1823663182164682391" at="108,0,115,0" />
       <scope id="4817470067537861733" at="123,0,130,0" />
       <scope id="6562295948842607129" at="162,0,169,0" />
-      <scope id="1241009559927" at="177,0,184,0">
+      <scope id="1241009559927" at="175,0,182,0">
         <var name="tuples" id="1241009567933" />
       </scope>
-      <scope id="1241009714371" at="184,0,191,0">
+      <scope id="1241009714371" at="182,0,189,0">
         <var name="tuples" id="1241009714372" />
       </scope>
       <scope id="1239725291895" at="78,54,86,52">
@@ -620,27 +614,27 @@
       <scope id="1239725291893" at="78,0,88,0" />
       <scope id="8755343252890002865" at="130,0,140,0" />
       <scope id="1239722626730" at="67,0,78,0" />
-      <scope id="1239720100328" at="203,20,222,19" />
-      <scope id="1239720100328" at="201,46,224,29" />
+      <scope id="1239720100328" at="201,20,220,19" />
+      <scope id="1239720100328" at="199,46,222,29" />
       <scope id="1239718482271" at="23,55,48,43">
         <var name="tpl" id="1239718507782" />
         <var name="tpl2" id="1239718550651" />
       </scope>
-      <scope id="1239720100328" at="201,0,226,0" />
+      <scope id="1239720100328" at="199,0,224,0" />
       <scope id="1239718482269" at="23,0,50,0" />
-      <scope id="1239720100328" at="198,44,226,14" />
-      <scope id="1239720100328" at="198,0,228,0" />
-      <scope id="1239720100328" at="196,40,228,10" />
-      <scope id="1239720100328" at="196,0,230,0" />
-      <scope id="1239720061723" at="194,39,230,7" />
-      <scope id="1239720061720" at="194,0,232,0" />
+      <scope id="1239720100328" at="196,44,224,14" />
+      <scope id="1239720100328" at="196,0,226,0" />
+      <scope id="1239720100328" at="194,40,226,10" />
+      <scope id="1239720100328" at="194,0,228,0" />
+      <scope id="1239720061723" at="192,39,228,7" />
+      <scope id="1239720061720" at="192,0,230,0" />
       <unit id="1240933105391" at="94,39,98,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$1" />
-      <unit id="1241009587748" at="178,91,182,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$2" />
-      <unit id="1241009714386" at="185,91,189,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$3" />
-      <unit id="1239720100328" at="199,23,226,13" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1$1" />
-      <unit id="1239720100328" at="197,19,228,9" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1" />
-      <unit id="1239720100328" at="195,36,230,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4" />
-      <unit id="1239714501613" at="22,0,233,0" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test" />
+      <unit id="1241009587748" at="176,91,180,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$2" />
+      <unit id="1241009714386" at="183,91,187,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$3" />
+      <unit id="1239720100328" at="197,23,224,13" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1$1" />
+      <unit id="1239720100328" at="195,19,226,9" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1" />
+      <unit id="1239720100328" at="193,36,228,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4" />
+      <unit id="1239714501613" at="22,0,231,0" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239715318677">
@@ -695,19 +689,16 @@
       <node id="4265636116363074300" at="24,32,25,32" concept="5" />
       <node id="1239977286033" at="26,5,27,28" concept="5" />
       <node id="1239977290885" at="27,28,28,34" concept="5" />
-      <node id="1240073873703" at="32,47,33,46" concept="12" />
-      <node id="1239977019777" at="30,0,32,0" concept="3" trace="GenericNamedTuples_Test#()V" />
-      <node id="1240073848853" at="32,0,35,0" concept="10" trace="pairOfStrings#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="1240073873703" at="30,47,31,46" concept="12" />
+      <node id="1240073848853" at="30,0,33,0" concept="10" trace="pairOfStrings#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="1239977231412" at="21,13,26,5" concept="1" />
       <node id="1239977032461" at="10,0,18,0" concept="10" trace="test_pair#()V" />
       <node id="1239977136862" at="18,0,30,0" concept="10" trace="test_pairToIndexedTuple#()V" />
-      <scope id="1239977019780" at="30,36,30,36" />
-      <scope id="1240073848856" at="32,47,33,46" />
-      <scope id="1239977019777" at="30,0,32,0" />
+      <scope id="1240073848856" at="30,47,31,46" />
       <scope id="1239977231412" at="22,5,25,32">
         <var name="_tmp_quuzte_d0b0" id="1239977231412" />
       </scope>
-      <scope id="1240073848853" at="32,0,35,0" />
+      <scope id="1240073848853" at="30,0,33,0" />
       <scope id="1239977032463" at="10,44,16,40">
         <var name="pair" id="1239977080198" />
       </scope>
@@ -718,7 +709,7 @@
         <var name="y" id="1239977244349" />
       </scope>
       <scope id="1239977136862" at="18,0,30,0" />
-      <unit id="1239977019775" at="9,0,36,0" name="jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test" />
+      <unit id="1239977019775" at="9,0,34,0" name="jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239977036413">
@@ -875,21 +866,18 @@
       <node id="2682363017137682713" at="13,9,14,15" concept="5" />
       <node id="2682363017137682709" at="14,15,15,20" concept="5" />
       <node id="2682363017137682709" at="16,34,17,28" concept="13" />
-      <node id="2682363017137682664" at="20,0,22,0" concept="3" trace="MPS14511_Test#()V" />
       <node id="2682363017137682709" at="12,45,18,5" concept="18" />
       <node id="2682363017137682669" at="10,0,20,0" concept="10" trace="test_accessNamedTupleInOtherPkg#()V" />
-      <scope id="2682363017137682667" at="20,26,20,26" />
       <scope id="2682363017137682709" at="16,0,17,28">
         <var name="e" id="2682363017137682709" />
       </scope>
       <scope id="2682363017137682709" at="16,34,17,28" />
       <scope id="2682363017137682709" at="13,9,15,20" />
-      <scope id="2682363017137682664" at="20,0,22,0" />
       <scope id="2682363017137682672" at="10,66,18,5">
         <var name="fb" id="2682363017137682674" />
       </scope>
       <scope id="2682363017137682669" at="10,0,20,0" />
-      <unit id="2682363017137682662" at="9,0,23,0" name="jetbrains.mps.baseLanguage.tuples.test.MPS14511_Test" />
+      <unit id="2682363017137682662" at="9,0,21,0" name="jetbrains.mps.baseLanguage.tuples.test.MPS14511_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/3142843783245432636">
@@ -1088,11 +1076,8 @@
       <node id="8176846727166195923" at="32,42,33,0" concept="14" />
       <node id="8176846727166196058" at="33,0,34,44" concept="5" />
       <node id="8176846727166196795" at="34,44,35,55" concept="5" />
-      <node id="4483021482224672490" at="37,0,39,0" concept="3" trace="ExtendedNamedTuples_Test#()V" />
       <node id="4483021482224672495" at="12,0,22,0" concept="10" trace="test_subtyping#()V" />
       <node id="8176846727166110339" at="22,0,37,0" concept="10" trace="test_extended_tuple_component#()V" />
-      <scope id="4483021482224672493" at="37,37,37,37" />
-      <scope id="4483021482224672490" at="37,0,39,0" />
       <scope id="4483021482224672498" at="12,49,20,62">
         <var name="bar" id="2912004279740772159" />
         <var name="foo" id="2912004279740772133" />
@@ -1104,7 +1089,7 @@
         <var name="foo" id="8176846727166110781" />
       </scope>
       <scope id="8176846727166110339" at="22,0,37,0" />
-      <unit id="4483021482224672488" at="11,0,40,0" name="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test" />
+      <unit id="4483021482224672488" at="11,0,38,0" name="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/6562295948842314981">
@@ -1189,16 +1174,13 @@
       <node id="7782532150063714728" at="14,70,15,67" concept="5" />
       <node id="7782532150063714752" at="15,67,16,77" concept="11" />
       <node id="7782532150063714761" at="16,77,17,59" concept="5" />
-      <node id="7782532150063714699" at="19,0,21,0" concept="3" trace="MPS15234_Test#()V" />
       <node id="7782532150063714705" at="13,0,19,0" concept="10" trace="test_coerceInternalClassifier#()V" />
-      <scope id="7782532150063714702" at="19,26,19,26" />
-      <scope id="7782532150063714699" at="19,0,21,0" />
       <scope id="7782532150063714708" at="13,64,17,59">
         <var name="array" id="7782532150063714753" />
         <var name="lot" id="7782532150063714718" />
       </scope>
       <scope id="7782532150063714705" at="13,0,19,0" />
-      <unit id="7782532150063714697" at="12,0,22,0" name="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
+      <unit id="7782532150063714697" at="12,0,20,0" name="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
     </file>
   </root>
   <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/8209339320719679363">

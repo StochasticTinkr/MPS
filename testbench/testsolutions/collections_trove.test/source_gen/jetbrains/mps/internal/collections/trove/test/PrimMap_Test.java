@@ -80,6 +80,4 @@ public class PrimMap_Test extends Util_Test {
     MapSequence.fromMap(mss).put((short) 2, (short) 1);
     Assert.assertSame((short) 1, MapSequence.fromMap(mss).get((short) 2));
   }
-  public PrimMap_Test() {
-  }
 }

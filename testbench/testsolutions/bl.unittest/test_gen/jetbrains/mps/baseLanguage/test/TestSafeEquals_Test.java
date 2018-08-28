@@ -21,6 +21,4 @@ public class TestSafeEquals_Test extends TestCase {
     Assert.assertTrue(!(Objects.equals(null, o)));
     Assert.assertFalse(!(Objects.equals(null, null)));
   }
-  public TestSafeEquals_Test() {
-  }
 }

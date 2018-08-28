@@ -733,36 +733,35 @@
       <node id="2551169102353647778" at="104,70,105,30" concept="2" />
       <node id="2551169102353648671" at="105,30,106,42" concept="2" />
       <node id="2551169102353647784" at="106,42,107,69" concept="2" />
-      <node id="671853460608825101" at="112,40,113,96" concept="7" />
-      <node id="671853460608825127" at="113,96,114,46" concept="7" />
-      <node id="671853460608825142" at="114,46,115,37" concept="7" />
-      <node id="671853460608825983" at="115,37,116,42" concept="2" />
-      <node id="743280580075875697" at="116,42,117,46" concept="2" />
-      <node id="743280580075889505" at="117,46,118,27" concept="2" />
-      <node id="8855298915862216593" at="118,27,119,29" concept="2" />
-      <node id="8855298915862225058" at="122,43,123,31" concept="2" />
-      <node id="743280580075893420" at="123,31,124,30" concept="2" />
-      <node id="8855298915862216560" at="127,36,128,36" concept="2" />
-      <node id="8855298915862216582" at="132,36,133,38" concept="2" />
-      <node id="671853460608703868" at="109,0,111,0" concept="1" trace="Generator_Test#()V" />
+      <node id="671853460608825101" at="110,40,111,96" concept="7" />
+      <node id="671853460608825127" at="111,96,112,46" concept="7" />
+      <node id="671853460608825142" at="112,46,113,37" concept="7" />
+      <node id="671853460608825983" at="113,37,114,42" concept="2" />
+      <node id="743280580075875697" at="114,42,115,46" concept="2" />
+      <node id="743280580075889505" at="115,46,116,27" concept="2" />
+      <node id="8855298915862216593" at="116,27,117,29" concept="2" />
+      <node id="8855298915862225058" at="120,43,121,31" concept="2" />
+      <node id="743280580075893420" at="121,31,122,30" concept="2" />
+      <node id="8855298915862216560" at="125,36,126,36" concept="2" />
+      <node id="8855298915862216582" at="130,36,131,38" concept="2" />
       <node id="5646063728432375801" at="54,0,57,0" concept="6" trace="describeTo#(Lorg/hamcrest/Description;)V" />
       <node id="5646063728432375834" at="64,0,67,0" concept="6" trace="describeTo#(Lorg/hamcrest/Description;)V" />
       <node id="2551169102353647737" at="81,0,84,0" concept="6" trace="describeTo#(Lorg/hamcrest/Description;)V" />
       <node id="2551169102353647765" at="90,0,93,0" concept="6" trace="describeTo#(Lorg/hamcrest/Description;)V" />
-      <node id="8855298915862216553" at="126,50,129,5" concept="4" />
-      <node id="8855298915862216580" at="131,52,134,5" concept="4" />
+      <node id="8855298915862216553" at="124,50,127,5" concept="4" />
+      <node id="8855298915862216580" at="129,52,132,5" concept="4" />
       <node id="2551169102353647720" at="74,44,78,13" concept="5" />
       <node id="2551169102353647750" at="86,0,90,0" concept="6" trace="invoke#(Lorg/jmock/api/Invocation;)Ljava/lang/Object;" />
       <node id="5646063728432375787" at="49,0,54,0" concept="6" trace="matches#(Ljava/lang/Object;)Z" />
       <node id="5646063728432375814" at="59,0,64,0" concept="6" trace="invoke#(Lorg/jmock/api/Invocation;)Ljava/lang/Object;" />
-      <node id="671853460608704030" at="121,0,126,0" concept="6" trace="tearDown#()V" />
-      <node id="8855298915862216534" at="126,0,131,0" concept="6" trace="registerFacets#(Ljetbrains/mps/make/facet/IFacetManifest;)V" />
-      <node id="8855298915862216574" at="131,0,136,0" concept="6" trace="unregisterFacets#(Ljetbrains/mps/make/facet/IFacetManifest;)V" />
+      <node id="671853460608704030" at="119,0,124,0" concept="6" trace="tearDown#()V" />
+      <node id="8855298915862216534" at="124,0,129,0" concept="6" trace="registerFacets#(Ljetbrains/mps/make/facet/IFacetManifest;)V" />
+      <node id="8855298915862216574" at="129,0,134,0" concept="6" trace="unregisterFacets#(Ljetbrains/mps/make/facet/IFacetManifest;)V" />
       <node id="2551169102353647714" at="73,0,81,0" concept="6" trace="matches#(Ljava/lang/Object;)Z" />
       <node id="2551169102353647744" at="84,12,93,11" concept="2" />
       <node id="5646063728432375770" at="47,43,57,12" concept="2" />
       <node id="5646063728432375808" at="57,12,67,11" concept="2" />
-      <node id="671853460608703882" at="111,0,121,0" concept="6" trace="setUp#()V" />
+      <node id="671853460608703882" at="109,0,119,0" concept="6" trace="setUp#()V" />
       <node id="2551169102353647701" at="71,45,84,12" concept="2" />
       <node id="2551169102353647682" at="44,67,95,7" concept="2" />
       <node id="2551169102353647622" at="40,0,109,0" concept="6" trace="test_queryStop#()V" />
@@ -770,15 +769,13 @@
       <scope id="5646063728432375839" at="65,59,65,59" />
       <scope id="2551169102353647742" at="82,50,82,50" />
       <scope id="2551169102353647770" at="91,59,91,59" />
-      <scope id="671853460608703871" at="109,27,109,27" />
       <scope id="2551169102353647756" at="87,72,88,68" />
-      <scope id="8855298915862216554" at="127,36,128,36" />
-      <scope id="8855298915862216581" at="132,36,133,38" />
+      <scope id="8855298915862216554" at="125,36,126,36" />
+      <scope id="8855298915862216581" at="130,36,131,38" />
       <scope id="5646063728432375792" at="50,44,52,24" />
       <scope id="5646063728432375820" at="60,72,62,24" />
       <scope id="2551169102353647724" at="75,38,77,26" />
-      <scope id="671853460608703868" at="109,0,111,0" />
-      <scope id="671853460608704034" at="122,43,124,30" />
+      <scope id="671853460608704034" at="120,43,122,30" />
       <scope id="5646063728432375801" at="54,0,57,0">
         <var name="p0" id="5646063728432375804" />
       </scope>
@@ -791,12 +788,12 @@
       <scope id="2551169102353647765" at="90,0,93,0">
         <var name="description" id="2551169102353647768" />
       </scope>
-      <scope id="8855298915862216537" at="126,50,129,5" />
-      <scope id="8855298915862216553" at="126,50,129,5">
+      <scope id="8855298915862216537" at="124,50,127,5" />
+      <scope id="8855298915862216553" at="124,50,127,5">
         <var name="fct" id="8855298915862216555" />
       </scope>
-      <scope id="8855298915862216579" at="131,52,134,5" />
-      <scope id="8855298915862216580" at="131,52,134,5">
+      <scope id="8855298915862216579" at="129,52,132,5" />
+      <scope id="8855298915862216580" at="129,52,132,5">
         <var name="fct" id="8855298915862216587" />
       </scope>
       <scope id="2551169102353647750" at="86,0,90,0">
@@ -809,14 +806,14 @@
         <var name="invocation" id="5646063728432375817" />
       </scope>
       <scope id="2551169102353647719" at="74,44,79,25" />
-      <scope id="671853460608704030" at="121,0,126,0" />
-      <scope id="8855298915862216534" at="126,0,131,0">
+      <scope id="671853460608704030" at="119,0,124,0" />
+      <scope id="8855298915862216534" at="124,0,129,0">
         <var name="fm" id="8855298915862216539" />
       </scope>
-      <scope id="8855298915862216574" at="131,0,136,0">
+      <scope id="8855298915862216574" at="129,0,134,0">
         <var name="fm" id="8855298915862216575" />
       </scope>
-      <scope id="671853460608703886" at="112,40,119,29">
+      <scope id="671853460608703886" at="110,40,117,29">
         <var name="ctor" id="671853460608825128" />
         <var name="inst" id="671853460608825143" />
         <var name="mf" id="671853460608825102" />
@@ -824,7 +821,7 @@
       <scope id="2551169102353647714" at="73,0,81,0">
         <var name="o" id="2551169102353647717" />
       </scope>
-      <scope id="671853460608703882" at="111,0,121,0" />
+      <scope id="671853460608703882" at="109,0,119,0" />
       <scope id="2551169102353647691" at="46,7,93,11">
         <var name="cfg" id="5646063728432375762" />
         <var name="query" id="2551169102353647693" />
@@ -843,7 +840,7 @@
       <unit id="5646063728432375812" at="58,17,67,9" name="jetbrains.mps.make.generator.Generator_Test$1$2" />
       <unit id="2551169102353647712" at="72,48,84,9" name="jetbrains.mps.make.generator.Generator_Test$1$3" />
       <unit id="2551169102353647688" at="45,25,95,5" name="jetbrains.mps.make.generator.Generator_Test$1" />
-      <unit id="671853460608703866" at="36,0,137,0" name="jetbrains.mps.make.generator.Generator_Test" />
+      <unit id="671853460608703866" at="36,0,135,0" name="jetbrains.mps.make.generator.Generator_Test" />
     </file>
   </root>
   <root nodeRef="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)/9000373783400844597">

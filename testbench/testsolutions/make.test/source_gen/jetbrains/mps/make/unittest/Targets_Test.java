@@ -179,6 +179,4 @@ public class Targets_Test extends MockTestCase {
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text), tr.targetAndSortedPrecursors(new ITarget.Name("text")));
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text), tr.immediatePrecursors(new ITarget.Name("make")));
   }
-  public Targets_Test() {
-  }
 }

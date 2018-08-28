@@ -22,15 +22,12 @@
       <node id="7542046987151769370" at="17,49,18,49" concept="1" />
       <node id="4454445068919750057" at="18,49,19,49" concept="1" />
       <node id="12077399789563419" at="19,49,20,49" concept="1" />
-      <node id="12077399789561868" at="22,0,24,0" concept="0" trace="PropertiesTest_Test#()V" />
       <node id="12077399789562069" at="9,0,22,0" concept="3" trace="test_properties#()V" />
-      <scope id="12077399789561871" at="22,32,22,32" />
-      <scope id="12077399789561868" at="22,0,24,0" />
       <scope id="12077399789562072" at="9,50,20,49">
         <var name="testClass" id="12077399789562076" />
       </scope>
       <scope id="12077399789562069" at="9,0,22,0" />
-      <unit id="12077399789561866" at="8,0,25,0" name="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
+      <unit id="12077399789561866" at="8,0,23,0" name="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
     </file>
   </root>
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/12077399789561873">

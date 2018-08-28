@@ -34,6 +34,4 @@ public class ExtendedNamedTuples_Test extends TestCase {
     Assert.assertEquals("ABCDEF", bar.id());
     Assert.assertEquals(0.123456, (double) bar.size());
   }
-  public ExtendedNamedTuples_Test() {
-  }
 }

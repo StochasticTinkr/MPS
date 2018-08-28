@@ -103,6 +103,4 @@ __switch__:
     });
     this.assertIterableEquals(Sequence.fromArray(new String[]{"C", "B", "A"}), test);
   }
-  public Advanced_Test() {
-  }
 }

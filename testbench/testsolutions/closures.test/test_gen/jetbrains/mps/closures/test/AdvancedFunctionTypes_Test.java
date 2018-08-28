@@ -56,8 +56,6 @@ public class AdvancedFunctionTypes_Test extends TestCase {
     _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> curriedPlusThree = this.curry(add, 3);
     Assert.assertEquals(plusThree.invoke(1), curriedPlusThree.invoke(1));
   }
-  public AdvancedFunctionTypes_Test() {
-  }
   public _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> curry(final _FunctionTypes._return_P2_E0<? extends Integer, ? super Integer, ? super Integer> fun, final int y) {
     return new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer x) {

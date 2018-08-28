@@ -96,8 +96,6 @@ public class ScriptBuilder_Test extends MockTestCase {
     }));
     scb.toScript();
   }
-  public ScriptBuilder_Test() {
-  }
   @After
   public void tearDown() throws Exception {
     for (IFacet fn : Sequence.fromIterable(Sequence.fromArray(facets))) {

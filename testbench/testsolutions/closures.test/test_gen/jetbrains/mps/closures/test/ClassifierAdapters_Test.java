@@ -364,8 +364,6 @@ __switch__:
       // expected exception 
     }
   }
-  public ClassifierAdapters_Test() {
-  }
   public void acceptWorker(Worker one, Worker two) {
   }
   public void acceptWorker(Worker one) {

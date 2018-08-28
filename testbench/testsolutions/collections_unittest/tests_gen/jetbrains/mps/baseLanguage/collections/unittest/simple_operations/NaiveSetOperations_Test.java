@@ -549,8 +549,6 @@ __switch__:
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
   }
-  public NaiveSetOperations_Test() {
-  }
   public void assertSameContents(Iterable<String> seq1, Iterable<String> seq2) {
     Assert.assertSame(Sequence.fromIterable(seq1).count(), Sequence.fromIterable(seq2).count());
     for (String x : seq1) {

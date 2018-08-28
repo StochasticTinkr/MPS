@@ -157,6 +157,4 @@ public class ReduceFold_Test extends Util_Test {
     }) + 1;
     Assert.assertSame(9, res);
   }
-  public ReduceFold_Test() {
-  }
 }
