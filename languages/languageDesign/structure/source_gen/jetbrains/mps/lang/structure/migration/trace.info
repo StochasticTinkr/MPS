@@ -155,6 +155,97 @@
       <unit id="1780177113170754287" at="25,0,92,0" name="jetbrains.mps.lang.structure.migration.MigrateHelpURL" />
     </file>
   </root>
+  <root nodeRef="r:33eabb60-7192-4d12-ba46-11dacf966b3e(jetbrains.mps.lang.structure.migration)/2367072595509371506">
+    <file name="Removing_IDontSubstituteByDefault.java">
+      <node id="2367072595509371506" at="23,30,24,83" concept="7" />
+      <node id="2367072595509371506" at="27,33,28,16" concept="7" />
+      <node id="2367072595509371506" at="30,41,31,17" concept="2" />
+      <node id="2367072595509371506" at="31,17,32,16" concept="7" />
+      <node id="2367072595509383877" at="35,5,36,59" concept="6" />
+      <node id="2367072595509383877" at="38,52,39,23" concept="7" />
+      <node id="2367072595509494329" at="45,45,46,290" concept="7" />
+      <node id="2367072595509518818" at="50,41,51,45" concept="2" />
+      <node id="2367072595509525281" at="59,45,60,290" concept="7" />
+      <node id="2367072595509525297" at="64,41,65,45" concept="2" />
+      <node id="2367072595509371506" at="72,51,73,149" concept="7" />
+      <node id="2367072595509371506" at="23,0,26,0" concept="5" trace="getCaption#()Ljava/lang/String;" />
+      <node id="2367072595509383877" at="38,0,41,0" concept="5" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="2367072595509494327" at="45,0,48,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2367072595509517604" at="50,0,53,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2367072595509525279" at="59,0,62,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2367072595509525295" at="64,0,67,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2367072595509371506" at="72,0,75,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="2367072595509371506" at="26,0,30,0" concept="5" trace="isRerunnable#()Z" />
+      <node id="2367072595509371506" at="30,0,34,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2367072595509383877" at="36,59,41,8" concept="6" />
+      <node id="2367072595509494320" at="43,37,48,30" concept="6" />
+      <node id="2367072595509436323" at="48,30,53,13" concept="2" />
+      <node id="2367072595509525269" at="57,37,62,30" concept="6" />
+      <node id="2367072595509525291" at="62,30,67,13" concept="2" />
+      <node id="2367072595509436321" at="43,0,55,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2367072595509525267" at="57,0,69,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2367072595509384442" at="41,8,55,9" concept="2" />
+      <node id="2367072595509525262" at="55,9,69,9" concept="2" />
+      <node id="2367072595509383877" at="34,42,70,5" concept="0" />
+      <node id="2367072595509371506" at="34,0,72,0" concept="5" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="2367072595509371506" at="23,30,24,83" />
+      <scope id="2367072595509371506" at="27,33,28,16" />
+      <scope id="2367072595509383877" at="38,52,39,23" />
+      <scope id="2367072595509494328" at="45,45,46,290" />
+      <scope id="2367072595509517605" at="50,41,51,45" />
+      <scope id="2367072595509525280" at="59,45,60,290" />
+      <scope id="2367072595509525296" at="64,41,65,45" />
+      <scope id="2367072595509371506" at="72,51,73,149" />
+      <scope id="2367072595509371506" at="30,41,32,16" />
+      <scope id="2367072595509371506" at="23,0,26,0" />
+      <scope id="2367072595509383877" at="38,0,41,0" />
+      <scope id="2367072595509494327" at="45,0,48,0">
+        <var name="it" id="2367072595509494327" />
+      </scope>
+      <scope id="2367072595509517604" at="50,0,53,0">
+        <var name="it" id="2367072595509517604" />
+      </scope>
+      <scope id="2367072595509525279" at="59,0,62,0">
+        <var name="it" id="2367072595509525279" />
+      </scope>
+      <scope id="2367072595509525295" at="64,0,67,0">
+        <var name="it" id="2367072595509525295" />
+      </scope>
+      <scope id="2367072595509371506" at="72,0,75,0" />
+      <scope id="2367072595509371506" at="26,0,30,0" />
+      <scope id="2367072595509371506" at="30,0,34,0">
+        <var name="m" id="2367072595509371506" />
+      </scope>
+      <scope id="2367072595509436322" at="43,37,53,13">
+        <var name="toRemove" id="2367072595509494321" />
+      </scope>
+      <scope id="2367072595509525268" at="57,37,67,13">
+        <var name="toRemove" id="2367072595509525270" />
+      </scope>
+      <scope id="2367072595509436321" at="43,0,55,0">
+        <var name="it" id="2367072595509436321" />
+      </scope>
+      <scope id="2367072595509525267" at="57,0,69,0">
+        <var name="it" id="2367072595509525267" />
+      </scope>
+      <scope id="2367072595509383877" at="35,5,69,9">
+        <var name="context" id="2367072595509383877" />
+        <var name="scope" id="2367072595509383877" />
+      </scope>
+      <scope id="2367072595509371506" at="34,42,70,5" />
+      <scope id="2367072595509371506" at="34,0,72,0">
+        <var name="m" id="2367072595509371506" />
+      </scope>
+      <unit id="2367072595509383877" at="37,42,41,7" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$1" />
+      <unit id="2367072595509494327" at="44,224,48,11" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$2$1" />
+      <unit id="2367072595509517604" at="49,55,53,11" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$2$2" />
+      <unit id="2367072595509525279" at="58,222,62,11" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$3$1" />
+      <unit id="2367072595509525295" at="63,55,67,11" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$3$2" />
+      <unit id="2367072595509436321" at="42,272,55,7" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$2" />
+      <unit id="2367072595509525267" at="56,282,69,7" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault$3" />
+      <unit id="2367072595509371506" at="22,0,77,0" name="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault" />
+    </file>
+  </root>
   <root nodeRef="r:33eabb60-7192-4d12-ba46-11dacf966b3e(jetbrains.mps.lang.structure.migration)/3160346131749731897">
     <file name="IntroduceSmartRefAttribute.java">
       <node id="3160346131749731897" at="29,30,30,49" concept="7" />

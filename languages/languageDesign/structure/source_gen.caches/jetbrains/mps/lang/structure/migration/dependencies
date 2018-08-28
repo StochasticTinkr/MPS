@@ -88,10 +88,31 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.CopyIconsToResources" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.IntroduceSmartRefAttribute" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.MigrateHelpURL" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetSIds" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.UseDevkit" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.migration.Removing_IDontSubstituteByDefault" file="Removing_IDontSubstituteByDefault.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" file="SetOldConceptIds_Empty.java">
     <classNode dependClassName="java.lang.Override" />
