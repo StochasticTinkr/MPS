@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
@@ -270,9 +270,6 @@
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
       <concept id="1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" flags="nn" index="kMnCb">
         <child id="1224414456414" name="elementType" index="kMuH3" />
-      </concept>
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
       </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
@@ -1476,12 +1473,12 @@
                     <node concept="37vLTw" id="2BHiRxgm7l5" role="2Oq$k0">
                       <ref role="3cqZAo" node="i1QJ_lB" resolve="localVariables" />
                     </node>
-                    <node concept="2l5eF5" id="i1QKjIc" role="2OqNvi">
-                      <node concept="1PxgMI" id="i1QKmzU" role="2l6Ag6">
-                        <node concept="2GrUjf" id="i1QKmf8" role="1m5AlR">
+                    <node concept="TSZUe" id="HQjE4XgBFE" role="2OqNvi">
+                      <node concept="1PxgMI" id="HQjE4XgBFB" role="25WWJ7">
+                        <node concept="2GrUjf" id="HQjE4XgBFC" role="1m5AlR">
                           <ref role="2Gs0qQ" node="i1QK1Vt" resolve="child" />
                         </node>
-                        <node concept="chp4Y" id="714IaVdH1vp" role="3oSUPX">
+                        <node concept="chp4Y" id="HQjE4XgBFD" role="3oSUPX">
                           <ref role="cht4Q" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
                         </node>
                       </node>

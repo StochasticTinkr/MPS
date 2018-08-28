@@ -2,7 +2,7 @@
 <model ref="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="0d40d465-dded-40d0-8d4c-2c6d177f60d7" name="org.jetbrains.mps.samples.Constants" version="0" />
     <use id="65c13e67-09b6-4695-af88-52024b7d2027" name="org.jetbrains.mps.samples.DecisionTable" version="0" />
     <use id="67b828fd-8fbc-4496-b7f7-8b64ac097c62" name="org.jetbrains.mps.samples.IfAndUnless" version="0" />

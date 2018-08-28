@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
@@ -356,12 +356,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
-      <concept id="1226592602759" name="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" flags="nn" index="2mBsIq">
-        <child id="1226592623721" name="argument" index="2mBxPO" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -385,6 +379,7 @@
       <concept id="1237909114519" name="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" flags="nn" index="T8wYR" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1175845471038" name="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" flags="nn" index="35Qw8J" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
@@ -2020,14 +2015,14 @@
         </node>
         <node concept="3clFbF" id="6kZNNdikoCH" role="3cqZAp">
           <node concept="2OqwBi" id="6kZNNdikoCI" role="3clFbG">
-            <node concept="2mBsIq" id="6kZNNdikoCK" role="2OqNvi">
-              <node concept="2YIFZM" id="2mTpoiCveDI" role="2mBxPO">
+            <node concept="X8dFx" id="HQjE4XgDZU" role="2OqNvi">
+              <node concept="2YIFZM" id="HQjE4XgDZR" role="25WWJ7">
                 <ref role="1Pybhc" node="1NYD3hytmTa" resolve="SNodeOperations" />
                 <ref role="37wK5l" node="2mTpoiCttyd" resolve="getChildRoles" />
-                <node concept="37vLTw" id="2mTpoiCveHE" role="37wK5m">
+                <node concept="37vLTw" id="HQjE4XgDZS" role="37wK5m">
                   <ref role="3cqZAo" node="6kZNNdikoCu" resolve="b" />
                 </node>
-                <node concept="3clFbT" id="2mTpoiCveDK" role="37wK5m">
+                <node concept="3clFbT" id="HQjE4XgDZT" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
               </node>
@@ -2725,8 +2720,8 @@
                           <ref role="3cqZAo" node="6X7LBGD5Gso" resolve="rootToSet" />
                         </node>
                       </node>
-                      <node concept="2l5eF5" id="6X7LBGD5Gt3" role="2OqNvi">
-                        <node concept="37vLTw" id="2BHiRxgm74K" role="2l6Ag6">
+                      <node concept="TSZUe" id="HQjE4XgDZQ" role="2OqNvi">
+                        <node concept="37vLTw" id="HQjE4XgDZP" role="25WWJ7">
                           <ref role="3cqZAo" node="6X7LBGD5Gt5" resolve="x" />
                         </node>
                       </node>

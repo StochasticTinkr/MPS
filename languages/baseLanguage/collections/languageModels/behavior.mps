@@ -348,9 +348,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226592602759" name="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" flags="nn" index="2mBsIq">
-        <child id="1226592623721" name="argument" index="2mBxPO" />
-      </concept>
       <concept id="6801639034384703212" name="jetbrains.mps.baseLanguage.collections.structure.StackType" flags="in" index="oyxx6" />
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
@@ -6439,12 +6436,12 @@
                       <node concept="37vLTw" id="6ALWH9g0FjX" role="2Oq$k0">
                         <ref role="3cqZAo" node="5cL0w3DZkXn" resolve="result" />
                       </node>
-                      <node concept="2mBsIq" id="6ALWH9g0Hh1" role="2OqNvi">
-                        <node concept="2OqwBi" id="6ALWH9g1603" role="2mBxPO">
-                          <node concept="37vLTw" id="6ALWH9g15_p" role="2Oq$k0">
+                      <node concept="X8dFx" id="HQjE4XgBFU" role="2OqNvi">
+                        <node concept="2OqwBi" id="HQjE4XgBFR" role="25WWJ7">
+                          <node concept="37vLTw" id="HQjE4XgBFS" role="2Oq$k0">
                             <ref role="3cqZAo" node="6ALWH9g0F9H" resolve="it" />
                           </node>
-                          <node concept="2qgKlT" id="6ALWH9g16Cp" role="2OqNvi">
+                          <node concept="2qgKlT" id="HQjE4XgBFT" role="2OqNvi">
                             <ref role="37wK5l" node="5cL0w3DYzxf" resolve="getApplicableTypes" />
                           </node>
                         </node>

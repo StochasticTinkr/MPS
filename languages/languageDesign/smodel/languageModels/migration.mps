@@ -11,7 +11,7 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -401,7 +401,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="2482611074346661065" name="jetbrains.mps.lang.core.structure.ReviewMigration" flags="ng" index="13_zln">
+      <concept id="2482611074346661065" name="jetbrains.mps.lang.core.structure.ReviewMigration_old" flags="ng" index="13_zln">
         <property id="2482611074346661078" name="reasonShort" index="13_zl8" />
         <property id="2482611074346661073" name="todo" index="13_zlf" />
         <property id="2482611074347169514" name="readableId" index="13BvtO" />
@@ -5837,14 +5837,14 @@
                           </node>
                           <node concept="3CFZ6_" id="7uvxILP6e7$" role="2OqNvi">
                             <node concept="3CFYIy" id="7uvxILP6e7_" role="3CFYIz">
-                              <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                              <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
                             </node>
                           </node>
                         </node>
                         <node concept="2oxUTD" id="7uvxILP6e7A" role="2OqNvi">
                           <node concept="2pJPEk" id="7uvxILP6e7B" role="2oxUTC">
                             <node concept="2pJPED" id="7uvxILP6e7C" role="2pJPEn">
-                              <ref role="2pJxaS" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                              <ref role="2pJxaS" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
                               <node concept="2pJxcG" id="7uvxILP6e7D" role="2pJxcM">
                                 <ref role="2pJxcJ" to="tpck:29O0pTxUvrE" resolve="readableId" />
                                 <node concept="Xl_RD" id="7uvxILP6e7E" role="2pJxcZ">

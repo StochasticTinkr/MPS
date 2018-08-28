@@ -405,9 +405,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -605,15 +602,15 @@
                                         <node concept="37vLTw" id="3GM_nagT$AR" role="2Oq$k0">
                                           <ref role="3cqZAo" node="6haaRkUNonr" resolve="retainedPaths" />
                                         </node>
-                                        <node concept="2l5eF5" id="6haaRkUNonD" role="2OqNvi">
-                                          <node concept="2Sg_IR" id="16DX0Hyy9Ob" role="2l6Ag6">
-                                            <node concept="1aIXbY" id="16DX0Hyy9Oc" role="2SgG2M">
-                                              <node concept="1aIXbZ" id="16DX0Hyy9Od" role="2Oq$k0" />
-                                              <node concept="2sxana" id="16DX0Hyy9Oe" role="2OqNvi">
+                                        <node concept="TSZUe" id="HQjE4XgBGg" role="2OqNvi">
+                                          <node concept="2Sg_IR" id="HQjE4XgBGb" role="25WWJ7">
+                                            <node concept="1aIXbY" id="HQjE4XgBGc" role="2SgG2M">
+                                              <node concept="1aIXbZ" id="HQjE4XgBGd" role="2Oq$k0" />
+                                              <node concept="2sxana" id="HQjE4XgBGe" role="2OqNvi">
                                                 <ref role="2sxfKC" node="4_Slee3tlgV" resolve="fileToPath" />
                                               </node>
                                             </node>
-                                            <node concept="37vLTw" id="2BHiRxghixq" role="2SgHGx">
+                                            <node concept="37vLTw" id="HQjE4XgBGf" role="2SgHGx">
                                               <ref role="3cqZAo" node="6haaRkUNong" resolve="file" />
                                             </node>
                                           </node>

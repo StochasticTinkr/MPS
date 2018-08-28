@@ -4,7 +4,7 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
@@ -693,9 +693,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226592602759" name="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" flags="nn" index="2mBsIq">
-        <child id="1226592623721" name="argument" index="2mBxPO" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -10601,10 +10598,10 @@
             <node concept="37vLTw" id="3GM_nagTx_Z" role="2Oq$k0">
               <ref role="3cqZAo" node="2erTeUVF2eg" resolve="nodes" />
             </node>
-            <node concept="2mBsIq" id="2erTeUVF2ep" role="2OqNvi">
-              <node concept="2OqwBi" id="2erTeUVF2eq" role="2mBxPO">
-                <node concept="1beSmn" id="2erTeUVF2er" role="2Oq$k0" />
-                <node concept="2qgKlT" id="2erTeUVF2es" role="2OqNvi">
+            <node concept="X8dFx" id="HQjE4XgE3y" role="2OqNvi">
+              <node concept="2OqwBi" id="HQjE4XgE3v" role="25WWJ7">
+                <node concept="1beSmn" id="HQjE4XgE3w" role="2Oq$k0" />
+                <node concept="2qgKlT" id="HQjE4XgE3x" role="2OqNvi">
                   <ref role="37wK5l" to="tpcn:5zMz2aJEI4B" resolve="findGeneratorFragments" />
                 </node>
               </node>

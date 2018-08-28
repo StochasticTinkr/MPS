@@ -233,11 +233,11 @@
       <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
         <child id="1176906787974" name="rightExpression" index="576Qk" />
       </concept>
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
-      </concept>
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
       </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
@@ -253,6 +253,7 @@
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
@@ -1003,12 +1004,12 @@
             <node concept="37vLTw" id="2BHiRxghgsV" role="2Oq$k0">
               <ref role="3cqZAo" node="JzCdmU6yQz" resolve="throwables" />
             </node>
-            <node concept="2l5eF5" id="JzCdmU6yQv" role="2OqNvi">
-              <node concept="2OqwBi" id="JzCdmU6yQw" role="2l6Ag6">
-                <node concept="BsUDl" id="JzCdmU6yQx" role="2Oq$k0">
+            <node concept="TSZUe" id="HQjE4XgDZG" role="2OqNvi">
+              <node concept="2OqwBi" id="HQjE4XgDZD" role="25WWJ7">
+                <node concept="BsUDl" id="HQjE4XgDZE" role="2Oq$k0">
                   <ref role="37wK5l" node="JzCdmU6yQ5" resolve="getException" />
                 </node>
-                <node concept="3TrEf2" id="JzCdmU6yQy" role="2OqNvi">
+                <node concept="3TrEf2" id="HQjE4XgDZF" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>

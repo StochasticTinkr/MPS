@@ -340,9 +340,6 @@
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -1139,8 +1136,8 @@
             <node concept="37vLTw" id="3x_lgCAhEmP" role="2Oq$k0">
               <ref role="3cqZAo" node="3x_lgCAhqMc" resolve="myPluginClassPath" />
             </node>
-            <node concept="2l5eF5" id="3x_lgCAhFZF" role="2OqNvi">
-              <node concept="37vLTw" id="3x_lgCAhGaG" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE0a" role="2OqNvi">
+              <node concept="37vLTw" id="HQjE4XgE09" role="25WWJ7">
                 <ref role="3cqZAo" node="3x_lgCAhDc5" resolve="cp" />
               </node>
             </node>

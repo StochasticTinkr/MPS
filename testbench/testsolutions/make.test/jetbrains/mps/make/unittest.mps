@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
@@ -311,9 +311,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237467461002" name="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation" flags="nn" index="uNJiE" />
       <concept id="1237467705688" name="jetbrains.mps.baseLanguage.collections.structure.IteratorType" flags="in" index="uOF1S">
         <child id="1237467730343" name="elementType" index="uOL27" />
@@ -5949,8 +5946,8 @@
             <node concept="37vLTw" id="2BHiRxeukq8" role="2Oq$k0">
               <ref role="3cqZAo" node="1FvZhs40Dme" resolve="vertices" />
             </node>
-            <node concept="2l5eF5" id="1FvZhs40EC$" role="2OqNvi">
-              <node concept="37vLTw" id="2BHiRxgm7Y0" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE7y" role="2OqNvi">
+              <node concept="37vLTw" id="HQjE4XgE7x" role="25WWJ7">
                 <ref role="3cqZAo" node="1FvZhs40E8f" resolve="from" />
               </node>
             </node>
@@ -6053,8 +6050,8 @@
                 <node concept="37vLTw" id="2BHiRxeut1t" role="2Oq$k0">
                   <ref role="3cqZAo" node="1FvZhs40Dme" resolve="vertices" />
                 </node>
-                <node concept="2l5eF5" id="1FvZhs40EDf" role="2OqNvi">
-                  <node concept="37vLTw" id="3GM_nagTw$n" role="2l6Ag6">
+                <node concept="TSZUe" id="HQjE4XgE7w" role="2OqNvi">
+                  <node concept="37vLTw" id="HQjE4XgE7v" role="25WWJ7">
                     <ref role="3cqZAo" node="1FvZhs40E8P" resolve="next" />
                   </node>
                 </node>

@@ -4,7 +4,7 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
@@ -648,12 +648,6 @@
       <concept id="1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" flags="nn" index="kMnCb">
         <child id="1224414456414" name="elementType" index="kMuH3" />
       </concept>
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
-      <concept id="1226591481394" name="jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation" flags="nn" index="2mzaWJ">
-        <child id="1226591501988" name="argument" index="2mzfYT" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -688,6 +682,7 @@
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" flags="nn" index="32HrFt" />
+      <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -4012,12 +4007,12 @@
                     <ref role="2Oxat5" node="7$e6lgA3AFw" resolve="mySelectedItems" />
                   </node>
                 </node>
-                <node concept="2l5eF5" id="7$e6lgA3AEW" role="2OqNvi">
-                  <node concept="2OqwBi" id="7$e6lgA3AEX" role="2l6Ag6">
-                    <node concept="37vLTw" id="2BHiRxghgk9" role="2Oq$k0">
+                <node concept="TSZUe" id="HQjE4XgE3e" role="2OqNvi">
+                  <node concept="2OqwBi" id="HQjE4XgE3b" role="25WWJ7">
+                    <node concept="37vLTw" id="HQjE4XgE3c" role="2Oq$k0">
                       <ref role="3cqZAo" node="7$e6lgA3AEJ" resolve="checkBoxNode" />
                     </node>
-                    <node concept="liA8E" id="7$e6lgA3AEZ" role="2OqNvi">
+                    <node concept="liA8E" id="HQjE4XgE3d" role="2OqNvi">
                       <ref role="37wK5l" node="7$e6lgA3AAj" resolve="getData" />
                     </node>
                   </node>
@@ -4040,12 +4035,12 @@
                       <ref role="2Oxat5" node="7$e6lgA3AFw" resolve="mySelectedItems" />
                     </node>
                   </node>
-                  <node concept="2mzaWJ" id="7$e6lgA3AF8" role="2OqNvi">
-                    <node concept="2OqwBi" id="7$e6lgA3AF9" role="2mzfYT">
-                      <node concept="37vLTw" id="2BHiRxglYDF" role="2Oq$k0">
+                  <node concept="3dhRuq" id="HQjE4XgE3k" role="2OqNvi">
+                    <node concept="2OqwBi" id="HQjE4XgE3h" role="25WWJ7">
+                      <node concept="37vLTw" id="HQjE4XgE3i" role="2Oq$k0">
                         <ref role="3cqZAo" node="7$e6lgA3AEJ" resolve="checkBoxNode" />
                       </node>
-                      <node concept="liA8E" id="7$e6lgA3AFb" role="2OqNvi">
+                      <node concept="liA8E" id="HQjE4XgE3j" role="2OqNvi">
                         <ref role="37wK5l" node="7$e6lgA3AAj" resolve="getData" />
                       </node>
                     </node>
@@ -5707,8 +5702,8 @@
             <node concept="37vLTw" id="2BHiRxglGUx" role="2Oq$k0">
               <ref role="3cqZAo" node="7$e6lgA3AS4" resolve="collection" />
             </node>
-            <node concept="2l5eF5" id="7$e6lgA3ARL" role="2OqNvi">
-              <node concept="37vLTw" id="2BHiRxgm7to" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE3g" role="2OqNvi">
+              <node concept="37vLTw" id="HQjE4XgE3f" role="25WWJ7">
                 <ref role="3cqZAo" node="7$e6lgA3AS2" resolve="item" />
               </node>
             </node>

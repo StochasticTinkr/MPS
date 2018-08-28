@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
@@ -274,9 +274,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -3451,8 +3448,8 @@
                         <node concept="37vLTw" id="3GM_nagT_AC" role="2Oq$k0">
                           <ref role="3cqZAo" node="hGR7ZWi" resolve="results" />
                         </node>
-                        <node concept="2l5eF5" id="i0pXiI_" role="2OqNvi">
-                          <node concept="2GrUjf" id="i0pXiIA" role="2l6Ag6">
+                        <node concept="TSZUe" id="HQjE4XgBFm" role="2OqNvi">
+                          <node concept="2GrUjf" id="HQjE4XgBFl" role="25WWJ7">
                             <ref role="2Gs0qQ" node="hGQFWsD" resolve="classMethod" />
                           </node>
                         </node>

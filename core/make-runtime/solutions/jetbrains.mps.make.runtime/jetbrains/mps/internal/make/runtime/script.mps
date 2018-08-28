@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
@@ -275,9 +275,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237467461002" name="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation" flags="nn" index="uNJiE" />
       <concept id="1237467705688" name="jetbrains.mps.baseLanguage.collections.structure.IteratorType" flags="in" index="uOF1S">
         <child id="1237467730343" name="elementType" index="uOL27" />
@@ -4435,8 +4432,8 @@
                   <node concept="37vLTw" id="2BHiRxeusoc" role="2Oq$k0">
                     <ref role="3cqZAo" node="2$fvvfbk5Td" resolve="loadedFacets" />
                   </node>
-                  <node concept="2l5eF5" id="ec2sOLcTr9" role="2OqNvi">
-                    <node concept="37vLTw" id="2BHiRxgm9eg" role="2l6Ag6">
+                  <node concept="TSZUe" id="HQjE4XgE02" role="2OqNvi">
+                    <node concept="37vLTw" id="HQjE4XgE01" role="25WWJ7">
                       <ref role="3cqZAo" node="ec2sOLcTqq" resolve="facetName" />
                     </node>
                   </node>

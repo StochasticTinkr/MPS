@@ -252,9 +252,6 @@
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -1826,14 +1823,14 @@
             <node concept="37vLTw" id="2BHiRxgm_h9" role="2Oq$k0">
               <ref role="3cqZAo" node="2rjnNcUbr0$" resolve="throwables" />
             </node>
-            <node concept="2l5eF5" id="2rjnNcUbr0R" role="2OqNvi">
-              <node concept="2OqwBi" id="2rjnNcUbr0X" role="2l6Ag6">
-                <node concept="2c44tf" id="2rjnNcUbr0T" role="2Oq$k0">
-                  <node concept="3uibUv" id="2rjnNcUbr0W" role="2c44tc">
+            <node concept="TSZUe" id="HQjE4XgDZz" role="2OqNvi">
+              <node concept="2OqwBi" id="HQjE4XgDZv" role="25WWJ7">
+                <node concept="2c44tf" id="HQjE4XgDZw" role="2Oq$k0">
+                  <node concept="3uibUv" id="HQjE4XgDZx" role="2c44tc">
                     <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
                   </node>
                 </node>
-                <node concept="3TrEf2" id="2rjnNcUbr11" role="2OqNvi">
+                <node concept="3TrEf2" id="HQjE4XgDZy" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>

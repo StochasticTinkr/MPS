@@ -630,11 +630,11 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -657,9 +657,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -2908,22 +2905,22 @@
                 <ref role="2Oxat5" node="hR4KcDs" resolve="myPlaces" />
               </node>
             </node>
-            <node concept="2l5eF5" id="hR4KsiW" role="2OqNvi">
-              <node concept="2ShNRf" id="hR4Lb9V" role="2l6Ag6">
-                <node concept="1pGfFk" id="hR4Lcom" role="2ShVmc">
+            <node concept="TSZUe" id="HQjE4XgDZg" role="2OqNvi">
+              <node concept="2ShNRf" id="HQjE4XgBGn" role="25WWJ7">
+                <node concept="1pGfFk" id="HQjE4XgBGo" role="2ShVmc">
                   <ref role="37wK5l" to="zn9m:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
-                  <node concept="37vLTw" id="2BHiRxglp6o" role="37wK5m">
+                  <node concept="37vLTw" id="HQjE4XgBGp" role="37wK5m">
                     <ref role="3cqZAo" node="hR4JZRT" resolve="place" />
                   </node>
-                  <node concept="37vLTw" id="2BHiRxgmFmf" role="37wK5m">
+                  <node concept="37vLTw" id="HQjE4XgBGq" role="37wK5m">
                     <ref role="3cqZAo" node="hR4JZRV" resolve="cond" />
                   </node>
-                  <node concept="3uibUv" id="hR4LiLH" role="1pMfVU">
+                  <node concept="3uibUv" id="HQjE4XgBGr" role="1pMfVU">
                     <ref role="3uigEE" to="3s15:~ActionPlace" resolve="ActionPlace" />
                   </node>
-                  <node concept="3uibUv" id="hR4Lkgw" role="1pMfVU">
+                  <node concept="3uibUv" id="HQjE4XgBGs" role="1pMfVU">
                     <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-                    <node concept="3uibUv" id="hR4LlET" role="11_B2D">
+                    <node concept="3uibUv" id="HQjE4XgBGt" role="11_B2D">
                       <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
                     </node>
                   </node>
