@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="3" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
@@ -221,7 +221,6 @@
       <concept id="3743831881070657680" name="jetbrains.mps.lang.plugin.structure.ListenBlock" flags="in" index="2E2Kfi" />
       <concept id="3743831881070611759" name="jetbrains.mps.lang.plugin.structure.EditorTab" flags="ng" index="2E2WTH">
         <property id="3743831881070611767" name="shortcutChar" index="2E2WTP" />
-        <property id="8204570419206313935" name="commandOnCreate" index="3ED2Es" />
         <reference id="3743831881070611760" name="baseNodeConcept" index="2E2WTM" />
         <child id="3743831881070657666" name="isApplicableBlock" index="2E2Kf0" />
         <child id="3743831881070611762" name="baseNodeBlock" index="2E2WTK" />
@@ -7270,7 +7269,6 @@
     <node concept="3Tm1VV" id="2$SWsiCtx0W" role="1B3o_S" />
   </node>
   <node concept="2E2WTH" id="2$SWsiCu1P0">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="A" />
     <property role="TrG5h" value="Actions" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7468,7 +7466,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVEQFB">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="B" />
     <property role="TrG5h" value="Behavior" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7648,7 +7645,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVF9WV">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="E" />
     <property role="TrG5h" value="Editor" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7877,7 +7873,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFa2t">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="C" />
     <property role="TrG5h" value="Constraints" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8054,7 +8049,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFaEE">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="D" />
     <property role="TrG5h" value="Data Flow" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8275,7 +8269,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFaZh">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="F" />
     <property role="TrG5h" value="Find Usages" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8482,7 +8475,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFcrJ">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="I" />
     <property role="TrG5h" value="Intentions" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8686,7 +8678,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtD_">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="R" />
     <property role="TrG5h" value="Refactorings" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8887,7 +8878,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtO0">
-    <property role="3ED2Es" value="true" />
     <property role="TrG5h" value="Textgen" />
     <property role="3GE5qa" value="EditorTabs" />
     <ref role="2E2WTM" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
@@ -9090,7 +9080,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtP_">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="T" />
     <property role="TrG5h" value="Typesystem" />
     <property role="3GE5qa" value="EditorTabs" />
