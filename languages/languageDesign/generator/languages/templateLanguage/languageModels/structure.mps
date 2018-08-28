@@ -113,9 +113,6 @@
     <node concept="PrWs8" id="4x$RhEw1aYr" role="PzmwI">
       <ref role="PrY4T" node="hR0XTcV" resolve="AbstractMacro" />
     </node>
-    <node concept="PrWs8" id="1653mnvAOHK" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="fP7Vmt2">
     <property role="R5$K7" value="true" />
@@ -624,9 +621,6 @@
     <property role="34LRSv" value="node" />
     <property role="EcuMT" value="1167169188348" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvANBB" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZ0H$p7">
     <property role="R5$K7" value="true" />
@@ -758,9 +752,6 @@
     <property role="34LRSv" value="templateValue" />
     <property role="EcuMT" value="1167756221419" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2EA" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZ$xsMr">
     <property role="R5$K7" value="false" />
@@ -781,9 +772,6 @@
     <property role="34LRSv" value="templateValue" />
     <property role="EcuMT" value="1167770229866" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAOHM" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZIZrPI">
     <property role="R5$K7" value="false" />
@@ -923,9 +911,6 @@
         <property role="t5JxN" value="FIXME change to [1] once template:TD reference gone" />
       </node>
     </node>
-    <node concept="PrWs8" id="1653mnvB2PX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h1lLz4x">
     <property role="R5$K7" value="false" />
@@ -1002,9 +987,6 @@
     <property role="34LRSv" value="mainContextNode" />
     <property role="EcuMT" value="1184374096829" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAgBZ" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hfgB$Qy">
     <property role="R5$K7" value="false" />
@@ -1025,9 +1007,6 @@
     <property role="34LRSv" value="outputNode" />
     <property role="EcuMT" value="1184690432998" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvANB2" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hfr999a">
     <property role="R5$K7" value="false" />
@@ -1038,9 +1017,6 @@
     <property role="34LRSv" value="parentOutputNode" />
     <property role="EcuMT" value="1184792613450" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2Vf" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hoxERsl">
     <property role="R5$K7" value="false" />
@@ -1094,9 +1070,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1195158241124" />
       <ref role="20lvS9" node="h0jzcLb" resolve="RuleConsequence" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAmBY" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="hp4ZrX9">

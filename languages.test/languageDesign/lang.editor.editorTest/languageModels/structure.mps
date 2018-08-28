@@ -511,9 +511,6 @@
       <property role="IQ2nx" value="957371990174101881" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="PrWs8" id="P9hc2KfCUK" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="P9hc2Kf3mI">
     <property role="3GE5qa" value="substitute" />
@@ -524,9 +521,6 @@
       <property role="TrG5h" value="myEnumProperty" />
       <property role="IQ2nx" value="957371990174310446" />
       <ref role="AX2Wp" node="P9hc2KfQmc" resolve="SubstTestEnum" />
-    </node>
-    <node concept="PrWs8" id="P9hc2Kg1bb" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="AxPO7" id="P9hc2KfQmc">

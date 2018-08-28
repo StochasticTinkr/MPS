@@ -155,9 +155,6 @@
     <property role="3GE5qa" value="Project.Sources" />
     <property role="EcuMT" value="5253498789149588970" />
     <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
-    <node concept="PrWs8" id="1653mnvB2Ve" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="4zCbl23dbRG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="folder" />
@@ -1308,9 +1305,6 @@
       <property role="IQ2ns" value="868963075225252684" />
       <ref role="20lvS9" node="2L4pT56gD3S" resolve="BuildMps_Language" />
     </node>
-    <node concept="PrWs8" id="4LHG7OIlEHa" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="24CrdeKWBto">
     <property role="TrG5h" value="BuildMps_ModuleTestSource" />
@@ -1322,9 +1316,6 @@
       <property role="TrG5h" value="isGenerated" />
       <property role="IQ2nx" value="7354447573577513025" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="PrWs8" id="24CrdeKWBBE" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="1TJgyj" id="24CrdeKWCDg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

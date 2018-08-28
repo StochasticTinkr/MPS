@@ -575,9 +575,6 @@
     <property role="3GE5qa" value="sequence.closures" />
     <property role="EcuMT" value="1178286324487" />
     <ref role="1TJDcQ" to="tpee:fzclF81" resolve="BooleanConstant" />
-    <node concept="PrWs8" id="1653mnvANAG" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h9VAtIW">
     <property role="R5$K7" value="false" />
@@ -695,9 +692,6 @@
       <property role="IQ2ns" value="1197932525128" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1653mnvB2Bh" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="huI4ejp">
     <property role="TrG5h" value="MapOperationExpression" />
@@ -718,9 +712,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1201225916438" />
       <ref role="20lvS9" node="huID7Cm" resolve="MapOperation" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAOMb" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="huID7Cm">
@@ -822,9 +813,6 @@
     <property role="34LRSv" value="iterator" />
     <property role="EcuMT" value="1207236100912" />
     <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
-    <node concept="PrWs8" id="1653mnvAlLK" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h_yHZ_$">
     <property role="R5$K7" value="false" />
@@ -1532,9 +1520,6 @@
       <property role="IQ2ns" value="1228228959951" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1653mnvAME4" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hYHwmNo">
     <property role="R5$K7" value="false" />
@@ -1638,9 +1623,6 @@
     <node concept="PrWs8" id="i0vGyI4" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
-    <node concept="PrWs8" id="5SF9060GziX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i0v0PRO">
     <property role="R5$K7" value="false" />
@@ -1709,9 +1691,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="i0w$BYY" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
-    </node>
-    <node concept="PrWs8" id="5SF9060Gzd$" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="i0zFOeX">
@@ -1816,9 +1795,6 @@
     <property role="34LRSv" value="remove" />
     <property role="EcuMT" value="1240151544672" />
     <ref role="1TJDcQ" node="i0v0eXP" resolve="AbstractIteratorOperation" />
-    <node concept="PrWs8" id="5SF9060Gzo5" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i32FmgM">
     <property role="R5$K7" value="false" />
@@ -2051,9 +2027,6 @@
     <node concept="PrWs8" id="i39bRBW" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
-    <node concept="PrWs8" id="5SF9060Gz9v" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i3f3tOl">
     <property role="R5$K7" value="false" />
@@ -2108,9 +2081,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="i3AUHRH" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
-    </node>
-    <node concept="PrWs8" id="5SF9060Gzxj" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="i3AV6I3">

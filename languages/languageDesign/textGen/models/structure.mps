@@ -499,9 +499,6 @@
     <property role="TrG5h" value="StubOperationDeclaration" />
     <property role="EcuMT" value="3147100357551177019" />
     <ref role="1TJDcQ" node="hXbweBj" resolve="OperationDeclaration" />
-    <node concept="PrWs8" id="2IGJLB$lVOW" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="PrWs8" id="2IGJLB$lVP1" role="PzmwI">
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
