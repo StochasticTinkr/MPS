@@ -99,6 +99,7 @@
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
+        <property id="5299416737274925395" name="type" index="2BwPSy" />
         <property id="1206123256132" name="migrationFromBuild" index="3iz5xs" />
         <property id="1206123296179" name="category" index="3izfiF" />
         <child id="1177458178889" name="part" index="_YvDr" />
@@ -165,6 +166,7 @@
     <property role="_Wzho" value="Convert ExtensionMethodCall to Local" />
     <property role="TrG5h" value="ConvertExtensionMethodCallToLocal" />
     <property role="3iz5xs" value="6252" />
+    <property role="2BwPSy" value="enhancement" />
     <node concept="_XfAh" id="6xkNu_iwnGd" role="_YvDr">
       <property role="_XH9r" value="ConvertLocalInstanceMethodCall" />
       <property role="1iWc8x" value="true" />
