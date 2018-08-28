@@ -74,50 +74,6 @@ public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring() {
-      @Override
-      public String getName() {
-        return "_UnrestrictedFunctionTypes";
-      }
-      @Override
-      public String getAdditionalInfo() {
-        return "_UnrestrictedFunctionTypes";
-      }
-      @Override
-      public SAbstractConcept getApplicableConcept() {
-        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-      }
-      @Override
-      public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.util.RuntimeUtil".equals(NameUtil.nodeFQName(SNodeOperations.getParent(node))) && "unrestricted_function".equals(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-      }
-      @Override
-      public void doUpdateInstanceNode(SNode node) {
-        SNode smd = node;
-        SNode ssw = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(smd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")), MetaAdapterFactory.getConcept(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L, "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement"))).first();
-
-        if ((ssw == null)) {
-          if (LOG.isEnabledFor(Level.WARN)) {
-            LOG.warn("broken code in RuntimeUtil: not found StringSwitchStatement in ufunction");
-          }
-          return;
-        }
-
-        // these will be replaced with new contents 
-        ListSequence.fromList(SLinkOperations.getChildren(ssw, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02edcafL, "case"))).clear();
-
-        // this reference must point to the @java_stub model 
-        SNode fncls = SPointerOperations.resolveNode(new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/)", "~_UnrestrictedFunctionTypes"), SNodeOperations.getModel(node).getRepository());
-
-        for (SNode ifc : SNodeOperations.ofConcept(SLinkOperations.getChildren(fncls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-          ListSequence.fromList(SLinkOperations.getChildren(ssw, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02edcafL, "case"))).addElement(_quotation_createNode_tdy3l4_a0a0a11a0b(SPropertyOperations.getString(ifc, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), NodePointer__BehaviorDescriptor.create_id4nxIQVL$eu9.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, "jetbrains.mps.lang.modelapi.structure.NodePointer")), SNodeOperations.getModel(node), ifc.getReference())));
-        }
-      }
-      @Override
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
   }
 
   @Nullable
@@ -126,30 +82,6 @@ public final class UpdateRuntimeUtil_MigrationScript extends BaseMigrationScript
     return PersistenceFacade.getInstance().createNodeReference("r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/9046093740212371828");
   }
   private static SNode _quotation_createNode_tdy3l4_a0a0a11a0a(Object parameter_1, Object parameter_2) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    SNode quotedNode_7 = null;
-    SNode quotedNode_8 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10ef02cdd1bL, "SwitchCase"), null, null, false);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), (String) parameter_1);
-    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d67cfL, "expression"), quotedNode_4);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList"), null, null, false);
-    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7feL, "ReturnStatement"), null, null, false);
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x66b228a4fb0c9435L, "NodePointerExpression"), null, null, false);
-    quotedNode_8 = (SNode) parameter_2;
-    if (quotedNode_8 != null) {
-      quotedNode_7.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref"), HUtil.copyIfNecessary(quotedNode_8));
-    }
-    quotedNode_6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), quotedNode_7);
-    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), quotedNode_6);
-    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d8048L, "body"), quotedNode_5);
-    return quotedNode_3;
-  }
-  private static SNode _quotation_createNode_tdy3l4_a0a0a11a0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

@@ -16,13 +16,11 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractFunctionType = createDescriptorForAbstractFunctionType();
   /*package*/ final ConceptDescriptor myConceptClosureArgReference = createDescriptorForClosureArgReference();
-  /*package*/ final ConceptDescriptor myConceptClosureControlStatement = createDescriptorForClosureControlStatement();
   /*package*/ final ConceptDescriptor myConceptClosureLiteral = createDescriptorForClosureLiteral();
   /*package*/ final ConceptDescriptor myConceptClosureLiteralType = createDescriptorForClosureLiteralType();
   /*package*/ final ConceptDescriptor myConceptCompactInvokeFunctionExpression = createDescriptorForCompactInvokeFunctionExpression();
   /*package*/ final ConceptDescriptor myConceptControlAbstractionContainer = createDescriptorForControlAbstractionContainer();
   /*package*/ final ConceptDescriptor myConceptControlAbstractionDeclaration = createDescriptorForControlAbstractionDeclaration();
-  /*package*/ final ConceptDescriptor myConceptControlClosureLiteral = createDescriptorForControlClosureLiteral();
   /*package*/ final ConceptDescriptor myConceptFunctionMethodDeclaration = createDescriptorForFunctionMethodDeclaration();
   /*package*/ final ConceptDescriptor myConceptFunctionType = createDescriptorForFunctionType();
   /*package*/ final ConceptDescriptor myConceptInvokeExpression = createDescriptorForInvokeExpression();
@@ -31,8 +29,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPairOfInts = createDescriptorForPairOfInts();
   /*package*/ final ConceptDescriptor myConceptStringPropertyHolder = createDescriptorForStringPropertyHolder();
   /*package*/ final ConceptDescriptor myConceptUnboundClosureParameterDeclaration = createDescriptorForUnboundClosureParameterDeclaration();
-  /*package*/ final ConceptDescriptor myConceptUnrestrictedClosureLiteral = createDescriptorForUnrestrictedClosureLiteral();
-  /*package*/ final ConceptDescriptor myConceptUnrestrictedFunctionType = createDescriptorForUnrestrictedFunctionType();
   /*package*/ final ConceptDescriptor myConceptYieldAllStatement = createDescriptorForYieldAllStatement();
   /*package*/ final ConceptDescriptor myConceptYieldStatement = createDescriptorForYieldStatement();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -43,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractFunctionType, myConceptClosureArgReference, myConceptClosureControlStatement, myConceptClosureLiteral, myConceptClosureLiteralType, myConceptCompactInvokeFunctionExpression, myConceptControlAbstractionContainer, myConceptControlAbstractionDeclaration, myConceptControlClosureLiteral, myConceptFunctionMethodDeclaration, myConceptFunctionType, myConceptInvokeExpression, myConceptInvokeFunctionExpression, myConceptInvokeFunctionOperation, myConceptPairOfInts, myConceptStringPropertyHolder, myConceptUnboundClosureParameterDeclaration, myConceptUnrestrictedClosureLiteral, myConceptUnrestrictedFunctionType, myConceptYieldAllStatement, myConceptYieldStatement);
+    return Arrays.asList(myConceptAbstractFunctionType, myConceptClosureArgReference, myConceptClosureLiteral, myConceptClosureLiteralType, myConceptCompactInvokeFunctionExpression, myConceptControlAbstractionContainer, myConceptControlAbstractionDeclaration, myConceptFunctionMethodDeclaration, myConceptFunctionType, myConceptInvokeExpression, myConceptInvokeFunctionExpression, myConceptInvokeFunctionOperation, myConceptPairOfInts, myConceptStringPropertyHolder, myConceptUnboundClosureParameterDeclaration, myConceptYieldAllStatement, myConceptYieldStatement);
   }
 
   @Override
@@ -54,8 +50,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAbstractFunctionType;
       case LanguageConceptSwitch.ClosureArgReference:
         return myConceptClosureArgReference;
-      case LanguageConceptSwitch.ClosureControlStatement:
-        return myConceptClosureControlStatement;
       case LanguageConceptSwitch.ClosureLiteral:
         return myConceptClosureLiteral;
       case LanguageConceptSwitch.ClosureLiteralType:
@@ -66,8 +60,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptControlAbstractionContainer;
       case LanguageConceptSwitch.ControlAbstractionDeclaration:
         return myConceptControlAbstractionDeclaration;
-      case LanguageConceptSwitch.ControlClosureLiteral:
-        return myConceptControlClosureLiteral;
       case LanguageConceptSwitch.FunctionMethodDeclaration:
         return myConceptFunctionMethodDeclaration;
       case LanguageConceptSwitch.FunctionType:
@@ -84,10 +76,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptStringPropertyHolder;
       case LanguageConceptSwitch.UnboundClosureParameterDeclaration:
         return myConceptUnboundClosureParameterDeclaration;
-      case LanguageConceptSwitch.UnrestrictedClosureLiteral:
-        return myConceptUnrestrictedClosureLiteral;
-      case LanguageConceptSwitch.UnrestrictedFunctionType:
-        return myConceptUnrestrictedFunctionType;
       case LanguageConceptSwitch.YieldAllStatement:
         return myConceptYieldAllStatement;
       case LanguageConceptSwitch.YieldStatement:
@@ -120,19 +108,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)/6206193564530254535");
     b.version(2);
     b.aggregate("original", 0x5620d42a45242312L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L).optional(false).ordered(true).multiple(false).origin("6206193564530254610").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForClosureControlStatement() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.closures", "ClosureControlStatement", 0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
-    b.origin("r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)/1229599010201");
-    b.version(2);
-    b.associate("controlMethod", 0x11e4ba658c8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL).optional(false).origin("1229629839560").done();
-    b.aggregate("controlClosure", 0x11ef552e307L).target(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL).optional(false).ordered(true).multiple(false).origin("1232476496647").done();
-    b.aggregate("actualParameter", 0x11e4ba7ffe1L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(true).origin("1229629947873").done();
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForClosureLiteral() {
@@ -198,15 +173,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.aggregate("parameter", 0x11e49e00275L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L).optional(true).ordered(true).multiple(true).origin("1229600064117").done();
     b.aggregate("body", 0x11e49dfc8a3L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("1229600049315").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForControlClosureLiteral() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.closures", "ControlClosureLiteral", 0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", 0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL);
-    b.origin("r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)/1229599114269");
-    b.version(2);
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFunctionMethodDeclaration() {
@@ -297,27 +263,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("? <name>");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForUnrestrictedClosureLiteral() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.closures", "UnrestrictedClosureLiteral", 0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", 0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L);
-    b.origin("r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)/1229598881739");
-    b.version(2);
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("{ ==> <body> }");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForUnrestrictedFunctionType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.closures", "UnrestrictedFunctionType", 0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.closures.structure.FunctionType", 0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL);
-    b.origin("r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)/1229708828035");
-    b.version(2);
-    b.aggregate("terminateType", 0x11eda2b270fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(false).ordered(true).multiple(false).origin("1232020907791").done();
-    b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("{ ==> }");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForYieldAllStatement() {

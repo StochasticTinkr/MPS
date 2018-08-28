@@ -29,7 +29,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule" file="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -92,7 +91,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClosureLiteralType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureControlStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_CompactInvokeFunctionExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeExpression_InferenceRule" />
@@ -200,24 +198,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule" file="typeof_ClosureArgReference_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureControlStatement_InferenceRule" file="typeof_ClosureControlStatement_InferenceRule.java">
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
