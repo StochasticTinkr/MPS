@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
@@ -43,7 +43,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -714,11 +713,6 @@
     <node concept="3uibUv" id="hr22M51" role="1zkMxy">
       <ref role="3uigEE" to="gf2w:5XNkAKP6$Pu" resolve="StateMachineTest" />
     </node>
-    <node concept="3clFbW" id="b3cCzsTPYw" role="312cEh">
-      <node concept="3cqZAl" id="b3cCzsTPYx" role="3clF45" />
-      <node concept="3clFbS" id="b3cCzsTPYy" role="3clF47" />
-      <node concept="3Tm1VV" id="b3cCzsTPYz" role="1B3o_S" />
-    </node>
   </node>
   <node concept="13MO4I" id="hr1QwsV">
     <property role="TrG5h" value="reduce_StateMachineTestMethod" />
@@ -877,11 +871,6 @@
       </node>
       <node concept="3uibUv" id="hr235WL" role="1zkMxy">
         <ref role="3uigEE" to="gf2w:5XNkAKP6$Pu" resolve="StateMachineTest" />
-      </node>
-      <node concept="3clFbW" id="b3cCzsTPY$" role="312cEh">
-        <node concept="3cqZAl" id="b3cCzsTPY_" role="3clF45" />
-        <node concept="3clFbS" id="b3cCzsTPYA" role="3clF47" />
-        <node concept="3Tm1VV" id="b3cCzsTPYB" role="1B3o_S" />
       </node>
     </node>
   </node>

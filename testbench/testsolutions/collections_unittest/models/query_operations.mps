@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
@@ -58,7 +58,6 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -712,11 +711,6 @@
     <property role="TrG5h" value="Mapping_Test1" />
     <property role="3s_ewP" value="Mapping_Test1" />
     <node concept="3Tm1VV" id="1ngiNkTyw25" role="1B3o_S" />
-    <node concept="3clFbW" id="1ngiNkTyw26" role="312cEh">
-      <node concept="3cqZAl" id="1ngiNkTyw27" role="3clF45" />
-      <node concept="3Tm1VV" id="1ngiNkTyw28" role="1B3o_S" />
-      <node concept="3clFbS" id="1ngiNkTyw29" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="1ngiNkTyw2a" role="3s_ewO">
       <node concept="3s$Bmu" id="1ngiNkTyw2b" role="3s_gse">
         <property role="3s$Bm0" value="_1" />
@@ -1252,11 +1246,6 @@
     <property role="TrG5h" value="Where_Select_Test1" />
     <property role="3s_ewP" value="Where_Select_Test1" />
     <node concept="3Tm1VV" id="1ngiNkTzM2S" role="1B3o_S" />
-    <node concept="3clFbW" id="1ngiNkTzM2T" role="312cEh">
-      <node concept="3cqZAl" id="1ngiNkTzM2U" role="3clF45" />
-      <node concept="3Tm1VV" id="1ngiNkTzM2V" role="1B3o_S" />
-      <node concept="3clFbS" id="1ngiNkTzM2W" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="1ngiNkTzM2X" role="3s_ewO">
       <node concept="3s$Bmu" id="1ngiNkTzM2Y" role="3s_gse">
         <property role="3s$Bm0" value="_1" />

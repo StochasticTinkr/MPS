@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
@@ -87,7 +87,6 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -2074,11 +2073,6 @@
   <node concept="3s_ewN" id="4E0MfgIpEW6">
     <property role="3s_ewP" value="TestRelativePathHelper" />
     <node concept="3Tm1VV" id="4E0MfgIpEW7" role="1B3o_S" />
-    <node concept="3clFbW" id="4E0MfgIpEW8" role="312cEh">
-      <node concept="3cqZAl" id="4E0MfgIpEW9" role="3clF45" />
-      <node concept="3Tm1VV" id="4E0MfgIpEWa" role="1B3o_S" />
-      <node concept="3clFbS" id="4E0MfgIpEWb" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="4E0MfgIpEWc" role="3s_ewO">
       <node concept="3s$Bmu" id="4E0MfgIpFWc" role="3s_gse">
         <property role="3s$Bm0" value="testRelPaths" />

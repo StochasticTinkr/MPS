@@ -2,7 +2,7 @@
 <model ref="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)">
   <persistence version="9" />
   <languages>
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
@@ -92,7 +92,6 @@
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="5862977038373003187" name="jetbrains.mps.baseLanguage.structure.LocalPropertyReference" flags="nn" index="338YkY">
@@ -200,11 +199,6 @@
   <node concept="3s_ewN" id="EU5j4h6wa">
     <property role="3s_ewP" value="PropertiesTest" />
     <node concept="3Tm1VV" id="EU5j4h6wb" role="1B3o_S" />
-    <node concept="3clFbW" id="EU5j4h6wc" role="312cEh">
-      <node concept="3cqZAl" id="EU5j4h6wd" role="3clF45" />
-      <node concept="3Tm1VV" id="EU5j4h6we" role="1B3o_S" />
-      <node concept="3clFbS" id="EU5j4h6wf" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="EU5j4h6wg" role="3s_ewO">
       <node concept="3s$Bmu" id="EU5j4h6zl" role="3s_gse">
         <property role="3s$Bm0" value="properties" />

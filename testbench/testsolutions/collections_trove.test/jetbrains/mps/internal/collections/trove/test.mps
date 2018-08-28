@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="73736c50-f124-433b-b789-2828a15a0adc" name="jetbrains.mps.baseLanguage.collections.trove" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
@@ -68,7 +68,6 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -99,7 +98,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
@@ -260,11 +258,6 @@
   <node concept="3s_ewN" id="7b2diHqzAh5">
     <property role="3s_ewP" value="PrimSet" />
     <node concept="3Tm1VV" id="7b2diHqzAh6" role="1B3o_S" />
-    <node concept="3clFbW" id="7b2diHqzAh7" role="312cEh">
-      <node concept="3cqZAl" id="7b2diHqzAh8" role="3clF45" />
-      <node concept="3Tm1VV" id="7b2diHqzAh9" role="1B3o_S" />
-      <node concept="3clFbS" id="7b2diHqzAha" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="7b2diHqzAhb" role="3s_ewO">
       <node concept="3s$Bmu" id="7b2diHqzAhc" role="3s_gse">
         <property role="3s$Bm0" value="byteSet" />
@@ -815,11 +808,6 @@
   <node concept="3s_ewN" id="4BZeu3U2H4c">
     <property role="3s_ewP" value="PrimMap" />
     <node concept="3Tm1VV" id="4BZeu3U2H4d" role="1B3o_S" />
-    <node concept="3clFbW" id="4BZeu3U2H4e" role="312cEh">
-      <node concept="3cqZAl" id="4BZeu3U2H4f" role="3clF45" />
-      <node concept="3Tm1VV" id="4BZeu3U2H4g" role="1B3o_S" />
-      <node concept="3clFbS" id="4BZeu3U2H4h" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="4BZeu3U2H4i" role="3s_ewO">
       <node concept="3s$Bmu" id="4BZeu3U2H4j" role="3s_gse">
         <property role="3s$Bm0" value="byteByte" />
@@ -1539,11 +1527,6 @@
   <node concept="3s_ewN" id="2pBaI06EVZC">
     <property role="3s_ewP" value="PrimList" />
     <node concept="3Tm1VV" id="2pBaI06EVZD" role="1B3o_S" />
-    <node concept="3clFbW" id="2pBaI06EVZE" role="312cEh">
-      <node concept="3cqZAl" id="2pBaI06EVZF" role="3clF45" />
-      <node concept="3Tm1VV" id="2pBaI06EVZG" role="1B3o_S" />
-      <node concept="3clFbS" id="2pBaI06EVZH" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="2pBaI06EVZI" role="3s_ewO">
       <node concept="3s$Bmu" id="3T0X77N5THF" role="3s_gse">
         <property role="3s$Bm0" value="primLists" />

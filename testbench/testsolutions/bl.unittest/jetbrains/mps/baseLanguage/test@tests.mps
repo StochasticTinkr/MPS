@@ -5,7 +5,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
@@ -256,7 +256,6 @@
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -29749,11 +29748,6 @@
   <node concept="3s_ewN" id="19BYn$PNedq">
     <property role="3s_ewP" value="TestSafeEquals" />
     <node concept="3Tm1VV" id="19BYn$PNedr" role="1B3o_S" />
-    <node concept="3clFbW" id="19BYn$PNeds" role="312cEh">
-      <node concept="3cqZAl" id="19BYn$PNedt" role="3clF45" />
-      <node concept="3Tm1VV" id="19BYn$PNedu" role="1B3o_S" />
-      <node concept="3clFbS" id="19BYn$PNedv" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="19BYn$PNedw" role="3s_ewO">
       <node concept="3s$Bmu" id="19BYn$PNer6" role="3s_gse">
         <property role="3s$Bm0" value="test_eq" />
