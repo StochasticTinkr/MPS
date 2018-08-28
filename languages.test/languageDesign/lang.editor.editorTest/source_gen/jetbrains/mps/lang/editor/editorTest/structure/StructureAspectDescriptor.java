@@ -1180,7 +1180,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "SubstTestBooleanPropertyChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174086445");
     b.version(2);
     b.prop("myProperty", 0xd4944c0b03c7179L, "957371990174101881");
@@ -1207,7 +1206,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "SubstTestEnumPropertyChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174086574");
     b.version(2);
     b.prop("myEnumProperty", 0xd4944c0b03fa02eL, "957371990174310446");

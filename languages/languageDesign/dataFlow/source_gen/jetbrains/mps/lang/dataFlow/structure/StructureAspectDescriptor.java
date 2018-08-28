@@ -453,7 +453,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.dataFlow", "NodeParameter", 0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)/1206442747519");
     b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

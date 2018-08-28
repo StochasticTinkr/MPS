@@ -507,7 +507,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_Generator", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.BuildMps_Module", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/5507251971038816436");
     b.version(2);
     b.associate("sourceLanguage", 0xc0f2d501dbb734cL).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L).optional(true).origin("868963075225252684").done();
@@ -720,7 +719,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_ModuleJavaSource", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/5253498789149588970");
     b.version(2);
     b.prop("isGenerated", 0x52da585100dba65aL, "5970181360963003994");
@@ -774,7 +772,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps", "BuildMps_ModuleTestSource", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/2389279258782627672");
     b.version(2);
     b.prop("isGenerated", 0x66103f1a46523841L, "7354447573577513025");
