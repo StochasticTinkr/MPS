@@ -129,7 +129,6 @@
       </concept>
       <concept id="1230224281548" name="jetbrains.mps.lang.test.structure.MockAnnotation" flags="ng" index="1J5cVi" />
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
-      <concept id="1225983109083" name="jetbrains.mps.lang.test.structure.EditorExpression" flags="nn" index="1Miqr6" />
       <concept id="1225989773458" name="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" flags="nn" index="1MFPAf">
         <reference id="1225989811227" name="intention" index="1MFYO6" />
       </concept>
@@ -1131,22 +1130,10 @@
       <node concept="3vwNmj" id="hT_dk7V" role="3cqZAp">
         <node concept="2OqwBi" id="hT_dk7W" role="3vwVQn">
           <node concept="2OqwBi" id="hT_dk7X" role="2Oq$k0">
-            <node concept="1eOMI4" id="3Y1sPZ9YCvB" role="2Oq$k0">
-              <node concept="10QFUN" id="3Y1sPZ9YCvC" role="1eOMHV">
-                <node concept="3uibUv" id="3Y1sPZ9YCvF" role="10QFUM">
-                  <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
-                </node>
-                <node concept="2OqwBi" id="hT_dk7Y" role="10QFUP">
-                  <node concept="1Miqr6" id="hT_dk7Z" role="2Oq$k0" />
-                  <node concept="liA8E" id="hT_dk80" role="2OqNvi">
-                    <ref role="37wK5l" to="cj4x:~Editor.getCurrentEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getCurrentEditorComponent" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="liA8E" id="hT_dk81" role="2OqNvi">
               <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
+            <node concept="369mXd" id="23pxZJWPS2S" role="2Oq$k0" />
           </node>
           <node concept="liA8E" id="hT_dk82" role="2OqNvi">
             <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
@@ -1182,19 +1169,7 @@
             <node concept="liA8E" id="3Y1sPZ9YCvI" role="2OqNvi">
               <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="1eOMI4" id="3Y1sPZ9YCvJ" role="2Oq$k0">
-              <node concept="10QFUN" id="3Y1sPZ9YCvK" role="1eOMHV">
-                <node concept="3uibUv" id="3Y1sPZ9YCvL" role="10QFUM">
-                  <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
-                </node>
-                <node concept="2OqwBi" id="3Y1sPZ9YCvM" role="10QFUP">
-                  <node concept="1Miqr6" id="3Y1sPZ9YCvN" role="2Oq$k0" />
-                  <node concept="liA8E" id="3Y1sPZ9YCvO" role="2OqNvi">
-                    <ref role="37wK5l" to="cj4x:~Editor.getCurrentEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getCurrentEditorComponent" />
-                  </node>
-                </node>
-              </node>
-            </node>
+            <node concept="369mXd" id="23pxZJWPSeW" role="2Oq$k0" />
           </node>
           <node concept="liA8E" id="3Y1sPZ9YCvP" role="2OqNvi">
             <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
@@ -5125,9 +5100,9 @@
               </node>
               <node concept="2OqwBi" id="59D800tVpLx" role="2Oq$k0">
                 <node concept="liA8E" id="59D800tVqwR" role="2OqNvi">
-                  <ref role="37wK5l" to="cj4x:~Editor.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
                 </node>
-                <node concept="1Miqr6" id="59D800tVpFP" role="2Oq$k0" />
+                <node concept="369mXd" id="23pxZJWPSwO" role="2Oq$k0" />
               </node>
             </node>
           </node>

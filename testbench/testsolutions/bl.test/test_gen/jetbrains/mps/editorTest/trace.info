@@ -559,56 +559,56 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1230058635763">
     <file name="ForEachTest_Test.java">
-      <node id="1230058635763" at="20,29,21,25" concept="11" />
-      <node id="1230058635763" at="25,51,26,53" concept="2" />
-      <node id="1230058635763" at="31,52,32,19" concept="11" />
-      <node id="1230058635763" at="36,51,37,47" concept="2" />
-      <node id="1230058635770" at="37,47,38,28" concept="2" />
-      <node id="1230058635771" at="38,28,39,124" concept="2" />
-      <node id="1230058635763" at="17,0,19,0" concept="9" trace="ourParamCache" />
-      <node id="1230058635763" at="20,0,23,0" concept="1" trace="ForEachTest_Test#()V" />
-      <node id="1230058635763" at="31,0,34,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="1230058635763" at="24,0,28,0" concept="5" trace="test_ForEachTest#()V" />
-      <node id="1230058635763" at="35,0,41,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="1230058635763" at="20,29,21,25" />
-      <scope id="1230058635763" at="25,51,26,53" />
-      <scope id="1230058635763" at="31,52,32,19" />
-      <scope id="1230058635763" at="20,0,23,0" />
-      <scope id="1230058635763" at="31,0,34,0">
+      <node id="1230058635763" at="19,29,20,25" concept="11" />
+      <node id="1230058635763" at="24,51,25,53" concept="2" />
+      <node id="1230058635763" at="30,52,31,19" concept="11" />
+      <node id="1230058635763" at="35,51,36,47" concept="2" />
+      <node id="1230058635770" at="36,47,37,28" concept="2" />
+      <node id="1230058635771" at="37,28,38,85" concept="2" />
+      <node id="1230058635763" at="16,0,18,0" concept="9" trace="ourParamCache" />
+      <node id="1230058635763" at="19,0,22,0" concept="1" trace="ForEachTest_Test#()V" />
+      <node id="1230058635763" at="30,0,33,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="1230058635763" at="23,0,27,0" concept="5" trace="test_ForEachTest#()V" />
+      <node id="1230058635763" at="34,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1230058635763" at="19,29,20,25" />
+      <scope id="1230058635763" at="24,51,25,53" />
+      <scope id="1230058635763" at="30,52,31,19" />
+      <scope id="1230058635763" at="19,0,22,0" />
+      <scope id="1230058635763" at="30,0,33,0">
         <var name="owner" id="1230058635763" />
       </scope>
-      <scope id="1230058635763" at="36,51,39,124" />
-      <scope id="1230058635763" at="24,0,28,0" />
-      <scope id="1230058635763" at="35,0,41,0" />
-      <unit id="1230058635763" at="29,0,42,0" name="jetbrains.mps.editorTest.ForEachTest_Test$TestBody" />
-      <unit id="1230058635763" at="15,0,43,0" name="jetbrains.mps.editorTest.ForEachTest_Test" />
+      <scope id="1230058635763" at="35,51,38,85" />
+      <scope id="1230058635763" at="23,0,27,0" />
+      <scope id="1230058635763" at="34,0,40,0" />
+      <unit id="1230058635763" at="28,0,41,0" name="jetbrains.mps.editorTest.ForEachTest_Test$TestBody" />
+      <unit id="1230058635763" at="14,0,42,0" name="jetbrains.mps.editorTest.ForEachTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1230058635795">
     <file name="ForTest_Test.java">
-      <node id="1230058635795" at="20,25,21,25" concept="11" />
-      <node id="1230058635795" at="25,47,26,49" concept="2" />
-      <node id="1230058635795" at="31,52,32,19" concept="11" />
-      <node id="1230058635795" at="36,51,37,47" concept="2" />
-      <node id="1230058635802" at="37,47,38,25" concept="2" />
-      <node id="1230058635803" at="38,25,39,124" concept="2" />
-      <node id="1230058635795" at="17,0,19,0" concept="9" trace="ourParamCache" />
-      <node id="1230058635795" at="20,0,23,0" concept="1" trace="ForTest_Test#()V" />
-      <node id="1230058635795" at="31,0,34,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="1230058635795" at="24,0,28,0" concept="5" trace="test_ForTest#()V" />
-      <node id="1230058635795" at="35,0,41,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="1230058635795" at="20,25,21,25" />
-      <scope id="1230058635795" at="25,47,26,49" />
-      <scope id="1230058635795" at="31,52,32,19" />
-      <scope id="1230058635795" at="20,0,23,0" />
-      <scope id="1230058635795" at="31,0,34,0">
+      <node id="1230058635795" at="19,25,20,25" concept="11" />
+      <node id="1230058635795" at="24,47,25,49" concept="2" />
+      <node id="1230058635795" at="30,52,31,19" concept="11" />
+      <node id="1230058635795" at="35,51,36,47" concept="2" />
+      <node id="1230058635802" at="36,47,37,25" concept="2" />
+      <node id="1230058635803" at="37,25,38,85" concept="2" />
+      <node id="1230058635795" at="16,0,18,0" concept="9" trace="ourParamCache" />
+      <node id="1230058635795" at="19,0,22,0" concept="1" trace="ForTest_Test#()V" />
+      <node id="1230058635795" at="30,0,33,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="1230058635795" at="23,0,27,0" concept="5" trace="test_ForTest#()V" />
+      <node id="1230058635795" at="34,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1230058635795" at="19,25,20,25" />
+      <scope id="1230058635795" at="24,47,25,49" />
+      <scope id="1230058635795" at="30,52,31,19" />
+      <scope id="1230058635795" at="19,0,22,0" />
+      <scope id="1230058635795" at="30,0,33,0">
         <var name="owner" id="1230058635795" />
       </scope>
-      <scope id="1230058635795" at="36,51,39,124" />
-      <scope id="1230058635795" at="24,0,28,0" />
-      <scope id="1230058635795" at="35,0,41,0" />
-      <unit id="1230058635795" at="29,0,42,0" name="jetbrains.mps.editorTest.ForTest_Test$TestBody" />
-      <unit id="1230058635795" at="15,0,43,0" name="jetbrains.mps.editorTest.ForTest_Test" />
+      <scope id="1230058635795" at="35,51,38,85" />
+      <scope id="1230058635795" at="23,0,27,0" />
+      <scope id="1230058635795" at="34,0,40,0" />
+      <unit id="1230058635795" at="28,0,41,0" name="jetbrains.mps.editorTest.ForTest_Test$TestBody" />
+      <unit id="1230058635795" at="14,0,42,0" name="jetbrains.mps.editorTest.ForTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1230058635842">
@@ -3738,7 +3738,7 @@
       <scope id="5938312768538925726" at="44,0,49,0" />
       <scope id="2345623147105465521" at="40,51,49,9" />
       <scope id="2345623147105465521" at="39,0,51,0" />
-      <unit id="5938312768538925726" at="43,88,49,7" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody$1" />
+      <unit id="5938312768538925726" at="43,97,49,7" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody$1" />
       <unit id="2345623147105465521" at="33,0,52,0" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
       <unit id="2345623147105465521" at="19,0,53,0" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
     </file>

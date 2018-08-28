@@ -10,7 +10,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class ForTest_Test extends BaseTransformationTest {
@@ -36,7 +35,7 @@ public class ForTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("1230058635796", "");
       typeString("for ");
-      Assert.assertTrue(((EditorComponent) getEditor().getCurrentEditorComponent()).getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
     }
   }
 }

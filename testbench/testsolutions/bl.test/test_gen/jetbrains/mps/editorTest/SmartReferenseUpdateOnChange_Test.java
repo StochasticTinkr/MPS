@@ -40,7 +40,7 @@ public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("2345623147105495371", "2345623147105495377");
       invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      getEditor().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           SNode testNode = SNodeOperations.cast(getNodeById("2345623147105496859"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType")));
           EditorCell editorCell = getEditorComponent().findCellWithId(testNode, "ReferencePresentation_91bvrs_a0a0");
