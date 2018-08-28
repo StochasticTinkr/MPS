@@ -15,8 +15,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
-import jetbrains.mps.baseLanguage.closures.runtime.Result;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -257,47 +255,7 @@ __switch__:
       }
     }.invoke();
     Assert.assertSame(2, count.value);
-    _UnrestrictedFunctionTypes._return_terminate_P0_E0<? extends Integer, ? extends Integer> ucl = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
-      public Result<Integer, Integer> invokeUnrestricted() {
-        return Result.TERMINATE(count.value++);
-      }
-    };
-    {
-      Result<? extends Integer, ?> __result__ = ucl.invokeUnrestricted();
-      switch (__result__.getOutcome()) {
-        case RETURN_VALUE:
-          //  fall through 
-        case RETURN_VOID:
-          return;
-        case BREAK:
-          break;
-        case TERMINATE_VALUE:
-          break;
-        default:
-          break;
-      }
-    }
-    Assert.assertSame(3, count.value);
-    {
-      Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
-        public Result<Integer, Integer> invokeUnrestricted() {
-          return Result.TERMINATE(count.value++);
-        }
-      }.invokeUnrestricted();
-      switch (__result__.getOutcome()) {
-        case RETURN_VALUE:
-          //  fall through 
-        case RETURN_VOID:
-          return;
-        case BREAK:
-          break;
-        case TERMINATE_VALUE:
-          break;
-        default:
-          break;
-      }
-    }
-    Assert.assertSame(4, count.value);
+
     // testing compilation 
     new _FunctionTypes._return_P0_E0<Object>() {
       public Object invoke() {
