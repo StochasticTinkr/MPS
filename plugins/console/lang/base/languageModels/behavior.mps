@@ -1670,11 +1670,14 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="2YIFZM" id="72nsGSZbucq" role="3uHU7w">
-                                    <ref role="37wK5l" to="w1kc:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isDefaultSubstitutable" />
-                                    <ref role="1Pybhc" to="w1kc:~SNodeUtil" resolve="SNodeUtil" />
-                                    <node concept="37vLTw" id="72nsGSZbuEh" role="37wK5m">
-                                      <ref role="3cqZAo" node="60B$8338uAR" resolve="it" />
+                                  <node concept="3fqX7Q" id="23pxZJWT3le" role="3uHU7w">
+                                    <node concept="2OqwBi" id="23pxZJWT52n" role="3fr31v">
+                                      <node concept="37vLTw" id="23pxZJWT4$0" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="60B$8338uAR" resolve="it" />
+                                      </node>
+                                      <node concept="liA8E" id="23pxZJWT5QA" role="2OqNvi">
+                                        <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

@@ -144,9 +144,6 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -217,9 +214,6 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
       <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
         <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
@@ -288,9 +282,6 @@
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
-      </concept>
-      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
-        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
@@ -1872,60 +1863,6 @@
         <node concept="3Tqbb2" id="1YioXbrrFWn" role="1tU5fm">
           <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="7vc5PjWu3AY" role="jymVt">
-      <property role="TrG5h" value="isDefaultSubstitutable" />
-      <node concept="10P_77" id="7vc5PjWu3AZ" role="3clF45" />
-      <node concept="3Tm1VV" id="7vc5PjWu3B0" role="1B3o_S" />
-      <node concept="3clFbS" id="7vc5PjWu3B1" role="3clF47">
-        <node concept="3SKdUt" id="4PEU_E$fkS" role="3cqZAp">
-          <node concept="3SKdUq" id="4PEU_E$fkU" role="3SKWNk">
-            <property role="3SKdUp" value="1 use in mbeddr" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="7vc5PjWukYC" role="3cqZAp">
-          <node concept="1Wc70l" id="6spw4TQeyqm" role="3clFbG">
-            <node concept="3fqX7Q" id="6spw4TQeyqn" role="3uHU7w">
-              <node concept="2OqwBi" id="7vc5PjWuleT" role="3fr31v">
-                <node concept="37vLTw" id="7vc5PjWulbB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7vc5PjWu3B6" resolve="concept" />
-                </node>
-                <node concept="2Zo12i" id="7vc5PjWulnl" role="2OqNvi">
-                  <node concept="chp4Y" id="7vc5PjWulom" role="2Zo12j">
-                    <ref role="cht4Q" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3fqX7Q" id="6spw4TQeyqr" role="3uHU7B">
-              <node concept="2OqwBi" id="2wdLO7KdhZk" role="3fr31v">
-                <node concept="liA8E" id="30Cvt28ZSc4" role="2OqNvi">
-                  <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
-                </node>
-                <node concept="37vLTw" id="7vc5PjWul5E" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7vc5PjWu3B6" resolve="concept" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7vc5PjWu3B6" role="3clF46">
-        <property role="TrG5h" value="concept" />
-        <node concept="3bZ5Sz" id="7vc5PjWu4az" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="zFlAU0Tibv" role="lGtFl">
-        <node concept="TZ5HI" id="zFlAU0Tibw" role="3nqlJM">
-          <node concept="TZ5HA" id="zFlAU0Tibx" role="3HnX3l">
-            <node concept="1dT_AC" id="zFlAU0Tif1" role="1dT_Ay">
-              <property role="1dT_AB" value="Since 2017.1 editor automatically detects whether the concept cannot be used as a substitute by noticing that its substitute menu is empty" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="zFlAU0Tiby" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="7kDY1n$F1IM" role="jymVt">

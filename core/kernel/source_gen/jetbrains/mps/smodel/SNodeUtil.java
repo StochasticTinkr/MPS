@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -111,15 +110,6 @@ public final class SNodeUtil {
   }
   public static String getDetailedPresentation(SNode node) {
     return ((String) (String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
-  }
-  /**
-   * 
-   * @deprecated Since 2017.1 editor automatically detects whether the concept cannot be used as a substitute by noticing that its substitute menu is empty
-   */
-  @Deprecated
-  public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
-    // 1 use in mbeddr 
-    return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static int getMetaLevel(SNode node) {
     return ((int) (Integer) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
