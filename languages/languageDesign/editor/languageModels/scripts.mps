@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
   <persistence version="9" />
   <languages>
-    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="-1" />
+    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="1" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -103,8 +103,6 @@
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
         <property id="5299416737274925395" name="type" index="2BwPSy" />
-        <property id="1206123256132" name="migrationFromBuild" index="3iz5xs" />
-        <property id="1206123296179" name="category" index="3izfiF" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
       <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="lg" index="_XfAh">
@@ -239,10 +237,8 @@
     </language>
   </registry>
   <node concept="_UgoZ" id="hXrXdhr">
-    <property role="3izfiF" value="editor language" />
     <property role="_Wzho" value="Horizontal Gap Migration" />
     <property role="TrG5h" value="HorizontalGapMigration" />
-    <property role="3iz5xs" value="5070" />
     <node concept="_XfAh" id="hXZj9GA" role="_YvDr">
       <property role="_XH9r" value="Padding right delete" />
       <ref role="_XDHR" to="tpc2:hF$7juf" resolve="PaddingRightStyleClassItem" />

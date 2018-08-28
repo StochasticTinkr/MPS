@@ -2,7 +2,7 @@
 <model ref="r:f5dc9f67-2195-4fd6-8b9b-a998435bfa08(jetbrains.mps.lang.generator.scripts)">
   <persistence version="9" />
   <languages>
-    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
+    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
