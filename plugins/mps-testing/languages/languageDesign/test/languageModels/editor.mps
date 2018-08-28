@@ -2058,14 +2058,6 @@
       <node concept="2iRkQZ" id="i2ICqH$" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="hPMizUx">
-    <property role="3GE5qa" value="expression" />
-    <ref role="1XX52x" to="tp5g:hPMiqvr" resolve="EditorExpression" />
-    <node concept="PMmxH" id="2wdLO7KhYbR" role="2wV5jI">
-      <property role="1cu_pB" value="0" />
-      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-    </node>
-  </node>
   <node concept="24kQdi" id="hPMGr28">
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hPMFPyi" resolve="InvokeIntentionStatement" />

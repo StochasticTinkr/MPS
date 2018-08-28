@@ -713,12 +713,6 @@
         <ref role="v9R2y" node="hPLRi3V" resolve="reduce_SimpleNodeTest" />
       </node>
     </node>
-    <node concept="3aamgX" id="hPMjGwD" role="3acgRq">
-      <ref role="30HIoZ" to="tp5g:hPMiqvr" resolve="EditorExpression" />
-      <node concept="j$656" id="hPMs0dy" role="1lVwrX">
-        <ref role="v9R2y" node="hPMrA67" resolve="reduce_EditorExpresstion" />
-      </node>
-    </node>
     <node concept="3aamgX" id="hPMNTQu" role="3acgRq">
       <ref role="30HIoZ" to="tp5g:hPMFPyi" resolve="InvokeIntentionStatement" />
       <node concept="j$656" id="hPMO2bU" role="1lVwrX">
@@ -2882,39 +2876,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="hPMrA67">
-    <property role="TrG5h" value="reduce_EditorExpresstion" />
-    <node concept="312cEu" id="5s44y2KUzao" role="13RCb5">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="A" />
-      <property role="1sVAO0" value="true" />
-      <node concept="3clFb_" id="5s44y2KUzap" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="foo" />
-        <property role="od$2w" value="false" />
-        <property role="DiZV1" value="false" />
-        <node concept="3clFbS" id="5s44y2KUzaq" role="3clF47">
-          <node concept="3cpWs8" id="5s44y2Lqy6G" role="3cqZAp">
-            <node concept="3cpWsn" id="5s44y2Lqy6H" role="3cpWs9">
-              <property role="TrG5h" value="editor" />
-              <node concept="1rXfSq" id="ORe5oE9XJQ" role="33vP2m">
-                <ref role="37wK5l" to="tp6m:ORe5oE9OIM" resolve="getEditor" />
-                <node concept="raruj" id="ORe5oE9XJR" role="lGtFl" />
-              </node>
-              <node concept="3uibUv" id="5s44y2Lqy6I" role="1tU5fm">
-                <ref role="3uigEE" to="cj4x:~Editor" resolve="Editor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cqZAl" id="5s44y2KUzaw" role="3clF45" />
-      </node>
-      <node concept="3Tm1VV" id="5s44y2KUzax" role="1B3o_S" />
-      <node concept="3uibUv" id="5s44y2KUzay" role="1zkMxy">
-        <ref role="3uigEE" to="tp6m:hPMdj4e" resolve="BaseEditorTestBody" />
       </node>
     </node>
   </node>

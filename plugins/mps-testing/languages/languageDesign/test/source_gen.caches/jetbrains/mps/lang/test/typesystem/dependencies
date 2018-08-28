@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.check_DragMouseStatement_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_InvokeIntentionStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_IsActionApplicableExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_IsIntentionApplicableExpression_InferenceRule" />
@@ -118,19 +117,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" file="typeof_EditorComponentExpression_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule" file="typeof_EditorExpression_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

@@ -21,10 +21,7 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -481,20 +478,6 @@
     <property role="34LRSv" value="test method" />
     <property role="EcuMT" value="1225978065297" />
     <ref role="1TJDcQ" node="hHlHkQ8" resolve="NodesTestMethod" />
-  </node>
-  <node concept="1TIwiD" id="hPMiqvr">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="EditorExpression" />
-    <property role="3GE5qa" value="expression" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="editor" />
-    <property role="EcuMT" value="1225983109083" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="asaX9" id="ORe5oE9_um" role="lGtFl">
-      <property role="YLPcu" value="version 3.3" />
-      <property role="YLQ7P" value="use EditorComponent construction instead" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hPMFPyi">
     <property role="R5$K7" value="false" />

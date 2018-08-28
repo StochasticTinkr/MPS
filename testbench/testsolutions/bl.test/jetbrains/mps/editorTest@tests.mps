@@ -5096,7 +5096,7 @@
             </node>
             <node concept="2OqwBi" id="59D800tVqCs" role="2Oq$k0">
               <node concept="liA8E" id="59D800tVrrQ" role="2OqNvi">
-                <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
               <node concept="2OqwBi" id="59D800tVpLx" role="2Oq$k0">
                 <node concept="liA8E" id="59D800tVqwR" role="2OqNvi">
