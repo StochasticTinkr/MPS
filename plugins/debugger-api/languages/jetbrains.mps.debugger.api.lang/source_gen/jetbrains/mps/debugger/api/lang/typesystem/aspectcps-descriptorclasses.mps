@@ -250,16 +250,17 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
     </language>
   </registry>
   <node concept="312cEu" id="0">
@@ -2185,25 +2186,25 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2l5eF5" id="bH" role="2OqNvi">
-                  <node concept="2c44tf" id="bL" role="2l6Ag6">
+                <node concept="TSZUe" id="bH" role="2OqNvi">
+                  <node concept="2c44tf" id="bL" role="25WWJ7">
                     <node concept="3uibUv" id="bN" role="2c44tc">
                       <ref role="3uigEE" to="1l1h:3SnNvqCaJHs" resolve="DebuggerNotPresentException" />
                       <node concept="cd27G" id="bP" role="lGtFl">
                         <node concept="3u3nmq" id="bQ" role="cd27D">
-                          <property role="3u3nmv" value="7329423411587718651" />
+                          <property role="3u3nmv" value="825934036093542362" />
                         </node>
                       </node>
                     </node>
                     <node concept="cd27G" id="bO" role="lGtFl">
                       <node concept="3u3nmq" id="bR" role="cd27D">
-                        <property role="3u3nmv" value="7329423411587718650" />
+                        <property role="3u3nmv" value="825934036093542361" />
                       </node>
                     </node>
                   </node>
                   <node concept="cd27G" id="bM" role="lGtFl">
                     <node concept="3u3nmq" id="bS" role="cd27D">
-                      <property role="3u3nmv" value="7329423411587718649" />
+                      <property role="3u3nmv" value="825934036093542363" />
                     </node>
                   </node>
                 </node>

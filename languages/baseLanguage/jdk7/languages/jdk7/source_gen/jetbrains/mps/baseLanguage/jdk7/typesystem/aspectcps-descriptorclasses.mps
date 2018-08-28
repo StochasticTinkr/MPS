@@ -235,12 +235,10 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -1004,18 +1002,18 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="2l5eF5" id="4Q" role="2OqNvi">
-                        <node concept="37vLTw" id="4U" role="2l6Ag6">
+                      <node concept="TSZUe" id="4Q" role="2OqNvi">
+                        <node concept="37vLTw" id="4U" role="25WWJ7">
                           <ref role="3cqZAo" node="3$" resolve="current" />
                           <node concept="cd27G" id="4W" role="lGtFl">
                             <node concept="3u3nmq" id="4X" role="cd27D">
-                              <property role="3u3nmv" value="4265636116363096852" />
+                              <property role="3u3nmv" value="825934036093532927" />
                             </node>
                           </node>
                         </node>
                         <node concept="cd27G" id="4V" role="lGtFl">
                           <node concept="3u3nmq" id="4Y" role="cd27D">
-                            <property role="3u3nmv" value="3446170115498222145" />
+                            <property role="3u3nmv" value="825934036093532928" />
                           </node>
                         </node>
                       </node>
