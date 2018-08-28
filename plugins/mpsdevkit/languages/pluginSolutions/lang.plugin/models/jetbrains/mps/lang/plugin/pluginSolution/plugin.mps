@@ -8,7 +8,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
@@ -217,7 +217,6 @@
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
@@ -589,7 +588,6 @@
                                 <node concept="2V$Bhx" id="3DVVPRJFv41" role="2V$M_3">
                                   <property role="2V$B1T" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
                                   <property role="2V$B1Q" value="jetbrains.mps.lang.plugin" />
-                                  <property role="2V$B1S" value="-1" />
                                 </node>
                               </node>
                             </node>
@@ -613,7 +611,6 @@
                                 <node concept="2V$Bhx" id="3DVVPRJFBUv" role="2V$M_3">
                                   <property role="2V$B1T" value="ef7bf5ac-d06c-4342-b11d-e42104eb9343" />
                                   <property role="2V$B1Q" value="jetbrains.mps.lang.plugin.standalone" />
-                                  <property role="2V$B1S" value="-1" />
                                 </node>
                               </node>
                             </node>
@@ -637,7 +634,6 @@
                                 <node concept="2V$Bhx" id="3DVVPRJFDBx" role="2V$M_3">
                                   <property role="2V$B1T" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1" />
                                   <property role="2V$B1Q" value="jetbrains.mps.lang.smodel" />
-                                  <property role="2V$B1S" value="-1" />
                                 </node>
                               </node>
                             </node>
@@ -661,7 +657,6 @@
                                 <node concept="2V$Bhx" id="3DVVPRJFEpe" role="2V$M_3">
                                   <property role="2V$B1T" value="63650c59-16c8-498a-99c8-005c7ee9515d" />
                                   <property role="2V$B1Q" value="jetbrains.mps.lang.access" />
-                                  <property role="2V$B1S" value="-1" />
                                 </node>
                               </node>
                             </node>
@@ -685,7 +680,6 @@
                                 <node concept="2V$Bhx" id="3DVVPRJFFb6" role="2V$M_3">
                                   <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
                                   <property role="2V$B1Q" value="jetbrains.mps.baseLanguage" />
-                                  <property role="2V$B1S" value="-1" />
                                 </node>
                               </node>
                             </node>

@@ -8,7 +8,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="3" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
@@ -349,7 +349,6 @@
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
@@ -773,7 +772,6 @@
                 <node concept="2V$Bhx" id="3D0DuOpy4v8" role="2V$M_3">
                   <property role="2V$B1T" value="b401a680-8325-4110-8fd3-84331ff25bef" />
                   <property role="2V$B1Q" value="jetbrains.mps.lang.generator" />
-                  <property role="2V$B1S" value="-1" />
                 </node>
               </node>
             </node>
@@ -2437,7 +2435,6 @@
                   <node concept="2V$Bhx" id="5oW9SGadQED" role="2V$M_3">
                     <property role="2V$B1T" value="289fcc83-6543-41e8-a5ca-768235715ce4" />
                     <property role="2V$B1Q" value="jetbrains.mps.lang.generator.generationParameters" />
-                    <property role="2V$B1S" value="0" />
                   </node>
                 </node>
               </node>
@@ -2452,7 +2449,6 @@
                   <node concept="2V$Bhx" id="5oW9SGadQEI" role="2V$M_3">
                     <property role="2V$B1T" value="b401a680-8325-4110-8fd3-84331ff25bef" />
                     <property role="2V$B1Q" value="jetbrains.mps.lang.generator" />
-                    <property role="2V$B1S" value="-1" />
                   </node>
                 </node>
               </node>

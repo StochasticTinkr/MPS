@@ -358,7 +358,6 @@
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
@@ -11146,7 +11145,6 @@
               <node concept="2V$Bhx" id="3DVVPRJEajX" role="2V$M_3">
                 <property role="2V$B1T" value="f2801650-65d5-424e-bb1b-463a8781b786" />
                 <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.javadoc" />
-                <property role="2V$B1S" value="-1" />
               </node>
             </node>
           </node>
