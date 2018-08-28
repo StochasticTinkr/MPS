@@ -11,7 +11,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="3" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -338,7 +338,6 @@
       </concept>
       <concept id="1204478074808" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject" flags="nn" index="1KvdUw" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
     </language>
@@ -2835,7 +2834,6 @@
     </node>
     <node concept="1DS2jV" id="hIWpGMe" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
       <node concept="1oajcY" id="7HZe2EwZDgF" role="1oa70y" />
     </node>
@@ -6153,7 +6151,6 @@
     </node>
     <node concept="1DS2jV" id="7LEQOWrr$rH" role="1NuT2Z">
       <property role="TrG5h" value="namespace" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="3s15:~MPSDataKeys.NAMESPACE" resolve="NAMESPACE" />
     </node>
     <node concept="1QGGSu" id="4LxHW5_okK_" role="3Uehp1">
@@ -9484,7 +9481,6 @@
     </node>
     <node concept="1DS2jV" id="4npc6Q0o$Yn" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
     </node>
     <node concept="2S4$dB" id="4npc6Q0o_c_" role="1NuT2Z">
@@ -9597,7 +9593,6 @@
     </node>
     <node concept="1DS2jV" id="4npc6Q0oGJD" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
     </node>
     <node concept="2S4$dB" id="4npc6Q0oGJ$" role="1NuT2Z">
@@ -13122,14 +13117,12 @@
     </node>
     <node concept="1DS2jV" id="4NbzjXXKNEl" role="1NuT2Z">
       <property role="TrG5h" value="contextModel" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
       <node concept="1oajcY" id="7HZe2EwZDol" role="1oa70y" />
       <node concept="3dZWAM" id="34D$71tXqR7" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4NbzjXXKNEd" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
     </node>
     <node concept="1DS2jV" id="gcMdbCsWOi" role="1NuT2Z">
@@ -36294,7 +36287,6 @@
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="M3eFeZXiWv" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
     </node>
     <node concept="2S4$dB" id="M3eFeZXiWw" role="1NuT2Z">

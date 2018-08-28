@@ -5,7 +5,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="3" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
@@ -138,7 +138,6 @@
       </concept>
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
     </language>
@@ -765,12 +764,10 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9cQ" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9cR" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9cS" role="1NuT2Z">
@@ -833,17 +830,14 @@
     <node concept="mfpdH" id="79ALBP9Jg68" role="med8o" />
     <node concept="1DS2jV" id="4KDfkUwM9dh" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9di" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9dj" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <property role="1Ld5UQ" value="true" />
       <node concept="3Tm6S6" id="4KDfkUwM9dk" role="1B3o_S" />
       <node concept="3Tqbb2" id="4KDfkUwM9dl" role="1tU5fm" />
     </node>
@@ -1757,12 +1751,10 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9iW" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9iX" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9iY" role="1NuT2Z">
@@ -1846,19 +1838,16 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9jx" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
       <node concept="1oajcY" id="4KDfkUwM9jy" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9jz" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
       <node concept="1oajcY" id="4KDfkUwM9j$" role="1oa70y" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9j_" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <property role="1Ld5UQ" value="true" />
       <node concept="3Tm6S6" id="4KDfkUwM9jA" role="1B3o_S" />
       <node concept="3Tqbb2" id="4KDfkUwM9jB" role="1tU5fm" />
     </node>

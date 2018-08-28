@@ -7,7 +7,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="3" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
@@ -186,7 +186,6 @@
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
       <concept id="1204478074808" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject" flags="nn" index="1KvdUw" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
     </language>
@@ -1939,12 +1938,10 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJEWW" role="1NuT2Z">
       <property role="TrG5h" value="models" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJEWX" role="1NuT2Z">
       <property role="TrG5h" value="cmodel" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="tnohg" id="7tZeFupJEWY" role="tncku">
@@ -4304,22 +4301,18 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJF8J" role="1NuT2Z">
       <property role="TrG5h" value="models" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJF8K" role="1NuT2Z">
       <property role="TrG5h" value="cmodel" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJF8L" role="1NuT2Z">
       <property role="TrG5h" value="modules" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULES" resolve="MODULES" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJF8M" role="1NuT2Z">
       <property role="TrG5h" value="cmodule" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="tnohg" id="7tZeFupJF8N" role="tncku">
@@ -4971,12 +4964,10 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJFbQ" role="1NuT2Z">
       <property role="TrG5h" value="modules" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULES" resolve="MODULES" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJFbR" role="1NuT2Z">
       <property role="TrG5h" value="cmodule" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="tnohg" id="7tZeFupJFbS" role="tncku">
@@ -5176,12 +5167,10 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJFcR" role="1NuT2Z">
       <property role="TrG5h" value="modules" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULES" resolve="MODULES" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJFcS" role="1NuT2Z">
       <property role="TrG5h" value="cmodule" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="tnohg" id="7tZeFupJFcT" role="tncku">
@@ -5616,12 +5605,10 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJFdT" role="1NuT2Z">
       <property role="TrG5h" value="models" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJFdU" role="1NuT2Z">
       <property role="TrG5h" value="cmodel" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="tnohg" id="7tZeFupJFdV" role="tncku">
@@ -6946,13 +6933,11 @@
     </node>
     <node concept="1DS2jV" id="7tZeFupJFi7" role="1NuT2Z">
       <property role="TrG5h" value="cmodel" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
       <node concept="1oajcY" id="7rKYJcjJo3G" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="7tZeFupJFi8" role="1NuT2Z">
       <property role="TrG5h" value="models" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
     </node>
     <node concept="2ScWuX" id="7tZeFupJFi9" role="tmbBb">
