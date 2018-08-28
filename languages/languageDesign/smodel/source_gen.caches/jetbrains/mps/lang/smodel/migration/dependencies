@@ -326,6 +326,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.NodePointersTypesystem" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.migration.RemoveLanguageIdVersionProperty" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
@@ -486,6 +487,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.migration.RemoveLanguageIdVersionProperty" file="RemoveLanguageIdVersionProperty.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression" file="SNodeTypeCastExpression.java">
     <classNode dependClassName="java.lang.Iterable" />
