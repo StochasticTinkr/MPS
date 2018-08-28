@@ -17,7 +17,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <child id="1083172003582" name="member" index="M5hS2" />
@@ -1259,7 +1261,9 @@
       <property role="IQ2ns" value="1226567214363" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="asaX9" id="4dZhGkwx1jH" role="lGtFl" />
+    <node concept="asaX9" id="4dZhGkwx1jH" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQmzaSM">
     <property role="R5$K7" value="false" />
@@ -1278,7 +1282,9 @@
       <property role="IQ2ns" value="1226591501988" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="asaX9" id="4dZhGkwx1jI" role="lGtFl" />
+    <node concept="asaX9" id="4dZhGkwx1jI" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQmBsE7">
     <property role="R5$K7" value="false" />
@@ -1297,7 +1303,9 @@
       <property role="IQ2ns" value="1226592623721" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="asaX9" id="4dZhGkwxg_z" role="lGtFl" />
+    <node concept="asaX9" id="4dZhGkwxg_z" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQmGkF$">
     <property role="R5$K7" value="false" />
@@ -1316,7 +1324,9 @@
       <property role="IQ2ns" value="1226593903142" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="asaX9" id="4dZhGkwxgA7" role="lGtFl" />
+    <node concept="asaX9" id="4dZhGkwxgA7" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQEZigj">
     <property role="R5$K7" value="false" />

@@ -213,7 +213,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
@@ -2486,6 +2488,7 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="e1" role="lGtFl">
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="e5" role="lGtFl">
                             <node concept="3u3nmq" id="e6" role="cd27D">
                               <property role="3u3nmv" value="4863683935051516259" />
@@ -2854,6 +2857,7 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="gh" role="lGtFl">
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="gl" role="lGtFl">
                             <node concept="3u3nmq" id="gm" role="cd27D">
                               <property role="3u3nmv" value="4863683935051453677" />
@@ -11488,6 +11492,7 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="152" role="lGtFl">
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="156" role="lGtFl">
                             <node concept="3u3nmq" id="157" role="cd27D">
                               <property role="3u3nmv" value="4863683935051516295" />
@@ -12017,6 +12022,7 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="18h" role="lGtFl">
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="18l" role="lGtFl">
                             <node concept="3u3nmq" id="18m" role="cd27D">
                               <property role="3u3nmv" value="4863683935051453678" />
