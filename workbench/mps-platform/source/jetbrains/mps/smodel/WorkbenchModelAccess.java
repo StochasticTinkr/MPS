@@ -23,13 +23,11 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.math.BigDecimal;
@@ -223,7 +221,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       groupId = ur.getGroupId();
       confirmUndo = ur.shallConfirmUndo();
     }
-    runWriteActionInCommand(new CommandRunnable(r, project), name, groupId, confirmUndo, project.getProject());
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
+    runWriteActionInCommand(myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo, project.getProject());
   }
 
   private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, com.intellij.openapi.project.Project project) {
@@ -231,12 +230,13 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     CommandProcessor.getInstance().executeCommand(project, r, name, groupId, cp);
   }
 
-  /*package*/ void runUndoTransparentCommand(Runnable r, Project project) {
+  /*package*/ void runUndoTransparentCommand(Runnable r, MPSProject project) {
     if (myCommandLevel > 0) {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
+    CommandProcessor.getInstance().runUndoTransparentAction(myPlatformWriteHelper.withPlatformWrite(withModelLock));
   }
 
   @Override
@@ -256,7 +256,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   private int myCommandLevel = 0;
 
-  private void incCommandLevel(Runnable command, SRepository repository) {
+  private void incCommandLevel(Runnable command, MPSProject mpsProject) {
     checkWriteAccess();
     if (myCommandLevel != 0) {
       // LOG.error("command level>0", new Exception());
@@ -265,8 +265,9 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       if (command instanceof UndoContext) {
         context = (UndoContext) command;
       } else {
-        context = new DefaultUndoContext(repository);
+        context = new DefaultUndoContext(mpsProject.getRepository());
       }
+      // XXX pass MPSProject right to undoHandler, don't be shy
       myUndoHandler.startCommand(context);
       onCommandStarted();
     }
@@ -347,26 +348,32 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return getClass().getSimpleName();
   }
 
+  /**
+   * Responsible to notify about command start and end using incCommandLevel/decCommandLevel.
+   * Shall get executed inside platform write and under model lock
+   */
   @Immutable
   private final class CommandRunnable implements Runnable {
     private final Runnable myRunnable;
-    private final Project myProject;
+    private final MPSProject myProject;
 
-    CommandRunnable(Runnable r, Project project) {
+    CommandRunnable(Runnable r, MPSProject project) {
       myRunnable = r;
       myProject = project;
     }
 
     @Override
     public void run() {
-      WorkbenchModelAccess.this.runWriteAction(() -> {
-        incCommandLevel(myRunnable, myProject.getRepository());
-        try {
-          myRunnable.run();
-        } finally {
-          decCommandLevel();
-        }
-      });
+      // it seems that the only chance for CommandRunnable to be executed inside another CommandRunnable (hence, to expect myCommandLevel != 0)
+      // would be executeCommand() nested inside another executeCommand(). Undo-transparent is explicit about top-level, and async command is always top-level
+      // by design. Therefore, once executeCommand() runs a delegate directly in case of nested command, this runnable could become UndoContextSetupRunnable
+      // and get incCommandLevel (myCommandLevel == 0) responsibilities here
+      incCommandLevel(myRunnable, myProject);
+      try {
+        myRunnable.run();
+      } finally {
+        decCommandLevel();
+      }
     }
   }
 }

@@ -89,6 +89,13 @@ final class TryRunPlatformWriteHelper implements Disposable {
     return di;
   }
 
+  /**
+   * {@link #runWrite(Runnable)} as a {@link Runnable}
+   */
+  /*package*/ Runnable withPlatformWrite(final Runnable r) {
+    return () -> runWrite(r);
+  }
+
   /*package*/ void runWrite(Runnable r) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     try {
