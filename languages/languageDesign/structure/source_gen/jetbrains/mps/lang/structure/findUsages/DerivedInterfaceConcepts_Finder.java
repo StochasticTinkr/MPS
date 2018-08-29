@@ -20,8 +20,8 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class InterfaceConceptsDescendants_Finder extends GeneratedFinder {
-  public InterfaceConceptsDescendants_Finder() {
+public class DerivedInterfaceConcepts_Finder extends GeneratedFinder {
+  public DerivedInterfaceConcepts_Finder() {
   }
   @Override
   public String getDescription() {

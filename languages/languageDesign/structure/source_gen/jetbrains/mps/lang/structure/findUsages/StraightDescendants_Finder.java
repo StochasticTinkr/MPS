@@ -52,10 +52,9 @@ public class StraightDescendants_Finder extends GeneratedFinder {
           if (monitor.isCanceled()) {
             return;
           }
-          SNode descendantCandidate = SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-          if (SNodeOperations.isInstanceOf(descendantCandidate, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-            if (SLinkOperations.getTarget(SNodeOperations.cast(descendantCandidate, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) == node) {
-              callback.onUsageFound(createSingleResult(descendantCandidate));
+          if (SNodeOperations.isInstanceOf(nodeParam, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+            if (SLinkOperations.getTarget(SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) == node) {
+              callback.onUsageFound(createSingleResult(nodeParam));
             }
           }
         }

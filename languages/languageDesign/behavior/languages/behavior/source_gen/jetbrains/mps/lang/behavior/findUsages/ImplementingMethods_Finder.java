@@ -14,12 +14,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import java.util.List;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -60,26 +59,24 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
   protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       monitor.start("Looking for method implementations", 10);
-      List<SNode> nodes = FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(2));
+      FindUtils.searchForResults(monitor.subTask(10), new IFinder.FindCallback() {
+        public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+          SNode nodeParam = (SNode) searchResult.getObject();
+          if (SNodeOperations.isInstanceOf(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) == ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(node)) {
 
-      ProgressMonitor subMonitor = monitor.subTask(8);
-      final SNode method = node;
-      Iterable<SNode> candidates = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) == ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(method);
-        }
-      });
-      subMonitor.start("", Sequence.fromIterable(candidates).count());
-      for (SNode nodeUsage : Sequence.fromIterable(candidates)) {
-        callback.onUsageFound(createSingleResult(nodeUsage));
-        for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder", nodeUsage, scope, subMonitor.subTask(1)))) {
-          if (monitor.isCanceled()) {
-            return;
+            callback.onUsageFound(createSingleResult(nodeParam));
+            FindUtils.searchForResults(new EmptyProgressMonitor(), new IFinder.FindCallback() {
+              public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+                SNode nodeParam = (SNode) searchResult.getObject();
+                if (monitor.isCanceled()) {
+                  return;
+                }
+                callback.onUsageFound(createSingleResult(nodeParam));
+              }
+            }, new SearchQuery(nodeParam, scope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder"));
           }
-          callback.onUsageFound(createSingleResult(overriding));
         }
-      }
-      subMonitor.done();
+      }, new SearchQuery(node, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
     } finally {
       monitor.done();
     }

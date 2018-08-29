@@ -30,7 +30,7 @@ public class ImplementingConcepts_Finder extends GeneratedFinder {
   }
   @Override
   public SAbstractConcept getSConcept() {
-    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.InterfaceConceptDeclaration");
+    return MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
 
   @Override
@@ -59,7 +59,7 @@ public class ImplementingConcepts_Finder extends GeneratedFinder {
             }
           }, new SearchQuery(nodeParam, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
         }
-      }, new SearchQuery(node, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.InterfaceConceptsDescendants_Finder"), FindUtils.getFinder("jetbrains.mps.lang.core.findUsages.IdentityFinder_Finder"));
+      }, new SearchQuery(node, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder"), FindUtils.getFinder("jetbrains.mps.lang.core.findUsages.IdentityFinder_Finder"));
     } finally {
       monitor.done();
     }

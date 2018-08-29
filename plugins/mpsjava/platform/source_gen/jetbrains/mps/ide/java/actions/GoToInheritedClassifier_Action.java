@@ -97,14 +97,9 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     final Wrappers._boolean isClass = new Wrappers._boolean();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          isClass.value = true;
-        } else {
-          isClass.value = false;
-        }
+        isClass.value = SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
     });
-
     InputEvent inputEvent = event.getInputEvent();
     SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
     DefaultBLClassComparator comparator = new DefaultBLClassComparator(repository);
