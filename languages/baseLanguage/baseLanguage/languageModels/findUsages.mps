@@ -879,14 +879,30 @@
                     <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundClass" />
                   </node>
                 </node>
-                <node concept="3clFbF" id="5ljwgzfFoKt" role="3cqZAp">
-                  <node concept="2OqwBi" id="5ljwgzfFpge" role="3clFbG">
-                    <node concept="37vLTw" id="5ljwgzfFoKs" role="2Oq$k0">
-                      <ref role="3cqZAo" node="htSpuxC" resolve="currentClasses" />
+                <node concept="3clFbJ" id="7uPL$vP5FkO" role="3cqZAp">
+                  <node concept="3clFbS" id="7uPL$vP5FkQ" role="3clFbx">
+                    <node concept="3clFbF" id="5ljwgzfFoKt" role="3cqZAp">
+                      <node concept="2OqwBi" id="5ljwgzfFpge" role="3clFbG">
+                        <node concept="37vLTw" id="5ljwgzfFoKs" role="2Oq$k0">
+                          <ref role="3cqZAo" node="htSpuxC" resolve="currentClasses" />
+                        </node>
+                        <node concept="2Ke9KJ" id="5ljwgzfFpA4" role="2OqNvi">
+                          <node concept="37vLTw" id="5ljwgzfNI1r" role="25WWJ7">
+                            <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundClass" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
-                    <node concept="2Ke9KJ" id="5ljwgzfFpA4" role="2OqNvi">
-                      <node concept="37vLTw" id="5ljwgzfNI1r" role="25WWJ7">
+                  </node>
+                  <node concept="3fqX7Q" id="7uPL$vP5Flv" role="3clFbw">
+                    <node concept="2OqwBi" id="7uPL$vP5LEG" role="3fr31v">
+                      <node concept="37vLTw" id="7uPL$vP5FlY" role="2Oq$k0">
                         <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundClass" />
+                      </node>
+                      <node concept="1mIQ4w" id="7uPL$vP5Mco" role="2OqNvi">
+                        <node concept="chp4Y" id="7uPL$vP5Mhd" role="cj9EA">
+                          <ref role="cht4Q" to="tpee:h1Y3b43" resolve="AnonymousClass" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -2986,6 +3002,15 @@
         <node concept="3clFbF" id="hzAOmje" role="3cqZAp">
           <node concept="Xl_RD" id="hzAOm$6" role="3clFbG">
             <property role="Xl_RC" value="Straight Derivatives" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QTw1a" id="5ljwgzfSGqq" role="QTGFR">
+      <node concept="3clFbS" id="5ljwgzfSGqr" role="2VODD2">
+        <node concept="3clFbF" id="5ljwgzfSGyh" role="3cqZAp">
+          <node concept="3clFbT" id="5ljwgzfSGyg" role="3clFbG">
+            <property role="3clFbU" value="false" />
           </node>
         </node>
       </node>

@@ -33,7 +33,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   }
   @Override
   public SAbstractConcept getSConcept() {
-    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.InterfaceConceptDeclaration");
   }
 
   @Override
@@ -48,7 +48,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
           public void onUsageFound(@NotNull SearchResult<?> searchResult) {
             SNode nodeParam = (SNode) searchResult.getObject();
             if (SNodeOperations.hasRole(nodeParam, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
-              SNode foundIntfc = SNodeOperations.cast(SNodeOperations.getParent(nodeParam), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
+              SNode foundIntfc = SNodeOperations.cast(SNodeOperations.getParent(nodeParam), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.InterfaceConceptDeclaration"));
               callback.onUsageFound(createSingleResult(foundIntfc));
               QueueSequence.fromQueue(queue).addLastElement(foundIntfc);
             }

@@ -49,7 +49,9 @@ public class DerivedClasses_Finder extends GeneratedFinder {
             SNode nodeParam = (SNode) searchResult.getObject();
             SNode foundClass = SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
             callback.onUsageFound(createSingleResult(foundClass));
-            QueueSequence.fromQueue(currentClasses).addLastElement(foundClass);
+            if (!(SNodeOperations.isInstanceOf(foundClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
+              QueueSequence.fromQueue(currentClasses).addLastElement(foundClass);
+            }
           }
         }, new SearchQuery(nextNode, scope), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder"));
       }
