@@ -62,6 +62,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -98,8 +101,10 @@
     <language id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages">
       <concept id="1197044488845" name="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" flags="ig" index="2PqlIr">
         <property id="1197385993272" name="description" index="39L4OI" />
+        <child id="1216396839916" name="isVisibleBlock" index="QTGFR" />
       </concept>
       <concept id="1197044488840" name="jetbrains.mps.lang.findUsages.structure.FindBlock" flags="in" index="2PqlIu" />
+      <concept id="1216396788049" name="jetbrains.mps.lang.findUsages.structure.IsVisibleBlock" flags="in" index="QTw1a" />
       <concept id="1197386047362" name="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" flags="nn" index="39LhUk" />
       <concept id="1218978086674" name="jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration" flags="ng" index="3gKnS9">
         <reference id="1218978181697" name="forConcept" index="3gKJdq" />
@@ -294,6 +299,27 @@
       <node concept="3clFbS" id="hzFh$Jb" role="2VODD2">
         <node concept="1O21ld" id="l1SV1umuWb" role="3cqZAp">
           <node concept="39LhUk" id="l1SV1umuWd" role="1O268K" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2PqlIr" id="5ljwgzfM54U">
+    <property role="TrG5h" value="IdentityFinder" />
+    <property role="39L4OI" value="Node Itself" />
+    <ref role="3gKJdq" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="2PqlIu" id="5ljwgzfM54V" role="3gKxsI">
+      <node concept="3clFbS" id="5ljwgzfM54W" role="2VODD2">
+        <node concept="1O1abz" id="5ljwgzfM57U" role="3cqZAp">
+          <node concept="39LhUk" id="5ljwgzfM58q" role="1O1k6O" />
+        </node>
+      </node>
+    </node>
+    <node concept="QTw1a" id="5ljwgzfP08f" role="QTGFR">
+      <node concept="3clFbS" id="5ljwgzfP08g" role="2VODD2">
+        <node concept="3clFbF" id="5ljwgzfP0g2" role="3cqZAp">
+          <node concept="3clFbT" id="5ljwgzfP0g1" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
         </node>
       </node>
     </node>

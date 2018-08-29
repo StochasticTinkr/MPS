@@ -19,6 +19,8 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
   public IInterfacedFinder instantiate(int token) throws IllegalArgumentException {
     switch (token) {
       case 0:
+        return new IdentityFinder_Finder();
+      case 1:
         return new NodeAndDescendantsUsages_Finder();
       default:
         throw new IllegalArgumentException(String.format("Illegal identifier of a finder implementation: %d", token));
@@ -27,6 +29,7 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
 
   @Override
   public void init(FinderRegistry reg) {
-    reg.add(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), 0, "NodeAndDescendantsUsages");
+    reg.add(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), 0, "IdentityFinder");
+    reg.add(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), 1, "NodeAndDescendantsUsages");
   }
 }
