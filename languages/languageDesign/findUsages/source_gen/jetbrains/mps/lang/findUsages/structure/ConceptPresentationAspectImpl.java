@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_FinderDeclaration;
   private ConceptPresentation props_FinderReference;
   private ConceptPresentation props_FinderReferenceExpression;
+  private ConceptPresentation props_ForEachFoundNodeExpression;
   private ConceptPresentation props_IsApplicableBlock;
   private ConceptPresentation props_IsUsedByDefault;
   private ConceptPresentation props_IsVisibleBlock;
@@ -85,7 +86,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FinderDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0s);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0t);
           props_FinderDeclaration = cpb.create();
         }
         return props_FinderDeclaration;
@@ -104,6 +105,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FinderReferenceExpression = cpb.create();
         }
         return props_FinderReferenceExpression;
+      case LanguageConceptSwitch.ForEachFoundNodeExpression:
+        if (props_ForEachFoundNodeExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("foreach found node");
+          props_ForEachFoundNodeExpression = cpb.create();
+        }
+        return props_ForEachFoundNodeExpression;
       case LanguageConceptSwitch.IsApplicableBlock:
         if (props_IsApplicableBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

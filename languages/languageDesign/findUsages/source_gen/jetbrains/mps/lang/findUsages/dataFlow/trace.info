@@ -4,7 +4,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.lang.findUsages.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="15,0,38,0" name="jetbrains.mps.lang.findUsages.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)/1540083505037467679">
@@ -28,6 +28,27 @@
         <var name="_context" id="1540083505037525413" />
       </scope>
       <unit id="1540083505037525413" at="11,0,17,0" name="jetbrains.mps.lang.findUsages.dataFlow.ExecuteFinderExpression_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)/6148399791136986501">
+    <file name="ForEachFoundNodeExpression_DataFlow.java">
+      <node id="1207060299994" at="12,60,13,223" concept="0" />
+      <node id="1207323166495" at="13,223,14,49" concept="0" />
+      <node id="1207323191691" at="14,49,15,182" concept="0" />
+      <node id="2516462576967508982" at="15,182,16,216" concept="0" />
+      <node id="1207060341794" at="16,216,17,213" concept="0" />
+      <node id="1207323226796" at="19,25,20,197" concept="0" />
+      <node id="1207323226795" at="19,0,22,0" concept="1" trace="run#()V" />
+      <node id="1207323226795" at="17,213,22,7" concept="0" />
+      <node id="6148399791136986501" at="12,0,24,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="1207323226795" at="19,25,20,197" />
+      <scope id="1207323226795" at="19,0,22,0" />
+      <scope id="6148399791136986503" at="12,60,22,7" />
+      <scope id="6148399791136986501" at="12,0,24,0">
+        <var name="_context" id="6148399791136986501" />
+      </scope>
+      <unit id="1207323226795" at="18,51,22,5" name="jetbrains.mps.lang.findUsages.dataFlow.ForEachFoundNodeExpression_DataFlow$1" />
+      <unit id="6148399791136986501" at="11,0,25,0" name="jetbrains.mps.lang.findUsages.dataFlow.ForEachFoundNodeExpression_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)/6413574678187369355">

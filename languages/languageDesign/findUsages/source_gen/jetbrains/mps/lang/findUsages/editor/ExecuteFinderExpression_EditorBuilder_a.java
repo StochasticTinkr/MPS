@@ -366,7 +366,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       }
     }
     protected String getNoTargetText() {
-      return "<progress monitor>";
+      return "<same monitor>";
     }
   }
   private EditorCell createConstant_4() {

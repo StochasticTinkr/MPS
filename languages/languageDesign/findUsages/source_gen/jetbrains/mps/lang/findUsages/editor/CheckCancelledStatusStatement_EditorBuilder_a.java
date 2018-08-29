@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
 
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "check cancelled status;");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "check cancelled status");
     editorCell.setCellId("Constant_n2ooek_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
