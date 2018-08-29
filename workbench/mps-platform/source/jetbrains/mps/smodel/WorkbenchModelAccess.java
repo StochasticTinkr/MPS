@@ -198,7 +198,17 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return null;
     });
     // XXX unlike #executeCommand(Runnable, Project), we don't respect UndoRunnable options here, why?
-    CommandProcessor.getInstance().executeCommand(project.getProject(), computable, "MPS #tryCommand", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    String name =  "MPS #tryCommand", groupId = null;
+    UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
+    if (r instanceof UndoRunnable) {
+      UndoRunnable ur = (UndoRunnable) r;
+      name = ur.getName();
+      groupId = ur.getGroupId();
+      if (ur.shallConfirmUndo()) {
+        confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
+      }
+    }
+    CommandProcessor.getInstance().executeCommand(project.getProject(), computable, name, groupId, confirmUndo);
     if (computable.getResult() != null) {
       // XXX why on earth do we report platform lock timeout with an exception, while model lock timeout with mere boolean wasExecuted?
       throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), computable.getResult());
@@ -216,20 +226,17 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     assert project != null;
 
     String name = "MPS Execute Command", groupId = null;
-    boolean confirmUndo = false;
+    UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
     if (r instanceof UndoRunnable) {
       UndoRunnable ur = (UndoRunnable) r;
       name = ur.getName();
       groupId = ur.getGroupId();
-      confirmUndo = ur.shallConfirmUndo();
+      if (ur.shallConfirmUndo()) {
+        confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
+      }
     }
     final LockRunnable withModelLock = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
-    runWriteActionInCommand(myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo, project.getProject());
-  }
-
-  private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, com.intellij.openapi.project.Project project) {
-    final UndoConfirmationPolicy cp = requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
-    CommandProcessor.getInstance().executeCommand(project, r, name, groupId, cp);
+    CommandProcessor.getInstance().executeCommand(project.getProject(), myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo);
   }
 
   /*package*/ void runUndoTransparentCommand(Runnable r, MPSProject project) {
