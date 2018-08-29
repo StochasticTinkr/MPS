@@ -118,7 +118,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   @Override
   public void runWriteInEDT(Runnable r) {
     // XXX tryWrite() doesn't clear repository caches like runWriteAction() does!
-    //     I don't want to fix this as I'm going to
+    //     I don't want to fix this as I'm going to get rid of caches anyway
     myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
@@ -147,6 +147,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private boolean tryWrite(final Runnable r) {
     final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, r);
 
+    // XXX there's only 1 use of the method, and it's from EDT executor, are there any chance not to be in EDT here?
     if (isInEDT()) {
       TaskTimer taskTimer = new TaskTimer();
       taskTimer.start();
@@ -155,6 +156,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         // and another is to grab MPS write lock with lockRunnable
         myPlatformWriteHelper.tryWrite(lockRunnable);
       } catch (WriteTimeOutException e) {
+        // XXX why not return false to indicate failed attempt?
         throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
       }
     } else {
