@@ -4,6 +4,8 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import java.util.List;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem.CheckerCategory;
+import jetbrains.mps.errors.item.IssueKindReportItem.KindLevel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -27,10 +29,11 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
   public GeneratorTemplatesChecker() {
   }
 
+  public static final CheckerCategory CROSS_TEMPLATE_REFERENCES = new CheckerCategory(KindLevel.MANUAL, "cross-templates references");
 
   @Override
-  public String getCategory() {
-    return "cross-templates references";
+  public CheckerCategory getCategory() {
+    return CROSS_TEMPLATE_REFERENCES;
   }
 
   @Override
@@ -101,8 +104,8 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
       }
 
       ListSequence.fromList(results).addElement(new ReferenceReportItem(MessageStatus.WARNING, ref, String.format("Reference across root templates in role '%s', use mapping label or reference macro", ref.getLink().getName())) {
-        public String getIssueKind() {
-          return "cross-template reference";
+        public ItemKind getIssueKind() {
+          return CROSS_TEMPLATE_REFERENCES.deriveItemKind();
         }
       });
     }

@@ -21,8 +21,8 @@ public abstract class Problem<T> implements ReportItem, IssueKindReportItem {
   public abstract String getCategory();
 
   @Override
-  public final String getIssueKind() {
-    return getCategory();
+  public final ItemKind getIssueKind() {
+    return new CheckerCategory(KindLevel.MANUAL, "migration").deriveItemKind(getCategory());
   }
   @Override
   public MessageStatus getSeverity() {

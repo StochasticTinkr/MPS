@@ -34,8 +34,8 @@ public class ImportSelfWarning extends ModelReportItemBase implements QuickFixRe
   }
 
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.MODEL_PROPERTIES;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.MODEL_PROPERTIES.deriveItemKind();
   }
 
   @Override

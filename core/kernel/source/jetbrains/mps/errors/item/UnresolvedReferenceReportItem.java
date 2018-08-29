@@ -30,8 +30,8 @@ public class UnresolvedReferenceReportItem extends ReferenceReportItem implement
   }
 
   @Override
-  public String getIssueKind() {
-    return UNRESOLVED_REFERENCE;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.UNRESOLVED_REFERENCE.deriveItemKind();
   }
 
   @Override

@@ -83,6 +83,7 @@ public class ValidationUtil {
     }
   }
 
+ // is this method called from model checker ?
   public static void validateModel(@NotNull final SModel model, @NotNull Processor<? super ModelReportItem> processor) {
     final SRepository repository = model.getRepository();
     if (repository != null) {

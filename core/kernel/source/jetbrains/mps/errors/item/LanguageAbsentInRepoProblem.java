@@ -23,7 +23,7 @@ public class LanguageAbsentInRepoProblem extends LanguageMissingProblem {
     super(language, instance, "Language " + language + " is not in repository");
   }
 
-  public String getIssueKind() {
-    return "missing language (missing plugin?)";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.ENVIRONMENT_PROBLEM.deriveItemKind("missing language (missing plugin?)");
   }
 }
