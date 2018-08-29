@@ -71,6 +71,6 @@ public final class MethodIsOverriddenEditorMessage extends AbstractOverrideEdito
   @Override
   public AnAction getClickAction() {
     // that is right: the method is overridden (implemented) and we can navigate to the implemeting methods (descendant) 
-    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToImplementingBehaviorMethod_Action"));
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToImplementationBehaviorMethod_Action"));
   }
 }

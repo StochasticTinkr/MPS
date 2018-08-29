@@ -70,6 +70,6 @@ public final class MethodOverridesEditorMessage extends AbstractOverrideEditorMe
   @Override
   public AnAction getClickAction() {
     // that is right: the method overrides (implements) smth. and we can navigate to the overridden methods (ancestors) 
-    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToOverriddenBehaviorMethod_Action"));
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToSuperBehaviorMethod_Action"));
   }
 }

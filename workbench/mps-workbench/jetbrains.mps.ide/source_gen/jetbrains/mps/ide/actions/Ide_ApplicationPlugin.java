@@ -50,6 +50,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixModuleImportsInProject_Action());
     addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
+    addAction(new GoToConceptDescendants_Action());
     addAction(new GoToImplementationBehaviorMethod_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());

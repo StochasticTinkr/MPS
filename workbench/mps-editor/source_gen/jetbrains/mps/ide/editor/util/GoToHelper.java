@@ -26,7 +26,7 @@ public final class GoToHelper {
   public static void showPopupAndSearchNodeInBackground(final SNode node, final MPSProject project, final CaptionFunction captionFun, final Finder finder, final RelativePoint point) {
     SearchQuery query = createNodeQuery(project.getRepository(), node, null);
     PopupSettingsBuilder settings = new PopupSettingsBuilder(project);
-    settings.query(query).captionFun(captionFun).finder(finder).point(point);
+    settings.query(query).captionFun(captionFun).finders(finder).point(point);
     showPopupAndSearchInBackground(settings);
   }
 
@@ -49,7 +49,7 @@ public final class GoToHelper {
   }
 
   public static void showPopupAndSearchInBackground(@NotNull final PopupSettingsBuilder settings) {
-    Task.Backgroundable task = new BackgroundUsageWithPopupTask(settings);
+    Task.Backgroundable task = new BackgroundSearchWithPopupTask(settings);
     ProgressManager.getInstance().run(task);
   }
 }

@@ -20,9 +20,10 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
+import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
 import jetbrains.mps.ide.editor.util.GoToHelper;
-import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.MPSCodeInsightBundle;
@@ -87,7 +88,9 @@ public class GoToSuperClassMethod_Action extends BaseAction {
     final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
     DefaultBLMethodComparator comparator = new DefaultBLMethodComparator(repository);
     DefaultBLMethodNameFilter nameFilter = new DefaultBLMethodNameFilter(repository);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finder(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder")).captionFun(GoToSuperClassMethod_Action.this.captionFun(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params)).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
+    DefaultMethodRenderer renderer = new DefaultMethodRenderer(repository);
+    CaptionFunction function = GoToSuperClassMethod_Action.this.captionFun(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("methodNode")), _params);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).finders(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder")).renderer(renderer).captionFun(function).queryFromNode(((SNode) MapSequence.fromMap(_params).get("methodNode"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
   private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {

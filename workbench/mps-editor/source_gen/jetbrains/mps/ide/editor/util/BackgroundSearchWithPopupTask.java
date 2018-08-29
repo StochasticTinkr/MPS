@@ -11,17 +11,13 @@ import com.intellij.openapi.util.Ref;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import java.util.Collections;
-import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.find.FindBundle;
 
-public class BackgroundUsageWithPopupTask extends BackgroundSearchTask {
+public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   private final JBPopup myPopup;
   private final PopupSettingsBuilder mySettings;
   private final JBList<NodeNavigatable> myList;
@@ -30,17 +26,16 @@ public class BackgroundUsageWithPopupTask extends BackgroundSearchTask {
   private final Ref<Boolean> myShown = new Ref<Boolean>(false);
   private final Object LOCK = new Object();
   private final List<NodeNavigatable> myCurrentResults = new ArrayList<NodeNavigatable>();
+  private volatile boolean myFinished = false;
 
-  public BackgroundUsageWithPopupTask(@NotNull PopupSettingsBuilder settings) {
-    super(settings.myProject, settings.query, Collections.singletonList(settings.finder), "Searching...");
+  public BackgroundSearchWithPopupTask(@NotNull PopupSettingsBuilder settings) {
+    super(settings.myProject, settings.query, settings.finders, "Searching...");
     mySettings = settings;
-    DefaultMethodRenderer renderer = new DefaultMethodRenderer(settings.myProject.getRepository());
-    final GoToContextMenuHelper.ContextMenuComposite contextMenuComposite = new GoToContextMenuHelper(settings.myProject, settings.captionFun, renderer, settings.comparator, settings.nameFilter).buildPopup();
+    final GoToContextMenuHelper.ContextMenuComposite contextMenuComposite = new GoToContextMenuHelper(settings.myProject, settings.captionFun, settings.renderer, settings.comparator, settings.nameFilter).buildPopup();
     myPopup = contextMenuComposite.myPopup;
     myList = contextMenuComposite.myJBList;
     myListModel = contextMenuComposite.myListModel;
   }
-
 
   @Override
   public void run(@NotNull final ProgressIndicator indicator) {
@@ -92,7 +87,7 @@ public class BackgroundUsageWithPopupTask extends BackgroundSearchTask {
         }
       }
     });
-    String newCaption = mySettings.captionFun.caption(myCurrentResults.size(), false);
+    String newCaption = mySettings.captionFun.caption(myCurrentResults.size(), myFinished);
     myPopup.setCaption(newCaption);
     myPopup.pack(true, true);
     if (!(myShown.get())) {
@@ -109,17 +104,15 @@ public class BackgroundUsageWithPopupTask extends BackgroundSearchTask {
     if (myPopup.isDisposed()) {
       return;
     }
-    myList.setPaintBusy(false);
+    myFinished = true;
     if (myCurrentResults.isEmpty()) {
-      Messages.showInfoMessage(mySettings.point.getComponent(), FindBundle.message("find.usage.view.no.usages.text"), FindBundle.message("find.pointcut.applications.not.found.title"));
-    }
-    if (myCurrentResults.size() == 1) {
+    } else if (myCurrentResults.size() == 1) {
       myPopup.cancel();
       NodeNavigatable navigatable = myCurrentResults.get(0);
       navigatable.navigate(true);
+    } else {
+      refresh();
+      myList.setPaintBusy(false);
     }
-    String newCaption = mySettings.captionFun.caption(myCurrentResults.size(), true);
-    myPopup.setCaption(newCaption);
-    myPopup.pack(true, true);
   }
 }

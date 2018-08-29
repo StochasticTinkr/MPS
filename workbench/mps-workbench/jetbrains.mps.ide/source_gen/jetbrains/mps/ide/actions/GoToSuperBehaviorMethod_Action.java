@@ -18,9 +18,10 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
+import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
 import jetbrains.mps.ide.editor.util.GoToHelper;
-import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.MPSCodeInsightBundle;
@@ -82,7 +83,9 @@ public class GoToSuperBehaviorMethod_Action extends BaseAction {
     SRepository repository = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     DefaultBHMethodComparator comparator = new DefaultBHMethodComparator(repository);
     DefaultBHMethodNameFilter nameFilter = new DefaultBHMethodNameFilter(repository);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finder(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder")).captionFun(GoToSuperBehaviorMethod_Action.this.captionFun(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event)).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), inputEvent).comparator(comparator).nameFilter(nameFilter);
+    DefaultMethodRenderer renderer = new DefaultMethodRenderer(repository);
+    CaptionFunction caption = GoToSuperBehaviorMethod_Action.this.captionFun(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finders(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder")).renderer(renderer).captionFun(caption).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), inputEvent).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
   private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {

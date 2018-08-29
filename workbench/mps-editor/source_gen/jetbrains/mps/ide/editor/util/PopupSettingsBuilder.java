@@ -4,9 +4,11 @@ package jetbrains.mps.ide.editor.util;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
-import com.intellij.ui.awt.RelativePoint;
 import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
+import jetbrains.mps.ide.editor.util.renderer.BaseRenderer;
+import jetbrains.mps.ide.navigation.NodeNavigatable;
+import com.intellij.ui.awt.RelativePoint;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import com.intellij.util.Function;
@@ -14,6 +16,7 @@ import java.util.Comparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
@@ -23,8 +26,9 @@ import java.awt.Point;
 public final class PopupSettingsBuilder {
   /*package*/ final MPSProject myProject;
   /*package*/ SearchQuery query;
-  /*package*/ Finder finder;
+  /*package*/ List<Finder> finders;
   /*package*/ CaptionFunction captionFun;
+  /*package*/ BaseRenderer<NodeNavigatable> renderer;
   /*package*/ RelativePoint point;
   /*package*/ List<SNodeReference> foundUsages = new ArrayList<SNodeReference>();
   /*package*/ Function<SNodeReference, String> nameFilter;
@@ -48,8 +52,13 @@ public final class PopupSettingsBuilder {
     return this;
   }
 
-  public PopupSettingsBuilder finder(@NotNull Finder finder) {
-    this.finder = finder;
+  public PopupSettingsBuilder finders(@NotNull Finder... finders) {
+    this.finders = Arrays.asList(finders);
+    return this;
+  }
+
+  public PopupSettingsBuilder renderer(@NotNull BaseRenderer<NodeNavigatable> renderer) {
+    this.renderer = renderer;
     return this;
   }
 

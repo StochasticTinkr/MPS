@@ -32,6 +32,6 @@ public class OverriddenMethodEditorMessage extends AbstractOverrideEditorMessage
 
   @Override
   public AnAction getClickAction() {
-    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action"));
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action"));
   }
 }

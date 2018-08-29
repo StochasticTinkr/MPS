@@ -38,6 +38,11 @@
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
+    <import index="9teg" ref="r:59f5b892-a6eb-4a9b-9c81-ecffc10026ee(jetbrains.mps.ide.highlighters.behavior)" />
+    <import index="p9ap" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.codeInsight.daemon(MPS.IDEA/)" />
+    <import index="vuw5" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.keymap(MPS.IDEA/)" />
+    <import index="25x5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.text(JDK/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -1505,7 +1510,7 @@
         </node>
         <node concept="3clFbF" id="7k6J8c3ti$8" role="3cqZAp">
           <node concept="3$FdUm" id="7k6J8c3ti$9" role="3clFbG">
-            <ref role="3$FpRE" to="tprs:6ndnYgP5$a$" resolve="GoToOverriddenBehaviorMethod" />
+            <ref role="3$FpRE" to="tprs:6ndnYgP5$a$" resolve="GoToSuperBehaviorMethod" />
           </node>
         </node>
       </node>
@@ -3036,7 +3041,7 @@
         </node>
         <node concept="3clFbF" id="6xaYinJOO1n" role="3cqZAp">
           <node concept="3$FdUm" id="6xaYinJOO1o" role="3clFbG">
-            <ref role="3$FpRE" to="tprs:1oCHNhnjllY" resolve="GoToImplementingBehaviorMethod" />
+            <ref role="3$FpRE" to="tprs:1oCHNhnjllY" resolve="GoToImplementationBehaviorMethod" />
           </node>
         </node>
       </node>
