@@ -3729,47 +3729,6 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3EZMnI" id="6ARlnePUomh" role="3EZMnx">
-        <node concept="l2Vlx" id="6ARlnePUomi" role="2iSdaV" />
-        <node concept="3F0ifn" id="6ARlnePUolx" role="3EZMnx">
-          <property role="3F0ifm" value="@Deprecated" />
-          <ref role="1k5W1q" to="tpch:hOawUFH" resolve="AnnotationNode" />
-          <node concept="lj46D" id="6ARlnePUolK" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-          <node concept="ljvvj" id="6ARlnePUolM" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="3F0ifn" id="6MNA4JYmRbB" role="3EZMnx">
-          <property role="3F0ifm" value="icon16" />
-          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-          <node concept="lj46D" id="6MNA4JYmYNM" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-          <node concept="3nxI2P" id="6ARlneQegJc" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="3F1sOY" id="6MNA4JYmRbE" role="3EZMnx">
-          <ref role="1NtTu8" to="kdzh:6MNA4JYmRbk" resolve="icon16" />
-        </node>
-        <node concept="pkWqt" id="6ARlnePUone" role="pqm2j">
-          <node concept="3clFbS" id="6ARlnePUonf" role="2VODD2">
-            <node concept="3clFbF" id="6ARlnePUrUq" role="3cqZAp">
-              <node concept="2OqwBi" id="6ARlnePUsQM" role="3clFbG">
-                <node concept="2OqwBi" id="6ARlnePUs6_" role="2Oq$k0">
-                  <node concept="pncrf" id="6ARlnePUrUp" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="6ARlnePUstt" role="2OqNvi">
-                    <ref role="3Tt5mk" to="kdzh:6MNA4JYmRbk" resolve="icon16" />
-                  </node>
-                </node>
-                <node concept="3x8VRR" id="6ARlnePUtis" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="5D0zVz80B2B">

@@ -656,7 +656,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.prop("url", 0x6cb3984bfe5b72d5L, "7832771629084799701");
     b.prop("name", 0x6cb3984bfe5b72d6L, "7832771629084799702");
-    b.aggregate("icon16", 0x6cb3984bfe5b72d4L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("7832771629084799700").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_Language() {
