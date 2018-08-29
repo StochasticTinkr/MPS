@@ -11,10 +11,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -41,8 +41,13 @@ public class NodeUsages_Finder extends GeneratedFinder {
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
-      FindUsagesFacade.getInstance().findUsages(scope, Collections.<SNode>singleton(node),
-                                                                          (SReference ref) -> callback.onUsageFound(createSingleResult(ref.getSourceNode())), monitor);
+      FindUsagesFacade.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new Consumer<SReference>() {
+        @Override
+        public void consume(@NotNull SReference ref) {
+          callback.onUsageFound(createSingleResult(((SNode) ref.getSourceNode())));
+        }
+      }, monitor);
+
     } finally {
       monitor.done();
     }
