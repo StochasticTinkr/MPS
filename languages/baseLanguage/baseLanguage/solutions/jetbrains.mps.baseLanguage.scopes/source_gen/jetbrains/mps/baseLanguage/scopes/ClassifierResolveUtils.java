@@ -25,8 +25,6 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -210,18 +208,7 @@ public class ClassifierResolveUtils {
       }
     });
   }
-  public static SNode resolveAndCache(final String refText, final SNode contextNode, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
 
-    SNode classifier = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
-    Pair<SNode, String> key = new Pair(classifier, refText);
-    ResolveResult result = RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<ResolveResult>() {
-      public ResolveResult invoke() {
-        return new ResolveResult(resolve(refText, contextNode, modelPlusImported, includeAncestors));
-      }
-    });
-
-    return SNodeOperations.cast(result.getResult(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-  }
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
     // The algorithm: 
     // - split refText into tokens A.B.C (separated by dot) 

@@ -38,7 +38,7 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
     // TODO Must be done through ScopeProvider 
-    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
+    return ClassifierResolveUtils.resolve(refText, contextNode, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
   }
   @Override
   public boolean contains(SNode node) {
