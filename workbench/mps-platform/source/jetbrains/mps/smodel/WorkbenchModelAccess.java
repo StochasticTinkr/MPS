@@ -21,12 +21,12 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
+import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -187,13 +187,21 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private boolean tryWriteInCommand(final Runnable r, @NotNull final MPSProject project) {
     ApplicationManager.getApplication().assertIsDispatchThread();
 
-    com.intellij.openapi.project.Project ideaProject = project.getProject();
     TaskTimer taskTimer = new TaskTimer();
     final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
-    try {
-      myPlatformWriteHelper.tryCommand(ideaProject, lockRunnable);
-    } catch (WriteTimeOutException e) {
-      throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
+    ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
+      try {
+        myPlatformWriteHelper.tryWrite(lockRunnable);
+      } catch (WriteTimeOutException e) {
+        return e;
+      }
+      return null;
+    });
+    // XXX unlike #executeCommand(Runnable, Project), we don't respect UndoRunnable options here, why?
+    CommandProcessor.getInstance().executeCommand(project.getProject(), computable, "MPS #tryCommand", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    if (computable.getResult() != null) {
+      // XXX why on earth do we report platform lock timeout with an exception, while model lock timeout with mere boolean wasExecuted?
+      throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), computable.getResult());
     }
     return lockRunnable.wasExecuted();
   }
@@ -215,14 +223,12 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       groupId = ur.getGroupId();
       confirmUndo = ur.shallConfirmUndo();
     }
-    runWriteActionInCommand(r, name, groupId, confirmUndo, project);
+    runWriteActionInCommand(new CommandRunnable(r, project), name, groupId, confirmUndo, project.getProject());
   }
 
-  private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project),
-                                                  new CommandRunnable(r, project), name, groupId,
-                                                  requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION
-                                                                          : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, com.intellij.openapi.project.Project project) {
+    final UndoConfirmationPolicy cp = requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
+    CommandProcessor.getInstance().executeCommand(project, r, name, groupId, cp);
   }
 
   /*package*/ void runUndoTransparentCommand(Runnable r, Project project) {

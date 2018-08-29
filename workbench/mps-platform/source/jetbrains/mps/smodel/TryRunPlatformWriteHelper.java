@@ -18,11 +18,6 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -92,30 +87,6 @@ final class TryRunPlatformWriteHelper implements Disposable {
     DelayedInterrupt di = new DelayedInterrupt(toInterrupt, delay, unit);
     myInterruptQueue.put(di);
     return di;
-  }
-
-  /*package*/ void tryCommand(@NotNull Project project, @NotNull Runnable runnable) throws WriteTimeOutException {
-    ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
-      try {
-        tryWrite(runnable);
-      } catch (WriteTimeOutException e) {
-        return e;
-      }
-      return null;
-    });
-    executeCommand(project, computable);
-    if (computable.getResult() != null) {
-      throw computable.getResult();
-    }
-  }
-
-  private void executeCommand(@NotNull Project project, ComputeRunnable<?> computable) {
-    CommandProcessor.getInstance().executeCommand(
-        project,
-        computable,
-        "MPS #tryCommand",
-        null,
-        UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   /*package*/ void runWrite(Runnable r) {
