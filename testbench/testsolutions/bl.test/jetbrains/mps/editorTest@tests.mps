@@ -635,11 +635,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -12070,21 +12069,20 @@
               </node>
             </node>
             <node concept="3clFbS" id="2tTgVY$$PBe" role="TDEfX">
-              <node concept="34ab3g" id="2tTgVY$$Yz4" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="2tTgVY$$Yz6" role="34bqiv">
-                  <property role="Xl_RC" value="Can't write messages" />
-                </node>
-                <node concept="37vLTw" id="2tTgVY$$Yz8" role="34bMjA">
-                  <ref role="3cqZAo" node="2tTgVY$$PBc" resolve="e" />
-                </node>
-                <node concept="LIFWc" id="7yRd4V1DW4G" role="lGtFl">
+              <node concept="RRSsy" id="683qm1GbJYR" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="LIFWc" id="683qm1GbJZ1" role="lGtFl">
                   <property role="LIFWa" value="0" />
                   <property role="OXtK3" value="true" />
                   <property role="p6zMq" value="0" />
                   <property role="p6zMs" value="0" />
                   <property role="LIFWd" value="property_severity" />
+                </node>
+                <node concept="Xl_RD" id="2tTgVY$$Yz6" role="RRSoy">
+                  <property role="Xl_RC" value="Can't write messages" />
+                </node>
+                <node concept="37vLTw" id="2tTgVY$$Yz8" role="RRSow">
+                  <ref role="3cqZAo" node="2tTgVY$$PBc" resolve="e" />
                 </node>
               </node>
             </node>
@@ -12120,18 +12118,17 @@
               </node>
             </node>
             <node concept="3clFbS" id="2tTgVY$_0mq" role="TDEfX">
-              <node concept="34ab3g" id="7yRd4V1FEmd" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="7yRd4V1FEme" role="34bqiv">
+              <node concept="RRSsy" id="683qm1GbKbE" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="Xl_RD" id="7yRd4V1FEme" role="RRSoy">
                   <property role="Xl_RC" value="Can't write messages" />
                 </node>
-                <node concept="37vLTw" id="7yRd4V1FEmf" role="34bMjA">
+                <node concept="37vLTw" id="7yRd4V1FEmf" role="RRSow">
                   <ref role="3cqZAo" node="2tTgVY$_0ms" resolve="e" />
                 </node>
-                <node concept="LIFWc" id="7yRd4V1FEx6" role="lGtFl">
+                <node concept="LIFWc" id="683qm1GdoMA" role="lGtFl">
                   <property role="LIFWa" value="0" />
-                  <property role="LIFWd" value="Collection_xuwwk0_a" />
+                  <property role="LIFWd" value="Collection_8ff02w_a" />
                 </node>
               </node>
             </node>
