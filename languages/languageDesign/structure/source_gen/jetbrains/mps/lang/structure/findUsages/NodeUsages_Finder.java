@@ -47,7 +47,6 @@ public class NodeUsages_Finder extends GeneratedFinder {
           callback.onUsageFound(createSingleResult(((SNode) ref.getSourceNode())));
         }
       }, monitor);
-
     } finally {
       monitor.done();
     }

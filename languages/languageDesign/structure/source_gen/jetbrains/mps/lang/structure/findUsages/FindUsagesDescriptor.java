@@ -21,17 +21,23 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
       case 0:
         return new ConceptAncestors_Finder();
       case 1:
-        return new ConceptDescendants_Finder();
-      case 2:
         return new ConceptInstances_Finder();
+      case 2:
+        return new DerivedConcepts_Finder();
       case 3:
         return new ExactConceptInstances_Finder();
       case 4:
-        return new LinkInstances_Finder();
+        return new ImplementingConcepts_Finder();
       case 5:
-        return new NodeUsages_Finder();
+        return new InterfaceConceptsDescendants_Finder();
       case 6:
+        return new LinkInstances_Finder();
+      case 7:
+        return new NodeUsages_Finder();
+      case 8:
         return new PropertyInstances_Finder();
+      case 9:
+        return new StraightDescendants_Finder();
       default:
         throw new IllegalArgumentException(String.format("Illegal identifier of a finder implementation: %d", token));
     }
@@ -40,11 +46,14 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
   @Override
   public void init(FinderRegistry reg) {
     reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 0, "ConceptAncestors");
-    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 1, "ConceptDescendants");
-    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 2, "ConceptInstances");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 1, "ConceptInstances");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 2, "DerivedConcepts");
     reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), 3, "ExactConceptInstances");
-    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), 4, "LinkInstances");
-    reg.add(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), 5, "NodeUsages");
-    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), 6, "PropertyInstances");
+    reg.add(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.InterfaceConceptDeclaration"), 4, "ImplementingConcepts");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), 5, "InterfaceConceptsDescendants");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), 6, "LinkInstances");
+    reg.add(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), 7, "NodeUsages");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), 8, "PropertyInstances");
+    reg.add(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), 9, "StraightDescendants");
   }
 }
