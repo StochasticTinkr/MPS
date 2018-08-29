@@ -17,18 +17,7 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import java.util.Collections;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -49,33 +38,10 @@ public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Iterable<SNode> getMembers_id6r77ob2V1Fr(@NotNull final SNode __thisNode__) {
-    if (__thisNode__ == null) {
-      // todo: this in virtual methods cannot be null but in non-virtual can be. think about it 
-      return Collections.emptyList();
-    }
-
-    // this cache is safe, more complicated caches - think about it 
-    Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__), new ArrayList<SNode>());
-    for (SNode typeParameter : IClassifierType__BehaviorDescriptor.getTypeParameters_id6r77ob2URYe.invoke(__thisNode__)) {
-      if (SNodeOperations.isInstanceOf(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-        ListSequence.fromList(cacheKey._1()).addElement(SLinkOperations.getTarget(SNodeOperations.cast(typeParameter, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
-      } else {
-        ListSequence.fromList(cacheKey._1()).addElement(typeParameter);
-        // in pure language i don't need this things =(. Main problem here is: classifier.getThisType() != classifier.getThisType() 
-      }
-    }
-    return RepositoryStateCacheUtils.getFromCache("IClassifierType_Behavior", cacheKey, new _FunctionTypes._return_P0_E0<ISequence<SNode>>() {
-      public ISequence<SNode> invoke() {
-        MembersPopulatingContext scope = new MembersPopulatingContext();
-        IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(__thisNode__, scope, __thisNode__);
-        return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
-          }
-        });
-      }
-    });
+  /*package*/ static Iterable<SNode> getMembers_id6r77ob2V1Fr(@NotNull SNode __thisNode__) {
+    MembersPopulatingContext scope = new MembersPopulatingContext();
+    IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(__thisNode__, scope, __thisNode__);
+    return scope.getMembers();
   }
   /*package*/ static Iterable<SNode> getVisibleMembers_id5laDzmpBPtZ(@NotNull final SNode __thisNode__, final SNode contextNode) {
     return Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
