@@ -47,17 +47,14 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private static final String IDEA_WRITE_LOCK_FAIL = "Failed to acquire the IDEA write lock after having waited for %.3f s";
 
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
-  // track attempts to grab IDEA platform write lock
-  private final WriteActionTracker myPlatformWriteActionTracker;
-  private final TryRunPlatformWriteHelper myTryPlatformWriteHelper;
+  private final TryRunPlatformWriteHelper myPlatformWriteHelper;
   private final WorkbenchUndoHandler myUndoHandler;
 
   public WorkbenchModelAccess(WorkbenchUndoHandler undoHandler) {
     myUndoHandler = undoHandler;
-    myPlatformWriteActionTracker = new WriteActionTracker();
-    myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myPlatformWriteActionTracker);
+    myPlatformWriteHelper = new TryRunPlatformWriteHelper();
     Disposer.register(this, myEDTExecutor);
-    Disposer.register(this, myTryPlatformWriteHelper);
+    Disposer.register(this, myPlatformWriteHelper);
   }
 
   // implementation detail, public just to overcome package boundaries j.m.smodel and j.m.project
@@ -94,12 +91,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     assertNotWriteFromRead();
     final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(r));
     if (isInEDT()) {
-      try {
-        myPlatformWriteActionTracker.writeActionScheduled();
-        ApplicationManager.getApplication().runWriteAction(lockRunnable);
-      } finally {
-        myPlatformWriteActionTracker.writeActionProcessed();
-      }
+      myPlatformWriteHelper.runWrite(lockRunnable);
     } else {
       ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
@@ -161,14 +153,14 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       TaskTimer taskTimer = new TaskTimer();
       taskTimer.start();
       try {
-        // in fact, there are 2 lock attempts, one to grab IDEA's platform lock (myTryPlatformWriteHelper.tryWrite),
+        // in fact, there are 2 lock attempts, one to grab IDEA's platform lock (myPlatformWriteHelper.tryWrite),
         // and another is to grab MPS write lock with lockRunnable
-        myTryPlatformWriteHelper.tryWrite(lockRunnable);
+        myPlatformWriteHelper.tryWrite(lockRunnable);
       } catch (WriteTimeOutException e) {
         throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
       }
     } else {
-      // unlike myTryPlatformWriteHelper.tryWrite() above, here we don't care to tryLock IDEA's read, why?
+      // unlike myPlatformWriteHelper.tryWrite() above, here we don't care to tryLock IDEA's read, why?
       ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
     return lockRunnable.wasExecuted();
@@ -199,7 +191,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     TaskTimer taskTimer = new TaskTimer();
     final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
     try {
-      myTryPlatformWriteHelper.tryCommand(ideaProject, lockRunnable);
+      myPlatformWriteHelper.tryCommand(ideaProject, lockRunnable);
     } catch (WriteTimeOutException e) {
       throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
     }
@@ -248,7 +240,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public boolean hasScheduledWrites() {
-    return myPlatformWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
+    return myPlatformWriteHelper.hasScheduledWrites() || super.hasScheduledWrites();
   }
 
   //--------command events listening

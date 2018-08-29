@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,9 @@ public interface ModelAccess {
   void executeCommandInEDT(Runnable r);
 
   /**
-   * FIXME
+   * FIXME need thorough documentation
+   * Executed code has model write, is treated as a command, the only difference is that changes from the transparent action merged with the that of the
+   * previous undoable command
    */
   void executeUndoTransparentCommand(Runnable r);
 
