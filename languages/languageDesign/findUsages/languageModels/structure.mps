@@ -66,6 +66,7 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="find" />
     <property role="EcuMT" value="1197044488840" />
+    <property role="R4oN_" value="use lalala" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hqPqlEd">
@@ -246,7 +247,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractFinderDeclaration" />
     <property role="EcuMT" value="1218978086674" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="AbstractConceptDeclarat" />
     <node concept="1TJgyj" id="hJgKJ91" role="1TKVEi">
       <property role="20kJfa" value="forConcept" />
       <property role="20lbJX" value="1" />
@@ -319,7 +320,7 @@
   <node concept="1TIwiD" id="1JlDhgSjx_v">
     <property role="TrG5h" value="FinderReference" />
     <property role="EcuMT" value="2005690715325995359" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="AbstractConceptDeclarat" />
     <node concept="1TJgyj" id="6gUevv0xDDg" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="finder" />
@@ -355,9 +356,9 @@
   <node concept="1TIwiD" id="5UvmwWxPpEG">
     <property role="EcuMT" value="6818267381900876460" />
     <property role="TrG5h" value="FinderReferenceExpression" />
-    <property role="34LRSv" value="finder" />
     <property role="3GE5qa" value="Statements" />
     <property role="R4oN_" value="Access to an instance of linked FinderDeclaration" />
+    <property role="34LRSv" value="finder" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5UvmwWxPpEH" role="1TKVEi">
       <property role="IQ2ns" value="6818267381900876461" />

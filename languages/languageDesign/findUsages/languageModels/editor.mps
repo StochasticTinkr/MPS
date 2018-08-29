@@ -463,9 +463,7 @@
     <node concept="3EZMnI" id="5UvmwWxPpFi" role="2wV5jI">
       <node concept="PMmxH" id="5UvmwWxPpFs" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <node concept="3$7jql" id="5UvmwWxPqNi" role="3F10Kt">
-          <property role="3$6WeP" value="1" />
-        </node>
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="3F1sOY" id="5UvmwWxPpFF" role="3EZMnx">
         <ref role="1NtTu8" to="tp3b:5UvmwWxPpEH" resolve="finder" />

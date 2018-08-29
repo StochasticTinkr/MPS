@@ -78,6 +78,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.FindBlock:
         if (props_FindBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("use lalala");
           cpb.rawPresentation("find");
           props_FindBlock = cpb.create();
         }
