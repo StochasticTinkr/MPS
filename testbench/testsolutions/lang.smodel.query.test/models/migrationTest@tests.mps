@@ -178,7 +178,7 @@
                         <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                         <node concept="2ShNRf" id="3eDPCSVuh7y" role="37wK5m">
                           <node concept="1pGfFk" id="3eDPCSVuh7z" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
+                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
                             <node concept="BaHAS" id="3eDPCSVuh7$" role="37wK5m">
                               <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
                               <property role="BaGAP" value="tests" />
@@ -199,7 +199,7 @@
                   <node concept="psT0i" id="3eDPCSVuh7D" role="psT0v">
                     <node concept="2ShNRf" id="3eDPCSVuh7E" role="psT0h">
                       <node concept="1pGfFk" id="3eDPCSVuh7F" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
+                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
                         <node concept="BaHAS" id="3eDPCSVuh7G" role="37wK5m">
                           <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
                           <property role="BaGAP" value="tests" />
@@ -229,7 +229,7 @@
                                     <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                                     <node concept="2ShNRf" id="3eDPCSVuh7V" role="37wK5m">
                                       <node concept="1pGfFk" id="3eDPCSVuh7W" role="2ShVmc">
-                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
+                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
                                         <node concept="2OqwBi" id="3eDPCSVuh7X" role="37wK5m">
                                           <node concept="EZOir" id="3eDPCSVuh7Y" role="2Oq$k0" />
                                           <node concept="1uHKPH" id="3eDPCSVuh7Z" role="2OqNvi" />
@@ -260,7 +260,7 @@
                   <node concept="psT0i" id="3eDPCSVuh86" role="psT0v">
                     <node concept="2ShNRf" id="3eDPCSVuh87" role="psT0h">
                       <node concept="1pGfFk" id="3eDPCSVuh88" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
+                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
                         <node concept="3rM5sP" id="3eDPCSVuh89" role="37wK5m">
                           <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
                         </node>
@@ -281,7 +281,7 @@
                         <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
                         <node concept="2ShNRf" id="3eDPCSVuh8h" role="37wK5m">
                           <node concept="1pGfFk" id="3eDPCSVuh8i" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
+                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
                             <node concept="3rM5sP" id="3eDPCSVuh8j" role="37wK5m">
                               <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
                             </node>
