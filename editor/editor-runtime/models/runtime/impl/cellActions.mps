@@ -313,7 +313,6 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -4987,7 +4986,7 @@
             <node concept="37vLTw" id="24Me8yynidr" role="2Oq$k0">
               <ref role="3cqZAo" node="24Me8yyn6Hg" resolve="myComment" />
             </node>
-            <node concept="1PgB_6" id="24Me8yyniTK" role="2OqNvi" />
+            <node concept="3YRAZt" id="24Me8yyniTK" role="2OqNvi" />
           </node>
         </node>
         <node concept="3cpWs6" id="24Me8yynjKR" role="3cqZAp">
@@ -5071,7 +5070,7 @@
                         <node concept="37vLTw" id="24Me8yynfDM" role="2Oq$k0">
                           <ref role="3cqZAo" node="24Me8yynfDy" resolve="firstChild" />
                         </node>
-                        <node concept="1PgB_6" id="24Me8yynfDN" role="2OqNvi" />
+                        <node concept="3YRAZt" id="24Me8yynfDN" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
