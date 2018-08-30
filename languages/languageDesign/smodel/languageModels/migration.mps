@@ -365,7 +365,7 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
+      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="ng" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -6107,6 +6107,102 @@
       <ref role="3tTeZr" to="slm6:1JWcQ2VeXpD" resolve="check" />
     </node>
     <node concept="3uibUv" id="7WkLaZovgYw" role="1zkMxy">
+      <ref role="3uigEE" to="slm6:5TUCQr2ybBO" resolve="HasMigrationScriptReference" />
+    </node>
+  </node>
+  <node concept="3SyAh_" id="683qm1GnWW_">
+    <property role="qMTe8" value="12" />
+    <property role="TrG5h" value="RemoveNodeConceptMethodCallDirectCallProperty" />
+    <node concept="3Tm1VV" id="683qm1GnWWA" role="1B3o_S" />
+    <node concept="3tTeZs" id="683qm1GnWWB" role="jymVt">
+      <property role="3tTeZt" value="&lt;no execute after&gt;" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
+    </node>
+    <node concept="3tTeZs" id="683qm1GnWWC" role="jymVt">
+      <property role="3tTeZt" value="&lt;no required data&gt;" />
+      <ref role="3tTeZr" to="slm6:5TUCQr2FPTh" resolve="requires annotation data" />
+    </node>
+    <node concept="3tTeZs" id="683qm1GnWWD" role="jymVt">
+      <property role="3tTeZt" value="&lt;no produced data&gt;" />
+      <ref role="3tTeZr" to="slm6:5TUCQr2C271" resolve="produces annotation data" />
+    </node>
+    <node concept="2tJIrI" id="683qm1GnWWE" role="jymVt" />
+    <node concept="3tYpMH" id="683qm1GnWWF" role="jymVt">
+      <property role="TrG5h" value="isRerunnable" />
+      <property role="3tYpME" value="true" />
+      <ref role="25KYV2" to="slm6:1JWcQ2VeWIs" resolve="isRerunnable" />
+      <node concept="3Tm1VV" id="683qm1GnWWG" role="1B3o_S" />
+      <node concept="10P_77" id="683qm1GnWWH" role="1tU5fm" />
+    </node>
+    <node concept="3tYpXE" id="683qm1GnX1u" role="jymVt">
+      <property role="TrG5h" value="description" />
+      <property role="3tYpXF" value="Remove Node_ConceptMethodCall.directCall Property" />
+      <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
+      <node concept="3Tm1VV" id="683qm1GnX1w" role="1B3o_S" />
+      <node concept="17QB3L" id="683qm1GnX1x" role="1tU5fm" />
+    </node>
+    <node concept="q3mfD" id="683qm1GnWWJ" role="jymVt">
+      <property role="TrG5h" value="execute" />
+      <ref role="2VtyIY" to="slm6:4ubqdNOF9cA" resolve="execute" />
+      <node concept="3Tm1VV" id="683qm1GnWWL" role="1B3o_S" />
+      <node concept="3clFbS" id="683qm1GnWWN" role="3clF47">
+        <node concept="L3pyB" id="683qm1GnX6o" role="3cqZAp">
+          <node concept="3clFbS" id="683qm1GnX6p" role="L3pyw">
+            <node concept="3clFbF" id="683qm1GnXeO" role="3cqZAp">
+              <node concept="2OqwBi" id="683qm1GnXHb" role="3clFbG">
+                <node concept="qVDSY" id="683qm1GnXeM" role="2Oq$k0">
+                  <node concept="chp4Y" id="683qm1GnXgu" role="qVDSX">
+                    <ref role="cht4Q" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
+                  </node>
+                </node>
+                <node concept="2es0OD" id="683qm1GnYc6" role="2OqNvi">
+                  <node concept="1bVj0M" id="683qm1GnYc8" role="23t8la">
+                    <node concept="3clFbS" id="683qm1GnYc9" role="1bW5cS">
+                      <node concept="3clFbF" id="683qm1GnYiG" role="3cqZAp">
+                        <node concept="2OqwBi" id="683qm1GnZQy" role="3clFbG">
+                          <node concept="2OqwBi" id="683qm1GnYvR" role="2Oq$k0">
+                            <node concept="37vLTw" id="683qm1GnYiF" role="2Oq$k0">
+                              <ref role="3cqZAo" node="683qm1GnYca" resolve="it" />
+                            </node>
+                            <node concept="3TrcHB" id="683qm1GnZb5" role="2OqNvi">
+                              <ref role="3TsBF5" to="tp25:2up2FNsZMWt" resolve="directCall" />
+                            </node>
+                          </node>
+                          <node concept="3ZvMEC" id="683qm1Go0vX" role="2OqNvi" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="683qm1GnYca" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="683qm1GnYcb" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="683qm1GnX7b" role="L3pyr">
+            <ref role="3cqZAo" node="683qm1GnWWP" resolve="m" />
+          </node>
+        </node>
+      </node>
+      <node concept="ffn8J" id="683qm1GnWWP" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <ref role="ffrpq" to="slm6:7fCCGqboj9J" resolve="m" />
+        <node concept="3uibUv" id="683qm1GnWWO" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="q3mfm" id="683qm1GnWWQ" role="3clF45">
+        <ref role="q3mfh" to="slm6:4F5w8gPXEEe" />
+        <ref role="1QQUv3" node="683qm1GnWWJ" resolve="execute" />
+      </node>
+    </node>
+    <node concept="3tTeZs" id="683qm1GnWWR" role="jymVt">
+      <property role="3tTeZt" value="&lt;no result checking&gt;" />
+      <ref role="3tTeZr" to="slm6:1JWcQ2VeXpD" resolve="check" />
+    </node>
+    <node concept="3uibUv" id="683qm1GnWWS" role="1zkMxy">
       <ref role="3uigEE" to="slm6:5TUCQr2ybBO" resolve="HasMigrationScriptReference" />
     </node>
   </node>
