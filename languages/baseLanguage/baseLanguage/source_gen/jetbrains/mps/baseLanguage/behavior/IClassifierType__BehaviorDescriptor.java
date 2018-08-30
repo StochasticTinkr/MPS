@@ -44,6 +44,8 @@ public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor 
     return scope.getMembers();
   }
   /*package*/ static Iterable<SNode> getVisibleMembers_id5laDzmpBPtZ(@NotNull final SNode __thisNode__, final SNode contextNode) {
+    // note, code that does ofConcept<> filtering of returned value might be more effective if does filtering first 
+    // as isVisible() operation might be quite expensive 
     return Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (boolean) IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);

@@ -54769,6 +54769,16 @@
       <property role="13i0it" value="false" />
       <node concept="3Tm1VV" id="5laDzmpBPu0" role="1B3o_S" />
       <node concept="3clFbS" id="5laDzmpBPu2" role="3clF47">
+        <node concept="3SKdUt" id="6zo10grh_$V" role="3cqZAp">
+          <node concept="3SKdUq" id="6zo10grh_$X" role="3SKWNk">
+            <property role="3SKdUp" value="note, code that does ofConcept&lt;&gt; filtering of returned value might be more effective if does filtering first" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6zo10grh_Fo" role="3cqZAp">
+          <node concept="3SKdUq" id="6zo10grh_Fq" role="3SKWNk">
+            <property role="3SKdUp" value="as isVisible() operation might be quite expensive" />
+          </node>
+        </node>
         <node concept="3clFbF" id="5laDzmpBPu6" role="3cqZAp">
           <node concept="2OqwBi" id="5laDzmpBPuu" role="3clFbG">
             <node concept="BsUDl" id="5laDzmpBPu7" role="2Oq$k0">

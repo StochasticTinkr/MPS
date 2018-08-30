@@ -27699,7 +27699,7 @@
     <file name="check_PropertyNameUniqueness_NonTypesystemRule.java">
       <node id="1472285356912878366" at="34,39,35,47" concept="13" />
       <node id="1472285356912893182" at="37,7,38,0" concept="15" />
-      <node id="1472285356915344364" at="40,39,41,494" concept="13" />
+      <node id="1472285356915344364" at="40,39,41,334" concept="13" />
       <node id="1472285356915365475" at="45,7,46,60" concept="12" />
       <node id="1472285356915365475" at="46,60,47,672" concept="12" />
       <node id="1472285356915190665" at="49,5,50,0" concept="15" />
@@ -27741,7 +27741,7 @@
       <node id="9181921299218949582" at="32,0,79,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="9181921299218949582" at="30,59,30,59" />
       <scope id="1472285356912873457" at="34,39,35,47" />
-      <scope id="1472285356915344363" at="40,39,41,494" />
+      <scope id="1472285356915344363" at="40,39,41,334" />
       <scope id="2067922812368734996" at="54,43,55,456" />
       <scope id="1472285356915753044" at="67,45,68,1601" />
       <scope id="9181921299218949582" at="79,50,80,148" />
