@@ -60,7 +60,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   public LanguageEditorChecker(@NotNull SRepository projectRepo) {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
-    SetSequence.fromSet(myRules).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker());
+    SetSequence.fromSet(myRules).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker().withoutBrokenReferences());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
     myErrorComponents = new ErrorComponents(projectRepo);

@@ -154,7 +154,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
             // find missing concept features when concept's not missing 
             for (EditableSModel model : ListSequence.fromList(models)) {
               final Wrappers._boolean stop = new Wrappers._boolean(false);
-              IChecker.AbstractModelChecker<NodeReportItem> checker = new StructureChecker(false, true, false, true).asModelChecker();
+              IChecker.AbstractModelChecker<NodeReportItem> checker = new StructureChecker().withoutCardinalities().asModelChecker();
               checker.check(model, myProject.getRepository(), new Consumer<NodeReportItem>() {
                 public void consume(NodeReportItem vp) {
                   if (!(vp instanceof UnresolvedReferenceReportItem)) {

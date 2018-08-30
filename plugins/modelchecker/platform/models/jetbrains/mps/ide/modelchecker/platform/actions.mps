@@ -692,9 +692,14 @@
                   <node concept="TSZUe" id="4aUWmf9LiE5" role="2OqNvi">
                     <node concept="10QFUN" id="2z6v5unPmL1" role="25WWJ7">
                       <node concept="10QFUN" id="2z6v5unPmKW" role="10QFUP">
-                        <node concept="2ShNRf" id="2z6v5unPmKX" role="10QFUP">
-                          <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
-                            <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
+                        <node concept="2OqwBi" id="3ATw3Mv9s8L" role="10QFUP">
+                          <node concept="2ShNRf" id="2z6v5unPmKX" role="2Oq$k0">
+                            <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
+                              <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="3ATw3Mv9toF" role="2OqNvi">
+                            <ref role="37wK5l" to="6if8:~StructureChecker.withoutBrokenReferences():jetbrains.mps.project.validation.StructureChecker" resolve="withoutBrokenReferences" />
                           </node>
                         </node>
                         <node concept="3uibUv" id="2z6v5unPmL0" role="10QFUM">

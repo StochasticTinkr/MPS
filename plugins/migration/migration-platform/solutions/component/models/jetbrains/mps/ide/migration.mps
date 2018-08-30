@@ -3783,7 +3783,7 @@
                         <node concept="3clFbF" id="1WW5sXgiZip" role="3cqZAp">
                           <node concept="2OqwBi" id="1WW5sXgj0jd" role="3clFbG">
                             <node concept="37vLTw" id="1WW5sXgiZio" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1WW5sXgihDu" />
+                              <ref role="3cqZAo" node="1WW5sXgihDu" resolve="events" />
                             </node>
                             <node concept="2es0OD" id="1WW5sXgj0XR" role="2OqNvi">
                               <node concept="1bVj0M" id="1WW5sXgj0XT" role="23t8la">
@@ -3791,12 +3791,12 @@
                                   <node concept="3clFbF" id="1WW5sXgj1$o" role="3cqZAp">
                                     <node concept="2OqwBi" id="1WW5sXgj2bM" role="3clFbG">
                                       <node concept="37vLTw" id="1WW5sXgj1$n" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1WW5sXgj0XV" />
+                                        <ref role="3cqZAo" node="1WW5sXgj0XV" resolve="it" />
                                       </node>
                                       <node concept="liA8E" id="1WW5sXgj2rI" role="2OqNvi">
                                         <ref role="37wK5l" to="j9co:~SModelEvent.accept(jetbrains.mps.smodel.event.SModelEventVisitor):void" resolve="accept" />
                                         <node concept="37vLTw" id="1WW5sXgj2VG" role="37wK5m">
-                                          <ref role="3cqZAo" node="1WW5sXgiV2h" />
+                                          <ref role="3cqZAo" node="1WW5sXgiV2h" resolve="myVisitor" />
                                         </node>
                                       </node>
                                     </node>
@@ -3817,7 +3817,7 @@
                     </node>
                     <node concept="2OqwBi" id="3ReTDvBwdK5" role="37wK5m">
                       <node concept="37vLTw" id="3ReTDvBwduS" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ReTDvBw9vp" />
+                        <ref role="3cqZAo" node="3ReTDvBw9vp" resolve="repository" />
                       </node>
                       <node concept="liA8E" id="3ReTDvBwe8g" role="2OqNvi">
                         <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
@@ -11183,21 +11183,14 @@
                             <node concept="3cpWsn" id="6EV6$79Em42" role="3cpWs9">
                               <property role="TrG5h" value="checker" />
                               <node concept="2OqwBi" id="5P_sMle5Bxq" role="33vP2m">
-                                <node concept="2ShNRf" id="5P_sMle5_vY" role="2Oq$k0">
-                                  <node concept="1pGfFk" id="5P_sMle5_vZ" role="2ShVmc">
-                                    <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean,boolean,boolean,boolean)" resolve="StructureChecker" />
-                                    <node concept="3clFbT" id="5P_sMle5_w0" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
+                                <node concept="2OqwBi" id="3ATw3Mv9yHL" role="2Oq$k0">
+                                  <node concept="2ShNRf" id="5P_sMle5_vY" role="2Oq$k0">
+                                    <node concept="1pGfFk" id="5P_sMle5_vZ" role="2ShVmc">
+                                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
                                     </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w1" role="37wK5m">
-                                      <property role="3clFbU" value="true" />
-                                    </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w2" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
-                                    </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w3" role="37wK5m">
-                                      <property role="3clFbU" value="true" />
-                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="3ATw3Mv9$OS" role="2OqNvi">
+                                    <ref role="37wK5l" to="6if8:~StructureChecker.withoutCardinalities():jetbrains.mps.project.validation.StructureChecker" resolve="withoutCardinalities" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="5P_sMle5LUA" role="2OqNvi">

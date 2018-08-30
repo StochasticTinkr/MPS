@@ -39,9 +39,9 @@ import java.util.List;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
 
-  private final boolean myCheckMissingRuntimeLanguage;
-  private final boolean myCheckCardinalities;
-  private final boolean myCheckBrokenReferences;
+  private boolean myCheckMissingRuntimeLanguage = true;
+  private boolean myCheckCardinalities = true;
+  private boolean myCheckBrokenReferences = true;
 
   public StructureChecker(boolean suppressErrors, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
                           boolean checkBrokenReferences) {
@@ -51,7 +51,16 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
   }
 
   public StructureChecker() {
-    this(true, true, true, true);
+  }
+
+  public StructureChecker withoutBrokenReferences() {
+    myCheckBrokenReferences = false;
+    return this;
+  }
+
+  public StructureChecker withoutCardinalities() {
+    myCheckCardinalities = false;
+    return this;
   }
 
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
