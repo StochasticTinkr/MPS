@@ -105,15 +105,14 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
                                                                         boolean typesystemErrors, boolean applyQuickFixes) {
     Set<EditorMessage> messages = new HashSet<>();
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
-      if (!ErrorReportUtil.shouldReportError(errorNode.o1)) {
-        // although we might need to check IErrorReporter.getSNode(), I assume pair's first element always match that of IErrorReporter
-        continue;
-      }
       List<IErrorReporter> errors = new ArrayList<>(errorNode.o2);
       Collections.sort(errors, (o1, o2) -> o2.getMessageStatus().compareTo(o1.getMessageStatus()));
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
+        if (!ErrorReportUtil.shouldReportError(reportItem,editorContext.getRepository())) {
+          break;
+        }
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this, editorContext.getRepository());
 
         EditorQuickFix quickfix = TypesystemReportItemAdapter.FLAVOUR_EDITOR_QUICKFIX.getAutoApplicable(message.getReportItem());

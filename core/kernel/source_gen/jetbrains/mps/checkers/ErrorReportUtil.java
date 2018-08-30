@@ -4,6 +4,7 @@ package jetbrains.mps.checkers;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -24,6 +25,8 @@ public class ErrorReportUtil {
   private static final Logger LOG = LogManager.getLogger(ErrorReportUtil.class);
   public ErrorReportUtil() {
   }
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static boolean shouldReportError(final SNode node) {
     SModel model = node.getModel();
     if (model == null) {
