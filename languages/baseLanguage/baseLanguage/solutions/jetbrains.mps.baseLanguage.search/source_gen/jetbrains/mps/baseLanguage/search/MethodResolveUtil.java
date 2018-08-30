@@ -9,18 +9,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,6 +27,7 @@ import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
@@ -54,15 +54,15 @@ public class MethodResolveUtil {
 
     Iterable<SNode> candidates = getCandidates(methodCall, name);
     if (candidates == null || Sequence.fromIterable(candidates).isEmpty()) {
-      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
+      return MultiTuple.<SNode,Boolean>from(((SNode) null), false);
     }
-    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
 
-    return resolveMethodByCandidatesAndTypes(methodCall, candidates, typeByTypeVar);
+    return resolveMethodByCandidatesAndTypes(methodCall, candidates, true);
   }
+
   private static Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, final String name) {
     if (SNodeOperations.getReference(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) == null) {
-      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
+      return MultiTuple.<SNode,Boolean>from(((SNode) null), false);
     }
 
     Scope scope = ModelConstraints.getScope(SNodeOperations.getReference(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
@@ -74,12 +74,13 @@ public class MethodResolveUtil {
         public boolean accept(SNode it) {
           return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
         }
-      }), null);
+      }), false);
     }
   }
-  private static Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, @Nullable Map<SNode, SNode> typeByTypeVar) {
+
+  private static Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, boolean utilizeParameterTypes) {
+
     List<SNode> actualArgs = SLinkOperations.getChildren(methodCall, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
-    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
 
     Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(Sequence.fromIterable(candidates).toListSequence(), methodCall);
     List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
@@ -92,17 +93,22 @@ public class MethodResolveUtil {
       if (methodDeclarationsGoodParams.size() == 1) {
         return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
       } else {
-        if (typeByTypeVar == null) {
-          return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), false);
+        if (utilizeParameterTypes) {
+          Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
+          if (typeByTypeVar != null) {
+            SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+            Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+            return MultiTuple.<SNode,Boolean>from(parmTypesPair.o1, parmTypesPair.o2);
+          }
         }
-
-        Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-        return MultiTuple.<SNode,Boolean>from(parmTypesPair.o1, parmTypesPair.o2);
+        return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), false);
       }
     }
   }
 
   private static Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
+    // FIXME in fact, returned map doesn't depend on IMethodCall itself, rather its getInstanceType():ClassifierType, 
+    // which we likely can use here to cache information to avoid rebuilding it for each method call from within a class. 
     return ((Map<SNode, SNode>) BHReflection.invoke0(methodCall, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), SMethodTrimmedId.create("getTypesByTypeVars", null, "JfLh5LDMrj")));
   }
 
@@ -259,7 +265,7 @@ public class MethodResolveUtil {
       }
       List<SNode> methodTypeVariableDecls = SLinkOperations.getChildren(candidate, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"));
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, ((SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")) != null) ? _quotation_createNode_zegw12_a1a0a0f0d0s(SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"))) : SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))));
+        typeByTypeVar.put(tvd, ((SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")) != null) ? _quotation_createNode_zegw12_a1a0a0f0d0u(SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"))) : SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))));
       }
       final Wrappers._T<SNode> typeOfParam = new Wrappers._T<SNode>((varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
       if ((typeOfParam.value == null) || ListSequence.fromList(SNodeOperations.getNodeDescendants(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})).any(new IWhereFilter<SNode>() {
@@ -280,7 +286,7 @@ public class MethodResolveUtil {
         typeOfParam.value = SLinkOperations.getTarget(SNodeOperations.cast(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound"));
       }
       if (SNodeOperations.isInstanceOf(typeOfParam.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
-        typeOfParam.value = _quotation_createNode_zegw12_a0a0m0d0s();
+        typeOfParam.value = _quotation_createNode_zegw12_a0a0m0d0u();
       }
       if (subtypingManager.isSubtype(typeOfArg, typeOfParam.value, isWeak)) {
         Set<SNode> methods = typesOfParamToMethods.get(typeOfParam.value);
@@ -346,7 +352,7 @@ public class MethodResolveUtil {
     return result;
   }
 
-  private static SNode _quotation_createNode_zegw12_a1a0a0f0d0s(Object parameter_1) {
+  private static SNode _quotation_createNode_zegw12_a1a0a0f0d0u(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -357,7 +363,7 @@ public class MethodResolveUtil {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_zegw12_a0a0m0d0s() {
+  private static SNode _quotation_createNode_zegw12_a0a0m0d0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
