@@ -69,6 +69,10 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -80,6 +84,9 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -954,33 +961,106 @@
       <node concept="3Tm1VV" id="3612de_vrfW" role="1B3o_S" />
       <node concept="10P_77" id="3612de_vrfX" role="3clF45" />
       <node concept="3clFbS" id="3612de_vrfY" role="3clF47">
-        <node concept="3cpWs6" id="3612de_vrfZ" role="3cqZAp">
-          <node concept="BsUDl" id="3612de_vriG" role="3cqZAk">
-            <ref role="37wK5l" node="2WmWrdnSpX7" resolve="suppress" />
-            <node concept="2OqwBi" id="3612de_vrTy" role="37wK5m">
-              <node concept="2OqwBi" id="3612de_vr$1" role="2Oq$k0">
-                <node concept="37vLTw" id="3612de_vrja" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3612de_vrg1" resolve="reportItem" />
+        <node concept="3cpWs8" id="4$Xvl0yJ7qs" role="3cqZAp">
+          <node concept="3cpWsn" id="4$Xvl0yJ7qt" role="3cpWs9">
+            <property role="TrG5h" value="kindLevel" />
+            <node concept="3uibUv" id="4$Xvl0yJ7qq" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+            </node>
+            <node concept="2OqwBi" id="4$Xvl0yJ7qu" role="33vP2m">
+              <node concept="2OqwBi" id="4$Xvl0yJ7qv" role="2Oq$k0">
+                <node concept="2OqwBi" id="4$Xvl0yJ7qw" role="2Oq$k0">
+                  <node concept="37vLTw" id="4$Xvl0yJ7qx" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3612de_vrg1" resolve="reportItem" />
+                  </node>
+                  <node concept="liA8E" id="4$Xvl0yJ7qy" role="2OqNvi">
+                    <ref role="37wK5l" to="d6hs:~IssueKindReportItem.getIssueKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="getIssueKind" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="3612de_vrN_" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                <node concept="liA8E" id="4$Xvl0yJ7qz" role="2OqNvi">
+                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$ItemKind.getChecker():jetbrains.mps.errors.item.IssueKindReportItem$CheckerCategory" resolve="getChecker" />
                 </node>
               </node>
-              <node concept="liA8E" id="3612de_vs0p" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-                <node concept="2OqwBi" id="3612de_vsGX" role="37wK5m">
-                  <node concept="2JrnkZ" id="3612de_vsAU" role="2Oq$k0">
-                    <node concept="2OqwBi" id="3612de_vsb1" role="2JrQYb">
-                      <node concept="13iPFW" id="3612de_vs2L" role="2Oq$k0" />
-                      <node concept="I4A8Y" id="3612de_vsjz" role="2OqNvi" />
+              <node concept="liA8E" id="4$Xvl0yJ7q$" role="2OqNvi">
+                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.getKindLevel():jetbrains.mps.errors.item.IssueKindReportItem$KindLevel" resolve="getKindLevel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4$Xvl0yJ7Qa" role="3cqZAp">
+          <property role="TyiWK" value="true" />
+          <property role="TyiWL" value="false" />
+          <node concept="3clFbS" id="4$Xvl0yJ7Qc" role="3clFbx">
+            <node concept="3cpWs6" id="3612de_vrfZ" role="3cqZAp">
+              <node concept="BsUDl" id="3612de_vriG" role="3cqZAk">
+                <ref role="37wK5l" node="2WmWrdnSpX7" resolve="suppress" />
+                <node concept="2OqwBi" id="3612de_vrTy" role="37wK5m">
+                  <node concept="2OqwBi" id="3612de_vr$1" role="2Oq$k0">
+                    <node concept="37vLTw" id="3612de_vrja" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3612de_vrg1" resolve="reportItem" />
+                    </node>
+                    <node concept="liA8E" id="3612de_vrN_" role="2OqNvi">
+                      <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="3612de_vsRU" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  <node concept="liA8E" id="3612de_vs0p" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                    <node concept="2OqwBi" id="3612de_vsGX" role="37wK5m">
+                      <node concept="2JrnkZ" id="3612de_vsAU" role="2Oq$k0">
+                        <node concept="2OqwBi" id="3612de_vsb1" role="2JrQYb">
+                          <node concept="13iPFW" id="3612de_vs2L" role="2Oq$k0" />
+                          <node concept="I4A8Y" id="3612de_vsjz" role="2OqNvi" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="3612de_vsRU" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="22lmx$" id="7S0yfInCE3a" role="3clFbw">
+            <node concept="22lmx$" id="4$Xvl0yJaVW" role="3uHU7B">
+              <node concept="3clFbC" id="4$Xvl0yJ8vW" role="3uHU7B">
+                <node concept="37vLTw" id="4$Xvl0yJ80S" role="3uHU7B">
+                  <ref role="3cqZAo" node="4$Xvl0yJ7qt" resolve="kindLevel" />
+                </node>
+                <node concept="Rm8GO" id="4$Xvl0yJ9Ob" role="3uHU7w">
+                  <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.CONSTRAINTS" resolve="CONSTRAINTS" />
+                  <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+                </node>
+              </node>
+              <node concept="3clFbC" id="4$Xvl0yJbwR" role="3uHU7w">
+                <node concept="37vLTw" id="4$Xvl0yJb6z" role="3uHU7B">
+                  <ref role="3cqZAo" node="4$Xvl0yJ7qt" resolve="kindLevel" />
+                </node>
+                <node concept="Rm8GO" id="4$Xvl0yJcMH" role="3uHU7w">
+                  <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.TYPESYSTEM" resolve="TYPESYSTEM" />
+                  <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="7S0yfInCD6t" role="3uHU7w">
+              <node concept="10M0yZ" id="7S0yfInCDi4" role="3uHU7w">
+                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CARDINALITY_ERROR" resolve="CARDINALITY_ERROR" />
+              </node>
+              <node concept="2OqwBi" id="7S0yfInCCSQ" role="3uHU7B">
+                <node concept="37vLTw" id="7S0yfInCCSR" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3612de_vrg1" resolve="reportItem" />
+                </node>
+                <node concept="liA8E" id="7S0yfInCCSS" role="2OqNvi">
+                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem.getIssueKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="getIssueKind" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4$Xvl0yJheH" role="3cqZAp">
+          <node concept="3clFbT" id="4$Xvl0yJh$j" role="3cqZAk">
+            <property role="3clFbU" value="false" />
           </node>
         </node>
       </node>

@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -47,7 +48,11 @@ public final class ISuppressErrors__BehaviorDescriptor extends BaseBHDescriptor 
     }), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xe8924c64a55a26fL, "jetbrains.mps.lang.core.structure.IAntisuppressErrors")));
   }
   /*package*/ static boolean suppress_id3612de_vrfV(@NotNull SNode __thisNode__, NodeReportItem reportItem) {
-    return ((boolean) ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invoke(__thisNode__, reportItem.getNode().resolve(SNodeOperations.getModel(__thisNode__).getRepository())));
+    IssueKindReportItem.KindLevel kindLevel = reportItem.getIssueKind().getChecker().getKindLevel();
+    if (kindLevel == IssueKindReportItem.KindLevel.CONSTRAINTS || kindLevel == IssueKindReportItem.KindLevel.TYPESYSTEM || reportItem.getIssueKind() == IssueKindReportItem.CARDINALITY_ERROR) {
+      return ((boolean) ISuppressErrors__BehaviorDescriptor.suppress_id2WmWrdnSpX7.invoke(__thisNode__, reportItem.getNode().resolve(SNodeOperations.getModel(__thisNode__).getRepository())));
+    }
+    return false;
   }
 
   /*package*/ ISuppressErrors__BehaviorDescriptor() {
