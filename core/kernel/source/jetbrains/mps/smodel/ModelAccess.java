@@ -24,7 +24,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -66,13 +65,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
       return Boolean.FALSE;
     }
   };
-
-  /**
-   * @deprecated
-   * @see #getRepositoryStateCache(String)
-   */
-  @Deprecated
-  protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<>();
 
   protected ModelAccess() {
   }
@@ -239,13 +231,8 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 //    if (canWrite()) {
 //      return null;
 //    }
-    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(repositoryKey);
-    if (cache != null) {
-      return cache;
-    }
-    cache = new ConcurrentHashMap<>();
-    ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(repositoryKey, (ConcurrentMap<Object, Object>) cache);
-    return existingCache != null ? existingCache : cache;
+    LOG.error(String.format("getRepositoryStateCache(%s) is no op, please don't use", repositoryKey));
+    return new ConcurrentHashMap<>();
   }
 
   /**
@@ -255,8 +242,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
    */
   @Deprecated
   public void clearRepositoryStateCaches() {
-    LOG.debug("Clearing repository state caches");
-    myRepositoryStateCaches.clear();
+    LOG.error("clearRepositoryStateCaches() is no op, please don't use");
   }
 
   @Override

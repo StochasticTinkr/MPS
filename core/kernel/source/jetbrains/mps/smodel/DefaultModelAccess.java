@@ -58,7 +58,6 @@ class DefaultModelAccess extends ModelAccess {
     assertNotWriteFromRead();
     getWriteLock().lock();
     try {
-      clearRepositoryStateCaches();
       myWriteActionDispatcher.run(r);
     } finally {
       getWriteLock().unlock();

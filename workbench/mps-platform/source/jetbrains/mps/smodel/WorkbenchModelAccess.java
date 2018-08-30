@@ -87,7 +87,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     assertNotWriteFromRead();
-    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(r));
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(r));
     if (isInEDT()) {
       myPlatformWriteHelper.runWrite(lockRunnable);
     } else {
@@ -98,9 +98,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   // to cease once clearRepositoryStateCache gone
   // The easiest way is to have onActionStart (much like onCommandStart) and do it there
   // Smartest way is to drop these caches altogether.
-  private Runnable clearCachesAndDispatchWrite(Runnable r) {
+  private Runnable wrapWithModelWriteDispatch(Runnable r) {
     return () -> {
-      clearRepositoryStateCaches();
       myWriteActionDispatcher.run(r);
     };
   }
@@ -188,7 +187,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     ApplicationManager.getApplication().assertIsDispatchThread();
 
     TaskTimer taskTimer = new TaskTimer();
-    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
     ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
       try {
         myPlatformWriteHelper.tryWrite(lockRunnable);
@@ -235,7 +234,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
       }
     }
-    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
     CommandProcessor.getInstance().executeCommand(project.getProject(), myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo);
   }
 
@@ -244,7 +243,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), clearCachesAndDispatchWrite(new CommandRunnable(r, project)));
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
     CommandProcessor.getInstance().runUndoTransparentAction(myPlatformWriteHelper.withPlatformWrite(withModelLock));
   }
 
