@@ -106,7 +106,9 @@
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
+        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
+      </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -375,6 +377,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -502,14 +505,14 @@
       <property role="TrG5h" value="SKIP_CONSTRAINTS_CONDITION" />
       <node concept="3Tm1VV" id="45Q6RD6jKlP" role="1B3o_S" />
       <node concept="3uibUv" id="45Q6RD6u_jP" role="1tU5fm">
-        <ref role="3uigEE" node="45Q6RD6utsz" />
+        <ref role="3uigEE" node="45Q6RD6utsz" resolve="IChecker.AbstractNodeChecker.ErrorSkipCondition" />
       </node>
       <node concept="2ShNRf" id="45Q6RD6u_AZ" role="33vP2m">
         <node concept="YeOm9" id="45Q6RD6wppr" role="2ShVmc">
           <node concept="1Y3b0j" id="45Q6RD6wppu" role="YeSDq">
             <property role="2bfB8j" value="true" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-            <ref role="1Y3XeK" node="45Q6RD6utsz" />
+            <ref role="1Y3XeK" node="45Q6RD6utsz" resolve="IChecker.AbstractNodeChecker.ErrorSkipCondition" />
             <node concept="3Tm1VV" id="45Q6RD6wppv" role="1B3o_S" />
             <node concept="3clFb_" id="45Q6RD6wppw" role="jymVt">
               <property role="1EzhhJ" value="false" />
@@ -543,7 +546,7 @@
                 <node concept="3clFbF" id="45Q6RD6wq6o" role="3cqZAp">
                   <node concept="2OqwBi" id="45Q6RD6wqu0" role="3clFbG">
                     <node concept="37vLTw" id="45Q6RD6wq6m" role="2Oq$k0">
-                      <ref role="3cqZAo" node="45Q6RD6wppG" />
+                      <ref role="3cqZAo" node="45Q6RD6wppG" resolve="root" />
                     </node>
                     <node concept="1mIQ4w" id="45Q6RD6wqC7" role="2OqNvi">
                       <node concept="chp4Y" id="45Q6RD6wqKg" role="cj9EA">
@@ -698,7 +701,9 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="dTvp$YVayT" role="1B3o_S" />
-      <node concept="17QB3L" id="dTvp$YVayU" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpiM4S" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="dTvp$YVayY" role="3clF47">
         <node concept="3clFbF" id="dTvp$YVbJi" role="3cqZAp">
           <node concept="10M0yZ" id="dTvp$YVbMa" role="3clFbG">
@@ -942,9 +947,12 @@
                           <ref role="37wK5l" node="5S0STpDMb1Q" resolve="addError" />
                           <node concept="2ShNRf" id="1PHXAu1pwXx" role="37wK5m">
                             <node concept="1pGfFk" id="1PHXAu1pxcS" role="2ShVmc">
-                              <ref role="37wK5l" to="6if8:~ConceptFeatureMissingError.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SConceptFeature,java.lang.String)" resolve="ConceptFeatureMissingError" />
-                              <node concept="37vLTw" id="1PHXAu1pxhh" role="37wK5m">
-                                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                              <ref role="37wK5l" to="6if8:~ConceptFeatureMissingError.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference,org.jetbrains.mps.openapi.language.SConceptFeature,java.lang.String)" resolve="ConceptFeatureMissingError" />
+                              <node concept="2OqwBi" id="dQllQpiMRA" role="37wK5m">
+                                <node concept="37vLTw" id="1PHXAu1pxhh" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                                </node>
+                                <node concept="iZEcu" id="dQllQpiNzQ" role="2OqNvi" />
                               </node>
                               <node concept="2OqwBi" id="1PHXAu1py4Y" role="37wK5m">
                                 <node concept="37vLTw" id="1PHXAu1pxRM" role="2Oq$k0">
@@ -4024,7 +4032,9 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="dTvp$YV2l9" role="1B3o_S" />
-      <node concept="17QB3L" id="dTvp$YV2la" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjKbk" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="dTvp$YV2le" role="3clF47">
         <node concept="3clFbF" id="dTvp$YV3L9" role="3cqZAp">
           <node concept="10M0yZ" id="dTvp$YV3NZ" role="3clFbG">
@@ -4783,7 +4793,9 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="dTvp$YV4U9" role="1B3o_S" />
-      <node concept="17QB3L" id="dTvp$YV4Ua" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjN53" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="dTvp$YV4Ue" role="3clF47">
         <node concept="3clFbF" id="dTvp$YV5dd" role="3cqZAp">
           <node concept="10M0yZ" id="dTvp$YV5dJ" role="3clFbG">
@@ -5661,11 +5673,14 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="dTvp$YUS$A" role="1B3o_S" />
-      <node concept="17QB3L" id="dTvp$YUS$B" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjYRG" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="dTvp$YUS$F" role="3clF47">
         <node concept="3clFbF" id="dTvp$YUUMb" role="3cqZAp">
-          <node concept="Xl_RD" id="dTvp$YUW9E" role="3clFbG">
-            <property role="Xl_RC" value="language imports" />
+          <node concept="10M0yZ" id="dQllQpk050" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.LANGUAGE_IMPORTS" resolve="LANGUAGE_IMPORTS" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>
       </node>
@@ -6474,7 +6489,9 @@
       <property role="TrG5h" value="getCategory" />
       <node concept="3clFbS" id="3xfDcbRdDBb" role="3clF47" />
       <node concept="3Tm1VV" id="3xfDcbRdDBc" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRdDAz" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpifd$" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
     </node>
     <node concept="2tJIrI" id="3RAxiQnF7LR" role="jymVt" />
     <node concept="2tJIrI" id="3RAxiQnF8gj" role="jymVt" />
@@ -6626,13 +6643,17 @@
                     <property role="2aFKle" value="false" />
                     <property role="TrG5h" value="getCategory" />
                     <node concept="3Tm1VV" id="320sejm8sAx" role="1B3o_S" />
-                    <node concept="17QB3L" id="320sejm8sAy" role="3clF45" />
+                    <node concept="3uibUv" id="dQllQpigMV" role="3clF45">
+                      <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+                    </node>
                     <node concept="3clFbS" id="320sejm8sAz" role="3clF47">
                       <node concept="3clFbF" id="320sejm8sA$" role="3cqZAp">
                         <node concept="2OqwBi" id="320sejm8sA_" role="3clFbG">
-                          <node concept="Xjq3P" id="5P_sMled1jj" role="2Oq$k0" />
+                          <node concept="Xjq3P" id="5P_sMled1jj" role="2Oq$k0">
+                            <ref role="1HBi2w" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                          </node>
                           <node concept="liA8E" id="320sejm8sAB" role="2OqNvi">
-                            <ref role="37wK5l" node="320sejm8sAw" resolve="getCategory" />
+                            <ref role="37wK5l" node="3xfDcbRdDB8" resolve="getCategory" />
                           </node>
                         </node>
                       </node>
@@ -6650,9 +6671,11 @@
                     <node concept="3clFbS" id="3WzkGZcfgZt" role="3clF47">
                       <node concept="3clFbF" id="3WzkGZcfk0w" role="3cqZAp">
                         <node concept="2OqwBi" id="3WzkGZcfkFU" role="3clFbG">
-                          <node concept="Xjq3P" id="5P_sMled1nM" role="2Oq$k0" />
+                          <node concept="Xjq3P" id="5P_sMled1nM" role="2Oq$k0">
+                            <ref role="1HBi2w" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                          </node>
                           <node concept="liA8E" id="3WzkGZcflt6" role="2OqNvi">
-                            <ref role="37wK5l" node="3WzkGZcfgZ9" resolve="toString" />
+                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                           </node>
                         </node>
                       </node>
@@ -6954,13 +6977,17 @@
                     <property role="2aFKle" value="false" />
                     <property role="TrG5h" value="getCategory" />
                     <node concept="3Tm1VV" id="320sejm7GLB" role="1B3o_S" />
-                    <node concept="17QB3L" id="320sejm7GLC" role="3clF45" />
+                    <node concept="3uibUv" id="dQllQpirnJ" role="3clF45">
+                      <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+                    </node>
                     <node concept="3clFbS" id="320sejm7GLD" role="3clF47">
                       <node concept="3clFbF" id="320sejm7HL8" role="3cqZAp">
                         <node concept="2OqwBi" id="320sejm7I8Q" role="3clFbG">
-                          <node concept="Xjq3P" id="5P_sMlecD5v" role="2Oq$k0" />
+                          <node concept="Xjq3P" id="5P_sMlecD5v" role="2Oq$k0">
+                            <ref role="1HBi2w" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+                          </node>
                           <node concept="liA8E" id="320sejm7Iur" role="2OqNvi">
-                            <ref role="37wK5l" node="320sejm7GL_" resolve="getCategory" />
+                            <ref role="37wK5l" node="3xfDcbRdDB8" resolve="getCategory" />
                           </node>
                         </node>
                       </node>
@@ -6978,9 +7005,11 @@
                     <node concept="3clFbS" id="3WzkGZcfaic" role="3clF47">
                       <node concept="3clFbF" id="3WzkGZcfdf8" role="3cqZAp">
                         <node concept="2OqwBi" id="3WzkGZcfdTL" role="3clFbG">
-                          <node concept="Xjq3P" id="5P_sMlecDa6" role="2Oq$k0" />
+                          <node concept="Xjq3P" id="5P_sMlecDa6" role="2Oq$k0">
+                            <ref role="1HBi2w" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+                          </node>
                           <node concept="liA8E" id="3WzkGZcfeFk" role="2OqNvi">
-                            <ref role="37wK5l" node="3WzkGZcfahS" resolve="toString" />
+                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                           </node>
                         </node>
                       </node>
@@ -8739,7 +8768,7 @@
       <property role="TrG5h" value="myOrigin" />
       <node concept="3Tm6S6" id="3xfDcbRcg4q" role="1B3o_S" />
       <node concept="3uibUv" id="3xfDcbRcg4r" role="1tU5fm">
-        <ref role="3uigEE" node="3xfDcbRbJai" resolve="IAbstractChecker" />
+        <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
         <node concept="16syzq" id="3xfDcbRcg4s" role="11_B2D">
           <ref role="16sUi3" node="3xfDcbRcg4V" resolve="O" />
         </node>
@@ -8749,11 +8778,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="312cEg" id="3xfDcbRizTp" role="jymVt">
-      <property role="TrG5h" value="myCategory" />
-      <node concept="3Tm6S6" id="3xfDcbRizTq" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRi$CE" role="1tU5fm" />
     </node>
     <node concept="3clFbW" id="3xfDcbRcg4$" role="jymVt">
       <node concept="3cqZAl" id="3xfDcbRcg4_" role="3clF45" />
@@ -8766,21 +8790,6 @@
             </node>
             <node concept="37vLTw" id="3xfDcbRcg4F" role="37vLTx">
               <ref role="3cqZAo" node="3xfDcbRcg4K" resolve="origin" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3xfDcbRi$OG" role="3cqZAp">
-          <node concept="37vLTI" id="3xfDcbRi_yk" role="3clFbG">
-            <node concept="2OqwBi" id="3xfDcbRiA5b" role="37vLTx">
-              <node concept="37vLTw" id="3xfDcbRi_Gx" role="2Oq$k0">
-                <ref role="3cqZAo" node="3xfDcbRcg4K" resolve="origin" />
-              </node>
-              <node concept="liA8E" id="3xfDcbRiArl" role="2OqNvi">
-                <ref role="37wK5l" node="3xfDcbRdDB8" resolve="getCategory" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3xfDcbRi$OE" role="37vLTJ">
-              <ref role="3cqZAo" node="3xfDcbRizTp" resolve="myCategory" />
             </node>
           </node>
         </node>
@@ -8862,8 +8871,18 @@
             </node>
             <node concept="liA8E" id="3xfDcbRcg5p" role="2OqNvi">
               <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="37vLTw" id="3xfDcbRiAw1" role="37wK5m">
-                <ref role="3cqZAo" node="3xfDcbRizTp" resolve="myCategory" />
+              <node concept="2OqwBi" id="dQllQpiIFN" role="37wK5m">
+                <node concept="2OqwBi" id="dQllQpiHqW" role="2Oq$k0">
+                  <node concept="37vLTw" id="dQllQpiH2Y" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3xfDcbRcg4p" resolve="myOrigin" />
+                  </node>
+                  <node concept="liA8E" id="dQllQpiIm6" role="2OqNvi">
+                    <ref role="37wK5l" node="3xfDcbRdDB8" resolve="getCategory" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="dQllQpiJyK" role="2OqNvi">
+                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.toString():java.lang.String" resolve="toString" />
+                </node>
               </node>
               <node concept="3cmrfG" id="3xfDcbRcyke" role="37wK5m">
                 <property role="3cmrfH" value="1" />
@@ -10782,11 +10801,14 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="kXqcYjXa3a" role="1B3o_S" />
-      <node concept="17QB3L" id="kXqcYjXa3b" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjdlc" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="kXqcYjXa3c" role="3clF47">
         <node concept="3clFbF" id="kXqcYjXaSI" role="3cqZAp">
-          <node concept="Xl_RD" id="kXqcYjXaSH" role="3clFbG">
-            <property role="Xl_RC" value="module properties" />
+          <node concept="10M0yZ" id="dQllQpjdNX" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.MODULE_PROPERTIES" resolve="MODULE_PROPERTIES" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>
       </node>
@@ -11004,11 +11026,14 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="3xfDcbRhCAz" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRhCA$" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjcgH" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="3xfDcbRhCAC" role="3clF47">
         <node concept="3clFbF" id="3xfDcbRhD3s" role="3cqZAp">
-          <node concept="Xl_RD" id="sQz2V6og$3" role="3clFbG">
-            <property role="Xl_RC" value="model properties" />
+          <node concept="10M0yZ" id="dQllQpjcNV" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.MODEL_PROPERTIES" resolve="MODEL_PROPERTIES" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>
       </node>

@@ -420,16 +420,21 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="2OqwBi" id="35jzWtwrnlv" role="37wK5m">
-                              <node concept="10M0yZ" id="35jzWtwrm_U" role="2Oq$k0">
-                                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
-                              </node>
-                              <node concept="liA8E" id="35jzWtwro8q" role="2OqNvi">
-                                <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
-                                <node concept="37vLTw" id="35jzWtwroqI" role="37wK5m">
-                                  <ref role="3cqZAo" node="3_S1WmRESfp" resolve="p" />
+                            <node concept="2OqwBi" id="dQllQpk35A" role="37wK5m">
+                              <node concept="2OqwBi" id="35jzWtwrnlv" role="2Oq$k0">
+                                <node concept="10M0yZ" id="35jzWtwrm_U" role="2Oq$k0">
+                                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
                                 </node>
+                                <node concept="liA8E" id="35jzWtwro8q" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
+                                  <node concept="37vLTw" id="35jzWtwroqI" role="37wK5m">
+                                    <ref role="3cqZAo" node="3_S1WmRESfp" resolve="p" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="dQllQpk4gE" role="2OqNvi">
+                                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$ItemKind.getSpecialization():java.lang.String" resolve="getSpecialization" />
                               </node>
                             </node>
                             <node concept="3uibUv" id="13muGfOFi2M" role="1pMfVU">

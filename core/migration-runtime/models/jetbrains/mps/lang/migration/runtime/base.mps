@@ -4110,18 +4110,35 @@
       <property role="DiZV1" value="true" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="5nMUAz4Ku8z" role="1B3o_S" />
-      <node concept="3uibUv" id="5nMUAz4Ku8_" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
       <node concept="3clFbS" id="5nMUAz4Ku8B" role="3clF47">
         <node concept="3clFbF" id="5nMUAz4KumG" role="3cqZAp">
-          <node concept="1rXfSq" id="5nMUAz4KumF" role="3clFbG">
-            <ref role="37wK5l" node="3n7MNzOOraF" resolve="getCategory" />
+          <node concept="2OqwBi" id="dQllQpi8Vf" role="3clFbG">
+            <node concept="2ShNRf" id="dQllQpi6MS" role="2Oq$k0">
+              <node concept="1pGfFk" id="dQllQpi8hf" role="2ShVmc">
+                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.&lt;init&gt;(jetbrains.mps.errors.item.IssueKindReportItem$KindLevel,java.lang.String)" resolve="IssueKindReportItem.CheckerCategory" />
+                <node concept="Rm8GO" id="dQllQpi8ID" role="37wK5m">
+                  <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.MANUAL" resolve="MANUAL" />
+                  <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+                </node>
+                <node concept="Xl_RD" id="dQllQpi9sP" role="37wK5m">
+                  <property role="Xl_RC" value="migration" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="dQllQpi9gH" role="2OqNvi">
+              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+              <node concept="1rXfSq" id="5nMUAz4KumF" role="37wK5m">
+                <ref role="37wK5l" node="3n7MNzOOraF" resolve="getCategory" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="5nMUAz4Ku8C" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3uibUv" id="dQllQpi6w5" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
       </node>
     </node>
     <node concept="3clFb_" id="5nMUAz4JfdN" role="jymVt">

@@ -598,17 +598,24 @@
   <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/7712479415687661167">
     <file name="ErrorScope.java">
       <node id="7712479415687706032" at="7,0,8,0" concept="4" trace="message" />
-      <node id="7712479415687706035" at="8,37,9,27" concept="3" />
-      <node id="7712479415687706046" at="11,30,12,19" concept="9" />
-      <node id="7712479415687661169" at="8,0,11,0" concept="1" trace="ErrorScope#(Ljava/lang/String;)V" />
-      <node id="7712479415687706041" at="11,0,14,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <scope id="7712479415687661172" at="8,37,9,27" />
-      <scope id="7712479415687706044" at="11,30,12,19" />
-      <scope id="7712479415687661169" at="8,0,11,0">
+      <node id="249480689858809141" at="8,0,9,0" concept="4" trace="exception" />
+      <node id="7712479415687706035" at="9,58,10,27" concept="3" />
+      <node id="249480689858809158" at="10,27,11,31" concept="3" />
+      <node id="7712479415687706046" at="13,30,14,19" concept="9" />
+      <node id="249480689858809173" at="16,35,17,21" concept="9" />
+      <node id="7712479415687706041" at="13,0,16,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
+      <node id="249480689858809171" at="16,0,19,0" concept="7" trace="getException#()Ljava/lang/Throwable;" />
+      <node id="7712479415687661169" at="9,0,13,0" concept="1" trace="ErrorScope#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+      <scope id="7712479415687706044" at="13,30,14,19" />
+      <scope id="249480689858809172" at="16,35,17,21" />
+      <scope id="7712479415687661172" at="9,58,11,31" />
+      <scope id="7712479415687706041" at="13,0,16,0" />
+      <scope id="249480689858809171" at="16,0,19,0" />
+      <scope id="7712479415687661169" at="9,0,13,0">
+        <var name="exception" id="249480689858809149" />
         <var name="message" id="7712479415687706029" />
       </scope>
-      <scope id="7712479415687706041" at="11,0,14,0" />
-      <unit id="7712479415687661167" at="6,0,15,0" name="jetbrains.mps.scope.ErrorScope" />
+      <unit id="7712479415687661167" at="6,0,20,0" name="jetbrains.mps.scope.ErrorScope" />
     </file>
   </root>
   <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/8401916545537277014">

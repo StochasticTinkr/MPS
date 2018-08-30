@@ -13,7 +13,6 @@ public class ErrorScope extends EmptyScope {
   public String getMessage() {
     return message;
   }
-
   public Throwable getException() {
     return exception;
   }

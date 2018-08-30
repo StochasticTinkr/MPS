@@ -41,7 +41,6 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.CategoryShowingChecker" file="CategoryShowingChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
@@ -238,7 +237,7 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.ModelPropertiesChecker" file="ModelPropertiesChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ModelReportItem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -250,7 +249,7 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.ModuleChecker" file="ModuleChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
@@ -305,7 +304,6 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.IncompatibleTargetReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
@@ -333,6 +331,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />
     <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageNotImportedReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />

@@ -293,20 +293,20 @@
       <node id="3875289449860656352" at="15,28,16,22" concept="4" />
       <node id="3875289449857741882" at="19,0,20,0" concept="8" trace="getMessage#()Ljava/lang/String;" />
       <node id="3875289449861591723" at="21,0,22,0" concept="8" trace="getCategory#()Ljava/lang/String;" />
-      <node id="6193270173286393260" at="24,38,25,25" concept="10" />
+      <node id="6193270173286393260" at="24,60,25,132" concept="10" />
       <node id="6193270173286070590" at="28,38,29,31" concept="10" />
       <node id="6193270173286110464" at="32,69,33,87" concept="10" />
       <node id="6193270173286392999" at="33,87,34,0" concept="12" />
       <node id="3875289449860659200" at="37,24,38,20" concept="10" />
       <node id="3875289449860656184" at="15,0,18,0" concept="2" trace="Problem#(null)V" />
       <node id="3875289449857836380" at="37,0,40,0" concept="8" trace="getReason#()null" />
-      <node id="6193270173286392354" at="23,0,27,0" concept="8" trace="getIssueKind#()Ljava/lang/String;" />
+      <node id="6193270173286392354" at="23,0,27,0" concept="8" trace="getIssueKind#()Ljetbrains/mps/errors/item/IssueKindReportItem/ItemKind;" />
       <node id="6193270173286069107" at="27,0,31,0" concept="8" trace="getSeverity#()Ljetbrains/mps/errors/MessageStatus;" />
       <node id="6193270173286069115" at="31,0,36,0" concept="8" trace="getIdFlavours#()Ljava/util/Set;" />
       <scope id="3875289449860656188" at="15,28,16,22" />
       <scope id="3875289449857741882" at="19,0,20,0" />
       <scope id="3875289449861591723" at="21,0,22,0" />
-      <scope id="6193270173286392359" at="24,38,25,25" />
+      <scope id="6193270173286392359" at="24,60,25,132" />
       <scope id="6193270173286069111" at="28,38,29,31" />
       <scope id="3875289449857836384" at="37,24,38,20" />
       <scope id="6193270173286069123" at="32,69,34,0" />
