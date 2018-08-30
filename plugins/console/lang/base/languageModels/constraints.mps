@@ -169,9 +169,6 @@
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
-        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
-      </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
         <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
@@ -183,6 +180,9 @@
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
@@ -337,8 +337,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="35c_gC" id="5Vvmn_QkWOY" role="37wK5m">
-                          <ref role="35c_gD" to="3xdn:qgIopN3HO7" resolve="HelpProvider" />
+                        <node concept="3B5_sB" id="4$Xvl0yBSCr" role="37wK5m">
+                          <ref role="3B5MYn" to="3xdn:qgIopN3HO7" resolve="HelpProvider" />
                         </node>
                         <node concept="2OqwBi" id="5Vvmn_QkWPm" role="37wK5m">
                           <node concept="2rP1CM" id="5Vvmn_QkWPn" role="2Oq$k0" />

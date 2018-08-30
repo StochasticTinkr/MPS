@@ -679,7 +679,6 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -3918,7 +3917,7 @@
           <node concept="3clFbF" id="z2ICeMRNZa" role="3cqZAp">
             <node concept="2OqwBi" id="z2ICeMRNZe" role="3clFbG">
               <node concept="0IXxy" id="z2ICeMRNZb" role="2Oq$k0" />
-              <node concept="1PgB_6" id="z2ICeMRNZj" role="2OqNvi" />
+              <node concept="3YRAZt" id="4$Xvl0yAdT7" role="2OqNvi" />
             </node>
           </node>
         </node>

@@ -60,7 +60,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), SNodeOperations.getModel(_context.getContextNode())) {
+            return new FilteringScope(new SubconceptsScope(SNodeOperations.getNode("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "473081947981012231"), SNodeOperations.getModel(_context.getContextNode())) {
               public String getName(SNode child) {
                 return (String) HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SAbstractConcept) SNodeOperations.asSConcept(child))));
               }
