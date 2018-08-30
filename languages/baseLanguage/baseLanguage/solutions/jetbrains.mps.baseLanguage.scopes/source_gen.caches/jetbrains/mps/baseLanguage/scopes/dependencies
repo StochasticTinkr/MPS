@@ -65,10 +65,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" />
-    <classNode dependClassName="jetbrains.mps.extapi.module.TransientSModule" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -79,9 +76,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" file="ClassifierScopes.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -311,13 +306,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" file="RepositoryStateCacheUtils.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.Scopes" file="Scopes.java">
     <classNode dependClassName="java.lang.Iterable" />

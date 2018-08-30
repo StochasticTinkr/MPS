@@ -15,8 +15,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -24,8 +22,6 @@ import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
@@ -63,16 +59,8 @@ public class ClassifierScopeUtils {
     }
     return getClassifierAndSuperClassifiersData(classifier).isCyclic;
   }
-  private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull final SNode classifier) {
-    if (check_uu0vlb_a0a0i(SNodeOperations.getModel(classifier)) instanceof TransientSModule) {
-      return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
-    } else {
-      return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
-        public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke() {
-          return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
-        }
-      });
-    }
+  private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull SNode classifier) {
+    return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
   }
 
   private static class ClassifierAndSuperClassifiersData {
@@ -122,11 +110,5 @@ public class ClassifierScopeUtils {
       SetSequence.fromSet(subClassifiers).removeElement(classifier);
       return false;
     }
-  }
-  private static SModule check_uu0vlb_a0a0i(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
 }
