@@ -93,7 +93,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" />
