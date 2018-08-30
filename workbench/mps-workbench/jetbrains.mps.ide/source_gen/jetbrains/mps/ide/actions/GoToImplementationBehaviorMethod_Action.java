@@ -40,7 +40,7 @@ public class GoToImplementationBehaviorMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder");
+    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     return finder != null && finder.isApplicable(event.getData(MPSCommonDataKeys.NODE));
   }
   @Override
@@ -83,7 +83,7 @@ public class GoToImplementationBehaviorMethod_Action extends BaseAction {
     DefaultBHMethodNameFilter nameFilter = new DefaultBHMethodNameFilter(repository);
     DefaultMethodRenderer renderer = new DefaultMethodRenderer(repository);
     CaptionFunction caption = GoToImplementationBehaviorMethod_Action.this.captionFun(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSCommonDataKeys.NODE), event);
-    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finders(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder")).renderer(renderer).captionFun(caption).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getInputEvent()).comparator(comparator).nameFilter(nameFilter);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(event.getData(MPSCommonDataKeys.MPS_PROJECT)).finders(FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder")).renderer(renderer).captionFun(caption).queryFromNode(event.getData(MPSCommonDataKeys.NODE)).pointFromCellAndEvent(event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getInputEvent()).comparator(comparator).nameFilter(nameFilter);
     GoToHelper.showPopupAndSearchNodeInBackground(settings);
   }
   private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final AnActionEvent event) {

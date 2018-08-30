@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.ide.MPSCodeInsightBundle;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -41,7 +42,7 @@ public final class MethodIsOverriddenEditorMessage extends AbstractOverrideEdito
   private static String tooltipText(SNode method, @Nullable List<SNode> overrides) {
     // fixme html reference to the concept 
     if (overrides == null) {
-      return (isOverridden(method) ? "Is overridden in subclasses" : "Has implementations");
+      return (isOverridden(method) ? MPSCodeInsightBundle.message("method.is.overridden.too.many") : MPSCodeInsightBundle.message("method.is.implemented.too.many"));
     }
     String prefix = ((isOverridden(method) ? "Is overridden" : "Is implemented")) + " in ";
 

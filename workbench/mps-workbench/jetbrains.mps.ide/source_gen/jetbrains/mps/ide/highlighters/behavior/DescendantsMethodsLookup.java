@@ -17,12 +17,14 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.annotations.Mutable;
+import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 
 /*package*/ final class DescendantsMethodsLookup {
   private final Cancellable myCancellable;
@@ -55,9 +57,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   }
 
   @Nullable
-  /*package*/ EditorMessage calcMessage(SNode method) {
-    Set<SNode> overrides = new LinkedHashSet<SNode>();
-    addDescendantsOverrides(myCancellable, method, overrides);
+  private EditorMessage calcMessage(SNode method) {
+    Set<SNode> overrides = findDescendantsOverrides(myCancellable, method);
     if (SetSequence.fromSet(overrides).count() > myMaxResultsToCollect) {
       return new MethodIsOverriddenEditorMessage(method, null, null);
     } else {
@@ -68,22 +69,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
   }
 
-  private void addDescendantsOverrides(final Cancellable cancellable, SNode currentMethod, @Mutable Set<SNode> result) {
+  private Set<SNode> findDescendantsOverrides(final Cancellable cancellable, SNode method) {
+    Set<SNode> result = new LinkedHashSet<SNode>();
     ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
       @Override
       public boolean isCanceled() {
         return super.isCanceled();
       }
     };
-    // fixme need async analogue of this operation 
-    Set<Object> resultObjects = FindUtils.getSearchResults(monitor, currentMethod, myScope, "jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder").getResultObjects();
-    for (Object resultObj : resultObjects) {
-      if (resultObj instanceof SNode) {
-        SNode res = (SNode) resultObj;
-        if (SNodeOperations.isInstanceOf(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-          SetSequence.fromSet(result).addElement(SNodeOperations.cast(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
+    FindUtils.searchForResults(monitor, new IFinder.FindCallback() {
+      public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+        SNode nodeParam = (SNode) searchResult.getObject();
+        if (SNodeOperations.isInstanceOf(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+          SetSequence.fromSet(result).addElement(SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
+          if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
+            monitor.cancel();
+          }
         }
       }
-    }
+    }, new SearchQuery(method, myScope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
+    return result;
   }
 }

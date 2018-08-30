@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -44,8 +45,11 @@ public class NodeUsageFinder {
   }
 
 
-  public void collectUsages(SModel model) {
+  public void collectUsages(SModel model, ProgressMonitor monitor) {
     for (SNode node : SNodeUtil.getDescendants(model)) {
+      if (monitor.isCanceled()) {
+        break;
+      }
       collectUsages(node);
     }
   }

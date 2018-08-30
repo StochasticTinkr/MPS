@@ -24,6 +24,7 @@ import jetbrains.mps.findUsages.NodeUsageFinder;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.util.FileUtil;
@@ -36,6 +37,7 @@ import jetbrains.mps.workbench.findusages.UsageEntry.ModelUse;
 import jetbrains.mps.workbench.findusages.UsageEntry.NodeUse;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -45,6 +47,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -71,32 +74,59 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
   }
 
   @Override
-  public void findUsages(Collection<SModel> scope, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SNode> candidates = findCandidates(scope, nodes, processedConsumer, key -> new NodeUse(key.getNodeId()));
+  public void findUsages(Collection<SModel> scope, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
+    if (monitor.isCanceled()) {
+      return;
+    }
+    MultiMap<SModel, SNode> candidates = findCandidates(scope, nodes, processedConsumer, key -> new NodeUse(key.getNodeId()), monitor);
     for (Entry<SModel, Collection<SNode>> candidate : candidates.entrySet()) {
-      new NodeUsageFinder(candidate.getValue(), consumer).collectUsages(candidate.getKey());
+      if (monitor.isCanceled()) {
+        break;
+      }
+      new NodeUsageFinder(candidate.getValue(), consumer).collectUsages(candidate.getKey(), monitor);
     }
   }
 
   @Override
-  public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, key -> new ConceptInstance(MetaIdHelper.getConcept(key)));
+  public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
+    if (monitor.isCanceled()) {
+      return;
+    }
+    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, key -> new ConceptInstance(MetaIdHelper.getConcept(key)),
+                                                                   monitor);
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {
-      FindUsagesUtil.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
+      FindUsagesUtil.collectInstances(candidate.getKey(), candidate.getValue(), consumer, monitor);
     }
   }
 
   @Override
-  public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, ModelUse::new);
+  public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer,
+                              @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
+    if (monitor.isCanceled()) {
+      return;
+    }
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, ModelUse::new, monitor);
     for (Entry<SModel, Collection<SModelReference>> candidate : candidates.entrySet()) {
+      if (monitor.isCanceled()) {
+        return;
+      }
       if (FindUsagesUtil.hasModelUsages(candidate.getKey(), candidate.getValue())) {
         consumer.consume(candidate.getKey());
       }
     }
   }
 
-  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, Function<T, UsageEntry> id) {
+  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, Function<T, UsageEntry> id,
+                                                 @NotNull ProgressMonitor monitor) {
     // get all files in scope
     final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<>();
     for (final SModel sm : models) {
@@ -104,6 +134,9 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
         continue;
       }
 
+      if (monitor.isCanceled()) {
+        break;
+      }
       DataSource source = sm.getSource();
       // these are data sources this participant knows about
       if (!(source instanceof FileDataSource || source instanceof FilePerRootDataSource)) {
@@ -122,6 +155,9 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
         String ext = FileUtil.getExtension(modelFile.getName());
         if (ext == null || modelFile.isDirectory()) {
           continue;
+        }
+        if (monitor.isCanceled()) {
+          break;
         }
 
         VirtualFile vf = VirtualFileUtils.getOrCreateVirtualFile(modelFile);

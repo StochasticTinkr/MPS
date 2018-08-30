@@ -27,9 +27,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.ConceptMethodsHighlighter" file="ConceptMethodsHighlighter.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.ConceptInheritanceHighlighter" file="ConceptInheritanceHighlighter.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.OverrideConceptMethodsChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.highlighters.structure.OverrideConceptsChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -37,13 +38,15 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.highlighters.behavior.DescendantsMethodsLookup" file="DescendantsMethodsLookup.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.EmptyProgressMonitorWithCancellable" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.MethodIsOverriddenEditorMessage" />
@@ -58,7 +61,6 @@
     <classNode dependClassName="jetbrains.mps.util.Cancellable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.annotations.Mutable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
@@ -77,6 +79,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCodeInsightBundle" />
     <classNode dependClassName="jetbrains.mps.ide.editor.popup.IconResourceBundle_OverrideImplements" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

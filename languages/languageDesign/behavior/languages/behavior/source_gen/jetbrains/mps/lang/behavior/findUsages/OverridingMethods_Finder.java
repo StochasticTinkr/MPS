@@ -22,8 +22,8 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class ImplementingMethods_Finder extends GeneratedFinder {
-  public ImplementingMethods_Finder() {
+public class OverridingMethods_Finder extends GeneratedFinder {
+  public OverridingMethods_Finder() {
   }
   public boolean isVisible(SNode node, SearchScope scope) {
     if ((boolean) ConceptMethodDeclaration__BehaviorDescriptor.isVirtual_id6WSEafdhbZX.invoke(node) || SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"))) {
@@ -37,7 +37,7 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
   }
   @Override
   public String getDescription() {
-    return "Implementing Methods";
+    return "Overriding Methods";
   }
   @Override
   public String getLongDescription() {
@@ -73,7 +73,7 @@ public class ImplementingMethods_Finder extends GeneratedFinder {
                 }
                 callback.onUsageFound(createSingleResult(nodeParam));
               }
-            }, new SearchQuery(nodeParam, scope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder"));
+            }, new SearchQuery(nodeParam, scope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
           }
         }
       }, new SearchQuery(node, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));

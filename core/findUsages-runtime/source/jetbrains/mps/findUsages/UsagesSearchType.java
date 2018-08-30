@@ -44,6 +44,9 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
     monitor.start("Finding usages...", participants.size() + 4);
     try {
+      if (monitor.isCanceled()) {
+        return;
+      }
       Collection<SModel> current = new LinkedHashSet<>();
       Collection<SModel> simpleSearch = new LinkedHashSet<>();
       for (SModel m : IterableUtil.asCollection(scope.getModels())) {
@@ -56,10 +59,13 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
+        if (monitor.isCanceled()) {
+          return;
+        }
         participant.findUsages(current, nodes, consumer, sModel -> {
           assert !(sModel instanceof EditableSModel && ((EditableSModel) sModel).isChanged());
           next.remove(sModel);
-        });
+        }, monitor);
         current = next;
         monitor.advance(1);
       }
@@ -71,7 +77,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       current.addAll(simpleSearch);
       for (SModel m : current) {
         subMonitor.step(m.getName().getSimpleName());
-        nf.collectUsages(m);
+        nf.collectUsages(m, monitor);
         if (monitor.isCanceled()) {
           break;
         }

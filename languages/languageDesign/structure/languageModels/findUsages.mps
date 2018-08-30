@@ -2675,5 +2675,86 @@
       </node>
     </node>
   </node>
+  <node concept="2PqlIr" id="2mjA7mXuoKy">
+    <property role="TrG5h" value="ConceptDescendants" />
+    <property role="39L4OI" value="Concept Descendants" />
+    <property role="eK4wv" value="Merging the inheriting logic for interface concepts and for concepts" />
+    <ref role="3gKJdq" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    <node concept="2PqlIu" id="2mjA7mXuoKz" role="3gKxsI">
+      <node concept="3clFbS" id="2mjA7mXuoK$" role="2VODD2">
+        <node concept="3cpWs8" id="2mjA7mXusbk" role="3cqZAp">
+          <node concept="3cpWsn" id="2mjA7mXusbl" role="3cpWs9">
+            <property role="TrG5h" value="isIntfc" />
+            <node concept="10P_77" id="2mjA7mXusbj" role="1tU5fm" />
+            <node concept="2OqwBi" id="2mjA7mXusbm" role="33vP2m">
+              <node concept="39LhUk" id="2mjA7mXusbn" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="2mjA7mXusbo" role="2OqNvi">
+                <node concept="chp4Y" id="2mjA7mXusbp" role="cj9EA">
+                  <ref role="cht4Q" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2mjA7mXusPL" role="3cqZAp">
+          <node concept="3clFbS" id="2mjA7mXusPN" role="3clFbx">
+            <node concept="1ecyme" id="2mjA7mXut33" role="3cqZAp">
+              <node concept="2GrKxI" id="2mjA7mXut37" role="1Duv9y">
+                <property role="TrG5h" value="concept" />
+              </node>
+              <node concept="3clFbS" id="2mjA7mXut3b" role="2LFqv_">
+                <node concept="fgBEq" id="2mjA7mXutcu" role="3cqZAp" />
+                <node concept="1O1abz" id="2mjA7mXutbl" role="3cqZAp">
+                  <node concept="2GrUjf" id="2mjA7mXutbI" role="1O1k6O">
+                    <ref role="2Gs0qQ" node="2mjA7mXut37" resolve="concept" />
+                  </node>
+                </node>
+              </node>
+              <node concept="39LhUk" id="2mjA7mXut59" role="1ecym1" />
+              <node concept="zAVLb" id="2mjA7mXut4E" role="1ef06T">
+                <ref role="2$JaeB" node="htS4elS" resolve="ImplementingConcepts" />
+              </node>
+              <node concept="zAVLb" id="2mjA7mXutwA" role="1ef06T">
+                <ref role="2$JaeB" node="htS4nKv" resolve="DerivedInterfaceConcepts" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="2mjA7mXusTV" role="3clFbw">
+            <ref role="3cqZAo" node="2mjA7mXusbl" resolve="isIntfc" />
+          </node>
+          <node concept="9aQIb" id="2mjA7mXuvSh" role="9aQIa">
+            <node concept="3clFbS" id="2mjA7mXuvSi" role="9aQI4">
+              <node concept="1ecyme" id="2mjA7mXuvTA" role="3cqZAp">
+                <node concept="2GrKxI" id="2mjA7mXuvTB" role="1Duv9y">
+                  <property role="TrG5h" value="concept" />
+                </node>
+                <node concept="3clFbS" id="2mjA7mXuvTC" role="2LFqv_">
+                  <node concept="fgBEq" id="2mjA7mXuvTD" role="3cqZAp" />
+                  <node concept="1O1abz" id="2mjA7mXuvTE" role="3cqZAp">
+                    <node concept="2GrUjf" id="2mjA7mXuvTF" role="1O1k6O">
+                      <ref role="2Gs0qQ" node="2mjA7mXuvTB" resolve="concept" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="39LhUk" id="2mjA7mXuvTG" role="1ecym1" />
+                <node concept="zAVLb" id="2mjA7mXuwhr" role="1ef06T">
+                  <ref role="2$JaeB" node="5Xky2$hnZgs" resolve="DerivedConcepts" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QTw1a" id="2mjA7mXupyD" role="QTGFR">
+      <node concept="3clFbS" id="2mjA7mXupyE" role="2VODD2">
+        <node concept="3clFbF" id="2mjA7mXupAk" role="3cqZAp">
+          <node concept="3clFbT" id="2mjA7mXupAj" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

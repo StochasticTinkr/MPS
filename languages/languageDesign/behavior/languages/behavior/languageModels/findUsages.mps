@@ -208,9 +208,9 @@
     </language>
   </registry>
   <node concept="2PqlIr" id="hReyrfg">
-    <property role="39L4OI" value="Implementing Methods" />
+    <property role="39L4OI" value="Overriding Methods" />
     <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="ImplementingMethods" />
+    <property role="TrG5h" value="OverridingMethods" />
     <ref role="3gKJdq" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2PqlIu" id="hReyrfh" role="3gKxsI">
       <node concept="3clFbS" id="hReyrfi" role="2VODD2">
@@ -257,7 +257,7 @@
                     <ref role="2Gs0qQ" node="5VO8Ahfg4XW" resolve="candidate" />
                   </node>
                   <node concept="zAVLb" id="5VO8AhffabY" role="1ef06T">
-                    <ref role="2$JaeB" node="hReyrfg" resolve="ImplementingMethods" />
+                    <ref role="2$JaeB" node="hReyrfg" resolve="OverridingMethods" />
                   </node>
                 </node>
               </node>

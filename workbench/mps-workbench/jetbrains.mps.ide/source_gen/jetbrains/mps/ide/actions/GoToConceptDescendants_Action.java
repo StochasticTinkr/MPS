@@ -12,12 +12,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.awt.event.InputEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.editor.util.CaptionFunction;
@@ -65,13 +62,6 @@ public class GoToConceptDescendants_Action extends BaseAction {
       }
     }
     {
-      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      MapSequence.fromMap(_params).put("editorContext", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
@@ -82,14 +72,7 @@ public class GoToConceptDescendants_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    final Wrappers._boolean isInterface = new Wrappers._boolean();
-    modelAccess.runReadAction(new Runnable() {
-      public void run() {
-        isInterface.value = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("conceptDecl")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
-      }
-    });
 
     InputEvent inputEvent = event.getInputEvent();
     SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
@@ -98,11 +81,7 @@ public class GoToConceptDescendants_Action extends BaseAction {
     CaptionFunction caption = GoToConceptDescendants_Action.this.captionFun(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("conceptDecl")), _params);
     DefaultNodeRenderer renderer = new DefaultNodeRenderer(repository);
     PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).captionFun(caption).renderer(renderer).queryFromNode(((SNode) MapSequence.fromMap(_params).get("conceptDecl"))).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
-    if (isInterface.value) {
-      GoToHelper.showPopupAndSearchNodeInBackground(settings.finders(FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.ImplementingConcepts_Finder"), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder")));
-    } else {
-      GoToHelper.showPopupAndSearchNodeInBackground(settings.finders(FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.DerivedConcepts_Finder")));
-    }
+    GoToHelper.showPopupAndSearchNodeInBackground(settings.finders(FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.ConceptDescendants_Finder")));
   }
   private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
     return new CaptionFunction() {

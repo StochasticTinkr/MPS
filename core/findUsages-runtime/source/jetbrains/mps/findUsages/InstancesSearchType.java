@@ -80,7 +80,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       current.addAll(simpleSearch);
       for (SModel m : current) {
         subMonitor.step(m.getName().getSimpleName());
-        FindUsagesUtil.collectInstances(m, queryConcepts, consumer);
+        FindUsagesUtil.collectInstances(m, queryConcepts, consumer, monitor);
         if (monitor.isCanceled()) {
           break;
         }

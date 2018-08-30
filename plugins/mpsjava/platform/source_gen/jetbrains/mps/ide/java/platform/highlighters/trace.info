@@ -545,48 +545,48 @@
       <node id="8432634623182579986" at="22,0,23,0" concept="14" trace="TYPE" />
       <node id="8432634623182579979" at="23,0,24,0" concept="5" trace="myIsInterface" />
       <node id="8432634623182579982" at="24,0,25,0" concept="5" trace="myClassifierNameCellCondition" />
-      <node id="8432634623182580017" at="25,125,26,32" concept="16" />
-      <node id="8432634623182580021" at="26,32,27,32" concept="4" />
-      <node id="8432634623182580040" at="30,43,31,117" concept="11" />
-      <node id="8432634623182690132" at="36,25,37,188" concept="11" />
-      <node id="8432634623182580074" at="40,63,41,16" concept="11" />
-      <node id="2786528417096380295" at="46,68,47,55" concept="10" />
-      <node id="6226950206220272496" at="47,55,48,143" concept="10" />
-      <node id="8432634623182580089" at="48,143,49,64" concept="11" />
-      <node id="8432634623182580100" at="53,36,54,129" concept="11" />
-      <node id="8432634623182580034" at="29,0,33,0" concept="9" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
-      <node id="8432634623182580059" at="35,0,39,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="8432634623182580070" at="39,0,43,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-      <node id="8432634623182580096" at="52,0,56,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-      <node id="8432634623182580025" at="27,32,33,6" concept="4" />
-      <node id="2786528417096367393" at="44,0,51,0" concept="9" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="8432634623182580005" at="25,0,35,0" concept="2" trace="SubclassedClassifierEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;Z)V" />
-      <scope id="8432634623182580039" at="30,43,31,117" />
-      <scope id="8432634623182580062" at="36,25,37,188" />
-      <scope id="8432634623182580073" at="40,63,41,16" />
-      <scope id="8432634623182580099" at="53,36,54,129" />
-      <scope id="2786528417096367404" at="46,68,49,64">
+      <node id="8432634623182580017" at="26,125,27,32" concept="16" />
+      <node id="8432634623182580021" at="27,32,28,32" concept="4" />
+      <node id="8432634623182580040" at="31,43,32,117" concept="11" />
+      <node id="8432634623182690132" at="38,25,39,188" concept="11" />
+      <node id="8432634623182580074" at="43,63,44,16" concept="11" />
+      <node id="2786528417096380295" at="49,68,50,55" concept="10" />
+      <node id="6226950206220272496" at="50,55,51,143" concept="10" />
+      <node id="8432634623182580089" at="51,143,52,64" concept="11" />
+      <node id="8432634623182580100" at="56,36,57,129" concept="11" />
+      <node id="8432634623182580034" at="30,0,34,0" concept="9" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="8432634623182580059" at="37,0,41,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="8432634623182580070" at="42,0,46,0" concept="9" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+      <node id="8432634623182580096" at="55,0,59,0" concept="9" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+      <node id="8432634623182580025" at="28,32,34,6" concept="4" />
+      <node id="2786528417096367393" at="47,0,54,0" concept="9" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8432634623182580005" at="26,0,36,0" concept="2" trace="SubclassedClassifierEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;Z)V" />
+      <scope id="8432634623182580039" at="31,43,32,117" />
+      <scope id="8432634623182580062" at="38,25,39,188" />
+      <scope id="8432634623182580073" at="43,63,44,16" />
+      <scope id="8432634623182580099" at="56,36,57,129" />
+      <scope id="2786528417096367404" at="49,68,52,64">
         <var name="nodeCell" id="2786528417096380296" />
         <var name="returnTypeCell" id="6226950206220272497" />
       </scope>
-      <scope id="8432634623182580034" at="29,0,33,0">
+      <scope id="8432634623182580034" at="30,0,34,0">
         <var name="cell" id="8432634623182580037" />
       </scope>
-      <scope id="8432634623182580059" at="35,0,39,0" />
-      <scope id="8432634623182580070" at="39,0,43,0" />
-      <scope id="8432634623182580096" at="52,0,56,0" />
-      <scope id="2786528417096367393" at="44,0,51,0">
+      <scope id="8432634623182580059" at="37,0,41,0" />
+      <scope id="8432634623182580070" at="42,0,46,0" />
+      <scope id="8432634623182580096" at="55,0,59,0" />
+      <scope id="2786528417096367393" at="47,0,54,0">
         <var name="editorComponent" id="2786528417096367398" />
       </scope>
-      <scope id="8432634623182580016" at="25,125,33,6" />
-      <scope id="8432634623182580005" at="25,0,35,0">
+      <scope id="8432634623182580016" at="26,125,34,6" />
+      <scope id="8432634623182580005" at="26,0,36,0">
         <var name="isInterface" id="8432634623182580012" />
         <var name="node" id="8432634623182580006" />
         <var name="owner" id="8432634623182580008" />
         <var name="tooltip" id="8432634623182580010" />
       </scope>
-      <unit id="8432634623182580031" at="28,40,33,5" name="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage$1" />
-      <unit id="8432634623182579978" at="21,0,57,0" name="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" />
+      <unit id="8432634623182580031" at="29,40,34,5" name="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage$1" />
+      <unit id="8432634623182579978" at="21,0,60,0" name="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" />
     </file>
   </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/8432634623182781100">

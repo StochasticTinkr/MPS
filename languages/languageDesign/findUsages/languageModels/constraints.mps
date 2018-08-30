@@ -78,31 +78,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="hDMPBmV">
-    <ref role="1M2myG" to="tp3b:5Xky2$hpEQB" resolve="ForEachFoundNodeExpression" />
-    <node concept="9S07l" id="147CB3QsUDi" role="9Vyp8">
-      <node concept="3clFbS" id="147CB3QsUDj" role="2VODD2">
-        <node concept="3clFbF" id="147CB3QsUDk" role="3cqZAp">
-          <node concept="3y3z36" id="147CB3QsUDl" role="3clFbG">
-            <node concept="10Nm6u" id="147CB3QsUDm" role="3uHU7w" />
-            <node concept="2OqwBi" id="147CB3QsUDn" role="3uHU7B">
-              <node concept="nLn13" id="147CB3QsUDo" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="147CB3QsUDp" role="2OqNvi">
-                <node concept="3gmYPX" id="147CB3QsUDq" role="1xVPHs">
-                  <node concept="3gn64h" id="147CB3QsUDr" role="3gmYPZ">
-                    <ref role="3gnhBz" to="tp3b:hqPqlE8" resolve="FindBlock" />
-                  </node>
-                  <node concept="3gn64h" id="147CB3QsUDs" role="3gmYPZ">
-                    <ref role="3gnhBz" to="tp3b:hzAHsKp" resolve="SearchedNodesBlock" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="1M2fIO" id="hDMPBzY">
     <ref role="1M2myG" to="tp3b:htO1afO" resolve="ResultStatement" />
     <node concept="9S07l" id="147CB3QsUDB" role="9Vyp8">

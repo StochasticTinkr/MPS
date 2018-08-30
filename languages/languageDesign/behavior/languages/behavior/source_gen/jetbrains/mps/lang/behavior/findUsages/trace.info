@@ -18,15 +18,15 @@
   </root>
   <root nodeRef="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)/1227530810320">
     <file name="FindUsagesDescriptor.java">
-      <node id="1227530810320" at="21,13,22,48" concept="6" />
-      <node id="1227530810320" at="31,40,32,193" concept="1" />
-      <scope id="1227530810320" at="21,13,22,48" />
+      <node id="1227530810320" at="23,13,24,46" concept="6" />
+      <node id="1227530810320" at="32,191,33,191" concept="1" />
+      <scope id="1227530810320" at="23,13,24,46" />
     </file>
-    <file name="ImplementingMethods_Finder.java">
+    <file name="OverridingMethods_Finder.java">
       <node id="1279830762538563480" at="29,262,30,221" concept="6" />
       <node id="1279830762538563494" at="31,5,32,17" concept="6" />
       <node id="1227530810320" at="35,40,36,61" concept="6" />
-      <node id="1227530810320" at="39,34,40,34" concept="6" />
+      <node id="1227530810320" at="39,34,40,32" concept="6" />
       <node id="1227530810320" at="43,38,44,14" concept="6" />
       <node id="1227530810320" at="47,41,48,165" concept="6" />
       <node id="6359835160674952221" at="52,262,53,221" concept="6" />
@@ -40,7 +40,7 @@
       <node id="1227531284031" at="73,17,74,69" concept="1" />
       <node id="1227530810320" at="80,15,81,21" concept="1" />
       <node id="1227530810320" at="88,46,89,83" concept="6" />
-      <node id="1227530810320" at="26,0,28,0" concept="0" trace="ImplementingMethods_Finder#()V" />
+      <node id="1227530810320" at="26,0,28,0" concept="0" trace="OverridingMethods_Finder#()V" />
       <node id="1279830762538563478" at="28,59,31,5" concept="3" />
       <node id="7335624801804275179" at="51,43,54,5" concept="3" />
       <node id="3175824769152186184" at="70,67,73,17" concept="3" />
@@ -52,16 +52,16 @@
       <node id="1227530810320" at="28,0,34,0" concept="4" trace="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;)Z" />
       <node id="1227530810320" at="50,0,57,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6842131548104072279" at="69,0,76,0" concept="4" trace="onUsageFound#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
-      <node id="6842131548104072279" at="67,65,76,140" concept="1" />
+      <node id="6842131548104072279" at="67,65,76,138" concept="1" />
       <node id="6842131548104359710" at="64,61,77,11" concept="3" />
       <node id="6842131548104314746" at="63,0,79,0" concept="4" trace="onUsageFound#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
       <node id="6842131548104314746" at="61,62,79,121" concept="1" />
       <node id="1227530810320" at="59,122,82,5" concept="10" />
       <node id="1227530810320" at="58,0,84,0" concept="4" trace="doFind0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;Ljetbrains/mps/ide/findusages/findalgorithm/finders/IFinder/FindCallback;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="1227530810320" at="26,39,26,39" />
+      <scope id="1227530810320" at="26,37,26,37" />
       <scope id="1279830762538563479" at="29,262,30,221" />
       <scope id="1227530810320" at="35,40,36,61" />
-      <scope id="1227530810320" at="39,34,40,34" />
+      <scope id="1227530810320" at="39,34,40,32" />
       <scope id="1227530810320" at="43,38,44,14" />
       <scope id="1227530810320" at="47,41,48,165" />
       <scope id="7335624801804275181" at="52,262,53,221" />
@@ -92,7 +92,7 @@
       <scope id="6842131548104072279" at="69,0,76,0">
         <var name="searchResult" id="6842131548104072279" />
       </scope>
-      <scope id="6842131548104359712" at="65,649,76,140" />
+      <scope id="6842131548104359712" at="65,649,76,138" />
       <scope id="6842131548104314750" at="64,61,77,11" />
       <scope id="6842131548104314746" at="63,73,77,11">
         <var name="nodeParam" id="6842131548104314746" />
@@ -108,16 +108,16 @@
         <var name="node" id="1227530810320" />
         <var name="scope" id="1227530810320" />
       </scope>
-      <unit id="6842131548104072279" at="68,71,76,13" name="jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder$1$1" />
-      <unit id="6842131548104314746" at="62,58,79,7" name="jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder$1" />
-      <unit id="1227530810320" at="25,0,92,0" name="jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder" />
+      <unit id="6842131548104072279" at="68,71,76,13" name="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder$1$1" />
+      <unit id="6842131548104314746" at="62,58,79,7" name="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder$1" />
+      <unit id="1227530810320" at="25,0,92,0" name="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
     </file>
   </root>
   <root nodeRef="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)/7335624801804187873">
     <file name="FindUsagesDescriptor.java">
-      <node id="7335624801804187873" at="23,13,24,46" concept="6" />
-      <node id="7335624801804187873" at="32,193,33,191" concept="1" />
-      <scope id="7335624801804187873" at="23,13,24,46" />
+      <node id="7335624801804187873" at="21,13,22,46" concept="6" />
+      <node id="7335624801804187873" at="31,40,32,191" concept="1" />
+      <scope id="7335624801804187873" at="21,13,22,46" />
     </file>
     <file name="OverriddenMethods_Finder.java">
       <node id="7335624801804187873" at="34,0,35,0" concept="9" trace="LOG" />
