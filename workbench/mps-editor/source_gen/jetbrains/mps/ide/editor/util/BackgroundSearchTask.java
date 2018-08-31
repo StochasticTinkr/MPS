@@ -12,8 +12,8 @@ import com.intellij.openapi.progress.PerformInBackgroundOption;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public abstract class BackgroundSearchTask extends Task.Backgroundable {
   private final MPSProject myMPSProject;
@@ -29,11 +29,11 @@ public abstract class BackgroundSearchTask extends Task.Backgroundable {
   }
 
   @Override
-  public final void onCancel() {
+  public void onCancel() {
     myCancelled = true;
   }
 
-  public final boolean isCancelled() {
+  public boolean isCancelled() {
     return myCancelled;
   }
 
@@ -50,7 +50,13 @@ public abstract class BackgroundSearchTask extends Task.Backgroundable {
             BackgroundSearchTask.this.onUsageFound(result);
           }
         };
-        FindUtils.searchForResults(new ProgressMonitorAdapter(indicator), callback, myQuery, myFinders.toArray(new IFinder[0]));
+        ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator) {
+          @Override
+          public boolean isCanceled() {
+            return super.isCanceled() || isCancelled();
+          }
+        };
+        FindUtils.searchForResults(monitor, callback, myQuery, myFinders.toArray(new IFinder[0]));
       }
     });
   }

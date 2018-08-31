@@ -20,6 +20,7 @@
   <dependency className="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask" file="BackgroundSearchWithPopupTask.java">
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="com.intellij.ui.SortedListModel" />

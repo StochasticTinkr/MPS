@@ -29,7 +29,7 @@ public class DefaultNodeRenderer extends BaseRenderer<NodeNavigatable> {
   }
 
   /*package*/ final void superCustomizeCellRenderer(JList list, Object value, int i, boolean index, boolean selected) {
-    // this is workaround for https://youtrack.jetbrains.com/issue/MPS-23068 
+    // this is workaround for https://youtrack.jetbrains.com/issue/MPS-23068
     super.customizeCellRenderer(list, value, i, index, selected);
   }
 

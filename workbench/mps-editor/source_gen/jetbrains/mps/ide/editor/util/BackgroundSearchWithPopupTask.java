@@ -4,23 +4,19 @@ package jetbrains.mps.ide.editor.util;
 
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.ui.components.JBList;
-import jetbrains.mps.ide.navigation.NamedNodeNavigatable;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.ui.SortedListModel;
 import com.intellij.util.Alarm;
 import com.intellij.openapi.util.Ref;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.progress.ProgressManager;
 
 public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   private final JBPopup myPopup;
@@ -30,8 +26,7 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   private final Alarm myAlarm = new Alarm(Alarm.ThreadToUse.SWING_THREAD);
   private final Ref<Boolean> myShown = new Ref<Boolean>(false);
   private final Object LOCK = new Object();
-  private final BlockingQueue<NamedNodeNavigatable> myResults = new LinkedBlockingQueue<>();
-  private final List<NamedNodeNavigatable> myResultList = new ArrayList<>();
+  private final List<NodeNavigatable> myCurrentResults = new ArrayList<NodeNavigatable>();
   private volatile boolean myFinished = false;
 
   public BackgroundSearchWithPopupTask(@NotNull PopupSettingsBuilder settings) {
@@ -50,32 +45,31 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   }
 
   @Override
+  public boolean isCancelled() {
+    return super.isCancelled() || myPopup.isDisposed();
+  }
+
+  @Override
   public void onUsageFound(@NotNull SearchResult<?> result) {
     if (myPopup.isDisposed()) {
       return;
     }
     Object object = result.getObject();
     if (object instanceof SNode) {
-      SNodeReference pointer = ((SNode) object).getReference();
-      assert ModelAccess.instance().canRead();
-      NamedNodeNavigatable newNamedNV = new NamedNodeNavigatable(mySettings.myProject, pointer, getName(pointer));
-      if (!(myResults.add(newNamedNV))) {
-        return;
+      synchronized (LOCK) {
+        SNodeReference pointer = ((SNode) object).getReference();
+        if (!(myCurrentResults.add(new NodeNavigatable(mySettings.myProject, pointer)))) {
+          return;
+        }
       }
-      myResultList.add(newNamedNV);
       myAlarm.addRequest(new Runnable() {
         @Override
         public void run() {
           myAlarm.cancelAllRequests();
           refresh();
         }
-      }, 100, ModalityState.stateForComponent(myPopup.getContent()));
+      }, 200, ModalityState.stateForComponent(myPopup.getContent()));
     }
-  }
-
-  @NotNull
-  private String getName(SNodeReference pointer) {
-    return mySettings.nameFilter.fun(pointer);
   }
 
   private void refresh() {
@@ -85,25 +79,35 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
     if (myPopup.isDisposed()) {
       return;
     }
-    String newCaption = mySettings.captionFun.caption(myResultList.size(), myFinished);
+    final List<NodeNavigatable> newData;
+    synchronized (LOCK) {
+      newData = new ArrayList<NodeNavigatable>(myCurrentResults);
+    }
+    List<NodeNavigatable> showingItems = myListModel.getItems();
+    newData.removeAll(showingItems);
+    // fix comparator needs read, could transfer the name into a NamedNodeNavigatable composite instead
+    mySettings.myProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Object selected = myList.getSelectedValue();
+        myListModel.addAll(newData);
+        myList.setSelectedValue(selected, true);
+      }
+    });
+    String newCaption = mySettings.captionFun.caption(myCurrentResults.size(), myFinished);
     myPopup.setCaption(newCaption);
     myPopup.pack(true, true);
     if (!(myShown.get())) {
       myShown.set(true);
       myPopup.show(mySettings.point);
     }
-    mySettings.myProject.getModelAccess().runReadAction(new Runnable() {
-                                                          @Override
-                                                          public void run() {
-                                                            List<NodeNavigatable> items = new ArrayList<>();
-                                                            myResults.drainTo(items);
-                                                            myListModel.addAll(items);
-                                                          }
-                                                        });
   }
 
   @Override
   public void onFinished() {
+    ProgressIndicator progress = ProgressManager.getInstance().getProgressIndicator();
+    if (progress != null) {
+      progress.cancel();
+    }
     if (isCancelled()) {
       return;
     }
@@ -111,10 +115,10 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
       return;
     }
     myFinished = true;
-    if (myResultList.isEmpty()) {
-    } else if (myResultList.size() == 1) {
+    if (myCurrentResults.isEmpty()) {
+    } else if (myCurrentResults.size() == 1) {
       myPopup.cancel();
-      NodeNavigatable navigatable = myResultList.get(0);
+      NodeNavigatable navigatable = myCurrentResults.get(0);
       navigatable.navigate(true);
     } else {
       refresh();

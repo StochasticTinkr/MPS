@@ -1275,7 +1275,7 @@
               <node concept="3clFbS" id="5Xky2$hugSk" role="2LFqv_">
                 <node concept="3cpWs8" id="5ljwgzfNI1m" role="3cqZAp">
                   <node concept="3cpWsn" id="5ljwgzfNI1n" role="3cpWs9">
-                    <property role="TrG5h" value="foundClass" />
+                    <property role="TrG5h" value="foundConcept" />
                     <node concept="3Tqbb2" id="5ljwgzfNI12" role="1tU5fm">
                       <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                     </node>
@@ -1289,9 +1289,21 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3clFbF" id="7iebvqEsUbv" role="3cqZAp">
+                  <node concept="2OqwBi" id="7iebvqEsUF9" role="3clFbG">
+                    <node concept="37vLTw" id="7iebvqEsUbt" role="2Oq$k0">
+                      <ref role="3cqZAo" node="htSpuxC" resolve="currentConcepts" />
+                    </node>
+                    <node concept="2Ke9KJ" id="7iebvqEt1By" role="2OqNvi">
+                      <node concept="37vLTw" id="7iebvqEt1Vj" role="25WWJ7">
+                        <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundConcept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="1O1abz" id="htSpuyA" role="3cqZAp">
                   <node concept="37vLTw" id="5ljwgzfNIxe" role="1O1k6O">
-                    <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundClass" />
+                    <ref role="3cqZAo" node="5ljwgzfNI1n" resolve="foundConcept" />
                   </node>
                 </node>
               </node>
@@ -1310,7 +1322,7 @@
       <node concept="3clFbS" id="5Xky2$hnZi9" role="2VODD2">
         <node concept="3clFbF" id="5Xky2$hnZia" role="3cqZAp">
           <node concept="Xl_RD" id="5Xky2$hnZib" role="3clFbG">
-            <property role="Xl_RC" value="Concept Descendants" />
+            <property role="Xl_RC" value="Derived Concepts" />
           </node>
         </node>
       </node>

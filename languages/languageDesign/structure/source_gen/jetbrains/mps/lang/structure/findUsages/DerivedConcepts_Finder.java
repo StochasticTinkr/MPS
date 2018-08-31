@@ -47,8 +47,9 @@ public class DerivedConcepts_Finder extends GeneratedFinder {
         FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
           public void onUsageFound(@NotNull SearchResult<?> searchResult) {
             SNode nodeParam = (SNode) searchResult.getObject();
-            SNode foundClass = SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-            callback.onUsageFound(createSingleResult(foundClass));
+            SNode foundConcept = SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+            QueueSequence.fromQueue(currentConcepts).addLastElement(foundConcept);
+            callback.onUsageFound(createSingleResult(foundConcept));
           }
         }, new SearchQuery(nextNode, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.StraightDescendants_Finder"));
       }
@@ -59,7 +60,7 @@ public class DerivedConcepts_Finder extends GeneratedFinder {
 
   @Override
   public String getNodeCategory(SNode node) {
-    return "Concept Descendants";
+    return "Derived Concepts";
   }
 
   @Nullable
