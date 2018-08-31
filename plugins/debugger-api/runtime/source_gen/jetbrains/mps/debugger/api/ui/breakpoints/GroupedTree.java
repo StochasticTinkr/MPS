@@ -13,12 +13,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.awt.Color;
 import javax.swing.UIManager;
 
 /*package*/ abstract class GroupedTree<D extends CheckBoxNodeRenderer.NodeData> extends MPSTree {
   public GroupedTree() {
-    setCellRenderer(new CheckBoxNodeRenderer(true));
+    setCellRenderer(new CheckBoxNodeRenderer(true, getCellRenderer()));
     setCellEditor(new CheckBoxNodeRenderer.CheckBoxNodeEditor<CheckBoxNodeRenderer.NodeData>(true) {
       @Override
       protected CheckBoxNodeRenderer.NodeData createNodeData(boolean selected) {
@@ -33,33 +32,20 @@ import javax.swing.UIManager;
   protected abstract MPSTreeNode createDataNode(D data);
   protected abstract GroupedTree.GroupKind<D, Object> createRootGroupKind();
   protected abstract Collection<D> getData();
+
   @Override
   protected MPSTreeNode rebuild() {
     return new GroupedTree.GroupTreeNode(createRootGroupKind(), new Object(), getData());
   }
+
   @Nullable
   public MPSTreeNode findNodeForData(D nodeData) {
     if (this.isEmpty()) {
       return null;
     }
-    return findNodeForData((GroupedTree.GroupTreeNode) getRootNode(), nodeData);
+    return (MPSTreeNode) findNodeWith(nodeData);
   }
-  @Nullable
-  private MPSTreeNode findNodeForData(GroupedTree.GroupTreeNode rootNode, D nodeData) {
-    for (int i = 0; i < rootNode.getChildCount(); i++) {
-      MPSTreeNode child = (MPSTreeNode) rootNode.getChildAt(i);
-      if (child instanceof GroupedTree.GroupTreeNode) {
-        GroupedTree.GroupData groupData = ((GroupedTree.GroupTreeNode) child).getGroupData();
-        if (groupData.getKind().getGroup(nodeData).equals(groupData.getGroup())) {
-          return findNodeForData((GroupedTree.GroupTreeNode) child, nodeData);
-        }
-      } else
-      if (child.getUserObject() != null && child.getUserObject().equals(nodeData)) {
-        return child;
-      }
-    }
-    return null;
-  }
+
   public static abstract class GroupKind<D, T> {
     private boolean myIsVisible = true;
     public GroupKind() {
@@ -97,75 +83,58 @@ import javax.swing.UIManager;
       myIsVisible = isVisible;
     }
   }
-  private class GroupData<D extends CheckBoxNodeRenderer.NodeData, T> implements CheckBoxNodeRenderer.NodeData {
-    @NotNull
-    private final GroupedTree.GroupKind<D, T> myKind;
-    @NotNull
-    private final T myGroup;
-    private final Collection<D> myData;
-    public GroupData(T group, GroupedTree.GroupKind<D, T> kind, Collection<D> data) {
-      myGroup = group;
-      myKind = kind;
-      myData = data;
-    }
-    @Override
-    public Icon getIcon(boolean expanded) {
-      return myKind.getIcon(myGroup);
-    }
-    @Override
-    public Color getColor() {
-      return UIManager.getColor("Tree.textForeground");
-    }
-    @Override
-    public String getText() {
-      return myKind.getText(myGroup);
-    }
-    @Override
-    public boolean isSelected() {
-      for (D d : myData) {
-        if (!(d.isSelected())) {
-          return false;
-        }
-      }
-      return true;
-    }
-    @NotNull
-    public GroupedTree.GroupKind<D, T> getKind() {
-      return myKind;
-    }
-    @NotNull
-    public T getGroup() {
-      return myGroup;
-    }
-    @Override
-    public void setSelected(boolean selected) {
-      for (D d : myData) {
-        d.setSelected(selected);
-      }
-    }
-  }
+
   private class GroupTreeNode<T> extends MPSTreeNode {
-    private final Collection<D> myData;
+
     public GroupTreeNode(@NotNull GroupedTree.GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
-      super(new GroupedTree.GroupData(group, kind, data));
-      GroupedTree.GroupData groupData = getGroupData();
-      setNodeIdentifier(groupData.getText());
-      setText(groupData.getText());
-      Icon icon = groupData.getIcon(false);
-      if (icon != null) {
-        setIcon(icon);
-      }
-      myData = data;
+      // populate tree element with all data necessary for rendering, so that CheckBoxNodeRenderer shall not care to grab a model lock 
+      // CheckBoxNodeRenderer deals with 
+      String text = kind.getText(group);
+      setNodeIdentifier(text);
+      setText(text);
+      // XXX any reason to set it here provided there's renderer that likely does its own coloring? 
+      setColor(UIManager.getColor("Tree.textForeground"));
+      setIcon(kind.getIcon(group));
+
+      // CheckBoxNodeRenderer uses NodeData to represent checked state, therefore we have to attach NodeData to group node to 
+      // represent composite state of its children 
+      setUserObject(new CheckBoxNodeRenderer.NodeData() {
+        public Icon getIcon(boolean expanded) {
+          return GroupTreeNode.this.getIcon(expanded);
+        }
+        public String getText() {
+          return GroupTreeNode.this.getText();
+        }
+        public boolean isSelected() {
+          for (MPSTreeNode c : GroupTreeNode.this) {
+            if (c.getUserObject() instanceof CheckBoxNodeRenderer.NodeData) {
+              if (!(((CheckBoxNodeRenderer.NodeData) c.getUserObject()).isSelected())) {
+                return false;
+              }
+            }
+            // ignore other tree nodes 
+          }
+          return true;
+        }
+        public void setSelected(boolean selected) {
+          for (MPSTreeNode c : GroupTreeNode.this) {
+            if (c.getUserObject() instanceof CheckBoxNodeRenderer.NodeData) {
+              ((CheckBoxNodeRenderer.NodeData) c.getUserObject()).setSelected(selected);
+            }
+          }
+        }
+      });
+
       GroupedTree.GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
       while (subGroupKind != null && !(subGroupKind.isVisible())) {
         subGroupKind = subGroupKind.getSubGroupKind();
       }
       if (subGroupKind == null) {
-        for (D d : myData) {
+        for (D d : data) {
           add(createDataNode(d));
         }
       } else {
-        Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myData);
+        Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(data);
         for (Object subGroup : sorted.keySet()) {
           if (subGroup != null) {
             add(new GroupedTree.GroupTreeNode(subGroupKind, subGroup, sorted.get(subGroup)));
@@ -176,9 +145,6 @@ import javax.swing.UIManager;
           }
         }
       }
-    }
-    private GroupedTree.GroupData getGroupData() {
-      return (GroupedTree.GroupData) getUserObject();
     }
   }
 }

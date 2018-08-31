@@ -6,7 +6,6 @@ import jetbrains.mps.project.Project;
 import java.util.Collection;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -27,8 +26,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
-import java.awt.Color;
-import javax.swing.UIManager;
 
 /*package*/ abstract class AbstractBreakpointsTree extends BreakpointsView {
   protected final Project myProject;
@@ -50,15 +47,19 @@ import javax.swing.UIManager;
     updateBreakpointsData();
     myTree = new GroupedTree<AbstractBreakpointsTree.BreakpointNodeData>() {
 
-
       @Override
       public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
         super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
       }
 
       @Override
-      protected AbstractBreakpointsTree.BreakpointTreeNode createDataNode(AbstractBreakpointsTree.BreakpointNodeData data) {
-        return new AbstractBreakpointsTree.BreakpointTreeNode(data);
+      protected MPSTreeNode createDataNode(AbstractBreakpointsTree.BreakpointNodeData data) {
+        MPSTreeNode rv = new MPSTreeNode(data);
+        String text = data.getText();
+        rv.setNodeIdentifier(text);
+        rv.setText(text);
+        rv.setIcon(data.getIcon(true));
+        return rv;
       }
 
       @Override
@@ -68,10 +69,6 @@ import javax.swing.UIManager;
       @Override
       protected Collection<AbstractBreakpointsTree.BreakpointNodeData> getData() {
         return myData;
-      }
-      @Override
-      protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
-        return null;
       }
     };
     myTree.addTreeSelectionListener(new TreeSelectionListener() {
@@ -98,8 +95,11 @@ import javax.swing.UIManager;
   protected IBreakpoint getSelectedBreakpoint(@Nullable TreePath path) {
     if (path != null) {
       Object lastPathComponent = path.getLastPathComponent();
-      if (lastPathComponent instanceof AbstractBreakpointsTree.BreakpointTreeNode) {
-        return ((AbstractBreakpointsTree.BreakpointNodeData) ((AbstractBreakpointsTree.BreakpointTreeNode) lastPathComponent).getUserObject()).myBreakpoint;
+      if (lastPathComponent instanceof MPSTreeNode) {
+        MPSTreeNode node = (MPSTreeNode) lastPathComponent;
+        if (node.getUserObject() instanceof AbstractBreakpointsTree.BreakpointNodeData) {
+          return ((AbstractBreakpointsTree.BreakpointNodeData) node.getUserObject()).myBreakpoint;
+        }
       }
     }
     return null;
@@ -141,20 +141,12 @@ import javax.swing.UIManager;
   }
   @Override
   public Object getData(@NonNls String dataId) {
-    TreePath path = myTree.getSelectionPath();
-    if (path == null) {
-      return null;
-    }
-    Object node = path.getLastPathComponent();
     if (BreakpointsUtil.MPS_BREAKPOINT.is(dataId)) {
-      if (node instanceof AbstractBreakpointsTree.BreakpointTreeNode) {
-        AbstractBreakpointsTree.BreakpointTreeNode breakpointNode = (AbstractBreakpointsTree.BreakpointTreeNode) node;
-        return ((AbstractBreakpointsTree.BreakpointNodeData) breakpointNode.getUserObject()).myBreakpoint;
-      }
-      return null;
+      return getSelectedBreakpoint();
     }
     return null;
   }
+
   protected class AllGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, Object> {
     protected AllGroupKind() {
     }
@@ -236,17 +228,13 @@ import javax.swing.UIManager;
   }
   protected class BreakpointNodeData implements CheckBoxNodeRenderer.NodeData {
     @NotNull
-    private final IBreakpoint myBreakpoint;
+    /*package*/ final IBreakpoint myBreakpoint;
     public BreakpointNodeData(@NotNull IBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
     }
     @Override
     public Icon getIcon(boolean expanded) {
       return BreakpointIconRenderer.getIconFor(myBreakpoint);
-    }
-    @Override
-    public Color getColor() {
-      return UIManager.getColor("Tree.textForeground");
     }
     @Override
     public String getText() {
@@ -281,18 +269,6 @@ import javax.swing.UIManager;
     @Override
     public int hashCode() {
       return myBreakpoint.hashCode();
-    }
-  }
-  protected class BreakpointTreeNode extends MPSTreeNode {
-    public BreakpointTreeNode(AbstractBreakpointsTree.BreakpointNodeData breakpoint) {
-      super(breakpoint);
-      setNodeIdentifier(breakpoint.getText());
-      setIcon(breakpoint.getIcon(true));
-      setText(breakpoint.getText());
-    }
-    @Override
-    public boolean isLeaf() {
-      return true;
     }
   }
 }

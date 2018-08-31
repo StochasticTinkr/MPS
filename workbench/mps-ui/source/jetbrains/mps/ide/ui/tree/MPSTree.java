@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class MPSTree extends DnDAwareTree implements Disposable {
@@ -654,7 +655,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
-    if (root.getUserObject() == userObject) {
+    if (Objects.equals(root.getUserObject(), userObject)) {
       return root;
     }
     if (!(root.isInitialized() || root.hasInfiniteSubtree())) {

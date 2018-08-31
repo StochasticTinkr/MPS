@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,28 +15,39 @@
  */
 package jetbrains.mps.ide.platform.ui;
 
-import jetbrains.mps.smodel.ModelAccess;
-
-import javax.swing.*;
+import javax.swing.AbstractCellEditor;
+import javax.swing.Icon;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTree;
+import javax.swing.UIManager;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
-import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+// FIXME why this class is in mps-platform, not mps-ui?
 public class CheckBoxNodeRenderer implements TreeCellRenderer {
   private final JPanelWithCheckBox myPanel;
+  private final TreeCellRenderer myDelegate;
 
   public CheckBoxNodeRenderer() {
     this(false);
   }
 
   public CheckBoxNodeRenderer(boolean isCheckboxLeft) {
+    this(isCheckboxLeft, new DefaultTreeCellRenderer());
+  }
+
+  public CheckBoxNodeRenderer(boolean isCheckboxLeft, TreeCellRenderer delegate) {
     myPanel = new JPanelWithCheckBox(isCheckboxLeft);
+    myDelegate = delegate;
   }
 
   public boolean isSelected() {
@@ -45,10 +56,14 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
 
   @Override
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, final boolean expanded, boolean leaf, int row, boolean hasFocus) {
-    String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
     Object userObject = ((DefaultMutableTreeNode) value).getUserObject();
-    myPanel.updateView(tree.isEnabled(), selected, expanded, userObject, text);
-    return myPanel;
+    if (userObject instanceof NodeData) {
+      String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
+      myPanel.updateView(tree.isEnabled(), selected, expanded, (NodeData) userObject, text);
+      return myPanel;
+    } else {
+      return myDelegate.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+    }
   }
 
   private static class JPanelWithCheckBox extends JPanel {
@@ -74,32 +89,22 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       myCheckBox.addItemListener(listener);
     }
 
-    public void updateView(boolean enabled, boolean selected, final boolean expanded, final Object userObject, final String text) {
+    public void updateView(boolean enabled, boolean selected, final boolean expanded, NodeData userObject, final String text) {
 
       myCheckBox.setEnabled(enabled);
 
-      ModelAccess.instance().runReadAction(() -> {
-        if (userObject instanceof NodeData) {
-          NodeData data = (NodeData) userObject;
-          myIconLabel.setIcon(data.getIcon(expanded));
-          Color color = data.getColor();
-          if (color != null) {
-            myCheckBox.setForeground(color);
-            myTextLabel.setForeground(color);
-          }
-          myTextLabel.setText(data.getText());
-          myCheckBox.setSelected(data.isSelected());
-        } else {
-          myIconLabel.setIcon(null);
-          myTextLabel.setText(text);
-          myCheckBox.setSelected(false);
-        }
-      });
+      myIconLabel.setIcon(userObject.getIcon(expanded));
+      myTextLabel.setText(userObject.getText());
+      myCheckBox.setSelected(userObject.isSelected());
 
-      myCheckBox.setForeground(getForeground(selected));
-      myCheckBox.setBackground(getBackground(selected));
-      setForeground(getForeground(selected));
-      setBackground(getBackground(selected));
+      final Color foregroundColor = getForeground(selected);
+      myCheckBox.setForeground(foregroundColor);
+      myTextLabel.setForeground(foregroundColor);
+      setForeground(foregroundColor);
+      final Color backgroundColor = getBackground(selected);
+      myCheckBox.setBackground(backgroundColor);
+      myTextLabel.setBackground(foregroundColor);
+      setBackground(backgroundColor);
 
     }
 
@@ -115,9 +120,6 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
 
   public interface NodeData {
     Icon getIcon(boolean expanded);
-
-    Color getColor();
-
     String getText();
 
     boolean isSelected();
