@@ -27669,22 +27669,8 @@
           </node>
         </node>
         <node concept="398223" id="5sovPIfS$mZ" role="39821P">
-          <node concept="28jJK3" id="35zoHQHRZ3P" role="39821P">
-            <node concept="398BVA" id="5sovPIfS$n2" role="28jJRO">
-              <ref role="398BVh" node="4O0hKJpjIUX" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="5sovPIfS$n3" role="iGT6I">
-                <property role="2Ry0Am" value="plugins" />
-                <node concept="2Ry0Ak" id="5sovPIfS$n4" role="2Ry0An">
-                  <property role="2Ry0Am" value="mpsdevkit" />
-                  <node concept="2Ry0Ak" id="5sovPIfS$n5" role="2Ry0An">
-                    <property role="2Ry0Am" value="META-INF" />
-                    <node concept="2Ry0Ak" id="5sovPIfS$n6" role="2Ry0An">
-                      <property role="2Ry0Am" value="plugin.xml" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
+          <node concept="m_q07" id="3BEvYVs3g7Q" role="39821P">
+            <ref role="m_q06" node="4O0hKJpjIV3" resolve="jetbrains.mps.ide.devkit" />
           </node>
           <node concept="3_J27D" id="5sovPIfS$n7" role="Nbhlr">
             <node concept="3Mxwew" id="5sovPIfS$n8" role="3MwsjC">
@@ -27800,6 +27786,21 @@
     </node>
     <node concept="m$_wf" id="4O0hKJpjIV3" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.ide.devkit" />
+      <node concept="398BVA" id="3BEvYVrXfSA" role="I30fb">
+        <ref role="398BVh" node="4O0hKJpjIUX" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="3BEvYVrXfSB" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+          <node concept="2Ry0Ak" id="3BEvYVrXfSC" role="2Ry0An">
+            <property role="2Ry0Am" value="mpsdevkit" />
+            <node concept="2Ry0Ak" id="3BEvYVrXfSD" role="2Ry0An">
+              <property role="2Ry0Am" value="META-INF" />
+              <node concept="2Ry0Ak" id="3BEvYVrXfSE" role="2Ry0An">
+                <property role="2Ry0Am" value="plugin.xml" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3_J27D" id="4O0hKJpjIV4" role="m$_yQ">
         <node concept="3Mxwew" id="4O0hKJpjIV7" role="3MwsjC">
           <property role="3MwjfP" value="Languages DevKit" />
