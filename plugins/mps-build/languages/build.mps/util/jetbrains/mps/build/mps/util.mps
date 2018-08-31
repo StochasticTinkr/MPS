@@ -21468,6 +21468,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwrzG" role="jymVt" />
     <node concept="3clFbW" id="3pzPpUFO9wL" role="jymVt">
       <node concept="37vLTG" id="3pzPpUFO9wM" role="3clF46">
         <property role="TrG5h" value="initialProject" />
@@ -21528,6 +21529,7 @@
         <node concept="1iwH7U" id="3pzPpUFO9x8" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwpHz" role="jymVt" />
     <node concept="3clFb_" id="3pzPpUFO9x9" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -21541,6 +21543,9 @@
               <node concept="Tc6Ow" id="3pzPpUFO9xe" role="2ShVmc">
                 <node concept="3Tqbb2" id="3pzPpUFO9xf" role="HW$YZ">
                   <ref role="ehGHo" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+                </node>
+                <node concept="37vLTw" id="5I1s5NvwL$1" role="I$8f6">
+                  <ref role="3cqZAo" node="5I1s5NvwCJq" resolve="additionalPlugins" />
                 </node>
               </node>
             </node>
@@ -21731,7 +21736,14 @@
           <ref role="3uigEE" node="1jjYQYSjid_" resolve="MPSModulesClosure" />
         </node>
       </node>
+      <node concept="37vLTG" id="5I1s5NvwCJq" role="3clF46">
+        <property role="TrG5h" value="additionalPlugins" />
+        <node concept="2I9FWS" id="5I1s5NvwDD3" role="1tU5fm">
+          <ref role="2I9WkF" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwqC$" role="jymVt" />
     <node concept="3clFb_" id="3pzPpUFO9yt" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />

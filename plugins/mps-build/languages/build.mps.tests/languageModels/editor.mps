@@ -12,6 +12,7 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ot6o" ref="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" />
+    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -19,6 +20,7 @@
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
@@ -26,6 +28,7 @@
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
+      <concept id="1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" flags="ln" index="pVoyu" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -41,7 +44,9 @@
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
+      <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -87,17 +92,28 @@
     <property role="3GE5qa" value="Project.Testing" />
     <ref role="1XX52x" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
     <node concept="3EZMnI" id="3X9rC2XzJjp" role="2wV5jI">
-      <node concept="3F0ifn" id="3X9rC2XzJjq" role="3EZMnx">
-        <property role="3F0ifm" value="test modules configuration" />
-        <ref role="1k5W1q" to="o2va:16Vg0jOctJb" resolve="projectPartKeyword" />
-      </node>
       <node concept="3F0A7n" id="7rX0uM1se1L" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="ljvvj" id="3ZNuxuVD0J5" role="3F10Kt">
+      </node>
+      <node concept="3F0ifn" id="3X9rC2XzJjq" role="3EZMnx">
+        <property role="3F0ifm" value="test configuration: run tests from modules with additional plugins" />
+        <ref role="1k5W1q" to="o2va:16Vg0jOctJb" resolve="projectPartKeyword" />
+      </node>
+      <node concept="3EZMnI" id="5I1s5NvvnI6" role="3EZMnx">
+        <node concept="3F2HdR" id="5I1s5Nvvy9p" role="3EZMnx">
+          <property role="2czwfO" value="," />
+          <ref role="1NtTu8" to="5tjl:5I1s5NvuWcr" resolve="requiredPlugins" />
+          <node concept="l2Vlx" id="5I1s5Nvvy9r" role="2czzBx" />
+        </node>
+        <node concept="l2Vlx" id="5I1s5NvvrPM" role="2iSdaV" />
+        <node concept="3vyZuw" id="5I1s5Nvw1$R" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3EZMnI" id="3X9rC2XzJjs" role="3EZMnx">
+        <node concept="pVoyu" id="5I1s5NvvkA8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
         <node concept="3F2HdR" id="3X9rC2XzJjt" role="3EZMnx">
           <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" resolve="modules" />
           <node concept="l2Vlx" id="3X9rC2XzJju" role="2czzBx" />
@@ -113,8 +129,10 @@
         </node>
         <node concept="l2Vlx" id="3X9rC2XzJjy" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="3X9rC2XzJjz" role="3EZMnx">
-        <property role="3F0ifm" value="" />
+      <node concept="3F0ifn" id="5I1s5NvvF$Y" role="3EZMnx">
+        <node concept="ljvvj" id="5I1s5NvvF_p" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="l2Vlx" id="3X9rC2XzJj$" role="2iSdaV" />
     </node>
@@ -162,6 +180,22 @@
         <ref role="1k5W1q" to="o2va:6qcrfIJFt0m" resolve="plugin" />
       </node>
       <node concept="l2Vlx" id="5KZfyKsUqLI" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5I1s5NvvaS2">
+    <property role="3GE5qa" value="Project.Testing" />
+    <ref role="1XX52x" to="5tjl:5I1s5NvuWco" resolve="RequiredPlugin" />
+    <node concept="3EZMnI" id="5HVSRHdUrJZ" role="2wV5jI">
+      <node concept="1iCGBv" id="5HVSRHdUrK2" role="3EZMnx">
+        <ref role="1NtTu8" to="5tjl:5I1s5NvuWcp" resolve="plugin" />
+        <node concept="1sVBvm" id="5HVSRHdUrK3" role="1sWHZn">
+          <node concept="3F0A7n" id="5HVSRHdUrK5" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="kdzh:5HVSRHdUrHJ" resolve="id" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="5HVSRHdUrK1" role="2iSdaV" />
     </node>
   </node>
 </model>

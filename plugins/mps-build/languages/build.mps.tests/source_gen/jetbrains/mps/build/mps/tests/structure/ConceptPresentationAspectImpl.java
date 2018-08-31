@@ -14,6 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMpsLayout_TestModuleGroup;
   private ConceptPresentation props_BuildMpsLayout_TestModules;
   private ConceptPresentation props_BuildMpsLayout_TestModules_Content;
+  private ConceptPresentation props_RequiredPlugin;
 
   @Override
   @Nullable
@@ -55,6 +56,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMpsLayout_TestModules_Content = cpb.create();
         }
         return props_BuildMpsLayout_TestModules_Content;
+      case LanguageConceptSwitch.RequiredPlugin:
+        if (props_RequiredPlugin == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdf7bc318L, 0x5b81705cdf7bc319L, "plugin", "", "");
+          props_RequiredPlugin = cpb.create();
+        }
+        return props_RequiredPlugin;
     }
     return null;
   }

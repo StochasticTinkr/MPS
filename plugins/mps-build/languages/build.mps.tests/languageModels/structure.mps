@@ -86,6 +86,13 @@
       <property role="IQ2ns" value="4560297596904469360" />
       <ref role="20lvS9" node="3X9rC2XzJdL" resolve="BuildMpsLayout_TestModules_Content" />
     </node>
+    <node concept="1TJgyj" id="5I1s5NvuWcr" role="1TKVEi">
+      <property role="IQ2ns" value="6593674873635848987" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="requiredPlugins" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5I1s5NvuWco" resolve="RequiredPlugin" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3X9rC2XzJdL">
     <property role="R5$K7" value="true" />
@@ -119,6 +126,19 @@
     <ref role="1TJDcQ" to="3ior:5KZfyKsUo6u" resolve="BuildPlugin" />
     <node concept="PrWs8" id="3umvbTBQBt4" role="PzmwI">
       <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5I1s5NvuWco">
+    <property role="EcuMT" value="6593674873635848984" />
+    <property role="3GE5qa" value="Project.Testing" />
+    <property role="TrG5h" value="RequiredPlugin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5I1s5NvuWcp" role="1TKVEi">
+      <property role="IQ2ns" value="6593674873635848985" />
+      <property role="20lmBu" value="reference" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="plugin" />
+      <ref role="20lvS9" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
     </node>
   </node>
 </model>
