@@ -32,7 +32,6 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ItemListener;
 
-// FIXME why this class is in mps-platform, not mps-ui?
 public class CheckBoxNodeRenderer implements TreeCellRenderer {
   private final JPanelWithCheckBox myPanel;
   private final TreeCellRenderer myDelegate;
