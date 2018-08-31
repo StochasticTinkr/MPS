@@ -535,7 +535,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Model Checker" />
     <property role="9BnSO" value="182.1" />
-    <property role="9BnSK" value="2018.2.2" />
+    <property role="9BnSK" value="2018.2.3" />
   </node>
   <node concept="Zd50a" id="1gEYwydCqV1">
     <property role="TrG5h" value="Default" />
