@@ -13069,12 +13069,17 @@
             <node concept="37vLTw" id="ZyaJRS0CAK" role="37wK5m">
               <ref role="3cqZAo" node="ZyaJRRZYNh" resolve="refactoringSession" />
             </node>
-            <node concept="2OqwBi" id="XAmMejBImc" role="37wK5m">
-              <node concept="37vLTw" id="ZyaJRS0Eiw" role="2Oq$k0">
-                <ref role="3cqZAo" node="ZyaJRRZYN4" resolve="module" />
+            <node concept="2OqwBi" id="23pjS9DSjTS" role="37wK5m">
+              <node concept="2OqwBi" id="23pjS9DShPv" role="2Oq$k0">
+                <node concept="Xjq3P" id="23pjS9DSclR" role="2Oq$k0">
+                  <ref role="1HBi2w" node="4biA4YBp1hH" resolve="MigrationExecutorImpl" />
+                </node>
+                <node concept="2OwXpG" id="23pjS9DSiLP" role="2OqNvi">
+                  <ref role="2Oxat5" node="4biA4YBrvZe" resolve="myMpsProject" />
+                </node>
               </node>
-              <node concept="liA8E" id="XAmMejBIA4" role="2OqNvi">
-                <ref role="37wK5l" to="31cb:~SModuleBase.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              <node concept="liA8E" id="23pjS9DSloi" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
             </node>
             <node concept="2ShNRf" id="XAmMejBNHv" role="37wK5m">
