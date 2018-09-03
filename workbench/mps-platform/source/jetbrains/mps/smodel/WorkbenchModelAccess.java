@@ -47,10 +47,12 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
   private final TryRunPlatformWriteHelper myPlatformWriteHelper;
   private final WorkbenchUndoHandler myUndoHandler;
+  private final CancellableReadsManager myCancellableReads;
 
   public WorkbenchModelAccess(WorkbenchUndoHandler undoHandler) {
     myUndoHandler = undoHandler;
     myPlatformWriteHelper = new TryRunPlatformWriteHelper();
+    myCancellableReads = new CancellableReadsManager();
     Disposer.register(this, myEDTExecutor);
     Disposer.register(this, myPlatformWriteHelper);
   }
@@ -66,6 +68,10 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runReadAction(final Runnable r) {
+    // even if canRead(), register anyway, just in case it can stop sooner in case a 'write' arrives
+    if (handleIfCancellable(r)) {
+      return;
+    }
     if (canRead()) {
       r.run();
       return;
@@ -87,6 +93,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     assertNotWriteFromRead();
+    myCancellableReads.cancel();
     final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(r));
     if (isInEDT()) {
       myPlatformWriteHelper.runWrite(lockRunnable);
@@ -99,9 +106,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   // The easiest way is to have onActionStart (much like onCommandStart) and do it there
   // Smartest way is to drop these caches altogether.
   private Runnable wrapWithModelWriteDispatch(Runnable r) {
-    return () -> {
-      myWriteActionDispatcher.run(r);
-    };
+    return () -> myWriteActionDispatcher.run(r);
   }
 
   @Override
@@ -111,17 +116,39 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runReadInEDT(Runnable r) {
+    if (handleIfCancellable(r)) {
+      return;
+    }
+    myCancellableReads.addIfCanCancel(r);
     myEDTExecutor.scheduleRead(() -> tryRead(r));
+  }
+
+  // return true if runnable doesn't need further processing
+  private boolean handleIfCancellable(Runnable r) {
+    if (r instanceof CancellableReadAction) {
+      if (hasScheduledWrites()) {
+        // cancel right away if there's write in action/scheduled
+        ((CancellableReadAction) r).cancel();
+        return true;
+      } else {
+        myCancellableReads.add((CancellableReadAction) r);
+        return false;
+      }
+    }
+    return false;
   }
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    // XXX tryWrite() doesn't clear repository caches like runWriteAction() does!
-    //     I don't want to fix this as I'm going to get rid of caches anyway
+    myCancellableReads.cancel(); // not sure if shall cancel here or inside scheduled write, i.e. right before tryWrite(),
+    // though it seems that if we do it from the original thread, not EDT, we facilitate use of CancellableReadActions from within
+    // the ED thread. Otherwise, with cancel from withing scheduleWrite(), there'd be no chances for cancellable action started in EDT to
+    // get cancellation request (code in scheduleWrite would get executed *after* the read action completes).
     myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
   /*package*/ void runCommandInEDT_(@NotNull Runnable r, @NotNull MPSProject project) {
+    myCancellableReads.cancel(); // see runWriteInEDT above
     myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, project), project);
   }
 
@@ -224,6 +251,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     assert r != null;
     assert project != null;
 
+    myCancellableReads.cancel();
+
     String name = "MPS Execute Command", groupId = null;
     UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
     if (r instanceof UndoRunnable) {
@@ -242,6 +271,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     if (myCommandLevel > 0) {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
+
+    myCancellableReads.cancel();
 
     final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
     CommandProcessor.getInstance().runUndoTransparentAction(myPlatformWriteHelper.withPlatformWrite(withModelLock));
