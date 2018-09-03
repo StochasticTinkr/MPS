@@ -4,10 +4,10 @@ package jetbrains.mps.vcs.suspicious;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -41,11 +41,9 @@ import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.vcs.MPSVcsManager;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
-  private final VirtualFileManager myVirtualFileManager;
   private PlatformActivityTracker myPlatformWatcher;
   private SuspiciousModelIndex.MyTaskQueue myTaskQueue;
   private ReloadManagerComponent myReloadManager;
@@ -54,7 +52,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager, MPSCoreComponents mpsCore) {
     myProjectManager = manager;
     myReloadManager = reloadManager;
-    myVirtualFileManager = vfManager;
     myPlatformWatcher = new PlatformActivityTracker(manager, vfManager, reloadManager);
     myMPSPlatform = mpsCore.getPlatform();
   }
@@ -73,7 +70,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   @NotNull
   @Override
   public String getComponentName() {
-    return "Suspicious Model Index";
+    return "Model Disk-Memory Conflict Handler";
   }
   @Override
   public void initComponent() {
@@ -177,12 +174,10 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     }, ModalityState.defaultModalityState());
   }
-  public static SuspiciousModelIndex instance() {
-    return ApplicationManager.getApplication().getComponent(SuspiciousModelIndex.class);
-  }
+
   @Nullable
-  private static Project getProjectForFile(VirtualFile f) {
-    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+  private Project getProjectForFile(VirtualFile f) {
+    for (Project project : myProjectManager.getOpenProjects()) {
       if (project.isDisposed()) {
         continue;
       }
@@ -192,12 +187,13 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     return null;
   }
-  private static boolean isInConflict(IFile ifile) {
+
+  private boolean isInConflict(IFile ifile) {
     // use of deprecated method not to get warning for non-project files (see VFU.getProjectVirtualFile impl) 
-    // However, it it possible to get IFile not from project here (e.g. reloaded model from distribution)? 
+    // However, is it possible to get IFile not from a project here (e.g. reloaded model from distribution)? 
     VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
-      for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      for (Project project : myProjectManager.getOpenProjects()) {
         if (MPSVcsManager.getInstance(project).isInConflict(vfile)) {
           return true;
         }
@@ -205,10 +201,11 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     return false;
   }
+
   private class MyTaskQueue extends BaseTaskQueue<Conflictable> {
     @Override
     protected boolean isProcessingAllowed() {
-      return myPlatformWatcher.isProcessingAllowed() && !(ModelAccess.instance().canRead());
+      return myPlatformWatcher.isProcessingAllowed();
     }
     @Override
     protected void processTask(final List<Conflictable> tasks) {
