@@ -123,6 +123,10 @@ public class assignment_to_variable_declaration extends TransformationMenuBase {
           SLinkOperations.setTarget(var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), rValue);
           SelectionUtil.selectCell(_context.getEditorContext(), var, SelectionManager.FIRST_ERROR_CELL);
         }
+        @Override
+        public String getShortDescriptionText(@NotNull String pattern) {
+          return "Local variable declaration";
+        }
       };
     }
   }
