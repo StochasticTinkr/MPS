@@ -1523,6 +1523,7 @@
       <pathelement location="${artifacts.mps}/plugins/migration" />
       <pathelement location="${artifacts.mps}/plugins/modelchecker" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
+      <pathelement location="${artifacts.mps}/plugins/mps-devkit/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-make" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
     </path>
@@ -1550,6 +1551,9 @@
         <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
+        <patternset refid="plugin.deployed.jars" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-devkit/META-INF/plugin.xml/../..">
         <patternset refid="plugin.deployed.jars" />
       </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-make">
