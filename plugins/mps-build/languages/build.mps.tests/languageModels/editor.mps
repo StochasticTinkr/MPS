@@ -16,14 +16,11 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
-      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
-        <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
-      </concept>
+      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
-      <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -44,11 +41,12 @@
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
-      <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
+      <concept id="7667708318090725848" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem" flags="ln" index="1Bsynf" />
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
@@ -96,64 +94,48 @@
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="3X9rC2XzJjq" role="3EZMnx">
-        <property role="3F0ifm" value="test configuration: run tests from modules with additional plugins" />
+        <property role="3F0ifm" value="test configuration" />
         <ref role="1k5W1q" to="o2va:16Vg0jOctJb" resolve="projectPartKeyword" />
       </node>
-      <node concept="3EZMnI" id="5I1s5NvvnI6" role="3EZMnx">
-        <node concept="3F2HdR" id="5I1s5Nvvy9p" role="3EZMnx">
-          <property role="2czwfO" value="," />
-          <ref role="1NtTu8" to="5tjl:5I1s5NvuWcr" resolve="requiredPlugins" />
-          <node concept="l2Vlx" id="5I1s5Nvvy9r" role="2czzBx" />
-        </node>
-        <node concept="l2Vlx" id="5I1s5NvvrPM" role="2iSdaV" />
-        <node concept="3vyZuw" id="5I1s5Nvw1$R" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="3X9rC2XzJjs" role="3EZMnx">
-        <node concept="pVoyu" id="5I1s5NvvkA8" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="3F2HdR" id="3X9rC2XzJjt" role="3EZMnx">
-          <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" resolve="modules" />
-          <node concept="l2Vlx" id="3X9rC2XzJju" role="2czzBx" />
-          <node concept="pj6Ft" id="3X9rC2XzJjv" role="3F10Kt">
+      <node concept="3EZMnI" id="5I1s5NvHjrO" role="3EZMnx">
+        <node concept="l2Vlx" id="5I1s5NvHjrP" role="2iSdaV" />
+        <node concept="3F0ifn" id="5I1s5NvHjrs" role="3EZMnx">
+          <property role="3F0ifm" value="run tests from modules:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+          <node concept="pVoyu" id="5I1s5NvHjrJ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="VPM3Z" id="3X9rC2XzJjw" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="lj46D" id="3X9rC2XzJjx" role="3F10Kt">
+        <node concept="pVoyu" id="5I1s5NvHjsa" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="l2Vlx" id="3X9rC2XzJjy" role="2iSdaV" />
-      </node>
-      <node concept="3F0ifn" id="5I1s5NvvF$Y" role="3EZMnx">
-        <node concept="ljvvj" id="5I1s5NvvF_p" role="3F10Kt">
+        <node concept="lj46D" id="5I1s5NvHjsc" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3EZMnI" id="3X9rC2XzJjs" role="3EZMnx">
+          <node concept="pVoyu" id="5I1s5NvvkA8" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3F2HdR" id="3X9rC2XzJjt" role="3EZMnx">
+            <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" resolve="modules" />
+            <node concept="l2Vlx" id="3X9rC2XzJju" role="2czzBx" />
+            <node concept="pj6Ft" id="3X9rC2XzJjv" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+          </node>
+          <node concept="VPM3Z" id="3X9rC2XzJjw" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="lj46D" id="3X9rC2XzJjx" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="l2Vlx" id="3X9rC2XzJjy" role="2iSdaV" />
+        </node>
+        <node concept="3F1sOY" id="5I1s5NvGTxr" role="3EZMnx">
+          <ref role="1NtTu8" to="5tjl:5I1s5NvGLlK" resolve="options" />
         </node>
       </node>
       <node concept="l2Vlx" id="3X9rC2XzJj$" role="2iSdaV" />
-    </node>
-    <node concept="3EZMnI" id="2_mwjmp45j$" role="6VMZX">
-      <node concept="2iRkQZ" id="2_mwjmp45j_" role="2iSdaV" />
-      <node concept="3EZMnI" id="NvWe6DqhoM" role="3EZMnx">
-        <node concept="VPM3Z" id="NvWe6DqhoN" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="NvWe6DrcJF" role="3EZMnx">
-          <property role="3F0ifm" value="halt on failure" />
-          <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
-        </node>
-        <node concept="3F1sOY" id="6g2MV4s4M$d" role="3EZMnx">
-          <ref role="1NtTu8" to="5tjl:6g2MV4s4KuI" resolve="haltonfailure" />
-        </node>
-        <node concept="l2Vlx" id="NvWe6DqhoP" role="2iSdaV" />
-        <node concept="lj46D" id="NvWe6DqhoQ" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3X9rC2XzJj_">
@@ -196,6 +178,55 @@
         </node>
       </node>
       <node concept="l2Vlx" id="5HVSRHdUrK1" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5I1s5NvGLjU">
+    <property role="3GE5qa" value="Project.Testing" />
+    <ref role="1XX52x" to="5tjl:5I1s5NvGLjw" resolve="BuildMpsLayout_TestModules_Options" />
+    <node concept="3EZMnI" id="5I1s5NvGZWj" role="2wV5jI">
+      <node concept="3F0ifn" id="5I1s5NvGZXf" role="3EZMnx">
+        <property role="3F0ifm" value="options" />
+        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        <node concept="ljvvj" id="5I1s5NvH6uL" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="5I1s5NvGZWk" role="2iSdaV" />
+      <node concept="3EZMnI" id="5I1s5NvGLkp" role="3EZMnx">
+        <node concept="3F0ifn" id="NvWe6DrcJF" role="3EZMnx">
+          <property role="3F0ifm" value="halt on failure" />
+          <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F1sOY" id="6g2MV4s4M$d" role="3EZMnx">
+          <property role="1$x2rV" value="false" />
+          <ref role="1NtTu8" to="5tjl:5I1s5NvGMfd" resolve="haltonfailure" />
+          <node concept="ljvvj" id="5I1s5NvHga5" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5I1s5NvGLkv" role="3EZMnx">
+          <property role="3F0ifm" value="load additional idea plugins:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F2HdR" id="5I1s5NvGLkz" role="3EZMnx">
+          <property role="2czwfO" value="," />
+          <ref role="1NtTu8" to="5tjl:5I1s5NvuWcr" resolve="requiredPlugins" />
+          <node concept="l2Vlx" id="5I1s5NvGLk$" role="2czzBx" />
+          <node concept="ljvvj" id="5I1s5NvGWLc" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="5I1s5NvGZX$" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="5I1s5NvGLkO" role="2iSdaV" />
+        <node concept="1Bsynf" id="5I1s5NvGLl5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="5I1s5NvH6uN" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

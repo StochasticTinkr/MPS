@@ -309,7 +309,7 @@
         <var name="builder" id="4560297596904469394" />
       </scope>
       <unit id="4560297596904469374" at="52,224,56,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$1" />
-      <unit id="6593674873636777695" at="66,254,70,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$2" />
+      <unit id="6593674873636777695" at="66,415,70,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$2" />
       <unit id="6593674873636875347" at="71,274,75,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$3" />
       <unit id="2887318893670203363" at="85,251,89,5" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor$4" />
       <unit id="4560297596904469364" at="38,0,162,0" name="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor" />

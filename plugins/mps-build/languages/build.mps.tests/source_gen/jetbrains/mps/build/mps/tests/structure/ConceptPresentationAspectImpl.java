@@ -14,6 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMpsLayout_TestModuleGroup;
   private ConceptPresentation props_BuildMpsLayout_TestModules;
   private ConceptPresentation props_BuildMpsLayout_TestModules_Content;
+  private ConceptPresentation props_BuildMpsLayout_TestModules_Options;
   private ConceptPresentation props_RequiredPlugin;
 
   @Override
@@ -45,7 +46,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMpsLayout_TestModuleGroup;
       case LanguageConceptSwitch.BuildMpsLayout_TestModules:
         if (props_BuildMpsLayout_TestModules == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL);
+          cpb.deprecateAggregation(0x6402cbb11c1307aeL, "haltonfailure");
           cpb.presentationByName();
           props_BuildMpsLayout_TestModules = cpb.create();
         }
@@ -56,6 +58,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMpsLayout_TestModules_Content = cpb.create();
         }
         return props_BuildMpsLayout_TestModules_Content;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModules_Options:
+        if (props_BuildMpsLayout_TestModules_Options == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildMpsLayout_TestModules_Options");
+          props_BuildMpsLayout_TestModules_Options = cpb.create();
+        }
+        return props_BuildMpsLayout_TestModules_Options;
       case LanguageConceptSwitch.RequiredPlugin:
         if (props_RequiredPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

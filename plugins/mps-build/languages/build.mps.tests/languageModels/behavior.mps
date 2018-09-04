@@ -388,9 +388,14 @@
             </node>
             <node concept="2OqwBi" id="5I1s5NvyBMd" role="33vP2m">
               <node concept="2OqwBi" id="5I1s5Nvyqiq" role="2Oq$k0">
-                <node concept="2OqwBi" id="5I1s5Nvyo7R" role="2Oq$k0">
-                  <node concept="13iPFW" id="5I1s5Nvyo7S" role="2Oq$k0" />
-                  <node concept="3Tsc0h" id="5I1s5Nvyo7T" role="2OqNvi">
+                <node concept="2OqwBi" id="5I1s5NvJq4N" role="2Oq$k0">
+                  <node concept="2OqwBi" id="5I1s5Nvyo7R" role="2Oq$k0">
+                    <node concept="13iPFW" id="5I1s5Nvyo7S" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="5I1s5NvJpCm" role="2OqNvi">
+                      <ref role="3Tt5mk" to="5tjl:5I1s5NvGLlK" resolve="options" />
+                    </node>
+                  </node>
+                  <node concept="3Tsc0h" id="5I1s5NvJqi_" role="2OqNvi">
                     <ref role="3TtcxE" to="5tjl:5I1s5NvuWcr" resolve="requiredPlugins" />
                   </node>
                 </node>
