@@ -293,6 +293,7 @@
       </concept>
       <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
         <property id="6592112598314498927" name="id" index="m$_wk" />
+        <property id="4972001163784560067" name="pluginXmlProvided" index="1NdglO" />
         <child id="7832771629084912518" name="vendor" index="2iVFfd" />
         <child id="6592112598314498931" name="version" index="m$_w8" />
         <child id="6592112598314499050" name="content" index="m$_yh" />
@@ -27771,6 +27772,7 @@
     </node>
     <node concept="m$_wf" id="4O0hKJpjIV3" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.ide.devkit" />
+      <property role="1NdglO" value="false" />
       <node concept="398BVA" id="3BEvYVrXfSA" role="I30fb">
         <ref role="398BVh" node="4O0hKJpjIUX" resolve="mps_home" />
         <node concept="2Ry0Ak" id="3BEvYVrXfSB" role="iGT6I">

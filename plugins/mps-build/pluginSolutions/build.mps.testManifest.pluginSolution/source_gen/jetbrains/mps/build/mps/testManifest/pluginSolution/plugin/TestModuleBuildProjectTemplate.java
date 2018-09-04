@@ -212,6 +212,7 @@ public class TestModuleBuildProjectTemplate {
     SNode quotedNode_42 = null;
     SNode quotedNode_43 = null;
     SNode quotedNode_44 = null;
+    SNode quotedNode_45 = null;
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x4df58c6f18f84a13L, "BuildProject"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_11, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory"), "../../../../");
     SNodeAccessUtil.setProperty(quotedNode_11, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4438b4de59410ebcL, "fileName"), (String) parameter_7);
@@ -270,11 +271,11 @@ public class TestModuleBuildProjectTemplate {
     quotedNode_11.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x5c3f3e2c1ce9ac70L, "plugins"), quotedNode_21);
     quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x4df58c6f18f84a14L, "BuildLayout"), null, null, false);
     quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x668c6cfbafac4c78L, "BuildLayout_Folder"), null, null, false);
-    quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0xbabdfbeee17fe57L, "BuildStringNotEmpty"), null, null, false);
-    quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x440d7ea3b68b7d03L, "BuildTextStringPart"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_43, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), "languages");
-    quotedNode_38.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts"), quotedNode_43);
-    quotedNode_32.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_38);
+    quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0xbabdfbeee17fe57L, "BuildStringNotEmpty"), null, null, false);
+    quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x440d7ea3b68b7d03L, "BuildTextStringPart"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_44, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), "languages");
+    quotedNode_39.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts"), quotedNode_44);
+    quotedNode_32.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_39);
     {
       List<SNode> nodes = (List<SNode>) parameter_5;
       for (SNode child : nodes) {
@@ -283,11 +284,11 @@ public class TestModuleBuildProjectTemplate {
     }
     quotedNode_22.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"), quotedNode_32);
     quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x668c6cfbafac4c78L, "BuildLayout_Folder"), null, null, false);
-    quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0xbabdfbeee17fe57L, "BuildStringNotEmpty"), null, null, false);
-    quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x440d7ea3b68b7d03L, "BuildTextStringPart"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_44, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), "tests");
-    quotedNode_40.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts"), quotedNode_44);
-    quotedNode_33.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_40);
+    quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0xbabdfbeee17fe57L, "BuildStringNotEmpty"), null, null, false);
+    quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x440d7ea3b68b7d03L, "BuildTextStringPart"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_45, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), "tests");
+    quotedNode_41.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts"), quotedNode_45);
+    quotedNode_33.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_41);
     {
       List<SNode> nodes = (List<SNode>) parameter_6;
       for (SNode child : nodes) {
@@ -305,14 +306,16 @@ public class TestModuleBuildProjectTemplate {
     if (quotedNode_34 != null) {
       quotedNode_24.addChild(MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x3f496e80bd8ef370L, "modules"), HUtil.copyIfNecessary(quotedNode_34));
     }
+    quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x3600cb0a44dd4a5bL, 0x996822924406419eL, "jetbrains.mps.build.mps.tests"), 0x5b81705cdfb314e0L, "BuildMpsLayout_TestModules_Options"), null, null, false);
+    quotedNode_24.addChild(MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x5b81705cdfb31570L, "options"), quotedNode_35);
     quotedNode_11.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x31292e1a60db57afL, "aspects"), quotedNode_24);
     quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x4c12642949048fb2L, "BuildSourceProjectRelativePath"), null, null, false);
-    quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x779c6e65c01467f1L, "BuildCompositePath"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_35, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "build");
-    quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x779c6e65c01467f1L, "BuildCompositePath"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_42, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "tests");
-    quotedNode_35.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), quotedNode_42);
-    quotedNode_25.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_35);
+    quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x779c6e65c01467f1L, "BuildCompositePath"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_36, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "build");
+    quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build"), 0x779c6e65c01467f1L, "BuildCompositePath"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_43, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), "tests");
+    quotedNode_36.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), quotedNode_43);
+    quotedNode_25.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_36);
     quotedNode_11.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4291308148e8c6beL, "scriptsDir"), quotedNode_25);
     quotedNode_29.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro"), quotedNode_18);
     quotedNode_30.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, 0x668c6cfbafae122aL, "macro"), quotedNode_17);
