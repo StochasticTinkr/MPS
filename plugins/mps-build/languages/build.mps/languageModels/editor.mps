@@ -181,6 +181,7 @@
         <child id="730181322658904467" name="menuReference" index="1s_PAo" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
+      <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" flags="sg" stub="8104358048506729356" index="1xolST">
         <property id="1075375595204" name="text" index="1xolSY" />
       </concept>
@@ -3392,22 +3393,6 @@
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="3vXGXT8bfc7" role="3EZMnx">
-        <property role="3F0ifm" value="(custom packaging)" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-        <node concept="pkWqt" id="3vXGXT8bsoY" role="pqm2j">
-          <node concept="3clFbS" id="3vXGXT8bsoZ" role="2VODD2">
-            <node concept="3clFbF" id="3vXGXT8bsp0" role="3cqZAp">
-              <node concept="2OqwBi" id="3vXGXT8bspm" role="3clFbG">
-                <node concept="pncrf" id="3vXGXT8bsp1" role="2Oq$k0" />
-                <node concept="3TrcHB" id="3vXGXT8bsps" role="2OqNvi">
-                  <ref role="3TsBF5" to="kdzh:3vXGXT8bfbv" resolve="customPackaging" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="l2Vlx" id="5HVSRHdUrJz" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="3vXGXT8bfc8" role="6VMZX">
@@ -3647,13 +3632,26 @@
             <ref role="1NtTu8" to="kdzh:5HVSRHdUrHJ" resolve="id" />
           </node>
         </node>
-        <node concept="ljvvj" id="5HVSRHdVMJJ" role="3F10Kt">
+      </node>
+      <node concept="3EZMnI" id="36cV00Crkpi" role="3EZMnx">
+        <node concept="3vyZuw" id="36cV00CpqRJ" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRfu4" id="36cV00Crkpj" role="2iSdaV" />
+        <node concept="3F1sOY" id="36cV00CpqRz" role="3EZMnx">
+          <ref role="1NtTu8" to="kdzh:36cV00CpqRw" resolve="packagingType" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+          <node concept="ljvvj" id="5HVSRHdVMJJ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
       </node>
       <node concept="PMmxH" id="6qcrfIJF7Yk" role="3EZMnx">
         <ref role="PMmxG" to="o2va:6qcrfIJF4M6" resolve="BuildLayout_containerElements" />
         <node concept="lj46D" id="6qcrfIJF7Yl" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pVoyu" id="36cV00CsfIk" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -5940,6 +5938,20 @@
         <ref role="1NtTu8" to="kdzh:EpEP7hVcc7" resolve="files" />
       </node>
       <node concept="l2Vlx" id="EpEP7hVccS" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="36cV00CpqQV">
+    <property role="3GE5qa" value="Layout" />
+    <ref role="1XX52x" to="kdzh:36cV00CpqQx" resolve="BuildMpsLayout_AutoPluginLayoutType" />
+    <node concept="PMmxH" id="36cV00CpqQX" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="36cV00CpqRo">
+    <property role="3GE5qa" value="Layout" />
+    <ref role="1XX52x" to="kdzh:36cV00CpqQw" resolve="BuildMpsLayout_ManualPluginLayoutType" />
+    <node concept="PMmxH" id="36cV00CpqRt" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
 </model>

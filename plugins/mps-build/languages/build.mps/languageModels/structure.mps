@@ -42,6 +42,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -981,6 +982,13 @@
     <property role="34LRSv" value="plugin" />
     <property role="EcuMT" value="6592112598314498926" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
+    <node concept="1TJgyj" id="36cV00CpqRw" role="1TKVEi">
+      <property role="IQ2ns" value="3570488090019868128" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="packagingType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
+    </node>
     <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">
       <property role="TrG5h" value="stripImplementation" />
       <property role="IQ2nx" value="3389822811991596365" />
@@ -1109,6 +1117,10 @@
       <property role="TrG5h" value="customPackaging" />
       <property role="IQ2nx" value="4034578608468849375" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="asaX9" id="36cV00Cx3at" role="lGtFl">
+        <property role="YLPcu" value="183" />
+        <property role="YLQ7P" value="please choose the packaging type in the BuildMpsLayout_Plugin instance instead" />
+      </node>
     </node>
     <node concept="1TJgyj" id="5HVSRHdUrJt" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -1141,6 +1153,10 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="4034578608468929327" />
       <ref role="20lvS9" node="3vXGXT8byGB" resolve="BuildMps_IdeaPluginGroupCustomModule" />
+      <node concept="asaX9" id="36cV00Cx3ap" role="lGtFl">
+        <property role="YLPcu" value="183" />
+        <property role="YLQ7P" value="please choose the packaging type in the BuildMpsLayout_Plugin construction instead" />
+      </node>
     </node>
     <node concept="1TJgyj" id="5HVSRHdUL82" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -1175,6 +1191,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4034578608468929320" />
       <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+    </node>
+    <node concept="asaX9" id="36cV00Cx3ar" role="lGtFl">
+      <property role="YLQ7P" value="the packaging is to be defined in the layout section" />
     </node>
   </node>
   <node concept="1TIwiD" id="6MNA4JYmRbj">
@@ -1510,6 +1529,30 @@
       <property role="1uS6qv" value="never" />
       <property role="1uS6qo" value="never" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="36cV00CpqQv">
+    <property role="EcuMT" value="3570488090019868063" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_PluginLayoutTypeBase" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="36cV00CpqQw">
+    <property role="EcuMT" value="3570488090019868064" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_ManualPluginLayoutType" />
+    <property role="34LRSv" value="manual packaging" />
+    <property role="R4oN_" value="packaging of the plugin is to be provided by the user" />
+    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
+  </node>
+  <node concept="1TIwiD" id="36cV00CpqQx">
+    <property role="EcuMT" value="3570488090019868065" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_AutoPluginLayoutType" />
+    <property role="34LRSv" value="auto packaging" />
+    <property role="R4oN_" value="all modules are placed into the folder 'languages', which is created in the root of the plugin" />
+    <ref role="1TJDcQ" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
   </node>
 </model>
 

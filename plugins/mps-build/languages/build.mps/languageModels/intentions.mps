@@ -270,7 +270,7 @@
       <node concept="3clFbS" id="3vXGXT8byI3" role="2VODD2">
         <node concept="3clFbF" id="3vXGXT8byI6" role="3cqZAp">
           <node concept="Xl_RD" id="3vXGXT8byI7" role="3clFbG">
-            <property role="Xl_RC" value="Customize Packaging for modules" />
+            <property role="Xl_RC" value="Customize Packaging for modules (deprecated, use the packaging type in the 'plugin' construction instead)" />
           </node>
         </node>
       </node>

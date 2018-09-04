@@ -50,7 +50,7 @@ public final class AddCustomPackaging_Intention extends AbstractIntentionDescrip
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Customize Packaging for modules";
+      return "Customize Packaging for modules (deprecated, use the packaging type in the 'plugin' construction instead)";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
