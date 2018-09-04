@@ -16397,6 +16397,7 @@
     </node>
     <node concept="m$_wf" id="4k71ibbLe59" role="3989C9">
       <property role="m$_wk" value="com.intellij.modules.mps" />
+      <property role="1NdglO" value="true" />
       <node concept="m$_yC" id="4k71ibbLe5s" role="m$_yJ">
         <ref role="m$_y1" node="4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
@@ -17754,6 +17755,9 @@
             </node>
           </node>
           <node concept="398223" id="WgHS__B4mO" role="39821P">
+            <node concept="m_q07" id="36cV00Cd0$0" role="39821P">
+              <ref role="m_q06" node="4k71ibbLe59" resolve="com.intellij.modules.mps" />
+            </node>
             <node concept="28jJK3" id="35zoHQHRCKd" role="39821P">
               <node concept="398BVA" id="WgHS__B4mT" role="28jJRO">
                 <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
