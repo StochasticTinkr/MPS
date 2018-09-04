@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -13,53 +14,52 @@
   </root>
   <root nodeRef="r:814dd373-1dd8-47c3-8bf7-f61eb041d515(jetbrains.mps.build.mps.tests.migration)/6593674873641213864">
     <file name="TestModulesOptionsMigration.java">
-      <node id="6593674873641213864" at="19,30,20,41" concept="5" />
-      <node id="6593674873641213864" at="23,33,24,16" concept="5" />
-      <node id="6593674873641213864" at="26,41,27,17" concept="0" />
-      <node id="6593674873641213864" at="27,17,28,16" concept="5" />
-      <node id="6593674873641256275" at="32,70,33,30" concept="4" />
-      <node id="6593674873641511101" at="35,197,36,391" concept="0" />
-      <node id="6593674873641666228" at="36,391,37,532" concept="0" />
-      <node id="6593674873641213864" at="43,51,44,150" concept="5" />
-      <node id="6593674873641213864" at="19,0,22,0" concept="3" trace="getCaption#()Ljava/lang/String;" />
-      <node id="6593674873641213864" at="43,0,46,0" concept="3" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
-      <node id="6593674873641213864" at="22,0,26,0" concept="3" trace="isRerunnable#()Z" />
-      <node id="6593674873641213864" at="26,0,30,0" concept="3" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6593674873641330019" at="34,300,38,11" concept="2" />
-      <node id="6593674873641326324" at="33,30,39,9" concept="1" />
-      <node id="6593674873641254865" at="31,63,40,7" concept="1" />
-      <node id="6593674873641219630" at="30,42,41,5" concept="1" />
-      <node id="6593674873641213864" at="30,0,43,0" concept="3" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <scope id="6593674873641213864" at="19,30,20,41" />
-      <scope id="6593674873641213864" at="23,33,24,16" />
-      <scope id="6593674873641213864" at="43,51,44,150" />
-      <scope id="6593674873641213864" at="26,41,28,16" />
-      <scope id="6593674873641330021" at="35,197,37,532" />
-      <scope id="6593674873641213864" at="19,0,22,0" />
-      <scope id="6593674873641213864" at="43,0,46,0" />
-      <scope id="6593674873641213864" at="22,0,26,0" />
-      <scope id="6593674873641213864" at="26,0,30,0">
+      <node id="6593674873641213864" at="18,30,19,107" concept="6" />
+      <node id="6593674873641213864" at="22,33,23,16" concept="6" />
+      <node id="6593674873641213864" at="25,41,26,17" concept="1" />
+      <node id="6593674873641213864" at="26,17,27,16" concept="6" />
+      <node id="3570488090022677862" at="30,5,31,59" concept="5" />
+      <node id="3570488090022677862" at="33,52,34,23" concept="6" />
+      <node id="6593674873641511101" at="38,195,39,389" concept="1" />
+      <node id="6593674873641666228" at="39,389,40,530" concept="1" />
+      <node id="6593674873641213864" at="45,51,46,150" concept="6" />
+      <node id="6593674873641213864" at="18,0,21,0" concept="4" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3570488090022677862" at="33,0,36,0" concept="4" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="6593674873641213864" at="45,0,48,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="6593674873641213864" at="21,0,25,0" concept="4" trace="isRerunnable#()Z" />
+      <node id="6593674873641213864" at="25,0,29,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6593674873641330019" at="37,301,41,9" concept="3" />
+      <node id="3570488090022677862" at="31,59,36,8" concept="5" />
+      <node id="6593674873641326324" at="36,8,42,7" concept="2" />
+      <node id="3570488090022677862" at="29,42,43,5" concept="0" />
+      <node id="6593674873641213864" at="29,0,45,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="6593674873641213864" at="18,30,19,107" />
+      <scope id="6593674873641213864" at="22,33,23,16" />
+      <scope id="3570488090022677862" at="33,52,34,23" />
+      <scope id="6593674873641213864" at="45,51,46,150" />
+      <scope id="6593674873641213864" at="25,41,27,16" />
+      <scope id="6593674873641330021" at="38,195,40,530" />
+      <scope id="6593674873641213864" at="18,0,21,0" />
+      <scope id="3570488090022677862" at="33,0,36,0" />
+      <scope id="6593674873641213864" at="45,0,48,0" />
+      <scope id="6593674873641213864" at="21,0,25,0" />
+      <scope id="6593674873641213864" at="25,0,29,0">
         <var name="m" id="6593674873641213864" />
       </scope>
-      <scope id="6593674873641326330" at="34,300,38,11" />
-      <scope id="6593674873641326324" at="33,30,39,9">
+      <scope id="6593674873641326330" at="37,301,41,9" />
+      <scope id="6593674873641326324" at="36,8,42,7">
         <var name="testModules" id="6593674873641326326" />
       </scope>
-      <scope id="6593674873641254868" at="32,70,39,9">
-        <var name="rootNode" id="6593674873641256278" />
+      <scope id="3570488090022677862" at="30,5,42,7">
+        <var name="context" id="3570488090022677862" />
+        <var name="scope" id="3570488090022677862" />
       </scope>
-      <scope id="6593674873641219633" at="31,63,40,7" />
-      <scope id="6593674873641254865" at="31,63,40,7">
-        <var name="root" id="6593674873641254866" />
-      </scope>
-      <scope id="6593674873641213864" at="30,42,41,5" />
-      <scope id="6593674873641219630" at="30,42,41,5">
-        <var name="model" id="6593674873641219631" />
-      </scope>
-      <scope id="6593674873641213864" at="30,0,43,0">
+      <scope id="6593674873641213864" at="29,42,43,5" />
+      <scope id="6593674873641213864" at="29,0,45,0">
         <var name="m" id="6593674873641213864" />
       </scope>
-      <unit id="6593674873641213864" at="18,0,48,0" name="jetbrains.mps.build.mps.tests.migration.TestModulesOptionsMigration" />
+      <unit id="3570488090022677862" at="32,42,36,7" name="jetbrains.mps.build.mps.tests.migration.TestModulesOptionsMigration$1" />
+      <unit id="6593674873641213864" at="17,0,50,0" name="jetbrains.mps.build.mps.tests.migration.TestModulesOptionsMigration" />
     </file>
   </root>
 </debug-info>
