@@ -33,6 +33,14 @@ import java.util.concurrent.ConcurrentLinkedQueue;
     }
   }
 
+  // though we can rely that subsequent write would clean all outdated reads from myQueue (see #cancel()), it doesn't hurt to
+  // be explicit when caller knows Runnable is over, to avoid growing of the queue in case of repeated reads with no writes
+  public void removeIfCanCancel(Runnable readAction) {
+    if (readAction instanceof CancellableReadAction) {
+      myQueue.remove(readAction);
+    }
+  }
+
   public void add(CancellableReadAction readAction) {
     myQueue.add(readAction);
   }

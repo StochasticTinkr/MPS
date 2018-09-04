@@ -171,6 +171,8 @@ public class HighlighterUpdateSession {
           } catch (InterruptedException ignored) {
           }
         }
+        // Important: for CancellableReadAction to work (i.e. to be truly 'cancellable', we have to start it from a non-EDT thread). As commands and most of
+        // write actions are executed in EDT, a highlighter read started from EDT has no chance to receive cancel() request.
         final HighlighterReadAction ra = new HighlighterReadAction(checker, editor, wasCheckedOnce, applyQuickFixes);
         // it's not clear whether to use SRepository associated with the editor or the project one. Left project as it was the one in runLoPrioRead()
         projectModelAccess.runReadAction(ra);

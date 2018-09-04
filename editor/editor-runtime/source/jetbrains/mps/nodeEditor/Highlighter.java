@@ -64,18 +64,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
 
-  private static final int DEFAULT_GRACE_PERIOD = 150;
-  public static final int DEFAULT_DELAY_MULTIPLIER = 1;
-
   private volatile boolean myPaused;
   private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
-  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
+  private final com.intellij.openapi.command.CommandListener myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
 
   private ClassLoaderManager myClassLoaderManager;
   private ScheduledExecutorService myBackgroundExecutor;
@@ -182,6 +178,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private Future<?> addPendingAction(Runnable action) {
+    myCommandWatcher.resetGracePeriod(); // grace period may grow large with multiple extendGracePeriod() calls, wake the thread up
     return myBackgroundExecutor.submit(action);
   }
 
@@ -278,6 +275,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
       return;
     }
+    // XXX why not app pool threads (e.g. with IDEA's JobScheduler)?
     myBackgroundExecutor = Executors.newSingleThreadScheduledExecutor(runnable -> new Thread(runnable, "Highlighter"));
     myScheduleHighlighterUpdate = new ScheduleHighlighterUpdate(EdtExecutorService.getScheduledExecutorInstance(), DumbService.getInstance(myProject));
     if (!RuntimeFlags.isTestMode()) {
@@ -304,7 +302,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
       // explicit update action (available in powerSafeMode only)
       for (EditorCheckerWrapper checker : myCheckers) {
-        if (checker.isEssential() || !essentialOnly) {
+        if (!essentialOnly || checker.isEssential()) {
           checkers.add(checker);
         }
       }
@@ -386,6 +384,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return myPaused || isStopping();
   }
 
+  // XXX why not ModelAccess's WriteActionListener and mps.CommandListener?
   private class PauseDuringWriteAction extends ApplicationAdapter {
     @Override
     public void beforeWriteActionStart(@NotNull Object action) {
@@ -398,7 +397,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  private class PauseDuringCommandOrUndoTransparentAction extends com.intellij.openapi.command.CommandAdapter {
+  private class PauseDuringCommandOrUndoTransparentAction implements com.intellij.openapi.command.CommandListener {
     private int myLevel = 0;
 
     @Override
@@ -438,6 +437,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   /**
    * Runs in EDT
+   * FIXME In fact, there's no true need to perform isGoodTimeToUpdate from an EDT thread.
+   * If we would do it from another thread, we can avoid 'heartbeat' check and to fire off
+   * EDT read that accesses active editors on regular Java monitor wake up (or any other thread
+   * synch mechanism). That would simplify grace period management a lot (no need to extend)
    */
   private class ScheduleHighlighterUpdate implements Runnable {
     private final ScheduledExecutorService myEdtExecutor;
@@ -459,6 +462,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
       List<EditorComponent> activeEditors = myEditorList.getActiveEditors(); // Must be called in EDT
 
+      // don't use addPendingAction() as it resets grace period
       myBackgroundExecutor.submit(() -> update(activeEditors));
     }
 
@@ -468,8 +472,17 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
     private void update(List<EditorComponent> activeEditors) {
       try {
-        createUpdateSession(activeEditors, shouldOnlyUpdateEssentialCheckers()).update();
+        final boolean updateAllCheckers = myCommandWatcher.getAndClearHasChangesFlag();
+        // there had been changes, ensure we check with all possible checkers and do it asap.
+        if (updateAllCheckers) {
+          // I reset grace period here, prior to update to ensure we fire check again soon in case something goes wrong
+          myCommandWatcher.resetGracePeriod();
+        }
+        createUpdateSession(activeEditors, !updateAllCheckers).update();
+        // XXX in fact, would be better to check if update() had succeeded and only then extend grace period.
+        myCommandWatcher.extendGracePeriod();
       } catch (IndexNotReadyException ex) {
+        myCommandWatcher.resetGracePeriod();
         myEditorTracker.markEverythingUnchecked();
       } finally {
         scheduleNext();
@@ -477,70 +490,103 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
 
     private void scheduleNext() {
-      myEdtExecutor.schedule(this, Math.max(myCommandWatcher.timeToExpiration(), DEFAULT_GRACE_PERIOD), TimeUnit.MILLISECONDS);
+      myEdtExecutor.schedule(this, myCommandWatcher.timeToCheck4ExpiredGracePeriod(), TimeUnit.MILLISECONDS);
     }
 
-    private boolean shouldOnlyUpdateEssentialCheckers() {
-      boolean essentialOnly;
-      if (myCommandWatcher.isLargerGracePeriodExpired()) {
-        myCommandWatcher.resetGracePeriod();
-        essentialOnly = false;
-      } else {
-        essentialOnly = true;
-      }
-      return essentialOnly;
-    }
   }
 
   /**
+   * The idea is to delay highlighter when user actively modifies a model.
+   * When a command comes, we enlarge grace period till the next highlighter start ({@link #timeToCheck4ExpiredGracePeriod()}.
+   * Otherwise, when there are no commands, there is highlighter 'heartbeat' that asks {@link EditorChecker#needsUpdate(EditorComponent)}.
+   * Unfortunately, there are few EditorChecker implementations, that always tell {@code true} and perform internal result caching; therefore
+   * one can observe constant activity of highlighter thread even when there's no user activity.
+   *
    * Thread safe.
    */
   private static class CommandWatcher implements CommandListener {
-    private AtomicLong myLastCommandStarted = new AtomicLong(System.currentTimeMillis());
-    private AtomicLong myLastCommandFinished = new AtomicLong(System.currentTimeMillis());
-    private AtomicLong myGracePeriod = new AtomicLong(DEFAULT_GRACE_PERIOD);
-    private AtomicInteger myCurrentMultiplier = new AtomicInteger(4);
+    // base time unit for checks, don't run more often than once in that period
+    private static final int DEFAULT_GRACE_PERIOD_MS = 150;
+    // this is how long one could look at the editor and don't perceive highlighter hang
+    private static final int MAX_TOLERABLE_DELAY_MS = DEFAULT_GRACE_PERIOD_MS * 7;
+    // frequency to check grace period expiration.
+    // When a command comes during long grace period, we don't want to wait for the period to end normally,
+    // but there's no mechanism to notify ScheduleHighlighterUpdate, therefore we ask it to get back to us and check often enough.
+    private static final int EXPIRATION_HEARTBEAT_MS = DEFAULT_GRACE_PERIOD_MS * 2;
+
+    // the moment in time we track grace period from
+    private final AtomicLong myGracePeriodResetTime = new AtomicLong();
+    // period of time starting from myGracePeriodResetTime we'd like to perform NO highlighting, increases if a user doesn't modify models.
+    private final AtomicLong myGracePeriod = new AtomicLong();
+    private volatile boolean myHasChanges;
+
+    CommandWatcher() {
+      myHasChanges = true;
+      resetGracePeriod();
+    }
 
     boolean isGracePeriodExpired() {
       final long time = System.currentTimeMillis();
-      long delta = time - myLastCommandFinished.get();
+      long delta = time - myGracePeriodResetTime.get();
       return delta >= myGracePeriod.get();
     }
 
-    boolean isLargerGracePeriodExpired() {
-      final long time = System.currentTimeMillis();
-      long delta = time - myLastCommandFinished.get();
-      return delta - 2 * DEFAULT_GRACE_PERIOD >= myGracePeriod.get();
+    boolean getAndClearHasChangesFlag() {
+      final boolean rv = myHasChanges;
+      myHasChanges = false;
+      return rv;
+    }
+
+    // tell there's no need to run highlighter any time soon
+    void extendGracePeriod() {
+      // XXX perhaps, shall use geometric progression (although capped)
+      myGracePeriod.getAndAdd(MAX_TOLERABLE_DELAY_MS);
+      myGracePeriodResetTime.set(System.currentTimeMillis());
     }
 
     void resetGracePeriod() {
-      myGracePeriod.set(DEFAULT_GRACE_PERIOD);
-      myCurrentMultiplier.set(DEFAULT_DELAY_MULTIPLIER);
+      myGracePeriod.set(DEFAULT_GRACE_PERIOD_MS);
+      myGracePeriodResetTime.set(System.currentTimeMillis());
     }
 
-    long timeToExpiration() {
+    long timeToCheck4ExpiredGracePeriod() {
       final long time = System.currentTimeMillis();
-      final long delta = time - myLastCommandFinished.get();
+      final long delta = time - myGracePeriodResetTime.get();
+      assert delta >= 0;
       final long left = myGracePeriod.get() - delta;
-      return Math.max(left, 0L);
+      // max(left,DEFAULT_GRACE_PERIOD_MS) ensures we don't scheduleNext one by one with 0 delay just because there's e.g. make session
+      // and isGoodTimeToUpdate() == false.
+      // EXPIRATION_HEARTBEAT_MS helps to react promptly to grace period change due to commands, i.e.
+      // we don't want to wait for a whole extended grace period once there's a change in a model.
+      // Clients shall check #isGracePeriodExpired() once told delay is over to make sure the period is in fact over
+      return Math.min(Math.max(left, DEFAULT_GRACE_PERIOD_MS), EXPIRATION_HEARTBEAT_MS);
     }
 
     @Override
     public void commandStarted() {
       final long time = System.currentTimeMillis();
-      myLastCommandStarted.set(time);
-      final long delta = time - myLastCommandFinished.get();
-      if (delta < myGracePeriod.get()) {
-        final int mult = myCurrentMultiplier.get();
-        myGracePeriod.getAndAdd(delta * mult);
-        myCurrentMultiplier.set(Math.max(mult - 1, 0));
+      long delta = time - myGracePeriodResetTime.get();
+      // there are 2 scenarios:
+      //   active modification, time between old and new command is small here, we need to ensure grace period is not shorter not to intervene with editing.
+      //   long pause between commands (user inactivity), time period between old previous and actual command is huge
+      //
+      if (delta > MAX_TOLERABLE_DELAY_MS) {
+        // if there's long delay from last reset, check soon
+        delta = DEFAULT_GRACE_PERIOD_MS;
       }
+      // extend grace period with to reflect frequency of events, so that we don't report isGracePeriodExpired right away
+      // twice the delta as one delta value amounts to time already passed to command start.
+      myGracePeriod.getAndSet(Math.max(delta * 2, DEFAULT_GRACE_PERIOD_MS));
+      // guess, the idea of this piece of code was to avoid highlighter to start for at least amount of time close to pause between
+      // two commands, so that if a user types (issues commands) with more or less constant speed, highlighter doesn't jump in
     }
 
     @Override
     public void commandFinished() {
+      myHasChanges = true;
       final long time = System.currentTimeMillis();
-      myLastCommandFinished.set(time);
+      myGracePeriodResetTime.set(time);
+      // we keep whatever value we have accumulated so far in myGracePeriod, which presumably accounts for possible subsequent command
     }
   }
 }

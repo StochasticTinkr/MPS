@@ -74,6 +74,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     }
     if (canRead()) {
       r.run();
+      myCancellableReads.removeIfCanCancel(r);
       return;
     }
     ApplicationManager.getApplication().runReadAction(() -> {
@@ -84,6 +85,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         getReadLock().unlock();
       }
     });
+    myCancellableReads.removeIfCanCancel(r);
   }
 
   @Override
@@ -120,7 +122,13 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     myCancellableReads.addIfCanCancel(r);
-    myEDTExecutor.scheduleRead(() -> tryRead(r));
+    myEDTExecutor.scheduleRead(() -> {
+      boolean succeed;
+      if (succeed = tryRead(r)) {
+        myCancellableReads.removeIfCanCancel(r);
+      }
+      return succeed;
+    });
   }
 
   // return true if runnable doesn't need further processing
