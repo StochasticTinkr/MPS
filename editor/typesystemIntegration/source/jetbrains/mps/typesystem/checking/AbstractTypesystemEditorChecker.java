@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -45,7 +44,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -72,10 +70,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   @Override
   public boolean needsUpdate(EditorComponent editorComponent) {
-    // TODO: instead of checking that the editor is instance of InspectorEditorComponent here, we should modify API & pass some context object
-    // TODO: instead of editorComponent here. We should understand that the checker was executed on top of the inspector from the context
-    // TODO: and access different information like: mainEditorMessagesChanged / wereInspectorMessagesCreated here
-    return myHasEvents || editorComponent instanceof InspectorEditorComponent;
+    return myHasEvents;
   }
 
   @Override

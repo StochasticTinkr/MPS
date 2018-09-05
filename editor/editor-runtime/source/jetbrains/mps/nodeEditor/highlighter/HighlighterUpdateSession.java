@@ -115,7 +115,16 @@ public class HighlighterUpdateSession {
     boolean recreateInspectorMessages =
         myHighlighter.getEditorTracker().isInspector(component) && (mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated());
     editorTracker.markCheckedOnce(component);
-    if (!rootWasCheckedOnce) {
+    // Messages are associated with an editor component. Unlike regular editor, the one of inspector is disposed/re-created for each new selection
+    // therefore we have to re-assign messages for inspector, and that's what recreateInspectorMessages flag indicates.
+    // There's MPS-28277 that has been fixed (e189953f) with checkers telling needsUpdate() true for inspector's EC. However, this leads to constant re-check
+    // even if nothing changes in the model. The fix could be improved (as its comments suggest) by passing context to needsUpdate() that would tell checker
+    // if we truly need to re-check or just care to re-create messages. However, I don't want checker to be aware of inspector and its lifecycle implementation detail
+    // (i.e. inspector is disposed on re-selection), nor to care if checker implementor did respect this case. Therefore, we now force all checkers in case
+    // inspector messages are needed. Indeed rootWasCheckedOnce used to exclude most of the checkers from working with inspector component, now I'm eager to see
+    // if their involvement could cause any issue. Extra time to perform a check has been  addressed with cancellable read actions, so that
+    // model commands could start promptly.
+    if (!rootWasCheckedOnce || recreateInspectorMessages) {
       checkersToRecheck.addAll(myCheckers);
     } else {
       repository.getModelAccess().runReadAction(new CancellableReadAction() {
@@ -126,8 +135,6 @@ public class HighlighterUpdateSession {
           }
 
           for (EditorCheckerWrapper checker : myCheckers) {
-            // TODO: pass some context to checker.needsUpdate() method containing recreateInspectorMessages flag.
-            // TODO: to allow checkers to show up in inspector editor properly
             if (checker.needsUpdate(component)) {
               checkersToRecheck.add(checker);
               if (isCancelRequested()) {
