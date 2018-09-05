@@ -123,7 +123,6 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.CancellableReadAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -1401,20 +1400,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void assertModelNotDisposed() {
-    boolean old = ModelAccess.instance().setReadEnabledFlag(true);
-    try {
-      assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-      if (myNode == null) {
-        return;
-      }
-      SModel model = myNode.getModel();
-      if (model == null) {
-        return;
-      }
-      assert model.getRepository() != null : getNodeDisposedMessage(model);
-    } finally {
-      ModelAccess.instance().setReadEnabledFlag(old);
+    // if by any chance you need model access here, use myRepository
+    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+    if (myNode == null) {
+      return;
     }
+    SModel model = myNode.getModel();
+    if (model == null) {
+      return;
+    }
+    assert model.getRepository() != null : getNodeDisposedMessage(model);
   }
 
   private String getNodeDisposedMessage(SModel model) {
