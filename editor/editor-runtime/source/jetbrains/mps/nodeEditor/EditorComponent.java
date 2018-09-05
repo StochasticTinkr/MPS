@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,8 +75,8 @@ import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
 import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooserHandler;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
@@ -117,12 +117,12 @@ import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.CancellableReadAction;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
@@ -133,6 +133,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -832,36 +833,52 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public String getMPSTooltipText(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(() -> {
-      if (isDisposed()) {
-        return null;
-      }
+    final Reference<String> rv = new Reference<>(null);
+    getModelAccess().runReadAction(new CancellableReadAction() {
+      @Override
+      protected void execute() {
+        if (isDisposed()) {
+          return;
+        }
 
-      jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
-      if (cell == null) {
-        return null;
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+        if (cell == null) {
+          return;
+        }
+        if (isCancelRequested()) {
+          confirmCancel();
+          return;
+        }
+        rv.set(getMessagesTextFor(cell));
       }
-      return getMessagesTextFor(cell);
     });
+    return rv.get();
   }
 
   @Override
   public Point getToolTipLocation(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(() -> {
-      if (isDisposed()) {
-        return null;
-      }
+    final Reference<Point> rv = new Reference<>(null);
+    getModelAccess().runReadAction(new CancellableReadAction() {
+      @Override
+      protected void execute() {
+        if (isDisposed()) {
+          return;
+        }
 
-      jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
-      if (cell == null) {
-        return null;
-      }
-      if (getMessagesTextFor(cell) != null) {
-        return new Point(event.getX(), event.getY());
-      } else {
-        return null;
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+        if (cell == null) {
+          return;
+        }
+        if (isCancelRequested()) {
+          confirmCancel();
+          return;
+        }
+        if (getMessagesTextFor(cell) != null) {
+          rv.set(new Point(event.getX(), event.getY()));
+        }
       }
     });
+    return rv.get();
   }
 
   public void updateStatusBarMessage() {
