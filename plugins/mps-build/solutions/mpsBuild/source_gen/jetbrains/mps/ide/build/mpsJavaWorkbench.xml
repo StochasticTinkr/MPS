@@ -73,6 +73,7 @@
       <zipfileset dir="${mps_home}/plugins/mps-java-workbench/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-java-workbench-workbench-models" prefix="modules/jetbrains.mps.ide.java/models" />
     </jar>
+    <mkdir dir="${build.layout}/mps-java-workbench/languages" />
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   

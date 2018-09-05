@@ -53,8 +53,6 @@
     <copy todir="${build.layout}/http-support/META-INF">
       <fileset file="${plugin_home}/META-INF/plugin.xml" />
     </copy>
-    <mkdir dir="${build.layout}/http-support/languages" />
-    <mkdir dir="${build.layout}/http-support/languages/mps-http-support" />
     <mkdir dir="${build.layout}/http-support/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/models">
       <fileset dir="${plugin_home}/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />

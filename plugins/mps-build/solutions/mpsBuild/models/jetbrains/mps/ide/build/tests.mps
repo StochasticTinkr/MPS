@@ -4,7 +4,7 @@
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="6" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -131,6 +131,7 @@
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+        <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
       <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
         <property id="4034578608468849375" name="customPackaging" index="1ZOk41" />
@@ -139,6 +140,7 @@
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="3570488090019868064" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ManualPluginLayoutType" flags="ng" index="pUk6w" />
       <concept id="7862711839422606209" name="jetbrains.mps.build.mps.structure.BuildMps_GeneratorRef" flags="ng" index="t5LP3">
         <reference id="7862711839422606210" name="generator" index="t5LP0" />
       </concept>
@@ -4686,6 +4688,35 @@
               </node>
             </node>
           </node>
+          <node concept="pUk6w" id="5peYeZGo8W5" role="pUk7w" />
+          <node concept="398223" id="5peYeZGo8W6" role="39821P">
+            <node concept="3_J27D" id="5peYeZGo8W7" role="Nbhlr">
+              <node concept="3Mxwew" id="5peYeZGo8W8" role="3MwsjC">
+                <property role="3MwjfP" value="languages" />
+              </node>
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8W9" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6SkhI" resolve="BHL1" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8Wa" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6SkhV" resolve="BHL2" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8Wb" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6Ski8" resolve="BHL3" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8Wc" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6Skil" resolve="BHL4" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8Wd" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6Ski$" resolve="BHL5" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8We" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6SkiJ" resolve="BHL6" />
+            </node>
+            <node concept="L2wRC" id="5peYeZGo8Wf" role="39821P">
+              <ref role="L2wRA" node="6sT62Z6SkiW" resolve="BHL7" />
+            </node>
+          </node>
         </node>
         <node concept="398223" id="6sT62Z6Skhx" role="39821P">
           <node concept="3_J27D" id="6sT62Z6Skhy" role="Nbhlr">
@@ -5496,24 +5527,31 @@
         <ref role="m$_yA" node="6sT62Z6Skja" resolve="UtilSolution" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skko" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6SkhI" resolve="BHL1" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skkp" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6SkhV" resolve="BHL2" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skkq" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6Ski8" resolve="BHL3" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skkr" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6Skil" resolve="BHL4" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skks" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6Ski$" resolve="BHL5" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skkt" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6SkiJ" resolve="BHL6" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skku" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="6sT62Z6SkiW" resolve="BHL7" />
       </node>
       <node concept="3_J27D" id="6sT62Z6Skkv" role="m_cZH">

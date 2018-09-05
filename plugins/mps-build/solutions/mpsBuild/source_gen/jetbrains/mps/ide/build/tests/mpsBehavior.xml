@@ -63,6 +63,25 @@
         </extensions>
       </idea-plugin>
     </echoxml>
+    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-UtilSolution-models">
+      <fileset dir="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/lib/UtilSolution.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/UtilSolution" />
+      <zipfileset file="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" prefix="modules/UtilSolution" />
+      <zipfileset dir="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution" includes="icons/**, resources/**" prefix="modules/UtilSolution" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-UtilSolution-models" prefix="modules/UtilSolution/models" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-TestBehaviorReflective-models">
+      <fileset dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/lib/TestBehaviorReflective.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/TestBehaviorReflective" />
+      <zipfileset file="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/TestBehaviorReflective.msd" prefix="modules/TestBehaviorReflective" />
+      <zipfileset dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective" includes="icons/**, resources/**" prefix="modules/TestBehaviorReflective" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-TestBehaviorReflective-models" prefix="modules/TestBehaviorReflective/models" />
+    </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL1.jar" />
     <mkdir dir="${build.tmp}/default/BHL1.jar/META-INF" />
@@ -106,7 +125,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L1/BHL1.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL2.jar" />
     <mkdir dir="${build.tmp}/default/BHL2.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL2.jar/META-INF/module.xml">
@@ -149,7 +167,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L2/BHL2.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL3.jar" />
     <mkdir dir="${build.tmp}/default/BHL3.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL3.jar/META-INF/module.xml">
@@ -192,7 +209,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L3/BHL3.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL4.jar" />
     <mkdir dir="${build.tmp}/default/BHL4.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL4.jar/META-INF/module.xml">
@@ -235,7 +251,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L4/BHL4.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL5.jar" />
     <mkdir dir="${build.tmp}/default/BHL5.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL5.jar/META-INF/module.xml">
@@ -278,7 +293,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L5/BHL5.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL6.jar" />
     <mkdir dir="${build.tmp}/default/BHL6.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL6.jar/META-INF/module.xml">
@@ -321,7 +335,6 @@
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L6/BHL6.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
     <mkdir dir="${build.tmp}/default/BHL7.jar" />
     <mkdir dir="${build.tmp}/default/BHL7.jar/META-INF" />
     <echoxml file="${build.tmp}/default/BHL7.jar/META-INF/module.xml">
@@ -363,25 +376,6 @@
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L7/BHL7.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-models" prefix="module/models" />
-    </jar>
-    <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/lib" />
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-UtilSolution-models">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/lib/UtilSolution.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/UtilSolution" />
-      <zipfileset file="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" prefix="modules/UtilSolution" />
-      <zipfileset dir="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution" includes="icons/**, resources/**" prefix="modules/UtilSolution" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-UtilSolution-models" prefix="modules/UtilSolution/models" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-TestBehaviorReflective-models">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/lib/TestBehaviorReflective.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/TestBehaviorReflective" />
-      <zipfileset file="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/TestBehaviorReflective.msd" prefix="modules/TestBehaviorReflective" />
-      <zipfileset dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective" includes="icons/**, resources/**" prefix="modules/TestBehaviorReflective" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-solutions-TestBehaviorReflective-models" prefix="modules/TestBehaviorReflective/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/nonReflectiveTest" />
     <mkdir dir="${build.tmp}/default/TestBehavior.jar" />

@@ -581,6 +581,7 @@
       <zipfileset file="${mps_home}/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/lang-internalCommandsRuntime-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.layout}/mps-console/languages" />
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   

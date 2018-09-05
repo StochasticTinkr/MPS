@@ -114,6 +114,7 @@
       <zipfileset file="${plugin_home}/migration-platform/solutions/component/jetbrains.mps.migration.component.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/migration-platform-solutions-component-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.layout}/migration/languages" />
     <mkdir dir="${build.layout}/projectMigrations" />
     <mkdir dir="${build.layout}/projectMigrations/lib" />
     <mkdir dir="${build.tmp}/default/projectMigrations.jar" />

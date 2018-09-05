@@ -65,6 +65,7 @@
       <zipfileset dir="${basedir}/plugins/modelchecker/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.modelchecker.platform" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/platform-models" prefix="modules/jetbrains.mps.ide.modelchecker.platform/models" />
     </jar>
+    <mkdir dir="${build.layout}/modelchecker/languages" />
     <jar destfile="${build.layout}/samples.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples" />
       <zipfileset file="${mps_home}/plugins/samples/META-INF/plugin.xml" prefix="META-INF" />
