@@ -49,16 +49,7 @@ public final class ModelOutline implements TextGenModelOutline {
   }
 
   @Override
-  public void registerTextUnit(@NotNull String unitName, SNode... input) {
-    // XXX Do I need to consider distinction between java and plain text units? lang.BL already has custom units (RegularTextUnit2) is there
-    // any other language that needs dependencies and trace info collected?
-//    final boolean needsJava = SModelOperations.getAllLanguageImports(model).contains(MetaAdapterFactory.getLanguage(BootstrapLanguages.baseLanguageRef()));
-//    registerTextUnit(needsJava ? new JavaTextUnit(root, name) : new RegularTextUnit(root, name));
-    registerTextUnit(new RegularTextUnit(input[0], unitName));
-  }
-
-  @Override
-  public void registerTextUnit(@NotNull String unitName, @Nullable Charset encoding, SNode... input) {
+  public void registerTextUnit(@NotNull String unitName, @Nullable String unitPath, @Nullable Charset encoding, SNode... input) {
     registerTextUnit(new RegularTextUnit(input[0], unitName, encoding));
   }
 

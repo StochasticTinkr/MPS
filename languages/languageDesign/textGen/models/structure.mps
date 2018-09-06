@@ -17,6 +17,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -52,6 +55,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -89,6 +93,15 @@
       <property role="20kJfa" value="filename" />
       <property role="IQ2ns" value="45307784116711884" />
       <ref role="20lvS9" node="2wXN29P0Ie" resolve="FilenameFunction" />
+    </node>
+    <node concept="1TJgyj" id="6NuIk8swUPi" role="1TKVEi">
+      <property role="IQ2ns" value="7844911294523354450" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filePath" />
+      <ref role="20lvS9" node="6NuIk8swUPh" resolve="FilePathSpec" />
+      <node concept="t5JxF" id="6NuIk8swUPr" role="lGtFl">
+        <property role="t5JxN" value="optional path, defaults to model name ('.' --&gt; '/') unless specified" />
+      </node>
     </node>
     <node concept="1TJgyj" id="2IHxTF8WBRG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -642,6 +655,19 @@
       <property role="20kJfa" value="context" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3tQ$H_xEITT" resolve="UnitContextDeclaration" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6NuIk8swUPh">
+    <property role="EcuMT" value="7844911294523354449" />
+    <property role="TrG5h" value="FilePathSpec" />
+  </node>
+  <node concept="1TIwiD" id="6NuIk8swWsv">
+    <property role="EcuMT" value="7844911294523361055" />
+    <property role="TrG5h" value="FilePathQuery" />
+    <property role="R4oN_" value="path built with a custom BL code" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="6NuIk8swWsw" role="PzmwI">
+      <ref role="PrY4T" node="6NuIk8swUPh" resolve="FilePathSpec" />
     </node>
   </node>
 </model>

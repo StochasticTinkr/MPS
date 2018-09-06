@@ -24,6 +24,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_EncodingDeclarationBase;
   private ConceptPresentation props_EncodingLiteral;
   private ConceptPresentation props_ExtensionDeclaration;
+  private ConceptPresentation props_FilePathQuery;
+  private ConceptPresentation props_FilePathSpec;
   private ConceptPresentation props_FilenameFunction;
   private ConceptPresentation props_FoundErrorOperation;
   private ConceptPresentation props_GenerateTextDeclaration;
@@ -106,7 +108,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptTextGenDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0nb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0pb);
           props_ConceptTextGenDeclaration = cpb.create();
         }
         return props_ConceptTextGenDeclaration;
@@ -158,6 +160,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ExtensionDeclaration = cpb.create();
         }
         return props_ExtensionDeclaration;
+      case LanguageConceptSwitch.FilePathQuery:
+        if (props_FilePathQuery == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("path built with a custom BL code");
+          cpb.rawPresentation("FilePathQuery");
+          props_FilePathQuery = cpb.create();
+        }
+        return props_FilePathQuery;
+      case LanguageConceptSwitch.FilePathSpec:
+        if (props_FilePathSpec == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FilePathSpec = cpb.create();
+        }
+        return props_FilePathSpec;
       case LanguageConceptSwitch.FilenameFunction:
         if (props_FilenameFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -214,7 +230,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LanguageTextGenDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a22b0nb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a42b0pb);
           props_LanguageTextGenDeclaration = cpb.create();
         }
         return props_LanguageTextGenDeclaration;
