@@ -58,6 +58,7 @@ import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
@@ -969,7 +970,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /*
     sorted by severity, from lower to high
    */
-  public Collection<ReportItem> getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public Collection<IssueKindReportItem> getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     return messages.stream().map(HighlighterMessage::getReportItem).collect(Collectors.toList());
   }

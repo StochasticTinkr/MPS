@@ -57,7 +57,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   }
 
   public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
-      new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
+      new SimpleReportItemFlavour<>("FLAVOUR_ERROR_REPORTER", TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {

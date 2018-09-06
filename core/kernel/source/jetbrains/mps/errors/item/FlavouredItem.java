@@ -16,6 +16,7 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,6 +31,8 @@ public interface FlavouredItem {
     public abstract T get(I reportItem);
     @NotNull
     public abstract Class<I> getApplicableClass();
+    @NotNull
+    public abstract String getId();
     @Nullable
     public T tryToGet(FlavouredItem reportItem) {
       if (canGet(reportItem)) {
@@ -41,9 +44,21 @@ public interface FlavouredItem {
     public boolean canGet(FlavouredItem reportItem) {
       return getApplicableClass().isAssignableFrom(reportItem.getClass());
     }
+    @Override
+    public final String toString() {
+      return getId();
+    }
   }
 
-  ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>(FlavouredItem.class, FlavouredItem::getClass);
-  ReportItemFlavour<ReportItem, ReportItem> FLAVOUR_THIS = new SimpleReportItemFlavour<>(ReportItem.class, Function.identity());
+  static String serialize(FlavouredItem flavouredItem) {
+    StringBuilder result = new StringBuilder();
+    for (ReportItemFlavour flavour : flavouredItem.getIdFlavours()) {
+      result.append(flavour.getId() + "=\"" + NameUtil.escapeString(flavour.get(flavouredItem).toString()) + "\";");
+    }
+    return result.toString();
+  }
+
+  ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>("FLAVOUR_CLASS", FlavouredItem.class, FlavouredItem::getClass);
+  ReportItemFlavour<ReportItem, ReportItem> FLAVOUR_THIS = new SimpleReportItemFlavour<>("FLAVOUR_THIS", ReportItem.class, Function.identity());
 
 }

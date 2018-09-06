@@ -23,18 +23,22 @@ import java.util.Collection;
 public interface RuleIdFlavouredItem extends FlavouredItem {
 
   class TypesystemRuleId {
+    private final SNodeReference myNodeReference;
     public TypesystemRuleId(SNodeReference nodeReference) {
       myNodeReference = nodeReference;
     }
-    private final SNodeReference myNodeReference;
     public SNodeReference getSourceNode() {
       return myNodeReference;
+    }
+    @Override
+    public String toString() {
+      return myNodeReference.toString();
     }
   }
 
   Collection<TypesystemRuleId> getRuleId();
 
   MultipleReportItemFlavour<RuleIdFlavouredItem, TypesystemRuleId> FLAVOUR_RULE_ID =
-      new MultipleReportItemFlavour<>(RuleIdFlavouredItem.class, RuleIdFlavouredItem::getRuleId);
+      new MultipleReportItemFlavour<>("FLAVOUR_RULE_ID", RuleIdFlavouredItem.class, RuleIdFlavouredItem::getRuleId);
 
 }

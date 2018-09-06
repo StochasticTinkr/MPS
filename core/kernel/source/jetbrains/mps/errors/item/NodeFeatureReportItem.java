@@ -34,7 +34,7 @@ public interface NodeFeatureReportItem extends NodeReportItem, NodeFeatureFlavou
 
   class MessageTargetSimpleReportItemFlavour extends SimpleReportItemFlavour<NodeReportItem, MessageTarget> {
     MessageTargetSimpleReportItemFlavour() {
-      super(NodeReportItem.class, MessageTargetSimpleReportItemFlavour::conceptFeatureToMessageTarget);
+      super("FLAVOUR_MESSAGE_TARGET", NodeReportItem.class, MessageTargetSimpleReportItemFlavour::conceptFeatureToMessageTarget);
     }
 
     @NotNull

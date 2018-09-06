@@ -23,6 +23,6 @@ public interface NodeFeatureFlavouredItem extends NodeFlavouredItem {
   SConceptFeature getConceptFeature();
 
   ReportItemFlavour<NodeFeatureFlavouredItem, SConceptFeature>
-      FLAVOUR_NODE_FEATURE = new SimpleReportItemFlavour<>(NodeFeatureFlavouredItem.class, NodeFeatureFlavouredItem::getConceptFeature);
+      FLAVOUR_NODE_FEATURE = new SimpleReportItemFlavour<>("FLAVOUR_NODE_FEATURE", NodeFeatureFlavouredItem.class, NodeFeatureFlavouredItem::getConceptFeature);
 
 }

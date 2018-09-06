@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.errors.item;
 
-import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModelPathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModulePathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.NodePathObject;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
-import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,7 +37,7 @@ public interface IssueKindReportItem extends ReportItem {
   ItemKind getIssueKind();
 
   SimpleReportItemFlavour<IssueKindReportItem, ItemKind> FLAVOUR_ISSUE_KIND =
-      new SimpleReportItemFlavour<>(IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
+      new SimpleReportItemFlavour<>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
 
   final class CheckerCategory {
     private final KindLevel myKindLevel;
@@ -179,7 +177,7 @@ public interface IssueKindReportItem extends ReportItem {
     }
   }
 
-  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>(IssueKindReportItem.class, reportItem -> {
+  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>("FLAVOUR_PATH_OBJECT", IssueKindReportItem.class, reportItem -> {
     if (NodeFlavouredItem.FLAVOUR_NODE.canGet(reportItem)) {
       return new NodePathObject(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(reportItem));
     }
