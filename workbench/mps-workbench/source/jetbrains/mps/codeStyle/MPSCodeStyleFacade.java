@@ -66,11 +66,6 @@ public class MPSCodeStyleFacade extends CodeStyleFacade {
   }
 
   @Override
-  public boolean isSmartTabs(FileType fileType) {
-    return false;
-  }
-
-  @Override
   public boolean isUnsuitableCodeStyleConfigurable(Configurable c) {
     return false;
   }
