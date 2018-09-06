@@ -8,6 +8,7 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
     <classNode dependClassName="jetbrains.mps.checkers.ModuleImportQuickFix" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.TargetModuleNotImportedReportItem" />

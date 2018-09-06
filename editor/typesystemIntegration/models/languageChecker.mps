@@ -2066,43 +2066,21 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="36YhQHI6GIJ" role="3cqZAp">
-              <node concept="3cpWsn" id="36YhQHI6GIK" role="3cpWs9">
-                <property role="TrG5h" value="message" />
-                <node concept="2YIFZM" id="36YhQHI6GIL" role="33vP2m">
-                  <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
-                  <node concept="37vLTw" id="kgRRK9gIoS" role="37wK5m">
-                    <ref role="3cqZAo" node="kgRRK9gqEN" resolve="reportItem" />
-                  </node>
-                  <node concept="Xjq3P" id="36YhQHI6GIQ" role="37wK5m" />
-                  <node concept="2OqwBi" id="u6B29mC$f_" role="37wK5m">
-                    <node concept="2OqwBi" id="u6B29mCxs3" role="2Oq$k0">
-                      <node concept="37vLTw" id="u6B29mCvPT" role="2Oq$k0">
-                        <ref role="3cqZAo" node="36YhQHI6FUH" resolve="editorComponent" />
-                      </node>
-                      <node concept="liA8E" id="u6B29mCzV2" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="u6B29mC$Gs" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="36YhQHI6GIR" role="1tU5fm">
-                  <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="36YhQHI6GIS" role="3cqZAp">
-              <node concept="2OqwBi" id="36YhQHI6GIT" role="3clFbG">
-                <node concept="37vLTw" id="36YhQHI6GIU" role="2Oq$k0">
+            <node concept="3clFbF" id="5VT$fGfbTXZ" role="3cqZAp">
+              <node concept="1rXfSq" id="5VT$fGfbTXX" role="3clFbG">
+                <ref role="37wK5l" node="5VT$fGfbC2w" resolve="report" />
+                <node concept="37vLTw" id="5VT$fGfbUnR" role="37wK5m">
                   <ref role="3cqZAo" node="36YhQHI6GIc" resolve="messages" />
                 </node>
-                <node concept="TSZUe" id="36YhQHI6GIV" role="2OqNvi">
-                  <node concept="37vLTw" id="36YhQHI6GIW" role="25WWJ7">
-                    <ref role="3cqZAo" node="36YhQHI6GIK" resolve="message" />
+                <node concept="37vLTw" id="5VT$fGfbW4v" role="37wK5m">
+                  <ref role="3cqZAo" node="kgRRK9gqEN" resolve="reportItem" />
+                </node>
+                <node concept="2OqwBi" id="5VT$fGfc5tf" role="37wK5m">
+                  <node concept="37vLTw" id="5VT$fGfc43M" role="2Oq$k0">
+                    <ref role="3cqZAo" node="15Dv6lKf6It" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="5VT$fGfc7mv" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>
@@ -2201,43 +2179,21 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="34otMr4$RGJ" role="3cqZAp">
-              <node concept="3cpWsn" id="34otMr4$RGK" role="3cpWs9">
-                <property role="TrG5h" value="message" />
-                <node concept="2YIFZM" id="34otMr4$RGL" role="33vP2m">
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
-                  <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <node concept="37vLTw" id="34otMr4$RGM" role="37wK5m">
-                    <ref role="3cqZAo" node="34otMr4$RGD" resolve="reportItem" />
-                  </node>
-                  <node concept="Xjq3P" id="34otMr4$RGN" role="37wK5m" />
-                  <node concept="2OqwBi" id="34otMr4$RGO" role="37wK5m">
-                    <node concept="2OqwBi" id="34otMr4$RGP" role="2Oq$k0">
-                      <node concept="37vLTw" id="34otMr4$RGQ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="36YhQHI6FUH" resolve="editorComponent" />
-                      </node>
-                      <node concept="liA8E" id="34otMr4$RGR" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="34otMr4$RGS" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="34otMr4$RGT" role="1tU5fm">
-                  <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="34otMr4$RGU" role="3cqZAp">
-              <node concept="2OqwBi" id="34otMr4$RGV" role="3clFbG">
-                <node concept="37vLTw" id="34otMr4$RGW" role="2Oq$k0">
+            <node concept="3clFbF" id="5VT$fGfc9mJ" role="3cqZAp">
+              <node concept="1rXfSq" id="5VT$fGfc9mH" role="3clFbG">
+                <ref role="37wK5l" node="5VT$fGfbC2w" resolve="report" />
+                <node concept="37vLTw" id="5VT$fGfca8R" role="37wK5m">
                   <ref role="3cqZAo" node="36YhQHI6GIc" resolve="messages" />
                 </node>
-                <node concept="TSZUe" id="34otMr4$RGX" role="2OqNvi">
-                  <node concept="37vLTw" id="34otMr4$RGY" role="25WWJ7">
-                    <ref role="3cqZAo" node="34otMr4$RGK" resolve="message" />
+                <node concept="37vLTw" id="5VT$fGfcao6" role="37wK5m">
+                  <ref role="3cqZAo" node="34otMr4$RGD" resolve="reportItem" />
+                </node>
+                <node concept="2OqwBi" id="5VT$fGfcbk_" role="37wK5m">
+                  <node concept="37vLTw" id="5VT$fGfca_p" role="2Oq$k0">
+                    <ref role="3cqZAo" node="15Dv6lKf6It" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="5VT$fGfccgE" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>
@@ -2388,6 +2344,78 @@
       </node>
       <node concept="2AHcQZ" id="36YhQHI6FUR" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5VT$fGfbC2w" role="jymVt">
+      <property role="TrG5h" value="report" />
+      <node concept="3cqZAl" id="5VT$fGfbC2y" role="3clF45" />
+      <node concept="3Tm6S6" id="5VT$fGfbDyL" role="1B3o_S" />
+      <node concept="3clFbS" id="5VT$fGfbC2$" role="3clF47">
+        <node concept="3clFbJ" id="5VT$fGfbKDD" role="3cqZAp">
+          <node concept="3clFbS" id="5VT$fGfbKDE" role="3clFbx">
+            <node concept="3cpWs8" id="5VT$fGfbKDF" role="3cqZAp">
+              <node concept="3cpWsn" id="5VT$fGfbKDG" role="3cpWs9">
+                <property role="TrG5h" value="message" />
+                <node concept="2YIFZM" id="5VT$fGfbKDH" role="33vP2m">
+                  <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <node concept="37vLTw" id="5VT$fGfbKDI" role="37wK5m">
+                    <ref role="3cqZAo" node="5VT$fGfbIQP" resolve="reportItem" />
+                  </node>
+                  <node concept="Xjq3P" id="5VT$fGfbKDJ" role="37wK5m" />
+                  <node concept="37vLTw" id="5VT$fGfbT4g" role="37wK5m">
+                    <ref role="3cqZAo" node="5VT$fGfbLt4" resolve="repository" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="5VT$fGfbKDP" role="1tU5fm">
+                  <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5VT$fGfbKDQ" role="3cqZAp">
+              <node concept="2OqwBi" id="5VT$fGfbKDR" role="3clFbG">
+                <node concept="37vLTw" id="5VT$fGfbSqR" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5VT$fGfbPDf" resolve="messages" />
+                </node>
+                <node concept="TSZUe" id="5VT$fGfbKDT" role="2OqNvi">
+                  <node concept="37vLTw" id="5VT$fGfbKDU" role="25WWJ7">
+                    <ref role="3cqZAo" node="5VT$fGfbKDG" resolve="message" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="5VT$fGfbKDV" role="3clFbw">
+            <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
+            <ref role="37wK5l" to="wsw7:2I7VK7MzSVd" resolve="shouldReportError" />
+            <node concept="37vLTw" id="5VT$fGfbKDW" role="37wK5m">
+              <ref role="3cqZAo" node="5VT$fGfbIQP" resolve="reportItem" />
+            </node>
+            <node concept="37vLTw" id="5VT$fGfbSJC" role="37wK5m">
+              <ref role="3cqZAo" node="5VT$fGfbLt4" resolve="repository" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5VT$fGfbPDf" role="3clF46">
+        <property role="TrG5h" value="messages" />
+        <node concept="2hMVRd" id="5VT$fGfbRIh" role="1tU5fm">
+          <node concept="3uibUv" id="5VT$fGfbRWi" role="2hN53Y">
+            <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5VT$fGfbIQP" role="3clF46">
+        <property role="TrG5h" value="reportItem" />
+        <node concept="3uibUv" id="5VT$fGfbIQO" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5VT$fGfbLt4" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="5VT$fGfbNJW" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="77jjuPI9$wi" role="jymVt">

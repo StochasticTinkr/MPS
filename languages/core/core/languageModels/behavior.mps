@@ -107,6 +107,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -1045,11 +1046,7 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbC" id="7S0yfInCD6t" role="3uHU7w">
-              <node concept="10M0yZ" id="7S0yfInCDi4" role="3uHU7w">
-                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CARDINALITY_ERROR" resolve="CARDINALITY_ERROR" />
-              </node>
+            <node concept="17R0WA" id="5VT$fGfaUzd" role="3uHU7w">
               <node concept="2OqwBi" id="7S0yfInCCSQ" role="3uHU7B">
                 <node concept="37vLTw" id="7S0yfInCCSR" role="2Oq$k0">
                   <ref role="3cqZAo" node="3612de_vrg1" resolve="reportItem" />
@@ -1057,6 +1054,10 @@
                 <node concept="liA8E" id="7S0yfInCCSS" role="2OqNvi">
                   <ref role="37wK5l" to="d6hs:~IssueKindReportItem.getIssueKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="getIssueKind" />
                 </node>
+              </node>
+              <node concept="10M0yZ" id="7S0yfInCDi4" role="3uHU7w">
+                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CARDINALITY_ERROR" resolve="CARDINALITY_ERROR" />
               </node>
             </node>
           </node>
@@ -1764,6 +1765,34 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="5VT$fGfaX3r" role="3cqZAp">
+              <node concept="3clFbS" id="5VT$fGfaX3s" role="3clFbx">
+                <node concept="3cpWs6" id="5VT$fGfaX3t" role="3cqZAp">
+                  <node concept="3clFbT" id="5VT$fGfaX3u" role="3cqZAk">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="17R0WA" id="5VT$fGfaX3v" role="3clFbw">
+                <node concept="2OqwBi" id="5VT$fGfaXWQ" role="3uHU7B">
+                  <node concept="2OqwBi" id="5VT$fGfaX3w" role="2Oq$k0">
+                    <node concept="37vLTw" id="5VT$fGfaX3x" role="2Oq$k0">
+                      <ref role="3cqZAo" node="23pjS9DRI7$" resolve="reportItem" />
+                    </node>
+                    <node concept="liA8E" id="5VT$fGfaX3y" role="2OqNvi">
+                      <ref role="37wK5l" to="d6hs:~IssueKindReportItem.getIssueKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="getIssueKind" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5VT$fGfaY3y" role="2OqNvi">
+                    <ref role="37wK5l" to="d6hs:~IssueKindReportItem$ItemKind.getChecker():jetbrains.mps.errors.item.IssueKindReportItem$CheckerCategory" resolve="getChecker" />
+                  </node>
+                </node>
+                <node concept="10M0yZ" id="5VT$fGfaXBQ" role="3uHU7w">
+                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.UNRESOLVED_REFERENCE" resolve="UNRESOLVED_REFERENCE" />
+                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="23pjS9DRWKK" role="3cqZAp">
               <node concept="3clFbS" id="23pjS9DRWKL" role="3clFbx">
                 <node concept="3cpWs6" id="23pjS9DRWKM" role="3cqZAp">
@@ -1772,7 +1801,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbC" id="23pjS9DRIvL" role="3clFbw">
+              <node concept="17R0WA" id="5VT$fGfaWep" role="3clFbw">
                 <node concept="2OqwBi" id="23pjS9DRIvN" role="3uHU7B">
                   <node concept="37vLTw" id="23pjS9DRIvO" role="2Oq$k0">
                     <ref role="3cqZAo" node="23pjS9DRI7$" resolve="reportItem" />
@@ -1795,11 +1824,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbC" id="23pjS9DRZID" role="3clFbw">
-                <node concept="10M0yZ" id="23pjS9DRZIE" role="3uHU7w">
-                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.MODULE_NOT_IMPORTED" resolve="MODULE_NOT_IMPORTED" />
-                </node>
+              <node concept="17R0WA" id="5VT$fGfaWwH" role="3clFbw">
                 <node concept="2OqwBi" id="23pjS9DRZIF" role="3uHU7B">
                   <node concept="37vLTw" id="23pjS9DRZIG" role="2Oq$k0">
                     <ref role="3cqZAo" node="23pjS9DRI7$" resolve="reportItem" />
@@ -1807,6 +1832,10 @@
                   <node concept="liA8E" id="23pjS9DRZIH" role="2OqNvi">
                     <ref role="37wK5l" to="d6hs:~IssueKindReportItem.getIssueKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="getIssueKind" />
                   </node>
+                </node>
+                <node concept="10M0yZ" id="23pjS9DRZIE" role="3uHU7w">
+                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.MODULE_NOT_IMPORTED" resolve="MODULE_NOT_IMPORTED" />
                 </node>
               </node>
             </node>

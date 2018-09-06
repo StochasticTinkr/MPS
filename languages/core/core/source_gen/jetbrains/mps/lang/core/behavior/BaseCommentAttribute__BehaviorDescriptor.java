@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import java.util.Objects;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -46,10 +47,13 @@ public final class BaseCommentAttribute__BehaviorDescriptor extends BaseBHDescri
       if (kindLevel == IssueKindReportItem.KindLevel.TYPESYSTEM) {
         return true;
       }
-      if (reportItem.getIssueKind() == IssueKindReportItem.CARDINALITY_ERROR) {
+      if (Objects.equals(reportItem.getIssueKind().getChecker(), IssueKindReportItem.UNRESOLVED_REFERENCE)) {
         return true;
       }
-      if (reportItem.getIssueKind() == IssueKindReportItem.MODULE_NOT_IMPORTED) {
+      if (Objects.equals(reportItem.getIssueKind(), IssueKindReportItem.CARDINALITY_ERROR)) {
+        return true;
+      }
+      if (Objects.equals(reportItem.getIssueKind(), IssueKindReportItem.MODULE_NOT_IMPORTED)) {
         return true;
       }
     }
