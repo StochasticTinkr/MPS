@@ -16,14 +16,57 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public interface FlavouredItem {
+
+  class FlavourPredicate implements Predicate<FlavouredItem> {
+    final Map<String, String> myFlavours;
+    public FlavourPredicate(Map<String, String> flavours) {
+      myFlavours = flavours;
+    }
+    @Override
+    public boolean test(FlavouredItem flavouredItem) {
+      return flavouredItem.toPredicate().myFlavours.entrySet().containsAll(myFlavours.entrySet());
+    }
+    public static FlavourPredicate deserialize(String s) {
+      Map<String, String> flavours = new ListMap<>();
+      Matcher matcher = Pattern.compile("(\\w+)=\"(([^\"]|\\\\\")*)\";").matcher(s);
+      int cursor = 0;
+      while (matcher.find()) {
+        if (cursor != matcher.start()) {
+          throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
+        }
+        cursor = matcher.end();
+        flavours.put(matcher.group(1), matcher.group(2));
+      }
+      if (cursor != s.length()) {
+        throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
+      }
+      return new FlavourPredicate(flavours);
+    }
+    public String serialize() {
+      StringBuilder result = new StringBuilder();
+      for (Entry<String, String> flavour : myFlavours.entrySet()) {
+        result.append(flavour.getKey()).append("=\"").append(NameUtil.escapeString(flavour.getValue())).append("\";");
+      }
+      return result.toString();
+    }
+  }
 
   Set<ReportItemFlavour<?, ?>> getIdFlavours();
 
@@ -50,12 +93,12 @@ public interface FlavouredItem {
     }
   }
 
-  static String serialize(FlavouredItem flavouredItem) {
-    StringBuilder result = new StringBuilder();
-    for (ReportItemFlavour flavour : flavouredItem.getIdFlavours()) {
-      result.append(flavour.getId() + "=\"" + NameUtil.escapeString(flavour.get(flavouredItem).toString()) + "\";");
+  default FlavourPredicate toPredicate() {
+    Map<String, String> flavours = new HashMap<>();
+    for (ReportItemFlavour flavour : this.getIdFlavours()) {
+      flavours.put(flavour.getId(), flavour.get(this).toString());
     }
-    return result.toString();
+    return new FlavourPredicate(flavours);
   }
 
   ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>("FLAVOUR_CLASS", FlavouredItem.class, FlavouredItem::getClass);
