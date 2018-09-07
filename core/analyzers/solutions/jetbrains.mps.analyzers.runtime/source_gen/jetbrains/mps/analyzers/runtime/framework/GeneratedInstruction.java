@@ -5,13 +5,14 @@ package jetbrains.mps.analyzers.runtime.framework;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Collections;
 
 public abstract class GeneratedInstruction extends Instruction {
-  protected List myParameters = new LinkedList();
+  private List myParameters = new LinkedList();
   public GeneratedInstruction() {
   }
   public List getParameters() {
-    return myParameters;
+    return Collections.unmodifiableList(myParameters);
   }
   public Object getParameter(int index) {
     return myParameters.get(index);

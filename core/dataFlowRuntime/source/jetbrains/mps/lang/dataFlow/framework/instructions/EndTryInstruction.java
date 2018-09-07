@@ -23,8 +23,8 @@ import java.util.ArrayList;
 
 public class EndTryInstruction extends Instruction {
 
-  protected TryFinallyInfo myInfo;
-  protected final List<RetInstruction> myReturns = new ArrayList<>();
+  private TryFinallyInfo myInfo;
+  private final List<RetInstruction> myReturns = new ArrayList<>();
 
   public EndTryInstruction() {
   }

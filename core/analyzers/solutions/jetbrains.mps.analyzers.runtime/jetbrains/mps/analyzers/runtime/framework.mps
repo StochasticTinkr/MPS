@@ -29,6 +29,9 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -93,6 +96,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -255,7 +259,7 @@
     </node>
     <node concept="312cEg" id="6L60FDzMFhB" role="jymVt">
       <property role="TrG5h" value="myParameters" />
-      <node concept="3Tmbuc" id="6L60FDzMFhG" role="1B3o_S" />
+      <node concept="3Tm6S6" id="1o68y$H6vKt" role="1B3o_S" />
       <node concept="3uibUv" id="6L60FDzMFhH" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
       </node>
@@ -277,9 +281,13 @@
       </node>
       <node concept="3Tm1VV" id="6L60FDzMFhL" role="1B3o_S" />
       <node concept="3clFbS" id="6L60FDzMFhM" role="3clF47">
-        <node concept="3clFbF" id="6L60FDzMFhO" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeuyRB" role="3clFbG">
-            <ref role="3cqZAo" node="6L60FDzMFhB" resolve="myParameters" />
+        <node concept="3cpWs6" id="1o68y$H6wfm" role="3cqZAp">
+          <node concept="2YIFZM" id="2CzxSeGAbs2" role="3cqZAk">
+            <ref role="37wK5l" to="33ny:~Collections.unmodifiableList(java.util.List):java.util.List" resolve="unmodifiableList" />
+            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            <node concept="37vLTw" id="2BHiRxeuyRB" role="37wK5m">
+              <ref role="3cqZAo" node="6L60FDzMFhB" resolve="myParameters" />
+            </node>
           </node>
         </node>
       </node>

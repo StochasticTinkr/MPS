@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JumpInstruction extends Instruction {
-  protected int myJumpTo;
+  private int myJumpTo;
 
   public JumpInstruction() {
   }
