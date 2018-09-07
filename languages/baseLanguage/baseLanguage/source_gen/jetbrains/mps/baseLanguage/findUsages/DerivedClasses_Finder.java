@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -37,21 +38,25 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      Queue<SNode> currentClasses = QueueSequence.fromQueue(new LinkedList<SNode>());
+      final Queue<SNode> currentClasses = QueueSequence.fromQueue(new LinkedList<SNode>());
       QueueSequence.fromQueue(currentClasses).addLastElement(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       while (QueueSequence.fromQueue(currentClasses).isNotEmpty()) {
         SNode nextNode = QueueSequence.fromQueue(currentClasses).removeFirstElement();
         FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
           public void onUsageFound(@NotNull SearchResult<?> searchResult) {
             SNode nodeParam = (SNode) searchResult.getObject();
-            SNode foundClass = SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-            callback.onUsageFound(createSingleResult(foundClass));
-            if (!(SNodeOperations.isInstanceOf(foundClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
-              QueueSequence.fromQueue(currentClasses).addLastElement(foundClass);
-            }
+            new _FunctionTypes._void_P1_E0<SNode>() {
+              public void invoke(SNode directDescendant) {
+                SNode foundClass = SNodeOperations.cast(directDescendant, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+                callback.onUsageFound(createSingleResult(foundClass));
+                if (!(SNodeOperations.isInstanceOf(foundClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
+                  QueueSequence.fromQueue(currentClasses).addLastElement(foundClass);
+                }
+              }
+            }.invoke(nodeParam);
           }
         }, new SearchQuery(nextNode, scope), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder"));
       }

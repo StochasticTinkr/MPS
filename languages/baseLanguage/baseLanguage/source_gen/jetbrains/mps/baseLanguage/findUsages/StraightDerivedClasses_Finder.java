@@ -13,6 +13,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
@@ -42,20 +43,24 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, final ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
       FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
         public void onUsageFound(@NotNull SearchResult<?> searchResult) {
           SNode nodeParam = (SNode) searchResult.getObject();
-          if (monitor.isCanceled()) {
-            return;
-          }
-          if (SNodeOperations.hasRole(nodeParam, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"))) {
-            callback.onUsageFound(createSingleResult(SNodeOperations.getParent(nodeParam)));
-          } else if (SNodeOperations.isInstanceOf(nodeParam, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-            callback.onUsageFound(createSingleResult(nodeParam));
-          }
+          new _FunctionTypes._void_P1_E0<SNode>() {
+            public void invoke(SNode nodeUsage) {
+              if (monitor.isCanceled()) {
+                return;
+              }
+              if (SNodeOperations.hasRole(nodeUsage, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"))) {
+                callback.onUsageFound(createSingleResult(SNodeOperations.getParent(nodeUsage)));
+              } else if (SNodeOperations.isInstanceOf(nodeUsage, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+                callback.onUsageFound(createSingleResult(nodeUsage));
+              }
+            }
+          }.invoke(nodeParam);
         }
       }, new SearchQuery(node, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
     } finally {

@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 
@@ -70,8 +71,8 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
   }
 
   private Set<SNode> findDescendantsOverrides(final Cancellable cancellable, SNode method) {
-    Set<SNode> result = new LinkedHashSet<SNode>();
-    ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
+    final Set<SNode> result = new LinkedHashSet<SNode>();
+    final ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
       @Override
       public boolean isCanceled() {
         return super.isCanceled();
@@ -80,12 +81,16 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
     FindUtils.searchForResults(monitor, new IFinder.FindCallback() {
       public void onUsageFound(@NotNull SearchResult<?> searchResult) {
         SNode nodeParam = (SNode) searchResult.getObject();
-        if (SNodeOperations.isInstanceOf(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-          SetSequence.fromSet(result).addElement(SNodeOperations.cast(nodeParam, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
-          if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
-            monitor.cancel();
+        new _FunctionTypes._void_P1_E0<SNode>() {
+          public void invoke(SNode res) {
+            if (SNodeOperations.isInstanceOf(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+              SetSequence.fromSet(result).addElement(SNodeOperations.cast(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
+              if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
+                monitor.cancel();
+              }
+            }
           }
-        }
+        }.invoke(nodeParam);
       }
     }, new SearchQuery(method, myScope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
     return result;
