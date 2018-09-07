@@ -22,8 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -32,41 +31,9 @@ import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public interface FlavouredItem {
+import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
 
-  class FlavourPredicate implements Predicate<FlavouredItem> {
-    final Map<String, String> myFlavours;
-    public FlavourPredicate(Map<String, String> flavours) {
-      myFlavours = flavours;
-    }
-    @Override
-    public boolean test(FlavouredItem flavouredItem) {
-      return flavouredItem.toPredicate().myFlavours.entrySet().containsAll(myFlavours.entrySet());
-    }
-    public static FlavourPredicate deserialize(String s) {
-      Map<String, String> flavours = new ListMap<>();
-      Matcher matcher = Pattern.compile("(\\w+)=\"(([^\"]|\\\\\")*)\";").matcher(s);
-      int cursor = 0;
-      while (matcher.find()) {
-        if (cursor != matcher.start()) {
-          throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
-        }
-        cursor = matcher.end();
-        flavours.put(matcher.group(1), matcher.group(2));
-      }
-      if (cursor != s.length()) {
-        throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
-      }
-      return new FlavourPredicate(flavours);
-    }
-    public String serialize() {
-      StringBuilder result = new StringBuilder();
-      for (Entry<String, String> flavour : myFlavours.entrySet()) {
-        result.append(flavour.getKey()).append("=\"").append(NameUtil.escapeString(flavour.getValue())).append("\";");
-      }
-      return result.toString();
-    }
-  }
+public interface FlavouredItem {
 
   Set<ReportItemFlavour<?, ?>> getIdFlavours();
 
@@ -93,10 +60,48 @@ public interface FlavouredItem {
     }
   }
 
-  default FlavourPredicate toPredicate() {
+  class FlavourPredicate implements Predicate<FlavouredItem> {
+    final Map<String, String> myFlavours;
+    public FlavourPredicate(Map<String, String> flavours) {
+      myFlavours = flavours;
+    }
+    @Override
+    public boolean test(FlavouredItem flavouredItem) {
+      return flavouredItem.toPredicate(flavouredItem.getIdFlavours()).myFlavours.entrySet().containsAll(myFlavours.entrySet());
+    }
+    public static FlavourPredicate deserialize(String s) {
+      Map<String, String> flavours = new ListMap<>();
+      Matcher matcher = Pattern.compile("(\\w+)=\"(([^\"]|\\\\\")*)\";").matcher(s);
+      int cursor = 0;
+      while (matcher.find()) {
+        if (cursor != matcher.start()) {
+          throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
+        }
+        cursor = matcher.end();
+        flavours.put(matcher.group(1), matcher.group(2));
+      }
+      if (cursor != s.length()) {
+        throw new IllegalArgumentException("'" + s + "' is not a valid flavour map, parse error at position " + cursor);
+      }
+      return new FlavourPredicate(flavours);
+    }
+    public String serialize() {
+      StringBuilder result = new StringBuilder();
+      for (Entry<String, String> flavour : myFlavours.entrySet()) {
+        result.append(flavour.getKey()).append("=\"").append(NameUtil.escapeString(flavour.getValue())).append("\";");
+      }
+      return result.toString();
+    }
+  }
+
+  default FlavourPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
     Map<String, String> flavours = new HashMap<>();
-    for (ReportItemFlavour flavour : this.getIdFlavours()) {
-      flavours.put(flavour.getId(), flavour.get(this).toString());
+    idFlavours.remove(FLAVOUR_NODE);
+    for (ReportItemFlavour flavour : idFlavours) {
+      Object value = flavour.tryToGet(this);
+      if (value != null) {
+        flavours.put(flavour.getId(), value.toString());
+      }
     }
     return new FlavourPredicate(flavours);
   }

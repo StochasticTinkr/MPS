@@ -44,7 +44,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
 
   @Override
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FlavouredItem.FLAVOUR_CLASS, NodeReportItem.FLAVOUR_NODE, FLAVOUR_RULE_ID));
+    return new HashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_RULE_ID, FLAVOUR_NODE));
   }
 
   public static String getMessage(IErrorReporter errorReporter) {

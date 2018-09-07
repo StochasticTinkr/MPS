@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,28 +17,31 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.NodeFeatureReportItem;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
+import jetbrains.mps.errors.item.NodeReportItemBase;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SNamedElement;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class ConceptFeatureMissingError extends LanguageFeatureMissingError implements NodeFeatureReportItem {
-  private final SConceptFeature myConceptFeature;
-  public ConceptFeatureMissingError(SNodeReference node, SConceptFeature feature, String message) {
-    super(MessageStatus.ERROR, node, message);
-    myConceptFeature = feature;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public abstract class LanguageFeatureMissingError extends NodeReportItemBase {
+  public LanguageFeatureMissingError(MessageStatus severity, SNodeReference node, String message) {
+    super(severity, node, message);
   }
-  @Override
+
+  public ReportItemFlavour<LanguageFeatureMissingError, SNamedElement> FLAVOUR_LANGUAGE_FEATURE =
+      new SimpleReportItemFlavour<>("FLAVOUR_LANGUAGE_FEATURE", LanguageFeatureMissingError.class, LanguageFeatureMissingError::getLanguageFeature);
+
+  public abstract SNamedElement getLanguageFeature();
+
   public ItemKind getIssueKind() {
     return IssueKindReportItem.UNKNOWN_LANGUAGE_FEATURE;
   }
-  @Override
-  public SConceptFeature getConceptFeature() {
-    return myConceptFeature;
-  }
 
   @Override
-  public SNamedElement getLanguageFeature() {
-    return getConceptFeature();
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new LinkedHashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_LANGUAGE_FEATURE, FLAVOUR_NODE));
   }
 }

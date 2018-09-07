@@ -560,6 +560,7 @@
         <child id="1237721435807" name="elementType" index="HW$YZ" />
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
       </concept>
+      <concept id="1227022210526" name="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" flags="nn" index="2Kehj3" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
@@ -7361,9 +7362,8 @@
     <node concept="tnohg" id="5YEoTZrE_cH" role="tncku">
       <node concept="3clFbS" id="5YEoTZrE_cI" role="2VODD2">
         <node concept="3clFbF" id="5YEoTZrE_cJ" role="3cqZAp">
-          <node concept="37vLTI" id="5YEoTZrE_cK" role="3clFbG">
-            <node concept="10Nm6u" id="5YEoTZrE_cL" role="37vLTx" />
-            <node concept="2OqwBi" id="5YEoTZrE_cM" role="37vLTJ">
+          <node concept="2OqwBi" id="4oS1ku9k1GX" role="3clFbG">
+            <node concept="2OqwBi" id="5YEoTZrE_cM" role="2Oq$k0">
               <node concept="1eOMI4" id="5YEoTZrE_cN" role="2Oq$k0">
                 <node concept="10QFUN" id="5YEoTZrE_cO" role="1eOMHV">
                   <node concept="3Tqbb2" id="5YEoTZrE_cP" role="10QFUM">
@@ -7383,6 +7383,7 @@
                 </node>
               </node>
             </node>
+            <node concept="2Kehj3" id="4oS1ku9k4oo" role="2OqNvi" />
           </node>
         </node>
       </node>

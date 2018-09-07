@@ -23,6 +23,11 @@ import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 /**
  * An error associated with a concept feature
  */
@@ -32,6 +37,11 @@ public abstract class ConceptFeatureError extends NodeReportItemBase implements 
   public ConceptFeatureError(SNodeReference node, SConceptFeature feature, String message) {
     super(MessageStatus.ERROR, node, message);
     myFeature = feature;
+  }
+
+  @Override
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new LinkedHashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE));
   }
 
   public SConceptFeature getConceptFeature() {

@@ -21,8 +21,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem, IssueKindReportItem, NodeReportItem {
   private final TypesystemRuleId myRuleNode;
@@ -43,8 +47,8 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
   }
 
   @Override
-  public ItemKind getIssueKind() {
-    return IssueKindReportItem.CONSTRAINTS.deriveItemKind();
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new LinkedHashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_RULE_ID, FLAVOUR_NODE));
   }
 
   public static class PropertyConstraintReportItem extends ConstraintsReportItem implements NodeFeatureReportItem {
@@ -60,11 +64,19 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
     public SProperty getConceptFeature() {
       return myProperty;
     }
+    @Override
+    public ItemKind getIssueKind() {
+      return IssueKindReportItem.CONSTRAINTS.deriveItemKind("property constraint violation");
+    }
   }
 
   public static class CanBeChildFailedReportItem extends ConstraintsReportItem {
     public CanBeChildFailedReportItem(@NotNull SNode node, SNode parent, @NotNull TypesystemRuleId ruleNode) {
       super(node, "Node " + node + " cannot be child of node " + parent, ruleNode);
+    }
+    @Override
+    public ItemKind getIssueKind() {
+      return IssueKindReportItem.CONSTRAINTS.deriveItemKind("cannot be child");
     }
   }
 
@@ -72,17 +84,29 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
     public CanBeRootFailedReportItem(@NotNull SNode node, @NotNull TypesystemRuleId ruleNode) {
       super(node, "Not rootable concept added as root", ruleNode);
     }
+    @Override
+    public ItemKind getIssueKind() {
+      return IssueKindReportItem.CONSTRAINTS.deriveItemKind("not rootable");
+    }
   }
 
   public static class CanBeParentFailedReportItem extends ConstraintsReportItem {
     public CanBeParentFailedReportItem(@NotNull SNode node, @NotNull SNode child, @NotNull TypesystemRuleId ruleNode) {
       super(node, "Node " + node + " cannot be parent of node " + child, ruleNode);
     }
+    @Override
+    public ItemKind getIssueKind() {
+      return IssueKindReportItem.CONSTRAINTS.deriveItemKind("cannot be parent");
+    }
   }
 
   public static class CanBeAncestorFailedReportItem extends ConstraintsReportItem {
     public CanBeAncestorFailedReportItem(@NotNull SNode node, @NotNull SNode ancestor, @NotNull TypesystemRuleId ruleNode) {
       super(node, "Invalid ancestor: " + ancestor, ruleNode);
+    }
+    @Override
+    public ItemKind getIssueKind() {
+      return IssueKindReportItem.CONSTRAINTS.deriveItemKind("cannot be ancestor");
     }
   }
 }
