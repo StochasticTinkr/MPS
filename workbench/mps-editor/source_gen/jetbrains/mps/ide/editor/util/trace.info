@@ -408,136 +408,138 @@
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/5343046100067132614">
     <file name="BackgroundSearchWithPopupTask.java">
-      <node id="5343046100068653428" at="22,0,23,0" concept="5" trace="myPopup" />
-      <node id="5343046100069195889" at="23,0,24,0" concept="5" trace="mySettings" />
-      <node id="5343046100069492654" at="24,0,25,0" concept="5" trace="myList" />
-      <node id="5343046100069917062" at="25,0,26,0" concept="5" trace="myListModel" />
-      <node id="7052698666283512472" at="26,0,27,0" concept="5" trace="myAlarm" />
-      <node id="7052698666283512478" at="27,0,28,0" concept="5" trace="myShown" />
-      <node id="7052698666283512485" at="28,0,29,0" concept="5" trace="LOCK" />
-      <node id="7052698666283512490" at="29,0,30,0" concept="5" trace="myCurrentResults" />
-      <node id="7553210639458622006" at="30,0,31,0" concept="5" trace="myFinished" />
-      <node id="5343046100068446253" at="32,80,33,80" concept="14" />
-      <node id="5343046100069734734" at="33,80,34,26" concept="4" />
-      <node id="7052698666283512446" at="34,26,35,217" concept="9" />
-      <node id="5343046100068012761" at="35,217,36,43" concept="4" />
-      <node id="5343046100069550376" at="36,43,37,43" concept="4" />
-      <node id="5343046100070066863" at="37,43,38,51" concept="4" />
-      <node id="7052698666283512463" at="42,63,43,30" concept="4" />
-      <node id="5343046100068222218" at="43,30,44,25" concept="4" />
-      <node id="8398700892537595012" at="48,32,49,55" concept="10" />
-      <node id="7052698666283512507" at="54,31,55,13" concept="10" />
-      <node id="7052698666283512509" at="56,5,57,39" concept="9" />
-      <node id="7052698666287761226" at="59,27,60,65" concept="9" />
-      <node id="7052698666283512536" at="61,90,62,17" concept="10" />
-      <node id="7052698666283566045" at="67,27,68,38" concept="4" />
-      <node id="7052698666283566049" at="68,38,69,20" concept="4" />
-      <node id="7052698666283512561" at="76,24,77,13" concept="10" />
-      <node id="7052698666283512565" at="79,31,80,13" concept="10" />
-      <node id="7052698666283512568" at="81,5,82,40" concept="9" />
-      <node id="7052698666283512574" at="83,25,84,65" concept="4" />
-      <node id="8398700892537638248" at="85,5,86,104" concept="11" />
-      <node id="7052698666283512584" at="89,52,90,67" concept="9" />
-      <node id="7052698666283512596" at="91,61,92,38" concept="4" />
-      <node id="5343046100070502687" at="96,7,97,91" concept="9" />
-      <node id="5343046100070455885" at="97,91,98,35" concept="4" />
-      <node id="7052698666283512603" at="98,35,99,29" concept="4" />
-      <node id="7052698666283512612" at="100,27,101,24" concept="4" />
-      <node id="7052698666283512615" at="101,24,102,37" concept="4" />
-      <node id="6022254558509004713" at="107,28,108,86" concept="9" />
-      <node id="6022254558509039668" at="109,27,110,24" concept="4" />
-      <node id="7052698666283512625" at="112,24,113,13" concept="10" />
-      <node id="7052698666283512629" at="115,31,116,13" concept="10" />
-      <node id="7553210639458636010" at="117,5,118,22" concept="4" />
-      <node id="7052698666283512651" at="120,46,121,23" concept="4" />
-      <node id="7052698666283512654" at="121,23,122,60" concept="9" />
-      <node id="7052698666283512658" at="122,60,123,33" concept="4" />
-      <node id="7553210639458648336" at="124,12,125,16" concept="4" />
-      <node id="7553210639458670484" at="125,16,126,33" concept="4" />
-      <node id="7052698666283512503" at="53,61,56,5" concept="7" />
-      <node id="7052698666283512528" at="60,65,63,9" concept="7" />
-      <node id="7052698666283512559" at="75,26,78,5" concept="7" />
-      <node id="7052698666283512563" at="78,5,81,5" concept="7" />
-      <node id="7052698666283512571" at="82,40,85,5" concept="15" />
-      <node id="7052698666283512588" at="90,67,93,11" concept="7" />
-      <node id="6022254558509022326" at="108,86,111,5" concept="7" />
-      <node id="7052698666283512623" at="111,5,114,5" concept="7" />
-      <node id="7052698666283512627" at="114,5,117,5" concept="7" />
-      <node id="6148399791137342057" at="124,10,127,5" concept="1" />
-      <node id="8398700892537595003" at="47,0,51,0" concept="8" trace="isCancelled#()Z" />
-      <node id="7052698666283512607" at="99,29,103,5" concept="7" />
-      <node id="5343046100068222156" at="41,0,46,0" concept="8" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="7052698666283566042" at="66,0,71,0" concept="8" trace="run#()V" />
-      <node id="7052698666283512518" at="58,34,64,7" concept="15" />
-      <node id="7052698666283512580" at="88,25,94,9" concept="6" />
-      <node id="7052698666283512538" at="64,7,71,69" concept="4" />
-      <node id="5343046100067156483" at="32,0,40,0" concept="3" trace="BackgroundSearchWithPopupTask#(Ljetbrains/mps/ide/editor/util/PopupSettingsBuilder;)V" />
-      <node id="7259305962755451543" at="88,0,96,0" concept="8" trace="run#()V" />
-      <node id="7052698666283512634" at="118,22,127,5" concept="7" />
-      <node id="7259305962755306231" at="86,104,96,7" concept="4" />
-      <node id="7052698666283512512" at="57,39,72,5" concept="7" />
-      <node id="7052698666283512496" at="52,0,74,0" concept="8" trace="onUsageFound#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
-      <node id="7052698666283512620" at="106,0,129,0" concept="8" trace="onFinished#()V" />
-      <node id="7052698666283512557" at="75,0,105,0" concept="8" trace="refresh#()V" />
-      <scope id="7052698666283512637" at="119,37,119,37" />
-      <scope id="8398700892537595009" at="48,32,49,55" />
-      <scope id="7052698666283512506" at="54,31,55,13" />
-      <scope id="7052698666283512535" at="61,90,62,17" />
-      <scope id="7052698666283512562" at="76,24,77,13" />
-      <scope id="7052698666283512566" at="79,31,80,13" />
-      <scope id="7052698666283512573" at="83,25,84,65" />
-      <scope id="7052698666283512595" at="91,61,92,38" />
-      <scope id="6022254558509022328" at="109,27,110,24" />
-      <scope id="7052698666283512626" at="112,24,113,13" />
-      <scope id="7052698666283512630" at="115,31,116,13" />
-      <scope id="5343046100068222215" at="42,63,44,25" />
-      <scope id="7052698666283566044" at="67,27,69,20" />
-      <scope id="7052698666283512611" at="100,27,102,37" />
-      <scope id="6148399791137342058" at="124,12,126,33" />
-      <scope id="6148399791137327255" at="120,46,123,33">
+      <node id="5343046100068653428" at="25,0,26,0" concept="5" trace="myPopup" />
+      <node id="5343046100069195889" at="26,0,27,0" concept="5" trace="mySettings" />
+      <node id="5343046100069492654" at="27,0,28,0" concept="5" trace="myList" />
+      <node id="5343046100069917062" at="28,0,29,0" concept="5" trace="myListModel" />
+      <node id="7052698666283512472" at="29,0,30,0" concept="5" trace="myAlarm" />
+      <node id="7052698666283512478" at="30,0,31,0" concept="5" trace="myShown" />
+      <node id="7052698666283512485" at="31,0,32,0" concept="5" trace="LOCK" />
+      <node id="7052698666283512490" at="32,0,33,0" concept="5" trace="myCurrentResults" />
+      <node id="7553210639458622006" at="33,0,34,0" concept="5" trace="myFinished" />
+      <node id="5343046100068446253" at="35,80,36,80" concept="14" />
+      <node id="5343046100069734734" at="36,80,37,26" concept="4" />
+      <node id="7052698666283512446" at="37,26,38,217" concept="9" />
+      <node id="5343046100068012761" at="38,217,39,43" concept="4" />
+      <node id="5343046100069550376" at="39,43,40,43" concept="4" />
+      <node id="5343046100070066863" at="40,43,41,51" concept="4" />
+      <node id="7052698666283512463" at="45,63,46,30" concept="4" />
+      <node id="5343046100068222218" at="46,30,47,25" concept="4" />
+      <node id="8398700892537595012" at="51,32,52,55" concept="10" />
+      <node id="7052698666283512507" at="57,31,58,13" concept="10" />
+      <node id="7052698666283512509" at="59,5,60,39" concept="9" />
+      <node id="7052698666287761226" at="62,27,63,65" concept="9" />
+      <node id="7381896486551451006" at="63,65,64,92" concept="9" />
+      <node id="7052698666283512536" at="65,87,66,17" concept="10" />
+      <node id="7052698666283566045" at="71,27,72,38" concept="4" />
+      <node id="7052698666283566049" at="72,38,73,20" concept="4" />
+      <node id="7052698666283512561" at="80,24,81,13" concept="10" />
+      <node id="7052698666283512565" at="83,31,84,13" concept="10" />
+      <node id="7052698666283512568" at="85,5,86,40" concept="9" />
+      <node id="7052698666283512574" at="87,25,88,65" concept="4" />
+      <node id="8398700892537638248" at="89,5,90,104" concept="11" />
+      <node id="7052698666283512584" at="93,52,94,67" concept="9" />
+      <node id="7052698666283512596" at="95,61,96,38" concept="4" />
+      <node id="5343046100070502687" at="100,7,101,113" concept="9" />
+      <node id="5343046100070455885" at="101,113,102,35" concept="4" />
+      <node id="7052698666283512603" at="102,35,103,29" concept="4" />
+      <node id="7052698666283512612" at="104,27,105,24" concept="4" />
+      <node id="7052698666283512615" at="105,24,106,37" concept="4" />
+      <node id="6022254558509004713" at="111,28,112,86" concept="9" />
+      <node id="6022254558509039668" at="113,27,114,24" concept="4" />
+      <node id="7052698666283512625" at="116,24,117,13" concept="10" />
+      <node id="7052698666283512629" at="119,31,120,13" concept="10" />
+      <node id="7553210639458636010" at="121,5,122,22" concept="4" />
+      <node id="7052698666283512651" at="124,68,125,23" concept="4" />
+      <node id="7052698666283512654" at="125,23,126,82" concept="9" />
+      <node id="7052698666283512658" at="126,82,127,33" concept="4" />
+      <node id="7553210639458648336" at="128,12,129,16" concept="4" />
+      <node id="7553210639458670484" at="129,16,130,33" concept="4" />
+      <node id="7052698666283512503" at="56,61,59,5" concept="7" />
+      <node id="7052698666283512528" at="64,92,67,9" concept="7" />
+      <node id="7052698666283512559" at="79,26,82,5" concept="7" />
+      <node id="7052698666283512563" at="82,5,85,5" concept="7" />
+      <node id="7052698666283512571" at="86,40,89,5" concept="15" />
+      <node id="7052698666283512588" at="94,67,97,11" concept="7" />
+      <node id="6022254558509022326" at="112,86,115,5" concept="7" />
+      <node id="7052698666283512623" at="115,5,118,5" concept="7" />
+      <node id="7052698666283512627" at="118,5,121,5" concept="7" />
+      <node id="6148399791137342057" at="128,10,131,5" concept="1" />
+      <node id="8398700892537595003" at="50,0,54,0" concept="8" trace="isCancelled#()Z" />
+      <node id="7052698666283512607" at="103,29,107,5" concept="7" />
+      <node id="5343046100068222156" at="44,0,49,0" concept="8" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="7052698666283566042" at="70,0,75,0" concept="8" trace="run#()V" />
+      <node id="7052698666283512580" at="92,25,98,9" concept="6" />
+      <node id="7052698666283512518" at="61,34,68,7" concept="15" />
+      <node id="7052698666283512538" at="68,7,75,69" concept="4" />
+      <node id="5343046100067156483" at="35,0,43,0" concept="3" trace="BackgroundSearchWithPopupTask#(Ljetbrains/mps/ide/editor/util/PopupSettingsBuilder;)V" />
+      <node id="7259305962755451543" at="92,0,100,0" concept="8" trace="run#()V" />
+      <node id="7052698666283512634" at="122,22,131,5" concept="7" />
+      <node id="7259305962755306231" at="90,104,100,7" concept="4" />
+      <node id="7052698666283512512" at="60,39,76,5" concept="7" />
+      <node id="7052698666283512496" at="55,0,78,0" concept="8" trace="onUsageFound#(Ljetbrains/mps/ide/findusages/model/SearchResult;)V" />
+      <node id="7052698666283512620" at="110,0,133,0" concept="8" trace="onFinished#()V" />
+      <node id="7052698666283512557" at="79,0,109,0" concept="8" trace="refresh#()V" />
+      <scope id="7052698666283512637" at="123,58,123,58" />
+      <scope id="8398700892537595009" at="51,32,52,55" />
+      <scope id="7052698666283512506" at="57,31,58,13" />
+      <scope id="7052698666283512535" at="65,87,66,17" />
+      <scope id="7052698666283512562" at="80,24,81,13" />
+      <scope id="7052698666283512566" at="83,31,84,13" />
+      <scope id="7052698666283512573" at="87,25,88,65" />
+      <scope id="7052698666283512595" at="95,61,96,38" />
+      <scope id="6022254558509022328" at="113,27,114,24" />
+      <scope id="7052698666283512626" at="116,24,117,13" />
+      <scope id="7052698666283512630" at="119,31,120,13" />
+      <scope id="5343046100068222215" at="45,63,47,25" />
+      <scope id="7052698666283566044" at="71,27,73,20" />
+      <scope id="7052698666283512611" at="104,27,106,37" />
+      <scope id="6148399791137342058" at="128,12,130,33" />
+      <scope id="6148399791137327255" at="124,68,127,33">
         <var name="navigatable" id="7052698666283512653" />
       </scope>
-      <scope id="8398700892537595003" at="47,0,51,0" />
-      <scope id="7052698666283512520" at="59,27,63,9">
-        <var name="pointer" id="7052698666287761227" />
-      </scope>
-      <scope id="7052698666283512582" at="89,52,93,11">
+      <scope id="8398700892537595003" at="50,0,54,0" />
+      <scope id="7052698666283512582" at="93,52,97,11">
         <var name="listModel" id="7052698666283512583" />
       </scope>
-      <scope id="5343046100068222156" at="41,0,46,0">
+      <scope id="5343046100068222156" at="44,0,49,0">
         <var name="indicator" id="5343046100068222158" />
       </scope>
-      <scope id="7052698666283566042" at="66,0,71,0" />
-      <scope id="5343046100067156487" at="32,80,38,51">
+      <scope id="7052698666283512520" at="62,27,67,9">
+        <var name="newNavigatable" id="7381896486551451007" />
+        <var name="pointer" id="7052698666287761227" />
+      </scope>
+      <scope id="7052698666283566042" at="70,0,75,0" />
+      <scope id="5343046100067156487" at="35,80,41,51">
         <var name="contextMenuComposite" id="7052698666283512445" />
       </scope>
-      <scope id="7052698666283512580" at="88,25,94,9">
+      <scope id="7052698666283512580" at="92,25,98,9">
         <var name="newElement" id="7052698666283512599" />
       </scope>
-      <scope id="7259305962755451547" at="88,25,94,9" />
-      <scope id="5343046100067156483" at="32,0,40,0">
+      <scope id="7259305962755451547" at="92,25,98,9" />
+      <scope id="5343046100067156483" at="35,0,43,0">
         <var name="settings" id="5343046100067295564" />
       </scope>
-      <scope id="7259305962755451543" at="88,0,96,0" />
-      <scope id="7052698666283512517" at="58,34,71,69" />
-      <scope id="7052698666283512502" at="53,61,72,5">
+      <scope id="7259305962755451543" at="92,0,100,0" />
+      <scope id="7052698666283512517" at="61,34,75,69" />
+      <scope id="7052698666283512502" at="56,61,76,5">
         <var name="object" id="7052698666283512508" />
       </scope>
-      <scope id="7052698666283512622" at="107,28,127,5">
+      <scope id="7052698666283512622" at="111,28,131,5">
         <var name="progress" id="6022254558509004714" />
       </scope>
-      <scope id="7052698666283512496" at="52,0,74,0">
+      <scope id="7052698666283512496" at="55,0,78,0">
         <var name="result" id="7052698666283512498" />
       </scope>
-      <scope id="7052698666283512620" at="106,0,129,0" />
-      <scope id="7052698666283512558" at="75,26,103,5">
+      <scope id="7052698666283512620" at="110,0,133,0" />
+      <scope id="7052698666283512558" at="79,26,107,5">
         <var name="newCaption" id="5343046100070502688" />
         <var name="newData" id="7052698666283512567" />
       </scope>
-      <scope id="7052698666283512557" at="75,0,105,0" />
-      <unit id="7052698666283566041" at="65,29,71,7" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask$1" />
-      <unit id="7259305962755451541" at="87,60,96,5" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask$2" />
-      <unit id="5343046100067132614" at="21,0,130,0" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask" />
+      <scope id="7052698666283512557" at="79,0,109,0" />
+      <unit id="7052698666283566041" at="69,29,75,7" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask$1" />
+      <unit id="7259305962755451541" at="91,60,100,5" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask$2" />
+      <unit id="5343046100067132614" at="24,0,134,0" name="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask" />
     </file>
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/5343046100070160550">

@@ -8,14 +8,17 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.ui.SortedListModel;
 import com.intellij.util.Alarm;
 import com.intellij.openapi.util.Ref;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ModalityState;
+import java.util.List;
+import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 
 public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
@@ -26,7 +29,7 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   private final Alarm myAlarm = new Alarm(Alarm.ThreadToUse.SWING_THREAD);
   private final Ref<Boolean> myShown = new Ref<Boolean>(false);
   private final Object LOCK = new Object();
-  private final List<NodeNavigatable> myCurrentResults = new ArrayList<NodeNavigatable>();
+  private final Set<NodeNavigatable> myCurrentResults = SetSequence.fromSet(new LinkedHashSet<NodeNavigatable>());
   private volatile boolean myFinished = false;
 
   public BackgroundSearchWithPopupTask(@NotNull PopupSettingsBuilder settings) {
@@ -58,7 +61,8 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
     if (object instanceof SNode) {
       synchronized (LOCK) {
         SNodeReference pointer = ((SNode) object).getReference();
-        if (!(myCurrentResults.add(new NodeNavigatable(mySettings.myProject, pointer)))) {
+        NodeNavigatable newNavigatable = new NodeNavigatable(mySettings.myProject, pointer);
+        if (SetSequence.fromSet(myCurrentResults).addElement(newNavigatable) == null) {
           return;
         }
       }
@@ -83,17 +87,18 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
     synchronized (LOCK) {
       newData = new ArrayList<NodeNavigatable>(myCurrentResults);
     }
-    List<NodeNavigatable> showingItems = myListModel.getItems();
-    newData.removeAll(showingItems);
-    // fix comparator needs read, could transfer the name into a NamedNodeNavigatable composite instead
+    // fix comparator needs read, could transfer the name into a NamedNodeNavigatable composite instead 
     mySettings.myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Object selected = myList.getSelectedValue();
-        myListModel.addAll(newData);
-        myList.setSelectedValue(selected, true);
+        for (NodeNavigatable newElement : newData) {
+          SortedListModel<NodeNavigatable> listModel = myListModel;
+          if (!(listModel.getItems().contains(newElement))) {
+            listModel.add(newElement);
+          }
+        }
       }
     });
-    String newCaption = mySettings.captionFun.caption(myCurrentResults.size(), myFinished);
+    String newCaption = mySettings.captionFun.caption(SetSequence.fromSet(myCurrentResults).count(), myFinished);
     myPopup.setCaption(newCaption);
     myPopup.pack(true, true);
     if (!(myShown.get())) {
@@ -115,10 +120,10 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
       return;
     }
     myFinished = true;
-    if (myCurrentResults.isEmpty()) {
-    } else if (myCurrentResults.size() == 1) {
+    if (SetSequence.fromSet(myCurrentResults).isEmpty()) {
+    } else if (SetSequence.fromSet(myCurrentResults).count() == 1) {
       myPopup.cancel();
-      NodeNavigatable navigatable = myCurrentResults.get(0);
+      NodeNavigatable navigatable = SetSequence.fromSet(myCurrentResults).first();
       navigatable.navigate(true);
     } else {
       refresh();
