@@ -9,7 +9,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -66,7 +66,6 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="find" />
     <property role="EcuMT" value="1197044488840" />
-    <property role="R4oN_" value="use lalala" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hqPqlEd">
@@ -371,31 +370,25 @@
   <node concept="1TIwiD" id="5Xky2$hpEQB">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ForEachFoundNodeExpression" />
+    <property role="TrG5h" value="OnEachNodeFoundByExpression" />
     <property role="3GE5qa" value="Statements" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="foreach found node" />
     <property role="EcuMT" value="6869265041613827495" />
+    <property role="34LRSv" value="on each node" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="1TJgyj" id="gDDuvdF" role="1TKVEi">
+    <node concept="1TJgyj" id="14FcRCmOY2q" role="1TKVEi">
+      <property role="IQ2ns" value="1237139122105344154" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="nodeVar" />
+      <property role="20kJfa" value="callback" />
       <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1144230900587" />
-      <ref role="20lvS9" to="tp2q:gMGrK_y" resolve="ForEachVariable" />
+      <ref role="20lvS9" node="14FcRCmME_I" resolve="OnEachFoundNodeCallback" />
     </node>
     <node concept="1TJgyj" id="gMLFqrC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="body" />
+      <property role="20kJfa" value="bodyC" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1154032183016" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
-    <node concept="PrWs8" id="hWu5N6C" role="PzmwI">
-      <ref role="PrY4T" to="tpck:hWu5dyl" resolve="IContainer" />
-    </node>
-    <node concept="PrWs8" id="5Xky2$hrPyL" role="PzmwI">
-      <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
     </node>
     <node concept="PrWs8" id="5Xky2$hrPyT" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
@@ -426,6 +419,22 @@
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="1JlDhgSjx_v" resolve="FinderReference" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="14FcRCmME_I">
+    <property role="EcuMT" value="1237139122104740206" />
+    <property role="3GE5qa" value="Methods" />
+    <property role="TrG5h" value="OnEachFoundNodeCallback" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+  </node>
+  <node concept="1TIwiD" id="14FcRCmOTXM">
+    <property role="EcuMT" value="1237139122105327474" />
+    <property role="3GE5qa" value="Methods" />
+    <property role="TrG5h" value="ForEachNodeFoundClosureParameterDeclaration" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
   </node>
 </model>
 

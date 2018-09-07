@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ForEachFoundNodeExpression_Editor extends DefaultNodeEditor {
+public class ForEachNodeFoundClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new ForEachFoundNodeExpression_EditorBuilder_a(editorContext, node).createCell();
+    return new ForEachNodeFoundClosureParameterDeclaration_EditorBuilder_a(editorContext, node).createCell();
   }
 }
