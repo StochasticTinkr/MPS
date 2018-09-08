@@ -6,8 +6,6 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nls;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 import java.lang.reflect.Constructor;
@@ -44,7 +42,7 @@ import com.intellij.execution.configurations.UnknownRunConfiguration;
     //  perhaps, shall nullify myDelegateClass to release any reference to stale class? 
   }
 
-  @NonNls
+  @NotNull
   @Override
   public String getId() {
     // though javadoc in superclass suggests to use getType().getId(), it doesn't allow to distinguish multiple factories for the same type 
@@ -52,8 +50,8 @@ import com.intellij.execution.configurations.UnknownRunConfiguration;
     return myName;
   }
 
-  @Nls
   @Override
+  @NotNull
   public String getName() {
     return myName;
   }
