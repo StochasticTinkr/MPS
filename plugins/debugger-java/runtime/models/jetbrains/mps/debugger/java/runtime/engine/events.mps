@@ -2119,12 +2119,12 @@
           <node concept="3cpWsn" id="6iKTdy44w$h" role="3cpWs9">
             <property role="TrG5h" value="progress" />
             <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="6iKTdy44w$i" role="1tU5fm">
-              <ref role="3uigEE" to="ot7:~ProgressWindowWithNotification" resolve="ProgressWindowWithNotification" />
+            <node concept="3uibUv" id="4sfZAWyrxDB" role="1tU5fm">
+              <ref role="3uigEE" to="ot7:~ProgressWindow" resolve="ProgressWindow" />
             </node>
             <node concept="2ShNRf" id="6iKTdy44w_X" role="33vP2m">
               <node concept="1pGfFk" id="6iKTdy44Cd7" role="2ShVmc">
-                <ref role="37wK5l" to="ot7:~ProgressWindowWithNotification.&lt;init&gt;(boolean,boolean,com.intellij.openapi.project.Project,javax.swing.JComponent,java.lang.String)" resolve="ProgressWindowWithNotification" />
+                <ref role="37wK5l" to="ot7:~ProgressWindow.&lt;init&gt;(boolean,boolean,com.intellij.openapi.project.Project)" resolve="ProgressWindow" />
                 <node concept="3clFbT" id="6iKTdy44CpM" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
@@ -2134,8 +2134,6 @@
                 <node concept="37vLTw" id="6iKTdy44Crt" role="37wK5m">
                   <ref role="3cqZAo" node="47Hi8V_09tm" resolve="myProject" />
                 </node>
-                <node concept="10Nm6u" id="6iKTdy44Cs4" role="37wK5m" />
-                <node concept="10Nm6u" id="6iKTdy44FTr" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -2154,41 +2152,40 @@
           </node>
         </node>
         <node concept="3clFbH" id="4IpZL7CsOjn" role="3cqZAp" />
-        <node concept="3clFbF" id="6iKTdy44Qxq" role="3cqZAp">
-          <node concept="2OqwBi" id="6iKTdy44QG4" role="3clFbG">
-            <node concept="37vLTw" id="6iKTdy44Qxp" role="2Oq$k0">
-              <ref role="3cqZAo" node="6iKTdy44w$h" resolve="progress" />
+        <node concept="3cpWs8" id="4sfZAWyrFGQ" role="3cqZAp">
+          <node concept="3cpWsn" id="4sfZAWyrFGR" role="3cpWs9">
+            <property role="TrG5h" value="progressIndicatorListener" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="4sfZAWyrQH5" role="1tU5fm">
+              <ref role="3uigEE" to="ot7:~ProgressIndicatorListener" resolve="ProgressIndicatorListener" />
             </node>
-            <node concept="liA8E" id="6iKTdy44Z5W" role="2OqNvi">
-              <ref role="37wK5l" to="ot7:~ProgressWindowWithNotification.addListener(com.intellij.openapi.progress.util.ProgressIndicatorListener):void" resolve="addListener" />
-              <node concept="2ShNRf" id="6iKTdy44Z7w" role="37wK5m">
-                <node concept="YeOm9" id="6iKTdy450kj" role="2ShVmc">
-                  <node concept="1Y3b0j" id="6iKTdy450km" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="37wK5l" to="ot7:~ProgressIndicatorListenerAdapter.&lt;init&gt;()" resolve="ProgressIndicatorListenerAdapter" />
-                    <ref role="1Y3XeK" to="ot7:~ProgressIndicatorListenerAdapter" resolve="ProgressIndicatorListenerAdapter" />
-                    <node concept="3Tm1VV" id="6iKTdy450kn" role="1B3o_S" />
-                    <node concept="3clFb_" id="6iKTdy450kv" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="cancelled" />
-                      <property role="DiZV1" value="false" />
-                      <node concept="3Tm1VV" id="6iKTdy450kw" role="1B3o_S" />
-                      <node concept="3cqZAl" id="6iKTdy450ky" role="3clF45" />
-                      <node concept="3clFbS" id="6iKTdy450k$" role="3clF47">
-                        <node concept="3clFbF" id="7aZroELtejp" role="3cqZAp">
-                          <node concept="2OqwBi" id="7aZroELteta" role="3clFbG">
-                            <node concept="37vLTw" id="7aZroELtejo" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6iKTdy44w$h" resolve="progress" />
-                            </node>
-                            <node concept="liA8E" id="7aZroELtiS0" role="2OqNvi">
-                              <ref role="37wK5l" to="ot7:~ProgressWindow.stop():void" resolve="stop" />
-                            </node>
+            <node concept="2ShNRf" id="4sfZAWyrFGS" role="33vP2m">
+              <node concept="YeOm9" id="4sfZAWyrFGT" role="2ShVmc">
+                <node concept="1Y3b0j" id="4sfZAWyrFGU" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="37wK5l" to="ot7:~ProgressIndicatorListenerAdapter.&lt;init&gt;()" resolve="ProgressIndicatorListenerAdapter" />
+                  <ref role="1Y3XeK" to="ot7:~ProgressIndicatorListenerAdapter" resolve="ProgressIndicatorListenerAdapter" />
+                  <node concept="3Tm1VV" id="4sfZAWyrFGV" role="1B3o_S" />
+                  <node concept="3clFb_" id="4sfZAWyrFGW" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="cancelled" />
+                    <property role="DiZV1" value="false" />
+                    <node concept="3Tm1VV" id="4sfZAWyrFGX" role="1B3o_S" />
+                    <node concept="3cqZAl" id="4sfZAWyrFGY" role="3clF45" />
+                    <node concept="3clFbS" id="4sfZAWyrFGZ" role="3clF47">
+                      <node concept="3clFbF" id="4sfZAWyrFH0" role="3cqZAp">
+                        <node concept="2OqwBi" id="4sfZAWyrFH1" role="3clFbG">
+                          <node concept="37vLTw" id="4sfZAWyrFH2" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6iKTdy44w$h" resolve="progress" />
+                          </node>
+                          <node concept="liA8E" id="4sfZAWyrFH3" role="2OqNvi">
+                            <ref role="37wK5l" to="ot7:~ProgressWindow.stop():void" resolve="stop" />
                           </node>
                         </node>
                       </node>
-                      <node concept="2AHcQZ" id="6iKTdy450k_" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="4sfZAWyrFH4" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                     </node>
                   </node>
                 </node>
@@ -2196,6 +2193,20 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4sfZAWyrOdD" role="3cqZAp">
+          <node concept="2OqwBi" id="4sfZAWyrQer" role="3clFbG">
+            <node concept="37vLTw" id="4sfZAWyrOdB" role="2Oq$k0">
+              <ref role="3cqZAo" node="4sfZAWyrFGR" resolve="progressIndicatorListener" />
+            </node>
+            <node concept="liA8E" id="4sfZAWyrQNV" role="2OqNvi">
+              <ref role="37wK5l" to="ot7:~ProgressIndicatorListener.installToProgress(com.intellij.openapi.wm.ex.ProgressIndicatorEx):void" resolve="installToProgress" />
+              <node concept="37vLTw" id="4sfZAWyrQWz" role="37wK5m">
+                <ref role="3cqZAo" node="6iKTdy44w$h" resolve="progress" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4sfZAWyrI5t" role="3cqZAp" />
         <node concept="3clFbF" id="4IpZL7CsIm0" role="3cqZAp">
           <node concept="2OqwBi" id="4IpZL7CsJo0" role="3clFbG">
             <node concept="2YIFZM" id="4IpZL7CsJdE" role="2Oq$k0">
