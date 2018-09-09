@@ -111,6 +111,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   @Deprecated
+  @ToRemove(version = 2018.3)
   /*package*/ static boolean applicableToConcept_id1653mnvAgvQ(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
