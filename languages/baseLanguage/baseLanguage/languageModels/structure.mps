@@ -1960,7 +1960,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1170346101385" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
-      <node concept="asaX9" id="2yoSzAaKW1v" role="lGtFl" />
+      <node concept="asaX9" id="2yoSzAaKW1v" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="2yoSzAaKW1u" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
