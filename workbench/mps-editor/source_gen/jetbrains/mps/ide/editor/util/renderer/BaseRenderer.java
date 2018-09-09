@@ -5,8 +5,6 @@ package jetbrains.mps.ide.editor.util.renderer;
 import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
 import java.awt.Color;
-
-import com.intellij.ui.JBColor;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Font;
 import com.intellij.util.ui.UIUtil;
@@ -27,7 +25,7 @@ public abstract class BaseRenderer<T> extends ColoredListCellRenderer {
     setIcon(getIcon(element));
     String containerText = getContainerText(element, name);
     if (containerText != null) {
-      append(" " + containerText, new SimpleTextAttributes(Font.PLAIN, JBColor.GRAY));
+      append(" " + containerText, new SimpleTextAttributes(Font.PLAIN, Color.GRAY));
     }
     setPaintFocusBorder(false);
     setBackground((selected ? UIUtil.getListSelectionBackground() : UIUtil.getListBackground()));

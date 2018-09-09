@@ -43,6 +43,7 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -4239,7 +4240,38 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="1x2nNIrvXTW" role="3clF46">
+        <property role="TrG5h" value="monitor" />
+        <node concept="3uibUv" id="1x2nNIrw0ck" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+        <node concept="2AHcQZ" id="1x2nNIrw2uB" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+      </node>
       <node concept="3clFbS" id="6f4clAdW61o" role="3clF47">
+        <node concept="3clFbJ" id="1x2nNIrw315" role="3cqZAp">
+          <node concept="3clFbS" id="1x2nNIrw316" role="3clFbx">
+            <node concept="3clFbF" id="1x2nNIrw317" role="3cqZAp">
+              <node concept="37vLTI" id="1x2nNIrw318" role="3clFbG">
+                <node concept="2ShNRf" id="1x2nNIrw319" role="37vLTx">
+                  <node concept="1pGfFk" id="1x2nNIrw31a" role="2ShVmc">
+                    <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="1x2nNIrw31b" role="37vLTJ">
+                  <ref role="3cqZAo" node="1x2nNIrvXTW" resolve="monitor" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="1x2nNIrw31c" role="3clFbw">
+            <node concept="10Nm6u" id="1x2nNIrw31d" role="3uHU7w" />
+            <node concept="37vLTw" id="1x2nNIrw31e" role="3uHU7B">
+              <ref role="3cqZAo" node="1x2nNIrvXTW" resolve="monitor" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6f4clAe1qKP" role="3cqZAp">
           <node concept="37vLTI" id="6f4clAe1qKQ" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmatv" role="37vLTJ">
@@ -4445,7 +4477,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5aJlj9qO_ZN" role="2OqNvi">
-                  <ref role="37wK5l" to="yctd:~NodeUsageFinder.collectUsages(org.jetbrains.mps.openapi.model.SModel):void" resolve="collectUsages" />
+                  <ref role="37wK5l" to="yctd:~NodeUsageFinder.collectUsages(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.ProgressMonitor):void" resolve="collectUsages" />
                   <node concept="2OqwBi" id="5aJlj9qOAbD" role="37wK5m">
                     <node concept="37vLTw" id="5aJlj9qOA4K" role="2Oq$k0">
                       <ref role="3cqZAo" node="6f4clAe1qMh" resolve="e" />
@@ -4453,6 +4485,9 @@
                     <node concept="liA8E" id="5aJlj9qOA$$" role="2OqNvi">
                       <ref role="37wK5l" to="33ny:~Map$Entry.getKey():java.lang.Object" resolve="getKey" />
                     </node>
+                  </node>
+                  <node concept="37vLTw" id="1x2nNIrw4WP" role="37wK5m">
+                    <ref role="3cqZAo" node="1x2nNIrvXTW" resolve="monitor" />
                   </node>
                 </node>
               </node>
@@ -4507,7 +4542,38 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="1x2nNIrvCVS" role="3clF46">
+        <property role="TrG5h" value="monitor" />
+        <node concept="3uibUv" id="1x2nNIrvHTB" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+        <node concept="2AHcQZ" id="1x2nNIrw1Ly" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+      </node>
       <node concept="3clFbS" id="6f4clAdW61E" role="3clF47">
+        <node concept="3clFbJ" id="1x2nNIrvKm8" role="3cqZAp">
+          <node concept="3clFbS" id="1x2nNIrvKma" role="3clFbx">
+            <node concept="3clFbF" id="1x2nNIrvMyD" role="3cqZAp">
+              <node concept="37vLTI" id="1x2nNIrvMTI" role="3clFbG">
+                <node concept="2ShNRf" id="1x2nNIrvMWE" role="37vLTx">
+                  <node concept="1pGfFk" id="1x2nNIrvXst" role="2ShVmc">
+                    <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="1x2nNIrvMyB" role="37vLTJ">
+                  <ref role="3cqZAo" node="1x2nNIrvCVS" resolve="monitor" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="1x2nNIrvLCR" role="3clFbw">
+            <node concept="10Nm6u" id="1x2nNIrvLFE" role="3uHU7w" />
+            <node concept="37vLTw" id="1x2nNIrvL0L" role="3uHU7B">
+              <ref role="3cqZAo" node="1x2nNIrvCVS" resolve="monitor" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1IbvthZGpyS" role="3cqZAp">
           <node concept="3cpWsn" id="1IbvthZGpyT" role="3cpWs9">
             <property role="TrG5h" value="bl" />
@@ -4627,7 +4693,7 @@
             <node concept="3clFbF" id="6f4clAe9cZF" role="3cqZAp">
               <node concept="2YIFZM" id="6f4clAe9f2q" role="3clFbG">
                 <ref role="1Pybhc" to="yctd:~FindUsagesUtil" resolve="FindUsagesUtil" />
-                <ref role="37wK5l" to="yctd:~FindUsagesUtil.collectInstances(org.jetbrains.mps.openapi.model.SModel,java.util.Collection,org.jetbrains.mps.openapi.util.Consumer):void" resolve="collectInstances" />
+                <ref role="37wK5l" to="yctd:~FindUsagesUtil.collectInstances(org.jetbrains.mps.openapi.model.SModel,java.util.Collection,org.jetbrains.mps.openapi.util.Consumer,org.jetbrains.mps.openapi.util.ProgressMonitor):void" resolve="collectInstances" />
                 <node concept="2OqwBi" id="6f4clAe9f2r" role="37wK5m">
                   <node concept="liA8E" id="6f4clAe9f2s" role="2OqNvi">
                     <ref role="37wK5l" to="33ny:~Map$Entry.getKey():java.lang.Object" resolve="getKey" />
@@ -4646,6 +4712,9 @@
                 </node>
                 <node concept="37vLTw" id="6f4clAe9f2x" role="37wK5m">
                   <ref role="3cqZAo" node="6f4clAdW61z" resolve="consumer" />
+                </node>
+                <node concept="37vLTw" id="1x2nNIrvX_n" role="37wK5m">
+                  <ref role="3cqZAo" node="1x2nNIrvCVS" resolve="monitor" />
                 </node>
               </node>
             </node>

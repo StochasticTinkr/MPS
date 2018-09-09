@@ -61,14 +61,17 @@ public abstract class KeymapHandler<E> {
   public Collection<Pair<KeyMapAction, EditorCell>> getActions(final EditorCell selectedCell, E event, final EditorContext context) {
     final Collection<ActionKey> actionKeys = getActionKeys(event);
     assert !actionKeys.isEmpty();
-    return new ModelAccessHelper(context.getRepository()).runReadAction(() -> {
-      // collect all keymaps available
-      List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
-      if (keymapsAndCells.isEmpty()) {
-        return Collections.emptyList();
-      }
+    return new ModelAccessHelper(context.getRepository()).runReadAction(new Computable<List<Pair<KeyMapAction, EditorCell>>>() {
+      @Override
+      public List<Pair<KeyMapAction, EditorCell>> compute() {
+        // collect all keymaps available
+        List<Pair<KeyMap, EditorCell>> keymapsAndCells = KeymapHandler.this.getRegisteredKeymaps(selectedCell, context);
+        if (keymapsAndCells.isEmpty()) {
+          return Collections.emptyList();
+        }
 
-      return selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
+        return KeymapHandler.this.selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
+      }
     });
   }
 

@@ -1,12 +1,17 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="MPSDebug with profiling" type="Application" factoryName="Application">
-    <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-    <module name="startup" />
     <option name="VM_PARAMETERS" value="-ea -Xmx4096m -XX:NewSize=384m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2018.3 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5083 -javaagent:$PROJECT_DIR$/build/artifacts/editorInstrumentation/editorAgent.jar -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
+    <option name="PROGRAM_PARAMETERS" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
-    <method v="2">
-      <option name="Make" enabled="true" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+    <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+    <option name="ENABLE_SWING_INSPECTOR" value="false" />
+    <option name="ENV_VARIABLES" />
+    <option name="PASS_PARENT_ENVS" value="true" />
+    <module name="startup" />
+    <envs />
+    <method>
       <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/editor/instrumentation/build.xml" target="build" />
     </method>
   </configuration>

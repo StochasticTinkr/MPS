@@ -1,9 +1,16 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-    <module name="startup" />
     <option name="VM_PARAMETERS" value="-client -ea -Xmx4096m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2018.3 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
+    <option name="PROGRAM_PARAMETERS" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="ENABLE_SWING_INSPECTOR" value="false" />
+    <option name="ENV_VARIABLES" />
+    <option name="PASS_PARENT_ENVS" value="true" />
+    <module name="startup" />
+    <envs />
     <RunnerSettings RunnerId="Debug">
       <option name="DEBUG_PORT" value="4454" />
       <option name="TRANSPORT" value="0" />
