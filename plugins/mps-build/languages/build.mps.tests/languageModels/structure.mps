@@ -72,7 +72,7 @@
       <property role="IQ2ns" value="6593674873639474544" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="options" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="5I1s5NvGLjw" resolve="BuildMpsLayout_TestModules_Options" />
     </node>
     <node concept="1TJgyj" id="6g2MV4s4KuI" role="1TKVEi">
