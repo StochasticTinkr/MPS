@@ -986,7 +986,7 @@
       <property role="IQ2ns" value="3570488090019868128" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="packagingType" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
     </node>
     <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">

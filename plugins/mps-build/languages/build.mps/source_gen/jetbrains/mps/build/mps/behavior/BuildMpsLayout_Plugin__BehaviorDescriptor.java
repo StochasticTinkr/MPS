@@ -24,9 +24,9 @@ import jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildLayout_Container__BehaviorDescriptor;
@@ -48,8 +48,9 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<Boolean> isFolder_id1bWeed$oPYW = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFolder").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPYW").registry(REGISTRY).build();
   /*package*/ static final SMethod<SNode> findGroup_id7cOEBlPT2gC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findGroup").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7cOEBlPT2gC").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   /*package*/ static final SMethod<Boolean> isPackagedAutomatically_id36cV00CxaOW = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isPackagedAutomatically").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("36cV00CxaOW").registry(REGISTRY).build();
+  /*package*/ static final SMethod<Void> unpackPluginModules_id6ZIjmBZXud7 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpackPluginModules").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("6ZIjmBZXud7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(String.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(appendName_id1bWeed$ownT, unpack_id6IqTD4bJTWZ, location_id6b4RkXS8sT2, exports_id5FtnUVJQES1, getChildrenOutputDir_WithMacro_id450ejGzh8bb, getOutputPath_WithMacro_idfzIHCHip1Q, getApproximateName_id4RsV8qJH_Br, isFolder_id1bWeed$oPYW, findGroup_id7cOEBlPT2gC, isPackagedAutomatically_id36cV00CxaOW);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(appendName_id1bWeed$ownT, unpack_id6IqTD4bJTWZ, location_id6b4RkXS8sT2, exports_id5FtnUVJQES1, getChildrenOutputDir_WithMacro_id450ejGzh8bb, getOutputPath_WithMacro_idfzIHCHip1Q, getApproximateName_id4RsV8qJH_Br, isFolder_id1bWeed$oPYW, findGroup_id7cOEBlPT2gC, isPackagedAutomatically_id36cV00CxaOW, unpackPluginModules_id6ZIjmBZXud7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -101,17 +102,21 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
         }
         // XXX Note, it seems artifacts iterable has to be superset of modules collection. It looks like it was deemed 
         // for scenarios like this one (build parts exposed through single layout node). As it's unused now, it's hard to be 100% sure, though. 
-        for (SNode m : Sequence.fromIterable(modules)) {
-          if (SNodeOperations.isInstanceOf(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
-            // j.m.build.mps, loadMods moves generator modules out of their languages, expect them to be among group.modules 
-            helper.putLayoutRelativePath(__thisNode__, m, baseLocation + groupSuffix + SPropertyOperations.getString(BuildMps_Generator__BehaviorDescriptor.getSourceLanguage_id7YI57w6ZMdZ.invoke(SNodeOperations.cast(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-generator.jar");
-          } else {
-            helper.putLayoutRelativePath(__thisNode__, m, baseLocation + groupSuffix + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".jar");
-            if (SNodeOperations.isInstanceOf(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")) && (SLinkOperations.getTarget(SNodeOperations.as(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")) != null)) {
-              helper.putLayoutRelativePath(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")), baseLocation + groupSuffix + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-generator.jar");
+        BuildMpsLayout_Plugin__BehaviorDescriptor.unpackPluginModules_id6ZIjmBZXud7.invoke(__thisNode__, modules, helper, baseLocation, groupSuffix);
+      } else {
+        // legacy code, old behavior for the 'custom packaging option', to remove in 19.1 
+        if (SNodeOperations.isInstanceOf(ipc, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"))) {
+          final SNode group = SNodeOperations.as(ipc, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
+          modules = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(group, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x5b7be37b4deb1202L, "group")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules"))).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return !((boolean) BuildMps_IdeaPluginGroup__BehaviorDescriptor.isCustomPackaging_id7cOEBlPTrI3.invoke(group, it));
             }
-          }
+          });
+          groupSuffix = SPropertyOperations.getString(SLinkOperations.getTarget(group, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x5b7be37b4deb1202L, "group")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + '/';
+        } else if (SNodeOperations.isInstanceOf(ipc, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && !(SPropertyOperations.getBoolean(SNodeOperations.as(ipc, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x37fdb3de482cf2dfL, "customPackaging")))) {
+          modules = Sequence.<SNode>singleton(SLinkOperations.getTarget(SNodeOperations.as(ipc, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target")));
         }
+        BuildMpsLayout_Plugin__BehaviorDescriptor.unpackPluginModules_id6ZIjmBZXud7.invoke(__thisNode__, modules, helper, baseLocation, groupSuffix);
       }
     }
   }
@@ -138,11 +143,21 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
         if ((container != null)) {
           // todo: seems to be rather messy 
           SNode group = SNodeOperations.as(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
-          if ((group != null) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
-            return null;
-          }
-          if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
-            return null;
+          if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x318cec002865ade0L, "packagingType")) != null)) {
+            if ((group != null) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
+              return null;
+            }
+            if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
+              return null;
+            }
+          } else {
+            // to remove in 191 
+            if ((group != null) && (boolean) BuildMps_IdeaPluginGroup__BehaviorDescriptor.isCustomPackaging_id7cOEBlPTrI3.invoke(group, module.value)) {
+              return null;
+            }
+            if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && SPropertyOperations.getBoolean(SNodeOperations.as(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x37fdb3de482cf2dfL, "customPackaging"))) {
+              return null;
+            }
           }
           String baseLocation = helper.getLocation(__thisNode__) + "/languages/";
           String groupName = "";
@@ -184,11 +199,21 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
           }
         });
         SNode group = SNodeOperations.as(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
-        if ((group != null) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
-          return false;
-        }
-        if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
-          return false;
+        if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x318cec002865ade0L, "packagingType")) != null)) {
+          if ((group != null) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
+            return false;
+          }
+          if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && !(((boolean) BuildMpsLayout_Plugin__BehaviorDescriptor.isPackagedAutomatically_id36cV00CxaOW.invoke(__thisNode__)))) {
+            return false;
+          }
+        } else {
+          // again legacy stuff, to remove in 19.1 
+          if ((group != null) && (boolean) BuildMps_IdeaPluginGroup__BehaviorDescriptor.isCustomPackaging_id7cOEBlPTrI3.invoke(group, module.value)) {
+            return false;
+          }
+          if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")) && SPropertyOperations.getBoolean(SNodeOperations.as(container, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x37fdb3de482cf2dfL, "customPackaging"))) {
+            return false;
+          }
         }
         return container != null;
       }
@@ -219,7 +244,20 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
     }).first(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
   }
   /*package*/ static boolean isPackagedAutomatically_id36cV00CxaOW(@NotNull SNode __thisNode__) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x318cec002865ade0L, "packagingType")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ada1L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_AutoPluginLayoutType"));
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x318cec002865ade0L, "packagingType")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x318cec002865ade0L, "packagingType")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ada1L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_AutoPluginLayoutType"));
+  }
+  /*package*/ static void unpackPluginModules_id6ZIjmBZXud7(@NotNull SNode __thisNode__, Iterable<SNode> modules, UnpackHelper helper, final String baseLocation, String groupSuffix) {
+    for (SNode m : Sequence.fromIterable(modules)) {
+      if (SNodeOperations.isInstanceOf(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+        // j.m.build.mps, loadMods moves generator modules out of their languages, expect them to be among group.modules 
+        helper.putLayoutRelativePath(__thisNode__, m, baseLocation + groupSuffix + SPropertyOperations.getString(BuildMps_Generator__BehaviorDescriptor.getSourceLanguage_id7YI57w6ZMdZ.invoke(SNodeOperations.cast(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-generator.jar");
+      } else {
+        helper.putLayoutRelativePath(__thisNode__, m, baseLocation + groupSuffix + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".jar");
+        if (SNodeOperations.isInstanceOf(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")) && (SLinkOperations.getTarget(SNodeOperations.as(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")) != null)) {
+          helper.putLayoutRelativePath(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")), baseLocation + groupSuffix + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-generator.jar");
+        }
+      }
+    }
   }
 
   /*package*/ BuildMpsLayout_Plugin__BehaviorDescriptor() {
@@ -260,6 +298,9 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
         return (T) ((SNode) findGroup_id7cOEBlPT2gC(node, (SNode) parameters[0]));
       case 9:
         return (T) ((Boolean) isPackagedAutomatically_id36cV00CxaOW(node));
+      case 10:
+        unpackPluginModules_id6ZIjmBZXud7(node, (Iterable<SNode>) parameters[0], (UnpackHelper) parameters[1], (String) parameters[2], (String) parameters[3]);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }

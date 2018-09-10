@@ -344,7 +344,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.prop("stripImplementation", 0x2f0b11e330465d4dL, "3389822811991596365");
     b.associate("plugin", 0x5b7be37b4dee5919L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L).optional(false).origin("6592112598314801433").done();
-    b.aggregate("packagingType", 0x318cec002865ade0L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ad9fL).optional(false).ordered(true).multiple(false).origin("3570488090019868128").done();
+    b.aggregate("packagingType", 0x318cec002865ade0L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ad9fL).optional(true).ordered(true).multiple(false).origin("3570488090019868128").done();
     b.alias("plugin");
     return b.create();
   }
