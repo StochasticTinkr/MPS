@@ -59,7 +59,7 @@ public class MappingConfigFinder extends BaseFinder implements IFinder {
         }
       }
     }
-    return new SearchResults(CollectionUtil.set(myNodeToFindUsages), results);
+    return new SearchResults<SNode>(CollectionUtil.set(myNodeToFindUsages), results);
   }
   private void collectChildrenThatMayHaveReferenceOnTemplate(SNode parent, List<SNode> result) {
     List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(parent, false);

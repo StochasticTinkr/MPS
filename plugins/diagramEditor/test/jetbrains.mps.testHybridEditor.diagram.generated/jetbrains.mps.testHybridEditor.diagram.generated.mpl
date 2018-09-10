@@ -68,7 +68,6 @@
     <module reference="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" version="0" />
     <module reference="913a1d63-9e19-48fa-ad03-e33ecccd3814(jetbrains.mps.testHybridEditor)" version="0" />
     <module reference="dabb32d7-ce29-4e63-bdf4-c024c25acf62(jetbrains.mps.testHybridEditor.diagram.generated)" version="0" />
-    <module reference="e6368d5c-b931-4d4d-9941-07b7da7d2e2d(jetbrains.mps.tool.builder)" version="0" />
   </dependencyVersions>
   <extendedLanguages>
     <extendedLanguage>913a1d63-9e19-48fa-ad03-e33ecccd3814(jetbrains.mps.testHybridEditor)</extendedLanguage>

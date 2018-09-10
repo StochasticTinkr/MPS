@@ -833,7 +833,7 @@
                       <ref role="3cqZAo" node="6hha$XdHbNA" resolve="results" />
                     </node>
                     <node concept="liA8E" id="6hha$XdHbN4" role="2OqNvi">
-                      <ref role="37wK5l" to="9erk:~SearchResults.removeDuplicates():void" resolve="removeDuplicates" />
+                      <ref role="37wK5l" to="9erk:~SearchResults.removeDuplicates():jetbrains.mps.ide.findusages.model.SearchResults" resolve="removeDuplicates" />
                     </node>
                   </node>
                 </node>
@@ -2020,7 +2020,7 @@
         <node concept="3cpWs6" id="5gewV25wDgo" role="3cqZAp">
           <node concept="2ShNRf" id="5gewV25wDgp" role="3cqZAk">
             <node concept="1pGfFk" id="5gewV25wDgq" role="2ShVmc">
-              <ref role="37wK5l" to="9erk:~SearchResults.&lt;init&gt;(java.util.Set,java.util.List)" resolve="SearchResults" />
+              <ref role="37wK5l" to="9erk:~SearchResults.&lt;init&gt;(java.util.Collection,java.util.List)" resolve="SearchResults" />
               <node concept="3uibUv" id="5gewV25wDgr" role="1pMfVU">
                 <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
               </node>

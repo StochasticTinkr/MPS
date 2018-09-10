@@ -54,6 +54,7 @@
         <module reference="046d1c1d-4f8e-464d-9cd7-f0fbeae3d132(jetbrains.mps.editor.contextActionsTool.lang.menus#6917971026853604122)" version="0" />
         <module reference="25811379-ae76-45d3-b18c-739c1ab28a1a(jetbrains.mps.editor.contextActionsTool.lang.menus.runtime)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
+        <module reference="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)" version="0" />
         <module reference="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" version="0" />
@@ -115,6 +116,7 @@
     <module reference="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba(jetbrains.mps.editor.contextActionsTool.lang.menus)" version="0" />
     <module reference="28583149-5b6e-4663-9c02-b9a8fa3cb09a(jetbrains.mps.editor.contextActionsTool.pluginSolution)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
+    <module reference="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" version="0" />

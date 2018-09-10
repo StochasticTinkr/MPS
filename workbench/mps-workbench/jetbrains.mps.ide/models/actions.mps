@@ -2682,7 +2682,7 @@
                     <node concept="37vLTI" id="4XT$SRv1nj6" role="3clFbG">
                       <node concept="2ShNRf" id="4XT$SRv1nj7" role="37vLTx">
                         <node concept="1pGfFk" id="4XT$SRv1nj8" role="2ShVmc">
-                          <ref role="37wK5l" to="yrws:1pyYjDPRa0t" resolve="NewModelDialog" />
+                          <ref role="37wK5l" to="yrws:4qwq9N3x1q0" resolve="NewModelDialog" />
                           <node concept="2OqwBi" id="5Kh0XTSxwX6" role="37wK5m">
                             <node concept="1DTwFV" id="4oi2Bf2rLO5" role="2OqNvi">
                               <ref role="2WH_rO" node="4oi2Bf2rHMM" resolve="project" />
@@ -16733,7 +16733,7 @@
                     <node concept="37vLTI" id="1ePK2dvw5QA" role="3clFbG">
                       <node concept="2ShNRf" id="1ePK2dvw5QB" role="37vLTx">
                         <node concept="1pGfFk" id="1ePK2dvw5QC" role="2ShVmc">
-                          <ref role="37wK5l" to="yrws:1pyYjDPRa0t" resolve="NewModelDialog" />
+                          <ref role="37wK5l" to="yrws:4qwq9N3x1q0" resolve="NewModelDialog" />
                           <node concept="2OqwBi" id="5Kh0XTSxx5V" role="37wK5m">
                             <node concept="1DTwFV" id="4oi2Bf2sHNT" role="2OqNvi">
                               <ref role="2WH_rO" node="4oi2Bf2sxVd" resolve="project" />
@@ -43764,7 +43764,7 @@
                             <ref role="37wK5l" to="7lvn:63HiSAD$Iua" resolve="finders" />
                             <node concept="1ZiG2z" id="48bQBQu057X" role="37wK5m">
                               <node concept="zAVLb" id="48bQBQu07rf" role="1ZiG2y">
-                                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
+                                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
                               </node>
                             </node>
                           </node>
@@ -43846,7 +43846,7 @@
             </node>
             <node concept="1ZiG2z" id="5UvmwWxQcEQ" role="33vP2m">
               <node concept="zAVLb" id="5UvmwWxQcER" role="1ZiG2y">
-                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="ImplementingMethods" />
+                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
               </node>
             </node>
           </node>
@@ -43885,7 +43885,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="1dN09J$28KR" role="1B3o_S" />
       <node concept="3uibUv" id="1dN09J$29ZD" role="1tU5fm">
-        <ref role="3uigEE" to="9teg:1dN09JzTrVI" resolve="ConceptMethodsHighlighter" />
+        <ref role="3uigEE" to="9teg:1dN09JzTrVI" resolve="ConceptInheritanceHighlighter" />
       </node>
     </node>
     <node concept="2uRRBT" id="1dN09J$28U7" role="2uRRB$">
@@ -43894,7 +43894,7 @@
           <node concept="37vLTI" id="1dN09J$2agq" role="3clFbG">
             <node concept="2ShNRf" id="1dN09J$2ahd" role="37vLTx">
               <node concept="1pGfFk" id="1dN09J$2aHu" role="2ShVmc">
-                <ref role="37wK5l" to="9teg:1dN09JzT_rP" resolve="ConceptMethodsHighlighter" />
+                <ref role="37wK5l" to="9teg:1dN09JzT_rP" resolve="ConceptInheritanceHighlighter" />
                 <node concept="1KvdUw" id="1dN09J$2aI8" role="37wK5m" />
               </node>
             </node>

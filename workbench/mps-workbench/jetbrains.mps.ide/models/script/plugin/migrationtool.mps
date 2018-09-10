@@ -202,6 +202,7 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -3549,9 +3550,7 @@
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="DTcS_lxVfB" role="11_B2D">
                 <ref role="3uigEE" to="9erk:~SearchResult" resolve="SearchResult" />
-                <node concept="3uibUv" id="DTcS_lxVfD" role="11_B2D">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                </node>
+                <node concept="3qTvmN" id="6hZLf2XJXDl" role="11_B2D" />
               </node>
             </node>
             <node concept="2OqwBi" id="DTcS_lxT39" role="33vP2m">
@@ -3563,8 +3562,8 @@
                   <ref role="37wK5l" node="6m98d5YYbKy" resolve="getLastSearchResults" />
                 </node>
               </node>
-              <node concept="liA8E" id="DTcS_lxT3d" role="2OqNvi">
-                <ref role="37wK5l" to="9erk:~SearchResults.getAliveResults():java.util.List" resolve="getAliveResults" />
+              <node concept="liA8E" id="6hZLf2XJWJI" role="2OqNvi">
+                <ref role="37wK5l" to="9erk:~SearchResults.getNotNullResults():java.util.List" resolve="getNotNullResults" />
               </node>
             </node>
           </node>
