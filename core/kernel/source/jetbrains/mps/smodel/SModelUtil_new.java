@@ -39,14 +39,14 @@ public class SModelUtil_new {
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull SAbstractConcept concept, @Nullable SModel model, SNodeId nodeId,
       boolean fullNodeStructure) {
     boolean isNotProjectModel = model == null || !TemporaryModels.isTemporary(model);
+    SConcept concreteConcept;
     if (isNotProjectModel) {
-      SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(concept);
-      if (concreteConcept != null) {
-        concept = concreteConcept;
-      }
+      // FIXME as discussed with MM, this dubious code shall be removed, isNotProjectModel doesn't make any sense, and really few clients of the method care to
+      // get another concept than the one supplied
+      concreteConcept = ModelConstraints.getDefaultConcreteConcept(concept);
+    } else {
+      concreteConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
     }
-
-    SConcept concreteConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
 
     jetbrains.mps.smodel.SNode newNode =
         nodeId == null ? new jetbrains.mps.smodel.SNode(concreteConcept) : new jetbrains.mps.smodel.SNode(concreteConcept, nodeId);

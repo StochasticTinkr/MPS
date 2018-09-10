@@ -220,14 +220,14 @@
   <root nodeRef="r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)/7789927720474629546">
     <file name="Container_Constraints.java">
       <node id="7789927720474629546" at="10,34,11,164" concept="9" />
-      <node id="7789927720474629546" at="14,55,15,174" concept="7" />
+      <node id="7789927720474629546" at="15,47,16,174" concept="7" />
       <node id="7789927720474629546" at="10,0,13,0" concept="1" trace="Container_Constraints#()V" />
-      <node id="7789927720474629546" at="14,0,17,0" concept="5" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="7789927720474629546" at="14,0,18,0" concept="5" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
       <scope id="7789927720474629546" at="10,34,11,164" />
-      <scope id="7789927720474629546" at="14,55,15,174" />
+      <scope id="7789927720474629546" at="15,47,16,174" />
       <scope id="7789927720474629546" at="10,0,13,0" />
-      <scope id="7789927720474629546" at="14,0,17,0" />
-      <unit id="7789927720474629546" at="9,0,18,0" name="jetbrains.mps.lang.editor.editorTest.constraints.Container_Constraints" />
+      <scope id="7789927720474629546" at="14,0,18,0" />
+      <unit id="7789927720474629546" at="9,0,19,0" name="jetbrains.mps.lang.editor.editorTest.constraints.Container_Constraints" />
     </file>
   </root>
 </debug-info>

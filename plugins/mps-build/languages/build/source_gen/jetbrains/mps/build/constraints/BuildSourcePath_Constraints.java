@@ -4,14 +4,15 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class BuildSourcePath_Constraints extends BaseConstraintsDescriptor {
   public BuildSourcePath_Constraints() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
   }
 
-  public SAbstractConcept getDefaultConcreteConcept() {
+  @Override
+  public SConcept getDefaultConcreteConcept() {
     return MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
   }
 }

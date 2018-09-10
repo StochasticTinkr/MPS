@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,6 +214,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   public SAbstractConcept getDefaultConcreteConcept() {
+    // FIXME once 2018.3 is out, with templates that generate override for the method with SConcept, change signature of this method
+    // and the one in ConstraintsDescriptor to return SConcept
     return myConcept;
   }
 }
