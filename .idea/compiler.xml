@@ -475,6 +475,7 @@
       <directory url="file://$PROJECT_DIR$/samples/expressions/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/gen2/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerFramework/source_gen" includeSubdirectories="true" />

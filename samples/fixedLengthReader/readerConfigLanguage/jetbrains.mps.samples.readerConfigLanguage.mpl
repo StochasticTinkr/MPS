@@ -70,10 +70,10 @@
         </mapping-priority-rule>
       </mapping-priorities>
     </generator>
-    <generator alias="xml" namespace="jetbrains.mps.samples.readerConfigLanguage.xml#1129923281152" uuid="ffb71f3a-317f-4241-a93c-321d713ebf82">
+    <generator alias="xml" namespace="jetbrains.mps.samples.readerConfigLanguage.xml#1129923281152" uuid="ffb71f3a-317f-4241-a93c-321d713ebf82" generatorOutputPath="${module}/gen2/source_gen">
       <models>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot location="generator/xml" />
+          <sourceRoot location="gen2/xml" />
         </modelRoot>
       </models>
       <external-templates />
