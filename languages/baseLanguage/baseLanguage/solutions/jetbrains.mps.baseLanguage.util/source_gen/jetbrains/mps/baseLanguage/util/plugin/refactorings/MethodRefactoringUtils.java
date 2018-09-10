@@ -32,14 +32,14 @@ public class MethodRefactoringUtils {
         searchResults = FindUtils.getSearchResults(progressMonitor, method, scope, "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
-      for (SearchResult<?> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast((SNode) result.getObject(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+      for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
+        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
     if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, scope, "jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder");
-      for (SearchResult<?> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast((SNode) result.getObject(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, scope, "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+      for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
+        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
     return results;

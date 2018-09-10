@@ -11,14 +11,14 @@
     <action id="jetbrains.mps.ide.java.actions.GenerateSetters_Action" class="jetbrains.mps.ide.java.actions.GenerateSetters_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.GenerateToString_Action" class="jetbrains.mps.ide.java.actions.GenerateToString_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"></action>
+    <action id="jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action" class="jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" class="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action">
       <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.GoToSuperClassMethod_Action" class="jetbrains.mps.ide.java.actions.GoToSuperClassMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl U" keymap="$default" />
-    </action>
-    <action id="jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action" class="jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action">
-      <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethod_Action" class="jetbrains.mps.ide.java.actions.ImplementMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl I" keymap="$default" />

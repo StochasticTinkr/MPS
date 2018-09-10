@@ -828,12 +828,6 @@
             <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
           </node>
         </node>
-        <node concept="1SiIV0" id="4rxYtJXJxB5" role="3bR37C">
-          <node concept="3bR9La" id="4rxYtJXJxB6" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="4rxYtJXJxB7" role="3bR37C">
           <node concept="3bR9La" id="4rxYtJXJxB8" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -844,18 +838,6 @@
           <node concept="3bR9La" id="4rxYtJXJxBa" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:2eDSGe9d1qi" resolve="jetbrains.mps.ide" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="4rxYtJXJxBb" role="3bR37C">
-          <node concept="3bR9La" id="4rxYtJXJxBc" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="4rxYtJXJxBd" role="3bR37C">
-          <node concept="3bR9La" id="4rxYtJXJxBe" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
           </node>
         </node>
       </node>
@@ -1020,6 +1002,12 @@
           <node concept="3bR9La" id="4rxYtJXJxBX" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6hZLf2Y77cN" role="3bR37C">
+          <node concept="3bR9La" id="6hZLf2Y77cO" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:4Hc8TwAmyoE" resolve="jetbrains.mps.tool.builder" />
           </node>
         </node>
       </node>
