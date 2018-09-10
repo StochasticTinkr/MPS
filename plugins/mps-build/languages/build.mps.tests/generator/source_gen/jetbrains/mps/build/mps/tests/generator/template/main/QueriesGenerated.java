@@ -88,6 +88,9 @@ public class QueriesGenerated extends QueryProviderBase {
       }
       return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")), macroHelper);
     }
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x5b81705cdfb31570L, "options")), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L, 0x5b81705cdfb323cdL, "haltonfailure")) == null)) {
+      return "false";
+    }
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x5b81705cdfb31570L, "options")), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L, 0x5b81705cdfb323cdL, "haltonfailure")), macroHelper);
   }
   public static Object propertyMacro_GetValue_0_7(final PropertyMacroContext _context) {
