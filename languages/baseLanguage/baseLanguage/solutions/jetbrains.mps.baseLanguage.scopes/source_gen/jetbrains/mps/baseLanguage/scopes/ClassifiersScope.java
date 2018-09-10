@@ -14,22 +14,35 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class ClassifiersScope extends FilteringScope {
-  private boolean myInlcudeAncestors;
+  private boolean myIncludeAncestors;
   private SNode myClassifier;
-  private SModel myModel;
+
+  /**
+   * 
+   * @param model we respect classifiers from this model and from models imported into it
+   * @param clas context classifier
+   * @param concept shall be a Classifier or its subconcept
+   * @param includeAncestors {@code false} indicates we ignore first Classifier ancestor of a context node from {@link #resolve(SNode, String) method. Generally, it's handy for links like extends/implements.
+   */
   public ClassifiersScope(SModel model, SNode clas, SAbstractConcept concept, boolean includeAncestors) {
     super(new ModelPlusImportedScope(model, false, concept));
-    myModel = model;
-    myInlcudeAncestors = includeAncestors;
+    // Another important aspect of includeAncestors is scope for dynamic references 
+    // Imagine we need a scope for 'implements' reference of a ClassConcept. If we includeAncestors == true, then 
+    //   the moment ClassifierResolveUtils.resolve() later tries to build ancestors, it would end up with the need to follow  
+    //   'implements' reference of the class again, and we face a loop 
+    myIncludeAncestors = includeAncestors;
     myClassifier = clas;
   }
+
   public ClassifiersScope(SModel model, SNode clas, SAbstractConcept concept) {
     this(model, clas, concept, false);
   }
+
   @Override
   public boolean isExcluded(SNode node) {
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
+
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     // hack for [model]node construction, remove it 
@@ -38,15 +51,16 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
     // TODO Must be done through ScopeProvider 
-    return ClassifierResolveUtils.resolve(refText, contextNode, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
+    return ClassifierResolveUtils.resolve(refText, contextNode, (ModelPlusImportedScope) wrapped, myIncludeAncestors);
   }
+
   @Override
   public boolean contains(SNode node) {
-    if (super.contains(node)) {
-      return true;
-    }
     if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
       return false;
+    }
+    if (super.contains(node)) {
+      return true;
     }
 
     SNode root = Sequence.fromIterable(ClassifierResolveUtils.getPathToRoot(myClassifier)).last();

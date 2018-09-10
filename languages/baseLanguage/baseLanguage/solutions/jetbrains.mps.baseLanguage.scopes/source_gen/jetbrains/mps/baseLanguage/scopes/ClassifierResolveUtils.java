@@ -386,7 +386,8 @@ public class ClassifierResolveUtils {
     // TODO make more precise: take role into consideration 
     return SNodeOperations.getNodeAncestors(clas, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true);
   }
-  public static Iterable<SNode> getAncestors(SNode clas) {
+
+  private static Iterable<SNode> getAncestors(SNode clas) {
     final Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
