@@ -741,6 +741,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/expressions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/expressions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/myReaderConfiguration/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/gen2/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerFramework/source_gen" isTestSource="false" />
@@ -1142,7 +1143,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements/languages/testMoveElements/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testPackaged">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/classes_gen" />
@@ -1153,7 +1153,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPersistence/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testRead">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/classes_gen" />
     </content>
@@ -1211,9 +1210,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/editor.multiple.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/editor.table.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/editor.test/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/execution-test/tests.data/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/execution-test/tests.data/test_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/execution-test/tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/execution-test/tests/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/extension.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/extension.test/test_gen" isTestSource="false" />
