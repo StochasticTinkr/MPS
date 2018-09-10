@@ -11,7 +11,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
@@ -390,9 +390,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT">
-        <property id="2853323645193760541" name="directCall" index="3Vpymx" />
-      </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -16109,7 +16107,6 @@
                 <ref role="3cqZAo" node="2Ja1M$RkGe2" resolve="clazz" />
               </node>
               <node concept="2qgKlT" id="2Ja1M$Rl2s1" role="2OqNvi">
-                <property role="3Vpymx" value="true" />
                 <ref role="37wK5l" to="tpek:3sXyOQUqKq0" resolve="checkLoops" />
               </node>
             </node>
@@ -16150,7 +16147,6 @@
                   <ref role="3cqZAo" node="2Ja1M$RkGe2" resolve="clazz" />
                 </node>
                 <node concept="2qgKlT" id="2Ja1M$Rl2x6" role="2OqNvi">
-                  <property role="3Vpymx" value="true" />
                   <ref role="37wK5l" to="tpek:i3H_lLu" resolve="getSuperclass" />
                 </node>
               </node>
@@ -16171,7 +16167,6 @@
                     <ref role="3cqZAo" node="2Ja1M$RkGe2" resolve="clazz" />
                   </node>
                   <node concept="2qgKlT" id="2Ja1M$Rl2x8" role="2OqNvi">
-                    <property role="3Vpymx" value="true" />
                     <ref role="37wK5l" to="tpek:i3H_lLu" resolve="getSuperclass" />
                   </node>
                 </node>
@@ -16276,7 +16271,6 @@
                   <ref role="3cqZAo" node="2Ja1M$Rl2$X" resolve="constructor" />
                 </node>
                 <node concept="2qgKlT" id="2Ja1M$Rl2Ae" role="2OqNvi">
-                  <property role="3Vpymx" value="true" />
                   <ref role="37wK5l" to="tpek:70J2WaK_oVl" resolve="isVisible" />
                   <node concept="37vLTw" id="2BHiRxglKAf" role="37wK5m">
                     <ref role="3cqZAo" node="2Ja1M$Rl2sd" resolve="currentClass" />
@@ -16305,7 +16299,6 @@
                         <ref role="3cqZAo" node="2Ja1M$Rl2sd" resolve="currentClass" />
                       </node>
                       <node concept="2qgKlT" id="2Ja1M$Rl2yf" role="2OqNvi">
-                        <property role="3Vpymx" value="true" />
                         <ref role="37wK5l" to="tpek:i3H_lLu" resolve="getSuperclass" />
                       </node>
                     </node>
@@ -16326,7 +16319,6 @@
                           <ref role="3cqZAo" node="2Ja1M$Rl2sd" resolve="currentClass" />
                         </node>
                         <node concept="2qgKlT" id="2Ja1M$Rl2yo" role="2OqNvi">
-                          <property role="3Vpymx" value="true" />
                           <ref role="37wK5l" to="tpek:i3H_lLu" resolve="getSuperclass" />
                         </node>
                       </node>

@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
@@ -3783,7 +3783,7 @@
                         <node concept="3clFbF" id="1WW5sXgiZip" role="3cqZAp">
                           <node concept="2OqwBi" id="1WW5sXgj0jd" role="3clFbG">
                             <node concept="37vLTw" id="1WW5sXgiZio" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1WW5sXgihDu" />
+                              <ref role="3cqZAo" node="1WW5sXgihDu" resolve="events" />
                             </node>
                             <node concept="2es0OD" id="1WW5sXgj0XR" role="2OqNvi">
                               <node concept="1bVj0M" id="1WW5sXgj0XT" role="23t8la">
@@ -3791,12 +3791,12 @@
                                   <node concept="3clFbF" id="1WW5sXgj1$o" role="3cqZAp">
                                     <node concept="2OqwBi" id="1WW5sXgj2bM" role="3clFbG">
                                       <node concept="37vLTw" id="1WW5sXgj1$n" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1WW5sXgj0XV" />
+                                        <ref role="3cqZAo" node="1WW5sXgj0XV" resolve="it" />
                                       </node>
                                       <node concept="liA8E" id="1WW5sXgj2rI" role="2OqNvi">
                                         <ref role="37wK5l" to="j9co:~SModelEvent.accept(jetbrains.mps.smodel.event.SModelEventVisitor):void" resolve="accept" />
                                         <node concept="37vLTw" id="1WW5sXgj2VG" role="37wK5m">
-                                          <ref role="3cqZAo" node="1WW5sXgiV2h" />
+                                          <ref role="3cqZAo" node="1WW5sXgiV2h" resolve="myVisitor" />
                                         </node>
                                       </node>
                                     </node>
@@ -3817,7 +3817,7 @@
                     </node>
                     <node concept="2OqwBi" id="3ReTDvBwdK5" role="37wK5m">
                       <node concept="37vLTw" id="3ReTDvBwduS" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ReTDvBw9vp" />
+                        <ref role="3cqZAo" node="3ReTDvBw9vp" resolve="repository" />
                       </node>
                       <node concept="liA8E" id="3ReTDvBwe8g" role="2OqNvi">
                         <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
