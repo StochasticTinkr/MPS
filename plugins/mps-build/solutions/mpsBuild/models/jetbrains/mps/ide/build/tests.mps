@@ -1925,18 +1925,18 @@
     </node>
     <node concept="22LTRH" id="6gfB34BldeH" role="1hWBAP">
       <property role="TrG5h" value="baseLanguage" />
-      <node concept="22LTRF" id="7S0pHCu4Te" role="22LTRK">
-        <ref role="22LTRG" node="6gfB34BldeJ" resolve="baseLanguage-tests" />
-      </node>
-      <node concept="22LTRF" id="2LuGVbI_t9o" role="22LTRK">
-        <ref role="22LTRG" node="QtAfUFXwu" resolve="closures-tests" />
-      </node>
       <node concept="24cAiW" id="5I1s5NvQ4SX" role="24cAkG">
         <node concept="NbPM2" id="6g2MV4s62LI" role="24c_eh">
           <node concept="3Mxwey" id="aAVDHmDgl9" role="3MwsjC">
             <ref role="3Mxwex" node="6g2MV4s3Qza" resolve="mps.junit.haltonfailure" />
           </node>
         </node>
+      </node>
+      <node concept="22LTRF" id="7S0pHCu4Te" role="22LTRK">
+        <ref role="22LTRG" node="6gfB34BldeJ" resolve="baseLanguage-tests" />
+      </node>
+      <node concept="22LTRF" id="2LuGVbI_t9o" role="22LTRK">
+        <ref role="22LTRG" node="QtAfUFXwu" resolve="closures-tests" />
       </node>
     </node>
     <node concept="2G$12M" id="QtAfUFXwu" role="3989C9">

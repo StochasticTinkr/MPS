@@ -43,6 +43,7 @@
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
+      <concept id="3459162043708467089" name="jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction" flags="in" index="jK8Ss" />
       <concept id="6089045305654894367" name="jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named" flags="ng" index="2kknPI">
         <reference id="6089045305654944382" name="menu" index="2kkw0f" />
       </concept>
@@ -156,6 +157,7 @@
       </concept>
       <concept id="1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" flags="lg" index="1hA7zw">
         <property id="1139535298778" name="actionId" index="1hAc7j" />
+        <child id="3459162043708468028" name="canExecuteFunction" index="jK8aL" />
         <child id="1139535280620" name="executeFunction" index="1hA7z_" />
       </concept>
       <concept id="1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" flags="in" index="1hAIg9" />
@@ -3653,6 +3655,7 @@
         </node>
       </node>
       <node concept="3EZMnI" id="36cV00Crkpi" role="3EZMnx">
+        <ref role="1ERwB7" node="4yJrsdlB_kx" resolve="NoDeleteForType" />
         <node concept="3vyZuw" id="36cV00CpqRJ" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -3660,6 +3663,7 @@
         <node concept="3F1sOY" id="36cV00CpqRz" role="3EZMnx">
           <ref role="1NtTu8" to="kdzh:36cV00CpqRw" resolve="packagingType" />
           <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+          <ref role="1ERwB7" node="4yJrsdlB_kx" resolve="NoDeleteForType" />
           <node concept="ljvvj" id="5HVSRHdVMJJ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -5930,6 +5934,41 @@
     <ref role="1XX52x" to="kdzh:36cV00CpqQw" resolve="BuildMpsLayout_ManualPluginLayoutType" />
     <node concept="PMmxH" id="36cV00CpqRt" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="4yJrsdlB_kx">
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="NoDeleteForType" />
+    <ref role="1h_SK9" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
+    <node concept="1hA7zw" id="4yJrsdlB_ky" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="4yJrsdlB_kz" role="1hA7z_">
+        <node concept="3clFbS" id="4yJrsdlB_k$" role="2VODD2" />
+      </node>
+      <node concept="jK8Ss" id="4yJrsdlB_kK" role="jK8aL">
+        <node concept="3clFbS" id="4yJrsdlB_kL" role="2VODD2">
+          <node concept="3clFbF" id="4yJrsdlB_s6" role="3cqZAp">
+            <node concept="3clFbT" id="4yJrsdlB_s5" role="3clFbG">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="4yJrsdlB_zC" role="1h_SK8">
+      <property role="1hAc7j" value="backspace_action_id" />
+      <node concept="1hAIg9" id="4yJrsdlB_zD" role="1hA7z_">
+        <node concept="3clFbS" id="4yJrsdlB_zE" role="2VODD2" />
+      </node>
+      <node concept="jK8Ss" id="4yJrsdlB_zF" role="jK8aL">
+        <node concept="3clFbS" id="4yJrsdlB_zG" role="2VODD2">
+          <node concept="3clFbF" id="4yJrsdlB_zH" role="3cqZAp">
+            <node concept="3clFbT" id="4yJrsdlB_zI" role="3clFbG">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
