@@ -15,7 +15,7 @@
       <unit at="10,0,78,0" name="jetbrains.mps.lang.smodel.query.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,355,0" name="jetbrains.mps.lang.smodel.query.structure.StructureAspectDescriptor" />
+      <unit at="14,0,356,0" name="jetbrains.mps.lang.smodel.query.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/2362304834939062178">
@@ -372,16 +372,17 @@
       <node id="4234138103881610891" at="344,120,345,71" concept="0" />
       <node id="4234138103881610891" at="346,75,347,118" concept="0" />
       <node id="4234138103881610891" at="347,118,348,17" concept="0" />
-      <node id="4234138103881610892" at="348,17,349,193" concept="0" />
-      <node id="4234138103881610935" at="349,193,350,193" concept="0" />
-      <node id="4234138103881610891" at="350,193,351,20" concept="0" />
-      <node id="4234138103881610891" at="351,20,352,22" concept="4" />
-      <node id="4234138103881610891" at="341,0,354,0" concept="6" trace="createDescriptorForWithStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="192970713427626335" at="348,17,349,75" concept="0" />
+      <node id="4234138103881610892" at="349,75,350,193" concept="0" />
+      <node id="4234138103881610935" at="350,193,351,193" concept="0" />
+      <node id="4234138103881610891" at="351,193,352,20" concept="0" />
+      <node id="4234138103881610891" at="352,20,353,22" concept="4" />
+      <node id="4234138103881610891" at="341,0,355,0" concept="6" trace="createDescriptorForWithStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4234138103881610891" at="106,47,107,38" />
-      <scope id="4234138103881610891" at="341,71,352,22">
+      <scope id="4234138103881610891" at="341,71,353,22">
         <var name="b" id="4234138103881610891" />
       </scope>
-      <scope id="4234138103881610891" at="341,0,354,0" />
+      <scope id="4234138103881610891" at="341,0,355,0" />
     </file>
   </root>
   <root nodeRef="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/4307205004131544317">

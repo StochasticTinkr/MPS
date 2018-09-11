@@ -1111,16 +1111,11 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1H31ARNR265" role="3clF47">
         <node concept="3cpWs6" id="1H31ARNR2Ru" role="3cqZAp">
-          <node concept="2ShNRf" id="1$qF1T9WgU6" role="3cqZAk">
-            <node concept="1pGfFk" id="1$qF1T9WiqN" role="2ShVmc">
-              <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-              <node concept="2ShNRf" id="1H31ARNR3rS" role="37wK5m">
-                <node concept="1pGfFk" id="1H31ARNR8qY" role="2ShVmc">
-                  <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
-                  <node concept="37vLTw" id="1H31ARNR8xF" role="37wK5m">
-                    <ref role="3cqZAo" node="1H31ARNR2GW" resolve="model" />
-                  </node>
-                </node>
+          <node concept="2ShNRf" id="1H31ARNR3rS" role="3cqZAk">
+            <node concept="1pGfFk" id="1H31ARNR8qY" role="2ShVmc">
+              <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel...)" resolve="ModelsScope" />
+              <node concept="37vLTw" id="1H31ARNR8xF" role="37wK5m">
+                <ref role="3cqZAo" node="1H31ARNR2GW" resolve="model" />
               </node>
             </node>
           </node>
@@ -1141,16 +1136,11 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1H31ARNRaeF" role="3clF47">
         <node concept="3cpWs6" id="1$qF1T9WiFc" role="3cqZAp">
-          <node concept="2ShNRf" id="1$qF1T9WiFd" role="3cqZAk">
-            <node concept="1pGfFk" id="1$qF1T9WiFe" role="2ShVmc">
-              <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-              <node concept="2ShNRf" id="1H31ARNRaeH" role="37wK5m">
-                <node concept="1pGfFk" id="1H31ARNRaeI" role="2ShVmc">
-                  <ref role="37wK5l" to="mte5:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
-                  <node concept="37vLTw" id="1H31ARNRaeJ" role="37wK5m">
-                    <ref role="3cqZAo" node="1H31ARNRaeM" resolve="module" />
-                  </node>
-                </node>
+          <node concept="2ShNRf" id="1H31ARNRaeH" role="3cqZAk">
+            <node concept="1pGfFk" id="1H31ARNRaeI" role="2ShVmc">
+              <ref role="37wK5l" to="mte5:~ModulesScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule...)" resolve="ModulesScope" />
+              <node concept="37vLTw" id="1H31ARNRaeJ" role="37wK5m">
+                <ref role="3cqZAo" node="1H31ARNRaeM" resolve="module" />
               </node>
             </node>
           </node>
@@ -1227,29 +1217,19 @@
                 </node>
               </node>
             </node>
-            <node concept="2ShNRf" id="1$qF1T9Wjq6" role="3K4E3e">
-              <node concept="1pGfFk" id="1$qF1T9Wjq7" role="2ShVmc">
-                <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                <node concept="2ShNRf" id="1H31ARNRz8W" role="37wK5m">
-                  <node concept="1pGfFk" id="1H31ARNRzTX" role="2ShVmc">
-                    <ref role="37wK5l" to="mte5:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
-                    <node concept="37vLTw" id="1H31ARNR$5f" role="37wK5m">
-                      <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
-                    </node>
-                  </node>
+            <node concept="2ShNRf" id="1H31ARNRz8W" role="3K4E3e">
+              <node concept="1pGfFk" id="1H31ARNRzTX" role="2ShVmc">
+                <ref role="37wK5l" to="mte5:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                <node concept="37vLTw" id="1H31ARNR$5f" role="37wK5m">
+                  <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
                 </node>
               </node>
             </node>
-            <node concept="2ShNRf" id="1$qF1T9Wksx" role="3K4GZi">
-              <node concept="1pGfFk" id="1$qF1T9Wksy" role="2ShVmc">
-                <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                <node concept="2ShNRf" id="1H31ARNR_1d" role="37wK5m">
-                  <node concept="1pGfFk" id="1H31ARNR_1e" role="2ShVmc">
-                    <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                    <node concept="37vLTw" id="1H31ARNR_1f" role="37wK5m">
-                      <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
-                    </node>
-                  </node>
+            <node concept="2ShNRf" id="1H31ARNR_1d" role="3K4GZi">
+              <node concept="1pGfFk" id="1H31ARNR_1e" role="2ShVmc">
+                <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                <node concept="37vLTw" id="1H31ARNR_1f" role="37wK5m">
+                  <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
                 </node>
               </node>
             </node>
@@ -1273,16 +1253,11 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1H31ARNRcpk" role="3clF47">
         <node concept="3cpWs6" id="1$qF1T9WncO" role="3cqZAp">
-          <node concept="2ShNRf" id="1$qF1T9WncP" role="3cqZAk">
-            <node concept="1pGfFk" id="1$qF1T9WncQ" role="2ShVmc">
-              <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-              <node concept="2ShNRf" id="1H31ARNRcpm" role="37wK5m">
-                <node concept="1pGfFk" id="1H31ARNRcpn" role="2ShVmc">
-                  <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
-                  <node concept="37vLTw" id="1H31ARNRcpo" role="37wK5m">
-                    <ref role="3cqZAo" node="1H31ARNRcpr" resolve="project" />
-                  </node>
-                </node>
+          <node concept="2ShNRf" id="1H31ARNRcpm" role="3cqZAk">
+            <node concept="1pGfFk" id="1H31ARNRcpn" role="2ShVmc">
+              <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+              <node concept="37vLTw" id="1H31ARNRcpo" role="37wK5m">
+                <ref role="3cqZAo" node="1H31ARNRcpr" resolve="project" />
               </node>
             </node>
           </node>
@@ -1305,13 +1280,8 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2ZOO3bS4NGi" role="3clF47">
         <node concept="3cpWs6" id="1$qF1T9WnIt" role="3cqZAp">
-          <node concept="2ShNRf" id="1$qF1T9WnIu" role="3cqZAk">
-            <node concept="1pGfFk" id="1$qF1T9WnIv" role="2ShVmc">
-              <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-              <node concept="37vLTw" id="1$qF1T9WnQN" role="37wK5m">
-                <ref role="3cqZAo" node="2ZOO3bS4NGp" resolve="searchScope" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="1$qF1T9WnQN" role="3cqZAk">
+            <ref role="3cqZAo" node="2ZOO3bS4NGp" resolve="searchScope" />
           </node>
         </node>
       </node>
