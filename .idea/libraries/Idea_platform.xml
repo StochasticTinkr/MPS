@@ -68,10 +68,11 @@
       <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/objenesis-2.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/serviceMessages.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/intellij-coverage-agent-1.0.470.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/intellij-test-discovery-agent-1.0.470.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xml-apis-ext-1.3.04.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xmlgraphics-commons-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-compatibility.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/intellij-coverage-agent-1.0.493.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/intellij-test-discovery-agent-1.0.493.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
