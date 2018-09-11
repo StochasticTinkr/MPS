@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -37,10 +38,11 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_ccrblf_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_ccrblf_a0d_0 = new EditableFilteringScope(scope_ccrblf_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_ccrblf_a0d_0;
         }
       };
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
@@ -66,10 +68,11 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_ccrblf_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_ccrblf_a0e_0 = new EditableFilteringScope(scope_ccrblf_a0e);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_ccrblf_a0e_0;
         }
       };
       return Sequence.fromClosure(new ISequenceClosure<Problem>() {
@@ -87,7 +90,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2__yield_ccrblf_a0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
+                        this._2__yield_ccrblf_a0a0d0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))) || SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression")));
                           }
@@ -101,15 +104,15 @@ __switch__:
                           }
                         })).iterator();
                       case 3:
-                        if (!(this._2__yield_ccrblf_a0a0c0a0e_it.hasNext())) {
+                        if (!(this._2__yield_ccrblf_a0a0d0a0e_it.hasNext())) {
                           this.__CP__ = 5;
                           break;
                         }
-                        this._2__yield_ccrblf_a0a0c0a0e = this._2__yield_ccrblf_a0a0c0a0e_it.next();
+                        this._2__yield_ccrblf_a0a0d0a0e = this._2__yield_ccrblf_a0a0d0a0e_it.next();
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        this._6__yield_ccrblf_b0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
+                        this._6__yield_ccrblf_b0a0d0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))) || SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression")));
                           }
@@ -123,20 +126,20 @@ __switch__:
                           }
                         })).iterator();
                       case 7:
-                        if (!(this._6__yield_ccrblf_b0a0c0a0e_it.hasNext())) {
+                        if (!(this._6__yield_ccrblf_b0a0d0a0e_it.hasNext())) {
                           this.__CP__ = 1;
                           break;
                         }
-                        this._6__yield_ccrblf_b0a0c0a0e = this._6__yield_ccrblf_b0a0c0a0e_it.next();
+                        this._6__yield_ccrblf_b0a0d0a0e = this._6__yield_ccrblf_b0a0d0a0e_it.next();
                         this.__CP__ = 8;
                         break;
                       case 6:
                         this.__CP__ = 3;
-                        this.yield(_2__yield_ccrblf_a0a0c0a0e);
+                        this.yield(_2__yield_ccrblf_a0a0d0a0e);
                         return true;
                       case 9:
                         this.__CP__ = 7;
-                        this.yield(_6__yield_ccrblf_b0a0c0a0e);
+                        this.yield(_6__yield_ccrblf_b0a0d0a0e);
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -153,10 +156,10 @@ __switch__:
                   } while (true);
                   return false;
                 }
-                private Problem _2__yield_ccrblf_a0a0c0a0e;
-                private Iterator<Problem> _2__yield_ccrblf_a0a0c0a0e_it;
-                private Problem _6__yield_ccrblf_b0a0c0a0e;
-                private Iterator<Problem> _6__yield_ccrblf_b0a0c0a0e_it;
+                private Problem _2__yield_ccrblf_a0a0d0a0e;
+                private Iterator<Problem> _2__yield_ccrblf_a0a0d0a0e_it;
+                private Problem _6__yield_ccrblf_b0a0d0a0e;
+                private Iterator<Problem> _6__yield_ccrblf_b0a0d0a0e_it;
               };
             }
           };

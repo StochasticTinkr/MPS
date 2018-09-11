@@ -10,6 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -66,10 +67,11 @@ public class DeprecatedUtil {
     final String cat = "Reference to Deprecated Node";
 
     {
-      final SearchScope scope = CommandUtil.createScope(where);
+      SearchScope scope_i2l0ze_d0e = CommandUtil.createScope(where);
+      final SearchScope scope_i2l0ze_d0e_0 = new EditableFilteringScope(scope_i2l0ze_d0e);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_d0e_0;
         }
       };
       Sequence.fromIterable(depNodes).visitAll(new IVisitor<SNode>() {
@@ -87,10 +89,11 @@ public class DeprecatedUtil {
 
   private static void addUsagesOfDeprecatedMeta(final Map<SNode, DeprecatedNodeProperties> result, SearchScope depScope, SearchScope s) {
     {
-      final SearchScope scope = CommandUtil.createScope(s);
+      SearchScope scope_i2l0ze_a0g = CommandUtil.createScope(s);
+      final SearchScope scope_i2l0ze_a0g_0 = new EditableFilteringScope(scope_i2l0ze_a0g);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_a0g_0;
         }
       };
       // --------concepts 
@@ -239,10 +242,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depNodes(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope);
+      SearchScope scope_i2l0ze_a0k = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0k_0 = new EditableFilteringScope(scope_i2l0ze_a0k);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_a0k_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), false)).where(new IWhereFilter<SNode>() {
@@ -259,10 +263,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depLinks(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope);
+      SearchScope scope_i2l0ze_a0m = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0m_0 = new EditableFilteringScope(scope_i2l0ze_a0m);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_a0m_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false)).where(new IWhereFilter<SNode>() {
@@ -275,10 +280,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depProps(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope);
+      SearchScope scope_i2l0ze_a0o = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0o_0 = new EditableFilteringScope(scope_i2l0ze_a0o);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_a0o_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false)).where(new IWhereFilter<SNode>() {
@@ -291,10 +297,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depConcepts(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope);
+      SearchScope scope_i2l0ze_a0q = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0q_0 = new EditableFilteringScope(scope_i2l0ze_a0q);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i2l0ze_a0q_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {

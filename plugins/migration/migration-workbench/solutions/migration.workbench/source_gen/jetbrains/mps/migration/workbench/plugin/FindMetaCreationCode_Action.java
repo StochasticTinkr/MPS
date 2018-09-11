@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -67,10 +68,11 @@ public class FindMetaCreationCode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
     {
-      final SearchScope scope = CommandUtil.createScope(((jetbrains.mps.project.Project) event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+      SearchScope scope_375gxx_b0a = CommandUtil.createScope(((jetbrains.mps.project.Project) event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+      final SearchScope scope_375gxx_b0a_0 = new EditableFilteringScope(scope_375gxx_b0a);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_375gxx_b0a_0;
         }
       };
       SetSequence.fromSet(nodes).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), false)).select(new ISelector<SNode, SNode>() {

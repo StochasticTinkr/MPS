@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -35,10 +36,11 @@ public class ExtensionPoint_name extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_3c5dbg_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_3c5dbg_a0d_0 = new EditableFilteringScope(scope_3c5dbg_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_3c5dbg_a0d_0;
         }
       };
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
@@ -55,10 +57,11 @@ public class ExtensionPoint_name extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_3c5dbg_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_3c5dbg_a0e_0 = new EditableFilteringScope(scope_3c5dbg_a0e);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_3c5dbg_a0e_0;
         }
       };
       return Sequence.fromClosure(new ISequenceClosure<Problem>() {

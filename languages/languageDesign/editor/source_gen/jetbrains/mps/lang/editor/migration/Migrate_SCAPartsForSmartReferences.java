@@ -10,6 +10,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -42,10 +43,11 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
   public void doExecute(final SModule m) {
     final Map<SModule, SNode> data = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 8));
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_6mkphx_b0d = CommandUtil.createScope(m);
+      final SearchScope scope_6mkphx_b0d_0 = new EditableFilteringScope(scope_6mkphx_b0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_6mkphx_b0d_0;
         }
       };
       Collection<SNode> SCAs = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), false);

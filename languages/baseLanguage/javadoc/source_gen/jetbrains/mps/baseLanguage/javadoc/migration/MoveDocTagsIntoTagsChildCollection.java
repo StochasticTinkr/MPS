@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -79,10 +80,11 @@ public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_i7tkk0_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_i7tkk0_a0e_0 = new EditableFilteringScope(scope_i7tkk0_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_i7tkk0_a0e_0;
         }
       };
       List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());

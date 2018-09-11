@@ -44,6 +44,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -215,10 +216,11 @@ public class MigrationCheckerImpl implements MigrationChecker {
 
         List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
         {
-          final SearchScope scope = CommandUtil.createScope(modules);
+          SearchScope scope_9mxawj_j0a0a8 = CommandUtil.createScope(modules);
+          final SearchScope scope_9mxawj_j0a0a8_0 = new EditableFilteringScope(scope_9mxawj_j0a0a8);
           QueryExecutionContext context = new QueryExecutionContext() {
             public SearchScope getDefaultSearchScope() {
-              return scope;
+              return scope_9mxawj_j0a0a8_0;
             }
           };
           for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation_old"), false)).where(new IWhereFilter<SNode>() {

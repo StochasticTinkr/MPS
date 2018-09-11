@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -37,10 +38,11 @@ public class MigrateModelReferenceExprWithRepo extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_lc3hzh_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_lc3hzh_a0d_0 = new EditableFilteringScope(scope_lc3hzh_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_lc3hzh_a0d_0;
         }
       };
       final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(m.getRepository());

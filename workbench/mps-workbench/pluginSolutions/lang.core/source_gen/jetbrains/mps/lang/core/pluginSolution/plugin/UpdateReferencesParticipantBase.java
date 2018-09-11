@@ -31,6 +31,7 @@ import java.util.Collections;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -180,10 +181,11 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
       }
     }).toListSequence();
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_82eo7d_d0s = CommandUtil.createScope(searchScope);
+      final SearchScope scope_82eo7d_d0s_0 = new EditableFilteringScope(scope_82eo7d_d0s);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_82eo7d_d0s_0;
         }
       };
       if (!(ListSequence.fromList(movedNodes).contains(null))) {

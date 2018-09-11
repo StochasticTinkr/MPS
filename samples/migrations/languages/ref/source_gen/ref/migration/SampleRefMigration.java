@@ -12,6 +12,7 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -56,10 +57,11 @@ public class SampleRefMigration extends MigrationScriptBase {
     });
 
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_u457zm_d0d = CommandUtil.createScope(searchScope);
+      final SearchScope scope_u457zm_d0d_0 = new EditableFilteringScope(scope_u457zm_d0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_u457zm_d0d_0;
         }
       };
 
@@ -108,10 +110,11 @@ public class SampleRefMigration extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_u457zm_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_u457zm_a0e_0 = new EditableFilteringScope(scope_u457zm_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_u457zm_a0e_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, "ref.structure.OldComponentRef"), false)).select(new ISelector<SNode, NotMigratedNode>() {
@@ -130,10 +133,11 @@ public class SampleRefMigration extends MigrationScriptBase {
   }
   public List<SNode> getDeclData(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_u457zm_a0g = CommandUtil.createScope(m);
+      final SearchScope scope_u457zm_a0g_0 = new EditableFilteringScope(scope_u457zm_a0g);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_u457zm_a0g_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L, "jetbrains.mps.lang.core.structure.MigrationDataAnnotation"), false)).where(new IWhereFilter<SNode>() {

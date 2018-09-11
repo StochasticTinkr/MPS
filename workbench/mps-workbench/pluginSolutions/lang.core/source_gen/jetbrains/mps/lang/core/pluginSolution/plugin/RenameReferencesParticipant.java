@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -64,10 +65,11 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, String>>());
     }
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_xv67ae_b0i = CommandUtil.createScope(searchScope);
+      final SearchScope scope_xv67ae_b0i_0 = new EditableFilteringScope(scope_xv67ae_b0i);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_xv67ae_b0i_0;
         }
       };
       final SNode movingNode = initialState.resolve(repository);
@@ -99,7 +101,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
                   }
                   if (node.getModel() instanceof EditableSModel && node.getReference(role) instanceof jetbrains.mps.smodel.SReference) {
                     ((jetbrains.mps.smodel.SReference) node.getReference(role)).setResolveInfo(finalState);
-                    as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a5a1a8(node.getModel(), EditableSModel.class).setChanged(true);
+                    as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a6a1a8(node.getModel(), EditableSModel.class).setChanged(true);
                   }
                 }
               });
@@ -110,7 +112,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
       }).toListSequence();
     }
   }
-  private static <T> T as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a5a1a8(Object o, Class<T> type) {
+  private static <T> T as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a6a1a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

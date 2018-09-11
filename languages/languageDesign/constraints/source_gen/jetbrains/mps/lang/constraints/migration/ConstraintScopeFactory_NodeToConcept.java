@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -37,10 +38,11 @@ public class ConstraintScopeFactory_NodeToConcept extends MigrationScriptBase {
   public Iterable<Problem> check(SModule m) {
     final List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_djohgv_b0e = CommandUtil.createScope(m);
+      final SearchScope scope_djohgv_b0e_0 = new EditableFilteringScope(scope_djohgv_b0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_djohgv_b0e_0;
         }
       };
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), false)).visitAll(new IVisitor<SNode>() {
