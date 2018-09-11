@@ -7,8 +7,6 @@
   </target>
 
   <target name="getResourcesAndBuildAll">
-    <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getHelp" />
-    <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getMachelp" />
     <ant antfile="getResources.xml" inheritall="true" usenativebasedir="true" target="getOpenjdkWin" />
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
   </target>
@@ -36,7 +34,6 @@
   </target>
 
   <target name="cleanResources">
-    <delete dir="${resources}/help"/>
     <delete dir="${resources}/openJDK"/>
   </target>
 </project>
