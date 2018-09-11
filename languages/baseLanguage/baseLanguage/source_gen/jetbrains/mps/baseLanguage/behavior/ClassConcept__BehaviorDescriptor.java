@@ -46,6 +46,7 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -359,11 +360,7 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
     }
 
     // populate implemented interfaces members  
-    for (SNode implementedInterface : SNodeOperations.ofConcept(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb7f7eL, "jetbrains.mps.baseLanguage.structure.IClassifierType"))) {
+    for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).where(new NotNullWhereFilter<SNode>())) {
       IClassifierType__BehaviorDescriptor.populateMembers_id6r77ob2USS_.invoke(implementedInterface, context, classifierType);
     }
   }

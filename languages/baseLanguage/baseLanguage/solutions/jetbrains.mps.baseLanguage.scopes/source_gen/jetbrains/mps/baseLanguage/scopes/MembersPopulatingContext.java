@@ -26,7 +26,7 @@ public class MembersPopulatingContext {
   private final List<SNode> members = new ArrayList<SNode>();
   private final Map<Signature, SNode> addedSignatures = new HashMap<Signature, SNode>();
   private Map<SNode, SNode> typeByTypeVariable = new HashMap<SNode, SNode>();
-  private Map<Object, Object> userObjects = new HashMap<Object, Object>();
+
   public MembersPopulatingContext() {
     // java collections for speed 
   }
@@ -49,15 +49,7 @@ public class MembersPopulatingContext {
     members.addAll(this.members);
     return members;
   }
-  public void putUserObject(Object key, Object value) {
-    userObjects.put(key, value);
-  }
-  public Object getUserObject(Object key) {
-    return userObjects.get(key);
-  }
-  public boolean containsUserObject(Object key) {
-    return userObjects.containsKey(key);
-  }
+
   public boolean enterClassifierInternal(SNode classifierType) {
     SNode classifier = IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifierType);
 

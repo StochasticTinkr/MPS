@@ -109,7 +109,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierSignature" file="ClassifierSignature.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -145,7 +144,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.FieldSignature" file="FieldSignature.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -191,7 +189,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" file="MembersPopulatingContext.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -247,7 +244,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.MethodSignature" file="MethodSignature.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -257,8 +253,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
