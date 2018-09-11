@@ -10,7 +10,6 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -68,7 +67,7 @@ public class DeprecatedUtil {
 
     {
       SearchScope scope_i2l0ze_d0e = CommandUtil.createScope(where);
-      final SearchScope scope_i2l0ze_d0e_0 = new EditableFilteringScope(scope_i2l0ze_d0e);
+      final SearchScope scope_i2l0ze_d0e_0 = scope_i2l0ze_d0e;
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_d0e_0;
@@ -90,7 +89,7 @@ public class DeprecatedUtil {
   private static void addUsagesOfDeprecatedMeta(final Map<SNode, DeprecatedNodeProperties> result, SearchScope depScope, SearchScope s) {
     {
       SearchScope scope_i2l0ze_a0g = CommandUtil.createScope(s);
-      final SearchScope scope_i2l0ze_a0g_0 = new EditableFilteringScope(scope_i2l0ze_a0g);
+      final SearchScope scope_i2l0ze_a0g_0 = scope_i2l0ze_a0g;
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_a0g_0;
@@ -243,7 +242,7 @@ public class DeprecatedUtil {
   private static Iterable<SNode> depNodes(SearchScope depScope) {
     {
       SearchScope scope_i2l0ze_a0k = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0k_0 = new EditableFilteringScope(scope_i2l0ze_a0k);
+      final SearchScope scope_i2l0ze_a0k_0 = scope_i2l0ze_a0k;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_a0k_0;
@@ -264,7 +263,7 @@ public class DeprecatedUtil {
   private static Iterable<SNode> depLinks(SearchScope depScope) {
     {
       SearchScope scope_i2l0ze_a0m = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0m_0 = new EditableFilteringScope(scope_i2l0ze_a0m);
+      final SearchScope scope_i2l0ze_a0m_0 = scope_i2l0ze_a0m;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_a0m_0;
@@ -281,7 +280,7 @@ public class DeprecatedUtil {
   private static Iterable<SNode> depProps(SearchScope depScope) {
     {
       SearchScope scope_i2l0ze_a0o = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0o_0 = new EditableFilteringScope(scope_i2l0ze_a0o);
+      final SearchScope scope_i2l0ze_a0o_0 = scope_i2l0ze_a0o;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_a0o_0;
@@ -298,7 +297,7 @@ public class DeprecatedUtil {
   private static Iterable<SNode> depConcepts(SearchScope depScope) {
     {
       SearchScope scope_i2l0ze_a0q = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0q_0 = new EditableFilteringScope(scope_i2l0ze_a0q);
+      final SearchScope scope_i2l0ze_a0q_0 = scope_i2l0ze_a0q;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope_i2l0ze_a0q_0;

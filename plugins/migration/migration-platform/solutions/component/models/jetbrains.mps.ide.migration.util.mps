@@ -283,6 +283,7 @@
         <child id="7738379549910147342" name="conceptArg" index="qVDSX" />
       </concept>
       <concept id="4234138103881610891" name="jetbrains.mps.lang.smodel.query.structure.WithStatement" flags="ng" index="L3pyB">
+        <property id="192970713427626335" name="includeNonEditable" index="1Fhty8" />
         <child id="4234138103881610935" name="scope" index="L3pyr" />
         <child id="4234138103881610892" name="stmts" index="L3pyw" />
       </concept>
@@ -1567,6 +1568,7 @@
         </node>
         <node concept="3clFbH" id="75sEHjoWgAl" role="3cqZAp" />
         <node concept="L3pyB" id="51adnVzUYML" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzWnNo" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzWmza" resolve="where" />
           </node>
@@ -1680,6 +1682,7 @@
       </node>
       <node concept="3clFbS" id="51adnVzULk1" role="3clF47">
         <node concept="L3pyB" id="51adnVzULkv" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzULn7" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzULn2" resolve="s" />
           </node>
@@ -2839,6 +2842,7 @@
       </node>
       <node concept="3clFbS" id="51adnVzVVEg" role="3clF47">
         <node concept="L3pyB" id="51adnVzVVEj" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzVVER" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzVVEO" resolve="depScope" />
           </node>
@@ -2920,6 +2924,7 @@
       </node>
       <node concept="3clFbS" id="51adnVzUp_t" role="3clF47">
         <node concept="L3pyB" id="51adnVzULkf" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzWi3X" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzWeqE" resolve="depScope" />
           </node>
@@ -2980,6 +2985,7 @@
       </node>
       <node concept="3clFbS" id="51adnVzUpbf" role="3clF47">
         <node concept="L3pyB" id="51adnVzVCSA" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzWjtf" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzWfKw" resolve="depScope" />
           </node>
@@ -3040,6 +3046,7 @@
       </node>
       <node concept="3clFbS" id="51adnVzUoue" role="3clF47">
         <node concept="L3pyB" id="51adnVzVD12" role="3cqZAp">
+          <property role="1Fhty8" value="true" />
           <node concept="37vLTw" id="51adnVzWkEt" role="L3pyr">
             <ref role="3cqZAo" node="51adnVzWgYe" resolve="depScope" />
           </node>
