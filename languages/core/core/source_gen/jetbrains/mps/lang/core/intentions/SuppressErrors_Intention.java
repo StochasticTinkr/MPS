@@ -15,10 +15,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
 public final class SuppressErrors_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
@@ -42,7 +51,15 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
       return true;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    return !(editorComponent.getReportItemsForCell(editorComponent.getSelectedCell()).isEmpty());
+    Collection<IssueKindReportItem> reportItemsForCell = editorComponent.getReportItemsForCell(editorComponent.getSelectedCell());
+    if (CollectionSequence.fromCollection(reportItemsForCell).isEmpty()) {
+      return false;
+    }
+    return CollectionSequence.fromCollection(reportItemsForCell).all(new IWhereFilter<IssueKindReportItem>() {
+      public boolean accept(IssueKindReportItem it) {
+        return Objects.equals(it.getIssueKind().getChecker(), IssueKindReportItem.TYPESYSTEM);
+      }
+    });
   }
   @Override
   public boolean isSurroundWith() {
@@ -59,12 +76,14 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).isEmpty() ? String.format("Suppress all errors for " + ICanSuppressErrors__BehaviorDescriptor.nodeLine_id4oS1ku9jIXr.invoke(node)) : "Don't suppress errors");
+      return (ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).isEmpty() ? String.format("Suppress all typesystem errors for " + ICanSuppressErrors__BehaviorDescriptor.nodeLine_id4oS1ku9jIXr.invoke(node)) : "Don't suppress errors");
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       if (ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).isEmpty()) {
-        SNodeFactoryOperations.addNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"));
+        SNode annotation = SNodeFactoryOperations.addNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"));
+        Map<String, String> flavours = MapSequence.<String, String>fromMapAndKeysArray(new HashMap<String, String>(), IssueKindReportItem.FLAVOUR_ISSUE_KIND.getId()).withValues(IssueKindReportItem.TYPESYSTEM.deriveItemKind().toString());
+        SPropertyOperations.assign(annotation, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, 0x21a1b53c6f2a72edL, "whichError"), new FlavouredItem.FlavourPredicate(flavours).serialize());
       } else {
         ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).clear();
       }

@@ -688,6 +688,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="2423417345669755629" name="whichError" index="1eyWvh" />
+      </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
         <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
@@ -58190,6 +58193,9 @@
         </node>
       </node>
     </node>
+    <node concept="15s5l7" id="aH$ttDSDsF" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
+    </node>
   </node>
   <node concept="LiM7Y" id="ATHDXzvTQx">
     <property role="TrG5h" value="DeleteUsualStatementBeforeCommented" />
@@ -58385,6 +58391,9 @@
         </node>
       </node>
     </node>
+    <node concept="15s5l7" id="aH$ttDSyim" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
+    </node>
   </node>
   <node concept="LiM7Y" id="1A9qTDfq4Xl">
     <property role="TrG5h" value="DefaultEditor_ForDeletedConcepts_Property" />
@@ -58426,6 +58435,9 @@
           <property role="LIFWd" value="property_name" />
         </node>
       </node>
+    </node>
+    <node concept="15s5l7" id="5wXOsKcW4cD" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
     </node>
   </node>
   <node concept="LiM7Y" id="7DH9HgSBvSu">
@@ -59807,6 +59819,9 @@
         </node>
         <node concept="1mVH4l" id="2V5Y3KmbJ3K" role="SUVWm" />
       </node>
+    </node>
+    <node concept="15s5l7" id="aH$ttDSDs1" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
     </node>
   </node>
   <node concept="LiM7Y" id="7DH9HgSBm2N">

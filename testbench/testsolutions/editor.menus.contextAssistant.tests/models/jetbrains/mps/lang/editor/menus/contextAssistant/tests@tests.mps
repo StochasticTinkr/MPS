@@ -232,6 +232,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="2423417345669755629" name="whichError" index="1eyWvh" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
@@ -2334,6 +2337,9 @@
       </node>
       <node concept="3TPunu" id="3XP_kj6ENGm" role="3TOBOl" />
     </node>
+    <node concept="15s5l7" id="aH$ttDTcPg" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
+    </node>
   </node>
   <node concept="LiM7Y" id="3XP_kj6Eqgu">
     <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeSameMenuTwiceForSameNode" />
@@ -2867,6 +2873,9 @@
         <property role="LIFWd" value="Constant_kqu7x4_ob2a" />
       </node>
       <node concept="3TPunu" id="1D1LJGC35Qb" role="3TOBOl" />
+    </node>
+    <node concept="15s5l7" id="aH$ttDTaLI" role="lGtFl">
+      <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;structure (unknown language feature)&quot;;" />
     </node>
   </node>
   <node concept="LiM7Y" id="3XP_kj6EH3H">
