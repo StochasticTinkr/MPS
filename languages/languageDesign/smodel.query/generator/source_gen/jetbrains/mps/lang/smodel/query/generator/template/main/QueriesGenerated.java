@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -56,8 +57,17 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter")), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter")), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x967fc67f6f09d70L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterExact"))).isNotEmpty();
   }
+  public static Object propertyMacro_GetValue_10_0(final PropertyMacroContext _context) {
+    return _context.createUniqueName("scope", SNodeOperations.getContainingRoot(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_10_1(final PropertyMacroContext _context) {
+    return _context.createUniqueName("scope", SNodeOperations.getContainingRoot(_context.getNode()));
+  }
   public static Object propertyMacro_GetValue_13_0(final PropertyMacroContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter")), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly_old"))).isNotEmpty();
+  }
+  public static boolean ifMacro_Condition_10_0(final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3ac2ae2c0bcf368bL, 0x2ad91d769e8495fL, "includeNonEditable")));
   }
   public static boolean ifMacro_Condition_13_0(final IfMacroContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter")), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a3L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope"))).isNotEmpty();
@@ -171,7 +181,7 @@ public class QueriesGenerated extends QueryProviderBase {
     snqMethods.put("5486105161151187536", new QueriesGenerated.SNQ(i++));
     snqMethods.put("3492877759612269969", new QueriesGenerated.SNQ(i++));
     snqMethods.put("5486105161151264070", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("1964420931776208395", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("192970713428089402", new QueriesGenerated.SNQ(i++));
     snqMethods.put("8064924659634241365", new QueriesGenerated.SNQ(i++));
     snqMethods.put("8064924659634241465", new QueriesGenerated.SNQ(i++));
     snqMethods.put("2362304834940239526", new QueriesGenerated.SNQ(i++));
@@ -267,6 +277,8 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     int i = 0;
     pvqMethods.put("677787792397362226", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "false"));
+    pvqMethods.put("192970713428117409", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "rareScope"));
+    pvqMethods.put("192970713428056961", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "resultingScope"));
     pvqMethods.put("8064924659634241500", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "true"));
   }
   @NotNull
@@ -290,6 +302,10 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.propertyMacro_GetValue_2_0(ctx);
         case 1:
+          return QueriesGenerated.propertyMacro_GetValue_10_0(ctx);
+        case 2:
+          return QueriesGenerated.propertyMacro_GetValue_10_1(ctx);
+        case 3:
           return QueriesGenerated.propertyMacro_GetValue_13_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -299,6 +315,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
   {
     int i = 0;
+    imcMethods.put("192970713428105055", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8064924659634241341", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8064924659634241426", new QueriesGenerated.IfMC(i++));
   }
@@ -320,8 +337,10 @@ public class QueriesGenerated extends QueryProviderBase {
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_13_0(ctx);
+          return QueriesGenerated.ifMacro_Condition_10_0(ctx);
         case 1:
+          return QueriesGenerated.ifMacro_Condition_13_0(ctx);
+        case 2:
           return QueriesGenerated.ifMacro_Condition_13_1(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
