@@ -34,17 +34,21 @@ public final class Statement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> isGuardClauseStatement_idi0z$q7V = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isGuardClauseStatement").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0z$q7V").registry(REGISTRY).build();
+  public static final SMethod<String> nodeDescription_id4oS1ku9jIXr = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("nodeDescription").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4oS1ku9jIXr").registry(REGISTRY).build();
   public static final SMethod<Set<SNode>> uncaughtThrowables_id4Gt7ANIVAVT = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("uncaughtThrowables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Gt7ANIVAVT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   public static final SMethod<Void> collectUncaughtMethodThrowables_id4Gt7ANIVH8f = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectUncaughtMethodThrowables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Gt7ANIVH8f").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   public static final SMethod<Void> collectUncaughtMethodThrowables_id4Gt7ANIVBW7 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectUncaughtMethodThrowables").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Gt7ANIVBW7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isGuardClauseStatement_idi0z$q7V, uncaughtThrowables_id4Gt7ANIVAVT, collectUncaughtMethodThrowables_id4Gt7ANIVH8f, collectUncaughtMethodThrowables_id4Gt7ANIVBW7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isGuardClauseStatement_idi0z$q7V, nodeDescription_id4oS1ku9jIXr, uncaughtThrowables_id4Gt7ANIVAVT, collectUncaughtMethodThrowables_id4Gt7ANIVH8f, collectUncaughtMethodThrowables_id4Gt7ANIVBW7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static boolean isGuardClauseStatement_idi0z$q7V(@NotNull SNode __thisNode__) {
     return false;
+  }
+  /*package*/ static String nodeDescription_id4oS1ku9jIXr(@NotNull SNode __thisNode__) {
+    return "the statement";
   }
   /*package*/ static Set<SNode> uncaughtThrowables_id4Gt7ANIVAVT(@NotNull SNode __thisNode__, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
@@ -96,8 +100,10 @@ public final class Statement__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((Boolean) isGuardClauseStatement_idi0z$q7V(node));
       case 1:
-        return (T) ((Set<SNode>) uncaughtThrowables_id4Gt7ANIVAVT(node, ((boolean) (Boolean) parameters[0])));
+        return (T) ((String) nodeDescription_id4oS1ku9jIXr(node));
       case 2:
+        return (T) ((Set<SNode>) uncaughtThrowables_id4Gt7ANIVAVT(node, ((boolean) (Boolean) parameters[0])));
+      case 3:
         collectUncaughtMethodThrowables_id4Gt7ANIVH8f(node, (Set<SNode>) parameters[0], ((boolean) (Boolean) parameters[1]));
         return null;
       default:
@@ -112,7 +118,7 @@ public final class Statement__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 3:
+      case 4:
         collectUncaughtMethodThrowables_id4Gt7ANIVBW7(concept, (Set<SNode>) parameters[0], (SNode) parameters[1]);
         return null;
       default:

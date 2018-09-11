@@ -2254,7 +2254,7 @@
     <node concept="13i0hz" id="4oS1ku9jIXr" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="true" />
-      <property role="TrG5h" value="nodeLine" />
+      <property role="TrG5h" value="nodeDescription" />
       <node concept="3Tm1VV" id="4oS1ku9jIXs" role="1B3o_S" />
       <node concept="17QB3L" id="4oS1ku9jJXq" role="3clF45" />
       <node concept="3clFbS" id="4oS1ku9jIXu" role="3clF47">

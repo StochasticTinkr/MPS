@@ -24,14 +24,14 @@ public final class ICanSuppressErrors__BehaviorDescriptor extends BaseBHDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> nodeLine_id4oS1ku9jIXr = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("nodeLine").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4oS1ku9jIXr").registry(REGISTRY).build();
+  public static final SMethod<String> nodeDescription_id4oS1ku9jIXr = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("nodeDescription").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4oS1ku9jIXr").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nodeLine_id4oS1ku9jIXr);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nodeDescription_id4oS1ku9jIXr);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String nodeLine_id4oS1ku9jIXr(@NotNull SNode __thisNode__) {
+  /*package*/ static String nodeDescription_id4oS1ku9jIXr(@NotNull SNode __thisNode__) {
     return "node '" + __thisNode__ + "'";
   }
 
@@ -52,7 +52,7 @@ public final class ICanSuppressErrors__BehaviorDescriptor extends BaseBHDescript
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) nodeLine_id4oS1ku9jIXr(node));
+        return (T) ((String) nodeDescription_id4oS1ku9jIXr(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

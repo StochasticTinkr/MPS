@@ -34,6 +34,7 @@ public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<List<SNode>> getTestSet_idhGB2z8L = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGB2z8L").registry(REGISTRY).build();
+  public static final SMethod<String> nodeDescription_id4oS1ku9jIXr = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("nodeDescription").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4oS1ku9jIXr").registry(REGISTRY).build();
   public static final SMethod<String> getTestName_idhGBohAB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBohAB").registry(REGISTRY).build();
   public static final SMethod<SNode> getTestCase_idhGBgWVd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTestCase").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBgWVd").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getTestMethods_id1RfJDyhAUar = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1RfJDyhAUar").registry(REGISTRY).build();
@@ -43,13 +44,16 @@ public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getBody_idi2fhZ_m = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getBody").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2fhZ_m").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTestSet_idhGB2z8L, getTestName_idhGBohAB, getTestCase_idhGBgWVd, getTestMethods_id1RfJDyhAUar, suppress_id2WmWrdnSpX7, isMpsStartRequired_id2RMg39tmiFh, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getThrowableTypes_id5op8ooRkkc7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTestSet_idhGB2z8L, nodeDescription_id4oS1ku9jIXr, getTestName_idhGBohAB, getTestCase_idhGBgWVd, getTestMethods_id1RfJDyhAUar, suppress_id2WmWrdnSpX7, isMpsStartRequired_id2RMg39tmiFh, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getThrowableTypes_id5op8ooRkkc7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static List<SNode> getTestSet_idhGB2z8L(@NotNull SNode __thisNode__) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), __thisNode__);
+  }
+  /*package*/ static String nodeDescription_id4oS1ku9jIXr(@NotNull SNode __thisNode__) {
+    return "test '" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "'";
   }
   /*package*/ static String getTestName_idhGBohAB(@NotNull SNode __thisNode__) {
     return "test_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -78,7 +82,7 @@ public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(_quotation_createNode_jcmzdd_a0a1a8());
+    ListSequence.fromList(result).addElement(_quotation_createNode_jcmzdd_a0a1a9());
     return result;
   }
 
@@ -101,20 +105,22 @@ public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((List<SNode>) getTestSet_idhGB2z8L(node));
       case 1:
-        return (T) ((String) getTestName_idhGBohAB(node));
+        return (T) ((String) nodeDescription_id4oS1ku9jIXr(node));
       case 2:
-        return (T) ((SNode) getTestCase_idhGBgWVd(node));
+        return (T) ((String) getTestName_idhGBohAB(node));
       case 3:
-        return (T) ((List<SNode>) getTestMethods_id1RfJDyhAUar(node));
+        return (T) ((SNode) getTestCase_idhGBgWVd(node));
       case 4:
-        return (T) ((Boolean) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]));
+        return (T) ((List<SNode>) getTestMethods_id1RfJDyhAUar(node));
       case 5:
-        return (T) ((Boolean) isMpsStartRequired_id2RMg39tmiFh(node));
+        return (T) ((Boolean) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]));
       case 6:
-        return (T) ((SNode) getExpectedRetType_idi2fhBNC(node));
+        return (T) ((Boolean) isMpsStartRequired_id2RMg39tmiFh(node));
       case 7:
-        return (T) ((SNode) getBody_idi2fhZ_m(node));
+        return (T) ((SNode) getExpectedRetType_idi2fhBNC(node));
       case 8:
+        return (T) ((SNode) getBody_idi2fhZ_m(node));
+      case 9:
         return (T) ((List<SNode>) getThrowableTypes_id5op8ooRkkc7(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -144,7 +150,7 @@ public final class EditorTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_jcmzdd_a0a1a8() {
+  private static SNode _quotation_createNode_jcmzdd_a0a1a9() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
