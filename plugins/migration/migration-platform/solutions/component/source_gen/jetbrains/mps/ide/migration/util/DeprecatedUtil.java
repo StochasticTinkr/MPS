@@ -11,17 +11,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -61,16 +61,82 @@ public class DeprecatedUtil {
     return result;
   }
 
+  public static Map<SNode, DeprecatedNodeProperties> deprecatedAndNotUsed(SearchScope s) {
+    final Map<SNode, DeprecatedNodeProperties> result = MapSequence.fromMap(new HashMap<SNode, DeprecatedNodeProperties>());
+    {
+      SearchScope scope_i2l0ze_b0e = CommandUtil.createScope(s);
+      final SearchScope scope_i2l0ze_b0e_0 = scope_i2l0ze_b0e;
+      final QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope_i2l0ze_b0e_0;
+        }
+      };
+      Sequence.fromIterable(depLinks(s)).where(new IWhereFilter<SNode>() {
+        public boolean accept(final SNode link) {
+          if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+            return !(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SNodeOperations.getNodeAncestor(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false))), false)).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode ins) {
+                return ListSequence.fromList(SNodeOperations.getChildren(ins, MetaAdapterByDeclaration.getContainmentLink(link))).isNotEmpty();
+              }
+            }));
+          } else {
+            return !(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SNodeOperations.getNodeAncestor(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false))), false)).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode ins) {
+                return ins.getReference(MetaAdapterByDeclaration.getReferenceLink(link)) != null;
+              }
+            }));
+          }
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          MapSequence.fromMap(result).put(it, new DeprecatedNodeProperties("Deprecated Links with No Instances", getToRemoveVersion(it)));
+        }
+      });
+      Sequence.fromIterable(depProps(s)).where(new IWhereFilter<SNode>() {
+        public boolean accept(final SNode prop) {
+          return !(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SNodeOperations.getNodeAncestor(prop, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false))), false)).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode ins) {
+              return ins.getProperty(MetaAdapterByDeclaration.getProperty(prop)) != null;
+            }
+          }));
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          MapSequence.fromMap(result).put(it, new DeprecatedNodeProperties("Deprecated Properties with No Instances", getToRemoveVersion(it)));
+        }
+      });
+      Sequence.fromIterable(depConcepts(s)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)), true)).isEmpty();
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          MapSequence.fromMap(result).put(it, new DeprecatedNodeProperties("Deprecated Concepts with No Instances", getToRemoveVersion(it)));
+        }
+      });
+      Sequence.fromIterable(depNodes(s)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), it)).isEmpty();
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          MapSequence.fromMap(result).put(it, new DeprecatedNodeProperties("Deprecated Nodes with No Usages", getToRemoveVersion(it)));
+        }
+      });
+    }
+    return result;
+  }
+
   private static void usagesOfDeprecatedNodes(final Map<SNode, DeprecatedNodeProperties> result, SearchScope what, SearchScope where) {
     Iterable<SNode> depNodes = DeprecatedUtil.depNodes(what);
     final String cat = "Reference to Deprecated Node";
 
     {
-      SearchScope scope_i2l0ze_d0e = CommandUtil.createScope(where);
-      final SearchScope scope_i2l0ze_d0e_0 = scope_i2l0ze_d0e;
+      SearchScope scope_i2l0ze_d0g = CommandUtil.createScope(where);
+      final SearchScope scope_i2l0ze_d0g_0 = scope_i2l0ze_d0g;
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_d0e_0;
+          return scope_i2l0ze_d0g_0;
         }
       };
       Sequence.fromIterable(depNodes).visitAll(new IVisitor<SNode>() {
@@ -88,11 +154,11 @@ public class DeprecatedUtil {
 
   private static void addUsagesOfDeprecatedMeta(final Map<SNode, DeprecatedNodeProperties> result, SearchScope depScope, SearchScope s) {
     {
-      SearchScope scope_i2l0ze_a0g = CommandUtil.createScope(s);
-      final SearchScope scope_i2l0ze_a0g_0 = scope_i2l0ze_a0g;
+      SearchScope scope_i2l0ze_a0i = CommandUtil.createScope(s);
+      final SearchScope scope_i2l0ze_a0i_0 = scope_i2l0ze_a0i;
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_a0g_0;
+          return scope_i2l0ze_a0i_0;
         }
       };
       // --------concepts 
@@ -241,11 +307,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depNodes(SearchScope depScope) {
     {
-      SearchScope scope_i2l0ze_a0k = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0k_0 = scope_i2l0ze_a0k;
+      SearchScope scope_i2l0ze_a0m = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0m_0 = scope_i2l0ze_a0m;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_a0k_0;
+          return scope_i2l0ze_a0m_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), false)).where(new IWhereFilter<SNode>() {
@@ -262,11 +328,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depLinks(SearchScope depScope) {
     {
-      SearchScope scope_i2l0ze_a0m = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0m_0 = scope_i2l0ze_a0m;
+      SearchScope scope_i2l0ze_a0o = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0o_0 = scope_i2l0ze_a0o;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_a0m_0;
+          return scope_i2l0ze_a0o_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false)).where(new IWhereFilter<SNode>() {
@@ -279,11 +345,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depProps(SearchScope depScope) {
     {
-      SearchScope scope_i2l0ze_a0o = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0o_0 = scope_i2l0ze_a0o;
+      SearchScope scope_i2l0ze_a0q = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0q_0 = scope_i2l0ze_a0q;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_a0o_0;
+          return scope_i2l0ze_a0q_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false)).where(new IWhereFilter<SNode>() {
@@ -296,11 +362,11 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depConcepts(SearchScope depScope) {
     {
-      SearchScope scope_i2l0ze_a0q = CommandUtil.createScope(depScope);
-      final SearchScope scope_i2l0ze_a0q_0 = scope_i2l0ze_a0q;
+      SearchScope scope_i2l0ze_a0s = CommandUtil.createScope(depScope);
+      final SearchScope scope_i2l0ze_a0s_0 = scope_i2l0ze_a0s;
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope_i2l0ze_a0q_0;
+          return scope_i2l0ze_a0s_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {

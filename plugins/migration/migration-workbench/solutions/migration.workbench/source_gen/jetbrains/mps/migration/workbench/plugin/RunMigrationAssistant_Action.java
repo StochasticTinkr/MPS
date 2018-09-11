@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 
-public class ExecuteMigrationAssistant_Action extends BaseAction {
+public class RunMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ExecuteMigrationAssistant_Action() {
+  public RunMigrationAssistant_Action() {
     super("Run Migration Assistant", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);

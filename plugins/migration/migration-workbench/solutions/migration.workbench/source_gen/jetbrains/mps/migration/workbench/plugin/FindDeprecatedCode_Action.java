@@ -16,26 +16,19 @@ import com.intellij.openapi.progress.PerformInBackgroundOption;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.progress.ProgressIndicator;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.migration.util.DeprecatedNodeProperties;
 import jetbrains.mps.ide.migration.util.DeprecatedUtil;
-import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
-public class ShowDeprecatedUsages_Action extends BaseAction {
+public class FindDeprecatedCode_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowDeprecatedUsages_Action() {
-    super("Show Usages of Deprecated", "", ICON);
+  public FindDeprecatedCode_Action() {
+    super("Find Deprecated Code in Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
-    this.setMnemonic("d".charAt(0));
   }
   @Override
   public boolean isDumbAware() {
@@ -69,14 +62,8 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
         indicator.setIndeterminate(true);
         event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
-            SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
-            Map<SNode, DeprecatedNodeProperties> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-            Map<SNode, DeprecatedNodeProperties> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-
-            CategoryKind locationCategoryKind = CategoryKind.DEFAULT_CATEGORY_KIND;
-            UsagesFormattingUtil.addResults(searchResults, new Pair(locationCategoryKind, "Deprecated library stuff"), depLibs);
-            UsagesFormattingUtil.addResults(searchResults, new Pair(locationCategoryKind, "Deprecated project stuff"), depProj);
+            Map<SNode, DeprecatedNodeProperties> dep = DeprecatedUtil.deprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+            UsagesFormattingUtil.addResults(searchResults, new Pair(CategoryKind.DEFAULT_CATEGORY_KIND, "Deprecated Code"), dep);
           }
         });
       }
