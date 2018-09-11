@@ -26,6 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.StringTokenizer;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.AbstractModule;
@@ -223,8 +224,10 @@ public class ClassifierResolveUtils {
 
     final SModel contextNodeModel = SNodeOperations.getModel(contextNode);
 
-    SNode ourClass = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
-    if ((ourClass == null)) {
+    // though it's exactly what getPathToRoot does, I want to be 100% sure I get complete set of classifiers, inclusive, and don't want to risk any refactorings of the method 
+    Iterable<SNode> pathToRoot = SNodeOperations.getNodeAncestors(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true);
+
+    if (Sequence.fromIterable(pathToRoot).isEmpty()) {
       // no class outside, just use simple old logic 
       return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
     }
@@ -237,26 +240,16 @@ public class ClassifierResolveUtils {
 
     assert token != null;
 
-    if (!(SNodeOperations.isInstanceOf(ourClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
-      if (token.equals(SPropertyOperations.getString(ourClass, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-        return construct(ourClass, tokenizer);
-      }
-    }
-    for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(ourClass))) {
-      if (token.equals(SPropertyOperations.getString(nestedClas, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-        return construct(nestedClas, tokenizer);
-      }
-    }
+    final SConcept anonymousClassConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
 
-    Iterable<SNode> pathToRoot = getPathToRoot(ourClass);
-    for (SNode enclosingClass : Sequence.fromIterable(pathToRoot)) {
-      if (SNodeOperations.isInstanceOf(enclosingClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+    for (SNode pathElement : Sequence.fromIterable(pathToRoot)) {
+      if (SNodeOperations.isInstanceOf(pathElement, SNodeOperations.asSConcept(anonymousClassConcept))) {
         continue;
       }
-      if (token.equals(SPropertyOperations.getString(enclosingClass, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-        return construct(enclosingClass, tokenizer);
+      if (token.equals(SPropertyOperations.getString(pathElement, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+        return construct(pathElement, tokenizer);
       }
-      for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(enclosingClass))) {
+      for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(pathElement))) {
         if (token.equals(SPropertyOperations.getString(nested, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
           return construct(nested, tokenizer);
         }
@@ -284,6 +277,7 @@ public class ClassifierResolveUtils {
     } else {
       AbstractModule module = (AbstractModule) contextNodeModel.getModule();
       SearchScope moduleScope = (module == null ? GlobalScope.getInstance() : module.getScope());
+      final List<SModel> moduleScopeModels = ListSequence.fromListWithValues(new ArrayList<SModel>(), moduleScope.getModels());
 
       // walk through single-type imports 
       // TODO static imports are not handled yet 
@@ -302,7 +296,7 @@ public class ClassifierResolveUtils {
         // during java import in idea plugin we can stumble upon a psi stub model (the one being imported 
         // and about to be deleted) before the newly created model (which is the right one) 
 
-        Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName);
+        Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName);
         return (Sequence.fromIterable(matches).count() == 1 ? construct(Sequence.fromIterable(matches).first(), tokenizer) : null);
       }
 
@@ -316,11 +310,11 @@ public class ClassifierResolveUtils {
       ListSequence.fromList(javaImportedThings).addElement(contextNodeModel);
 
       String ourPkgName = contextNodeModel.getName().getLongName();
-      ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, ourPkgName)).where(new IWhereFilter<SModel>() {
+      ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(getModelsByName(ListSequence.fromList(moduleScopeModels).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
           return it != contextNodeModel;
         }
-      }));
+      }), ourPkgName)));
 
       SModel javaLangModel = moduleScope.resolve(new JavaPackageNameStub("java.lang").asModelReference(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")));
       if (javaLangModel != null) {
@@ -333,11 +327,11 @@ public class ClassifierResolveUtils {
         }
       })) {
         String fqName = SPropertyOperations.getString(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"));
-        Iterable<SModel> models = getModelsByName(moduleScope, fqName);
+        Iterable<SModel> models = getModelsByName(moduleScopeModels, fqName);
         if (Sequence.fromIterable(models).isNotEmpty()) {
           ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(models));
         } else {
-          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName)));
+          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName)));
         }
       }
 
@@ -352,18 +346,15 @@ public class ClassifierResolveUtils {
         boolean wasResult = false;
 
         // TODO try to use some fast find support 
-        Iterable<? extends SNode> roots = (thing instanceof SModel ? ((SModel) thing).getRootNodes() : SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(((SNode) thing), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+        Iterable<SNode> roots = (thing instanceof SModel ? SModelOperations.roots(((SModel) thing), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) : SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(((SNode) thing), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
 
         for (SNode r : roots) {
-          if (!(SNodeOperations.isInstanceOf(r, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
-            continue;
-          }
-          if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+          if (token.equals(SPropertyOperations.getString(r, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
             if (theResult != null) {
               // ambiguity 
               return null;
             }
-            theResult = construct(SNodeOperations.cast(r, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), tokenizer);
+            theResult = construct(r, tokenizer);
             wasResult = true;
           }
         }
@@ -490,21 +481,26 @@ public class ClassifierResolveUtils {
     }
     return null;
   }
-  public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
-    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
-    for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
+  private static List<SModel> getModelsByName(Iterable<SModel> models, String name) {
+    List<SModel> rv = ListSequence.fromList(new ArrayList<SModel>());
+
+    for (SModel candidate : Sequence.fromIterable(models)) {
       if (name.equals(candidate.getName().getLongName())) {
         // partial order: all models with stereotype after all models without it 
         if (!(candidate.getName().hasStereotype())) {
-          ListSequence.fromList(models).insertElement(0, candidate);
+          ListSequence.fromList(rv).insertElement(0, candidate);
         } else {
-          ListSequence.fromList(models).addElement(candidate);
+          ListSequence.fromList(rv).addElement(candidate);
         }
       }
     }
 
-    return models;
+    return rv;
+  }
+
+  public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
+    return getModelsByName(moduleScope.getModels(), name);
   }
   public static Iterable<SNode> staticImportedMethods(SNode imports) {
     return SNodeOperations.ofConcept(staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
