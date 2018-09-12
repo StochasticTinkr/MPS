@@ -27,6 +27,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
+import jetbrains.mps.nodeEditor.IntelligentInputUtil.IntelligentCellProcessor;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -54,6 +55,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.Optional;
 
 public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label, WithCaret {
   protected boolean myNoTextSet;
@@ -462,7 +464,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     String text = String.valueOf(keyEvent.getKeyChar());
     if (isEditable()) {
-      ModifyTextCommand keyTypedCommand = new ModifyTextCommand(text, allowErrors, side, getContext());
+      IntelligentCellProcessor cellProcessor = IntelligentInputUtil.getIntelligentCellProcessor(this, getContext(), side);
+      ModifyTextCommand keyTypedCommand =
+          new ModifyTextCommand(text, allowErrors, side, getContext(), cellProcessor);
       modelAccess.executeCommand(keyTypedCommand);
       getEditor().relayout();
       return keyTypedCommand.getResult();
@@ -492,7 +496,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       setCaretPosition(selectionStart, true);
     }
 
-    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(textChangeEvent.getText(), true, null, getContext());
+    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(textChangeEvent.getText(), true, getContext());
     getContext().getRepository().getModelAccess().executeCommand(keyTypedCommand);
     if (keyTypedCommand.getResult()) {
       getEditor().relayout();
@@ -1054,13 +1058,23 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   public class ModifyTextCommand extends EditorComputable<Boolean> implements UndoRunnable {
     private final String myReplacingText;
     private final boolean myAllowErrors;
-    private final CellSide mySide;
 
-    public ModifyTextCommand(String replacingText, boolean allowErrors, CellSide side, EditorContext context) {
+    @Nullable
+    private final CellSide mySide;
+    @Nullable
+    private final IntelligentCellProcessor myIntelligentCellProcessor;
+
+    public ModifyTextCommand(String replacingText, boolean allowErrors, @Nullable CellSide side, EditorContext context,
+                             @Nullable IntelligentCellProcessor cellProcessor) {
       super(context);
       myReplacingText = replacingText;
       myAllowErrors = allowErrors;
       mySide = side;
+      myIntelligentCellProcessor = cellProcessor;
+    }
+
+    public ModifyTextCommand(String replacingText, boolean allowErrors, EditorContext context) {
+      this(replacingText, allowErrors, null, context, null);
     }
 
     @Override
@@ -1069,7 +1083,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
         getContext().flushEvents();
         addChangeTextUndoableAction();
 
-        if (isErrorState() && mySide != null && IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), getRenderedText(), mySide)) {
+        if (isErrorState() && myIntelligentCellProcessor != null && myIntelligentCellProcessor.processCell(getRenderedText())) {
           /**
            * Resetting current command group ID if cell was side-transformed. In such situations
            * side-transforming command as well as char typing command should be separate part of

@@ -654,6 +654,11 @@ public class NodeEditorActions {
   }
 
   public static class Complete extends AbstractCellAction {
+
+    Complete(){
+      super(false);
+    }
+
     @Override
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getSelectedCell();
