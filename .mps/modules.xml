@@ -400,6 +400,10 @@
       <modulePath path="$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/sandbox/jetbrains.mps.samples.notesOrganizer.sandbox.msd" folder="samples.notesOrganizer" />
       <modulePath path="$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/jetbrains.mps.samples.notesOrganizer.build.msd" folder="samples.notesOrganizer" />
       <modulePath path="$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/ActionWithProgress.msd" folder="samples.progressIndicator" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/jetbrains.mps.samples.requirementTracking.RequirementDefinition.mpl" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/jetbrains.mps.samples.requirementTracking.Traces.mpl" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/jetbrains.mps.samples.ProjectCode.msd" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/jetbrains.mps.samples.Specification.msd" folder="samples.requirementTracking" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/KajaAndOr.mpl" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/KajaSceneConstruction/KajaSceneConstruction.mpl" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/Kajak/Kajak.mpl" folder="samples.robotKaja" />

@@ -1,0 +1,12 @@
+Requirements Persistence
+
+1. 00001: Reading and writting objects must work quickly
+As fast as possible. 
+Never longer than two seconds per request. 
+
+2. The system must withstand outages
+Any, including a total blackout in the region. 
+
+3. The storage must be encrypted
+RSA or stronger alg. 
+

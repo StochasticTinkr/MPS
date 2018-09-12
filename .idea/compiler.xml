@@ -572,6 +572,14 @@
       <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaSceneConstruction/generator/source_gen" includeSubdirectories="true" />
