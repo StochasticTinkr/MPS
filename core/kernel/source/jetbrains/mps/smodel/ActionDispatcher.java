@@ -113,6 +113,9 @@ import java.util.function.Consumer;
       throw new ListenersConsistenceException("Adding the same listener again");
     }
     myListeners.add(listener);
+    if (isInsideAction()) {
+      myOnActionStart.accept(listener);
+    }
   }
 
   /**
@@ -122,6 +125,9 @@ import java.util.function.Consumer;
   public void removeActionListener(T listener) {
     if (!myListeners.contains(listener)) {
       throw new ListenersConsistenceException("The listener you are trying to remove does not exist");
+    }
+    if (isInsideAction()) {
+      myOnActionFinish.accept(listener);
     }
     myListeners.remove(listener);
   }
