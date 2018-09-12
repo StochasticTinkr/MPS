@@ -114,6 +114,9 @@ import java.util.function.Consumer;
     }
     myListeners.add(listener);
     if (isInsideAction()) {
+      // FIXME there's ClassLoaderManager.init that attaches listeners inside model write and expects to receive 'start' notification, otherwise
+      // internal state of BatchEventsProcessor breaks. However, I don't think it's good idea to send notifications like that when listener is added,
+      // we can violate the listener contract or expectations
       myOnActionStart.accept(listener);
     }
   }
