@@ -144,8 +144,4 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
       }
     }
   }
-
-  public String toString() {
-    return getMatchingText("");
-  }
 }
