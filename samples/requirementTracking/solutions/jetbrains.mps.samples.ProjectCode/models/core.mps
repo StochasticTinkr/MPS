@@ -46,6 +46,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -104,6 +105,9 @@
         </node>
       </node>
       <node concept="3PfD8P" id="3BHdE7cVCDS" role="lGtFl">
+        <node concept="3PeMUF" id="4mfny7WbiE0" role="3Pemqw">
+          <ref role="3PeMUL" to="uq0e:3BHdE7cNfr0" resolve="Reading and writting objects must work quickly" />
+        </node>
         <node concept="3PeMUF" id="3BHdE7cVCFm" role="3Pemqw">
           <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="The storage must be encrypted" />
         </node>
@@ -129,6 +133,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4mfny7WbrDg" role="3cqZAp" />
         <node concept="3clFbF" id="3BHdE7cVD5h" role="3cqZAp">
           <node concept="1rXfSq" id="3BHdE7cVD5g" role="3clFbG">
             <ref role="37wK5l" node="3BHdE7cVCgo" resolve="encrypt" />

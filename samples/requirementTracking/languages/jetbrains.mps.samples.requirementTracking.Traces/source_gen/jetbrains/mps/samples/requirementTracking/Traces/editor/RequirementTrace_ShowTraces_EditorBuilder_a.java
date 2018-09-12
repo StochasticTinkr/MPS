@@ -162,7 +162,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd3a494L, 0x39ed36a1ccd45001L, "mentions"))).count() > 1;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "--");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "/");
     editorCell.setCellId("Constant_yys6sy_c1a");
     DeleteRequirementTrace.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");

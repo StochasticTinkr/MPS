@@ -11,6 +11,7 @@ public class Kernel {
 
   public void handleHttpRequest() {
     System.out.println("Handling http");
+
     encrypt();
   }
 

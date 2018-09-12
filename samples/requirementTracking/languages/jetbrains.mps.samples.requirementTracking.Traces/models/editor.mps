@@ -39,6 +39,7 @@
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
         <property id="168363875802087287" name="showInUI" index="2gpH_U" />
+        <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" flags="ng" index="2SqB2G" />
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
@@ -143,6 +144,7 @@
     <node concept="2BsEeg" id="3BHdE7cRY9B" role="2ABdcP">
       <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="ShowTraces" />
+      <property role="2BUmq6" value="Requirement traces visible in code" />
     </node>
   </node>
   <node concept="24kQdi" id="3BHdE7cRY9E">
@@ -189,7 +191,7 @@
           </node>
         </node>
         <node concept="3F0ifn" id="3BHdE7cRYa6" role="3EZMnx">
-          <property role="3F0ifm" value="--" />
+          <property role="3F0ifm" value="/" />
           <ref role="1ERwB7" node="3BHdE7cV9Td" resolve="DeleteRequirementTrace" />
         </node>
       </node>

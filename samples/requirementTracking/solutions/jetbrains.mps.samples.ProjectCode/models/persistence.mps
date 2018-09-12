@@ -137,7 +137,7 @@
           </node>
           <node concept="3PfD8P" id="3BHdE7cVk97" role="lGtFl">
             <node concept="3PeMUF" id="3BHdE7cVk9a" role="3Pemqw">
-              <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="The storage must be encrypted" />
+              <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="Encrypt the storage" />
             </node>
           </node>
         </node>

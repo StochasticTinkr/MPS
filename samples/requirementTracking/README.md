@@ -19,3 +19,5 @@ Multiple traces can be specified for an attribute. Scoping for RequirementEntryR
 The ProjectCode solution simulates the actual code of a project that must conform to the specification contained in the Specification solution. The code is organized by functionality into models. Each model imports the relevant specification models from the Specification solution.
 The code, both Java and XML is annotated with requirement traces. The traces are only visible, when the ShowTraces editor hint is pushed.
 With intentions additional traces can be added or removed.
+
+More details can be found in the [Requirement tracking language cookbook](https://confluence.jetbrains.com/display/MPSD20183/Requirement+tracking+language).

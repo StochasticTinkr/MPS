@@ -37,7 +37,7 @@
   <node concept="3P9f96" id="3BHdE7cN16h">
     <property role="TrG5h" value="Persistence" />
     <node concept="3P9f9a" id="3BHdE7cNfr0" role="3P9ZXS">
-      <property role="TrG5h" value="Reading and writting objects must work quickly" />
+      <property role="TrG5h" value="Read/write of objects must work quickly" />
       <property role="3P9f9e" value="00001" />
       <node concept="1Pa9Pv" id="3BHdE7cNfr1" role="3P9f9j">
         <node concept="1PaTwC" id="3BHdE7cNfr2" role="1PaQFQ">
@@ -83,6 +83,7 @@
     </node>
     <node concept="3P9f9a" id="3BHdE7cNfq8" role="3P9ZXS">
       <property role="TrG5h" value="The system must withstand outages" />
+      <property role="3P9f9e" value="00041" />
       <node concept="1Pa9Pv" id="3BHdE7cNfq9" role="3P9f9j">
         <node concept="1PaTwC" id="3BHdE7cNfqB" role="1PaQFQ">
           <node concept="3oM_SD" id="3BHdE7cNftH" role="1PaTwD">
@@ -113,7 +114,8 @@
       </node>
     </node>
     <node concept="3P9f9a" id="3BHdE7cNftK" role="3P9ZXS">
-      <property role="TrG5h" value="The storage must be encrypted" />
+      <property role="TrG5h" value="Encrypt the storage" />
+      <property role="3P9f9e" value="00007" />
       <node concept="1Pa9Pv" id="3BHdE7cNftL" role="3P9f9j">
         <node concept="1PaTwC" id="3BHdE7cNftM" role="1PaQFQ">
           <node concept="3oM_SD" id="3BHdE7cNfuy" role="1PaTwD">
