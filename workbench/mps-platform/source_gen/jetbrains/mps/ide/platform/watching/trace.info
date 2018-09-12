@@ -76,12 +76,12 @@
       <node id="4774203567237411419" at="95,0,99,0" concept="10" trace="clear#()V" />
       <node id="2091137892354801003" at="51,87,56,7" concept="12" />
       <node id="4774203567234382058" at="59,35,64,7" concept="6" />
-      <node id="6758423346044693609" at="80,0,85,0" concept="10" trace="run#()V" />
+      <node id="1705896275417105283" at="80,0,85,0" concept="10" trace="run#()V" />
       <node id="174954467868287444" at="117,0,122,0" concept="10" trace="fireReloadStarted#()V" />
       <node id="174954467868287457" at="123,0,128,0" concept="10" trace="fireReloadFinished#()V" />
       <node id="4774203567228726232" at="102,20,108,7" concept="18" />
       <node id="4774203567233844334" at="59,0,66,0" concept="10" trace="updateStatus#()V" />
-      <node id="6758423346044693607" at="78,26,85,9" concept="6" />
+      <node id="1705896275417103429" at="78,26,85,9" concept="6" />
       <node id="2091137892354159806" at="50,0,58,0" concept="10" trace="wantsToShowProgress#()Z" />
       <node id="4774203567228489393" at="101,84,109,5" concept="9" />
       <node id="4774203567228170196" at="100,0,112,0" concept="10" trace="getParticipant#(Ljava/lang/Class;)null" />
@@ -125,10 +125,10 @@
       <scope id="4774203567234382065" at="61,0,64,0">
         <var name="it" id="4774203567234382065" />
       </scope>
+      <scope id="1705896275417105284" at="80,27,83,11" />
       <scope id="2034046503373004484" at="80,27,83,11">
         <var name="rp" id="2034046503373004496" />
       </scope>
-      <scope id="6758423346044693611" at="80,27,83,11" />
       <scope id="4774203567230850155" at="113,0,116,0" />
       <scope id="174954467868287447" at="117,36,120,5" />
       <scope id="4774203567243933079" at="117,36,120,5">
@@ -142,7 +142,7 @@
       <scope id="4774203567225520663" at="41,0,45,0" />
       <scope id="4774203567237411419" at="95,0,99,0" />
       <scope id="4774203567233844337" at="59,35,64,7" />
-      <scope id="6758423346044693609" at="80,0,85,0" />
+      <scope id="1705896275417105283" at="80,0,85,0" />
       <scope id="174954467868287389" at="86,15,91,27" />
       <scope id="174954467868287444" at="117,0,122,0" />
       <scope id="174954467868287457" at="123,0,128,0" />
@@ -166,7 +166,7 @@
       </scope>
       <unit id="2091137892354825885" at="52,60,56,5" name="jetbrains.mps.ide.platform.watching.ReloadSession$1" />
       <unit id="4774203567234382065" at="60,63,64,5" name="jetbrains.mps.ide.platform.watching.ReloadSession$2" />
-      <unit id="6758423346044693609" at="79,48,85,7" name="jetbrains.mps.ide.platform.watching.ReloadSession$3" />
+      <unit id="1705896275417105283" at="79,48,85,7" name="jetbrains.mps.ide.platform.watching.ReloadSession$3" />
       <unit id="174954467868287275" at="20,0,129,0" name="jetbrains.mps.ide.platform.watching.ReloadSession" />
     </file>
   </root>

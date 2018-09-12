@@ -126,7 +126,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -159,6 +158,7 @@
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.TestCollector" />
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.Test_Facet.Target_runTests.Parameters" />
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.Tester" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />

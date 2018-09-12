@@ -667,7 +667,7 @@
                 <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mEP" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
+                <ref role="37wK5l" to="lui2:~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
                 <node concept="10Nm6u" id="hPi0mEQ" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mER" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mES" role="3NFExx">
@@ -715,7 +715,7 @@
                 <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mF9" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                <ref role="37wK5l" to="w1kc:~ModelAccess.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
                 <node concept="10Nm6u" id="hPi0mFa" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mFb" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mFc" role="3NFExx">
@@ -763,7 +763,7 @@
                 <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
               </node>
               <node concept="liA8E" id="hPi0mFt" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                 <node concept="10Nm6u" id="hPi0mFu" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mFv" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mFw" role="3NFExx">
