@@ -73,7 +73,6 @@ public class Type_TransformationMenu extends TransformationMenuBase {
       result.add(new Type_TransformationMenu.TMP_Include_hyviqe_g0());
       result.add(new Type_TransformationMenu.TMP_Include_hyviqe_h0());
       result.add(new Type_TransformationMenu.TMP_Include_hyviqe_i0());
-      result.add(new Type_TransformationMenu.TMP_Include_hyviqe_j0());
     }
     return result;
   }
@@ -175,29 +174,6 @@ public class Type_TransformationMenu extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "AddMethodModifiersOnTypes", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586943352")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-    }
-
-    @Nullable
-    @Override
-    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
-      final SNode node = _context.getNode();
-      final EditorContext editorContext = _context.getEditorContext();
-
-      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), "jetbrains.mps.baseLanguage.editor.AddMethodModifiersOnTypes");
-    }
-
-  }
-  public class TMP_Include_hyviqe_g0 extends IncludeTransformationMenuTransformationMenuPart {
-    @NotNull
-    @Override
-    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
       context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "instanceOfIntoTernary", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944378")));
       try {
         return super.createItems(context);
@@ -216,7 +192,7 @@ public class Type_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_hyviqe_h0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_hyviqe_g0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -239,7 +215,7 @@ public class Type_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_hyviqe_i0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_hyviqe_h0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -262,7 +238,7 @@ public class Type_TransformationMenu extends TransformationMenuBase {
     }
 
   }
-  public class TMP_Include_hyviqe_j0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_hyviqe_i0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
