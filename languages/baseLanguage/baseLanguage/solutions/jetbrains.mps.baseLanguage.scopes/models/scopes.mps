@@ -12633,6 +12633,7 @@
     <node concept="3Tm1VV" id="5U4HErzRWk0" role="1B3o_S" />
     <node concept="312cEg" id="1FNJAreaJDr" role="jymVt">
       <property role="TrG5h" value="classifiers" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1FNJAreaJDs" role="1B3o_S" />
       <node concept="3uibUv" id="1FNJAreaJDv" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~Stack" resolve="Stack" />
@@ -12644,6 +12645,27 @@
         <node concept="1pGfFk" id="1FNJAreaJD_" role="2ShVmc">
           <ref role="37wK5l" to="33ny:~Stack.&lt;init&gt;()" resolve="Stack" />
           <node concept="3Tqbb2" id="1FNJAreaJDB" role="1pMfVU">
+            <ref role="ehGHo" to="tpee:6r77ob2UL4X" resolve="IClassifier" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="gc_S9Pbjwg" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myVisited" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="gc_S9PbgGt" role="1B3o_S" />
+      <node concept="3uibUv" id="gc_S9Pbjuq" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3Tqbb2" id="gc_S9PbjvO" role="11_B2D">
+          <ref role="ehGHo" to="tpee:6r77ob2UL4X" resolve="IClassifier" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="gc_S9PbmhK" role="33vP2m">
+        <node concept="1pGfFk" id="gc_S9PbooA" role="2ShVmc">
+          <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+          <node concept="3Tqbb2" id="gc_S9PboEe" role="1pMfVU">
             <ref role="ehGHo" to="tpee:6r77ob2UL4X" resolve="IClassifier" />
           </node>
         </node>
@@ -12947,7 +12969,12 @@
         <node concept="3clFbH" id="2tCFvtZN2YH" role="3cqZAp" />
         <node concept="3SKdUt" id="2tCFvtZN2YJ" role="3cqZAp">
           <node concept="3SKdUq" id="2tCFvtZN2YL" role="3SKWNk">
-            <property role="3SKdUp" value="recursion preventing" />
+            <property role="3SKdUp" value="prevent recursion and duplicated members for same classifiers accessed via different paths" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="gc_S9PbKxH" role="3cqZAp">
+          <node concept="3SKdUq" id="gc_S9PbKxJ" role="3SKWNk">
+            <property role="3SKdUp" value="e.g. same interface implemented directly and though some superclass" />
           </node>
         </node>
         <node concept="3clFbJ" id="2tCFvtZN2YO" role="3cqZAp">
@@ -12958,14 +12985,16 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="2tCFvtZN2Zg" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuuXH" role="2Oq$k0">
-              <ref role="3cqZAo" node="1FNJAreaJDr" resolve="classifiers" />
-            </node>
-            <node concept="liA8E" id="2tCFvtZN2Zm" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Vector.contains(java.lang.Object):boolean" resolve="contains" />
-              <node concept="37vLTw" id="3GM_nagT$7b" role="37wK5m">
-                <ref role="3cqZAo" node="2tCFvtZN2Yd" resolve="classifier" />
+          <node concept="3fqX7Q" id="gc_S9Pb$Mo" role="3clFbw">
+            <node concept="2OqwBi" id="gc_S9Pb$Mq" role="3fr31v">
+              <node concept="37vLTw" id="gc_S9Pb$Mr" role="2Oq$k0">
+                <ref role="3cqZAo" node="gc_S9Pbjwg" resolve="myVisited" />
+              </node>
+              <node concept="liA8E" id="gc_S9Pb$Ms" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                <node concept="37vLTw" id="gc_S9Pb$Mt" role="37wK5m">
+                  <ref role="3cqZAo" node="2tCFvtZN2Yd" resolve="classifier" />
+                </node>
               </node>
             </node>
           </node>
