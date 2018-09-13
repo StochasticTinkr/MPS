@@ -327,11 +327,18 @@ public class ClassifierResolveUtils {
         }
       })) {
         String fqName = SPropertyOperations.getString(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"));
-        Iterable<SModel> models = getModelsByName(moduleScopeModels, fqName);
-        if (Sequence.fromIterable(models).isNotEmpty()) {
-          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(models));
-        } else {
+        if (SPropertyOperations.getBoolean(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x4d5c30eb30af1572L, "static"))) {
+          // StaticImportOnDemandDeclaration:   import static TypeName . * ; 
           ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName)));
+        } else {
+          // TypeImportOnDemandDeclaration:   import PackageOrTypeName . * ; 
+          Iterable<SModel> models = getModelsByName(moduleScopeModels, fqName);
+          if (Sequence.fromIterable(models).isNotEmpty()) {
+            ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(models));
+          } else {
+            // could be a type name 
+            ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName)));
+          }
         }
       }
 

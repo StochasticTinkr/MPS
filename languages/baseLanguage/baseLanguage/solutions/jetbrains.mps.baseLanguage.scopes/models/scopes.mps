@@ -10446,61 +10446,110 @@
                       <node concept="17QB3L" id="5ll4uk65_68" role="1tU5fm" />
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="7hj6pImitwN" role="3cqZAp">
-                    <node concept="3cpWsn" id="7hj6pImitwO" role="3cpWs9">
-                      <property role="TrG5h" value="models" />
-                      <node concept="A3Dl8" id="7hj6pImiwIB" role="1tU5fm">
-                        <node concept="3uibUv" id="7hj6pImiwID" role="A3Ik2">
-                          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                  <node concept="3clFbJ" id="4pFu0Z6Nw2E" role="3cqZAp">
+                    <node concept="3clFbS" id="4pFu0Z6Nw2G" role="3clFbx">
+                      <node concept="3SKdUt" id="4pFu0Z6NJ8V" role="3cqZAp">
+                        <node concept="3SKdUq" id="4pFu0Z6NJ8X" role="3SKWNk">
+                          <property role="3SKdUp" value="StaticImportOnDemandDeclaration:   import static TypeName . * ;" />
                         </node>
                       </node>
-                      <node concept="1rXfSq" id="7hj6pImitYU" role="33vP2m">
-                        <ref role="37wK5l" node="yOTl$3$sJ$" resolve="getModelsByName" />
-                        <node concept="37vLTw" id="yOTl$3_ocV" role="37wK5m">
-                          <ref role="3cqZAo" node="yOTl$3$XZL" resolve="moduleScopeModels" />
-                        </node>
-                        <node concept="37vLTw" id="7hj6pImitYW" role="37wK5m">
-                          <ref role="3cqZAo" node="5ll4uk65_6c" resolve="fqName" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="7hj6pImiuYa" role="3cqZAp">
-                    <node concept="3clFbS" id="7hj6pImiuYd" role="3clFbx">
-                      <node concept="3clFbF" id="23hJNjAHvmf" role="3cqZAp">
-                        <node concept="2OqwBi" id="23hJNjAHwaj" role="3clFbG">
-                          <node concept="37vLTw" id="23hJNjAHvme" role="2Oq$k0">
+                      <node concept="3clFbF" id="7hj6pImiNrc" role="3cqZAp">
+                        <node concept="2OqwBi" id="7hj6pImiNIv" role="3clFbG">
+                          <node concept="37vLTw" id="7hj6pImiNrb" role="2Oq$k0">
                             <ref role="3cqZAo" node="5EoRO04nVAj" resolve="javaImportedThings" />
                           </node>
-                          <node concept="X8dFx" id="23hJNjAHAfe" role="2OqNvi">
-                            <node concept="37vLTw" id="7hj6pImiy$f" role="25WWJ7">
-                              <ref role="3cqZAo" node="7hj6pImitwO" resolve="models" />
+                          <node concept="X8dFx" id="7hj6pImiOt9" role="2OqNvi">
+                            <node concept="1rXfSq" id="7hj6pImiD7N" role="25WWJ7">
+                              <ref role="37wK5l" node="47k7VnvVyjr" resolve="resolveClassifierByFqNameWithNonStubPriority" />
+                              <node concept="37vLTw" id="yOTl$3_qKd" role="37wK5m">
+                                <ref role="3cqZAo" node="yOTl$3$XZL" resolve="moduleScopeModels" />
+                              </node>
+                              <node concept="37vLTw" id="7hj6pImiD7R" role="37wK5m">
+                                <ref role="3cqZAo" node="5ll4uk65_6c" resolve="fqName" />
+                              </node>
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="7hj6pImix9e" role="3clFbw">
-                      <node concept="37vLTw" id="7hj6pImiwYi" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7hj6pImitwO" resolve="models" />
+                    <node concept="2OqwBi" id="4pFu0Z6Nx73" role="3clFbw">
+                      <node concept="2GrUjf" id="4pFu0Z6NwUp" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="5EoRO04o$Fj" resolve="imp" />
                       </node>
-                      <node concept="3GX2aA" id="7hj6pImiyni" role="2OqNvi" />
+                      <node concept="3TrcHB" id="4pFu0Z6Ny2l" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpee:4PsceGKFLlM" resolve="static" />
+                      </node>
                     </node>
-                    <node concept="9aQIb" id="7hj6pImiz8z" role="9aQIa">
-                      <node concept="3clFbS" id="7hj6pImiz8$" role="9aQI4">
-                        <node concept="3clFbF" id="7hj6pImiNrc" role="3cqZAp">
-                          <node concept="2OqwBi" id="7hj6pImiNIv" role="3clFbG">
-                            <node concept="37vLTw" id="7hj6pImiNrb" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5EoRO04nVAj" resolve="javaImportedThings" />
+                    <node concept="9aQIb" id="4pFu0Z6N$fc" role="9aQIa">
+                      <node concept="3clFbS" id="4pFu0Z6N$fd" role="9aQI4">
+                        <node concept="3SKdUt" id="4pFu0Z6NJNb" role="3cqZAp">
+                          <node concept="3SKdUq" id="4pFu0Z6NJNd" role="3SKWNk">
+                            <property role="3SKdUp" value="TypeImportOnDemandDeclaration:   import PackageOrTypeName . * ;" />
+                          </node>
+                        </node>
+                        <node concept="3cpWs8" id="7hj6pImitwN" role="3cqZAp">
+                          <node concept="3cpWsn" id="7hj6pImitwO" role="3cpWs9">
+                            <property role="TrG5h" value="models" />
+                            <node concept="A3Dl8" id="7hj6pImiwIB" role="1tU5fm">
+                              <node concept="3uibUv" id="7hj6pImiwID" role="A3Ik2">
+                                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                              </node>
                             </node>
-                            <node concept="X8dFx" id="7hj6pImiOt9" role="2OqNvi">
-                              <node concept="1rXfSq" id="7hj6pImiD7N" role="25WWJ7">
-                                <ref role="37wK5l" node="47k7VnvVyjr" resolve="resolveClassifierByFqNameWithNonStubPriority" />
-                                <node concept="37vLTw" id="yOTl$3_qKd" role="37wK5m">
-                                  <ref role="3cqZAo" node="yOTl$3$XZL" resolve="moduleScopeModels" />
+                            <node concept="1rXfSq" id="7hj6pImitYU" role="33vP2m">
+                              <ref role="37wK5l" node="yOTl$3$sJ$" resolve="getModelsByName" />
+                              <node concept="37vLTw" id="yOTl$3_ocV" role="37wK5m">
+                                <ref role="3cqZAo" node="yOTl$3$XZL" resolve="moduleScopeModels" />
+                              </node>
+                              <node concept="37vLTw" id="7hj6pImitYW" role="37wK5m">
+                                <ref role="3cqZAo" node="5ll4uk65_6c" resolve="fqName" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbJ" id="7hj6pImiuYa" role="3cqZAp">
+                          <node concept="3clFbS" id="7hj6pImiuYd" role="3clFbx">
+                            <node concept="3clFbF" id="23hJNjAHvmf" role="3cqZAp">
+                              <node concept="2OqwBi" id="23hJNjAHwaj" role="3clFbG">
+                                <node concept="37vLTw" id="23hJNjAHvme" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5EoRO04nVAj" resolve="javaImportedThings" />
                                 </node>
-                                <node concept="37vLTw" id="7hj6pImiD7R" role="37wK5m">
-                                  <ref role="3cqZAo" node="5ll4uk65_6c" resolve="fqName" />
+                                <node concept="X8dFx" id="23hJNjAHAfe" role="2OqNvi">
+                                  <node concept="37vLTw" id="7hj6pImiy$f" role="25WWJ7">
+                                    <ref role="3cqZAo" node="7hj6pImitwO" resolve="models" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="7hj6pImix9e" role="3clFbw">
+                            <node concept="37vLTw" id="7hj6pImiwYi" role="2Oq$k0">
+                              <ref role="3cqZAo" node="7hj6pImitwO" resolve="models" />
+                            </node>
+                            <node concept="3GX2aA" id="7hj6pImiyni" role="2OqNvi" />
+                          </node>
+                          <node concept="9aQIb" id="7hj6pImiz8z" role="9aQIa">
+                            <node concept="3clFbS" id="7hj6pImiz8$" role="9aQI4">
+                              <node concept="3SKdUt" id="4pFu0Z6NMsC" role="3cqZAp">
+                                <node concept="3SKdUq" id="4pFu0Z6NMsE" role="3SKWNk">
+                                  <property role="3SKdUp" value="could be a type name" />
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="4pFu0Z6NK5L" role="3cqZAp">
+                                <node concept="2OqwBi" id="4pFu0Z6NK5M" role="3clFbG">
+                                  <node concept="37vLTw" id="4pFu0Z6NK5N" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5EoRO04nVAj" resolve="javaImportedThings" />
+                                  </node>
+                                  <node concept="X8dFx" id="4pFu0Z6NK5O" role="2OqNvi">
+                                    <node concept="1rXfSq" id="4pFu0Z6NK5P" role="25WWJ7">
+                                      <ref role="37wK5l" node="47k7VnvVyjr" resolve="resolveClassifierByFqNameWithNonStubPriority" />
+                                      <node concept="37vLTw" id="4pFu0Z6NK5Q" role="37wK5m">
+                                        <ref role="3cqZAo" node="yOTl$3$XZL" resolve="moduleScopeModels" />
+                                      </node>
+                                      <node concept="37vLTw" id="4pFu0Z6NK5R" role="37wK5m">
+                                        <ref role="3cqZAo" node="5ll4uk65_6c" resolve="fqName" />
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
