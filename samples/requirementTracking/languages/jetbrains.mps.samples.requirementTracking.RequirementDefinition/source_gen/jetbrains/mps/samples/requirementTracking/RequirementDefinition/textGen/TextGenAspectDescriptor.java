@@ -22,10 +22,10 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
-      case LanguageConceptSwitch.RequirementDocument:
-        return new RequirementDocument_TextGen();
-      case LanguageConceptSwitch.RequirementEntry:
-        return new RequirementEntry_TextGen();
+      case LanguageConceptSwitch.Entry:
+        return new Entry_TextGen();
+      case LanguageConceptSwitch.Specification:
+        return new Specification_TextGen();
     }
     return null;
   }
@@ -33,18 +33,18 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
     for (SNode root : outline.getModel().getRootNodes()) {
-      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4e7L, "jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure.RequirementDocument"))) {
-        String fname = getFileName_RequirementDocument(root);
-        String ext = getFileExtension_RequirementDocument(root);
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4e7L, "jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure.Specification"))) {
+        String fname = getFileName_Specification(root);
+        String ext = getFileExtension_Specification(root);
         outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
     }
   }
-  private static String getFileName_RequirementDocument(SNode node) {
+  private static String getFileName_Specification(SNode node) {
     return node.getName();
   }
-  private static String getFileExtension_RequirementDocument(SNode node) {
+  private static String getFileExtension_Specification(SNode node) {
     return ".txt";
   }
 }

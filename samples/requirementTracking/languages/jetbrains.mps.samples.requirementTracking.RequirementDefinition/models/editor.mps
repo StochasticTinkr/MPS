@@ -90,7 +90,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="3BHdE7cMxLP">
-    <ref role="1XX52x" to="dub1:3BHdE7cMsjF" resolve="RequirementEntry" />
+    <ref role="1XX52x" to="dub1:3BHdE7cMsjF" resolve="Entry" />
     <node concept="3EZMnI" id="3BHdE7cMxLR" role="2wV5jI">
       <node concept="3EZMnI" id="3BHdE7cMF7P" role="3EZMnx">
         <node concept="2EHx9g" id="3BHdE7cMF$o" role="2iSdaV" />
@@ -159,7 +159,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3BHdE7cMGBP">
-    <ref role="1XX52x" to="dub1:3BHdE7cMsjB" resolve="RequirementDocument" />
+    <ref role="1XX52x" to="dub1:3BHdE7cMsjB" resolve="Specification" />
     <node concept="3EZMnI" id="3BHdE7cMGBR" role="2wV5jI">
       <node concept="3F0ifn" id="3BHdE7cMGC1" role="3EZMnx">
         <property role="3F0ifm" value="Requirements" />

@@ -44,7 +44,7 @@
   </registry>
   <node concept="1TIwiD" id="3BHdE7cMsjB">
     <property role="EcuMT" value="4174052498195727591" />
-    <property role="TrG5h" value="RequirementDocument" />
+    <property role="TrG5h" value="Specification" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3BHdE7cMGBp" role="1TKVEi">
@@ -52,7 +52,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="entries" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="3BHdE7cMsjF" resolve="RequirementEntry" />
+      <ref role="20lvS9" node="3BHdE7cMsjF" resolve="Entry" />
     </node>
     <node concept="PrWs8" id="3BHdE7cMsjC" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -60,7 +60,7 @@
   </node>
   <node concept="1TIwiD" id="3BHdE7cMsjF">
     <property role="EcuMT" value="4174052498195727595" />
-    <property role="TrG5h" value="RequirementEntry" />
+    <property role="TrG5h" value="Entry" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3BHdE7cMsjM" role="1TKVEi">
       <property role="IQ2ns" value="4174052498195727602" />

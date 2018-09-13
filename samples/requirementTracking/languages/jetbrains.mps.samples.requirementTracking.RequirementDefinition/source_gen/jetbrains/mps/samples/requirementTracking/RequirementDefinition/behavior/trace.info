@@ -17,13 +17,13 @@
     </file>
   </root>
   <root nodeRef="r:f3cc2bef-46d9-42f9-8371-e5a6c144285f(jetbrains.mps.samples.requirementTracking.RequirementDefinition.behavior)/4174052498196307125">
-    <file name="RequirementEntry__BehaviorDescriptor.java">
+    <file name="Entry__BehaviorDescriptor.java">
       <node id="4174052498196307125" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4174052498196307125" at="26,0,27,0" concept="6" trace="REGISTRY" />
       <node id="4174052498196307125" at="28,0,29,0" concept="6" trace="getPresentation_idhEwIMiw" />
       <node id="4174052498196307125" at="30,0,31,0" concept="6" trace="BH_METHODS" />
       <node id="4174052498196324831" at="35,84,36,542" concept="5" />
-      <node id="4174052498196307125" at="39,54,40,20" concept="8" />
+      <node id="4174052498196307125" at="39,43,40,20" concept="8" />
       <node id="4174052498196307125" at="44,114,45,21" concept="1" />
       <node id="4174052498196307125" at="49,114,50,49" concept="4" />
       <node id="4174052498196307125" at="51,26,52,56" concept="10" />
@@ -37,7 +37,7 @@
       <node id="4174052498196338905" at="85,55,86,43" concept="5" />
       <node id="4174052498196307125" at="32,0,34,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4174052498196307125" at="35,0,38,0" concept="7" trace="getPresentation_idhEwIMiw#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4174052498196307125" at="39,0,42,0" concept="0" trace="RequirementEntry__BehaviorDescriptor#()V" />
+      <node id="4174052498196307125" at="39,0,42,0" concept="0" trace="Entry__BehaviorDescriptor#()V" />
       <node id="4174052498196307125" at="50,49,53,5" concept="2" />
       <node id="4174052498196307125" at="64,49,67,5" concept="2" />
       <node id="4174052498196338905" at="85,0,88,0" concept="7" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
@@ -50,7 +50,7 @@
       <node id="4174052498196307125" at="48,0,61,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4174052498196307125" at="32,63,32,63" />
       <scope id="4174052498196307171" at="35,84,36,542" />
-      <scope id="4174052498196307125" at="39,54,40,20" />
+      <scope id="4174052498196307125" at="39,43,40,20" />
       <scope id="4174052498196307125" at="44,114,45,21" />
       <scope id="4174052498196307125" at="51,26,52,56" />
       <scope id="4174052498196307125" at="55,13,56,62" />
@@ -93,7 +93,7 @@
         <var name="node" id="4174052498196307125" />
         <var name="parameters" id="4174052498196307125" />
       </scope>
-      <unit id="4174052498196307125" at="24,0,89,0" name="jetbrains.mps.samples.requirementTracking.RequirementDefinition.behavior.RequirementEntry__BehaviorDescriptor" />
+      <unit id="4174052498196307125" at="24,0,89,0" name="jetbrains.mps.samples.requirementTracking.RequirementDefinition.behavior.Entry__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

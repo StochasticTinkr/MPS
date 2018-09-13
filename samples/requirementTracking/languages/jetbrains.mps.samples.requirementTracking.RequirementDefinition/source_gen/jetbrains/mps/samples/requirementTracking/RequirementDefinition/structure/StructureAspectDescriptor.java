@@ -12,8 +12,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptRequirementDocument = createDescriptorForRequirementDocument();
-  /*package*/ final ConceptDescriptor myConceptRequirementEntry = createDescriptorForRequirementEntry();
+  /*package*/ final ConceptDescriptor myConceptEntry = createDescriptorForEntry();
+  /*package*/ final ConceptDescriptor myConceptSpecification = createDescriptorForSpecification();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -22,17 +22,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptRequirementDocument, myConceptRequirementEntry);
+    return Arrays.asList(myConceptEntry, myConceptSpecification);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.RequirementDocument:
-        return myConceptRequirementDocument;
-      case LanguageConceptSwitch.RequirementEntry:
-        return myConceptRequirementEntry;
+      case LanguageConceptSwitch.Entry:
+        return myConceptEntry;
+      case LanguageConceptSwitch.Specification:
+        return myConceptSpecification;
       default:
         return null;
     }
@@ -42,23 +42,23 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForRequirementDocument() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.requirementTracking.RequirementDefinition", "RequirementDocument", 0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4e7L);
-    b.class_(false, false, true);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:87988510-cde0-4a7e-9312-8d83b2656540(jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure)/4174052498195727591");
-    b.version(2);
-    b.aggregate("entries", 0x39ed36a1cccac9d9L).target(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL).optional(true).ordered(true).multiple(true).origin("4174052498195794393").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRequirementEntry() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.requirementTracking.RequirementDefinition", "RequirementEntry", 0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL);
+  private static ConceptDescriptor createDescriptorForEntry() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.requirementTracking.RequirementDefinition", "Entry", 0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:87988510-cde0-4a7e-9312-8d83b2656540(jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure)/4174052498195727595");
     b.version(2);
     b.prop("id", 0x39ed36a1ccc9c4efL, "4174052498195727599");
     b.aggregate("description", 0x39ed36a1ccc9c4f2L).target(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e5619f411L).optional(false).ordered(true).multiple(false).origin("4174052498195727602").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSpecification() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.requirementTracking.RequirementDefinition", "Specification", 0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4e7L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:87988510-cde0-4a7e-9312-8d83b2656540(jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure)/4174052498195727591");
+    b.version(2);
+    b.aggregate("entries", 0x39ed36a1cccac9d9L).target(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL).optional(true).ordered(true).multiple(true).origin("4174052498195794393").done();
     return b.create();
   }
 }

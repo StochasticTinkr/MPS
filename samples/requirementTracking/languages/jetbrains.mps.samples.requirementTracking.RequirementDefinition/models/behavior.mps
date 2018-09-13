@@ -78,7 +78,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="3BHdE7cODMP">
-    <ref role="13h7C2" to="dub1:3BHdE7cMsjF" resolve="RequirementEntry" />
+    <ref role="13h7C2" to="dub1:3BHdE7cMsjF" resolve="Entry" />
     <node concept="13hLZK" id="3BHdE7cODMQ" role="13h7CW">
       <node concept="3clFbS" id="3BHdE7cODMR" role="2VODD2" />
     </node>

@@ -9,28 +9,28 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_RequirementDocument;
-  private ConceptPresentation props_RequirementEntry;
+  private ConceptPresentation props_Entry;
+  private ConceptPresentation props_Specification;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.RequirementDocument:
-        if (props_RequirementDocument == null) {
+      case LanguageConceptSwitch.Entry:
+        if (props_Entry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_RequirementDocument = cpb.create();
+          props_Entry = cpb.create();
         }
-        return props_RequirementDocument;
-      case LanguageConceptSwitch.RequirementEntry:
-        if (props_RequirementEntry == null) {
+        return props_Entry;
+      case LanguageConceptSwitch.Specification:
+        if (props_Specification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_RequirementEntry = cpb.create();
+          props_Specification = cpb.create();
         }
-        return props_RequirementEntry;
+        return props_Specification;
     }
     return null;
   }

@@ -129,7 +129,7 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="3BHdE7cNfva">
-    <ref role="WuzLi" to="dub1:3BHdE7cMsjB" resolve="RequirementDocument" />
+    <ref role="WuzLi" to="dub1:3BHdE7cMsjB" resolve="Specification" />
     <node concept="9MYSb" id="3BHdE7cNfvb" role="33IsuW">
       <node concept="3clFbS" id="3BHdE7cNfvc" role="2VODD2">
         <node concept="3clFbF" id="3BHdE7cNfBS" role="3cqZAp">
@@ -173,7 +173,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="3BHdE7cNhjO">
-    <ref role="WuzLi" to="dub1:3BHdE7cMsjF" resolve="RequirementEntry" />
+    <ref role="WuzLi" to="dub1:3BHdE7cMsjF" resolve="Entry" />
     <node concept="11bSqf" id="3BHdE7cNhjP" role="11c4hB">
       <node concept="3clFbS" id="3BHdE7cNhjQ" role="2VODD2">
         <node concept="lc7rE" id="3BHdE7cNhk9" role="3cqZAp">
