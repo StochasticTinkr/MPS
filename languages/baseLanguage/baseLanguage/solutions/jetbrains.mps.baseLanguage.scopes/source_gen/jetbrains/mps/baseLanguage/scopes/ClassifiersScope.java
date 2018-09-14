@@ -4,6 +4,11 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Map;
+import jetbrains.mps.util.Pair;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.scope.ModelPlusImportedScope;
@@ -14,8 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class ClassifiersScope extends FilteringScope {
-  private boolean myIncludeAncestors;
-  private SNode myClassifier;
+  private final boolean myIncludeAncestors;
+  private final SNode myClassifier;
+  private final Map<Pair<SNode, String>, SNode> myResolveCache = new HashMap<Pair<SNode, String>, SNode>();
+  private final Set<Pair<SNode, String>> myResolveFailed = new HashSet<Pair<SNode, String>>();
 
   /**
    * 
@@ -45,6 +52,24 @@ public class ClassifiersScope extends FilteringScope {
 
   @Override
   public SNode resolve(SNode contextNode, String refText) {
+    // scopes were never advertised as capable of/demanding to multi-thread, hence regular map. 
+    final Pair<SNode, String> key = new Pair<SNode, String>(contextNode, refText);
+    SNode cached = myResolveCache.get(key);
+    if (cached == null) {
+      if (myResolveFailed.contains(key)) {
+        return null;
+      }
+      cached = resolveImpl(contextNode, refText);
+      if (cached == null) {
+        myResolveFailed.add(key);
+      } else {
+        myResolveCache.put(key, cached);
+      }
+    }
+    return cached;
+  }
+
+  private SNode resolveImpl(SNode contextNode, String refText) {
     // hack for [model]node construction, remove it 
     if (refText.startsWith("[")) {
       return ClassifierResolveUtils.resolveSpecialSyntax(refText, contextNode);
