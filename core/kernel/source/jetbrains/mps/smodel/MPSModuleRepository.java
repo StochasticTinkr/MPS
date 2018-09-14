@@ -303,6 +303,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     @Override
     public Scope getScope(@NotNull SReference reference) {
       if (myCache == null) {
+        // we might be inside proper read but myCache still == null due to threading issue described in ActionDispatcher
         return super.getScope(reference);
       }
       final Map<SReference, Scope> thisThreadCache = myCache.get();
