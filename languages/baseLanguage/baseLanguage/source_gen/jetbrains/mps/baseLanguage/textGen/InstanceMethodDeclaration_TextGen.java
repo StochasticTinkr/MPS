@@ -72,7 +72,7 @@ public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(ctx.getPrimaryInput())) {
+    if (!((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasBody_id10BRnhak8m8.invoke(ctx.getPrimaryInput()))) {
       tgs.append(";");
       tgs.newLine();
     } else {

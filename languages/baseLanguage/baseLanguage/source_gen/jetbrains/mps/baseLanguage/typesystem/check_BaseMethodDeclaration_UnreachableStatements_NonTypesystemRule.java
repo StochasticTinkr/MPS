@@ -30,7 +30,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     boolean checkReturns = true;
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       checkReturns = false;
-    } else if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(nodeToCheck)) {
+    } else if (!((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasBody_id10BRnhak8m8.invoke(nodeToCheck))) {
       checkReturns = false;
     } else if ((IMethodLike__BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(nodeToCheck) == null)) {
       checkReturns = false;

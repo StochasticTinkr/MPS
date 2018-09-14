@@ -42,6 +42,8 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
   public static final SMethod<Boolean> canBeAnnotated_idhWp4PwP = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeAnnotated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWp4PwP").registry(REGISTRY).build();
   public static final SMethod<IconResource> getSideIcon_id6TtJ6IUjtJX = new SMethodBuilder<IconResource>(new SJavaCompoundTypeImpl(IconResource.class)).name("getSideIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUjtJX").registry(REGISTRY).build();
   public static final SMethod<Boolean> isAbstract_idhWjv7RO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isAbstract").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWjv7RO").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isAnAbstractMethod_id28P2dHxCoRl = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isAnAbstractMethod").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("28P2dHxCoRl").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasBody_id10BRnhak8m8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasBody").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("10BRnhak8m8").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getChildrenToDisplayIntention_id3vsDNFqJVhw = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getChildrenToDisplayIntention").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3vsDNFqJVhw").registry(REGISTRY).build();
   public static final SMethod<Boolean> canBeInterfaceMember_id2zJQqQIUx2B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeInterfaceMember").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2zJQqQIUx2B").registry(REGISTRY).build();
   public static final SMethod<SNode> getImplementedInterfaceMethod_id7cTWCexFh1W = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getImplementedInterfaceMethod").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7cTWCexFh1W").registry(REGISTRY).build();
@@ -49,7 +51,7 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDataFlowChecked_idhRptrfk, canBeAnnotated_idhWp4PwP, getSideIcon_id6TtJ6IUjtJX, isAbstract_idhWjv7RO, getChildrenToDisplayIntention_id3vsDNFqJVhw, canBeInterfaceMember_id2zJQqQIUx2B, getImplementedInterfaceMethod_id7cTWCexFh1W, getNearestOverriddenMethod_id4DuBHEkPTzU, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDataFlowChecked_idhRptrfk, canBeAnnotated_idhWp4PwP, getSideIcon_id6TtJ6IUjtJX, isAbstract_idhWjv7RO, isAnAbstractMethod_id28P2dHxCoRl, hasBody_id10BRnhak8m8, getChildrenToDisplayIntention_id3vsDNFqJVhw, canBeInterfaceMember_id2zJQqQIUx2B, getImplementedInterfaceMethod_id7cTWCexFh1W, getNearestOverriddenMethod_id4DuBHEkPTzU, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -63,8 +65,15 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
   /*package*/ static IconResource getSideIcon_id6TtJ6IUjtJX(@NotNull SNode __thisNode__) {
     return ((IconResource) IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__));
   }
+  @Deprecated
   /*package*/ static boolean isAbstract_idhWjv7RO(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")) || SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"));
+    return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+  }
+  /*package*/ static boolean isAnAbstractMethod_id28P2dHxCoRl(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+  }
+  /*package*/ static boolean hasBody_id10BRnhak8m8(@NotNull SNode __thisNode__) {
+    return !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"))) && !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative")));
   }
   /*package*/ static List<SNode> getChildrenToDisplayIntention_id3vsDNFqJVhw(@NotNull SNode __thisNode__) {
     List<SNode> result = HasAnnotation__BehaviorDescriptor.getChildrenToDisplayIntention_id3vsDNFqJVhw.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
@@ -154,15 +163,19 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
       case 3:
         return (T) ((Boolean) isAbstract_idhWjv7RO(node));
       case 4:
-        return (T) ((List<SNode>) getChildrenToDisplayIntention_id3vsDNFqJVhw(node));
+        return (T) ((Boolean) isAnAbstractMethod_id28P2dHxCoRl(node));
+      case 5:
+        return (T) ((Boolean) hasBody_id10BRnhak8m8(node));
       case 6:
-        return (T) ((SNode) getImplementedInterfaceMethod_id7cTWCexFh1W(node));
-      case 7:
-        return (T) ((SNode) getNearestOverriddenMethod_id4DuBHEkPTzU(node));
+        return (T) ((List<SNode>) getChildrenToDisplayIntention_id3vsDNFqJVhw(node));
       case 8:
+        return (T) ((SNode) getImplementedInterfaceMethod_id7cTWCexFh1W(node));
+      case 9:
+        return (T) ((SNode) getNearestOverriddenMethod_id4DuBHEkPTzU(node));
+      case 10:
         populateMember_id6r77ob2UW9O(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
-      case 9:
+      case 11:
         return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -176,7 +189,7 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 5:
+      case 7:
         return (T) ((Boolean) canBeInterfaceMember_id2zJQqQIUx2B(concept));
       default:
         throw new BHMethodNotFoundException(this, method);

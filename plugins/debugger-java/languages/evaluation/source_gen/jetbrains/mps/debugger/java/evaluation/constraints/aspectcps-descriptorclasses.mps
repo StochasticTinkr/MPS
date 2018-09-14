@@ -859,7 +859,7 @@
                                                                   </node>
                                                                 </node>
                                                                 <node concept="2qgKlT" id="43" role="2OqNvi">
-                                                                  <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                                                                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                                                 </node>
                                                               </node>
                                                             </node>

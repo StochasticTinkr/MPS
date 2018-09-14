@@ -102,7 +102,7 @@ public class QualifiedSuperMethodCall_Constraints extends BaseConstraintsDescrip
               }).first();
               MethodsScope scope = new MethodsScope(extendedClassifierType, Sequence.fromIterable(Members.visibleInstanceMethods(extendedClassifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it));
+                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(it));
                 }
               }));
               return scope;

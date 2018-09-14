@@ -65,7 +65,7 @@ public class StaticMethodDeclaration_TextGen extends TextGenDescriptorBase {
         }
       }
     }
-    if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(ctx.getPrimaryInput())) {
+    if (!((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasBody_id10BRnhak8m8.invoke(ctx.getPrimaryInput()))) {
       tgs.append(";");
       tgs.newLine();
     } else {

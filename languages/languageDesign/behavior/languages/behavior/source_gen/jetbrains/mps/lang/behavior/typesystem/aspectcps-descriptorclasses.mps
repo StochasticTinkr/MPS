@@ -3442,7 +3442,7 @@
             <node concept="3clFbJ" id="iB" role="3cqZAp">
               <node concept="2OqwBi" id="iC" role="3clFbw">
                 <node concept="2qgKlT" id="iE" role="2OqNvi">
-                  <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                 </node>
                 <node concept="37vLTw" id="iF" role="2Oq$k0">
                   <ref role="3cqZAo" node="iA" resolve="cmd" />
