@@ -77,7 +77,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     ApplicationManager.getApplication().runReadAction(() -> {
       getReadLock().lock();
       try {
-        r.run();
+        myReadActionDispatcher.dispatch(r);
       } finally {
         getReadLock().unlock();
       }
@@ -169,7 +169,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     }
 
     // 1 ms is pretty short to be considered 'try'
-    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, r);
+    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, myReadActionDispatcher.wrap(r));
     // XXX likely, shall try to grab IDEA's read lock much like tryWrite does
     ApplicationManager.getApplication().runReadAction(lockRunnable);
     return lockRunnable.wasExecuted();

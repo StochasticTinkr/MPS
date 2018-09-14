@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ActionDispatcher.DispatchController;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -29,6 +30,8 @@ import org.jetbrains.mps.openapi.repository.WriteActionListener;
  * @since 2017.3
  */
 public abstract class AbstractModelAccess implements ModelAccess {
+  protected final ActionDispatcher<ReadActionListener> myReadActionDispatcher;
+
   /**
    * Implementation of {@link #executeCommand(Runnable)} and {@link #executeCommandInEDT(Runnable)} shall
    * dispatch actions through {@link ActionDispatcher#dispatch(Runnable)} method of this field
@@ -44,6 +47,7 @@ public abstract class AbstractModelAccess implements ModelAccess {
   protected final ActionDispatcher<WriteActionListener> myWriteActionDispatcher;
 
   public AbstractModelAccess() {
+    myReadActionDispatcher = new ActionDispatcher<>(ReadActionListener::readStarted, ReadActionListener::readFinished);
     myCommandActionDispatcher = new ActionDispatcher<>(new DispatchController() {
       @Override
       public void onActionStart() {
@@ -98,5 +102,15 @@ public abstract class AbstractModelAccess implements ModelAccess {
   @Override
   public void removeWriteActionListener(@NotNull WriteActionListener listener) {
     myWriteActionDispatcher.removeActionListener(listener);
+  }
+
+  @Override
+  public void addReadActionListener(@NotNull ReadActionListener listener) {
+    myReadActionDispatcher.addActionListener(listener);
+  }
+
+  @Override
+  public void removeReadActionListener(@NotNull ReadActionListener listener) {
+    myReadActionDispatcher.removeActionListener(listener);
   }
 }

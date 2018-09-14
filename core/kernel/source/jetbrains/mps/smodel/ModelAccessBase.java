@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -85,6 +86,16 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   @Override
   public void removeWriteActionListener(@NotNull WriteActionListener listener) {
     getDelegate().removeWriteActionListener(listener);
+  }
+
+  @Override
+  public void addReadActionListener(@NotNull ReadActionListener listener) {
+    getDelegate().addReadActionListener(listener);
+  }
+
+  @Override
+  public void removeReadActionListener(@NotNull ReadActionListener listener) {
+    getDelegate().removeReadActionListener(listener);
   }
 
   // not null

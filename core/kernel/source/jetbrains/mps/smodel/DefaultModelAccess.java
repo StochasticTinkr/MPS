@@ -36,7 +36,7 @@ class DefaultModelAccess extends ModelAccess {
     }
     getReadLock().lock();
     try {
-      r.run();
+      myReadActionDispatcher.dispatch(r);
     } finally {
       getReadLock().unlock();
     }
@@ -75,7 +75,7 @@ class DefaultModelAccess extends ModelAccess {
   public boolean tryRead(Runnable r) {
     if (getReadLock().tryLock()) {
       try {
-        r.run();
+        myReadActionDispatcher.dispatch(r);
       } finally {
         getReadLock().unlock();
       }
