@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -131,6 +132,8 @@ public class DynamicReference extends SReferenceBase {
       return myCachedTargetNode;
     }
 
+    final SRepository owner = mySourceNode.getModel().getRepository();
+
 
     final Set<DynamicReference> currentRefs = currentlyResolved.get();
     final Set<DynamicReference> loggedRefs = currentlySourceNodeLogged.get();
@@ -151,7 +154,13 @@ public class DynamicReference extends SReferenceBase {
         return null;
       }
 
-      Scope scope = ModelConstraints.getScope(this);
+
+      final Scope scope;
+      if (owner instanceof ReferenceScopeHelper.Source) {
+        scope = ((ReferenceScopeHelper.Source) owner).getReferenceScopeHelper().getScope(this);
+      } else {
+        scope = ModelConstraints.getScope(this);
+      }
       if (scope instanceof ErrorScope) {
         reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
         return null;
