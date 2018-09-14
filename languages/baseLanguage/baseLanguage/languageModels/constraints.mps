@@ -3410,8 +3410,8 @@
             <node concept="10Nm6u" id="1fdcuoJ0Yzq" role="3K4GZi" />
             <node concept="2OqwBi" id="6uUAyNjFfHw" role="3K4Cdx">
               <node concept="EsrRn" id="6uUAyNjFfHx" role="2Oq$k0" />
-              <node concept="3TrcHB" id="6uUAyNjFfOH" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+              <node concept="2qgKlT" id="4c$BrPwdO35" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
               </node>
             </node>
           </node>

@@ -28565,28 +28565,13 @@
         </node>
         <node concept="3cpWs8" id="1$X$vL9L36_" role="3cqZAp">
           <node concept="3cpWsn" id="1$X$vL9L36A" role="3cpWs9">
-            <property role="TrG5h" value="isInterfaceMethod" />
-            <node concept="22lmx$" id="1$X$vL9L36C" role="33vP2m">
-              <node concept="2OqwBi" id="1$X$vL9L36G" role="3uHU7B">
-                <node concept="2OqwBi" id="1$X$vL9L36H" role="2Oq$k0">
-                  <node concept="1mfA1w" id="1$X$vL9L36J" role="2OqNvi" />
-                  <node concept="37vLTw" id="2BHiRxglfBJ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1$X$vL9L38L" resolve="baseMethod" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="1$X$vL9L36K" role="2OqNvi">
-                  <node concept="chp4Y" id="1$X$vL9L36L" role="cj9EA">
-                    <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
-                  </node>
-                </node>
+            <property role="TrG5h" value="isAbstractMethod" />
+            <node concept="2OqwBi" id="1$X$vL9L36D" role="33vP2m">
+              <node concept="2qgKlT" id="4c$BrPw9wOC" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
               </node>
-              <node concept="2OqwBi" id="1$X$vL9L36D" role="3uHU7w">
-                <node concept="3TrcHB" id="1$X$vL9L38N" role="2OqNvi">
-                  <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxglRGi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1$X$vL9L38L" resolve="baseMethod" />
-                </node>
+              <node concept="37vLTw" id="2BHiRxglRGi" role="2Oq$k0">
+                <ref role="3cqZAo" node="1$X$vL9L38L" resolve="baseMethod" />
               </node>
             </node>
             <node concept="10P_77" id="1$X$vL9L36B" role="1tU5fm" />
@@ -28603,7 +28588,7 @@
         </node>
         <node concept="3clFbJ" id="1$X$vL9L37K" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTr45" role="3clFbw">
-            <ref role="3cqZAo" node="1$X$vL9L36A" resolve="isInterfaceMethod" />
+            <ref role="3cqZAo" node="1$X$vL9L36A" resolve="isAbstractMethod" />
           </node>
           <node concept="9aQIb" id="1$X$vL9L37V" role="9aQIa">
             <node concept="3clFbS" id="1$X$vL9L37W" role="9aQI4">
@@ -28790,7 +28775,7 @@
             <node concept="3clFbJ" id="1$X$vL9L38c" role="3cqZAp">
               <node concept="3fqX7Q" id="1$X$vL9L38r" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagTBNh" role="3fr31v">
-                  <ref role="3cqZAo" node="1$X$vL9L36A" resolve="isInterfaceMethod" />
+                  <ref role="3cqZAo" node="1$X$vL9L36A" resolve="isAbstractMethod" />
                 </node>
               </node>
               <node concept="3clFbS" id="1$X$vL9L38d" role="3clFbx">

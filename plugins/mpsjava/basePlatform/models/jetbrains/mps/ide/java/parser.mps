@@ -50,6 +50,7 @@
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="jqf9" ref="r:c97f7798-14e8-47eb-b3f8-b032ba7575c4(jetbrains.mps.baseLanguage.jdk8.structure)" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" implicit="true" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" implicit="true" />
   </imports>
@@ -522,6 +523,9 @@
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
+      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
+        <reference id="1139877738879" name="concept" index="1A0vxQ" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -874,25 +878,6 @@
                   </node>
                   <node concept="3uibUv" id="31WmxQNAIjv" role="10QFUM">
                     <ref role="3uigEE" to="twf3:~TypeDeclaration" resolve="TypeDeclaration" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="31WmxQNAIjx" role="3cqZAp">
-              <node concept="3cpWsn" id="31WmxQNAIjy" role="3cpWs9">
-                <property role="TrG5h" value="name" />
-                <node concept="17QB3L" id="31WmxQNAIjz" role="1tU5fm" />
-                <node concept="2ShNRf" id="31WmxQNAIj$" role="33vP2m">
-                  <node concept="1pGfFk" id="31WmxQNAIj_" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~String.&lt;init&gt;(char[])" resolve="String" />
-                    <node concept="2OqwBi" id="31WmxQNAIjA" role="37wK5m">
-                      <node concept="37vLTw" id="3GM_nagT$BC" role="2Oq$k0">
-                        <ref role="3cqZAo" node="31WmxQNAIjs" resolve="decl" />
-                      </node>
-                      <node concept="2OwXpG" id="31WmxQNAIjC" role="2OqNvi">
-                        <ref role="2Oxat5" to="twf3:~TypeDeclaration.name" resolve="name" />
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>
@@ -3631,35 +3616,33 @@
               <node concept="3clFbS" id="7Vq2yb0g8xC" role="3clFbx">
                 <node concept="3clFbJ" id="56vkmOpgN1V" role="3cqZAp">
                   <node concept="3clFbS" id="56vkmOpgN1Y" role="3clFbx">
-                    <node concept="3clFbF" id="7Vq2yb0g8xD" role="3cqZAp">
-                      <node concept="37vLTI" id="7Vq2yb0g8xE" role="3clFbG">
-                        <node concept="3clFbT" id="7Vq2yb0g8xF" role="37vLTx">
-                          <property role="3clFbU" value="true" />
-                        </node>
-                        <node concept="2OqwBi" id="7Vq2yb0g8xG" role="37vLTJ">
-                          <node concept="1PxgMI" id="7Vq2yb0g8xH" role="2Oq$k0">
-                            <node concept="chp4Y" id="714IaVdGZqQ" role="3oSUPX">
+                    <node concept="3clFbF" id="4c$BrPwhhvv" role="3cqZAp">
+                      <node concept="2OqwBi" id="4c$BrPwhoZz" role="3clFbG">
+                        <node concept="2OqwBi" id="4c$BrPwhir5" role="2Oq$k0">
+                          <node concept="1PxgMI" id="4c$BrPwhhV3" role="2Oq$k0">
+                            <node concept="chp4Y" id="4c$BrPwhhYm" role="3oSUPX">
                               <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                             </node>
-                            <node concept="37vLTw" id="3GM_nagTw_k" role="1m5AlR">
+                            <node concept="37vLTw" id="4c$BrPwhhvq" role="1m5AlR">
                               <ref role="3cqZAo" node="7Vq2yb0g8ws" resolve="result" />
                             </node>
                           </node>
-                          <node concept="3TrcHB" id="7Vq2yb0g8xJ" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                          <node concept="3Tsc0h" id="4c$BrPwhls6" role="2OqNvi">
+                            <ref role="3TtcxE" to="tpee:20YUQaJkyYL" resolve="modifiers" />
                           </node>
+                        </node>
+                        <node concept="WFELt" id="4c$BrPwhyHx" role="2OqNvi">
+                          <ref role="1A0vxQ" to="jqf9:43H3v3JgacM" resolve="DefaultModifier" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3fqX7Q" id="56vkmOpgN5m" role="3clFbw">
-                    <node concept="2OqwBi" id="56vkmOpgNPe" role="3fr31v">
-                      <node concept="37vLTw" id="56vkmOpgN_C" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7Vq2yb0g8z9" resolve="method" />
-                      </node>
-                      <node concept="liA8E" id="56vkmOpgONy" role="2OqNvi">
-                        <ref role="37wK5l" to="twf3:~AbstractMethodDeclaration.isDefaultMethod():boolean" resolve="isDefaultMethod" />
-                      </node>
+                  <node concept="2OqwBi" id="56vkmOpgNPe" role="3clFbw">
+                    <node concept="37vLTw" id="56vkmOpgN_C" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7Vq2yb0g8z9" resolve="method" />
+                    </node>
+                    <node concept="liA8E" id="56vkmOpgONy" role="2OqNvi">
+                      <ref role="37wK5l" to="twf3:~AbstractMethodDeclaration.isDefaultMethod():boolean" resolve="isDefaultMethod" />
                     </node>
                   </node>
                 </node>

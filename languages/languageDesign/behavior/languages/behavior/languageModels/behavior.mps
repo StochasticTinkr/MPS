@@ -798,8 +798,8 @@
                 <node concept="37vLTw" id="3GM_nagT_IG" role="2Oq$k0">
                   <ref role="3cqZAo" node="4GM03FJm5$e" resolve="method" />
                 </node>
-                <node concept="3TrcHB" id="4GM03FJm5zL" role="2OqNvi">
-                  <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+                <node concept="2qgKlT" id="4c$BrPwbcJ1" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                 </node>
               </node>
             </node>

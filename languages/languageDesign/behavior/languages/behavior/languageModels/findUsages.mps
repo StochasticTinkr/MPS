@@ -22,6 +22,7 @@
     <import index="csvn" ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" />
     <import index="mg3u" ref="r:0799ed23-f21a-4dba-ac61-5b80d66bec13(jetbrains.mps.lang.behavior.plugin)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -141,9 +142,6 @@
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -343,8 +341,8 @@
           <node concept="22lmx$" id="6ndnYgP5KMm" role="3clFbw">
             <node concept="2OqwBi" id="6ndnYgP5LDP" role="3uHU7w">
               <node concept="39LhUk" id="6ndnYgP5LbA" role="2Oq$k0" />
-              <node concept="3TrcHB" id="6ndnYgP5MxC" role="2OqNvi">
-                <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+              <node concept="2qgKlT" id="4c$BrPwbpWz" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
               </node>
             </node>
             <node concept="2OqwBi" id="6ndnYgP5HAW" role="3uHU7B">
@@ -383,8 +381,8 @@
           <node concept="22lmx$" id="172ROKPIBuv" role="3clFbw">
             <node concept="2OqwBi" id="172ROKPIBuw" role="3uHU7w">
               <node concept="39LhUk" id="172ROKPIBux" role="2Oq$k0" />
-              <node concept="3TrcHB" id="172ROKPIBuy" role="2OqNvi">
-                <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+              <node concept="2qgKlT" id="4c$BrPwbruy" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
               </node>
             </node>
             <node concept="2OqwBi" id="172ROKPIBuz" role="3uHU7B">

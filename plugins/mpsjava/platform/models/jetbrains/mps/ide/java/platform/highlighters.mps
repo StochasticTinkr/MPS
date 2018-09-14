@@ -850,8 +850,8 @@
                     <node concept="2GrUjf" id="7k6J8c3tila" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="7k6J8c3tikt" resolve="overridingMethod" />
                     </node>
-                    <node concept="3TrcHB" id="7k6J8c3tilb" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                    <node concept="2qgKlT" id="4c$BrPwjP1T" role="2OqNvi">
+                      <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="7k6J8c3tikT" role="3uHU7w">
@@ -875,8 +875,8 @@
                                       <ref role="3cqZAo" node="7k6J8c3til6" resolve="it" />
                                     </node>
                                   </node>
-                                  <node concept="3TrcHB" id="7k6J8c3til5" role="2OqNvi">
-                                    <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                                  <node concept="2qgKlT" id="4c$BrPwjSoF" role="2OqNvi">
+                                    <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                   </node>
                                 </node>
                               </node>
@@ -1513,8 +1513,8 @@
                     <node concept="2GrUjf" id="7k6J8c3tipe" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="7k6J8c3tioY" resolve="overridenMethod" />
                     </node>
-                    <node concept="3TrcHB" id="7k6J8c3tipf" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                    <node concept="2qgKlT" id="4c$BrPwliOx" role="2OqNvi">
+                      <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                     </node>
                   </node>
                 </node>

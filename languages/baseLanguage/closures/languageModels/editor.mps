@@ -1750,8 +1750,8 @@
             <node concept="3clFbF" id="2DQYZoTrox4" role="3cqZAp">
               <node concept="2OqwBi" id="2DQYZoTrox6" role="3clFbG">
                 <node concept="pncrf" id="2DQYZoTrox5" role="2Oq$k0" />
-                <node concept="3TrcHB" id="2DQYZoTroND" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                <node concept="2qgKlT" id="4c$BrPwfS1Y" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                 </node>
               </node>
             </node>
