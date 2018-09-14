@@ -19,6 +19,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -4551,6 +4554,14 @@
     <ref role="1TJDcQ" node="gEShNN5" resolve="GenericNewExpression" />
     <node concept="PrWs8" id="6kfBYRWHrp_" role="PzmwI">
       <ref role="PrY4T" node="hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="10BRnhaa76o">
+    <property role="EcuMT" value="1164142520228671896" />
+    <property role="TrG5h" value="JavaModifier" />
+    <ref role="1TJDcQ" node="25pbpTNtsmA" resolve="Modifier" />
+    <node concept="t5JxF" id="10BRnhaa76p" role="lGtFl">
+      <property role="t5JxN" value="pure java modifier. Note that for the historical reasons all the java modifiers are still implemented via the concept properties" />
     </node>
   </node>
 </model>

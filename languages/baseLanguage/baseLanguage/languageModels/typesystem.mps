@@ -11160,12 +11160,14 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6d7r2FpVjhZ" role="3eO9$A">
-            <node concept="1YBJjd" id="6d7r2FpVji0" role="2Oq$k0">
-              <ref role="1YBMHb" node="hq0DGTI" resolve="nodeToCheck" />
-            </node>
-            <node concept="2qgKlT" id="6d7r2FpVnV9" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+          <node concept="3fqX7Q" id="4SpJmwPMJEq" role="3eO9$A">
+            <node concept="2OqwBi" id="4SpJmwPMJEs" role="3fr31v">
+              <node concept="1YBJjd" id="4SpJmwPMJEt" role="2Oq$k0">
+                <ref role="1YBMHb" node="hq0DGTI" resolve="nodeToCheck" />
+              </node>
+              <node concept="2qgKlT" id="4SpJmwPMJEu" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:10BRnhak8m8" resolve="hasBody" />
+              </node>
             </node>
           </node>
         </node>
@@ -16929,8 +16931,8 @@
                         <node concept="37vLTw" id="4APRYc2MU90" role="2Oq$k0">
                           <ref role="3cqZAo" node="4APRYc2MRdu" resolve="it" />
                         </node>
-                        <node concept="2qgKlT" id="4APRYc2MZ4d" role="2OqNvi">
-                          <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                        <node concept="2qgKlT" id="4SpJmwPMRLo" role="2OqNvi">
+                          <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                         </node>
                       </node>
                     </node>
@@ -25470,8 +25472,8 @@
             <node concept="1YBJjd" id="3HnrdCzpivF" role="2Oq$k0">
               <ref role="1YBMHb" node="3HnrdCzpiv$" resolve="baseMethodDeclaration" />
             </node>
-            <node concept="2qgKlT" id="3HnrdCzpivK" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+            <node concept="2qgKlT" id="4SpJmwPMF8C" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
             </node>
           </node>
         </node>
@@ -30723,7 +30725,7 @@
                   <ref role="3cqZAo" node="2r0d$DFaQc0" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="2r0d$DFaQcs" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="2r0d$DFaQct" role="37wK5m">
                     <ref role="2Gs0qQ" node="2r0d$DFaQc6" resolve="overridingMethod" />
                   </node>
@@ -31089,7 +31091,7 @@
                   <ref role="3cqZAo" node="1oBkklPU9ei" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="1oBkklPU9e_" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="1oBkklPU9eA" role="37wK5m">
                     <ref role="2Gs0qQ" node="1oBkklPU9eo" resolve="overridingMethod" />
                   </node>
@@ -45823,7 +45825,7 @@
                   <ref role="3cqZAo" node="7LqRtP_PkRE" resolve="finder" />
                 </node>
                 <node concept="liA8E" id="7LqRtP_PkRX" role="2OqNvi">
-                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverridenMethods" />
+                  <ref role="37wK5l" to="pz2c:7k6J8c3tHRT" resolve="getOverriddenMethods" />
                   <node concept="2GrUjf" id="7LqRtP_PkRY" role="37wK5m">
                     <ref role="2Gs0qQ" node="7LqRtP_PkRK" resolve="overridingMethod" />
                   </node>
@@ -55636,8 +55638,8 @@
             <node concept="1YBJjd" id="2tn0L7fd8D9" role="2Oq$k0">
               <ref role="1YBMHb" node="fNOVZ7NW6Q" resolve="instanceMethodDeclaration" />
             </node>
-            <node concept="2qgKlT" id="2tn0L7fd8Da" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+            <node concept="2qgKlT" id="4SpJmwPMN7I" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
             </node>
           </node>
           <node concept="2OqwBi" id="2tn0L7fxKcL" role="3uHU7w">

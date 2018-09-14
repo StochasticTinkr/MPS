@@ -68,7 +68,6 @@ public class QualifiedSuperMethodCall_Constraints extends BaseConstraintsDescrip
                   }
                 }
               }
-              System.out.println("AAAAAAAAAAAA " + result);
               return ListScope.forNamedElements(result);
             }
           }

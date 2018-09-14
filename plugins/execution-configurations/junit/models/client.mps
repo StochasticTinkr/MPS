@@ -5253,8 +5253,8 @@
                       <node concept="37vLTw" id="2BHiRxgm9cG" role="2Oq$k0">
                         <ref role="3cqZAo" node="1KnTQt4OifF" resolve="method" />
                       </node>
-                      <node concept="2qgKlT" id="1KnTQt4Oifv" role="2OqNvi">
-                        <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                      <node concept="2qgKlT" id="4SpJmwPN42O" role="2OqNvi">
+                        <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                       </node>
                     </node>
                   </node>
@@ -5854,8 +5854,8 @@
                     <node concept="37vLTw" id="2BHiRxgm_pa" role="2Oq$k0">
                       <ref role="3cqZAo" node="1KnTQt4OihD" resolve="method" />
                     </node>
-                    <node concept="2qgKlT" id="1KnTQt4Oiio" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                    <node concept="2qgKlT" id="4SpJmwPN8_1" role="2OqNvi">
+                      <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                     </node>
                   </node>
                 </node>

@@ -309,8 +309,8 @@
                                       <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                                     </node>
                                   </node>
-                                  <node concept="2qgKlT" id="5Vvmn_QkWXO" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                                  <node concept="2qgKlT" id="4SpJmwPNcfZ" role="2OqNvi">
+                                    <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                   </node>
                                 </node>
                               </node>

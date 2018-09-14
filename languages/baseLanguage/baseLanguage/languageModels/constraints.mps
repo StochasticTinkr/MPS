@@ -24,7 +24,6 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -80,9 +79,6 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -4314,25 +4310,6 @@
               <ref role="3cqZAo" node="5Vvmn_QkhuI" resolve="ancestors" />
             </node>
           </node>
-          <node concept="3clFbF" id="5Vvmn_Qkhvi" role="3cqZAp">
-            <node concept="2OqwBi" id="5Vvmn_Qkhvj" role="3clFbG">
-              <node concept="10M0yZ" id="5Vvmn_Qkhvk" role="2Oq$k0">
-                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-              </node>
-              <node concept="liA8E" id="5Vvmn_Qkhvl" role="2OqNvi">
-                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                <node concept="3cpWs3" id="5Vvmn_Qkhvm" role="37wK5m">
-                  <node concept="37vLTw" id="5Vvmn_Qkhvn" role="3uHU7w">
-                    <ref role="3cqZAo" node="5Vvmn_QkhuQ" resolve="result" />
-                  </node>
-                  <node concept="Xl_RD" id="5Vvmn_Qkhvo" role="3uHU7B">
-                    <property role="Xl_RC" value="AAAAAAAAAAAA " />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="5Vvmn_Qkhvp" role="3cqZAp">
             <node concept="2YIFZM" id="5Vvmn_Qkhvq" role="3clFbG">
               <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
@@ -4459,8 +4436,8 @@
                                 <node concept="37vLTw" id="5Vvmn_Qkhwi" role="2Oq$k0">
                                   <ref role="3cqZAo" node="5Vvmn_Qkhwk" resolve="it" />
                                 </node>
-                                <node concept="2qgKlT" id="5Vvmn_Qkhwj" role="2OqNvi">
-                                  <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                                <node concept="2qgKlT" id="28P2dHxEz3p" role="2OqNvi">
+                                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                 </node>
                               </node>
                             </node>
@@ -4564,6 +4541,23 @@
                   <ref role="359W_E" to="tpee:fzclF8n" resolve="IfStatement" />
                   <ref role="359W_F" to="tpee:fK9aQHQ" resolve="ifFalseStatement" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="10BRnhaa76O">
+    <ref role="1M2myG" to="tpee:10BRnhaa76o" resolve="JavaModifier" />
+    <node concept="9S07l" id="10BRnhaa76P" role="9Vyp8">
+      <node concept="3clFbS" id="10BRnhaa76Q" role="2VODD2">
+        <node concept="3clFbF" id="10BRnhaa7e9" role="3cqZAp">
+          <node concept="2OqwBi" id="10BRnhaa7QO" role="3clFbG">
+            <node concept="nLn13" id="10BRnhaa7F7" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="10BRnhaa8gn" role="2OqNvi">
+              <node concept="chp4Y" id="10BRnhaa8nR" role="cj9EA">
+                <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
               </node>
             </node>
           </node>

@@ -1147,8 +1147,8 @@
         <node concept="3clFbS" id="hsAZ8V1" role="2LFqv$">
           <node concept="3clFbJ" id="hsAZcZf" role="3cqZAp">
             <node concept="2OqwBi" id="6rh9tzl$WBP" role="3clFbw">
-              <node concept="2qgKlT" id="3HZb3XmtYo" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+              <node concept="2qgKlT" id="4SpJmwPNlLG" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
               </node>
               <node concept="37vLTw" id="3GM_nagTww2" role="2Oq$k0">
                 <ref role="3cqZAo" node="hsAZ8V4" resolve="cmd" />

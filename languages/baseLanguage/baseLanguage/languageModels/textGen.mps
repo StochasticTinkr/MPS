@@ -4387,22 +4387,11 @@
               <node concept="l8MVK" id="1hodSy99NeZ" role="lcghm" />
             </node>
           </node>
-          <node concept="22lmx$" id="hYfOfsw" role="3clFbw">
-            <node concept="2OqwBi" id="hYfOdR5" role="3uHU7B">
-              <node concept="2OqwBi" id="hYfOdqr" role="2Oq$k0">
-                <node concept="117lpO" id="hYfOdin" role="2Oq$k0" />
-                <node concept="1mfA1w" id="hYfOdF6" role="2OqNvi" />
-              </node>
-              <node concept="1mIQ4w" id="hYfOehw" role="2OqNvi">
-                <node concept="chp4Y" id="hYfOeWZ" role="cj9EA">
-                  <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="hYfOgmr" role="3uHU7w">
-              <node concept="117lpO" id="hYfOgad" role="2Oq$k0" />
-              <node concept="2qgKlT" id="7fnnP3fPplr" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+          <node concept="3fqX7Q" id="4c$BrPvUfpN" role="3clFbw">
+            <node concept="2OqwBi" id="4c$BrPvUfpP" role="3fr31v">
+              <node concept="117lpO" id="4c$BrPvUfpQ" role="2Oq$k0" />
+              <node concept="2qgKlT" id="4c$BrPvUfpR" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:10BRnhak8m8" resolve="hasBody" />
               </node>
             </node>
           </node>
@@ -5660,10 +5649,12 @@
               <node concept="l8MVK" id="7fN3zRU_3M4" role="lcghm" />
             </node>
           </node>
-          <node concept="2OqwBi" id="7fN3zRU_3M6" role="3clFbw">
-            <node concept="117lpO" id="7fN3zRU_3M7" role="2Oq$k0" />
-            <node concept="2qgKlT" id="7fnnP3fPtW_" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+          <node concept="3fqX7Q" id="4SpJmwPMCC6" role="3clFbw">
+            <node concept="2OqwBi" id="4SpJmwPMCC8" role="3fr31v">
+              <node concept="117lpO" id="4SpJmwPMCC9" role="2Oq$k0" />
+              <node concept="2qgKlT" id="4SpJmwPMCCa" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:10BRnhak8m8" resolve="hasBody" />
+              </node>
             </node>
           </node>
           <node concept="9aQIb" id="7fN3zRU_3Mf" role="9aQIa">
