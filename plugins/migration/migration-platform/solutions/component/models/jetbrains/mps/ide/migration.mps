@@ -3858,6 +3858,14 @@
           </node>
         </node>
         <node concept="3clFbS" id="3ReTDvBw9vC" role="3clF47">
+          <node concept="3clFbF" id="3ReTDvBw9vG" role="3cqZAp">
+            <node concept="3nyPlj" id="3ReTDvBw9vF" role="3clFbG">
+              <ref role="37wK5l" to="lui2:~SRepositoryContentAdapter.stopListening(org.jetbrains.mps.openapi.module.SRepository):void" resolve="stopListening" />
+              <node concept="37vLTw" id="3ReTDvBw9vE" role="37wK5m">
+                <ref role="3cqZAo" node="3ReTDvBw9v_" resolve="repository" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="3ReTDvBwhLs" role="3cqZAp">
             <node concept="2OqwBi" id="3ReTDvBwi3M" role="3clFbG">
               <node concept="37vLTw" id="3ReTDvBwhLq" role="2Oq$k0">
@@ -3873,14 +3881,6 @@
               <node concept="10Nm6u" id="3ReTDvBwhim" role="37vLTx" />
               <node concept="37vLTw" id="3ReTDvBwgBH" role="37vLTJ">
                 <ref role="3cqZAo" node="1WW5sXgjCJU" resolve="myModelListener" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="3ReTDvBw9vG" role="3cqZAp">
-            <node concept="3nyPlj" id="3ReTDvBw9vF" role="3clFbG">
-              <ref role="37wK5l" to="lui2:~SRepositoryContentAdapter.stopListening(org.jetbrains.mps.openapi.module.SRepository):void" resolve="stopListening" />
-              <node concept="37vLTw" id="3ReTDvBw9vE" role="37wK5m">
-                <ref role="3cqZAo" node="3ReTDvBw9v_" resolve="repository" />
               </node>
             </node>
           </node>
