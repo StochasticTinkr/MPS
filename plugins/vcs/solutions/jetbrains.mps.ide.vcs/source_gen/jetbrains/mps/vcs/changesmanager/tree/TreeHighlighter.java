@@ -129,7 +129,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   private void registerNodeRecursively(@NotNull MPSTreeNode node) {
     registerNode(node);
-    for (MPSTreeNode child : Sequence.fromIterable(node)) {
+    for (MPSTreeNode child : node.getChildren()) {
       registerNodeRecursively(child);
     }
   }

@@ -169,7 +169,7 @@ public class ProjectPaneTreeHighlighter {
     if (treeNode instanceof TreeElement) {
       schedule((MPSTreeNode & TreeElement) treeNode, myGenStatusVisitor);
     }
-    for (MPSTreeNode node : treeNode) {
+    for (MPSTreeNode node : treeNode.getChildren()) {
       dispatchForHierarchy(node);
     }
   }

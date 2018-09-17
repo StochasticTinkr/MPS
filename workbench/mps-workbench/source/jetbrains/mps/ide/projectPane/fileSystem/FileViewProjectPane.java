@@ -380,7 +380,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       }
     }
 
-    for (MPSTreeNode node : rootTreeNode) {
+    for (MPSTreeNode node : rootTreeNode.getChildren()) {
       node.init();
       MPSTreeNode result = getNode(node, file);
       if (result != null) {
