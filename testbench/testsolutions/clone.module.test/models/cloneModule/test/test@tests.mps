@@ -940,15 +940,15 @@
             <property role="TrG5h" value="processor" />
             <node concept="3uibUv" id="2_jX3OnIRVK" role="1tU5fm">
               <ref role="3uigEE" to="6if8:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
-              <node concept="3uibUv" id="4QJbmJGUxSE" role="11_B2D">
-                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+              <node concept="3uibUv" id="KgjTrBn68S" role="11_B2D">
+                <ref role="3uigEE" to="6if8:~ModuleValidationProblem" resolve="ModuleValidationProblem" />
               </node>
             </node>
             <node concept="2ShNRf" id="2_jX3OnIRVL" role="33vP2m">
               <node concept="1pGfFk" id="2_jX3OnIRVM" role="2ShVmc">
                 <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;()" resolve="MessageCollectProcessor" />
-                <node concept="3uibUv" id="4QJbmJGUyrE" role="1pMfVU">
-                  <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                <node concept="3uibUv" id="KgjTrBn6DI" role="1pMfVU">
+                  <ref role="3uigEE" to="6if8:~ModuleValidationProblem" resolve="ModuleValidationProblem" />
                 </node>
               </node>
             </node>

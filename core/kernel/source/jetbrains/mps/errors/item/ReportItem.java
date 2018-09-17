@@ -16,9 +16,14 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 
 public interface ReportItem extends FlavouredItem {
   String getMessage();
 
   MessageStatus getSeverity();
+
+  SimpleReportItemFlavour<ReportItem, MessageStatus> FLAVOUR_SEVERITY = new SimpleReportItemFlavour<>("FLAVOUR_SEVERITY", ReportItem.class, ReportItem::getSeverity);
+  SimpleReportItemFlavour<ReportItem, String> FLAVOUR_MESSAGE = new SimpleReportItemFlavour<>("FLAVOUR_MESSAGE", ReportItem.class, ReportItem::getMessage);
+
 }
