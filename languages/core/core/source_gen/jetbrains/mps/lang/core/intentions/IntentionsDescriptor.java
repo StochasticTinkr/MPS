@@ -41,9 +41,10 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
       case 1:
         if (true) {
           // Concept: ICanSuppressErrors 
-          intentions = new IntentionFactory[2];
+          intentions = new IntentionFactory[3];
           intentions[0] = new SuppressSpecificErrors_Intention();
           intentions[1] = new SuppressErrors_Intention();
+          intentions[2] = new SuppressInspection_Intention();
         }
         break;
       default:
@@ -55,10 +56,11 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[3];
+    IntentionFactory[] rv = new IntentionFactory[4];
     rv[0] = new AddMissingDependency_Intention();
     rv[1] = new SuppressSpecificErrors_Intention();
     rv[2] = new SuppressErrors_Intention();
+    rv[3] = new SuppressInspection_Intention();
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L)).seal();

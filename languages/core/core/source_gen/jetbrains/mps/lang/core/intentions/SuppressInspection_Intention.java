@@ -29,13 +29,13 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class SuppressSpecificErrors_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
-  public SuppressSpecificErrors_Intention() {
-    super(Kind.ERROR, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "243673576855293524"));
+public final class SuppressInspection_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+  public SuppressInspection_Intention() {
+    super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "869282237627508178"));
   }
   @Override
   public String getPresentation() {
-    return "SuppressSpecificErrors";
+    return "SuppressInspection";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -50,7 +50,7 @@ public final class SuppressSpecificErrors_Intention extends AbstractIntentionDes
     List<IssueKindReportItem> paramList = parameter(node, context);
     if (paramList != null) {
       for (IssueKindReportItem param : paramList) {
-        ListSequence.fromList(list).addElement(new SuppressSpecificErrors_Intention.IntentionImplementation(param));
+        ListSequence.fromList(list).addElement(new SuppressInspection_Intention.IntentionImplementation(param));
       }
     }
     return list;
@@ -60,7 +60,7 @@ public final class SuppressSpecificErrors_Intention extends AbstractIntentionDes
     Collection<IssueKindReportItem> reportItemsForCell = editorComponent.getReportItemsForCell(editorComponent.getSelectedCell());
     return ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), CollectionSequence.fromCollection(reportItemsForCell).where(new IWhereFilter<IssueKindReportItem>() {
       public boolean accept(IssueKindReportItem it) {
-        return Objects.equals(it.getSeverity(), MessageStatus.ERROR);
+        return !(Objects.equals(it.getSeverity(), MessageStatus.ERROR));
       }
     }));
   }
@@ -71,7 +71,7 @@ public final class SuppressSpecificErrors_Intention extends AbstractIntentionDes
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Suppress error '" + myParameter.getMessage() + "' for " + ICanSuppressErrors__BehaviorDescriptor.nodeDescription_id4oS1ku9jIXr.invoke(node);
+      return "Suppress message '" + myParameter.getMessage() + "' for " + ICanSuppressErrors__BehaviorDescriptor.nodeDescription_id4oS1ku9jIXr.invoke(node);
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -80,7 +80,7 @@ public final class SuppressSpecificErrors_Intention extends AbstractIntentionDes
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return SuppressSpecificErrors_Intention.this;
+      return SuppressInspection_Intention.this;
     }
     public Object getParameter() {
       return myParameter;
