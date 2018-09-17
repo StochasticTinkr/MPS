@@ -30,7 +30,6 @@ import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,19 +55,19 @@ public class FakeReloadableModule implements ReloadableModule {
   @NotNull
   @Override
   public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
-    throw new NotImplementedException();
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @NotNull
   @Override
   public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
-    throw new NotImplementedException();
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Nullable
   @Override
   public ClassLoader getClassLoader() {
-    throw new NotImplementedException();
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override

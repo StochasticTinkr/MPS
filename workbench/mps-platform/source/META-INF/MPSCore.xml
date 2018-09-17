@@ -5,6 +5,11 @@
 
   <application-components>
     <component>
+      <interface-class>com.intellij.openapi.vfs.jrt.JrtFileSystem</interface-class>
+      <implementation-class>com.intellij.openapi.vfs.impl.jrt.JrtFileSystemImpl</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.help.PlatformHelpURLProvider</implementation-class>
     </component>
 
