@@ -33,8 +33,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens__BehaviorDescriptor;
-import jetbrains.mps.java.stub.JavaPackageNameStub;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
@@ -42,6 +42,9 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
+import java.util.Map;
+import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SModelName;
 
 public class ClassifierResolveUtils {
   /*package*/ static SConcept anonymousClassConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
@@ -121,7 +124,7 @@ public class ClassifierResolveUtils {
 
   private static Iterable<SNode> resolveInScope(@NotNull final String targetModelName, @NotNull String classifierFqName, Iterable<SModule> modules) {
     // todo: go through all stereotypes and resolve by long name and stereotype 
-    List<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+    Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
@@ -129,7 +132,7 @@ public class ClassifierResolveUtils {
       public boolean accept(SModel it) {
         return Objects.equals(targetModelName, it.getName().getLongName());
       }
-    }).toListSequence();
+    });
     return resolveClassifierByFqNameWithNonStubPriority(models, classifierFqName);
   }
 
@@ -139,6 +142,8 @@ public class ClassifierResolveUtils {
         return !((it.getModule() instanceof TransientSModule));
       }
     });
+
+    // XXX there's copy of this code in ModelsByName, below, a desperate attempt to get rid of statics 
 
     final String stubStereoType = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
@@ -171,11 +176,12 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByFqName(SModel modelDescriptor, String classifierFqName) {
     assert !(classifierFqName.contains("$"));
 
-    if (!(classifierFqName.startsWith(modelDescriptor.getName().getLongName()))) {
+    final String modelNameNoStereotype = modelDescriptor.getName().getLongName();
+
+    if (!(classifierFqName.startsWith(modelNameNoStereotype))) {
       return Collections.<SNode>emptyList();
     }
 
-    String modelNameNoStereotype = modelDescriptor.getName().getLongName();
     if (1 + modelNameNoStereotype.length() > classifierFqName.length()) {
       return Collections.<SNode>emptyList();
     }
@@ -207,7 +213,7 @@ public class ClassifierResolveUtils {
     }
     SNode parent = SNodeOperations.getParent(classifier);
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      return getNestedName(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) + "." + name;
+      return getNestedName(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) + '.' + name;
     }
     return name;
   }
@@ -231,7 +237,7 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
-    final SModel contextNodeModel = SNodeOperations.getModel(contextClassifier);
+    SModel contextNodeModel = SNodeOperations.getModel(contextClassifier);
     assert contextNodeModel != null;
 
     // though it's exactly what getPathToRoot does, I want to be 100% sure I get complete set of classifiers, inclusive, and don't want to risk any refactorings of the method 
@@ -283,6 +289,8 @@ public class ClassifierResolveUtils {
     // XXX why do we use module scope, not ModelPlusImportedScope available in ClassifiersScope?! 
     SearchScope moduleScope = (module == null ? GlobalScope.getInstance() : module.getScope());
     final List<SModel> moduleScopeModels = ListSequence.fromListWithValues(new ArrayList<SModel>(), moduleScope.getModels());
+    ClassifierResolveUtils.ModelsByName modelsByName = new ClassifierResolveUtils.ModelsByName(moduleScopeModels);
+    final String javaStubStereotype = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
     // walk through single-type imports 
     // TODO static imports are not handled yet 
@@ -301,11 +309,11 @@ public class ClassifierResolveUtils {
       // during java import in idea plugin we can stumble upon a psi stub model (the one being imported 
       // and about to be deleted) before the newly created model (which is the right one) 
 
-      Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName);
+      Iterable<SNode> matches = modelsByName.resolveClassifierByFqNameWithNonStubPriority(fqName, javaStubStereotype);
       return (Sequence.fromIterable(matches).count() == 1 ? construct(Sequence.fromIterable(matches).first(), tokenizer) : null);
     }
 
-    // not found in single-type impors 
+    // not found in single-type imports 
 
     // putting on-demand imports into model list 
     // element is either SModel or node<Classifier> 
@@ -315,13 +323,15 @@ public class ClassifierResolveUtils {
     ListSequence.fromList(javaImportedThings).addElement(contextNodeModel);
 
     String ourPkgName = contextNodeModel.getName().getLongName();
-    ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(getModelsByName(ListSequence.fromList(moduleScopeModels).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return it != contextNodeModel;
-      }
-    }), ourPkgName)));
+    List<SModel> samePackageModels = modelsByName.getByName(ourPkgName);
+    // I assume the idea here is to ensure contextNodeModel comes first 
+    samePackageModels.remove(contextNodeModel);
+    ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(samePackageModels));
 
-    SModel javaLangModel = moduleScope.resolve(new JavaPackageNameStub("java.lang").asModelReference(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")));
+    // intentionally not moduleScope.resolve(JavaPackageNameStub.asModuleReference) as we are looking for specific model in 
+    // a specific module, and module scope might contain a lot of models and could be ineffective in resolve by walking all of them. 
+    SModule jdkModule = moduleScope.resolve(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"));
+    SModel javaLangModel = (jdkModule == null ? null : jdkModule.getModel(new JavaPackageNameStub("java.lang").asModelId()));
     if (javaLangModel != null) {
       ListSequence.fromList(javaImportedThings).addElement(javaLangModel);
     }
@@ -334,15 +344,15 @@ public class ClassifierResolveUtils {
       String fqName = SPropertyOperations.getString(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"));
       if (SPropertyOperations.getBoolean(imp, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x4d5c30eb30af1572L, "static"))) {
         // StaticImportOnDemandDeclaration:   import static TypeName . * ; 
-        ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName)));
+        ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(modelsByName.resolveClassifierByFqNameWithNonStubPriority(fqName, javaStubStereotype)));
       } else {
         // TypeImportOnDemandDeclaration:   import PackageOrTypeName . * ; 
-        Iterable<SModel> models = getModelsByName(moduleScopeModels, fqName);
-        if (Sequence.fromIterable(models).isNotEmpty()) {
-          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(models));
+        List<SModel> models = modelsByName.getByName(fqName);
+        if (!(models.isEmpty())) {
+          ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(models));
         } else {
           // could be a type name 
-          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScopeModels, fqName)));
+          ListSequence.fromList(javaImportedThings).addSequence(ListSequence.fromList(modelsByName.resolveClassifierByFqNameWithNonStubPriority(fqName, javaStubStereotype)));
         }
       }
     }
@@ -592,5 +602,98 @@ public class ClassifierResolveUtils {
       }
     }
     return false;
+  }
+
+  private static class ModelsByName {
+    private final Map<String, List<SModel>> myModelsWithStereotype = new HashMap<String, List<SModel>>();
+    private final Map<String, List<SModel>> myModelsWithoutStereotype = new HashMap<String, List<SModel>>();
+
+    /*package*/ ModelsByName(Iterable<SModel> models) {
+      for (SModel m : Sequence.fromIterable(models)) {
+        SModelName modelName = m.getName();
+        String nameWithoutStereotype = modelName.getLongName();
+        Map<String, List<SModel>> dest = (modelName.hasStereotype() ? myModelsWithStereotype : myModelsWithoutStereotype);
+        List<SModel> collected = dest.get(nameWithoutStereotype);
+        if (collected == null) {
+          dest.put(nameWithoutStereotype, collected = new ArrayList<SModel>());
+        }
+        collected.add(m);
+      }
+    }
+
+    /*package*/ List<SModel> getByName(String name) {
+      // partial order: all models with stereotype after all models without it 
+      List<SModel> withoutStereotype = myModelsWithoutStereotype.get(name);
+      List<SModel> withStereotype = myModelsWithStereotype.get(name);
+      if (withoutStereotype == null && withStereotype == null) {
+        return Collections.emptyList();
+      }
+      ArrayList<SModel> rv = new ArrayList<SModel>();
+      if (withoutStereotype != null) {
+        rv.addAll(withoutStereotype);
+      }
+      if (withStereotype != null) {
+        rv.addAll(withStereotype);
+      }
+      return rv;
+    }
+
+    /**
+     * This is a copy of original ClassifieResolveUtil.resolveClassifierByFqNameWithNonStubPriority() to utilize models cached by name.
+     * Tecnhically, this method shall not be part of this class, just need to refactor the whole stuff
+     */
+    private List<SNode> resolveClassifierByFqNameWithNonStubPriority(String classifierFQN, final String stubStereoType) {
+      assert classifierFQN.indexOf('$') == -1;
+
+      List<SNode> rv = ListSequence.fromList(new ArrayList<SNode>());
+      // resolve without stubs 
+      for (String modelNameNoStereotype : myModelsWithoutStereotype.keySet()) {
+        // conditions taken from resolveClassifierByFqName 
+        if (!(classifierFQN.startsWith(modelNameNoStereotype))) {
+          continue;
+        }
+        if (1 + modelNameNoStereotype.length() > classifierFQN.length()) {
+          continue;
+        }
+
+        final String classifierNestedName = classifierFQN.substring(modelNameNoStereotype.length() + 1);
+        Iterable<SModel> values = myModelsWithoutStereotype.get(modelNameNoStereotype);
+
+        ListSequence.fromList(rv).addSequence(Sequence.fromIterable(values).translate(new ITranslator2<SModel, SNode>() {
+          public Iterable<SNode> translate(SModel md) {
+            return resolveClassifierByNestedName(md, classifierNestedName);
+          }
+        }));
+      }
+      if (ListSequence.fromList(rv).isNotEmpty()) {
+        return rv;
+      }
+
+      // resolve with stubs 
+      // FIXME it's a copy of the for loop above, just for different map and extra filter for model stereotype 
+      for (String modelNameNoStereotype : myModelsWithStereotype.keySet()) {
+        // conditions taken from resolveClassifierByFqName 
+        if (!(classifierFQN.startsWith(modelNameNoStereotype))) {
+          continue;
+        }
+        if (1 + modelNameNoStereotype.length() > classifierFQN.length()) {
+          continue;
+        }
+
+        final String classifierNestedName = classifierFQN.substring(modelNameNoStereotype.length() + 1);
+        Iterable<SModel> values = myModelsWithStereotype.get(modelNameNoStereotype);
+
+        ListSequence.fromList(rv).addSequence(Sequence.fromIterable(values).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel m) {
+            return m.getName().hasStereotype(stubStereoType);
+          }
+        }).translate(new ITranslator2<SModel, SNode>() {
+          public Iterable<SNode> translate(SModel md) {
+            return resolveClassifierByNestedName(md, classifierNestedName);
+          }
+        }));
+      }
+      return rv;
+    }
   }
 }
