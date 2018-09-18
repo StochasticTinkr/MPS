@@ -9,9 +9,9 @@
   </root>
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/127305800529615843">
     <file name="ParametersDeclaration_add_empty_var.java">
-      <node id="127305800529615847" at="13,91,14,343" concept="0" />
+      <node id="127305800529615847" at="13,91,14,182" concept="0" />
       <node id="127305800529615844" at="13,0,16,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="127305800529615844" at="13,91,14,343" />
+      <scope id="127305800529615844" at="13,91,14,182" />
       <scope id="127305800529615844" at="13,0,16,0">
         <var name="enclosingNode" id="127305800529615844" />
         <var name="model" id="127305800529615844" />

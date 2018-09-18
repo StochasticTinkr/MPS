@@ -504,7 +504,7 @@
       <node id="33324785349515820" at="44,38,45,0" concept="13" />
       <node id="33324785349626935" at="46,63,47,275" concept="5" />
       <node id="33324785349720804" at="48,5,49,0" concept="13" />
-      <node id="5507539734802092123" at="49,0,50,319" concept="5" />
+      <node id="5507539734802092123" at="49,0,50,186" concept="5" />
       <node id="33324785349772101" at="51,61,52,426" concept="5" />
       <node id="33324785353334068" at="53,5,54,0" concept="13" />
       <node id="5057842142812585000" at="54,0,55,25" concept="11" />
@@ -513,8 +513,8 @@
       <node id="8633283924066273041" at="61,45,62,54" concept="10" />
       <node id="8633283924066273047" at="62,54,63,198" concept="10" />
       <node id="8633283924066273057" at="64,31,65,175" concept="5" />
-      <node id="8633283924066273064" at="65,175,66,326" concept="5" />
-      <node id="8633283924066273070" at="66,326,67,194" concept="5" />
+      <node id="8633283924066273064" at="65,175,66,186" concept="5" />
+      <node id="8633283924066273070" at="66,186,67,194" concept="5" />
       <node id="8633283924066273076" at="68,5,69,46" concept="5" />
       <node id="8633283924066273084" at="69,46,70,0" concept="13" />
       <node id="8633283924066273088" at="70,0,71,16" concept="11" />
@@ -543,7 +543,7 @@
       <node id="33324785349247839" at="36,0,39,0" concept="9" trace="select#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="33324785349513725" at="41,0,44,0" concept="9" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="33324785349515121" at="45,0,48,5" concept="7" />
-      <node id="33324785349721616" at="50,319,53,5" concept="7" />
+      <node id="33324785349721616" at="50,186,53,5" concept="7" />
       <node id="33324785350078713" at="57,0,60,0" concept="15" trace="createPathFromFullPath#(Ljava/io/File;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6099797596647572261" at="73,72,76,5" concept="8" />
       <node id="33324785349247834" at="34,0,39,27" concept="10" />
@@ -570,7 +570,7 @@
       <scope id="33324785349515121" at="45,0,48,5">
         <var name="projectNode" id="33324785349515123" />
       </scope>
-      <scope id="33324785349721616" at="50,319,53,5">
+      <scope id="33324785349721616" at="50,186,53,5">
         <var name="plugin" id="33324785349721618" />
       </scope>
       <scope id="33324785350078713" at="57,0,60,0">

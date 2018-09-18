@@ -2569,7 +2569,7 @@
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/2565027568480537754">
     <file name="ValueInlineDocTag_Actions.java">
       <node id="2565027568480538139" at="19,56,20,51" concept="2" />
-      <node id="2565027568480630218" at="22,77,23,360" concept="2" />
+      <node id="2565027568480630218" at="22,77,23,199" concept="2" />
       <node id="2565027568480537754" at="29,95,30,76" concept="7" />
       <node id="2565027568480537754" at="30,76,31,82" concept="7" />
       <node id="2565027568480537754" at="31,82,32,0" concept="10" />
@@ -2602,7 +2602,7 @@
       <node id="2565027568480538139" at="17,0,28,0" concept="11" trace="createAction_RIGHT_TRANSFORM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/editor/runtime/cells/AbstractCellAction;" />
       <node id="2565027568480537754" at="29,0,44,0" concept="11" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="2565027568480538139" at="19,56,20,51" />
-      <scope id="2565027568480538141" at="22,77,23,360" />
+      <scope id="2565027568480538141" at="22,77,23,199" />
       <scope id="2565027568480537754" at="40,81,41,67" />
       <scope id="2565027568480538139" at="59,69,60,75" />
       <scope id="2565027568480538139" at="19,0,22,0">

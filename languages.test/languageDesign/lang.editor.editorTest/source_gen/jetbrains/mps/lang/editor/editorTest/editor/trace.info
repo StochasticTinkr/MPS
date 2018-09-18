@@ -16054,7 +16054,7 @@
     <file name="Custom_Placeholder_Action.java">
       <node id="6997653033587013310" at="22,56,23,51" concept="2" />
       <node id="6997653033587014787" at="26,228,27,288" concept="2" />
-      <node id="6997653033587094743" at="28,16,29,350" concept="2" />
+      <node id="6997653033587094743" at="28,16,29,194" concept="2" />
       <node id="6997653033587013309" at="36,95,37,76" concept="6" />
       <node id="6997653033587013309" at="37,76,38,82" concept="6" />
       <node id="6997653033587013309" at="38,82,39,0" concept="9" />
@@ -16090,7 +16090,7 @@
       <node id="6997653033587013309" at="36,0,51,0" concept="10" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="6997653033587013310" at="22,56,23,51" />
       <scope id="6997653033587074261" at="26,228,27,288" />
-      <scope id="6997653033587094509" at="28,16,29,350" />
+      <scope id="6997653033587094509" at="28,16,29,194" />
       <scope id="6997653033587013309" at="47,81,48,67" />
       <scope id="6997653033587013310" at="66,72,67,78" />
       <scope id="6997653033587013310" at="22,0,25,0">

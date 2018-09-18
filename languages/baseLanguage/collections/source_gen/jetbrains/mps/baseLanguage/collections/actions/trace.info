@@ -848,10 +848,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/7246115176735615122">
     <file name="replace_sequence_type.java">
-      <node id="569424390635801816" at="13,91,14,311" concept="2" />
-      <node id="5964102845036902986" at="14,311,15,81" concept="2" />
-      <node id="7886927014685056898" at="19,91,20,321" concept="2" />
-      <node id="5964102845036905130" at="20,321,21,90" concept="2" />
+      <node id="569424390635801816" at="13,91,14,184" concept="2" />
+      <node id="5964102845036902986" at="14,184,15,81" concept="2" />
+      <node id="7886927014685056898" at="19,91,20,194" concept="2" />
+      <node id="5964102845036905130" at="20,194,21,90" concept="2" />
       <node id="5964102845036619372" at="25,91,26,77" concept="2" />
       <node id="5964102845036647612" at="30,91,31,76" concept="2" />
       <node id="7246115176735618985" at="25,0,28,0" concept="6" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
@@ -896,8 +896,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/8656797459614853041">
     <file name="DefaultNodeFactory.java">
       <node id="8656797459614518961" at="23,211,24,504" concept="2" />
-      <node id="8656797459614551222" at="24,504,25,342" concept="2" />
-      <node id="8656797459614619464" at="25,342,26,718" concept="2" />
+      <node id="8656797459614551222" at="24,504,25,185" concept="2" />
+      <node id="8656797459614619464" at="25,185,26,718" concept="2" />
       <node id="8656797459614518981" at="26,718,27,573" concept="2" />
       <node id="8656797459614518989" at="27,573,28,1003" concept="2" />
       <node id="8656797459614519018" at="30,43,31,518" concept="8" />

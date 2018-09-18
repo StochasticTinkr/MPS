@@ -6196,7 +6196,7 @@
     <file name="PersistenPropertyDeclaration_Actions.java">
       <node id="1210180446803" at="19,42,20,33" concept="8" />
       <node id="1210180446803" at="22,56,23,51" concept="2" />
-      <node id="1210180450936" at="25,77,26,314" concept="2" />
+      <node id="1210180450936" at="25,77,26,181" concept="2" />
       <node id="1210180436234" at="32,95,33,76" concept="7" />
       <node id="1210180436234" at="33,76,34,82" concept="7" />
       <node id="1210180436234" at="34,82,35,0" concept="10" />
@@ -6231,7 +6231,7 @@
       <node id="1210180436234" at="32,0,47,0" concept="12" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1210180446803" at="19,42,20,33" />
       <scope id="1210180446803" at="22,56,23,51" />
-      <scope id="1210180446805" at="25,77,26,314" />
+      <scope id="1210180446805" at="25,77,26,181" />
       <scope id="1210180436234" at="43,81,44,67" />
       <scope id="1210180446803" at="62,69,63,75" />
       <scope id="1210180446803" at="19,0,22,0" />
