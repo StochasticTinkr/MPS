@@ -18,16 +18,16 @@ public class fixpoint {
   public static class Function_1751004816843424603 extends Function {
     private List myOuterVars = new ArrayList();
     public Function_1751004816843424603() {
-      myType = "";
+      myType = "((AnyType->AnyType)->AnyType)";
     }
     public Function_1751004816843424603(List outerVars) {
-      myType = "";
+      myType = "((AnyType->AnyType)->AnyType)";
       myOuterVars.addAll(outerVars);
     }
     public Object eval() {
       int i = 0;
       int j = 0;
-      Object f = (Object) myArgs.get(i++);
+      Function f = (Function) myArgs.get(i++);
       return lambdaAbstr_1751004816843424696(new fixpoint.Function_1751004816843424603.Function_1751004816843561803(f), f);
     }
     public int getParamsCount() {
@@ -38,19 +38,19 @@ public class fixpoint {
     }
     public static class Function_1751004816843561803 extends Function {
       private List myOuterVars = new ArrayList();
-      public Function_1751004816843561803(Object f) {
-        myType = "";
+      public Function_1751004816843561803(Function f) {
+        myType = "((AnyType->AnyType)->AnyType)";
         myOuterVars.add(f);
       }
       public Function_1751004816843561803(List outerVars) {
-        myType = "";
+        myType = "((AnyType->AnyType)->AnyType)";
         myOuterVars.addAll(outerVars);
       }
       public Object eval() {
         int i = 0;
         int j = 0;
-        Object f = (Object) myOuterVars.get(j++);
-        Object x = (Object) myArgs.get(i++);
+        Function f = (Function) myOuterVars.get(j++);
+        Function x = (Function) myArgs.get(i++);
         return (Object) ((Function) f).apply((Object) ((Function) x).apply(x));
       }
       public int getParamsCount() {
@@ -60,7 +60,7 @@ public class fixpoint {
         return new fixpoint.Function_1751004816843424603.Function_1751004816843561803(myOuterVars);
       }
     }
-    public static Object lambdaAbstr_1751004816843424696(Object x, Object f) {
+    public static Object lambdaAbstr_1751004816843424696(Function x, Function f) {
       return (Object) ((Function) f).apply((Object) ((Function) x).apply(x));
     }
   }

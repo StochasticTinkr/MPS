@@ -18,16 +18,16 @@ public class minimalTypeTest {
   public static class Function_1751004816843568058 extends Function {
     private List myOuterVars = new ArrayList();
     public Function_1751004816843568058() {
-      myType = "";
+      myType = "((AnyType->AnyType)->AnyType)";
     }
     public Function_1751004816843568058(List outerVars) {
-      myType = "";
+      myType = "((AnyType->AnyType)->AnyType)";
       myOuterVars.addAll(outerVars);
     }
     public Object eval() {
       int i = 0;
       int j = 0;
-      Object x = (Object) myArgs.get(i++);
+      Function x = (Function) myArgs.get(i++);
       return (Object) ((Function) x).apply(x);
     }
     public int getParamsCount() {

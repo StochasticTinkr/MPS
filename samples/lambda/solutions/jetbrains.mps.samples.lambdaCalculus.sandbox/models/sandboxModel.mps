@@ -316,51 +316,5 @@
       </node>
     </node>
   </node>
-  <node concept="3wbhwI" id="1xcOpEbT1Xt">
-    <property role="TrG5h" value="fixpoint" />
-    <node concept="3wftgB" id="1xcOpEbT1Xy" role="3wbhwH">
-      <node concept="3wftgA" id="1xcOpEbT1Xz" role="3wfNou">
-        <property role="TrG5h" value="f" />
-      </node>
-      <node concept="3wfNpU" id="1xcOpEbT1X$" role="3wfNpy">
-        <node concept="3wftgB" id="1xcOpEbT1X_" role="3wfNp6">
-          <node concept="3wftgA" id="1xcOpEbT1XA" role="3wfNou">
-            <property role="TrG5h" value="x" />
-          </node>
-          <node concept="3wfNpU" id="1xcOpEbT1XB" role="3wfNpy">
-            <node concept="3wfNpU" id="1xcOpEbT1XC" role="3wfNp6">
-              <node concept="3wbOWC" id="1xcOpEbT1XD" role="3wfNp6">
-                <ref role="2k$wWx" node="1xcOpEbT1XA" resolve="x" />
-              </node>
-              <node concept="3wbOWC" id="1xcOpEbT1XE" role="3wfNp7">
-                <ref role="2k$wWx" node="1xcOpEbT1XA" resolve="x" />
-              </node>
-            </node>
-            <node concept="3wbOWC" id="1xcOpEbT1XF" role="3wfNp7">
-              <ref role="2k$wWx" node="1xcOpEbT1Xz" resolve="f" />
-            </node>
-          </node>
-        </node>
-        <node concept="3wftgB" id="1xcOpEbT1XG" role="3wfNp7">
-          <node concept="3wftgA" id="1xcOpEbT1XH" role="3wfNou">
-            <property role="TrG5h" value="x" />
-          </node>
-          <node concept="3wfNpU" id="1xcOpEbUatA" role="3wfNpy">
-            <node concept="3wfNpU" id="1xcOpEbV6t8" role="3wfNp6">
-              <node concept="3wbOWC" id="1xcOpEbV6yf" role="3wfNp6">
-                <ref role="2k$wWx" node="1xcOpEbT1XH" resolve="x" />
-              </node>
-              <node concept="3wbOWC" id="1xcOpEbUatD" role="3wfNp7">
-                <ref role="2k$wWx" node="1xcOpEbT1XH" resolve="x" />
-              </node>
-            </node>
-            <node concept="3wbOWC" id="1xcOpEbUatE" role="3wfNp7">
-              <ref role="2k$wWx" node="1xcOpEbT1Xz" resolve="f" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 

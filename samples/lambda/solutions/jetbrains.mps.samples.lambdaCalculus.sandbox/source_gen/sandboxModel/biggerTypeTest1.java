@@ -18,17 +18,17 @@ public class biggerTypeTest1 {
   public static class Function_1751004816843669402 extends Function {
     private List myOuterVars = new ArrayList();
     public Function_1751004816843669402() {
-      myType = "";
+      myType = "((AnyType->AnyType)->(((AnyType->AnyType)->AnyType)->AnyType))";
     }
     public Function_1751004816843669402(List outerVars) {
-      myType = "";
+      myType = "((AnyType->AnyType)->(((AnyType->AnyType)->AnyType)->AnyType))";
       myOuterVars.addAll(outerVars);
     }
     public Object eval() {
       int i = 0;
       int j = 0;
-      Object x = (Object) myArgs.get(i++);
-      Object y = (Object) myArgs.get(i++);
+      Function x = (Function) myArgs.get(i++);
+      Function y = (Function) myArgs.get(i++);
       return (Object) ((Function) x).apply((Object) ((Function) y).apply(x));
     }
     public int getParamsCount() {
