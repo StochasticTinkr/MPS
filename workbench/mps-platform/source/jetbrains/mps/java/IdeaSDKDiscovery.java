@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.java;
 
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.projectRoots.JdkUtil;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.text.StringUtil;
@@ -24,6 +25,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.jrt.JrtFileSystem;
 import com.intellij.util.containers.ContainerUtil;
+import jetbrains.mps.reloading.CommonPaths;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -40,8 +42,24 @@ import java.util.Properties;
 /**
  * This code was copied from IDEA's JavaSdkImpl
  */
-public class IdeaSDKUtil {
-  private static final Logger LOG = LogManager.getLogger(IdeaSDKUtil.class);
+public class IdeaSDKDiscovery implements ApplicationComponent {
+  @Override
+  public void initComponent() {
+    CommonPaths.setJDKProducer(() -> findClasses(new File(System.getProperty("java.home")) ,false));
+  }
+
+  @Override
+  public void disposeComponent() {
+
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return getClass().getName();
+  }
+
+  private static final Logger LOG = LogManager.getLogger(IdeaSDKDiscovery.class);
   @NotNull
   public static List<String> findClasses(@NotNull File file, boolean isJre) {
     List<String> result = ContainerUtil.newArrayList();

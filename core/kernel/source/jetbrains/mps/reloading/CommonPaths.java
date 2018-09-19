@@ -15,41 +15,36 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.URLUtil;
 import jetbrains.mps.util.ClassPathReader;
 import jetbrains.mps.util.ClassType;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.SystemInfo;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
-import sun.misc.Launcher;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
+//todo [MM] rename this class, possibly make it a component
 public final class CommonPaths {
-  private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
+  private static Computable<List<String>> ourJDKProducer = null;
 
   //--------paths-----------
 
+
+  public static void setJDKProducer(Computable<List<String>> JDKProducer) {
+    ourJDKProducer = JDKProducer;
+  }
+
   public static List<String> getMPSPaths(ClassType type) {
+    Predicate<String> toolsPredicate = s -> s.contains("jdk.jdi") || s.contains("tools.jar");
     if (type == ClassType.JDK) {
-      return getJDKPath();
+      return getJDKPath().stream().filter(toolsPredicate.negate()).collect(Collectors.toList());
     } else if (type == ClassType.JDK_TOOLS) {
-      return getJDK_ToolsPath();
+      return getJDKPath().stream().filter(toolsPredicate).collect(Collectors.toList());
     }
 
     final List<String> result = new ArrayList<>();
@@ -79,93 +74,7 @@ public final class CommonPaths {
   }
 
   public static List<String> getJDKPath() {
-    ArrayList<String> result = new ArrayList<>();
-    Map<String, File> bootstrapJars = mapBootstrapJarByName();
-    for (String s : getJDKJars()) {
-      File rtJar = bootstrapJars.get(s);
-      try {
-        if (rtJar != null) {
-          result.add(rtJar.getCanonicalPath());
-        } else {
-          LOG.error(String.format("Can't find %s of JDK jars", s));
-        }
-      } catch (IOException e) {
-        LOG.error(String.format("Bad bootstrap jar '%s'", rtJar), e);
-      }
-    }
-    if (SystemInfo.isJavaVersionAtLeast("1.7")) {
-      result.addAll(getJDK_JavaFXPath());
-    }
-    return result;
-  }
-
-  private static List<String> getJDK_jarPath(@NotNull String classFQName) {
-    String jarLocation = getJarFileLocation(classFQName);
-    if (jarLocation != null) {
-      File file = new File(jarLocation);
-      if (file.exists()) {
-        return Collections.singletonList(file.getAbsolutePath());
-      }
-    }
-    return Collections.emptyList();
-  }
-
-  private static List<String> getJDK_ToolsPath() {
-    return getJDK_jarPath("com.sun.jdi.Field");
-  }
-
-  private static List<String> getJDK_JavaFXPath() {
-    return getJDK_jarPath("javafx.animation.Animation");
-  }
-
-  private static String getJarFileLocation(@NotNull String classFQName) {
-    try {
-      Class cls = Class.forName(classFQName);
-      String classFileResourceLocation = "/" + classFQName.replaceAll("\\.", "/") + ".class";
-      String classFileResourceURL = cls.getResource(classFileResourceLocation).toString();
-      Pair<String, String> urls = URLUtil.splitJarUrl(classFileResourceURL);
-      if (urls == null) {
-        return null;
-      }
-      return URLDecoder.decode(urls.o1, Charset.defaultCharset().name()).replace('/', File.separatorChar);
-    } catch (ClassNotFoundException | UnsupportedEncodingException e) {
-      LOG.warn("jar file for class " + classFQName + " could not be found");
-      return null;
-    }
-  }
-
-  //------classpaths : JDK--------
-
-  private static List<String> getJDKJars() {
-    List<String> result = new ArrayList<>();
-
-    if (SystemInfo.isMac && !SystemInfo.isJavaVersionAtLeast("1.7")) {
-      // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
-      result.add("classes.jar");
-    } else {
-      result.add("rt.jar");
-    }
-
-    result.add("jsse.jar");
-    result.add("jce.jar");
-    result.add("charsets.jar");
-    return result;
-  }
-
-  private static Map<String, File> mapBootstrapJarByName() {
-    HashMap<String, File> rv = new HashMap<>();
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-        if (!file.exists()) {
-          continue;
-        }
-        rv.put(file.getName(), file);
-      } catch (URISyntaxException e) {
-        LOG.error(String.format("Bad bootstrap jar '%s'", url), e);
-      }
-    }
-    return rv;
+    return ourJDKProducer.compute();
   }
 
   //------classpaths : MPS--------
