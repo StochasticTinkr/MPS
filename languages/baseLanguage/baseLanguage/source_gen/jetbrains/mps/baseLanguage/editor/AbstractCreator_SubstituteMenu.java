@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -161,7 +162,7 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
           if (SNodeOperations.isInstanceOf(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
             methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+                return (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(it);
               }
             }).toListSequence();
             for (SNode baseMethodDeclaration : IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(SNodeOperations.cast(myParameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {

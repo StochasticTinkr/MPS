@@ -1424,7 +1424,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.JavaModifier:
         if (props_JavaModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("JavaModifier");
           props_JavaModifier = cpb.create();
         }
         return props_JavaModifier;

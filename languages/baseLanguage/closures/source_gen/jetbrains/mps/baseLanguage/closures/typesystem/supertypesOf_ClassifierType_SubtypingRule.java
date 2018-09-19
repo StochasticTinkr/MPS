@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
@@ -44,7 +45,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
           Iterable<SNode> methods = Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classifier);
           Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode m) {
-              return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && SPropertyOperations.getBoolean(m, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+              return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(m);
             }
           });
           Iterator<SNode> it = Sequence.fromIterable(cands).iterator();

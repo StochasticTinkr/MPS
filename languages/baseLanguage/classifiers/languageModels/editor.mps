@@ -155,7 +155,6 @@
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
-        <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="1198512004906" name="focusPolicyApplicable" index="cStSX" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
@@ -549,7 +548,6 @@
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
       <node concept="PMmxH" id="hLrKZ74" role="3EZMnx">
-        <ref role="1ERwB7" to="tpen:h9EA$1S" resolve="_InstanceMethodDeclaration_AddAbstract" />
         <ref role="PMmxG" to="tpen:h9AUA0X" resolve="_Component_Visibility" />
       </node>
       <node concept="PMmxH" id="hLrKZ76" role="3EZMnx">

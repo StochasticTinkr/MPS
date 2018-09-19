@@ -621,8 +621,8 @@
                           <node concept="37vLTw" id="1u" role="2Oq$k0">
                             <ref role="3cqZAo" node="1j" resolve="m" />
                           </node>
-                          <node concept="3TrcHB" id="1v" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                          <node concept="2qgKlT" id="1v" role="2OqNvi">
+                            <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                           </node>
                         </node>
                       </node>
@@ -1644,8 +1644,8 @@
                               <node concept="37vLTw" id="7T" role="2Oq$k0">
                                 <ref role="3cqZAo" node="7I" resolve="m" />
                               </node>
-                              <node concept="3TrcHB" id="7U" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                              <node concept="2qgKlT" id="7U" role="2OqNvi">
+                                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                               </node>
                             </node>
                           </node>
@@ -7695,8 +7695,8 @@
                                         <node concept="37vLTw" id="Ge" role="2Oq$k0">
                                           <ref role="3cqZAo" node="G3" resolve="m" />
                                         </node>
-                                        <node concept="3TrcHB" id="Gf" role="2OqNvi">
-                                          <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                                        <node concept="2qgKlT" id="Gf" role="2OqNvi">
+                                          <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                         </node>
                                       </node>
                                     </node>

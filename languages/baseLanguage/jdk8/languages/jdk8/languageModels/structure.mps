@@ -50,11 +50,11 @@
   </node>
   <node concept="1TIwiD" id="43H3v3JgacM">
     <property role="EcuMT" value="4678410916365116210" />
-    <property role="3GE5qa" value="classifiers.members" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="DefaultModifier" />
     <property role="34LRSv" value="default" />
-    <property role="R4oN_" value="default modifier for an interface method" />
-    <ref role="1TJDcQ" to="tpee:25pbpTNtsmA" resolve="Modifier" />
+    <property role="R4oN_" value="the 'default' modifier for an interface method" />
+    <ref role="1TJDcQ" to="tpee:10BRnhaa76o" resolve="JavaModifier" />
   </node>
 </model>
 

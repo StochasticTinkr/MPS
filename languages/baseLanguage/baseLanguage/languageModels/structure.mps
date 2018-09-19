@@ -48,6 +48,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -4559,6 +4560,8 @@
   <node concept="1TIwiD" id="10BRnhaa76o">
     <property role="EcuMT" value="1164142520228671896" />
     <property role="TrG5h" value="JavaModifier" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" node="25pbpTNtsmA" resolve="Modifier" />
     <node concept="t5JxF" id="10BRnhaa76p" role="lGtFl">
       <property role="t5JxN" value="pure java modifier. Note that for the historical reasons all the java modifiers are still implemented via the concept properties" />

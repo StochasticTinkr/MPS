@@ -2568,7 +2568,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForJavaModifier() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage", "JavaModifier", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1027dd744a287198L);
-    b.class_(false, false, false);
+    b.class_(false, true, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Modifier", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L);
     b.origin("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1164142520228671896");
     b.version(2);

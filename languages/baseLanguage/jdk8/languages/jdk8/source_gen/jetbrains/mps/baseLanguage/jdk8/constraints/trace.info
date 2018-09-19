@@ -13,7 +13,46 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,29,0" name="jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)/1164142520228621411">
+    <file name="DefaultModifier_Constraints.java">
+      <node id="1164142520228621411" at="19,40,20,165" concept="10" />
+      <node id="1164142520228621411" at="27,127,28,128" concept="5" />
+      <node id="1164142520228621411" at="28,128,29,0" concept="7" />
+      <node id="1164142520228621411" at="30,55,31,71" concept="2" />
+      <node id="1164142520228621411" at="32,9,33,0" concept="7" />
+      <node id="1164142520228621411" at="33,0,34,22" concept="6" />
+      <node id="1164142520228621880" at="38,128,39,218" concept="6" />
+      <node id="1164142520228621411" at="41,0,42,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="1164142520228621411" at="19,0,22,0" concept="1" trace="DefaultModifier_Constraints#()V" />
+      <node id="1164142520228621411" at="29,0,32,9" concept="3" />
+      <node id="1164142520228621411" at="38,0,41,0" concept="9" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="1164142520228621411" at="26,0,36,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="1164142520228621411" at="24,103,36,6" concept="6" />
+      <node id="1164142520228621411" at="23,0,38,0" concept="4" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="1164142520228621411" at="19,40,20,165" />
+      <scope id="1164142520228621411" at="30,55,31,71" />
+      <scope id="1164142520228621413" at="38,128,39,218" />
+      <scope id="1164142520228621411" at="19,0,22,0" />
+      <scope id="1164142520228621411" at="38,0,41,0">
+        <var name="childConcept" id="1164142520228621411" />
+        <var name="link" id="1164142520228621411" />
+        <var name="node" id="1164142520228621411" />
+        <var name="parentNode" id="1164142520228621411" />
+      </scope>
+      <scope id="1164142520228621411" at="27,127,34,22">
+        <var name="result" id="1164142520228621411" />
+      </scope>
+      <scope id="1164142520228621411" at="26,0,36,0">
+        <var name="checkingNodeContext" id="1164142520228621411" />
+        <var name="context" id="1164142520228621411" />
+      </scope>
+      <scope id="1164142520228621411" at="24,103,36,6" />
+      <scope id="1164142520228621411" at="23,0,38,0" />
+      <unit id="1164142520228621411" at="25,15,36,5" name="jetbrains.mps.baseLanguage.jdk8.constraints.DefaultModifier_Constraints$1" />
+      <unit id="1164142520228621411" at="18,0,43,0" name="jetbrains.mps.baseLanguage.jdk8.constraints.DefaultModifier_Constraints" />
     </file>
   </root>
   <root nodeRef="r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)/1719162360409958585">
@@ -34,7 +73,7 @@
       <node id="6836281137582776110" at="99,13,100,228" concept="5" />
       <node id="6836281137582776118" at="101,44,102,40" concept="6" />
       <node id="6836281137582776124" at="103,15,104,118" concept="5" />
-      <node id="6836281137582776143" at="106,49,107,112" concept="6" />
+      <node id="6836281137582776143" at="106,49,107,124" concept="6" />
       <node id="6836281137582776150" at="109,18,110,27" concept="6" />
       <node id="1719162360409958585" at="115,7,116,22" concept="6" />
       <node id="1227128029536560561" at="118,128,119,71" concept="6" />
@@ -72,7 +111,7 @@
       <scope id="6434457067209972429" at="86,44,87,20" />
       <scope id="6434457067209972429" at="94,63,95,58" />
       <scope id="6836281137582776117" at="101,44,102,40" />
-      <scope id="6836281137582776142" at="106,49,107,112" />
+      <scope id="6836281137582776142" at="106,49,107,124" />
       <scope id="1227128029536560560" at="118,128,119,71" />
       <scope id="5258834964331983164" at="76,13,78,64">
         <var name="scope" id="5258834964331983164" />

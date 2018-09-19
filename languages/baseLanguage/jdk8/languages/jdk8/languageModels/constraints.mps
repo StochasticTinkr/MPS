@@ -102,6 +102,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -256,16 +257,19 @@
     </node>
   </node>
   <node concept="1M2fIO" id="10BRnha9ULz">
-    <property role="3GE5qa" value="classifiers.members" />
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="jqf9:43H3v3JgacM" resolve="DefaultModifier" />
     <node concept="9S07l" id="10BRnha9UL$" role="9Vyp8">
       <node concept="3clFbS" id="10BRnha9UL_" role="2VODD2">
         <node concept="3clFbF" id="10BRnha9USS" role="3cqZAp">
-          <node concept="2OqwBi" id="10BRnha9V4$" role="3clFbG">
-            <node concept="nLn13" id="10BRnha9USR" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="10BRnha9ViA" role="2OqNvi">
-              <node concept="chp4Y" id="10BRnha9Vq6" role="cj9EA">
-                <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+          <node concept="2OqwBi" id="4c$BrPwowJ7" role="3clFbG">
+            <node concept="2OqwBi" id="4c$BrPwow91" role="2Oq$k0">
+              <node concept="nLn13" id="4c$BrPwovJU" role="2Oq$k0" />
+              <node concept="1mfA1w" id="4c$BrPwowl_" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="4c$BrPwox9I" role="2OqNvi">
+              <node concept="chp4Y" id="4c$BrPwoxq1" role="cj9EA">
+                <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
               </node>
             </node>
           </node>

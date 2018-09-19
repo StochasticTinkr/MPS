@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 
 public class ClosureLiteralTarget {
   private TemplateQueryContext genContext;
@@ -121,7 +122,7 @@ public class ClosureLiteralTarget {
   private SNode getFunctionMethod(SNode literal, SNode targetIface) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode mth : Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SLinkOperations.getTarget(targetIface, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))) {
-      if (!("equals".equals(SPropertyOperations.getString(mth, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && SPropertyOperations.getBoolean(mth, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"))) {
+      if (!("equals".equals(SPropertyOperations.getString(mth, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(mth)) {
         ListSequence.fromList(result).addElement(mth);
       }
     }
