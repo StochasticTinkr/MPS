@@ -232,8 +232,8 @@
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2018" minorVersoin="3">
-      <build number="183.449" version="2018.3 EAP1">
-        <message>JetBrains MPS 2018.3 EAP1 is available.</message>
+      <build number="183.544" version="2018.3 EAP2">
+        <message>JetBrains MPS 2018.3 EAP2 is available.</message>
         <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2018.3 EAP+Download+Page" download="true"/>
       </build>
     </channel>
