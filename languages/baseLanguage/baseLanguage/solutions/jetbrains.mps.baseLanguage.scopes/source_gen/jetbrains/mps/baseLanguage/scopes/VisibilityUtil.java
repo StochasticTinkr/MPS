@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public final class VisibilityUtil {
   private VisibilityUtil() {
   }
+
   public static boolean isVisible(@NotNull SNode context, @NotNull SNode name) {
     // only check visibility of the name, accessibility of qualifier and if the name is member is not checked here 
     if (SNodeOperations.isInstanceOf(name, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -46,7 +47,7 @@ public final class VisibilityUtil {
           if (SNodeOperations.isInstanceOf(name, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && SNodeOperations.isInstanceOf(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) || SNodeOperations.isInstanceOf(name, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(DotExpression__BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(SNodeOperations.cast(SNodeOperations.getParent(context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))), _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(cls))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(DotExpression__BehaviorDescriptor.getOperandType_id7GulAc9z0dN.invoke(SNodeOperations.cast(SNodeOperations.getParent(context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))), _quotation_createNode_v8uv56_b0a2a0a0a2a7a2(cls))) {
               return true;
             }
           } else if (SNodeOperations.isInstanceOf(name, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
@@ -60,13 +61,16 @@ public final class VisibilityUtil {
     }
     return false;
   }
+
   public static String packageName(@NotNull SNode node) {
     String packageName = SModelOperations.getModelName(SNodeOperations.getModel(node));
     return (packageName != null ? packageName : "");
   }
+
   public static SNode topClassifier(@NotNull SNode node) {
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last();
   }
+
   private static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
     //  check "static" accessibility here 
     if ((classifier == null)) {
@@ -76,6 +80,9 @@ public final class VisibilityUtil {
       return topClassifier(context) == topClassifier(classifier);
     }
     SNode parent = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      return true;
+    }
     if (!(isClassifierAccessible(context, parent))) {
       return false;
     }
@@ -96,7 +103,7 @@ public final class VisibilityUtil {
     }
     return false;
   }
-  private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(Object parameter_1) {
+  private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
