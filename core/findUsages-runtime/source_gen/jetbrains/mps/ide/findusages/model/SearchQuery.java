@@ -92,6 +92,7 @@ public class SearchQuery implements IExternalizeable {
     myObjectHolder.write(holderXML, project);
     element.addContent(holderXML);
   }
+
   @Override
   public final void read(Element element, Project project) throws CantLoadSomethingException {
     myScope = FindUsagesScope.load(element, project);

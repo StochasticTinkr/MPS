@@ -4,8 +4,6 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -41,7 +39,7 @@ public final class ReloadableFinder extends BaseFinder {
   }
 
   @Override
-  public void find(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
+  public void find(@NotNull SearchQuery query, @NotNull IFinder.FindCallback callback, @NotNull ProgressMonitor monitor) {
     IInterfacedFinder finder = getFinder();
     if (finder != null) {
       finder.find(query, callback, monitor);
