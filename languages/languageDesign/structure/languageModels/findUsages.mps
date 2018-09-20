@@ -984,6 +984,20 @@
     <ref role="3gKJdq" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     <node concept="2PqlIu" id="5ljwgzfTcPs" role="3gKxsI">
       <node concept="3clFbS" id="5ljwgzfTcPt" role="2VODD2">
+        <node concept="3clFbF" id="7$vLFyJGAez" role="3cqZAp">
+          <node concept="2OqwBi" id="7$vLFyJGAut" role="3clFbG">
+            <node concept="24CIHX" id="7$vLFyJGAex" role="2Oq$k0" />
+            <node concept="liA8E" id="7$vLFyJGAAT" role="2OqNvi">
+              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
+              <node concept="Xl_RD" id="7$vLFyJGAV$" role="37wK5m">
+                <property role="Xl_RC" value="ancestors" />
+              </node>
+              <node concept="3cmrfG" id="7$vLFyJGAGE" role="37wK5m">
+                <property role="3cmrfH" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="172ROKPzva0" role="3cqZAp">
           <node concept="3cpWsn" id="172ROKPzva1" role="3cpWs9">
             <property role="TrG5h" value="methodResolutionOrder" />

@@ -34,6 +34,7 @@ public class ConceptAncestors_Finder extends GeneratedFinder {
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
+      monitor.start("ancestors", 10);
       ConceptMRO methodResolutionOrder = new ConceptMRO();
       AbstractConceptWrap wrapper = AbstractConceptWrap.wrap(node);
       List<AbstractConceptWrap> linearization = methodResolutionOrder.calcLinearization(wrapper);
