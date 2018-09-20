@@ -7617,6 +7617,395 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="4fAeKISQjDi" role="13h7CS">
+      <property role="TrG5h" value="getAllSuperClassifiers" />
+      <node concept="3Tm1VV" id="4fAeKISQjDj" role="1B3o_S" />
+      <node concept="3clFbS" id="4fAeKISQjDl" role="3clF47">
+        <node concept="3cpWs8" id="4fAeKISQ7Iw" role="3cqZAp">
+          <node concept="3cpWsn" id="4fAeKISQ7Ix" role="3cpWs9">
+            <property role="TrG5h" value="seen" />
+            <node concept="3uibUv" id="4fAeKISQjEf" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+              <node concept="3Tqbb2" id="4fAeKISQjEh" role="11_B2D" />
+            </node>
+            <node concept="2ShNRf" id="4fAeKISQ7IA" role="33vP2m">
+              <node concept="2i4dXS" id="4fAeKISQ7IC" role="2ShVmc">
+                <node concept="3Tqbb2" id="4fAeKISQ7IE" role="HW$YZ" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4fAeKISQ7IH" role="3cqZAp">
+          <node concept="3cpWsn" id="4fAeKISQ7II" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="2I9FWS" id="4fAeKISQ7IJ" role="1tU5fm">
+              <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
+            </node>
+            <node concept="2ShNRf" id="4fAeKISQ7IL" role="33vP2m">
+              <node concept="2T8Vx0" id="4fAeKISQ7IV" role="2ShVmc">
+                <node concept="2I9FWS" id="4fAeKISQ7IW" role="2T96Bj">
+                  <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4fAeKISQ7Jb" role="3cqZAp">
+          <node concept="3cpWsn" id="4fAeKISQ7Jc" role="3cpWs9">
+            <property role="TrG5h" value="queue" />
+            <node concept="3O6Q9H" id="4fAeKISQ7Jd" role="1tU5fm">
+              <node concept="3Tqbb2" id="4fAeKISQ7Jf" role="3O5elw">
+                <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="4fAeKISQ7Jh" role="33vP2m">
+              <node concept="2Jqq0_" id="4fAeKISQj_A" role="2ShVmc">
+                <node concept="3Tqbb2" id="4fAeKISQj_C" role="HW$YZ">
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fAeKISQj_E" role="3cqZAp">
+          <node concept="2OqwBi" id="4fAeKISQj_G" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTrAM" role="2Oq$k0">
+              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+            </node>
+            <node concept="2Ke9KJ" id="4fAeKISQj_K" role="2OqNvi">
+              <node concept="13iPFW" id="4fAeKISQjDn" role="25WWJ7" />
+            </node>
+          </node>
+        </node>
+        <node concept="2$JKZl" id="4fAeKISQj_O" role="3cqZAp">
+          <node concept="3clFbS" id="4fAeKISQj_Q" role="2LFqv$">
+            <node concept="3cpWs8" id="4fAeKISQjA9" role="3cqZAp">
+              <node concept="3cpWsn" id="4fAeKISQjAa" role="3cpWs9">
+                <property role="TrG5h" value="qn" />
+                <node concept="3Tqbb2" id="4fAeKISQjAb" role="1tU5fm">
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+                <node concept="2OqwBi" id="4fAeKISQjAc" role="33vP2m">
+                  <node concept="37vLTw" id="3GM_nagTzWD" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+                  </node>
+                  <node concept="2Kt2Hk" id="4fAeKISQjAe" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="4fAeKISQ7J1" role="3cqZAp">
+              <node concept="2OqwBi" id="4fAeKISQ7J3" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagT$Fe" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
+                </node>
+                <node concept="TSZUe" id="4fAeKISQ7J7" role="2OqNvi">
+                  <node concept="37vLTw" id="3GM_nagTAOH" role="25WWJ7">
+                    <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="4fAeKISQjAh" role="3cqZAp">
+              <node concept="3clFbS" id="4fAeKISQjAi" role="3clFbx">
+                <node concept="3clFbJ" id="4fAeKISQjFa" role="3cqZAp">
+                  <node concept="3clFbS" id="4fAeKISQjFb" role="3clFbx">
+                    <node concept="3cpWs8" id="4fAeKISQjFm" role="3cqZAp">
+                      <node concept="3cpWsn" id="4fAeKISQjFn" role="3cpWs9">
+                        <property role="TrG5h" value="cl" />
+                        <node concept="3Tqbb2" id="4fAeKISQjFo" role="1tU5fm">
+                          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                        </node>
+                        <node concept="2OqwBi" id="4fAeKISQjFu" role="33vP2m">
+                          <node concept="2OqwBi" id="4fAeKISQjFq" role="2Oq$k0">
+                            <node concept="1PxgMI" id="4fAeKISQjFr" role="2Oq$k0">
+                              <node concept="chp4Y" id="714IaVdH1c0" role="3oSUPX">
+                                <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                              </node>
+                              <node concept="37vLTw" id="3GM_nagTAXh" role="1m5AlR">
+                                <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="4fAeKISQjFt" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="4fAeKISQjFy" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="4fAeKISQjF$" role="3cqZAp">
+                      <node concept="3clFbS" id="4fAeKISQjF_" role="3clFbx">
+                        <node concept="3clFbF" id="4fAeKISQjEw" role="3cqZAp">
+                          <node concept="2OqwBi" id="4fAeKISQjEy" role="3clFbG">
+                            <node concept="37vLTw" id="3GM_nagTyM4" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+                            </node>
+                            <node concept="2Ke9KJ" id="4fAeKISQjEA" role="2OqNvi">
+                              <node concept="37vLTw" id="3GM_nagT$Uh" role="25WWJ7">
+                                <ref role="3cqZAo" node="4fAeKISQjFn" resolve="cl" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="4fAeKISQjFD" role="3clFbw">
+                        <node concept="37vLTw" id="3GM_nagTvyA" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
+                        </node>
+                        <node concept="liA8E" id="4fAeKISQjFH" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                          <node concept="37vLTw" id="3GM_nagTx3i" role="37wK5m">
+                            <ref role="3cqZAo" node="4fAeKISQjFn" resolve="cl" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4fAeKISQjFe" role="3clFbw">
+                    <node concept="2OqwBi" id="4fAeKISQjEr" role="2Oq$k0">
+                      <node concept="1PxgMI" id="4fAeKISQjEp" role="2Oq$k0">
+                        <node concept="chp4Y" id="714IaVdH0YU" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                        </node>
+                        <node concept="37vLTw" id="3GM_nagTz0E" role="1m5AlR">
+                          <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="4fAeKISQjEv" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="4fAeKISQjFi" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="1DcWWT" id="4fAeKISQjED" role="3cqZAp">
+                  <node concept="3clFbS" id="4fAeKISQjEE" role="2LFqv$">
+                    <node concept="3cpWs8" id="4fAeKISQjFR" role="3cqZAp">
+                      <node concept="3cpWsn" id="4fAeKISQjFS" role="3cpWs9">
+                        <property role="TrG5h" value="cl" />
+                        <node concept="3Tqbb2" id="4fAeKISQjFT" role="1tU5fm">
+                          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                        </node>
+                        <node concept="2OqwBi" id="4fAeKISQjGd" role="33vP2m">
+                          <node concept="37vLTw" id="3GM_nagTBme" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4fAeKISQjEG" resolve="i" />
+                          </node>
+                          <node concept="3TrEf2" id="4fAeKISQjGh" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="4fAeKISQjG0" role="3cqZAp">
+                      <node concept="3clFbS" id="4fAeKISQjG1" role="3clFbx">
+                        <node concept="3clFbF" id="4fAeKISQjG2" role="3cqZAp">
+                          <node concept="2OqwBi" id="4fAeKISQjG3" role="3clFbG">
+                            <node concept="37vLTw" id="3GM_nagT$RA" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+                            </node>
+                            <node concept="2Ke9KJ" id="4fAeKISQjG5" role="2OqNvi">
+                              <node concept="37vLTw" id="3GM_nagT$E3" role="25WWJ7">
+                                <ref role="3cqZAo" node="4fAeKISQjFS" resolve="cl" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="4fAeKISQjG7" role="3clFbw">
+                        <node concept="37vLTw" id="3GM_nagTyD6" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
+                        </node>
+                        <node concept="liA8E" id="4fAeKISQjG9" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                          <node concept="37vLTw" id="3GM_nagTt73" role="37wK5m">
+                            <ref role="3cqZAo" node="4fAeKISQjFS" resolve="cl" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWsn" id="4fAeKISQjEG" role="1Duv9x">
+                    <property role="TrG5h" value="i" />
+                    <node concept="3Tqbb2" id="4fAeKISQjFL" role="1tU5fm">
+                      <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4fAeKISQjEL" role="1DdaDG">
+                    <node concept="1PxgMI" id="4fAeKISQjEJ" role="2Oq$k0">
+                      <node concept="chp4Y" id="714IaVdH0Tb" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTynN" role="1m5AlR">
+                        <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                      </node>
+                    </node>
+                    <node concept="3Tsc0h" id="4fAeKISQjEP" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4fAeKISQjAr" role="3clFbw">
+                <node concept="37vLTw" id="3GM_nagTyIU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                </node>
+                <node concept="1mIQ4w" id="4fAeKISQjAv" role="2OqNvi">
+                  <node concept="chp4Y" id="4fAeKISQjAx" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="4fAeKISQjDp" role="3eNLev">
+                <node concept="2OqwBi" id="4fAeKISQjDt" role="3eO9$A">
+                  <node concept="37vLTw" id="3GM_nagTrMk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                  </node>
+                  <node concept="1mIQ4w" id="4fAeKISQjDx" role="2OqNvi">
+                    <node concept="chp4Y" id="4fAeKISQjDz" role="cj9EA">
+                      <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4fAeKISQjDr" role="3eOfB_">
+                  <node concept="1DcWWT" id="4fAeKISQjGi" role="3cqZAp">
+                    <node concept="3clFbS" id="4fAeKISQjGj" role="2LFqv$">
+                      <node concept="3cpWs8" id="4fAeKISQjGk" role="3cqZAp">
+                        <node concept="3cpWsn" id="4fAeKISQjGl" role="3cpWs9">
+                          <property role="TrG5h" value="cl" />
+                          <node concept="3Tqbb2" id="4fAeKISQjGm" role="1tU5fm">
+                            <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                          </node>
+                          <node concept="2OqwBi" id="4fAeKISQjGn" role="33vP2m">
+                            <node concept="37vLTw" id="3GM_nagTxY5" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4fAeKISQjG_" resolve="i" />
+                            </node>
+                            <node concept="3TrEf2" id="4fAeKISQjGp" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="4fAeKISQjGq" role="3cqZAp">
+                        <node concept="3clFbS" id="4fAeKISQjGr" role="3clFbx">
+                          <node concept="3clFbF" id="4fAeKISQjGs" role="3cqZAp">
+                            <node concept="2OqwBi" id="4fAeKISQjGt" role="3clFbG">
+                              <node concept="37vLTw" id="3GM_nagT_Y9" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+                              </node>
+                              <node concept="2Ke9KJ" id="4fAeKISQjGv" role="2OqNvi">
+                                <node concept="37vLTw" id="3GM_nagTxVA" role="25WWJ7">
+                                  <ref role="3cqZAo" node="4fAeKISQjGl" resolve="cl" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="4fAeKISQjGx" role="3clFbw">
+                          <node concept="37vLTw" id="3GM_nagTrl$" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
+                          </node>
+                          <node concept="liA8E" id="4fAeKISQjGz" role="2OqNvi">
+                            <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                            <node concept="37vLTw" id="3GM_nagTzlL" role="37wK5m">
+                              <ref role="3cqZAo" node="4fAeKISQjGl" resolve="cl" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="4fAeKISQjG_" role="1Duv9x">
+                      <property role="TrG5h" value="i" />
+                      <node concept="3Tqbb2" id="4fAeKISQjGA" role="1tU5fm">
+                        <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4fAeKISQjGB" role="1DdaDG">
+                      <node concept="1PxgMI" id="4fAeKISQjGC" role="2Oq$k0">
+                        <node concept="chp4Y" id="714IaVdH19R" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
+                        </node>
+                        <node concept="37vLTw" id="3GM_nagTtlK" role="1m5AlR">
+                          <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
+                        </node>
+                      </node>
+                      <node concept="3Tsc0h" id="4fAeKISQjGF" role="2OqNvi">
+                        <ref role="3TtcxE" to="tpee:g7HQHFn" resolve="extendedInterface" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4fAeKISQj_S" role="2$JKZa">
+            <node concept="37vLTw" id="3GM_nagTvOC" role="2Oq$k0">
+              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="queue" />
+            </node>
+            <node concept="3GX2aA" id="4fAeKISQj_W" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6JSwfN$KRfV" role="3cqZAp">
+          <node concept="3cpWsn" id="6JSwfN$KRfW" role="3cpWs9">
+            <property role="TrG5h" value="obj" />
+            <node concept="3Tqbb2" id="6JSwfN$KRfX" role="1tU5fm">
+              <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+            </node>
+            <node concept="2c44tf" id="6JSwfN$KRfZ" role="33vP2m">
+              <node concept="3uibUv" id="6JSwfN$KRg2" role="2c44tc">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6JSwfN$KRg5" role="3cqZAp">
+          <node concept="3clFbS" id="6JSwfN$KRg6" role="3clFbx">
+            <node concept="3clFbF" id="6JSwfN$KRgs" role="3cqZAp">
+              <node concept="2OqwBi" id="6JSwfN$KRgu" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagT$_Q" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
+                </node>
+                <node concept="TSZUe" id="6JSwfN$KRgy" role="2OqNvi">
+                  <node concept="2OqwBi" id="6JSwfN$KRg_" role="25WWJ7">
+                    <node concept="37vLTw" id="3GM_nagTzsa" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6JSwfN$KRfW" resolve="obj" />
+                    </node>
+                    <node concept="3TrEf2" id="6JSwfN$KRgD" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6JSwfN$KRgh" role="3clFbw">
+            <node concept="37vLTw" id="3GM_nagTz4P" role="2Oq$k0">
+              <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
+            </node>
+            <node concept="liA8E" id="6JSwfN$KRgl" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2OqwBi" id="6JSwfN$KRgn" role="37wK5m">
+                <node concept="37vLTw" id="3GM_nagTsp$" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6JSwfN$KRfW" resolve="obj" />
+                </node>
+                <node concept="3TrEf2" id="6JSwfN$KRgr" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4fAeKISQ7IY" role="3cqZAp">
+          <node concept="37vLTw" id="3GM_nagTBjO" role="3clFbG">
+            <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
+          </node>
+        </node>
+      </node>
+      <node concept="2I9FWS" id="4fAeKISQjDm" role="3clF45">
+        <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+    </node>
     <node concept="13i0hz" id="2xreLMO8jma" role="13h7CS">
       <property role="TrG5h" value="getAllExtendedClassifiers" />
       <node concept="3Tm1VV" id="2xreLMO8jmb" role="1B3o_S" />
@@ -7664,6 +8053,18 @@
         <node concept="3clFbF" id="2xreLMO8jo$" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagT$bE" role="3clFbG">
             <ref role="3cqZAo" node="2xreLMO8jof" resolve="result" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="xRdxZ2VISI" role="lGtFl">
+        <node concept="TZ5HA" id="xRdxZ2VISJ" role="TZ5H$">
+          <node concept="1dT_AC" id="xRdxZ2VISK" role="1dT_Ay">
+            <property role="1dT_AB" value="I have no fidea why these two methods are both here" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="xRdxZ2VU5_" role="TZ5H$">
+          <node concept="1dT_AC" id="xRdxZ2VU5A" role="1dT_Ay">
+            <property role="1dT_AB" value="no time to fix" />
           </node>
         </node>
       </node>
@@ -23297,395 +23698,6 @@
         </node>
       </node>
       <node concept="17QB3L" id="2a$QO9k_z62" role="3clF45" />
-    </node>
-    <node concept="13i0hz" id="4fAeKISQjDi" role="13h7CS">
-      <property role="TrG5h" value="getAllSuperClassifiers" />
-      <node concept="3Tm1VV" id="4fAeKISQjDj" role="1B3o_S" />
-      <node concept="3clFbS" id="4fAeKISQjDl" role="3clF47">
-        <node concept="3cpWs8" id="4fAeKISQ7Iw" role="3cqZAp">
-          <node concept="3cpWsn" id="4fAeKISQ7Ix" role="3cpWs9">
-            <property role="TrG5h" value="seen" />
-            <node concept="3uibUv" id="4fAeKISQjEf" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-              <node concept="3Tqbb2" id="4fAeKISQjEh" role="11_B2D" />
-            </node>
-            <node concept="2ShNRf" id="4fAeKISQ7IA" role="33vP2m">
-              <node concept="2i4dXS" id="4fAeKISQ7IC" role="2ShVmc">
-                <node concept="3Tqbb2" id="4fAeKISQ7IE" role="HW$YZ" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4fAeKISQ7IH" role="3cqZAp">
-          <node concept="3cpWsn" id="4fAeKISQ7II" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <node concept="2I9FWS" id="4fAeKISQ7IJ" role="1tU5fm">
-              <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
-            </node>
-            <node concept="2ShNRf" id="4fAeKISQ7IL" role="33vP2m">
-              <node concept="2T8Vx0" id="4fAeKISQ7IV" role="2ShVmc">
-                <node concept="2I9FWS" id="4fAeKISQ7IW" role="2T96Bj">
-                  <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4fAeKISQ7Jb" role="3cqZAp">
-          <node concept="3cpWsn" id="4fAeKISQ7Jc" role="3cpWs9">
-            <property role="TrG5h" value="q" />
-            <node concept="3O6Q9H" id="4fAeKISQ7Jd" role="1tU5fm">
-              <node concept="3Tqbb2" id="4fAeKISQ7Jf" role="3O5elw">
-                <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="4fAeKISQ7Jh" role="33vP2m">
-              <node concept="2Jqq0_" id="4fAeKISQj_A" role="2ShVmc">
-                <node concept="3Tqbb2" id="4fAeKISQj_C" role="HW$YZ">
-                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4fAeKISQj_E" role="3cqZAp">
-          <node concept="2OqwBi" id="4fAeKISQj_G" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTrAM" role="2Oq$k0">
-              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-            </node>
-            <node concept="2Ke9KJ" id="4fAeKISQj_K" role="2OqNvi">
-              <node concept="13iPFW" id="4fAeKISQjDn" role="25WWJ7" />
-            </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="4fAeKISQj_O" role="3cqZAp">
-          <node concept="3clFbS" id="4fAeKISQj_Q" role="2LFqv$">
-            <node concept="3cpWs8" id="4fAeKISQjA9" role="3cqZAp">
-              <node concept="3cpWsn" id="4fAeKISQjAa" role="3cpWs9">
-                <property role="TrG5h" value="qn" />
-                <node concept="3Tqbb2" id="4fAeKISQjAb" role="1tU5fm">
-                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-                </node>
-                <node concept="2OqwBi" id="4fAeKISQjAc" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTzWD" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-                  </node>
-                  <node concept="2Kt2Hk" id="4fAeKISQjAe" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="4fAeKISQ7J1" role="3cqZAp">
-              <node concept="2OqwBi" id="4fAeKISQ7J3" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT$Fe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
-                </node>
-                <node concept="TSZUe" id="4fAeKISQ7J7" role="2OqNvi">
-                  <node concept="37vLTw" id="3GM_nagTAOH" role="25WWJ7">
-                    <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="4fAeKISQjAh" role="3cqZAp">
-              <node concept="3clFbS" id="4fAeKISQjAi" role="3clFbx">
-                <node concept="3clFbJ" id="4fAeKISQjFa" role="3cqZAp">
-                  <node concept="3clFbS" id="4fAeKISQjFb" role="3clFbx">
-                    <node concept="3cpWs8" id="4fAeKISQjFm" role="3cqZAp">
-                      <node concept="3cpWsn" id="4fAeKISQjFn" role="3cpWs9">
-                        <property role="TrG5h" value="cl" />
-                        <node concept="3Tqbb2" id="4fAeKISQjFo" role="1tU5fm">
-                          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-                        </node>
-                        <node concept="2OqwBi" id="4fAeKISQjFu" role="33vP2m">
-                          <node concept="2OqwBi" id="4fAeKISQjFq" role="2Oq$k0">
-                            <node concept="1PxgMI" id="4fAeKISQjFr" role="2Oq$k0">
-                              <node concept="chp4Y" id="714IaVdH1c0" role="3oSUPX">
-                                <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
-                              </node>
-                              <node concept="37vLTw" id="3GM_nagTAXh" role="1m5AlR">
-                                <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="4fAeKISQjFt" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="4fAeKISQjFy" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbJ" id="4fAeKISQjF$" role="3cqZAp">
-                      <node concept="3clFbS" id="4fAeKISQjF_" role="3clFbx">
-                        <node concept="3clFbF" id="4fAeKISQjEw" role="3cqZAp">
-                          <node concept="2OqwBi" id="4fAeKISQjEy" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagTyM4" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-                            </node>
-                            <node concept="2Ke9KJ" id="4fAeKISQjEA" role="2OqNvi">
-                              <node concept="37vLTw" id="3GM_nagT$Uh" role="25WWJ7">
-                                <ref role="3cqZAo" node="4fAeKISQjFn" resolve="cl" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="4fAeKISQjFD" role="3clFbw">
-                        <node concept="37vLTw" id="3GM_nagTvyA" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
-                        </node>
-                        <node concept="liA8E" id="4fAeKISQjFH" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                          <node concept="37vLTw" id="3GM_nagTx3i" role="37wK5m">
-                            <ref role="3cqZAo" node="4fAeKISQjFn" resolve="cl" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="4fAeKISQjFe" role="3clFbw">
-                    <node concept="2OqwBi" id="4fAeKISQjEr" role="2Oq$k0">
-                      <node concept="1PxgMI" id="4fAeKISQjEp" role="2Oq$k0">
-                        <node concept="chp4Y" id="714IaVdH0YU" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTz0E" role="1m5AlR">
-                          <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="4fAeKISQjEv" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
-                      </node>
-                    </node>
-                    <node concept="3x8VRR" id="4fAeKISQjFi" role="2OqNvi" />
-                  </node>
-                </node>
-                <node concept="1DcWWT" id="4fAeKISQjED" role="3cqZAp">
-                  <node concept="3clFbS" id="4fAeKISQjEE" role="2LFqv$">
-                    <node concept="3cpWs8" id="4fAeKISQjFR" role="3cqZAp">
-                      <node concept="3cpWsn" id="4fAeKISQjFS" role="3cpWs9">
-                        <property role="TrG5h" value="cl" />
-                        <node concept="3Tqbb2" id="4fAeKISQjFT" role="1tU5fm">
-                          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-                        </node>
-                        <node concept="2OqwBi" id="4fAeKISQjGd" role="33vP2m">
-                          <node concept="37vLTw" id="3GM_nagTBme" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4fAeKISQjEG" resolve="i" />
-                          </node>
-                          <node concept="3TrEf2" id="4fAeKISQjGh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbJ" id="4fAeKISQjG0" role="3cqZAp">
-                      <node concept="3clFbS" id="4fAeKISQjG1" role="3clFbx">
-                        <node concept="3clFbF" id="4fAeKISQjG2" role="3cqZAp">
-                          <node concept="2OqwBi" id="4fAeKISQjG3" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagT$RA" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-                            </node>
-                            <node concept="2Ke9KJ" id="4fAeKISQjG5" role="2OqNvi">
-                              <node concept="37vLTw" id="3GM_nagT$E3" role="25WWJ7">
-                                <ref role="3cqZAo" node="4fAeKISQjFS" resolve="cl" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="4fAeKISQjG7" role="3clFbw">
-                        <node concept="37vLTw" id="3GM_nagTyD6" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
-                        </node>
-                        <node concept="liA8E" id="4fAeKISQjG9" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                          <node concept="37vLTw" id="3GM_nagTt73" role="37wK5m">
-                            <ref role="3cqZAo" node="4fAeKISQjFS" resolve="cl" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWsn" id="4fAeKISQjEG" role="1Duv9x">
-                    <property role="TrG5h" value="i" />
-                    <node concept="3Tqbb2" id="4fAeKISQjFL" role="1tU5fm">
-                      <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="4fAeKISQjEL" role="1DdaDG">
-                    <node concept="1PxgMI" id="4fAeKISQjEJ" role="2Oq$k0">
-                      <node concept="chp4Y" id="714IaVdH0Tb" role="3oSUPX">
-                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTynN" role="1m5AlR">
-                        <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                      </node>
-                    </node>
-                    <node concept="3Tsc0h" id="4fAeKISQjEP" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="4fAeKISQjAr" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTyIU" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                </node>
-                <node concept="1mIQ4w" id="4fAeKISQjAv" role="2OqNvi">
-                  <node concept="chp4Y" id="4fAeKISQjAx" role="cj9EA">
-                    <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3eNFk2" id="4fAeKISQjDp" role="3eNLev">
-                <node concept="2OqwBi" id="4fAeKISQjDt" role="3eO9$A">
-                  <node concept="37vLTw" id="3GM_nagTrMk" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                  </node>
-                  <node concept="1mIQ4w" id="4fAeKISQjDx" role="2OqNvi">
-                    <node concept="chp4Y" id="4fAeKISQjDz" role="cj9EA">
-                      <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbS" id="4fAeKISQjDr" role="3eOfB_">
-                  <node concept="1DcWWT" id="4fAeKISQjGi" role="3cqZAp">
-                    <node concept="3clFbS" id="4fAeKISQjGj" role="2LFqv$">
-                      <node concept="3cpWs8" id="4fAeKISQjGk" role="3cqZAp">
-                        <node concept="3cpWsn" id="4fAeKISQjGl" role="3cpWs9">
-                          <property role="TrG5h" value="cl" />
-                          <node concept="3Tqbb2" id="4fAeKISQjGm" role="1tU5fm">
-                            <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
-                          </node>
-                          <node concept="2OqwBi" id="4fAeKISQjGn" role="33vP2m">
-                            <node concept="37vLTw" id="3GM_nagTxY5" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4fAeKISQjG_" resolve="i" />
-                            </node>
-                            <node concept="3TrEf2" id="4fAeKISQjGp" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="4fAeKISQjGq" role="3cqZAp">
-                        <node concept="3clFbS" id="4fAeKISQjGr" role="3clFbx">
-                          <node concept="3clFbF" id="4fAeKISQjGs" role="3cqZAp">
-                            <node concept="2OqwBi" id="4fAeKISQjGt" role="3clFbG">
-                              <node concept="37vLTw" id="3GM_nagT_Y9" role="2Oq$k0">
-                                <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-                              </node>
-                              <node concept="2Ke9KJ" id="4fAeKISQjGv" role="2OqNvi">
-                                <node concept="37vLTw" id="3GM_nagTxVA" role="25WWJ7">
-                                  <ref role="3cqZAo" node="4fAeKISQjGl" resolve="cl" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2OqwBi" id="4fAeKISQjGx" role="3clFbw">
-                          <node concept="37vLTw" id="3GM_nagTrl$" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
-                          </node>
-                          <node concept="liA8E" id="4fAeKISQjGz" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                            <node concept="37vLTw" id="3GM_nagTzlL" role="37wK5m">
-                              <ref role="3cqZAo" node="4fAeKISQjGl" resolve="cl" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWsn" id="4fAeKISQjG_" role="1Duv9x">
-                      <property role="TrG5h" value="i" />
-                      <node concept="3Tqbb2" id="4fAeKISQjGA" role="1tU5fm">
-                        <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="4fAeKISQjGB" role="1DdaDG">
-                      <node concept="1PxgMI" id="4fAeKISQjGC" role="2Oq$k0">
-                        <node concept="chp4Y" id="714IaVdH19R" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTtlK" role="1m5AlR">
-                          <ref role="3cqZAo" node="4fAeKISQjAa" resolve="qn" />
-                        </node>
-                      </node>
-                      <node concept="3Tsc0h" id="4fAeKISQjGF" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpee:g7HQHFn" resolve="extendedInterface" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="4fAeKISQj_S" role="2$JKZa">
-            <node concept="37vLTw" id="3GM_nagTvOC" role="2Oq$k0">
-              <ref role="3cqZAo" node="4fAeKISQ7Jc" resolve="q" />
-            </node>
-            <node concept="3GX2aA" id="4fAeKISQj_W" role="2OqNvi" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6JSwfN$KRfV" role="3cqZAp">
-          <node concept="3cpWsn" id="6JSwfN$KRfW" role="3cpWs9">
-            <property role="TrG5h" value="obj" />
-            <node concept="3Tqbb2" id="6JSwfN$KRfX" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-            </node>
-            <node concept="2c44tf" id="6JSwfN$KRfZ" role="33vP2m">
-              <node concept="3uibUv" id="6JSwfN$KRg2" role="2c44tc">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6JSwfN$KRg5" role="3cqZAp">
-          <node concept="3clFbS" id="6JSwfN$KRg6" role="3clFbx">
-            <node concept="3clFbF" id="6JSwfN$KRgs" role="3cqZAp">
-              <node concept="2OqwBi" id="6JSwfN$KRgu" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT$_Q" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
-                </node>
-                <node concept="TSZUe" id="6JSwfN$KRgy" role="2OqNvi">
-                  <node concept="2OqwBi" id="6JSwfN$KRg_" role="25WWJ7">
-                    <node concept="37vLTw" id="3GM_nagTzsa" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6JSwfN$KRfW" resolve="obj" />
-                    </node>
-                    <node concept="3TrEf2" id="6JSwfN$KRgD" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6JSwfN$KRgh" role="3clFbw">
-            <node concept="37vLTw" id="3GM_nagTz4P" role="2Oq$k0">
-              <ref role="3cqZAo" node="4fAeKISQ7Ix" resolve="seen" />
-            </node>
-            <node concept="liA8E" id="6JSwfN$KRgl" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2OqwBi" id="6JSwfN$KRgn" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTsp$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6JSwfN$KRfW" resolve="obj" />
-                </node>
-                <node concept="3TrEf2" id="6JSwfN$KRgr" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4fAeKISQ7IY" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTBjO" role="3clFbG">
-            <ref role="3cqZAo" node="4fAeKISQ7II" resolve="result" />
-          </node>
-        </node>
-      </node>
-      <node concept="2I9FWS" id="4fAeKISQjDm" role="3clF45">
-        <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
-      </node>
     </node>
     <node concept="13i0hz" id="25$0boVcoWj" role="13h7CS">
       <property role="13i0iv" value="false" />
