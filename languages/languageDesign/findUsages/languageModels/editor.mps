@@ -635,26 +635,6 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="5Xky2$htBVk" role="3EZMnx">
-        <property role="3F0ifm" value="--------------------" />
-        <ref role="1ERwB7" to="tpen:5qguV_rpt7X" resolve="Delete_Loop" />
-        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
-        <node concept="ljvvj" id="5Xky2$htBVl" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="14FcRCmLX26" role="3EZMnx">
-        <property role="3F0ifm" value="old body:" />
-      </node>
-      <node concept="3F1sOY" id="gDDdEYX" role="3EZMnx">
-        <ref role="1NtTu8" to="tp3b:gMLFqrC" resolve="bodyC" />
-        <node concept="lj46D" id="i0v2V7O" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="ljvvj" id="i0v2VrA" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
       <node concept="l2Vlx" id="5Xky2$hq8_n" role="2iSdaV" />
     </node>
   </node>

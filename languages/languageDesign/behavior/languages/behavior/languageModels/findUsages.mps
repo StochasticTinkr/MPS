@@ -175,7 +175,6 @@
       <concept id="1197386047362" name="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" flags="nn" index="39LhUk" />
       <concept id="6869265041613827495" name="jetbrains.mps.lang.findUsages.structure.OnEachNodeFoundByExpression" flags="nn" index="1ecyme">
         <child id="1237139122105344154" name="callback" index="7Ydfw" />
-        <child id="1154032183016" name="bodyC" index="2LFqv_" />
         <child id="6869265041613827496" name="queryNode" index="1ecym1" />
         <child id="6869265041613827498" name="monitor" index="1ecym3" />
         <child id="6869265041613949328" name="finders" index="1ef06T" />
@@ -258,7 +257,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbS" id="1ofoPOHOn63" role="2LFqv_" />
                     <node concept="37vLTw" id="1ofoPOHOnDz" role="1ecym1">
                       <ref role="3cqZAo" node="1ofoPOHOjXn" resolve="candidate" />
                     </node>
@@ -303,7 +301,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="1ofoPOHOjXr" role="2LFqv_" />
           <node concept="39LhUk" id="1ofoPOHOkCm" role="1ecym1" />
           <node concept="zAVLb" id="1ofoPOHOkjj" role="1ef06T">
             <ref role="2$JaeB" to="tpci:hroFk9u" resolve="NodeUsages" />
@@ -626,7 +623,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="1ofoPOHO3iF" role="2LFqv_" />
           <node concept="2OqwBi" id="1ofoPOHO6El" role="1ecym1">
             <node concept="39LhUk" id="1ofoPOHO67C" role="2Oq$k0" />
             <node concept="2qgKlT" id="1ofoPOHOa1m" role="2OqNvi">

@@ -257,7 +257,6 @@
       </concept>
       <concept id="6869265041613827495" name="jetbrains.mps.lang.findUsages.structure.OnEachNodeFoundByExpression" flags="nn" index="1ecyme">
         <child id="1237139122105344154" name="callback" index="7Ydfw" />
-        <child id="1154032183016" name="bodyC" index="2LFqv_" />
         <child id="6869265041613827497" name="queryScope" index="1ecym0" />
         <child id="6869265041613827496" name="queryNode" index="1ecym1" />
         <child id="6869265041613827498" name="monitor" index="1ecym3" />
@@ -1245,7 +1244,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="1ofoPOHNva4" role="2LFqv_" />
           <node concept="37vLTw" id="1ofoPOHNIOu" role="1ecym1">
             <ref role="3cqZAo" node="6xaYinJLQeN" resolve="myConcept" />
           </node>

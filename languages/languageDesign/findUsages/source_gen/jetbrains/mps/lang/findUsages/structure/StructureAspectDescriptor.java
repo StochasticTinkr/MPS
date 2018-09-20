@@ -290,7 +290,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)/6869265041613827495");
     b.version(2);
     b.aggregate("callback", 0x112b337a16d3e09aL).target(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16caa96eL).optional(false).ordered(true).multiple(false).origin("1237139122105344154").done();
-    b.aggregate("bodyC", 0x10cb1ada6e8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("1154032183016").done();
     b.aggregate("queryNode", 0x5f5488291166ada8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6869265041613827496").done();
     b.aggregate("queryScope", 0x5f5488291166ada9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("6869265041613827497").done();
     b.aggregate("monitor", 0x5f5488291166adaaL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("6869265041613827498").done();

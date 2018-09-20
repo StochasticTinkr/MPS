@@ -383,13 +383,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="14FcRCmME_I" resolve="OnEachFoundNodeCallback" />
     </node>
-    <node concept="1TJgyj" id="gMLFqrC" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="bodyC" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1154032183016" />
-      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
     <node concept="PrWs8" id="5Xky2$hrPyT" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>

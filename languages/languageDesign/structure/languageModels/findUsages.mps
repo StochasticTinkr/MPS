@@ -327,7 +327,6 @@
       <concept id="1197386047362" name="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" flags="nn" index="39LhUk" />
       <concept id="6869265041613827495" name="jetbrains.mps.lang.findUsages.structure.OnEachNodeFoundByExpression" flags="nn" index="1ecyme">
         <child id="1237139122105344154" name="callback" index="7Ydfw" />
-        <child id="1154032183016" name="bodyC" index="2LFqv_" />
         <child id="6869265041613827496" name="queryNode" index="1ecym1" />
         <child id="6869265041613949328" name="finders" index="1ef06T" />
       </concept>
@@ -588,7 +587,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbS" id="14FcRCn0VSJ" role="2LFqv_" />
               <node concept="37vLTw" id="14FcRCn0WSA" role="1ecym1">
                 <ref role="3cqZAo" node="hyITypJ" resolve="nextNode" />
               </node>
@@ -665,7 +663,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="5h94hAr1DVy" role="2LFqv_" />
           <node concept="39LhUk" id="5h94hAr1Fjt" role="1ecym1" />
           <node concept="zAVLb" id="5h94hAr1EDc" role="1ef06T">
             <ref role="2$JaeB" node="hroFk9u" resolve="NodeUsages" />
@@ -1222,7 +1219,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbS" id="1ofoPOHLB6w" role="2LFqv_" />
               <node concept="39LhUk" id="1ofoPOHLBc3" role="1ecym1" />
               <node concept="zAVLb" id="1ofoPOHLB9G" role="1ef06T">
                 <ref role="2$JaeB" node="htS4elS" resolve="ImplementingConcepts" />
@@ -1252,7 +1248,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbS" id="1ofoPOHLBG4" role="2LFqv_" />
                 <node concept="39LhUk" id="1ofoPOHLBMn" role="1ecym1" />
                 <node concept="zAVLb" id="1ofoPOHLBLf" role="1ef06T">
                   <ref role="2$JaeB" node="5Xky2$hnZgs" resolve="DerivedConcepts" />
@@ -2069,7 +2064,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbS" id="1ofoPOHLz6s" role="2LFqv_" />
               <node concept="37vLTw" id="1ofoPOHLz9s" role="1ecym1">
                 <ref role="3cqZAo" node="hyITlEV" resolve="nextNode" />
               </node>
@@ -2239,7 +2233,6 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3clFbS" id="1ofoPOHLwTj" role="2LFqv_" />
                               <node concept="37vLTw" id="1ofoPOHLxn7" role="1ecym1">
                                 <ref role="3cqZAo" node="7uPL$vP6HsB" resolve="conceptNode" />
                               </node>
@@ -2272,7 +2265,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbS" id="1ofoPOHLuXu" role="2LFqv_" />
                 <node concept="37vLTw" id="1ofoPOHLv8I" role="1ecym1">
                   <ref role="3cqZAo" node="1ofoPOHLtVV" resolve="derivedInterface" />
                 </node>
@@ -2282,7 +2274,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="1ofoPOHLtVZ" role="2LFqv_" />
           <node concept="39LhUk" id="1ofoPOHLusm" role="1ecym1" />
           <node concept="zAVLb" id="1ofoPOHLtZ7" role="1ef06T">
             <ref role="2$JaeB" node="htS4nKv" resolve="DerivedInterfaceConcepts" />
