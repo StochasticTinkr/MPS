@@ -66,6 +66,7 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="bzg8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.impl(MPS.Core/)" />
     <import index="ista" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.illegal(MPS.Core/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="f3o1" ref="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)" implicit="true" />
     <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
@@ -2886,7 +2887,7 @@
                     <ref role="3cqZAo" node="3o7jGk0HA7G" resolve="searchResults" />
                   </node>
                   <node concept="liA8E" id="7ssBnMszHm2" role="2OqNvi">
-                    <ref role="37wK5l" to="g4jo:J2bOg02HcH" resolve="getResultObjects" />
+                    <ref role="37wK5l" to="g4jo:6hZLf2Yo3r2" resolve="getResultObjects" />
                   </node>
                 </node>
                 <node concept="2hMVRd" id="7ssBnMszHlY" role="10QFUM">
@@ -2894,7 +2895,7 @@
                 </node>
               </node>
               <node concept="2hMVRd" id="3o7jGk0LSYc" role="1tU5fm">
-                <node concept="3Tqbb2" id="7ssBnMszEG$" role="2hN53Y" />
+                <node concept="3Tqbb2" id="2BD4QPgnguU" role="2hN53Y" />
               </node>
             </node>
           </node>
@@ -2978,6 +2979,22 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="2BD4QPgnGrk" role="3cqZAp">
+            <node concept="3cpWsn" id="2BD4QPgnGrl" role="3cpWs9">
+              <property role="TrG5h" value="searchedObjects" />
+              <node concept="2OqwBi" id="2BD4QPgnGrm" role="33vP2m">
+                <node concept="37vLTw" id="2BD4QPgnGrn" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3o7jGk0HA7G" resolve="searchResults" />
+                </node>
+                <node concept="liA8E" id="2BD4QPgnGro" role="2OqNvi">
+                  <ref role="37wK5l" to="g4jo:6hZLf2Yo3qA" resolve="getSearchedObjects" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="2BD4QPgnHEE" role="1tU5fm">
+                <ref role="3uigEE" to="b2d5:6hZLf2YmXSq" resolve="SearchedObjects" />
+              </node>
+            </node>
+          </node>
           <node concept="2Gpval" id="3o7jGk0LGn$" role="3cqZAp">
             <node concept="2GrKxI" id="3o7jGk0LGn_" role="2Gsz3X">
               <property role="TrG5h" value="node" />
@@ -2985,19 +3002,14 @@
             <node concept="3clFbS" id="3o7jGk0LGnA" role="2LFqv$">
               <node concept="3vwNmj" id="3o7jGk0LGnT" role="3cqZAp">
                 <node concept="2OqwBi" id="3o7jGk0Mtbh" role="3vwVQn">
-                  <node concept="2OqwBi" id="3o7jGk0LGnU" role="2Oq$k0">
-                    <node concept="37vLTw" id="3o7jGk0MoCN" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3o7jGk0HA7G" resolve="searchResults" />
-                    </node>
-                    <node concept="liA8E" id="3o7jGk0Msv6" role="2OqNvi">
-                      <ref role="37wK5l" to="g4jo:J2bOg02Hcu" resolve="getSearchedNodes" />
-                    </node>
-                  </node>
                   <node concept="liA8E" id="3o7jGk0MvA7" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                    <ref role="37wK5l" to="b2d5:6hZLf2YmXUc" resolve="contains" />
                     <node concept="2GrUjf" id="3o7jGk0Mw1G" role="37wK5m">
                       <ref role="2Gs0qQ" node="3o7jGk0LGn_" resolve="node" />
                     </node>
+                  </node>
+                  <node concept="37vLTw" id="2BD4QPgnMOB" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2BD4QPgnGrl" resolve="searchedObjects" />
                   </node>
                 </node>
                 <node concept="3_1$Yv" id="3o7jGk0LGnY" role="3_9lra">
@@ -3070,12 +3082,12 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="3o7jGk0MFcS" role="2GsD0m">
-              <node concept="37vLTw" id="3o7jGk0MFcT" role="2Oq$k0">
-                <ref role="3cqZAo" node="3o7jGk0HA7G" resolve="searchResults" />
+            <node concept="2OqwBi" id="2BD4QPgnkNg" role="2GsD0m">
+              <node concept="37vLTw" id="2BD4QPgnGrq" role="2Oq$k0">
+                <ref role="3cqZAo" node="2BD4QPgnGrl" resolve="searchedObjects" />
               </node>
-              <node concept="liA8E" id="3o7jGk0MFcU" role="2OqNvi">
-                <ref role="37wK5l" to="g4jo:J2bOg02Hcu" resolve="getSearchedNodes" />
+              <node concept="liA8E" id="2BD4QPgnoXS" role="2OqNvi">
+                <ref role="37wK5l" to="b2d5:6hZLf2YmXU4" resolve="getElements" />
               </node>
             </node>
           </node>

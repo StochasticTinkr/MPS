@@ -17,6 +17,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
 
 public class HeadlessRefactoringUI implements RefactoringUI {
   private List<RefactoringParticipant.Option> myOptions;
@@ -86,10 +87,11 @@ public class HeadlessRefactoringUI implements RefactoringUI {
       for (SNode result : SetSequence.fromSet(shownResults)) {
         Assert.assertTrue("SearchResult " + idString(result) + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
       }
+      SearchedObjects searchedObjects = searchResults.getSearchedObjects();
       for (SNode node : SetSequence.fromSet(mySearchedNodes)) {
-        Assert.assertTrue("SearchNode " + idString(node) + " is expected but was not shown.", searchResults.getSearchedObjects().contains(node));
+        Assert.assertTrue("SearchNode " + idString(node) + " is expected but was not shown.", searchedObjects.contains(node));
       }
-      for (Object node : searchResults.getSearchedObjects().getElements()) {
+      for (Object node : searchedObjects.getElements()) {
         Assert.assertTrue("SearchNode " + idString((SNode) node) + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains((SNode) node));
       }
       // do nothing, this in fact stops the process 
