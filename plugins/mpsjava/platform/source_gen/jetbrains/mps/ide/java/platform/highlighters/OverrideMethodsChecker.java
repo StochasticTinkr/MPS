@@ -24,7 +24,8 @@ import java.util.HashSet;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.project.GlobalScope;
@@ -32,8 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -100,9 +100,9 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
       StringBuffer tooltip = new StringBuffer();
       int messageCounter = 0;
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverriddenMethods(overridingMethod);
-      boolean overrides = SPropertyOperations.getBoolean(overridingMethod, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")) || SetSequence.fromSet(overridenMethods).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
+      boolean overrides = ((boolean) (Boolean) BHReflection.invoke0(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("isAnAbstractMethod", null, "28P2dHxCoRl"))) || SetSequence.fromSet(overridenMethods).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
         public boolean accept(Tuples._2<SNode, SNode> it) {
-          return !(SPropertyOperations.getBoolean(it._0(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")));
+          return !(((boolean) (Boolean) BHReflection.invoke0(it._0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("isAnAbstractMethod", null, "28P2dHxCoRl"))));
         }
       }).isNotEmpty();
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
@@ -163,7 +163,7 @@ public class OverrideMethodsChecker extends BaseEventProcessingEditorChecker {
       if (SPropertyOperations.getBoolean(overridenMethod, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) {
         continue;
       }
-      boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")));
+      boolean overriden = !(((boolean) (Boolean) BHReflection.invoke0(overridenMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("isAnAbstractMethod", null, "28P2dHxCoRl"))));
       StringBuffer tooltip = new StringBuffer("Is ");
       tooltip.append((overriden ? "overriden" : "implemented"));
       tooltip.append(" in");
