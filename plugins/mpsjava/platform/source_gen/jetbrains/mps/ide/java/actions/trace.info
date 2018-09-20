@@ -7824,7 +7824,7 @@
         <var name="project" id="9126454250600054886" />
       </scope>
       <unit id="9126454250600059145" at="40,63,44,5" name="jetbrains.mps.ide.java.actions.MoveStaticField$1" />
-      <unit id="3464535278051984796" at="50,97,55,5" name="jetbrains.mps.ide.java.actions.MoveStaticField$2" />
+      <unit id="3464535278051984796" at="50,84,55,5" name="jetbrains.mps.ide.java.actions.MoveStaticField$2" />
       <unit id="9126454250599950216" at="26,0,34,0" name="jetbrains.mps.ide.java.actions.MoveStaticField$MoveStaticField_extension" />
       <unit id="9088427053767113812" at="63,0,76,0" name="jetbrains.mps.ide.java.actions.MoveStaticField$NodeLocationClassifierMember" />
       <unit id="9126454250599937719" at="24,0,78,0" name="jetbrains.mps.ide.java.actions.MoveStaticField" />
@@ -7929,7 +7929,7 @@
         <var name="project" id="9126454250600099637" />
       </scope>
       <unit id="9126454250600099614" at="42,63,46,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$1" />
-      <unit id="3464535278051991433" at="52,97,57,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$2" />
+      <unit id="3464535278051991433" at="52,84,57,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$2" />
       <unit id="9126454250600099586" at="28,0,36,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$MoveStaticMethod_extension" />
       <unit id="9088427053763560875" at="62,180,89,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$3" />
       <unit id="9126454250600098577" at="26,0,93,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod" />

@@ -42,7 +42,6 @@
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
-    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
@@ -1466,13 +1465,8 @@
             <node concept="2YIFZM" id="55uxGWy8qs9" role="33vP2m">
               <ref role="1Pybhc" to="u42p:5zhJtEaVXEd" resolve="MoveNodesDialog" />
               <ref role="37wK5l" to="u42p:5zhJtEaVXFl" resolve="getSelectedObject" />
-              <node concept="2OqwBi" id="55uxGWy8qsa" role="37wK5m">
-                <node concept="37vLTw" id="55uxGWy8qsb" role="2Oq$k0">
-                  <ref role="3cqZAo" node="55uxGWy8qrJ" resolve="project" />
-                </node>
-                <node concept="liA8E" id="55uxGWy8qsc" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="55uxGWy8qsb" role="37wK5m">
+                <ref role="3cqZAo" node="55uxGWy8qrJ" resolve="project" />
               </node>
               <node concept="37vLTw" id="55uxGWy8qsd" role="37wK5m">
                 <ref role="3cqZAo" node="55uxGWy8qrS" resolve="currentModel" />

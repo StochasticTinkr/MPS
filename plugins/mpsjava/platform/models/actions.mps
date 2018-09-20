@@ -38,7 +38,6 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="2ymi" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.structureView(MPS.IDEA/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="ngmm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.view(MPS.Core/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="j9ng" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.util(MPS.Platform/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -24509,13 +24508,8 @@
             <node concept="2YIFZM" id="30kw7F06gml" role="33vP2m">
               <ref role="1Pybhc" to="u42p:5zhJtEaVXHo" resolve="MoveNodeDialog" />
               <ref role="37wK5l" to="u42p:5zhJtEaVXHL" resolve="getSelectedObject" />
-              <node concept="2OqwBi" id="30kw7F06gmm" role="37wK5m">
-                <node concept="37vLTw" id="30kw7F06gmn" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7UBFs_LRG1A" resolve="project" />
-                </node>
-                <node concept="liA8E" id="30kw7F06gmo" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="30kw7F06gmn" role="37wK5m">
+                <ref role="3cqZAo" node="7UBFs_LRG1A" resolve="project" />
               </node>
               <node concept="37vLTw" id="30kw7F06gmp" role="37wK5m">
                 <ref role="3cqZAo" node="7UBFs_LRKP6" resolve="target" />
@@ -24952,13 +24946,8 @@
             <node concept="2YIFZM" id="30kw7F06hY2" role="33vP2m">
               <ref role="37wK5l" to="u42p:5zhJtEaVXHL" resolve="getSelectedObject" />
               <ref role="1Pybhc" to="u42p:5zhJtEaVXHo" resolve="MoveNodeDialog" />
-              <node concept="2OqwBi" id="30kw7F06hY3" role="37wK5m">
-                <node concept="37vLTw" id="30kw7F06hY4" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7UBFs_LRQWP" resolve="project" />
-                </node>
-                <node concept="liA8E" id="30kw7F06hY5" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="30kw7F06hY4" role="37wK5m">
+                <ref role="3cqZAo" node="7UBFs_LRQWP" resolve="project" />
               </node>
               <node concept="37vLTw" id="30kw7F06hY6" role="37wK5m">
                 <ref role="3cqZAo" node="7UBFs_LRQWX" resolve="target" />

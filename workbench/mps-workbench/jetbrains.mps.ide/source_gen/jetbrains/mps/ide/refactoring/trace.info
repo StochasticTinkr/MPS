@@ -752,10 +752,12 @@
       <node id="3548249452606133174" at="56,5,57,18" concept="10" />
       <node id="4930770434913670928" at="60,36,61,23" concept="10" />
       <node id="4227032065680825875" at="64,52,65,18" concept="10" />
+      <node id="8369473153157668782" at="69,25,70,21" concept="4" />
       <node id="2441348466211462189" at="38,57,41,5" concept="7" />
       <node id="2441348466211483998" at="43,0,46,0" concept="8" trace="run#()V" />
       <node id="4930770434913670920" at="59,0,63,0" concept="8" trace="getComponent#()Ljavax/swing/JComponent;" />
       <node id="4227032065680790684" at="63,0,67,0" concept="8" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="8369473153157658105" at="68,0,72,0" concept="8" trace="dispose#()V" />
       <node id="2441348466211445173" at="28,0,33,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="2441348466211453018" at="33,0,38,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2441348466211465105" at="41,5,46,7" concept="4" />
@@ -769,6 +771,7 @@
       <scope id="3548249452606133161" at="54,53,55,90" />
       <scope id="4930770434913670923" at="60,36,61,23" />
       <scope id="4227032065680790688" at="64,52,65,18" />
+      <scope id="8369473153157658110" at="69,25,70,21" />
       <scope id="2441348466211445177" at="28,41,31,27">
         <var name="helper" id="2441348466211451646" />
         <var name="treeNode" id="2441348466211451812" />
@@ -781,6 +784,7 @@
       <scope id="2441348466211432693" at="22,51,26,24" />
       <scope id="4930770434913670920" at="59,0,63,0" />
       <scope id="4227032065680790684" at="63,0,67,0" />
+      <scope id="8369473153157658105" at="68,0,72,0" />
       <scope id="2441348466211445173" at="28,0,33,0">
         <var name="model" id="2441348466211450777" />
       </scope>
@@ -800,7 +804,7 @@
       </scope>
       <scope id="7012097027058891183" at="48,0,59,0" />
       <unit id="2441348466211483998" at="42,35,46,5" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$1" />
-      <unit id="7012097027058828343" at="19,0,68,0" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
+      <unit id="7012097027058828343" at="19,0,73,0" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
     </file>
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/7420671084264343427">

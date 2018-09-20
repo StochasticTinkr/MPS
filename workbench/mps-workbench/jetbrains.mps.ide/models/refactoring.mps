@@ -3993,6 +3993,30 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7gAlRPb8mur" role="jymVt" />
+    <node concept="3clFb_" id="7gAlRPb8nnT" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="dispose" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7gAlRPb8nnU" role="1B3o_S" />
+      <node concept="3cqZAl" id="7gAlRPb8nnW" role="3clF45" />
+      <node concept="3clFbS" id="7gAlRPb8nnY" role="3clF47">
+        <node concept="3clFbF" id="7gAlRPb8pYI" role="3cqZAp">
+          <node concept="2OqwBi" id="7gAlRPb8qX5" role="3clFbG">
+            <node concept="37vLTw" id="7gAlRPb8pYH" role="2Oq$k0">
+              <ref role="3cqZAo" node="3HO6DnBfcO6" resolve="myTree" />
+            </node>
+            <node concept="liA8E" id="7gAlRPb8sth" role="2OqNvi">
+              <ref role="37wK5l" to="7e8u:~MPSTree.dispose():void" resolve="dispose" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7gAlRPb8nnZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4rbk1n1vg1x">
     <property role="TrG5h" value="OptionDialog" />
