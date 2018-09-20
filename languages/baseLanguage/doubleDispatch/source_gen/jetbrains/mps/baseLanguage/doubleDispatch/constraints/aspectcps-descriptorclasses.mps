@@ -19,6 +19,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
@@ -447,44 +448,56 @@
           </node>
         </node>
         <node concept="3clFbF" id="1L" role="3cqZAp">
-          <node concept="2OqwBi" id="1N" role="3clFbG">
-            <node concept="1mIQ4w" id="1O" role="2OqNvi">
-              <node concept="chp4Y" id="1Q" role="cj9EA">
-                <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+          <node concept="22lmx$" id="1N" role="3clFbG">
+            <node concept="2OqwBi" id="1O" role="3uHU7w">
+              <node concept="37vLTw" id="1Q" role="2Oq$k0">
+                <ref role="3cqZAo" node="1H" resolve="parentNode" />
+              </node>
+              <node concept="1mIQ4w" id="1R" role="2OqNvi">
+                <node concept="chp4Y" id="1S" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:38nmGbAZc61" resolve="IncompleteMemberDeclaration" />
+                </node>
               </node>
             </node>
-            <node concept="37vLTw" id="1P" role="2Oq$k0">
-              <ref role="3cqZAo" node="1H" resolve="parentNode" />
+            <node concept="2OqwBi" id="1P" role="3uHU7B">
+              <node concept="1mIQ4w" id="1T" role="2OqNvi">
+                <node concept="chp4Y" id="1V" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="1U" role="2Oq$k0">
+                <ref role="3cqZAo" node="1H" resolve="parentNode" />
+              </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="1G" role="3clF46">
         <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="1R" role="1tU5fm">
+        <node concept="3uibUv" id="1W" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="1H" role="3clF46">
         <property role="TrG5h" value="parentNode" />
-        <node concept="3uibUv" id="1S" role="1tU5fm">
+        <node concept="3uibUv" id="1X" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="1I" role="3clF46">
         <property role="TrG5h" value="childConcept" />
-        <node concept="3uibUv" id="1T" role="1tU5fm">
+        <node concept="3uibUv" id="1Y" role="1tU5fm">
           <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
       <node concept="37vLTG" id="1J" role="3clF46">
         <property role="TrG5h" value="link" />
-        <node concept="3uibUv" id="1U" role="1tU5fm">
+        <node concept="3uibUv" id="1Z" role="1tU5fm">
           <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="39dXUE" id="1V" />
+  <node concept="39dXUE" id="20" />
 </model>
 

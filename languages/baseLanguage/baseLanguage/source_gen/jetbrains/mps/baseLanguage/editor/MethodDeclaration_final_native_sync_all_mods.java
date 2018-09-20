@@ -301,10 +301,6 @@ public class MethodDeclaration_final_native_sync_all_mods extends Transformation
         return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L, "jetbrains.mps.baseLanguage.structure.Modifier");
       }
 
-      @Override
-      protected SNode getTargetNode(TransformationMenuContext _context) {
-        return _context.getNode();
-      }
 
       @Override
       protected TransformationMenuItem createTransformationItem(final SNode targetNode, final SubstituteMenuItem item, final TransformationMenuContext _context) {

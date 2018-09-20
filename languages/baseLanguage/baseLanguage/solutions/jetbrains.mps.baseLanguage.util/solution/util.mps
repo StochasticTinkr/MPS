@@ -2344,8 +2344,6 @@
         <node concept="17QB3L" id="DxJezr2f8D" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6FltliuC6xH" role="jymVt" />
-    <node concept="2tJIrI" id="6FltliuC5Sq" role="jymVt" />
     <node concept="3Tm1VV" id="6FltliuC5it" role="1B3o_S" />
   </node>
 </model>

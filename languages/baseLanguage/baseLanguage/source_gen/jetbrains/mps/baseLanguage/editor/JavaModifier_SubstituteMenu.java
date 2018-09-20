@@ -18,9 +18,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.function.Predicate;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.stream.Collectors;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
@@ -60,7 +60,11 @@ public class JavaModifier_SubstituteMenu extends SubstituteMenuBase {
     private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
       // Simon, Alex, I need to put it in every next modifier down the hierarchy 
       // in order for the descendant modifiers to work properly (if we are using the subconcepts construction) 
-      // this is totally about the case of inclusion this submenu into a transformation menu 
+      // this is totally about the case of wrapping this substitute menu into a transformation menu -- 
+      // because of that I cannot put it simply into the constraints aspect 
+      if (!(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, "jetbrains.mps.baseLanguage.structure.IHasModifiers")))) {
+        return true;
+      }
       List<SNode> modifiers = SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, "jetbrains.mps.baseLanguage.structure.IHasModifiers")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, 0x203eeb62af522fb1L, "modifiers"));
       return ListSequence.fromList(modifiers).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

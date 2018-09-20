@@ -4395,6 +4395,9 @@
     <node concept="PrWs8" id="38nmGbAZciQ" role="PzmwI">
       <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
     </node>
+    <node concept="PrWs8" id="3$ZGCDjhBX0" role="PzmwI">
+      <ref role="PrY4T" node="20YUQaJkyY_" resolve="IHasModifiers" />
+    </node>
     <node concept="PrWs8" id="pv4FLfrrI9" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
