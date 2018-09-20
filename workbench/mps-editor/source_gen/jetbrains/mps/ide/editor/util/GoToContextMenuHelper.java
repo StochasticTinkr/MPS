@@ -127,7 +127,7 @@ public final class GoToContextMenuHelper {
           selected.navigate(true);
         }
       }
-    }).setRenderer(myRenderer).setSelectionMode(ListSelectionModel.SINGLE_SELECTION).setNamerForFiltering(myNamerForFiltering).setAutoselectOnMouseMove(true).createPopup();
+    }).setRequestFocus(true).setRenderer(myRenderer).setSelectionMode(ListSelectionModel.SINGLE_SELECTION).setNamerForFiltering(myNamerForFiltering).setAutoselectOnMouseMove(true).createPopup();
     return new GoToContextMenuHelper.ContextMenuComposite(popup, list, listModel);
   }
 

@@ -116,7 +116,7 @@ public class SearchResults<T> implements UsagesList {
   }
 
   @NotNull
-  public SearchResults<?> removeDuplicates() {
-    return new SearchResults(getSearchedNodes(), mySearchResults.stream().distinct().collect(Collectors.toList()));
+  public SearchResults<T> removeDuplicates() {
+    return new SearchResults<T>(getSearchedNodes(), (List<SearchResult<T>>) mySearchResults.stream().distinct().collect(Collectors.toList()));
   }
 }

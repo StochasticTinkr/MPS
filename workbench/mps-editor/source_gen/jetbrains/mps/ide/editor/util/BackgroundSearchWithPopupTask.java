@@ -87,15 +87,14 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
     synchronized (LOCK) {
       newData = new ArrayList<NodeNavigatable>(myCurrentResults);
     }
+    List<NodeNavigatable> showingItems = myListModel.getItems();
+    newData.removeAll(showingItems);
     // fix comparator needs read, could transfer the name into a NamedNodeNavigatable composite instead 
     mySettings.myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (NodeNavigatable newElement : newData) {
-          SortedListModel<NodeNavigatable> listModel = myListModel;
-          if (!(listModel.getItems().contains(newElement))) {
-            listModel.add(newElement);
-          }
-        }
+        Object selected = myList.getSelectedValue();
+        myListModel.addAll(newData);
+        myList.setSelectedValue(selected, true);
       }
     });
     String newCaption = mySettings.captionFun.caption(SetSequence.fromSet(myCurrentResults).count(), myFinished);

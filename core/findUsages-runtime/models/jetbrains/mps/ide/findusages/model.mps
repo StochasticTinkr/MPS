@@ -2089,27 +2089,41 @@
               <node concept="1rXfSq" id="6hZLf2Yo6B2" role="37wK5m">
                 <ref role="37wK5l" node="6hZLf2Yo3qI" resolve="getSearchedNodes" />
               </node>
-              <node concept="2OqwBi" id="6hZLf2Yo6B3" role="37wK5m">
-                <node concept="2OqwBi" id="6hZLf2Yo6B4" role="2Oq$k0">
-                  <node concept="2OqwBi" id="6hZLf2Yok5O" role="2Oq$k0">
-                    <node concept="37vLTw" id="6hZLf2Yok5N" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6hZLf2Yo3oI" resolve="mySearchResults" />
+              <node concept="10QFUN" id="1D0QuRYm4Cv" role="37wK5m">
+                <node concept="3uibUv" id="1D0QuRYm8UF" role="10QFUM">
+                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                  <node concept="3uibUv" id="1D0QuRYmbqF" role="11_B2D">
+                    <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
+                    <node concept="16syzq" id="1D0QuRYmbvp" role="11_B2D">
+                      <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
                     </node>
-                    <node concept="liA8E" id="6hZLf2Yok5P" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6hZLf2Yo6B6" role="2OqNvi">
-                    <ref role="37wK5l" to="1ctc:~Stream.distinct():java.util.stream.Stream" resolve="distinct" />
                   </node>
                 </node>
-                <node concept="liA8E" id="6hZLf2Yo6B7" role="2OqNvi">
-                  <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
-                  <node concept="2YIFZM" id="6hZLf2YokDq" role="37wK5m">
-                    <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
-                    <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
+                <node concept="2OqwBi" id="6hZLf2Yo6B3" role="10QFUP">
+                  <node concept="2OqwBi" id="6hZLf2Yo6B4" role="2Oq$k0">
+                    <node concept="2OqwBi" id="6hZLf2Yok5O" role="2Oq$k0">
+                      <node concept="37vLTw" id="6hZLf2Yok5N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6hZLf2Yo3oI" resolve="mySearchResults" />
+                      </node>
+                      <node concept="liA8E" id="6hZLf2Yok5P" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6hZLf2Yo6B6" role="2OqNvi">
+                      <ref role="37wK5l" to="1ctc:~Stream.distinct():java.util.stream.Stream" resolve="distinct" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6hZLf2Yo6B7" role="2OqNvi">
+                    <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
+                    <node concept="2YIFZM" id="6hZLf2YokDq" role="37wK5m">
+                      <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
+                      <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
+                    </node>
                   </node>
                 </node>
+              </node>
+              <node concept="16syzq" id="1D0QuRYm1wu" role="1pMfVU">
+                <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
               </node>
             </node>
           </node>
@@ -2118,7 +2132,9 @@
       <node concept="3Tm1VV" id="6hZLf2Yo3tm" role="1B3o_S" />
       <node concept="3uibUv" id="6hZLf2Yo3tn" role="3clF45">
         <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
-        <node concept="3qTvmN" id="6hZLf2Yo3to" role="11_B2D" />
+        <node concept="16syzq" id="1D0QuRYlXuN" role="11_B2D">
+          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="J2bOg02HbI" role="1B3o_S" />

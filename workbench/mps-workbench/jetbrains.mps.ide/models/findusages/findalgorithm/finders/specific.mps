@@ -828,12 +828,27 @@
                   </node>
                 </node>
                 <node concept="3clFbF" id="6hha$XdHbMY" role="3cqZAp">
-                  <node concept="2OqwBi" id="6hha$XdHbN0" role="3clFbG">
-                    <node concept="37vLTw" id="3GM_nagTAtA" role="2Oq$k0">
+                  <node concept="37vLTI" id="1D0QuRYlSF6" role="3clFbG">
+                    <node concept="37vLTw" id="1D0QuRYlSjB" role="37vLTJ">
                       <ref role="3cqZAo" node="6hha$XdHbNA" resolve="results" />
                     </node>
-                    <node concept="liA8E" id="6hha$XdHbN4" role="2OqNvi">
-                      <ref role="37wK5l" to="9erk:~SearchResults.removeDuplicates():jetbrains.mps.ide.findusages.model.SearchResults" resolve="removeDuplicates" />
+                    <node concept="1eOMI4" id="1D0QuRYmurw" role="37vLTx">
+                      <node concept="10QFUN" id="1D0QuRYmurt" role="1eOMHV">
+                        <node concept="3uibUv" id="1D0QuRYmuCN" role="10QFUM">
+                          <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />
+                          <node concept="3uibUv" id="1D0QuRYmuPg" role="11_B2D">
+                            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="6hha$XdHbN0" role="10QFUP">
+                          <node concept="37vLTw" id="3GM_nagTAtA" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6hha$XdHbNA" resolve="results" />
+                          </node>
+                          <node concept="liA8E" id="6hha$XdHbN4" role="2OqNvi">
+                            <ref role="37wK5l" to="9erk:~SearchResults.removeDuplicates():jetbrains.mps.ide.findusages.model.SearchResults" resolve="removeDuplicates" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -891,6 +906,9 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S6pK" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="1D0QuRYml$l" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3uibUv" id="1Fz6CCofBaQ" role="1zkMxy">
