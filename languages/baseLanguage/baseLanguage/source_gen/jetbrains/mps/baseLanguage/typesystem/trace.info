@@ -22362,37 +22362,51 @@
       <node id="6640766779591088702" at="27,383,28,345" concept="6" />
       <node id="6640766779591279032" at="28,345,29,316" concept="6" />
       <node id="6640766779591319222" at="29,316,30,335" concept="6" />
-      <node id="6640766779591362306" at="30,335,31,328" concept="6" />
-      <node id="6640766779596327772" at="33,35,34,206" concept="12" />
-      <node id="6640766779591423984" at="34,206,35,176" concept="6" />
-      <node id="6640766779593924127" at="37,7,38,37" concept="6" />
+      <node id="3653081518534618697" at="32,393,33,169" concept="6" />
+      <node id="3653081518537203389" at="33,169,34,343" concept="12" />
+      <node id="3653081518534673586" at="34,343,35,326" concept="6" />
+      <node id="3653081518537206884" at="35,326,36,232" concept="6" />
+      <node id="3653081518534836975" at="36,232,37,56" concept="6" />
+      <node id="3653081518534841020" at="37,56,38,15" concept="13" />
+      <node id="6640766779591362306" at="40,12,41,330" concept="6" />
+      <node id="6640766779596327772" at="44,35,45,206" concept="12" />
+      <node id="6640766779591423984" at="45,206,46,176" concept="6" />
+      <node id="6640766779593924127" at="48,7,49,37" concept="6" />
+      <node id="3653081518534471125" at="40,10,42,5" concept="1" />
       <node id="6640766779592686124" at="18,0,21,0" concept="3" trace="ConvertFieldToLocalVariable_QuickFix#()V" />
       <node id="6640766779592686124" at="21,0,24,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="6640766779591423793" at="33,0,37,0" concept="11" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6640766779591413322" at="31,328,37,7" concept="6" />
-      <node id="6640766779592686124" at="24,0,40,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6640766779591423793" at="44,0,48,0" concept="11" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6640766779591413322" at="42,5,48,7" concept="6" />
+      <node id="3653081518534472193" at="31,348,39,7" concept="10" />
+      <node id="3653081518534220731" at="30,335,42,5" concept="10" />
+      <node id="6640766779592686124" at="24,0,51,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6640766779592686124" at="18,49,19,132" />
       <scope id="6640766779592699628" at="21,44,22,45" />
-      <scope id="6640766779591423794" at="33,35,35,176">
+      <scope id="3653081518534471126" at="40,12,41,330" />
+      <scope id="6640766779591423794" at="44,35,46,176">
         <var name="ref" id="6640766779596327773" />
       </scope>
       <scope id="6640766779592686124" at="18,0,21,0" />
       <scope id="6640766779592686124" at="21,0,24,0">
         <var name="node" id="6640766779592686124" />
       </scope>
-      <scope id="6640766779591423793" at="33,0,37,0">
+      <scope id="6640766779591423793" at="44,0,48,0">
         <var name="it" id="6640766779591423793" />
       </scope>
-      <scope id="6640766779592686126" at="24,35,38,37">
+      <scope id="3653081518534472195" at="32,393,38,15">
+        <var name="assignment" id="3653081518537203390" />
+      </scope>
+      <scope id="3653081518534220733" at="31,348,39,7" />
+      <scope id="6640766779592686126" at="24,35,49,37">
         <var name="var" id="6640766779597634916" />
         <var name="varStmd" id="6640766779591230302" />
         <var name="variableDeclaration" id="6640766779592720135" />
       </scope>
-      <scope id="6640766779592686124" at="24,0,40,0">
+      <scope id="6640766779592686124" at="24,0,51,0">
         <var name="node" id="6640766779592686124" />
       </scope>
-      <unit id="6640766779591423793" at="32,122,37,5" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix$1" />
-      <unit id="6640766779592686124" at="17,0,41,0" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix" />
+      <unit id="6640766779591423793" at="43,122,48,5" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix$1" />
+      <unit id="6640766779592686124" at="17,0,52,0" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6640766779604081241">
