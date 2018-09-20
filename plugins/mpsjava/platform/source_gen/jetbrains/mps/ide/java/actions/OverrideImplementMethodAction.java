@@ -34,9 +34,9 @@ public class OverrideImplementMethodAction {
 
   public void run() {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
-    final SNode contextClass = mah.runReadAction(new Computable<SNode>() {
+    final SNode contextClassifier = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
       }
     });
     final SNode contextMember = mah.runReadAction(new Computable<SNode>() {
@@ -47,11 +47,11 @@ public class OverrideImplementMethodAction {
     final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {
-        List<SNode> methodsToImplementAndOverride = ((List<SNode>) BHReflection.invoke0(contextClass, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), SMethodTrimmedId.create("getMethodsToImplement", null, "4GM03FJm5q2")));
+        List<SNode> methodsToImplementAndOverride = ((List<SNode>) BHReflection.invoke0(contextClassifier, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), SMethodTrimmedId.create("getMethodsToImplement", null, "4GM03FJm5q2")));
         if (myIsOverride) {
-          ListSequence.fromList(methodsToImplementAndOverride).addSequence(ListSequence.fromList(((List<SNode>) BHReflection.invoke0(contextClass, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), SMethodTrimmedId.create("getMethodsToOverride", null, "4GM03FJm3zL")))));
+          ListSequence.fromList(methodsToImplementAndOverride).addSequence(ListSequence.fromList(((List<SNode>) BHReflection.invoke0(contextClassifier, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), SMethodTrimmedId.create("getMethodsToOverride", null, "4GM03FJm3zL")))));
         }
-        return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClass, methodsToImplementAndOverride));
+        return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClassifier, methodsToImplementAndOverride));
       }
     });
 
@@ -72,7 +72,7 @@ public class OverrideImplementMethodAction {
             }
           }).toListSequence();
 
-          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsHelper(myProject, contextClass, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
+          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsHelper(myProject, contextClassifier, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
           List<SNode> insertedMethods = helper.insertMethods(selection);
           if (insertedMethods.isEmpty()) {
             return;

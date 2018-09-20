@@ -37,6 +37,7 @@ public class OverrideImplementMethodsHelper {
   private boolean myRemoveAttributes;
   private boolean myInsertOverride;
   private boolean myNeedReturnKW;
+
   public OverrideImplementMethodsHelper(Project project, SNode target, SNode contextMember, boolean removeAttributes, boolean insertOverride, boolean needReturnKW) {
     this.myProject = project;
     this.myClassConcept = target;
@@ -45,6 +46,7 @@ public class OverrideImplementMethodsHelper {
     this.myInsertOverride = insertOverride;
     this.myNeedReturnKW = needReturnKW;
   }
+
   public List<SNode> insertMethods(List<SNode> baseMethods) {
     int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getChildren(myClassConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
@@ -64,6 +66,7 @@ public class OverrideImplementMethodsHelper {
     }
     return result;
   }
+
   /*package*/ void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModel(SNodeOperations.getModel(baseMethod))) {
       // we only need to find good names for parameters, if they are cryptic e.g. java_sourcestubs deliver proper names 
@@ -88,33 +91,33 @@ public class OverrideImplementMethodsHelper {
         }
       }
       if (isNeedAddAnnotation) {
-        ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).addElement(_quotation_createNode_tfz3o4_a0a0a2a2a8());
+        ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).addElement(_quotation_createNode_tfz3o4_a0a0a2a2a11());
       }
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return _quotation_createNode_tfz3o4_a0a0a0a4a8(it);
+        return _quotation_createNode_tfz3o4_a0a0a0a4a11(it);
       }
     });
     if (SNodeOperations.isInstanceOf(baseMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
-      boolean isInterfaceMethod = SNodeOperations.isInstanceOf(SNodeOperations.getParent(baseMethod), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || SPropertyOperations.getBoolean(SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+      boolean isInterfaceMethod = ((boolean) (Boolean) BHReflection.invoke0(SNodeOperations.cast(baseMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("isAnAbstractMethod", null, "28P2dHxCoRl")));
       SNode defaultExpr;
       if (isInterfaceMethod) {
         defaultExpr = ((SNode) BHReflection.invoke0(SLinkOperations.getTarget(baseMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), SMethodTrimmedId.create("createDefaultTypeExpression", null, "2UvJdVpqUA4")));
       } else {
-        defaultExpr = _quotation_createNode_tfz3o4_a0a0a2a5a8(baseMethod, Sequence.fromIterable(paramList).toListSequence());
+        defaultExpr = _quotation_createNode_tfz3o4_a0a0a2a5a11(baseMethod, Sequence.fromIterable(paramList).toListSequence());
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         if (!(isInterfaceMethod)) {
-          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(_quotation_createNode_tfz3o4_a0a0a0a3a5a8(defaultExpr));
+          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(_quotation_createNode_tfz3o4_a0a0a0a3a5a11(defaultExpr));
         }
       } else {
         ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(getReturnStatement(defaultExpr));
       }
     } else {
       if (SNodeOperations.isInstanceOf(baseMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
-        SNode superConstructor = _quotation_createNode_tfz3o4_a0a0a0a5a8(Sequence.fromIterable(paramList).toListSequence());
+        SNode superConstructor = _quotation_createNode_tfz3o4_a0a0a0a5a11(Sequence.fromIterable(paramList).toListSequence());
         SLinkOperations.setTarget(superConstructor, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), baseMethod);
         ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(superConstructor);
       }
@@ -127,11 +130,12 @@ public class OverrideImplementMethodsHelper {
     }
 
     if (myNeedReturnKW) {
-      return _quotation_createNode_tfz3o4_a0a2a01(returnExpr);
+      return _quotation_createNode_tfz3o4_a0a2a31(returnExpr);
     } else {
-      return _quotation_createNode_tfz3o4_a0a0c0k(returnExpr);
+      return _quotation_createNode_tfz3o4_a0a0c0n(returnExpr);
     }
   }
+
   private void removeAttributes(SNode node) {
     if (SNodeOperations.isAttribute(node)) {
       SNodeOperations.deleteNode(node);
@@ -141,6 +145,7 @@ public class OverrideImplementMethodsHelper {
       }
     }
   }
+
   private void setVariableNames(SNode node, Map<String, Integer> usedNames) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       SNode variable = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
@@ -168,21 +173,21 @@ public class OverrideImplementMethodsHelper {
       setVariableNames(child, usedNames);
     }
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0a2a2a8() {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a2a2a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x114a6b4ccabL, "AnnotationInstance"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Override")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0a0a4a8(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a0a4a11(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c77f1e98L, "VariableReference"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0a2a5a8(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a2a5a11(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -196,7 +201,7 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0a0a3a5a8(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a0a3a5a11(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -207,7 +212,7 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a8(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a11(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -221,7 +226,7 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a2a01(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a2a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -232,7 +237,7 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_tfz3o4_a0a0c0k(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0c0n(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

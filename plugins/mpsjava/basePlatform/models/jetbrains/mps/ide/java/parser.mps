@@ -2719,7 +2719,6 @@
         <node concept="3cpWs8" id="7Vq2yb0g8mv" role="3cqZAp">
           <node concept="3cpWsn" id="7Vq2yb0g8mw" role="3cpWs9">
             <property role="TrG5h" value="fDecl" />
-            <node concept="10Nm6u" id="3Pe5uytQPDJ" role="33vP2m" />
             <node concept="3Tqbb2" id="7Vq2yb0g8mx" role="1tU5fm">
               <ref role="ehGHo" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
             </node>
