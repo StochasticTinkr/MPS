@@ -297,7 +297,7 @@ public class ASTConverter {
       return null;
     }
 
-    SNode fDecl = null;
+    SNode fDecl;
 
     if (flagSet(f.modifiers, ClassFileConstants.AccStatic) || SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       // interfaces in java can have fields not declared as static, but they are static 
