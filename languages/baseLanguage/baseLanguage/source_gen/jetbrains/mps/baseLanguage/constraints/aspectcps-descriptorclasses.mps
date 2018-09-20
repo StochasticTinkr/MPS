@@ -7652,8 +7652,7 @@
   <node concept="312cEu" id="FF">
     <property role="TrG5h" value="ConstraintsUtil" />
     <node concept="3Tm1VV" id="FG" role="1B3o_S" />
-    <node concept="2tJIrI" id="FH" role="jymVt" />
-    <node concept="2YIFZL" id="FI" role="jymVt">
+    <node concept="2YIFZL" id="FH" role="jymVt">
       <property role="TrG5h" value="isInNonStaticClasssifierContext" />
       <node concept="10P_77" id="FK" role="3clF45" />
       <node concept="3Tm1VV" id="FL" role="1B3o_S" />
@@ -7723,6 +7722,7 @@
         <node concept="3Tqbb2" id="Gf" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="FI" role="jymVt" />
     <node concept="2YIFZL" id="FJ" role="jymVt">
       <property role="TrG5h" value="isInsideOfClassifier" />
       <node concept="10P_77" id="Gg" role="3clF45" />
@@ -20934,7 +20934,7 @@
       <node concept="3clFbS" id="1UU" role="3clF47">
         <node concept="3clFbF" id="1UZ" role="3cqZAp">
           <node concept="2YIFZM" id="1V0" role="3clFbG">
-            <ref role="37wK5l" node="FI" resolve="isInNonStaticClasssifierContext" />
+            <ref role="37wK5l" node="FH" resolve="isInNonStaticClasssifierContext" />
             <ref role="1Pybhc" node="FF" resolve="ConstraintsUtil" />
             <node concept="37vLTw" id="1V1" role="37wK5m">
               <ref role="3cqZAo" node="1UW" resolve="parentNode" />
@@ -21850,7 +21850,7 @@
       <node concept="3clFbS" id="20l" role="3clF47">
         <node concept="3clFbF" id="20q" role="3cqZAp">
           <node concept="2YIFZM" id="20r" role="3clFbG">
-            <ref role="37wK5l" node="FI" resolve="isInNonStaticClasssifierContext" />
+            <ref role="37wK5l" node="FH" resolve="isInNonStaticClasssifierContext" />
             <ref role="1Pybhc" node="FF" resolve="ConstraintsUtil" />
             <node concept="37vLTw" id="20s" role="37wK5m">
               <ref role="3cqZAo" node="20n" resolve="parentNode" />

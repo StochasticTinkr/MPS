@@ -2783,7 +2783,6 @@
   <node concept="312cEu" id="1LqCkvsb8hT">
     <property role="TrG5h" value="ConstraintsUtil" />
     <node concept="3Tm1VV" id="1LqCkvsb8hU" role="1B3o_S" />
-    <node concept="2tJIrI" id="2uigQkX2qEa" role="jymVt" />
     <node concept="2YIFZL" id="1LqCkvsb8i0" role="jymVt">
       <property role="TrG5h" value="isInNonStaticClasssifierContext" />
       <node concept="10P_77" id="1LqCkvsb8i4" role="3clF45" />
@@ -2854,6 +2853,7 @@
         <node concept="3Tqbb2" id="1LqCkvsb8i6" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6zL3kooTsnD" role="jymVt" />
     <node concept="2YIFZL" id="1LqCkvsb8ie" role="jymVt">
       <property role="TrG5h" value="isInsideOfClassifier" />
       <node concept="10P_77" id="1LqCkvsb8ii" role="3clF45" />

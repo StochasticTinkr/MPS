@@ -274,6 +274,7 @@
         <child id="5948027493682790175" name="preProcessor" index="21GTLy" />
         <child id="5948027493682790174" name="postProcessor" index="21GTLz" />
       </concept>
+      <concept id="5948027493682405480" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal" flags="nn" index="21Iscl" />
       <concept id="5948027493682405428" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess" flags="nn" index="21Isd9" />
       <concept id="5948027493682321734" name="jetbrains.mps.lang.actions.structure.CopyPreProcessor" flags="ng" index="21IFCV">
         <reference id="5948027493682346893" name="concept" index="21IHzK" />
@@ -6465,6 +6466,64 @@
                 <ref role="3cqZAo" node="3Zg$dTLuqqD" resolve="qualifiedReference" />
               </node>
               <node concept="3x8VRR" id="3Zg$dTLuqt4" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="21IFCV" id="1j7jIZEhbzf" role="21GTLy">
+      <ref role="21IHzK" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+      <node concept="21IHzy" id="1j7jIZEhbzg" role="21ICi$">
+        <node concept="3clFbS" id="1j7jIZEhbzh" role="2VODD2">
+          <node concept="3cpWs8" id="1j7jIZEhcFw" role="3cqZAp">
+            <node concept="3cpWsn" id="1j7jIZEhcFx" role="3cpWs9">
+              <property role="TrG5h" value="methodParent" />
+              <node concept="3Tqbb2" id="1j7jIZEhcFt" role="1tU5fm" />
+              <node concept="2OqwBi" id="1j7jIZEhcFy" role="33vP2m">
+                <node concept="21Iscl" id="1j7jIZEhcFz" role="2Oq$k0" />
+                <node concept="1mfA1w" id="1j7jIZEhcF$" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="1j7jIZEhbzE" role="3cqZAp">
+            <node concept="2OqwBi" id="1j7jIZEhcNQ" role="3clFbw">
+              <node concept="37vLTw" id="1j7jIZEhcF_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1j7jIZEhcFx" resolve="methodParent" />
+              </node>
+              <node concept="1mIQ4w" id="1j7jIZEhcTf" role="2OqNvi">
+                <node concept="chp4Y" id="1j7jIZEhcTk" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="1j7jIZEhbzG" role="3clFbx">
+              <node concept="3clFbJ" id="1j7jIZEhcTn" role="3cqZAp">
+                <node concept="2OqwBi" id="1j7jIZEhd4J" role="3clFbw">
+                  <node concept="37vLTw" id="1j7jIZEhcTt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1j7jIZEhcFx" resolve="methodParent" />
+                  </node>
+                  <node concept="1mIQ4w" id="1j7jIZEhda8" role="2OqNvi">
+                    <node concept="chp4Y" id="1j7jIZEhdad" role="cj9EA">
+                      <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="1j7jIZEhcTp" role="3clFbx">
+                  <node concept="3clFbF" id="1j7jIZEhdah" role="3cqZAp">
+                    <node concept="37vLTI" id="1j7jIZEhexH" role="3clFbG">
+                      <node concept="3clFbT" id="1j7jIZEhey7" role="37vLTx">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="2OqwBi" id="1j7jIZEhd$o" role="37vLTJ">
+                        <node concept="21Isd9" id="1j7jIZEhdag" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="1j7jIZEheg6" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

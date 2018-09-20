@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 
 public class ConstraintsUtil {
-
   public static boolean isInNonStaticClasssifierContext(SNode node) {
     if (!(isInsideOfClassifier(node))) {
       return false;
@@ -21,6 +20,7 @@ public class ConstraintsUtil {
       }
     }).isNotEmpty();
   }
+
   public static boolean isInsideOfClassifier(SNode node) {
     return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false) != null);
   }
