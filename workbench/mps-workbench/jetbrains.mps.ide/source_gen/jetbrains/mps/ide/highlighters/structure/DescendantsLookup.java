@@ -5,6 +5,7 @@ package jetbrains.mps.ide.highlighters.structure;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -27,10 +28,12 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
   private final SNode myConcept;
   private final int myMaxResultsToCollect;
   private final SearchScope myScope;
+  private final EditorMessageOwner myOwner;
 
-  public DescendantsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode concept, int maxResultsToCollect) {
+  public DescendantsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode concept, EditorMessageOwner owner, int maxResultsToCollect) {
     myCancellable = cancellable;
     myScope = scope;
+    myOwner = owner;
     myConcept = concept;
     myMaxResultsToCollect = maxResultsToCollect;
   }
@@ -42,12 +45,12 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
     }
     Set<SNode> overrides = findDescendantsOverrides(myCancellable);
     if (SetSequence.fromSet(overrides).count() > myMaxResultsToCollect) {
-      return new ConceptHasSubconceptsEditorMessage(myConcept, null, null);
+      return new ConceptHasSubconceptsEditorMessage(myConcept, null, myOwner);
     } else {
       if (SetSequence.fromSet(overrides).isEmpty()) {
         return null;
       }
-      return new ConceptHasSubconceptsEditorMessage(myConcept, SetSequence.fromSet(overrides).toListSequence(), null);
+      return new ConceptHasSubconceptsEditorMessage(myConcept, SetSequence.fromSet(overrides).toListSequence(), myOwner);
     }
   }
 

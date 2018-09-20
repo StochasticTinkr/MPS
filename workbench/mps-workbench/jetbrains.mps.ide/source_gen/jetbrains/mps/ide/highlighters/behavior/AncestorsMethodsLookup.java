@@ -5,6 +5,7 @@ package jetbrains.mps.ide.highlighters.behavior;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -28,11 +29,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   private final SNode myBehavior;
   private final int myMaxResultsToCollect;
   private final SearchScope myScope;
+  private final EditorMessageOwner myOwner;
 
-  public AncestorsMethodsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode behavior, int maxResultsToCollect) {
+  public AncestorsMethodsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode behavior, EditorMessageOwner owner, int maxResultsToCollect) {
     myCancellable = cancellable;
     myScope = scope;
     myBehavior = behavior;
+    myOwner = owner;
     myMaxResultsToCollect = maxResultsToCollect;
   }
 
@@ -58,12 +61,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     Set<SNode> ancestors = new LinkedHashSet<SNode>();
     addAncestorsMethods(myCancellable, method, ancestors);
     if (SetSequence.fromSet(ancestors).count() > myMaxResultsToCollect) {
-      return new MethodOverridesEditorMessage(method, null, null);
+      return new MethodOverridesEditorMessage(method, null, myOwner);
     } else {
       if (SetSequence.fromSet(ancestors).isEmpty()) {
         return null;
       }
-      return new MethodOverridesEditorMessage(method, SetSequence.fromSet(ancestors).toListSequence(), null);
+      return new MethodOverridesEditorMessage(method, SetSequence.fromSet(ancestors).toListSequence(), myOwner);
     }
   }
 

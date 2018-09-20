@@ -77,6 +77,7 @@
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -902,6 +903,16 @@
         <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
       </node>
     </node>
+    <node concept="312cEg" id="31TiiQ4APo0" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myOwner" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="31TiiQ4ANjY" role="1B3o_S" />
+      <node concept="3uibUv" id="31TiiQ4APnL" role="1tU5fm">
+        <ref role="3uigEE" to="kpve:~EditorMessageOwner" resolve="EditorMessageOwner" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6xaYinJLQeQ" role="jymVt" />
     <node concept="3clFbW" id="6xaYinJLQeR" role="jymVt">
       <node concept="3cqZAl" id="6xaYinJLQeS" role="3clF45" />
@@ -924,6 +935,16 @@
             </node>
             <node concept="37vLTw" id="6xaYinJMmYD" role="37vLTJ">
               <ref role="3cqZAo" node="6xaYinJMmIv" resolve="myScope" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="31TiiQ4AQsn" role="3cqZAp">
+          <node concept="37vLTI" id="31TiiQ4AQHF" role="3clFbG">
+            <node concept="37vLTw" id="31TiiQ4AQPR" role="37vLTx">
+              <ref role="3cqZAo" node="31TiiQ4ALPC" resolve="owner" />
+            </node>
+            <node concept="37vLTw" id="31TiiQ4AQsl" role="37vLTJ">
+              <ref role="3cqZAo" node="31TiiQ4APo0" resolve="myOwner" />
             </node>
           </node>
         </node>
@@ -973,6 +994,12 @@
         </node>
         <node concept="2AHcQZ" id="6xaYinJLQL4" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="31TiiQ4ALPC" role="3clF46">
+        <property role="TrG5h" value="owner" />
+        <node concept="3uibUv" id="31TiiQ4AM89" role="1tU5fm">
+          <ref role="3uigEE" to="kpve:~EditorMessageOwner" resolve="EditorMessageOwner" />
         </node>
       </node>
       <node concept="37vLTG" id="6xaYinJLQL6" role="3clF46">
@@ -1028,7 +1055,9 @@
                     <ref role="3cqZAo" node="6xaYinJLQeN" resolve="myConcept" />
                   </node>
                   <node concept="10Nm6u" id="6xaYinJO$as" role="37wK5m" />
-                  <node concept="10Nm6u" id="6xaYinJO$at" role="37wK5m" />
+                  <node concept="37vLTw" id="31TiiQ4AQUP" role="37wK5m">
+                    <ref role="3cqZAo" node="31TiiQ4APo0" resolve="myOwner" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1072,7 +1101,9 @@
                       </node>
                       <node concept="ANE8D" id="6xaYinJO$aF" role="2OqNvi" />
                     </node>
-                    <node concept="10Nm6u" id="6xaYinJO$aG" role="37wK5m" />
+                    <node concept="37vLTw" id="31TiiQ4AS2z" role="37wK5m">
+                      <ref role="3cqZAo" node="31TiiQ4APo0" resolve="myOwner" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1496,6 +1527,7 @@
                   <node concept="37vLTw" id="6xaYinJMepQ" role="37wK5m">
                     <ref role="3cqZAo" node="1dN09JzYeKZ" resolve="concept" />
                   </node>
+                  <node concept="Xjq3P" id="31TiiQ4ALim" role="37wK5m" />
                   <node concept="37vLTw" id="2mjA7mXwPLk" role="37wK5m">
                     <ref role="3cqZAo" node="6xaYinJJMze" resolve="MAX_ITEMS_TO_SHOW" />
                   </node>
