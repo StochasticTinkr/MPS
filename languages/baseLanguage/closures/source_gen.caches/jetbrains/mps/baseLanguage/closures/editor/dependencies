@@ -691,7 +691,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteFinalInBaseMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteSynchronizedInBaseMethod" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_AddAbstract" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_RemoveAbstract" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />

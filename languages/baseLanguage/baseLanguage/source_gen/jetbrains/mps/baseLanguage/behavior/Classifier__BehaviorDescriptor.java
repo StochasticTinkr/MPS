@@ -27,9 +27,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
-import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
@@ -71,6 +71,8 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<List<IconResource>> getIconMarks_id6TtJ6IUkhQJ = new SMethodBuilder<List<IconResource>>(new SJavaCompoundTypeImpl((Class<List<IconResource>>) ((Class) Object.class))).name("getIconMarks").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUkhQJ").registry(REGISTRY).build();
   public static final SMethod<Scope> getVisibleMembers_id70J2WaK$Uj3 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getVisibleMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("70J2WaK$Uj3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getMethodsToImplement_id4GM03FJm5q2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMethodsToImplement").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4GM03FJm5q2").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getMethodsToOverride_id4GM03FJm3zL = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMethodsToOverride").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4GM03FJm3zL").registry(REGISTRY).build();
   public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getMembers_idhEwJjl2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJjl2").registry(REGISTRY).build();
   public static final SMethod<Scope> getMembers_id1UeCwxlVpJs = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlVpJs").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
@@ -113,7 +115,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<String> getPresentation_id69Qfsw3IoJg = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("69Qfsw3IoJg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getIconMarks_id6TtJ6IUkhQJ, getVisibleMembers_id70J2WaK$Uj3, getFqName_idhEwIO9y, getMembers_idhEwJjl2, getMembers_id1UeCwxlVpJs, getExtendedClassifierTypes_id1UeCwxlWKny, getAllExtendedClassifiers_id2xreLMO8jma, getAllExtendedClassifiers_id2xreLMO8jm_, getPresentation_idhEwIMiw, hasStaticMemebers_idhFq8xqE, getNestedName_id7q4lzBFjvIX, getNestedNameInContext_id7q4lzBFjvF8, isStatic_idsWroEc0xXc, isStatic_id6r77ob2USS8, isInner_idsWroEc0xXl, checkLoops_id3sXyOQUqKq0, isDescendant_id6dL7A1DpKo1, isDescendant_checkLoops_id6dL7A1DpKoA, isSame_id4dzXPK1BpyE, checkLoops_id3sXyOQUqKq5, canInstantiateIn_id610WLfjPjne, getOwnMethods_id1DPgsAlM_WC, getSideIcon_id6TtJ6IUjtJX, getThisType_id2RtWPFZ12w7, getWithResolvedTypevars_id2RtWPFZ0VAJ, getResolvedVar_id2RtWPFZ12Bt, getResolvedMethodVar_idIqmIRMsvlW, getScope_id52_Geb4QDV$, getTypeVariables_id6r77ob2URXZ, getSuperTypes_id6r77ob2URYj, getThisType_id6r77ob2UWbY, populateMembers_id6r77ob2USUV, members_id1hodSy8nQmC, nestedClassifiers_id4_LVZ3pBjGQ, staticFields_id4_LVZ3pBr7M, staticMethods_id7fFTwQrQPHW, methods_id4_LVZ3pBKCn, canBeInterfaceMember_id2zJQqQIUx2B, getNonStaticContextClassifiers_id5S7J9l$QYtM, getContextClassifier_id5mDmeD1aaq0, getAccessibleMembers_id_8Pw6zYia7, populateMember_id6r77ob2UW9O, getPresentation_id69Qfsw3IoJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getIconMarks_id6TtJ6IUkhQJ, getVisibleMembers_id70J2WaK$Uj3, getMethodsToImplement_id4GM03FJm5q2, getMethodsToOverride_id4GM03FJm3zL, getFqName_idhEwIO9y, getMembers_idhEwJjl2, getMembers_id1UeCwxlVpJs, getExtendedClassifierTypes_id1UeCwxlWKny, getAllExtendedClassifiers_id2xreLMO8jma, getAllExtendedClassifiers_id2xreLMO8jm_, getPresentation_idhEwIMiw, hasStaticMemebers_idhFq8xqE, getNestedName_id7q4lzBFjvIX, getNestedNameInContext_id7q4lzBFjvF8, isStatic_idsWroEc0xXc, isStatic_id6r77ob2USS8, isInner_idsWroEc0xXl, checkLoops_id3sXyOQUqKq0, isDescendant_id6dL7A1DpKo1, isDescendant_checkLoops_id6dL7A1DpKoA, isSame_id4dzXPK1BpyE, checkLoops_id3sXyOQUqKq5, canInstantiateIn_id610WLfjPjne, getOwnMethods_id1DPgsAlM_WC, getSideIcon_id6TtJ6IUjtJX, getThisType_id2RtWPFZ12w7, getWithResolvedTypevars_id2RtWPFZ0VAJ, getResolvedVar_id2RtWPFZ12Bt, getResolvedMethodVar_idIqmIRMsvlW, getScope_id52_Geb4QDV$, getTypeVariables_id6r77ob2URXZ, getSuperTypes_id6r77ob2URYj, getThisType_id6r77ob2UWbY, populateMembers_id6r77ob2USUV, members_id1hodSy8nQmC, nestedClassifiers_id4_LVZ3pBjGQ, staticFields_id4_LVZ3pBr7M, staticMethods_id7fFTwQrQPHW, methods_id4_LVZ3pBKCn, canBeInterfaceMember_id2zJQqQIUx2B, getNonStaticContextClassifiers_id5S7J9l$QYtM, getContextClassifier_id5mDmeD1aaq0, getAccessibleMembers_id_8Pw6zYia7, populateMember_id6r77ob2UW9O, getPresentation_id69Qfsw3IoJg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
@@ -129,6 +131,48 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   /*package*/ static Scope getVisibleMembers_id70J2WaK$Uj3(@NotNull SNode __thisNode__, SNode contextNode, SAbstractConcept kind) {
     return MemberScopes.visibleClassifierMembers(__thisNode__, kind, contextNode);
+  }
+  /*package*/ static List<SNode> getMethodsToImplement_id4GM03FJm5q2(@NotNull SNode __thisNode__) {
+    List<SNode> methods = new ArrayList<SNode>();
+
+    MethodOverrideHelper helper = new MethodOverrideHelper(__thisNode__);
+
+    for (SNode method : (List<SNode>) helper.getMethods()) {
+      boolean isOverridden = false;
+      List<SNode> overridenMethods = helper.getOverriddenMethods(method);
+      for (SNode overridingMethod : overridenMethods) {
+        isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.getConcept(SNodeOperations.cast(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))).isAbstract());
+      }
+      if (isOverridden) {
+        continue;
+      }
+      SNode container = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+      if (container == __thisNode__ || container == null) {
+        continue;
+      }
+      if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(method)) {
+        ListSequence.fromList(methods).addElement(method);
+      }
+    }
+    return methods;
+  }
+  /*package*/ static List<SNode> getMethodsToOverride_id4GM03FJm3zL(@NotNull SNode __thisNode__) {
+    List<SNode> methods = new ArrayList<SNode>();
+    Iterable<SNode> myMethods = SNodeOperations.ofConcept(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(__thisNode__)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+
+    for (SNode method : myMethods) {
+      SNode cls = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+      if (cls == __thisNode__) {
+        continue;
+      }
+      if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        if (!(SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) && !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(SNodeOperations.cast(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")))) {
+          ListSequence.fromList(methods).addElement(method);
+        }
+      }
+    }
+
+    return methods;
   }
   /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
     SNode parentClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
@@ -257,7 +301,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     // ignore model defferences for java_stub models 
     String javastub = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    if (javastub.equals(check_qw8l7c_a0a0d0s(check_qw8l7c_a0a0a3a81(SNodeOperations.getModel(__thisNode__)))) && javastub.equals(check_qw8l7c_a0a0d0s_0(check_qw8l7c_a0a0a3a81_0(SNodeOperations.getModel(that))))) {
+    if (javastub.equals(check_qw8l7c_a0a0d0u(check_qw8l7c_a0a0a3a02(SNodeOperations.getModel(__thisNode__)))) && javastub.equals(check_qw8l7c_a0a0d0u_0(check_qw8l7c_a0a0a3a02_0(SNodeOperations.getModel(that))))) {
       return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__).equals(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(that));
     }
     return __thisNode__ == that;
@@ -299,7 +343,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   /*package*/ static SNode getWithResolvedTypevars_id2RtWPFZ0VAJ(@NotNull SNode __thisNode__, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(__thisNode__), new Pattern_qw8l7c_b0a0a0y(_quotation_createNode_qw8l7c_a0b0a0a0y(ancestor)), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(__thisNode__), new Pattern_qw8l7c_b0a0a0ab(_quotation_createNode_qw8l7c_a0b0a0a0ab(ancestor)), true);
     if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       return Classifier__BehaviorDescriptor.getResolvedVar_id2RtWPFZ12Bt.invoke(__thisNode__, SNodeOperations.cast(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), ancestor, coercedType, method, baseMethod);
     } else {
@@ -567,81 +611,85 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       case 1:
         return (T) ((Scope) getVisibleMembers_id70J2WaK$Uj3(node, (SNode) parameters[0], (SAbstractConcept) parameters[1]));
       case 2:
-        return (T) ((String) getFqName_idhEwIO9y(node));
+        return (T) ((List<SNode>) getMethodsToImplement_id4GM03FJm5q2(node));
       case 3:
-        return (T) ((List<SNode>) getMembers_idhEwJjl2(node));
+        return (T) ((List<SNode>) getMethodsToOverride_id4GM03FJm3zL(node));
       case 4:
-        return (T) ((Scope) getMembers_id1UeCwxlVpJs(node, (SAbstractConcept) parameters[0]));
+        return (T) ((String) getFqName_idhEwIO9y(node));
       case 5:
-        return (T) ((List<SNode>) getExtendedClassifierTypes_id1UeCwxlWKny(node));
+        return (T) ((List<SNode>) getMembers_idhEwJjl2(node));
       case 6:
-        return (T) ((Set<SNode>) getAllExtendedClassifiers_id2xreLMO8jma(node));
+        return (T) ((Scope) getMembers_id1UeCwxlVpJs(node, (SAbstractConcept) parameters[0]));
       case 7:
+        return (T) ((List<SNode>) getExtendedClassifierTypes_id1UeCwxlWKny(node));
+      case 8:
+        return (T) ((Set<SNode>) getAllExtendedClassifiers_id2xreLMO8jma(node));
+      case 9:
         getAllExtendedClassifiers_id2xreLMO8jm_(node, (Set<SNode>) parameters[0]);
         return null;
-      case 8:
-        return (T) ((String) getPresentation_idhEwIMiw(node));
-      case 9:
-        return (T) ((Boolean) hasStaticMemebers_idhFq8xqE(node));
       case 10:
-        return (T) ((String) getNestedName_id7q4lzBFjvIX(node));
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       case 11:
-        return (T) ((String) getNestedNameInContext_id7q4lzBFjvF8(node, (SNode) parameters[0]));
+        return (T) ((Boolean) hasStaticMemebers_idhFq8xqE(node));
       case 12:
-        return (T) ((Boolean) isStatic_idsWroEc0xXc(node));
+        return (T) ((String) getNestedName_id7q4lzBFjvIX(node));
       case 13:
-        return (T) ((Boolean) isStatic_id6r77ob2USS8(node));
+        return (T) ((String) getNestedNameInContext_id7q4lzBFjvF8(node, (SNode) parameters[0]));
       case 14:
-        return (T) ((Boolean) isInner_idsWroEc0xXl(node));
+        return (T) ((Boolean) isStatic_idsWroEc0xXc(node));
       case 15:
-        return (T) ((Boolean) checkLoops_id3sXyOQUqKq0(node));
+        return (T) ((Boolean) isStatic_id6r77ob2USS8(node));
       case 16:
-        return (T) ((Boolean) isDescendant_id6dL7A1DpKo1(node, (SNode) parameters[0]));
+        return (T) ((Boolean) isInner_idsWroEc0xXl(node));
       case 17:
-        return (T) ((Boolean) isDescendant_checkLoops_id6dL7A1DpKoA(node, (SNode) parameters[0], (Set<SNode>) parameters[1]));
+        return (T) ((Boolean) checkLoops_id3sXyOQUqKq0(node));
       case 18:
-        return (T) ((Boolean) isSame_id4dzXPK1BpyE(node, (SNode) parameters[0]));
+        return (T) ((Boolean) isDescendant_id6dL7A1DpKo1(node, (SNode) parameters[0]));
       case 19:
-        return (T) ((Boolean) checkLoops_id3sXyOQUqKq5(node, (Set<SNode>) parameters[0]));
+        return (T) ((Boolean) isDescendant_checkLoops_id6dL7A1DpKoA(node, (SNode) parameters[0], (Set<SNode>) parameters[1]));
       case 20:
-        return (T) ((Boolean) canInstantiateIn_id610WLfjPjne(node, (SNode) parameters[0]));
+        return (T) ((Boolean) isSame_id4dzXPK1BpyE(node, (SNode) parameters[0]));
       case 21:
-        return (T) ((List<SNode>) getOwnMethods_id1DPgsAlM_WC(node));
+        return (T) ((Boolean) checkLoops_id3sXyOQUqKq5(node, (Set<SNode>) parameters[0]));
       case 22:
-        return (T) ((IconResource) getSideIcon_id6TtJ6IUjtJX(node));
+        return (T) ((Boolean) canInstantiateIn_id610WLfjPjne(node, (SNode) parameters[0]));
       case 23:
-        return (T) ((SNode) getThisType_id2RtWPFZ12w7(node));
+        return (T) ((List<SNode>) getOwnMethods_id1DPgsAlM_WC(node));
       case 24:
-        return (T) ((SNode) getWithResolvedTypevars_id2RtWPFZ0VAJ(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3]));
+        return (T) ((IconResource) getSideIcon_id6TtJ6IUjtJX(node));
       case 25:
-        return (T) ((SNode) getResolvedVar_id2RtWPFZ12Bt(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3], (SNode) parameters[4]));
+        return (T) ((SNode) getThisType_id2RtWPFZ12w7(node));
       case 26:
-        return (T) ((SNode) getResolvedMethodVar_idIqmIRMsvlW(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2]));
+        return (T) ((SNode) getWithResolvedTypevars_id2RtWPFZ0VAJ(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3]));
       case 27:
-        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
+        return (T) ((SNode) getResolvedVar_id2RtWPFZ12Bt(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3], (SNode) parameters[4]));
       case 28:
-        return (T) ((Iterable<SNode>) getTypeVariables_id6r77ob2URXZ(node));
+        return (T) ((SNode) getResolvedMethodVar_idIqmIRMsvlW(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2]));
       case 29:
-        return (T) ((Iterable<SNode>) getSuperTypes_id6r77ob2URYj(node));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 30:
-        return (T) ((SNode) getThisType_id6r77ob2UWbY(node));
+        return (T) ((Iterable<SNode>) getTypeVariables_id6r77ob2URXZ(node));
       case 31:
+        return (T) ((Iterable<SNode>) getSuperTypes_id6r77ob2URYj(node));
+      case 32:
+        return (T) ((SNode) getThisType_id6r77ob2UWbY(node));
+      case 33:
         populateMembers_id6r77ob2USUV(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
-      case 32:
-        return (T) ((Iterable<SNode>) members_id1hodSy8nQmC(node));
-      case 33:
-        return (T) ((Iterable<SNode>) nestedClassifiers_id4_LVZ3pBjGQ(node));
       case 34:
-        return (T) ((Iterable<SNode>) staticFields_id4_LVZ3pBr7M(node));
+        return (T) ((Iterable<SNode>) members_id1hodSy8nQmC(node));
       case 35:
-        return (T) ((Iterable<SNode>) staticMethods_id7fFTwQrQPHW(node));
+        return (T) ((Iterable<SNode>) nestedClassifiers_id4_LVZ3pBjGQ(node));
       case 36:
+        return (T) ((Iterable<SNode>) staticFields_id4_LVZ3pBr7M(node));
+      case 37:
+        return (T) ((Iterable<SNode>) staticMethods_id7fFTwQrQPHW(node));
+      case 38:
         return (T) ((Iterable<SNode>) methods_id4_LVZ3pBKCn(node));
-      case 41:
+      case 43:
         populateMember_id6r77ob2UW9O(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
-      case 42:
+      case 44:
         return (T) ((String) getPresentation_id69Qfsw3IoJg(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -655,13 +703,13 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 37:
-        return (T) ((Boolean) canBeInterfaceMember_id2zJQqQIUx2B(concept));
-      case 38:
-        return (T) ((List<SNode>) getNonStaticContextClassifiers_id5S7J9l$QYtM(concept, (SNode) parameters[0]));
       case 39:
-        return (T) ((SNode) getContextClassifier_id5mDmeD1aaq0(concept, (SNode) parameters[0]));
+        return (T) ((Boolean) canBeInterfaceMember_id2zJQqQIUx2B(concept));
       case 40:
+        return (T) ((List<SNode>) getNonStaticContextClassifiers_id5S7J9l$QYtM(concept, (SNode) parameters[0]));
+      case 41:
+        return (T) ((SNode) getContextClassifier_id5mDmeD1aaq0(concept, (SNode) parameters[0]));
+      case 42:
         return (T) ((List<SNode>) getAccessibleMembers_id_8Pw6zYia7(concept, (SNode) parameters[0], ((int) (Integer) parameters[1])));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -679,31 +727,31 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static String check_qw8l7c_a0a0d0s(SModelName checkedDotOperand) {
+  private static String check_qw8l7c_a0a0d0u(SModelName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStereotype();
     }
     return null;
   }
-  private static SModelName check_qw8l7c_a0a0a3a81(SModel checkedDotOperand) {
+  private static SModelName check_qw8l7c_a0a0a3a02(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }
     return null;
   }
-  private static String check_qw8l7c_a0a0d0s_0(SModelName checkedDotOperand) {
+  private static String check_qw8l7c_a0a0d0u_0(SModelName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStereotype();
     }
     return null;
   }
-  private static SModelName check_qw8l7c_a0a0a3a81_0(SModel checkedDotOperand) {
+  private static SModelName check_qw8l7c_a0a0a3a02_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }
     return null;
   }
-  private static SNode _quotation_createNode_qw8l7c_a0b0a0a0y(Object parameter_1) {
+  private static SNode _quotation_createNode_qw8l7c_a0b0a0a0ab(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
