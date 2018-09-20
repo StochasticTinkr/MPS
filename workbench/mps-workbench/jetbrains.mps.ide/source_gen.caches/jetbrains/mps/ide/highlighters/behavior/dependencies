@@ -2,13 +2,16 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.highlighters.behavior.AncestorsMethodsLookup" file="AncestorsMethodsLookup.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.EmptyProgressMonitorWithCancellable" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.MethodOverridesEditorMessage" />

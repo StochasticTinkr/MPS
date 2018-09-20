@@ -22,7 +22,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 
 /*package*/ final class AncestorsMethodsLookup {
   private final Cancellable myCancellable;
@@ -70,25 +74,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
   }
 
-  private void addAncestorsMethods(final Cancellable cancellable, SNode currentMethod, @Mutable Set<SNode> result) {
-    ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
+  private void addAncestorsMethods(final Cancellable cancellable, SNode currentMethod, @Mutable final Set<SNode> result) {
+    final ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
       @Override
       public boolean isCanceled() {
         return super.isCanceled();
       }
     };
-    // fixme need async analogue of this operation 
-    Set<Object> resultObjects = FindUtils.getSearchResults(monitor, currentMethod, myScope, "jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder").getResultObjects();
-    for (Object resultObj : resultObjects) {
-      if (resultObj instanceof SNode) {
-        SNode res = (SNode) resultObj;
-        if (SNodeOperations.isInstanceOf(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-          SetSequence.fromSet(result).addElement(SNodeOperations.cast(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
-          if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
-            return;
+    FindUtils.searchForResults(monitor, new IFinder.FindCallback() {
+      public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+        SNode nodeParam = (SNode) searchResult.getObject();
+        new _FunctionTypes._void_P1_E0<SNode>() {
+          public void invoke(SNode foundNode) {
+            if (SNodeOperations.isInstanceOf(foundNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+              SetSequence.fromSet(result).addElement(SNodeOperations.cast(foundNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
+              if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
+                monitor.cancel();
+              }
+            }
           }
-        }
+        }.invoke(nodeParam);
       }
-    }
+    }, new SearchQuery(currentMethod, myScope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverriddenMethods_Finder"));
   }
 }
