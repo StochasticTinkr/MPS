@@ -107,7 +107,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
         return cell;
       }
     };
-    provider.setRole("callback");
     provider.setNoTargetText("<no callback>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -541,7 +540,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
         return cell;
       }
     };
-    provider.setRole("callback");
     provider.setNoTargetText("<no callback>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

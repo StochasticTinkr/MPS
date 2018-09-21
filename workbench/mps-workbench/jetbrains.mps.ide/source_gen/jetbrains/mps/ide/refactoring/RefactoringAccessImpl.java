@@ -73,7 +73,11 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   private SearchResults truncateSearchResults(Project project, SearchResults searchResults) {
     if (searchResults.getSearchResults().size() > MAX_SEARCH_RESULTS) {
       Messages.showWarningDialog(project, "More than " + MAX_SEARCH_RESULTS + " usages found. Only first " + MAX_SEARCH_RESULTS + " results will be displayed.", "Refactor");
-      return new SearchResults(searchResults.getSearchedObjects().getElements(), ListSequence.fromList(((List<? extends SearchResult<Object>>) searchResults.getSearchResults())).take(MAX_SEARCH_RESULTS).toListSequence());
+
+      SearchResults truncatedSearchResults = new SearchResults();
+      truncatedSearchResults.getSearchedNodes().addAll(searchResults.getSearchedNodes());
+      truncatedSearchResults.getSearchResults().addAll(ListSequence.fromList(((List<? extends SearchResult<Object>>) searchResults.getSearchResults())).take(MAX_SEARCH_RESULTS).toListSequence());
+      return truncatedSearchResults;
     }
     return searchResults;
   }

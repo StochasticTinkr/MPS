@@ -123,7 +123,7 @@ public class InstanceMethodDeclaration_static_abstract extends TransformationMen
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+          SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
           MemberDeclarationRefactoringUtil.rewireMethodReferences(_context.getNode(), staticMethod);
 
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), staticMethod, "staticModifier", -1);

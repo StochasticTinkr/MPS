@@ -9,9 +9,9 @@
   </root>
   <root nodeRef="r:8253b042-7a30-4553-80d6-5be4d3c0082b(jetbrains.mps.lang.findUsages.actions)/1237139122106539382">
     <file name="ForEachFoundNode.java">
-      <node id="1237139122106905973" at="13,91,14,399" concept="0" />
+      <node id="1237139122106905973" at="13,91,14,357" concept="0" />
       <node id="1237139122106539383" at="13,0,16,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1237139122106539383" at="13,91,14,399" />
+      <scope id="1237139122106539383" at="13,91,14,357" />
       <scope id="1237139122106539383" at="13,0,16,0">
         <var name="enclosingNode" id="1237139122106539383" />
         <var name="model" id="1237139122106539383" />
