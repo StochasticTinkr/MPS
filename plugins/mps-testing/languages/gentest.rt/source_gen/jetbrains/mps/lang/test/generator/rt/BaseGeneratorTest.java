@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.junit.Assume;
 
 public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
@@ -107,5 +108,11 @@ public class BaseGeneratorTest implements EnvironmentAware {
     //       Need to decide how to grab model locks effectively, don't want to grab it here, either shall wrap whole prepareArguments() or test method 
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
     return mr.resolve(myRepository);
+  }
+
+  protected final SModel findModel(String parameterName, String modelRef) {
+    SModel m = findModel(modelRef);
+    Assume.assumeTrue(String.format("Could not find model for parameter '%s' (%s)", parameterName, modelRef), m != null);
+    return m;
   }
 }

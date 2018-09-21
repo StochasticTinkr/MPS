@@ -31,6 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.project.Project" />
     <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Assume" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.generator.rt.TransformHelper" file="TransformHelper.java">

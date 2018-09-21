@@ -21,10 +21,10 @@ public class GenPlanForkTest extends BaseGeneratorTest {
 
   @Before
   public void prepareArguments() {
-    myArg_EM1 = findModel("r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)");
-    myArg_RM1 = findModel("r:35b2450d-4c62-4a43-8984-fcb9e972f2a9(jetbrains.mps.generator.tests.bean1)");
-    myArg_RM2 = findModel("r:9a9ec010-573d-4ed5-a9f5-3a7cb4b1d15a(jetbrains.mps.generator.tests.bean2)");
-    myArg_ForkPlan = findModel("r:3da86158-d8e3-46d4-8529-5e1d4bd09279(jetbrains.mps.generator.tests.gpfork@genplan)");
+    myArg_EM1 = findModel("EM1", "r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)");
+    myArg_RM1 = findModel("RM1", "r:35b2450d-4c62-4a43-8984-fcb9e972f2a9(jetbrains.mps.generator.tests.bean1)");
+    myArg_RM2 = findModel("RM2", "r:9a9ec010-573d-4ed5-a9f5-3a7cb4b1d15a(jetbrains.mps.generator.tests.bean2)");
+    myArg_ForkPlan = findModel("ForkPlan", "r:3da86158-d8e3-46d4-8529-5e1d4bd09279(jetbrains.mps.generator.tests.gpfork@genplan)");
   }
 
 

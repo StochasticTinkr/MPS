@@ -856,6 +856,68 @@
         <node concept="17QB3L" id="2kP5W5yTHcT" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6sSwiyirUcs" role="jymVt" />
+    <node concept="3clFb_" id="6sSwiyirTbI" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="findModel" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="true" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6sSwiyirTbJ" role="3clF47">
+        <node concept="3cpWs8" id="6sSwiyirXoV" role="3cqZAp">
+          <node concept="3cpWsn" id="6sSwiyirXoY" role="3cpWs9">
+            <property role="TrG5h" value="m" />
+            <node concept="H_c77" id="6sSwiyirXoT" role="1tU5fm" />
+            <node concept="1rXfSq" id="6sSwiyirYpo" role="33vP2m">
+              <ref role="37wK5l" node="2kP5W5yTGwT" resolve="findModel" />
+              <node concept="37vLTw" id="6sSwiyirYxc" role="37wK5m">
+                <ref role="3cqZAo" node="6sSwiyirTc2" resolve="modelRef" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6sSwiyirZz1" role="3cqZAp">
+          <node concept="2YIFZM" id="6sSwiyis0ut" role="3clFbG">
+            <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
+            <ref role="37wK5l" to="rjhg:~Assume.assumeTrue(java.lang.String,boolean):void" resolve="assumeTrue" />
+            <node concept="2YIFZM" id="6sSwiyis3Hq" role="37wK5m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+              <node concept="Xl_RD" id="6sSwiyis3N8" role="37wK5m">
+                <property role="Xl_RC" value="Could not find model for parameter '%s' (%s)" />
+              </node>
+              <node concept="37vLTw" id="6sSwiyis3UR" role="37wK5m">
+                <ref role="3cqZAo" node="6sSwiyirVbn" resolve="parameterName" />
+              </node>
+              <node concept="37vLTw" id="6sSwiyis5FS" role="37wK5m">
+                <ref role="3cqZAo" node="6sSwiyirTc2" resolve="modelRef" />
+              </node>
+            </node>
+            <node concept="3y3z36" id="6sSwiyis3v8" role="37wK5m">
+              <node concept="10Nm6u" id="6sSwiyis3yr" role="3uHU7w" />
+              <node concept="37vLTw" id="6sSwiyis3mL" role="3uHU7B">
+                <ref role="3cqZAo" node="6sSwiyirXoY" resolve="m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6sSwiyirTbV" role="3cqZAp">
+          <node concept="37vLTw" id="6sSwiyis7Hb" role="3cqZAk">
+            <ref role="3cqZAo" node="6sSwiyirXoY" resolve="m" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="6sSwiyirTc0" role="1B3o_S" />
+      <node concept="H_c77" id="6sSwiyirTc1" role="3clF45" />
+      <node concept="37vLTG" id="6sSwiyirVbn" role="3clF46">
+        <property role="TrG5h" value="parameterName" />
+        <node concept="17QB3L" id="6sSwiyirW5S" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="6sSwiyirTc2" role="3clF46">
+        <property role="TrG5h" value="modelRef" />
+        <node concept="17QB3L" id="6sSwiyirTc3" role="1tU5fm" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="3AyJARA_3iW" role="1B3o_S" />
     <node concept="3uibUv" id="6VhyYlfP2Qq" role="EKbjA">
       <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
