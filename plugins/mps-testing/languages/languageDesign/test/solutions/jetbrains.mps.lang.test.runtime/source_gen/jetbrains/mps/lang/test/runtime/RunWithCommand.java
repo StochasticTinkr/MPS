@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.runtime;
 import org.junit.rules.TestRule;
 import org.junit.runners.model.Statement;
 import org.junit.runner.Description;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.ide.ThreadUtils;
 
 /**
  * Generated test classes add a field annotated with {@link org.junit.Rule } if they need their methods to be executed within model command.
@@ -20,7 +22,25 @@ public final class RunWithCommand implements TestRule {
   public Statement apply(final Statement base, Description description) {
     return new Statement() {
       public void evaluate() throws Throwable {
-        myOwner.runInCommand(base);
+        final Reference<Throwable> ex = new Reference<Throwable>(null);
+        final Runnable r = new Runnable() {
+          public void run() {
+            try {
+              base.evaluate();
+            } catch (Throwable th) {
+              ex.set(th);
+            }
+          }
+        };
+        // FIXME shall replace project's model access with MA to BaseTestBody.myModel (initialized with #getTransientModelDescriptor() value) as it's the model we deal with 
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          public void run() {
+            myOwner.getProject().getModelAccess().executeCommand(r);
+          }
+        });
+        if (ex.get() != null) {
+          throw ex.get();
+        }
       }
     };
   }

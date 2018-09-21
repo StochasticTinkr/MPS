@@ -67,10 +67,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
-  protected BaseEditorTestBody() {
-    // this is for legacy path through BaseTransformationTest.runTest(), reflective instantiation and field initialization 
-  }
-
   protected BaseEditorTestBody(TransformationTest owner) {
     super(owner);
   }
