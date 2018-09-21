@@ -43,13 +43,12 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     if (myParamCache != null) {
       // initializes project/models for the first test in the class, reuse initialized values for subsequent tests from the same class 
       // FIXME it seems I can do this populate from ClassRule TestParametersCache itself, just need to sort out access to Environment value 
-      myParamCache.populate(this);
+      myParamCache.initializeOnce(this, myEnvironment);
+      setProject(myParamCache.getProject());
+      setModelDescriptor(myParamCache.getTestModel());
+      setTransientModelDescriptor(myParamCache.getTransientModel());
     }
     clearSystemClipboard();
-  }
-
-  /*package*/ Environment getEnv() {
-    return myEnvironment;
   }
 
   @Override
