@@ -43,8 +43,8 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
   }
 
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.CONSTRAINTS;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.CONSTRAINTS.deriveItemKind();
   }
 
   public static class PropertyConstraintReportItem extends ConstraintsReportItem implements NodeFeatureReportItem {

@@ -39,7 +39,7 @@ public class MoveNodesActionBase implements MoveNodesAction {
         currentModel.value = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
       }
     });
-    final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter() {
+    final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project, currentModel.value, new MoveNodesDialog.ModelFilter() {
       public String getErrorMessage(NodeLocation selectedObject) {
         return "Choose model or node that can contain moving nodes";
       }

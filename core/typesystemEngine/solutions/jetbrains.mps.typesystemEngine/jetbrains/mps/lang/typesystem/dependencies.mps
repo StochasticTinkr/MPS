@@ -2,11 +2,11 @@
 <model ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -199,9 +199,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -209,6 +206,7 @@
         <child id="1237721435807" name="elementType" index="HW$YZ" />
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
@@ -294,8 +292,8 @@
                     <node concept="37vLTw" id="3GM_nagTt2p" role="2Oq$k0">
                       <ref role="3cqZAo" node="hovZoj9" resolve="roots" />
                     </node>
-                    <node concept="2l5eF5" id="i1AEPyv" role="2OqNvi">
-                      <node concept="37vLTw" id="3GM_nagTBHB" role="2l6Ag6">
+                    <node concept="TSZUe" id="HQjE4XgE0g" role="2OqNvi">
+                      <node concept="37vLTw" id="HQjE4XgE0f" role="25WWJ7">
                         <ref role="3cqZAo" node="hovTyl9" resolve="applicableNodeReference" />
                       </node>
                     </node>
@@ -445,8 +443,8 @@
                               <node concept="37vLTw" id="2BHiRxglp2z" role="2Oq$k0">
                                 <ref role="3cqZAo" node="ho$snze" resolve="leaves" />
                               </node>
-                              <node concept="2l5eF5" id="i1AEPyT" role="2OqNvi">
-                                <node concept="37vLTw" id="3GM_nagTzc$" role="2l6Ag6">
+                              <node concept="TSZUe" id="HQjE4XgE0e" role="2OqNvi">
+                                <node concept="37vLTw" id="HQjE4XgE0d" role="25WWJ7">
                                   <ref role="3cqZAo" node="how1a9g" resolve="node" />
                                 </node>
                               </node>

@@ -115,6 +115,4 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertSame(2, i);
   }
-  public MultiForeachTest_Test() {
-  }
 }

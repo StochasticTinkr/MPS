@@ -17,12 +17,17 @@ package jetbrains.mps.library;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.annotations.Immutable;
 
-@Immutable
+/**
+ * Bean class for {@link jetbrains.mps.library.BaseLibraryManager.LibraryState}
+ * Do not remove the default constructor and setters/getters
+ */
 public final class Library {
-  private final String myName;
+  private String myName;
   private String myPath;
+
+  public Library() {
+  }
 
   public Library(@NotNull String name) {
     myName = name;
@@ -33,7 +38,6 @@ public final class Library {
     myPath = path;
   }
 
-  @NotNull
   public String getName() {
     return myName;
   }
@@ -45,6 +49,10 @@ public final class Library {
 
   public void setPath(@NotNull String path) {
     myPath = path;
+  }
+
+  public void setName(@NotNull String name) {
+    myName = name;
   }
 
   public String toString() {

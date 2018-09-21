@@ -182,7 +182,7 @@
     <file name="EditorUtil.java">
       <node id="698904412655892814" at="52,138,53,50" concept="10" />
       <node id="385021105274018032" at="53,50,54,60" concept="9" />
-      <node id="887982272834817133" at="57,131,58,107" concept="8" />
+      <node id="887982272834817133" at="57,131,58,90" concept="8" />
       <node id="887982272834823278" at="60,45,61,55" concept="9" />
       <node id="887982272834823287" at="64,46,65,56" concept="9" />
       <node id="887982272835085381" at="70,305,71,134" concept="8" />
@@ -293,7 +293,7 @@
       <node id="887982272834823288" at="228,0,234,0" concept="13" trace="check_3m4h3r_a0a4a1a4#(Ljetbrains/mps/util/MacroHelper;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="887982272835874751" at="133,108,140,15" concept="6" />
       <node id="1610107741209109192" at="176,0,183,7" concept="6" />
-      <node id="887982272834823270" at="58,107,67,7" concept="9" />
+      <node id="887982272834823270" at="58,90,67,7" concept="9" />
       <node id="887982272835248751" at="81,0,90,0" concept="7" trace="run#()V" />
       <node id="6382213440893107352" at="196,55,205,7" concept="6" />
       <node id="887982272835248749" at="79,68,90,7" concept="3" />

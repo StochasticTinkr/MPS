@@ -172,8 +172,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(42, pair._0());
     Assert.assertSame(24, (int) ipair._1());
   }
-  public NamedTuples_Test() {
-  }
   public String getString(Pair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {

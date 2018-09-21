@@ -2,7 +2,7 @@
 <model ref="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -26,7 +26,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -185,7 +184,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -525,7 +524,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgno" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgnp" role="1B3o_S" />
@@ -540,7 +538,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgu_" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAguA" role="1B3o_S" />
@@ -561,7 +558,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAguM" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -575,7 +571,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB6es" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgno" resolve="oneLineBlock" />
@@ -957,7 +952,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAOWo" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -1040,7 +1034,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAguS" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -1555,7 +1548,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAOFY" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isSingle" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgni" resolve="isSingle" />
@@ -1571,7 +1563,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAOYh" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isFirst" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgw8" resolve="isFirst" />
@@ -1593,7 +1584,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgni" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isSingle" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgnj" role="1B3o_S" />
@@ -1608,7 +1598,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgw8" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isFirst" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgw9" role="1B3o_S" />
@@ -2277,7 +2266,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAguD" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -2291,7 +2279,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB2Ex" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgno" resolve="oneLineBlock" />
@@ -2313,7 +2300,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAguY" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -2327,7 +2313,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAlOq" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgno" resolve="oneLineBlock" />
@@ -2349,7 +2334,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgv7" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -2363,7 +2347,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB6zR" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgno" resolve="oneLineBlock" />
@@ -2385,7 +2368,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgvg" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="textLike" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgu_" resolve="textLike" />
@@ -2399,7 +2381,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB6co" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="oneLineBlock" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgno" resolve="oneLineBlock" />
@@ -2421,7 +2402,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB2z3" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isSingle" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="1653mnvAgni" resolve="isSingle" />

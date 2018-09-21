@@ -35,10 +35,6 @@ public class LanguageErrorItem extends ReportItemBase implements IssueKindReport
 
   private final Throwable myException;
 
-  public LanguageErrorItem(@NotNull String message) {
-    this(message, null);
-  }
-
   public LanguageErrorItem(@NotNull String message, @Nullable Throwable exception) {
     super(MessageStatus.ERROR, message);
     myException = exception;
@@ -54,15 +50,15 @@ public class LanguageErrorItem extends ReportItemBase implements IssueKindReport
   }
 
   @Override
-  public String getIssueKind() {
-    return "language problem";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.LANGUAGE_PROBLEM;
   }
 
   public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem, IssueKindReportItem {
     private final SNodeReference myNode;
     private final SReferenceLink myReferenceLink;
     public ReferenceItem(@NotNull ErrorScope errorScope, SReference reference) {
-      super(errorScope.getMessage());
+      super(errorScope.getMessage(), errorScope.getException());
       myNode = reference.getSourceNode().getReference();
       myReferenceLink = reference.getLink();
     }

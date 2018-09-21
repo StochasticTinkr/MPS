@@ -3,11 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
   <imports>
@@ -1421,38 +1421,6 @@
     <node concept="3uibUv" id="11BHxZ7C7LY" role="EKbjA">
       <ref role="3uigEE" to="1m72:~ApplicationComponent" resolve="ApplicationComponent" />
     </node>
-  </node>
-  <node concept="312cEu" id="1ihbBywx_Oy">
-    <property role="TrG5h" value="DataTransferUtil" />
-    <node concept="3clFbW" id="1ihbBywx_O$" role="jymVt">
-      <node concept="3cqZAl" id="1ihbBywx_O_" role="3clF45" />
-      <node concept="3clFbS" id="1ihbBywx_OB" role="3clF47" />
-      <node concept="3Tm1VV" id="1ihbBywx_OA" role="1B3o_S" />
-    </node>
-    <node concept="2YIFZL" id="1ihbBywxAg2" role="jymVt">
-      <property role="TrG5h" value="isAbstract" />
-      <node concept="10P_77" id="1ihbBywxAg6" role="3clF45" />
-      <node concept="37vLTG" id="1ihbBywxAg7" role="3clF46">
-        <property role="TrG5h" value="conceptDeclaration" />
-        <node concept="3Tqbb2" id="1ihbBywxAg9" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1ihbBywxAg4" role="1B3o_S" />
-      <node concept="3clFbS" id="1ihbBywxAg5" role="3clF47">
-        <node concept="3cpWs6" id="1ihbBywxAga" role="3cqZAp">
-          <node concept="2OqwBi" id="2wdLO7KeHiV" role="3cqZAk">
-            <node concept="3TrcHB" id="2wdLO7KeHiW" role="2OqNvi">
-              <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxglRKV" role="2Oq$k0">
-              <ref role="3cqZAo" node="1ihbBywxAg7" resolve="conceptDeclaration" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="1ihbBywx_Oz" role="1B3o_S" />
   </node>
 </model>
 

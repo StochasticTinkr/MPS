@@ -2,12 +2,12 @@
 <model ref="r:59f5b892-a6eb-4a9b-9c81-ecffc10026ee(jetbrains.mps.ide.highlighters.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
   </languages>
   <imports>
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -32,9 +32,9 @@
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="ew8r" ref="r:579b6612-4f9e-4479-8e4c-5ef2ee0f9722(jetbrains.mps.ide.editor.popup)" />
-    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="3aru" ref="r:8da2312b-c61c-4a7c-bb90-3ea3623b8abe(jetbrains.mps.ide.highlighters.structure)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="ew8r" ref="r:579b6612-4f9e-4479-8e4c-5ef2ee0f9722(jetbrains.mps.ide.editor.popup)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -1550,11 +1550,11 @@
             <node concept="3clFbJ" id="6xaYinJKMll" role="3cqZAp">
               <node concept="22lmx$" id="6xaYinJKMlm" role="3clFbw">
                 <node concept="2OqwBi" id="6xaYinJKMln" role="3uHU7w">
-                  <node concept="2GrUjf" id="6xaYinJKMlo" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="6xaYinJKMlg" resolve="method" />
-                  </node>
                   <node concept="2qgKlT" id="4c$BrPw9KYy" role="2OqNvi">
                     <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+                  </node>
+                  <node concept="2GrUjf" id="6xaYinJKMlo" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="6xaYinJKMlg" resolve="method" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="6xaYinJKMlq" role="3uHU7B">
@@ -1633,6 +1633,7 @@
     <node concept="2tJIrI" id="6xaYinJO$gY" role="jymVt" />
     <node concept="3clFb_" id="6xaYinJO$9S" role="jymVt">
       <property role="TrG5h" value="calcMessage" />
+      <node concept="3Tm6S6" id="2mjA7mXsjVd" role="1B3o_S" />
       <node concept="3uibUv" id="6xaYinJO$9T" role="3clF45">
         <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
       </node>
@@ -1640,11 +1641,6 @@
         <node concept="3cpWs8" id="6xaYinJO$aa" role="3cqZAp">
           <node concept="3cpWsn" id="6xaYinJO$ab" role="3cpWs9">
             <property role="TrG5h" value="overrides" />
-            <node concept="2hMVRd" id="6xaYinJO$ac" role="1tU5fm">
-              <node concept="3Tqbb2" id="6xaYinJO$ad" role="2hN53Y">
-                <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
-              </node>
-            </node>
             <node concept="1rXfSq" id="2mjA7mXtTNg" role="33vP2m">
               <ref role="37wK5l" node="6xaYinJJxCX" resolve="findDescendantsOverrides" />
               <node concept="37vLTw" id="2mjA7mXtTNh" role="37wK5m">
@@ -1652,6 +1648,11 @@
               </node>
               <node concept="37vLTw" id="2mjA7mXtTNi" role="37wK5m">
                 <ref role="3cqZAo" node="6xaYinJOEcf" resolve="method" />
+              </node>
+            </node>
+            <node concept="2hMVRd" id="6xaYinJO$ac" role="1tU5fm">
+              <node concept="3Tqbb2" id="6xaYinJO$ad" role="2hN53Y">
+                <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
               </node>
             </node>
           </node>
@@ -1731,7 +1732,6 @@
           <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
         </node>
       </node>
-      <node concept="3Tm6S6" id="2mjA7mXsjVd" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6xaYinJMmlK" role="jymVt" />
     <node concept="3clFb_" id="6xaYinJJxCX" role="jymVt">
@@ -1740,6 +1740,11 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
+      <node concept="2hMVRd" id="2mjA7mXtQoq" role="3clF45">
+        <node concept="3Tqbb2" id="2mjA7mXtQor" role="2hN53Y">
+          <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+        </node>
+      </node>
       <node concept="3clFbS" id="6xaYinJJxD0" role="3clF47">
         <node concept="3cpWs8" id="2mjA7mXtR3F" role="3cqZAp">
           <node concept="3cpWsn" id="2mjA7mXtR3G" role="3cpWs9">
@@ -1893,11 +1898,6 @@
       <node concept="37vLTG" id="6xaYinJJxNy" role="3clF46">
         <property role="TrG5h" value="method" />
         <node concept="3Tqbb2" id="6xaYinJJxNx" role="1tU5fm">
-          <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
-        </node>
-      </node>
-      <node concept="2hMVRd" id="2mjA7mXtQoq" role="3clF45">
-        <node concept="3Tqbb2" id="2mjA7mXtQor" role="2hN53Y">
           <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
         </node>
       </node>
@@ -2445,6 +2445,9 @@
   <node concept="312cEu" id="6xaYinJONYR">
     <property role="TrG5h" value="MethodIsOverriddenEditorMessage" />
     <property role="1EXbeo" value="true" />
+    <node concept="3uibUv" id="2mjA7mXpKD0" role="1zkMxy">
+      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
+    </node>
     <node concept="Wx3nA" id="6xaYinJONYS" role="jymVt">
       <property role="TrG5h" value="TYPE" />
       <property role="3TUv4t" value="true" />
@@ -2586,10 +2589,11 @@
           <node concept="3clFbS" id="6xaYinJONZF" role="3clFbx">
             <node concept="3cpWs6" id="6xaYinJONZG" role="3cqZAp">
               <node concept="3K4zz7" id="6xaYinJONZJ" role="3cqZAk">
-                <node concept="1rXfSq" id="6xaYinJONZM" role="3K4Cdx">
-                  <ref role="37wK5l" node="6xaYinJQahj" resolve="isOverridden" />
-                  <node concept="37vLTw" id="6xaYinJONZN" role="37wK5m">
-                    <ref role="3cqZAo" node="6xaYinJOO0C" resolve="method" />
+                <node concept="2YIFZM" id="2mjA7mXteOJ" role="3K4GZi">
+                  <ref role="1Pybhc" to="3a50:~MPSCodeInsightBundle" resolve="MPSCodeInsightBundle" />
+                  <ref role="37wK5l" to="3a50:~MPSCodeInsightBundle.message(java.lang.String,java.lang.Object...):java.lang.String" resolve="message" />
+                  <node concept="Xl_RD" id="2mjA7mXteOK" role="37wK5m">
+                    <property role="Xl_RC" value="method.is.implemented.too.many" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="1R9kKoB7ZcP" role="3K4E3e">
@@ -2599,11 +2603,10 @@
                     <property role="Xl_RC" value="method.is.overridden.too.many" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="2mjA7mXteOJ" role="3K4GZi">
-                  <ref role="1Pybhc" to="3a50:~MPSCodeInsightBundle" resolve="MPSCodeInsightBundle" />
-                  <ref role="37wK5l" to="3a50:~MPSCodeInsightBundle.message(java.lang.String,java.lang.Object...):java.lang.String" resolve="message" />
-                  <node concept="Xl_RD" id="2mjA7mXteOK" role="37wK5m">
-                    <property role="Xl_RC" value="method.is.implemented.too.many" />
+                <node concept="1rXfSq" id="6xaYinJONZM" role="3K4Cdx">
+                  <ref role="37wK5l" node="6xaYinJQahj" resolve="isOverridden" />
+                  <node concept="37vLTw" id="6xaYinJONZN" role="37wK5m">
+                    <ref role="3cqZAo" node="6xaYinJOO0C" resolve="method" />
                   </node>
                 </node>
               </node>
@@ -2859,9 +2862,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6xaYinJOO1p" role="1B3o_S" />
-    <node concept="3uibUv" id="2mjA7mXpKD0" role="1zkMxy">
-      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
-    </node>
     <node concept="3UR2Jj" id="6xaYinJOO1r" role="lGtFl">
       <node concept="TZ5HA" id="6xaYinJOPhK" role="TZ5H$">
         <node concept="1dT_AC" id="6xaYinJOPhL" role="1dT_Ay">

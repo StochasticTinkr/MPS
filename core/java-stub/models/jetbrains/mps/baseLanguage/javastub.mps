@@ -7,8 +7,8 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="45y3" ref="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" />
@@ -76,9 +76,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -3444,7 +3441,6 @@
     <node concept="2tJIrI" id="3oDzK78nuEH" role="jymVt" />
     <node concept="2YIFZL" id="3Eq_PkMakxI" role="jymVt">
       <property role="TrG5h" value="readClass" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3oDzK78nxWM" role="3clF47">
@@ -3477,10 +3473,10 @@
               <node concept="3cpWsn" id="3oDzK78nGh9" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
                 <property role="TrG5h" value="inp" />
+                <node concept="10Nm6u" id="Z4zolcYEFB" role="33vP2m" />
                 <node concept="3uibUv" id="3oDzK78nGJS" role="1tU5fm">
                   <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
                 </node>
-                <node concept="10Nm6u" id="Z4zolcYEFB" role="33vP2m" />
               </node>
             </node>
             <node concept="2GUZhq" id="3oDzK78nGhz" role="3cqZAp">
@@ -3560,7 +3556,6 @@
     <node concept="2tJIrI" id="6jcekJXoPl_" role="jymVt" />
     <node concept="2YIFZL" id="6jcekJXppK3" role="jymVt">
       <property role="TrG5h" value="getClassName" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6jcekJXp1VK" role="3clF47">

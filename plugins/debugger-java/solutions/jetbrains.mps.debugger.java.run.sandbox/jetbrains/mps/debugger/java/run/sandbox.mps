@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -71,9 +71,6 @@
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -232,7 +229,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -246,9 +243,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -1030,8 +1024,8 @@
             <node concept="37vLTw" id="3GM_nagTwCQ" role="2Oq$k0">
               <ref role="3cqZAo" node="2gN3IJkDNzL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="2gN3IJkDN$m" role="2OqNvi">
-              <node concept="Xl_RD" id="2gN3IJkDN$o" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2S" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2R" role="25WWJ7">
                 <property role="Xl_RC" value="alpha" />
               </node>
             </node>
@@ -1042,8 +1036,8 @@
             <node concept="37vLTw" id="3GM_nagTrpE" role="2Oq$k0">
               <ref role="3cqZAo" node="2gN3IJkDNzL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="2gN3IJkDN$t" role="2OqNvi">
-              <node concept="Xl_RD" id="2gN3IJkDN$v" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2U" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2T" role="25WWJ7">
                 <property role="Xl_RC" value="beta" />
               </node>
             </node>
@@ -1054,8 +1048,8 @@
             <node concept="37vLTw" id="3GM_nagTBoF" role="2Oq$k0">
               <ref role="3cqZAo" node="2gN3IJkDNzL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="2gN3IJkDN$$" role="2OqNvi">
-              <node concept="Xl_RD" id="2gN3IJkDN$A" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2Q" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2P" role="25WWJ7">
                 <property role="Xl_RC" value="gamma" />
               </node>
             </node>
@@ -1100,8 +1094,8 @@
             <node concept="37vLTw" id="3GM_nagTtLb" role="2Oq$k0">
               <ref role="3cqZAo" node="3MAMd0FnFaL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="3MAMd0FnFaU" role="2OqNvi">
-              <node concept="Xl_RD" id="3MAMd0FnFaV" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2W" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2V" role="25WWJ7">
                 <property role="Xl_RC" value="alpha" />
               </node>
             </node>
@@ -1112,8 +1106,8 @@
             <node concept="37vLTw" id="3GM_nagTBlo" role="2Oq$k0">
               <ref role="3cqZAo" node="3MAMd0FnFaL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="3MAMd0FnFaZ" role="2OqNvi">
-              <node concept="Xl_RD" id="3MAMd0FnFb0" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2Y" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2X" role="25WWJ7">
                 <property role="Xl_RC" value="beta" />
               </node>
             </node>
@@ -1124,8 +1118,8 @@
             <node concept="37vLTw" id="3GM_nagT$LH" role="2Oq$k0">
               <ref role="3cqZAo" node="3MAMd0FnFaL" resolve="strings" />
             </node>
-            <node concept="2l5eF5" id="3MAMd0FnFb4" role="2OqNvi">
-              <node concept="Xl_RD" id="3MAMd0FnFb5" role="2l6Ag6">
+            <node concept="TSZUe" id="HQjE4XgE2O" role="2OqNvi">
+              <node concept="Xl_RD" id="HQjE4XgE2N" role="25WWJ7">
                 <property role="Xl_RC" value="gamma" />
               </node>
             </node>
@@ -1454,7 +1448,6 @@
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="toString" />
                     <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
                     <node concept="3Tm1VV" id="17iIHNKqSxH" role="1B3o_S" />
                     <node concept="3uibUv" id="17iIHNKqSxJ" role="3clF45">
                       <ref role="3uigEE" to="wyt6:~String" resolve="String" />

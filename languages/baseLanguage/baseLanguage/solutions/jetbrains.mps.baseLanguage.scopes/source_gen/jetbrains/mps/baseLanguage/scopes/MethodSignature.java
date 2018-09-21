@@ -9,15 +9,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
 
 public class MethodSignature implements Signature {
   private final String singature;
-  public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, MembersPopulatingContext context) {
-    this.singature = getStringSignature(method, typeByTypeVariable, context);
-  }
+
   public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
     this.singature = getStringSignature(method, typeByTypeVariable, null);
   }
@@ -44,18 +40,7 @@ public class MethodSignature implements Signature {
         result.append(',');
       }
       if (type != null) {
-        if (context != null) {
-          Tuples._2<Class, SNode> cacheKey = MultiTuple.<Class,SNode>from(MethodSignature.class, type);
-          if (context.containsUserObject(cacheKey)) {
-            result.append(context.getUserObject(cacheKey));
-          } else {
-            String typeSignature = Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(type);
-            context.putUserObject(cacheKey, typeSignature);
-            result.append(typeSignature);
-          }
-        } else {
-          result.append(Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(type));
-        }
+        result.append(Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(type));
       } else {
         result.append("");
       }

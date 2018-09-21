@@ -16,19 +16,16 @@
 package jetbrains.mps.plugins.part;
 
 import jetbrains.mps.core.platform.Platform;
-import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 
 /**
  * Fractions of {@link jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin}.
  *
- * This class is a replacement for unfortunately nameed {@link BaseCustomApplicationPlugin}.
- *
- * FIXME drop extends BaseCustomApplicationPlugin once 2018.1 is out and new code is generated with this class.
+ * This class is a replacement for unfortunately named {@code BaseCustomApplicationPlugin}.
  *
  * @author Artem Tikhomirov
  * @since 2018.1
  */
-public class ApplicationPluginPart extends BaseCustomApplicationPlugin {
+public class ApplicationPluginPart {
   private Platform myPlatform;
 
   /**
@@ -51,12 +48,10 @@ public class ApplicationPluginPart extends BaseCustomApplicationPlugin {
     return myPlatform;
   }
 
-  @Override
   public void init() {
     // no-op, subclasses to override
   }
 
-  @Override
   public void dispose() {
     // no-op, subclasses to override
   }

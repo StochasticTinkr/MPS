@@ -39,9 +39,6 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -308,7 +305,6 @@
     <property role="TrG5h" value="MigrationsCheckUtil" />
     <node concept="2YIFZL" id="2xiZ7_1zES8" role="jymVt">
       <property role="TrG5h" value="hasCycles" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2xiZ7_1zES9" role="3clF47">
@@ -477,7 +473,6 @@
     </node>
     <node concept="2YIFZL" id="2xiZ7_1zPzP" role="jymVt">
       <property role="TrG5h" value="hasCycles" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2xiZ7_1zPzQ" role="3clF47">
@@ -534,7 +529,6 @@
     </node>
     <node concept="2YIFZL" id="Czdt9t3YHI" role="jymVt">
       <property role="TrG5h" value="hasCycles" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="Czdt9sZxd5" role="3clF47">
@@ -576,7 +570,6 @@
     </node>
     <node concept="2YIFZL" id="2xiZ7_1zE2V" role="jymVt">
       <property role="TrG5h" value="hasIncludeCycles" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2xiZ7_1zE2W" role="3clF47">
@@ -1627,7 +1620,6 @@
     <property role="TrG5h" value="NodeReferenceUtil" />
     <node concept="2YIFZL" id="2SJclOrQjKm" role="jymVt">
       <property role="TrG5h" value="makeReflection" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2SJclOrQjKn" role="3clF47">
@@ -2010,7 +2002,6 @@
     </node>
     <node concept="2YIFZL" id="6szrkDodCxv" role="jymVt">
       <property role="TrG5h" value="makeReflection" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6szrkDodCxw" role="3clF47">
@@ -2046,7 +2037,6 @@
     </node>
     <node concept="2YIFZL" id="6szrkDodClJ" role="jymVt">
       <property role="TrG5h" value="makeDirect" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6szrkDodxIo" role="3clF47">

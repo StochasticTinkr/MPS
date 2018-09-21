@@ -2,8 +2,8 @@
 <model ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -21,9 +21,9 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
-    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="lhc4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.annotations(MPS.OpenAPI/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
+    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -431,33 +431,33 @@
       <property role="TrG5h" value="getResults" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="6tnk5amZmeA" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
       <node concept="3Tm1VV" id="J2bOg02GFJ" role="1B3o_S" />
       <node concept="37vLTG" id="J2bOg02GFK" role="3clF46">
         <property role="TrG5h" value="query" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="J2bOg0cXez" role="1tU5fm">
-          <ref role="3uigEE" node="J2bOg0cap_" resolve="SearchQuery" />
-        </node>
         <node concept="2AHcQZ" id="6tnk5amZuet" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="J2bOg0cXez" role="1tU5fm">
+          <ref role="3uigEE" node="J2bOg0cap_" resolve="SearchQuery" />
         </node>
       </node>
       <node concept="37vLTG" id="J2bOg02GFM" role="3clF46">
         <property role="TrG5h" value="monitor" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="J2bOg02GFN" role="1tU5fm">
-          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
-        </node>
         <node concept="2AHcQZ" id="6tnk5amZufu" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
+        <node concept="3uibUv" id="J2bOg02GFN" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
         </node>
       </node>
       <node concept="3clFbS" id="J2bOg02GFO" role="3clF47" />
       <node concept="3uibUv" id="J2bOg02HXk" role="3clF45">
         <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
-      </node>
-      <node concept="2AHcQZ" id="6tnk5amZmeA" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="6tnk5amZu96" role="jymVt" />
@@ -1219,6 +1219,13 @@
       </node>
       <node concept="3Tm6S6" id="6hZLf2Yo3oN" role="1B3o_S" />
     </node>
+    <node concept="3Tm1VV" id="J2bOg02HbI" role="1B3o_S" />
+    <node concept="16euLQ" id="J2bOg02HbJ" role="16eVyc">
+      <property role="TrG5h" value="T" />
+    </node>
+    <node concept="3uibUv" id="J2bOg02HbK" role="EKbjA">
+      <ref role="3uigEE" to="yctd:~UsagesList" resolve="UsagesList" />
+    </node>
     <node concept="2tJIrI" id="1fzBqomvOR" role="jymVt" />
     <node concept="3clFbW" id="J2bOg02HbW" role="jymVt">
       <property role="DiZV1" value="false" />
@@ -1266,7 +1273,6 @@
     <node concept="3clFbW" id="J2bOg02Hcb" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
-      <node concept="3cqZAl" id="J2bOg02Hcc" role="3clF45" />
       <node concept="37vLTG" id="1jwh7Lz4QbY" role="3clF46">
         <property role="TrG5h" value="searchedObjects" />
         <property role="3TUv4t" value="false" />
@@ -1275,6 +1281,7 @@
           <node concept="3qTvmN" id="1jwh7Lz4Qc0" role="11_B2D" />
         </node>
       </node>
+      <node concept="3cqZAl" id="J2bOg02Hcc" role="3clF45" />
       <node concept="37vLTG" id="J2bOg02Hcg" role="3clF46">
         <property role="TrG5h" value="searchResults" />
         <property role="3TUv4t" value="false" />
@@ -1593,6 +1600,21 @@
       <property role="TrG5h" value="getSearchedNodes" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
+      <node concept="P$JXv" id="1jwh7Lz6cTV" role="lGtFl">
+        <node concept="TZ5HA" id="6hZLf2Yo3tp" role="TZ5H$">
+          <node concept="1dT_AC" id="6hZLf2Yo3tq" role="1dT_Ay">
+            <property role="1dT_AB" value="@deprecated need to remove this since it exposes the internals too much." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6hZLf2Yo3tr" role="TZ5H$">
+          <node concept="1dT_AC" id="6hZLf2Yo3ts" role="1dT_Ay">
+            <property role="1dT_AB" value="            in my view the provided constructors of the class must be enough" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1jwh7Lz622Z" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
       <node concept="3clFbS" id="J2bOg02Hcv" role="3clF47">
         <node concept="3SKdUt" id="6$qiO1QkvD4" role="3cqZAp">
           <node concept="3SKdUq" id="6$qiO1QkwN8" role="3SKWNk">
@@ -1633,21 +1655,6 @@
         <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
         <node concept="3uibUv" id="6$qiO1Ql9Pn" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1jwh7Lz622Z" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="P$JXv" id="1jwh7Lz6cTV" role="lGtFl">
-        <node concept="TZ5HA" id="6hZLf2Yo3tp" role="TZ5H$">
-          <node concept="1dT_AC" id="6hZLf2Yo3tq" role="1dT_Ay">
-            <property role="1dT_AB" value="@deprecated need to remove this since it exposes the internals too much." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="6hZLf2Yo3tr" role="TZ5H$">
-          <node concept="1dT_AC" id="6hZLf2Yo3ts" role="1dT_Ay">
-            <property role="1dT_AB" value="            in my view the provided constructors of the class must be enough" />
-          </node>
         </node>
       </node>
     </node>
@@ -1775,14 +1782,14 @@
       <node concept="3cqZAl" id="73FgxppsoyF" role="3clF45" />
       <node concept="37vLTG" id="73Fgxppss4g" role="3clF46">
         <property role="TrG5h" value="result" />
+        <node concept="2AHcQZ" id="1jwh7Lz7AnU" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="3uibUv" id="73Fgxppss4f" role="1tU5fm">
           <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
           <node concept="16syzq" id="73Fgxppsvu7" role="11_B2D">
             <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
           </node>
-        </node>
-        <node concept="2AHcQZ" id="1jwh7Lz7AnU" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>
@@ -1794,14 +1801,14 @@
       <node concept="37vLTG" id="J2bOg02Hd8" role="3clF46">
         <property role="TrG5h" value="results" />
         <property role="3TUv4t" value="false" />
+        <node concept="2AHcQZ" id="1jwh7Lz7R3f" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="3uibUv" id="J2bOg02Hd9" role="1tU5fm">
           <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
           <node concept="16syzq" id="J2bOg02Hda" role="11_B2D">
             <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
           </node>
-        </node>
-        <node concept="2AHcQZ" id="1jwh7Lz7R3f" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="J2bOg02Hdb" role="3clF47">
@@ -1995,6 +2002,9 @@
       <property role="TrG5h" value="getNotNullResults" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="1jwh7Lz9tMY" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
       <node concept="3clFbS" id="J2bOg02HeP" role="3clF47">
         <node concept="3cpWs8" id="6hZLf2Yo3sI" role="3cqZAp">
           <node concept="3cpWsn" id="6hZLf2Yo3sH" role="3cpWs9">
@@ -2083,15 +2093,21 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="1jwh7Lz9tMY" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
     </node>
     <node concept="2tJIrI" id="1fzBqomvJL" role="jymVt" />
     <node concept="3clFb_" id="J2bOg02HfO" role="jymVt">
       <property role="TrG5h" value="removeDuplicates" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="1jwh7Lz9tMU" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="1jwh7Lz9tHQ" role="3clF45">
+        <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
+        <node concept="16syzq" id="1jwh7Lz9tM$" role="11_B2D">
+          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
+        </node>
+      </node>
       <node concept="3clFbS" id="J2bOg02HfP" role="3clF47">
         <node concept="3cpWs6" id="6hZLf2Yo3td" role="3cqZAp">
           <node concept="2ShNRf" id="6hZLf2Yo6yu" role="3cqZAk">
@@ -2141,22 +2157,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="J2bOg02HfW" role="1B3o_S" />
-      <node concept="3uibUv" id="1jwh7Lz9tHQ" role="3clF45">
-        <ref role="3uigEE" node="J2bOg02HbG" resolve="SearchResults" />
-        <node concept="16syzq" id="1jwh7Lz9tM$" role="11_B2D">
-          <ref role="16sUi3" node="J2bOg02HbJ" resolve="T" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1jwh7Lz9tMU" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="J2bOg02HbI" role="1B3o_S" />
-    <node concept="16euLQ" id="J2bOg02HbJ" role="16eVyc">
-      <property role="TrG5h" value="T" />
-    </node>
-    <node concept="3uibUv" id="J2bOg02HbK" role="EKbjA">
-      <ref role="3uigEE" to="yctd:~UsagesList" resolve="UsagesList" />
     </node>
   </node>
   <node concept="312cEu" id="J2bOg0cap_">

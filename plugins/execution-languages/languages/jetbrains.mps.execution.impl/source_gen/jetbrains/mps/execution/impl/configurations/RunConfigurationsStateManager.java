@@ -168,7 +168,7 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
       RunManagerImpl runManager = getRunManager();
       String selectedConfigurationId = getSelectedConfigurationId(runManager);
       clearAllRunConfigurations();
-      runManager.initializeConfigurationTypes(ConfigurationType.CONFIGURATION_TYPE_EP.getExtensions());
+      runManager.initializeConfigurationTypes(ConfigurationType.CONFIGURATION_TYPE_EP.getExtensionList());
       runManager.reloadSchemes();
       if (selectedConfigurationId != null) {
         RunnerAndConfigurationSettings toSelect = runManager.getConfigurationById(selectedConfigurationId);

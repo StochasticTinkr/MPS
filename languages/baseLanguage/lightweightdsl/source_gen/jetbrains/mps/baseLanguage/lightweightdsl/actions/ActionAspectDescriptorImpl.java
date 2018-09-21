@@ -20,6 +20,8 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 0:
           return Collections.<NodeFactory>singletonList(new ClassLike.NodeFactory_1055884086724932454());
         case 1:
+          return Collections.<NodeFactory>singletonList(new ModifiersFactories.NodeFactory_8823436878019221504());
+        case 2:
           return Collections.<NodeFactory>singletonList(new DependentType_factory.NodeFactory_9097849371504700258());
         default:
       }
@@ -27,5 +29,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     return Collections.<NodeFactory>emptyList();
   }
 
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AutoInitDSLClass", "DependentTypeDescriptor"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AutoInitDSLClass", "DefaultModifier", "DependentTypeDescriptor"};
 }

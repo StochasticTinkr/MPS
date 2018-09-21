@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -56,9 +56,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -374,7 +371,6 @@
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
@@ -5048,33 +5044,6 @@
             </node>
           </node>
           <node concept="3clFbJ" id="5I1xGKoVjX" role="3cqZAp">
-            <node concept="3clFbS" id="5I1xGKoVk0" role="3clFbx">
-              <node concept="3clFbF" id="5I1xGKaUNH" role="3cqZAp">
-                <node concept="2OqwBi" id="5I1xGKaUNI" role="3clFbG">
-                  <node concept="2OqwBi" id="5I1xGKaUNJ" role="2Oq$k0">
-                    <node concept="1PxgMI" id="5I1xGKspbR" role="2Oq$k0">
-                      <node concept="37vLTw" id="5I1xGKaUNK" role="1m5AlR">
-                        <ref role="3cqZAo" node="5I1xGJZr8e" resolve="method" />
-                      </node>
-                      <node concept="chp4Y" id="714IaVdH0YK" role="3oSUPX">
-                        <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="5I1xGKsHlS" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
-                    </node>
-                  </node>
-                  <node concept="tyxLq" id="5I1xGKaUNM" role="2OqNvi">
-                    <node concept="2OqwBi" id="5I1xGKaUNN" role="tz02z">
-                      <node concept="1ht04C" id="5I1xGKaUNO" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="5I1xGKdDsc" role="2OqNvi">
-                        <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="1Wc70l" id="4c$BrPw9MWE" role="3clFbw">
               <node concept="3fqX7Q" id="4c$BrPwaBaI" role="3uHU7w">
                 <node concept="2OqwBi" id="4c$BrPwaBaK" role="3fr31v">
@@ -5098,6 +5067,33 @@
                 <node concept="1mIQ4w" id="5I1xGKpTaG" role="2OqNvi">
                   <node concept="chp4Y" id="5I1xGKq8HV" role="cj9EA">
                     <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="5I1xGKoVk0" role="3clFbx">
+              <node concept="3clFbF" id="5I1xGKaUNH" role="3cqZAp">
+                <node concept="2OqwBi" id="5I1xGKaUNI" role="3clFbG">
+                  <node concept="2OqwBi" id="5I1xGKaUNJ" role="2Oq$k0">
+                    <node concept="1PxgMI" id="5I1xGKspbR" role="2Oq$k0">
+                      <node concept="37vLTw" id="5I1xGKaUNK" role="1m5AlR">
+                        <ref role="3cqZAo" node="5I1xGJZr8e" resolve="method" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH0YK" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="5I1xGKsHlS" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                    </node>
+                  </node>
+                  <node concept="tyxLq" id="5I1xGKaUNM" role="2OqNvi">
+                    <node concept="2OqwBi" id="5I1xGKaUNN" role="tz02z">
+                      <node concept="1ht04C" id="5I1xGKaUNO" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="5I1xGKdDsc" role="2OqNvi">
+                        <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -7732,7 +7728,6 @@
     <node concept="2tJIrI" id="qIwpvNWaYl" role="jymVt" />
     <node concept="2YIFZL" id="qIwpvNWfTr" role="jymVt">
       <property role="TrG5h" value="needsParensInsideCastExpression" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="qIwpvNW9Xd" role="3clF47">
@@ -7845,7 +7840,6 @@
     <node concept="2tJIrI" id="2iI3$d2corb" role="jymVt" />
     <node concept="2YIFZL" id="3VO0F5J53_2" role="jymVt">
       <property role="TrG5h" value="needsParensAroundNotExpression" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="3VO0F5J53_3" role="3clF47">
@@ -7955,7 +7949,6 @@
     <node concept="2tJIrI" id="3VO0F5J53a5" role="jymVt" />
     <node concept="2YIFZL" id="2iI3$d2iOv8" role="jymVt">
       <property role="TrG5h" value="findDesiredInstanceOfExpressionRoot" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2iI3$d2iOv9" role="3clF47">
@@ -11143,7 +11136,6 @@
     <property role="TrG5h" value="ModuleDependencyUtils" />
     <node concept="2YIFZL" id="v01Wj46Hrq" role="jymVt">
       <property role="TrG5h" value="addDependencyOnJDKIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="v01Wj46Dqv" role="3clF47">
@@ -11197,7 +11189,6 @@
     </node>
     <node concept="2YIFZL" id="6BkpuGOYpXd" role="jymVt">
       <property role="TrG5h" value="addDependencyOnJavaDocIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6BkpuGOYpXe" role="3clF47">
@@ -11227,7 +11218,6 @@
               <node concept="2V$Bhx" id="3DVVPRJEajX" role="2V$M_3">
                 <property role="2V$B1T" value="f2801650-65d5-424e-bb1b-463a8781b786" />
                 <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.javadoc" />
-                <property role="2V$B1S" value="-1" />
               </node>
             </node>
           </node>
@@ -11279,7 +11269,6 @@
     </node>
     <node concept="2YIFZL" id="54GdGFn5FyU" role="jymVt">
       <property role="TrG5h" value="addDependencyOnCoreIfMissing" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="54GdGFn5FyV" role="3clF47">
@@ -11732,6 +11721,23 @@
   <node concept="312cEu" id="17XX289k1Hw">
     <property role="3GE5qa" value="members" />
     <property role="TrG5h" value="IncompleteMemberHelper" />
+    <node concept="3UR2Jj" id="3$ZGCDjqry2" role="lGtFl">
+      <node concept="TZ5HA" id="3$ZGCDjqrB6" role="TZ5H$">
+        <node concept="1dT_AC" id="3$ZGCDjqrB7" role="1dT_Ay">
+          <property role="1dT_AB" value="Beatiful!" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3$ZGCDjqrC8" role="TZ5H$">
+        <node concept="1dT_AC" id="3$ZGCDjqrC9" role="1dT_Ay">
+          <property role="1dT_AB" value="just saying that all the properties must be migrated to modifiers and Modifiers must get the #getAttributedObjects" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3$ZGCDjqrDb" role="TZ5H$">
+        <node concept="1dT_AC" id="3$ZGCDjqrDc" role="1dT_Ay">
+          <property role="1dT_AB" value="which returns whether it could be attached to field, method, class, etc" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="17XX289kv8Y" role="jymVt" />
     <node concept="2YIFZL" id="17XX289k1HM" role="jymVt">
       <property role="TrG5h" value="isJavaKeyWordNotApplicableAsModifier" />
@@ -13226,23 +13232,6 @@
     </node>
     <node concept="2tJIrI" id="4ZJfKKWFweu" role="jymVt" />
     <node concept="3Tm1VV" id="17XX289k1Hx" role="1B3o_S" />
-    <node concept="3UR2Jj" id="3$ZGCDjqry2" role="lGtFl">
-      <node concept="TZ5HA" id="3$ZGCDjqrB6" role="TZ5H$">
-        <node concept="1dT_AC" id="3$ZGCDjqrB7" role="1dT_Ay">
-          <property role="1dT_AB" value="Beatiful!" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="3$ZGCDjqrC8" role="TZ5H$">
-        <node concept="1dT_AC" id="3$ZGCDjqrC9" role="1dT_Ay">
-          <property role="1dT_AB" value="just saying that all the properties must be migrated to modifiers and Modifiers must get the #getAttributedObjects" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="3$ZGCDjqrDb" role="TZ5H$">
-        <node concept="1dT_AC" id="3$ZGCDjqrDc" role="1dT_Ay">
-          <property role="1dT_AB" value="which returns whether it could be attached to field, method, class, etc" />
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="37WguZ" id="3$Sh7m_wMrx">
     <property role="3GE5qa" value="comments" />

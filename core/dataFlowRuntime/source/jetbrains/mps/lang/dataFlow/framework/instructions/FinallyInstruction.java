@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class FinallyInstruction extends Instruction {
-  protected TryFinallyInfo myInfo;
-  protected final List<RetInstruction> myReturns = new ArrayList<>();
-  protected final List<TryFinallyInfo> myChildTryFinallies = new ArrayList<>();
+  private TryFinallyInfo myInfo;
+  private final List<RetInstruction> myReturns = new ArrayList<>();
+  private final List<TryFinallyInfo> myChildTryFinallies = new ArrayList<>();
 
   public FinallyInstruction() {
   }

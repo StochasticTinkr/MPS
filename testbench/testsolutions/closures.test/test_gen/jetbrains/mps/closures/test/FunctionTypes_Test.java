@@ -163,8 +163,6 @@ public class FunctionTypes_Test extends TestCase {
       }
     };
   }
-  public FunctionTypes_Test() {
-  }
   public void accept_int(_FunctionTypes._return_P0_E0<? extends Integer> fun) {
   }
   public void accept_Integer(_FunctionTypes._return_P0_E0<? extends Integer> fun) {

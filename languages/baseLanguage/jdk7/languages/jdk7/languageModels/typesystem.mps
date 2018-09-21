@@ -146,12 +146,10 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -275,8 +273,8 @@
                     <node concept="37vLTw" id="3GM_nagTu9Y" role="2Oq$k0">
                       <ref role="3cqZAo" node="kfgQ7MCgcP" resolve="caseElements" />
                     </node>
-                    <node concept="2l5eF5" id="2ZjgnoxPE91" role="2OqNvi">
-                      <node concept="37vLTw" id="3GM_nagTzck" role="2l6Ag6">
+                    <node concept="TSZUe" id="HQjE4XgBG0" role="2OqNvi">
+                      <node concept="37vLTw" id="HQjE4XgBFZ" role="25WWJ7">
                         <ref role="3cqZAo" node="2ZjgnoxPE8F" resolve="current" />
                       </node>
                     </node>

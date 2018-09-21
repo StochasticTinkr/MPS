@@ -127,7 +127,7 @@ public class ML_SideTransforms_LocalVariableDeclaration_Contribution extends Tra
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode lso = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation")), null);
+          SNode lso = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), null);
           {
             SNode matchedNode_8mvt7x_b0a0a0 = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
             {

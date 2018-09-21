@@ -109,11 +109,15 @@ public class TemplateUtil {
   /**
    * @throws IllegalArgumentException if actual number of arguments doesn't match expected
    */
+  @ToRemove(version = 2018.3)
   public static void assertTemplateParametersCount(SNodeReference template, int expected, int actual) throws IllegalArgumentException {
-    if (expected != actual) {
-      final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
-      throw new IllegalArgumentException(msg);
-    }
+    // We no longer assert params count as we pass fixed Object[10] array to legacy generated code when loading templates through old API
+    // (TemplateModel.loadTemplates) to be invoked with new API that doesn't tell us exact number of arguments it would push into TC later.
+    // Remove this method altogether once TM.loadTemplate gone.
+//    if (expected != actual) {
+//      final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
+//      throw new IllegalArgumentException(msg);
+//    }
   }
 
   public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {

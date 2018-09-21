@@ -112,7 +112,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
           public EditorCell compute() {
             return new NodePropertyConstraint_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "applicableProperty");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull_smartReference(cell);

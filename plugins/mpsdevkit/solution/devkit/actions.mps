@@ -4,15 +4,15 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
@@ -221,7 +221,6 @@
       <concept id="3743831881070657680" name="jetbrains.mps.lang.plugin.structure.ListenBlock" flags="in" index="2E2Kfi" />
       <concept id="3743831881070611759" name="jetbrains.mps.lang.plugin.structure.EditorTab" flags="ng" index="2E2WTH">
         <property id="3743831881070611767" name="shortcutChar" index="2E2WTP" />
-        <property id="8204570419206313935" name="commandOnCreate" index="3ED2Es" />
         <reference id="3743831881070611760" name="baseNodeConcept" index="2E2WTM" />
         <child id="3743831881070657666" name="isApplicableBlock" index="2E2Kf0" />
         <child id="3743831881070611762" name="baseNodeBlock" index="2E2WTK" />
@@ -292,7 +291,6 @@
       </concept>
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
       <concept id="7459370737647652607" name="jetbrains.mps.lang.plugin.structure.ConceptsBlock" flags="in" index="1YUSNl" />
@@ -332,9 +330,6 @@
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -696,9 +691,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226592602759" name="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation" flags="nn" index="2mBsIq">
-        <child id="1226592623721" name="argument" index="2mBxPO" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -842,14 +834,14 @@
     </node>
   </node>
   <node concept="9BnSX" id="7sF2r9CiRc9">
-    <property role="9BnSZ" value="jebrains.mps.ide.mpsdevkit" />
+    <property role="9BnSZ" value="jetbrains.mps.ide.mpsdevkit" />
     <property role="3FCvg6" value="true" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSL" value="Allows to develop new MPS languages" />
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
-    <property role="9BnSO" value="182.1" />
+    <property role="9BnSO" value="183.1" />
     <property role="9BnSK" value="2018.3" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
@@ -1056,7 +1048,6 @@
     </node>
     <node concept="1DS2jV" id="7LEQOWrrWbQ" role="1NuT2Z">
       <property role="TrG5h" value="namespace" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="3s15:~MPSDataKeys.NAMESPACE" resolve="NAMESPACE" />
     </node>
     <node concept="1QGGSu" id="6oIkdfWzGAm" role="3Uehp1">
@@ -1185,7 +1176,6 @@
     </node>
     <node concept="1DS2jV" id="7LEQOWrrWbr" role="1NuT2Z">
       <property role="TrG5h" value="namespace" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="3s15:~MPSDataKeys.NAMESPACE" resolve="NAMESPACE" />
     </node>
     <node concept="1QGGSu" id="6oIkdfW$mHz" role="3Uehp1">
@@ -5658,7 +5648,6 @@
                     <ref role="1Y3XeK" to="mnlj:~PropertyChangeListener" resolve="PropertyChangeListener" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3clFb_" id="2cRxHo3XlXE" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="propertyChange" />
                       <property role="DiZV1" value="false" />
@@ -5782,7 +5771,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="editorComponentCreated" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="6adHiaZW6r$" role="1B3o_S" />
                       <node concept="3cqZAl" id="6adHiaZW6r_" role="3clF45" />
@@ -5801,7 +5789,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="editorComponentDisposed" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="6adHiaZW6rF" role="1B3o_S" />
                       <node concept="3cqZAl" id="6adHiaZW6rG" role="3clF45" />
@@ -7282,7 +7269,6 @@
     <node concept="3Tm1VV" id="2$SWsiCtx0W" role="1B3o_S" />
   </node>
   <node concept="2E2WTH" id="2$SWsiCu1P0">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="A" />
     <property role="TrG5h" value="Actions" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7480,7 +7466,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVEQFB">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="B" />
     <property role="TrG5h" value="Behavior" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7660,7 +7645,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVF9WV">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="E" />
     <property role="TrG5h" value="Editor" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -7889,7 +7873,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFa2t">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="C" />
     <property role="TrG5h" value="Constraints" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8066,7 +8049,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFaEE">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="D" />
     <property role="TrG5h" value="Data Flow" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8287,7 +8269,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFaZh">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="F" />
     <property role="TrG5h" value="Find Usages" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8494,7 +8475,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="2erTeUVFcrJ">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="I" />
     <property role="TrG5h" value="Intentions" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8698,7 +8678,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtD_">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="R" />
     <property role="TrG5h" value="Refactorings" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -8899,7 +8878,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtO0">
-    <property role="3ED2Es" value="true" />
     <property role="TrG5h" value="Textgen" />
     <property role="3GE5qa" value="EditorTabs" />
     <ref role="2E2WTM" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
@@ -9102,7 +9080,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="7POWRVZLtP_">
-    <property role="3ED2Es" value="true" />
     <property role="2E2WTP" value="T" />
     <property role="TrG5h" value="Typesystem" />
     <property role="3GE5qa" value="EditorTabs" />
@@ -10607,10 +10584,10 @@
             <node concept="37vLTw" id="3GM_nagTx_Z" role="2Oq$k0">
               <ref role="3cqZAo" node="2erTeUVF2eg" resolve="nodes" />
             </node>
-            <node concept="2mBsIq" id="2erTeUVF2ep" role="2OqNvi">
-              <node concept="2OqwBi" id="2erTeUVF2eq" role="2mBxPO">
-                <node concept="1beSmn" id="2erTeUVF2er" role="2Oq$k0" />
-                <node concept="2qgKlT" id="2erTeUVF2es" role="2OqNvi">
+            <node concept="X8dFx" id="HQjE4XgE3y" role="2OqNvi">
+              <node concept="2OqwBi" id="HQjE4XgE3v" role="25WWJ7">
+                <node concept="1beSmn" id="HQjE4XgE3w" role="2Oq$k0" />
+                <node concept="2qgKlT" id="HQjE4XgE3x" role="2OqNvi">
                   <ref role="37wK5l" to="tpcn:5zMz2aJEI4B" resolve="findGeneratorFragments" />
                 </node>
               </node>
@@ -11897,7 +11874,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getIntentionActions" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5Szoie_lL$9" role="1B3o_S" />
       <node concept="10Q1$e" id="5Szoie_lL$b" role="3clF45">
         <node concept="3uibUv" id="5Szoie_lL$c" role="10Q1$1">

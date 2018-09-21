@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.AbstractBreakpointsTree" file="AbstractBreakpointsTree.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
-    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -11,7 +9,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.UIManager" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
@@ -227,7 +224,6 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree" file="GroupedTree.java">
-    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

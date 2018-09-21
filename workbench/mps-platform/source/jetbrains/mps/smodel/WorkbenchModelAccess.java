@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,26 +21,17 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import static java.math.BigDecimal.valueOf;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -51,14 +42,21 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private static final String IDEA_WRITE_LOCK_FAIL = "Failed to acquire the IDEA write lock after having waited for %.3f s";
 
   private final EDTExecutor myEDTExecutor = new EDTExecutor();
-  private final WriteActionTracker myWriteActionTracker;
-  private final TryRunPlatformWriteHelper myTryPlatformWriteHelper;
+  private final TryRunPlatformWriteHelper myPlatformWriteHelper;
+  private final WorkbenchUndoHandler myUndoHandler;
+  private final CancellableReadsManager myCancellableReads;
 
-  protected WorkbenchModelAccess() {
-    myWriteActionTracker = new WriteActionTracker();
-    myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myWriteActionTracker);
+  public WorkbenchModelAccess(WorkbenchUndoHandler undoHandler) {
+    myUndoHandler = undoHandler;
+    myPlatformWriteHelper = new TryRunPlatformWriteHelper();
+    myCancellableReads = new CancellableReadsManager();
     Disposer.register(this, myEDTExecutor);
-    Disposer.register(this, myTryPlatformWriteHelper);
+    Disposer.register(this, myPlatformWriteHelper);
+  }
+
+  // implementation detail, public just to overcome package boundaries j.m.smodel and j.m.project
+  public org.jetbrains.mps.openapi.module.ModelAccess createForProject(MPSProject mpsProject) {
+    return new ProjectModelAccess2(mpsProject, this);
   }
 
   @Override
@@ -67,28 +65,24 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runReadAction(final Runnable r) {
+    // even if canRead(), register anyway, just in case it can stop sooner in case a 'write' arrives
+    if (handleIfCancellable(r)) {
+      return;
+    }
     if (canRead()) {
       r.run();
+      myCancellableReads.removeIfCanCancel(r);
       return;
     }
     ApplicationManager.getApplication().runReadAction(() -> {
       getReadLock().lock();
       try {
-        r.run();
+        myReadActionDispatcher.dispatch(r);
       } finally {
         getReadLock().unlock();
       }
     });
-  }
-
-  @Override
-  public <T> T runReadAction(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    runReadAction(r);
-    return r.getResult();
+    myCancellableReads.removeIfCanCancel(r);
   }
 
   @Override
@@ -98,42 +92,20 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return;
     }
     assertNotWriteFromRead();
-    Runnable runnable = () -> {
-      getWriteLock().lock();
-      try {
-        clearRepositoryStateCaches();
-        myWriteActionDispatcher.run(r);
-      } finally {
-        getWriteLock().unlock();
-      }
-    };
+    myCancellableReads.cancel();
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(r));
     if (isInEDT()) {
-      try {
-        myWriteActionTracker.writeActionScheduled();
-        ApplicationManager.getApplication().runWriteAction(runnable);
-      } finally {
-        myWriteActionTracker.writeActionProcessed();
-      }
+      myPlatformWriteHelper.runWrite(lockRunnable);
     } else {
-      ApplicationManager.getApplication().runReadAction(runnable);
+      ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
   }
 
-  @Override
-  public <T> T runWriteAction(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-    assertNotWriteFromRead();
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    runWriteAction(r);
-    return r.getResult();
-  }
-
-  private void assertNotWriteFromRead() {
-    if (canRead()) {
-      throw new IllegalStateException("deadlock prevention: do not start write action from read");
-    }
+  // to cease once clearRepositoryStateCache gone
+  // The easiest way is to have onActionStart (much like onCommandStart) and do it there
+  // Smartest way is to drop these caches altogether.
+  private Runnable wrapWithModelWriteDispatch(Runnable r) {
+    return myWriteActionDispatcher.wrap(r);
   }
 
   @Override
@@ -143,20 +115,49 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   @Override
   public void runReadInEDT(Runnable r) {
-    myEDTExecutor.scheduleRead(() -> tryRead(r));
+    if (handleIfCancellable(r)) {
+      return;
+    }
+    myCancellableReads.addIfCanCancel(r);
+    myEDTExecutor.scheduleRead(() -> {
+      boolean succeed;
+      if (succeed = tryRead(r)) {
+        myCancellableReads.removeIfCanCancel(r);
+      }
+      return succeed;
+    });
+  }
+
+  // return true if runnable doesn't need further processing
+  private boolean handleIfCancellable(Runnable r) {
+    if (r instanceof CancellableReadAction) {
+      if (hasScheduledWrites()) {
+        // cancel right away if there's write in action/scheduled
+        ((CancellableReadAction) r).cancel();
+        return true;
+      } else {
+        myCancellableReads.add((CancellableReadAction) r);
+        return false;
+      }
+    }
+    return false;
   }
 
   @Override
   public void runWriteInEDT(Runnable r) {
+    myCancellableReads.cancel(); // not sure if shall cancel here or inside scheduled write, i.e. right before tryWrite(),
+    // though it seems that if we do it from the original thread, not EDT, we facilitate use of CancellableReadActions from within
+    // the ED thread. Otherwise, with cancel from withing scheduleWrite(), there'd be no chances for cancellable action started in EDT to
+    // get cancellation request (code in scheduleWrite would get executed *after* the read action completes).
     myEDTExecutor.scheduleWrite(() -> tryWrite(r));
   }
 
-  @Override
-  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project project) {
-    myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, (MPSProject) project), project);
+  /*package*/ void runCommandInEDT_(@NotNull Runnable r, @NotNull MPSProject project) {
+    myCancellableReads.cancel(); // see runWriteInEDT above
+    myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, project), project);
   }
 
-  public boolean isInEDT() {
+  private boolean isInEDT() {
     return ApplicationManager.getApplication().isDispatchThread();
   }
 
@@ -167,79 +168,33 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       return true;
     }
 
-    return ApplicationManager.getApplication().runReadAction((com.intellij.openapi.util.Computable<Boolean>) () -> {
-      if (getReadLock().tryLock()) {
-        try {
-          r.run();
-        } finally {
-          getReadLock().unlock();
-        }
-        return true;
-      } else {
-        return false;
-      }
-    });
-  }
-
-  @Override
-  public <T> T tryRead(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-
-    ComputeRunnable<T> r = new ComputeRunnable<>(c);
-    if (tryRead(r)) {
-      return r.getResult();
-    }
-    return null;
+    // 1 ms is pretty short to be considered 'try'
+    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, myReadActionDispatcher.wrap(r));
+    // XXX likely, shall try to grab IDEA's read lock much like tryWrite does
+    ApplicationManager.getApplication().runReadAction(lockRunnable);
+    return lockRunnable.wasExecuted();
   }
 
   private boolean tryWrite(final Runnable r) {
-    Computable<Boolean> c = () -> {
-      r.run();
-      return true;
-    };
-    Boolean res = tryWrite(c);
-    return res != null ? res : false;
-  }
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, r);
 
-
-  private <T> T tryWrite(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-
-    // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
-    com.intellij.openapi.util.Computable<T> computable = () -> {
-      try {
-        if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-          try {
-            clearRepositoryStateCaches();
-            return myWriteActionDispatcher.compute(c);
-          } finally {
-            getWriteLock().unlock();
-          }
-        } else {
-          return null;
-        }
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        LOG.error("Interrupted while trying to access the MPS write lock", e);
-        return null;
-      }
-    };
-
+    // XXX there's only 1 use of the method, and it's from EDT executor, are there any chance not to be in EDT here?
     if (isInEDT()) {
       TaskTimer taskTimer = new TaskTimer();
       taskTimer.start();
       try {
-        return myTryPlatformWriteHelper.tryWrite(computable);
+        // in fact, there are 2 lock attempts, one to grab IDEA's platform lock (myPlatformWriteHelper.tryWrite),
+        // and another is to grab MPS write lock with lockRunnable
+        myPlatformWriteHelper.tryWrite(lockRunnable);
       } catch (WriteTimeOutException e) {
+        // XXX why not return false to indicate failed attempt?
         throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
       }
     } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
+      // unlike myPlatformWriteHelper.tryWrite() above, here we don't care to tryLock IDEA's read, why?
+      ApplicationManager.getApplication().runReadAction(lockRunnable);
     }
+    return lockRunnable.wasExecuted();
   }
 
   /**
@@ -263,154 +218,84 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   private boolean tryWriteInCommand(final Runnable r, @NotNull final MPSProject project) {
     ApplicationManager.getApplication().assertIsDispatchThread();
 
-    Reference<Boolean> lockGranted = new Reference<>();
-    com.intellij.openapi.project.Project ideaProject = project.getProject();
     TaskTimer taskTimer = new TaskTimer();
-    try {
-      myTryPlatformWriteHelper.tryCommand(ideaProject, () -> {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              myWriteActionDispatcher.run(() -> {
-                new CommandRunnable(r, project).run();
-                lockGranted.set(true);
-              });
-            } finally {
-              getWriteLock().unlock();
-            }
-          }
-        } catch (InterruptedException ie) {
-          Thread.currentThread().interrupt();
-          LOG.error("Interrupted while trying to access the MPS write lock", ie);
-        }
-      });
-    } catch (WriteTimeOutException e) {
-      throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), e);
-    }
-    return lockGranted.get();
-  }
-
-  @Override
-  public void executeCommand(Runnable r, @Nullable Project project) {
-    if (project == null) {
-      project = CurrentProjectAccessUtil.getMPSProjectFromUI();
-    }
-    String name = "MPS Execute Command", groupId = null;
-    boolean confirmUndo = false;
+    // tryWrite ensures our command runnable would be executed from a distinct thread and hence would be 'top' one
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
+    ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
+      try {
+        myPlatformWriteHelper.tryWrite(lockRunnable);
+      } catch (WriteTimeOutException e) {
+        return e;
+      }
+      return null;
+    });
+    // XXX unlike #executeCommand(Runnable, Project), we don't respect UndoRunnable options here, why?
+    String name =  "MPS #tryCommand", groupId = null;
+    UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
     if (r instanceof UndoRunnable) {
       UndoRunnable ur = (UndoRunnable) r;
       name = ur.getName();
       groupId = ur.getGroupId();
-      confirmUndo = ur.shallConfirmUndo();
+      if (ur.shallConfirmUndo()) {
+        confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
+      }
     }
-    runWriteActionInCommand(r, name, groupId, confirmUndo, project);
-  }
-
-  private void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project),
-                                                  new CommandRunnable(r, project), name, groupId,
-                                                  requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION
-                                                                          : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(project.getProject(), computable, name, groupId, confirmUndo);
+    if (computable.getResult() != null) {
+      // XXX why on earth do we report platform lock timeout with an exception, while model lock timeout with mere boolean wasExecuted?
+      throw new TimeOutRuntimeException(String.format(IDEA_WRITE_LOCK_FAIL, taskTimer.secondsElapsed()), computable.getResult());
+    }
+    return lockRunnable.wasExecuted();
   }
 
   @Override
-  public void runUndoTransparentCommand(Runnable r, Project project) {
-    if (myCommandLevel > 0) {
+  public void executeCommand(Runnable r) {
+    executeCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
+  }
+
+  /*package*/ void executeCommand(Runnable r, MPSProject project) {
+    assert r != null;
+    assert project != null;
+
+    myCancellableReads.cancel();
+
+    if (isInsideCommand()) {
+      // no apparent reason to go long way and to notify IDEA's CommandProcessor.
+      // Besides, and it's IMPORTANT, wrapTopCommandRunnable() and UndoContextSetup expect runnable to be the top command
+      // as they use it to configure undo context, which is not the thing we'd like to do for an executeCommand() inside another executeCommand().
+      r.run();
+      return;
+    }
+
+    String name = "MPS Execute Command", groupId = null;
+    UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
+    if (r instanceof UndoRunnable) {
+      UndoRunnable ur = (UndoRunnable) r;
+      name = ur.getName();
+      groupId = ur.getGroupId();
+      if (ur.shallConfirmUndo()) {
+        confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
+      }
+    }
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
+    CommandProcessor.getInstance().executeCommand(project.getProject(), myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo);
+  }
+
+  /*package*/ void runUndoTransparentCommand(Runnable r, MPSProject project) {
+    if (myCommandActionDispatcher.isInsideAction()) {
+      // XXX why not, except for the newly introduced wrapTopCommandRunnable() limitation of nested commands?
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
-  }
+    myCancellableReads.cancel();
 
-  @Override
-  public boolean isInsideCommand() {
-    return canWrite() && myCommandLevel > 0;
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
+    CommandProcessor.getInstance().runUndoTransparentAction(myPlatformWriteHelper.withPlatformWrite(withModelLock));
   }
 
   @Override
   public boolean hasScheduledWrites() {
-    return myWriteActionTracker.hasScheduledWrites() || super.hasScheduledWrites();
-  }
-
-  //--------command events listening
-
-  private List<CommandListener> myListeners = new ArrayList<>();
-  private final Object myListenersLock = new Object();
-
-  private int myCommandLevel = 0;
-
-  private void incCommandLevel(Runnable command, SRepository repository) {
-    checkWriteAccess();
-    if (myCommandLevel != 0) {
-      // LOG.error("command level>0", new Exception());
-    } else {
-      UndoContext context;
-      if (command instanceof UndoContext) {
-        context = (UndoContext) command;
-      } else {
-        context = new DefaultUndoContext(repository);
-      }
-      UndoHelper.getInstance().startCommand(context);
-      onCommandStarted();
-    }
-    myCommandLevel++;
-  }
-
-  private void decCommandLevel() {
-    checkWriteAccess();
-    myCommandLevel--;
-    if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand();
-      onCommandFinished();
-    }
-  }
-
-  @Override
-  public void addCommandListener(CommandListener l) {
-    synchronized (myListenersLock) {
-      myListeners.add(l);
-    }
-  }
-
-  @Override
-  public void removeCommandListener(CommandListener l) {
-    synchronized (myListenersLock) {
-      myListeners.remove(l);
-    }
-  }
-
-  @Override
-  protected void onCommandStarted() {
-    super.onCommandStarted();
-    ArrayList<CommandListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<>(myListeners);
-    }
-
-    for (CommandListener l : listeners) {
-      try {
-        l.commandStarted();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-  }
-
-  @Override
-  protected void onCommandFinished() {
-    ArrayList<CommandListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<>(myListeners);
-    }
-    for (CommandListener l : listeners) {
-      try {
-        l.commandFinished();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-    super.onCommandFinished();
+    return myPlatformWriteHelper.hasScheduledWrites() || super.hasScheduledWrites();
   }
 
   @Override
@@ -431,26 +316,67 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return getClass().getSimpleName();
   }
 
-  @Immutable
-  private final class CommandRunnable implements Runnable {
-    private final Runnable myRunnable;
-    private final Project myProject;
 
-    CommandRunnable(Runnable r, Project project) {
-      myRunnable = r;
+  /**
+   * Bears 'TOP' in the name to stress we don't expect nested command here.
+   * myCommandActionDispatcher indeed tolerates nested commands, however UndoContextSetup DOES NOT.
+   * This might be worth a refactoring, so that even nested commands go through myCommandActionDispatcher, and only for the top one
+   * there'd be an extra responsibility to setup undo context.
+   */
+  private Runnable wrapTopCommandRunnable(Runnable r, MPSProject project) {
+    // first, commandStarted notification is dispatched, then undo context set,
+    // at the end, undo context is flushed, and then commandFinished() is dispatched.
+    // The start sequence used to be other way round, does it matter? If yes, can change to:
+    //    new UndoContextSetup(r, myCommandActionDispatcher.wrap(r), project) for notifications to go
+    // inside initialized undo context, just need to make sure UndoContextSetup receives the right Runnable instance (to check instanceof)
+    return myCommandActionDispatcher.wrap(new UndoContextSetup(r, project));
+  }
+
+  /**
+   * Responsible to prepare and cleanup undo context for the command. Has to run prior to any client-supplied command code, only for the very first command.
+   * Shall get executed inside platform write and under model write lock.
+   */
+  @Immutable
+  private final class UndoContextSetup implements Runnable {
+    private final Runnable myCommand;
+    private final MPSProject myProject;
+
+    /**
+     * IMPORTANT: Runnable instance has to be the one that came from an end-user, we look at optional interfaces it may implement!
+     */
+    UndoContextSetup(Runnable r, MPSProject project) {
+      myCommand = r;
       myProject = project;
     }
 
     @Override
     public void run() {
-      WorkbenchModelAccess.this.runWriteAction(() -> {
-        incCommandLevel(myRunnable, myProject.getRepository());
-        try {
-          myRunnable.run();
-        } finally {
-          decCommandLevel();
-        }
-      });
+      // it seems that the only chance for CommandRunnable to be executed inside another CommandRunnable (hence, to expect myCommandLevel != 0)
+      // would be executeCommand() nested inside another executeCommand(). Undo-transparent is explicit about top-level, and async command is always top-level
+      // by design. Therefore, once executeCommand() runs a delegate directly in case of nested command, this runnable could become UndoContextSetupRunnable
+      // and get incCommandLevel (myCommandLevel == 0) responsibilities here
+      setUp();
+      try {
+        myCommand.run();
+      } finally {
+        tearDown();
+      }
+    }
+    private void setUp() {
+      checkWriteAccess();
+      UndoContext context;
+      if (myCommand instanceof UndoContext) {
+        context = (UndoContext) myCommand;
+      } else {
+        context = new DefaultUndoContext(myProject.getRepository());
+      }
+      // XXX pass MPSProject right to undoHandler, don't be shy
+      myUndoHandler.startCommand(context);
+    }
+
+    private void tearDown() {
+      checkWriteAccess();
+      myUndoHandler.flushCommand();
     }
   }
 }

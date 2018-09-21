@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -215,7 +215,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -223,7 +223,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -465,32 +465,6 @@
     <node concept="1YaCAy" id="hIdQRfr" role="1YuTPh">
       <property role="TrG5h" value="nodesTestMethod" />
       <ref role="1YaFvo" to="tp5g:hHlHkQ8" resolve="NodesTestMethod" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="hPMo4MW">
-    <property role="TrG5h" value="typeof_EditorExpression" />
-    <property role="3GE5qa" value="expression" />
-    <node concept="3clFbS" id="hPMo4MX" role="18ibNy">
-      <node concept="1Z5TYs" id="hPMpqDh" role="3cqZAp">
-        <node concept="mw_s8" id="hPMprLQ" role="1ZfhKB">
-          <node concept="2c44tf" id="hPMq6Vi" role="mwGJk">
-            <node concept="3uibUv" id="3Y1sPZ9XXjR" role="2c44tc">
-              <ref role="3uigEE" to="cj4x:~Editor" resolve="Editor" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="hPMpqDk" role="1ZfhK$">
-          <node concept="1Z2H0r" id="hPMpp0J" role="mwGJk">
-            <node concept="1YBJjd" id="hPMpq3U" role="1Z2MuG">
-              <ref role="1YBMHb" node="hPMo4MY" resolve="expression" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="hPMo4MY" role="1YuTPh">
-      <property role="TrG5h" value="expression" />
-      <ref role="1YaFvo" to="tp5g:hPMiqvr" resolve="EditorExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="hRNnbDw">

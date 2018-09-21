@@ -224,10 +224,7 @@
       <node id="1841835149314780128" at="39,0,40,12" concept="6" />
       <node id="1841835149314780130" at="40,12,41,108" concept="1" />
       <node id="1841835149314781674" at="41,108,42,109" concept="1" />
-      <node id="5368511706901688072" at="44,0,46,0" concept="0" trace="TestRelativePathHelper_Test#()V" />
       <node id="5368511706901692172" at="11,0,44,0" concept="3" trace="test_testRelPaths#()V" />
-      <scope id="5368511706901688075" at="44,40,44,40" />
-      <scope id="5368511706901688072" at="44,0,46,0" />
       <scope id="5368511706901692175" at="11,52,42,109">
         <var name="baseDir" id="1841835149314687008" />
         <var name="oneUp" id="1841835149314780164" />
@@ -236,7 +233,7 @@
         <var name="tmpFile" id="1841835149314679085" />
       </scope>
       <scope id="5368511706901692172" at="11,0,44,0" />
-      <unit id="5368511706901688070" at="10,0,47,0" name="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
+      <unit id="5368511706901688070" at="10,0,45,0" name="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
     </file>
   </root>
   <root nodeRef="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)/5584673629410321146">
@@ -274,11 +271,9 @@
       <node id="6547494638219647735" at="116,85,117,48" concept="10" />
       <node id="6547494638219647744" at="120,46,121,48" concept="10" />
       <node id="6547494638219647753" at="124,36,125,48" concept="10" />
-      <node id="6547494638219647757" at="128,40,129,48" concept="10" />
-      <node id="6547494638219647760" at="132,35,133,48" concept="10" />
-      <node id="6547494638219647763" at="136,34,137,48" concept="10" />
-      <node id="6547494638219647769" at="140,33,141,48" concept="10" />
-      <node id="6547494638219647772" at="144,28,145,48" concept="10" />
+      <node id="6547494638219647760" at="128,35,129,48" concept="10" />
+      <node id="6547494638219647763" at="132,34,133,48" concept="10" />
+      <node id="6547494638219647769" at="136,33,137,48" concept="10" />
       <node id="5584673629410321148" at="20,0,23,0" concept="0" trace="TestContext#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="6547494638219647278" at="27,0,31,0" concept="0" trace="TestGenContext#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="6547494638219647311" at="31,0,35,0" concept="3" trace="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
@@ -305,11 +300,9 @@
       <node id="6547494638219647414" at="115,0,119,0" concept="3" trace="getOutputNodeByInputNodeAndMappingLabel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6547494638219647390" at="119,0,123,0" concept="3" trace="getGenerator#()Ljetbrains/mps/generator/template/ITemplateGenerator;" />
       <node id="6547494638219647369" at="123,0,127,0" concept="3" trace="getOutputModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="6547494638219647359" at="127,0,131,0" concept="3" trace="isDirty#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6547494638219647352" at="131,0,135,0" concept="3" trace="getInputModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="6547494638219647345" at="135,0,139,0" concept="3" trace="getOutputNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6547494638219647331" at="139,0,143,0" concept="3" trace="getInputNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6547494638219647324" at="143,0,147,0" concept="3" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6547494638219647352" at="127,0,131,0" concept="3" trace="getInputModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="6547494638219647345" at="131,0,135,0" concept="3" trace="getOutputNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6547494638219647331" at="135,0,139,0" concept="3" trace="getInputNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5584673629410321151" at="20,43,21,56" />
       <scope id="6547494638219647318" at="32,56,33,27" />
       <scope id="6547494638219647306" at="36,46,37,24" />
@@ -335,11 +328,9 @@
       <scope id="6547494638219647421" at="116,85,117,48" />
       <scope id="6547494638219647393" at="120,46,121,48" />
       <scope id="6547494638219647372" at="124,36,125,48" />
-      <scope id="6547494638219647364" at="128,40,129,48" />
-      <scope id="6547494638219647355" at="132,35,133,48" />
-      <scope id="6547494638219647348" at="136,34,137,48" />
-      <scope id="6547494638219647334" at="140,33,141,48" />
-      <scope id="6547494638219647327" at="144,28,145,48" />
+      <scope id="6547494638219647355" at="128,35,129,48" />
+      <scope id="6547494638219647348" at="132,34,133,48" />
+      <scope id="6547494638219647334" at="136,33,137,48" />
       <scope id="6547494638219647281" at="27,41,29,25" />
       <scope id="5584673629410321148" at="20,0,23,0">
         <var name="currentModel" id="6547494638219654971" />
@@ -420,15 +411,11 @@
       </scope>
       <scope id="6547494638219647390" at="119,0,123,0" />
       <scope id="6547494638219647369" at="123,0,127,0" />
-      <scope id="6547494638219647359" at="127,0,131,0">
-        <var name="node" id="6547494638219647362" />
-      </scope>
-      <scope id="6547494638219647352" at="131,0,135,0" />
-      <scope id="6547494638219647345" at="135,0,139,0" />
-      <scope id="6547494638219647331" at="139,0,143,0" />
-      <scope id="6547494638219647324" at="143,0,147,0" />
-      <unit id="6547494638219647276" at="24,0,148,0" name="jetbrains.mps.build.tests.TestContext$TestGenContext" />
-      <unit id="5584673629410321146" at="15,0,149,0" name="jetbrains.mps.build.tests.TestContext" />
+      <scope id="6547494638219647352" at="127,0,131,0" />
+      <scope id="6547494638219647345" at="131,0,135,0" />
+      <scope id="6547494638219647331" at="135,0,139,0" />
+      <unit id="6547494638219647276" at="24,0,140,0" name="jetbrains.mps.build.tests.TestContext$TestGenContext" />
+      <unit id="5584673629410321146" at="15,0,141,0" name="jetbrains.mps.build.tests.TestContext" />
     </file>
   </root>
 </debug-info>

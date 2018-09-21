@@ -30,12 +30,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @SuppressWarnings("unused")
 //used as generation target
 public class URLCellProvider extends PropertyCellProvider {
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public URLCellProvider(@NotNull SNode node, EditorContext context) {
-    super(node, context);
-  }
-
   public URLCellProvider(@NotNull SNode node, SProperty property, EditorContext context) {
     super(node, property, context);
   }

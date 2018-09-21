@@ -4,6 +4,7 @@ package jetbrains.mps.samples.Kaja.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.FragmentResult;
@@ -24,8 +25,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_CommentLine extends TemplateDeclarationBase {
-
+public class Template_reduce_CommentLine extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_reduce_CommentLine() {
   }
@@ -33,6 +33,8 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287829");
   }
+
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -41,7 +43,7 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_22_0(new PropertyMacroContext(context1, "this is a comment", propertyMacro_h26r33_c0a0c0a0b0b0c0f))));
+          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_22_0(new PropertyMacroContext(context1, "this is a comment", propertyMacro_h26r33_c0a0c0a0b0b0c0g))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode2);
@@ -59,15 +61,10 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -90,5 +87,5 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
     return rv;
   }
-  private static SNodePointer propertyMacro_h26r33_c0a0c0a0b0b0c0f = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287838");
+  private static SNodePointer propertyMacro_h26r33_c0a0c0a0b0b0c0g = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287838");
 }

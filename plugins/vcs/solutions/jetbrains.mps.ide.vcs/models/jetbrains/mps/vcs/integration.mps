@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -50,9 +50,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -107,6 +104,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -181,6 +179,11 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
@@ -726,6 +729,9 @@
       <node concept="2AHcQZ" id="3tYsUK_UvPX" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+      <node concept="2AHcQZ" id="7WyXo5rEorx" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
     <node concept="3clFb_" id="33vUo2uvKdQ" role="jymVt">
       <property role="TrG5h" value="getPresentableRelativePath" />
@@ -746,41 +752,64 @@
         </node>
       </node>
       <node concept="3clFbS" id="33vUo2uvKdX" role="3clF47">
-        <node concept="3cpWs6" id="33vUo2uvKdY" role="3cqZAp">
-          <node concept="2YIFZM" id="33vUo2uvKdZ" role="3cqZAk">
-            <ref role="37wK5l" to="snbe:~FileUtil.getRelativePath(java.io.File,java.io.File):java.lang.String" resolve="getRelativePath" />
-            <ref role="1Pybhc" to="snbe:~FileUtil" resolve="FileUtil" />
-            <node concept="2OqwBi" id="33vUo2uvKe0" role="37wK5m">
-              <node concept="2OqwBi" id="33vUo2uvKe1" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgmFy$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="33vUo2uvKdV" resolve="toRevision" />
+        <node concept="3cpWs8" id="7WyXo5rEH4w" role="3cqZAp">
+          <node concept="3cpWsn" id="7WyXo5rEH4x" role="3cpWs9">
+            <property role="TrG5h" value="relativePath" />
+            <node concept="17QB3L" id="7WyXo5rEHNQ" role="1tU5fm" />
+            <node concept="2YIFZM" id="7WyXo5rEH4y" role="33vP2m">
+              <ref role="37wK5l" to="snbe:~FileUtil.getRelativePath(java.io.File,java.io.File):java.lang.String" resolve="getRelativePath" />
+              <ref role="1Pybhc" to="snbe:~FileUtil" resolve="FileUtil" />
+              <node concept="2OqwBi" id="7WyXo5rEH4z" role="37wK5m">
+                <node concept="2OqwBi" id="7WyXo5rEH4$" role="2Oq$k0">
+                  <node concept="37vLTw" id="7WyXo5rEH4_" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33vUo2uvKdV" resolve="toRevision" />
+                  </node>
+                  <node concept="liA8E" id="7WyXo5rEH4A" role="2OqNvi">
+                    <ref role="37wK5l" to="1037:~ContentRevision.getFile():com.intellij.openapi.vcs.FilePath" resolve="getFile" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="33vUo2uvKe3" role="2OqNvi">
-                  <ref role="37wK5l" to="1037:~ContentRevision.getFile():com.intellij.openapi.vcs.FilePath" resolve="getFile" />
+                <node concept="liA8E" id="7WyXo5rEH4B" role="2OqNvi">
+                  <ref role="37wK5l" to="jlcu:~FilePath.getIOFile():java.io.File" resolve="getIOFile" />
                 </node>
               </node>
-              <node concept="liA8E" id="33vUo2uvKe4" role="2OqNvi">
-                <ref role="37wK5l" to="jlcu:~FilePath.getIOFile():java.io.File" resolve="getIOFile" />
+              <node concept="2OqwBi" id="7WyXo5rEH4C" role="37wK5m">
+                <node concept="2OqwBi" id="7WyXo5rEH4D" role="2Oq$k0">
+                  <node concept="37vLTw" id="7WyXo5rEH4E" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33vUo2uvKdT" resolve="fromRevision" />
+                  </node>
+                  <node concept="liA8E" id="7WyXo5rEH4F" role="2OqNvi">
+                    <ref role="37wK5l" to="1037:~ContentRevision.getFile():com.intellij.openapi.vcs.FilePath" resolve="getFile" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7WyXo5rEH4G" role="2OqNvi">
+                  <ref role="37wK5l" to="jlcu:~FilePath.getIOFile():java.io.File" resolve="getIOFile" />
+                </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="33vUo2uvKe5" role="37wK5m">
-              <node concept="2OqwBi" id="33vUo2uvKe6" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgm9yP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="33vUo2uvKdT" resolve="fromRevision" />
-                </node>
-                <node concept="liA8E" id="33vUo2uvKe8" role="2OqNvi">
-                  <ref role="37wK5l" to="1037:~ContentRevision.getFile():com.intellij.openapi.vcs.FilePath" resolve="getFile" />
-                </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="33vUo2uvKdY" role="3cqZAp">
+          <node concept="3K4zz7" id="7WyXo5rEJCC" role="3cqZAk">
+            <node concept="Xl_RD" id="7WyXo5rEKa8" role="3K4E3e">
+              <property role="Xl_RC" value="" />
+            </node>
+            <node concept="37vLTw" id="7WyXo5rEKFz" role="3K4GZi">
+              <ref role="3cqZAo" node="7WyXo5rEH4x" resolve="relativePath" />
+            </node>
+            <node concept="2OqwBi" id="7WyXo5rEIpe" role="3K4Cdx">
+              <node concept="37vLTw" id="7WyXo5rEH4H" role="2Oq$k0">
+                <ref role="3cqZAo" node="7WyXo5rEH4x" resolve="relativePath" />
               </node>
-              <node concept="liA8E" id="33vUo2uvKe9" role="2OqNvi">
-                <ref role="37wK5l" to="jlcu:~FilePath.getIOFile():java.io.File" resolve="getIOFile" />
-              </node>
+              <node concept="17RlXB" id="7WyXo5rEIW6" role="2OqNvi" />
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UvPW" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="7WyXo5rEoRg" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
   </node>
@@ -1136,7 +1165,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5ooWrzQB8CS" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
@@ -1163,7 +1191,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5ooWrzQB8CO" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
@@ -1395,7 +1422,6 @@
         <node concept="3clFbS" id="5ooWrzQB8Dk" role="3clF47" />
       </node>
       <node concept="3clFb_" id="5ooWrzQB8Dt" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="contentsChanged" />
         <property role="DiZV1" value="false" />
@@ -1422,7 +1448,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="5ooWrzQB8DF" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeFileDeletion" />
         <property role="DiZV1" value="false" />

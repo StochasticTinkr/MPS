@@ -7,8 +7,8 @@
   <imports>
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -77,9 +77,6 @@
     </node>
     <node concept="PrWs8" id="5BD$AU43p5W" role="PzmwI">
       <ref role="PrY4T" node="5BD$AU43p5T" resolve="MemberInstance" />
-    </node>
-    <node concept="PrWs8" id="3m06JgsoqNo" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5s">
@@ -191,9 +188,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="9097849371505568270" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    </node>
-    <node concept="PrWs8" id="7T23sO8sTX6" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="36gOZBLMF3a">
@@ -325,9 +319,6 @@
     <node concept="PrWs8" id="5BD$AU43DLe" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
-    <node concept="PrWs8" id="7ay_HjINhyL" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU43p5h">
     <property role="3GE5qa" value="instances.property" />
@@ -345,9 +336,6 @@
     </node>
     <node concept="PrWs8" id="5BD$AU43p5Y" role="PzmwI">
       <ref role="PrY4T" node="5BD$AU43p5T" resolve="MemberInstance" />
-    </node>
-    <node concept="PrWs8" id="3m06Jgsnez1" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="PlHQZ" id="5BD$AU43p5T">
@@ -413,9 +401,6 @@
     <node concept="PrWs8" id="3crTN2XY8Qq" role="PzmwI">
       <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
-    <node concept="PrWs8" id="2h59CdJnEbH" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="1QReUKIFP7I">
     <property role="3GE5qa" value="member.modifier" />
@@ -448,6 +433,23 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8880393040217294897" />
       <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7DN9hucqeID">
+    <property role="3GE5qa" value="member.modifier" />
+    <property role="TrG5h" value="DefaultModifier" />
+    <property role="34LRSv" value="default" />
+    <property role="EcuMT" value="8823436878019095465" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7DN9hucqf4S" role="1TKVEi">
+      <property role="IQ2ns" value="8823436878019096888" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5BD$AU43p5h" resolve="PropertyInstance" />
+    </node>
+    <node concept="PrWs8" id="7DN9hucqeIE" role="PzmwI">
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
 </model>

@@ -31,8 +31,8 @@ import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -176,7 +176,11 @@ public final class FileBasedModelRootEntry implements ModelRootEntry<FileBasedMo
     if (virtualFile != null && virtualFile.exists()) {
       HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(pathPresentation, foreground);
       hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
-      hyperlinkLabel.addHyperlinkListener(e -> myFileBasedModelRootEditor.selectFile(sourceRoot.getAbsolutePath()));
+      hyperlinkLabel.addHyperlinkListener(e -> {
+        if (myFileBasedModelRootEditor != null) {
+          myFileBasedModelRootEditor.selectFile(sourceRoot.getAbsolutePath());
+        }
+      });
       registerTextComponent(hyperlinkLabel, foreground);
       label2Return = hyperlinkLabel;
     }

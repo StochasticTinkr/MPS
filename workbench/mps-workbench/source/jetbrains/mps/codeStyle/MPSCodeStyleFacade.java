@@ -18,6 +18,7 @@ package jetbrains.mps.codeStyle;
 import com.intellij.codeStyle.CodeStyleFacade;
 import com.intellij.lang.Language;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.project.Project;
@@ -43,6 +44,11 @@ public class MPSCodeStyleFacade extends CodeStyleFacade {
     return 4;
   }
 
+  @Override
+  public int getJoinedLinesSpacing(@NotNull Editor editor, @Nullable Language language, int offset, boolean allowDocCommit) {
+    return 0;
+  }
+
   @Nullable
   @Override
   public String getLineIndent(@NotNull Document document, int offset) {
@@ -63,11 +69,6 @@ public class MPSCodeStyleFacade extends CodeStyleFacade {
   @Override
   public int getTabSize(FileType fileType) {
     return 4;
-  }
-
-  @Override
-  public boolean isSmartTabs(FileType fileType) {
-    return false;
   }
 
   @Override

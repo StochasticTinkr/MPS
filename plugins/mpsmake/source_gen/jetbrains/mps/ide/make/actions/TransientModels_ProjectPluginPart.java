@@ -12,7 +12,7 @@ public class TransientModels_ProjectPluginPart extends ProjectPluginPart {
   }
   @Override
   public void init(MPSProject project) {
-    TransientModels_ProjectPluginPart.this.myNotifier = new TransientModelsNotification(project.getProject());
+    TransientModels_ProjectPluginPart.this.myNotifier = new TransientModelsNotification(project);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         TransientModels_ProjectPluginPart.this.myNotifier.projectOpened();

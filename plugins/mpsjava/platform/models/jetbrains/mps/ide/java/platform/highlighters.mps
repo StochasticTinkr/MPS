@@ -5,11 +5,11 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
@@ -94,9 +94,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -847,11 +844,11 @@
                 <property role="TrG5h" value="overrides" />
                 <node concept="22lmx$" id="7k6J8c3tikS" role="33vP2m">
                   <node concept="2OqwBi" id="7k6J8c3til9" role="3uHU7B">
-                    <node concept="2GrUjf" id="7k6J8c3tila" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="7k6J8c3tikt" resolve="overridingMethod" />
-                    </node>
                     <node concept="2qgKlT" id="4c$BrPwjP1T" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+                    </node>
+                    <node concept="2GrUjf" id="7k6J8c3tila" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7k6J8c3tikt" resolve="overridingMethod" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="7k6J8c3tikT" role="3uHU7w">
@@ -867,6 +864,9 @@
                             <node concept="3clFbF" id="7k6J8c3tikZ" role="3cqZAp">
                               <node concept="3fqX7Q" id="7k6J8c3til0" role="3clFbG">
                                 <node concept="2OqwBi" id="7k6J8c3til1" role="3fr31v">
+                                  <node concept="2qgKlT" id="4c$BrPwjSoF" role="2OqNvi">
+                                    <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+                                  </node>
                                   <node concept="1LFfDK" id="7k6J8c3til2" role="2Oq$k0">
                                     <node concept="3cmrfG" id="7k6J8c3til3" role="1LF_Uc">
                                       <property role="3cmrfH" value="0" />
@@ -874,9 +874,6 @@
                                     <node concept="37vLTw" id="2BHiRxgmwTd" role="1LFl5Q">
                                       <ref role="3cqZAo" node="7k6J8c3til6" resolve="it" />
                                     </node>
-                                  </node>
-                                  <node concept="2qgKlT" id="4c$BrPwjSoF" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                                   </node>
                                 </node>
                               </node>
@@ -1510,11 +1507,11 @@
                 <property role="TrG5h" value="overriden" />
                 <node concept="3fqX7Q" id="7k6J8c3tipc" role="33vP2m">
                   <node concept="2OqwBi" id="7k6J8c3tipd" role="3fr31v">
-                    <node concept="2GrUjf" id="7k6J8c3tipe" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="7k6J8c3tioY" resolve="overridenMethod" />
-                    </node>
                     <node concept="2qgKlT" id="4c$BrPwliOx" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+                    </node>
+                    <node concept="2GrUjf" id="7k6J8c3tipe" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7k6J8c3tioY" resolve="overridenMethod" />
                     </node>
                   </node>
                 </node>
@@ -2933,6 +2930,9 @@
   </node>
   <node concept="312cEu" id="7k6J8c3tixT">
     <property role="TrG5h" value="OverriddenMethodEditorMessage" />
+    <node concept="3uibUv" id="2mjA7mXpiUM" role="1zkMxy">
+      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
+    </node>
     <node concept="Wx3nA" id="7k6J8c3tixU" role="jymVt">
       <property role="TrG5h" value="TYPE" />
       <property role="3TUv4t" value="true" />
@@ -3074,12 +3074,12 @@
       <node concept="3Tm1VV" id="7k6J8c3tiyV" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="7k6J8c3tiyf" role="1B3o_S" />
-    <node concept="3uibUv" id="2mjA7mXpiUM" role="1zkMxy">
-      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
-    </node>
   </node>
   <node concept="312cEu" id="7k6J8c3tiz3">
     <property role="TrG5h" value="OverridingMethodEditorMessage" />
+    <node concept="3uibUv" id="2mjA7mXpIlW" role="1zkMxy">
+      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
+    </node>
     <node concept="Wx3nA" id="7k6J8c3tiz4" role="jymVt">
       <property role="TrG5h" value="TYPE" />
       <property role="3TUv4t" value="true" />
@@ -3220,9 +3220,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="7k6J8c3tizp" role="1B3o_S" />
-    <node concept="3uibUv" id="2mjA7mXpIlW" role="1zkMxy">
-      <ref role="3uigEE" to="ew8r:7k6J8c3tigZ" resolve="AbstractOverrideEditorMessage" />
-    </node>
   </node>
   <node concept="312cEu" id="7k6J8c3ti$a">
     <property role="TrG5h" value="SubclassedClassifierEditorMessage" />
@@ -3593,7 +3590,6 @@
     </node>
     <node concept="2tJIrI" id="1dN09JzSmS1" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3u3EN" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="projectOpened" />
       <property role="DiZV1" value="false" />
@@ -3606,7 +3602,6 @@
     </node>
     <node concept="2tJIrI" id="1dN09JzSmS2" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3u3ER" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="projectClosed" />
       <property role="DiZV1" value="false" />
@@ -3619,7 +3614,6 @@
     </node>
     <node concept="2tJIrI" id="1dN09JzSmS3" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3u3EV" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
@@ -3721,7 +3715,6 @@
     </node>
     <node concept="2tJIrI" id="1dN09JzSmS4" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3u3EZ" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
@@ -3820,7 +3813,6 @@
     </node>
     <node concept="2tJIrI" id="1dN09JzSmS5" role="jymVt" />
     <node concept="3clFb_" id="7k6J8c3u3F3" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />

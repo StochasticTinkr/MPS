@@ -125,10 +125,6 @@ public class TestContext extends Context {
       throw new UnsupportedOperationException();
     }
     @Override
-    public boolean isDirty(SNode node) {
-      throw new UnsupportedOperationException();
-    }
-    @Override
     public SModel getInputModel() {
       throw new UnsupportedOperationException();
     }
@@ -138,10 +134,6 @@ public class TestContext extends Context {
     }
     @Override
     public SNode getInputNode() {
-      throw new UnsupportedOperationException();
-    }
-    @Override
-    public SNode getNode() {
       throw new UnsupportedOperationException();
     }
   }

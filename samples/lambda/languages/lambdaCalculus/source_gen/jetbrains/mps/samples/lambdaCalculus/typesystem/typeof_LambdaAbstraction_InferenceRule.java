@@ -13,6 +13,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,11 +37,16 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
     for (SNode node : reversedNodes) {
       final SNode D_typevar_6115593414628019700 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
+        SNode _nodeToCheck_1029348928467 = lambdaAbstraction;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "1751004816842641901", 0, null);
+        typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), (SNode) SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x184cd19a8be486c1L, "jetbrains.mps.samples.lambdaCalculus.structure.AnyType")), false, true, _info_12389875345);
+      }
+      {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193423", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193434", true), (SNode) typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), _info_12389875345);
       }
-      result = _quotation_createNode_e7wm7n_a0c0f0b(typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), result);
+      result = _quotation_createNode_e7wm7n_a0d0f0b(typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), result);
     }
     {
       SNode _nodeToCheck_1029348928467 = lambdaAbstraction;
@@ -57,7 +63,7 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_e7wm7n_a0c0f0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_e7wm7n_a0d0f0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

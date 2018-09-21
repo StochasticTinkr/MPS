@@ -84,7 +84,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   }
 
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.TYPESYSTEM;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.TYPESYSTEM.deriveItemKind();
   }
 }

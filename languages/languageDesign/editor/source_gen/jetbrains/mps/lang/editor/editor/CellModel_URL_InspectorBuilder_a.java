@@ -153,7 +153,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
           public EditorCell compute() {
             return new CellModel_URL_InspectorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "relationDeclaration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, 0x334adf8cb15f3fdfL, "propertyDeclaration"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);

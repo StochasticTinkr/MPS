@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -209,10 +209,6 @@
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
         <child id="1722980698497626405" name="actualArgument" index="v9R3O" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
-        <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
       </concept>
       <concept id="7473026166162297915" name="jetbrains.mps.lang.generator.structure.DropAttributeRule" flags="lg" index="CY16f">
         <property id="1515402509390413598" name="applyToSubConcepts" index="2MXbmj" />
@@ -1559,9 +1555,9 @@
           <node concept="liA8E" id="7Qbh0xgh96K" role="2OqNvi">
             <ref role="37wK5l" to="7jhi:~NodeMatcher.property(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):jetbrains.mps.lang.pattern.NodeMatcher" resolve="property" />
             <node concept="10Nm6u" id="7Qbh0xgh970" role="37wK5m">
-              <node concept="xERo3" id="7Qbh0xgh9sY" role="lGtFl">
-                <ref role="xH3mL" to="tp27:5ZE7FBZ0xn2" resolve="reduce_PropertyId_SProperty" />
-                <node concept="3NFfHV" id="7Qbh0xgh9G8" role="xEYEz">
+              <node concept="5jKBG" id="za$VMvkOeF" role="lGtFl">
+                <ref role="v9R2y" to="tp27:5ZE7FBZ0xn2" resolve="reduce_PropertyId_SProperty" />
+                <node concept="3NFfHV" id="7Qbh0xgh9G8" role="5jGum">
                   <node concept="3clFbS" id="7Qbh0xgh9G9" role="2VODD2">
                     <node concept="3cpWs8" id="7Qbh0xghaDw" role="3cqZAp">
                       <node concept="3cpWsn" id="7Qbh0xghaDx" role="3cpWs9">
@@ -1661,9 +1657,9 @@
           <node concept="liA8E" id="6wyfy1abwJl" role="2OqNvi">
             <ref role="37wK5l" to="7jhi:~NodeMatcher.association(org.jetbrains.mps.openapi.language.SReferenceLink,java.lang.String):jetbrains.mps.lang.pattern.NodeMatcher" resolve="association" />
             <node concept="10Nm6u" id="6wyfy1abwJ_" role="37wK5m">
-              <node concept="xERo3" id="6wyfy1abx4w" role="lGtFl">
-                <ref role="xH3mL" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
-                <node concept="3NFfHV" id="6wyfy1abx6N" role="xEYEz">
+              <node concept="5jKBG" id="za$VMvkOeG" role="lGtFl">
+                <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+                <node concept="3NFfHV" id="6wyfy1abx6N" role="5jGum">
                   <node concept="3clFbS" id="6wyfy1abx6O" role="2VODD2">
                     <node concept="3SKdUt" id="6wyfy1abxvL" role="3cqZAp">
                       <node concept="3SKdUq" id="6wyfy1abxvN" role="3SKWNk">

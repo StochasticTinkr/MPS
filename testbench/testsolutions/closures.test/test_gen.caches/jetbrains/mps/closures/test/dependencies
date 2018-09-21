@@ -30,11 +30,9 @@
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Result" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
     <classNode dependClassName="jetbrains.mps.closures.test.Generator" />
     <classNode dependClassName="jetbrains.mps.closures.test.IFilter" />

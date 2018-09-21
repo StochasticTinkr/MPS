@@ -143,7 +143,7 @@ public class MigrationExecutorImpl implements MigrationExecutor {
   }
 
   private <IP, FP> void doRun(AbstractModule module, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, IP, FP> participant, RefactoringUI ui, Iterable<SNode> initialState, final Map<SNode, SNode> initialToFinal, RefactoringSession refactoringSession) {
-    RefactoringProcessor.<IP,FP,SNode,SNode>performRefactoring(new RefactoringParticipant.DeserializingParticipantStateFactory<IP, FP>(), ui, refactoringSession, module.getRepository(), new ModulesScope(module), null, ((Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>) Sequence.<RefactoringParticipant<?, ?, IP, FP>>singleton(participant)), Sequence.fromIterable(initialState).toListSequence(), new _FunctionTypes._return_P1_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>>>() {
+    RefactoringProcessor.<IP,FP,SNode,SNode>performRefactoring(new RefactoringParticipant.DeserializingParticipantStateFactory<IP, FP>(), ui, refactoringSession, MigrationExecutorImpl.this.myMpsProject.getRepository(), new ModulesScope(module), null, ((Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>) Sequence.<RefactoringParticipant<?, ?, IP, FP>>singleton(participant)), Sequence.fromIterable(initialState).toListSequence(), new _FunctionTypes._return_P1_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>>>() {
       public Map<SNode, SNode> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>> changes) {
         return initialToFinal;
       }

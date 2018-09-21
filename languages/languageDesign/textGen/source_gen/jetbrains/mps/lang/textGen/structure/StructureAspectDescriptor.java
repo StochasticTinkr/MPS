@@ -29,6 +29,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEncodingDeclarationBase = createDescriptorForEncodingDeclarationBase();
   /*package*/ final ConceptDescriptor myConceptEncodingLiteral = createDescriptorForEncodingLiteral();
   /*package*/ final ConceptDescriptor myConceptExtensionDeclaration = createDescriptorForExtensionDeclaration();
+  /*package*/ final ConceptDescriptor myConceptFilePathQuery = createDescriptorForFilePathQuery();
+  /*package*/ final ConceptDescriptor myConceptFilePathSpec = createDescriptorForFilePathSpec();
   /*package*/ final ConceptDescriptor myConceptFilenameFunction = createDescriptorForFilenameFunction();
   /*package*/ final ConceptDescriptor myConceptFoundErrorOperation = createDescriptorForFoundErrorOperation();
   /*package*/ final ConceptDescriptor myConceptGenerateTextDeclaration = createDescriptorForGenerateTextDeclaration();
@@ -60,7 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptClassConceptUnitContext, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextInstanceSpecification, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptInstancePerUnitContextObject, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUnitContextDeclaration, myConceptUnitContextObject, myConceptUnitContextReference, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
+    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptClassConceptUnitContext, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextInstanceSpecification, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilePathQuery, myConceptFilePathSpec, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptInstancePerUnitContextObject, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUnitContextDeclaration, myConceptUnitContextObject, myConceptUnitContextReference, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
   }
 
   @Override
@@ -97,6 +99,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEncodingLiteral;
       case LanguageConceptSwitch.ExtensionDeclaration:
         return myConceptExtensionDeclaration;
+      case LanguageConceptSwitch.FilePathQuery:
+        return myConceptFilePathQuery;
+      case LanguageConceptSwitch.FilePathSpec:
+        return myConceptFilePathSpec;
       case LanguageConceptSwitch.FilenameFunction:
         return myConceptFilenameFunction;
       case LanguageConceptSwitch.FoundErrorOperation:
@@ -232,6 +238,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("encoding", 0x10fd02ec599e8fbeL).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8fbbL).optional(true).ordered(true).multiple(false).origin("1224137887853744062").done();
     b.aggregate("textGenBlock", 0x11f41304578L).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L).optional(true).ordered(true).multiple(false).origin("1233749296504").done();
     b.aggregate("filename", 0xa0f73089d631ccL).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL).optional(true).ordered(true).multiple(false).origin("45307784116711884").done();
+    b.aggregate("filePath", 0x6cdeb9421c83ad52L).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x6cdeb9421c83ad51L).optional(true).ordered(true).multiple(false).origin("7844911294523354450").done();
     b.aggregate("layout", 0x2bad879ac8f27decL).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dc9L).optional(true).ordered(true).multiple(false).origin("3147320813467893228").done();
     b.aggregate("contextObjects", 0x1dfcc3c672ea7620L).target(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL).optional(true).ordered(true).multiple(true).origin("2160817178329904672").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
@@ -301,6 +308,23 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("extension");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForFilePathQuery() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "FilePathQuery", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x6cdeb9421c83c71fL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.parent(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x6cdeb9421c83ad51L);
+    b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/7844911294523361055");
+    b.version(2);
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForFilePathSpec() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "FilePathSpec", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x6cdeb9421c83ad51L);
+    b.interface_();
+    b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/7844911294523354449");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFilenameFunction() {
@@ -460,7 +484,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.textGen", "StubOperationDeclaration", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bacbf19e457bd3bL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.textGen.structure.OperationDeclaration", 0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x226fb4c3ba26d45L);
     b.origin("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)/3147100357551177019");

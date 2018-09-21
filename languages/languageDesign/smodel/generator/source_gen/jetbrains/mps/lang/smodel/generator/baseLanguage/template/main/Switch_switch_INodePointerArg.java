@@ -65,9 +65,10 @@ public class Switch_switch_INodePointerArg extends TemplateSwitchBase implements
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_135_1(new SourceSubstituteMacroNodeContext(context, callMacro_230kvm_b0a0a2a1i));
-      TemplateContext context1 = context.subContext(null, callInputNode1);
+      TemplateContext context1;
+      context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(context1);
+        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(environment, context1);
       }
       return tlist1;
     }

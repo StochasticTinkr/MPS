@@ -88,12 +88,8 @@ public class ChangesRollbackTest extends ChangesTestBase {
     });
   }
 
-  private void rollbackChangesSeriallyAndCheckNoDifference(final Runnable changesRunnable) {
-    testChanges(new Runnable() {
-      public void run() {
-        changesRunnable.run();
-      }
-    });
+  private void rollbackChangesSeriallyAndCheckNoDifference(Runnable changesRunnable) {
+    testChanges(changesRunnable);
     final SModel model = getTestModel();
     List<ModelChange> changes = ListSequence.fromListWithValues(new ArrayList<ModelChange>(), myDiff.getChangeSet().getModelChanges());
     ListSequence.fromList(changes).reversedList().visitAll(new IVisitor<ModelChange>() {
@@ -107,14 +103,11 @@ public class ChangesRollbackTest extends ChangesTestBase {
     });
     Assert.assertTrue(ListSequence.fromList(myDiff.getChangeSet().getModelChanges()).isEmpty());
   }
-  private void rollbackChangesAutomaticallyAndCheckNoDifference(final Runnable changesRunnable) {
-    testChanges(new Runnable() {
-      public void run() {
-        changesRunnable.run();
-      }
-    });
+
+  private void rollbackChangesAutomaticallyAndCheckNoDifference(Runnable changesRunnable) {
+    testChanges(changesRunnable);
     final SModel model = getTestModel();
-    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_p3cuek_a0a0c0j(myDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
+    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_p3cuek_a0a0c0k(myDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
       public ModelChange select(ModelChange ch) {
         return ch.getOppositeChange();
       }
@@ -146,13 +139,13 @@ public class ChangesRollbackTest extends ChangesTestBase {
   private void makeAllChanges() {
     SNode root = SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705");
     SPropertyOperations.assign(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "newName");
-    SLinkOperations.setTarget(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), _quotation_createNode_p3cuek_a0c0m());
+    SLinkOperations.setTarget(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), _quotation_createNode_p3cuek_a0c0n());
     addNodeAttribute();
     addChildAttribute();
-    ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a5a21());
+    ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(createInstanceMethodDeclaration_p3cuek_a0a5a31());
   }
   private void addNodeAttribute() {
-    AttributeOperations.createAndSetAttrbiute(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
+    AttributeOperations.createAndSetAttrbiute(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L, "jetbrains.mps.lang.core.structure.ReviewMigration"));
   }
   private void addChildAttribute() {
     ChangesTestUtil.addCommentedMethod(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).first());
@@ -161,20 +154,20 @@ public class ChangesRollbackTest extends ChangesTestBase {
   private void deleteChildAttribute() {
     SNodeOperations.deleteNode(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5297043982019668093")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
   }
-  private static List<ModelChange> check_p3cuek_a0a0c0j(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_p3cuek_a0a0c0k(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-  private static SNode _quotation_createNode_p3cuek_a0c0m() {
+  private static SNode _quotation_createNode_p3cuek_a0c0n() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-  private static SNode createInstanceMethodDeclaration_p3cuek_a0a5a21() {
+  private static SNode createInstanceMethodDeclaration_p3cuek_a0a5a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null, null, false);
     {

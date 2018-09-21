@@ -30,7 +30,8 @@ import com.sun.jdi.AbsentInformationException;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.atomic.AtomicReference;
-import com.intellij.openapi.progress.util.ProgressWindowWithNotification;
+import com.intellij.openapi.progress.util.ProgressWindow;
+import com.intellij.openapi.progress.util.ProgressIndicatorListener;
 import com.intellij.openapi.progress.util.ProgressIndicatorListenerAdapter;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProcessCanceledException;
@@ -244,15 +245,17 @@ public class EventsProcessor {
 
     final AtomicReference<R> resultReference = new AtomicReference();
 
-    final ProgressWindowWithNotification progress = new ProgressWindowWithNotification(true, false, myProject, null, null);
+    final ProgressWindow progress = new ProgressWindow(true, false, myProject);
     progress.setTitle("Evaluating");
 
-    progress.addListener(new ProgressIndicatorListenerAdapter() {
+    final ProgressIndicatorListener progressIndicatorListener = new ProgressIndicatorListenerAdapter() {
       @Override
       public void cancelled() {
         progress.stop();
       }
-    });
+    };
+    progressIndicatorListener.installToProgress(progress);
+
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         try {

@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -80,10 +81,11 @@ import org.jetbrains.mps.openapi.language.SLanguage;
       myProject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SReference>() {
         public SReference invoke() {
           {
-            final SearchScope scope = CommandUtil.createScope(myProject);
+            SearchScope scope_51bgm5_a0a0a2a2a0a6 = CommandUtil.createScope(myProject);
+            final SearchScope scope_51bgm5_a0a0a2a2a0a6_0 = new EditableFilteringScope(scope_51bgm5_a0a0a2a2a0a6);
             QueryExecutionContext context = new QueryExecutionContext() {
               public SearchScope getDefaultSearchScope() {
-                return scope;
+                return scope_51bgm5_a0a0a2a2a0a6_0;
               }
             };
             return ref.value = Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).translate(new ITranslator2<SNode, SReference>() {

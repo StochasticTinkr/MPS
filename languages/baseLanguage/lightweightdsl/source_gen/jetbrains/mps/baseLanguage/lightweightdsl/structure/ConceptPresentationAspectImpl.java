@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DSLAnnotation;
   private ConceptPresentation props_DSLClassMember;
   private ConceptPresentation props_DSLDescriptor;
+  private ConceptPresentation props_DefaultModifier;
   private ConceptPresentation props_DependentTypeDescriptor;
   private ConceptPresentation props_DependentTypeInstance;
   private ConceptPresentation props_EmptyMemberDescriptor;
@@ -79,6 +80,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DSLDescriptor = cpb.create();
         }
         return props_DSLDescriptor;
+      case LanguageConceptSwitch.DefaultModifier:
+        if (props_DefaultModifier == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("default");
+          props_DefaultModifier = cpb.create();
+        }
+        return props_DefaultModifier;
       case LanguageConceptSwitch.DependentTypeDescriptor:
         if (props_DependentTypeDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

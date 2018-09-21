@@ -17,10 +17,12 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -37,7 +39,7 @@ import java.util.Iterator;
  * @since 3.3
  */
 public final class NodeWeaveSupport implements NodeWeaveFacility {
-  private final TemplateContext myTemplateContext;
+  private TemplateContext myTemplateContext;
   private final SNodeReference myTemplateNode;
   private final TemplateExecutionEnvironmentImpl myEnv;
   private final TemplateGenerator myGenerator;
@@ -94,15 +96,33 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
 
   @Override
   public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, Object... args) throws GenerationException {
+    // XXX we get here only when a pre-2018.3 generated template invokes a cross-generator template (which I doubt ever was a case)
+    //     here, it can face new TD (expects args in TC) and legacy TD that does not (arguments are injected as cons args)
     TemplateDeclaration templateDeclarationInstance = myEnv.loadTemplateDeclaration(templateDeclaration, myTemplateNode, myTemplateContext, args);
-    if (templateDeclarationInstance != null /*templateDeclarationInstance instanceof TemplateDeclarationWeavingAware2*/) {
-      return templateDeclarationInstance.weave(myWeaveContext, this);
+    if (templateDeclarationInstance == null) {
+      return Collections.emptyList();
     }
-    return Collections.emptyList();
+    // templateDeclarationInstance either comes from TemplateModel2 and expects arguments in TC, or from an old generated TM.loadTemplate()
+    // that populates arguments through TD cons. If it's a former, get TC ready.
+    if (templateDeclarationInstance instanceof TemplateDeclaration2) {
+      TemplateCall callSite = new TemplateCall(((TemplateDeclaration2) templateDeclarationInstance).getParameterNames(), args);
+      if (callSite.argumentsMismatch()) {
+        myGenerator.getLogger().error(templateDeclaration, "number of arguments doesn't match template", GeneratorUtil.describeInput(myTemplateContext));
+        // fall-though
+      }
+      myTemplateContext = callSite.prepareCallContext(myTemplateContext);
+    }
+    return templateDeclarationInstance.weave(myWeaveContext, this);
   }
 
   @Override
   public Collection<SNode> weaveTemplate(@NotNull TemplateDeclaration templateDeclaration) throws GenerationException {
+    // legacy generated templates invoking weaving from the same generator module. It's ok as we don't need to bother about the way arguments get
+    // passed to a template.
+    // New, 2018.3 code uses this method as well, with env.findTemplate() for argument. Assumption of argument values being available to template
+    // (in this case set by calling code) holds true and we don't need to do anything extra here. The reasons I decided to reuse this method are:
+    // (a) easier to change TD.weave signature afterwards (it's ugly)
+    // (b) generated code needed NWF instance anyway, and looked ugly with env.findTemplate().weave(wc, environment.prepareWeave(wc, ptr))).
     return templateDeclaration.weave(myWeaveContext, this);
   }
 }

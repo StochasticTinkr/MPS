@@ -35,6 +35,5 @@ import com.intellij.openapi.util.Computable;
   }
   private void onClose() {
     TransientModelBallonDisplayer.setShowPopup(myShowPopupBox.isSelected());
-    TransientModelsNotification.updateWidgets();
   }
 }

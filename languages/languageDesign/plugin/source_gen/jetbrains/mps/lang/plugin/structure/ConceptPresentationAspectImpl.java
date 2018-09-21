@@ -395,6 +395,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConceptFunctionParameter_OperationContext:
         if (props_ConceptFunctionParameter_OperationContext == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.shortDesc("function parameter");
           cpb.rawPresentation("context");
           props_ConceptFunctionParameter_OperationContext = cpb.create();

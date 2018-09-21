@@ -130,9 +130,6 @@
     <node concept="PrWs8" id="WK6Z46DX$a" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="1j91DJgZxzd" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5u6$4zsyvJR">
     <property role="TrG5h" value="CellModel_Diagram" />
@@ -285,9 +282,6 @@
     <property role="R5$K7" value="true" />
     <property role="EcuMT" value="285670992213637294" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="fQU43XxJyO" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="fQU43XxJzR">
     <property role="TrG5h" value="BLQueryArgument" />

@@ -15,7 +15,7 @@
       <unit at="10,0,78,0" name="jetbrains.mps.baseLanguageInternal.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,433,0" name="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
+      <unit at="16,0,432,0" name="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)/1100832983841311024">
@@ -931,19 +931,18 @@
       <node id="8791205313600585946" at="420,76,421,187" concept="3" />
       <node id="8791205313600585946" at="421,187,422,34" concept="0" />
       <node id="8791205313600585946" at="422,34,423,121" concept="0" />
-      <node id="8791205313600585946" at="423,121,424,76" concept="0" />
-      <node id="8791205313600585946" at="424,76,425,121" concept="0" />
-      <node id="8791205313600585946" at="425,121,426,17" concept="0" />
-      <node id="8791205313600585947" at="426,17,427,169" concept="0" />
-      <node id="8791205313600585946" at="427,169,428,49" concept="0" />
-      <node id="8791205313600585946" at="428,49,429,26" concept="0" />
-      <node id="8791205313600585946" at="429,26,430,22" concept="4" />
-      <node id="8791205313600585946" at="420,0,432,0" concept="6" trace="createDescriptorForWeakClassReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8791205313600585946" at="423,121,424,121" concept="0" />
+      <node id="8791205313600585946" at="424,121,425,17" concept="0" />
+      <node id="8791205313600585947" at="425,17,426,169" concept="0" />
+      <node id="8791205313600585946" at="426,169,427,49" concept="0" />
+      <node id="8791205313600585946" at="427,49,428,26" concept="0" />
+      <node id="8791205313600585946" at="428,26,429,22" concept="4" />
+      <node id="8791205313600585946" at="420,0,431,0" concept="6" trace="createDescriptorForWeakClassReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8791205313600585946" at="108,52,109,43" />
-      <scope id="8791205313600585946" at="420,76,430,22">
+      <scope id="8791205313600585946" at="420,76,429,22">
         <var name="b" id="8791205313600585946" />
       </scope>
-      <scope id="8791205313600585946" at="420,0,432,0" />
+      <scope id="8791205313600585946" at="420,0,431,0" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)/937236280924494202">

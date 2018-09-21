@@ -16,6 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeReportItemBase;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,8 +34,8 @@ public class ConceptMissingError extends NodeReportItemBase {
     return myConcept;
   }
 
-  public String getIssueKind() {
-    return "missing concept";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.UNKNOWN_LANGUAGE_FEATURE;
   }
 
 }

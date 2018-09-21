@@ -7,35 +7,39 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import java.util.Collections;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class StaleFilesCollector {
   private IFile rootDir;
   private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
+  private final Set<IFile> filesToKeep;
 
   public StaleFilesCollector(IFile rootDir) {
     this.rootDir = rootDir;
+    MapSequence.fromMap(generatedChildren).put(rootDir, ListSequence.fromList(new ArrayList<IFile>()));
+    filesToKeep = SetSequence.fromSet(new HashSet<IFile>());
   }
-  private List<IFile> collectFilesToDelete(Iterable<IFile> filesToKeep) {
-    String[] pathsToKeep = Sequence.fromIterable(filesToKeep).select(new ISelector<IFile, String>() {
+
+  private List<IFile> collectFilesToDelete() {
+    String[] pathsToKeep = SetSequence.fromSet(filesToKeep).select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (f.isDirectory() ? DirUtil.normalizeAsDir(f.getPath()) : DirUtil.normalize(f.getPath()));
       }
@@ -95,9 +99,7 @@ public class StaleFilesCollector {
    */
   public void recordGeneratedChildren(GenerationDependenciesCache genDeps, SModel model) {
     List<IFile> genChildren = knownGeneratedChildren(genDeps.get(model));
-    if (ListSequence.fromList(genChildren).isNotEmpty()) {
-      MapSequence.fromMap(generatedChildren).put(rootDir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
-    }
+    ListSequence.fromList(MapSequence.fromMap(generatedChildren).get(rootDir)).addSequence(ListSequence.fromList(genChildren));
   }
 
   private List<IFile> knownGeneratedChildren(GenerationDependencies gd) {
@@ -113,8 +115,11 @@ public class StaleFilesCollector {
     return rv;
   }
 
-  public void updateDelta(FilesDelta delta) {
-    final Set<IFile> filesToKeep = SetSequence.fromSet(new HashSet<IFile>());
+  /**
+   * May be invoked multiple times, updates internal state of what files are considered 'touched' according to delta supplied
+   * These files are not reported as 'stale' from {@link jetbrains.mps.internal.make.runtime.util.StaleFilesCollector#reportStaleFiles() }
+   */
+  public void recordFilesToKeep(FilesDelta delta) {
     delta.acceptVisitor(new FilesDelta.Visitor() {
       @Override
       public boolean acceptWritten(IFile file) {
@@ -127,10 +132,32 @@ public class StaleFilesCollector {
         return true;
       }
     });
-    for (IFile f : collectFilesToDelete(filesToKeep)) {
+  }
+
+  public FilesDelta reportStaleFiles() {
+    FilesDelta rv = new FilesDelta(rootDir);
+    reportStaleFilesInto(rv);
+    return rv;
+  }
+
+  private void reportStaleFilesInto(FilesDelta delta) {
+    for (IFile f : collectFilesToDelete()) {
       delta.stale(f);
     }
   }
+
+  /**
+   * This method assumes there's no other delta for the root other than passed as an argument, which is wrong for forked generation plans with multiple models that save output into the same location. 
+   * Then there are few deltas reported for the same location, some reporting files as stale while other report as added
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  public void updateDelta(FilesDelta delta) {
+    recordFilesToKeep(delta);
+    reportStaleFilesInto(delta);
+  }
+
   private Iterable<IFile> getChildren(IFile dir) {
     Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
     if (GeneratorPathsComponent.getInstance().isForeign(dir)) {

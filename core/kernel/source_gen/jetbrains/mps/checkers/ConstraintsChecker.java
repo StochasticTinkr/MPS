@@ -32,12 +32,12 @@ public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements I
   }
 
   @Override
-  public String getCategory() {
+  public IssueKindReportItem.CheckerCategory getCategory() {
     return IssueKindReportItem.CONSTRAINTS;
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+    return AbstractNodeCheckerInEditor.SKIP_CONSTRAINTS_CONDITION;
   }
   private void runCheck(LanguageErrorsCollector errorsCollector, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super CheckingNodeContext> check, _FunctionTypes._return_P1_E0<? extends NodeReportItem, ? super RuleIdFlavouredItem.TypesystemRuleId> reportItem) {
     final CheckingNodeContextImpl context = new CheckingNodeContextImpl();
@@ -62,7 +62,7 @@ public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements I
       if (SNodeOperations.getConcept(parent).isValid()) {
         SContainmentLink link = node.getContainmentLink();
         if (!(SNodeOperations.getConcept(parent).getContainmentLinks().contains(link))) {
-          errorsCollector.addError(new ConceptFeatureMissingError(node, SNodeOperations.getContainingLink(node), "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName()));
+          errorsCollector.addError(new ConceptFeatureMissingError(SNodeOperations.getPointer(node), SNodeOperations.getContainingLink(node), "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName()));
           return;
         }
         runCheck(errorsCollector, new _FunctionTypes._return_P1_E0<Boolean, CheckingNodeContext>() {

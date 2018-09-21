@@ -36,8 +36,9 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
   public static final SMethod<List<SNode>> getOwnVariables_id7c7Ta3MgIQj = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7c7Ta3MgIQj").registry(REGISTRY).build();
   public static final SMethod<SAbstractConcept> getQuotedNodeConcept_id4vXWNHn1_L$ = new SMethodBuilder<SAbstractConcept>(new SJavaCompoundTypeImpl((Class<SAbstractConcept>) ((Class) Object.class))).name("getQuotedNodeConcept").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4vXWNHn1_L$").registry(REGISTRY).build();
   public static final SMethod<Boolean> hasVariable_id4dzCQkRGUNw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasVariable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGUNw").registry(REGISTRY).build();
+  public static final SMethod<Boolean> suppress_id2WmWrdnSpX7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("suppress").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WmWrdnSpX7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, getQuotedNodeConcept_id4vXWNHn1_L$, hasVariable_id4dzCQkRGUNw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, getQuotedNodeConcept_id4vXWNHn1_L$, hasVariable_id4dzCQkRGUNw, suppress_id2WmWrdnSpX7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -78,6 +79,9 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
   /*package*/ static boolean hasVariable_id4dzCQkRGUNw(@NotNull SNode __thisNode__) {
     return false;
   }
+  /*package*/ static boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
+    return child == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern"));
+  }
 
   /*package*/ PatternExpression__BehaviorDescriptor() {
     super(REGISTRY);
@@ -105,6 +109,8 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
         return (T) ((SAbstractConcept) getQuotedNodeConcept_id4vXWNHn1_L$(node));
       case 4:
         return (T) ((Boolean) hasVariable_id4dzCQkRGUNw(node));
+      case 5:
+        return (T) ((Boolean) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

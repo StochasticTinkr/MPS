@@ -28,6 +28,7 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelsEventsCollector;
 import com.intellij.util.containers.MultiMap;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +40,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
   private final SRepositoryContentAdapter myModelRepositoryListener = new CurrentDifferenceRegistry.MyRepositoryListener();
   private final SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
-  private final CurrentDifferenceRegistry.MyEventsCollector myEventsCollector = new CurrentDifferenceRegistry.MyEventsCollector();
+  private final CurrentDifferenceRegistry.MyEventsCollector myEventsCollector;
   private final CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
   private final CurrentDifferenceRegistry.MyFileStatusListener myFileStatusListener = new CurrentDifferenceRegistry.MyFileStatusListener();
   private final FileStatusManager myFileStatusManager;
@@ -49,7 +50,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     super(project);
     myFileStatusManager = fileStatusManager;
     myMpsProject = mpsProject;
+    myEventsCollector = new CurrentDifferenceRegistry.MyEventsCollector(mpsProject.getRepository());
   }
+
   @Override
   public void projectOpened() {
     myFileStatusManager.addFileStatusListener(myFileStatusListener);
@@ -207,6 +210,11 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
   private static class MyEventsCollector extends ModelsEventsCollector {
     private final MultiMap<SModelReference, SModelCommandListener> myListeners = new MultiMap<SModelReference, SModelCommandListener>();
+
+    /*package*/ MyEventsCollector(SRepository repo) {
+      super(repo.getModelAccess());
+    }
+
     public void addListener(SModel model, SModelCommandListener listener) {
       if (!(myListeners.containsKey(model.getReference()))) {
         //  first time we see the model, tell EventCollector we are interested 

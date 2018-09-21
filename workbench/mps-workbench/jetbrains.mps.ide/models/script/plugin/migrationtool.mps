@@ -2,10 +2,10 @@
 <model ref="r:6e42326f-4bc0-4b77-a711-f3d4535f48d5(jetbrains.mps.ide.script.plugin.migrationtool)">
   <persistence version="9" />
   <languages>
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
   </languages>
   <imports>
     <import index="tp33" ref="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" />
@@ -77,9 +77,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -615,7 +612,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="actionPerformed" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="6Qwue3HJ33V" role="1B3o_S" />
                       <node concept="3cqZAl" id="6Qwue3HJ33X" role="3clF45" />
                       <node concept="37vLTG" id="6Qwue3HJ33Y" role="3clF46">
@@ -1018,7 +1014,6 @@
                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="3Tm1VV" id="DTcS_lydos" role="1B3o_S" />
                 <node concept="3clFb_" id="DTcS_lydot" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getTitle" />
                   <property role="DiZV1" value="false" />
@@ -1039,7 +1034,6 @@
                   </node>
                 </node>
                 <node concept="3clFb_" id="DTcS_lydoy" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getCancelText" />
                   <property role="DiZV1" value="false" />
@@ -1055,7 +1049,6 @@
                   </node>
                 </node>
                 <node concept="3clFb_" id="DTcS_lydoA" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getCancelTooltipText" />
                   <property role="DiZV1" value="false" />
@@ -1071,7 +1064,6 @@
                   </node>
                 </node>
                 <node concept="3clFb_" id="DTcS_lydoE" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="isCancellable" />
                   <property role="DiZV1" value="false" />
@@ -1155,7 +1147,6 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="compute" />
                         <property role="DiZV1" value="false" />
-                        <property role="IEkAT" value="false" />
                         <node concept="3Tm1VV" id="55cfbd7tuet" role="1B3o_S" />
                         <node concept="3clFbS" id="55cfbd7tuew" role="3clF47">
                           <node concept="3cpWs6" id="55cfbd7tODD" role="3cqZAp">
@@ -1314,7 +1305,6 @@
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="run" />
                     <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
                     <node concept="3Tm1VV" id="1rNZ4ilyXSe" role="1B3o_S" />
                     <node concept="3cqZAl" id="1rNZ4ilyXSg" role="3clF45" />
                     <node concept="3clFbS" id="1rNZ4ilyXSh" role="3clF47">
@@ -3558,6 +3548,9 @@
               </node>
             </node>
             <node concept="2OqwBi" id="DTcS_lxT39" role="33vP2m">
+              <node concept="liA8E" id="6hZLf2XJWJI" role="2OqNvi">
+                <ref role="37wK5l" to="9erk:~SearchResults.getNotNullResults():java.util.List" resolve="getNotNullResults" />
+              </node>
               <node concept="2OqwBi" id="DTcS_lxT3a" role="2Oq$k0">
                 <node concept="37vLTw" id="2BHiRxeulxH" role="2Oq$k0">
                   <ref role="3cqZAo" node="DTcS_lxT1W" resolve="myFinder" />
@@ -3565,9 +3558,6 @@
                 <node concept="liA8E" id="DTcS_lxT3c" role="2OqNvi">
                   <ref role="37wK5l" node="6m98d5YYbKy" resolve="getLastSearchResults" />
                 </node>
-              </node>
-              <node concept="liA8E" id="6hZLf2XJWJI" role="2OqNvi">
-                <ref role="37wK5l" to="9erk:~SearchResults.getNotNullResults():java.util.List" resolve="getNotNullResults" />
               </node>
             </node>
           </node>

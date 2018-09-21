@@ -9,13 +9,9 @@ import org.jetbrains.annotations.Nullable;
 public class DelegatingScope extends Scope {
   protected Scope wrapped;
   public DelegatingScope(@NotNull Scope wrapped) {
-    if (wrapped == null) {
-      // todo: ? 
-      throw new IllegalArgumentException();
-    }
     this.wrapped = wrapped;
   }
-  public DelegatingScope() {
+  protected DelegatingScope() {
     // setup wrapped field later, before using the scope! 
   }
   @Override

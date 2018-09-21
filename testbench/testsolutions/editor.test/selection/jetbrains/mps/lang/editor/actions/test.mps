@@ -4,8 +4,10 @@
   <languages>
     <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="e7808658-592b-442e-9770-511bd6bd751d" name="jetbrains.mps.lang.editor.editorTest.extension" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -19,9 +21,26 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
+    <import index="tpc6" ref="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)" implicit="true" />
+    <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" implicit="true" />
+    <import index="zer1" ref="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="1215507671101" name="jetbrains.mps.lang.test.structure.NodeErrorCheckOperation" flags="ng" index="1TM$A">
+        <child id="8489045168660938517" name="errorRef" index="3lydEf" />
+      </concept>
+      <concept id="1215511704609" name="jetbrains.mps.lang.test.structure.NodeWarningCheckOperation" flags="ng" index="29bkU">
+        <child id="8489045168660938635" name="warningRef" index="3lydCh" />
+      </concept>
+      <concept id="1215603922101" name="jetbrains.mps.lang.test.structure.NodeOperationsContainer" flags="ng" index="7CXmI">
+        <child id="1215604436604" name="nodeOperations" index="7EUXB" />
+      </concept>
+      <concept id="1215607067978" name="jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation" flags="ng" index="7OXhh" />
+      <concept id="7691029917083872157" name="jetbrains.mps.lang.test.structure.IRuleReference" flags="ng" index="2u4UPC">
+        <reference id="8333855927540250453" name="declaration" index="39XzEq" />
+      </concept>
       <concept id="1228934484974" name="jetbrains.mps.lang.test.structure.PressKeyStatement" flags="nn" index="yd1bK">
         <child id="1228934507814" name="keyStrokes" index="yd6KS" />
       </concept>
@@ -42,6 +61,8 @@
         <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
         <property id="1229432188737" name="isLastPosition" index="ZRATv" />
       </concept>
+      <concept id="4531408400486526326" name="jetbrains.mps.lang.test.structure.WarningStatementReference" flags="ng" index="2PQEqo" />
+      <concept id="4531408400484511853" name="jetbrains.mps.lang.test.structure.ReportErrorStatementReference" flags="ng" index="2PYRI3" />
       <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
         <property id="1227184461946" name="keys" index="2TTd_B" />
       </concept>
@@ -52,6 +73,12 @@
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
       </concept>
+      <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
+      </concept>
+      <concept id="1216989428737" name="jetbrains.mps.lang.test.structure.TestNode" flags="ng" index="1qefOq">
+        <child id="1216989461394" name="nodeToCheck" index="1qenE9" />
+      </concept>
       <concept id="1210673684636" name="jetbrains.mps.lang.test.structure.TestNodeAnnotation" flags="ng" index="3xLA65" />
       <concept id="1210674524691" name="jetbrains.mps.lang.test.structure.TestNodeReference" flags="nn" index="3xONca">
         <reference id="1210674534086" name="declaration" index="3xOPvv" />
@@ -60,6 +87,27 @@
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242774" name="keycode" index="pLAjf" />
+      </concept>
+    </language>
+    <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
+      <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
+        <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
+        <child id="1139535219969" name="item" index="1h_SK8" />
+        <child id="8528336319562672595" name="imports" index="3yKHlx" />
+      </concept>
+      <concept id="1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" flags="lg" index="1hA7zw">
+        <property id="1139535298778" name="actionId" index="1hAc7j" />
+        <child id="1139535280620" name="executeFunction" index="1hA7z_" />
+      </concept>
+      <concept id="1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" flags="in" index="1hAIg9" />
+      <concept id="5730897613506180559" name="jetbrains.mps.lang.editor.structure.CellActionMapImportWildcardSelector" flags="ng" index="1uCOzb" />
+      <concept id="5730897613507860227" name="jetbrains.mps.lang.editor.structure.CellActionMapImportSelectorByActionId" flags="ng" index="1uNiC7">
+        <property id="5730897613507860230" name="actionId" index="1uNiC2" />
+      </concept>
+      <concept id="8528336319562672599" name="jetbrains.mps.lang.editor.structure.CellActionMapImport" flags="ng" index="3yKHl_">
+        <reference id="8528336319562672600" name="cellActionMap" index="3yKHlE" />
+        <child id="5730897613507031771" name="selector" index="1uG4Zv" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -93,6 +141,9 @@
       <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
+      </concept>
+      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
+        <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -209,6 +260,9 @@
         <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
     </language>
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
@@ -220,7 +274,7 @@
       <concept id="3717301156197626279" name="jetbrains.mps.lang.core.structure.BasePlaceholder" flags="ng" index="3DQ70j" />
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -228,11 +282,17 @@
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
       <concept id="6997653033587013240" name="jetbrains.mps.lang.editor.editorTest.structure.CustomPlaceholder" flags="ng" index="21vXSz" />
+      <concept id="6517546124954507547" name="jetbrains.mps.lang.editor.editorTest.structure.ActionMapDeleteBackspaceTester" flags="ng" index="bku2K">
+        <property id="6517546124954507571" name="result" index="bku2o" />
+      </concept>
       <concept id="7636548531550364598" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveChildWithErrorCell" flags="ng" index="2cVlJr" />
       <concept id="7636548531550360847" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveNodeToReference" flags="ng" index="2cVmPy" />
       <concept id="7636548531550360846" name="jetbrains.mps.lang.editor.editorTest.structure.AutoResolveRoot" flags="ng" index="2cVmPz">
         <reference id="7636548531550360856" name="reference" index="2cVmPP" />
         <child id="7636548531550364668" name="childWithErrorCell" index="2cVlIh" />
+      </concept>
+      <concept id="4205244270189792387" name="jetbrains.mps.lang.editor.editorTest.structure.ActionMapImportTester" flags="ng" index="sdcJx">
+        <property id="4205244270189792388" name="result" index="sdcJA" />
       </concept>
       <concept id="5824791737913814352" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeChild" flags="ng" index="GbBLD" />
       <concept id="3766420342434505217" name="jetbrains.mps.lang.editor.editorTest.structure.PlaceholderChildAttribute" flags="ng" index="2HQ25p" />
@@ -275,6 +335,9 @@
       <concept id="6866182640452532264" name="jetbrains.mps.lang.editor.editorTest.structure.PlaceholderParent" flags="ng" index="30quMj">
         <child id="6997653033587013241" name="customPlaceholder" index="21vXSy" />
         <child id="6866182640452532268" name="multipleChildren" index="30quMn" />
+      </concept>
+      <concept id="1465006755393550581" name="jetbrains.mps.lang.editor.editorTest.structure.ActionMapIndividualImportTester" flags="ng" index="34$Ksk">
+        <property id="1465006755393550582" name="result" index="34$Ksn" />
       </concept>
       <concept id="5383578965096699278" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChildSpecialContainer" flags="ng" index="3grck5" />
       <concept id="5383578965096699277" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild" flags="ng" index="3grck6" />
@@ -342,6 +405,9 @@
       <concept id="1241246198932939393" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteCustomChild" flags="ng" index="1Z2Axm" />
       <concept id="1241246198932224646" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteCellCollectionChild" flags="ng" index="1Z4n1h" />
       <concept id="1241246198932081750" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteLabelChild" flags="ng" index="1Z7Oq1" />
+    </language>
+    <language id="e7808658-592b-442e-9770-511bd6bd751d" name="jetbrains.mps.lang.editor.editorTest.extension">
+      <concept id="4575047236827101332" name="jetbrains.mps.lang.editor.editorTest.extension.structure.ActionMapImportTesterExtension" flags="ng" index="3qMYQG" />
     </language>
   </registry>
   <node concept="LiM7Y" id="6LcR7GqvFCf">
@@ -8963,6 +9029,494 @@
   <node concept="2cVmPy" id="1aZe_qODWEj">
     <property role="3GE5qa" value="autoResolve" />
     <property role="TrG5h" value="autoResolveNodeToReference1" />
+  </node>
+  <node concept="1lH9Xt" id="3Ds1Q8AohV8">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImportCycleDetection" />
+    <node concept="1qefOq" id="3Ds1Q8AouUN" role="1SKRRt">
+      <node concept="1h_SRR" id="3Ds1Q8Aox39" role="1qenE9">
+        <property role="TrG5h" value="First" />
+        <node concept="3yKHl_" id="3Ds1Q8Aox3v" role="3yKHlx">
+          <ref role="3yKHlE" node="3Ds1Q8Aox3t" resolve="Second" />
+          <node concept="7CXmI" id="3Ds1Q8Aox3z" role="lGtFl">
+            <node concept="1TM$A" id="3Ds1Q8Aox3$" role="7EUXB">
+              <node concept="2PYRI3" id="5Sx2dSLZIiY" role="3lydEf">
+                <ref role="39XzEq" to="tpc6:5Sx2dSLZI37" />
+              </node>
+            </node>
+          </node>
+          <node concept="1uCOzb" id="4Y8fgghhgrc" role="1uG4Zv" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="3Ds1Q8Aox3p" role="1SKRRt">
+      <node concept="1h_SRR" id="3Ds1Q8Aox3t" role="1qenE9">
+        <property role="TrG5h" value="Second" />
+        <node concept="3yKHl_" id="3Ds1Q8AoxaW" role="3yKHlx">
+          <ref role="3yKHlE" node="3Ds1Q8Aphqz" resolve="Third" />
+          <node concept="7CXmI" id="3Ds1Q8Ap5$l" role="lGtFl">
+            <node concept="1TM$A" id="3Ds1Q8Ap5$m" role="7EUXB">
+              <node concept="2PYRI3" id="5Sx2dSLZIj0" role="3lydEf">
+                <ref role="39XzEq" to="tpc6:5Sx2dSLZI37" />
+              </node>
+            </node>
+          </node>
+          <node concept="1uCOzb" id="1hkJY7gLNZN" role="1uG4Zv" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="3Ds1Q8Aphqn" role="1SKRRt">
+      <node concept="1h_SRR" id="3Ds1Q8Aphqz" role="1qenE9">
+        <property role="TrG5h" value="Third" />
+        <node concept="3yKHl_" id="3Ds1Q8Aphq_" role="3yKHlx">
+          <ref role="3yKHlE" node="3Ds1Q8Aox39" resolve="First" />
+          <node concept="7CXmI" id="3Ds1Q8AphqB" role="lGtFl">
+            <node concept="1TM$A" id="3Ds1Q8AphqC" role="7EUXB">
+              <node concept="2PYRI3" id="5Sx2dSLZIj2" role="3lydEf">
+                <ref role="39XzEq" to="tpc6:5Sx2dSLZI37" />
+              </node>
+            </node>
+          </node>
+          <node concept="1uCOzb" id="4Y8fgghhgri" role="1uG4Zv" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="5Sx2dSLR5KU" role="1SKRRt">
+      <node concept="1h_SRR" id="5Sx2dSLR5Lh" role="1qenE9">
+        <property role="TrG5h" value="NotPartOfCycle" />
+        <node concept="3yKHl_" id="5Sx2dSLTm_4" role="3yKHlx">
+          <ref role="3yKHlE" node="3Ds1Q8Aox39" resolve="First" />
+          <node concept="1uCOzb" id="5Sx2dSLTo$d" role="1uG4Zv" />
+        </node>
+        <node concept="7CXmI" id="5Sx2dSMy7Jj" role="lGtFl">
+          <node concept="7OXhh" id="5Sx2dSMy7Jl" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3Ds1Q8AqcxS">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImportOverride" />
+    <property role="3YCmrE" value="By invoking DELETE on the cell with action map 2, checks that an action specified in an action map directly overrides the imported action of the same type." />
+    <node concept="3clFbS" id="3Ds1Q8AqUSo" role="LjaKd">
+      <node concept="2HxZob" id="3Ds1Q8AuNKF" role="3cqZAp">
+        <node concept="1iFQzN" id="3Ds1Q8AuNKR" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uIL" role="LiRBU">
+      <property role="sdcJA" value="???" />
+      <node concept="LIFWc" id="4Y8fggh6uK3" role="lGtFl">
+        <property role="LIFWa" value="18" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
+        <property role="LIFWd" value="Constant_me2fch_b0" />
+      </node>
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uJj" role="LiZbd">
+      <property role="sdcJA" value="2" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3Ds1Q8AvQJx">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImport" />
+    <property role="3YCmrE" value="By invoking DELETE on the cell with action map 3, checks that an imported action is executed." />
+    <node concept="3clFbS" id="3Ds1Q8AwJij" role="LjaKd">
+      <node concept="2HxZob" id="3Ds1Q8AwJih" role="3cqZAp">
+        <node concept="1iFQzN" id="3Ds1Q8AwJiv" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uTR" role="LiZbd">
+      <property role="sdcJA" value="1" />
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uUh" role="LiRBU">
+      <property role="sdcJA" value="???" />
+      <node concept="LIFWc" id="4Y8fggh6uV3" role="lGtFl">
+        <property role="LIFWa" value="18" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
+        <property role="LIFWd" value="Constant_me2fch_c0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2lc36UBN9Wv">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImportMostRecentWins" />
+    <property role="3YCmrE" value="By invoking DELETE on the cell with action map 4, checks that if an action for the same action type is imported more than once, the most recent import wins." />
+    <node concept="3clFbS" id="2lc36UBNmbv" role="LjaKd">
+      <node concept="2HxZob" id="2lc36UBNmbt" role="3cqZAp">
+        <node concept="1iFQzN" id="2lc36UBNmbF" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uMl" role="LiZbd">
+      <property role="sdcJA" value="1" />
+    </node>
+    <node concept="sdcJx" id="4Y8fggh6uMJ" role="LiRBU">
+      <property role="sdcJA" value="1" />
+      <node concept="LIFWc" id="4Y8fggh6uNh" role="lGtFl">
+        <property role="LIFWa" value="18" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
+        <property role="LIFWd" value="Constant_me2fch_d0" />
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="2lc36UC2R2v">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImportConceptCompatibility" />
+    <node concept="1qefOq" id="2lc36UC2R2w" role="1SKRRt">
+      <node concept="1h_SRR" id="2lc36UC2R2y" role="1qenE9">
+        <property role="TrG5h" value="MapForBar" />
+        <ref role="1h_SK9" to="68nn:2lc36UC2R2n" resolve="Bar" />
+        <node concept="1hA7zw" id="2lc36UC2R3x" role="1h_SK8">
+          <property role="1hAc7j" value="delete_action_id" />
+          <node concept="1hAIg9" id="2lc36UC2R3y" role="1hA7z_">
+            <node concept="3clFbS" id="2lc36UC2R3z" role="2VODD2">
+              <node concept="3SKdUt" id="2lc36UC8y$U" role="3cqZAp">
+                <node concept="3SKdUq" id="2lc36UC8y$W" role="3SKWNk">
+                  <property role="3SKdUp" value="Could not be invoked on node&lt;Foo&gt;." />
+                </node>
+              </node>
+              <node concept="3clFbF" id="2lc36UC2R7S" role="3cqZAp">
+                <node concept="2OqwBi" id="2lc36UC2RdQ" role="3clFbG">
+                  <node concept="0IXxy" id="2lc36UC2R7R" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="2lc36UC2RpT" role="2OqNvi">
+                    <ref role="37wK5l" to="zer1:2lc36UC2R3m" resolve="bar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="2lc36UC2R32" role="1SKRRt">
+      <node concept="1h_SRR" id="2lc36UC2R37" role="1qenE9">
+        <property role="TrG5h" value="MapForFoo" />
+        <ref role="1h_SK9" to="68nn:2lc36UC2R2m" resolve="Foo" />
+        <node concept="3yKHl_" id="2lc36UC2R39" role="3yKHlx">
+          <ref role="3yKHlE" node="2lc36UC2R2y" resolve="MapForBar" />
+          <node concept="7CXmI" id="2lc36UC2RLF" role="lGtFl">
+            <node concept="1TM$A" id="2lc36UC2RLG" role="7EUXB">
+              <node concept="2PYRI3" id="2lc36UC77xG" role="3lydEf">
+                <ref role="39XzEq" to="tpc6:2lc36UC6EJ9" />
+              </node>
+            </node>
+          </node>
+          <node concept="1uCOzb" id="4Y8fgghhgUw" role="1uG4Zv" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1hkJY7gMIG$">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="ActionMapImportIndividual" />
+    <property role="3YCmrE" value="By invoking INSERT and then DELETE on the cell with action map 2, checks that the individually imported INSERT action is executed, and that the DELETE action is not imported from action map 1." />
+    <node concept="34$Ksk" id="1hkJY7gMIH_" role="LiRBU">
+      <property role="34$Ksn" value="???" />
+      <node concept="LIFWc" id="1hkJY7gMJ48" role="lGtFl">
+        <property role="LIFWa" value="17" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="17" />
+        <property role="p6zMs" value="17" />
+        <property role="LIFWd" value="Constant_4aboec_b0" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="1hkJY7gMIQh" role="LjaKd">
+      <node concept="2HxZob" id="1hkJY7gMIQf" role="3cqZAp">
+        <node concept="1iFQzN" id="1hkJY7gMIQt" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="1hkJY7gMJ8$" role="3cqZAp">
+        <node concept="1iFQzN" id="1hkJY7gMJ8O" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="34$Ksk" id="1hkJY7gMIVw" role="LiZbd">
+      <property role="34$Ksn" value="INSERT-1" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1hkJY7gNBZi">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="ActionMapImportIndividualIndirect" />
+    <property role="3YCmrE" value="By invoking INSERT on the cell with action map 3, checks that the indirectly imported INSERT action is executed." />
+    <node concept="34$Ksk" id="1hkJY7gNC0F" role="LiRBU">
+      <property role="34$Ksn" value="???" />
+      <node concept="LIFWc" id="2pg2GNPW$X0" role="lGtFl">
+        <property role="LIFWa" value="19" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="19" />
+        <property role="p6zMs" value="19" />
+        <property role="LIFWd" value="Constant_4aboec_c0" />
+      </node>
+    </node>
+    <node concept="34$Ksk" id="1hkJY7gNC0P" role="LiZbd">
+      <property role="34$Ksn" value="INSERT-1" />
+    </node>
+    <node concept="3clFbS" id="1hkJY7gNCdF" role="LjaKd">
+      <node concept="2HxZob" id="1hkJY7gNCdD" role="3cqZAp">
+        <node concept="1iFQzN" id="1hkJY7gNCdR" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+      <node concept="3clFbH" id="3XXPjz_J_vG" role="3cqZAp" />
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="1hkJY7hbV_P">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMapImportNullConceptCompatibility" />
+    <node concept="1qefOq" id="1hkJY7hbV_Q" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7hbV_S" role="1qenE9">
+        <property role="TrG5h" value="BaseMap" />
+      </node>
+    </node>
+    <node concept="1qefOq" id="1hkJY7hbVFu" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7hbVFy" role="1qenE9">
+        <property role="TrG5h" value="FooMap" />
+        <ref role="1h_SK9" to="68nn:2lc36UC2R2m" resolve="Foo" />
+        <node concept="3yKHl_" id="1hkJY7hbVFA" role="3yKHlx">
+          <ref role="3yKHlE" node="1hkJY7hbV_S" resolve="BaseMap" />
+          <node concept="1uCOzb" id="JCy0Jrccys" role="1uG4Zv" />
+        </node>
+        <node concept="7CXmI" id="1hkJY7he2AU" role="lGtFl">
+          <node concept="7OXhh" id="1hkJY7he2AW" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1hkJY7heeES" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7heeF6" role="1qenE9">
+        <property role="TrG5h" value="FooExtMap" />
+        <node concept="3yKHl_" id="1hkJY7heeF8" role="3yKHlx">
+          <ref role="3yKHlE" node="1hkJY7hbVFy" resolve="FooMap" />
+          <node concept="7CXmI" id="1hkJY7heeO$" role="lGtFl">
+            <node concept="1TM$A" id="1hkJY7heeO_" role="7EUXB">
+              <node concept="2PYRI3" id="1hkJY7heeOD" role="3lydEf">
+                <ref role="39XzEq" to="tpc6:2lc36UC6EJ9" />
+              </node>
+            </node>
+          </node>
+          <node concept="1uCOzb" id="JCy0Jrccyu" role="1uG4Zv" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1hkJY7heeE_" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7heeEK" role="1qenE9">
+        <property role="TrG5h" value="BarMap" />
+        <ref role="1h_SK9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <node concept="3yKHl_" id="1hkJY7heeEM" role="3yKHlx">
+          <ref role="3yKHlE" node="1hkJY7hbV_S" resolve="BaseMap" />
+          <node concept="1uCOzb" id="JCy0Jrccyw" role="1uG4Zv" />
+        </node>
+        <node concept="7CXmI" id="1hkJY7heeEO" role="lGtFl">
+          <node concept="7OXhh" id="1hkJY7heeEQ" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1hkJY7heeOF" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7heeOZ" role="1qenE9">
+        <property role="TrG5h" value="BarExtMap" />
+        <node concept="3yKHl_" id="1hkJY7heeP3" role="3yKHlx">
+          <ref role="3yKHlE" node="1hkJY7heeEK" resolve="BarMap" />
+          <node concept="1uCOzb" id="JCy0Jrccyy" role="1uG4Zv" />
+        </node>
+        <node concept="7CXmI" id="1hkJY7heeP6" role="lGtFl">
+          <node concept="7OXhh" id="1hkJY7heeP8" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="1hkJY7gS2mE">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="WarnOnImportingAbsentAction" />
+    <node concept="1qefOq" id="1hkJY7gS2mF" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7gS2mH" role="1qenE9">
+        <property role="TrG5h" value="AM1" />
+        <node concept="1hA7zw" id="1hkJY7gS2mJ" role="1h_SK8">
+          <property role="1hAc7j" value="delete_action_id" />
+          <node concept="1hAIg9" id="1hkJY7gS2mK" role="1hA7z_">
+            <node concept="3clFbS" id="1hkJY7gS2mL" role="2VODD2" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1hkJY7gS2nh" role="1SKRRt">
+      <node concept="1h_SRR" id="1hkJY7gS2no" role="1qenE9">
+        <property role="TrG5h" value="AM2" />
+        <node concept="3yKHl_" id="1hkJY7gS2nq" role="3yKHlx">
+          <ref role="3yKHlE" node="1hkJY7gS2mH" resolve="AM1" />
+          <node concept="1uNiC7" id="1hkJY7gS2nu" role="1uG4Zv">
+            <property role="1uNiC2" value="comment_out_action_id" />
+          </node>
+          <node concept="7CXmI" id="JCy0JrcSpR" role="lGtFl">
+            <node concept="29bkU" id="JCy0JrcSpS" role="7EUXB">
+              <node concept="2PQEqo" id="40UAa_eVpQw" role="3lydCh">
+                <ref role="39XzEq" to="tpc6:2pg2GNQgtqF" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2fdemSsU2I9">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="ActionMapImportIndividualViaWildcard" />
+    <property role="3YCmrE" value="By invoking DELETE on the cell with action map 4, checks that the DELETE action from action map 1 is not executed." />
+    <node concept="34$Ksk" id="2fdemSsU2JM" role="LiRBU">
+      <property role="34$Ksn" value="???" />
+      <node concept="LIFWc" id="2fdemSsUDLe" role="lGtFl">
+        <property role="LIFWa" value="22" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="22" />
+        <property role="p6zMs" value="22" />
+        <property role="LIFWd" value="Constant_4aboec_d0" />
+      </node>
+    </node>
+    <node concept="34$Ksk" id="2fdemSsUDBR" role="LiZbd">
+      <property role="34$Ksn" value="???" />
+    </node>
+    <node concept="3clFbS" id="2fdemSsUDKB" role="LjaKd">
+      <node concept="2HxZob" id="2fdemSsUDK_" role="3cqZAp">
+        <node concept="1iFQzN" id="2fdemSsUDKN" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2fdemSsVPaP">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="ActionMapImportIndividualFromWildcard" />
+    <property role="3YCmrE" value="By invoking DELETE on the cell with action map 6, checks that the DELETE action from map 1 is not executed." />
+    <node concept="34$Ksk" id="2fdemSsVPgI" role="LiRBU">
+      <property role="34$Ksn" value="???" />
+      <node concept="LIFWc" id="2fdemSsWrKT" role="lGtFl">
+        <property role="LIFWa" value="22" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="22" />
+        <property role="p6zMs" value="22" />
+        <property role="LIFWd" value="Constant_4aboec_f0" />
+      </node>
+    </node>
+    <node concept="34$Ksk" id="2fdemSsWrKV" role="LiZbd">
+      <property role="34$Ksn" value="???" />
+    </node>
+    <node concept="3clFbS" id="2fdemSsWrTz" role="LjaKd">
+      <node concept="2HxZob" id="2fdemSsWrTx" role="3cqZAp">
+        <node concept="1iFQzN" id="2fdemSsWrTJ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2fdemSsYrYD">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="CrossLanguageImport" />
+    <property role="3YCmrE" value="Checks that importing an action map from a different language works." />
+    <node concept="3qMYQG" id="2fdemSsYtv0" role="LiRBU">
+      <property role="sdcJA" value="???" />
+      <node concept="LIFWc" id="2fdemSsYtEA" role="lGtFl">
+        <property role="LIFWa" value="44" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="44" />
+        <property role="p6zMs" value="44" />
+        <property role="LIFWd" value="Constant_yqxxln_a0" />
+      </node>
+    </node>
+    <node concept="3qMYQG" id="2fdemSsYtvs" role="LiZbd">
+      <property role="sdcJA" value="1" />
+    </node>
+    <node concept="3clFbS" id="2fdemSsYtDZ" role="LjaKd">
+      <node concept="2HxZob" id="2fdemSsYtDX" role="3cqZAp">
+        <node concept="1iFQzN" id="2fdemSsYtEb" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5DMYqHh9nFN">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ImportedBackspaceNotOverriddenByDelete" />
+    <property role="3YCmrE" value="By invoking BACKSPACE on a cell with imported BACKSPACE action and defined DELETE action, tests that a BACKSPACE action identical to the DELETE action is not synthesized." />
+    <node concept="bku2K" id="5DMYqHh9nIk" role="LiRBU">
+      <property role="bku2o" value="???" />
+      <node concept="LIFWc" id="5DMYqHh9o9T" role="lGtFl">
+        <property role="LIFWa" value="14" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="14" />
+        <property role="p6zMs" value="14" />
+        <property role="LIFWd" value="Constant_xwuqmn_a0" />
+      </node>
+    </node>
+    <node concept="bku2K" id="5DMYqHh9nIu" role="LiZbd">
+      <property role="bku2o" value="BACKSPACE" />
+    </node>
+    <node concept="3clFbS" id="5DMYqHh9nR6" role="LjaKd">
+      <node concept="2HxZob" id="5DMYqHh9nR4" role="3cqZAp">
+        <node concept="1iFQzN" id="5DMYqHh9nRi" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5DMYqHh9nXv">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ImportedDeleteLeadsToSynthesizedBackspace" />
+    <property role="3YCmrE" value="By invoking BACKSPACE on a cell with imported DELETE action, checks that identical BACKSPACE action was synthesized." />
+    <node concept="bku2K" id="5DMYqHh9o0w" role="LiRBU">
+      <property role="bku2o" value="???" />
+      <node concept="LIFWc" id="5DMYqHh9oab" role="lGtFl">
+        <property role="LIFWa" value="20" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="20" />
+        <property role="p6zMs" value="20" />
+        <property role="LIFWd" value="Constant_xwuqmn_b0" />
+      </node>
+    </node>
+    <node concept="bku2K" id="5DMYqHh9o0E" role="LiZbd">
+      <property role="bku2o" value="DELETE" />
+    </node>
+    <node concept="3clFbS" id="5DMYqHh9o9i" role="LjaKd">
+      <node concept="2HxZob" id="5DMYqHh9o9g" role="3cqZAp">
+        <node concept="1iFQzN" id="5DMYqHh9o9u" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2oeJbOGKfZK">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="DefaultBackspaceNotImported" />
+    <property role="3YCmrE" value="By invoking BACKSPACE on a cell which both imports and overrides DELETE, checks that the default BACKSPACE action is synthesized from the overriding DELETE action, not the overridden one." />
+    <node concept="bku2K" id="2oeJbOGKg0x" role="LiRBU">
+      <property role="bku2o" value="???" />
+      <node concept="LIFWc" id="2oeJbOGKg1d" role="lGtFl">
+        <property role="LIFWa" value="18" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
+        <property role="LIFWd" value="Constant_xwuqmn_c0" />
+      </node>
+    </node>
+    <node concept="bku2K" id="2oeJbOGKg0F" role="LiZbd">
+      <property role="bku2o" value="DELETE-2" />
+    </node>
+    <node concept="3clFbS" id="2oeJbOGKg9P" role="LjaKd">
+      <node concept="2HxZob" id="2oeJbOGKg9N" role="3cqZAp">
+        <node concept="1iFQzN" id="2oeJbOGKga1" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

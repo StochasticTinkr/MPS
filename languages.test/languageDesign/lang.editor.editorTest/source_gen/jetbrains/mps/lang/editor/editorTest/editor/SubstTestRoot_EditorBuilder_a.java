@@ -552,7 +552,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
         return cell;
       }
     };
-    provider.setRole("middlewareChild");
     provider.setNoTargetText("<no middlewareChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

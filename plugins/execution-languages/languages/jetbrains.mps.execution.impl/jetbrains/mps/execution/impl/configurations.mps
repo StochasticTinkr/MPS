@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -44,9 +44,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -317,7 +314,6 @@
     </node>
     <node concept="2tJIrI" id="4tfwdmbG7Wy" role="jymVt" />
     <node concept="3clFb_" id="1s_TLxa97VH" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="afterPluginsLoaded" />
       <property role="DiZV1" value="false" />
@@ -345,7 +341,6 @@
     </node>
     <node concept="2tJIrI" id="4tfwdmbGcY4" role="jymVt" />
     <node concept="3clFb_" id="1s_TLxa97VL" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="beforePluginsUnloaded" />
       <property role="DiZV1" value="false" />
@@ -471,7 +466,6 @@
     <node concept="2tJIrI" id="4tfwdmbFNPW" role="jymVt" />
     <node concept="3clFb_" id="4tDMPuHd$R0" role="jymVt">
       <property role="TrG5h" value="disposeRunConfigurations" />
-      <property role="IEkAT" value="false" />
       <node concept="3cqZAl" id="4tDMPuHd$R1" role="3clF45" />
       <node concept="3clFbS" id="4tDMPuHd$R2" role="3clF47">
         <node concept="1gVbGN" id="4tDMPuHd$R3" role="3cqZAp">
@@ -531,7 +525,6 @@
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3Tm1VV" id="4tfwdmbGEsk" role="1B3o_S" />
                     <node concept="3clFb_" id="4tfwdmbGEsl" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="run" />
                       <property role="DiZV1" value="false" />
@@ -1022,14 +1015,14 @@
                 <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
               </node>
               <node concept="liA8E" id="1xg2vZtrX26" role="2OqNvi">
-                <ref role="37wK5l" to="zjj4:~RunManagerImpl.initializeConfigurationTypes(com.intellij.execution.configurations.ConfigurationType[]):void" resolve="initializeConfigurationTypes" />
+                <ref role="37wK5l" to="zjj4:~RunManagerImpl.initializeConfigurationTypes(java.util.List):void" resolve="initializeConfigurationTypes" />
                 <node concept="2OqwBi" id="1xg2vZtrXFX" role="37wK5m">
                   <node concept="10M0yZ" id="1xg2vZtrXFW" role="2Oq$k0">
                     <ref role="1PxDUh" to="dj99:~ConfigurationType" resolve="ConfigurationType" />
                     <ref role="3cqZAo" to="dj99:~ConfigurationType.CONFIGURATION_TYPE_EP" resolve="CONFIGURATION_TYPE_EP" />
                   </node>
                   <node concept="liA8E" id="1xg2vZtrXFY" role="2OqNvi">
-                    <ref role="37wK5l" to="9ti4:~ExtensionPointName.getExtensions():java.lang.Object[]" resolve="getExtensions" />
+                    <ref role="37wK5l" to="9ti4:~ExtensionPointName.getExtensionList():java.util.List" resolve="getExtensionList" />
                   </node>
                 </node>
               </node>
@@ -1218,7 +1211,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="projectOpened" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="8ByOnNt7Ku" role="1B3o_S" />
       <node concept="3cqZAl" id="8ByOnNt7Kw" role="3clF45" />
       <node concept="3clFbS" id="8ByOnNt7Kx" role="3clF47" />
@@ -1227,7 +1219,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="projectClosed" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="8ByOnNt7Kz" role="1B3o_S" />
       <node concept="3cqZAl" id="8ByOnNt7K_" role="3clF45" />
       <node concept="3clFbS" id="8ByOnNt7KA" role="3clF47" />
@@ -1236,7 +1227,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="8ByOnNt7KC" role="1B3o_S" />
       <node concept="3cqZAl" id="8ByOnNt7KE" role="3clF45" />
       <node concept="3clFbS" id="8ByOnNt7KG" role="3clF47" />
@@ -1245,7 +1235,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="8ByOnNt7KI" role="1B3o_S" />
       <node concept="3cqZAl" id="8ByOnNt7KK" role="3clF45" />
       <node concept="3clFbS" id="8ByOnNt7KM" role="3clF47" />
@@ -1254,7 +1243,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="8ByOnNt7KO" role="1B3o_S" />
       <node concept="17QB3L" id="8ByOnNt98M" role="3clF45" />
       <node concept="2AHcQZ" id="8ByOnNt7KR" role="2AJF6D">

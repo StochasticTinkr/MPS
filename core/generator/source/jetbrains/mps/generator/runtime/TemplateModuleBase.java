@@ -141,12 +141,6 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   @Override
-  public Class<?> loadClass(String qualifiedName) throws ClassNotFoundException {
-    // default implementation for generated templates
-    return getClass().getClassLoader().loadClass(qualifiedName);
-  }
-
-  @Override
   public String toString() {
     return String.format("Generator runtime for %s", getAlias());
   }

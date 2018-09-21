@@ -4,6 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.FragmentResult;
@@ -24,8 +25,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_weave_InputNode_A extends TemplateDeclarationBase {
-
+public class Template_weave_InputNode_A extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_weave_InputNode_A() {
   }
@@ -33,11 +33,13 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992784");
   }
+
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_2_0(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0f))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_2_0(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0g))));
     } finally {
     }
     FragmentResult rv = nodeFragment(0, tnode1);
@@ -50,15 +52,10 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -79,5 +76,5 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11bc24e708cL, "specialChild");
     return rv;
   }
-  private static SNodePointer propertyMacro_ymqu3a_c0a0c0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
+  private static SNodePointer propertyMacro_ymqu3a_c0a0c0a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
 }

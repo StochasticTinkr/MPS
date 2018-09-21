@@ -20,12 +20,8 @@ import java.util.HashMap;
 import com.intellij.openapi.keymap.KeymapManager;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jdom.Element;
-import jetbrains.mps.persistence.PersistenceUtil;
-import com.intellij.util.Base64Converter;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.util.xmlb.annotations.Tag;
 import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -76,16 +72,9 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     initTabs();
   }
 
-  public BaseConsoleTab addConsoleTab(@Nullable final ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
+  public BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
     String title = check_xg3v07_a0a0t(tabState);
-    final Wrappers._T<Element> history = new Wrappers._T<Element>(check_xg3v07_a0b0t(check_xg3v07_a0a1a91(check_xg3v07_a0a0b0t(check_xg3v07_a0a0a1a91(tabState)))));
-    if (check_xg3v07_a0c0t(tabState) != null) {
-      myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          history.value = PersistenceUtil.saveModelToXml(PersistenceUtil.loadBinaryModel(Base64Converter.decode(tabState.history.getBytes())));
-        }
-      });
-    }
+    Element history = check_xg3v07_a0b0t(check_xg3v07_a0a1a91(check_xg3v07_a0a0b0t(check_xg3v07_a0a0a1a91(tabState))));
     if (icon == null) {
       icon = MPSIcons.ToolWindows.OpenTerminal_13x13;
     }
@@ -93,10 +82,10 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       title = "Console";
     }
     BaseConsoleTab tab;
-    if (check_xg3v07_a6a91(tabState)) {
-      tab = new OutputConsoleTab(myProject, this, title, history.value);
+    if (check_xg3v07_a5a91(tabState)) {
+      tab = new OutputConsoleTab(myProject, this, title, history);
     } else {
-      tab = new DialogConsoleTab(myProject, this, title, history.value);
+      tab = new DialogConsoleTab(myProject, this, title, history);
     }
     ListSequence.fromList(myTabs).addElement(tab);
     addTab(tab, title, icon, new IComponentDisposer<BaseConsoleTab>() {
@@ -125,6 +114,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       getContentManager().getContent(tab).setPinned(true);
     }
     check_xg3v07_a2a32(getContentManager().getContent(0), this);
+    check_xg3v07_a3a32(getContentManager().getContent(0), this);
     getContentManager().setSelectedContent(getContentManager().getContent(0));
   }
 
@@ -135,9 +125,6 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   public static class TabState {
     public String title;
     public boolean isHistoryTab;
-    @Deprecated
-    @ToRemove(version = 3.5)
-    public String history;
     @Tag(value = "tab")
     public Element historyXml;
   }
@@ -226,19 +213,19 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     }
     return null;
   }
-  private static String check_xg3v07_a0c0t(ConsoleTool.TabState checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.history;
-    }
-    return null;
-  }
-  private static boolean check_xg3v07_a6a91(ConsoleTool.TabState checkedDotOperand) {
+  private static boolean check_xg3v07_a5a91(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isHistoryTab;
     }
     return false;
   }
   private static void check_xg3v07_a2a32(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setPinnable(false);
+    }
+
+  }
+  private static void check_xg3v07_a3a32(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setCloseable(false);
     }

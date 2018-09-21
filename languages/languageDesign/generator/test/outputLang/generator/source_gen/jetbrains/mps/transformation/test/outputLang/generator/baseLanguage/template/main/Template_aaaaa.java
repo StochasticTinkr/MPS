@@ -4,17 +4,15 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
@@ -23,12 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_aaaaa extends TemplateDeclarationBase {
-  private SNode myNnnn;
-
-  public Template_aaaaa(SNode nnnn) {
-    this.myNnnn = nnnn;
-  }
+public class Template_aaaaa extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_aaaaa() {
   }
@@ -36,11 +29,11 @@ public class Template_aaaaa extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
   }
-  private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
-    MapSequence.fromMap(result).put("nnnn", myNnnn);
-    return result;
+
+  public String[] getParameterNames() {
+    return new String[]{"nnnn"};
   }
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -61,22 +54,15 @@ public class Template_aaaaa extends TemplateDeclarationBase {
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    context = context.subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
     applyPart0(context).reportTo(rv);
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context, SNode nnnn) throws GenerationException {
-    this.myNnnn = nnnn;
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override

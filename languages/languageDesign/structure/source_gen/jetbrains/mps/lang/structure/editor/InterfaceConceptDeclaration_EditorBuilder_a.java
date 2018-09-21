@@ -443,7 +443,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return nodeFactory();
     }
     public SNode nodeFactory() {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), null);
       SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation");
       return result;
     }
@@ -563,7 +563,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       return nodeFactory();
     }
     public SNode nodeFactory() {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), null);
       SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference");
       return result;
     }

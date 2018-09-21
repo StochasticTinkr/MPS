@@ -70,6 +70,6 @@ public class Actions_TabDescriptor extends RelationDescriptor {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.ACTIONS, node);
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.ACTIONS, node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(((SAbstractConcept) concept)), null));
+    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.ACTIONS, node, SNodeFactoryOperations.createNewNode(((SAbstractConcept) concept), null));
   }
 }

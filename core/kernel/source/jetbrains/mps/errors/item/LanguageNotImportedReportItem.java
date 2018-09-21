@@ -40,7 +40,7 @@ public class LanguageNotImportedReportItem extends NodeReportItemBase implements
   }
 
   @Override
-  public String getIssueKind() {
-    return "missing language import";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.LANGUAGE_NOT_IMPORTED;
   }
 }

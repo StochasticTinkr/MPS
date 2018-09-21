@@ -32,6 +32,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringRuntime;
@@ -101,10 +102,11 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
   }
   public Collection<SNode> findInstances(final SAbstractConcept concept, SearchScope searchScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_c4c66o_a0d = CommandUtil.createScope(searchScope);
+      final SearchScope scope_c4c66o_a0d_0 = new EditableFilteringScope(scope_c4c66o_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_c4c66o_a0d_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(concept), false)).where(new IWhereFilter<SNode>() {

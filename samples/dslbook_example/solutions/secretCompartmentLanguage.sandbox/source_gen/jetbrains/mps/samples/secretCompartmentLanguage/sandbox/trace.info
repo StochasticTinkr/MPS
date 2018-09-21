@@ -41,15 +41,12 @@
       <node id="1197255894825" at="13,35,14,35" concept="1" />
       <node id="1197255910138" at="14,35,15,35" concept="1" />
       <node id="1197253131013" at="15,35,16,86" concept="1" />
-      <node id="1197247437082" at="18,0,20,0" concept="0" trace="MrsH_StateMachine_Test#()V" />
       <node id="1197253131013" at="10,0,18,0" concept="2" trace="test_A#()V" />
-      <scope id="1197247437082" at="18,35,18,35" />
-      <scope id="1197247437082" at="18,0,20,0" />
       <scope id="1197253131013" at="10,41,16,86">
         <var name="stateMachineFactory" id="1197253131013" />
       </scope>
       <scope id="1197253131013" at="10,0,18,0" />
-      <unit id="1197247437082" at="9,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.sandbox.MrsH_StateMachine_Test" />
+      <unit id="1197247437082" at="9,0,19,0" name="jetbrains.mps.samples.secretCompartmentLanguage.sandbox.MrsH_StateMachine_Test" />
     </file>
   </root>
 </debug-info>

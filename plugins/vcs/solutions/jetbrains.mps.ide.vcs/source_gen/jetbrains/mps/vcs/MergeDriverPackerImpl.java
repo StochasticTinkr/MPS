@@ -51,7 +51,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.search" + fsep + "classes");
     SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.util" + fsep + "classes");
 
-    SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + "classes");
+    SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + getVCSCoreFileName());
     return classpathItems;
 
   }

@@ -19,13 +19,11 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
           return Collections.<NodeFactory>singletonList(new initialize_ClosureLiteral.NodeFactory_876385242039333159());
-        case 1:
-          return Collections.<NodeFactory>singletonList(new initialize_UnrestrictedFunctionType.NodeFactory_1232132222404());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
 
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ClosureLiteral", "UnrestrictedFunctionType"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ClosureLiteral"};
 }

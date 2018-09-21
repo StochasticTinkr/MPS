@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="6" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -73,6 +73,7 @@
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <property id="3389822811991596365" name="stripImplementation" index="vjkMI" />
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+        <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
       <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
         <property id="4034578608468849375" name="customPackaging" index="1ZOk41" />
@@ -81,6 +82,7 @@
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="3570488090019868064" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ManualPluginLayoutType" flags="ng" index="pUk6w" />
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
         <reference id="1265949165890536425" name="module" index="L2wRA" />
       </concept>
@@ -137,6 +139,7 @@
         <ref role="m$_yA" node="2Wb4ucKlQX3" resolve="jetbrains.mps.build.sandbox" />
       </node>
       <node concept="m$_yB" id="2Wb4ucKmnHM" role="m$_yh">
+        <property role="1ZOk41" value="false" />
         <ref role="m$_yA" node="2Wb4ucKmnFy" resolve="jetbrains.mps.build.tests" />
       </node>
     </node>
@@ -315,7 +318,11 @@
           <node concept="L2wRC" id="2Wb4ucKmkhM" role="39821P">
             <ref role="L2wRA" node="2Wb4ucKlQX3" resolve="jetbrains.mps.build.sandbox" />
           </node>
+          <node concept="L2wRC" id="5peYeZGo8Vn" role="39821P">
+            <ref role="L2wRA" node="2Wb4ucKmnFy" resolve="jetbrains.mps.build.tests" />
+          </node>
         </node>
+        <node concept="pUk6w" id="5peYeZGo8Vm" role="pUk7w" />
       </node>
     </node>
     <node concept="3b7kt6" id="2Wb4ucKlQKh" role="10PD9s" />

@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ReferenceScopeHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -41,15 +42,21 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
  * (i.e. module added to the global repository triggers moduleAdded for for both global and
  * each project repository
  */
-public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
+public class ProjectRepository extends SRepositoryBase implements SRepositoryExt, ReferenceScopeHelper.Source {
   private final Project myProject;
-  private final ProjectModelAccess myProjectModelAccess;
+  private final ModelAccess myProjectModelAccess;
   private final SRepositoryExt myRootRepo;
 
   public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry) {
+    this(project, rootRepo, repositoryRegistry, new ProjectModelAccess(project));
+  }
+
+  // XXX in fact, the only reason to pass project here is to provide it from #getProject()
+  //     there are very few uses of this knowledge, likely can get rid of it.
+  public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry, @NotNull ModelAccess projectModelAccess) {
     super(repositoryRegistry);
     myProject = project;
-    myProjectModelAccess = new ProjectModelAccess(project);
+    myProjectModelAccess = projectModelAccess;
     myRootRepo = rootRepo;
   }
 
@@ -117,5 +124,13 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   @Override
   public void removeRepositoryListener(@NotNull SRepositoryListener listener) {
     getRootRepository().removeRepositoryListener(listener);
+  }
+
+  @Override
+  public ReferenceScopeHelper getReferenceScopeHelper() {
+    if (getRootRepository() instanceof ReferenceScopeHelper.Source) {
+      ((ReferenceScopeHelper.Source) getRootRepository()).getReferenceScopeHelper();
+    }
+    return new ReferenceScopeHelper();
   }
 }

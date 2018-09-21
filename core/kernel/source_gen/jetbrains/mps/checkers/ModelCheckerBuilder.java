@@ -22,9 +22,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -98,8 +96,12 @@ public class ModelCheckerBuilder {
       IChecker<?, ? extends IssueKindReportItem> checker = it;
       if (checker instanceof IChecker.AbstractModuleChecker) {
         ListSequence.fromList(moduleCheckers).addElement((IChecker.AbstractModuleChecker<? extends IssueKindReportItem>) checker);
-      } else if (checker instanceof IChecker.AbstractModelChecker || checker instanceof IChecker.AbstractRootChecker || checker instanceof IChecker.AbstractNodeChecker) {
-        ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapToModelChecker(checker));
+      } else if (checker instanceof IChecker.AbstractModelChecker) {
+        ListSequence.fromList(modelCheckers).addElement((IChecker.AbstractModelChecker<?>) checker);
+      } else if (checker instanceof IChecker.AbstractRootChecker) {
+        ListSequence.fromList(modelCheckers).addElement(((IChecker.AbstractRootChecker<?>) checker).asModelChecker());
+      } else if (checker instanceof IChecker.AbstractNodeChecker) {
+        ListSequence.fromList(modelCheckers).addElement(((IChecker.AbstractNodeChecker<?>) checker).asModelChecker());
       } else {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("IChecker implementor doesn't extend none of expected base classes: " + checker.getClass().getName());
@@ -168,14 +170,13 @@ public class ModelCheckerBuilder {
   public static <O> IAbstractChecker<O, IssueKindReportItem> wrapWithFiltering(IAbstractChecker<O, ? extends IssueKindReportItem> specificChecker, final String checkerName) {
     return new FilteringChecker<O, IssueKindReportItem>(specificChecker, new _FunctionTypes._return_P2_E0<Boolean, IssueKindReportItem, SRepository>() {
       public Boolean invoke(IssueKindReportItem item, SRepository repository) {
-        SNodeReference nodeRef = NodeReportItem.FLAVOUR_NODE.tryToGet(item);
-        if (nodeRef != null) {
-          SNode node = nodeRef.resolve(repository);
-          if (ErrorReportUtil.shouldReportError(node)) {
+        if (item instanceof NodeReportItem) {
+          NodeReportItem nodeReportItem = (NodeReportItem) item;
+          if (ErrorReportUtil.shouldReportError(nodeReportItem, repository)) {
             return true;
           } else {
             if (LOG.isInfoEnabled()) {
-              LOG.info("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeRef.getNodeId() + " in model " + nodeRef.getModelReference());
+              LOG.info("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeReportItem.getNode().getNodeId() + " in model " + nodeReportItem.getNode().getModelReference());
             }
             return false;
           }

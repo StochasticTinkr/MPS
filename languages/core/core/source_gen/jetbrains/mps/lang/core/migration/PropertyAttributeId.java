@@ -17,6 +17,7 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -68,10 +69,11 @@ public class PropertyAttributeId extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_iro8gh_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_iro8gh_a0e_0 = new EditableFilteringScope(scope_iro8gh_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_iro8gh_a0e_0;
         }
       };
       List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());

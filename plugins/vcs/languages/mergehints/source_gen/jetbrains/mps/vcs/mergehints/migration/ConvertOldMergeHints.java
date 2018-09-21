@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -50,10 +51,11 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
     }
 
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_fwc2c_c0d = CommandUtil.createScope(m);
+      final SearchScope scope_fwc2c_c0d_0 = new EditableFilteringScope(scope_fwc2c_c0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_fwc2c_c0d_0;
         }
       };
       // note: .toList is important here 
@@ -99,10 +101,11 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_fwc2c_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_fwc2c_a0e_0 = new EditableFilteringScope(scope_fwc2c_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_fwc2c_a0e_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"), false)).select(new ISelector<SNode, Problem>() {

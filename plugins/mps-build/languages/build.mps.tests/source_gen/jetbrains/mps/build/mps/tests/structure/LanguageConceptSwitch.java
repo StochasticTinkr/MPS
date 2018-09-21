@@ -14,6 +14,8 @@ public final class LanguageConceptSwitch {
   public static final int BuildMpsLayout_TestModuleGroup = 2;
   public static final int BuildMpsLayout_TestModules = 3;
   public static final int BuildMpsLayout_TestModules_Content = 4;
+  public static final int BuildMpsLayout_TestModules_Options = 5;
+  public static final int RequiredPlugin = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3600cb0a44dd4a5bL, 0x996822924406419eL);
@@ -22,6 +24,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x3f496e80bd8ef36bL, BuildMpsLayout_TestModuleGroup);
     builder.put(0x3f496e80bd8ef36dL, BuildMpsLayout_TestModules);
     builder.put(0x3f496e80bd8ef371L, BuildMpsLayout_TestModules_Content);
+    builder.put(0x5b81705cdfb314e0L, BuildMpsLayout_TestModules_Options);
+    builder.put(0x5b81705cdf7bc318L, RequiredPlugin);
     myIndex = builder.seal();
   }
 

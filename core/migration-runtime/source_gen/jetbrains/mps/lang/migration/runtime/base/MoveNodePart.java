@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -38,10 +39,11 @@ public class MoveNodePart {
     Iterable<SReference> references;
     SNode targetFromNode = myFrom.resolve(repository);
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_8rsufn_c0h = CommandUtil.createScope(searchScope);
+      final SearchScope scope_8rsufn_c0h_0 = new EditableFilteringScope(scope_8rsufn_c0h);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_8rsufn_c0h_0;
         }
       };
       if (targetFromNode != null) {

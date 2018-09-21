@@ -95,9 +95,6 @@
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -515,7 +512,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -5384,7 +5381,6 @@
                 <ref role="1Y3XeK" to="h87c:~RecursiveIterator" resolve="RecursiveIterator" />
                 <ref role="37wK5l" to="h87c:~RecursiveIterator.&lt;init&gt;(java.lang.Iterable,boolean)" resolve="RecursiveIterator" />
                 <node concept="3clFb_" id="1jjYQYSjkjP" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="children" />
                   <property role="DiZV1" value="false" />
@@ -5468,7 +5464,6 @@
                 <ref role="1Y3XeK" to="h87c:~RecursiveIterator" resolve="RecursiveIterator" />
                 <ref role="37wK5l" to="h87c:~RecursiveIterator.&lt;init&gt;(java.lang.Iterable,boolean)" resolve="RecursiveIterator" />
                 <node concept="3clFb_" id="1jjYQYSjkfE" role="jymVt">
-                  <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="children" />
                   <property role="DiZV1" value="false" />
@@ -5570,7 +5565,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="children" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tmbuc" id="4fCiNXEvIv5" role="1B3o_S" />
                   <node concept="3uibUv" id="4fCiNXEvIv7" role="3clF45">
                     <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
@@ -10027,7 +10021,6 @@
       </node>
       <node concept="2tJIrI" id="ECLZhkqqXI" role="jymVt" />
       <node concept="3clFb_" id="2pk5iwY4UUl" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getNexts" />
         <property role="DiZV1" value="false" />
@@ -11424,7 +11417,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7AaordoBkQA" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="expandPath" />
         <property role="DiZV1" value="false" />
@@ -11896,7 +11888,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7AaordoBkQJ" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="shrinkPath" />
         <property role="DiZV1" value="false" />
@@ -19285,7 +19276,6 @@
     </node>
     <node concept="2YIFZL" id="10IvbaIsHgS" role="jymVt">
       <property role="TrG5h" value="unwrapExtractedDeps" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="10IvbaInuys" role="3clF47">
@@ -21478,6 +21468,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwrzG" role="jymVt" />
     <node concept="3clFbW" id="3pzPpUFO9wL" role="jymVt">
       <node concept="37vLTG" id="3pzPpUFO9wM" role="3clF46">
         <property role="TrG5h" value="initialProject" />
@@ -21538,6 +21529,7 @@
         <node concept="1iwH7U" id="3pzPpUFO9x8" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwpHz" role="jymVt" />
     <node concept="3clFb_" id="3pzPpUFO9x9" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -21551,6 +21543,9 @@
               <node concept="Tc6Ow" id="3pzPpUFO9xe" role="2ShVmc">
                 <node concept="3Tqbb2" id="3pzPpUFO9xf" role="HW$YZ">
                   <ref role="ehGHo" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+                </node>
+                <node concept="37vLTw" id="5I1s5NvwL$1" role="I$8f6">
+                  <ref role="3cqZAo" node="5I1s5NvwCJq" resolve="additionalPlugins" />
                 </node>
               </node>
             </node>
@@ -21741,7 +21736,14 @@
           <ref role="3uigEE" node="1jjYQYSjid_" resolve="MPSModulesClosure" />
         </node>
       </node>
+      <node concept="37vLTG" id="5I1s5NvwCJq" role="3clF46">
+        <property role="TrG5h" value="additionalPlugins" />
+        <node concept="2I9FWS" id="5I1s5NvwDD3" role="1tU5fm">
+          <ref role="2I9WkF" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="5I1s5NvwqC$" role="jymVt" />
     <node concept="3clFb_" id="3pzPpUFO9yt" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />

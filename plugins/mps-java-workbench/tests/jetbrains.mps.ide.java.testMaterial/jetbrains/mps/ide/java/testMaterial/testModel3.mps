@@ -2,7 +2,7 @@
 <model ref="r:d8a04b41-593b-40ad-8fa1-52c3ccb0b7ef(jetbrains.mps.ide.java.testMaterial.testModel3)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="8ssk" ref="r:8b9c3824-e139-4993-893a-476446730917(jetbrains.mps.ide.java.testMaterial.testModel3.sub)" />

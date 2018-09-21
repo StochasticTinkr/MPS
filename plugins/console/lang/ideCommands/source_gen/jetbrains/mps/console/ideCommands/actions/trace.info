@@ -12,9 +12,9 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">
     <file name="NodeStatisticsTarget_Setup.java">
-      <node id="2087237500476347103" at="13,91,14,380" concept="0" />
+      <node id="2087237500476347103" at="13,91,14,338" concept="0" />
       <node id="2087237500476328251" at="13,0,16,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="2087237500476328251" at="13,91,14,380" />
+      <scope id="2087237500476328251" at="13,91,14,338" />
       <scope id="2087237500476328251" at="13,0,16,0">
         <var name="enclosingNode" id="2087237500476328251" />
         <var name="model" id="2087237500476328251" />

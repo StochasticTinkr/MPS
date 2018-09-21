@@ -4,9 +4,9 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
@@ -107,9 +107,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1917,16 +1914,21 @@
             <node concept="3uibUv" id="6MDTP4X65c8" role="1tU5fm">
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
-            <node concept="2OqwBi" id="6MDTP4X65c9" role="33vP2m">
-              <node concept="10M0yZ" id="6MDTP4X65ca" role="2Oq$k0">
-                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
-              </node>
-              <node concept="liA8E" id="6MDTP4X65cb" role="2OqNvi">
-                <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
-                <node concept="37vLTw" id="6MDTP4X65cc" role="37wK5m">
-                  <ref role="3cqZAo" node="6MDTP4X65cC" resolve="item" />
+            <node concept="2OqwBi" id="dQllQpj5S7" role="33vP2m">
+              <node concept="2OqwBi" id="6MDTP4X65c9" role="2Oq$k0">
+                <node concept="10M0yZ" id="6MDTP4X65ca" role="2Oq$k0">
+                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
                 </node>
+                <node concept="liA8E" id="6MDTP4X65cb" role="2OqNvi">
+                  <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
+                  <node concept="37vLTw" id="6MDTP4X65cc" role="37wK5m">
+                    <ref role="3cqZAo" node="6MDTP4X65cC" resolve="item" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="dQllQpj9Uj" role="2OqNvi">
+                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$ItemKind.getSpecialization():java.lang.String" resolve="getSpecialization" />
               </node>
             </node>
           </node>
@@ -2877,7 +2879,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="stateChanged" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="5bed3YcMOfg" role="1B3o_S" />
                       <node concept="3cqZAl" id="5bed3YcMOfi" role="3clF45" />
                       <node concept="37vLTG" id="5bed3YcMOfj" role="3clF46">
@@ -3391,7 +3392,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="apply" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ09o" role="1B3o_S" />
       <node concept="3cqZAl" id="3KDENWMZ09q" role="3clF45" />
       <node concept="3uibUv" id="3KDENWMZ09r" role="Sfmx6">
@@ -3463,7 +3463,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="reset" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ09w" role="1B3o_S" />
       <node concept="3cqZAl" id="3KDENWMZ09y" role="3clF45" />
       <node concept="3clFbS" id="3KDENWMZ09_" role="3clF47">
@@ -3637,7 +3636,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getId" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ08C" role="1B3o_S" />
       <node concept="17QB3L" id="6x0p4ufF$3i" role="3clF45" />
       <node concept="2AHcQZ" id="3KDENWMZ08F" role="2AJF6D">
@@ -3658,7 +3656,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="enableSearch" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ08L" role="1B3o_S" />
       <node concept="3uibUv" id="3KDENWMZ08N" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
@@ -3682,7 +3679,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDisplayName" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ08V" role="1B3o_S" />
       <node concept="17QB3L" id="6x0p4ufFys2" role="3clF45" />
       <node concept="2AHcQZ" id="3KDENWMZ08Y" role="2AJF6D">
@@ -3700,7 +3696,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getHelpTopic" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ094" role="1B3o_S" />
       <node concept="17QB3L" id="6x0p4ufFwOK" role="3clF45" />
       <node concept="2AHcQZ" id="3KDENWMZ097" role="2AJF6D">
@@ -3721,7 +3716,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ09e" role="1B3o_S" />
       <node concept="3uibUv" id="3KDENWMZ09g" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
@@ -3741,7 +3735,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeUIResources" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3KDENWMZ09B" role="1B3o_S" />
       <node concept="3cqZAl" id="3KDENWMZ09D" role="3clF45" />
       <node concept="3clFbS" id="3KDENWMZ09G" role="3clF47" />
@@ -4295,11 +4288,14 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="3xfDcbRhFDJ" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRhFDK" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjVCJ" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="3xfDcbRhFDO" role="3clF47">
         <node concept="3clFbF" id="3xfDcbRhGUr" role="3cqZAp">
-          <node concept="Xl_RD" id="sQz2V6oofL" role="3clFbG">
-            <property role="Xl_RC" value="unresolved references" />
+          <node concept="10M0yZ" id="dQllQpjWxQ" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.UNRESOLVED_REFERENCE" resolve="UNRESOLVED_REFERENCE" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>
       </node>
@@ -5853,7 +5849,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="actionPerformed" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="2AAgPT$dvch" role="1B3o_S" />
                       <node concept="3cqZAl" id="2AAgPT$dvci" role="3clF45" />
                       <node concept="37vLTG" id="2AAgPT$dvcj" role="3clF46">
@@ -7504,17 +7499,40 @@
       <node concept="3clFbS" id="3etVqSRT$IJ" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="3xfDcbRhN9u" role="jymVt" />
+    <node concept="Wx3nA" id="dQllQpiVol" role="jymVt">
+      <property role="TrG5h" value="CROSS_TEMPLATE_REFERENCES" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="dQllQpiWe8" role="1tU5fm">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
+      <node concept="2ShNRf" id="dQllQpiWMR" role="33vP2m">
+        <node concept="1pGfFk" id="dQllQpiWN4" role="2ShVmc">
+          <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.&lt;init&gt;(jetbrains.mps.errors.item.IssueKindReportItem$KindLevel,java.lang.String)" resolve="IssueKindReportItem.CheckerCategory" />
+          <node concept="Rm8GO" id="dQllQpiXly" role="37wK5m">
+            <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+            <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.MANUAL" resolve="MANUAL" />
+          </node>
+          <node concept="Xl_RD" id="dQllQpiWN6" role="37wK5m">
+            <property role="Xl_RC" value="cross-templates references" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dQllQpiVoq" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="dQllQpiUBf" role="jymVt" />
     <node concept="2tJIrI" id="3xfDcbRhNdX" role="jymVt" />
     <node concept="3clFb_" id="3xfDcbRhO1d" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="3xfDcbRhO1f" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRhO1g" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpiTLU" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="3xfDcbRhO1k" role="3clF47">
         <node concept="3clFbF" id="3xfDcbRhOT$" role="3cqZAp">
-          <node concept="Xl_RD" id="sQz2V6o8mX" role="3clFbG">
-            <property role="Xl_RC" value="cross-templates references" />
+          <node concept="37vLTw" id="dQllQpiXOO" role="3clFbG">
+            <ref role="3cqZAo" node="dQllQpiVol" resolve="CROSS_TEMPLATE_REFERENCES" />
           </node>
         </node>
       </node>
@@ -8054,13 +8072,18 @@
                           <property role="DiZV1" value="false" />
                           <property role="od$2w" value="false" />
                           <node concept="3Tm1VV" id="a7HeXjWw2j" role="1B3o_S" />
-                          <node concept="3uibUv" id="a7HeXjWw2k" role="3clF45">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                          <node concept="3uibUv" id="dQllQpiYcY" role="3clF45">
+                            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                           </node>
                           <node concept="3clFbS" id="a7HeXjWw2l" role="3clF47">
                             <node concept="3clFbF" id="a7HeXjWw2m" role="3cqZAp">
-                              <node concept="Xl_RD" id="a7HeXjWw2n" role="3clFbG">
-                                <property role="Xl_RC" value="cross-template reference" />
+                              <node concept="2OqwBi" id="dQllQpiZ$0" role="3clFbG">
+                                <node concept="37vLTw" id="dQllQpiYZk" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="dQllQpiVol" resolve="CROSS_TEMPLATE_REFERENCES" />
+                                </node>
+                                <node concept="liA8E" id="dQllQpiZTL" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                </node>
                               </node>
                             </node>
                           </node>

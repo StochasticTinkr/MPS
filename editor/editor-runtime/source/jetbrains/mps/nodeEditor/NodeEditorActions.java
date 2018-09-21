@@ -646,7 +646,7 @@ public class NodeEditorActions {
     }
 
     private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
-      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(new SNodeLegacy(childNode).getRoleLink())) {
+      while (childNode.getParent() != null && !childNode.getContainmentLink().isMultiple()) {
         childNode = childNode.getParent();
       }
       return childNode;
@@ -654,6 +654,11 @@ public class NodeEditorActions {
   }
 
   public static class Complete extends AbstractCellAction {
+
+    Complete(){
+      super(false);
+    }
+
     @Override
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getSelectedCell();

@@ -133,16 +133,12 @@ public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSy
     myNonTypeSystemComponent.clearNodeTypes();
   }
 
-  private void putError(IErrorReporter reporter) {
-    getTypeErrorComponent().addError(reporter);
-  }
-
   private ITypeErrorComponent getTypeErrorComponent() {
     return myTypeErrorComponent != null ? myTypeErrorComponent : getTypecheckingComponent();
   }
 
   public void reportTypeError(IErrorReporter errorReporter) {
-    putError(errorReporter);
+    getTypeErrorComponent().addError(errorReporter);
   }
 
   public void applyRuleToNode(@NotNull SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {

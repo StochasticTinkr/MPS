@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,8 +85,15 @@ public class TemplateQueryContext {
     return myGenerator.getInputModel();
   }
 
+  /**
+   * @deprecated left for compatibility with 2018.2-generated code, to be removed once 2018.3 is out.
+   *             Code generated with 2018.3 injects 'true' constant and doesn't depend on the method.
+   *             fwiw, there are no uses in mps-extensions and mbeddr, nor it has been mentioned in the 2018.2 documentation.
+   */
+  @ToRemove(version = 2018.3)
+  @Deprecated
   public boolean isDirty(SNode node) {
-    return myGenerator.isDirty(node);
+    return true;
   }
 
   public SModel getOutputModel() {
@@ -239,20 +246,6 @@ public class TemplateQueryContext {
     SNodeReference rnr = getRuleNode();
     myGenerator.getLogger().error(rnr == null ? tn : rnr, message,
         GeneratorUtil.describeIfExists(inputNode, "input node"), GeneratorUtil.describeIfExists(tn, "template node"));
-  }
-
-  /**
-   * Node in template model most close to the query being evaluated. For macro nodes, however
-   * shall point to macro's parent node (genContext.templateNode op contract)
-   * @deprecated  doesn't make sense for generated templates. Switch to {@link #getTemplateReference()}
-   *
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode getTemplateNode() {
-    SNodeReference tnr = getTemplateNodeRef();
-    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
-    return tnr == null ? null : tnr.resolve(repo);
   }
 
   /**

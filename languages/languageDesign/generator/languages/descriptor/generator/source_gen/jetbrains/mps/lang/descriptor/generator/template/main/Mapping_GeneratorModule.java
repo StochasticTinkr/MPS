@@ -355,7 +355,7 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_GDClass().apply(context);
+      Collection<SNode> result = new Template_GDClass().apply(environment, context);
       return result;
     }
   }
@@ -370,7 +370,7 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_InterpretedGeneratorRuntimeDescriptor().apply(context);
+      Collection<SNode> result = new Template_InterpretedGeneratorRuntimeDescriptor().apply(environment, context);
       return result;
     }
   }
@@ -380,7 +380,7 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
       DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
-      Collection<SNode> result = new Template_generator_descriptor().apply(context);
+      Collection<SNode> result = new Template_generator_descriptor().apply(environment, context);
       return result;
     }
   }

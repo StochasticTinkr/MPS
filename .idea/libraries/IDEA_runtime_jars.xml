@@ -5,11 +5,11 @@
       <root url="jar://$PROJECT_DIR$/lib/common-io-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/idea_rt.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/guava-23.6-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-25.1-jre.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/common-image-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/common-lang-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.10.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/commons-compress-1.16.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-compress-1.17.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-imaging-1.0-RC-1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/imageio-core-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/imageio-metadata-3.3.2.jar!/" />

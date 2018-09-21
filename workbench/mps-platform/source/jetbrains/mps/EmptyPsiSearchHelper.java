@@ -40,7 +40,7 @@ public class EmptyPsiSearchHelper implements PsiSearchHelper {
   }
 
   @Override
-  public boolean processCommentsContainingIdentifier(@NotNull String identifier, @NotNull SearchScope searchScope, @NotNull Processor<PsiElement> processor) {
+  public boolean processCommentsContainingIdentifier(@NotNull String identifier, @NotNull SearchScope searchScope, @NotNull Processor<? super PsiElement> processor) {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 

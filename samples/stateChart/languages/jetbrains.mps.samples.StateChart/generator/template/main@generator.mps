@@ -57,6 +57,9 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG">
+        <child id="1510949579266801461" name="sourceNodeQuery" index="5jGum" />
+      </concept>
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG" />
       <concept id="1202776937179" name="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" flags="lg" index="b5Tf3" />
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
@@ -70,10 +73,6 @@
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
-      </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
-        <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
       </concept>
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
@@ -360,8 +359,8 @@
     <node concept="2pNNFK" id="1id1$wMpSfT" role="13RCb5">
       <property role="2pNNFO" value="state" />
       <node concept="3o6iSG" id="1id1$wMpSL4" role="3o6s8t">
-        <node concept="xERo3" id="7$fcq_kbX9m" role="lGtFl">
-          <ref role="xH3mL" node="7$fcq_kbOBq" resolve="reduce_AnyState" />
+        <node concept="5jKBG" id="za$VMvkOSX" role="lGtFl">
+          <ref role="v9R2y" node="7$fcq_kbOBq" resolve="reduce_AnyState" />
         </node>
       </node>
       <node concept="2pNUuL" id="1id1$wMpSfX" role="2pNNFR">
@@ -480,8 +479,8 @@
     <node concept="2pNNFK" id="7$fcq_kbH6I" role="13RCb5">
       <property role="2pNNFO" value="final" />
       <node concept="3o6iSG" id="7$fcq_kbXz1" role="3o6s8t">
-        <node concept="xERo3" id="7$fcq_kbXHI" role="lGtFl">
-          <ref role="xH3mL" node="7$fcq_kbOBq" resolve="reduce_AnyState" />
+        <node concept="5jKBG" id="za$VMvkOSY" role="lGtFl">
+          <ref role="v9R2y" node="7$fcq_kbOBq" resolve="reduce_AnyState" />
         </node>
       </node>
       <node concept="2pNUuL" id="7$fcq_kbH6M" role="2pNNFR">
@@ -517,9 +516,9 @@
       <node concept="2pNNFK" id="5Uf3geaK5bo" role="3o6s8t">
         <property role="2pNNFO" value="onEntry" />
         <node concept="3o6iSG" id="5Uf3geaKev9" role="3o6s8t">
-          <node concept="xERo3" id="5Uf3geaKeFK" role="lGtFl">
-            <ref role="xH3mL" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
-            <node concept="3NFfHV" id="5Uf3geaKiss" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkOSZ" role="lGtFl">
+            <ref role="v9R2y" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
+            <node concept="3NFfHV" id="5Uf3geaKiss" role="5jGum">
               <node concept="3clFbS" id="5Uf3geaKist" role="2VODD2">
                 <node concept="3clFbF" id="5Uf3geaKivN" role="3cqZAp">
                   <node concept="2OqwBi" id="5Uf3geaKiF1" role="3clFbG">
@@ -560,9 +559,9 @@
       <node concept="2pNNFK" id="5Uf3geaK6_H" role="3o6s8t">
         <property role="2pNNFO" value="onExit" />
         <node concept="3o6iSG" id="5Uf3geaKeFP" role="3o6s8t">
-          <node concept="xERo3" id="5Uf3geaKeRG" role="lGtFl">
-            <ref role="xH3mL" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
-            <node concept="3NFfHV" id="5Uf3geaKeRM" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkOT0" role="lGtFl">
+            <ref role="v9R2y" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
+            <node concept="3NFfHV" id="5Uf3geaKeRM" role="5jGum">
               <node concept="3clFbS" id="5Uf3geaKeRN" role="2VODD2">
                 <node concept="3clFbF" id="5Uf3geaKeV9" role="3cqZAp">
                   <node concept="2OqwBi" id="5Uf3geaKf6n" role="3clFbG">
@@ -673,9 +672,9 @@
           </node>
         </node>
         <node concept="3o6iSG" id="5Uf3geaJNo9" role="3o6s8t">
-          <node concept="xERo3" id="5Uf3geaJNP5" role="lGtFl">
-            <ref role="xH3mL" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
-            <node concept="3NFfHV" id="5Uf3geaJNPh" role="xEYEz">
+          <node concept="5jKBG" id="za$VMvkOT1" role="lGtFl">
+            <ref role="v9R2y" node="5Uf3geaJG$e" resolve="reduce_OperationsList" />
+            <node concept="3NFfHV" id="5Uf3geaJNPh" role="5jGum">
               <node concept="3clFbS" id="5Uf3geaJNPi" role="2VODD2">
                 <node concept="3clFbF" id="5Uf3geaJNSK" role="3cqZAp">
                   <node concept="2OqwBi" id="5Uf3geaJO2S" role="3clFbG">

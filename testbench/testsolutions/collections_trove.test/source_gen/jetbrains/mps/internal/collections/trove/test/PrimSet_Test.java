@@ -122,6 +122,4 @@ __switch__:
     SetSequence.fromSet(shs).addElement((short) -1);
     Assert.assertSame(1, SetSequence.fromSet(shs).count());
   }
-  public PrimSet_Test() {
-  }
 }

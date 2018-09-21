@@ -1,6 +1,9 @@
 <component xmlns="http://jetbrains.org/intellij/schema/application-info"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://jetbrains.org/intellij/schema/application-info http://jetbrains.org/intellij/schema/ApplicationInfo.xsd">
+  <!-- Do not set minor version other than just one digit (minor="2" even for some 2018.2.# version) and eap other then eap="true":
+  it is used for AffectedVersionTest#testVersion, which expect only EAP minor version
+  TODO: this looks like hack and does not in any way reflects real version set in jetbrains.mps.ide.build.mps-->
   <version codename="MPS" major="2018" minor="3" eap="true" update-channel="MPS183"/>
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009"/>
   <build number="MPS-183.SNAPSHOT" date="__BUILD_DATE__"/>
@@ -30,8 +33,8 @@
   <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps"
             release-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps"/>
   <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html"/>
-  <keymap win="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference"
-          mac="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference"/>
+  <keymap win="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference"
+          mac="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference"/>
   <third-party url="http://www.jetbrains.org/"/>
   <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 

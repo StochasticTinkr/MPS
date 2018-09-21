@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class ReferencedNodeContext {
   // - unique identities of each reference in this chain (roles/cellIDs/..)
   //
   // TODO: Simplify information persisted in this context object
-  private List<String> myContextRoles = null;
+  private List<SReferenceLink> myContextRoles = null;
   private List<SNode> myContextRefererNodes = null;
 
   private SNode myNode = null;
@@ -72,11 +73,9 @@ public class ReferencedNodeContext {
     return new ReferencedNodeContext(newNode, this);
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
+  public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, SReferenceLink refLink) {
     ReferencedNodeContext result = new ReferencedNodeContext(node, this);
-    result.addContextRole(contextRole);
+    result.addContextRole(refLink);
     result.addContextRefererNode(contextRefererNode);
     return result;
   }
@@ -93,11 +92,11 @@ public class ReferencedNodeContext {
     return myIsNodeAttribute;
   }
 
-  private void addContextRole(String contextRole) {
+  private void addContextRole(SReferenceLink link) {
     if (myContextRoles == null) {
       myContextRoles = new LinkedList<>();
     }
-    myContextRoles.add(contextRole);
+    myContextRoles.add(link);
   }
 
   private void addContextRefererNode(SNode contextRefererNode) {
@@ -130,8 +129,8 @@ public class ReferencedNodeContext {
   public String toString() {
     StringBuilder result = new StringBuilder((myIsNodeAttribute ? "NodeAttribute: " : "Node: ") + myNode.toString());
     if (myContextRoles != null) {
-      for (String contextRole : myContextRoles) {
-        result.append(", context role: ").append(contextRole);
+      for (SReferenceLink link : myContextRoles) {
+        result.append(", context role: ").append(link.getName());
       }
     }
     if (myContextRefererNodes != null) {
@@ -146,8 +145,8 @@ public class ReferencedNodeContext {
     analyzer.appendObject(this);
     if (myContextRoles != null) {
       analyzer.appendCollection(myContextRoles);
-      for (String contextRole : myContextRoles) {
-        analyzer.appendObject(contextRole);
+      for (SReferenceLink contextRole : myContextRoles) {
+        analyzer.appendObject(contextRole.getName());
       }
     }
     if (myContextRefererNodes != null) {

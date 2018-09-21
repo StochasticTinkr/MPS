@@ -23,6 +23,4 @@ public class MPS14656_Test extends TestCase {
       // expected exception 
     }
   }
-  public MPS14656_Test() {
-  }
 }

@@ -138,7 +138,6 @@
       </concept>
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
       <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
     </language>
@@ -197,9 +196,6 @@
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
         <child id="2820489544402271667" name="typeParameter" index="HU9BZ" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -768,12 +764,10 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9cQ" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9cR" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9cS" role="1NuT2Z">
@@ -836,17 +830,14 @@
     <node concept="mfpdH" id="79ALBP9Jg68" role="med8o" />
     <node concept="1DS2jV" id="4KDfkUwM9dh" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9di" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9dj" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <property role="1Ld5UQ" value="true" />
       <node concept="3Tm6S6" id="4KDfkUwM9dk" role="1B3o_S" />
       <node concept="3Tqbb2" id="4KDfkUwM9dl" role="1tU5fm" />
     </node>
@@ -1760,12 +1751,10 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9iW" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9iX" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="true" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9iY" role="1NuT2Z">
@@ -1849,19 +1838,16 @@
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9jx" role="1NuT2Z">
       <property role="TrG5h" value="model" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
       <node concept="1oajcY" id="4KDfkUwM9jy" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM9jz" role="1NuT2Z">
       <property role="TrG5h" value="module" />
-      <property role="1Ld5UQ" value="false" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
       <node concept="1oajcY" id="4KDfkUwM9j$" role="1oa70y" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM9j_" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <property role="1Ld5UQ" value="true" />
       <node concept="3Tm6S6" id="4KDfkUwM9jA" role="1B3o_S" />
       <node concept="3Tqbb2" id="4KDfkUwM9jB" role="1tU5fm" />
     </node>
@@ -2142,7 +2128,6 @@
     <node concept="2tJIrI" id="1UKgwptxcjl" role="jymVt" />
     <node concept="2tJIrI" id="1QrPC3Bdxz6" role="jymVt" />
     <node concept="2YIFZL" id="1QrPC3BcsrS" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="calculateExtendsDependencies" />

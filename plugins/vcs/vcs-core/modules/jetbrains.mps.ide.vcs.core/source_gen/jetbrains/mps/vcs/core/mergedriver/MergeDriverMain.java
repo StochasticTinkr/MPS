@@ -63,7 +63,7 @@ public class MergeDriverMain {
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");
     File[] files = {baseFile, currentFile, otherFile};
-    AbstractContentMerger merger = selectMerger(filetype, files);
+    AbstractContentMerger merger = selectMerger(platform, filetype, files);
     if (merger == null) {
       merger = (SVN_OPTION.equals(args[1]) ? new TextMerger() : new SimpleMerger());
     }
@@ -97,7 +97,7 @@ public class MergeDriverMain {
     return false;
   }
   @Nullable
-  private static AbstractContentMerger selectMerger(final String filetype, File... files) {
+  private static AbstractContentMerger selectMerger(Platform mpsPlatform, final String filetype, File... files) {
     FileType fileType = Sequence.fromIterable(Sequence.fromArray(files)).select(new ISelector<File, FileType>() {
       public FileType select(File f) {
         return FileType.get(filetype, f);
@@ -114,7 +114,7 @@ public class MergeDriverMain {
       case MODEL_HEADER:
       case MODEL_ROOT:
       case MODEL:
-        return new CompositeMerger(new ModelMerger((filetype != null ? filetype : fileType.getSuffix())), new SimpleMerger());
+        return new CompositeMerger(new ModelMerger(mpsPlatform, (filetype != null ? filetype : fileType.getSuffix())), new SimpleMerger());
       case LANGUAGE:
       case SOLUTION:
       case DEVKIT:

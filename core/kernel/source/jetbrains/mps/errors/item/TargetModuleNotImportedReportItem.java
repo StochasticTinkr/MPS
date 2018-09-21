@@ -40,7 +40,7 @@ public class TargetModuleNotImportedReportItem extends ReferenceReportItem imple
   }
 
   @Override
-  public String getIssueKind() {
-    return "target module not imported";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.MODULE_NOT_IMPORTED;
   }
 }

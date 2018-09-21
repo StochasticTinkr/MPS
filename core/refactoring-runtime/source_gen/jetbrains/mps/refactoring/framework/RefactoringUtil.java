@@ -6,13 +6,8 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import jetbrains.mps.smodel.Language;
-import org.apache.log4j.Level;
-import java.util.Collections;
 import java.util.Collection;
+import org.apache.log4j.Level;
 
 /**
  * 
@@ -35,27 +30,6 @@ public class RefactoringUtil {
     return RefactoringAccess.getInstance().getRefactoringByClassName(className);
   }
 
-  /**
-   * 
-   * @deprecated hasn't been in use from external code, MPS implementation detail. If needed, please request an API method in RefactoringAccess. Note, at the moment there's such method, but it's not intdended for use by external clients unless explicitly requested!
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static List<IRefactoring> getAllRefactorings() {
-    return new ArrayList<IRefactoring>(RefactoringAccess.getInstance().getAllRefactorings());
-  }
-  /**
-   * 
-   * @deprecated hasn't been in use from external code, MPS implementation detail. If needed, please request an API method in RefactoringAccess
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static Set<IRefactoring> getRefactorings(Language language) {
-    if (LOG.isEnabledFor(Level.ERROR)) {
-      LOG.error("Method RefactoringUtil#getRefactorings(Language) does nothing, please update your code", new Throwable());
-    }
-    return Collections.emptySet();
-  }
   /**
    * 
    * @deprecated hasn't been in use from external code, MPS implementation detail. If needed, please request an API method in RefactoringAccess
@@ -113,16 +87,6 @@ public class RefactoringUtil {
       }
     }
     return true;
-  }
-
-  /**
-   * 
-   * @deprecated Use RefactoringAccess.isApplicable instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static boolean isApplicable(IRefactoring refactoring, Object target) {
-    return RefactoringAccess.getInstance().isApplicable(refactoring, target);
   }
 
   public enum Applicability {

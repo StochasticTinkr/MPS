@@ -4,17 +4,15 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
@@ -28,12 +26,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_GenericNewExpression_with_SNodeCreator extends TemplateDeclarationBase {
-  private SNode myConcept;
-
-  public Template_reduce_GenericNewExpression_with_SNodeCreator(SNode concept) {
-    this.myConcept = concept;
-  }
+public class Template_reduce_GenericNewExpression_with_SNodeCreator extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_reduce_GenericNewExpression_with_SNodeCreator() {
   }
@@ -41,11 +34,11 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1181945881357");
   }
-  private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
-    MapSequence.fromMap(result).put("concept", myConcept);
-    return result;
+
+  public String[] getParameterNames() {
+    return new String[]{"concept"};
   }
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -55,10 +48,11 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_48_0(new SourceSubstituteMacroNodeContext(context1, includeMacro_8mair_b0a0a1a3a2a8));
-        TemplateContext context2 = context1.subContext(null, callInputNode2);
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_48_0(new SourceSubstituteMacroNodeContext(context1, callMacro_8mair_b0a0a1a3a2a7));
+        TemplateContext context2;
+        context2 = context1.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
-          tlist2 = new Template_reduce_ConceptDeclaration2SConcept().apply(context2);
+          tlist2 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);
         }
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -72,22 +66,15 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    context = context.subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
     applyPart0(context).reportTo(rv);
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context, SNode concept) throws GenerationException {
-    this.myConcept = concept;
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -110,5 +97,5 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
     rv[1] = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode");
     return rv;
   }
-  private static SNodePointer includeMacro_8mair_b0a0a1a3a2a8 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226417730");
+  private static SNodePointer callMacro_8mair_b0a0a1a3a2a7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145302");
 }

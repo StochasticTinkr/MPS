@@ -23,7 +23,7 @@ public class MigrationScriptBuilder {
 
   private MigrationScriptBuilder(Language language) {
     SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
-    myScript = SNodeFactoryOperations.createNewRootNode(migrationModel, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript")), null);
+    myScript = SNodeFactoryOperations.createNewRootNode(migrationModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), null);
   }
 
   public static MigrationScriptBuilder createMigrationScript(Language language) {

@@ -72,11 +72,6 @@ public class FakeReloadableModule implements ReloadableModule {
   }
 
   @Override
-  public ClassLoader getRootClassLoader() {
-    return null;
-  }
-
-  @Override
   public void reload() {
   }
 

@@ -21,13 +21,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -69,25 +70,28 @@ public final class ClassCreator__BehaviorDescriptor extends BaseBHDescriptor {
     // special logic for java stubs 
     SReference cRef = SNodeOperations.getReference(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     if (cRef == null) {
-      return Collections.emptyList();
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    SModel targetModel = ((StaticReference) cRef).getTargetSModel();
+    SModelReference targetModel = cRef.getTargetSModelReference();
     if (targetModel == null) {
-      return Collections.emptyList();
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     SNodeId targetId = cRef.getTargetNodeId();
-    if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(targetModel)) && targetId != null) {
-      String constructorId = targetId.toString();
-      String classId = constructorId.substring(0, constructorId.indexOf("."));
-      classConcept = SNodeOperations.cast(targetModel.getNode(jetbrains.mps.smodel.SNodeId.fromString(classId)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    if (targetModel.getName().hasStereotype(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)) && targetId != null) {
+      // FIXME MPS dark arts, what a magic around constructor id! 
+      //       AFAIU, constructor node id is ClassShortName.<init>, see ASMNodeId.createId 
+      PersistenceFacade pf = PersistenceFacade.getInstance();
+      String constructorId = pf.asString(targetId);
+      String classId = constructorId.substring(0, constructorId.indexOf('.'));
+      SNode resolved = new SNodePointer(targetModel, pf.createNodeId(classId)).resolve(SNodeOperations.getModel(__thisNode__).getRepository());
+      classConcept = SNodeOperations.as(resolved, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
-
 
     if ((classConcept != null)) {
       return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
     } else {
-      return Collections.emptyList();
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
   }
   /*package*/ static boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {

@@ -159,7 +159,7 @@
       <unit id="8647218860633471926" at="62,104,70,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase$2$2$1" />
       <unit id="8647218860633363891" at="84,82,92,11" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase$2$3" />
       <unit id="8647218860633588864" at="60,67,72,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase$2$2" />
-      <unit id="5863271989071947536" at="42,117,97,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase$2" />
+      <unit id="5863271989071947536" at="42,104,97,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase$2" />
       <unit id="1929018697514204727" at="24,0,106,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase" />
     </file>
   </root>

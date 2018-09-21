@@ -9,8 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_DeclMigrationData_Component;
-  private ConceptPresentation props_DeclMigrationData_WholeModule;
+  private ConceptPresentation props_DeclMigrationData;
   private ConceptPresentation props_NewComponent;
   private ConceptPresentation props_NewComponentMember;
   private ConceptPresentation props_OldComponent;
@@ -21,20 +20,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.DeclMigrationData_Component:
-        if (props_DeclMigrationData_Component == null) {
+      case LanguageConceptSwitch.DeclMigrationData:
+        if (props_DeclMigrationData == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DeclMigrationData_Component");
-          props_DeclMigrationData_Component = cpb.create();
+          cpb.rawPresentation("DeclMigrationData");
+          props_DeclMigrationData = cpb.create();
         }
-        return props_DeclMigrationData_Component;
-      case LanguageConceptSwitch.DeclMigrationData_WholeModule:
-        if (props_DeclMigrationData_WholeModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DeclMigrationData_WholeModule");
-          props_DeclMigrationData_WholeModule = cpb.create();
-        }
-        return props_DeclMigrationData_WholeModule;
+        return props_DeclMigrationData;
       case LanguageConceptSwitch.NewComponent:
         if (props_NewComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

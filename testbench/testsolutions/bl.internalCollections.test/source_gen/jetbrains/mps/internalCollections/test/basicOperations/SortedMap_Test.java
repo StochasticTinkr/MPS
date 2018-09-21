@@ -30,6 +30,4 @@ public class SortedMap_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(2, 3, 4), SortedMapSequence.fromMap(submap).values());
     this.assertIterableEquals(Arrays.asList(2, 3, 4, 5), SortedMapSequence.fromMap(SortedMapSequence.fromMap(smap).subMap("B", "E\0")).values());
   }
-  public SortedMap_Test() {
-  }
 }

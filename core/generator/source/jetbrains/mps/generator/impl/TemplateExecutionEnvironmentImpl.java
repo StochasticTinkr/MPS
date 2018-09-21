@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
@@ -30,8 +31,11 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
+import jetbrains.mps.generator.runtime.TemplateDeclarationKey;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModel2;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -40,7 +44,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.trace.RuleTrace;
 import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
@@ -51,6 +55,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -73,11 +78,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     myExecutionContext = executionContext;
     myTemplateProcessor = templateProcessor;
     myReductionTrack = reductionTrack;
-  }
-
-  @Override
-  public IOperationContext getOperationContext() {
-    return generator.getGeneratorSessionContext();
   }
 
   @Override
@@ -178,13 +178,143 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return null;
   }
 
+  // XXX Now that I've checked old API works with both new interpreted and old generated templates,
+  //     shall check new API works with old generated templates. Then, change generated code to match new API
+  //     and check new API works ok.
+  //   ? how to check old API works fine with new generated code? Try to use new API from within applyTemplates()?
+  //     What if I regenerate first, to see if old api works with newly generated code?
+  // It's more important to check how new API works with old templates as it's a case we likely to face.
+  //     Old code either invokes same old code, or new one, interpreted or generated. For MPS-distributed generated
+  //     templates, there'd be no assert in loadTemplates and proper TemplateDeclaration2.getParameterNames to
+  //     handle arguments, i.e. the path already verified for interpreted.
+  // For a new invocation API to tell whether template is new or old, we can either use newly introduced method in TM to
+  //     access TD (missing method means loadTemplates have to be used, or a 'version' field in TD along with
+  //     relaxed assert (no-op implementation) and flagged TC to ignore
+
   @Override
   public Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
+    // (1) applyTemplate() invoked from interpreter (can change this by not using the method from interpreter)
+    //     (a) invoked template declaration is new and expects arguments in TC (e.g. interpreted TD)
+    //     (b) invoked template declaration is old and expects args at construction time, changes TC itself
+    //         can assume TC comes with proper values and flag TC to ignore subsequent subContext(Map).
+    //         caller can supply arguments[] of a proper length with null values.
+    // (2) applyTemplate() invoked from generated code or code that doesn't pass values through TC
+    //     (a) invoked template declaration is new and expects arguments in TC (e.g. interpreted TD
+    //         CAN I DO ANYTHING, provided I have no idea about parameter names? Can add a method to tell names for migration purposes
+    //           i.e. need to tell old TD from a new one. An interface with getParameterNames():String[] as indicator?
+    //           mangle TC with names and values
+    //     (b) invoked template declaration is old (means cross-compiled-generator template call) and expects args at construction time, changes TC itself
     TemplateDeclaration templateDeclarationInstance = loadTemplateDeclaration(templateDeclaration, templateNode, context, arguments);
     if (templateDeclarationInstance == null) {
       return Collections.emptyList();
     }
+    if (templateDeclarationInstance instanceof TemplateDeclaration2) {
+      TemplateCall callSite = new TemplateCall(((TemplateDeclaration2) templateDeclarationInstance).getParameterNames(), arguments);
+      if (callSite.argumentsMismatch()) {
+        getLogger().error(templateDeclaration, "number of arguments doesn't match template", GeneratorUtil.describeInput(context));
+        // fall-though, as it's the way it was in TemplateDeclarationInterpreted
+      }
+      // context may keep a mapping label (e.g. from outer $INCLUDE$ label template)
+      context = callSite.prepareCallContext(context);
+    }
     return templateDeclarationInstance.apply(this, context);
+  }
+
+  @NotNull
+  @Override
+  public TemplateDeclaration findTemplate(@NotNull TemplateDeclarationKey templateDeclaration, @NotNull SNodeReference callSite) {
+    class BadTemplateDeclaration implements TemplateDeclaration {
+      private final String myMessage;
+      private boolean myErrorReported = false;
+
+      /*package*/ BadTemplateDeclaration(String message) {
+        myMessage = message;
+      }
+
+
+      @Override
+      public SNodeReference getTemplateNode() {
+        return templateDeclaration.getSourceNode();
+      }
+
+      @Override
+      public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
+        reportError(context);
+        return Collections.emptyList();
+      }
+
+      @Override
+      public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+        reportError(weaveFacility.getTemplateContext());
+        return Collections.emptyList();
+      }
+
+      private void reportError(TemplateContext context) {
+        if (myErrorReported) {
+          return;
+        }
+        myErrorReported = true;
+        getLogger().error(callSite, myMessage,
+                          GeneratorUtil.describeIfExists(context.getInput(), "input"),
+                          GeneratorUtil.describe(callSite, "call site"),
+                          GeneratorUtil.describe(getTemplateNode(), "template declaration"));
+      }
+    }
+    TemplateModel templateModel = generator.getGenerationPlan().getTemplateModel(templateDeclaration.getSourceModel());
+    if (templateModel == null) {
+      String m = "Template model %s not found. Cannot apply template declaration, try to check & regenerate affected generators";
+      return new BadTemplateDeclaration(String.format(m, templateDeclaration.getSourceModel().getName()));
+    }
+    final TemplateDeclaration templateInstance;
+    final boolean legacyTD;
+    if (templateModel instanceof TemplateModel2) {
+      templateInstance = ((TemplateModel2) templateModel).loadTemplate(templateDeclaration);
+      legacyTD = false;
+    } else {
+      // XXX here I expect no template would have more than 10 arguments. In legacy generated templates, there's code
+      //     that access arguments by index, therefore I can't use empty array here
+      Object[] fakeEmptyArgs = new Object[10];
+      templateInstance = templateModel.loadTemplate(templateDeclaration.getSourceNode(), fakeEmptyArgs);
+      legacyTD = true;
+    }
+    if (templateInstance == null) {
+      String m = "Could not find '%s'. Cannot apply template declaration, try to check & regenerate affected generators";
+      return new BadTemplateDeclaration(String.format(m, templateDeclaration.describe()));
+    }
+
+    if (!legacyTD) {
+      // XXX may want to wrap with a tracing decorator
+      return templateInstance;
+    }
+    return new TemplateDeclaration() {
+      @Override
+      public SNodeReference getTemplateNode() {
+        return templateDeclaration.getSourceNode();
+      }
+
+      @Override
+      public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
+        if (context instanceof DefaultTemplateContext) {
+          ((DefaultTemplateContext) context).engageIgnoreNullVariablesHack();
+        }
+        return templateInstance.apply(environment, context);
+      }
+
+      @Override
+      public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+        // FWIW, I believe there were no cross-model weaving calls, and interpreted templates never used TD.weave() but had interpreted nodes directly.
+        // Besides, weaving of templates with arguments seems to be of elusive probability
+        // Here we are in new API, i.e. invoked from the code that had never before weaved any external template, therefore, we shall never get here with MPS code
+        // Nevertheless, for a small chance of an clients interpreted generator that weaves cross-model generated template and use this with 2018.3 without
+        // regeneration of a code (e.g. mbeddr client on 2018.3 with interpreted generator (i.e. new API in use) weaves a compiled template from 2018.2-built mbeddr distro)
+        // we still have this support
+        TemplateContext tc = weaveFacility.getTemplateContext();
+        if (tc instanceof DefaultTemplateContext) {
+          ((DefaultTemplateContext) tc).engageIgnoreNullVariablesHack();
+        }
+       return templateInstance.weave(context, weaveFacility);
+      }
+    };
   }
 
   /*package*/ TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
@@ -201,6 +331,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return templateDeclarationInstance;
   }
 
+  @Override
+  public TemplateDeclarationKey createTemplateKey(String modelRef, String nodeId, String templateName) {
+    /*
+     * Need to create a key for external template both in TemplateDeclarationBase and ReductionRuleBase subclasses, hence
+     * have to placed this method into a shared location. Besides, would be great to have proper access to PersistenceFacade, which is possible here
+     * Perhaps, shall introduce few copies of findTemplate() method, one to take these strings, and another to take TD instance and wrap it with a trace facility?
+     * Why I didn't do it right away: (a) the idea behind TDK was to keep 1 single key, (b) few related methods urge me to group them into ApplyFacility I've
+     * just deleted. Need to make up my mind
+     */
+    PersistenceFacade pf = PersistenceFacade.getInstance();
+    return TemplateIdentity.fromPointer(new SNodePointer(pf.createModelReference(modelRef), pf.createNodeId(nodeId)), templateName);
+  }
 
   @Override
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {

@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -52,10 +52,6 @@
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
-        <child id="1173175577737" name="index" index="AHEQo" />
-        <child id="1173175590490" name="array" index="AHHXb" />
-      </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
         <child id="1188214630783" name="value" index="2B76xF" />
@@ -66,9 +62,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -346,7 +339,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -439,7 +432,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="6xxD4C$B90e" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isGeneratedName" />
       <property role="DiZV1" value="false" />
@@ -457,7 +449,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="6xxD4C$B90a" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="suggestedName" />
       <property role="DiZV1" value="false" />
@@ -1130,7 +1121,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="1hahyPavQ4f" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getName" />
       <property role="DiZV1" value="false" />
@@ -1688,7 +1678,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="1hahyPavY9B" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="canExecuteTask" />
       <property role="DiZV1" value="false" />
@@ -1974,58 +1963,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="224UGqZGQ8l" role="jymVt" />
-    <node concept="3clFbW" id="7pREJKpbIgZ" role="jymVt">
-      <node concept="3clFbS" id="7pREJKpbIh0" role="3clF47">
-        <node concept="XkiVB" id="7pREJKpbIh1" role="3cqZAp">
-          <ref role="37wK5l" to="uycu:~RuntimeConfigurationProducer.&lt;init&gt;(com.intellij.execution.configurations.ConfigurationFactory)" resolve="RuntimeConfigurationProducer" />
-          <node concept="2YIFZM" id="7pREJKpbIh2" role="37wK5m">
-            <ref role="37wK5l" node="7pREJKpbIkJ" resolve="findFactory" />
-            <ref role="1Pybhc" node="7pREJKpbIgR" resolve="BaseMpsProducer" />
-            <node concept="37vLTw" id="2BHiRxglmYl" role="37wK5m">
-              <ref role="3cqZAo" node="7pREJKpbIh7" resolve="configurationType" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxglVuM" role="37wK5m">
-              <ref role="3cqZAo" node="7pREJKpbIh9" resolve="factoryClassName" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7pREJKpbIh5" role="1B3o_S" />
-      <node concept="3cqZAl" id="7pREJKpbIh6" role="3clF45" />
-      <node concept="37vLTG" id="7pREJKpbIh7" role="3clF46">
-        <property role="TrG5h" value="configurationType" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="7pREJKpbIh8" role="1tU5fm">
-          <ref role="3uigEE" to="dj99:~ConfigurationType" resolve="ConfigurationType" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7pREJKpbIh9" role="3clF46">
-        <property role="TrG5h" value="factoryClassName" />
-        <node concept="17QB3L" id="7pREJKpbIha" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="CZHNfvzPh9" role="lGtFl">
-        <node concept="TZ5HI" id="CZHNfvzS7H" role="3nqlJM">
-          <node concept="TZ5HA" id="CZHNfvzS7I" role="3HnX3l">
-            <node concept="1dT_AC" id="CZHNfvzS81" role="1dT_Ay">
-              <property role="1dT_AB" value="there's no value in specific factory class. The cons left for compatibility with generated code, templates use counterpart with ConfigurationFactory now." />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="CZHNfvzRJz" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="CZHNfvzRJ$" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="CZHNfvzRJ_" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="CZHNfvzRJA" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="224UGqZGPH8" role="jymVt" />
     <node concept="3clFbW" id="7pREJKpbIhb" role="jymVt">
       <node concept="3clFbS" id="7pREJKpbIhc" role="3clF47">
         <node concept="XkiVB" id="7pREJKpbIhd" role="3cqZAp">
@@ -2990,138 +2927,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="224UGqZGT7c" role="jymVt" />
-    <node concept="2YIFZL" id="7pREJKpbIkJ" role="jymVt">
-      <property role="TrG5h" value="findFactory" />
-      <node concept="3Tmbuc" id="7pREJKpbIkK" role="1B3o_S" />
-      <node concept="3clFbS" id="7pREJKpbIkL" role="3clF47">
-        <node concept="2Gpval" id="7pREJKpbIkM" role="3cqZAp">
-          <node concept="2GrKxI" id="7pREJKpbIkN" role="2Gsz3X">
-            <property role="TrG5h" value="factory" />
-          </node>
-          <node concept="3clFbS" id="7pREJKpbIkO" role="2LFqv$">
-            <node concept="3clFbJ" id="7pREJKpbIkP" role="3cqZAp">
-              <node concept="3clFbS" id="7pREJKpbIkQ" role="3clFbx">
-                <node concept="3cpWs6" id="7pREJKpbIkR" role="3cqZAp">
-                  <node concept="2GrUjf" id="7pREJKpbIkS" role="3cqZAk">
-                    <ref role="2Gs0qQ" node="7pREJKpbIkN" resolve="factory" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="7pREJKpbIkT" role="3clFbw">
-                <node concept="2OqwBi" id="7pREJKpbIkU" role="2Oq$k0">
-                  <node concept="2OqwBi" id="7pREJKpbIkV" role="2Oq$k0">
-                    <node concept="2GrUjf" id="7pREJKpbIkW" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="7pREJKpbIkN" resolve="factory" />
-                    </node>
-                    <node concept="liA8E" id="7pREJKpbIkX" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="7pREJKpbIkY" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7pREJKpbIkZ" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="37vLTw" id="2BHiRxgl6wm" role="37wK5m">
-                    <ref role="3cqZAo" node="7pREJKpbIlq" resolve="configurationFactoryClassName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7pREJKpbIl1" role="2GsD0m">
-            <node concept="2OqwBi" id="7pREJKpbIl2" role="2Oq$k0">
-              <node concept="liA8E" id="7pREJKpbIl3" role="2OqNvi">
-                <ref role="37wK5l" to="dj99:~ConfigurationType.getConfigurationFactories():com.intellij.execution.configurations.ConfigurationFactory[]" resolve="getConfigurationFactories" />
-              </node>
-              <node concept="37vLTw" id="2BHiRxgmpMX" role="2Oq$k0">
-                <ref role="3cqZAo" node="7pREJKpbIlo" resolve="configurationType" />
-              </node>
-            </node>
-            <node concept="39bAoz" id="7pREJKpbIl5" role="2OqNvi" />
-          </node>
-        </node>
-        <node concept="RRSsy" id="3jYQuSB333r" role="3cqZAp">
-          <property role="RRSoG" value="warn" />
-          <node concept="3cpWs3" id="7pREJKpbIl7" role="RRSoy">
-            <node concept="3cpWs3" id="7pREJKpbIl8" role="3uHU7B">
-              <node concept="2OqwBi" id="7pREJKpbIl9" role="3uHU7w">
-                <node concept="liA8E" id="7pREJKpbIla" role="2OqNvi">
-                  <ref role="37wK5l" to="dj99:~ConfigurationType.getDisplayName():java.lang.String" resolve="getDisplayName" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmC5N" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7pREJKpbIlo" resolve="configurationType" />
-                </node>
-              </node>
-              <node concept="3cpWs3" id="7pREJKpbIlc" role="3uHU7B">
-                <node concept="Xl_RD" id="7pREJKpbIld" role="3uHU7w">
-                  <property role="Xl_RC" value=" in type " />
-                </node>
-                <node concept="3cpWs3" id="7pREJKpbIle" role="3uHU7B">
-                  <node concept="37vLTw" id="2BHiRxgm$O4" role="3uHU7w">
-                    <ref role="3cqZAo" node="7pREJKpbIlq" resolve="configurationFactoryClassName" />
-                  </node>
-                  <node concept="Xl_RD" id="7pREJKpbIlg" role="3uHU7B">
-                    <property role="Xl_RC" value="Cound not find configuration factory for " />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="Xl_RD" id="7pREJKpbIlh" role="3uHU7w">
-              <property role="Xl_RC" value="." />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7pREJKpbIli" role="3cqZAp">
-          <node concept="AH0OO" id="7pREJKpbIlj" role="3cqZAk">
-            <node concept="3cmrfG" id="7pREJKpbIlk" role="AHEQo">
-              <property role="3cmrfH" value="0" />
-            </node>
-            <node concept="2OqwBi" id="7pREJKpbIll" role="AHHXb">
-              <node concept="37vLTw" id="2BHiRxghfI9" role="2Oq$k0">
-                <ref role="3cqZAo" node="7pREJKpbIlo" resolve="configurationType" />
-              </node>
-              <node concept="liA8E" id="7pREJKpbIln" role="2OqNvi">
-                <ref role="37wK5l" to="dj99:~ConfigurationType.getConfigurationFactories():com.intellij.execution.configurations.ConfigurationFactory[]" resolve="getConfigurationFactories" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7pREJKpbIlo" role="3clF46">
-        <property role="TrG5h" value="configurationType" />
-        <node concept="3uibUv" id="7pREJKpbIlp" role="1tU5fm">
-          <ref role="3uigEE" to="dj99:~ConfigurationType" resolve="ConfigurationType" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7pREJKpbIlq" role="3clF46">
-        <property role="TrG5h" value="configurationFactoryClassName" />
-        <node concept="2AHcQZ" id="7pREJKpbIlr" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
-        </node>
-        <node concept="17QB3L" id="7pREJKpbIls" role="1tU5fm" />
-      </node>
-      <node concept="3uibUv" id="7pREJKpbIlt" role="3clF45">
-        <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
-      </node>
-      <node concept="2AHcQZ" id="7pREJKpbIlu" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="2AHcQZ" id="CZHNfvzPtA" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="CZHNfvzQ8P" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="CZHNfvzR11" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="CZHNfvzRzj" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3Tm1VV" id="7pREJKpbIlv" role="1B3o_S" />
     <node concept="16euLQ" id="7pREJKpbIlw" role="16eVyc">
       <property role="3ztuRv" value="false" />
@@ -3903,7 +3708,7 @@
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="LPAYBxYuVA" role="1B3o_S" />
       <node concept="2AHcQZ" id="LPAYBxYuVC" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3uibUv" id="LPAYBxYuVD" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
@@ -3936,9 +3741,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="7N43e7FZetl" role="1B3o_S" />
-      <node concept="2AHcQZ" id="7N43e7FZetn" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nls" resolve="Nls" />
-      </node>
       <node concept="3uibUv" id="7N43e7FZeto" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
@@ -3951,6 +3753,9 @@
       </node>
       <node concept="2AHcQZ" id="7N43e7FZetq" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="7WyXo5rDKXY" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="LPAYBxZhzX" role="jymVt" />

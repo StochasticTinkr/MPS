@@ -15,6 +15,4 @@ public class MrsH_StateMachine_Test extends StateMachineTest {
     getController().handle("L1ON");
     Assert.assertEquals("panelUnlocked", getController().getCurrentState().getName());
   }
-  public MrsH_StateMachine_Test() {
-  }
 }

@@ -17,10 +17,8 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
-import gnu.trove.TIntProcedure;
 import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -48,24 +46,16 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLooku
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
-import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -359,59 +349,12 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   @ToRemove(version = 2018.2)
   @Override
   public String getRole() {
-    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
-    if (role != null) {
-      return role;
-    }
     SConceptFeature sRole = getSRole();
     return sRole == null ? null : sRole.getName();
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  @Override
-  public void setRole(String role) {
-    mySRole = extractRole(role);
-  }
-
-  private SConceptFeature extractRole(String role) {
-    SProperty prop = ((ConceptMetaInfoConverter) myNode.getConcept()).convertProperty(role);
-    SReferenceLink link = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAssociation(role);
-    SContainmentLink child = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAggregation(role);
-
-    boolean validProp = !(prop instanceof InvalidProperty);
-    boolean validLink = !(link instanceof InvalidReferenceLink);
-    boolean validChild = !(child instanceof InvalidContainmentLink);
-
-    if (!validChild && !validLink && !validProp) {
-      return null;
-    }
-
-    //if more than one valid
-    if (!(validProp ^ validChild ^ validLink)) {
-      LOG.error("Can't determine the feature for cell. Editor may work incorrectly. Node:" + myNode + "; role:" + role +
-                ". Please rebuild editor model in language " +
-                myNode.getConcept().getLanguage().getQualifiedName());
-    }
-
-    if (validProp) {
-      return prop;
-    } else if (validLink) {
-      return link;
-    } else {
-      return child;
-    }
-  }
-
   @Override
   public SConceptFeature getSRole() {
-    //todo remove following lines after 2018.2
-    String oldRole = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
-    if (oldRole != null) {
-      return extractRole(oldRole);
-    }
-    //todo end
-
     SConceptFeature role = getStyle().get(StyleAttributes.NAVIGATABLE_SREFERENCE);
     if (role != null) {
       return role;
@@ -537,9 +480,13 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = new SNodeLegacy(node).getRoleLink();
-    SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(MetaAdapterByDeclaration.getConcept(concept));
+    SContainmentLink link = node.getContainmentLink();
+    if (link == null) {
+      // quite unexpected, are we trying to replace a root?
+      return null;
+    }
+    SAbstractConcept concept = link.getTargetConcept();
+    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(concept);
     if (node.getConcept().equals(concreteConcept)) {
       return null;
     }

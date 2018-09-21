@@ -7,7 +7,6 @@ import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,10 +21,12 @@ import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.io.IOException;
 import com.intellij.openapi.vcs.VcsException;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -49,7 +50,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
 
     makeChangeAndWait(new Runnable() {
       public void run() {
-        DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), md.getModule(), md, false, true);
+        DeleteModelHelper.deleteModel(getProject(), md.getModule(), md, false, true);
       }
     });
     revertDiskChangesAndWait(modelFile);
@@ -88,33 +89,26 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
 
     getProject().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
-        DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), newModel.value.getModule(), newModel.value, false, true);
+        DeleteModelHelper.deleteModel(getProject(), newModel.value.getModule(), newModel.value, false, true);
       }
     });
   }
 
   @Test
   public void modifyExternallyRollback() throws ModelReadException, IOException, VcsException {
-    final Wrappers._T<String> model = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        model.value = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
+    SModel modelCopy2Change = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<MergeTemporaryModel>() {
+      public MergeTemporaryModel compute() {
+        return MergeTemporaryModel.writableCloneOf(getTestModel());
       }
     });
-    final SModel changedCopy = PersistenceUtil.loadModel(model.value);
-    SModelOperations.addRootNode(changedCopy, createClassConcept_2jv4hj_a0a3a5());
-    final Wrappers._T<String> changedContent = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        // todo that's just because of the Object ref, and Persistence9.genResolveInfo which goes by ref 
-        changedContent.value = PersistenceUtil.saveModel(changedCopy, getDefaultExt());
-      }
-    });
+    SModelOperations.addRootNode(modelCopy2Change, createClassConcept_2jv4hj_a0a1a5());
+    final String changedContent = PersistenceUtil.saveModel(modelCopy2Change, getDefaultExt());
 
+    // FIXME It's odd to use *model* write to ensure proper FileSystem access (there's no model access in here). 
     getProject().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         try {
-          getTestModelFile().setBinaryContent(changedContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
+          getTestModelFile().setBinaryContent(changedContent.getBytes(FileUtil.DEFAULT_CHARSET));
         } catch (IOException e) {
           throw new AssertionError(e);
         }
@@ -123,13 +117,13 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myEnv.flushAllEvents();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.MODIFIED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a5(myDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a9a5(myDiff.getChangeSet())).isNotEmpty());
 
     revertDiskChangesAndWait(getTestModelFile());
     revertMemChangesAndWait();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a71a5(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a51a5(myDiff.getChangeSet())).isEmpty());
   }
   private static List<ModelChange> check_2jv4hj_a0a11a1(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -143,19 +137,19 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     }
     return null;
   }
-  private static SNode createClassConcept_2jv4hj_a0a3a5() {
+  private static SNode createClassConcept_2jv4hj_a0a1a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NewRoot");
     return n1;
   }
-  private static List<ModelChange> check_2jv4hj_a0a11a5(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a9a5(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-  private static List<ModelChange> check_2jv4hj_a0a71a5(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a51a5(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

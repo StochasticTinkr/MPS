@@ -9,9 +9,9 @@
   </root>
   <root nodeRef="r:3fe3892d-7b9f-411e-8209-952fc977b7ad(jetbrains.mps.samples.notesOrganizer.actions)/8908453262579903200">
     <file name="Notes.java">
-      <node id="8908453262579903208" at="13,91,14,381" concept="0" />
+      <node id="8908453262579903208" at="13,91,14,339" concept="0" />
       <node id="8908453262579903201" at="13,0,16,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="8908453262579903201" at="13,91,14,381" />
+      <scope id="8908453262579903201" at="13,91,14,339" />
       <scope id="8908453262579903201" at="13,0,16,0">
         <var name="enclosingNode" id="8908453262579903201" />
         <var name="model" id="8908453262579903201" />

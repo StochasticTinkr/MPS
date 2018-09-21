@@ -50,6 +50,8 @@ import java.util.Collection;
  *     might be reasonable to return this from methods to get nice nodeFragment(tnode1).label("").reportTo() lines
  *     without intermediate local variables.
  *
+ * Check {@link TemplateDeclarationWeavingAware2} for extra stuff.
+ *
  * @author Artem Tikhomirov
  * @since 2018.2
  */

@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -99,7 +100,13 @@ public final class SModelOperations {
       return null;
     }
 
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(concept, model, id, false);
+    final SNode result;
+    if (model != null) {
+      result = model.createNode(MetaAdapterByDeclaration.asInstanceConcept(concept), id);
+    } else {
+      // legacy mechanism 
+      result = SModelUtil_new.instantiateConceptDeclaration(concept, model, id, false);
+    }
     if (result == null) {
       return null;
     }

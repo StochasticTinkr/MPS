@@ -135,7 +135,7 @@ public class CustomOperatorUsageTransform_Contribution extends TransformationMen
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode usage = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage")), null);
+          SNode usage = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), null);
           SNodeOperations.replaceWithAnother(_context.getNode(), usage);
           SLinkOperations.setTarget(usage, MetaAdapterFactory.getReferenceLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, 0x15c86fdc60847670L, "operator"), myParameterObject);
           SLinkOperations.setTarget(usage, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), _context.getNode());

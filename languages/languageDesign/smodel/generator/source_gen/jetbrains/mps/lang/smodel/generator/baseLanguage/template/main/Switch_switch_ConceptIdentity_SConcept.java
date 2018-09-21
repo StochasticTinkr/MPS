@@ -57,7 +57,7 @@ public class Switch_switch_ConceptIdentity_SConcept extends TemplateSwitchBase i
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SInterfaceConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SInterfaceConcept().apply(environment, context);
       return tlist1;
     }
   }
@@ -68,7 +68,7 @@ public class Switch_switch_ConceptIdentity_SConcept extends TemplateSwitchBase i
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SConcept().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ConceptId_SConcept().apply(environment, context);
       return tlist1;
     }
   }

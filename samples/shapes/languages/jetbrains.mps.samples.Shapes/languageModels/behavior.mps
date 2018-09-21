@@ -2,7 +2,7 @@
 <model ref="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -41,9 +41,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -816,7 +813,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="paintComponent" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tmbuc" id="3u6SZi0SXtR" role="1B3o_S" />
                   <node concept="3cqZAl" id="3u6SZi0SXtS" role="3clF45" />
                   <node concept="37vLTG" id="3u6SZi0SXtT" role="3clF46">
@@ -908,7 +904,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getPreferredSize" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="3u6SZi0SXuu" role="1B3o_S" />
                   <node concept="3uibUv" id="3u6SZi0SXuv" role="3clF45">
                     <ref role="3uigEE" to="z60i:~Dimension" resolve="Dimension" />
@@ -937,7 +932,6 @@
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="getBorder" />
                   <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
                   <node concept="3Tm1VV" id="3u6SZi0SXuD" role="1B3o_S" />
                   <node concept="3uibUv" id="3u6SZi0SXuE" role="3clF45">
                     <ref role="3uigEE" to="9z78:~Border" resolve="Border" />

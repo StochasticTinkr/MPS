@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -245,7 +245,6 @@
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
     </language>
@@ -1739,7 +1738,6 @@
                 <node concept="2V$Bhx" id="5w_juRXhPJJ" role="2V$M_3">
                   <property role="2V$B1T" value="479c7a8c-02f9-43b5-9139-d910cb22f298" />
                   <property role="2V$B1Q" value="jetbrains.mps.core.xml" />
-                  <property role="2V$B1S" value="-1" />
                 </node>
               </node>
             </node>
@@ -2029,7 +2027,6 @@
                     <node concept="2V$Bhx" id="5w_juRXhQkI" role="2V$M_3">
                       <property role="2V$B1T" value="479c7a8c-02f9-43b5-9139-d910cb22f298" />
                       <property role="2V$B1Q" value="jetbrains.mps.core.xml" />
-                      <property role="2V$B1S" value="-1" />
                     </node>
                   </node>
                 </node>

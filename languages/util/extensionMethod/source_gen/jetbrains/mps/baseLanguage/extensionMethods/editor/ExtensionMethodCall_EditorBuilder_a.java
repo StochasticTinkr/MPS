@@ -90,7 +90,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
           public EditorCell compute() {
             return new ExtensionMethodCall_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "baseMethodDeclaration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, 0x1583d1b63359483cL, "extension"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull_smartReference(cell);

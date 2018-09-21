@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.context.typechecking;
 
-import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.state.TargetState;
@@ -45,12 +44,7 @@ public class TracingTypechecking extends ReportingTypechecking<TargetState, Targ
   }
 
   public void reportTypeError(IErrorReporter errorReporter) {
-    putError(errorReporter.getSNode(), errorReporter);
-  }
-
-  private void putError(SNode node, IErrorReporter reporter) {
-    if (!ErrorReportUtil.shouldReportError(node)) return;
-    getState().addError(reporter);
+    getState().addError(errorReporter);
   }
 
 }

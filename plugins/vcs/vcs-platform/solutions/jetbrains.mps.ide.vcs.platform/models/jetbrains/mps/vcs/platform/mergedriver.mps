@@ -4,9 +4,9 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
@@ -75,9 +75,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -282,6 +279,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -329,7 +327,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -6083,7 +6081,6 @@
                               <ref role="1Y3XeK" to="fnpx:~NotificationListener" resolve="NotificationListener" />
                               <node concept="3Tm1VV" id="63ZcAL22ciP" role="1B3o_S" />
                               <node concept="3clFb_" id="63ZcAL22ciQ" role="jymVt">
-                                <property role="IEkAT" value="false" />
                                 <property role="1EzhhJ" value="false" />
                                 <property role="TrG5h" value="hyperlinkUpdate" />
                                 <property role="DiZV1" value="false" />
@@ -7197,7 +7194,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5k0aSfJ$YhV" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -7874,7 +7870,6 @@
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="run" />
                     <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
                     <node concept="3Tm1VV" id="3BgDQ5Ur4fx" role="1B3o_S" />
                     <node concept="3cqZAl" id="3BgDQ5Ur4fy" role="3clF45" />
                     <node concept="3clFbS" id="3BgDQ5Ur4fz" role="3clF47">
@@ -7899,7 +7894,6 @@
                                     <property role="1EzhhJ" value="false" />
                                     <property role="TrG5h" value="run" />
                                     <property role="DiZV1" value="false" />
-                                    <property role="IEkAT" value="false" />
                                     <node concept="3Tm1VV" id="3BgDQ5Ur4fI" role="1B3o_S" />
                                     <node concept="3cqZAl" id="3BgDQ5Ur4fJ" role="3clF45" />
                                     <node concept="37vLTG" id="3BgDQ5Ur4fK" role="3clF46">
@@ -8232,6 +8226,34 @@
                     <node concept="2GrUjf" id="2ouftQnoDib" role="37wK5m">
                       <ref role="2Gs0qQ" node="2ouftQnooKq" resolve="basePath" />
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="6ZJWS$QPIkk" role="3cqZAp">
+              <node concept="3clFbS" id="6ZJWS$QPIkm" role="3clFbx">
+                <node concept="RRSsy" id="6ZJWS$QPNEP" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="2YIFZM" id="6ZJWS$QPNZD" role="RRSoy">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <node concept="Xl_RD" id="6ZJWS$QPO5J" role="37wK5m">
+                      <property role="Xl_RC" value="Bad classpath location %s, file doesn't exist" />
+                    </node>
+                    <node concept="2GrUjf" id="6ZJWS$QPOmW" role="37wK5m">
+                      <ref role="2Gs0qQ" node="2ouftQnooKq" resolve="basePath" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3N13vt" id="6ZJWS$QPNT3" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="6ZJWS$QPLKY" role="3clFbw">
+                <node concept="2OqwBi" id="6ZJWS$QPLL0" role="3fr31v">
+                  <node concept="37vLTw" id="6ZJWS$QPLL1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ouftQnoCV_" resolve="baseDir" />
+                  </node>
+                  <node concept="liA8E" id="6ZJWS$QPLL2" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
                   </node>
                 </node>
               </node>

@@ -4,12 +4,12 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -79,9 +79,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -333,7 +330,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -439,7 +436,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7$NO6fvW1RP" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doExecute" />
       <property role="DiZV1" value="false" />
@@ -482,7 +478,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7$NO6fvW1Sx" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doUpdate" />
       <property role="DiZV1" value="false" />
@@ -3335,7 +3330,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="isSelected" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="2OJKTJ7vyNh" role="1B3o_S" />
                       <node concept="10P_77" id="2OJKTJ7vyNj" role="3clF45" />
                       <node concept="37vLTG" id="2OJKTJ7vyNk" role="3clF46">
@@ -3356,7 +3350,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="setSelected" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="2OJKTJ7vyNp" role="1B3o_S" />
                       <node concept="3cqZAl" id="2OJKTJ7vyNr" role="3clF45" />
                       <node concept="37vLTG" id="2OJKTJ7vyNs" role="3clF46">
@@ -4025,6 +4018,14 @@
             <node concept="2ShNRf" id="7DvDtq9OdRD" role="33vP2m">
               <node concept="1pGfFk" id="7DvDtq9OdRE" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaud" resolve="DiffEditorSeparator" />
+                <node concept="2OqwBi" id="2l91Uwxw4o" role="37wK5m">
+                  <node concept="37vLTw" id="2l91Uwxv3b" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3SMO48FTf02" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="2l91UwxwSX" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="3GM_nagTrqe" role="37wK5m">
                   <ref role="3cqZAo" node="7DvDtq9OdRl" resolve="layout" />
                 </node>
@@ -5401,6 +5402,14 @@
                 <node concept="2ShNRf" id="5zPLqcHK30q" role="37vLTx">
                   <node concept="1pGfFk" id="5zPLqcHK30r" role="2ShVmc">
                     <ref role="37wK5l" node="5zPLqcHJBnr" resolve="ModelDifferenceViewer.ModelDifferenceTree" />
+                    <node concept="2OqwBi" id="QicWNw6d22" role="37wK5m">
+                      <node concept="37vLTw" id="QicWNw6ci6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
+                      </node>
+                      <node concept="liA8E" id="QicWNw6ek2" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="5zPLqcHK30s" role="37vLTJ">
@@ -5638,7 +5647,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPreferredFocusedComponent" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="5U8a8kRybaY" role="1B3o_S" />
       <node concept="3uibUv" id="5U8a8kRybaZ" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
@@ -5668,7 +5676,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3nINzKYIfgC" role="1B3o_S" />
       <node concept="3cqZAl" id="5zPLqcHJBgj" role="3clF45" />
       <node concept="3clFbS" id="5zPLqcHJBgk" role="3clF47">
@@ -6590,7 +6597,6 @@
     </node>
     <node concept="2tJIrI" id="5zPLqcHJBmA" role="jymVt" />
     <node concept="3clFb_" id="5zPLqcHJBmB" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getData" />
       <property role="DiZV1" value="false" />
@@ -6720,9 +6726,22 @@
       <property role="TrG5h" value="ModelDifferenceTree" />
       <property role="2bfB8j" value="true" />
       <node concept="3clFbW" id="5zPLqcHJBnr" role="jymVt">
-        <node concept="3clFbS" id="5zPLqcHJBns" role="3clF47" />
+        <node concept="3clFbS" id="5zPLqcHJBns" role="3clF47">
+          <node concept="XkiVB" id="QicWNw8va8" role="3cqZAp">
+            <ref role="37wK5l" to="hdhb:42hl10VHaPj" resolve="DiffModelTree" />
+            <node concept="37vLTw" id="QicWNw8xb_" role="37wK5m">
+              <ref role="3cqZAo" node="QicWNw69$z" resolve="repo" />
+            </node>
+          </node>
+        </node>
         <node concept="3Tm6S6" id="5zPLqcHJBnt" role="1B3o_S" />
         <node concept="3cqZAl" id="5zPLqcHJBnu" role="3clF45" />
+        <node concept="37vLTG" id="QicWNw69$z" role="3clF46">
+          <property role="TrG5h" value="repo" />
+          <node concept="3uibUv" id="QicWNw69$y" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm6S6" id="5zPLqcHJBnv" role="1B3o_S" />
       <node concept="3uibUv" id="5zPLqcHJBnw" role="1zkMxy">
@@ -7998,7 +8017,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="isSelected" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="42UviMImjGs" role="1B3o_S" />
                       <node concept="10P_77" id="42UviMImjGt" role="3clF45" />
                       <node concept="37vLTG" id="42UviMImjGu" role="3clF46">
@@ -8019,7 +8037,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="setSelected" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="42UviMImjG$" role="1B3o_S" />
                       <node concept="3cqZAl" id="42UviMImjG_" role="3clF45" />
                       <node concept="37vLTG" id="42UviMImjGA" role="3clF46">
@@ -8428,6 +8445,13 @@
             <node concept="2ShNRf" id="42UviMImjKJ" role="33vP2m">
               <node concept="1pGfFk" id="42UviMImjKK" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaud" resolve="DiffEditorSeparator" />
+                <node concept="2YIFZM" id="2l91Uwx_eF" role="37wK5m">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.getProjectRepository(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.SRepository" resolve="getProjectRepository" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="37vLTw" id="2l91Uwx_Bw" role="37wK5m">
+                    <ref role="3cqZAo" node="42UviMImjCW" resolve="myProject" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="42UviMImjKL" role="37wK5m">
                   <ref role="3cqZAo" node="42UviMImjKr" resolve="layout" />
                 </node>
@@ -9704,7 +9728,6 @@
     </node>
     <node concept="2tJIrI" id="778KdJ_suVU" role="jymVt" />
     <node concept="3clFb_" id="778KdJ_suVV" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCenterPanel" />
       <property role="DiZV1" value="false" />
@@ -10005,7 +10028,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createSouthPanel" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="778KdJ_suYg" role="1B3o_S" />
       <node concept="3uibUv" id="778KdJ_suYh" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
@@ -10026,7 +10048,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="778KdJ_suYo" role="1B3o_S" />
       <node concept="3cqZAl" id="778KdJ_suYp" role="3clF45" />
       <node concept="3clFbS" id="778KdJ_suYq" role="3clF47">

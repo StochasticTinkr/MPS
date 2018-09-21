@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorSReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -39,30 +40,10 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public RefCellCellProvider(@NotNull SNode node, EditorContext context) {
-    super(node, context);
-  }
-
   //it is important for descendants to have a unique constructor and with the same parameters as this one
   public RefCellCellProvider(@NotNull SNode node, SAbstractLink link, SAbstractConcept targetConcept, String roleName,
                              EditorContext context) {
     super(node, link, targetConcept, roleName, context);
-  }
-
-  /**
-   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  protected void installDeleteActions_atLeastOne(EditorCell editorCell) {
-    if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
-      installDeleteActions_notnull_smartReference(editorCell);
-    } else {
-      installDeleteActions_notnull(editorCell);
-    }
   }
 
   protected void installDeleteActions_notnull(EditorCell editorCell) {
@@ -70,49 +51,9 @@ public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
   }
 
-  /**
-   * @deprecated not used anymore.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  protected void installDeleteActions_notnull_smartReference(EditorCell editorCell) {
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
-  }
-
   protected void installDeleteActions_nullable_aggregation(EditorCell editorCell) {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
-  }
-
-  /**
-   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
-    SReferenceLink rl = (SReferenceLink) getLink();
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), rl));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), rl));
-  }
-
-  /**
-   * @deprecated not used anymore. Use corresponding methods directly instead of calling this one.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  protected void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
-    if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
-      return;
-    }
-    ((EditorCell_Basic) rootCell).setSNode(semanticNode);
-    if (rootCell instanceof EditorCell_Collection) {
-      for (EditorCell nextChild : ((EditorCell_Collection) rootCell)) {
-        if (!nextChild.isBig()) {
-          setSemanticNodeToCells(nextChild, semanticNode);
-        }
-      }
-    }
   }
 
   @Override
@@ -130,7 +71,7 @@ public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     if (!getLink().isOptional()) {
-      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(node.getConcept()) != null) {
         errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         return errorCell;
@@ -138,8 +79,8 @@ public abstract class RefCellCellProvider extends AbstractReferentCellProvider {
     }
 
     SReferenceLink rl = (SReferenceLink) getLink();
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, rl));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, rl));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorSReference(node, rl));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorSReference(node, rl));
     return errorCell;
   }
 }

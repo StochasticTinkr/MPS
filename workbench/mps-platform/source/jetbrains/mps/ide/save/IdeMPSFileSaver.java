@@ -67,9 +67,9 @@ public class IdeMPSFileSaver implements ApplicationComponent {
 
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
           if (myMakeComponent.isSessionActive()) {
-            ApplicationManager.getApplication().invokeLater(saveCommand::runSavingTask);
+            ApplicationManager.getApplication().invokeLater(saveCommand::execute);
           } else {
-            saveCommand.runSavingTask();
+            saveCommand.execute();
           }
         }
       }

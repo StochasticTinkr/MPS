@@ -84,7 +84,7 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       addNodeById("2906110183022090592");
       addNodeById("2906110183022122665");
       addNodeById("2906110183022122679");
-      SReference refByOriginalLink = SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022122680"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x279bb63b8ca8b7feL, "ReferenceContainerSubConcept"))), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild")));
+      SReference refByOriginalLink = SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022122680"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x279bb63b8ca8b7feL, "ReferenceContainerSubConcept"))), MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild"));
       Assert.assertEquals(SNodeOperations.cast(getNodeById("2906110183022122670"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x7a02788de4ab4dL, "ChildSubConcept"))), SLinkOperations.getTargetNode(refByOriginalLink));
       Assert.assertEquals(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild")), SLinkOperations.findLinkDeclaration(refByOriginalLink));
       Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), check_l3bw6i_a6a5l(SLinkOperations.getRefLink(refByOriginalLink)));
@@ -98,15 +98,15 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       addNodeById("2906110183022122679");
       SNode nullReferenceContainer = null;
       Assert.assertNull(SNodeOperations.getReference(nullReferenceContainer, MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild")));
-      SNode nullLinkDeclaration = null;
-      Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022090593"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x798c0d67da965ac6L, "ReferenceContainer"))), nullLinkDeclaration));
+      SReferenceLink n = null;
+      Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022090593"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x798c0d67da965ac6L, "ReferenceContainer"))), n));
     }
     public void test_invalidLinkDeclaration() throws Exception {
       addNodeById("2906110183022090592");
       addNodeById("2906110183022122665");
       addNodeById("2906110183022122679");
-      SNode invalidLinkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink"));
-      Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022122680"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x279bb63b8ca8b7feL, "ReferenceContainerSubConcept"))), invalidLinkDeclaration));
+      SReferenceLink invalidLink = MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink");
+      Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(getNodeById("2906110183022122680"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x279bb63b8ca8b7feL, "ReferenceContainerSubConcept"))), invalidLink));
     }
 
 

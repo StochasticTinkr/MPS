@@ -94,33 +94,20 @@
     <property role="TrG5h" value="NewComponentMember" />
     <property role="EcuMT" value="7709929535540733442" />
   </node>
-  <node concept="1TIwiD" id="1Ij79tqsMxw">
-    <property role="TrG5h" value="DeclMigrationData_Component" />
+  <node concept="1TIwiD" id="29O0pTxSzj9">
+    <property role="TrG5h" value="DeclMigrationData" />
     <property role="3GE5qa" value="migrationData" />
-    <property role="EcuMT" value="1986963296983656544" />
+    <property role="EcuMT" value="2482611074346661065" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="1Ij79tqsMXH" role="1TKVEl">
+    <node concept="1TJgyi" id="3EYs7E9xnJu" role="1TKVEl">
       <property role="TrG5h" value="oldId" />
-      <property role="IQ2nx" value="1986963296983658349" />
+      <property role="IQ2nx" value="4232944371370392542" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="1Ij79tqsMXV" role="1TKVEl">
+    <node concept="1TJgyi" id="3EYs7E9xnJv" role="1TKVEl">
       <property role="TrG5h" value="newId" />
-      <property role="IQ2nx" value="1986963296983658363" />
+      <property role="IQ2nx" value="4232944371370392543" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="1Ij79tqsMYb">
-    <property role="TrG5h" value="DeclMigrationData_WholeModule" />
-    <property role="3GE5qa" value="migrationData" />
-    <property role="EcuMT" value="1986963296983658379" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1Ij79tqsMYq" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="entry" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="1986963296983658394" />
-      <ref role="20lvS9" node="1Ij79tqsMxw" resolve="DeclMigrationData_Component" />
     </node>
   </node>
 </model>

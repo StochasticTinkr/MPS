@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -66,7 +67,7 @@ public class CellAction_DeleteNode extends AbstractCellAction {
     SNode parent = nodeToDelete.getParent();
     SContainmentLink containmentLink;
     if (AttributeOperations.isChildAttribute(nodeToDelete)){
-      containmentLink = AttributeOperations.getChildLink(nodeToDelete);
+      containmentLink = SNodeUtil.getChildLink(nodeToDelete);
     } else {
       containmentLink = nodeToDelete.getContainmentLink();
     }

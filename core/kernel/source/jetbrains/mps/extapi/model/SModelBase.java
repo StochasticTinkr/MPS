@@ -242,15 +242,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   /**
-   * @deprecated not in use, no apparent scenario for usage.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public boolean isRegistered() {
-    return myRepository != null;
-  }
-
-  /**
    * Access actual node storage. Might trigger model load if model is not yet loaded.
    * XXX perhaps, this method shall live in SModelDescriptorStub?
    * @return node storage. Generally, shall not return <code>null</code> (FIXME revisit contract, enforce)

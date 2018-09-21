@@ -4,11 +4,9 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.generator.runtime.FragmentResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -27,12 +25,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduceWithArgs extends TemplateDeclarationBase {
-  private String myP1;
-
-  public Template_reduceWithArgs(String p1) {
-    this.myP1 = p1;
-  }
+public class Template_reduceWithArgs extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_reduceWithArgs() {
   }
@@ -40,16 +33,16 @@ public class Template_reduceWithArgs extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599872860");
   }
-  private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
-    MapSequence.fromMap(result).put("p1", myP1);
-    return result;
+
+  public String[] getParameterNames() {
+    return new String[]{"p1"};
   }
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_1_0(new PropertyMacroContext(context, null, propertyMacro_quugqv_c0a0c0a0c0i))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_1_0(new PropertyMacroContext(context, null, propertyMacro_quugqv_c0a0c0a0c0h))));
     } finally {
     }
     FragmentResult rv = nodeFragment(0, tnode1);
@@ -57,22 +50,15 @@ public class Template_reduceWithArgs extends TemplateDeclarationBase {
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    context = context.subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
     applyPart0(context).reportTo(rv);
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context, String p1) throws GenerationException {
-    this.myP1 = p1;
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -93,5 +79,5 @@ public class Template_reduceWithArgs extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode");
     return rv;
   }
-  private static SNodePointer propertyMacro_quugqv_c0a0c0a0c0i = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599876333");
+  private static SNodePointer propertyMacro_quugqv_c0a0c0a0c0h = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599876333");
 }

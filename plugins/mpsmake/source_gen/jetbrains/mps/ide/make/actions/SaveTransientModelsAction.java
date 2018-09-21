@@ -4,8 +4,9 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.generator.GenerationSettingsProvider;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.icons.MPSIcons;
 
 public class SaveTransientModelsAction extends ToggleAction {
@@ -14,12 +15,15 @@ public class SaveTransientModelsAction extends ToggleAction {
   }
   @Override
   public boolean isSelected(AnActionEvent e) {
-    return GenerationSettingsProvider.getInstance().getGenerationSettings().isSaveTransientModels();
+    MPSProject mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
+    GenerationSettingsProvider sp = mpsProject.getComponent(GenerationSettingsProvider.class);
+    return sp.getGenerationSettings().isSaveTransientModels();
   }
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
-    e.getPresentation().setVisible(e.getData(PlatformDataKeys.PROJECT) != null);
+    boolean inProject = e.getData(MPSCommonDataKeys.MPS_PROJECT) != null;
+    e.getPresentation().setEnabledAndVisible(inProject);
     if (e.getPlace().contains("Toolbar")) {
       e.getPresentation().setIcon(MPSIcons.Nodes.TransientModule);
     } else {
@@ -28,7 +32,8 @@ public class SaveTransientModelsAction extends ToggleAction {
   }
   @Override
   public void setSelected(AnActionEvent e, boolean state) {
-    GenerationSettingsProvider.getInstance().getGenerationSettings().setSaveTransientModels(state);
-    TransientModelsNotification.updateWidgets();
+    MPSProject mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
+    GenerationSettingsProvider sp = mpsProject.getComponent(GenerationSettingsProvider.class);
+    sp.getGenerationSettings().setSaveTransientModels(state);
   }
 }

@@ -50,11 +50,11 @@ public final class AddCustomPackaging_Intention extends AbstractIntentionDescrip
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Customize Packaging for modules";
+      return "Customize Packaging for modules (deprecated, use the packaging type in the 'plugin' construction instead)";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x37fdb3de482e2b2fL, "customPackaging"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule"));
+      SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x37fdb3de482e2b2fL, "customPackaging"), null);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

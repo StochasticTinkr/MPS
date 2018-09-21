@@ -434,7 +434,7 @@
       <node id="5364344611674795511" at="209,34,210,22" concept="6" />
       <node id="312429380032637971" at="212,40,213,183" concept="5" />
       <node id="312429380032637971" at="217,39,218,130" concept="6" />
-      <node id="312429380032637971" at="220,46,221,60" concept="1" />
+      <node id="312429380032637971" at="220,166,221,60" concept="1" />
       <node id="312429380032637971" at="221,60,222,48" concept="1" />
       <node id="312429380032637971" at="222,48,223,43" concept="1" />
       <node id="312429380032637971" at="223,43,224,20" concept="6" />
@@ -530,7 +530,7 @@
       <node id="312429380032637971" at="316,0,320,0" concept="0" trace="labelSingleRoleHandler_47umt4_e0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="312429380032637971" at="60,0,65,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="312429380032637971" at="135,0,140,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="312429380032637971" at="215,72,220,46" concept="5" />
+      <node id="312429380032637971" at="215,72,220,166" concept="5" />
       <node id="312429380032637971" at="236,301,241,7" concept="5" />
       <node id="312429380032637971" at="241,7,246,22" concept="3" />
       <node id="1140223082034" at="253,0,258,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />

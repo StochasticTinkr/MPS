@@ -94,7 +94,7 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
           public EditorCell compute() {
             return new OfAspectOperation_old_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "requestedAspect_old");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect_old"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);

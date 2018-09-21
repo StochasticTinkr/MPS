@@ -2,10 +2,10 @@
 <model ref="r:4ed18869-f098-400c-ba8a-f5a2ee09c21e(jetbrains.mps.lang.smodel.query.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1597,7 +1597,7 @@
                               </node>
                               <node concept="3CFZ6_" id="3eDPCSVsEp$" role="2OqNvi">
                                 <node concept="3CFYIy" id="3eDPCSVsEKp" role="3CFYIz">
-                                  <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                                  <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
                                 </node>
                               </node>
                             </node>
@@ -1691,12 +1691,12 @@
           <node concept="3cpWsn" id="4T7JBGSuDg2" role="3cpWs9">
             <property role="TrG5h" value="ann" />
             <node concept="3Tqbb2" id="4T7JBGSuDg3" role="1tU5fm">
-              <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+              <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
             </node>
             <node concept="2ShNRf" id="4T7JBGSuDg4" role="33vP2m">
               <node concept="3zrR0B" id="4T7JBGSuDg5" role="2ShVmc">
                 <node concept="3Tqbb2" id="4T7JBGSuDg6" role="3zrR0E">
-                  <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                  <ref role="ehGHo" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
                 </node>
               </node>
             </node>
@@ -1758,7 +1758,7 @@
               </node>
               <node concept="3CFZ6_" id="4T7JBGSuDgu" role="2OqNvi">
                 <node concept="3CFYIy" id="4T7JBGSuDgv" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration" />
+                  <ref role="3CFYIx" to="tpck:29O0pTxSzj9" resolve="ReviewMigration_old" />
                 </node>
               </node>
             </node>

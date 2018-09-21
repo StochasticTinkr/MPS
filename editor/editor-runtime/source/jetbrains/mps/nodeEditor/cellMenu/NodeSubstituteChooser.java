@@ -227,9 +227,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         location = new Point(10, 10);
       }
       getPatternEditor().activate(getEditorWindow(), location, calcPatternEditorDimension(), realUi);
-      setSelectionIndex(0);
       myUi = createNodeSubstituteChooserUi(realUi);
       myUi.show();
+      setSelectionIndex(0);
       if (realUi) {
         getEditorWindow().addComponentListener(myComponentListener);
       }

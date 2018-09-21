@@ -6,7 +6,7 @@
   <description>Debugger support for baseLanguage extensions</description>
   <version>2018.3</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="182.1" />
+  <idea-version since-build="183.1" />
   
   <depends>jetbrains.mps.debugger.java</depends>
   

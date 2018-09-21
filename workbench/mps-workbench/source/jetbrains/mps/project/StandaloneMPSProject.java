@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.WorkbenchModelAccess;
 import jetbrains.mps.util.MacroHelper.MacroNoHelper;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -61,8 +62,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   @SuppressWarnings("UnusedParameters")
-  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
-    super(project, unused, mpsCore);
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused,
+                              MPSCoreComponents mpsCore, WorkbenchModelAccess modelAccess) {
+    super(project, unused, mpsCore, modelAccess);
   }
 
   @Override

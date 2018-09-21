@@ -19,6 +19,13 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -105,9 +112,6 @@
     </node>
     <node concept="PrWs8" id="4x$RhEw1aYr" role="PzmwI">
       <ref role="PrY4T" node="hR0XTcV" resolve="AbstractMacro" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAOHK" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="fP7Vmt2">
@@ -617,9 +621,6 @@
     <property role="34LRSv" value="node" />
     <property role="EcuMT" value="1167169188348" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvANBB" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZ0H$p7">
     <property role="R5$K7" value="true" />
@@ -751,9 +752,6 @@
     <property role="34LRSv" value="templateValue" />
     <property role="EcuMT" value="1167756221419" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2EA" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZ$xsMr">
     <property role="R5$K7" value="false" />
@@ -774,9 +772,6 @@
     <property role="34LRSv" value="templateValue" />
     <property role="EcuMT" value="1167770229866" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAOHM" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gZIZrPI">
     <property role="R5$K7" value="false" />
@@ -840,6 +835,9 @@
     <property role="3GE5qa" value="rule.consequence" />
     <property role="EcuMT" value="1168559333462" />
     <ref role="1TJDcQ" node="h0jzcLb" resolve="RuleConsequence" />
+    <node concept="t5JxF" id="6JoULz$jqnx" role="lGtFl">
+      <property role="t5JxN" value="In fact, this is a RuleConsequence subclass that shall hold TemplateCall child" />
+    </node>
     <node concept="PrWs8" id="1vDgt48Nz4$" role="PzmwI">
       <ref role="PrY4T" node="1vDgt48Nz4w" resolve="ITemplateCall" />
     </node>
@@ -889,9 +887,13 @@
     <ref role="1TJDcQ" node="h0jzcLb" resolve="RuleConsequence" />
     <node concept="1TJgyj" id="h1fMUV2" role="1TKVEi">
       <property role="20kJfa" value="template" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="1169569853122" />
       <ref role="20lvS9" node="fT3MO7g" resolve="TemplateDeclaration" />
+      <node concept="asaX9" id="6JoULz$jqnD" role="lGtFl">
+        <property role="YLQ7P" value="Replaced with templateCall" />
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="h1fNfX3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -900,8 +902,14 @@
       <property role="IQ2ns" value="1169569939267" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
-    <node concept="PrWs8" id="1653mnvB2PX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    <node concept="1TJgyj" id="6JoULz$jqnz" role="1TKVEi">
+      <property role="IQ2ns" value="7771219649169827299" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="templateCall" />
+      <ref role="20lvS9" node="6JoULz$jqfj" resolve="TemplateCall" />
+      <node concept="t5JxF" id="6JoULz$jqnB" role="lGtFl">
+        <property role="t5JxN" value="FIXME change to [1] once template:TD reference gone" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="h1lLz4x">
@@ -979,9 +987,6 @@
     <property role="34LRSv" value="mainContextNode" />
     <property role="EcuMT" value="1184374096829" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAgBZ" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hfgB$Qy">
     <property role="R5$K7" value="false" />
@@ -1002,9 +1007,6 @@
     <property role="34LRSv" value="outputNode" />
     <property role="EcuMT" value="1184690432998" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvANB2" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hfr999a">
     <property role="R5$K7" value="false" />
@@ -1015,14 +1017,11 @@
     <property role="34LRSv" value="parentOutputNode" />
     <property role="EcuMT" value="1184792613450" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB2Vf" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hoxERsl">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="include template macro" />
+    <property role="R4oN_" value="include template macro (deprecated)" />
     <property role="TrG5h" value="IncludeMacro" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="macro" />
@@ -1031,6 +1030,10 @@
     <ref role="1TJDcQ" node="gZJkJnJ" resolve="SourceSubstituteMacro" />
     <node concept="M6xJ_" id="6_gUeuqOeTa" role="lGtFl">
       <property role="Hh88m" value="" />
+    </node>
+    <node concept="asaX9" id="za$VMviYjJ" role="lGtFl">
+      <property role="YLQ7P" value="Replace with $CALL$ which supports templates with parameters" />
+      <property role="YLPcu" value="2018.3" />
     </node>
     <node concept="1TJgyj" id="hoxH3iB" role="1TKVEi">
       <property role="20kJfa" value="includeTemplate" />
@@ -1067,9 +1070,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1195158241124" />
       <ref role="20lvS9" node="h0jzcLb" resolve="RuleConsequence" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAmBY" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="hp4ZrX9">
@@ -2003,12 +2003,18 @@
     <property role="EcuMT" value="9032177546941580387" />
     <property role="2_RsDV" value="none" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="t5JxF" id="39TODbGt7B_" role="lGtFl">
+      <property role="t5JxN" value="Implementation of NodeIdentity that is capable to reconstruct node instance with a help of preserved concept information. Unfortunate naming." />
+    </node>
     <node concept="1TJgyj" id="7r2v6u$o5W7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="cncpt" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8557539026538618631" />
       <ref role="20lvS9" to="tp25:5ZE7FBYYOp2" resolve="ConceptIdentity" />
+      <node concept="t5JxF" id="39TODbGt7Bz" role="lGtFl">
+        <property role="t5JxN" value="XXX shall use modelapi conterpart" />
+      </node>
     </node>
     <node concept="1TJgyi" id="7PoJpZpH$hA" role="1TKVEl">
       <property role="TrG5h" value="conceptId" />
@@ -2028,6 +2034,70 @@
     <property role="3GE5qa" value="crossmodel.vault" />
     <property role="TrG5h" value="NodeIdentity" />
     <property role="EcuMT" value="9032177546941555544" />
+    <node concept="t5JxF" id="39TODbGtasb" role="lGtFl">
+      <property role="t5JxN" value="Unlike modelapi.NodeIdentity, doesn't give access to SNodeReference, just SNodeId part" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="39TODbGtas8">
+    <property role="EcuMT" value="3637169702552512264" />
+    <property role="3GE5qa" value="crossmodel.vault" />
+    <property role="TrG5h" value="ElementaryNodeId" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="39TODbGtasd" role="1TKVEl">
+      <property role="TrG5h" value="nodeId" />
+      <property role="IQ2nx" value="3637169702552512269" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="39TODbGtdTB" role="lGtFl">
+        <property role="t5JxN" value="not datatype, see modelapi.NodePointer " />
+      </node>
+    </node>
+    <node concept="PrWs8" id="39TODbGtas9" role="PzmwI">
+      <ref role="PrY4T" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+    <node concept="t5JxF" id="39TODbGtasf" role="lGtFl">
+      <property role="t5JxN" value="Nothing but SNodeId serialization" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6UZRahyyZP8">
+    <property role="EcuMT" value="7980339663309897032" />
+    <property role="3GE5qa" value="crossmodel" />
+    <property role="TrG5h" value="OriginTrace" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="6UZRahyyZPd" role="1TKVEi">
+      <property role="IQ2ns" value="7980339663309897037" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+    <node concept="M6xJ_" id="6UZRahyyZP9" role="lGtFl">
+      <property role="Hh88m" value="originTrace" />
+      <node concept="tn0Fv" id="6UZRahyyZPb" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="6UZRahyzDdq" role="EQaZv">
+        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="t5JxF" id="6UZRahyyZPf" role="lGtFl">
+      <property role="t5JxN" value="We use this attribute to persist information about origin of a node in a checkpoint model (i.e. a node from previous CP that served as its source)" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6JoULz$jqfj">
+    <property role="EcuMT" value="7771219649169826771" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="TemplateCall" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="6JoULz$jqfk" role="PzmwI">
+      <ref role="PrY4T" node="1vDgt48Nz4w" resolve="ITemplateCall" />
+    </node>
+    <node concept="t5JxF" id="6JoULz$jqnv" role="lGtFl">
+      <property role="t5JxN" value="A reference to template declaration along with actual arguments, not bound to RuleConsequence hierarchy unlike TemplateDeclarationReference." />
+    </node>
   </node>
 </model>
 

@@ -33,7 +33,7 @@ import java.util.List;
       throw new IllegalStateException();
     }
     //  Don't want a distinct thread sleeping and waiting for tasks to come, that's why got a timer 
-    // note, IDEA's scheduler doesn't support schedyleAtFixedRate(). 
+    // note, IDEA's scheduler doesn't support scheduleAtFixedRate(). 
     myTimerTask = myScheduler.scheduleWithFixedDelay(new Runnable() {
       public void run() {
         scheduleProcessing();
@@ -84,6 +84,13 @@ import java.util.List;
     }
     processTask(tasks);
   }
+
+  /**
+   * Invoked from a thread assigned by scheduler, usually one from application thread pool, with no further locks (e.g. app write or model read).
+   */
   protected abstract boolean isProcessingAllowed();
+  /**
+   * invoked iff {@link jetbrains.mps.vcs.suspicious.BaseTaskQueue#isProcessingAllowed() } returned {@code true} from the same thread, with non-empty collections of tasks schduled to the moment
+   */
   protected abstract void processTask(List<T> tasks);
 }

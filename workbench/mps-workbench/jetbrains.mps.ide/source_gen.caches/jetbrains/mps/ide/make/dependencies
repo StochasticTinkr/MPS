@@ -38,7 +38,6 @@
     <classNode dependClassName="com.intellij.openapi.fileTypes.PlainTextFileType" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.UnknownFileType" />
     <classNode dependClassName="com.intellij.openapi.util.io.FileAttributes" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem" />
     <classNode dependClassName="com.intellij.util.ArrayUtil" />
@@ -49,13 +48,14 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.nio.charset.Charset" />
     <classNode dependClassName="jetbrains.mps.text.TextUnit" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile" />
+    <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFile" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />

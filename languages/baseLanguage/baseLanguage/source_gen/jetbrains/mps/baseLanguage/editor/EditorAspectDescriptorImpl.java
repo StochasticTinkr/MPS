@@ -756,28 +756,30 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
             case 5:
               return Arrays.asList(new TransformationMenu[]{new assert_()});
             case 6:
-              return Arrays.asList(new TransformationMenu[]{new assignments()});
+              return Arrays.asList(new TransformationMenu[]{new assignment_to_variable_declaration()});
             case 7:
-              return Arrays.asList(new TransformationMenu[]{new binaryOperations_Expression()});
+              return Arrays.asList(new TransformationMenu[]{new assignments()});
             case 8:
-              return Arrays.asList(new TransformationMenu[]{new csharp_rTransform_Expression()});
+              return Arrays.asList(new TransformationMenu[]{new binaryOperations_Expression()});
             case 9:
-              return Arrays.asList(new TransformationMenu[]{new dotExpression()});
+              return Arrays.asList(new TransformationMenu[]{new csharp_rTransform_Expression()});
             case 10:
-              return Arrays.asList(new TransformationMenu[]{new expressionStatement()});
+              return Arrays.asList(new TransformationMenu[]{new dotExpression()});
             case 11:
-              return Arrays.asList(new TransformationMenu[]{new expressionToNotExpression()});
+              return Arrays.asList(new TransformationMenu[]{new expressionStatement()});
             case 12:
-              return Arrays.asList(new TransformationMenu[]{new expressionToParenthesis()});
+              return Arrays.asList(new TransformationMenu[]{new expressionToNotExpression()});
             case 13:
-              return Arrays.asList(new TransformationMenu[]{new expression_to_varaible_declaration()});
+              return Arrays.asList(new TransformationMenu[]{new expressionToParenthesis()});
             case 14:
-              return Arrays.asList(new TransformationMenu[]{new instanceOf()});
+              return Arrays.asList(new TransformationMenu[]{new expression_to_varaible_declaration()});
             case 15:
-              return Arrays.asList(new TransformationMenu[]{new postfix()});
+              return Arrays.asList(new TransformationMenu[]{new instanceOf()});
             case 16:
-              return Arrays.asList(new TransformationMenu[]{new prefix()});
+              return Arrays.asList(new TransformationMenu[]{new postfix()});
             case 17:
+              return Arrays.asList(new TransformationMenu[]{new prefix()});
+            case 18:
               return Arrays.asList(new TransformationMenu[]{new ternaryOperator()});
             default:
           }
@@ -1368,7 +1370,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private static String[] stringSwitchCases_xbvbvu_a0a0a0n1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.newExpression_DefaultClassCreator_ext_2"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0o1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumClass_ApplySideTransforms"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0p1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.enumConstant_rt"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0q1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Expression_to_type_Cast", "jetbrains.mps.baseLanguage.editor.SubstringExpression_Transform", "jetbrains.mps.baseLanguage.editor.UnaryMinusLeftTransform", "jetbrains.mps.baseLanguage.editor.addComment_Expression", "jetbrains.mps.baseLanguage.editor.arrayAccess", "jetbrains.mps.baseLanguage.editor.assert_", "jetbrains.mps.baseLanguage.editor.assignments", "jetbrains.mps.baseLanguage.editor.binaryOperations_Expression", "jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression", "jetbrains.mps.baseLanguage.editor.dotExpression", "jetbrains.mps.baseLanguage.editor.expressionStatement", "jetbrains.mps.baseLanguage.editor.expressionToNotExpression", "jetbrains.mps.baseLanguage.editor.expressionToParenthesis", "jetbrains.mps.baseLanguage.editor.expression_to_varaible_declaration", "jetbrains.mps.baseLanguage.editor.instanceOf", "jetbrains.mps.baseLanguage.editor.postfix", "jetbrains.mps.baseLanguage.editor.prefix", "jetbrains.mps.baseLanguage.editor.ternaryOperator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0q1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Expression_to_type_Cast", "jetbrains.mps.baseLanguage.editor.SubstringExpression_Transform", "jetbrains.mps.baseLanguage.editor.UnaryMinusLeftTransform", "jetbrains.mps.baseLanguage.editor.addComment_Expression", "jetbrains.mps.baseLanguage.editor.arrayAccess", "jetbrains.mps.baseLanguage.editor.assert_", "jetbrains.mps.baseLanguage.editor.assignment_to_variable_declaration", "jetbrains.mps.baseLanguage.editor.assignments", "jetbrains.mps.baseLanguage.editor.binaryOperations_Expression", "jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression", "jetbrains.mps.baseLanguage.editor.dotExpression", "jetbrains.mps.baseLanguage.editor.expressionStatement", "jetbrains.mps.baseLanguage.editor.expressionToNotExpression", "jetbrains.mps.baseLanguage.editor.expressionToParenthesis", "jetbrains.mps.baseLanguage.editor.expression_to_varaible_declaration", "jetbrains.mps.baseLanguage.editor.instanceOf", "jetbrains.mps.baseLanguage.editor.postfix", "jetbrains.mps.baseLanguage.editor.prefix", "jetbrains.mps.baseLanguage.editor.ternaryOperator"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0r1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.FieldDeclaration_ApplySideTransforms"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0s1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.addGenericTypeVariableInDeclaration", "jetbrains.mps.baseLanguage.editor.genericDeclaration_right"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0t1a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddMethodCallTypeArgument", "jetbrains.mps.baseLanguage.editor.AddMethodCallTypeArgument_ext_1"};

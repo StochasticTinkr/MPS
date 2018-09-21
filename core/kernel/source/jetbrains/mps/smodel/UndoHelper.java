@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.undo.UndoContext;
+import jetbrains.mps.util.annotation.ToRemove;
 
+/**
+ * Gives access to platform-specific UndoHandler collector of model undoable actions.
+ * Likely, SRepository shall supply UndoHandler instance for its models, so that we don't really need this singleton at all.
+ * Perhaps, accessor could be part of SRepositoryExt or SRepositoryAux if we don't want to mix register functionality with undo.
+ */
 public class UndoHelper {
   private static final UndoHandler DEFAULT = new DefaultUndoHandler();
 
@@ -46,11 +52,19 @@ public class UndoHelper {
     myHandler.addUndoableAction(action);
   }
 
+  /**
+   * @deprecated This method is unused, no-op and scheduled for removal, just don't use it any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public void flushCommand() {
-    myHandler.flushCommand();
   }
 
+  /**
+   * @deprecated This method is unused, no-op and scheduled for removal, just don't use it any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public void startCommand(UndoContext context) {
-    myHandler.startCommand(context);
   }
 }

@@ -14,17 +14,12 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import java.util.Objects;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class AttributeOperations {
   private static final Logger LOG = LogManager.getLogger(AttributeOperations.class);
@@ -106,45 +101,6 @@ public class AttributeOperations {
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, SConcept newConceptFqname) {
     SModel model = SNodeOperations.getModel(node);
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
-  }
-  public static SReferenceLink getLink(SNode attribute) {
-    String linkId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"));
-    String linkName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
-    if (linkId == null) {
-      return ((ConceptMetaInfoConverter) attribute.getParent().getConcept()).convertAssociation(linkName);
-    }
-    SReferenceLinkId lid = SReferenceLinkId.deserialize(linkId);
-    return MetaAdapterFactory.getReferenceLink(lid, (linkName == null ? "" : linkName));
-  }
-  public static SContainmentLink getChildLink(SNode attribute) {
-    String linkId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"));
-    String linkName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "linkRole"));
-    if (linkId == null) {
-      return ((ConceptMetaInfoConverter) attribute.getParent().getConcept()).convertAggregation(linkName);
-    }
-    SContainmentLinkId lid = SContainmentLinkId.deserialize(linkId);
-    return MetaAdapterFactory.getContainmentLink(lid, (linkName == null ? "" : linkName));
-  }
-  public static void setLink(SNode attribute, SReferenceLink link) {
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), MetaIdHelper.getAssociation(link).serialize());
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"), link.getName());
-  }
-  public static void setLink(SNode attribute, SContainmentLink link) {
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId"), MetaIdHelper.getAggregation(link).serialize());
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "linkRole"), link.getName());
-  }
-  public static SProperty getProperty(SNode attribute) {
-    String propertyId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"));
-    String propertyName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
-    if (propertyId == null) {
-      return ((ConceptMetaInfoConverter) attribute.getParent().getConcept()).convertProperty(propertyName);
-    }
-    SPropertyId pid = SPropertyId.deserialize(propertyId);
-    return MetaAdapterFactory.getProperty(pid, (propertyName == null ? "" : propertyName));
-  }
-  public static void setProperty(SNode attribute, SProperty property) {
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), MetaIdHelper.getProperty(property).serialize());
-    attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), property.getName());
   }
   public static boolean isAttribute(SNode node) {
     if (node == null) {

@@ -108,7 +108,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
           public EditorCell compute() {
             return new MigratedToAnnotation_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "migratedTo");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, 0x7ce01982652a9f9L, "migratedTo"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);

@@ -138,7 +138,7 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
           public EditorCell compute() {
             return new CustomOperatorUsage_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "operator");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, 0x15c86fdc60847670L, "operator"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull_smartReference(cell);

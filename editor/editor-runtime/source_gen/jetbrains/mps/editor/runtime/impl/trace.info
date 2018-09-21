@@ -234,19 +234,5 @@
       <unit id="1182113674817469564" at="36,0,141,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
     </file>
   </root>
-  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1482016848005717282">
-    <file name="DataTransferUtil.java">
-      <node id="1482016848005719050" at="12,62,13,185" concept="7" />
-      <node id="1482016848005717284" at="10,0,12,0" concept="0" trace="DataTransferUtil#()V" />
-      <node id="1482016848005719042" at="12,0,15,0" concept="10" trace="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1482016848005717287" at="10,29,10,29" />
-      <scope id="1482016848005719045" at="12,62,13,185" />
-      <scope id="1482016848005717284" at="10,0,12,0" />
-      <scope id="1482016848005719042" at="12,0,15,0">
-        <var name="conceptDeclaration" id="1482016848005719047" />
-      </scope>
-      <unit id="1482016848005717282" at="9,0,16,0" name="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
-    </file>
-  </root>
 </debug-info>
 

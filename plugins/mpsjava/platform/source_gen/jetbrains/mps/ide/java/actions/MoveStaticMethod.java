@@ -49,7 +49,7 @@ public class MoveStaticMethod implements MoveNodesAction {
   public void execute(MPSProject project, List<SNode> nodes) {
     final SNode target = SNodeOperations.cast(ListSequence.fromList(nodes).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
 
-    final SNode whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
+    final SNode whereToMove = MoveNodeDialog.getSelectedObject(project, target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
       @Override
       public boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode) {
         return SNodeOperations.isInstanceOf(selectedObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeToMove, null, false)).contains(selectedObject));

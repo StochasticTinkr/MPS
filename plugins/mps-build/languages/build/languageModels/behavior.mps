@@ -4,7 +4,7 @@
   <languages>
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -49,7 +49,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -421,7 +420,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
-        <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1757699476691236117" name="name_DebugInfo" index="2qtEX9" />
         <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -3237,7 +3236,6 @@
     </node>
     <node concept="13i0hz" id="7wpYgMyU0sQ" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="isEmptyTail" />
       <node concept="3clFbS" id="7wpYgMyU0sT" role="3clF47">
@@ -3292,7 +3290,6 @@
     </node>
     <node concept="13i0hz" id="7wpYgMyU0gZ" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="next" />
       <node concept="3clFbS" id="7wpYgMyU0h2" role="3clF47">
@@ -3996,7 +3993,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgqQ" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="hasInputDir" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgqR" role="1B3o_S" />
@@ -6216,7 +6212,6 @@
     </node>
     <node concept="13i0hz" id="1bWeed$oELo" role="13h7CS">
       <property role="13i0iv" value="false" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
@@ -6295,7 +6290,6 @@
     </node>
     <node concept="13i0hz" id="1bWeed$oEMe" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="appendName_internal" />
       <node concept="3clFbS" id="1bWeed$oEMh" role="3clF47">
@@ -7893,7 +7887,6 @@
     </node>
     <node concept="13i0hz" id="3rOhm4gRyjC" role="13h7CS">
       <property role="13i0iv" value="false" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
@@ -12302,7 +12295,6 @@
     </node>
     <node concept="13i0hz" id="7N6lJotVTmG" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="defaultManifestName" />
       <node concept="3clFbS" id="7N6lJotVTmJ" role="3clF47">
@@ -13062,7 +13054,6 @@
     </node>
     <node concept="13i0hz" id="19QsrPvAva7" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="representativeName" />
       <node concept="3clFbS" id="19QsrPvAvaa" role="3clF47">
@@ -13329,7 +13320,6 @@
     </node>
     <node concept="13i0hz" id="19QsrPvClqt" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="filesetName" />
       <node concept="3clFbS" id="19QsrPvClqw" role="3clF47">

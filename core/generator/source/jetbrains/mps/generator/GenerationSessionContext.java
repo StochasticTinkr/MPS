@@ -22,12 +22,12 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
-import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,7 +50,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Igor Alshannikov
  * Sep 19, 2005
  */
-public class GenerationSessionContext extends StandaloneMPSContext {
+public class GenerationSessionContext {
 
   private final Object COPIED_ROOTS = new Object();
 
@@ -121,15 +121,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myOriginalInputModel;
   }
 
-  @Override
   @NotNull
   public TransientModelsModule getModule() {
     return myTransientModule;
   }
 
-  @Override
   @ToRemove(version = 3.3)
   public Project getProject() {
+    Logger.getLogger(getClass()).error("Please stop using GenerationSessionContext.getProject aka IOperationContext.getProject from within a generator");
     // XXX still in use in mbeddr (through IOperationContext)
     SRepository repository = myOriginalInputModel.getModule().getRepository();
     if (!(repository instanceof ProjectRepository)) {

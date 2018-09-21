@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,6 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -38,6 +32,9 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * and we sometimes experience long reads (e.g. Highlighter) we are forced to
  * start a separate thread which waits for some time and then interrupts
  *
+ * This class augments IDEA Platform write action with functionality essential for MPS,
+ * uses of {@code Application.runWriteAction} of all kinds from ModelAccess impl shall get directed here
+ *
  * @author apyshkin
  * @since 2017.2
  *
@@ -47,11 +44,12 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 final class TryRunPlatformWriteHelper implements Disposable {
   private static final int WAIT_FOR_WRITE_LOCK_MS = 200;
 
-  private final WriteActionTracker myWriteActionTracker;
+  // track attempts to grab IDEA platform write lock
+  private final WriteActionTracker myPlatformWriteActionTracker;
   private final DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<>();
 
-  TryRunPlatformWriteHelper(@NotNull WriteActionTracker writeActionTracker) {
-    myWriteActionTracker = writeActionTracker;
+  TryRunPlatformWriteHelper() {
+    myPlatformWriteActionTracker = new WriteActionTracker();
     myInterruptingThread.start();
   }
 
@@ -91,84 +89,63 @@ final class TryRunPlatformWriteHelper implements Disposable {
     return di;
   }
 
-  void tryCommand(@NotNull Project project, @NotNull Runnable runnable) throws WriteTimeOutException {
-    ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
-      TryWriteActionRunnable tryWriteAction = new TryWriteActionRunnable(runnable);
-      try {
-        tryWriteAction.tryWrite();
-      } catch (WriteTimeOutException e) {
-        return e;
-      }
-      return null;
-    });
-    executeCommand(project, computable);
-    if (computable.getResult() != null) {
-      throw computable.getResult();
+  /**
+   * {@link #runWrite(Runnable)} as a {@link Runnable}
+   */
+  /*package*/ Runnable withPlatformWrite(final Runnable r) {
+    return () -> runWrite(r);
+  }
+
+  /*package*/ void runWrite(Runnable r) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+    try {
+      myPlatformWriteActionTracker.writeActionScheduled();
+      ApplicationManager.getApplication().runWriteAction(r);
+    } finally {
+      myPlatformWriteActionTracker.writeActionProcessed();
     }
   }
 
-  private void executeCommand(@NotNull Project project, ComputeRunnable<?> computable) {
-    CommandProcessor.getInstance().executeCommand(
-        project,
-        computable,
-        "MPS #tryCommand",
-        null,
-        UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+  /*package*/ boolean hasScheduledWrites() {
+    return myPlatformWriteActionTracker.hasScheduledWrites();
   }
 
-  <T> T tryWrite(Computable<T> computable) throws WriteTimeOutException {
-    ComputeRunnable<T> toCompute = new ComputeRunnable<>(computable::compute);
-    new TryWriteActionRunnable(toCompute).tryWrite();
-    return toCompute.getResult();
+  // makes an attempt to grab IDEA's write action and executes a runnable if succeeds.
+  /*package*/ void tryWrite(Runnable r) throws WriteTimeOutException {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+    // workaround for IDEA's locks shortcoming: timeout on write action
+    Thread.interrupted();
+    final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MS, MILLISECONDS);
+    try {
+      runWrite(() -> {
+        cancelInterrupt(delayedInterrupt);
+        r.run();
+      });
+    } catch (RuntimeException re) {
+      dealWithRuntimeException(delayedInterrupt, re);
+    }
   }
 
-  @Immutable
-  private final class TryWriteActionRunnable {
-    private final Runnable myRunnable;
-
-    TryWriteActionRunnable(Runnable runnable) {
-      myRunnable = runnable;
-    }
-
-    void tryWrite() throws WriteTimeOutException {
-      ThreadUtils.assertEDT();
-      // workaround for IDEA's locks shortcoming: timeout on write action
-      Thread.interrupted();
-      final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MS, MILLISECONDS);
-      try {
-        myWriteActionTracker.writeActionScheduled();
-        ApplicationManager.getApplication().runWriteAction(() -> {
-          cancelInterrupt(delayedInterrupt);
-          myRunnable.run();
-        });
-      } catch (RuntimeException re) {
-        dealWithRuntimeException(delayedInterrupt, re);
-      } finally {
-        myWriteActionTracker.writeActionProcessed();
-      }
-    }
-
-    private void dealWithRuntimeException(DelayedInterrupt delayedInterrupt, RuntimeException re) throws WriteTimeOutException {
-      cancelInterrupt(delayedInterrupt);
-      RuntimeException cause = getCause(re);
-      if (cause.getCause() instanceof InterruptedException) {
-        if (delayedInterrupt.isInterruptSuccessful()) {
-          throw new WriteTimeOutException(cause.getCause());
-        } else {
-          throw cause;
-        }
+  private void dealWithRuntimeException(DelayedInterrupt delayedInterrupt, RuntimeException re) throws WriteTimeOutException {
+    cancelInterrupt(delayedInterrupt);
+    RuntimeException cause = getCause(re);
+    if (cause.getCause() instanceof InterruptedException) {
+      if (delayedInterrupt.isInterruptSuccessful()) {
+        throw new WriteTimeOutException(cause.getCause());
       } else {
         throw cause;
       }
+    } else {
+      throw cause;
     }
+  }
 
-    @NotNull
-    private RuntimeException getCause(RuntimeException re) {
-      while (re.getCause() instanceof RuntimeException) {
-        re = (RuntimeException) re.getCause();
-      }
-      return re;
+  @NotNull
+  private RuntimeException getCause(RuntimeException re) {
+    while (re.getCause() instanceof RuntimeException) {
+      re = (RuntimeException) re.getCause();
     }
+    return re;
   }
 
   private static class DelayedInterrupt implements Delayed {

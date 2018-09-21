@@ -27,31 +27,29 @@ import jetbrains.mps.smodel.resources.GResource;
 import java.util.stream.IntStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.make.facets.Make_Facet.Target_make;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.text.TextGeneratorEngine;
 import java.util.concurrent.ArrayBlockingQueue;
 import jetbrains.mps.text.TextGenResult;
-import java.util.Map;
-import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.concurrent.TimeUnit;
 import jetbrains.mps.text.TextUnit;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.DefaultStreamManager;
-import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import java.util.HashSet;
@@ -62,6 +60,8 @@ import jetbrains.mps.text.impl.BLDependenciesBuilder;
 import jetbrains.mps.text.impl.DebugInfoBuilder;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.util.IStatus;
+import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -198,9 +198,12 @@ public class TextGen_Facet extends IFacet.Stub {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
                 return new IResult.FAILURE(_output_21gswx_a0b);
               }
+              final IMessageHandler messageHandler = monitor.getSession().getMessageHandler();
+              final GenerationDependenciesCache genDepsCache = new GenerationDependenciesCache();
 
               int modelsCount = 0;
               final List<GResource> resourcesWithOutput = ListSequence.fromList(new ArrayList<GResource>(Sequence.fromIterable(input).count()));
+              final Map<SModule, ModuleStaleFileManager> moduleStaleFilesMap = new HashMap<SModule, ModuleStaleFileManager>();
               for (GResource resource : Sequence.fromIterable(input)) {
                 // Perhaps, shall check res.status.isError(), however not sure if there 
                 // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
@@ -216,8 +219,20 @@ public class TextGen_Facet extends IFacet.Stub {
                 // number of scheduled models doesn't match that we expect to poll. 
                 modelsCount += outputModels.size();
                 ListSequence.fromList(resourcesWithOutput).addElement(resource);
+                // 
+                // collect changes in a module-wide context 
+                ModuleStaleFileManager sfm = moduleStaleFilesMap.get(resource.module());
+                if (sfm == null) {
+                  sfm = new ModuleStaleFileManager(resource.module(), Target_make.vars(pa.global()).pathToFile(), messageHandler);
+                  moduleStaleFilesMap.put(resource.module(), sfm);
+                  sfm.collectRetainedFiles(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                    public boolean accept(SModel smd) {
+                      return GenerationFacade.canGenerate(smd);
+                    }
+                  }));
+                }
+                sfm.collectGeneratedFiles(genDepsCache, resource.model());
               }
-              final IMessageHandler messageHandler = monitor.getSession().getMessageHandler();
               final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
 
@@ -225,8 +240,8 @@ public class TextGen_Facet extends IFacet.Stub {
               // configure 
               final boolean _generateDebugInfo = vars(pa.global()).generateDebugInfo() == null || vars(pa.global()).generateDebugInfo();
 
-              final ProgressMonitor subProgress_n0a0b = progressMonitor.subTask(1000);
-              subProgress_n0a0b.start("Writing", modelsCount + 3);
+              final ProgressMonitor subProgress_p0a0b = progressMonitor.subTask(1000);
+              subProgress_p0a0b.start("Writing", modelsCount + 3);
 
               try {
                 final ArrayBlockingQueue<TextGenResult> resultQueue = new ArrayBlockingQueue<TextGenResult>(modelsCount);
@@ -246,10 +261,9 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
                 });
 
-                subProgress_n0a0b.advance(3);
+                subProgress_p0a0b.advance(3);
 
-                final Map<GResource, List<IDelta>> deltas2 = new HashMap<GResource, List<IDelta>>();
-                final List<FileProcessor> fileProcessors2 = ListSequence.fromList(new ArrayList<FileProcessor>());
+                final Map<GResource, ResourceDeltaCollector> deltas2 = new HashMap<GResource, ResourceDeltaCollector>();
                 // there's no really any use of the cached bl dependencies, provided each model from the set of resources is generated once and the cache is only populated, not read. 
                 // however, it's better than global singleton, and, perhaps, some day we could pass it further to make to use readily available bl dependencies in ModuleMaker, so that it 
                 // doesn't need to read these 'dependencies' files again with its Dependencies class. 
@@ -258,7 +272,6 @@ public class TextGen_Facet extends IFacet.Stub {
                 final TraceInfoCache traceInfoCache = new TraceInfoCache();
                 // we don't care about cached values of 'generated', but we need a way to read values, if any (e.g. StaleFilesCollector),  
                 // and the cache instance doesn't hurt 
-                final GenerationDependenciesCache genDepsCache = new GenerationDependenciesCache();
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
 
@@ -273,8 +286,8 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }
 
-                  subProgress_n0a0b.advance(1);
-                  subProgress_n0a0b.step(tgr.getModel().getReference().getModelName());
+                  subProgress_p0a0b.advance(1);
+                  subProgress_p0a0b.step(tgr.getModel().getReference().getModelName());
                   final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
 
                   _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(inputResource.model(), inputResource.module(), tgr))));
@@ -287,21 +300,24 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   outputModelRepo.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(inputResource.module(), Sequence.fromIterable(inputResource.retainedModels()).where(new IWhereFilter<SModel>() {
-                        public boolean accept(SModel smd) {
-                          return GenerationFacade.canGenerate(smd);
-                        }
-                      }), Target_make.vars(pa.global()).pathToFile());
-                      MapSequence.fromMap(deltas2).put(inputResource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), retainedFilesDelta));
+                      ResourceDeltaCollector rdm = MapSequence.fromMap(deltas2).get(inputResource);
+                      if (rdm == null) {
+                        rdm = new ResourceDeltaCollector();
+                        MapSequence.fromMap(deltas2).put(inputResource, rdm);
+                      }
+                      ModuleStaleFileManager staleFilesManager = moduleStaleFilesMap.get(inputResource.module());
+                      assert staleFilesManager != null;
 
-                      final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getOutputDir(inputResource.model()).getPath());
-                      final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getCachesDir(inputResource.model()).getPath());
-                      StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
-                      staleFileCollector.recordGeneratedChildren(genDepsCache, inputResource.model());
-                      FileProcessor fp = new FileProcessor(messageHandler);
-                      ListSequence.fromList(fileProcessors2).addElement(fp);
-                      FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, fp);
-                      FileDeltaCollector cachesLocation = new FileDeltaCollector(cacheOutputDir, fp);
+                      // we'd like to report delta per (module, model) pair (DResource is not sufficient, there are TResource clients) 
+                      // therefore we use can't use cached FDC instance (staleFilesManager.getStreamHandler()) now, I don't want to report complete module 
+                      // delta for each model just not to face any trouble with delta merge. However, would like to get this fixed (get rid of TResource use and report  
+                      // single combined delta per module) 
+                      // beware, ModuleStaleFileManager is responsible to translate these values into actual fs locations accoring to make.pathToFile, don't use this values directly 
+                      // except to pass to staleFileManager 
+                      final IFile javaOutputDir = DefaultStreamManager.Provider.getOutputDir(inputResource.model());
+                      final IFile cacheOutputDir = DefaultStreamManager.Provider.getCachesDir(inputResource.model());
+                      FileDeltaCollector javaSourcesLoc = staleFilesManager.newStreamHandler(javaOutputDir);
+                      FileDeltaCollector cachesLocation = staleFilesManager.newStreamHandler(cacheOutputDir);
                       // 
                       // Serialize outcome 
                       GenerationDependencies genDeps = inputResource.status().getDependencies();
@@ -341,18 +357,27 @@ public class TextGen_Facet extends IFacet.Stub {
                       if (status.isError()) {
                         monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
                       }
-                      staleFileCollector.updateDelta(javaSourcesLoc.getDelta());
-                      new StaleFilesCollector(cacheOutputDir).updateDelta(cachesLocation.getDelta());
-                      ListSequence.fromList(MapSequence.fromMap(deltas2).get(inputResource)).addElement(javaSourcesLoc.getDelta());
-                      ListSequence.fromList(MapSequence.fromMap(deltas2).get(inputResource)).addElement(cachesLocation.getDelta());
+                      // next two lines are needed only as long ModuleStaleFileManager creates newStreamHandler(), and doesn't keep track of FilesDeltaCollector instances it has created. 
+                      staleFilesManager.updateWith(javaOutputDir, javaSourcesLoc);
+                      staleFilesManager.updateWith(cacheOutputDir, cachesLocation);
+                      // collect delta for (module, model) pair to get dispatched as TResource later (staleFilesManager could do it with DResource only) 
+                      // FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaManager and report delta from ModuleStaleFileManager 
+                      rdm.addDelta(javaSourcesLoc.getDelta());
+                      rdm.addDelta(cachesLocation.getDelta());
                     }
                   });
                 }
+                for (ModuleStaleFileManager sfm : CollectionSequence.fromCollection(moduleStaleFilesMap.values())) {
+                  // StaleFilesCollector.reportStaleFiles, inside, walks FS, let it do the job prior to flushing anything to disk not to get confused with new files 
+                  List<IDelta> moduleWideStaleFiles = sfm.getModuleWideDelta();
+                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(moduleWideStaleFiles))));
+                }
+
                 // flush stream handlers 
                 if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
-                    for (FileProcessor fp : ListSequence.fromList(fileProcessors2)) {
-                      fp.flushChanges();
+                    for (ModuleStaleFileManager sfm : CollectionSequence.fromCollection(moduleStaleFilesMap.values())) {
+                      sfm.flushChanges();
                     }
                   }
                 }))) {
@@ -369,8 +394,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 // output result 
                 for (GResource resource : SetSequence.fromSet(MapSequence.fromMap(deltas2).keySet())) {
-                  Iterable<IDelta> delta = MapSequence.fromMap(deltas2).get(resource);
-                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(delta, resource.module(), resource.model()))));
+                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(MapSequence.fromMap(deltas2).get(resource).getDelta(), resource.module(), resource.model()))));
                 }
               } catch (InterruptedException ex) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
@@ -382,7 +406,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_21gswx_a0b);
               } finally {
                 tgEngine.shutdown();
-                subProgress_n0a0b.done();
+                subProgress_p0a0b.done();
               }
             default:
               progressMonitor.done();

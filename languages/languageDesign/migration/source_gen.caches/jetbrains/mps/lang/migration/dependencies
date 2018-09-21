@@ -12,6 +12,8 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.migration.MigrationDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" />

@@ -30,6 +30,4 @@ public class SplitCommandInParts_Test extends TestCase {
   public void test_quotsInCommandEnd() throws Exception {
     Assert.assertTrue(Arrays.equals(Sequence.fromIterable(ProcessHandlerBuilder.splitCommandInParts("-Dxxx=xxx -Dquoted=\\\"Quoted!\\\"")).toGenericArray(String.class), new String[]{"-Dxxx=xxx", "-Dquoted=\"Quoted!\""}));
   }
-  public SplitCommandInParts_Test() {
-  }
 }

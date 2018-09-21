@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.generator.IModifiableGenerationSettings.Listener;
 import jetbrains.mps.util.annotation.ToRemove;
 
 public class GenerationSettingsProvider implements CoreComponent {
@@ -39,6 +40,27 @@ public class GenerationSettingsProvider implements CoreComponent {
 
   public IModifiableGenerationSettings getGenerationSettings () {
     return myGenerationSettings;
+  }
+
+  /**
+   * Handy null-safe shorthand for {@code getGenerationSettings().addListener()}
+   * Note, if there's no settings, doesn't record the listener to add one later once settings become available.
+   * If such functionality required, it's easy to add. Didn't add it right away as there's always settings
+   * instance in MPS these days.
+   */
+  public void addSettingsListener(Listener listener) {
+    if (myGenerationSettings != null) {
+      myGenerationSettings.addListener(listener);
+    }
+  }
+
+  /**
+   * Handy null-safe shorthand for {@code getGenerationSettings().removeListener()}
+   */
+  public void removeSettingsListener(Listener listener) {
+    if (myGenerationSettings != null) {
+      myGenerationSettings.removeListener(listener);
+    }
   }
 
   @Override

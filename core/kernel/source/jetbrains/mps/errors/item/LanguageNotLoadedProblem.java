@@ -48,7 +48,7 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
     return err;
   }
 
-  public String getIssueKind() {
-    return "language not loaded (dependency problem)";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.ENVIRONMENT_PROBLEM.deriveItemKind("language not loaded, dependency problem?");
   }
 }

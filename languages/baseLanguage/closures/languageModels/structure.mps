@@ -118,9 +118,6 @@
       <ref role="PrY4T" to="tpck:hOwnYed" resolve="IDeprecatable" />
     </node>
     <node concept="asaX9" id="hPBm5_Y" role="lGtFl" />
-    <node concept="PrWs8" id="1653mnvAMSu" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="htbVj4_">
     <property role="R5$K7" value="false" />
@@ -185,9 +182,6 @@
       <property role="IQ2ns" value="1199711344856" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1653mnvB2yS" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hun63U2">
     <property role="R5$K7" value="false" />
@@ -214,9 +208,6 @@
     <property role="34LRSv" value="? &lt;name&gt;" />
     <property role="EcuMT" value="1203252195462" />
     <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-    <node concept="PrWs8" id="1653mnvAOYm" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hFwNq1q">
     <property role="TrG5h" value="PairOfInts" />
@@ -280,52 +271,6 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hT9Nvvb">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="unrestricted closure literal" />
-    <property role="TrG5h" value="UnrestrictedClosureLiteral" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="{ ==&gt; &lt;body&gt; }" />
-    <property role="EcuMT" value="1229598881739" />
-    <ref role="1TJDcQ" node="htbVj4_" resolve="ClosureLiteral" />
-  </node>
-  <node concept="1TIwiD" id="hT9NYQp">
-    <property role="TrG5h" value="ClosureControlStatement" />
-    <property role="2_RsDV" value="none" />
-    <property role="EcuMT" value="1229599010201" />
-    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="1TJgyj" id="hTbD_z8" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="controlMethod" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1229629839560" />
-      <ref role="20lvS9" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="hVPkIc7" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="controlClosure" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1232476496647" />
-      <ref role="20lvS9" node="hT9Oogt" resolve="ControlClosureLiteral" />
-    </node>
-    <node concept="1TJgyj" id="hTbDZZx" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="actualParameter" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="1229629947873" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB6D0" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="hT9Oogt">
-    <property role="TrG5h" value="ControlClosureLiteral" />
-    <property role="2_RsDV" value="none" />
-    <property role="EcuMT" value="1229599114269" />
-    <ref role="1TJDcQ" node="hT9Nvvb" resolve="UnrestrictedClosureLiteral" />
-  </node>
   <node concept="1TIwiD" id="hT9QNxK">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ControlAbstractionContainer" />
@@ -337,9 +282,6 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1229600801065" />
       <ref role="20lvS9" node="hT9R82n" resolve="ControlAbstractionDeclaration" />
-    </node>
-    <node concept="PrWs8" id="3QVLcMv2kiC" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="hT9R82n">
@@ -370,23 +312,6 @@
       <ref role="PrY4T" to="tpee:hiAJDhU" resolve="HasAnnotation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hTgmTQ3">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="unrestricted function type" />
-    <property role="TrG5h" value="UnrestrictedFunctionType" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="{ ==&gt; }" />
-    <property role="EcuMT" value="1229708828035" />
-    <ref role="1TJDcQ" node="htajhBZ" resolve="FunctionType" />
-    <node concept="1TJgyj" id="hVqaMsf" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="terminateType" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1232020907791" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hYSg_EC">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -408,9 +333,6 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1235747002942" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="1653mnvANB6" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="4bnBAeByBu4">
@@ -463,9 +385,6 @@
     <property role="TrG5h" value="ClosureLiteralType" />
     <property role="EcuMT" value="1046929382682558545" />
     <ref role="1TJDcQ" node="htajhBZ" resolve="FunctionType" />
-    <node concept="PrWs8" id="U7sbC7HC1i" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="PrWs8" id="U7sbC7HC1n" role="PzmwI">
       <ref role="PrY4T" to="tpee:hzdmp1d" resolve="IInternalType" />
     </node>

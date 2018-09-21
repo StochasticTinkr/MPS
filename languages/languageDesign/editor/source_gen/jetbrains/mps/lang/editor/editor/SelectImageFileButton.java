@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
@@ -57,7 +57,7 @@ public class SelectImageFileButton extends JButton {
             }
           });
 
-          AbstractModule module = (AbstractModule) SNodeOperations.getModel(myNode).getModule();
+          SModule module = SNodeOperations.getModel(myNode).getModule();
           MacroHelper macroHelper = MacrosFactory.forModule(module);
           if (macroHelper != null) {
             filename.value = macroHelper.expandPath(filename.value);

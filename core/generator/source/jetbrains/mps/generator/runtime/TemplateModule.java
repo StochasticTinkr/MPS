@@ -61,15 +61,4 @@ public interface TemplateModule extends GeneratorRuntime {
   Collection<SLanguage> getTargetLanguages();
 
   String getAlias();
-
-  /**
-   * PROVISIONAL CODE, supports migration from fully-reflective access to GeneratedQueries class
-   * to compiled access, when TemplateModel needs to answer with GQP. TemplateModel class
-   * generated with 3.4 would use default TMB implementation, which needs to load class without access to SModule
-   * as it used to do in j.m.utul.QueriesGenerated, hence exposed the mechanism to load a class.
-   * Access class from the given runtime, generally {@link ClassLoader#loadClass(String)}
-   * @throws ClassNotFoundException
-   * @since 3.5
-   */
-  Class<?> loadClass(String qualifiedName) throws ClassNotFoundException;
 }

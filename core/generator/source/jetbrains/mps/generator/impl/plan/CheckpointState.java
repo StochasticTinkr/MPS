@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,9 @@ public class CheckpointState {
     }
     // XXX this is dubious approach, implemented just for investigation purposes
     //     Likely, we shall keep information about copied nodes inside MM or its replacement, rather than walk nodes and match by id.
+    // FIXME Likely, shall not mix (ModelTransitions->TransitionTrace) into  (ModelCheckpoints->CheckpointState) as they are for different execution lines
+    //       (one is for checkpoints of active transformation, another to access saved checkpoints). OTOH, TranistionTrace is a nice abstraction, why
+    //       CheckpointState could not use it? See {@link TransitionTrace} javadoc.
     final TransitionTrace tt = new ModelTransitions().loadTransition(getCheckpoint(), getCheckpointModel());
     return myCheckpointModelLookup.getNodes(input.getConcept(), false).stream().filter(n -> inputNodeId.equals(tt.getOrigin(n))).findFirst().orElse(null);
   }

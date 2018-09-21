@@ -32,8 +32,8 @@ public class IncompatibleTargetReportItem extends NodeReportItemBase implements 
     return "incompatible target concept in role \"" + link.getName() + "\": subconcept of \"" + expectedTarget + "\" expected, \"" + foundTarget + "\" found";
   }
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.CONSTRAINTS;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.TARGET_CONCEPT;
   }
 
   public static class IncompatibleContainmentTargetReportItem extends IncompatibleTargetReportItem {

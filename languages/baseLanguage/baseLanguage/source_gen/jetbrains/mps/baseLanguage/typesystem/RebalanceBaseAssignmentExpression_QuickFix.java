@@ -22,7 +22,7 @@ public class RebalanceBaseAssignmentExpression_QuickFix extends QuickFix_Runtime
       SLinkOperations.setTarget(((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("child")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"), ((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("parent")[0]));
       ParenthesisUtil.checkOperationWRTPriority(((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("parent")[0]));
     } else if (SLinkOperations.getTarget(((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("parent")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) == ((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("child")[0])) {
-      SNode paren = SNodeFactoryOperations.replaceWithNewChild(((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("child")[0]), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+      SNode paren = SNodeFactoryOperations.replaceWithNewChild(((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("child")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
       SLinkOperations.setTarget(paren, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), ((SNode) RebalanceBaseAssignmentExpression_QuickFix.this.getField("child")[0]));
     }
   }

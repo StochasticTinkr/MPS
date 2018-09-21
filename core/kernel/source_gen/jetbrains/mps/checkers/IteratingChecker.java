@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
-public class IteratingChecker<O, P, I extends IssueKindReportItem> implements IChecker<O, I> {
+public class IteratingChecker<O, P, I extends IssueKindReportItem> implements IAbstractChecker<O, I> {
 
   public interface IteratorWithProgress<T> extends Iterator<T> {
     /**
@@ -86,9 +86,5 @@ public class IteratingChecker<O, P, I extends IssueKindReportItem> implements IC
       myOrigin.check(next._0(), repository, errorCollector, monitor.subTask((int) next._1(), SubProgressKind.IGNORED));
     }
     monitor.done();
-  }
-  @Override
-  public String getCategory() {
-    return myOrigin.getCategory();
   }
 }

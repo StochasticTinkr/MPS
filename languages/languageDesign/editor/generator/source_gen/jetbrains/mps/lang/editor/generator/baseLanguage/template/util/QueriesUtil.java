@@ -15,10 +15,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.annotation.ToRemove;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -99,28 +95,6 @@ __switch__:
       index++;
     }
     return SPropertyOperations.getString(keyMapDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Action" + index;
-  }
-  /**
-   * 
-   * @deprecated not in use by MPS and unlikely of any use for anyone else. Use relevant genContext operations instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static String getUnicName(String name, SNode root, TemplateQueryContext context) {
-    SNode bigCell = root;
-    Set<String> namesSet = ((Set<String>) context.getStepObject(bigCell));
-    if (namesSet == null) {
-      namesSet = SetSequence.fromSet(new HashSet<String>());
-      context.putStepObject(bigCell, namesSet);
-    }
-    String result = name;
-    int index = 1;
-    while (SetSequence.fromSet(namesSet).contains(result)) {
-      result = name + "_" + index;
-      index++;
-    }
-    SetSequence.fromSet(namesSet).addElement(result);
-    return result;
   }
   public static boolean requiresAutoDeletableStyleAddition(SNode inlineEditorComponent) {
     SNode cellModel_refCell = SNodeOperations.as(SNodeOperations.getParent(inlineEditorComponent), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"));

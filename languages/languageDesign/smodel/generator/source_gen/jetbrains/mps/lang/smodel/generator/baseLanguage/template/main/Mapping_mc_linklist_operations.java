@@ -23,6 +23,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import java.util.Collections;
+import jetbrains.mps.generator.template.IfMacroContext;
 
 @Generated
 public class Mapping_mc_linklist_operations extends MapConfigBase implements TemplateMappingConfiguration {
@@ -58,10 +59,11 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         }
         {
           Collection<SNode> tlist4 = null;
-          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_28_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a4a2a1d));
-          TemplateContext context2 = context1.subContext(null, callInputNode4);
+          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_28_1(new SourceSubstituteMacroNodeContext(context1, callMacro_mvfyrh_b0a0a1a4a2a1d));
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_LinkDeclaration_SLink().apply(context2);
+            tlist4 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -126,13 +128,24 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
         }
         {
           Collection<SNode> tlist7 = null;
-          SNode callInputNode7 = QueriesGenerated.sourceNodeQuery_28_4(new SourceSubstituteMacroNodeContext(context1, includeMacro_mvfyrh_b0a0a1a5a2a2e));
-          TemplateContext context2 = context1.subContext(null, callInputNode7);
-          if (callInputNode7 != null) {
-            tlist7 = new Template_reduce_ConceptDeclaration2SConcept().apply(context2);
+          if (QueriesGenerated.ifMacro_Condition_28_0(new IfMacroContext(context1, ifMacroRef_mvfyrh_b0a0b0f0c0c4))) {
+            Collection<SNode> tlist8 = null;
+            SNode callInputNode8 = QueriesGenerated.sourceNodeQuery_28_4(new SourceSubstituteMacroNodeContext(context1, callMacro_mvfyrh_b0a0a1a1a5a2a2e));
+            TemplateContext context2;
+            context2 = context1.subContext(null, callInputNode8);
+            if (callInputNode8 != null) {
+              tlist8 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context2);
+            }
+            tlist7 = tlist8;
+          } else {
+            final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940cd6167L, "NullLiteral"));
+            try {
+            } finally {
+            }
+            tlist7 = TemplateUtil.singletonList(tnode9);
           }
-          for (SNode child8 : TemplateUtil.asNotNull(tlist7)) {
-            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child8);
+          for (SNode child10 : TemplateUtil.asNotNull(tlist7)) {
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child10);
           }
           // TODO validate child 
         }
@@ -142,9 +155,10 @@ public class Mapping_mc_linklist_operations extends MapConfigBase implements Tem
     }
   }
   private static SNodePointer copySrcMacro_mvfyrh_b0a0c0d0c0b3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "76013687527990377");
-  private static SNodePointer includeMacro_mvfyrh_b0a0a1a4a2a1d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "76013687527990385");
+  private static SNodePointer callMacro_mvfyrh_b0a0a1a4a2a1d = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145292");
   private static SNodePointer copySrcMacro_mvfyrh_b0a0c0d0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6246743999000323226");
   private static SNodePointer switchMacroRef_mvfyrh_b0a0a0a1a4a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6246743999000323236");
   private static SNodePointer templateSwitchNode_mvfyrh_a0a0c0a1a1a4a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1205432344145");
-  private static SNodePointer includeMacro_mvfyrh_b0a0a1a5a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6667900741504103528");
+  private static SNodePointer callMacro_mvfyrh_b0a0a1a1a5a2a2e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145293");
+  private static SNodePointer ifMacroRef_mvfyrh_b0a0b0f0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "347387891234775606");
 }

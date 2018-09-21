@@ -54,7 +54,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ThisNodeExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ThisNodeExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -65,7 +65,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ThisConceptExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ThisConceptExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -76,7 +76,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_SuperNodeExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_SuperNodeExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -87,7 +87,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_SuperConceptExpression().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_SuperConceptExpression().apply(environment, context);
       return tlist1;
     }
   }
@@ -98,7 +98,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_LocalBehaviorMethodCallWithCast().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_LocalBehaviorMethodCallWithCast().apply(environment, context);
       return tlist1;
     }
   }
@@ -109,7 +109,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_BehaviorDescriptor().apply(context);
+      Collection<SNode> result = new Template_BehaviorDescriptor().apply(environment, context);
       return result;
     }
   }
@@ -123,7 +123,7 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
       DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
-      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(context);
+      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(environment, context);
       return result;
     }
   }

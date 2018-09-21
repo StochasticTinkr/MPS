@@ -42,8 +42,9 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressIndicatorListener" />
     <classNode dependClassName="com.intellij.openapi.progress.util.ProgressIndicatorListenerAdapter" />
-    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindowWithNotification" />
+    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />

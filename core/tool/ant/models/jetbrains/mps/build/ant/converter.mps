@@ -2,7 +2,7 @@
 <model ref="r:a5ddf2e2-82ac-4496-924f-5c515b082a89(jetbrains.mps.build.ant.converter)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="gola" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
@@ -32,9 +32,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -444,7 +441,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addFileset" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="7Z_17SWWcxD" role="1B3o_S" />
       <node concept="3cqZAl" id="7Z_17SWWcxF" role="3clF45" />
       <node concept="37vLTG" id="7Z_17SWWcxG" role="3clF46">
@@ -482,7 +478,6 @@
     </node>
     <node concept="2tJIrI" id="3RhXwLD0BdZ" role="jymVt" />
     <node concept="3clFb_" id="6NgXkpAOE4G" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="execute" />
       <property role="DiZV1" value="false" />
@@ -1008,7 +1003,6 @@
         <ref role="3uigEE" to="qy5u:~FileUtils" resolve="FileUtils" />
       </node>
       <node concept="3clFb_" id="2fW_UHbC9$J" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getDefaultEncoding" />
         <property role="DiZV1" value="false" />
@@ -1031,7 +1025,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="2fW_UHbCaJ9" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="copyFile" />
         <property role="DiZV1" value="false" />

@@ -195,6 +195,4 @@ public class Set_Test extends Util_Test {
       // expected exception 
     }
   }
-  public Set_Test() {
-  }
 }

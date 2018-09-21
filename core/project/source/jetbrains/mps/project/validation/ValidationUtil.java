@@ -17,8 +17,8 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ModelReportItem;
-import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -49,13 +49,11 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -74,12 +72,10 @@ import java.util.Set;
 
 public class ValidationUtil {
 
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
-    for (SNode root : roots) {
+  public static <O, I extends IssueKindReportItem> void runChecker(IChecker<O, I> checker, Iterable<O> toCheck, SRepository repository, Processor<? super I> processor) {
+    for (O root : toCheck) {
       EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-      IChecker.AbstractRootChecker.wrapToRootChecker(new StructureChecker(false, true, true, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
+      checker.check(root, repository, nodeReportItem -> {
         if (!processor.process(nodeReportItem)) {
           progressMonitor.cancel();
         }
@@ -87,17 +83,7 @@ public class ValidationUtil {
     }
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  public static void validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
-    EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-    new StructureChecker(false, true, true, true).check(node, node.getModel().getRepository(), nodeReportItem -> {
-      if (!processor.process(nodeReportItem)) {
-        progressMonitor.cancel();
-      }
-    }, progressMonitor);
-  }
-
+ // is this method called from model checker ?
   public static void validateModel(@NotNull final SModel model, @NotNull Processor<? super ModelReportItem> processor) {
     final SRepository repository = model.getRepository();
     if (repository != null) {

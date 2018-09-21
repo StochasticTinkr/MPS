@@ -15,7 +15,6 @@
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
   <dependency className="jetbrains.mps.scope.DelegatingScope" file="DelegatingScope.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -35,6 +34,7 @@
   </dependency>
   <dependency className="jetbrains.mps.scope.ErrorScope" file="ErrorScope.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.scope.EmptyScope" />
   </dependency>
   <dependency className="jetbrains.mps.scope.FilteringByConceptScope" file="FilteringByConceptScope.java">

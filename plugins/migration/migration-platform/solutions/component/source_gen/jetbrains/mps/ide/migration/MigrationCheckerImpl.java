@@ -34,7 +34,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.project.validation.StructureChecker;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
@@ -45,6 +44,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -155,7 +155,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
             // find missing concept features when concept's not missing 
             for (EditableSModel model : ListSequence.fromList(models)) {
               final Wrappers._boolean stop = new Wrappers._boolean(false);
-              IChecker.AbstractModelChecker<NodeReportItem> checker = IChecker.AbstractModelChecker.wrapToModelChecker(IChecker.AbstractRootChecker.wrapToRootChecker((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(false, true, false, true)));
+              IChecker.AbstractModelChecker<NodeReportItem> checker = new StructureChecker(false, true, false, true).asModelChecker();
               checker.check(model, myProject.getRepository(), new Consumer<NodeReportItem>() {
                 public void consume(NodeReportItem vp) {
                   if (!(vp instanceof UnresolvedReferenceReportItem)) {
@@ -216,15 +216,16 @@ public class MigrationCheckerImpl implements MigrationChecker {
 
         List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
         {
-          final SearchScope scope = CommandUtil.createScope(modules);
+          SearchScope scope_9mxawj_j0a0a8 = CommandUtil.createScope(modules);
+          final SearchScope scope_9mxawj_j0a0a8_0 = new EditableFilteringScope(scope_9mxawj_j0a0a8);
           QueryExecutionContext context = new QueryExecutionContext() {
             public SearchScope getDefaultSearchScope() {
-              return scope;
+              return scope_9mxawj_j0a0a8_0;
             }
           };
-          for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), false)).where(new IWhereFilter<SNode>() {
+          for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation_old"), false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return ((boolean) (Boolean) BHReflection.invoke0(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), SMethodTrimmedId.create("showInResults", null, "29O0pTxWdmG")));
+              return ((boolean) (Boolean) BHReflection.invoke0(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation_old"), SMethodTrimmedId.create("showInResults", null, "29O0pTxWdmG")));
             }
           })) {
             if (!(processor.process(new MigrateManually(ann)))) {

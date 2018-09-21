@@ -2,15 +2,10 @@
 <model ref="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,14 +13,10 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
-    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
-    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -241,6 +232,7 @@
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
+        <child id="8528336319562672595" name="imports" index="3yKHlx" />
       </concept>
       <concept id="1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" flags="lg" index="1hA7zw">
         <property id="1139535298778" name="actionId" index="1hAc7j" />
@@ -286,6 +278,10 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1174088067129" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary" flags="ng" index="1t6y$C" />
+      <concept id="5730897613506180559" name="jetbrains.mps.lang.editor.structure.CellActionMapImportWildcardSelector" flags="ng" index="1uCOzb" />
+      <concept id="5730897613507860227" name="jetbrains.mps.lang.editor.structure.CellActionMapImportSelectorByActionId" flags="ng" index="1uNiC7">
+        <property id="5730897613507860230" name="actionId" index="1uNiC2" />
+      </concept>
       <concept id="4056398722183895535" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_SubMenu" flags="ng" index="1vlq3a">
         <child id="5692353713941631155" name="textFunction" index="1hCDOS" />
         <child id="4056398722183895554" name="items" index="1vlqcB" />
@@ -298,6 +294,10 @@
         <child id="1180615838667" name="postfixesFunction" index="3yc0Fp" />
       </concept>
       <concept id="1180616057533" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" flags="in" index="3ycQeJ" />
+      <concept id="8528336319562672599" name="jetbrains.mps.lang.editor.structure.CellActionMapImport" flags="ng" index="3yKHl_">
+        <reference id="8528336319562672600" name="cellActionMap" index="3yKHlE" />
+        <child id="5730897613507031771" name="selector" index="1uG4Zv" />
+      </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
@@ -6741,6 +6741,404 @@
       <node concept="3F0A7n" id="6BUu6R_5MGq" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5DMYqHh8O6H">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <ref role="1XX52x" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="3EZMnI" id="5DMYqHh8O6J" role="2wV5jI">
+      <node concept="3F0ifn" id="5DMYqHh8O6Q" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map that imports BACKSPACE and defines DELETE" />
+        <ref role="1ERwB7" node="5DMYqHh8LF5" resolve="ActionMap_DefinesDeleteImportsBackspace" />
+      </node>
+      <node concept="3F0ifn" id="5DMYqHh8O6T" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map that imports DELETE, but not BACKSPACE" />
+        <ref role="1ERwB7" node="5DMYqHh8O0E" resolve="ActionMap_ImportsDelete" />
+      </node>
+      <node concept="3F0ifn" id="2oeJbOGHKr4" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map that imports DELETE, but overrides it" />
+        <ref role="1ERwB7" node="2oeJbOGHJq_" resolve="ActionMap_OverridesDelete" />
+      </node>
+      <node concept="3EZMnI" id="5DMYqHh8O70" role="3EZMnx">
+        <node concept="2iRfu4" id="5DMYqHh8O71" role="2iSdaV" />
+        <node concept="3F0ifn" id="5DMYqHh8O6W" role="3EZMnx">
+          <property role="3F0ifm" value="property value =" />
+        </node>
+        <node concept="3F0A7n" id="5DMYqHh8O7b" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:5DMYqHh8L$N" resolve="result" />
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="5DMYqHh8O6M" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="5DMYqHh8L$$">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMap_DefinesBackspace" />
+    <ref role="1h_SK9" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="1hA7zw" id="5DMYqHh8L$_" role="1h_SK8">
+      <property role="1hAc7j" value="backspace_action_id" />
+      <node concept="1hAIg9" id="5DMYqHh8L$A" role="1hA7z_">
+        <node concept="3clFbS" id="5DMYqHh8L$B" role="2VODD2">
+          <node concept="3clFbF" id="5DMYqHh8MUE" role="3cqZAp">
+            <node concept="37vLTI" id="5DMYqHh8NM3" role="3clFbG">
+              <node concept="Xl_RD" id="5DMYqHh8NOo" role="37vLTx">
+                <property role="Xl_RC" value="BACKSPACE" />
+              </node>
+              <node concept="2OqwBi" id="5DMYqHh8N1I" role="37vLTJ">
+                <node concept="0IXxy" id="5DMYqHh8MUD" role="2Oq$k0" />
+                <node concept="3TrcHB" id="5DMYqHh8NaK" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:5DMYqHh8L$N" resolve="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2oeJbOGHIkf">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMap_DefinesDelete" />
+    <ref role="1h_SK9" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="1hA7zw" id="2oeJbOGHIkg" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2oeJbOGHIkh" role="1hA7z_">
+        <node concept="3clFbS" id="2oeJbOGHIki" role="2VODD2">
+          <node concept="3clFbF" id="2oeJbOGHImJ" role="3cqZAp">
+            <node concept="37vLTI" id="2oeJbOGHJee" role="3clFbG">
+              <node concept="Xl_RD" id="2oeJbOGHJgv" role="37vLTx">
+                <property role="Xl_RC" value="DELETE-1" />
+              </node>
+              <node concept="2OqwBi" id="2oeJbOGHItN" role="37vLTJ">
+                <node concept="0IXxy" id="2oeJbOGHImI" role="2Oq$k0" />
+                <node concept="3TrcHB" id="2oeJbOGHIAR" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:5DMYqHh8L$N" resolve="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="5DMYqHh8LF5">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMap_DefinesDeleteImportsBackspace" />
+    <ref role="1h_SK9" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="1hA7zw" id="5DMYqHh8LFl" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="5DMYqHh8LFm" role="1hA7z_">
+        <node concept="3clFbS" id="5DMYqHh8LFn" role="2VODD2">
+          <node concept="3clFbF" id="5DMYqHh8LF$" role="3cqZAp">
+            <node concept="37vLTI" id="5DMYqHh8MFy" role="3clFbG">
+              <node concept="Xl_RD" id="5DMYqHh8MLZ" role="37vLTx">
+                <property role="Xl_RC" value="DELETE" />
+              </node>
+              <node concept="2OqwBi" id="5DMYqHh8LMC" role="37vLTJ">
+                <node concept="0IXxy" id="5DMYqHh8LFz" role="2Oq$k0" />
+                <node concept="3TrcHB" id="5DMYqHh8M4f" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:5DMYqHh8L$N" resolve="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3yKHl_" id="5DMYqHh8LFe" role="3yKHlx">
+      <ref role="3yKHlE" node="5DMYqHh8L$$" resolve="ActionMap_DefinesBackspace" />
+      <node concept="1uCOzb" id="5DMYqHh8LFi" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="5DMYqHh8O0E">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMap_ImportsDelete" />
+    <ref role="1h_SK9" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="3yKHl_" id="5DMYqHh8O0F" role="3yKHlx">
+      <ref role="3yKHlE" node="5DMYqHh8LF5" resolve="ActionMap_DefinesDeleteImportsBackspace" />
+      <node concept="1uNiC7" id="5DMYqHh8O0J" role="1uG4Zv">
+        <property role="1uNiC2" value="delete_action_id" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2oeJbOGHJq_">
+    <property role="3GE5qa" value="actionMapImports.deleteBackspace" />
+    <property role="TrG5h" value="ActionMap_OverridesDelete" />
+    <ref role="1h_SK9" to="68nn:5DMYqHh8L$r" resolve="ActionMapDeleteBackspaceTester" />
+    <node concept="1hA7zw" id="2oeJbOGHJqH" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2oeJbOGHJqI" role="1hA7z_">
+        <node concept="3clFbS" id="2oeJbOGHJqJ" role="2VODD2">
+          <node concept="3clFbF" id="2oeJbOGHJqW" role="3cqZAp">
+            <node concept="37vLTI" id="2oeJbOGHKip" role="3clFbG">
+              <node concept="Xl_RD" id="2oeJbOGHKkE" role="37vLTx">
+                <property role="Xl_RC" value="DELETE-2" />
+              </node>
+              <node concept="2OqwBi" id="2oeJbOGHJy0" role="37vLTJ">
+                <node concept="0IXxy" id="2oeJbOGHJqV" role="2Oq$k0" />
+                <node concept="3TrcHB" id="2oeJbOGHJF2" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:5DMYqHh8L$N" resolve="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3yKHl_" id="2oeJbOGHJqA" role="3yKHlx">
+      <ref role="3yKHlE" node="2oeJbOGHIkf" resolve="ActionMap_DefinesDelete" />
+      <node concept="1uCOzb" id="2oeJbOGHJqE" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1hkJY7gLZCc">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <ref role="1XX52x" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3EZMnI" id="1hkJY7gLZCh" role="2wV5jI">
+      <node concept="2iRkQZ" id="1hkJY7gLZCi" role="2iSdaV" />
+      <node concept="3F0ifn" id="1hkJY7gLZCe" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 1, which defines DELETE and INSERT actions" />
+        <ref role="1ERwB7" node="1hkJY7gLVzA" resolve="IndividualImports_Map1" />
+      </node>
+      <node concept="3F0ifn" id="1hkJY7gLZCn" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 2, which imports the INSERT action from action map 1" />
+        <ref role="1ERwB7" node="1hkJY7gLZBX" resolve="IndividualImports_Map2" />
+      </node>
+      <node concept="3F0ifn" id="1hkJY7gMVKp" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 3, which imports the INSERT action from action map 2" />
+        <ref role="1ERwB7" node="1hkJY7gMVKi" resolve="IndividualImports_Map3" />
+      </node>
+      <node concept="3F0ifn" id="2fdemSsU2I0" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 4, which imports all actions from action map 2" />
+        <ref role="1ERwB7" node="3XXPjz_J_H4" resolve="IndividualImports_Map4" />
+      </node>
+      <node concept="3F0ifn" id="2fdemSsVPaw" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 5, which imports all actions from action map 1" />
+        <ref role="1ERwB7" node="2fdemSsVP8H" resolve="IndividualImports_Map5" />
+      </node>
+      <node concept="3F0ifn" id="2fdemSsVPaE" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 6, which imports the INSERT action from action map 5" />
+        <ref role="1ERwB7" node="2fdemSsVPap" resolve="IndividualImports_Map6" />
+      </node>
+      <node concept="3EZMnI" id="1hkJY7gLZCz" role="3EZMnx">
+        <node concept="2iRfu4" id="1hkJY7gLZC$" role="2iSdaV" />
+        <node concept="3F0ifn" id="1hkJY7gLZCu" role="3EZMnx">
+          <property role="3F0ifm" value="property value:" />
+        </node>
+        <node concept="3F0A7n" id="1hkJY7gLZCJ" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:1hkJY7gLVzQ" resolve="result" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="1hkJY7gLVzA">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map1" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="1hA7zw" id="1hkJY7gLVzB" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="1hkJY7gLVzC" role="1hA7z_">
+        <node concept="3clFbS" id="1hkJY7gLVzD" role="2VODD2">
+          <node concept="3clFbF" id="1hkJY7gLVPp" role="3cqZAp">
+            <node concept="37vLTI" id="1hkJY7gLWKI" role="3clFbG">
+              <node concept="2OqwBi" id="1hkJY7gLVWt" role="37vLTJ">
+                <node concept="0IXxy" id="1hkJY7gLVPo" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1hkJY7gLW5j" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:1hkJY7gLVzQ" resolve="result" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="1hkJY7gLXsC" role="37vLTx">
+                <property role="Xl_RC" value="DELETE-1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="1hkJY7gLX_a" role="1h_SK8">
+      <property role="1hAc7j" value="insert_action_id" />
+      <node concept="1hAIg9" id="1hkJY7gLX_b" role="1hA7z_">
+        <node concept="3clFbS" id="1hkJY7gLX_c" role="2VODD2">
+          <node concept="3clFbF" id="1hkJY7gLXME" role="3cqZAp">
+            <node concept="37vLTI" id="1hkJY7gLZge" role="3clFbG">
+              <node concept="Xl_RD" id="1hkJY7gLZmF" role="37vLTx">
+                <property role="Xl_RC" value="INSERT-1" />
+              </node>
+              <node concept="2OqwBi" id="1hkJY7gLXTI" role="37vLTJ">
+                <node concept="0IXxy" id="1hkJY7gLXMD" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1hkJY7gLYaV" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:1hkJY7gLVzQ" resolve="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="1hkJY7gLZBX">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map2" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3yKHl_" id="1hkJY7gLZBY" role="3yKHlx">
+      <ref role="3yKHlE" node="1hkJY7gLVzA" resolve="IndividualImports_Map1" />
+      <node concept="1uNiC7" id="1hkJY7gNOvV" role="1uG4Zv">
+        <property role="1uNiC2" value="insert_action_id" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="1hkJY7gMVKi">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map3" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3yKHl_" id="1hkJY7gMVKj" role="3yKHlx">
+      <ref role="3yKHlE" node="1hkJY7gLZBX" resolve="IndividualImports_Map2" />
+      <node concept="1uNiC7" id="1hkJY7gNOvX" role="1uG4Zv">
+        <property role="1uNiC2" value="insert_action_id" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3XXPjz_J_H4">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map4" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3yKHl_" id="3XXPjz_J_H5" role="3yKHlx">
+      <ref role="3yKHlE" node="1hkJY7gLZBX" resolve="IndividualImports_Map2" />
+      <node concept="1uCOzb" id="3XXPjz_J_H9" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2fdemSsVP8H">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map5" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3yKHl_" id="2fdemSsVP8I" role="3yKHlx">
+      <ref role="3yKHlE" node="1hkJY7gLVzA" resolve="IndividualImports_Map1" />
+      <node concept="1uCOzb" id="2fdemSsVP8M" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2fdemSsVPap">
+    <property role="3GE5qa" value="actionMapImports.individual" />
+    <property role="TrG5h" value="IndividualImports_Map6" />
+    <ref role="1h_SK9" to="68nn:1hkJY7gLVzP" resolve="ActionMapIndividualImportTester" />
+    <node concept="3yKHl_" id="2fdemSsVPaq" role="3yKHlx">
+      <ref role="3yKHlE" node="2fdemSsVP8H" resolve="IndividualImports_Map5" />
+      <node concept="1uNiC7" id="2fdemSsVPau" role="1uG4Zv">
+        <property role="1uNiC2" value="insert_action_id" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3Ds1Q8AqfoH">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMap1" />
+    <ref role="1h_SK9" to="68nn:3Ds1Q8AqcM3" resolve="ActionMapImportTester" />
+    <node concept="1hA7zw" id="3Ds1Q8AqfoI" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="3Ds1Q8AqfoJ" role="1hA7z_">
+        <node concept="3clFbS" id="3Ds1Q8AqfoK" role="2VODD2">
+          <node concept="3clFbF" id="3Ds1Q8AqfoX" role="3cqZAp">
+            <node concept="2OqwBi" id="3Ds1Q8Aqg8D" role="3clFbG">
+              <node concept="2OqwBi" id="3Ds1Q8Aqfw1" role="2Oq$k0">
+                <node concept="0IXxy" id="3Ds1Q8AqfoW" role="2Oq$k0" />
+                <node concept="3TrcHB" id="3Ds1Q8AqfCT" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:3Ds1Q8AqcM4" resolve="result" />
+                </node>
+              </node>
+              <node concept="tyxLq" id="3Ds1Q8AqgtZ" role="2OqNvi">
+                <node concept="Xl_RD" id="3Ds1Q8Aqgx_" role="tz02z">
+                  <property role="Xl_RC" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3Ds1Q8AqgAX">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMap2" />
+    <ref role="1h_SK9" to="68nn:3Ds1Q8AqcM3" resolve="ActionMapImportTester" />
+    <node concept="3yKHl_" id="3Ds1Q8AqgAY" role="3yKHlx">
+      <ref role="3yKHlE" node="3Ds1Q8AqfoH" resolve="ActionMap1" />
+      <node concept="1uCOzb" id="4Y8fgghhgZ4" role="1uG4Zv" />
+    </node>
+    <node concept="1hA7zw" id="3Ds1Q8AqgB0" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="3Ds1Q8AqgB1" role="1hA7z_">
+        <node concept="3clFbS" id="3Ds1Q8AqgB2" role="2VODD2">
+          <node concept="3clFbF" id="3Ds1Q8AqgBf" role="3cqZAp">
+            <node concept="2OqwBi" id="3Ds1Q8Aqkli" role="3clFbG">
+              <node concept="2OqwBi" id="3Ds1Q8AqgIj" role="2Oq$k0">
+                <node concept="0IXxy" id="3Ds1Q8AqgBe" role="2Oq$k0" />
+                <node concept="3TrcHB" id="3Ds1Q8AqgZy" role="2OqNvi">
+                  <ref role="3TsBF5" to="68nn:3Ds1Q8AqcM4" resolve="result" />
+                </node>
+              </node>
+              <node concept="tyxLq" id="3Ds1Q8AqkCH" role="2OqNvi">
+                <node concept="Xl_RD" id="3Ds1Q8AqkGm" role="tz02z">
+                  <property role="Xl_RC" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3Ds1Q8AqkN4">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMap3" />
+    <ref role="1h_SK9" to="68nn:3Ds1Q8AqcM3" resolve="ActionMapImportTester" />
+    <node concept="3yKHl_" id="3Ds1Q8AqkN5" role="3yKHlx">
+      <ref role="3yKHlE" node="3Ds1Q8AqfoH" resolve="ActionMap1" />
+      <node concept="1uCOzb" id="4Y8fgghhgUI" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3Ds1Q8AqkPF">
+    <property role="3GE5qa" value="actionMapImports" />
+    <property role="TrG5h" value="ActionMap4" />
+    <ref role="1h_SK9" to="68nn:3Ds1Q8AqcM3" resolve="ActionMapImportTester" />
+    <node concept="3yKHl_" id="3Ds1Q8AqkPG" role="3yKHlx">
+      <ref role="3yKHlE" node="3Ds1Q8AqgAX" resolve="ActionMap2" />
+      <node concept="1uCOzb" id="4Y8fgghhgUE" role="1uG4Zv" />
+    </node>
+    <node concept="3yKHl_" id="3Ds1Q8AqkPL" role="3yKHlx">
+      <ref role="3yKHlE" node="3Ds1Q8AqkN4" resolve="ActionMap3" />
+      <node concept="1uCOzb" id="4Y8fgghhgUG" role="1uG4Zv" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4Y8fggh5JEG">
+    <property role="3GE5qa" value="actionMapImports" />
+    <ref role="1XX52x" to="68nn:3Ds1Q8AqcM3" resolve="ActionMapImportTester" />
+    <node concept="3EZMnI" id="4Y8fggh5JEI" role="2wV5jI">
+      <node concept="3F0ifn" id="4Y8fggh5JEP" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 1, which defines a DELETE action" />
+        <ref role="1ERwB7" node="3Ds1Q8AqfoH" resolve="ActionMap1" />
+      </node>
+      <node concept="3F0ifn" id="4Y8fggh5JES" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 2, which imports action map 1 and overrides the DELETE action" />
+        <ref role="1ERwB7" node="3Ds1Q8AqgAX" resolve="ActionMap2" />
+      </node>
+      <node concept="3F0ifn" id="4Y8fggh5JEV" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 3, which imports action map 1" />
+        <ref role="1ERwB7" node="3Ds1Q8AqkN4" resolve="ActionMap3" />
+      </node>
+      <node concept="3F0ifn" id="4Y8fggh5JEZ" role="3EZMnx">
+        <property role="3F0ifm" value="cell with action map 4, which imports action maps 2 and 3" />
+        <ref role="1ERwB7" node="3Ds1Q8AqkPF" resolve="ActionMap4" />
+      </node>
+      <node concept="3EZMnI" id="4Y8fggh5JFa" role="3EZMnx">
+        <node concept="VPM3Z" id="4Y8fggh5JFc" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="4Y8fggh5JFe" role="3EZMnx">
+          <property role="3F0ifm" value="property value =" />
+        </node>
+        <node concept="3F0A7n" id="4Y8fggh5JFr" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:3Ds1Q8AqcM4" resolve="result" />
+        </node>
+        <node concept="2iRfu4" id="4Y8fggh5JFf" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="4Y8fggh5JEL" role="2iSdaV" />
     </node>
   </node>
 </model>

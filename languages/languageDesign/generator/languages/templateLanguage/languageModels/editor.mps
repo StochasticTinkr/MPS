@@ -4,9 +4,9 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -215,6 +215,7 @@
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -297,6 +298,7 @@
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
+        <property id="1088613081987" name="vertical" index="1QpmdY" />
         <child id="1145918517974" name="alternationCondition" index="3e4ffs" />
         <child id="1088612958265" name="ifTrueCellModel" index="1QoS34" />
         <child id="1088612973955" name="ifFalseCellModel" index="1QoVPY" />
@@ -3911,16 +3913,37 @@
             <property role="2UZ17L" value="punctuation" />
           </node>
         </node>
-        <node concept="1iCGBv" id="hpa_$zV" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;choose template&gt;" />
-          <ref role="1NtTu8" to="tpf8:h1fMUV2" resolve="template" />
-          <node concept="1sVBvm" id="hpa_$zW" role="1sWHZn">
-            <node concept="3F0A7n" id="hpa_$zX" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <ref role="1k5W1q" node="hoxIDwG" resolve="reference" />
-              <node concept="2SqB2G" id="6__PySiwm7Q" role="2SqHTX">
-                <property role="TrG5h" value="templateName" />
+        <node concept="1QoScp" id="6JoULz$jqnQ" role="3EZMnx">
+          <property role="1QpmdY" value="true" />
+          <node concept="3F1sOY" id="6JoULz$jqvO" role="1QoS34">
+            <ref role="1NtTu8" to="tpf8:6JoULz$jqnz" resolve="templateCall" />
+          </node>
+          <node concept="pkWqt" id="6JoULz$jqnT" role="3e4ffs">
+            <node concept="3clFbS" id="6JoULz$jqnV" role="2VODD2">
+              <node concept="3clFbF" id="6JoULz$jqvY" role="3cqZAp">
+                <node concept="2OqwBi" id="6JoULz$jrWp" role="3clFbG">
+                  <node concept="2OqwBi" id="6JoULz$jqJy" role="2Oq$k0">
+                    <node concept="pncrf" id="6JoULz$jqvX" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="6JoULz$jrpd" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpf8:6JoULz$jqnz" resolve="templateCall" />
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="6JoULz$jsEL" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1iCGBv" id="hpa_$zV" role="1QoVPY">
+            <property role="1$x2rV" value="&lt;choose template&gt;" />
+            <ref role="1NtTu8" to="tpf8:h1fMUV2" resolve="template" />
+            <node concept="1sVBvm" id="hpa_$zW" role="1sWHZn">
+              <node concept="3F0A7n" id="hpa_$zX" role="2wV5jI">
+                <property role="1Intyy" value="true" />
+                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                <ref role="1k5W1q" node="hoxIDwG" resolve="reference" />
+                <node concept="2SqB2G" id="6__PySiwm7Q" role="2SqHTX">
+                  <property role="TrG5h" value="templateName" />
+                </node>
               </node>
             </node>
           </node>
@@ -4097,6 +4120,9 @@
         <node concept="11LMrY" id="1x7fy1yccfa" role="3F10Kt" />
         <node concept="3CIbrd" id="1x7fy1yccfb" role="3F10Kt">
           <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3nxI2P" id="za$VMviYPh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
         <node concept="A1WHu" id="6GI$fc4d6MY" role="3vIgyS">
           <ref role="A1WHt" node="6GI$fc4bPsN" resolve="ReplaceNodeMacro" />
@@ -7536,6 +7562,27 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6JoULz$jqfJ">
+    <property role="3GE5qa" value="rule" />
+    <ref role="1XX52x" to="tpf8:6JoULz$jqfj" resolve="TemplateCall" />
+    <node concept="3EZMnI" id="6JoULz$jqfL" role="2wV5jI">
+      <node concept="l2Vlx" id="6JoULz$jqfM" role="2iSdaV" />
+      <node concept="1iCGBv" id="6JoULz$jqfN" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;choose template&gt;" />
+        <ref role="1NtTu8" to="tpf8:1vDgt48Nz5N" resolve="template" />
+        <node concept="1sVBvm" id="6JoULz$jqfO" role="1sWHZn">
+          <node concept="3F0A7n" id="6JoULz$jqfP" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1k5W1q" node="hoxIDwG" resolve="reference" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="PMmxH" id="6JoULz$jqfQ" role="3EZMnx">
+        <ref role="PMmxG" node="1vDgt48Nz52" resolve="ITemplateCall_actualArguments" />
       </node>
     </node>
   </node>

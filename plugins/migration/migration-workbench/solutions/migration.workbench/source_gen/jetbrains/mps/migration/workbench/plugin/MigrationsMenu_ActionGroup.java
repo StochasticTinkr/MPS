@@ -6,18 +6,16 @@ import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class MigrationsMenu_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.migration.workbench.plugin.MigrationsMenu_ActionGroup";
   public static final String LABEL_ID_migrations = ID + "migrations";
-  public static final String LABEL_ID_utils = ID + "utils";
   public MigrationsMenu_ActionGroup() {
     super("MigrationsMenu", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.ExecuteMigrationAssistant_Action");
-    MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action");
-    MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action");
+    MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.RunMigrationAssistant_Action");
     MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action");
     {
       LabelledAnchor action = new LabelledAnchor(MigrationsMenu_ActionGroup.LABEL_ID_migrations);
@@ -26,10 +24,14 @@ public class MigrationsMenu_ActionGroup extends GeneratedActionGroup {
       MigrationsMenu_ActionGroup.this.addAction(action);
     }
     {
-      LabelledAnchor action = new LabelledAnchor(MigrationsMenu_ActionGroup.LABEL_ID_utils);
+      GeneratedActionGroup newAction = new MigrationsMenuLegacyCode_ActionGroup();
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-      manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.migration.workbench"));
-      MigrationsMenu_ActionGroup.this.addAction(action);
+      AnAction oldAction = manager.getAction(newAction.getId());
+      if (oldAction == null) {
+        manager.registerAction(newAction.getId(), newAction, PluginId.getId("jetbrains.mps.migration.workbench"));
+        oldAction = newAction;
+      }
+      MigrationsMenu_ActionGroup.this.addAction(oldAction);
     }
   }
 }

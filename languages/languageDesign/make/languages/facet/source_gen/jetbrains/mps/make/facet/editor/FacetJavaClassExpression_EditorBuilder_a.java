@@ -79,7 +79,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
           public EditorCell compute() {
             return new FacetJavaClassExpression_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "facet");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a4b910f856c1c94L, 0x1a4b910f856c1d9fL, "facet"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);

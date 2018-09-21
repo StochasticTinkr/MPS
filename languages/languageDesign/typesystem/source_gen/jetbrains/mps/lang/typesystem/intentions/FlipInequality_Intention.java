@@ -54,13 +54,13 @@ public final class FlipInequality_Intention extends AbstractIntentionDescriptor 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f62956cL, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")), null);
+        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f62956cL, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement")), null);
+        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f62956cL, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31c3185c17a0f767L, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112b37f1b6eL, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement")), null);
+        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112b37f1b6eL, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112b37f1b6eL, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31c3185c17a0f767L, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement")), null);
+        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31c3185c17a0f767L, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"), null);
       } else {
         return;
       }

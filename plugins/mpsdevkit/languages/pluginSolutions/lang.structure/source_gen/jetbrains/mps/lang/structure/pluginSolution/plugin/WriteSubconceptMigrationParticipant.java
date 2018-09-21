@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Objects;
@@ -100,10 +101,11 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
     }
 
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_8k3jue_c0m = CommandUtil.createScope(searchScope);
+      final SearchScope scope_8k3jue_c0m_0 = new EditableFilteringScope(scope_8k3jue_c0m);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_8k3jue_c0m_0;
         }
       };
       List<SNode> subConcepts = ListSequence.fromList(new ArrayList<SNode>());

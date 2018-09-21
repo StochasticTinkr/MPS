@@ -155,7 +155,7 @@ public abstract class ReferenceDescriptor {
         return new ModelPlusImportedScope(getModel(), false, myLinkTarget);
       } catch (Exception t) {
         LOG.error(t, myContextNode);
-        return new ErrorScope("can't create search scope for link `" + myReferenceLink + "' in '" + myNodeConcept.getName() + "'");
+        return new ErrorScope("can't create search scope for link `" + myReferenceLink + "' in '" + myNodeConcept.getName() + "'", t);
       }
     }
 
@@ -224,30 +224,4 @@ public abstract class ReferenceDescriptor {
     }
   }
 
-  static class ErrorReferenceDescriptor extends ReferenceDescriptor {
-    private final String message;
-
-    public ErrorReferenceDescriptor(String message) {
-      this.message = message;
-    }
-
-    @NotNull
-    @Override
-    public Scope getScope() {
-      return new ErrorScope(message);
-    }
-
-    @Override
-    @Nullable
-    @Deprecated
-    @ToRemove(version = 3.5)
-    public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
-      return null;
-    }
-
-    @Override
-    public ReferenceScopeProvider getScopeProvider() {
-      return null;
-    }
-  }
 }

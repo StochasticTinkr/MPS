@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -61,27 +62,19 @@ public class NodeFactoryManager {
     return createNode(linkTarget, null, enclosingNode, model);
   }
 
-  /**
-   * @deprecated use {@link #createNode(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(asSConcept(nodeConcept), sampleNode, enclosingNode, model);
-  }
-
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<>());
   }
 
   private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,
       Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
-    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, null, false);
-    if (newNode == null) return null;
+    SNode newNode = SModelOperations.createNewNode(model, null, nodeConcept);
+    if (newNode == null) {
+      return null;
+    }
     if (nodeConcept instanceof SInterfaceConcept) {
       return newNode;
     }
-    BHReflection.initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }
@@ -111,15 +104,6 @@ public class NodeFactoryManager {
         }
       }
     }
-  }
-
-  /**
-   * @deprecated use {@link #setupNode(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
-    setupNode(asSConcept(nodeConcept), node, sampleNode, enclosingNode, model);
   }
 
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {

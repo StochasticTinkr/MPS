@@ -101,7 +101,7 @@
       <node id="3597905718825910143" at="59,42,60,143" concept="8" />
       <node id="7544716099134869016" at="64,0,65,0" concept="6" trace="getAvailableOptions#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <node id="4331048896013468563" at="66,0,67,0" concept="6" trace="getChanges#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <node id="8609501485359835999" at="78,139,79,48" concept="8" />
+      <node id="8609501485359835999" at="78,139,79,100" concept="8" />
       <node id="4331048896013476542" at="86,0,87,0" concept="6" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="4331048896013472886" at="87,0,88,0" concept="6" trace="confirm#(nullLorg/jetbrains/mps/openapi/module/SRepository;Ljetbrains/mps/refactoring/participant/RefactoringSession;)V" />
       <node id="4331048896013544239" at="91,0,92,0" concept="6" trace="getId#()Ljava/lang/String;" />
@@ -193,7 +193,7 @@
         <var name="searchScope" id="4331048896013509994" />
         <var name="selectedOptions" id="7544716099134890113" />
       </scope>
-      <scope id="8609501485359821570" at="78,139,79,48" />
+      <scope id="8609501485359821570" at="78,139,79,100" />
       <scope id="4331048896013476542" at="86,0,87,0" />
       <scope id="4331048896013472886" at="87,0,88,0">
         <var name="finalState" id="4331048896013474629" />

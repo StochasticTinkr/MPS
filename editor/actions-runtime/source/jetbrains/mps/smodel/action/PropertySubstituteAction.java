@@ -23,16 +23,23 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
+@Deprecated
+@ToRemove(version = 2018.3)
+//use SPropertySubstituteAction
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyName;
   private String myPropertyValue;
   private PropertySupport myPropertySupport;
   private final EditorMenuTraceInfoImpl myMenuTraceInfo;
 
+  @Deprecated
+  @ToRemove(version = 2018.3)
+//use SPropertySubstituteAction
   public PropertySubstituteAction(SNode sourceNode, String propertyName, String propertyValue) {
     super(null, null, sourceNode);
     SNode propertyDeclaration = new SNodeLegacy(sourceNode).getPropertyDeclaration(propertyName);

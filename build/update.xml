@@ -212,8 +212,8 @@
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2018" minorVersoin="2">
-      <build number="182.1322" version="2018.2">
-        <message>JetBrains MPS 2018.2 is available.</message>
+      <build number="182.1460" version="2018.2.3">
+        <message>JetBrains MPS 2018.2.3 is available.</message>
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
       </build>
     </channel>
@@ -222,9 +222,19 @@
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2018" minorVersoin="2">
-      <build number="182.1322" version="2018.2">
-        <message>JetBrains MPS 2018.2 is available.</message>
+      <build number="182.1460" version="2018.2.3">
+        <message>JetBrains MPS 2018.2.3 is available.</message>
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
+      </build>
+    </channel>
+
+    <channel id="MPS183EAP" name="MPS 2018.3" status="eap"
+             url="https://www.jetbrains.com/mps/download"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2018" minorVersoin="3">
+      <build number="183.544" version="2018.3 EAP2">
+        <message>JetBrains MPS 2018.3 EAP2 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2018.3 EAP+Download+Page" download="true"/>
       </build>
     </channel>
 

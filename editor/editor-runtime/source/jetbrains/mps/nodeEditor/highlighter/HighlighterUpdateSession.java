@@ -21,18 +21,19 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.PriorityComparator;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.nodeEditor.checking.UpdateResult.Completed;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.CancellableReadAction;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -57,28 +58,6 @@ public class HighlighterUpdateSession {
     myAllEditorComponents = allEditorComponents;
     myInspector = inspector;
     myMakeComponent = highlighter.getProject().getComponent(MakeServiceComponent.class);
-  }
-
-  @NotNull
-  private <T> T runLoPrioRead(final Computable<T> computable) {
-    assert !myHighlighter.getProject().getModelAccess().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
-    T result;
-    do {
-      while (myMakeComponent.isSessionActive()) {
-        try {
-          Thread.sleep(600);
-        } catch (InterruptedException ignored) {
-        }
-      }
-      result = new ModelAccessHelper(myHighlighter.getProject().getModelAccess()).runReadAction(() -> {
-        if (myMakeComponent.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) {
-          return null;
-        }
-        return computable.compute();
-      });
-    } while (result == null);
-
-    return result;
   }
 
   private void doUpdate() {
@@ -127,30 +106,50 @@ public class HighlighterUpdateSession {
       final SNode editedNode = component.getEditedNode();
       return editedNode != null && SNodeUtil.isAccessible(editedNode, repository);
     });
-    if (!needsUpdate) return false;
+    if (!needsUpdate) {
+      return false;
+    }
 
     final Set<EditorCheckerWrapper> checkersToRecheck = new LinkedHashSet<>();
     boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
     boolean recreateInspectorMessages =
         myHighlighter.getEditorTracker().isInspector(component) && (mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated());
     editorTracker.markCheckedOnce(component);
-    if (!rootWasCheckedOnce) {
+    // Messages are associated with an editor component. Unlike regular editor, the one of inspector is disposed/re-created for each new selection
+    // therefore we have to re-assign messages for inspector, and that's what recreateInspectorMessages flag indicates.
+    // There's MPS-28277 that has been fixed (e189953f) with checkers telling needsUpdate() true for inspector's EC. However, this leads to constant re-check
+    // even if nothing changes in the model. The fix could be improved (as its comments suggest) by passing context to needsUpdate() that would tell checker
+    // if we truly need to re-check or just care to re-create messages. However, I don't want checker to be aware of inspector and its lifecycle implementation detail
+    // (i.e. inspector is disposed on re-selection), nor to care if checker implementor did respect this case. Therefore, we now force all checkers in case
+    // inspector messages are needed. Indeed rootWasCheckedOnce used to exclude most of the checkers from working with inspector component, now I'm eager to see
+    // if their involvement could cause any issue. Extra time to perform a check has been  addressed with cancellable read actions, so that
+    // model commands could start promptly.
+    if (!rootWasCheckedOnce || recreateInspectorMessages) {
       checkersToRecheck.addAll(myCheckers);
     } else {
-      repository.getModelAccess().runReadAction(() -> {
-        if (myHighlighter.isPausedOrStopping()) return;
+      repository.getModelAccess().runReadAction(new CancellableReadAction() {
+        @Override
+        protected void execute() {
+          if (myHighlighter.isPausedOrStopping()) {
+            return;
+          }
 
-        for (EditorCheckerWrapper checker : myCheckers) {
-          // TODO: pass some context to checker.needsUpdate() method containing recreateInspectorMessages flag.
-          // TODO: to allow checkers to show up in inspector editor properly
-          if (checker.needsUpdate(component)) {
-            checkersToRecheck.add(checker);
+          for (EditorCheckerWrapper checker : myCheckers) {
+            if (checker.needsUpdate(component)) {
+              checkersToRecheck.add(checker);
+              if (isCancelRequested()) {
+                confirmCancel();
+                return;
+              }
+            }
           }
         }
       });
     }
 
-    if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) return false;
+    if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) {
+      return false;
+    }
 
     List<EditorCheckerWrapper> checkersToRecheckList = new ArrayList<>(checkersToRecheck);
     checkersToRecheckList.sort(new PriorityComparator());
@@ -160,40 +159,42 @@ public class HighlighterUpdateSession {
 
   private boolean updateEditor(final EditorComponent editor, final boolean wasCheckedOnce,
       List<EditorCheckerWrapper> checkersToRecheck, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
-    if (editor == null || editor.getRootCell() == null) return false;
+    if (editor == null || editor.getRootCell() == null) {
+      return false;
+    }
 
-    final NodeHighlightManager highlightManager = editor.getHighlightManager();
+    final ModelAccess projectModelAccess = myHighlighter.getProject().getModelAccess();
+    // grabbed a read, a write comes and waits in the queue, but do{}while loops with result == null and write has no chance to get executed.
+    // of course, checkResult == null only in a single case (see HighlighterReadAction#execute()), however, we don't want to give deadlock any chance.
+    assert !projectModelAccess.canRead() : "There's do{}while that could cause a deadlock if invoked from within read";
+
     boolean anyMessageChanged = false;
     for (final EditorCheckerWrapper checker : checkersToRecheck) {
-      UpdateResult checkResult = runLoPrioRead(() -> {
-        if (myHighlighter.isPausedOrStopping()) return UpdateResult.CANCELLED;
-
-        SNode node = editor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
-        if (node == null) {
-          return UpdateResult.CANCELLED;
-        }
-        if (!SNodeUtil.isAccessible(node, editor.getEditorContext().getRepository())) {
-          // asking runLoPrioRead() implementation to re-execute this task later:
-          // editor was not updated in accordance with last modelReload event yet.
-          return null;
-        }
-
-        return checker.withChecker(checker1 -> {
+      UpdateResult checkResult;
+      do {
+        while (myMakeComponent.isSessionActive()) {
           try {
-            return checker1.update(editor, wasCheckedOnce, applyQuickFixes,
-                                   new HighlighterUpdateSessionCancellable(myHighlighter, checker1.toString(), editor));
-          } catch (IndexNotReadyException ex) {
-            highlightManager.clearForOwner(checker1.getEditorMessageOwner(), true);
-            throw ex;
+            Thread.sleep(600);
+          } catch (InterruptedException ignored) {
           }
-        }, UpdateResult.CANCELLED);
-      });
-      if (myHighlighter.isStopping()) return false;
+        }
+        // Important: for CancellableReadAction to work (i.e. to be truly 'cancellable', we have to start it from a non-EDT thread). As commands and most of
+        // write actions are executed in EDT, a highlighter read started from EDT has no chance to receive cancel() request.
+        final HighlighterReadAction ra = new HighlighterReadAction(checker, editor, wasCheckedOnce, applyQuickFixes);
+        // it's not clear whether to use SRepository associated with the editor or the project one. Left project as it was the one in runLoPrioRead()
+        projectModelAccess.runReadAction(ra);
+        checkResult = ra.getUpdateResult();
+      } while (checkResult == null);
+
+      if (myHighlighter.isStopping()) {
+        return false;
+      }
 
       if (checkResult instanceof Completed) {
         Completed completed = (Completed) checkResult;
         if (completed.myMessagesChanged || recreateInspectorMessages) {
           anyMessageChanged = true;
+          final NodeHighlightManager highlightManager = editor.getHighlightManager();
           highlightManager.clearForOwner(checker.getEditorMessageOwner(), false);
           for (EditorMessage message : completed.myMessages) {
             highlightManager.mark(message);
@@ -201,10 +202,12 @@ public class HighlighterUpdateSession {
         }
       }
     }
-    if (myHighlighter.isStopping()) return false;
+    if (myHighlighter.isStopping()) {
+      return false;
+    }
 
     if (anyMessageChanged) {
-      highlightManager.repaintAndRebuildEditorMessages();
+      editor.getHighlightManager().repaintAndRebuildEditorMessages();
       editor.updateStatusBarMessage();
     }
 
@@ -220,5 +223,80 @@ public class HighlighterUpdateSession {
   public void update() {
     doUpdate();
     doneUpdating();
+  }
+
+  private class HighlighterReadAction extends CancellableReadAction implements Cancellable {
+    private final EditorCheckerWrapper myChecker;
+    private final EditorComponent myEditor;
+    private final boolean myWasCheckedOnce;
+    private final boolean myApplyQuickFixes;
+    // initial state corresponds to isCancelRequested() branch, just in case MA cancels this read action prior to execute()
+    private UpdateResult myUpdateResult = UpdateResult.CANCELLED;
+
+    HighlighterReadAction(EditorCheckerWrapper checker, EditorComponent editor, boolean wasCheckedOnce, boolean applyQuickFixes) {
+      myChecker = checker;
+      myEditor = editor;
+      myWasCheckedOnce = wasCheckedOnce;
+      myApplyQuickFixes = applyQuickFixes;
+    }
+
+    /**
+     *
+     * @return null value indicates need to re-run; {@code UpdateResult.CANCELLED} indicates action has not been completed but doesn't need a re-run
+     */
+    public UpdateResult getUpdateResult() {
+      return myUpdateResult;
+    }
+
+    @Override
+    protected void execute() {
+      if (myHighlighter.isPausedOrStopping()) {
+        myUpdateResult = UpdateResult.CANCELLED;
+        return;
+      }
+
+      SNode node = myEditor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
+      if (node == null) {
+        myUpdateResult = UpdateResult.CANCELLED;
+        return;
+      }
+      if (!SNodeUtil.isAccessible(node, myEditor.getEditorContext().getRepository())) {
+        // asking runLoPrioRead() implementation to re-execute this task later:
+        // editor was not updated in accordance with last modelReload event yet.
+        myUpdateResult = null;
+        return;
+      }
+
+      if (isCancelRequested()) {
+        confirmCancel();
+        myUpdateResult = UpdateResult.CANCELLED;
+        return;
+      }
+
+      myUpdateResult = myChecker.withChecker(this::perform, UpdateResult.CANCELLED);
+    }
+
+    UpdateResult perform(EditorChecker checker1) {
+      try {
+        HighlighterUpdateSessionCancellable cancel = new HighlighterUpdateSessionCancellable(this, checker1.toString(), myEditor);
+        return checker1.update(myEditor, myWasCheckedOnce, myApplyQuickFixes, cancel);
+      } catch (IndexNotReadyException ex) {
+        myEditor.getHighlightManager().clearForOwner(checker1.getEditorMessageOwner(), true);
+        throw ex;
+      }
+    }
+
+    @Override
+    public boolean isCancelled() {
+      if (myHighlighter.isPausedOrStopping()) {
+        HighlighterUpdateSessionCancellable.debugReason("highlighter is paused");
+        return true;
+      }
+      if (isCancelRequested()) {
+        HighlighterUpdateSessionCancellable.debugReason("ModelAccess requested cancellation");
+        return true;
+      }
+      return false;
+    }
   }
 }

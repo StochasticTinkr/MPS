@@ -185,8 +185,6 @@ public class IndexedTuples_Test extends TestCase {
     int i = (int) Foo.getTuple()._1();
     Assert.assertSame(22, i);
   }
-  public IndexedTuples_Test() {
-  }
   public Tuples._2<String, Character> toTuple(String s, char c) {
     return MultiTuple.<String,Character>from(s, c);
   }

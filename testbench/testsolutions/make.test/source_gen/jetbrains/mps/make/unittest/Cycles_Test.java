@@ -136,6 +136,4 @@ public class Cycles_Test extends TestCase {
     }, false);
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E"), cd.precursors("E"));
   }
-  public Cycles_Test() {
-  }
 }

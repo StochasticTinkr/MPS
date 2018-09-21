@@ -283,7 +283,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.javadoc", "EmptyBlockDocTag", 0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", 0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13dL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)/4948473272651335344");
     b.version(2);
     return b.create();

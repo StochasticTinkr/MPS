@@ -32,8 +32,8 @@ public class ModuleValidationProblem extends ValidationProblem implements IssueK
   }
 
   @Override
-  public String getIssueKind() {
-    return MODULE_PROPERTIES;
+  public ItemKind getIssueKind() {
+    return MODULE_PROPERTIES.deriveItemKind();
   }
 
   @NotNull

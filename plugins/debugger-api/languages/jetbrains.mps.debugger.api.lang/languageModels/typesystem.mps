@@ -162,16 +162,17 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
-        <child id="1226567214363" name="argument" index="2l6Ag6" />
-      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
     </language>
   </registry>
   <node concept="1YbPZF" id="2cgI0d$wEWC">
@@ -336,9 +337,9 @@
               <node concept="37vLTw" id="3GM_nagTztB" role="2Oq$k0">
                 <ref role="3cqZAo" node="6mRlWa87xRK" resolve="throwables" />
               </node>
-              <node concept="2l5eF5" id="6mRlWa87xRT" role="2OqNvi">
-                <node concept="2c44tf" id="6mRlWa87xRU" role="2l6Ag6">
-                  <node concept="3uibUv" id="6mRlWa87xRV" role="2c44tc">
+              <node concept="TSZUe" id="HQjE4XgDZr" role="2OqNvi">
+                <node concept="2c44tf" id="HQjE4XgDZp" role="25WWJ7">
+                  <node concept="3uibUv" id="HQjE4XgDZq" role="2c44tc">
                     <ref role="3uigEE" to="1l1h:3SnNvqCaJHs" resolve="DebuggerNotPresentException" />
                   </node>
                 </node>

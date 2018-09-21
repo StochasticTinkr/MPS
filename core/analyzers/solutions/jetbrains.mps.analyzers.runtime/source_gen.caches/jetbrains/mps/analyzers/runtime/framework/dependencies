@@ -13,6 +13,7 @@
   </dependency>
   <dependency className="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" file="GeneratedInstruction.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />

@@ -355,9 +355,6 @@
       <property role="IQ2nx" value="1238684351431" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="PrWs8" id="1653mnvB2PM" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gAoxUXw">
     <property role="R5$K7" value="false" />
@@ -514,9 +511,6 @@
     <property role="34LRSv" value="+" />
     <property role="EcuMT" value="1144100932627" />
     <ref role="1TJDcQ" node="gDxHYCE" resolve="AbstractOperationParameter" />
-    <node concept="PrWs8" id="1653mnvB6D1" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gDxLfci">
     <property role="R5$K7" value="false" />
@@ -526,9 +520,6 @@
     <property role="34LRSv" value="root" />
     <property role="EcuMT" value="1144101597970" />
     <ref role="1TJDcQ" node="gDxHYCE" resolve="AbstractOperationParameter" />
-    <node concept="PrWs8" id="1653mnvAMDC" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gDxMEHC">
     <property role="R5$K7" value="false" />
@@ -544,9 +535,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1207343664468" />
       <ref role="20lvS9" node="hzMxujR" resolve="IRefConceptArg" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAlHo" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="gD$rokk">
@@ -618,9 +606,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1145404616321" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB5WU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="PrWs8" id="5HgiwiAy_7A" role="PzmwI">
       <ref role="PrY4T" to="tpee:1wHCnsn58oY" resolve="IBinaryLike" />
@@ -723,9 +708,6 @@
       <property role="20lbJX" value="1..n" />
       <property role="IQ2ns" value="1154546920563" />
       <ref role="20lvS9" node="gNgn60t" resolve="ConceptReference" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB2tk" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="gNgn60t">
@@ -863,7 +845,9 @@
     <property role="34LRSv" value="conceptNode" />
     <property role="EcuMT" value="1172323065820" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl" />
+    <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h3O6GYR">
     <property role="R5$K7" value="false" />
@@ -900,6 +884,7 @@
     </node>
     <node concept="asaX9" id="4eGV4eBU7tU" role="lGtFl">
       <property role="YLQ7P" value="use an explicit node&lt;AbstractConceptDeclaration&gt; instead, planned to be removed after 2017.2" />
+      <property role="YLPcu" value="2018.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3TUQj6">
@@ -1006,7 +991,9 @@
       <property role="TrG5h" value="directCall" />
       <property role="IQ2nx" value="2853323645193760541" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="1OqTjpjgM3z" role="lGtFl" />
+      <node concept="asaX9" id="1OqTjpjgM3z" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="haqh4HH" role="1TKVEi">
       <property role="20kJfa" value="conceptMethodDeclaration" />
@@ -1557,9 +1544,6 @@
       <property role="IQ2ns" value="1803469493727536396" />
       <ref role="20lvS9" node="gNgn60t" resolve="ConceptReference" />
     </node>
-    <node concept="PrWs8" id="1653mnvAME5" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="PlHQZ" id="3vpu_siOTrb">
     <property role="TrG5h" value="ILinkAccess" />
@@ -1726,9 +1710,6 @@
     <node concept="PrWs8" id="52QkhOxfiAo" role="PzmwI">
       <ref role="PrY4T" node="34EpZoncu9D" resolve="ILinkAccessQualifierContainer" />
     </node>
-    <node concept="PrWs8" id="1EtdPNudApe" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4WR1jK$23vx">
     <property role="R5$K7" value="false" />
@@ -1752,9 +1733,6 @@
     <property role="34LRSv" value="M" />
     <property role="EcuMT" value="1540150895035667832" />
     <ref role="1TJDcQ" node="gDxHYCE" resolve="AbstractOperationParameter" />
-    <node concept="PrWs8" id="1653mnvAOUT" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7eX9cM$Yh9k">
     <property role="R5$K7" value="false" />
@@ -2248,9 +2226,6 @@
     <property role="R5$K7" value="false" />
     <property role="EcuMT" value="597763930871270009" />
     <ref role="1TJDcQ" node="36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
-    <node concept="PrWs8" id="1NRmRaLG7Re" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="xbFM377T9g" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="targetNode" />
@@ -2448,6 +2423,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
       <node concept="asaX9" id="1KCVwvKvm6e" role="lGtFl">
         <property role="YLQ7P" value="was introduced after 3.2 and removed just after 3.3 EAP1. Users should not have instances of this field" />
+        <property role="YLPcu" value="2018.3" />
       </node>
     </node>
     <node concept="PrWs8" id="34EJa6aIcz1" role="PzmwI">
@@ -2700,9 +2676,6 @@
     <property role="34LRSv" value=":" />
     <property role="EcuMT" value="1761385620274348152" />
     <ref role="1TJDcQ" node="253epK5leq7" resolve="AbstractTypeCastExpression" />
-    <node concept="PrWs8" id="1xLGIeKVK1Y" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7c$ruAHVbwd">
     <property role="EcuMT" value="8296877263936075789" />

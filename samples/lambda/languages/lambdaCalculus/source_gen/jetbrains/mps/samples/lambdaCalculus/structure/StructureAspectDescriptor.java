@@ -15,6 +15,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractionVarRef = createDescriptorForAbstractionVarRef();
   /*package*/ final ConceptDescriptor myConceptAbstractionVariable = createDescriptorForAbstractionVariable();
   /*package*/ final ConceptDescriptor myConceptAddOperation = createDescriptorForAddOperation();
+  /*package*/ final ConceptDescriptor myConceptAnyType = createDescriptorForAnyType();
   /*package*/ final ConceptDescriptor myConceptBinaryNumericOperation = createDescriptorForBinaryNumericOperation();
   /*package*/ final ConceptDescriptor myConceptBinaryOperation = createDescriptorForBinaryOperation();
   /*package*/ final ConceptDescriptor myConceptBinaryStringOperation = createDescriptorForBinaryStringOperation();
@@ -48,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractionVarRef, myConceptAbstractionVariable, myConceptAddOperation, myConceptBinaryNumericOperation, myConceptBinaryOperation, myConceptBinaryStringOperation, myConceptConcatenateOperation, myConceptDivideOperation, myConceptFunctionType, myConceptLambdaAbstraction, myConceptLambdaApplication, myConceptLambdaExpression, myConceptLambdaType, myConceptLetExpression, myConceptLetRef, myConceptLetVariable, myConceptMultipleExpression, myConceptMultiplyOperation, myConceptNumberType, myConceptNumericConstant, myConceptParenthesisExpression, myConceptProgram, myConceptStringConstant, myConceptStringType, myConceptSubtractOperation, myConceptVariable, myConceptVariableOwner, myConceptVariableReference);
+    return Arrays.asList(myConceptAbstractionVarRef, myConceptAbstractionVariable, myConceptAddOperation, myConceptAnyType, myConceptBinaryNumericOperation, myConceptBinaryOperation, myConceptBinaryStringOperation, myConceptConcatenateOperation, myConceptDivideOperation, myConceptFunctionType, myConceptLambdaAbstraction, myConceptLambdaApplication, myConceptLambdaExpression, myConceptLambdaType, myConceptLetExpression, myConceptLetRef, myConceptLetVariable, myConceptMultipleExpression, myConceptMultiplyOperation, myConceptNumberType, myConceptNumericConstant, myConceptParenthesisExpression, myConceptProgram, myConceptStringConstant, myConceptStringType, myConceptSubtractOperation, myConceptVariable, myConceptVariableOwner, myConceptVariableReference);
   }
 
   @Override
@@ -61,6 +62,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAbstractionVariable;
       case LanguageConceptSwitch.AddOperation:
         return myConceptAddOperation;
+      case LanguageConceptSwitch.AnyType:
+        return myConceptAnyType;
       case LanguageConceptSwitch.BinaryNumericOperation:
         return myConceptBinaryNumericOperation;
       case LanguageConceptSwitch.BinaryOperation:
@@ -144,6 +147,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)/1934341835352312169");
     b.version(2);
     b.alias("+");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAnyType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.lambdaCalculus", "AnyType", 0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x184cd19a8be486c1L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.lambdaCalculus.structure.LambdaType", 0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afad8L);
+    b.origin("r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)/1751004816842458817");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBinaryNumericOperation() {

@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -9830,10 +9830,10 @@
             </node>
           </node>
           <node concept="2OqwBi" id="6WSEafdiDZV" role="3clFbw">
-            <node concept="2Sf5sV" id="6WSEafdiDpw" role="2Oq$k0" />
             <node concept="2qgKlT" id="4SpJmwPMdAO" role="2OqNvi">
               <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
             </node>
+            <node concept="2Sf5sV" id="6WSEafdiDpw" role="2Oq$k0" />
           </node>
         </node>
         <node concept="3cpWs8" id="4kb4CLbNH2L" role="3cqZAp">
@@ -14326,10 +14326,10 @@
         </node>
         <node concept="3clFbJ" id="3HnrdCzojjb" role="3cqZAp">
           <node concept="2OqwBi" id="3HnrdCzojjf" role="3clFbw">
-            <node concept="2Sf5sV" id="3HnrdCzojje" role="2Oq$k0" />
             <node concept="2qgKlT" id="4SpJmwPMfYk" role="2OqNvi">
               <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
             </node>
+            <node concept="2Sf5sV" id="3HnrdCzojje" role="2Oq$k0" />
           </node>
           <node concept="3clFbS" id="3HnrdCzojjd" role="3clFbx">
             <node concept="3cpWs6" id="3HnrdCzojjk" role="3cqZAp">

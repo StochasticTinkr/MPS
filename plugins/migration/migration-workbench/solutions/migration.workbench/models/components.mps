@@ -2,11 +2,11 @@
 <model ref="r:1f98243e-778e-4688-8b37-94002e0884e9(jetbrains.mps.migration.workbench.components)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
   </languages>
@@ -420,16 +420,21 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="2OqwBi" id="35jzWtwrnlv" role="37wK5m">
-                              <node concept="10M0yZ" id="35jzWtwrm_U" role="2Oq$k0">
-                                <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
-                              </node>
-                              <node concept="liA8E" id="35jzWtwro8q" role="2OqNvi">
-                                <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
-                                <node concept="37vLTw" id="35jzWtwroqI" role="37wK5m">
-                                  <ref role="3cqZAo" node="3_S1WmRESfp" resolve="p" />
+                            <node concept="2OqwBi" id="dQllQpk35A" role="37wK5m">
+                              <node concept="2OqwBi" id="35jzWtwrnlv" role="2Oq$k0">
+                                <node concept="10M0yZ" id="35jzWtwrm_U" role="2Oq$k0">
+                                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.FLAVOUR_ISSUE_KIND" resolve="FLAVOUR_ISSUE_KIND" />
                                 </node>
+                                <node concept="liA8E" id="35jzWtwro8q" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
+                                  <node concept="37vLTw" id="35jzWtwroqI" role="37wK5m">
+                                    <ref role="3cqZAo" node="3_S1WmRESfp" resolve="p" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="dQllQpk4gE" role="2OqNvi">
+                                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$ItemKind.getSpecialization():java.lang.String" resolve="getSpecialization" />
                               </node>
                             </node>
                             <node concept="3uibUv" id="13muGfOFi2M" role="1pMfVU">

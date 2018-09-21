@@ -2,10 +2,10 @@
 <model ref="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -716,10 +716,10 @@
               <node concept="1Wc70l" id="35Yw9K_Dssv" role="3cqZAk">
                 <node concept="3fqX7Q" id="35Yw9K_Dssy" role="3uHU7w">
                   <node concept="2OqwBi" id="35Yw9K_Dss_" role="3fr31v">
-                    <node concept="pncrf" id="35Yw9K_Dss$" role="2Oq$k0" />
                     <node concept="2qgKlT" id="4c$BrPwbjCe" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                     </node>
+                    <node concept="pncrf" id="35Yw9K_Dss$" role="2Oq$k0" />
                   </node>
                 </node>
                 <node concept="1Wc70l" id="hP3i0yl" role="3uHU7B">
@@ -773,10 +773,10 @@
               <node concept="1Wc70l" id="6WSEafdvG0O" role="3cqZAk">
                 <node concept="3fqX7Q" id="6WSEafdvG0P" role="3uHU7w">
                   <node concept="2OqwBi" id="6WSEafdvG0Q" role="3fr31v">
-                    <node concept="pncrf" id="6WSEafdvG0R" role="2Oq$k0" />
                     <node concept="2qgKlT" id="4c$BrPwbmM7" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                     </node>
+                    <node concept="pncrf" id="6WSEafdvG0R" role="2Oq$k0" />
                   </node>
                 </node>
                 <node concept="1Wc70l" id="6WSEafdvG0T" role="3uHU7B">

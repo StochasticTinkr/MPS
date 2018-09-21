@@ -97,8 +97,8 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
   @Override
-  public String getCategory() {
-    return "unresolved references";
+  public IssueKindReportItem.CheckerCategory getCategory() {
+    return IssueKindReportItem.UNRESOLVED_REFERENCE;
   }
   private static SModuleReference check_xiru3y_a0g0c0a0a7a2a3a2(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {

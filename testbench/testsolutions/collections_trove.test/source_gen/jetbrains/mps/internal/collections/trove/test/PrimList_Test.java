@@ -63,8 +63,6 @@ public class PrimList_Test extends TestCase {
     Assert.assertTrue(2.5 * (mem2 - mem1) < (mem4 - mem3));
     Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liBox).count());
   }
-  public PrimList_Test() {
-  }
   private long getUsedMem() {
     System.gc();
     System.gc();

@@ -6,9 +6,9 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
   </languages>
   <imports>
     <import index="tp3b" ref="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" />
@@ -812,7 +812,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5tzxsWqbkxW" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isVisible" />
       <property role="DiZV1" value="false" />
@@ -869,7 +868,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="5A3OU35mxn" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isUsedByDefault" />
       <property role="DiZV1" value="false" />
@@ -1110,10 +1108,10 @@
       <node concept="3Tmbuc" id="hzF0Efw" role="1B3o_S" />
       <node concept="37vLTG" id="hzF0Efx" role="3clF46">
         <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="i2nPOnA" role="1tU5fm" />
         <node concept="2AHcQZ" id="61W0QHrDPVd" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
+        <node concept="3Tqbb2" id="i2nPOnA" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="hzF0Efz" role="3clF46">
         <property role="TrG5h" value="scope" />
@@ -1489,6 +1487,9 @@
     <node concept="312cEu" id="htP$e5Y" role="13RCb5">
       <property role="TrG5h" value="GeneratedClass" />
       <property role="1sVAO0" value="true" />
+      <node concept="3uibUv" id="61W0QHrEqKq" role="1zkMxy">
+        <ref role="3uigEE" to="k4i4:~GeneratedFinder" resolve="GeneratedFinder" />
+      </node>
       <node concept="3Tm1VV" id="htP$e6p" role="1B3o_S" />
       <node concept="3clFb_" id="hzF1l6N" role="jymVt">
         <property role="TrG5h" value="doFind" />
@@ -1542,9 +1543,6 @@
             <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
           </node>
         </node>
-      </node>
-      <node concept="3uibUv" id="61W0QHrEqKq" role="1zkMxy">
-        <ref role="3uigEE" to="k4i4:~GeneratedFinder" resolve="GeneratedFinder" />
       </node>
     </node>
   </node>
@@ -1793,7 +1791,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7kBaCiqYMBU" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getConcept" />
         <property role="DiZV1" value="false" />
@@ -1808,7 +1805,6 @@
         </node>
       </node>
       <node concept="3clFb_" id="7kBaCiqYMC3" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getDescription" />
         <property role="DiZV1" value="false" />

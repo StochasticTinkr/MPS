@@ -2,7 +2,7 @@
 <model ref="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -1363,20 +1363,22 @@
     <node concept="3clFbS" id="6WSEafdwp3c" role="18ibNy">
       <node concept="3clFbJ" id="6WSEafdwp3d" role="3cqZAp">
         <node concept="1Wc70l" id="6WSEafdwp3e" role="3clFbw">
-          <node concept="2OqwBi" id="6WSEafdwp3f" role="3uHU7B">
-            <node concept="1YBJjd" id="6WSEafdwp3g" role="2Oq$k0">
-              <ref role="1YBMHb" node="6WSEafdwp3t" resolve="conceptMethodDeclaration" />
-            </node>
-            <node concept="3TrcHB" id="6WSEafdwp3h" role="2OqNvi">
-              <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+          <node concept="3fqX7Q" id="6fzD0ET6ZR1" role="3uHU7w">
+            <node concept="2OqwBi" id="6fzD0ET6ZR3" role="3fr31v">
+              <node concept="1YBJjd" id="6fzD0ET6ZR4" role="2Oq$k0">
+                <ref role="1YBMHb" node="6WSEafdwp3t" resolve="conceptMethodDeclaration" />
+              </node>
+              <node concept="2qgKlT" id="6fzD0ET70$X" role="2OqNvi">
+                <ref role="37wK5l" to="csvn:6WSEafdhbZX" resolve="isVirtual" />
+              </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6WSEafdwp3i" role="3uHU7w">
-            <node concept="1YBJjd" id="6WSEafdwp3j" role="2Oq$k0">
-              <ref role="1YBMHb" node="6WSEafdwp3t" resolve="conceptMethodDeclaration" />
+          <node concept="2OqwBi" id="6WSEafdwp3f" role="3uHU7B">
+            <node concept="2qgKlT" id="6fzD0ET6ZCC" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
             </node>
-            <node concept="3TrcHB" id="6WSEafdwrek" role="2OqNvi">
-              <ref role="3TsBF5" to="1i04:hP3i0m0" resolve="isVirtual" />
+            <node concept="1YBJjd" id="6WSEafdwp3g" role="2Oq$k0">
+              <ref role="1YBMHb" node="6WSEafdwp3t" resolve="conceptMethodDeclaration" />
             </node>
           </node>
         </node>

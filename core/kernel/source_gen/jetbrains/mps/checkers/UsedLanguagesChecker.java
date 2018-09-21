@@ -7,6 +7,7 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -29,8 +30,8 @@ public class UsedLanguagesChecker extends AbstractNodeCheckerInEditor implements
   private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
 
   @Override
-  public String getCategory() {
-    return "language imports";
+  public IssueKindReportItem.CheckerCategory getCategory() {
+    return IssueKindReportItem.LANGUAGE_IMPORTS;
   }
   public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     if (SNodeOperations.getParent(node) != null) {

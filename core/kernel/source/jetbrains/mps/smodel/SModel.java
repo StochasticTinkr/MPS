@@ -287,21 +287,6 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   /**
-   * @deprecated assumes use of SModelBase implementation, prefer general {@link #setModelDescriptor(org.jetbrains.mps.openapi.model.SModel, ModelEventDispatch)}.
-   * @param modelDescriptor if {@link SModelBase}, node event notification dispatch (see {@link SModelBase#getNodeEventDispatch()} is initialized as well.
-   */
-  // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    if (myModelDescriptor == modelDescriptor) {
-      // just to guard against accidental second assignment
-      return;
-    }
-    setModelDescriptor(modelDescriptor, modelDescriptor instanceof SModelBase ? ((SModelBase) modelDescriptor).getNodeEventDispatch() : null);
-  }
-
-  /**
    * Tells this model data implementation is bound to specific model descriptor and uses a supplied mechanism to dispatch events.
    * This method is intended for use by {@link org.jetbrains.mps.openapi.model.SModel model descriptor} implementations only.
    * @param modelDescriptor
@@ -878,6 +863,7 @@ public class SModel implements SModelData, UpdateModeSupport {
         }
         // there's RefUpdateUtil.updateModelRef() that could have been used here, it it was in [smodel].
         // But it's in [project] now, and needs refactoring to relocate.
+        // Besides, there's also similar code in vcs.DiffModelUtil
         final org.jetbrains.mps.openapi.model.SModel resolved = oldReference.resolve(repository);
         if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), oldReference)) {
           changed = true;
@@ -909,12 +895,12 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
-    SModelReference oldReference = myReference;
+    final SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetSModelReference())) {
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
+        if (reference instanceof SReferenceBase && oldReference.equals(reference.getTargetSModelReference())) {
+          ((SReferenceBase) reference).setTargetSModelReference(newModelReference);
         }
       }
     }

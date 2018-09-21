@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -227,7 +227,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1178,29 +1178,6 @@
     <node concept="1YaCAy" id="$lsh0EhCau" role="1YuTPh">
       <property role="TrG5h" value="operation" />
       <ref role="1YaFvo" to="tpf3:hHFEO4U" resolve="GenerationContextOp_GetOutputModel" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="$lsh0EhCzH">
-    <property role="TrG5h" value="typeof_GenerationContextOp_GetTemplateNode" />
-    <node concept="3clFbS" id="$lsh0EhCzI" role="18ibNy">
-      <node concept="1Z5TYs" id="$lsh0EhC_d" role="3cqZAp">
-        <node concept="mw_s8" id="$lsh0EhC_e" role="1ZfhKB">
-          <node concept="2c44tf" id="$lsh0EhC_f" role="mwGJk">
-            <node concept="3Tqbb2" id="$lsh0EhCEy" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="$lsh0EhC_h" role="1ZfhK$">
-          <node concept="1Z2H0r" id="$lsh0EhC_i" role="mwGJk">
-            <node concept="1YBJjd" id="$lsh0EhC_j" role="1Z2MuG">
-              <ref role="1YBMHb" node="$lsh0EhCzK" resolve="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="$lsh0EhCzK" role="1YuTPh">
-      <property role="TrG5h" value="operation" />
-      <ref role="1YaFvo" to="tpf3:hHKSx_M" resolve="GenerationContextOp_GetTemplateNode" />
     </node>
   </node>
   <node concept="1YbPZF" id="$lsh0EhDke">

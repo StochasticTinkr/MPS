@@ -152,7 +152,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
           public EditorCell compute() {
             return new TestSubstituteParentPropertyAndReference_Subconcept_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "defaultReference");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x314f66c376dfa909L, 0x314f66c376dfa915L, "defaultSpecialReference"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);
@@ -248,7 +248,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
           public EditorCell compute() {
             return new TestSubstituteParentPropertyAndReference_Subconcept_EditorBuilder_a.Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "referenceWithReferenceMenuPart");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x314f66c376dfa909L, 0x314f66c376dfa936L, "specialReferenceWithMenuPart"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);

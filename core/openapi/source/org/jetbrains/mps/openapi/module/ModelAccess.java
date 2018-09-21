@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -85,7 +86,9 @@ public interface ModelAccess {
   void executeCommandInEDT(Runnable r);
 
   /**
-   * FIXME
+   * FIXME need thorough documentation
+   * Executed code has model write, is treated as a command, the only difference is that changes from the transparent action merged with the that of the
+   * previous undoable command
    */
   void executeUndoTransparentCommand(Runnable r);
 
@@ -114,4 +117,16 @@ public interface ModelAccess {
   void addWriteActionListener(@NotNull WriteActionListener listener);
 
   void removeWriteActionListener(@NotNull WriteActionListener listener);
+
+  /**
+   * Get notified about start/finish of a model read action
+   * @since 2018.3
+   */
+  void addReadActionListener(@NotNull ReadActionListener listener);
+
+  /**
+   * Cease notifications about start/finish of a model read action
+   * @since 2018.3
+   */
+  void removeReadActionListener(@NotNull ReadActionListener listener);
 }

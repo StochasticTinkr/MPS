@@ -76,8 +76,8 @@
       <node id="481983775135178862" at="31,60,32,63" concept="4" />
       <node id="481983775135178862" at="32,63,33,30" concept="4" />
       <node id="481983775135178862" at="33,30,34,252" concept="2" />
-      <node id="481983775135178862" at="34,252,35,481" concept="2" />
-      <node id="481983775135178862" at="35,481,36,24" concept="5" />
+      <node id="481983775135178862" at="34,252,35,473" concept="2" />
+      <node id="481983775135178862" at="35,473,36,24" concept="5" />
       <node id="481983775135178859" at="17,0,19,0" concept="1" trace="Typeof_ProjectPluginType_SubtypingRule#()V" />
       <node id="481983775135178859" at="19,0,22,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178859" at="22,0,25,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -125,8 +125,8 @@
       <node id="481983775135178868" at="31,60,32,63" concept="4" />
       <node id="481983775135178868" at="32,63,33,30" concept="4" />
       <node id="481983775135178868" at="33,30,34,252" concept="2" />
-      <node id="481983775135178868" at="34,252,35,485" concept="2" />
-      <node id="481983775135178868" at="35,485,36,24" concept="5" />
+      <node id="481983775135178868" at="34,252,35,477" concept="2" />
+      <node id="481983775135178868" at="35,477,36,24" concept="5" />
       <node id="481983775135178865" at="17,0,19,0" concept="1" trace="Typeof_ApplicationPluginType_SubtypingRule#()V" />
       <node id="481983775135178865" at="19,0,22,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178865" at="22,0,25,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

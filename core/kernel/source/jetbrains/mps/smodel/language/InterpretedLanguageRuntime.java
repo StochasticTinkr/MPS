@@ -19,12 +19,16 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -49,14 +53,21 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> descriptorInterface) {
     if (descriptorInterface == StructureAspectDescriptor.class) {
-      return (T) new StructureAspectInterpreted(myLang);
+      return descriptorInterface.cast(new BaseStructureAspectDescriptor() {
+        @Override
+        public Collection<ConceptDescriptor> getDescriptors() {
+          return Collections.emptyList();
+        }
+      });
     }
     if (descriptorInterface == ConstraintsAspectDescriptor.class) {
-      // FIXME In fact, interpreted constraints are of no use, and ConstraintsAspectInterpreted for legacy reasons
-      // FIXME does a lot of job (within BaseConstraintsDescriptor) which is likely to break with interpreted (no source code) languages
-      // (see BaseConstraintsDescriptor#calcInheritance).
-      // We shall supply constraints aspect that would yield 'no constrains' (and do no initialization code)
-      return (T) ConstraintsAspectInterpreted.getInstance();
+      descriptorInterface.cast(new BaseConstraintsAspectDescriptor() {
+        @Nullable
+        @Override
+        public ConstraintsDescriptor getConstraints(@NotNull SAbstractConcept concept) {
+          return null;
+        }
+      });
     }
     return null;
   }

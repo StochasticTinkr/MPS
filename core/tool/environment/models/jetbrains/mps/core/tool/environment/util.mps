@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
@@ -50,9 +50,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
         <child id="1164903700860" name="catchClause" index="TEXxN" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -312,7 +309,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="57xhZj4qVLl" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getValue" />
       <property role="DiZV1" value="false" />
@@ -342,7 +338,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="57xhZj4qVLw" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getUserNames" />
       <property role="DiZV1" value="false" />
@@ -372,7 +367,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="57xhZj4qVLE" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getNames" />
       <property role="DiZV1" value="false" />
@@ -402,7 +396,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="57xhZj4qVLO" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="report" />
       <property role="DiZV1" value="false" />
@@ -3525,7 +3518,6 @@
     </node>
     <node concept="2tJIrI" id="2Koq9V0qPsE" role="jymVt" />
     <node concept="3clFb_" id="57xhZj4tkXU" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPaths" />
       <property role="DiZV1" value="false" />
@@ -3553,7 +3545,6 @@
     </node>
     <node concept="2tJIrI" id="2Koq9V0qPcA" role="jymVt" />
     <node concept="3clFb_" id="57xhZj4tkY2" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="hiddenLanguages" />
       <property role="DiZV1" value="false" />
@@ -3856,7 +3847,6 @@
     </node>
     <node concept="2tJIrI" id="1RTSjGsuc$S" role="jymVt" />
     <node concept="3clFb_" id="2doG_VG59H$" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getName" />
       <property role="DiZV1" value="false" />

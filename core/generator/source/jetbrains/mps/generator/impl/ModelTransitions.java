@@ -66,6 +66,7 @@ public final class ModelTransitions {
    */
   public TransitionTrace loadTransition(@NotNull CheckpointIdentity checkpoint, @NotNull SModel checkpointModel) {
     myActiveTransition = new TransitionTrace(checkpoint, this);
+    new TransitionTracePersistence(checkpointModel).load(myActiveTransition);
     return myActiveTransition;
   }
 

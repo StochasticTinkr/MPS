@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Abstract_SubstTestChild_WithNextApplicableEditorAndMenu;
+  private ConceptPresentation props_ActionMapDeleteBackspaceTester;
+  private ConceptPresentation props_ActionMapImportTester;
+  private ConceptPresentation props_ActionMapIndividualImportTester;
   private ConceptPresentation props_AttractsFocusBlock;
   private ConceptPresentation props_AttributeChild;
   private ConceptPresentation props_AttributeWithChildren;
@@ -17,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AutoResolveChildWithErrorCell;
   private ConceptPresentation props_AutoResolveNodeToReference;
   private ConceptPresentation props_AutoResolveRoot;
+  private ConceptPresentation props_Bar;
   private ConceptPresentation props_BinaryExpression;
   private ConceptPresentation props_BracesBlock;
   private ConceptPresentation props_BracesStubBlock;
@@ -48,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DeleteWrapperRoot;
   private ConceptPresentation props_FoldedCell;
   private ConceptPresentation props_FoldingContainer;
+  private ConceptPresentation props_Foo;
   private ConceptPresentation props_IBaseTestBlock;
   private ConceptPresentation props_IDelTestChild;
   private ConceptPresentation props_IDelTestConcreteChild;
@@ -135,6 +140,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Abstract_SubstTestChild_WithNextApplicableEditorAndMenu = cpb.create();
         }
         return props_Abstract_SubstTestChild_WithNextApplicableEditorAndMenu;
+      case LanguageConceptSwitch.ActionMapDeleteBackspaceTester:
+        if (props_ActionMapDeleteBackspaceTester == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ActionMapDeleteBackspaceTester");
+          props_ActionMapDeleteBackspaceTester = cpb.create();
+        }
+        return props_ActionMapDeleteBackspaceTester;
+      case LanguageConceptSwitch.ActionMapImportTester:
+        if (props_ActionMapImportTester == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ActionMapImportTester");
+          props_ActionMapImportTester = cpb.create();
+        }
+        return props_ActionMapImportTester;
+      case LanguageConceptSwitch.ActionMapIndividualImportTester:
+        if (props_ActionMapIndividualImportTester == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ActionMapIndividualImportTester");
+          props_ActionMapIndividualImportTester = cpb.create();
+        }
+        return props_ActionMapIndividualImportTester;
       case LanguageConceptSwitch.AttractsFocusBlock:
         if (props_AttractsFocusBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -184,6 +210,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AutoResolveRoot = cpb.create();
         }
         return props_AutoResolveRoot;
+      case LanguageConceptSwitch.Bar:
+        if (props_Bar == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Bar");
+          props_Bar = cpb.create();
+        }
+        return props_Bar;
       case LanguageConceptSwitch.BinaryExpression:
         if (props_BinaryExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -399,6 +432,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FoldingContainer = cpb.create();
         }
         return props_FoldingContainer;
+      case LanguageConceptSwitch.Foo:
+        if (props_Foo == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Foo");
+          props_Foo = cpb.create();
+        }
+        return props_Foo;
       case LanguageConceptSwitch.IBaseTestBlock:
         if (props_IBaseTestBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

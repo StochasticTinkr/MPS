@@ -760,151 +760,152 @@
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/5814231631271705710">
     <file name="ModelElementTargetChooser.java">
-      <node id="5814231631271710671" at="8,0,9,0" concept="6" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <node id="4227032065680714903" at="9,0,10,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <node id="5814231631271710678" at="10,0,11,0" concept="6" trace="getSelectedObject#()Ljetbrains/mps/ide/platform/refactoring/NodeLocation;" />
-      <scope id="5814231631271710671" at="8,0,9,0" />
-      <scope id="4227032065680714903" at="9,0,10,0" />
-      <scope id="5814231631271710678" at="10,0,11,0" />
-      <unit id="5814231631271705710" at="7,0,12,0" name="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
+      <node id="5814231631271710671" at="9,0,10,0" concept="6" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="4227032065680714903" at="10,0,11,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="5814231631271710678" at="11,0,12,0" concept="6" trace="getSelectedObject#()Ljetbrains/mps/ide/platform/refactoring/NodeLocation;" />
+      <scope id="5814231631271710671" at="9,0,10,0" />
+      <scope id="4227032065680714903" at="10,0,11,0" />
+      <scope id="5814231631271710678" at="11,0,12,0" />
+      <unit id="5814231631271705710" at="8,0,13,0" name="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/6400105291801668894">
     <file name="ModelOrNodeChooserDialog.java">
       <node id="6400105291801668895" at="13,0,14,0" concept="11" trace="REFACTORING_NAME" />
-      <node id="6400105291801668935" at="14,0,15,0" concept="3" trace="myProject" />
-      <node id="6400105291801668938" at="15,0,16,0" concept="3" trace="myChooser" />
-      <node id="6400105291801668948" at="16,61,17,25" concept="13" />
-      <node id="6400105291801668951" at="17,25,18,29" concept="2" />
-      <node id="2601526294119512223" at="22,52,23,52" concept="8" />
-      <node id="6400105291801668901" at="26,0,27,0" concept="3" trace="errorMessage" />
-      <node id="6400105291801668923" at="27,43,28,39" concept="2" />
-      <node id="6400105291801668908" at="32,66,33,101" concept="2" />
-      <node id="8427702170856802625" at="35,82,36,96" concept="2" />
-      <node id="6400105291801668931" at="30,0,32,0" concept="1" trace="Filter#()V" />
-      <node id="6400105291801668919" at="27,0,30,0" concept="1" trace="Filter#(Ljava/lang/String;)V" />
-      <node id="6400105291801668904" at="32,0,35,0" concept="6" trace="showError#(Ljava/lang/String;Ljavax/swing/JComponent;)V" />
-      <node id="8427702170856802621" at="35,0,38,0" concept="6" trace="showError#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/JComponent;)V" />
-      <node id="6400105291801668941" at="16,0,20,0" concept="1" trace="ModelOrNodeChooserDialog#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="2601526294119505281" at="20,0,25,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <scope id="6400105291801668934" at="30,24,30,24" />
-      <scope id="2601526294119505288" at="22,52,23,52" />
-      <scope id="6400105291801668922" at="27,43,28,39" />
-      <scope id="6400105291801668907" at="32,66,33,101" />
-      <scope id="8427702170856802624" at="35,82,36,96" />
-      <scope id="6400105291801668947" at="16,61,18,29" />
-      <scope id="6400105291801668931" at="30,0,32,0" />
-      <scope id="6400105291801668919" at="27,0,30,0">
+      <node id="6400105291801668935" at="15,0,16,0" concept="3" trace="myProject" />
+      <node id="6400105291801668938" at="16,0,17,0" concept="3" trace="myChooser" />
+      <node id="6400105291801668948" at="18,64,19,38" concept="13" />
+      <node id="6400105291801668951" at="19,38,20,24" concept="2" />
+      <node id="2601526294119512223" at="24,52,25,52" concept="8" />
+      <node id="6400105291801668901" at="29,0,30,0" concept="3" trace="errorMessage" />
+      <node id="6400105291801668923" at="30,43,31,39" concept="2" />
+      <node id="6400105291801668908" at="35,66,36,101" concept="2" />
+      <node id="8427702170856802625" at="38,82,39,96" concept="2" />
+      <node id="6400105291801668931" at="33,0,35,0" concept="1" trace="Filter#()V" />
+      <node id="6400105291801668919" at="30,0,33,0" concept="1" trace="Filter#(Ljava/lang/String;)V" />
+      <node id="6400105291801668904" at="35,0,38,0" concept="6" trace="showError#(Ljava/lang/String;Ljavax/swing/JComponent;)V" />
+      <node id="8427702170856802621" at="38,0,41,0" concept="6" trace="showError#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/JComponent;)V" />
+      <node id="6400105291801668941" at="18,0,22,0" concept="1" trace="ModelOrNodeChooserDialog#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="2601526294119505281" at="22,0,27,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <scope id="6400105291801668934" at="33,24,33,24" />
+      <scope id="2601526294119505288" at="24,52,25,52" />
+      <scope id="6400105291801668922" at="30,43,31,39" />
+      <scope id="6400105291801668907" at="35,66,36,101" />
+      <scope id="8427702170856802624" at="38,82,39,96" />
+      <scope id="6400105291801668947" at="18,64,20,24" />
+      <scope id="6400105291801668931" at="33,0,35,0" />
+      <scope id="6400105291801668919" at="30,0,33,0">
         <var name="errorMessage" id="6400105291801668929" />
       </scope>
-      <scope id="6400105291801668904" at="32,0,35,0">
+      <scope id="6400105291801668904" at="35,0,38,0">
         <var name="component" id="6400105291801668916" />
         <var name="title" id="6400105291801668914" />
       </scope>
-      <scope id="8427702170856802621" at="35,0,38,0">
+      <scope id="8427702170856802621" at="38,0,41,0">
         <var name="component" id="8427702170856802633" />
         <var name="message" id="8427702170856803613" />
         <var name="title" id="8427702170856802631" />
       </scope>
-      <scope id="6400105291801668941" at="16,0,20,0">
+      <scope id="6400105291801668941" at="18,0,22,0">
         <var name="project" id="6400105291801668942" />
       </scope>
-      <scope id="2601526294119505281" at="20,0,25,0" />
-      <unit id="6400105291801668900" at="25,0,39,0" name="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog$Filter" />
-      <unit id="6400105291801668894" at="12,0,40,0" name="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog" />
+      <scope id="2601526294119505281" at="22,0,27,0" />
+      <unit id="6400105291801668900" at="28,0,42,0" name="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog$Filter" />
+      <unit id="6400105291801668894" at="12,0,43,0" name="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/6400105291801680525">
     <file name="MoveNodesDialog.java">
-      <node id="6400105291801680628" at="14,0,15,0" concept="3" trace="myModel" />
-      <node id="6400105291801680631" at="15,0,16,0" concept="3" trace="myFilter" />
-      <node id="6400105291801680634" at="16,0,17,0" concept="3" trace="mySelectedObject" />
-      <node id="6400105291801680647" at="17,66,18,19" concept="13" />
-      <node id="6400105291801680649" at="18,19,19,20" concept="2" />
-      <node id="6400105291801680653" at="19,20,20,11" concept="2" />
-      <node id="6400105291801680655" at="20,11,21,47" concept="2" />
-      <node id="6400105291801680674" at="24,40,25,64" concept="7" />
-      <node id="6400105291801680682" at="26,105,27,40" concept="2" />
-      <node id="5918389564640884742" at="27,40,28,34" concept="2" />
-      <node id="6400105291801680706" at="33,44,34,90" concept="2" />
-      <node id="3493964992003905120" at="34,90,35,54" concept="7" />
-      <node id="3493964992003905150" at="35,54,36,58" concept="2" />
-      <node id="3493964992003905191" at="36,58,37,23" concept="8" />
-      <node id="6400105291801680722" at="39,61,40,22" concept="2" />
-      <node id="4507335185602817723" at="45,45,46,32" concept="8" />
-      <node id="6400105291801680581" at="48,82,49,65" concept="7" />
-      <node id="6400105291801680588" at="49,65,50,18" concept="2" />
-      <node id="6400105291801680592" at="50,18,51,35" concept="8" />
-      <node id="6400105291801680607" at="53,124,54,65" concept="7" />
-      <node id="6400105291801680614" at="54,65,55,29" concept="2" />
-      <node id="6400105291801680619" at="55,29,56,18" concept="2" />
-      <node id="6400105291801680623" at="56,18,57,35" concept="8" />
-      <node id="6400105291801680527" at="60,0,61,0" concept="6" trace="check#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="8427702170856854718" at="61,0,62,0" concept="6" trace="getErrorMessage#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;)Ljava/lang/String;" />
-      <node id="6400105291801680544" at="63,44,64,86" concept="2" />
-      <node id="6400105291801680548" at="64,86,65,21" concept="8" />
-      <node id="6400105291801680550" at="66,7,67,18" concept="8" />
-      <node id="6400105291801680718" at="39,0,42,0" concept="6" trace="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)V" />
-      <node id="6400105291801680680" at="25,64,29,5" concept="5" />
-      <node id="6400105291801680538" at="62,101,66,7" concept="5" />
-      <node id="6400105291801680573" at="48,0,53,0" concept="12" trace="getSelectedObject#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Object;" />
-      <node id="6400105291801680638" at="17,0,23,0" concept="1" trace="MoveNodesDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="4507335185602817717" at="42,0,48,0" concept="6" trace="getDimensionServiceKey#()Ljava/lang/String;" />
-      <node id="6400105291801680597" at="53,0,59,0" concept="12" trace="getSelectedObject#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)Ljetbrains/mps/ide/platform/refactoring/NodeLocation;" />
-      <node id="6400105291801680535" at="62,0,69,0" concept="6" trace="checkForObject#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;Lorg/jetbrains/mps/openapi/model/SModel;Ljavax/swing/JComponent;)Z" />
-      <node id="6400105291801680670" at="23,0,31,0" concept="6" trace="doRefactoringAction#()V" />
-      <node id="6400105291801680701" at="31,0,39,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <scope id="6400105291801680721" at="39,61,40,22" />
-      <scope id="4507335185602817722" at="45,45,46,32" />
-      <scope id="6400105291801680527" at="60,0,61,0">
+      <node id="6400105291801680628" at="15,0,16,0" concept="3" trace="myModel" />
+      <node id="6400105291801680631" at="16,0,17,0" concept="3" trace="myFilter" />
+      <node id="6400105291801680634" at="17,0,18,0" concept="3" trace="mySelectedObject" />
+      <node id="6400105291801680647" at="18,69,19,19" concept="13" />
+      <node id="6400105291801680649" at="19,19,20,20" concept="2" />
+      <node id="6400105291801680653" at="20,20,21,11" concept="2" />
+      <node id="6400105291801680655" at="21,11,22,47" concept="2" />
+      <node id="6400105291801680674" at="25,40,26,64" concept="7" />
+      <node id="6400105291801680682" at="27,105,28,40" concept="2" />
+      <node id="5918389564640884742" at="28,40,29,34" concept="2" />
+      <node id="6400105291801680706" at="34,44,35,103" concept="2" />
+      <node id="3493964992003905120" at="35,103,36,54" concept="7" />
+      <node id="3493964992003905150" at="36,54,37,58" concept="2" />
+      <node id="8369473153157945325" at="37,58,38,50" concept="2" />
+      <node id="3493964992003905191" at="38,50,39,23" concept="8" />
+      <node id="6400105291801680722" at="41,61,42,22" concept="2" />
+      <node id="4507335185602817723" at="47,45,48,32" concept="8" />
+      <node id="6400105291801680581" at="50,85,51,65" concept="7" />
+      <node id="6400105291801680588" at="51,65,52,18" concept="2" />
+      <node id="6400105291801680592" at="52,18,53,35" concept="8" />
+      <node id="6400105291801680607" at="55,127,56,65" concept="7" />
+      <node id="6400105291801680614" at="56,65,57,29" concept="2" />
+      <node id="6400105291801680619" at="57,29,58,18" concept="2" />
+      <node id="6400105291801680623" at="58,18,59,35" concept="8" />
+      <node id="6400105291801680527" at="62,0,63,0" concept="6" trace="check#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="8427702170856854718" at="63,0,64,0" concept="6" trace="getErrorMessage#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;)Ljava/lang/String;" />
+      <node id="6400105291801680544" at="65,44,66,86" concept="2" />
+      <node id="6400105291801680548" at="66,86,67,21" concept="8" />
+      <node id="6400105291801680550" at="68,7,69,18" concept="8" />
+      <node id="6400105291801680718" at="41,0,44,0" concept="6" trace="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)V" />
+      <node id="6400105291801680680" at="26,64,30,5" concept="5" />
+      <node id="6400105291801680538" at="64,101,68,7" concept="5" />
+      <node id="6400105291801680573" at="50,0,55,0" concept="12" trace="getSelectedObject#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Object;" />
+      <node id="6400105291801680638" at="18,0,24,0" concept="1" trace="MoveNodesDialog#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="4507335185602817717" at="44,0,50,0" concept="6" trace="getDimensionServiceKey#()Ljava/lang/String;" />
+      <node id="6400105291801680597" at="55,0,61,0" concept="12" trace="getSelectedObject#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)Ljetbrains/mps/ide/platform/refactoring/NodeLocation;" />
+      <node id="6400105291801680535" at="64,0,71,0" concept="6" trace="checkForObject#(Ljetbrains/mps/ide/platform/refactoring/NodeLocation;Lorg/jetbrains/mps/openapi/model/SModel;Ljavax/swing/JComponent;)Z" />
+      <node id="6400105291801680670" at="24,0,32,0" concept="6" trace="doRefactoringAction#()V" />
+      <node id="6400105291801680701" at="32,0,41,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <scope id="6400105291801680721" at="41,61,42,22" />
+      <scope id="4507335185602817722" at="47,45,48,32" />
+      <scope id="6400105291801680527" at="62,0,63,0">
         <var name="model" id="6400105291801680532" />
         <var name="selectedObject" id="6400105291801680530" />
       </scope>
-      <scope id="8427702170856854718" at="61,0,62,0">
+      <scope id="8427702170856854718" at="63,0,64,0">
         <var name="selectedObject" id="8427702170856854721" />
       </scope>
-      <scope id="6400105291801680681" at="26,105,28,34" />
-      <scope id="6400105291801680543" at="63,44,65,21" />
-      <scope id="6400105291801680718" at="39,0,42,0">
+      <scope id="6400105291801680681" at="27,105,29,34" />
+      <scope id="6400105291801680543" at="65,44,67,21" />
+      <scope id="6400105291801680718" at="41,0,44,0">
         <var name="filter" id="6400105291801680726" />
       </scope>
-      <scope id="6400105291801680580" at="48,82,51,35">
+      <scope id="6400105291801680580" at="50,85,53,35">
         <var name="dialog" id="6400105291801680582" />
       </scope>
-      <scope id="6400105291801680646" at="17,66,21,47" />
-      <scope id="6400105291801680705" at="33,44,37,23">
-        <var name="centerPanel" id="3493964992003905121" />
-      </scope>
-      <scope id="6400105291801680606" at="53,124,57,35">
+      <scope id="6400105291801680646" at="18,69,22,47" />
+      <scope id="6400105291801680606" at="55,127,59,35">
         <var name="dialog" id="6400105291801680608" />
       </scope>
-      <scope id="6400105291801680673" at="24,40,29,5">
+      <scope id="6400105291801680673" at="25,40,30,5">
         <var name="selectedObject" id="6400105291801680675" />
       </scope>
-      <scope id="6400105291801680573" at="48,0,53,0">
+      <scope id="6400105291801680705" at="34,44,39,23">
+        <var name="centerPanel" id="3493964992003905121" />
+      </scope>
+      <scope id="6400105291801680573" at="50,0,55,0">
         <var name="model" id="6400105291801680577" />
         <var name="project" id="6400105291801680574" />
       </scope>
-      <scope id="6400105291801680537" at="62,101,67,18" />
-      <scope id="6400105291801680638" at="17,0,23,0">
+      <scope id="6400105291801680537" at="64,101,69,18" />
+      <scope id="6400105291801680638" at="18,0,24,0">
         <var name="model" id="6400105291801680642" />
         <var name="project" id="6400105291801680639" />
       </scope>
-      <scope id="4507335185602817717" at="42,0,48,0" />
-      <scope id="6400105291801680597" at="53,0,59,0">
+      <scope id="4507335185602817717" at="44,0,50,0" />
+      <scope id="6400105291801680597" at="55,0,61,0">
         <var name="filter" id="6400105291801680603" />
         <var name="model" id="6400105291801680601" />
         <var name="project" id="6400105291801680598" />
       </scope>
-      <scope id="6400105291801680535" at="62,0,69,0">
+      <scope id="6400105291801680535" at="64,0,71,0">
         <var name="component" id="6400105291801680556" />
         <var name="model" id="6400105291801680554" />
         <var name="selectedObject" id="6400105291801680552" />
       </scope>
-      <scope id="6400105291801680670" at="23,0,31,0" />
-      <scope id="6400105291801680701" at="31,0,39,0" />
-      <unit id="6400105291801680526" at="59,0,70,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog$ModelFilter" />
-      <unit id="6400105291801680525" at="13,0,71,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
+      <scope id="6400105291801680670" at="24,0,32,0" />
+      <scope id="6400105291801680701" at="32,0,41,0" />
+      <unit id="6400105291801680526" at="61,0,72,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog$ModelFilter" />
+      <unit id="6400105291801680525" at="14,0,73,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/6400105291801680728">
@@ -912,121 +913,122 @@
       <node id="6400105291801680836" at="18,0,19,0" concept="3" trace="myNodeToMove" />
       <node id="6400105291801680839" at="19,0,20,0" concept="3" trace="myNodeFilter" />
       <node id="6400105291801680842" at="20,0,21,0" concept="3" trace="mySelectedObject" />
-      <node id="6400105291801680854" at="21,63,22,19" concept="13" />
-      <node id="6400105291801680856" at="22,19,23,24" concept="2" />
-      <node id="6400105291801680860" at="23,24,24,11" concept="2" />
-      <node id="6400105291801680862" at="24,11,25,46" concept="2" />
-      <node id="6400105291801680881" at="28,40,29,70" concept="7" />
-      <node id="6400105291801680889" at="30,70,31,133" concept="2" />
-      <node id="6400105291801680897" at="31,133,32,13" concept="8" />
-      <node id="1161420610164779674" at="33,5,34,73" concept="7" />
-      <node id="788503456865744402" at="36,25,37,147" concept="7" />
-      <node id="2034046503361620294" at="38,137,39,34" concept="2" />
-      <node id="2034046503361620302" at="39,34,40,37" concept="2" />
-      <node id="1161420610164779713" at="44,30,45,34" concept="2" />
-      <node id="6400105291801680937" at="48,59,49,26" concept="2" />
-      <node id="2034046503361596629" at="55,25,56,99" concept="2" />
-      <node id="3493964992003907193" at="58,7,59,54" concept="7" />
-      <node id="3493964992003907224" at="59,54,60,58" concept="2" />
-      <node id="6400105291801680957" at="60,58,61,23" concept="8" />
-      <node id="6597458264416733135" at="66,45,67,32" concept="8" />
-      <node id="6400105291801680737" at="69,79,70,62" concept="7" />
-      <node id="6400105291801680744" at="70,62,71,18" concept="2" />
-      <node id="6400105291801680748" at="71,18,72,35" concept="8" />
-      <node id="6400105291801680763" at="74,113,75,62" concept="7" />
-      <node id="6400105291801680770" at="75,62,76,29" concept="2" />
-      <node id="6400105291801680775" at="76,29,77,18" concept="2" />
-      <node id="6400105291801680779" at="77,18,78,35" concept="8" />
-      <node id="6400105291801680831" at="83,44,84,26" concept="13" />
-      <node id="6400105291801680785" at="86,0,87,0" concept="6" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="6400105291801680805" at="88,70,89,53" concept="2" />
-      <node id="6400105291801680809" at="89,53,90,21" concept="8" />
-      <node id="6400105291801680811" at="91,7,92,18" concept="8" />
-      <node id="6400105291801680823" at="81,0,83,0" concept="1" trace="NodeFilter#()V" />
-      <node id="1161420610164779708" at="43,7,46,5" concept="5" />
-      <node id="6400105291801680933" at="48,0,51,0" concept="6" trace="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)V" />
-      <node id="2034046503361596627" at="55,0,58,0" concept="6" trace="run#()V" />
-      <node id="6400105291801680827" at="83,0,86,0" concept="1" trace="NodeFilter#(Ljava/lang/String;)V" />
-      <node id="6400105291801680887" at="29,70,33,5" concept="5" />
-      <node id="2034046503361620292" at="37,147,41,9" concept="5" />
-      <node id="6400105291801680798" at="87,126,91,7" concept="5" />
-      <node id="2034046503361596623" at="53,44,58,7" concept="2" />
-      <node id="6400105291801680729" at="69,0,74,0" concept="12" trace="getSelectedObject#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6400105291801680845" at="21,0,27,0" concept="1" trace="MoveNodeDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6597458264416733129" at="63,0,69,0" concept="6" trace="getDimensionServiceKey#()Ljava/lang/String;" />
-      <node id="6400105291801680753" at="74,0,80,0" concept="12" trace="getSelectedObject#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2034046503361620289" at="36,0,43,0" concept="6" trace="run#()V" />
-      <node id="6400105291801680795" at="87,0,94,0" concept="6" trace="checkForObject#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljavax/swing/JComponent;)Z" />
-      <node id="2034046503361620285" at="34,73,43,7" concept="2" />
-      <node id="6400105291801680943" at="51,0,63,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="6400105291801680877" at="27,0,48,0" concept="6" trace="doRefactoringAction#()V" />
-      <scope id="6400105291801680826" at="81,25,81,25" />
-      <scope id="1161420610164779709" at="44,30,45,34" />
-      <scope id="6400105291801680936" at="48,59,49,26" />
-      <scope id="2034046503361596628" at="55,25,56,99" />
-      <scope id="6597458264416733134" at="66,45,67,32" />
-      <scope id="6400105291801680830" at="83,44,84,26" />
-      <scope id="6400105291801680785" at="86,0,87,0">
+      <node id="6400105291801680854" at="22,66,23,19" concept="13" />
+      <node id="6400105291801680856" at="23,19,24,24" concept="2" />
+      <node id="6400105291801680860" at="24,24,25,11" concept="2" />
+      <node id="6400105291801680862" at="25,11,26,46" concept="2" />
+      <node id="6400105291801680881" at="29,40,30,70" concept="7" />
+      <node id="6400105291801680889" at="31,70,32,133" concept="2" />
+      <node id="6400105291801680897" at="32,133,33,13" concept="8" />
+      <node id="1161420610164779674" at="34,5,35,73" concept="7" />
+      <node id="788503456865744402" at="37,25,38,116" concept="7" />
+      <node id="2034046503361620294" at="39,137,40,34" concept="2" />
+      <node id="2034046503361620302" at="40,34,41,37" concept="2" />
+      <node id="1161420610164779713" at="45,30,46,34" concept="2" />
+      <node id="6400105291801680937" at="49,59,50,26" concept="2" />
+      <node id="2034046503361596629" at="56,25,57,112" concept="2" />
+      <node id="3493964992003907193" at="59,7,60,54" concept="7" />
+      <node id="3493964992003907224" at="60,54,61,58" concept="2" />
+      <node id="8369473153157935281" at="61,58,62,50" concept="2" />
+      <node id="6400105291801680957" at="62,50,63,23" concept="8" />
+      <node id="6597458264416733135" at="68,45,69,32" concept="8" />
+      <node id="6400105291801680737" at="72,82,73,62" concept="7" />
+      <node id="6400105291801680744" at="73,62,74,18" concept="2" />
+      <node id="6400105291801680748" at="74,18,75,35" concept="8" />
+      <node id="6400105291801680763" at="78,116,79,62" concept="7" />
+      <node id="6400105291801680770" at="79,62,80,29" concept="2" />
+      <node id="6400105291801680775" at="80,29,81,18" concept="2" />
+      <node id="6400105291801680779" at="81,18,82,35" concept="8" />
+      <node id="6400105291801680831" at="88,44,89,26" concept="13" />
+      <node id="6400105291801680785" at="91,0,92,0" concept="6" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="6400105291801680805" at="93,70,94,53" concept="2" />
+      <node id="6400105291801680809" at="94,53,95,21" concept="8" />
+      <node id="6400105291801680811" at="96,7,97,18" concept="8" />
+      <node id="6400105291801680823" at="86,0,88,0" concept="1" trace="NodeFilter#()V" />
+      <node id="1161420610164779708" at="44,7,47,5" concept="5" />
+      <node id="6400105291801680933" at="49,0,52,0" concept="6" trace="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)V" />
+      <node id="2034046503361596627" at="56,0,59,0" concept="6" trace="run#()V" />
+      <node id="6400105291801680827" at="88,0,91,0" concept="1" trace="NodeFilter#(Ljava/lang/String;)V" />
+      <node id="6400105291801680887" at="30,70,34,5" concept="5" />
+      <node id="2034046503361620292" at="38,116,42,9" concept="5" />
+      <node id="6400105291801680798" at="92,126,96,7" concept="5" />
+      <node id="2034046503361596623" at="54,44,59,7" concept="2" />
+      <node id="6400105291801680729" at="72,0,77,0" concept="12" trace="getSelectedObject#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6400105291801680845" at="22,0,28,0" concept="1" trace="MoveNodeDialog#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6597458264416733129" at="65,0,71,0" concept="6" trace="getDimensionServiceKey#()Ljava/lang/String;" />
+      <node id="6400105291801680753" at="78,0,84,0" concept="12" trace="getSelectedObject#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2034046503361620289" at="37,0,44,0" concept="6" trace="run#()V" />
+      <node id="6400105291801680795" at="92,0,99,0" concept="6" trace="checkForObject#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljavax/swing/JComponent;)Z" />
+      <node id="2034046503361620285" at="35,73,44,7" concept="2" />
+      <node id="6400105291801680943" at="52,0,65,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="6400105291801680877" at="28,0,49,0" concept="6" trace="doRefactoringAction#()V" />
+      <scope id="6400105291801680826" at="86,25,86,25" />
+      <scope id="1161420610164779709" at="45,30,46,34" />
+      <scope id="6400105291801680936" at="49,59,50,26" />
+      <scope id="2034046503361596628" at="56,25,57,112" />
+      <scope id="6597458264416733134" at="68,45,69,32" />
+      <scope id="6400105291801680830" at="88,44,89,26" />
+      <scope id="6400105291801680785" at="91,0,92,0">
         <var name="modelOfSelectedNode" id="6400105291801680792" />
         <var name="nodeToMove" id="6400105291801680790" />
         <var name="selectedObject" id="6400105291801680788" />
       </scope>
-      <scope id="6400105291801680888" at="30,70,32,13" />
-      <scope id="2034046503361620293" at="38,137,40,37" />
-      <scope id="6400105291801680823" at="81,0,83,0" />
-      <scope id="6400105291801680804" at="88,70,90,21" />
-      <scope id="6400105291801680933" at="48,0,51,0">
+      <scope id="6400105291801680888" at="31,70,33,13" />
+      <scope id="2034046503361620293" at="39,137,41,37" />
+      <scope id="6400105291801680823" at="86,0,88,0" />
+      <scope id="6400105291801680804" at="93,70,95,21" />
+      <scope id="6400105291801680933" at="49,0,52,0">
         <var name="filter" id="6400105291801680941" />
       </scope>
-      <scope id="2034046503361596627" at="55,0,58,0" />
-      <scope id="6400105291801680736" at="69,79,72,35">
+      <scope id="2034046503361596627" at="56,0,59,0" />
+      <scope id="6400105291801680736" at="72,82,75,35">
         <var name="dialog" id="6400105291801680738" />
       </scope>
-      <scope id="6400105291801680827" at="83,0,86,0">
+      <scope id="6400105291801680827" at="88,0,91,0">
         <var name="errorMessage" id="6400105291801680833" />
       </scope>
-      <scope id="6400105291801680853" at="21,63,25,46" />
-      <scope id="6400105291801680762" at="74,113,78,35">
+      <scope id="6400105291801680853" at="22,66,26,46" />
+      <scope id="6400105291801680762" at="78,116,82,35">
         <var name="dialog" id="6400105291801680764" />
       </scope>
-      <scope id="2034046503361620291" at="36,25,41,9">
+      <scope id="2034046503361620291" at="37,25,42,9">
         <var name="node" id="788503456865744403" />
       </scope>
-      <scope id="6400105291801680729" at="69,0,74,0">
+      <scope id="6400105291801680729" at="72,0,77,0">
         <var name="node" id="6400105291801680733" />
         <var name="project" id="6400105291801680730" />
       </scope>
-      <scope id="6400105291801680797" at="87,126,92,18" />
-      <scope id="6400105291801680845" at="21,0,27,0">
+      <scope id="6400105291801680797" at="92,126,97,18" />
+      <scope id="6400105291801680845" at="22,0,28,0">
         <var name="node" id="6400105291801680849" />
         <var name="project" id="6400105291801680846" />
       </scope>
-      <scope id="6597458264416733129" at="63,0,69,0" />
-      <scope id="6400105291801680753" at="74,0,80,0">
+      <scope id="6597458264416733129" at="65,0,71,0" />
+      <scope id="6400105291801680753" at="78,0,84,0">
         <var name="filter" id="6400105291801680759" />
         <var name="node" id="6400105291801680757" />
         <var name="project" id="6400105291801680754" />
       </scope>
-      <scope id="2034046503361620289" at="36,0,43,0" />
-      <scope id="6400105291801680795" at="87,0,94,0">
+      <scope id="2034046503361620289" at="37,0,44,0" />
+      <scope id="6400105291801680795" at="92,0,99,0">
         <var name="component" id="6400105291801680819" />
         <var name="modelOfSelectedNode" id="6400105291801680817" />
         <var name="nodeToMove" id="6400105291801680815" />
         <var name="selectedObject" id="6400105291801680813" />
       </scope>
-      <scope id="6400105291801680947" at="53,44,61,23">
+      <scope id="6400105291801680947" at="54,44,63,23">
         <var name="centerPanel" id="3493964992003907194" />
       </scope>
-      <scope id="6400105291801680943" at="51,0,63,0" />
-      <scope id="6400105291801680880" at="28,40,46,5">
+      <scope id="6400105291801680943" at="52,0,65,0" />
+      <scope id="6400105291801680880" at="29,40,47,5">
         <var name="doRefactoring" id="1161420610164779675" />
         <var name="selectedObject" id="6400105291801680882" />
       </scope>
-      <scope id="6400105291801680877" at="27,0,48,0" />
-      <unit id="2034046503361596627" at="54,80,58,5" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$2" />
-      <unit id="2034046503361620289" at="35,80,43,5" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$1" />
-      <unit id="6400105291801680784" at="80,0,95,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$NodeFilter" />
-      <unit id="6400105291801680728" at="17,0,96,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
+      <scope id="6400105291801680877" at="28,0,49,0" />
+      <unit id="2034046503361596627" at="55,49,59,5" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$2" />
+      <unit id="2034046503361620289" at="36,49,44,5" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$1" />
+      <unit id="6400105291801680784" at="85,0,100,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$NodeFilter" />
+      <unit id="6400105291801680728" at="17,0,101,0" name="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/8821602715294017803">

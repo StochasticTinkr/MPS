@@ -32,11 +32,9 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.util.ToStringComparator;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -47,7 +45,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -61,6 +58,7 @@ public class ModelWriter9 implements IModelWriter {
   private IdInfoRegistry myMetaInfo;
   private ImportsHelper myImportsHelper;
   private final IdEncoder myIdEncoder = new IdEncoder();
+  private boolean myUseActualResolveInfo = true;
 
   public ModelWriter9(@NotNull MetaModelInfoProvider mmiProvider) {
     myMetaInfoProvider = mmiProvider;
@@ -68,6 +66,11 @@ public class ModelWriter9 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
+    // sometimes we serialize detached models (e.g. in tests), no need to enforce actual resolveInfo in that case
+    // In fact, I doubt the need to ensure actual resolve info at all during serialization. If needed, could be explicit step prior to
+    // save or part of MMIP
+    final boolean attachedModel = sourceModel.getModelDescriptor() != null && sourceModel.getModelDescriptor().getRepository() != null;
+    myUseActualResolveInfo = !RuntimeFlags.isMergeDriverMode() && attachedModel;
 
     myMetaInfo = new IdInfoRegistry();
     new IdInfoCollector(myMetaInfo, myMetaInfoProvider).fill(sourceModel.getRootNodes());
@@ -261,7 +264,7 @@ public class ModelWriter9 implements IModelWriter {
     final SContainmentLink roleInParent = node.getContainmentLink();
     if (roleInParent != null) {
       final AggregationLinkInfo aggregationLinkInfo = myMetaInfo.find(roleInParent);
-      setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, aggregationLinkInfo.getIndex());
+      nodeElement.setAttribute(ModelPersistence9.ROLE_ID, aggregationLinkInfo.getIndex());
     }
 
     for (SProperty pid : node.getProperties()) {
@@ -347,23 +350,26 @@ public class ModelWriter9 implements IModelWriter {
     return result;
   }
 
-  private static String genResolveInfo(@NotNull SReference ref) {
-    if (!(RuntimeFlags.isMergeDriverMode())) {
-      SNode target = (ref instanceof StaticReference ? ref.getTargetNode() : null);
-      if ((target != null)) {
+  // not-null arg
+  private String genResolveInfo(SReference ref) {
+    if (myUseActualResolveInfo) {
+      SNode target = ref instanceof StaticReference ? ref.getTargetNode() : null;
+      if (target != null) {
         String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(target);
         if (resolveInfo != null) {
           return resolveInfo;
         }
       }
+      // fall-through
     }
-    return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+    if (ref instanceof jetbrains.mps.smodel.SReference) {
+      return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+    }
+    return null;
   }
 
-  public static void setNotNullAttribute(
-      @NotNull Element element,
-      @NotNull String attrName,
-      @Nullable String attrValue) {
+  // element and attrName are not null, attrValue can be null
+  private static void setNotNullAttribute(Element element, String attrName, String attrValue) {
     if (attrValue != null) {
       element.setAttribute(attrName, attrValue);
     }

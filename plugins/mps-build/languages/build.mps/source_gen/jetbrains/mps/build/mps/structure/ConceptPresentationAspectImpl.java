@@ -12,7 +12,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildLayout_ToBinaryCopyProcessor;
   private ConceptPresentation props_BuildMPSPlugin;
   private ConceptPresentation props_BuildMpsAspect;
+  private ConceptPresentation props_BuildMpsLayout_AutoPluginLayoutType;
   private ConceptPresentation props_BuildMpsLayout_FolderWithSources;
+  private ConceptPresentation props_BuildMpsLayout_ManualPluginLayoutType;
   private ConceptPresentation props_BuildMpsLayout_ModuleJarContent;
   private ConceptPresentation props_BuildMpsLayout_ModuleJars;
   private ConceptPresentation props_BuildMpsLayout_ModuleSources;
@@ -20,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMpsLayout_ModuleXml_CustomJarLocation;
   private ConceptPresentation props_BuildMpsLayout_Plugin;
   private ConceptPresentation props_BuildMpsLayout_PluginDescriptor;
+  private ConceptPresentation props_BuildMpsLayout_PluginLayoutTypeBase;
   private ConceptPresentation props_BuildMps_AbstractModule;
   private ConceptPresentation props_BuildMps_Branding;
   private ConceptPresentation props_BuildMps_BrandingCompany;
@@ -93,6 +96,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMpsAspect = cpb.create();
         }
         return props_BuildMpsAspect;
+      case LanguageConceptSwitch.BuildMpsLayout_AutoPluginLayoutType:
+        if (props_BuildMpsLayout_AutoPluginLayoutType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("all modules are placed into the folder 'languages', which is created in the root of the plugin");
+          cpb.rawPresentation("auto packaging");
+          props_BuildMpsLayout_AutoPluginLayoutType = cpb.create();
+        }
+        return props_BuildMpsLayout_AutoPluginLayoutType;
       case LanguageConceptSwitch.BuildMpsLayout_FolderWithSources:
         if (props_BuildMpsLayout_FolderWithSources == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -101,6 +112,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMpsLayout_FolderWithSources = cpb.create();
         }
         return props_BuildMpsLayout_FolderWithSources;
+      case LanguageConceptSwitch.BuildMpsLayout_ManualPluginLayoutType:
+        if (props_BuildMpsLayout_ManualPluginLayoutType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("packaging of the plugin is to be provided by the user");
+          cpb.rawPresentation("manual packaging");
+          props_BuildMpsLayout_ManualPluginLayoutType = cpb.create();
+        }
+        return props_BuildMpsLayout_ManualPluginLayoutType;
       case LanguageConceptSwitch.BuildMpsLayout_ModuleJarContent:
         if (props_BuildMpsLayout_ModuleJarContent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -151,6 +170,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMpsLayout_PluginDescriptor = cpb.create();
         }
         return props_BuildMpsLayout_PluginDescriptor;
+      case LanguageConceptSwitch.BuildMpsLayout_PluginLayoutTypeBase:
+        if (props_BuildMpsLayout_PluginLayoutTypeBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BuildMpsLayout_PluginLayoutTypeBase = cpb.create();
+        }
+        return props_BuildMpsLayout_PluginLayoutTypeBase;
       case LanguageConceptSwitch.BuildMps_AbstractModule:
         if (props_BuildMps_AbstractModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -274,7 +299,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0ec);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a13b0hc);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -293,7 +318,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_IdeaPluginDependency;
       case LanguageConceptSwitch.BuildMps_IdeaPluginGroup:
         if (props_BuildMps_IdeaPluginGroup == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L);
+          cpb.deprecateAggregation(0x37fdb3de482e2b2fL, "customPackaging");
           cpb.presentationByReference(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, 0x5b7be37b4deb1202L, "group", "", "");
           props_BuildMps_IdeaPluginGroup = cpb.create();
         }
@@ -301,21 +327,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_IdeaPluginGroupCustomModule:
         if (props_BuildMps_IdeaPluginGroupCustomModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.presentationByReference(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L, 0x37fdb3de482e2b28L, "target", "", "");
           props_BuildMps_IdeaPluginGroupCustomModule = cpb.create();
         }
         return props_BuildMps_IdeaPluginGroupCustomModule;
       case LanguageConceptSwitch.BuildMps_IdeaPluginModule:
         if (props_BuildMps_IdeaPluginModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL);
+          cpb.deprecateProperty(0x37fdb3de482cf2dfL, "customPackaging");
           cpb.presentationByReference(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target", "", "");
           props_BuildMps_IdeaPluginModule = cpb.create();
         }
         return props_BuildMps_IdeaPluginModule;
       case LanguageConceptSwitch.BuildMps_IdeaPluginVendor:
         if (props_BuildMps_IdeaPluginVendor == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6cb3984bfe5b72d3L);
-          cpb.deprecateAggregation(0x6cb3984bfe5b72d4L, "icon16");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("BuildMps_IdeaPluginVendor");
           props_BuildMps_IdeaPluginVendor = cpb.create();
         }

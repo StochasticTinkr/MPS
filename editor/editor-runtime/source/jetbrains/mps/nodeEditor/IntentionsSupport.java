@@ -399,16 +399,6 @@ public class IntentionsSupport {
     return result;
   }
 
-
-  /**
-   * @deprecated is not used any more
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public boolean isLightBulbVisible() {
-    return myLightBulb.isVisible();
-  }
-
   private ModelAccess getModelAccess() {
     return myEditor.getRepository().getModelAccess();
   }

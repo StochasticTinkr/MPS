@@ -2,7 +2,7 @@
 <model ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -49,9 +49,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
         <child id="1164903700860" name="catchClause" index="TEXxN" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1497,7 +1494,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="saveStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3zGGVE6UVsI" role="1B3o_S" />
       <node concept="3cqZAl" id="3zGGVE6UVsK" role="3clF45" />
       <node concept="37vLTG" id="3zGGVE6UVsL" role="3clF46">
@@ -1584,7 +1580,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="saveStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3zGGVE6UVvl" role="1B3o_S" />
       <node concept="3cqZAl" id="3zGGVE6UVvn" role="3clF45" />
       <node concept="37vLTG" id="3zGGVE6UVvo" role="3clF46">
@@ -1671,7 +1666,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="saveStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3zGGVE6UVvu" role="1B3o_S" />
       <node concept="3cqZAl" id="3zGGVE6UVvw" role="3clF45" />
       <node concept="37vLTG" id="3zGGVE6UVvx" role="3clF46">
@@ -1758,7 +1752,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="touch" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="3zGGVE6UVvC" role="1B3o_S" />
       <node concept="10P_77" id="3zGGVE6UVvE" role="3clF45" />
       <node concept="37vLTG" id="3zGGVE6UVvF" role="3clF46">

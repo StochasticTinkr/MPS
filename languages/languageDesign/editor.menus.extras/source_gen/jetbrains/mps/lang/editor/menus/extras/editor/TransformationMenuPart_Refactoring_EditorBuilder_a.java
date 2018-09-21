@@ -90,7 +90,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
           public EditorCell compute() {
             return new TransformationMenuPart_Refactoring_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "refactoring");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, 0x41bc200f660dc37aL, "refactoring"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);

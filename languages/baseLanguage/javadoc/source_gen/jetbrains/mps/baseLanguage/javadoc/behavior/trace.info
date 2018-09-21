@@ -318,7 +318,7 @@
       <node id="6612597108004626828" at="31,0,32,0" concept="10" trace="REGISTRY" />
       <node id="6612597108004626828" at="33,0,34,0" concept="10" trace="smartDelete_id7PYAiugbmRz" />
       <node id="6612597108004626828" at="35,0,36,0" concept="10" trace="BH_METHODS" />
-      <node id="6612597108004626831" at="37,63,38,331" concept="2" />
+      <node id="6612597108004626831" at="37,63,38,183" concept="2" />
       <node id="439148907936339404" at="41,112,42,233" concept="6" />
       <node id="439148907936414313" at="42,233,43,63" concept="6" />
       <node id="439148907936340169" at="43,63,44,201" concept="6" />
@@ -391,7 +391,7 @@
       <node id="439148907936531663" at="57,10,96,5" concept="0" />
       <node id="439148907936340114" at="48,0,96,5" concept="4" />
       <node id="6612597108004626828" at="41,0,99,0" concept="11" trace="smartDelete_id7PYAiugbmRz#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
-      <scope id="6612597108004626828" at="37,63,38,331" />
+      <scope id="6612597108004626828" at="37,63,38,183" />
       <scope id="5521685164201377200" at="51,374,52,369" />
       <scope id="3633133276124307752" at="59,413,60,67" />
       <scope id="3633133276124307924" at="71,244,72,66" />

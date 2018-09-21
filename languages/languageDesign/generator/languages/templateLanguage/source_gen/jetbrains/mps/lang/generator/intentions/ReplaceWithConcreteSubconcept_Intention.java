@@ -76,7 +76,7 @@ public final class ReplaceWithConcreteSubconcept_Intention extends AbstractInten
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null);
+      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(myParameter, null);
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
     }

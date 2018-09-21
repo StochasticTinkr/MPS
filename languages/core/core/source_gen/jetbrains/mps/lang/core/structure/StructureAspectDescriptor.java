@@ -40,9 +40,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInterfacePart = createDescriptorForInterfacePart();
   /*package*/ final ConceptDescriptor myConceptLinkAttribute = createDescriptorForLinkAttribute();
   /*package*/ final ConceptDescriptor myConceptMigrationAnnotation = createDescriptorForMigrationAnnotation();
+  /*package*/ final ConceptDescriptor myConceptMigrationAnnotation_old = createDescriptorForMigrationAnnotation_old();
+  /*package*/ final ConceptDescriptor myConceptMigrationDataAnnotation = createDescriptorForMigrationDataAnnotation();
   /*package*/ final ConceptDescriptor myConceptNodeAttribute = createDescriptorForNodeAttribute();
   /*package*/ final ConceptDescriptor myConceptPropertyAttribute = createDescriptorForPropertyAttribute();
   /*package*/ final ConceptDescriptor myConceptReviewMigration = createDescriptorForReviewMigration();
+  /*package*/ final ConceptDescriptor myConceptReviewMigration_old = createDescriptorForReviewMigration_old();
   /*package*/ final ConceptDescriptor myConceptScopeFacade = createDescriptorForScopeFacade();
   /*package*/ final ConceptDescriptor myConceptScopeProvider = createDescriptorForScopeProvider();
   /*package*/ final ConceptDescriptor myConceptSideTransformInfo = createDescriptorForSideTransformInfo();
@@ -55,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptMigrationAnnotation_old, myConceptMigrationDataAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptReviewMigration_old, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -118,12 +121,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLinkAttribute;
       case LanguageConceptSwitch.MigrationAnnotation:
         return myConceptMigrationAnnotation;
+      case LanguageConceptSwitch.MigrationAnnotation_old:
+        return myConceptMigrationAnnotation_old;
+      case LanguageConceptSwitch.MigrationDataAnnotation:
+        return myConceptMigrationDataAnnotation;
       case LanguageConceptSwitch.NodeAttribute:
         return myConceptNodeAttribute;
       case LanguageConceptSwitch.PropertyAttribute:
         return myConceptPropertyAttribute;
       case LanguageConceptSwitch.ReviewMigration:
         return myConceptReviewMigration;
+      case LanguageConceptSwitch.ReviewMigration_old:
+        return myConceptReviewMigration_old;
       case LanguageConceptSwitch.ScopeFacade:
         return myConceptScopeFacade;
       case LanguageConceptSwitch.ScopeProvider:
@@ -175,8 +184,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "BasePlaceholder", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.ChildAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3717301156197626279");
     b.version(2);
     b.aggregate("content", 0x339681b4da4ef1bdL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x38518aff8a105fd6L).optional(true).ordered(true).multiple(false).origin("3717301156197626301").done();
@@ -188,7 +195,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/709746936026466394");
     b.version(2);
-    b.prop("linkRole", 0x9d98713f249b585L, "709746936026609029");
+    b.prop("role_DebugInfo", 0x9d98713f249b585L, "709746936026609029");
     b.prop("linkId", 0x9d98713f249b587L, "709746936026609031");
     return b.create();
   }
@@ -350,15 +357,34 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3364660638048049745");
     b.version(2);
-    b.prop("linkRole", 0x18649a5c82123514L, "1757699476691236116");
+    b.prop("role_DebugInfo", 0x18649a5c82123514L, "1757699476691236116");
     b.prop("linkId", 0x129f3f612792fc5cL, "1341860900488019036");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMigrationAnnotation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359251");
+    b.version(2);
+    b.prop("createdByScript", 0x78c7e79625a38e14L, "8703179436979359252");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMigrationAnnotation_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationAnnotation_old", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/2482611074347614920");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMigrationDataAnnotation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "MigrationDataAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625990591L);
+    b.class_(false, false, true);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436978668945");
+    b.version(2);
+    b.aggregate("dataNode", 0x5e7aa366c292fcceL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).ordered(true).multiple(false).origin("6807933448470330574").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeAttribute() {
@@ -375,12 +401,24 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.Attribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L);
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3364660638048049750");
     b.version(2);
-    b.prop("propertyName", 0x18649a5c82123515L, "1757699476691236117");
+    b.prop("name_DebugInfo", 0x18649a5c82123515L, "1757699476691236117");
     b.prop("propertyId", 0x129f3f61278d556dL, "1341860900487648621");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReviewMigration() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e06L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x78c7e79625a38e13L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/8703179436979359238");
+    b.version(2);
+    b.prop("reasonShort", 0x78c7e79625a38e07L, "8703179436979359239");
+    b.prop("todo", 0x78c7e79625a38e08L, "8703179436979359240");
+    b.prop("readableId", 0x78c7e79625a38e09L, "8703179436979359241");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForReviewMigration_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ReviewMigration_old", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61e234c9L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L);

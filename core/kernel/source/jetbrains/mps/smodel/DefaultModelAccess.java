@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,15 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.repository.CommandListener;
-
 import javax.swing.SwingUtilities;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
+ * This is an instance available from {@code smodel.ModelAccess.instance()} for uses from non-IDE ant tasks and tests, and for initial IDE use
+ * unless WorkbenchModelAccess is installed. We won't need it once {@code MA.instance()} gone.
+ *
  * Evgeny Gryaznov, Sep 3, 2010
  */
 class DefaultModelAccess extends ModelAccess {
-  /**
-   * write action is the same as command; storing a map from command listener clients to the actual write action listeners
-   */
-  private final Map<CommandListener, CommandWriteActionAdapter> myAdaptersMap = new HashMap<>();
 
   DefaultModelAccess() {
   }
@@ -44,7 +36,7 @@ class DefaultModelAccess extends ModelAccess {
     }
     getReadLock().lock();
     try {
-      r.run();
+      myReadActionDispatcher.dispatch(r);
     } finally {
       getReadLock().unlock();
     }
@@ -59,39 +51,7 @@ class DefaultModelAccess extends ModelAccess {
     assertNotWriteFromRead();
     getWriteLock().lock();
     try {
-      clearRepositoryStateCaches();
-      myWriteActionDispatcher.run(r);
-    } finally {
-      getWriteLock().unlock();
-    }
-  }
-
-  private void assertNotWriteFromRead() {
-    assert !canRead() : "Deadlock: Write action should not be executed from within read.";
-  }
-
-  @Override
-  public <T> T runReadAction(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-    getReadLock().lock();
-    try {
-      return c.compute();
-    } finally {
-      getReadLock().unlock();
-    }
-  }
-
-  @Override
-  public <T> T runWriteAction(final Computable<T> c) {
-    if (canWrite()) {
-      return c.compute();
-    }
-    getWriteLock().lock();
-    try {
-      clearRepositoryStateCaches();
-      return myWriteActionDispatcher.compute(c);
+      myWriteActionDispatcher.dispatch(r);
     } finally {
       getWriteLock().unlock();
     }
@@ -112,28 +72,10 @@ class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
-    runWriteInEDT(r);
-  }
-
-  @Override
-  public <T> T tryRead(final Computable<T> c) {
-    if (getReadLock().tryLock()) {
-      try {
-        return c.compute();
-      } finally {
-        getReadLock().unlock();
-      }
-    } else {
-      return null;
-    }
-  }
-
-  @Override
   public boolean tryRead(Runnable r) {
     if (getReadLock().tryLock()) {
       try {
-        r.run();
+        myReadActionDispatcher.dispatch(r);
       } finally {
         getReadLock().unlock();
       }
@@ -143,35 +85,16 @@ class DefaultModelAccess extends ModelAccess {
     }
   }
 
-  @Override
-  public void executeCommand(Runnable r, Project project) {
-    runWriteAction(r);
-  }
-
-  @Override
-  public void runUndoTransparentCommand(Runnable r, Project project) {
-    r.run();
-  }
-
-  @Override
-  public boolean isInsideCommand() {
-    return canWrite();
-  }
-
   /**
    * one might not expect that the command is equal to write action here
-   * warning : adding command listener to DefaultModelAccess: a command is the same as a write action
    */
   @Override
-  public void addCommandListener(@NotNull CommandListener listener) {
-    CommandWriteActionAdapter adapter = new CommandWriteActionAdapter(listener);
-    myAdaptersMap.put(listener, adapter);
-    addWriteActionListener(adapter);
-  }
+  public void executeCommand(Runnable r) {
+    // XXX alternatively:
+    //   myCommandActionDispatcher.dispatch(() -> runWriteAction(r));
+    // The order of command/write notifications is different, does it matter? Is there contract for that? WorkbenchModelAccess sends out
+    // command notifications from within a write!
+    runWriteAction(myCommandActionDispatcher.wrap(r));
 
-  @Override
-  public void removeCommandListener(@NotNull CommandListener listener) {
-    @NotNull CommandWriteActionAdapter adapter = myAdaptersMap.remove(listener);
-    removeWriteActionListener(adapter);
   }
 }

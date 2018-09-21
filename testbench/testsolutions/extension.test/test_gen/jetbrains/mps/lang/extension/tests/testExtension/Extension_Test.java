@@ -67,6 +67,4 @@ public class Extension_Test extends TestCase {
       });
     }
   }
-  public Extension_Test() {
-  }
 }
