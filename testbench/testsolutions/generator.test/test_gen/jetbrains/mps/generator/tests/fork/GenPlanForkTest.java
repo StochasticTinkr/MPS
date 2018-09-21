@@ -11,10 +11,13 @@ import java.util.Collection;
 import org.junit.Assert;
 
 public class GenPlanForkTest extends BaseGeneratorTest {
+
+
   private SModel myArg_EM1;
   private SModel myArg_RM1;
   private SModel myArg_RM2;
   private SModel myArg_ForkPlan;
+
 
   @Before
   public void prepareArguments() {

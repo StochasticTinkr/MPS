@@ -9,10 +9,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.generator.rt.TransformHelper;
 
 public class BasicTest1 extends BaseGeneratorTest {
+
+
   private SModel myArg_A;
   private SModel myArg_B;
   private SModel myArg_NoClosures;
   private SModel myArg_ClosuresOnlyPlan;
+
 
   @Before
   public void prepareArguments() {

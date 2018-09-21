@@ -24,6 +24,7 @@
     <import index="bjdw" ref="r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
+    <import index="jtsr" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.project(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -212,7 +213,6 @@
         <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6VhyYlfP6xO" role="jymVt" />
     <node concept="2tJIrI" id="6VhyYlfP4cS" role="jymVt" />
     <node concept="3clFb_" id="6VhyYlfP3VN" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -250,6 +250,16 @@
             <property role="3SKdUp" value="      Project shall be external configuration setting." />
           </node>
         </node>
+        <node concept="3SKdUt" id="6sSwiyilRY9" role="3cqZAp">
+          <node concept="3SKdUq" id="6sSwiyilQM4" role="3SKWNk">
+            <property role="3SKdUp" value="      As long as I don't have access to the project created inside MpsTestsSuite, I decided to resort to a CL repository for now," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6sSwiyilSsz" role="3cqZAp">
+          <node concept="3SKdUq" id="6sSwiyilSs_" role="3SKWNk">
+            <property role="3SKdUp" value="      though there's a chance to override this with setProject()" />
+          </node>
+        </node>
         <node concept="3clFbF" id="6VhyYlfP5U7" role="3cqZAp">
           <node concept="37vLTI" id="6VhyYlfP5U9" role="3clFbG">
             <node concept="2OqwBi" id="5ABvamFVub6" role="37vLTx">
@@ -277,6 +287,58 @@
       <node concept="2AHcQZ" id="6VhyYlfP3VV" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+    </node>
+    <node concept="2tJIrI" id="BMoFi_$Qxa" role="jymVt" />
+    <node concept="3clFb_" id="BMoFi_$Syu" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getEnvironment" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="true" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="BMoFi_$Syx" role="3clF47">
+        <node concept="3cpWs6" id="BMoFi_$Upm" role="3cqZAp">
+          <node concept="37vLTw" id="BMoFi_$Ur2" role="3cqZAk">
+            <ref role="3cqZAo" node="6VhyYlfP40B" resolve="myEnv" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="BMoFi_$RxZ" role="1B3o_S" />
+      <node concept="3uibUv" id="BMoFi_$SuU" role="3clF45">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="BMoFi__zoF" role="jymVt" />
+    <node concept="3clFb_" id="BMoFi___ug" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setProject" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="true" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="BMoFi__As0" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="BMoFi__Brc" role="1tU5fm">
+          <ref role="3uigEE" to="jtsr:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="BMoFi___uj" role="3clF47">
+        <node concept="3clFbF" id="BMoFi__DEo" role="3cqZAp">
+          <node concept="37vLTI" id="BMoFi__Ect" role="3clFbG">
+            <node concept="2OqwBi" id="BMoFi__ED0" role="37vLTx">
+              <node concept="37vLTw" id="BMoFi__Ew8" role="2Oq$k0">
+                <ref role="3cqZAo" node="BMoFi__As0" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="BMoFi__EN8" role="2OqNvi">
+                <ref role="37wK5l" to="jtsr:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="BMoFi__DEn" role="37vLTJ">
+              <ref role="3cqZAo" node="6VhyYlfP6Cd" resolve="myRepository" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="BMoFi__$q4" role="1B3o_S" />
+      <node concept="3cqZAl" id="BMoFi___qP" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="6VhyYlfKUIZ" role="jymVt" />
     <node concept="3clFb_" id="6VhyYlfKUJG" role="jymVt">
@@ -748,20 +810,9 @@
             <property role="3SKdUp" value="FIXME lacking proper model access, works as mr.resolve just complains with WARN if there's no model read" />
           </node>
         </node>
-        <node concept="3cpWs8" id="2HHqIa5Eh9Y" role="3cqZAp">
-          <node concept="3cpWsn" id="2HHqIa5Eh9Z" role="3cpWs9">
-            <property role="TrG5h" value="plaf" />
-            <node concept="3uibUv" id="2HHqIa5Eh9V" role="1tU5fm">
-              <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
-            </node>
-            <node concept="2OqwBi" id="2HHqIa5Eha0" role="33vP2m">
-              <node concept="37vLTw" id="2HHqIa5Eha1" role="2Oq$k0">
-                <ref role="3cqZAo" node="6VhyYlfP40B" resolve="myEnv" />
-              </node>
-              <node concept="liA8E" id="2HHqIa5Eha2" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
-              </node>
-            </node>
+        <node concept="3SKdUt" id="6sSwiyilTu9" role="3cqZAp">
+          <node concept="3SKdUq" id="6sSwiyilTub" role="3SKWNk">
+            <property role="3SKdUp" value="      Need to decide how to grab model locks effectively, don't want to grab it here, either shall wrap whole prepareArguments() or test method" />
           </node>
         </node>
         <node concept="3cpWs8" id="2HHqIa5EjXS" role="3cqZAp">
@@ -784,21 +835,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="2HHqIa5EmbK" role="3cqZAp">
-          <node concept="3SKdUq" id="2HHqIa5EmbM" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="2HHqIa5EMiU" role="3cqZAp">
-          <node concept="3SKdUq" id="2HHqIa5EMiW" role="3SKWNk">
-            <property role="3SKdUp" value="      and I'd rather resolve them trough project of MpsTestsSuite. However, as long as I don't have access to the project created inside MpsTestsSuite, I decided to go " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="2HHqIa5EMuP" role="3cqZAp">
-          <node concept="3SKdUq" id="2HHqIa5EMuQ" role="3SKWNk">
-            <property role="3SKdUp" value="      through a CL repository for now." />
-          </node>
-        </node>
         <node concept="3cpWs6" id="2HHqIa5EkvG" role="3cqZAp">
           <node concept="2OqwBi" id="2HHqIa5EkIs" role="3cqZAk">
             <node concept="37vLTw" id="2HHqIa5EkvI" role="2Oq$k0">
@@ -806,16 +842,8 @@
             </node>
             <node concept="liA8E" id="2HHqIa5El4$" role="2OqNvi">
               <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-              <node concept="2OqwBi" id="2HHqIa5E9nC" role="37wK5m">
-                <node concept="37vLTw" id="2HHqIa5Eha3" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2HHqIa5Eh9Z" resolve="plaf" />
-                </node>
-                <node concept="liA8E" id="2HHqIa5E9LN" role="2OqNvi">
-                  <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
-                  <node concept="3VsKOn" id="2HHqIa5Efu5" role="37wK5m">
-                    <ref role="3VsUkX" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="6sSwiyilOOC" role="37wK5m">
+                <ref role="3cqZAo" node="6VhyYlfP6Cd" resolve="myRepository" />
               </node>
             </node>
           </node>

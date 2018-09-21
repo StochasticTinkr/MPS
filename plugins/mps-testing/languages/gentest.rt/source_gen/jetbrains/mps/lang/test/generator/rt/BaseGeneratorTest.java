@@ -7,6 +7,7 @@ import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.project.Project;
 import jetbrains.mps.messages.LogHandler;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -34,13 +34,22 @@ public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
   private SRepository myRepository;
 
-
   @Override
   public void setEnvironment(@NotNull Environment env) {
     myEnv = env;
     // FIXME AntModuleTestSuite opens a project and I don't see a reason for the test to open another one. 
     //       Project shall be external configuration setting. 
+    //       As long as I don't have access to the project created inside MpsTestsSuite, I decided to resort to a CL repository for now, 
+    //       though there's a chance to override this with setProject() 
     myRepository = myEnv.getPlatform().findComponent(MPSModuleRepository.class);
+  }
+
+  protected final Environment getEnvironment() {
+    return myEnv;
+  }
+
+  protected final void setProject(Project mpsProject) {
+    myRepository = mpsProject.getRepository();
   }
 
   protected final TransformHelper newTransformer() {
@@ -95,11 +104,8 @@ public class BaseGeneratorTest implements EnvironmentAware {
 
   protected final SModel findModel(String modelRef) {
     // FIXME lacking proper model access, works as mr.resolve just complains with WARN if there's no model read 
-    Platform plaf = myEnv.getPlatform();
+    //       Need to decide how to grab model locks effectively, don't want to grab it here, either shall wrap whole prepareArguments() or test method 
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
-    // FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project 
-    //       and I'd rather resolve them trough project of MpsTestsSuite. However, as long as I don't have access to the project created inside MpsTestsSuite, I decided to go  
-    //       through a CL repository for now. 
-    return mr.resolve(plaf.findComponent(MPSModuleRepository.class));
+    return mr.resolve(myRepository);
   }
 }
