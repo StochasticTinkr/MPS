@@ -1824,7 +1824,7 @@
       <node id="4222853992782977046" at="162,217,163,56" concept="5" />
       <node id="4222853992782109380" at="168,31,169,81" concept="11" />
       <node id="3902807789912638533" at="173,9,174,20" concept="10" />
-      <node id="3902807789912638538" at="174,20,175,22" concept="10" />
+      <node id="3902807789912638538" at="174,20,175,29" concept="10" />
       <node id="3902807789912638543" at="176,11,177,37" concept="5" />
       <node id="3902807789912638548" at="177,37,178,36" concept="5" />
       <node id="3902807789912638561" at="180,26,181,22" concept="5" />
@@ -1858,7 +1858,7 @@
       <node id="4222853992782723459" at="199,0,204,0" concept="15" trace="createPrivateVisibility_eoyrbu_a0a0a7a11a41#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7602347209949724364" at="45,25,52,5" concept="8" />
       <node id="4222853992782977029" at="158,76,165,5" concept="7" />
-      <node id="3902807789912638563" at="175,22,183,7" concept="20" />
+      <node id="3902807789912638563" at="175,29,183,7" concept="20" />
       <node id="4222853992781904887" at="155,0,167,0" concept="9" trace="updateClassifier#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/java/stub/ReferenceFactory;)V" />
       <node id="4222853992781793483" at="40,0,54,0" concept="3" trace="ClassifierLoader#(Ljetbrains/mps/vfs/IFile;ZZ)V" />
       <node id="4222853992782654473" at="98,0,112,5" concept="8" />

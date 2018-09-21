@@ -114,7 +114,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   }
 
   public static Iterable<SNode> sortMethods(SNode baseClassifier, Iterable<SNode> methods) {
-    return sortMethods(((List<SNode>) BHReflection.invoke0(baseClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "4fAeKISQjDi"))), methods);
+    return sortMethods(((List<SNode>) BHReflection.invoke0(baseClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "59G_UM6ah0X"))), methods);
   }
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {

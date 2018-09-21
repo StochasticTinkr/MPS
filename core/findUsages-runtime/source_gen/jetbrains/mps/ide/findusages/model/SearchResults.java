@@ -61,8 +61,8 @@ public class SearchResults<T> implements UsagesList {
    */
   @Deprecated
   public Set<Object> getSearchedNodes() {
-    // mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same  
-    // kind as our results, hence we use <?>, not <T> (I don't feel there's reason introduce <E> as it  
+    // mySearchNodes lists elements we looked for; elements our results 'derived' from. They are not necessarily of the same 
+    // kind as our results, hence we use <?>, not <T> (I don't feel there's reason introduce <E> as it 
     // (a) limits where we can look; (b) complicates the code 
     return (Set<Object>) mySearchedObjects.getElements();
   }
@@ -71,9 +71,9 @@ public class SearchResults<T> implements UsagesList {
     return mySearchResults;
   }
 
-  public Set<Object> getResultObjects() {
-    Set<Object> resultObjects = new HashSet<Object>();
-    for (SearchResult<?> searchResult : mySearchResults) {
+  public Set<T> getResultObjects() {
+    Set<T> resultObjects = new HashSet<T>();
+    for (SearchResult<T> searchResult : mySearchResults) {
       resultObjects.add(searchResult.getObject());
     }
     return resultObjects;
@@ -105,9 +105,10 @@ public class SearchResults<T> implements UsagesList {
     return result;
   }
 
-  public List<SearchResult<?>> getNotNullResults() {
-    List<SearchResult<?>> alive = new ArrayList<SearchResult<?>>();
-    for (SearchResult<?> result : mySearchResults) {
+  @NotNull
+  public List<SearchResult<T>> getNotNullResults() {
+    List<SearchResult<T>> alive = new ArrayList<SearchResult<T>>();
+    for (SearchResult<T> result : mySearchResults) {
       if (result.getObject() != null) {
         alive.add(result);
       }

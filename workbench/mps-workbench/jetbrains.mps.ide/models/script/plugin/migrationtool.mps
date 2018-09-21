@@ -202,7 +202,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -3164,6 +3163,9 @@
       <node concept="2AHcQZ" id="3tYsUK_S1Vt" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+      <node concept="2AHcQZ" id="1jwh7LzqNEN" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
     <node concept="3clFb_" id="6m98d5YYbKm" role="jymVt">
       <property role="TrG5h" value="getRefactoring" />
@@ -3550,7 +3552,9 @@
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="DTcS_lxVfB" role="11_B2D">
                 <ref role="3uigEE" to="9erk:~SearchResult" resolve="SearchResult" />
-                <node concept="3qTvmN" id="6hZLf2XJXDl" role="11_B2D" />
+                <node concept="3uibUv" id="1VgT8rg7SZ5" role="11_B2D">
+                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="DTcS_lxT39" role="33vP2m">
@@ -3577,6 +3581,9 @@
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="DTcS_lxVf$" role="1tU5fm">
               <ref role="3uigEE" to="9erk:~SearchResult" resolve="SearchResult" />
+              <node concept="3uibUv" id="1VgT8rg7U3Q" role="11_B2D">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="DTcS_lxT3i" role="2LFqv$">
