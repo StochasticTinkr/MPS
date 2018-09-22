@@ -241,7 +241,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="BaseLanguage Debugger Support" />
     <property role="9BnSO" value="182.1" />
-    <property role="9BnSK" value="2018.2.4" />
+    <property role="9BnSK" value="2018.2.5" />
     <node concept="2Tc6Op" id="5ODR6dNebC9" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.debugger.java" />
     </node>
