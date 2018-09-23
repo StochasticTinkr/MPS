@@ -185,9 +185,6 @@
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
-      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
-        <reference id="1171315804605" name="concept" index="2RRcyH" />
-      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
@@ -196,6 +193,9 @@
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
+      </concept>
+      <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
+        <reference id="1176109685394" name="concept" index="3lApI3" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -1435,11 +1435,11 @@
                                                     </node>
                                                   </node>
                                                 </node>
-                                                <node concept="2RRcyG" id="7E" role="2OqNvi">
-                                                  <ref role="2RRcyH" to="c2kz:3NWQyev6tcm" resolve="Library" />
+                                                <node concept="3lApI0" id="7E" role="2OqNvi">
+                                                  <ref role="3lApI3" to="c2kz:3NWQyev6tcm" resolve="Library" />
                                                   <node concept="cd27G" id="7Q" role="lGtFl">
                                                     <node concept="3u3nmq" id="7R" role="cd27D">
-                                                      <property role="3u3nmv" value="6836281137582849306" />
+                                                      <property role="3u3nmv" value="6375461226781698638" />
                                                     </node>
                                                   </node>
                                                 </node>
