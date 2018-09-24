@@ -29,7 +29,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.*;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -48,7 +48,7 @@ import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkStatic;
 /**
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
-
+ * <p>
  * TODO
  * Features:
  * Multiple dispatch?
@@ -65,6 +65,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   private final SMethodVirtualTable mySuperVTable = new SMethodVirtualTable();
   private final BehaviorRegistry myBehaviorRegistry;
   private AncestorCache myAncestorCache;
+  private List<SMethod<?>> myMethods;
 
   protected BaseBHDescriptor(BehaviorRegistry behaviorRegistry) {
     myBehaviorRegistry = behaviorRegistry;
@@ -215,7 +216,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
     Object[] emptyParameters = new Object[0];
     new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor,
-        getParametersArray(Collections.emptyList(), emptyParameters));
+                                                                 getParametersArray(Collections.emptyList(), emptyParameters));
   }
 
   @Override
@@ -360,18 +361,21 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   @NotNull
   @Override
   public List<SMethod<?>> getMethods() {
-    Set<SMethod<?>> result = new HashSet<>();
-    for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
-      BHDescriptor bhDescriptor = getBHDescriptor(concept);
-      List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
-      for (SMethod<?> method : conceptMethods) {
-        if (method.getModifiers().isPublic() && !method.getModifiers().isVirtual()) {
-          result.add(method);
+    if (myMethods == null) {
+      Set<SMethod<?>> result = new HashSet<>();
+      for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
+        BHDescriptor bhDescriptor = getBHDescriptor(concept);
+        List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
+        for (SMethod<?> method : conceptMethods) {
+          if (method.getModifiers().isPublic() && !method.getModifiers().isVirtual()) {
+            result.add(method);
+          }
         }
       }
+      result.addAll(myVTable.getMethods());
+      myMethods = new ArrayList<>(result);
     }
-    result.addAll(myVTable.getMethods());
-    return new ArrayList<>(result);
+    return myMethods;
   }
 
   /**
