@@ -49,6 +49,7 @@ public final class TransformHelper {
         ModelGenerationPlan plan = (myPlanProvider == null ? null : myPlanProvider.getPlan(myInputModel));
         if (plan != null) {
           optBuilder.customPlan(myInputModel, plan);
+          tmp.initCheckpointModule();
         }
         GenerationFacade genFacade = new GenerationFacade(myRepository, optBuilder.create());
         final GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);

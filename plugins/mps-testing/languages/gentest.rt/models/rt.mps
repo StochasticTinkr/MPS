@@ -1185,6 +1185,16 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbF" id="50NVUdCq3$s" role="3cqZAp">
+                        <node concept="2OqwBi" id="50NVUdCq3QW" role="3clFbG">
+                          <node concept="37vLTw" id="50NVUdCq3$q" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6VhyYlfO2Fe" resolve="tmp" />
+                          </node>
+                          <node concept="liA8E" id="50NVUdCq4b0" role="2OqNvi">
+                            <ref role="37wK5l" to="ap4t:~TransientModelsProvider.initCheckpointModule():void" resolve="initCheckpointModule" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node concept="3y3z36" id="354Yu58nJY$" role="3clFbw">
                       <node concept="10Nm6u" id="354Yu58nKex" role="3uHU7w" />
