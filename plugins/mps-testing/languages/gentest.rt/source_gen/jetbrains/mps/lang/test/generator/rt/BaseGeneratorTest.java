@@ -5,13 +5,14 @@ package jetbrains.mps.lang.test.generator.rt;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.List;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.project.Project;
 import jetbrains.mps.messages.LogHandler;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.List;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -30,10 +31,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.Assume;
+import org.junit.After;
 
 public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
   private SRepository myRepository;
+  private final List<TransformHelper> myTransformHelpers = new ArrayList<TransformHelper>(2);
 
   @Override
   public void setEnvironment(@NotNull Environment env) {
@@ -56,7 +59,9 @@ public class BaseGeneratorTest implements EnvironmentAware {
   protected final TransformHelper newTransformer() {
     // Perhaps, we shall use a handler that pipes everything to stdout (warn -> stdout, error -> stderr?), but for now it's just 
     // a logger with a category matching name of a test class 
-    return new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
+    TransformHelper rv = new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
+    myTransformHelpers.add(rv);
+    return rv;
   }
 
   protected final void assertMatch(final SModel m1, final SModel m2) {
@@ -114,5 +119,13 @@ public class BaseGeneratorTest implements EnvironmentAware {
     SModel m = findModel(modelRef);
     Assume.assumeTrue(String.format("Could not find model for parameter '%s' (%s)", parameterName, modelRef), m != null);
     return m;
+  }
+
+  @After
+  public void cleanup() {
+    for (TransformHelper th : myTransformHelpers) {
+      th.dispose();
+    }
+    myTransformHelpers.clear();
   }
 }
