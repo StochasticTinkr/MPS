@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
-import com.intellij.icons.AllIcons.Modules;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -66,7 +66,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -86,7 +85,6 @@ import static com.intellij.openapi.vfs.VfsUtilCore.isAncestor;
  * It is located in the module properties dialog.
  */
 public class ModelRootContentEntriesEditor implements Disposable {
-  private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
   private final SRepository myRepository;
@@ -123,11 +121,11 @@ public class ModelRootContentEntriesEditor implements Disposable {
     return new IconWithTextAction(
         PropertiesBundle.message("module.common.roots.add.title"),
         PropertiesBundle.message("module.common.roots.add.tip"),
-        Modules.AddContentEntry) {
+        AllIcons.General.Add) {
       @Override
-      public void actionPerformed(final AnActionEvent e) {
+      public void actionPerformed(@NotNull final AnActionEvent e) {
         if (list.size() == 1) {
-          myRepository.getModelAccess().runReadAction(() -> list.get(0).actionPerformed(e));
+          list.get(0).actionPerformed(e);
           return;
         }
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
@@ -140,11 +138,6 @@ public class ModelRootContentEntriesEditor implements Disposable {
               @Override
               public boolean hasSubstep(AddContentEntryAction selectedValue) {
                 return false;
-              }
-
-              @Override
-              public boolean isMnemonicsNavigationEnabled() {
-                return true;
               }
 
               @Override
@@ -163,7 +156,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
     };
   }
 
-  public void initUI() {
+  public final void initUI() {
     myMainPanel = new JBPanel(new BorderLayout());
     myMainPanel.setPreferredSize(new Dimension(300, 300));
 
@@ -173,7 +166,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
     group.add(getContentEntryActions());
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
-    myEditorsListPanel.setBackground(BACKGROUND_COLOR);
+    myEditorsListPanel.setBackground(UIUtil.getListBackground());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorsListPanel);
     scrollPane.setPreferredSize(new Dimension(250, 300));
     entriesPanel.add(new ToolbarPanel(scrollPane, group), BorderLayout.CENTER);
@@ -291,11 +284,13 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
     AddContentEntryAction(@NotNull String type) {
       super(type);
+      // we know it's model root kind and not a user-friendly message that may contain mnemonic (IDEA's Presentation strips first '_' off)
+      getTemplatePresentation().setText(type, false);
       myType = type;
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(modelRoot);
       Disposer.register(ModelRootContentEntriesEditor.this, entry);
