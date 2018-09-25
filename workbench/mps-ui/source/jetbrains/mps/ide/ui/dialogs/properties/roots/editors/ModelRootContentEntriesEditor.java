@@ -157,9 +157,18 @@ public class ModelRootContentEntriesEditor implements Disposable {
               }
 
               @Override
+              public int getMnemonicPos(AddContentEntryAction value) {
+                // as long as isMnemonicsNavigationEnabled() == true, expect there could be a mnemonic in editor's title.
+                // Presentation uses '_' to indicate mnemonics, while super.getMnemonicPos expects '&' or 0x1b (I adore your approach to mnemonics, IDEA guys!)
+                // Therefore, here we delegate to presentation to tell position of a mnemonic identifier character (would get stripped off later in
+                // PopupListElementRenderer, I believe). Note, for unknown reason mnemonic letter is not highlighted although works!
+                return value.getTemplatePresentation().getDisplayedMnemonicIndex();
+              }
+
+              @Override
               @NotNull
               public String getTextFor(AddContentEntryAction value) {
-                return value.getTemplatePresentation().getText();
+                return value.getTemplatePresentation().getTextWithMnemonic();
               }
             });
         popup.show(new RelativePoint(myEditorsListPanel, new Point(0, 0)));
