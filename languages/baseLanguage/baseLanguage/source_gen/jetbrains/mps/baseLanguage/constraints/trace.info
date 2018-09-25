@@ -639,7 +639,7 @@
       <node id="1213104847359" at="37,90,38,131" concept="7" />
       <node id="1213104847360" at="41,44,42,20" concept="8" />
       <node id="1213104847360" at="49,63,50,58" concept="8" />
-      <node id="6836281137582644009" at="54,13,55,374" concept="7" />
+      <node id="6836281137582644009" at="54,13,55,372" concept="7" />
       <node id="6836281137582644019" at="56,41,57,40" concept="8" />
       <node id="6836281137582644025" at="58,15,59,112" concept="8" />
       <node id="4074304533012411946" at="67,44,68,20" concept="8" />
@@ -651,7 +651,7 @@
       <node id="1213104847359" at="95,0,96,0" concept="11" trace="breakingNode_amrbnf_a0a0a0a0a1a0b0a1a2" />
       <node id="1213104847359" at="96,0,97,0" concept="11" trace="breakingNode_amrbnf_a0a2a0a0a1a0b0a2a2" />
       <node id="1213104847359" at="32,0,35,0" concept="2" trace="StaticFieldReference_Constraints#()V" />
-      <node id="6836281137582644017" at="55,374,58,15" concept="5" />
+      <node id="6836281137582644017" at="55,372,58,15" concept="5" />
       <node id="1213104847360" at="40,0,44,0" concept="6" trace="hasOwnScopeProvider#()Z" />
       <node id="1213104847360" at="48,0,52,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="4074304533012411946" at="66,0,70,0" concept="6" trace="hasOwnScopeProvider#()Z" />
