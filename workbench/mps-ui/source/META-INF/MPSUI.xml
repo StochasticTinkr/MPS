@@ -26,7 +26,8 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntryFactory"/>
+    <mps.modelRootEntry rootType="default" title="Default" className="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntryFactory"/>
+    <mps.modelRootEntry rootType="java_classes" title="Java Classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntryFactory"/>
     <mps.facetTabFactory facetType="java" className="jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory"/>
     <mps.facetTabFactory facetType="generator" className="jetbrains.mps.ide.generator.CustomGenFacetTabFactory"/>
     <mps.projectGroupTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.SolutionProjectsGroup"/>

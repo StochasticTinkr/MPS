@@ -16,58 +16,47 @@
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
-import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.function.BiConsumer;
 
 /**
  * Registry with UI components ({@link org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor editors})
  * for {@link ModelRootEntry}.
- * To populate from extension point, instantiate and invoke {@link #initFromEP()}.
  */
 final class ModelRootEntryPersistence {
-  private final Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<>();
+  private final PersistenceFacade myPersistenceFacade;
+  // list with sequential search is perfectly ok, we don't expect it to grow too big
+  private final ModelRootEntryEP[] myExtensions;
 
-  public ModelRootEntryPersistence() {
+  public ModelRootEntryPersistence(PersistenceFacade persistenceFacade) {
+    myPersistenceFacade = persistenceFacade;
+    myExtensions = ModelRootEntryEP.EP_NAME.getExtensions();
   }
 
-  public ModelRootEntryPersistence initFromEP() {
-    ModelRootEntryEP[] extensions = ModelRootEntryEP.EP_NAME.getExtensions();
-    for (ModelRootEntryEP extension : extensions) {
-      addModelRootEntry(extension.rootType, extension.getModelRootEntryFactory());
-    }
-    // XXX why not through ExtPoint?
-    addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, new FileBasedModelRootEntryFactory());
-    return this;
-  }
-
-  // may become public, if there's scenario to populate the registry not from EP
-  private void addModelRootEntry(String type, @NotNull ModelRootEntryFactory factory) {
-    myModelRootEntries.put(type, factory);
-  }
-
+  @Nullable
   public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
-    if (!myModelRootEntries.containsKey(modelRoot.getType())) {
-      return null;
+    final String kind = modelRoot.getType();
+    for (ModelRootEntryEP extension : myExtensions) {
+      if (kind.equals(extension.rootType)) {
+        return extension.getModelRootEntryFactory().getModelRootEntry(modelRoot);
+      }
     }
-
-    ModelRootEntryFactory factory = myModelRootEntries.get(modelRoot.getType());
-    return factory.getModelRootEntry(modelRoot);
+    return null;
   }
 
-  public Set<String> getModelRootTypes() {
-    return myModelRootEntries.keySet();
+  public void foreachTypeAndName(BiConsumer<String,String> c) {
+    for (ModelRootEntryEP extension : myExtensions) {
+      c.accept(extension.rootType, extension.getTitle());
+    }
   }
 
   public ModelRootEntry getModelRootEntry(ModelRootDescriptor descriptor) {
-    ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(descriptor.getType()).create();
+    ModelRoot modelRoot = myPersistenceFacade.getModelRootFactory(descriptor.getType()).create();
     modelRoot.load(descriptor.getMemento());
 
     return getModelRootEntry(modelRoot);

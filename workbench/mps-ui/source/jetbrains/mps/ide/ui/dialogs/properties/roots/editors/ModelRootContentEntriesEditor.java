@@ -58,6 +58,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.BorderFactory;
@@ -73,6 +74,7 @@ import java.awt.Point;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -101,7 +103,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
   public ModelRootContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
     myModuleDescriptor = moduleDescriptor;
     myRepository = repository;
-    myRootEntryPersistence = new ModelRootEntryPersistence().initFromEP();
+    // XXX I'm puzzled with mix of ModelRoot and ModelRootDescriptor in ModelRootEntryPersistence, shall stick to one
+    //     i.e. basically have to decide whether we edit SModule or ModuleDescriptor.
+    myRootEntryPersistence = new ModelRootEntryPersistence(PersistenceFacade.getInstance());
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(descriptor);
       Disposer.register(this, entry);
@@ -114,9 +118,10 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
   private AnAction getContentEntryActions() {
     final List<AddContentEntryAction> list = new ArrayList<>();
-    for (String type : myRootEntryPersistence.getModelRootTypes()) {
-      list.add(new AddContentEntryAction(type));
-    }
+    // make sure that if title for an entry editor has not been specified, we don't treat underscores of a root type as mnemonics
+    myRootEntryPersistence.foreachTypeAndName((type, name) -> list.add(new AddContentEntryAction(type, type.equals(name) ? name.replace('_', ' '): name)) );
+    // may need to introduce weight into extpoint if by name sorting is not good enough
+    list.sort(Comparator.comparing(a -> a.getTemplatePresentation().getText()));
 
     return new IconWithTextAction(
         PropertiesBundle.message("module.common.roots.add.title"),
@@ -138,6 +143,12 @@ public class ModelRootContentEntriesEditor implements Disposable {
               @Override
               public boolean hasSubstep(AddContentEntryAction selectedValue) {
                 return false;
+              }
+
+              @Override
+              public boolean isMnemonicsNavigationEnabled() {
+                // just in case title of a root entry editor has mnemonics specified
+                return true;
               }
 
               @Override
@@ -280,12 +291,11 @@ public class ModelRootContentEntriesEditor implements Disposable {
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
-    private String myType;
+    private final String myType;
 
-    AddContentEntryAction(@NotNull String type) {
-      super(type);
-      // we know it's model root kind and not a user-friendly message that may contain mnemonic (IDEA's Presentation strips first '_' off)
-      getTemplatePresentation().setText(type, false);
+    // type is identity, while name is to get presented to end user and may contain IDEA's mnemonics
+    AddContentEntryAction(@NotNull String type, String name) {
+      super(name);
       myType = type;
     }
 
