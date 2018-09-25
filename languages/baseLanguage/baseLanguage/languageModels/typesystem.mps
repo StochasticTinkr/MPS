@@ -59315,47 +59315,14 @@
     <property role="TrG5h" value="MethodCallsFixer_Rule" />
     <property role="3GE5qa" value="classifiers.base" />
     <node concept="3clFbS" id="6S5AcYEJrdZ" role="18ibNy">
-      <node concept="3cpWs8" id="36YhQHIepz4" role="3cqZAp">
-        <node concept="3cpWsn" id="36YhQHIepz5" role="3cpWs9">
-          <property role="TrG5h" value="baseMethodDeclaration" />
-          <node concept="3Tqbb2" id="36YhQHIepz6" role="1tU5fm">
-            <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-          </node>
-          <node concept="2OqwBi" id="36YhQHIepz7" role="33vP2m">
-            <node concept="1YBJjd" id="6S5AcYEJtZr" role="2Oq$k0">
-              <ref role="1YBMHb" node="6S5AcYEJre1" resolve="methodCallNode" />
-            </node>
-            <node concept="3TrEf2" id="36YhQHIepz9" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3cpWs8" id="36YhQHIepza" role="3cqZAp">
-        <node concept="3cpWsn" id="36YhQHIepzb" role="3cpWs9">
-          <property role="TrG5h" value="methodName" />
-          <node concept="17QB3L" id="36YhQHIepzc" role="1tU5fm" />
-          <node concept="2YIFZM" id="6S5AcYEKB2F" role="33vP2m">
-            <ref role="37wK5l" to="5h2r:6S5AcYEKxYm" resolve="getMethodName" />
-            <ref role="1Pybhc" to="5h2r:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
-            <node concept="1YBJjd" id="6S5AcYENtCT" role="37wK5m">
-              <ref role="1YBMHb" node="6S5AcYEJre1" resolve="methodCallNode" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbH" id="36YhQHIepzf" role="3cqZAp" />
       <node concept="3cpWs8" id="36YhQHIepzg" role="3cqZAp">
         <node concept="3cpWsn" id="36YhQHIepzh" role="3cpWs9">
           <property role="TrG5h" value="resolveResult" />
-          <node concept="2YIFZM" id="6S5AcYEKxhG" role="33vP2m">
-            <ref role="37wK5l" to="5h2r:6mBdlj31AFU" resolve="resolveMethod" />
+          <node concept="2YIFZM" id="KgjTrC2DL3" role="33vP2m">
+            <ref role="37wK5l" to="5h2r:KgjTrC1yRy" resolve="resolveMethod" />
             <ref role="1Pybhc" to="5h2r:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
-            <node concept="1YBJjd" id="6S5AcYEKxhH" role="37wK5m">
+            <node concept="1YBJjd" id="KgjTrC2DL4" role="37wK5m">
               <ref role="1YBMHb" node="6S5AcYEJre1" resolve="methodCallNode" />
-            </node>
-            <node concept="37vLTw" id="6S5AcYEKxhI" role="37wK5m">
-              <ref role="3cqZAo" node="36YhQHIepzb" resolve="methodName" />
             </node>
           </node>
           <node concept="1LlUBW" id="36YhQHIepzl" role="1tU5fm">
@@ -59397,6 +59364,22 @@
         </node>
       </node>
       <node concept="3clFbH" id="36YhQHIepz$" role="3cqZAp" />
+      <node concept="3cpWs8" id="36YhQHIepz4" role="3cqZAp">
+        <node concept="3cpWsn" id="36YhQHIepz5" role="3cpWs9">
+          <property role="TrG5h" value="baseMethodDeclaration" />
+          <node concept="3Tqbb2" id="36YhQHIepz6" role="1tU5fm">
+            <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+          </node>
+          <node concept="2OqwBi" id="36YhQHIepz7" role="33vP2m">
+            <node concept="1YBJjd" id="6S5AcYEJtZr" role="2Oq$k0">
+              <ref role="1YBMHb" node="6S5AcYEJre1" resolve="methodCallNode" />
+            </node>
+            <node concept="3TrEf2" id="36YhQHIepz9" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="36YhQHIepz_" role="3cqZAp">
         <node concept="3y3z36" id="36YhQHIepzA" role="3clFbw">
           <node concept="37vLTw" id="36YhQHIepzB" role="3uHU7B">
@@ -59429,6 +59412,9 @@
                 </node>
                 <node concept="1YBJjd" id="KgjTrBei8k" role="2OEOjV">
                   <ref role="1YBMHb" node="6S5AcYEJre1" resolve="methodCallNode" />
+                </node>
+                <node concept="2OE7Q9" id="KgjTrC10Rg" role="2OEWyd">
+                  <ref role="2OEe5H" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
                 </node>
               </node>
             </node>
@@ -59508,6 +59494,11 @@
         <node concept="3SKdUt" id="KgjTrB6CfU" role="3cqZAp">
           <node concept="3SKdUq" id="KgjTrB6CfW" role="3SKWNk">
             <property role="3SKdUp" value="todo: this is a dirty hack to avoid selection from running away" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="KgjTrBnQUh" role="3cqZAp">
+          <node concept="3SKdUq" id="KgjTrBnQUj" role="3SKWNk">
+            <property role="3SKdUp" value="straight way is to do this using edtior context, but quickfixes now cannot use editor stuff" />
           </node>
         </node>
         <node concept="3clFbF" id="KgjTrB3z5H" role="3cqZAp">

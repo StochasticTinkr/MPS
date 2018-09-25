@@ -19,6 +19,7 @@ public class MethodCallsFixer_Quickfix_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     // todo: this is a dirty hack to avoid selection from running away 
+    // straight way is to do this using edtior context, but quickfixes now cannot use editor stuff 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ModelAccess.instance().executeCommand(new Runnable() {
