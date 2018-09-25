@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -45,6 +47,7 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
     GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
     Collection<SModule> deps = depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
     Collection<SModule> depsReexport = depManager.getOnlyReexportModules();
+    final SModuleReference jdkModuleRef = PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
     for (SNode extendedClassifierType : Classifier__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invoke(classifier)) {
       SNode extendedClassifier = SLinkOperations.getTarget(extendedClassifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
       if (SNodeOperations.is(extendedClassifier, new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"))) {
@@ -52,6 +55,10 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
       }
       SModule classifierModule = extendedClassifier.getModel().getModule();
       assert classifierModule != null;
+      if (jdkModuleRef.equals(classifierModule.getModuleReference())) {
+        // assume JDK is always there, don't force to re-export it from any module that extend regular Java classes. 
+        continue;
+      }
       if (deps.contains(classifierModule) && !(depsReexport.contains(classifierModule))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

@@ -563,6 +563,10 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="427659576753752243" name="jetbrains.mps.lang.smodel.structure.ModulePointer" flags="ng" index="20RdaH">
+        <property id="427659576753753627" name="moduleId" index="20Rdg5" />
+        <property id="427659576753753625" name="moduleName" index="20Rdg7" />
+      </concept>
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
@@ -639,6 +643,9 @@
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
+        <child id="1678062499342629861" name="moduleId" index="37shsm" />
       </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
@@ -55452,6 +55459,21 @@
           </node>
         </node>
       </node>
+      <node concept="3cpWs8" id="4DJGK7C9CYu" role="3cqZAp">
+        <node concept="3cpWsn" id="4DJGK7C9CYv" role="3cpWs9">
+          <property role="TrG5h" value="jdkModuleRef" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="4DJGK7C9CYt" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+          </node>
+          <node concept="37shsh" id="4DJGK7C9CYw" role="33vP2m">
+            <node concept="20RdaH" id="4DJGK7C9CYx" role="37shsm">
+              <property role="20Rdg5" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+              <property role="20Rdg7" value="JDK" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1DcWWT" id="6$WgwVmfCd1" role="3cqZAp">
         <node concept="3clFbS" id="6$WgwVmfCd4" role="2LFqv$">
           <node concept="3cpWs8" id="2bJBrq_Xb3g" role="3cqZAp">
@@ -55513,6 +55535,32 @@
               <node concept="10Nm6u" id="6$WgwVmgQyT" role="3uHU7w" />
               <node concept="37vLTw" id="6$WgwVmgQxW" role="3uHU7B">
                 <ref role="3cqZAo" node="6$WgwVmgN8H" resolve="classifierModule" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4DJGK7C6WbL" role="3cqZAp">
+            <node concept="3clFbS" id="4DJGK7C6WbN" role="3clFbx">
+              <node concept="3SKdUt" id="4DJGK7C6XaY" role="3cqZAp">
+                <node concept="3SKdUq" id="4DJGK7C6Xb0" role="3SKWNk">
+                  <property role="3SKdUp" value="assume JDK is always there, don't force to re-export it from any module that extend regular Java classes." />
+                </node>
+              </node>
+              <node concept="3N13vt" id="4DJGK7C6XaS" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="4DJGK7C6WOM" role="3clFbw">
+              <node concept="37vLTw" id="4DJGK7C9CYy" role="2Oq$k0">
+                <ref role="3cqZAo" node="4DJGK7C9CYv" resolve="jdkModuleRef" />
+              </node>
+              <node concept="liA8E" id="4DJGK7C6X8B" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="4DJGK7C6Ws_" role="37wK5m">
+                  <node concept="37vLTw" id="4DJGK7C6WlO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6$WgwVmgN8H" resolve="classifierModule" />
+                  </node>
+                  <node concept="liA8E" id="4DJGK7C6WE3" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
