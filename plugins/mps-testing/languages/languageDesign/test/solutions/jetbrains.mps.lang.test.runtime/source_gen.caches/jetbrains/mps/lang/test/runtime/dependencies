@@ -353,6 +353,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MPSTestModelInitializationException" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.ProjectPathIsNullException" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelDependencyUpdate" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />

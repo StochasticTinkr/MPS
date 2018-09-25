@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.tool.environment.EnvironmentSetupException;
 import org.junit.AssumptionViolatedException;
 
@@ -143,7 +144,8 @@ public final class TestParametersCache implements TestRule {
               }
               myTestModel = modelDescriptor;
               SModel transientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.nonReloadableModule());
-              new CloneUtil(modelDescriptor, transientModel).cloneModelWithAllImports();
+              new CloneUtil(modelDescriptor, transientModel).cloneModelWithImports();
+              new ModelDependencyUpdate(transientModel).updateModuleDependencies(repository);
               myTransientModel = transientModel;
             }
           });

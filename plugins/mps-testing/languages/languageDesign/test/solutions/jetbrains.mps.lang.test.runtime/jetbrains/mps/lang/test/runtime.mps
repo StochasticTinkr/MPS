@@ -9482,7 +9482,25 @@
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="6cgtlBrIEqj" role="2OqNvi">
-                                            <ref role="37wK5l" to="80j5:~CloneUtil.cloneModelWithAllImports():void" resolve="cloneModelWithAllImports" />
+                                            <ref role="37wK5l" to="80j5:~CloneUtil.cloneModelWithImports():void" resolve="cloneModelWithImports" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="50NVUdCq_Wl" role="3cqZAp">
+                                        <node concept="2OqwBi" id="50NVUdCr9IG" role="3clFbG">
+                                          <node concept="2ShNRf" id="50NVUdCq_Wh" role="2Oq$k0">
+                                            <node concept="1pGfFk" id="50NVUdCr99D" role="2ShVmc">
+                                              <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelDependencyUpdate" />
+                                              <node concept="37vLTw" id="50NVUdCr9BJ" role="37wK5m">
+                                                <ref role="3cqZAo" node="BMoFi_uakl" resolve="transientModel" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="liA8E" id="50NVUdCra4Z" role="2OqNvi">
+                                            <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.updateModuleDependencies(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.ModelDependencyUpdate" resolve="updateModuleDependencies" />
+                                            <node concept="37vLTw" id="50NVUdCra$z" role="37wK5m">
+                                              <ref role="3cqZAo" node="BMoFi_qkyU" resolve="repository" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>
