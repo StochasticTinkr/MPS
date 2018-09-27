@@ -49,7 +49,8 @@ public abstract class BaseModelCache<T> {
       return null;
     }
 
-    return cachesDir.getDescendant(getCacheFileName());
+    final IFile descendant = cachesDir.getDescendant(getCacheFileName());
+    return descendant.isDirectory() ? null : descendant;
   }
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
