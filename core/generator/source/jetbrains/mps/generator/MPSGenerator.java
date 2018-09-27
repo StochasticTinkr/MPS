@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   @Override
   public void init() {
     super.init();
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache());
+    final GenerationDependenciesCache depsCache = new GenerationDependenciesCache();
     myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
     mySettingsProvider = init(new GenerationSettingsProvider());

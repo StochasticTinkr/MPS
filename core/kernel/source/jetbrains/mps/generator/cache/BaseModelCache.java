@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.cache;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -32,7 +31,7 @@ import java.util.concurrent.ConcurrentMap;
  * Per-repository, model-associated caches.
  * FIXME shall use {@code ModelStreamManager} instead of a file to access associated cached data of a model.
  */
-public abstract class BaseModelCache<T> implements CoreComponent {
+public abstract class BaseModelCache<T> {
   // absence of model in the cache means we have no idea about present cache state.
   // if model is in the cache, we do know both IFile and cached object
   private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<>();
@@ -55,15 +54,6 @@ public abstract class BaseModelCache<T> implements CoreComponent {
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
   protected BaseModelCache() {
-  }
-
-  @Override
-  public void init() {
-    // FIXME once MGSM keeps own GenerationDependenciesCache instances (and there's no GDC.getInstance() singleton), cease being CoreComponent
-  }
-
-  @Override
-  public void dispose() {
   }
 
   @Nullable
