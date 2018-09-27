@@ -72,6 +72,8 @@
       <root url="jar://$PROJECT_DIR$/lib/intellij-coverage-agent-1.0.495.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/intellij-test-discovery-agent-1.0.495.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/java-compatibility-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-impl.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
