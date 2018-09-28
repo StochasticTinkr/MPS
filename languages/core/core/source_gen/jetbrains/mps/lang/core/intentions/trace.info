@@ -19,8 +19,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/243673576855293524">
     <file name="IntentionsDescriptor.java">
-      <node id="243673576855293524" at="44,47,45,65" concept="3" />
-      <node id="243673576855293524" at="60,49,61,51" concept="3" />
+      <node id="243673576855293524" at="46,61,47,65" concept="3" />
+      <node id="243673576855293524" at="62,47,63,51" concept="3" />
     </file>
     <file name="SuppressSpecificErrors_Intention.java">
       <node id="243673576855293524" at="33,45,34,146" concept="11" />
@@ -119,8 +119,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/4222318806802430725">
     <file name="IntentionsDescriptor.java">
-      <node id="4222318806802430725" at="45,65,46,57" concept="3" />
-      <node id="4222318806802430725" at="61,51,62,43" concept="3" />
+      <node id="4222318806802430725" at="44,47,45,57" concept="3" />
+      <node id="4222318806802430725" at="59,52,60,43" concept="3" />
     </file>
     <file name="SuppressErrors_Intention.java">
       <node id="4222318806802430725" at="34,0,35,0" concept="4" trace="myCachedExecutable" />
@@ -287,7 +287,7 @@
     </file>
     <file name="IntentionsDescriptor.java">
       <node id="6125986282171430130" at="37,47,38,63" concept="3" />
-      <node id="6125986282171430130" at="59,52,60,49" concept="3" />
+      <node id="6125986282171430130" at="60,43,61,49" concept="3" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/6125986282171721184">
@@ -359,8 +359,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/869282237627508178">
     <file name="IntentionsDescriptor.java">
-      <node id="869282237627508178" at="46,57,47,61" concept="3" />
-      <node id="869282237627508178" at="62,43,63,47" concept="3" />
+      <node id="869282237627508178" at="45,57,46,61" concept="3" />
+      <node id="869282237627508178" at="61,49,62,47" concept="3" />
     </file>
     <file name="SuppressInspection_Intention.java">
       <node id="869282237627508178" at="33,41,34,147" concept="11" />
