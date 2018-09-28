@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
@@ -3990,6 +3990,30 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3EDrOip5Hix" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7gAlRPb8mur" role="jymVt" />
+    <node concept="3clFb_" id="7gAlRPb8nnT" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="dispose" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7gAlRPb8nnU" role="1B3o_S" />
+      <node concept="3cqZAl" id="7gAlRPb8nnW" role="3clF45" />
+      <node concept="3clFbS" id="7gAlRPb8nnY" role="3clF47">
+        <node concept="3clFbF" id="7gAlRPb8pYI" role="3cqZAp">
+          <node concept="2OqwBi" id="7gAlRPb8qX5" role="3clFbG">
+            <node concept="37vLTw" id="7gAlRPb8pYH" role="2Oq$k0">
+              <ref role="3cqZAo" node="3HO6DnBfcO6" resolve="myTree" />
+            </node>
+            <node concept="liA8E" id="7gAlRPb8sth" role="2OqNvi">
+              <ref role="37wK5l" to="7e8u:~MPSTree.dispose():void" resolve="dispose" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7gAlRPb8nnZ" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

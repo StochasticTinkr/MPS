@@ -178,8 +178,4 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     }
     return nodeToSelect;
   }
-
-  public String toString() {
-    return getMatchingText("");
-  }
 }

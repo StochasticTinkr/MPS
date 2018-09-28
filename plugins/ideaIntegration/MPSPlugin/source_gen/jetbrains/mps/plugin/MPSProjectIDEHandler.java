@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -131,10 +132,11 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         List<SModel> modelsByName = ListSequence.fromList(new ArrayList<SModel>());
 
         {
-          final SearchScope scope = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
+          SearchScope scope_xnj2f8_e0a0a1a8 = CommandUtil.createScope(ProjectHelper.fromIdeaProject(myProject));
+          final SearchScope scope_xnj2f8_e0a0a1a8_0 = new EditableFilteringScope(scope_xnj2f8_e0a0a1a8);
           QueryExecutionContext context = new QueryExecutionContext() {
             public SearchScope getDefaultSearchScope() {
-              return scope;
+              return scope_xnj2f8_e0a0a1a8_0;
             }
           };
           // we first look up in models with the given name (better chance to succeed), then in all other models 

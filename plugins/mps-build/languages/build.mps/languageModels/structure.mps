@@ -986,7 +986,7 @@
       <property role="IQ2ns" value="3570488090019868128" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="packagingType" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="36cV00CpqQv" resolve="BuildMpsLayout_PluginLayoutTypeBase" />
     </node>
     <node concept="1TJgyi" id="2Wb4ucKh_Pd" role="1TKVEl">
@@ -1210,17 +1210,6 @@
       <property role="TrG5h" value="name" />
       <property role="IQ2nx" value="7832771629084799702" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="6MNA4JYmRbk" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon16" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="7832771629084799700" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-      <node concept="asaX9" id="6ARlnePUobq" role="lGtFl">
-        <property role="YLPcu" value="2017.3" />
-        <property role="YLQ7P" value="is not used anymore" />
-      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="5D0zVz80y2D">

@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -96,10 +97,11 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
   public List<SNode> findAffectedVariables(SModule m) {
     List<SNode> affectedUsages = ListSequence.fromList(new ArrayList<SNode>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_xvsotb_b0n = CommandUtil.createScope(m);
+      final SearchScope scope_xvsotb_b0n_0 = new EditableFilteringScope(scope_xvsotb_b0n);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_xvsotb_b0n_0;
         }
       };
       ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"), false)).where(new IWhereFilter<SNode>() {
@@ -119,10 +121,11 @@ public class TransformStatementDetachFix extends MigrationScriptBase {
   public List<SNode> findAffectedAntiquotations(SModule m) {
     List<SNode> affectedUsages = ListSequence.fromList(new ArrayList<SNode>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_xvsotb_b0p = CommandUtil.createScope(m);
+      final SearchScope scope_xvsotb_b0p_0 = new EditableFilteringScope(scope_xvsotb_b0p);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_xvsotb_b0p_0;
         }
       };
       ListSequence.fromList(affectedUsages).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), false)).translate(new ITranslator2<SNode, SNode>() {

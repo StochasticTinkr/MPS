@@ -8,10 +8,6 @@ import java.util.Objects;
 public class FieldSignature implements Signature {
   private final String singature;
   public FieldSignature(@NotNull String signature) {
-    if (signature == null) {
-      // todo: ? 
-      throw new IllegalArgumentException();
-    }
     this.singature = signature;
   }
   @Override

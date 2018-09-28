@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.util.LazyInstance;
 import com.intellij.util.xmlb.annotations.Attribute;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
 public class ModelRootEntryEP extends AbstractExtensionPointBean {
@@ -28,6 +29,8 @@ public class ModelRootEntryEP extends AbstractExtensionPointBean {
   public String rootType;
   @Attribute("className")
   public String className;
+  @Attribute("title")
+  public String title;
 
 
   private final LazyInstance<ModelRootEntryFactory> myFactory = new LazyInstance<ModelRootEntryFactory>() {
@@ -37,7 +40,13 @@ public class ModelRootEntryEP extends AbstractExtensionPointBean {
     }
   };
 
+  @NotNull
   public ModelRootEntryFactory getModelRootEntryFactory() {
     return myFactory.getValue();
+  }
+
+  public String getTitle() {
+    // title is optional, default to root kind
+    return title != null ? title : rootType;
   }
 }

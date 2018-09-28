@@ -22,7 +22,7 @@ import java.util.*;
 
 public class EndInstruction extends Instruction {
   protected final Set<RetInstruction> myReturns = new HashSet<>();
-  protected final Set<TryFinallyInfo> myRootTryFinallies = new HashSet<>();
+  private final Set<TryFinallyInfo> myRootTryFinallies = new HashSet<>();
 
   public EndInstruction() {
     super();

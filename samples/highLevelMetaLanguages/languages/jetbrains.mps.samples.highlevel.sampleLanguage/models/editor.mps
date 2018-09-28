@@ -2,7 +2,7 @@
 <model ref="r:b81c32c2-08b0-4c25-a0d3-c0560c7fbb82(jetbrains.mps.samples.highlevel.sampleLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <devkit ref="2a8d14e3-c26f-4f2f-ae52-28981c32e97a(jetbrains.mps.samples.highlevel.devkit.editor)" />
   </languages>
   <imports>

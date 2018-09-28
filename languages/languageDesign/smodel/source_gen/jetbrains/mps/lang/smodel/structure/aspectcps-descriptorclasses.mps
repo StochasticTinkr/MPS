@@ -3678,6 +3678,7 @@
                         </node>
                         <node concept="asaX9" id="lC" role="lGtFl">
                           <property role="YLQ7P" value="use an explicit node&lt;AbstractConceptDeclaration&gt; instead, planned to be removed after 2017.2" />
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="lG" role="lGtFl">
                             <node concept="3u3nmq" id="lH" role="cd27D">
                               <property role="3u3nmv" value="4876532271859398522" />
@@ -10874,6 +10875,7 @@
                           </node>
                         </node>
                         <node concept="asaX9" id="11n" role="lGtFl">
+                          <property role="YLPcu" value="2018.3" />
                           <node concept="cd27G" id="11r" role="lGtFl">
                             <node concept="3u3nmq" id="11s" role="cd27D">
                               <property role="3u3nmv" value="7453996997719754423" />

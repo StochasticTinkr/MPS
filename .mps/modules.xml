@@ -42,6 +42,7 @@
       <modulePath path="$PROJECT_DIR$/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest.extension/jetbrains.mps.lang.editor.editorTest.extension.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest/jetbrains.mps.lang.editor.editorTest.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.ide.tests/module.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages.test/languageDesign/lang.editor.test.generation/module.mpl" folder="core.aspects.editor" />
@@ -400,13 +401,16 @@
       <modulePath path="$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/sandbox/jetbrains.mps.samples.notesOrganizer.sandbox.msd" folder="samples.notesOrganizer" />
       <modulePath path="$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/jetbrains.mps.samples.notesOrganizer.build.msd" folder="samples.notesOrganizer" />
       <modulePath path="$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/ActionWithProgress.msd" folder="samples.progressIndicator" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/jetbrains.mps.samples.requirementTracking.RequirementDefinition.mpl" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/jetbrains.mps.samples.requirementTracking.Traces.mpl" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/jetbrains.mps.samples.ProjectCode.msd" folder="samples.requirementTracking" />
+      <modulePath path="$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/jetbrains.mps.samples.Specification.msd" folder="samples.requirementTracking" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/KajaAndOr.mpl" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/KajaSceneConstruction/KajaSceneConstruction.mpl" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/languages/Kajak/Kajak.mpl" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/solutions/JavaKajak/JavaKajak.msd" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/solutions/Kajak.sandbox/Kajak.sandbox.msd" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/sampleFacet/sampleFacet.mpl" folder="samples.sampleFacet" />
-      <modulePath path="$PROJECT_DIR$/samples/sampleFacet/solutions/pluginSolution/sampleFacet.pluginSolution.msd" folder="samples.sampleFacet" />
       <modulePath path="$PROJECT_DIR$/samples/sampleFacet/solutions/sampleFacet.sandbox/sampleFacet.sandbox.msd" folder="samples.sampleFacet" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/Constants/org.jetbrains.mps.samples.Constants.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/DecisionTable/org.jetbrains.mps.samples.DecisionTable.mpl" folder="samples.sampleJavaExtensions" />

@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ReferenceScopeHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -41,7 +42,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
  * (i.e. module added to the global repository triggers moduleAdded for for both global and
  * each project repository
  */
-public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
+public class ProjectRepository extends SRepositoryBase implements SRepositoryExt, ReferenceScopeHelper.Source {
   private final Project myProject;
   private final ModelAccess myProjectModelAccess;
   private final SRepositoryExt myRootRepo;
@@ -123,5 +124,13 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   @Override
   public void removeRepositoryListener(@NotNull SRepositoryListener listener) {
     getRootRepository().removeRepositoryListener(listener);
+  }
+
+  @Override
+  public ReferenceScopeHelper getReferenceScopeHelper() {
+    if (getRootRepository() instanceof ReferenceScopeHelper.Source) {
+      ((ReferenceScopeHelper.Source) getRootRepository()).getReferenceScopeHelper();
+    }
+    return new ReferenceScopeHelper();
   }
 }

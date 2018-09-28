@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -116,4 +117,16 @@ public interface ModelAccess {
   void addWriteActionListener(@NotNull WriteActionListener listener);
 
   void removeWriteActionListener(@NotNull WriteActionListener listener);
+
+  /**
+   * Get notified about start/finish of a model read action
+   * @since 2018.3
+   */
+  void addReadActionListener(@NotNull ReadActionListener listener);
+
+  /**
+   * Cease notifications about start/finish of a model read action
+   * @since 2018.3
+   */
+  void removeReadActionListener(@NotNull ReadActionListener listener);
 }

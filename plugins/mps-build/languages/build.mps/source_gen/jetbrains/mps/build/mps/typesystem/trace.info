@@ -660,13 +660,13 @@
       <node id="8488591998065935471" at="14,48,15,129" concept="11" />
       <node id="8488591998065970651" at="17,44,18,62" concept="8" />
       <node id="8488591998065944888" at="20,35,21,202" concept="7" />
-      <node id="8488591998065941154" at="21,202,22,493" concept="2" />
+      <node id="8488591998065941154" at="21,202,22,345" concept="2" />
       <node id="8488591998065935471" at="14,0,17,0" concept="1" trace="SetModuleJarClasspathEntry_QuickFix#()V" />
       <node id="8488591998065935471" at="17,0,20,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8488591998065935471" at="20,0,24,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8488591998065935471" at="14,48,15,129" />
       <scope id="8488591998065970111" at="17,44,18,62" />
-      <scope id="8488591998065935473" at="20,35,22,493">
+      <scope id="8488591998065935473" at="20,35,22,345">
         <var name="moduleXml" id="8488591998065944889" />
       </scope>
       <scope id="8488591998065935471" at="14,0,17,0" />

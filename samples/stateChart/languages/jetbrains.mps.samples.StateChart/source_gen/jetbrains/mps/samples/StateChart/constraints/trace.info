@@ -99,14 +99,14 @@
   <root nodeRef="r:c9acaf76-5e77-4b59-ae68-703975aa4649(jetbrains.mps.samples.StateChart.constraints)/6813679070097873640">
     <file name="ChartOperation_Constraints.java">
       <node id="6813679070097873640" at="10,39,11,165" concept="7" />
-      <node id="6813679070097873640" at="14,55,15,165" concept="5" />
+      <node id="6813679070097873640" at="15,47,16,165" concept="5" />
       <node id="6813679070097873640" at="10,0,13,0" concept="1" trace="ChartOperation_Constraints#()V" />
-      <node id="6813679070097873640" at="14,0,17,0" concept="3" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6813679070097873640" at="14,0,18,0" concept="3" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
       <scope id="6813679070097873640" at="10,39,11,165" />
-      <scope id="6813679070097873640" at="14,55,15,165" />
+      <scope id="6813679070097873640" at="15,47,16,165" />
       <scope id="6813679070097873640" at="10,0,13,0" />
-      <scope id="6813679070097873640" at="14,0,17,0" />
-      <unit id="6813679070097873640" at="9,0,18,0" name="jetbrains.mps.samples.StateChart.constraints.ChartOperation_Constraints" />
+      <scope id="6813679070097873640" at="14,0,18,0" />
+      <unit id="6813679070097873640" at="9,0,19,0" name="jetbrains.mps.samples.StateChart.constraints.ChartOperation_Constraints" />
     </file>
   </root>
   <root nodeRef="r:c9acaf76-5e77-4b59-ae68-703975aa4649(jetbrains.mps.samples.StateChart.constraints)/6813679070098860489">

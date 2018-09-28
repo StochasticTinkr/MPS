@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -36,10 +37,11 @@ public class NodePointersTypesystem extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_p7xwcw_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_p7xwcw_a0d_0 = new EditableFilteringScope(scope_p7xwcw_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_p7xwcw_a0d_0;
         }
       };
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4604033d54faa023L, "jetbrains.mps.lang.smodel.structure.Node_PointerOperation"), false)).visitAll(new IVisitor<SNode>() {

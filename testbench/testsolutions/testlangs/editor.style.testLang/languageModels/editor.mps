@@ -2,7 +2,7 @@
 <model ref="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -76,11 +76,11 @@
         <reference id="3982520150122346707" name="attribute" index="3tD7wE" />
         <child id="3982520150122341379" name="query" index="3tD6jU" />
       </concept>
-      <concept id="6681408443912431607" name="jetbrains.mps.lang.editor.structure.URLStyleClassItem" flags="ng" index="3u2Kpz">
+      <concept id="6681408443912431607" name="jetbrains.mps.lang.editor.structure.URLStyleClassItem" flags="ln" index="3u2Kpz">
         <property id="6681408443912457593" name="url" index="3u2UNH" />
         <child id="6681408443912431608" name="query" index="3u2KpG" />
       </concept>
-      <concept id="6681408443912573553" name="jetbrains.mps.lang.editor.structure.QueryFunction_Url" flags="ng" index="3u3nf_" />
+      <concept id="6681408443912573553" name="jetbrains.mps.lang.editor.structure.QueryFunction_URL" flags="in" index="3u3nf_" />
       <concept id="9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" flags="ng" index="1wgc9g">
         <reference id="9122903797312247166" name="style" index="1wgcnl" />
       </concept>

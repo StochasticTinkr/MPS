@@ -5,6 +5,8 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest.extension/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest.extension/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.editorTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.ide.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.ide.tests/test_gen" includeSubdirectories="true" />
@@ -475,6 +477,7 @@
       <directory url="file://$PROJECT_DIR$/samples/expressions/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/gen2/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerFramework/source_gen" includeSubdirectories="true" />
@@ -571,6 +574,14 @@
       <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.RequirementDefinition/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/languages/jetbrains.mps.samples.requirementTracking.Traces/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.ProjectCode/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/requirementTracking/solutions/jetbrains.mps.samples.Specification/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaSceneConstruction/generator/source_gen" includeSubdirectories="true" />
@@ -581,8 +592,6 @@
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/solutions/JavaKajak/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/solutions/Kajak.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/solutions/Kajak.sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/sampleFacet/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/sampleFacet/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/sampleFacet/solutions/sampleFacet.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/sampleFacet/solutions/sampleFacet.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/sampleFacet/source_gen" includeSubdirectories="true" />

@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import javax.swing.Icon;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -44,9 +43,8 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Integer> fromVersion_id4uVwhQyFcnl = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("fromVersion").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFcnl").registry(REGISTRY).build();
   public static final SMethod<Boolean> isVersionSet_id4uVwhQyFpOe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isVersionSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFpOe").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
-  public static final SMethod<Icon> getAdditionalIcon_id4mxbjAOAE$e = new SMethodBuilder<Icon>(new SJavaCompoundTypeImpl(Icon.class)).name("getAdditionalIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4mxbjAOAE$e").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getRequiredAnnotationData_id5TUCQr2Pzjk, getProducedData_id7s$_UJMVDH8, getProducedAnnotationData_id5TUCQr2CN0$, isRerunnable_id1JWcQ2Vfe4u, getMethod_id6d7r2Fq2j7f, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getPresentation_idhEwIMiw, getAdditionalIcon_id4mxbjAOAE$e);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getRequiredAnnotationData_id5TUCQr2Pzjk, getProducedData_id7s$_UJMVDH8, getProducedAnnotationData_id5TUCQr2CN0$, isRerunnable_id1JWcQ2Vfe4u, getMethod_id6d7r2Fq2j7f, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getPresentation_idhEwIMiw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -95,9 +93,6 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     return ((String) IMigrationUnit__BehaviorDescriptor.getVersionedName_id5T5Tgcp0u0A.invoke(__thisNode__));
   }
-  /*package*/ static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return null;
-  }
 
   /*package*/ MigrationScript__BehaviorDescriptor() {
     super(REGISTRY);
@@ -141,8 +136,6 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
         return (T) ((Boolean) isVersionSet_id4uVwhQyFpOe(node));
       case 13:
         return (T) ((String) getPresentation_idhEwIMiw(node));
-      case 14:
-        return (T) ((Icon) getAdditionalIcon_id4mxbjAOAE$e(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

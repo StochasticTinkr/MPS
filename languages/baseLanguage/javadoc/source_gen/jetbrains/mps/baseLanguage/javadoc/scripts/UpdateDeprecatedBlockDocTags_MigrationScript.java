@@ -35,7 +35,7 @@ public final class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigr
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text"), null);
       }
       @Override
       public boolean isShowAsIntention() {

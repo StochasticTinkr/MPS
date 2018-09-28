@@ -3,8 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
@@ -16,7 +15,6 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
-    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -700,6 +698,12 @@
     <node concept="2tJIrI" id="3KqYwoBIIP3" role="jymVt" />
     <node concept="Qs71p" id="7tV5ZLw0mML" role="jymVt">
       <property role="TrG5h" value="KeepOldNodes" />
+      <node concept="3uibUv" id="7tV5ZLw2DNg" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
+        <node concept="3uibUv" id="7tV5ZLw2EYk" role="11_B2D">
+          <ref role="3uigEE" node="7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+        </node>
+      </node>
       <node concept="QsSxf" id="7tV5ZLw0pQW" role="Qtgdg">
         <property role="TrG5h" value="REMOVE" />
         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -755,8 +759,18 @@
                                 <ref role="3cqZAo" node="7tV5ZLw4vc3" resolve="it" />
                               </node>
                             </node>
-                            <node concept="37vLTw" id="7tV5ZLw4Igt" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7tV5ZLw4vc5" resolve="s" />
+                            <node concept="1eOMI4" id="41po97dRWkh" role="2Oq$k0">
+                              <node concept="10QFUN" id="41po97dRWz$" role="1eOMHV">
+                                <node concept="3uibUv" id="41po97dRWQ7" role="10QFUM">
+                                  <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
+                                  <node concept="3uibUv" id="41po97dRXh8" role="11_B2D">
+                                    <ref role="3uigEE" node="7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="7tV5ZLw4Igt" role="10QFUP">
+                                  <ref role="3cqZAo" node="7tV5ZLw4vc5" resolve="s" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -781,12 +795,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="7tV5ZLw2DNg" role="EKbjA">
-        <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
-        <node concept="3uibUv" id="7tV5ZLw2EYk" role="11_B2D">
-          <ref role="3uigEE" node="7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
         </node>
       </node>
       <node concept="3UR2Jj" id="3D2IEK815Hy" role="lGtFl">

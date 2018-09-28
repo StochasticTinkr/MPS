@@ -35,7 +35,7 @@ public final class HTMLElement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(smartDelete_id7PYAiugbmRz);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SLinkOperations.addNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+    SLinkOperations.addNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"), null);
   }
 
   /*package*/ static NodeCaretPair smartDelete_id7PYAiugbmRz(@NotNull SNode __thisNode__, boolean isBeginning) {

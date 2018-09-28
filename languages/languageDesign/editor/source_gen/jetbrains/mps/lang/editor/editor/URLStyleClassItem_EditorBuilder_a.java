@@ -177,7 +177,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     }
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cb9219482b227f7L, 0x5cb9219482b227f8L, "query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cb9219482b45271L, "jetbrains.mps.lang.editor.structure.QueryFunction_URL"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cb9219482b227f7L, 0x5cb9219482b227f8L, "query"), null);
     }
     public String getMatchingText() {
       return "query";

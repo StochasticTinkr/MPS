@@ -197,6 +197,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     editorCell.getStyle().putAll(style);
+    NoDeleteForType.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
@@ -240,6 +241,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       editorCell.getStyle().putAll(style);
+      NoDeleteForType.setCellActions(editorCell, getNode(), getEditorContext());
     }
     @Override
     protected EditorCell createEmptyCell() {

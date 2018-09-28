@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -48,10 +49,11 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     SNode data = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, "jetbrains.mps.lang.editor.structure.SmartRefMigrationData"));
 
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_b3phj_c0d = CommandUtil.createScope(m);
+      final SearchScope scope_b3phj_c0d_0 = new EditableFilteringScope(scope_b3phj_c0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_b3phj_c0d_0;
         }
       };
       SCAs = extractSCAs(m);

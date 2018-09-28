@@ -16,9 +16,9 @@
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 public class WriteInstruction extends Instruction {
-  protected final Object myVar;
-  protected int myIndex;
-  protected final  Object myValue;
+  private final Object myVar;
+  private int myIndex;
+  private final  Object myValue;
 
   public WriteInstruction(Object var, Object value) {
     myVar = var;

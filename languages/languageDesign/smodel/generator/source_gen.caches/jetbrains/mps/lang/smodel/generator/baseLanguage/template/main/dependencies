@@ -236,10 +236,11 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SAbstractConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LinkDeclaration_SLink" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_NodeIdentity_SNodeReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -264,10 +265,11 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SAbstractConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LinkDeclaration_SLink" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -508,7 +510,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptSwitchStatement__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ContainmentLinkId__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.DevkitIdentity__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation__BehaviorDescriptor" />

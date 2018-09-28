@@ -49,9 +49,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
-public abstract class ModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
-  protected final WriteActionDispatcher myWriteActionDispatcher = new WriteActionDispatcher();
-
+public abstract class ModelAccess extends AbstractModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
   protected static ModelAccess ourInstance = new DefaultModelAccess();
@@ -147,17 +145,9 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   }
 
   @Override
-  public void checkReadAccess() {
-    if (!canRead()) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
-  }
-
-  @Override
-  public void checkWriteAccess() {
-    if (!canWrite()) {
-      throw new IllegalModelAccessError("You can write model only inside write actions");
-    }
+  public final boolean isInsideCommand() {
+    // to cease along with ModelCommandExecutor
+    return canWrite() && myCommandActionDispatcher.isInsideAction();
   }
 
   @Override
@@ -243,16 +233,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   @Deprecated
   public void clearRepositoryStateCaches() {
     LOG.error("clearRepositoryStateCaches() is no op, please don't use");
-  }
-
-  @Override
-  public void addWriteActionListener(@NotNull WriteActionListener listener) {
-    myWriteActionDispatcher.addWriteActionListener(listener);
-  }
-
-  @Override
-  public void removeWriteActionListener(@NotNull WriteActionListener listener) {
-    myWriteActionDispatcher.removeWriteActionListener(listener);
   }
 
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {

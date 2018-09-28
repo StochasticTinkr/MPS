@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -39,10 +40,11 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_8o28b_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_8o28b_a0d_0 = new EditableFilteringScope(scope_8o28b_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_8o28b_a0d_0;
         }
       };
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), false)).where(new IWhereFilter<SNode>() {
@@ -73,10 +75,11 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
   public Iterable<Problem> check(SModule m) {
     Iterable<Problem> result;
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_8o28b_b0e = CommandUtil.createScope(m);
+      final SearchScope scope_8o28b_b0e_0 = new EditableFilteringScope(scope_8o28b_b0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_8o28b_b0e_0;
         }
       };
       result = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), false)).where(new IWhereFilter<SNode>() {

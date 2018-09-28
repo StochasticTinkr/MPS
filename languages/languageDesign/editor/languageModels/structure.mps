@@ -12,7 +12,6 @@
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
-    <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" implicit="true" />
   </imports>
   <registry>
@@ -271,6 +270,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="i2I0itR" role="lGtFl">
         <property role="YLQ7P" value="Use isVertical(), remove after MPS3.5" />
+        <property role="YLPcu" value="2018.3" />
       </node>
     </node>
     <node concept="1TJgyi" id="fBEZMkq" role="1TKVEl">
@@ -279,6 +279,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="i2I0j49" role="lGtFl">
         <property role="YLQ7P" value="Use isVerticalGrid(), remove after MPS3.5" />
+        <property role="YLPcu" value="2018.3" />
       </node>
     </node>
     <node concept="1TJgyi" id="g_ayjLd" role="1TKVEl">
@@ -1092,6 +1093,13 @@
     <property role="34LRSv" value="Cell Action Map" />
     <property role="EcuMT" value="1139535219966" />
     <property role="3GE5qa" value="CellActionMap" />
+    <node concept="1TJgyj" id="7pqJbakA6Bj" role="1TKVEi">
+      <property role="IQ2ns" value="8528336319562672595" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="imports" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7pqJbakA6Bn" resolve="CellActionMapImport" />
+    </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQs" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/actionMap.png" />
     </node>
@@ -1103,6 +1111,9 @@
     </node>
     <node concept="PrWs8" id="2HMNXpxcTXb" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="PrWs8" id="6KlKhT34ne9" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
     <node concept="1TJgyj" id="g_h_SO0" role="1TKVEi">
       <property role="20kJfa" value="applicableConcept" />
@@ -6676,6 +6687,53 @@
       <property role="TrG5h" value="imagePath" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="7pqJbakA6Bn">
+    <property role="EcuMT" value="8528336319562672599" />
+    <property role="TrG5h" value="CellActionMapImport" />
+    <property role="3GE5qa" value="CellActionMap" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7pqJbakA6Bo" role="1TKVEi">
+      <property role="IQ2ns" value="8528336319562672600" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="cellActionMap" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="g_h_SNY" resolve="CellActionMapDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="4Y8fgghe7br" role="1TKVEi">
+      <property role="IQ2ns" value="5730897613507031771" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="selector" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4Y8fgghaRne" resolve="CellActionMapImportSelector" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Y8fgghaRne">
+    <property role="EcuMT" value="5730897613506180558" />
+    <property role="3GE5qa" value="CellActionMap" />
+    <property role="TrG5h" value="CellActionMapImportSelector" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4Y8fgghhhs3">
+    <property role="EcuMT" value="5730897613507860227" />
+    <property role="3GE5qa" value="CellActionMap" />
+    <property role="TrG5h" value="CellActionMapImportSelectorByActionId" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" node="4Y8fgghaRne" resolve="CellActionMapImportSelector" />
+    <node concept="1TJgyi" id="4Y8fgghhhs6" role="1TKVEl">
+      <property role="IQ2nx" value="5730897613507860230" />
+      <property role="TrG5h" value="actionId" />
+      <ref role="AX2Wp" node="g_hAjpB" resolve="CellActionId" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Y8fgghaRnf">
+    <property role="EcuMT" value="5730897613506180559" />
+    <property role="3GE5qa" value="CellActionMap" />
+    <property role="TrG5h" value="CellActionMapImportWildcardSelector" />
+    <property role="34LRSv" value="*" />
+    <ref role="1TJDcQ" node="4Y8fgghaRne" resolve="CellActionMapImportSelector" />
   </node>
 </model>
 

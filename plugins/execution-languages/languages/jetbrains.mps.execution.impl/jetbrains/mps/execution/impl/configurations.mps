@@ -1015,14 +1015,14 @@
                 <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
               </node>
               <node concept="liA8E" id="1xg2vZtrX26" role="2OqNvi">
-                <ref role="37wK5l" to="zjj4:~RunManagerImpl.initializeConfigurationTypes(com.intellij.execution.configurations.ConfigurationType[]):void" resolve="initializeConfigurationTypes" />
+                <ref role="37wK5l" to="zjj4:~RunManagerImpl.initializeConfigurationTypes(java.util.List):void" resolve="initializeConfigurationTypes" />
                 <node concept="2OqwBi" id="1xg2vZtrXFX" role="37wK5m">
                   <node concept="10M0yZ" id="1xg2vZtrXFW" role="2Oq$k0">
                     <ref role="1PxDUh" to="dj99:~ConfigurationType" resolve="ConfigurationType" />
                     <ref role="3cqZAo" to="dj99:~ConfigurationType.CONFIGURATION_TYPE_EP" resolve="CONFIGURATION_TYPE_EP" />
                   </node>
                   <node concept="liA8E" id="1xg2vZtrXFY" role="2OqNvi">
-                    <ref role="37wK5l" to="9ti4:~ExtensionPointName.getExtensions():java.lang.Object[]" resolve="getExtensions" />
+                    <ref role="37wK5l" to="9ti4:~ExtensionPointName.getExtensionList():java.util.List" resolve="getExtensionList" />
                   </node>
                 </node>
               </node>

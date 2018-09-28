@@ -24,6 +24,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SNodePointer;
@@ -87,10 +88,11 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   @Override
   public Iterable<Problem> check(SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_fgay1s_a0e = CommandUtil.createScope(m);
+      final SearchScope scope_fgay1s_a0e_0 = new EditableFilteringScope(scope_fgay1s_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_fgay1s_a0e_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"), false)).where(new IWhereFilter<SNode>() {

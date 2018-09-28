@@ -56,7 +56,7 @@ public final class AddSeeAlso_Intention extends AbstractIntentionDescriptor impl
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0ea9L, 0x6d1df6c2700b0eb8L, "seeAlso"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0eb5L, "jetbrains.mps.lang.structure.structure.DocumentationObjectiveRef"));
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0ea9L, 0x6d1df6c2700b0eb8L, "seeAlso"), null);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

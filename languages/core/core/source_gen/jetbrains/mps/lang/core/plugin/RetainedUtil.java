@@ -18,6 +18,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
+import java.util.List;
 
 public final class RetainedUtil {
   private RetainedUtil() {
@@ -74,6 +75,21 @@ public final class RetainedUtil {
               MapSequence.fromMap(dir2delta).put(parent, fd = new FilesDelta(parent));
             }
             fd.kept(actualOutput);
+            // sort of workaround, report files to keep explicitly, otherwise a directory[kept] with subdirectories[kept] doesn't protect files under directory/ itself 
+            List<IFile> children = actualOutput.getChildren();
+            fd = MapSequence.fromMap(dir2delta).get(actualOutput);
+            if (children != null && children.size() > 0) {
+              for (IFile child : children) {
+                // folders are output locations and therefore those to kept would get retained, if necessary, with the code above. 
+                if (child.isDirectory()) {
+                  continue;
+                }
+                if (fd == null) {
+                  MapSequence.fromMap(dir2delta).put(actualOutput, fd = new FilesDelta(actualOutput));
+                }
+                fd.kept(child);
+              }
+            }
           }
         }
       }

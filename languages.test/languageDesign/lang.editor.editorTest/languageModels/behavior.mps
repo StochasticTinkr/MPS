@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -75,6 +74,7 @@
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -228,6 +228,19 @@
       <node concept="3uibUv" id="2vGL3zqZrlD" role="3clF45">
         <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="2lc36UC2R3b">
+    <property role="3GE5qa" value="actionMapImports" />
+    <ref role="13h7C2" to="68nn:2lc36UC2R2n" resolve="Bar" />
+    <node concept="13i0hz" id="2lc36UC2R3m" role="13h7CS">
+      <property role="TrG5h" value="bar" />
+      <node concept="3Tm1VV" id="2lc36UC2R3n" role="1B3o_S" />
+      <node concept="3cqZAl" id="2lc36UC2R3u" role="3clF45" />
+      <node concept="3clFbS" id="2lc36UC2R3p" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="2lc36UC2R3c" role="13h7CW">
+      <node concept="3clFbS" id="2lc36UC2R3d" role="2VODD2" />
     </node>
   </node>
 </model>

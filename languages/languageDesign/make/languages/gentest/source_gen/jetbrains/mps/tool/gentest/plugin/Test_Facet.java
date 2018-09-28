@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.facet.ITargetEx;
@@ -75,10 +76,10 @@ public class Test_Facet extends IFacet.Stub {
                 final Wrappers._T<List<String>> tests = new Wrappers._T<List<String>>();
                 // FIXME here, shall not use makeSession.getProject().getModelAccess(), but instead, shall lock 
                 // repository of a transient model. Expose it either with GenerationStatus or GResource 
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
+                ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+                  public List<String> compute() {
                     SModel outModel = gr.status().getOutputModel();
-                    tests.value = Sequence.fromIterable(new TestCollector(Sequence.<SModel>singleton(outModel)).collectTests()).toListSequence();
+                    return tests.value = Sequence.fromIterable(new TestCollector(Sequence.<SModel>singleton(outModel)).collectTests()).toListSequence();
                   }
                 });
                 if (ListSequence.fromList(tests.value).isNotEmpty()) {

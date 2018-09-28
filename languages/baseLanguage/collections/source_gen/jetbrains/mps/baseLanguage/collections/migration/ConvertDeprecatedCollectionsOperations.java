@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -32,10 +33,11 @@ public class ConvertDeprecatedCollectionsOperations extends MigrationScriptBase 
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_oas78t_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_oas78t_a0d_0 = new EditableFilteringScope(scope_oas78t_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_oas78t_a0d_0;
         }
       };
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9514ebd8L, "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation"), false)).visitAll(new IVisitor<SNode>() {

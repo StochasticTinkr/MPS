@@ -2,10 +2,10 @@
 <model ref="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="n70j" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.checking(MPS.Editor/)" />
@@ -244,6 +244,19 @@
           </node>
           <node concept="3clFbS" id="2POSI7yqMVy" role="2LFqv$">
             <node concept="3clFbJ" id="2POSI7yqMVz" role="3cqZAp">
+              <node concept="2OqwBi" id="4oS1ku9kbX6" role="3clFbw">
+                <node concept="2OqwBi" id="2POSI7yqMVK" role="2Oq$k0">
+                  <node concept="2GrUjf" id="2POSI7yqMVL" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="2POSI7yqMVx" resolve="n" />
+                  </node>
+                  <node concept="3CFZ6_" id="2POSI7yqMVM" role="2OqNvi">
+                    <node concept="3CFYIy" id="2POSI7yqMVN" role="3CFYIz">
+                      <ref role="3CFYIx" to="tpck:3EoG9lZUeni" resolve="SuppressErrorsAnnotation" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3GX2aA" id="4oS1ku9keHY" role="2OqNvi" />
+              </node>
               <node concept="3clFbS" id="2POSI7yqMV$" role="3clFbx">
                 <node concept="3clFbF" id="2POSI7yqMV_" role="3cqZAp">
                   <node concept="2OqwBi" id="2POSI7yqMVA" role="3clFbG">
@@ -266,19 +279,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="2OqwBi" id="4oS1ku9kbX6" role="3clFbw">
-                <node concept="2OqwBi" id="2POSI7yqMVK" role="2Oq$k0">
-                  <node concept="2GrUjf" id="2POSI7yqMVL" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="2POSI7yqMVx" resolve="n" />
-                  </node>
-                  <node concept="3CFZ6_" id="2POSI7yqMVM" role="2OqNvi">
-                    <node concept="3CFYIy" id="2POSI7yqMVN" role="3CFYIz">
-                      <ref role="3CFYIx" to="tpck:3EoG9lZUeni" resolve="SuppressErrorsAnnotation" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="4oS1ku9keHY" role="2OqNvi" />
               </node>
             </node>
           </node>

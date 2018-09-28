@@ -29,6 +29,7 @@ import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__Behavi
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SNodePointer;
@@ -304,10 +305,11 @@ public class migrateExtension extends MigrationScriptBase {
   public Iterable<Problem> check(SModule m) {
     List<SNode> notMigrated = ListSequence.fromList(new ArrayList<SNode>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_2kk9yi_b0e = CommandUtil.createScope(m);
+      final SearchScope scope_2kk9yi_b0e_0 = new EditableFilteringScope(scope_2kk9yi_b0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_2kk9yi_b0e_0;
         }
       };
       ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), false)).where(new IWhereFilter<SNode>() {

@@ -542,9 +542,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
     @Override
     public void stopListening(@NotNull SRepository repository) {
+      super.stopListening(repository);
       myModelListener.dispose();
       myModelListener = null;
-      super.stopListening(repository);
     }
 
     @Override

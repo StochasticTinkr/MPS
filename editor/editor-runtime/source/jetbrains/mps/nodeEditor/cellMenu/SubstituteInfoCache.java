@@ -23,24 +23,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 class SubstituteInfoCache {
   private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<>();
   private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<>();
 
-  @Nullable
-  List<SubstituteAction> getActions(String pattern, boolean strictMatching) {
+  Optional<List<SubstituteAction>> getActions(String pattern, boolean strictMatching) {
     if (pattern == null) {
-      return null;
+      return Optional.empty();
     }
     if (strictMatching) {
       if (myStrictPatternsToActionListsCache.containsKey(pattern)) {
-        return Collections.unmodifiableList(myStrictPatternsToActionListsCache.get(pattern));
+        return Optional.of(Collections.unmodifiableList(myStrictPatternsToActionListsCache.get(pattern)));
       }
     } else if (myPatternsToActionListsCache.containsKey(pattern)) {
-      return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
+      return Optional.of(Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern)));
     }
-    return null;
+    return Optional.empty();
   }
 
   void putActions(String pattern, boolean strictMatching, List<SubstituteAction> actions) {

@@ -1923,7 +1923,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="38_6U8fKvyi" role="2OqNvi">
-                    <ref role="37wK5l" to="4b2m:~MessageBus.asyncPublisher(com.intellij.util.messages.Topic):java.lang.Object" resolve="asyncPublisher" />
+                    <ref role="37wK5l" to="4b2m:~MessageBus.syncPublisher(com.intellij.util.messages.Topic):java.lang.Object" resolve="syncPublisher" />
                     <node concept="10M0yZ" id="38_6U8fKvyj" role="37wK5m">
                       <ref role="3cqZAo" to="8fk4:~ProjectTopics.PROJECT_ROOTS" resolve="PROJECT_ROOTS" />
                       <ref role="1PxDUh" to="8fk4:~ProjectTopics" resolve="ProjectTopics" />

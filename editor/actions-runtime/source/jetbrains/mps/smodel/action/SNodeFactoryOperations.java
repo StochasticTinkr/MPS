@@ -20,6 +20,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -64,13 +67,19 @@ public class SNodeFactoryOperations {
     return newNode;
   }
 
-  public static SNode addNewChild(SNode node, SContainmentLink role, SAbstractConcept childConcept) {
-    if (node != null) {
-      SNode newChild = NodeFactoryManager.createNode(childConcept, null, node, node.getModel());
-      node.addChild(role, newChild);
-      return newChild;
+  public static SNode addNewChild(SNode node, SContainmentLink role, @Nullable SAbstractConcept childConcept) {
+    if (node == null) {
+      return null;
     }
-    return null;
+    final SConcept c;
+    if (childConcept == null) {
+      c = ModelConstraints.getDefaultConcreteConcept(role.getTargetConcept());
+    } else {
+      c = MetaAdapterByDeclaration.asInstanceConcept(childConcept);
+    }
+    SNode newChild = NodeFactoryManager.createNode(c, null, node, node.getModel());
+    node.addChild(role, newChild);
+    return newChild;
   }
 
   public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, SAbstractConcept childConcept) {
@@ -82,15 +91,21 @@ public class SNodeFactoryOperations {
     return null;
   }
 
-  public static SNode setNewChild(SNode node, SContainmentLink role, SAbstractConcept childConcept) {
-    if (node != null) {
-      Iterable<? extends SNode> ch = node.getChildren(role);
-      SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
-      SNode newChild = NodeFactoryManager.createNode(childConcept, prototypeNode, node, node.getModel());
-      SNodeEditorUtil.setSingleChild(node, role, newChild);
-      return newChild;
+  public static SNode setNewChild(SNode node, SContainmentLink role, @Nullable SAbstractConcept childConcept) {
+    if (node == null) {
+      return null;
     }
-    return null;
+    final SConcept c;
+    if (childConcept == null) {
+      c = ModelConstraints.getDefaultConcreteConcept(role.getTargetConcept());
+    } else {
+      c = MetaAdapterByDeclaration.asInstanceConcept(childConcept);
+    }
+    Iterable<? extends SNode> ch = node.getChildren(role);
+    SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
+    SNode newChild = NodeFactoryManager.createNode(c, prototypeNode, node, node.getModel());
+    SNodeEditorUtil.setSingleChild(node, role, newChild);
+    return newChild;
   }
 
   public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, SAbstractConcept childConcept) {

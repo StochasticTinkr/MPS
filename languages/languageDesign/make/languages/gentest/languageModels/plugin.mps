@@ -898,7 +898,7 @@
                       <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
                     </node>
                     <node concept="liA8E" id="1KUoCipvFzp" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                      <ref role="37wK5l" to="w1kc:~ModelAccess.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
                       <node concept="1bVj0M" id="1KUoCipvFzq" role="37wK5m">
                         <node concept="3clFbS" id="1KUoCipvFzr" role="1bW5cS">
                           <node concept="3cpWs8" id="1KUoCipvFzs" role="3cqZAp">

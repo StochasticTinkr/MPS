@@ -1,7 +1,7 @@
 <ivy-module version="2.0">
   <info organisation="org.jetbrains.mps" module="openJDK/jdk.tar.gz"/>
   <dependencies>
-    <dependency org="org" name="MPS_20182_Distribution_GetResources" rev="latest.lastSuccessful">
+    <dependency org="org" name="MPS_20183_Distribution_GetResources" rev="latest.lastSuccessful">
       <include name="openJDK/jdk" ext="tar.gz"/>
     </dependency>
   </dependencies>

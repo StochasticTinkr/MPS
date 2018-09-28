@@ -72,6 +72,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapImport_Constraints" file="CellActionMapImport_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" file="CellIdReferenceSelector_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -452,6 +472,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellActionMapDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellActionMapImport_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellKeyMapDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints" />

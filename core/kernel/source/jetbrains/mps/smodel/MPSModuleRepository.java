@@ -22,6 +22,7 @@ import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
@@ -31,6 +32,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -41,12 +43,13 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MPSModuleRepository extends SRepositoryBase implements CoreComponent, SRepositoryExt {
+public class MPSModuleRepository extends SRepositoryBase implements CoreComponent, SRepositoryExt, ReferenceScopeHelper.Source {
   private static final Logger LOG = LogManager.getLogger(MPSModuleRepository.class);
   private static MPSModuleRepository ourInstance;
 
   private final GlobalModelAccess myGlobalModelAccess;
   private final CommandListener myCommandListener;
+  private final CachingReferenceScopeHelper myScopeCache;
 
   private Set<SModule> myModules = new LinkedHashSet<>();
   private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<>();
@@ -89,6 +92,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         fireCommandFinished();
       }
     };
+    myScopeCache = new CachingReferenceScopeHelper();
   }
 
   @Override
@@ -99,10 +103,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     }
     ourInstance = this;
     myGlobalModelAccess.addCommandListener(myCommandListener);
+    myGlobalModelAccess.addReadActionListener(myScopeCache);
   }
 
   @Override
   public void dispose() {
+    myGlobalModelAccess.removeReadActionListener(myScopeCache);
     myGlobalModelAccess.removeCommandListener(myCommandListener);
     ourInstance = null;
     super.dispose();
@@ -275,6 +281,47 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       SModelRepository.getInstance().saveAll();
     } finally {
       LOG.info(String.format("Saving of the repository took %.3f s", (System.nanoTime() - beginTime) / 1e9));
+    }
+  }
+
+  //
+
+
+  @Override
+  public ReferenceScopeHelper getReferenceScopeHelper() {
+    return myScopeCache;
+  }
+
+  private static class CachingReferenceScopeHelper extends ReferenceScopeHelper implements ReadActionListener {
+    /*
+     * Can not be sure Scope implementations are written with multi-thread access in mind, hence keep
+     * distinct scope instances per thread.
+     */
+    private ThreadLocal<Map<SReference, Scope>> myCache;
+
+
+    @Override
+    public Scope getScope(@NotNull SReference reference) {
+      if (myCache == null) {
+        // we might be inside proper read but myCache still == null due to threading issue described in ActionDispatcher
+        return super.getScope(reference);
+      }
+      final Map<SReference, Scope> thisThreadCache = myCache.get();
+      Scope scope = thisThreadCache.get(reference);
+      if (scope == null) {
+        thisThreadCache.put(reference, scope = super.getScope(reference));
+      }
+      return scope;
+    }
+
+    @Override
+    public void readStarted() {
+      myCache = ThreadLocal.withInitial(ConcurrentHashMap::new);
+    }
+
+    @Override
+    public void readFinished() {
+      myCache = null;
     }
   }
 }

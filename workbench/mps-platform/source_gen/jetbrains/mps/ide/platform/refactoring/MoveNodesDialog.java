@@ -4,17 +4,18 @@ package jetbrains.mps.ide.platform.refactoring;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
+import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NonNls;
 
 public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   private SModel myModel;
   private MoveNodesDialog.ModelFilter myFilter;
   protected NodeLocation mySelectedObject;
-  public MoveNodesDialog(@NotNull Project project, SModel model) {
+  public MoveNodesDialog(@NotNull MPSProject project, SModel model) {
     super(project);
     myModel = model;
     init();
@@ -31,9 +32,10 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myModel);
+    myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject.getProject(), myModel);
     JComponent centerPanel = myChooser.getComponent();
     centerPanel.setPreferredSize(new Dimension(400, 900));
+    Disposer.register(getDisposable(), myChooser);
     return centerPanel;
   }
   public void setFilter(MoveNodesDialog.ModelFilter filter) {
@@ -45,12 +47,12 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-  public static Object getSelectedObject(@NotNull Project project, SModel model) {
+  public static Object getSelectedObject(@NotNull MPSProject project, SModel model) {
     MoveNodesDialog dialog = new MoveNodesDialog(project, model);
     dialog.show();
     return dialog.mySelectedObject;
   }
-  public static NodeLocation getSelectedObject(@NotNull Project project, SModel model, MoveNodesDialog.ModelFilter filter) {
+  public static NodeLocation getSelectedObject(@NotNull MPSProject project, SModel model, MoveNodesDialog.ModelFilter filter) {
     MoveNodesDialog dialog = new MoveNodesDialog(project, model);
     dialog.setFilter(filter);
     dialog.show();

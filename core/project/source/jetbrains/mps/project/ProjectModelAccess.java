@@ -17,6 +17,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.ModelAccessBase;
 
+import javax.swing.SwingUtilities;
+
 /**
  * This class represents a ModelAccess for cases when there is an available project in scope.
  * Currently it delegates all command execution to the class {@link jetbrains.mps.smodel.ModelAccess}
@@ -36,15 +38,25 @@ public class ProjectModelAccess extends ModelAccessBase {
 
   @Override
   public void executeCommand(Runnable r) {
-    // this is what DefaultModelAccess used to do for executeCommand(r, myProject).
-    // MA for a repository associated with an MPSProject has different implementation that interacts with IDEA Platform undo mechanism
-    getDelegate().runWriteAction(r);
+    // MA for a repository associated with an MPSProject has different implementation that interacts with IDEA Platform undo mechanism.
+    // We can get here through p.getModelAccess().executeCommand() only(MA.instance().executeCommand() is implemented in DMA and WMA and doesn't delegate here)
+    // therefore there's no reason to use myProject, we are already in its MA. Therefore, delegate to either DMA or WMA, available globally.
+    //
+    // Perhaps, the right way would be to do what DefaultModelAccess does for executeCommand (so that DMA doesn't keep executeCommand() implementation)
+    // to keep execute* implementations specific to an individual MA instance rather than global one. However, as MA.instance().executeCommand()
+    // has been exposed through lang.access constructs, we have to keep its implementation there for another release. With no global MA, implementation of
+    // DMA.executeCommand() would be here.
+    // Another aspect that prevents me from implementing DMA's executeCommand here is the need to access commandActionDispatcher, which is protected to
+    // hierarchy of 'true' MA (unlike this one, delegation-based, 'true' have locks and record/notify listeners)
+    getDelegate().executeCommand(r);
   }
 
   @Override
   public void executeCommandInEDT(Runnable r) {
+    // we can get here either with p.getModelAccess() or through MA.instance().runCommandInEDT re-dispatch.
     // see #executeCommand(Runnable) above why we don't use myProject
-    getDelegate().runWriteInEDT(r);
+    // Since this method have not been used through MA.instance(), we are free to implement it the way DMA would implement it, right here
+    SwingUtilities.invokeLater(() -> getDelegate().executeCommand(r));
   }
 
   @Override

@@ -4,21 +4,22 @@ package jetbrains.mps.ide.platform.refactoring;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
+import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class MoveNodeDialog extends ModelOrNodeChooserDialog {
-  private SNode myNodeToMove;
+  private final SNode myNodeToMove;
   private MoveNodeDialog.NodeFilter myNodeFilter;
   private SNode mySelectedObject;
-  public MoveNodeDialog(@NotNull Project project, SNode node) {
+
+  public MoveNodeDialog(@NotNull MPSProject project, SNode node) {
     super(project);
     myNodeToMove = node;
     init();
@@ -32,9 +33,9 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
       return;
     }
     final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
-    ProjectHelper.toMPSProject(getProject()).getModelAccess().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(ProjectHelper.toMPSProject(getProject()).getRepository());
+        SNode node = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(myProject.getRepository());
         if (myNodeFilter == null || myNodeFilter.checkForObject(node, myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
           mySelectedObject = node;
           doRefactoring.value = true;
@@ -51,13 +52,14 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    ProjectHelper.toMPSProject(getProject()).getModelAccess().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myNodeToMove);
+        myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject.getProject(), myNodeToMove);
       }
     });
     JComponent centerPanel = myChooser.getComponent();
     centerPanel.setPreferredSize(new Dimension(400, 900));
+    Disposer.register(getDisposable(), myChooser);
     return centerPanel;
   }
   @Nullable
@@ -66,17 +68,20 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-  public static SNode getSelectedObject(@NotNull Project project, SNode node) {
+
+  public static SNode getSelectedObject(@NotNull MPSProject project, SNode node) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.show();
     return dialog.mySelectedObject;
   }
-  public static SNode getSelectedObject(@NotNull Project project, SNode node, MoveNodeDialog.NodeFilter filter) {
+
+  public static SNode getSelectedObject(@NotNull MPSProject project, SNode node, MoveNodeDialog.NodeFilter filter) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.setFilter(filter);
     dialog.show();
     return dialog.mySelectedObject;
   }
+
   public static abstract class NodeFilter extends ModelOrNodeChooserDialog.Filter {
     public NodeFilter() {
     }

@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -538,10 +538,6 @@
   <node concept="24kQdi" id="_mhz_5U$MB">
     <property role="3GE5qa" value="types" />
     <ref role="1XX52x" to="tpck:3EoG9lZUeni" resolve="SuppressErrorsAnnotation" />
-    <node concept="3EZMnI" id="3Z3vdqw4NTG" role="2wV5jI">
-      <node concept="2SsqMj" id="_mhz_5U_X3" role="3EZMnx" />
-      <node concept="l2Vlx" id="3Z3vdqw4NTH" role="2iSdaV" />
-    </node>
     <node concept="3EZMnI" id="3Z3vdqw5yEk" role="6VMZX">
       <node concept="2iRkQZ" id="3Z3vdqw5yEl" role="2iSdaV" />
       <node concept="3F0A7n" id="3Z3vdqw5yEo" role="3EZMnx">
@@ -1047,6 +1043,10 @@
         </node>
       </node>
       <node concept="3F0ifn" id="3Z3vdqw6nRf" role="3EZMnx" />
+    </node>
+    <node concept="3EZMnI" id="3Z3vdqw4NTG" role="2wV5jI">
+      <node concept="2SsqMj" id="_mhz_5U_X3" role="3EZMnx" />
+      <node concept="l2Vlx" id="3Z3vdqw4NTH" role="2iSdaV" />
     </node>
   </node>
   <node concept="PKFIW" id="37EzmTDC95l">

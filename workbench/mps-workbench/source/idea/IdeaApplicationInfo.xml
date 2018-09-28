@@ -33,8 +33,8 @@
   <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps"
             release-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps"/>
   <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html"/>
-  <keymap win="https://confluence.jetbrains.com/display/MPSD20182/Default+Keymap+Reference"
-          mac="https://confluence.jetbrains.com/display/MPSD20182/Default+Keymap+Reference"/>
+  <keymap win="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference"
+          mac="https://confluence.jetbrains.com/display/MPSD20183/Default+Keymap+Reference"/>
   <third-party url="http://www.jetbrains.org/"/>
   <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 

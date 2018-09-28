@@ -845,7 +845,9 @@
     <property role="34LRSv" value="conceptNode" />
     <property role="EcuMT" value="1172323065820" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl" />
+    <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h3O6GYR">
     <property role="R5$K7" value="false" />
@@ -882,6 +884,7 @@
     </node>
     <node concept="asaX9" id="4eGV4eBU7tU" role="lGtFl">
       <property role="YLQ7P" value="use an explicit node&lt;AbstractConceptDeclaration&gt; instead, planned to be removed after 2017.2" />
+      <property role="YLPcu" value="2018.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3TUQj6">
@@ -988,7 +991,9 @@
       <property role="TrG5h" value="directCall" />
       <property role="IQ2nx" value="2853323645193760541" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="1OqTjpjgM3z" role="lGtFl" />
+      <node concept="asaX9" id="1OqTjpjgM3z" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="haqh4HH" role="1TKVEi">
       <property role="20kJfa" value="conceptMethodDeclaration" />

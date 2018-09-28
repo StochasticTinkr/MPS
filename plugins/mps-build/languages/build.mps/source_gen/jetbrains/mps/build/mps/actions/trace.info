@@ -11,13 +11,13 @@
   <root nodeRef="r:a8c26c18-fb37-4d4a-a67a-16f7c6482380(jetbrains.mps.build.mps.actions)/8369506495128727675">
     <file name="constructors_BuildMps.java">
       <node id="8369506495128729611" at="16,91,17,180" concept="0" />
-      <node id="8369506495128729645" at="17,180,18,321" concept="0" />
+      <node id="8369506495128729645" at="17,180,18,184" concept="0" />
       <node id="2105528055260692159" at="23,212,24,523" concept="0" />
       <node id="2105528055260692133" at="22,91,25,7" concept="1" />
       <node id="8369506495128727676" at="16,0,20,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="2105528055260692130" at="22,0,27,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="2105528055260692135" at="23,212,24,523" />
-      <scope id="8369506495128727676" at="16,91,18,321" />
+      <scope id="8369506495128727676" at="16,91,18,184" />
       <scope id="2105528055260692130" at="22,91,25,7" />
       <scope id="8369506495128727676" at="16,0,20,0">
         <var name="enclosingNode" id="8369506495128727676" />

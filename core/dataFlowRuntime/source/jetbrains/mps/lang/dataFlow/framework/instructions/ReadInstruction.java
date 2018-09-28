@@ -16,8 +16,8 @@
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 public class ReadInstruction extends Instruction {
-  protected final Object myVar;
-  protected int myIndex;
+  private final Object myVar;
+  private int myVariableIndex;
 
   public ReadInstruction(Object var) {
     myVar = var;
@@ -33,13 +33,13 @@ public class ReadInstruction extends Instruction {
   }
 
   public int getVariableIndex() {
-    return myIndex;
+    return myVariableIndex;
   }
 
   @Override
   public void buildCaches() {
     super.buildCaches();
-    myIndex = getProgram().getVariableIndex(myVar);
+    myVariableIndex = getProgram().getVariableIndex(myVar);
   }
 
   @Override

@@ -2,12 +2,12 @@
 <model ref="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="12" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
@@ -1204,16 +1204,11 @@
         </node>
         <node concept="3cpWs6" id="1H31ARNR$iX" role="3cqZAp">
           <node concept="3K4zz7" id="1H31ARNR$HI" role="3cqZAk">
-            <node concept="2ZW3vV" id="1H31ARNRyVz" role="3K4Cdx">
-              <node concept="3uibUv" id="1H31ARNRyXR" role="2ZW6by">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-              <node concept="2OqwBi" id="1H31ARNRyI2" role="2ZW6bz">
-                <node concept="37vLTw" id="1H31ARNRyCW" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1H31ARNRx6J" resolve="it" />
-                </node>
-                <node concept="liA8E" id="1H31ARNRyU6" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+            <node concept="2ShNRf" id="1H31ARNR_1d" role="3K4GZi">
+              <node concept="1pGfFk" id="1H31ARNR_1e" role="2ShVmc">
+                <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                <node concept="37vLTw" id="1H31ARNR_1f" role="37wK5m">
+                  <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
                 </node>
               </node>
             </node>
@@ -1225,11 +1220,16 @@
                 </node>
               </node>
             </node>
-            <node concept="2ShNRf" id="1H31ARNR_1d" role="3K4GZi">
-              <node concept="1pGfFk" id="1H31ARNR_1e" role="2ShVmc">
-                <ref role="37wK5l" to="mte5:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                <node concept="37vLTw" id="1H31ARNR_1f" role="37wK5m">
-                  <ref role="3cqZAo" node="1H31ARNR8CK" resolve="modelsAndModules" />
+            <node concept="2ZW3vV" id="1H31ARNRyVz" role="3K4Cdx">
+              <node concept="3uibUv" id="1H31ARNRyXR" role="2ZW6by">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+              <node concept="2OqwBi" id="1H31ARNRyI2" role="2ZW6bz">
+                <node concept="37vLTw" id="1H31ARNRyCW" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1H31ARNRx6J" resolve="it" />
+                </node>
+                <node concept="liA8E" id="1H31ARNRyU6" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                 </node>
               </node>
             </node>

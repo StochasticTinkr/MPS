@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInfo {
@@ -48,15 +49,17 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
   @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(() -> {
-      List<SubstituteAction> actions = mySubstituteInfoCache.getActions(pattern, strictMatching);
-      if (actions != null) {
-        return new ArrayList<>(actions);
-      }
-      actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
-      List<SubstituteAction> filteredActions = getFilteredActions(pattern, actions, strictMatching);
-      mySubstituteInfoCache.putActions(pattern, strictMatching, filteredActions);
+      Optional<List<SubstituteAction>> cachedActions = mySubstituteInfoCache.getActions(pattern, strictMatching);
+      if (cachedActions.isPresent()){
+        return new ArrayList<>(cachedActions.get());
+      } else {
 
-      return filteredActions;
+        List<SubstituteAction> actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
+        List<SubstituteAction> filteredActions = getFilteredActions(pattern, actions, strictMatching);
+        mySubstituteInfoCache.putActions(pattern, strictMatching, filteredActions);
+
+        return filteredActions;
+      }
     });
   }
 

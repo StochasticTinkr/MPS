@@ -344,7 +344,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.prop("stripImplementation", 0x2f0b11e330465d4dL, "3389822811991596365");
     b.associate("plugin", 0x5b7be37b4dee5919L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L).optional(false).origin("6592112598314801433").done();
-    b.aggregate("packagingType", 0x318cec002865ade0L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ad9fL).optional(false).ordered(true).multiple(false).origin("3570488090019868128").done();
+    b.aggregate("packagingType", 0x318cec002865ade0L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x318cec002865ad9fL).optional(true).ordered(true).multiple(false).origin("3570488090019868128").done();
     b.alias("plugin");
     return b.create();
   }
@@ -656,7 +656,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.prop("url", 0x6cb3984bfe5b72d5L, "7832771629084799701");
     b.prop("name", 0x6cb3984bfe5b72d6L, "7832771629084799702");
-    b.aggregate("icon16", 0x6cb3984bfe5b72d4L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("7832771629084799700").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildMps_Language() {

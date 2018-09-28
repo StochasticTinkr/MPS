@@ -2,9 +2,9 @@
 <model ref="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -3916,8 +3916,8 @@
           </node>
           <node concept="3clFbF" id="z2ICeMRNZa" role="3cqZAp">
             <node concept="2OqwBi" id="z2ICeMRNZe" role="3clFbG">
-              <node concept="0IXxy" id="z2ICeMRNZb" role="2Oq$k0" />
               <node concept="3YRAZt" id="4$Xvl0yAdT7" role="2OqNvi" />
+              <node concept="0IXxy" id="z2ICeMRNZb" role="2Oq$k0" />
             </node>
           </node>
         </node>

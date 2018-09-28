@@ -4,7 +4,7 @@
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
   <property name="get.dir" location="${resources}"/>
 
-  <target name="getall" depends="getHelp, getMachelp, getJdk, getOpenjdk, getOpenjdkMac, getOpenjdkWin"/>
+  <target name="getall" depends="getOpenjdk, getOpenjdkMac, getOpenjdkWin"/>
 
   <target name="install-ivy">
     <property name="mps.ivy.home" value="${user.home}" description="Property used to set custom path on TeamCity"/>
@@ -13,21 +13,6 @@
     </path>
     <typedef resource="org/apache/ivy/ant/antlib.xml"
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
-  </target>
-
-  <target name="getHelp" depends="install-ivy" description="--> Retreive recent help/mpshelp.jar">
-    <ivy:resolve file="ivyHelp.xml"/>
-    <ivy:retrieve file="ivyHelp.xml" pattern="${get.dir}/[artifact].[ext]"/>
-  </target>
-
-  <target name="getMachelp" depends="install-ivy" description="--> Retreive recent help/mac/mpshelp.jar">
-    <ivy:resolve file="ivyMachelp.xml"/>
-    <ivy:retrieve file="ivyMachelp.xml" pattern="${get.dir}/[artifact].[ext]"/>
-  </target>
-
-  <target name="getJdk" depends="install-ivy" description="--> Retreive recent JDK/jdk.zip">
-    <ivy:resolve file="ivyJdk.xml"/>
-    <ivy:retrieve file="ivyJdk.xml" pattern="${get.dir}/[artifact].[ext]"/>
   </target>
 
   <target name="getOpenjdk" depends="install-ivy" description="--> Retreive recent openJDK/jdk.tar.gz">

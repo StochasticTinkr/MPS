@@ -7,6 +7,7 @@ import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -27,10 +28,11 @@ public class ReapplyPatternMigration extends BaseProjectMigration implements Cle
   @Override
   public boolean doExecute(Project project) {
     {
-      final SearchScope scope = CommandUtil.createScope(project);
+      SearchScope scope_idu4d8_a0e = CommandUtil.createScope(project);
+      final SearchScope scope_idu4d8_a0e_0 = new EditableFilteringScope(scope_idu4d8_a0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_idu4d8_a0e_0;
         }
       };
       for (SNode pattern : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false))) {

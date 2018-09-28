@@ -97,7 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)/4560297596904469357");
     b.version(2);
-    b.aggregate("options", 0x5b81705cdfb31570L).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L).optional(false).ordered(true).multiple(false).origin("6593674873639474544").done();
+    b.aggregate("options", 0x5b81705cdfb31570L).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L).optional(true).ordered(true).multiple(false).origin("6593674873639474544").done();
     b.aggregate("haltonfailure", 0x6402cbb11c1307aeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("7206546315286874030").done();
     b.aggregate("modules", 0x3f496e80bd8ef370L).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L).optional(true).ordered(true).multiple(true).origin("4560297596904469360").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

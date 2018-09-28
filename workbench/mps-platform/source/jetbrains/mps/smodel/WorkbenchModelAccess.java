@@ -28,11 +28,8 @@ import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import static java.math.BigDecimal.valueOf;
 
@@ -80,7 +77,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     ApplicationManager.getApplication().runReadAction(() -> {
       getReadLock().lock();
       try {
-        r.run();
+        myReadActionDispatcher.dispatch(r);
       } finally {
         getReadLock().unlock();
       }
@@ -108,7 +105,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   // The easiest way is to have onActionStart (much like onCommandStart) and do it there
   // Smartest way is to drop these caches altogether.
   private Runnable wrapWithModelWriteDispatch(Runnable r) {
-    return () -> myWriteActionDispatcher.run(r);
+    return myWriteActionDispatcher.wrap(r);
   }
 
   @Override
@@ -172,7 +169,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     }
 
     // 1 ms is pretty short to be considered 'try'
-    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, r);
+    final LockRunnable lockRunnable = new LockRunnable(getReadLock(), 1, myReadActionDispatcher.wrap(r));
     // XXX likely, shall try to grab IDEA's read lock much like tryWrite does
     ApplicationManager.getApplication().runReadAction(lockRunnable);
     return lockRunnable.wasExecuted();
@@ -222,7 +219,8 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     ApplicationManager.getApplication().assertIsDispatchThread();
 
     TaskTimer taskTimer = new TaskTimer();
-    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
+    // tryWrite ensures our command runnable would be executed from a distinct thread and hence would be 'top' one
+    final LockRunnable lockRunnable = new LockRunnable(getWriteLock(), WAIT_FOR_WRITE_LOCK_MILLIS, wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
     ComputeRunnable<WriteTimeOutException> computable = new ComputeRunnable<>(() -> {
       try {
         myPlatformWriteHelper.tryWrite(lockRunnable);
@@ -261,6 +259,14 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
     myCancellableReads.cancel();
 
+    if (isInsideCommand()) {
+      // no apparent reason to go long way and to notify IDEA's CommandProcessor.
+      // Besides, and it's IMPORTANT, wrapTopCommandRunnable() and UndoContextSetup expect runnable to be the top command
+      // as they use it to configure undo context, which is not the thing we'd like to do for an executeCommand() inside another executeCommand().
+      r.run();
+      return;
+    }
+
     String name = "MPS Execute Command", groupId = null;
     UndoConfirmationPolicy confirmUndo = UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION;
     if (r instanceof UndoRunnable) {
@@ -271,110 +277,25 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
         confirmUndo = UndoConfirmationPolicy.REQUEST_CONFIRMATION;
       }
     }
-    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
     CommandProcessor.getInstance().executeCommand(project.getProject(), myPlatformWriteHelper.withPlatformWrite(withModelLock), name, groupId, confirmUndo);
   }
 
   /*package*/ void runUndoTransparentCommand(Runnable r, MPSProject project) {
-    if (myCommandLevel > 0) {
+    if (myCommandActionDispatcher.isInsideAction()) {
+      // XXX why not, except for the newly introduced wrapTopCommandRunnable() limitation of nested commands?
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
     myCancellableReads.cancel();
 
-    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(new CommandRunnable(r, project)));
+    final LockRunnable withModelLock = new LockRunnable(getWriteLock(), wrapWithModelWriteDispatch(wrapTopCommandRunnable(r, project)));
     CommandProcessor.getInstance().runUndoTransparentAction(myPlatformWriteHelper.withPlatformWrite(withModelLock));
-  }
-
-  @Override
-  public boolean isInsideCommand() {
-    return canWrite() && myCommandLevel > 0;
   }
 
   @Override
   public boolean hasScheduledWrites() {
     return myPlatformWriteHelper.hasScheduledWrites() || super.hasScheduledWrites();
-  }
-
-  //--------command events listening
-
-  private List<CommandListener> myListeners = new ArrayList<>();
-  private final Object myListenersLock = new Object();
-
-  private int myCommandLevel = 0;
-
-  private void incCommandLevel(Runnable command, MPSProject mpsProject) {
-    checkWriteAccess();
-    if (myCommandLevel != 0) {
-      // LOG.error("command level>0", new Exception());
-    } else {
-      UndoContext context;
-      if (command instanceof UndoContext) {
-        context = (UndoContext) command;
-      } else {
-        context = new DefaultUndoContext(mpsProject.getRepository());
-      }
-      // XXX pass MPSProject right to undoHandler, don't be shy
-      myUndoHandler.startCommand(context);
-      onCommandStarted();
-    }
-    myCommandLevel++;
-  }
-
-  private void decCommandLevel() {
-    checkWriteAccess();
-    myCommandLevel--;
-    if (myCommandLevel == 0) {
-      myUndoHandler.flushCommand();
-      onCommandFinished();
-    }
-  }
-
-  @Override
-  public void addCommandListener(CommandListener l) {
-    synchronized (myListenersLock) {
-      myListeners.add(l);
-    }
-  }
-
-  @Override
-  public void removeCommandListener(CommandListener l) {
-    synchronized (myListenersLock) {
-      myListeners.remove(l);
-    }
-  }
-
-  @Override
-  protected void onCommandStarted() {
-    super.onCommandStarted();
-    ArrayList<CommandListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<>(myListeners);
-    }
-
-    for (CommandListener l : listeners) {
-      try {
-        l.commandStarted();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-  }
-
-  @Override
-  protected void onCommandFinished() {
-    ArrayList<CommandListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<>(myListeners);
-    }
-    for (CommandListener l : listeners) {
-      try {
-        l.commandFinished();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-    super.onCommandFinished();
   }
 
   @Override
@@ -395,17 +316,36 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     return getClass().getSimpleName();
   }
 
+
   /**
-   * Responsible to notify about command start and end using incCommandLevel/decCommandLevel.
-   * Shall get executed inside platform write and under model lock
+   * Bears 'TOP' in the name to stress we don't expect nested command here.
+   * myCommandActionDispatcher indeed tolerates nested commands, however UndoContextSetup DOES NOT.
+   * This might be worth a refactoring, so that even nested commands go through myCommandActionDispatcher, and only for the top one
+   * there'd be an extra responsibility to setup undo context.
+   */
+  private Runnable wrapTopCommandRunnable(Runnable r, MPSProject project) {
+    // first, commandStarted notification is dispatched, then undo context set,
+    // at the end, undo context is flushed, and then commandFinished() is dispatched.
+    // The start sequence used to be other way round, does it matter? If yes, can change to:
+    //    new UndoContextSetup(r, myCommandActionDispatcher.wrap(r), project) for notifications to go
+    // inside initialized undo context, just need to make sure UndoContextSetup receives the right Runnable instance (to check instanceof)
+    return myCommandActionDispatcher.wrap(new UndoContextSetup(r, project));
+  }
+
+  /**
+   * Responsible to prepare and cleanup undo context for the command. Has to run prior to any client-supplied command code, only for the very first command.
+   * Shall get executed inside platform write and under model write lock.
    */
   @Immutable
-  private final class CommandRunnable implements Runnable {
-    private final Runnable myRunnable;
+  private final class UndoContextSetup implements Runnable {
+    private final Runnable myCommand;
     private final MPSProject myProject;
 
-    CommandRunnable(Runnable r, MPSProject project) {
-      myRunnable = r;
+    /**
+     * IMPORTANT: Runnable instance has to be the one that came from an end-user, we look at optional interfaces it may implement!
+     */
+    UndoContextSetup(Runnable r, MPSProject project) {
+      myCommand = r;
       myProject = project;
     }
 
@@ -415,12 +355,28 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       // would be executeCommand() nested inside another executeCommand(). Undo-transparent is explicit about top-level, and async command is always top-level
       // by design. Therefore, once executeCommand() runs a delegate directly in case of nested command, this runnable could become UndoContextSetupRunnable
       // and get incCommandLevel (myCommandLevel == 0) responsibilities here
-      incCommandLevel(myRunnable, myProject);
+      setUp();
       try {
-        myRunnable.run();
+        myCommand.run();
       } finally {
-        decCommandLevel();
+        tearDown();
       }
+    }
+    private void setUp() {
+      checkWriteAccess();
+      UndoContext context;
+      if (myCommand instanceof UndoContext) {
+        context = (UndoContext) myCommand;
+      } else {
+        context = new DefaultUndoContext(myProject.getRepository());
+      }
+      // XXX pass MPSProject right to undoHandler, don't be shy
+      myUndoHandler.startCommand(context);
+    }
+
+    private void tearDown() {
+      checkWriteAccess();
+      myUndoHandler.flushCommand();
     }
   }
 }

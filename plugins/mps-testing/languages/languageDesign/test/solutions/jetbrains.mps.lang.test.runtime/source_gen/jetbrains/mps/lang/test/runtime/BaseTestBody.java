@@ -16,18 +16,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNodeId;
 
 public class BaseTestBody {
-  public SModel myModel;
-  public Project myProject;
+  protected final SModel myModel;
+  protected final Project myProject;
   protected final Map<SNode, SNode> myMap;
-
-  /**
-   * 
-   * @deprecated Reflective instantiation of BaseTestBody subclass (from BaseTransformationTest.runTest()) will be removed after 2018.2
-   */
-  @Deprecated
-  public BaseTestBody() {
-    myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-  }
 
   protected BaseTestBody(TransformationTest owner) {
     myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());

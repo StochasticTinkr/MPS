@@ -53,9 +53,6 @@ public class GenerateGettersAndSettersUtil {
     } else {
       paramName = prefix + preparedFieldName + suffix;
     }
-    if (paramName.equals(SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-      paramName = paramName + "1";
-    }
     return paramName;
   }
   public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {

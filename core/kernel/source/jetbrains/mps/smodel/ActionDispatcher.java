@@ -20,16 +20,23 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 /**
  * Reentrant action execution, with notification on first and last action.
- * Note, implementation assumes it's a single thread that {@linkplain #dispatch(Runnable) dispatches} actions.
- * This is true for write and command actions of ModelAccess, but not necessarily true for any other possible use.
- * However, 'first' and 'last' for multi-threaded use would need a re-definition anyway.
- *
  * Use {@link #dispatch(Runnable)} to execute {@link Runnable action} with proper event dispatching.
  * If you need to postpone execution (and event dispatching), you can get appropriate runnable with {@link #wrap(Runnable)}.
+ *
+ * Implementation doesn't assume single thread {@linkplain #dispatch(Runnable) dispatches}, though is not completely thread-safe.
+ * {@code onActionStart} is notified prior to first action of a first thread that asked for {@code dispatch} and
+ * {@code onActionFinish} is notified after the last {@code dispatch} is over.
+ * FIXME However, note that there may be another read started from other thread the moment finish events are dispatched for the other thread.
+ * FIXME       Besides, there are chances to get into read action prior to the moment event dispatch is over (thread-1 starts read and fires events, thread-2
+ * FIXME       starts meanwhile and runs read.
+ *             Now there is only 1 listener that may get affected, still needs to address this defect. Need a synch primitive to ensure notifications are out
+ *             the moment any other read gets their chance to run. Barrier, semaphore? Perhaps, split single-threaded impl to keep it simple?
+ *
  *
  * @param <T> listener to notify
  *
@@ -42,7 +49,7 @@ import java.util.function.Consumer;
   private final Consumer<T> myOnActionStart;
   private final Consumer<T> myOnActionFinish;
   private final DispatchController myDispatchController;
-  private int myActionLevel = 0; // not volatile as we don't expect multiple threads, why bother then?
+  private final AtomicInteger myActionLevel = new AtomicInteger(0);
 
   // all arguments are non-null
   public ActionDispatcher(Consumer<T> onActionStart, Consumer<T> onActionFinish) {
@@ -63,20 +70,23 @@ import java.util.function.Consumer;
    * @param r action to execute
    */
   public void dispatch(Runnable r) {
-    if (myActionLevel++ == 0) {
-      onActionStarted();
-    }
     final boolean traceEnabled = LOG.isTraceEnabled();
+    final int actionLevel = myActionLevel.getAndIncrement();
     try {
+      if (actionLevel == 0) {
+        // in case listener fails, shall get into final to ensure myActionLevel is correct
+        onActionStarted();
+      }
       if (traceEnabled) {
-        LOG.trace(String.format("Action started (level:%d)", myActionLevel));
+        // I want trace to report actionLevel consistently (for multi-threaded run, myActionLevel.get() gives actual value, not the stable one)
+        LOG.trace(String.format("Action started (level:%d)", actionLevel));
       }
       r.run();
     } finally {
       if (traceEnabled) {
-        LOG.trace(String.format("Action finished (level:%d)", myActionLevel));
+        LOG.trace(String.format("Action finished (level:%d)", actionLevel));
       }
-      if (--myActionLevel == 0) {
+      if (myActionLevel.decrementAndGet() == 0) {
         onActionFinished();
       }
     }
@@ -101,7 +111,7 @@ import java.util.function.Consumer;
   }
 
   public boolean isInsideAction() {
-    return myActionLevel > 0;
+    return myActionLevel.get() > 0;
   }
 
   /**
@@ -113,6 +123,12 @@ import java.util.function.Consumer;
       throw new ListenersConsistenceException("Adding the same listener again");
     }
     myListeners.add(listener);
+    if (isInsideAction()) {
+      // FIXME there's ClassLoaderManager.init that attaches listeners inside model write and expects to receive 'start' notification, otherwise
+      // internal state of BatchEventsProcessor breaks. However, I don't think it's good idea to send notifications like that when listener is added,
+      // we can violate the listener contract or expectations
+      myOnActionStart.accept(listener);
+    }
   }
 
   /**
@@ -122,6 +138,9 @@ import java.util.function.Consumer;
   public void removeActionListener(T listener) {
     if (!myListeners.contains(listener)) {
       throw new ListenersConsistenceException("The listener you are trying to remove does not exist");
+    }
+    if (isInsideAction()) {
+      myOnActionFinish.accept(listener);
     }
     myListeners.remove(listener);
   }

@@ -23,7 +23,6 @@
     <import index="jqcx" ref="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
-    <import index="ab4o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs.newvfs.impl(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="xygl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.progress(MPS.IDEA/)" />
@@ -1421,8 +1420,8 @@
   <node concept="312cEu" id="9D0Ba05uJX">
     <property role="TrG5h" value="TextPreviewFile" />
     <node concept="3Tm1VV" id="9D0Ba05uSm" role="1B3o_S" />
-    <node concept="3uibUv" id="9D0Ba05uSn" role="1zkMxy">
-      <ref role="3uigEE" to="ab4o:~StubVirtualFile" resolve="StubVirtualFile" />
+    <node concept="3uibUv" id="bLTTcu2ETf" role="1zkMxy">
+      <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
     </node>
     <node concept="Wx3nA" id="9D0Ba05uJY" role="jymVt">
       <property role="TrG5h" value="FS" />
@@ -2913,6 +2912,9 @@
         <node concept="3uibUv" id="pBvCW7BDUG" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
+        <node concept="2AHcQZ" id="7WyXo5rBUK7" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
       </node>
       <node concept="3clFbS" id="pBvCW7BDUH" role="3clF47">
         <node concept="3SKdUt" id="pBvCW7BItt" role="3cqZAp">
@@ -2922,6 +2924,101 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="pBvCW7BDUI" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="25a$SfoTVYg" role="jymVt" />
+    <node concept="3clFb_" id="bLTTcu2GXc" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getChildren" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="bLTTcu2GXd" role="1B3o_S" />
+      <node concept="10Q1$e" id="bLTTcu2GXf" role="3clF45">
+        <node concept="3uibUv" id="bLTTcu2GXg" role="10Q1$1">
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="bLTTcu2GXh" role="3clF47">
+        <node concept="3clFbF" id="bLTTcu2Jg_" role="3cqZAp">
+          <node concept="2ShNRf" id="bLTTcu2Jgz" role="3clFbG">
+            <node concept="3$_iS1" id="bLTTcu3i0l" role="2ShVmc">
+              <node concept="3$GHV9" id="bLTTcu3i0n" role="3$GQph">
+                <node concept="3cmrfG" id="bLTTcu3jB7" role="3$I4v7">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="bLTTcu3h_T" role="3$_nBY">
+                <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="bLTTcu2GXi" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="bLTTcu2GXj" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getOutputStream" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="bLTTcu2GXk" role="1B3o_S" />
+      <node concept="2AHcQZ" id="bLTTcu2GXm" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="bLTTcu2GXn" role="3clF45">
+        <ref role="3uigEE" to="guwi:~OutputStream" resolve="OutputStream" />
+      </node>
+      <node concept="37vLTG" id="bLTTcu2GXo" role="3clF46">
+        <property role="TrG5h" value="object" />
+        <node concept="3uibUv" id="bLTTcu2GXp" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="bLTTcu2GXq" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3cpWsb" id="bLTTcu2GXr" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="bLTTcu2GXs" role="3clF46">
+        <property role="TrG5h" value="l1" />
+        <node concept="3cpWsb" id="bLTTcu2GXt" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="bLTTcu2GXu" role="Sfmx6">
+        <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+      </node>
+      <node concept="3clFbS" id="bLTTcu2GXv" role="3clF47">
+        <node concept="YS8fn" id="bLTTcu3jPT" role="3cqZAp">
+          <node concept="2ShNRf" id="bLTTcu3jSU" role="YScLw">
+            <node concept="1pGfFk" id="bLTTcu3jSW" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="bLTTcu2GXw" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="bLTTcu2GXz" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getInputStream" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="bLTTcu2GX$" role="1B3o_S" />
+      <node concept="3uibUv" id="bLTTcu2GXA" role="3clF45">
+        <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
+      </node>
+      <node concept="3uibUv" id="bLTTcu2GXB" role="Sfmx6">
+        <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+      </node>
+      <node concept="3clFbS" id="bLTTcu2GXC" role="3clF47">
+        <node concept="3clFbF" id="bLTTcu2GXF" role="3cqZAp">
+          <node concept="10Nm6u" id="bLTTcu2GXE" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="bLTTcu2GXD" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

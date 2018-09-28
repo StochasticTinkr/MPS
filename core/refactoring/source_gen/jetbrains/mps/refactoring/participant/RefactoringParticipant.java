@@ -76,7 +76,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     public static RefactoringParticipant.KeepOldNodes max(Iterable<RefactoringParticipant.KeepOldNodes> values) {
       return Sequence.fromIterable(values).foldRight(RefactoringParticipant.KeepOldNodes.REMOVE, new IRightCombinator<RefactoringParticipant.KeepOldNodes, RefactoringParticipant.KeepOldNodes>() {
         public RefactoringParticipant.KeepOldNodes combine(RefactoringParticipant.KeepOldNodes it, RefactoringParticipant.KeepOldNodes s) {
-          return (s.compareTo(it) > 0 ? s : it);
+          return (((Comparable<RefactoringParticipant.KeepOldNodes>) s).compareTo(it) > 0 ? s : it);
         }
       });
     }
