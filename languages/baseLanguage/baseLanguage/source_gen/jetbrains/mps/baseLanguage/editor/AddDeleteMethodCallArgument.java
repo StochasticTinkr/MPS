@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -77,8 +79,13 @@ public class AddDeleteMethodCallArgument {
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
         SNode contextNode = editorContext.getSelectedNode();
-        if (SNodeOperations.hasRole(contextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
-          SNode newArgument = SNodeOperations.insertNextSiblingChild(contextNode, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null));
+        List<SNode> ancestors = SNodeOperations.getNodeAncestors(contextNode, null, true);
+        if (!(ListSequence.fromList(ancestors).contains(node))) {
+          throw new IllegalStateException("ancestors: " + ancestors.toString());
+        }
+        SNode lastArgument = ListSequence.fromList(ancestors).getElement(ListSequence.fromList(ancestors).indexOf(node) - 1);
+        if (SNodeOperations.hasRole(lastArgument, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
+          SNode newArgument = SNodeOperations.insertNextSiblingChild(lastArgument, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null));
           MethodResolveUtil.replaceFromEditor(node);
           SelectionUtil.selectNode(editorContext, newArgument);
         }

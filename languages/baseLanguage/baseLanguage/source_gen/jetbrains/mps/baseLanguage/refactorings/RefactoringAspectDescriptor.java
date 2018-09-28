@@ -13,12 +13,11 @@ public class RefactoringAspectDescriptor extends RefactoringAspectBase {
 
 
   public RefactoringAspectDescriptor() {
-    myRefactorings = new IRefactoring[5];
-    myRefactorings[0] = new RenameMethod();
-    myRefactorings[1] = new MakeFieldFinal();
-    myRefactorings[2] = new MakeFieldStatic();
-    myRefactorings[3] = new ChangeMethodSignature();
-    myRefactorings[4] = new SafeDeleteConceptMethod();
+    myRefactorings = new IRefactoring[4];
+    myRefactorings[0] = new MakeFieldFinal();
+    myRefactorings[1] = new MakeFieldStatic();
+    myRefactorings[2] = new ChangeMethodSignature();
+    myRefactorings[3] = new SafeDeleteConceptMethod();
   }
   @NotNull
   @Override
