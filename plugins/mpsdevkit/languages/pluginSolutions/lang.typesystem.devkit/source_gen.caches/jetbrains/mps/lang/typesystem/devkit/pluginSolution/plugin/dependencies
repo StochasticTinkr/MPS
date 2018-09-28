@@ -36,6 +36,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorHelper" file="GoToTypeErrorHelper.java">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

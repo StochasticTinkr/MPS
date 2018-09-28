@@ -214,6 +214,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -1583,8 +1586,8 @@
           <node concept="3cpWsn" id="2PIlT5T$1qr" role="3cpWs9">
             <property role="TrG5h" value="allItems" />
             <node concept="3vKaQO" id="2PIlT5T$1qs" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$1qt" role="3O5elw">
-                <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+              <node concept="3uibUv" id="1knX_y6lxwR" role="3O5elw">
+                <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
               </node>
             </node>
             <node concept="2OqwBi" id="2PIlT5T$1qu" role="33vP2m">
@@ -1622,8 +1625,10 @@
           <node concept="3cpWsn" id="2PIlT5T$1qG" role="3cpWs9">
             <property role="TrG5h" value="maxSeverityItems" />
             <node concept="_YKpA" id="2PIlT5T$1qH" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$1qI" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+              <node concept="3qUE_q" id="1knX_y6lrMV" role="_ZDj9">
+                <node concept="3uibUv" id="1knX_y6lrMW" role="3qUE_r">
+                  <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="2PIlT5T$1qJ" role="33vP2m">
@@ -1676,8 +1681,10 @@
         </node>
       </node>
       <node concept="3vKaQO" id="2PIlT5T$1qm" role="3clF45">
-        <node concept="3uibUv" id="2PIlT5T$1qn" role="3O5elw">
-          <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+        <node concept="3qUE_q" id="1knX_y6lsnR" role="3O5elw">
+          <node concept="3uibUv" id="1knX_y6lsnS" role="3qUE_r">
+            <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+          </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="2PIlT5T$1qo" role="1B3o_S" />
