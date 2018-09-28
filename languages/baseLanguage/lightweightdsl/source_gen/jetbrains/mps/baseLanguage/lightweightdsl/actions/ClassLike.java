@@ -10,17 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass__BehaviorDescriptor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ClassLike {
   public static class NodeFactory_1055884086724932454 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       ClassLikeInitHelper.init(SNodeOperations.cast(newNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), AutoInitDSLClass__BehaviorDescriptor.getDescriptor_idUBgfI9eMAt.invoke(newNode), model);
     }
-  }
-  private static void set() {
-    // noinspection
-    List<String> l = new ArrayList();
   }
 }

@@ -87,7 +87,7 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/6238501899265293051">
     <file name="mpsActions.xml">
-      <unit id="6238501899265293051" at="1,0,475,10" name="jetbrains.mps.ide.build.tests.mpsActions" />
+      <unit id="6238501899265293051" at="1,0,483,10" name="jetbrains.mps.ide.build.tests.mpsActions" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/7210153263370654627">

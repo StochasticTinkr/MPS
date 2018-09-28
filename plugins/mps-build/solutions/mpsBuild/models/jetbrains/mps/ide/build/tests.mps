@@ -2532,6 +2532,12 @@
         <node concept="3bR9La" id="1l1jHO6iBmb" role="3bR37C">
           <ref role="3bR37D" node="tvZ$I9W3a2" resolve="jetbrains.mps.generator.test.crossmodel.property#g2" />
         </node>
+        <node concept="1SiIV0" id="1knX_y6AknA" role="3bR37C">
+          <node concept="3bR9La" id="1knX_y6AknB" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbIZ" resolve="MPS.Editor" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="tvZ$I9VJ41" role="3989C9">
