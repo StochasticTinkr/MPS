@@ -4390,7 +4390,7 @@
               <ref role="37wK5l" node="3TG1Sgl2UmU" resolve="method" />
               <node concept="LIFWc" id="67f0Bc18l8b" role="lGtFl">
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
                 <property role="p6zMq" value="0" />
                 <property role="ZRATv" value="true" />
                 <property role="OXtK3" value="true" />
@@ -5164,7 +5164,7 @@
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
               </node>
             </node>
           </node>
@@ -7645,7 +7645,7 @@
                   <property role="OXtK3" value="true" />
                   <property role="p6zMq" value="0" />
                   <property role="p6zMs" value="0" />
-                  <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                  <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
                 </node>
               </node>
             </node>
@@ -37742,7 +37742,7 @@
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
               </node>
             </node>
           </node>
@@ -37784,7 +37784,7 @@
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
               </node>
             </node>
           </node>
@@ -55595,7 +55595,7 @@
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
               </node>
             </node>
           </node>
@@ -56300,7 +56300,7 @@
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
                 <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+                <property role="LIFWd" value="EMPTY_PARAMETER_LIST" />
               </node>
             </node>
           </node>
@@ -73231,10 +73231,10 @@
               <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="25imKQRBPQg" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="3cmrfG" id="25imKQRBPRf" role="37wK5m">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
+              <node concept="3cmrfG" id="1knX_y6zYS2" role="37wK5m">
                 <property role="3cmrfH" value="239" />
-                <node concept="LIFWc" id="25imKQREJiX" role="lGtFl">
+                <node concept="LIFWc" id="1knX_y6$1W$" role="lGtFl">
                   <property role="ZRATv" value="true" />
                   <property role="OXtK3" value="true" />
                   <property role="p6zMq" value="3" />
