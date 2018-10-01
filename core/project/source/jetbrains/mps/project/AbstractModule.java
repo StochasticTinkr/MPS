@@ -592,10 +592,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (String facetType : types) {
       FacetFactory factory = FacetsFacade.getInstance().getFacetFactory(facetType);
       if (factory == null) {
-        LOG.error("no registered factory for a facet with type=`" + facetType + "'");
+        LOG.warn(String.format("no registered factory for a facet with type=`%s'", facetType));
         continue;
       }
+      // FIXME once #create() is gone, don't forget to fix setupFacet() not to invoke setModule(), as it's already set from factory's create(SModule)
       SModuleFacet newFacet = factory.create();
+      if (newFacet == null) {
+        newFacet = factory.create(this);
+      }
       if (!(newFacet instanceof ModuleFacetBase)) {
         LOG.error("broken facet factory: " + factory.getClass().getName());
         continue;

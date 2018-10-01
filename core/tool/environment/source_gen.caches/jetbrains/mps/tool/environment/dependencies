@@ -163,6 +163,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FacetsFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleFacet" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentBase" />
   </dependency>

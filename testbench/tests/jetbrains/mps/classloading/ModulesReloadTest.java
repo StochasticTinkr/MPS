@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.Solution;
@@ -29,10 +30,12 @@ import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -54,7 +57,14 @@ public class ModulesReloadTest extends ModuleMpsTest {
   private static final String CLASS_TO_LOAD = "Test";
   private static final File TEMP_DIR = createTempDir();
   private static final String TEMP_DIR_PATH = getTempDirPath();
-  private static final FacetFactory FACET_FACTORY = TestJavaModuleFacet::new;
+  private final FacetFactory FACET_FACTORY = new FacetFactory() {
+    @Override
+    public SModuleFacet create(@NotNull SModule module) {
+      final TestJavaModuleFacet rv = new TestJavaModuleFacet();
+      rv.setModule(module);
+      return rv;
+    }
+  };
 
   private static File createTempDir() {
     File tempDir = FileUtil.createTmpDir();
@@ -86,8 +96,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   private FacetsFacade getFacetFacade() {
-    // FIXME would like to use getPlatform().findComponent(FacetsFacade.class) but can't as it's not a CoreComponent (FacetsRegistry is).
-    return FacetsFacade.getInstance();
+    return getPlatform().findComponent(FacetsRegistry.class);
   }
 
   @Before

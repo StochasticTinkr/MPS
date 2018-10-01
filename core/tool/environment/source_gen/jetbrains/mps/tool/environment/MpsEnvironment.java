@@ -15,6 +15,7 @@ import jetbrains.mps.extapi.module.FacetsRegistry;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import java.io.File;
@@ -71,15 +72,18 @@ public final class MpsEnvironment extends EnvironmentBase {
     assert dumbFactory != null;
     facetsFacade.removeFactory(dumbFactory);
     facetsFacade.addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetsFacade.FacetFactory() {
+
       @Override
-      public SModuleFacet create() {
-        return new DumbIdeaPluginFacet() {
+      public SModuleFacet create(@NotNull SModule module) {
+        DumbIdeaPluginFacet rv = new DumbIdeaPluginFacet() {
           @Override
           @Nullable
           public ClassLoader getClassLoader() {
             return getRootClassLoader();
           }
         };
+        rv.setModule(module);
+        return rv;
       }
     });
   }
