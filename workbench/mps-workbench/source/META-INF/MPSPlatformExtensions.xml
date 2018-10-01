@@ -448,10 +448,6 @@
   <bundledKeymapProvider implementation="com.intellij.openapi.keymap.impl.DefaultBundledKeymaps"/>
   <!-- <checkinHandlerFactory implementation="com.intellij.openapi.vcs.CheckRemoteStatusCheckinHandlerFactory"/> -->
 
-  <!--MPS Patch Start: goto file-->
-  <projectService serviceInterface="com.intellij.ide.util.gotoByName.GotoFileConfiguration"
-                  serviceImplementation="com.intellij.ide.util.gotoByName.GotoFileConfiguration"/>
-  <gotoFileContributor implementation="jetbrains.mps.MPSGoToFileContributor"/>
   <!--MPS Patch End-->
   <keymapExtension implementation="com.intellij.ide.actions.ToolWindowKeymapExtension"/>
 
