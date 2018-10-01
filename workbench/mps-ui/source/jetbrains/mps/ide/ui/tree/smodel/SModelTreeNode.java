@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,6 @@ import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -432,7 +430,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     @Override
     public String calculateText(SModelTreeNode treeNode) {
       SModel model = treeNode.getModel();
-      return model == null ? "<null>" : InternUtil.intern(model.getModelName());
+      return model == null ? "<null>" : model.getName().getValue();
     }
   }
 
@@ -440,9 +438,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     @Override
     public String calculateText(SModelTreeNode treeNode) {
       SModel model = treeNode.getModel();
-      // model long name is likely to be encountered more than once. Does it make sense to intern short name?
-      // It's indeed saves some space for aspect models (all are named the same, but are short) at expense of occupied slot in InternUtil.
-      return model == null ? "<null>" : NameUtil.shortNameFromLongName(InternUtil.intern(model.getModelName()));
+      return model == null ? "<null>" : model.getName().getSimpleName();
     }
   }
 }
