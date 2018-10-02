@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -367,7 +366,7 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   public Collection<SLanguage> getAllLanguages() {
     ArrayList<SLanguage> rv = new ArrayList<>(100);
-    withAvailableLanguages(lr -> rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace())));
+    withAvailableLanguages(lr -> rv.add(lr.getIdentity()));
     return rv;
   }
 
