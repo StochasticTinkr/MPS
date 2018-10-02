@@ -582,6 +582,14 @@ class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode(), "pre-process " + preMappingScript.getLongName());
       }
+      if (modifiesModel && !needToCloneInputModel) {
+        // HACK:
+        // script gonna change a model and it's not a fresh new one, chances are there's FNF instance that may slow down removal of nodes significantly
+        // we can't help if script does model.nodes() and instantiates another FNF instance. Instead, shall make FNF use explicit or optimize
+        // its code that removes nodes to be effective with transient models (i.e. there's no batch notifications, nodes being removed one by one
+        // greatly slow down the process as FNF assumes multi-thread access to its cache).
+        FastNodeFinderManager.dispose(currentInputModel);
+      }
       templateGenerator.executeScript(preMappingScript);
     }
     if (needToCloneInputModel) {
