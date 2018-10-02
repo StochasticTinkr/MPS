@@ -20,11 +20,14 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.runtime.ModuleRuntime;
+import jetbrains.mps.smodel.runtime.ModuleRuntime.ModuleRuntimeContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -96,6 +99,8 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
   private final Map<SLanguageId, LanguageRuntime> myLanguagesById = new HashMap<>();
 
   private final Map<SModuleReference, GeneratorRuntime> myGeneratorsWithCompiledRuntime = new HashMap<>();
+
+  private final Map<SModuleReference, ModuleRuntime> myModuleRuntime = new HashMap<>();
 
   /*
    * Don't want to expose this lock right now, although perhaps would need to do it later, to facilitate scenarios with
@@ -304,6 +309,11 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
     return null;
   }
 
+  @Nullable
+  private ModuleRuntime createRuntime(Solution solution) {
+    return new ModuleRuntime(solution.getModuleReference(), solution.getClassLoader());
+  }
+
   public String toString() {
     return "LanguageRegistry";
   }
@@ -314,32 +324,6 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   public void removeRegistryListener(LanguageRegistryListener listener) {
     myLanguageListeners.remove(listener);
-  }
-
-  /**
-   *   Collection is valid until the end of the current read action.
-   * @deprecated Use of the method demands read lock on a repository we load languages from, which is not something we'd like to expose, nor can
-   *             always afford to (e.g. old persistence formats need 'by name' concepts and access to LanguageRegistry (see MetaAdapterFactoryByName))
-   *             and it's odd to wrap code that merely parses model data stream with a model access on an odd repository.
-   *
-   *             Therefore, unless we have public, explicit access to LanguageRegistry lock mechanism, use {@link #withAvailableLanguages(Consumer)}
-   *             instead.
-   *
-   *             TODO when removing uses of the method, check if there's superficial model read around the code, and drop it as well, if possible.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public Collection<LanguageRuntime> getAvailableLanguages() {
-    // there are 2 uses in mbeddr
-    try {
-      myRuntimeInstanceAccess.readLock().lock();
-      // 1. We return a copy of our collection, but the contract ('valid until the end of read action') holds true.
-      // 2. Although it's guaranteed by MA.checkReadAccess that we never get here while LR is updated, it doesn't hurt to be explicit about
-      //    access type. Just in case we move LR update out of model write some day.
-      return new ArrayList<>(myLanguagesById.values());
-    } finally {
-      myRuntimeInstanceAccess.readLock().unlock();
-    }
   }
 
   /**
@@ -444,7 +428,24 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
   // ClassLoaderManager/DeployListener part
   @Override
   public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
-    monitor.start("Generator Runtime", 4);
+    monitor.start("Solution Runtime", 5);
+    ArrayList<ModuleRuntime> modulesToUnload = new ArrayList<>();
+    for (Solution s : CollectionUtil.filter(Solution.class, unloadedModules)) {
+      // get, not remove as we notify all first, and only then remove them.
+      final ModuleRuntime moduleRuntime = myModuleRuntime.get(s.getModuleReference());
+      if (moduleRuntime == null) {
+        continue;
+      }
+      modulesToUnload.add(moduleRuntime);
+    }
+    ModuleRuntimeContext rtc = () -> null;
+    for (ModuleRuntime rt : modulesToUnload) {
+      rt.deactivate(rtc);
+    }
+    myModuleRuntime.values().removeAll(modulesToUnload);
+    monitor.advance(1);
+
+    monitor.step("Generator Runtime");
     for (Generator generator : collectGeneratorModules(unloadedModules)) {
       GeneratorRuntime generatorRuntime = myGeneratorsWithCompiledRuntime.remove(generator.getModuleReference());
       if (generatorRuntime == null) {
@@ -486,9 +487,10 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   @Override
   public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
-    monitor.start("Language Runtime", 3);
+    monitor.start("Language Runtime", 5);
     Set<LanguageRuntime> loadedRuntimes = new LinkedHashSet<>();
     try {
+      // FIXME why myRuntimeInstanceAccess doesn't guard instatiation of other module runtime classes?!
       myRuntimeInstanceAccess.writeLock().lock();
       for (Language language : collectLanguageModules(loadedModules)) {
         try {
@@ -527,6 +529,28 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
       }
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();
       srcLangRuntime.register(generatorRuntime);
+    }
+    monitor.advance(1);
+
+    monitor.step("Solution Runtime");
+    ArrayList<ModuleRuntime> loadedRuntime2 = new ArrayList<>();
+    for (Solution s : CollectionUtil.filter(Solution.class, loadedModules)) {
+      ModuleRuntime moduleRuntime = createRuntime(s);
+      if (moduleRuntime == null) {
+        continue;
+      }
+      ModuleRuntime old = myModuleRuntime.put(moduleRuntime.getSourceModule(), moduleRuntime);
+      if (old != null) {
+        LOG.warn(String.format("There's already runtime instance for module '%s'", old.getSourceModule()));
+      }
+      loadedRuntime2.add(moduleRuntime);
+    }
+    monitor.advance(1);
+
+    monitor.step("Activators...");
+    ModuleRuntimeContext rtc = () -> null;
+    for (ModuleRuntime rt : loadedRuntime2) {
+      rt.activate(rtc);
     }
     monitor.advance(1);
 

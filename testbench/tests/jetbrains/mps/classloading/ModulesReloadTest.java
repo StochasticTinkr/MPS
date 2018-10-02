@@ -395,6 +395,9 @@ public class ModulesReloadTest extends ModuleMpsTest {
       public void run() {
         runtime.set(createSolution(SolutionKind.PLUGIN_OTHER));
         addClassTo(runtime.get());
+        // if anyone took module's classloader prior to TestJavaModuleFacet got classpath, there would be no proper classpath entry,
+        // hence have to reload module to pick the changes up. Tests above do this for languages and generators, why not for solutions?
+        runtime.get().reload();
         Assert.assertTrue(classIsLoadableFromModule(runtime.get()));
       }
     });
@@ -429,6 +432,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
       public void run() {
         runtime.set(createSolution(SolutionKind.PLUGIN_OTHER));
         addClassTo(runtime.get());
+        runtime.get().reload(); // see testLanguageRuntimeIsLoadable() above for reasons to reload module here
         Assert.assertTrue(classIsLoadableFromModule(runtime.get()));
         language.set(createLanguage(runtime.get().getModuleReference()));
         solution.set(createSolution(SolutionKind.PLUGIN_OTHER));
