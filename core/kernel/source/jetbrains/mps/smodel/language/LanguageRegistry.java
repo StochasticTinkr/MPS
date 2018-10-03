@@ -114,11 +114,9 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<>();
 
-  private final SRepository myRepository;
   private final ClassLoaderManager myClassLoaderManager;
 
-  public LanguageRegistry(SRepository repository, ClassLoaderManager loaderManager) {
-    myRepository = repository;
+  public LanguageRegistry(ClassLoaderManager loaderManager) {
     myClassLoaderManager = loaderManager;
   }
 
@@ -394,19 +392,13 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    * Find respective runtime presentation of generator module
    * FIXME shall decide whether need standalone GeneratorRegistry to supply GeneratorRuntimes
    * FIXME or access to GeneratorRuntime through LanguageRegistry is enough.
+   * @deprecated use {@link #getGenerator(SModuleReference)} as it's {@link SModuleReference} that is generator identity.
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public GeneratorRuntime getGenerator(Generator generator) {
-    LanguageRuntime lr = getLanguage(generator.getSourceLanguage());
-    if (lr == null) {
-      return null;
-    }
-    for (GeneratorRuntime grt : lr.getGenerators()) {
-      if (grt.getModuleReference().equals(generator.getModuleReference())) {
-        return grt;
-      }
-    }
-    return null;
+    return getGenerator(generator.getModuleReference());
   }
 
   /**
@@ -415,13 +407,8 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   @Nullable
   public GeneratorRuntime getGenerator(@NotNull SModuleReference generatorIdentity) {
-    // XXX perhaps, shall take model read itself, but since this code has been copied from TemplateModuleBase, where no lock has been obtained, didn't put
-    //     one here either.
-    SModule resolved = generatorIdentity.resolve(myRepository);
-    if (resolved instanceof Generator) {
-      return getGenerator((Generator) resolved);
-    }
-    return null;
+    // XXX Likely, shall guard with myRuntimeInstanceAccess once onLoad/onUnload guards generator modules
+    return myGeneratorsWithCompiledRuntime.get(generatorIdentity);
   }
 
 
@@ -450,6 +437,7 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
       GeneratorRuntime generatorRuntime = myGeneratorsWithCompiledRuntime.remove(generator.getModuleReference());
       if (generatorRuntime == null) {
         // fine, we do not track GR other than generated
+        // XXX Perhaps, with generator module RT for each generator, shall issue a warning like a language does, below
         continue;
       }
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();

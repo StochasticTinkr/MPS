@@ -319,10 +319,10 @@ public class CheckpointModelTest implements EnvironmentAware {
         Generator baselangGeneratorInstance = (Generator) baselangGenerator.resolve(mpsProject.getRepository());
         final LanguageRegistry languageRegistry = myLanguageRegistry;
         Collection<TemplateModule> engagedGenerators = new ArrayList<>();
-        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(closuresGeneratorInstance)));
-        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(collectionsGeneratorInstance)));
-        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(baselangGeneratorInstance)));
-        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(blInternalGeneratorInstance)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(closuresGenerator)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(collectionsGenerator)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(baselangGenerator)));
+        engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(blInternalGenerator)));
         RegularPlanBuilder planBuilder = new RegularPlanBuilder(languageRegistry, engagedGenerators);
         planBuilder.recordCheckpoint(cp1);
         planBuilder.applyGeneratorWithExtended(closuresGeneratorInstance);

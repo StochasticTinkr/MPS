@@ -136,7 +136,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     //      so that ER could make extensions available to subsequent listeners of LR notifications.
     //      Note, as long as CLM supports both legacy and new DeployListener, both ER and LR have to use same mechanism to keep the notification order.
     myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
-    myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
+    myLanguageRegistry = init(new LanguageRegistry(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));

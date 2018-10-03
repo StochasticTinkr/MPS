@@ -78,7 +78,7 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
       if (!(generator instanceof Generator)) {
         continue; // FIXME throw an RT exception
       }
-      GeneratorRuntime gr = myLanguageRegistry.getGenerator((Generator) generator);
+      GeneratorRuntime gr = myLanguageRegistry.getGenerator(generator.getModuleReference());
       if (gr == null) {
         continue; // FIXME throw an RT exception
       }

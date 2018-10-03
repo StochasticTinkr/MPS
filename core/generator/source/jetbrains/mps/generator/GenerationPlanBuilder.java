@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -62,8 +63,11 @@ public interface GenerationPlanBuilder {
    * Specified generators (exact set, unlike {@link #applyGeneratorWithExtended(SModule...)} no extended relation between generators is taken into account)
    * applied as a single transformation step.
    * FIXME shall decide what happens if a generator references/extends another one, not mentioned.
+   * @deprecated use {@link #applyGenerators(Collection, BuilderOption...)} instead
    * @param generators generator modules
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   void applyGenerator(@NotNull SModule ... generators);
 
   /**
