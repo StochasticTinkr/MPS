@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class FacetRegistry implements CoreComponent {
   private static Logger LOG = LogManager.getLogger(FacetRegistry.class);
@@ -96,6 +97,13 @@ public class FacetRegistry implements CoreComponent {
   public Map<IFacet.Name, IFacet> allFacets() {
     return Collections.unmodifiableMap(facetMap);
   }
+
+  /**
+   * 
+   * @deprecated Use ComponentHost#findComponent() instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static FacetRegistry getInstance() {
     if (INSTANCE == null) {
       LOG.fatal("not initialized");

@@ -2169,6 +2169,13 @@
         <ref role="3uigEE" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
       </node>
     </node>
+    <node concept="312cEg" id="YDT75BqTsn" role="jymVt">
+      <property role="TrG5h" value="myFacetRegistry" />
+      <node concept="3Tm6S6" id="YDT75BqTsl" role="1B3o_S" />
+      <node concept="3uibUv" id="YDT75BqTsm" role="1tU5fm">
+        <ref role="3uigEE" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="1PwNLcbNZUy" role="jymVt" />
     <node concept="3clFbW" id="1PwNLcbO00J" role="jymVt">
       <node concept="3cqZAl" id="1PwNLcbO00K" role="3clF45" />
@@ -2216,13 +2223,9 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1PwNLcbO0Qz" role="3cqZAp">
-          <node concept="3cpWsn" id="1PwNLcbO0Q$" role="3cpWs9">
-            <property role="TrG5h" value="facetRegistry" />
-            <node concept="3uibUv" id="1PwNLcbO0Qy" role="1tU5fm">
-              <ref role="3uigEE" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
-            </node>
-            <node concept="1rXfSq" id="1PwNLcbO0Q_" role="33vP2m">
+        <node concept="3clFbF" id="YDT75BqRwK" role="3cqZAp">
+          <node concept="37vLTI" id="YDT75BqRwM" role="3clFbG">
+            <node concept="1rXfSq" id="1PwNLcbO0Q_" role="37vLTx">
               <ref role="37wK5l" to="wyuk:~ComponentPlugin.init(jetbrains.mps.components.CoreComponent):jetbrains.mps.components.CoreComponent" resolve="init" />
               <node concept="2ShNRf" id="1PwNLcbO0QA" role="37wK5m">
                 <node concept="1pGfFk" id="1PwNLcbO0QB" role="2ShVmc">
@@ -2233,6 +2236,9 @@
                 </node>
               </node>
             </node>
+            <node concept="37vLTw" id="YDT75BqU59" role="37vLTJ">
+              <ref role="3cqZAo" node="YDT75BqTsn" resolve="myFacetRegistry" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="1PwNLcbNzK9" role="3cqZAp">
@@ -2241,8 +2247,8 @@
             <node concept="2ShNRf" id="1PwNLcbNzLC" role="37wK5m">
               <node concept="1pGfFk" id="1PwNLcbN$8R" role="2ShVmc">
                 <ref role="37wK5l" node="1PwNLcbMO5S" resolve="BootstrapMakeFacets" />
-                <node concept="37vLTw" id="1PwNLcbO0QD" role="37wK5m">
-                  <ref role="3cqZAo" node="1PwNLcbO0Q$" resolve="facetRegistry" />
+                <node concept="37vLTw" id="YDT75BqUf5" role="37wK5m">
+                  <ref role="3cqZAo" node="YDT75BqTsn" resolve="myFacetRegistry" />
                 </node>
               </node>
             </node>
@@ -2308,6 +2314,31 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="YDT75BqUvT" role="3cqZAp">
+          <node concept="3clFbS" id="YDT75BqUvV" role="3clFbx">
+            <node concept="3cpWs6" id="YDT75BqV7S" role="3cqZAp">
+              <node concept="2OqwBi" id="YDT75BqVu$" role="3cqZAk">
+                <node concept="37vLTw" id="YDT75BqV8u" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1LibDRnKMz2" resolve="aClass" />
+                </node>
+                <node concept="liA8E" id="YDT75BqVXO" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.cast(java.lang.Object):java.lang.Object" resolve="cast" />
+                  <node concept="37vLTw" id="YDT75BqWcr" role="37wK5m">
+                    <ref role="3cqZAo" node="YDT75BqTsn" resolve="myFacetRegistry" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="YDT75BqV2r" role="3clFbw">
+            <node concept="3VsKOn" id="YDT75BqV6S" role="3uHU7w">
+              <ref role="3VsUkX" to="ud0o:5mqBoD3U4oX" resolve="FacetRegistry" />
+            </node>
+            <node concept="37vLTw" id="YDT75BqUED" role="3uHU7B">
+              <ref role="3cqZAo" node="1LibDRnKMz2" resolve="aClass" />
             </node>
           </node>
         </node>
