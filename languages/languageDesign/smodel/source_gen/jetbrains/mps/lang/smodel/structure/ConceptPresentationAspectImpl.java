@@ -1164,7 +1164,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Node_IsRoleOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("test role of the node");
-          cpb.rawPresentation("hasRole");
+          cpb.rawPresentation("isInRole");
           props_Node_IsRoleOperation = cpb.create();
         }
         return props_Node_IsRoleOperation;

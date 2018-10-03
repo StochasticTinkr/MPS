@@ -12856,7 +12856,7 @@
                       <node concept="liA8E" id="1du" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="1dv" role="37wK5m">
-                          <property role="Xl_RC" value="hasRole" />
+                          <property role="Xl_RC" value="isInRole" />
                           <node concept="cd27G" id="1dx" role="lGtFl">
                             <node concept="3u3nmq" id="1dy" role="cd27D">
                               <property role="3u3nmv" value="1144195091934" />
@@ -51405,7 +51405,7 @@
             <node concept="liA8E" id="4E7" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.alias(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="alias" />
               <node concept="Xl_RD" id="4E8" role="37wK5m">
-                <property role="Xl_RC" value="hasRole" />
+                <property role="Xl_RC" value="isInRole" />
               </node>
             </node>
           </node>
