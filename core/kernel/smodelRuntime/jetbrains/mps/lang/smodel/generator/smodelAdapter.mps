@@ -7,7 +7,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -330,6 +330,7 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -393,6 +394,9 @@
       </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
@@ -581,6 +585,72 @@
       </node>
       <node concept="3Tm1VV" id="1h92vNLYdv2" role="1B3o_S" />
       <node concept="17QB3L" id="1h92vNLYdBR" role="3clF45" />
+    </node>
+    <node concept="2YIFZL" id="1ecMxSk157t" role="jymVt">
+      <property role="TrG5h" value="getDefaultEnumMemberIndex" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1ecMxSk157w" role="3clF47">
+        <node concept="3clFbJ" id="1ecMxSk160O" role="3cqZAp">
+          <node concept="2OqwBi" id="1ecMxSk16ZL" role="3clFbw">
+            <node concept="37vLTw" id="1ecMxSk16NY" role="2Oq$k0">
+              <ref role="3cqZAo" node="1ecMxSk15yP" resolve="enumm" />
+            </node>
+            <node concept="3TrcHB" id="1ecMxSk17U4" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:hCPDuZq" resolve="hasNoDefaultMember" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1ecMxSk160Q" role="3clFbx">
+            <node concept="3cpWs6" id="1ecMxSk17Y8" role="3cqZAp">
+              <node concept="3cmrfG" id="1ecMxSk17ZJ" role="3cqZAk">
+                <property role="3cmrfH" value="-1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="ldKUue66rF" role="3cqZAp">
+          <node concept="3clFbS" id="ldKUue66rH" role="3clFbx">
+            <node concept="3cpWs6" id="2fA4VmRc4LG" role="3cqZAp">
+              <node concept="3cmrfG" id="2fA4VmRc4UF" role="3cqZAk">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2fA4VmRc3qR" role="3clFbw">
+            <node concept="2OqwBi" id="ldKUue66Rn" role="2Oq$k0">
+              <node concept="37vLTw" id="ldKUue66$I" role="2Oq$k0">
+                <ref role="3cqZAo" node="1ecMxSk15yP" resolve="enumm" />
+              </node>
+              <node concept="3TrEf2" id="2fA4VmRc2R5" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpce:fKQgatX" resolve="defaultMember" />
+              </node>
+            </node>
+            <node concept="3w_OXm" id="2fA4VmRc4eq" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1ecMxSk18fa" role="3cqZAp">
+          <node concept="2OqwBi" id="1ecMxSk19EJ" role="3cqZAk">
+            <node concept="2OqwBi" id="1ecMxSk18ED" role="2Oq$k0">
+              <node concept="37vLTw" id="1ecMxSk18uF" role="2Oq$k0">
+                <ref role="3cqZAo" node="1ecMxSk15yP" resolve="enumm" />
+              </node>
+              <node concept="3TrEf2" id="1ecMxSk190g" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpce:fKQgatX" resolve="defaultMember" />
+              </node>
+            </node>
+            <node concept="2bSWHS" id="1ecMxSk1aiF" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1ecMxSk14MR" role="1B3o_S" />
+      <node concept="10Oyi0" id="1ecMxSk150X" role="3clF45" />
+      <node concept="37vLTG" id="1ecMxSk15yP" role="3clF46">
+        <property role="TrG5h" value="enumm" />
+        <node concept="3Tqbb2" id="1ecMxSk15yO" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
+        </node>
+      </node>
     </node>
     <node concept="2YIFZL" id="X9k2kW5hMx" role="jymVt">
       <property role="TrG5h" value="enumMemberForName" />
@@ -1244,6 +1314,17 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="ldKUue5RF6" role="3cqZAp" />
+        <node concept="3SKdUt" id="ldKUue5Vlx" role="3cqZAp">
+          <node concept="3SKdUq" id="ldKUue5Vlz" role="3SKWNk">
+            <property role="3SKdUp" value="RS Why there is special case `value == null`? It looks strange that `memberFromValue(null)` returns a default member but" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="ldKUue6f92" role="3cqZAp">
+          <node concept="3SKdUq" id="ldKUue6exV" role="3SKWNk">
+            <property role="3SKdUp" value="RS `memberFromValue(&quot;not-a-value&quot;)` returns null, and `memberForName(null)` also returns null. See `EnumerationDatatypes` nullsafety tests" />
           </node>
         </node>
         <node concept="3cpWs6" id="2nIYwg$4ZqQ" role="3cqZAp">
