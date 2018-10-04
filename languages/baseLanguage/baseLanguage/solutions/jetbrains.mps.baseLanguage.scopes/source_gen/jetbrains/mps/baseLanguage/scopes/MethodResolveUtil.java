@@ -15,6 +15,7 @@ import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
@@ -33,7 +34,6 @@ import jetbrains.mps.baseLanguage.behavior.IMethodCall__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -122,6 +122,16 @@ public class MethodResolveUtil {
         }
         candidates = candidates1;
         indexOfArg++;
+      }
+    }
+    if (ListSequence.fromList(candidates).count() > 1) {
+      List<SNode> candidates1 = ListSequence.fromList(candidates).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).last(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType")));
+        }
+      }).toListSequence();
+      if (ListSequence.fromList(candidates1).isNotEmpty()) {
+        candidates = candidates1;
       }
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), (ListSequence.fromList(actualArgs).isEmpty() ? false : good));
