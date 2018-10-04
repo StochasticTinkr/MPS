@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class Enum_DeriveFromInternalValue_PropertySupport extends PropertySupport {
+public class TestEnum_FirstMemberDefaultValue_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     if (value == null) {
       return true;
     }
-    Iterator<Enum_DeriveFromInternalValue> constants = ListSequence.fromList(Enum_DeriveFromInternalValue.getConstants()).iterator();
+    Iterator<TestEnum_FirstMemberDefaultValue> constants = ListSequence.fromList(TestEnum_FirstMemberDefaultValue.getConstants()).iterator();
     while (constants.hasNext()) {
-      Enum_DeriveFromInternalValue constant = constants.next();
+      TestEnum_FirstMemberDefaultValue constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
       }
@@ -24,9 +24,9 @@ public class Enum_DeriveFromInternalValue_PropertySupport extends PropertySuppor
     if (value == null) {
       return null;
     }
-    Iterator<Enum_DeriveFromInternalValue> constants = ListSequence.fromList(Enum_DeriveFromInternalValue.getConstants()).iterator();
+    Iterator<TestEnum_FirstMemberDefaultValue> constants = ListSequence.fromList(TestEnum_FirstMemberDefaultValue.getConstants()).iterator();
     while (constants.hasNext()) {
-      Enum_DeriveFromInternalValue constant = constants.next();
+      TestEnum_FirstMemberDefaultValue constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
@@ -34,7 +34,7 @@ public class Enum_DeriveFromInternalValue_PropertySupport extends PropertySuppor
     return null;
   }
   public String fromInternalValue(String value) {
-    Enum_DeriveFromInternalValue constant = Enum_DeriveFromInternalValue.parseValue(value);
+    TestEnum_FirstMemberDefaultValue constant = TestEnum_FirstMemberDefaultValue.parseValue(value);
     if (constant != null) {
       return constant.getName();
     }

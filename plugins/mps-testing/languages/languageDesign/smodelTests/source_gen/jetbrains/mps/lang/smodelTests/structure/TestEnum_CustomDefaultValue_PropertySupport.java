@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class Enum_DeriveFromPresentation_PropertySupport extends PropertySupport {
+public class TestEnum_CustomDefaultValue_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     if (value == null) {
       return true;
     }
-    Iterator<Enum_DeriveFromPresentation> constants = ListSequence.fromList(Enum_DeriveFromPresentation.getConstants()).iterator();
+    Iterator<TestEnum_CustomDefaultValue> constants = ListSequence.fromList(TestEnum_CustomDefaultValue.getConstants()).iterator();
     while (constants.hasNext()) {
-      Enum_DeriveFromPresentation constant = constants.next();
+      TestEnum_CustomDefaultValue constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
       }
@@ -24,9 +24,9 @@ public class Enum_DeriveFromPresentation_PropertySupport extends PropertySupport
     if (value == null) {
       return null;
     }
-    Iterator<Enum_DeriveFromPresentation> constants = ListSequence.fromList(Enum_DeriveFromPresentation.getConstants()).iterator();
+    Iterator<TestEnum_CustomDefaultValue> constants = ListSequence.fromList(TestEnum_CustomDefaultValue.getConstants()).iterator();
     while (constants.hasNext()) {
-      Enum_DeriveFromPresentation constant = constants.next();
+      TestEnum_CustomDefaultValue constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
@@ -34,7 +34,7 @@ public class Enum_DeriveFromPresentation_PropertySupport extends PropertySupport
     return null;
   }
   public String fromInternalValue(String value) {
-    Enum_DeriveFromPresentation constant = Enum_DeriveFromPresentation.parseValue(value);
+    TestEnum_CustomDefaultValue constant = TestEnum_CustomDefaultValue.parseValue(value);
     if (constant != null) {
       return constant.getName();
     }
