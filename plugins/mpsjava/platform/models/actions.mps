@@ -24232,30 +24232,33 @@
             <property role="TrG5h" value="newName" />
             <property role="3TUv4t" value="true" />
             <node concept="17QB3L" id="3dReA4l3cbO" role="1tU5fm" />
-            <node concept="2YIFZM" id="3dReA4l3cbP" role="33vP2m">
+            <node concept="2YIFZM" id="6_k0AGsNAGx" role="33vP2m">
               <ref role="1Pybhc" to="u42p:1t_LRy89$1R" resolve="StringChooserDialog" />
-              <ref role="37wK5l" to="u42p:1t_LRy89$1S" resolve="getString" />
-              <node concept="2OqwBi" id="3dReA4l3cbQ" role="37wK5m">
-                <node concept="37vLTw" id="6uoOrkmmQbu" role="2Oq$k0">
+              <ref role="37wK5l" to="u42p:6_k0AGsJ6HR" resolve="getString" />
+              <node concept="2OqwBi" id="6_k0AGsNAGy" role="37wK5m">
+                <node concept="37vLTw" id="6_k0AGsNAGz" role="2Oq$k0">
                   <ref role="3cqZAo" node="6uoOrkmmm9X" resolve="project" />
                 </node>
-                <node concept="liA8E" id="3dReA4l3cbU" role="2OqNvi">
+                <node concept="liA8E" id="6_k0AGsNAG$" role="2OqNvi">
                   <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="3dReA4l3cbV" role="37wK5m">
+              <node concept="Xl_RD" id="6_k0AGsNAG_" role="37wK5m">
                 <property role="Xl_RC" value="Convert Anonymous Class" />
               </node>
-              <node concept="Xl_RD" id="3dReA4l3cbW" role="37wK5m">
+              <node concept="Xl_RD" id="6_k0AGsNAGA" role="37wK5m">
                 <property role="Xl_RC" value="Class Name" />
               </node>
-              <node concept="3cpWs3" id="3dReA4l3cbX" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTuyS" role="3uHU7w">
+              <node concept="3cpWs3" id="6_k0AGsNAGB" role="37wK5m">
+                <node concept="37vLTw" id="6_k0AGsNAGC" role="3uHU7w">
                   <ref role="3cqZAo" node="3dReA4l3c9x" resolve="classifierName" />
                 </node>
-                <node concept="Xl_RD" id="3dReA4l3cc5" role="3uHU7B">
+                <node concept="Xl_RD" id="6_k0AGsNAGD" role="3uHU7B">
                   <property role="Xl_RC" value="My" />
                 </node>
+              </node>
+              <node concept="3clFbT" id="6_k0AGsNDEw" role="37wK5m">
+                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
