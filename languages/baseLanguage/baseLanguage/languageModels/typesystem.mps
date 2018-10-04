@@ -22881,33 +22881,9 @@
             </node>
             <node concept="9aQIb" id="6nuuj1IdSCm" role="9aQIa">
               <node concept="3clFbS" id="6nuuj1IdSCn" role="9aQI4">
-                <node concept="2MkqsV" id="2yoSzAaLaGG" role="3cqZAp">
-                  <node concept="1YBJjd" id="2yoSzAaLaGS" role="2OEOjV">
-                    <ref role="1YBMHb" node="2yoSzAaL9vn" resolve="anonymousClass" />
-                  </node>
-                  <node concept="Xl_RD" id="2yoSzAaLaGI" role="2MkJ7o">
-                    <property role="Xl_RC" value="no method declaration" />
-                  </node>
-                  <node concept="3Cnw8n" id="2yoSzAaLaGJ" role="2OEOjU">
-                    <property role="ARO6o" value="true" />
-                    <ref role="QpYPw" node="hH5Rh1c" resolve="ChooseAppropriateMethodDeclaration" />
-                    <node concept="3CnSsL" id="2yoSzAaLaGK" role="3Coj4f">
-                      <ref role="QkamJ" node="hH5RsRT" resolve="classifier" />
-                      <node concept="2OqwBi" id="2yoSzAaLaGV" role="3CoRuB">
-                        <node concept="1YBJjd" id="2yoSzAaLaGT" role="2Oq$k0">
-                          <ref role="1YBMHb" node="2yoSzAaL9vn" resolve="anonymousClass" />
-                        </node>
-                        <node concept="3TrEf2" id="2yoSzAaLaGZ" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:h1Y3Xaw" resolve="classifier" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3CnSsL" id="2yoSzAaLaGM" role="3Coj4f">
-                      <ref role="QkamJ" node="hH5RllU" resolve="methodCall" />
-                      <node concept="1YBJjd" id="2yoSzAaLaGU" role="3CoRuB">
-                        <ref role="1YBMHb" node="2yoSzAaL9vn" resolve="anonymousClass" />
-                      </node>
-                    </node>
+                <node concept="3SKdUt" id="6_k0AGsCU1_" role="3cqZAp">
+                  <node concept="3SKdUq" id="6_k0AGsCU1A" role="3SKWNk">
+                    <property role="3SKdUp" value="MethodCallsFixer_Rule does everything" />
                   </node>
                 </node>
               </node>
