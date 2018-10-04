@@ -575,7 +575,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.MethodCallsFixer_Rule_NonTypesystemRule" file="MethodCallsFixer_Rule_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

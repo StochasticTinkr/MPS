@@ -340,7 +340,7 @@
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -9966,7 +9966,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.menus.SubstituteItemProxy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

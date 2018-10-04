@@ -28979,6 +28979,36 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="28$D10lLyGj" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="resolveMethod" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="28$D10lLyGk" role="1B3o_S" />
+      <node concept="1LlUBW" id="28$D10lLF6D" role="3clF45">
+        <node concept="3Tqbb2" id="28$D10lLF6O" role="1Lm7xW">
+          <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+        </node>
+        <node concept="10P_77" id="28$D10lLF6W" role="1Lm7xW" />
+      </node>
+      <node concept="3clFbS" id="28$D10lLyGm" role="3clF47">
+        <node concept="3SKdUt" id="28$D10lNPVS" role="3cqZAp">
+          <node concept="3SKdUq" id="28$D10lNPVU" role="3SKWNk">
+            <property role="3SKdUp" value="todo: this method can be deleted as soon as MethodCallsFixer will be removed" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="28$D10lLF79" role="3cqZAp">
+          <node concept="2YIFZM" id="28$D10lNsHZ" role="3clFbG">
+            <ref role="37wK5l" to="fnmy:KgjTrC1yRy" resolve="resolveMethod" />
+            <ref role="1Pybhc" to="fnmy:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
+            <node concept="13iPFW" id="28$D10lNt8b" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="28$D10lNPZX" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
     <node concept="13hLZK" id="hEwIVch" role="13h7CW">
       <node concept="3clFbS" id="hEwIVci" role="2VODD2" />
     </node>
