@@ -62,8 +62,8 @@
       <root url="jar://$PROJECT_DIR$/lib/xmlbeans-2.6.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/stax-api-1.0.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xml-resolver-1.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-core-0.22.5.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-jdk8-0.22.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-core-0.26.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/kotlinx-coroutines-jdk8-0.26.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-core-5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/objenesis-2.6.jar!/" />
