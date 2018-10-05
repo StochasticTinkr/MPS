@@ -21,9 +21,8 @@
 
     <applicationService serviceInterface="com.intellij.codeInsight.intention.IntentionManager"
                         serviceImplementation="com.intellij.codeInsight.intention.impl.config.IntentionManagerImpl"/>
-    <!--MPS patch -->
     <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
-                        serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
+                        serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleFacadeImpl"/>
 
     <applicationService serviceInterface="com.intellij.concurrency.JobLauncher"
                         serviceImplementation="com.intellij.concurrency.JobLauncherImpl"/>
