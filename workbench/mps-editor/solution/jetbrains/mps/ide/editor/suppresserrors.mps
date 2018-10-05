@@ -19,6 +19,7 @@
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -383,9 +384,9 @@
       </node>
       <node concept="3clFbS" id="6nUsdRkIPPs" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPt" role="3cqZAp">
-          <node concept="10M0yZ" id="7lcW6_fsrML" role="3clFbG">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.CloseNew" resolve="CloseNew" />
+          <node concept="10M0yZ" id="6UzEAyBmbNT" role="3clFbG">
+            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.SuppressedError" resolve="SuppressedError" />
           </node>
         </node>
       </node>
@@ -424,7 +425,7 @@
       <node concept="3clFbS" id="6nUsdRkIPPM" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPN" role="3cqZAp">
           <node concept="3$FdUm" id="6nUsdRkIPPO" role="3clFbG">
-            <ref role="3$FpRE" to="ekwn:5YEoTZrE_cF" resolve="DoNotSuppressErrors" />
+            <ref role="3$FpRE" to="ekwn:6_k0AGsVqjT" resolve="ShowSuppressedErrors" />
           </node>
         </node>
       </node>

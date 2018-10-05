@@ -26,7 +26,7 @@ public abstract class BaseNavigatable implements Navigatable {
 
   protected final Project myProject;
 
-  BaseNavigatable(@NotNull Project project) {
+  public BaseNavigatable(@NotNull Project project) {
     myProject = project;
   }
 

@@ -47,7 +47,7 @@ public final class GoToHelper {
 
       @Override
       public void onSuccess() {
-        GoToContextMenuUtil.showMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
+        GoToContextMenuUtil.showNodeMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
       }
     };
     ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
