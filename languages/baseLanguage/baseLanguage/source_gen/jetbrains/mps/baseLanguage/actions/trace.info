@@ -1133,7 +1133,7 @@
       <node id="3849351486103949423" at="43,39,44,350" concept="10" />
       <node id="3663192954215503164" at="49,94,50,132" concept="10" />
       <node id="5759891770220263000" at="53,50,54,1071" concept="10" />
-      <node id="5759891770220348812" at="57,51,58,354" concept="10" />
+      <node id="5759891770220348812" at="57,51,58,732" concept="10" />
       <node id="3663192954217794777" at="61,56,62,2123" concept="10" />
       <node id="3663192954213284522" at="65,50,66,915" concept="10" />
       <node id="3663192954215599813" at="69,49,70,1252" concept="10" />
@@ -1177,7 +1177,7 @@
       <scope id="3849351486103949422" at="43,39,44,350" />
       <scope id="3663192954215503163" at="49,94,50,132" />
       <scope id="5759891770220262562" at="53,50,54,1071" />
-      <scope id="5759891770220348811" at="57,51,58,354" />
+      <scope id="5759891770220348811" at="57,51,58,732" />
       <scope id="3663192954217794776" at="61,56,62,2123" />
       <scope id="3663192954213284521" at="65,50,66,915" />
       <scope id="3663192954215599812" at="69,49,70,1252" />
@@ -1262,7 +1262,7 @@
       </scope>
       <unit id="6224545524898267583" at="31,77,35,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$1" />
       <unit id="3849351486103949421" at="42,230,46,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$2" />
-      <unit id="1296460694774881120" at="27,0,113,0" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper" />
+      <unit id="1296460694774881120" at="27,0,112,0" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/1302191354693877826">
