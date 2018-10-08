@@ -933,7 +933,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="4v" role="37wK5m">
-                          <property role="Xl_RC" value="Abstract and default modifiers are not allowed" />
+                          <property role="Xl_RC" value="The 'abstract' and 'default' modifiers are not allowed together" />
                           <node concept="cd27G" id="4A" role="lGtFl">
                             <node concept="3u3nmq" id="4B" role="cd27D">
                               <property role="3u3nmv" value="1557757632988466938" />

@@ -27,7 +27,7 @@
     <file name="check_DefaultMethodIsNotAbstract_NonTypesystemRule.java">
       <node id="1557757632988409407" at="22,121,23,231" concept="6" />
       <node id="1557757632988466920" at="25,7,26,60" concept="6" />
-      <node id="1557757632988466920" at="26,60,27,268" concept="6" />
+      <node id="1557757632988466920" at="26,60,27,285" concept="6" />
       <node id="1557757632988482772" at="28,9,29,162" concept="6" />
       <node id="1557757632988482772" at="29,162,30,71" concept="3" />
       <node id="1557757632988482638" at="32,9,33,160" concept="6" />
@@ -39,7 +39,7 @@
       <node id="1557757632988404966" at="39,0,42,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1557757632988404966" at="42,0,45,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1557757632988404966" at="45,0,48,0" concept="5" trace="overrides#()Z" />
-      <node id="1557757632988482772" at="27,268,31,9" concept="1" />
+      <node id="1557757632988482772" at="27,285,31,9" concept="1" />
       <node id="1557757632988482638" at="31,9,35,9" concept="1" />
       <node id="1557757632988466920" at="24,168,36,7" concept="1" />
       <node id="1557757632988409537" at="23,231,37,5" concept="4" />
