@@ -367,11 +367,14 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public void removeAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
     // XXX why removal of accessory model is not done through ModuleDescriptor as other editing activities?
+    //     i.e. module properties add accessory models through MD, but remove them through Language, which is odd.
     final SModelReference accessoryModelRef = sm.getReference();
     boolean changed = myLanguageDescriptor.getAccessoryModels().removeIf(accessoryModelRef::equals);
     if (changed) {
+      // XXX Perhaps, setModuleDescriptor is too much, as it fires changed + dependenciesChange and eventually reloads classes,
+      //     while change in accessory models unlikely to affect any compiled class.
+      //     I'd stick to setChanged(true) + fireChanged() here, instead.
       setModuleDescriptor(myLanguageDescriptor);
-      reload();
     }
   }
 

@@ -25,7 +25,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.validation.MessageCollectProcessor" />
-    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />

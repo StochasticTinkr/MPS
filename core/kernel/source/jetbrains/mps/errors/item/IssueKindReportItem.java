@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.errors.item;
 
-import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModelPathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModulePathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.NodePathObject;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
-import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,6 +31,18 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
+
 /**
  * implementors of this interface should extend one of the following interfaces: {@link NodeReportItem}, {@link ModelReportItem}, {@link ModuleReportItem}
  */
@@ -39,7 +51,7 @@ public interface IssueKindReportItem extends ReportItem {
   ItemKind getIssueKind();
 
   SimpleReportItemFlavour<IssueKindReportItem, ItemKind> FLAVOUR_ISSUE_KIND =
-      new SimpleReportItemFlavour<>(IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
+      new SimpleReportItemFlavour<>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
 
   final class CheckerCategory {
     private final KindLevel myKindLevel;
@@ -179,9 +191,9 @@ public interface IssueKindReportItem extends ReportItem {
     }
   }
 
-  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>(IssueKindReportItem.class, reportItem -> {
-    if (NodeFlavouredItem.FLAVOUR_NODE.canGet(reportItem)) {
-      return new NodePathObject(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(reportItem));
+  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>("FLAVOUR_PATH_OBJECT", IssueKindReportItem.class, reportItem -> {
+    if (FLAVOUR_NODE.canGet(reportItem)) {
+      return new NodePathObject(FLAVOUR_NODE.tryToGet(reportItem));
     }
     if (ModelFlavouredItem.FLAVOUR_MODEL.canGet(reportItem)) {
       return new ModelPathObject(ModelFlavouredItem.FLAVOUR_MODEL.tryToGet(reportItem));

@@ -32,6 +32,8 @@
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -191,6 +193,11 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1163670490218" name="jetbrains.mps.baseLanguage.structure.SwitchStatement" flags="nn" index="3KaCP$">
         <child id="1163670592366" name="defaultBlock" index="3Kb1Dw" />
@@ -376,11 +383,7 @@
       </node>
       <node concept="3Tm6S6" id="4TtYrYGuXmy" role="1B3o_S" />
     </node>
-    <node concept="3clFbW" id="4TtYrYGuXm_" role="jymVt">
-      <node concept="3cqZAl" id="4TtYrYGuXmB" role="3clF45" />
-      <node concept="3Tm1VV" id="4TtYrYGuXmA" role="1B3o_S" />
-      <node concept="3clFbS" id="4TtYrYGuXmC" role="3clF47" />
-    </node>
+    <node concept="2tJIrI" id="$QEGdhUjXi" role="jymVt" />
     <node concept="3clFb_" id="4TtYrYGuXmD" role="jymVt">
       <property role="TrG5h" value="pasteJava" />
       <node concept="37vLTG" id="4TtYrYGuXmG" role="3clF46">
@@ -395,9 +398,7 @@
         <node concept="3cpWs8" id="4TtYrYGuXmN" role="3cqZAp">
           <node concept="3cpWsn" id="4TtYrYGuXmO" role="3cpWs9">
             <property role="TrG5h" value="javaCode" />
-            <node concept="3uibUv" id="4TtYrYGuXmP" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="$QEGdhTxTC" role="1tU5fm" />
             <node concept="1rXfSq" id="4hiugqyz91A" role="33vP2m">
               <ref role="37wK5l" node="4TtYrYGuXnv" resolve="getStringFromClipboard" />
             </node>
@@ -453,6 +454,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4VGQu7ao_Ni" role="jymVt" />
     <node concept="3clFb_" id="4TtYrYGuXn6" role="jymVt">
       <property role="TrG5h" value="pasteJavaAsClass" />
       <node concept="3Tm1VV" id="4TtYrYGuXn7" role="1B3o_S" />
@@ -473,9 +475,7 @@
         <node concept="3cpWs8" id="4TtYrYGuXne" role="3cqZAp">
           <node concept="3cpWsn" id="4TtYrYGuXnf" role="3cpWs9">
             <property role="TrG5h" value="javaCode" />
-            <node concept="3uibUv" id="4TtYrYGuXng" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="$QEGdhTyeW" role="1tU5fm" />
             <node concept="1rXfSq" id="4hiugqyzhSc" role="33vP2m">
               <ref role="37wK5l" node="4TtYrYGuXnv" resolve="getStringFromClipboard" />
             </node>
@@ -513,11 +513,10 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="$QEGdhUkEK" role="jymVt" />
     <node concept="3clFb_" id="4TtYrYGuXnv" role="jymVt">
       <property role="TrG5h" value="getStringFromClipboard" />
-      <node concept="3uibUv" id="4TtYrYGuXnx" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="$QEGdhTyDS" role="3clF45" />
       <node concept="3Tm1VV" id="4TtYrYGuXnw" role="1B3o_S" />
       <node concept="3clFbS" id="4TtYrYGuXny" role="3clF47">
         <node concept="3cpWs8" id="4TtYrYGuXnz" role="3cqZAp">
@@ -625,16 +624,12 @@
                     <node concept="37vLTw" id="3GM_nagTxJg" role="2ZW6bz">
                       <ref role="3cqZAo" node="4TtYrYGuXos" resolve="data" />
                     </node>
-                    <node concept="3uibUv" id="4TtYrYGuXo_" role="2ZW6by">
-                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                    </node>
+                    <node concept="17QB3L" id="$QEGdhTzpf" role="2ZW6by" />
                   </node>
                   <node concept="3clFbS" id="4TtYrYGuXoA" role="3clFbx">
                     <node concept="3cpWs6" id="4TtYrYGuXoB" role="3cqZAp">
                       <node concept="10QFUN" id="4TtYrYGuXoC" role="3cqZAk">
-                        <node concept="3uibUv" id="4TtYrYGuXoE" role="10QFUM">
-                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                        </node>
+                        <node concept="17QB3L" id="$QEGdhTzJR" role="10QFUM" />
                         <node concept="37vLTw" id="3GM_nagTAjr" role="10QFUP">
                           <ref role="3cqZAo" node="4TtYrYGuXos" resolve="data" />
                         </node>
@@ -700,6 +695,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="$QEGdhUlof" role="jymVt" />
     <node concept="3clFb_" id="4TtYrYGuXoH" role="jymVt">
       <property role="TrG5h" value="pasteJavaAsNode" />
       <node concept="3clFbS" id="4TtYrYGuXoU" role="3clF47">
@@ -803,20 +799,56 @@
             <node concept="3clFbH" id="2cQuilFfmvl" role="3cqZAp" />
             <node concept="3clFbJ" id="4TtYrYGuXp$" role="3cqZAp">
               <node concept="3clFbS" id="4TtYrYGuXpC" role="3clFbx">
-                <node concept="3clFbF" id="4TtYrYGuXpD" role="3cqZAp">
-                  <node concept="2YIFZM" id="4TtYrYGuXpE" role="3clFbG">
-                    <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                    <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
-                    <node concept="10Nm6u" id="4TtYrYGuXpF" role="37wK5m" />
-                    <node concept="Xl_RD" id="4TtYrYGuXpG" role="37wK5m">
-                      <property role="Xl_RC" value="nothing to paste as Java" />
+                <node concept="3SKdUt" id="$QEGdhUMPG" role="3cqZAp">
+                  <node concept="3SKdUq" id="$QEGdhUMPI" role="3SKWNk">
+                    <property role="3SKdUp" value="Avoid AWT event inside write action (action calls this code from command)" />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="$QEGdhUJie" role="3cqZAp">
+                  <node concept="2OqwBi" id="$QEGdhUJQR" role="3clFbG">
+                    <node concept="2YIFZM" id="$QEGdhUJ_l" role="2Oq$k0">
+                      <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                      <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                     </node>
-                    <node concept="Xl_RD" id="4TtYrYGuXpH" role="37wK5m">
-                      <property role="Xl_RC" value="ERROR" />
-                    </node>
-                    <node concept="10M0yZ" id="4TtYrYGuXpI" role="37wK5m">
-                      <ref role="1PxDUh" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                      <ref role="3cqZAo" to="dxuu:~JOptionPane.ERROR_MESSAGE" resolve="ERROR_MESSAGE" />
+                    <node concept="liA8E" id="$QEGdhUKbt" role="2OqNvi">
+                      <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                      <node concept="1bVj0M" id="$QEGdhUKGM" role="37wK5m">
+                        <node concept="3clFbS" id="$QEGdhUKGN" role="1bW5cS">
+                          <node concept="3clFbF" id="$QEGdhTHbG" role="3cqZAp">
+                            <node concept="2YIFZM" id="$QEGdhTNTs" role="3clFbG">
+                              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                              <ref role="37wK5l" to="jkm4:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
+                              <node concept="2YIFZM" id="6miBLfBELUk" role="37wK5m">
+                                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                <node concept="Xl_RD" id="$QEGdhTNTu" role="37wK5m">
+                                  <property role="Xl_RC" value="Text buffer does not contain data, that can be parsed as %s" />
+                                </node>
+                                <node concept="3K4zz7" id="6miBLfBEP5o" role="37wK5m">
+                                  <node concept="Xl_RD" id="6miBLfBEPCi" role="3K4E3e">
+                                    <property role="Xl_RC" value="Class content" />
+                                  </node>
+                                  <node concept="Xl_RD" id="6miBLfBEQtg" role="3K4GZi">
+                                    <property role="Xl_RC" value="Java" />
+                                  </node>
+                                  <node concept="3clFbC" id="6miBLfBENKx" role="3K4Cdx">
+                                    <node concept="37vLTw" id="6miBLfBEMYV" role="3uHU7B">
+                                      <ref role="3cqZAo" node="4TtYrYGuXoS" resolve="featureKind" />
+                                    </node>
+                                    <node concept="Rm8GO" id="6miBLfBEOi0" role="3uHU7w">
+                                      <ref role="1Px2BO" to="rkxj:4TtYrYGuU_3" resolve="FeatureKind" />
+                                      <ref role="Rm8GQ" to="rkxj:7Wa0aDjKsid" resolve="CLASS_CONTENT" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="$QEGdhTNTv" role="37wK5m">
+                                <property role="Xl_RC" value="Buffer Data Is Unsuitable" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1231,25 +1263,42 @@
           </node>
           <node concept="TDmWw" id="76hWnaG00of" role="TEbGg">
             <node concept="3clFbS" id="76hWnaG00oi" role="TDEfX">
-              <node concept="3clFbF" id="76hWnaG00on" role="3cqZAp">
-                <node concept="2YIFZM" id="76hWnaG00oo" role="3clFbG">
-                  <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
-                  <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                  <node concept="10Nm6u" id="76hWnaG00op" role="37wK5m" />
-                  <node concept="2OqwBi" id="76hWnaG00oq" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTrUS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="76hWnaG00og" resolve="ex" />
-                    </node>
-                    <node concept="liA8E" id="76hWnaG00os" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                    </node>
+              <node concept="3clFbF" id="$QEGdhULfF" role="3cqZAp">
+                <node concept="2OqwBi" id="$QEGdhULAb" role="3clFbG">
+                  <node concept="2YIFZM" id="$QEGdhULrR" role="2Oq$k0">
+                    <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                    <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                   </node>
-                  <node concept="Xl_RD" id="76hWnaG00ot" role="37wK5m">
-                    <property role="Xl_RC" value="ERROR" />
-                  </node>
-                  <node concept="10M0yZ" id="76hWnaG00ou" role="37wK5m">
-                    <ref role="3cqZAo" to="dxuu:~JOptionPane.ERROR_MESSAGE" resolve="ERROR_MESSAGE" />
-                    <ref role="1PxDUh" to="dxuu:~JOptionPane" resolve="JOptionPane" />
+                  <node concept="liA8E" id="$QEGdhUM7N" role="2OqNvi">
+                    <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                    <node concept="1bVj0M" id="$QEGdhUMjS" role="37wK5m">
+                      <node concept="3clFbS" id="$QEGdhUMjT" role="1bW5cS">
+                        <node concept="3clFbF" id="$QEGdhU5Uf" role="3cqZAp">
+                          <node concept="2YIFZM" id="$QEGdhU66r" role="3clFbG">
+                            <ref role="37wK5l" to="jkm4:~Messages.showErrorDialog(java.lang.String,java.lang.String):void" resolve="showErrorDialog" />
+                            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                            <node concept="2YIFZM" id="6miBLfBEoO9" role="37wK5m">
+                              <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                              <node concept="Xl_RD" id="6miBLfBEqcB" role="37wK5m">
+                                <property role="Xl_RC" value="Error message: %s" />
+                              </node>
+                              <node concept="2OqwBi" id="$QEGdhU6hq" role="37wK5m">
+                                <node concept="37vLTw" id="$QEGdhU6hr" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="76hWnaG00og" resolve="ex" />
+                                </node>
+                                <node concept="liA8E" id="$QEGdhU6hs" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="$QEGdhU66t" role="37wK5m">
+                              <property role="Xl_RC" value="Java Parsing Error" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1290,6 +1339,8 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="$QEGdhUm5J" role="jymVt" />
+    <node concept="2tJIrI" id="4VGQu7aoAz3" role="jymVt" />
     <node concept="2YIFZL" id="1eLg33xvAJG" role="jymVt">
       <property role="TrG5h" value="pasteAtAnchorInRole" />
       <node concept="3Tm6S6" id="1eLg33xvAMh" role="1B3o_S" />
@@ -1449,6 +1500,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="$QEGdhUmNg" role="jymVt" />
     <node concept="2YIFZL" id="1a2pD6vkXGd" role="jymVt">
       <property role="TrG5h" value="pasteMember" />
       <node concept="37vLTG" id="1a2pD6vkXHf" role="3clF46">
@@ -1662,6 +1714,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="$QEGdhUnwM" role="jymVt" />
     <node concept="2YIFZL" id="4UmDqAIX2IV" role="jymVt">
       <property role="TrG5h" value="areDataAvailableInClipboard" />
       <node concept="10P_77" id="4UmDqAIX2IZ" role="3clF45" />

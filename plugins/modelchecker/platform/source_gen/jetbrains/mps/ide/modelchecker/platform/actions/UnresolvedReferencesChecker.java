@@ -22,10 +22,7 @@ import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.errors.item.TargetModuleNotImportedReportItem;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.checkers.ModuleImportQuickFix;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   private final Project myProject;
@@ -33,7 +30,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     myProject = mpsProject;
   }
   @Override
-  public List<? extends IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
+  public List<? extends IssueKindReportItem> checkModel(SModel model, ProgressMonitor monitor) {
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     if (model == null || model.getModule() == null) {
       return results;
@@ -55,7 +52,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             }
           }));
         }
-        final SModelReference mref = ref.getTargetSModelReference();
+        SModelReference mref = ref.getTargetSModelReference();
         if (mref == null) {
           continue;
         }
@@ -66,32 +63,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if (visibilityHelper.isVisible(m)) {
           continue;
         }
-        ListSequence.fromList(results).addElement(new TargetModuleNotImportedReportItem(ref, m.getModule().getModuleReference(), new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
-          public Boolean invoke() {
-            // check once again as this is executed somewhen in future 
-            SModel m2 = mref.resolve(myProject.getRepository());
-            if (m2 == null) {
-              return false;
-            }
-            // intentionally left VisibilityUtil.isVisible(), not visibilityHelper, as I need actual state, not cached the moment the model has been checked 
-            if (VisibilityUtil.isVisible(model, m2)) {
-              return false;
-            }
-
-            SModuleReference moduleReference = check_xiru3y_a0g0c0a0a7a2a3a2(check_xiru3y_a0a6a2a0a0h0c0d0c(m2));
-            if (moduleReference == null) {
-              return false;
-            }
-
-            SModule module = check_xiru3y_a0j0c0a0a7a2a3a2(model);
-            if (module == null) {
-              return false;
-            }
-
-            ((AbstractModule) module).addDependency(moduleReference, false);
-            return true;
-          }
-        })));
+        ListSequence.fromList(results).addElement(new TargetModuleNotImportedReportItem(ref, m.getModule().getModuleReference(), new ModuleImportQuickFix(ref)));
       }
     }
     return results;
@@ -99,23 +71,5 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   @Override
   public IssueKindReportItem.CheckerCategory getCategory() {
     return IssueKindReportItem.UNRESOLVED_REFERENCE;
-  }
-  private static SModuleReference check_xiru3y_a0g0c0a0a7a2a3a2(SModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModuleReference();
-    }
-    return null;
-  }
-  private static SModule check_xiru3y_a0a6a2a0a0h0c0d0c(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static SModule check_xiru3y_a0j0c0a0a7a2a3a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
 }

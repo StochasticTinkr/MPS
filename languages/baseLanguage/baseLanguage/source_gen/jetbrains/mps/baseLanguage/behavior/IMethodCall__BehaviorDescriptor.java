@@ -15,6 +15,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +28,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -48,8 +50,9 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Iterable<SNode>> getAvailableMethodDeclarations_id50EF2fWdwEN = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getAvailableMethodDeclarations").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("50EF2fWdwEN").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
   public static final SMethod<Boolean> isInTypeInferenceContext_id4cxv$9$kw67 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInTypeInferenceContext").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cxv$9$kw67").registry(REGISTRY).build();
   public static final SMethod<Boolean> useScopesForMethodDeclarationFixer_id3EWPnx1lHq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("useScopesForMethodDeclarationFixer").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EWPnx1lHq").registry(REGISTRY).build();
+  public static final SMethod<Tuples._2<SNode, Boolean>> resolveMethod_id28$D10lLyGj = new SMethodBuilder<Tuples._2<SNode, Boolean>>(new SJavaCompoundTypeImpl((Class<Tuples._2<SNode, Boolean>>) ((Class) Object.class))).name("resolveMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("28$D10lLyGj").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getActualArguments_idhJyuD6_, deriveType_idhEwIVPz, getConcreteType_id6WzWPTX2xhN, getTypeAnnotation_idhXbqSv6, getInstanceType_id6WzWPTX2vuB, getTypesByTypeVars_idJfLh5LDMrj, getAvailableMethodDeclarations_id50EF2fWdwEN, isInTypeInferenceContext_id4cxv$9$kw67, useScopesForMethodDeclarationFixer_id3EWPnx1lHq);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getActualArguments_idhJyuD6_, deriveType_idhEwIVPz, getConcreteType_id6WzWPTX2xhN, getTypeAnnotation_idhXbqSv6, getInstanceType_id6WzWPTX2vuB, getTypesByTypeVars_idJfLh5LDMrj, getAvailableMethodDeclarations_id50EF2fWdwEN, isInTypeInferenceContext_id4cxv$9$kw67, useScopesForMethodDeclarationFixer_id3EWPnx1lHq, resolveMethod_id28$D10lLyGj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -141,6 +144,11 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
     // todo: use something better here. check usages of getAvailableMethodDeclarations in charisma etc 
     return false;
   }
+  @Deprecated
+  /*package*/ static Tuples._2<SNode, Boolean> resolveMethod_id28$D10lLyGj(@NotNull SNode __thisNode__) {
+    // todo: this method can be deleted as soon as MethodCallsFixer will be removed 
+    return MethodResolveUtil.resolveMethod(__thisNode__);
+  }
 
   /*package*/ IMethodCall__BehaviorDescriptor() {
     super(REGISTRY);
@@ -176,6 +184,8 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Boolean) isInTypeInferenceContext_id4cxv$9$kw67(node));
       case 8:
         return (T) ((Boolean) useScopesForMethodDeclarationFixer_id3EWPnx1lHq(node));
+      case 9:
+        return (T) ((Tuples._2<SNode, Boolean>) resolveMethod_id28$D10lLyGj(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -411,7 +411,6 @@
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/solutions/JavaKajak/JavaKajak.msd" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/robot_Kaja/solutions/Kajak.sandbox/Kajak.sandbox.msd" folder="samples.robotKaja" />
       <modulePath path="$PROJECT_DIR$/samples/sampleFacet/sampleFacet.mpl" folder="samples.sampleFacet" />
-      <modulePath path="$PROJECT_DIR$/samples/sampleFacet/solutions/pluginSolution/sampleFacet.pluginSolution.msd" folder="samples.sampleFacet" />
       <modulePath path="$PROJECT_DIR$/samples/sampleFacet/solutions/sampleFacet.sandbox/sampleFacet.sandbox.msd" folder="samples.sampleFacet" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/Constants/org.jetbrains.mps.samples.Constants.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/DecisionTable/org.jetbrains.mps.samples.DecisionTable.mpl" folder="samples.sampleJavaExtensions" />

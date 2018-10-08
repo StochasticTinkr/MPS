@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class MPSMake extends ComponentPlugin implements ComponentHost {
   private final LanguageRegistry myLanguageRegistry;
   private MakeServiceComponent myMakeServiceComponent;
+  private FacetRegistry myFacetRegistry;
 
   public MPSMake(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
@@ -22,8 +23,8 @@ public class MPSMake extends ComponentPlugin implements ComponentHost {
   @Override
   public void init() {
     myMakeServiceComponent = init(new MakeServiceComponent());
-    FacetRegistry facetRegistry = init(new FacetRegistry(myLanguageRegistry));
-    init(new BootstrapMakeFacets(facetRegistry));
+    myFacetRegistry = init(new FacetRegistry(myLanguageRegistry));
+    init(new BootstrapMakeFacets(myFacetRegistry));
   }
 
 
@@ -32,6 +33,9 @@ public class MPSMake extends ComponentPlugin implements ComponentHost {
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> aClass) {
     if (aClass == MakeServiceComponent.class) {
       return aClass.cast(myMakeServiceComponent);
+    }
+    if (aClass == FacetRegistry.class) {
+      return aClass.cast(myFacetRegistry);
     }
     // I don't expose other core components unless there's need to. 
     return null;

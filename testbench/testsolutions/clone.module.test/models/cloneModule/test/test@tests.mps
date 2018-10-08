@@ -2,11 +2,11 @@
 <model ref="r:20ab6a94-5179-4062-a795-403815374f72(CloneModule.test.test@tests)">
   <persistence version="9" />
   <languages>
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="-1" />
   </languages>
   <imports>
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -940,15 +940,15 @@
             <property role="TrG5h" value="processor" />
             <node concept="3uibUv" id="2_jX3OnIRVK" role="1tU5fm">
               <ref role="3uigEE" to="6if8:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
-              <node concept="3uibUv" id="4QJbmJGUxSE" role="11_B2D">
-                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+              <node concept="3uibUv" id="KgjTrBn68S" role="11_B2D">
+                <ref role="3uigEE" to="6if8:~ModuleValidationProblem" resolve="ModuleValidationProblem" />
               </node>
             </node>
             <node concept="2ShNRf" id="2_jX3OnIRVL" role="33vP2m">
               <node concept="1pGfFk" id="2_jX3OnIRVM" role="2ShVmc">
                 <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;()" resolve="MessageCollectProcessor" />
-                <node concept="3uibUv" id="4QJbmJGUyrE" role="1pMfVU">
-                  <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                <node concept="3uibUv" id="KgjTrBn6DI" role="1pMfVU">
+                  <ref role="3uigEE" to="6if8:~ModuleValidationProblem" resolve="ModuleValidationProblem" />
                 </node>
               </node>
             </node>

@@ -607,6 +607,9 @@
     <node concept="PrWs8" id="5_pDliflca0" role="PzmwI">
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
+    <node concept="PrWs8" id="dxGXeX_YMA" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX2" resolve="ICanSuppressErrors" />
+    </node>
     <node concept="PrWs8" id="2deFRo6cC4H" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>

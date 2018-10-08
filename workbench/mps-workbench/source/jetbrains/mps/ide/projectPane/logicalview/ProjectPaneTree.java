@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.SModelsSubtree;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.LongModelNameText;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
@@ -49,7 +51,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -60,7 +61,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragGestureEvent;
 import java.awt.dnd.DragGestureListener;
@@ -71,7 +71,6 @@ import java.awt.dnd.DropTarget;
 import java.awt.dnd.InvalidDnDOperationException;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -224,6 +223,15 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   public boolean populate(MPSTreeNode treeNode, Solution solution) {
+    if (myProjectPane.isDescriptorModelInSolutionVisible()) {
+      // XXX would like to do smth like: solution.getModel(GenericDescriptorModelProvider.myDescriptorModelId)
+      @SuppressWarnings("SimplifyOptionalCallChains") // yes, I deliberately avoid ifPresent()
+      final SModel descriptorModel = solution.getModels().stream().filter(SModelStereotype::isDescriptorModel).findFirst().orElse(null);
+      if (descriptorModel != null) {
+        treeNode.add(new SModelTreeNode(descriptorModel, new LongModelNameText()));
+      }
+      // fall through, shall add regular Solution content
+    }
     return false;
   }
 

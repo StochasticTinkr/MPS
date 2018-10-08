@@ -288,9 +288,6 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
-      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
-        <child id="1171903916107" name="bound" index="3qUE_r" />
-      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -5487,8 +5484,50 @@
                   <ref role="3cqZAo" node="5LbRjS1pN8w" resolve="myParamCache" />
                 </node>
                 <node concept="liA8E" id="5LbRjS1pVGG" role="2OqNvi">
-                  <ref role="37wK5l" node="5LbRjS1o1cB" resolve="populate" />
+                  <ref role="37wK5l" node="BMoFi_xPWK" resolve="initializeOnce" />
                   <node concept="Xjq3P" id="5LbRjS1pVUw" role="37wK5m" />
+                  <node concept="37vLTw" id="BMoFi_yjO0" role="37wK5m">
+                    <ref role="3cqZAo" node="3hj1t46gkWd" resolve="myEnvironment" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="BMoFi_xJOm" role="3cqZAp">
+              <node concept="1rXfSq" id="BMoFi_xJOk" role="3clFbG">
+                <ref role="37wK5l" node="e$hNri9Pgg" resolve="setProject" />
+                <node concept="2OqwBi" id="BMoFi_x$w8" role="37wK5m">
+                  <node concept="37vLTw" id="BMoFi_x$7p" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5LbRjS1pN8w" resolve="myParamCache" />
+                  </node>
+                  <node concept="liA8E" id="BMoFi_x$N6" role="2OqNvi">
+                    <ref role="37wK5l" node="5LbRjS1nWSe" resolve="getProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="BMoFi_xKKD" role="3cqZAp">
+              <node concept="1rXfSq" id="BMoFi_xKKB" role="3clFbG">
+                <ref role="37wK5l" node="7P8zeXPIiHi" resolve="setModelDescriptor" />
+                <node concept="2OqwBi" id="BMoFi_xAXd" role="37wK5m">
+                  <node concept="37vLTw" id="BMoFi_xAsY" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5LbRjS1pN8w" resolve="myParamCache" />
+                  </node>
+                  <node concept="liA8E" id="BMoFi_xEiA" role="2OqNvi">
+                    <ref role="37wK5l" node="5LbRjS1nXKF" resolve="getTestModel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="BMoFi_xLxD" role="3cqZAp">
+              <node concept="1rXfSq" id="BMoFi_xLxB" role="3clFbG">
+                <ref role="37wK5l" node="wQDhRCDPiv" resolve="setTransientModelDescriptor" />
+                <node concept="2OqwBi" id="BMoFi_xFYi" role="37wK5m">
+                  <node concept="37vLTw" id="BMoFi_xF__" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5LbRjS1pN8w" resolve="myParamCache" />
+                  </node>
+                  <node concept="liA8E" id="BMoFi_xJl1" role="2OqNvi">
+                    <ref role="37wK5l" node="5LbRjS1nZyM" resolve="getTransientModel" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -5519,20 +5558,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="BMoFi_qQkq" role="jymVt" />
-    <node concept="3clFb_" id="BMoFi_qSok" role="jymVt">
-      <property role="TrG5h" value="getEnv" />
-      <node concept="3uibUv" id="BMoFi_qUqx" role="3clF45">
-        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-      </node>
-      <node concept="3clFbS" id="BMoFi_qSoo" role="3clF47">
-        <node concept="3clFbF" id="BMoFi_qWXr" role="3cqZAp">
-          <node concept="37vLTw" id="BMoFi_qWXq" role="3clFbG">
-            <ref role="3cqZAo" node="3hj1t46gkWd" resolve="myEnvironment" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5LbRjS1uySZ" role="jymVt" />
     <node concept="3clFb_" id="e$hNri9Pga" role="jymVt">
       <property role="TrG5h" value="getProject" />
       <node concept="3clFbS" id="e$hNri9Pgd" role="3clF47">
@@ -8634,11 +8659,7 @@
       <node concept="3Tm6S6" id="5LbRjS1oaQA" role="1B3o_S" />
       <node concept="3uibUv" id="5LbRjS1oaQC" role="1tU5fm">
         <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3qUE_q" id="5LbRjS1xS8K" role="11_B2D">
-          <node concept="3uibUv" id="5LbRjS1xSr1" role="3qUE_r">
-            <ref role="3uigEE" node="e$hNri9cbt" resolve="TransformationTest" />
-          </node>
-        </node>
+        <node concept="3qTvmN" id="BMoFi_xO$G" role="11_B2D" />
       </node>
     </node>
     <node concept="312cEg" id="5LbRjS1obJF" role="jymVt">
@@ -8757,11 +8778,7 @@
         <property role="TrG5h" value="owner" />
         <node concept="3uibUv" id="5LbRjS1oa9q" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qUE_q" id="5LbRjS1xOyK" role="11_B2D">
-            <node concept="3uibUv" id="5LbRjS1xOLL" role="3qUE_r">
-              <ref role="3uigEE" node="e$hNri9cbt" resolve="TransformationTest" />
-            </node>
-          </node>
+          <node concept="3qTvmN" id="BMoFi_xOy0" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="5LbRjS1nSfs" role="3clF46">
@@ -8858,21 +8875,37 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5LbRjS1o0eW" role="jymVt" />
-    <node concept="3clFb_" id="5LbRjS1o1cB" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="populate" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="5LbRjS1o1cE" role="3clF47">
+    <node concept="3clFb_" id="BMoFi_xPWK" role="jymVt">
+      <property role="TrG5h" value="initializeOnce" />
+      <node concept="37vLTG" id="BMoFi_yg7z" role="3clF46">
+        <property role="TrG5h" value="ownerInstance" />
+        <node concept="3uibUv" id="BMoFi_yhac" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="BMoFi_ydl$" role="3clF46">
+        <property role="TrG5h" value="environment" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="BMoFi_ydl_" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="BMoFi_xPWM" role="3clF45" />
+      <node concept="3Tm1VV" id="BMoFi_xPWN" role="1B3o_S" />
+      <node concept="3clFbS" id="BMoFi_xPWO" role="3clF47">
+        <node concept="3SKdUt" id="BMoFi_yioK" role="3cqZAp">
+          <node concept="3SKdUq" id="BMoFi_yioM" role="3SKWNk">
+            <property role="3SKdUp" value="both arguments are non null" />
+          </node>
+        </node>
         <node concept="1gVbGN" id="5LbRjS1ofRe" role="3cqZAp">
           <node concept="3clFbC" id="5LbRjS1oh5t" role="1gVkn0">
             <node concept="37vLTw" id="5LbRjS1ohIT" role="3uHU7w">
               <ref role="3cqZAo" node="5LbRjS1oaQ_" resolve="myOwner" />
             </node>
             <node concept="2OqwBi" id="5LbRjS1ogpO" role="3uHU7B">
-              <node concept="37vLTw" id="5LbRjS1ogdk" role="2Oq$k0">
-                <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
+              <node concept="37vLTw" id="BMoFi_yhYG" role="2Oq$k0">
+                <ref role="3cqZAo" node="BMoFi_yg7z" resolve="ownerInstance" />
               </node>
               <node concept="liA8E" id="5LbRjS1ogJL" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
@@ -8880,103 +8913,43 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5LbRjS1opw3" role="3cqZAp" />
+        <node concept="3clFbH" id="BMoFi_yhwr" role="3cqZAp" />
         <node concept="3clFbJ" id="5LbRjS1onyl" role="3cqZAp">
           <node concept="3clFbS" id="5LbRjS1onyn" role="3clFbx">
-            <node concept="3clFbF" id="5LbRjS1osu$" role="3cqZAp">
-              <node concept="2OqwBi" id="5LbRjS1osFR" role="3clFbG">
-                <node concept="37vLTw" id="5LbRjS1osuy" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-                </node>
-                <node concept="liA8E" id="5LbRjS1otd6" role="2OqNvi">
-                  <ref role="37wK5l" node="e$hNri9Pgg" resolve="setProject" />
-                  <node concept="37vLTw" id="5LbRjS1otrF" role="37wK5m">
-                    <ref role="3cqZAo" node="5LbRjS1o3Ap" resolve="myProject" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="5LbRjS1otPh" role="3cqZAp">
-              <node concept="2OqwBi" id="5LbRjS1ou3C" role="3clFbG">
-                <node concept="37vLTw" id="5LbRjS1otPf" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-                </node>
-                <node concept="liA8E" id="5LbRjS1ouFT" role="2OqNvi">
-                  <ref role="37wK5l" node="7P8zeXPIiHi" resolve="setModelDescriptor" />
-                  <node concept="37vLTw" id="5LbRjS1ovjS" role="37wK5m">
-                    <ref role="3cqZAo" node="5LbRjS1o4wv" resolve="myTestModel" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="5LbRjS1oqQI" role="3cqZAp">
-              <node concept="2OqwBi" id="5LbRjS1or30" role="3clFbG">
-                <node concept="37vLTw" id="5LbRjS1oqQG" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-                </node>
-                <node concept="liA8E" id="5LbRjS1orzI" role="2OqNvi">
-                  <ref role="37wK5l" node="wQDhRCDPiv" resolve="setTransientModelDescriptor" />
-                  <node concept="37vLTw" id="5LbRjS1orMj" role="37wK5m">
-                    <ref role="3cqZAo" node="5LbRjS1o5qR" resolve="myTransientModel" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="5LbRjS1ovWm" role="3cqZAp" />
+            <node concept="3cpWs6" id="BMoFi_xNtQ" role="3cqZAp" />
           </node>
-          <node concept="37vLTw" id="5LbRjS1oocU" role="3clFbw">
+          <node concept="37vLTw" id="BMoFi_xyw5" role="3clFbw">
             <ref role="3cqZAo" node="5LbRjS1ojZh" resolve="myInitialized" />
           </node>
         </node>
         <node concept="3clFbF" id="BMoFi_qIoQ" role="3cqZAp">
           <node concept="1rXfSq" id="BMoFi_qIoO" role="3clFbG">
-            <ref role="37wK5l" node="BMoFi_qkx_" resolve="initTest" />
-            <node concept="37vLTw" id="BMoFi_qJ5f" role="37wK5m">
-              <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
+            <ref role="37wK5l" node="BMoFi_qkx_" resolve="initCachedValues" />
+            <node concept="37vLTw" id="BMoFi_yf_C" role="37wK5m">
+              <ref role="3cqZAo" node="BMoFi_ydl$" resolve="environment" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5LbRjS1p2b_" role="3cqZAp">
-          <node concept="37vLTI" id="5LbRjS1p2ZO" role="3clFbG">
-            <node concept="2OqwBi" id="5LbRjS1p3Yn" role="37vLTx">
-              <node concept="37vLTw" id="5LbRjS1p3GQ" role="2Oq$k0">
-                <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-              </node>
-              <node concept="liA8E" id="5LbRjS1p4EP" role="2OqNvi">
-                <ref role="37wK5l" node="e$hNri9Pga" resolve="getProject" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="5LbRjS1p2bz" role="37vLTJ">
+        <node concept="1gVbGN" id="BMoFi_xtcC" role="3cqZAp">
+          <node concept="3y3z36" id="BMoFi_xufI" role="1gVkn0">
+            <node concept="10Nm6u" id="BMoFi_xu_o" role="3uHU7w" />
+            <node concept="37vLTw" id="BMoFi_xtyl" role="3uHU7B">
               <ref role="3cqZAo" node="5LbRjS1o3Ap" resolve="myProject" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5LbRjS1p5Cn" role="3cqZAp">
-          <node concept="37vLTI" id="5LbRjS1p63g" role="3clFbG">
-            <node concept="2OqwBi" id="5LbRjS1p6_s" role="37vLTx">
-              <node concept="37vLTw" id="5LbRjS1p6nt" role="2Oq$k0">
-                <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-              </node>
-              <node concept="liA8E" id="5LbRjS1p7iv" role="2OqNvi">
-                <ref role="37wK5l" node="e$hNri9PfO" resolve="getModelDescriptor" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="5LbRjS1p5Cl" role="37vLTJ">
+        <node concept="1gVbGN" id="BMoFi_xuBb" role="3cqZAp">
+          <node concept="3y3z36" id="BMoFi_xuBc" role="1gVkn0">
+            <node concept="10Nm6u" id="BMoFi_xuBd" role="3uHU7w" />
+            <node concept="37vLTw" id="BMoFi_xvlT" role="3uHU7B">
               <ref role="3cqZAo" node="5LbRjS1o4wv" resolve="myTestModel" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5LbRjS1p8iN" role="3cqZAp">
-          <node concept="37vLTI" id="5LbRjS1p8IP" role="3clFbG">
-            <node concept="2OqwBi" id="5LbRjS1p9aY" role="37vLTx">
-              <node concept="37vLTw" id="5LbRjS1p8WZ" role="2Oq$k0">
-                <ref role="3cqZAo" node="5LbRjS1o1tn" resolve="test" />
-              </node>
-              <node concept="liA8E" id="5LbRjS1p9NW" role="2OqNvi">
-                <ref role="37wK5l" node="e$hNri9PfU" resolve="getTransientModelDescriptor" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="5LbRjS1p8iL" role="37vLTJ">
+        <node concept="1gVbGN" id="BMoFi_xuCc" role="3cqZAp">
+          <node concept="3y3z36" id="BMoFi_xuCd" role="1gVkn0">
+            <node concept="10Nm6u" id="BMoFi_xuCe" role="3uHU7w" />
+            <node concept="37vLTw" id="BMoFi_xvDP" role="3uHU7B">
               <ref role="3cqZAo" node="5LbRjS1o5qR" resolve="myTransientModel" />
             </node>
           </node>
@@ -8992,15 +8965,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="5LbRjS1o0CD" role="1B3o_S" />
-      <node concept="3cqZAl" id="5LbRjS1o10y" role="3clF45" />
-      <node concept="37vLTG" id="5LbRjS1o1tn" role="3clF46">
-        <property role="TrG5h" value="test" />
-        <node concept="3uibUv" id="3hj1t46iEpa" role="1tU5fm">
-          <ref role="3uigEE" node="e$hNri8RAJ" resolve="BaseTransformationTest" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="5LbRjS1p19Y" role="Sfmx6">
+      <node concept="3uibUv" id="BMoFi_ybrv" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
@@ -9139,34 +9104,18 @@
     </node>
     <node concept="2tJIrI" id="BMoFi_qk1Z" role="jymVt" />
     <node concept="3clFb_" id="BMoFi_qkx_" role="jymVt">
-      <property role="TrG5h" value="initTest" />
-      <node concept="37vLTG" id="BMoFi_twER" role="3clF46">
-        <property role="TrG5h" value="test" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="BMoFi_twES" role="1tU5fm">
-          <ref role="3uigEE" node="e$hNri8RAJ" resolve="BaseTransformationTest" />
+      <property role="TrG5h" value="initCachedValues" />
+      <node concept="37vLTG" id="BMoFi_xaJ4" role="3clF46">
+        <property role="TrG5h" value="environment" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="BMoFi_tyZ1" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
         </node>
       </node>
       <node concept="3uibUv" id="BMoFi_qkxA" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
       <node concept="3clFbS" id="BMoFi_qkxC" role="3clF47">
-        <node concept="3cpWs8" id="BMoFi_tyYZ" role="3cqZAp">
-          <node concept="3cpWsn" id="BMoFi_tyZ0" role="3cpWs9">
-            <property role="TrG5h" value="environment" />
-            <node concept="3uibUv" id="BMoFi_tyZ1" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2OqwBi" id="BMoFi_tzYR" role="33vP2m">
-              <node concept="37vLTw" id="BMoFi_tzIS" role="2Oq$k0">
-                <ref role="3cqZAo" node="BMoFi_twER" resolve="test" />
-              </node>
-              <node concept="liA8E" id="BMoFi_t$i1" role="2OqNvi">
-                <ref role="37wK5l" node="BMoFi_qSok" resolve="getEnv" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3SKdUt" id="BMoFi_qkxD" role="3cqZAp">
           <node concept="3SKdUq" id="BMoFi_qkxE" role="3SKWNk">
             <property role="3SKdUp" value="MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder " />
@@ -9203,8 +9152,8 @@
           </node>
           <node concept="3clFbC" id="BMoFi_qkxS" role="3clFbw">
             <node concept="10Nm6u" id="BMoFi_qkxT" role="3uHU7w" />
-            <node concept="37vLTw" id="BMoFi_qkxU" role="3uHU7B">
-              <ref role="3cqZAo" node="BMoFi_tyZ0" resolve="environment" />
+            <node concept="37vLTw" id="BMoFi_xcvq" role="3uHU7B">
+              <ref role="3cqZAo" node="BMoFi_xaJ4" resolve="environment" />
             </node>
           </node>
         </node>
@@ -9300,8 +9249,8 @@
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
                 <node concept="2OqwBi" id="BMoFi_qkyz" role="33vP2m">
-                  <node concept="37vLTw" id="BMoFi_qky$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="BMoFi_tyZ0" resolve="environment" />
+                  <node concept="37vLTw" id="BMoFi_xdM9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="BMoFi_xaJ4" resolve="environment" />
                   </node>
                   <node concept="liA8E" id="BMoFi_qky_" role="2OqNvi">
                     <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
@@ -9316,8 +9265,8 @@
               <node concept="3clFbS" id="BMoFi_qkyC" role="3clFbx">
                 <node concept="3clFbF" id="BMoFi_qkyD" role="3cqZAp">
                   <node concept="2OqwBi" id="BMoFi_qkyE" role="3clFbG">
-                    <node concept="37vLTw" id="BMoFi_qkyF" role="2Oq$k0">
-                      <ref role="3cqZAo" node="BMoFi_tyZ0" resolve="environment" />
+                    <node concept="37vLTw" id="BMoFi_xeje" role="2Oq$k0">
+                      <ref role="3cqZAo" node="BMoFi_xaJ4" resolve="environment" />
                     </node>
                     <node concept="liA8E" id="BMoFi_qkyG" role="2OqNvi">
                       <ref role="37wK5l" to="79ha:3hj1t46fvYr" resolve="closeProject" />
@@ -9330,8 +9279,8 @@
                 <node concept="3clFbF" id="BMoFi_qkyI" role="3cqZAp">
                   <node concept="37vLTI" id="BMoFi_qkyJ" role="3clFbG">
                     <node concept="2OqwBi" id="BMoFi_qkyK" role="37vLTx">
-                      <node concept="37vLTw" id="BMoFi_qkyL" role="2Oq$k0">
-                        <ref role="3cqZAo" node="BMoFi_tyZ0" resolve="environment" />
+                      <node concept="37vLTw" id="BMoFi_xexl" role="2Oq$k0">
+                        <ref role="3cqZAo" node="BMoFi_xaJ4" resolve="environment" />
                       </node>
                       <node concept="liA8E" id="BMoFi_qkyM" role="2OqNvi">
                         <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
@@ -9350,16 +9299,13 @@
                 <ref role="3cqZAo" node="5LbRjS1odeM" resolve="myReOpenProject" />
               </node>
             </node>
-            <node concept="3clFbF" id="BMoFi_tAAm" role="3cqZAp">
-              <node concept="2OqwBi" id="BMoFi_tBe_" role="3clFbG">
-                <node concept="37vLTw" id="BMoFi_tAAk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="BMoFi_twER" resolve="test" />
+            <node concept="3clFbF" id="BMoFi_xfgb" role="3cqZAp">
+              <node concept="37vLTI" id="BMoFi_xg0S" role="3clFbG">
+                <node concept="37vLTw" id="BMoFi_xhRg" role="37vLTx">
+                  <ref role="3cqZAo" node="BMoFi_qkyx" resolve="p" />
                 </node>
-                <node concept="liA8E" id="BMoFi_tBKk" role="2OqNvi">
-                  <ref role="37wK5l" node="e$hNri9Pgg" resolve="setProject" />
-                  <node concept="37vLTw" id="BMoFi_tBUY" role="37wK5m">
-                    <ref role="3cqZAo" node="BMoFi_qkyx" resolve="p" />
-                  </node>
+                <node concept="37vLTw" id="BMoFi_xfg9" role="37vLTJ">
+                  <ref role="3cqZAo" node="5LbRjS1o3Ap" resolve="myProject" />
                 </node>
               </node>
             </node>
@@ -9488,16 +9434,13 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3clFbF" id="BMoFi_qkzI" role="3cqZAp">
-                                        <node concept="2OqwBi" id="BMoFi_qkzJ" role="3clFbG">
-                                          <node concept="liA8E" id="BMoFi_qkzK" role="2OqNvi">
-                                            <ref role="37wK5l" node="7P8zeXPIiHi" resolve="setModelDescriptor" />
-                                            <node concept="37vLTw" id="BMoFi_qkzL" role="37wK5m">
-                                              <ref role="3cqZAo" node="BMoFi_qkzs" resolve="modelDescriptor" />
-                                            </node>
+                                      <node concept="3clFbF" id="BMoFi_xjyN" role="3cqZAp">
+                                        <node concept="37vLTI" id="BMoFi_xk$n" role="3clFbG">
+                                          <node concept="37vLTw" id="BMoFi_xllD" role="37vLTx">
+                                            <ref role="3cqZAo" node="BMoFi_qkzs" resolve="modelDescriptor" />
                                           </node>
-                                          <node concept="37vLTw" id="BMoFi_tC_v" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="BMoFi_twER" resolve="test" />
+                                          <node concept="37vLTw" id="BMoFi_xjyL" role="37vLTJ">
+                                            <ref role="3cqZAo" node="5LbRjS1o4wv" resolve="myTestModel" />
                                           </node>
                                         </node>
                                       </node>
@@ -9539,20 +9482,35 @@
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="6cgtlBrIEqj" role="2OqNvi">
-                                            <ref role="37wK5l" to="80j5:~CloneUtil.cloneModelWithAllImports():void" resolve="cloneModelWithAllImports" />
+                                            <ref role="37wK5l" to="80j5:~CloneUtil.cloneModelWithImports():void" resolve="cloneModelWithImports" />
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3clFbF" id="BMoFi_udoi" role="3cqZAp">
-                                        <node concept="2OqwBi" id="BMoFi_udSD" role="3clFbG">
-                                          <node concept="37vLTw" id="BMoFi_udog" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="BMoFi_twER" resolve="test" />
-                                          </node>
-                                          <node concept="liA8E" id="BMoFi_uews" role="2OqNvi">
-                                            <ref role="37wK5l" node="wQDhRCDPiv" resolve="setTransientModelDescriptor" />
-                                            <node concept="37vLTw" id="BMoFi_uf1H" role="37wK5m">
-                                              <ref role="3cqZAo" node="BMoFi_uakl" resolve="transientModel" />
+                                      <node concept="3clFbF" id="50NVUdCq_Wl" role="3cqZAp">
+                                        <node concept="2OqwBi" id="50NVUdCr9IG" role="3clFbG">
+                                          <node concept="2ShNRf" id="50NVUdCq_Wh" role="2Oq$k0">
+                                            <node concept="1pGfFk" id="50NVUdCr99D" role="2ShVmc">
+                                              <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelDependencyUpdate" />
+                                              <node concept="37vLTw" id="50NVUdCr9BJ" role="37wK5m">
+                                                <ref role="3cqZAo" node="BMoFi_uakl" resolve="transientModel" />
+                                              </node>
                                             </node>
+                                          </node>
+                                          <node concept="liA8E" id="50NVUdCra4Z" role="2OqNvi">
+                                            <ref role="37wK5l" to="w1kc:~ModelDependencyUpdate.updateModuleDependencies(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.ModelDependencyUpdate" resolve="updateModuleDependencies" />
+                                            <node concept="37vLTw" id="50NVUdCra$z" role="37wK5m">
+                                              <ref role="3cqZAo" node="BMoFi_qkyU" resolve="repository" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="BMoFi_xmPT" role="3cqZAp">
+                                        <node concept="37vLTI" id="BMoFi_xnSP" role="3clFbG">
+                                          <node concept="37vLTw" id="BMoFi_xoF_" role="37vLTx">
+                                            <ref role="3cqZAo" node="BMoFi_uakl" resolve="transientModel" />
+                                          </node>
+                                          <node concept="37vLTw" id="BMoFi_xmPR" role="37vLTJ">
+                                            <ref role="3cqZAo" node="5LbRjS1o5qR" resolve="myTransientModel" />
                                           </node>
                                         </node>
                                       </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.java.ui;
 
-
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
@@ -78,7 +78,7 @@ public final class JavaClassStubsModelRootEntry implements ModelRootEntry<JavaCl
 
   @Override
   public void dispose() {
-    myModelRootData.dispose();
+    Disposer.dispose(myModelRootData);
   }
 
   @Nullable

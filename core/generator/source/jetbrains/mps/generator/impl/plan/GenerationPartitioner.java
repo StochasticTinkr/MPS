@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
@@ -152,7 +151,7 @@ public class GenerationPartitioner {
     MultiMap<SLanguage, TemplateModule> lang2gen = new MultiMap<>();
     for (TemplateModule generator : myGenerators) {
       LanguageRuntime sLanguage = generator.getSourceLanguage();
-      SLanguage lang = MetaAdapterFactory.getLanguage(sLanguage.getId(),sLanguage.getNamespace());
+      SLanguage lang = sLanguage.getIdentity();
       lang2gen.putValue(lang, generator);
     }
     for (TemplateModule generator : myGenerators) {

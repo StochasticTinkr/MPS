@@ -555,7 +555,7 @@
     <property role="TrG5h" value="Node_IsRoleOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation.node" />
-    <property role="34LRSv" value="hasRole" />
+    <property role="34LRSv" value="isInRole" />
     <property role="EcuMT" value="1144195091934" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
     <node concept="1TJgyj" id="gDBmUTw" role="1TKVEi">

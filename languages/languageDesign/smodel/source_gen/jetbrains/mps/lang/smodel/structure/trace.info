@@ -1126,8 +1126,8 @@
       <node id="1144195091934" at="142,0,143,0" concept="1" trace="props_Node_IsRoleOperation" />
       <node id="1144195091934" at="1164,49,1165,76" concept="3" />
       <node id="1144195091934" at="1165,76,1166,49" concept="0" />
-      <node id="1144195091934" at="1166,49,1167,41" concept="0" />
-      <node id="1144195091934" at="1167,41,1168,52" concept="0" />
+      <node id="1144195091934" at="1166,49,1167,42" concept="0" />
+      <node id="1144195091934" at="1167,42,1168,52" concept="0" />
       <node id="1144195091934" at="1169,9,1170,42" concept="4" />
       <node id="1144195091934" at="1163,54,1169,9" concept="2" />
       <scope id="1144195091934" at="1164,49,1168,52">
@@ -1150,8 +1150,8 @@
       <node id="1144195362400" at="1910,17,1911,163" concept="0" />
       <node id="1144195396777" at="1911,163,1912,159" concept="0" />
       <node id="1144195091934" at="1912,159,1913,49" concept="0" />
-      <node id="1144195091934" at="1913,49,1914,23" concept="0" />
-      <node id="1144195091934" at="1914,23,1915,22" concept="4" />
+      <node id="1144195091934" at="1913,49,1914,24" concept="0" />
+      <node id="1144195091934" at="1914,24,1915,22" concept="4" />
       <node id="1144195091934" at="1905,0,1917,0" concept="6" trace="createDescriptorForNode_IsRoleOperation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1144195091934" at="482,54,483,45" />
       <scope id="1144195091934" at="1905,78,1915,22">

@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
@@ -29,6 +30,12 @@ public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
   public ProcessHandlerBuilder() {
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.execution.api.commands.ProcessHandlerBuilder#append(String...) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public ProcessHandlerBuilder append(@Nullable String command) {
     if (!((command == null || command.length() == 0))) {
       ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
@@ -43,7 +50,10 @@ public class ProcessHandlerBuilder {
   }
   public ProcessHandlerBuilder append(String... command) {
     for (String commandPart : Sequence.fromArray(command)) {
-      append(commandPart);
+      if (!((commandPart == null || commandPart.length() == 0))) {
+        ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(commandPart)));
+      }
+
     }
     return this;
   }

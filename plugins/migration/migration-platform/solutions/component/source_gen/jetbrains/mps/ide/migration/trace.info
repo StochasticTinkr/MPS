@@ -832,7 +832,7 @@
       <node id="3875289449857909309" at="153,122,154,66" concept="13" />
       <node id="3875289449857911494" at="154,66,155,72" concept="13" />
       <node id="2885477569137959003" at="156,72,157,74" concept="11" />
-      <node id="7690769658523771137" at="157,74,158,134" concept="11" />
+      <node id="7690769658523771137" at="157,74,158,133" concept="11" />
       <node id="7690769658524661406" at="161,71,162,168" concept="11" />
       <node id="7690769658524856002" at="163,115,164,91" concept="5" />
       <node id="7690769658524988802" at="165,21,166,93" concept="5" />
@@ -909,7 +909,7 @@
       <node id="2885477569135058116" at="64,0,83,0" concept="10" trace="checkMigrations#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="7690769658523895076" at="160,0,179,0" concept="10" trace="consume#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
       <node id="2482611074347892710" at="217,79,237,9" concept="1" />
-      <node id="7690769658523721444" at="158,134,184,17" concept="5" />
+      <node id="7690769658523721444" at="158,133,184,17" concept="5" />
       <node id="961570622492589251" at="87,0,114,0" concept="10" trace="run#()V" />
       <node id="961570622492589250" at="85,43,114,7" concept="5" />
       <node id="847913592342650696" at="155,72,188,13" concept="8" />

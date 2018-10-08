@@ -19,7 +19,8 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
@@ -36,10 +37,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,13 +55,10 @@ public class LibraryManagerPreferences {
   private JList<Library> myLibrariesList = new JBList<>(myListModel);
 
   private boolean myChanged;
-  private JButton myRemoveButton;
-  private JButton myEditButton;
 
   public LibraryManagerPreferences(BaseLibraryManager manager) {
     myManager = manager;
-
-    myMainPanel.add(ScrollPaneFactory.createScrollPane(myLibrariesList), BorderLayout.CENTER);
+    //TODO: List of libraries does not include predefined ones. Do we need to include them to the list?
 
     myLibrariesList.setCellRenderer(new DefaultListCellRenderer() {
       @Override
@@ -67,44 +69,13 @@ public class LibraryManagerPreferences {
         return this;
       }
     });
+    ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myLibrariesList);
+    decorator.disableUpDownActions();
+    decorator.setAddAction(anActionButton -> LibraryManagerPreferences.this.add())
+             .setRemoveAction(anActionButton -> LibraryManagerPreferences.this.remove())
+             .setEditAction(anActionButton -> LibraryManagerPreferences.this.edit());
 
-    JPanel buttonsPanel = new JPanel(new BorderLayout());
-    JPanel innerButtonsPanel = new JPanel(new GridLayout(1, 0));
-
-    buttonsPanel.add(new JPanel(), BorderLayout.CENTER);
-    buttonsPanel.add(innerButtonsPanel, BorderLayout.WEST);
-
-    innerButtonsPanel.add(new JButton(new AbstractAction("Add") {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        add();
-      }
-    }));
-    myRemoveButton = new JButton(new AbstractAction("Remove") {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        remove();
-      }
-    });
-    innerButtonsPanel.add(myRemoveButton);
-    myEditButton = new JButton(new AbstractAction("Edit") {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        edit();
-      }
-    });
-    innerButtonsPanel.add(myEditButton);
-    myLibrariesList.getSelectionModel().addListSelectionListener(e -> {
-      int index = myLibrariesList.getSelectedIndex();
-      if (index < 0) return;
-      Library l = myListModel.get(index);
-      //todo add predef lib to view
-      boolean predefined = false;
-      myEditButton.setEnabled(!predefined);
-      myRemoveButton.setEnabled(!predefined);
-    });
-
-    myMainPanel.add(buttonsPanel, BorderLayout.SOUTH);
+    myMainPanel.add(decorator.createPanel(), BorderLayout.CENTER);
 
     updateModel(false);
   }
@@ -129,23 +100,14 @@ public class LibraryManagerPreferences {
   }
 
   private void remove() {
-    int index = myLibrariesList.getSelectedIndex();
-    if (index == -1) {
-      return;
-    }
-    myManager.remove(myListModel.get(index));
+    myManager.remove(myListModel.get(myLibrariesList.getSelectedIndex()));
     updateModel(true);
     myChanged = true;
   }
 
 
   private void edit() {
-    int index = myLibrariesList.getSelectedIndex();
-    if (index == -1) {
-      return;
-    }
-
-    Library l = myListModel.get(index);
+    Library l = myListModel.get(myLibrariesList.getSelectedIndex());
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, true, true, false, false);
     final VirtualFile result = FileChooser.chooseFile(descriptor, myMainPanel, null, LocalFileSystem.getInstance().findFileByPath(l.getPath()));
@@ -161,7 +123,7 @@ public class LibraryManagerPreferences {
   }
 
   private void add() {
-    String name = JOptionPane.showInputDialog(myMainPanel, "Enter a Library name", "New Library", JOptionPane.PLAIN_MESSAGE);
+    String name = Messages.showInputDialog(myMainPanel, "Enter a Library name", "New Library", null);
 
     if (name == null) {
       return;

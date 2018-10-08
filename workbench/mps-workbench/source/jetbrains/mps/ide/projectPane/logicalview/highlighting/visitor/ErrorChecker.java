@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import jetbrains.mps.errors.item.ModelReportItem;
+import jetbrains.mps.errors.item.ModuleReportItem;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.ErrorStateNodeUpdate;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
@@ -23,7 +24,6 @@ import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -60,7 +60,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
     final SModuleReference mr = node.getModule().getModuleReference();
     SModule module = mr.resolve(myProject.getRepository());
     if (module != null) {
-      MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
+      MessageCollectProcessor<ModuleReportItem> collector = new MessageCollectProcessor<>(true);
       ValidationUtil.validateModule(module, collector);
       addUpdate(node, createNodeUpdate(collector));
     }

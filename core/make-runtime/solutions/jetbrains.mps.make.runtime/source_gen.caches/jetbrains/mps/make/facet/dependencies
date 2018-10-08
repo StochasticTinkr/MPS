@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />

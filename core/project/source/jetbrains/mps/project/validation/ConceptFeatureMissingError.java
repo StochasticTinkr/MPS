@@ -15,21 +15,30 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SNamedElement;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-/**
- * Both {@link ConceptFeatureMissingError} and {@link ConceptFeatureCardinalityError} are {@link ConceptFeatureError},
- * however, there's code (MigrationCheckUtil) which is interested in this particular error only, hence we keep distinct classes
- */
-public class ConceptFeatureMissingError extends ConceptFeatureError implements NodeFeatureReportItem {
+public class ConceptFeatureMissingError extends LanguageFeatureMissingError implements NodeFeatureReportItem {
+  private final SConceptFeature myConceptFeature;
   public ConceptFeatureMissingError(SNodeReference node, SConceptFeature feature, String message) {
-    super(node, feature, message);
+    super(MessageStatus.ERROR, node, message);
+    myConceptFeature = feature;
   }
   @Override
   public ItemKind getIssueKind() {
     return IssueKindReportItem.UNKNOWN_LANGUAGE_FEATURE;
+  }
+  @Override
+  public SConceptFeature getConceptFeature() {
+    return myConceptFeature;
+  }
+
+  @Override
+  public SNamedElement getLanguageFeature() {
+    return getConceptFeature();
   }
 }

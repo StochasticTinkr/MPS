@@ -33,6 +33,7 @@ import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.DescriptorModelComponent;
 import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
+import jetbrains.mps.project.structure.GenericDescriptorModelProvider;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -135,13 +136,14 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     //      so that ER could make extensions available to subsequent listeners of LR notifications.
     //      Note, as long as CLM supports both legacy and new DeployListener, both ER and LR have to use same mechanism to keep the notification order.
     myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
-    myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
+    myLanguageRegistry = init(new LanguageRegistry(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,
                                       new LanguageDescriptorModelProvider(myLanguageRegistry),
-                                      new GeneratorDescriptorModelProvider()));
+                                      new GeneratorDescriptorModelProvider(),
+                                      new GenericDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
 
     init(new ResolverComponent());

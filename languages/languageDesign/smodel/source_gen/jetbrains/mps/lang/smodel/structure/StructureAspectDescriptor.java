@@ -1911,7 +1911,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("conceptOfParent", 0x10a675bae60L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("1144195362400").done();
     b.associate("linkInParent", 0x10a675c34a9L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("1144195396777").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("hasRole");
+    b.alias("isInRole");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNode_PointerOperation() {

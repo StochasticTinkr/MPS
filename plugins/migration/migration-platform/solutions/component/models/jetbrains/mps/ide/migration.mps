@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
@@ -3862,7 +3862,7 @@
             <node concept="3nyPlj" id="3ReTDvBw9vF" role="3clFbG">
               <ref role="37wK5l" to="lui2:~SRepositoryContentAdapter.stopListening(org.jetbrains.mps.openapi.module.SRepository):void" resolve="stopListening" />
               <node concept="37vLTw" id="3ReTDvBw9vE" role="37wK5m">
-                <ref role="3cqZAo" node="3ReTDvBw9v_" resolve="repository" />
+                <ref role="3cqZAo" node="3ReTDvBw9v_" />
               </node>
             </node>
           </node>
@@ -11183,21 +11183,14 @@
                             <node concept="3cpWsn" id="6EV6$79Em42" role="3cpWs9">
                               <property role="TrG5h" value="checker" />
                               <node concept="2OqwBi" id="5P_sMle5Bxq" role="33vP2m">
-                                <node concept="2ShNRf" id="5P_sMle5_vY" role="2Oq$k0">
-                                  <node concept="1pGfFk" id="5P_sMle5_vZ" role="2ShVmc">
-                                    <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean,boolean,boolean,boolean)" resolve="StructureChecker" />
-                                    <node concept="3clFbT" id="5P_sMle5_w0" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
+                                <node concept="2OqwBi" id="3ATw3Mv9yHL" role="2Oq$k0">
+                                  <node concept="2ShNRf" id="5P_sMle5_vY" role="2Oq$k0">
+                                    <node concept="1pGfFk" id="5P_sMle5_vZ" role="2ShVmc">
+                                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
                                     </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w1" role="37wK5m">
-                                      <property role="3clFbU" value="true" />
-                                    </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w2" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
-                                    </node>
-                                    <node concept="3clFbT" id="5P_sMle5_w3" role="37wK5m">
-                                      <property role="3clFbU" value="true" />
-                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="3ATw3Mv9$OS" role="2OqNvi">
+                                    <ref role="37wK5l" to="6if8:~StructureChecker.withoutCardinalities():jetbrains.mps.project.validation.StructureChecker" resolve="withoutCardinalities" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="5P_sMle5LUA" role="2OqNvi">

@@ -41,14 +41,13 @@ class MPSProperties extends ProductProperties {
 
         productLayout.platformLayoutCustomizer = { PlatformLayout layout ->
             layout.customize {
-                withModule("java-runtime", "idea_rt.jar", null)
+                withModule("intellij.java.rt", "idea_rt.jar", null)
                 withProjectLibrary("Eclipse")
 //                withProjectLibrary("jgoodies-common")
 //                withProjectLibrary("commons-net")
                 withProjectLibrary("JUnit4")
                 withProjectLibrary("http-client-3.1")
                 withProjectLibrary("pty4j") // for terminal plugin
-                withProjectLibrary("purejavacomm") // for terminal plugin
                 withoutProjectLibrary("Ant")
                 withoutProjectLibrary("Gradle")
                 excludeFromModule("intellij.java.resources", "META-INF/IdeaPlugin.xml")

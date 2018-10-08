@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -108,8 +107,7 @@ public class SLanguageHierarchy {
   private static Collection<SLanguage> fromRuntime(Iterable<LanguageRuntime> runtimes) {
     ArrayList<SLanguage> rv = new ArrayList<>();
     for (LanguageRuntime rt : runtimes) {
-      // FIXME likely, no reason not to have LanguageRuntime.getSLanguage() method that does exactly same, and keeps only 1 reference
-      rv.add(MetaAdapterFactory.getLanguage(rt.getId(), rt.getNamespace()));
+      rv.add(rt.getIdentity());
     }
     return rv;
   }

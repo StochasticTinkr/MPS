@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry" file="JavaSourceStubsModelRootEntry.java">
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

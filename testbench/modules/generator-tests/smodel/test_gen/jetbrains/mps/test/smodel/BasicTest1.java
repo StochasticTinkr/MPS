@@ -9,17 +9,20 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.generator.rt.TransformHelper;
 
 public class BasicTest1 extends BaseGeneratorTest {
+
+
   private SModel myArg_A;
   private SModel myArg_B;
   private SModel myArg_NoClosures;
   private SModel myArg_ClosuresOnlyPlan;
 
+
   @Before
   public void prepareArguments() {
-    myArg_A = findModel("r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f(jetbrains.mps.test.smodel.data1)");
-    myArg_B = findModel("r:c850a08e-438b-4a8e-9ce5-5acf32b55cff(jetbrains.mps.test.smodel.refdata1)");
-    myArg_NoClosures = findModel("r:d382ffc4-6e9a-4c52-be08-af9b6c16348f(jetbrains.mps.test.smodel.refdata2)");
-    myArg_ClosuresOnlyPlan = findModel("r:6c5a5754-7997-4ba5-9273-c58651ab632d(jetbrains.mps.test.smodel.gp@genplan)");
+    myArg_A = findModel("A", "r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f(jetbrains.mps.test.smodel.data1)");
+    myArg_B = findModel("B", "r:c850a08e-438b-4a8e-9ce5-5acf32b55cff(jetbrains.mps.test.smodel.refdata1)");
+    myArg_NoClosures = findModel("NoClosures", "r:d382ffc4-6e9a-4c52-be08-af9b6c16348f(jetbrains.mps.test.smodel.refdata2)");
+    myArg_ClosuresOnlyPlan = findModel("ClosuresOnlyPlan", "r:6c5a5754-7997-4ba5-9273-c58651ab632d(jetbrains.mps.test.smodel.gp@genplan)");
   }
 
   @Test

@@ -26,8 +26,8 @@ public class SuppressErrorsChecker extends BaseEventProcessingEditorChecker {
   public UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = editorComponent.getEditedNode();
-    for (SNode n : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), false, new SAbstractConcept[]{}))) {
-      if (AttributeOperations.getAttribute(n, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) != null) {
+    for (SNode n : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), true, new SAbstractConcept[]{}))) {
+      if (ListSequence.fromList(AttributeOperations.getAttributeList(n, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).isNotEmpty()) {
         SetSequence.fromSet(messages).addElement(new SuppressErrorsMessage(n, this, "Errors suppressed"));
       }
     }

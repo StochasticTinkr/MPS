@@ -19,23 +19,19 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeReportItemBase;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SNamedElement;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptMissingError extends NodeReportItemBase {
+public class ConceptMissingError extends LanguageFeatureMissingError {
   private SConcept myConcept;
 
   public ConceptMissingError(SNode node, SConcept concept) {
-    // in other place it used to be "No concept found for", "Concept of a node was not found"
     super(MessageStatus.ERROR, node.getReference(), "Concept " + concept.getName() + " was not found in language " + concept.getLanguage().getQualifiedName());
     myConcept = concept;
   }
 
-  public SConcept getConcept() {
+  public SConcept getLanguageFeature() {
     return myConcept;
-  }
-
-  public ItemKind getIssueKind() {
-    return IssueKindReportItem.UNKNOWN_LANGUAGE_FEATURE;
   }
 
 }

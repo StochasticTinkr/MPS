@@ -9,8 +9,8 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.runners.model.Statement;
 import org.junit.runner.Description;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
+import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.tool.environment.EnvironmentSetupException;
 import org.junit.AssumptionViolatedException;
 
@@ -31,7 +32,7 @@ import org.junit.AssumptionViolatedException;
  */
 public final class TestParametersCache implements TestRule {
   private static final Logger LOG = LogManager.getLogger(TestParametersCache.class);
-  private final Class<? extends TransformationTest> myOwner;
+  private final Class<?> myOwner;
   private final String myProjectPath;
   private final String myModelRef;
   private final boolean myReOpenProject;
@@ -41,7 +42,7 @@ public final class TestParametersCache implements TestRule {
   private SModel myTransientModel;
   private boolean myInitialized = false;
 
-  public TestParametersCache(Class<? extends TransformationTest> owner, String projectPath, String modelRef, boolean reOpenProject) {
+  public TestParametersCache(Class<?> owner, String projectPath, String modelRef, boolean reOpenProject) {
     // FIXME can refactor this class to be responsible just for project/models initialization and cleanup, and keep BaseTransformatioTest-related 
     //       stuff in BTT iteself. Facilitates reuse of this cache for other tests. 
     myOwner = owner;
@@ -62,19 +63,17 @@ public final class TestParametersCache implements TestRule {
     };
   }
 
-  public void populate(BaseTransformationTest test) throws Exception {
-    assert test.getClass() == myOwner;
+  public void initializeOnce(Object ownerInstance, Environment environment) throws Exception {
+    // both arguments are non null 
+    assert ownerInstance.getClass() == myOwner;
 
     if (myInitialized) {
-      test.setProject(myProject);
-      test.setModelDescriptor(myTestModel);
-      test.setTransientModelDescriptor(myTransientModel);
       return;
     }
-    initTest(test);
-    myProject = test.getProject();
-    myTestModel = test.getModelDescriptor();
-    myTransientModel = test.getTransientModelDescriptor();
+    initCachedValues(environment);
+    assert myProject != null;
+    assert myTestModel != null;
+    assert myTransientModel != null;
     myInitialized = true;
   }
 
@@ -105,8 +104,7 @@ public final class TestParametersCache implements TestRule {
     myInitialized = false;
   }
 
-  private void initTest(final BaseTransformationTest test) throws Exception {
-    Environment environment = test.getEnv();
+  private void initCachedValues(Environment environment) throws Exception {
     // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
     // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
     if (environment == null) {
@@ -131,7 +129,7 @@ public final class TestParametersCache implements TestRule {
         environment.closeProject(p);
         p = environment.openProject(projectToOpen);
       }
-      test.setProject(p);
+      myProject = p;
       final SRepository repository = p.getRepository();
       Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
@@ -144,10 +142,11 @@ public final class TestParametersCache implements TestRule {
               if (modelDescriptor == null) {
                 throw new CouldNotFindModelException(String.format("Can't find model %s in supplied repository %s.", myModelRef, repository));
               }
-              test.setModelDescriptor(modelDescriptor);
+              myTestModel = modelDescriptor;
               SModel transientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.nonReloadableModule());
-              new CloneUtil(modelDescriptor, transientModel).cloneModelWithAllImports();
-              test.setTransientModelDescriptor(transientModel);
+              new CloneUtil(modelDescriptor, transientModel).cloneModelWithImports();
+              new ModelDependencyUpdate(transientModel).updateModuleDependencies(repository);
+              myTransientModel = transientModel;
             }
           });
         }

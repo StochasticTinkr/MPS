@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.LanguageImportHelper.Interaction;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
@@ -157,6 +158,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     getMpsFixture().getModelAccess().runReadAction(() -> {
       SModule module = FacetManager.getInstance(getMpsFixture().getModule()).getFacetByType(MPSFacetType.ID).getSolution();
       List<SModel> smodels = IterableUtil.asList(module.getModels());
+      smodels.removeIf(SModelStereotype::isDescriptorModel);
       assertEquals("Exactly one model must be in the idea solution after package rename", 1, smodels.size());
       SModel smodel = smodels.get(0);
       assertEquals("com.jetbrains.pkgRenamed", smodel.getName().getLongName());

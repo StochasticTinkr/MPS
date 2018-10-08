@@ -831,16 +831,16 @@
         <module file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" />
         <module file="${mps_home}/plugins/mps-build/solutions/workflow.preset/jetbrains.mps.build.workflow.preset.msd" />
       </chunk>
-      <chunk>
-        <module file="${mps_home}/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" />
+      <chunk bootstrap="true">
+        <module file="${mps_home}/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" bootstrap="true" />
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" bootstrap="true" />
       </chunk>
-      <chunk>
+      <chunk bootstrap="true">
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" />
-        <module file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" />
+        <module file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" bootstrap="true" />
       </chunk>
       <chunk>
         <module file="${mps_home}/plugins/mps-build/solutions/mpsBuild/jetbrains.mps.ide.build.msd" />
@@ -1588,14 +1588,6 @@
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/solutions/mpsBuild/source_gen" />

@@ -53,6 +53,7 @@ public abstract class ModuleFacetBase implements SModuleFacet {
    * Returns null if the facet cannot work within the passed module.
    */
   public boolean setModule(SModule module) {
+    // FIXME the 'cannot work' logic shall move to FacetFactory.isApplicable()
     checkNotRegistered();
     myModule = module;
     return true;

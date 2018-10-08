@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -74,9 +73,6 @@ public abstract class LanguageRuntime {
 
   /**
    * Generated LanguageRuntime classes shall override this method
-   * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
-   *
-   * @return 0 now
    * @since 3.2
    */
   public abstract int getVersion();
@@ -180,16 +176,6 @@ public abstract class LanguageRuntime {
   }
 
   /**
-   * @deprecated override {@link #fillExtendedLanguages(Collection)} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  protected String[] getExtendedLanguageIDs() {
-    // non-abstract to facilitate transition
-    return new String[0];
-  }
-
-  /**
    * Subclasses shall override to report languages they extend (fill in supplied collection).
    * It's not necessary to override the method if language doesn't extend any other, not to invoke super, this method is no-op.
    * <p/>
@@ -205,20 +191,9 @@ public abstract class LanguageRuntime {
     extendingLanguage.myExtendedLanguages.add(this);
   }
 
-  @ToRemove(version = 3.5)
-  private void fillLegacyExtendedLanguages(Collection<SLanguage> extendedLanguages, LanguageRegistry registry) {
-    for (String namespace : getExtendedLanguageIDs()) {
-      LanguageRuntime l = registry.getLanguage(namespace);
-      if (l != null) {
-        extendedLanguages.add(MetaAdapterFactory.getLanguage(l.getId(), l.getNamespace()));
-      }
-    }
-  }
-
   void initialize(LanguageRegistry registry) {
     Queue<SLanguage> extendedLanguageIDs = new ArrayDeque<>();
     fillExtendedLanguages(extendedLanguageIDs);
-    fillLegacyExtendedLanguages(extendedLanguageIDs, registry);
     Set<SLanguageId> visitedLanguages = new HashSet<>();
     visitedLanguages.add(getId());
     while (!extendedLanguageIDs.isEmpty()) {
@@ -227,7 +202,6 @@ public abstract class LanguageRuntime {
       if (extendedLanguage != null && visitedLanguages.add(extendedLanguage.getId())) {
         extendedLanguage.registerExtendingLanguage(this);
         extendedLanguage.fillExtendedLanguages(extendedLanguageIDs);
-        extendedLanguage.fillLegacyExtendedLanguages(extendedLanguageIDs, registry);
       }
     }
     // generally, should never happen, but doesn't hurt to ensure exclusive contract of getExtended/getExtendingLanguages()

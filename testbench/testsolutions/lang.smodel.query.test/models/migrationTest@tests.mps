@@ -129,11 +129,342 @@
   </registry>
   <node concept="2lJO3n" id="4T7JBGSvFUa">
     <property role="TrG5h" value="MigrateScopes" />
+    <node concept="1qefOq" id="KgjTrBZVqr" role="2lJPY$">
+      <node concept="9aQIb" id="KgjTrBZVoa" role="1qenE9">
+        <node concept="3clFbS" id="KgjTrBZVob" role="9aQI4">
+          <node concept="3clFbF" id="KgjTrBZVoc" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVod" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVoe" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVof" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVog" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVoh" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVoi" role="2ShVmc">
+                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                        <node concept="2ShNRf" id="KgjTrBZVoj" role="37wK5m">
+                          <node concept="1pGfFk" id="KgjTrBZVok" role="2ShVmc">
+                            <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVol" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVom" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVon" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVoo" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVop" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVoq" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVor" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVos" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVot" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVou" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVov" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVow" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVox" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVoy" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVoz" role="2ShVmc">
+                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                        <node concept="2ShNRf" id="KgjTrBZVo$" role="37wK5m">
+                          <node concept="1pGfFk" id="KgjTrBZVo_" role="2ShVmc">
+                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                            <node concept="BaHAS" id="KgjTrBZVoA" role="37wK5m">
+                              <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
+                              <property role="BaGAP" value="tests" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVoB" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVoC" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVoD" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVoE" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVoF" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVoG" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVoH" role="2ShVmc">
+                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                        <node concept="BaHAS" id="KgjTrBZVoI" role="37wK5m">
+                          <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
+                          <property role="BaGAP" value="tests" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVoJ" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVoK" role="3cqZAp">
+            <node concept="qVDSY" id="KgjTrBZVoL" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVoM" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVoN" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVoO" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVoP" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVoQ" role="2ShVmc">
+                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                        <node concept="EZOir" id="KgjTrBZVoR" role="37wK5m">
+                          <node concept="1dO9Bo" id="KgjTrBZVoS" role="1dOa5D">
+                            <node concept="psT0o" id="KgjTrBZVoT" role="1dp2q7">
+                              <node concept="psT0i" id="KgjTrBZVoU" role="psT0v">
+                                <node concept="2ShNRf" id="KgjTrBZVoV" role="psT0h">
+                                  <node concept="1pGfFk" id="KgjTrBZVoW" role="2ShVmc">
+                                    <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                                    <node concept="2ShNRf" id="KgjTrBZVoX" role="37wK5m">
+                                      <node concept="1pGfFk" id="KgjTrBZVoY" role="2ShVmc">
+                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
+                                        <node concept="2OqwBi" id="KgjTrBZVoZ" role="37wK5m">
+                                          <node concept="EZOir" id="KgjTrBZVp0" role="2Oq$k0" />
+                                          <node concept="1uHKPH" id="KgjTrBZVp1" role="2OqNvi" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="chp4Y" id="KgjTrBZVp2" role="qVDSX">
+                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVp3" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVp4" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVp5" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVp6" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVp7" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVp8" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVp9" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVpa" role="2ShVmc">
+                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                        <node concept="3rM5sP" id="KgjTrBZVpb" role="37wK5m">
+                          <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVpc" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVpd" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVpe" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVpf" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVpg" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVph" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVpi" role="2ShVmc">
+                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                        <node concept="2ShNRf" id="KgjTrBZVpj" role="37wK5m">
+                          <node concept="1pGfFk" id="KgjTrBZVpk" role="2ShVmc">
+                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                            <node concept="3rM5sP" id="KgjTrBZVpl" role="37wK5m">
+                              <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVpm" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVpn" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVpo" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVpp" role="1dOa5D">
+                <node concept="psT0o" id="KgjTrBZVpq" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVpr" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVps" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVpt" role="2ShVmc">
+                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                        <node concept="2ShNRf" id="KgjTrBZVpu" role="37wK5m">
+                          <node concept="1pGfFk" id="KgjTrBZVpv" role="2ShVmc">
+                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
+                            <node concept="2ShNRf" id="KgjTrBZVpw" role="37wK5m">
+                              <node concept="Tc6Ow" id="KgjTrBZVpx" role="2ShVmc">
+                                <node concept="3uibUv" id="KgjTrBZVpy" role="HW$YZ">
+                                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                                </node>
+                                <node concept="3rM5sP" id="KgjTrBZVpz" role="HW$Y0">
+                                  <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
+                                </node>
+                                <node concept="3rM5sP" id="KgjTrBZVp$" role="HW$Y0">
+                                  <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVp_" role="3cqZAp" />
+          <node concept="3clFbH" id="KgjTrBZVpA" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVpB" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVpC" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVpD" role="1dOa5D">
+                <node concept="1dREyB" id="KgjTrBZVpE" role="1dp2q7">
+                  <node concept="13_zln" id="KgjTrBZVpF" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+                <node concept="1dREyB" id="KgjTrBZVpG" role="1dp2q7">
+                  <node concept="13_zln" id="KgjTrBZVpH" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVpI" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVpJ" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVpK" role="1dOa5D">
+                <node concept="1dREyB" id="KgjTrBZVpL" role="1dp2q7">
+                  <node concept="13_zln" id="KgjTrBZVpM" role="lGtFl">
+                    <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVpN" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVpO" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVpP" role="1dOa5D">
+                <node concept="1dRE$e" id="KgjTrBZVpQ" role="1dp2q7">
+                  <node concept="39Z4gp" id="KgjTrBZVpR" role="1dZqIC">
+                    <node concept="2ShNRf" id="KgjTrBZVpS" role="39Zaju">
+                      <node concept="1pGfFk" id="KgjTrBZVpT" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="13_zln" id="KgjTrBZVpU" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+                <node concept="1dREyB" id="KgjTrBZVpV" role="1dp2q7">
+                  <node concept="13_zln" id="KgjTrBZVpW" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+                <node concept="psT0o" id="KgjTrBZVpX" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVpY" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVpZ" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVq0" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVq1" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVq2" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVq3" role="1dOa5D">
+                <node concept="1dREyB" id="KgjTrBZVq4" role="1dp2q7">
+                  <node concept="13_zln" id="KgjTrBZVq5" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+                <node concept="psT0o" id="KgjTrBZVq6" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVq7" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVq8" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVq9" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="KgjTrBZVqa" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVqb" role="3clFbG">
+              <node concept="1dO9Bo" id="KgjTrBZVqc" role="1dOa5D">
+                <node concept="1dRE$e" id="KgjTrBZVqd" role="1dp2q7">
+                  <node concept="39Z4gp" id="KgjTrBZVqe" role="1dZqIC">
+                    <node concept="2ShNRf" id="KgjTrBZVqf" role="39Zaju">
+                      <node concept="1pGfFk" id="KgjTrBZVqg" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="13_zln" id="KgjTrBZVqh" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
+                </node>
+                <node concept="psT0o" id="KgjTrBZVqi" role="1dp2q7">
+                  <node concept="psT0i" id="KgjTrBZVqj" role="psT0v">
+                    <node concept="2ShNRf" id="KgjTrBZVqk" role="psT0h">
+                      <node concept="1pGfFk" id="KgjTrBZVql" role="2ShVmc">
+                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVqm" role="3cqZAp" />
+          <node concept="3clFbF" id="KgjTrBZVqn" role="3cqZAp">
+            <node concept="2Jgcaq" id="KgjTrBZVqo" role="3clFbG" />
+          </node>
+          <node concept="3clFbH" id="KgjTrBZVqp" role="3cqZAp" />
+        </node>
+        <node concept="15s5l7" id="KgjTrBZVqq" role="lGtFl" />
+      </node>
+    </node>
     <node concept="3ea_Bc" id="4T7JBGSvFUf" role="3ea0P7">
       <ref role="3ea_Bf" to="62u1:7YDJGVyWP2j" resolve="MigrateScopes" />
     </node>
     <node concept="1qefOq" id="4T7JBGSvFUk" role="2lJO3o">
       <node concept="9aQIb" id="4T7JBGSvFUm" role="1qenE9">
+        <node concept="15s5l7" id="KgjTrBZQnH" role="lGtFl" />
         <node concept="3clFbS" id="4T7JBGSvFUr" role="9aQI4">
           <node concept="3clFbF" id="4T7JBGSvFUp" role="3cqZAp">
             <node concept="2Jgcaq" id="4T7JBGSvFUo" role="3clFbG">
@@ -362,336 +693,6 @@
             <node concept="2Jgcaq" id="4T7JBGSy0zE" role="3clFbG" />
           </node>
           <node concept="3clFbH" id="4T7JBGSxpnZ" role="3cqZAp" />
-        </node>
-      </node>
-      <node concept="15s5l7" id="5r4$rjzqnEI" role="lGtFl" />
-    </node>
-    <node concept="1qefOq" id="1t08xKfJLBl" role="2lJPY$">
-      <node concept="9aQIb" id="1t08xKfJL_5" role="1qenE9">
-        <node concept="3clFbS" id="1t08xKfJL_6" role="9aQI4">
-          <node concept="3clFbF" id="1t08xKfJL_7" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJL_8" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJL_9" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJL_a" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJL_b" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJL_c" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJL_d" role="2ShVmc">
-                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                        <node concept="2ShNRf" id="1t08xKfJL_e" role="37wK5m">
-                          <node concept="1pGfFk" id="1t08xKfJL_f" role="2ShVmc">
-                            <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJL_g" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJL_h" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJL_i" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJL_j" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJL_k" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJL_l" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJL_m" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJL_n" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJL_o" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJL_p" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJL_q" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJL_r" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJL_s" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJL_t" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJL_u" role="2ShVmc">
-                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                        <node concept="2ShNRf" id="1t08xKfJL_v" role="37wK5m">
-                          <node concept="1pGfFk" id="1t08xKfJL_w" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                            <node concept="BaHAS" id="1t08xKfJL_x" role="37wK5m">
-                              <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
-                              <property role="BaGAP" value="tests" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJL_y" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJL_z" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJL_$" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJL__" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJL_A" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJL_B" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJL_C" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                        <node concept="BaHAS" id="1t08xKfJL_D" role="37wK5m">
-                          <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.migrationTest" />
-                          <property role="BaGAP" value="tests" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJL_E" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJL_F" role="3cqZAp">
-            <node concept="qVDSY" id="1t08xKfJL_G" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJL_H" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJL_I" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJL_J" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJL_K" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJL_L" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                        <node concept="EZOir" id="1t08xKfJL_M" role="37wK5m">
-                          <node concept="1dO9Bo" id="1t08xKfJL_N" role="1dOa5D">
-                            <node concept="psT0o" id="1t08xKfJL_O" role="1dp2q7">
-                              <node concept="psT0i" id="1t08xKfJL_P" role="psT0v">
-                                <node concept="2ShNRf" id="1t08xKfJL_Q" role="psT0h">
-                                  <node concept="1pGfFk" id="1t08xKfJL_R" role="2ShVmc">
-                                    <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                                    <node concept="2ShNRf" id="1t08xKfJL_S" role="37wK5m">
-                                      <node concept="1pGfFk" id="1t08xKfJL_T" role="2ShVmc">
-                                        <ref role="37wK5l" to="mte6:~ModelsScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModelsScope" />
-                                        <node concept="2OqwBi" id="1t08xKfJL_U" role="37wK5m">
-                                          <node concept="EZOir" id="1t08xKfJL_V" role="2Oq$k0" />
-                                          <node concept="1uHKPH" id="1t08xKfJL_W" role="2OqNvi" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="chp4Y" id="1t08xKfJL_X" role="qVDSX">
-                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJL_Y" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJL_Z" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLA0" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLA1" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJLA2" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLA3" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLA4" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLA5" role="2ShVmc">
-                        <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
-                        <node concept="3rM5sP" id="1t08xKfJLA6" role="37wK5m">
-                          <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJLA7" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLA8" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLA9" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJLAa" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLAb" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLAc" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLAd" role="2ShVmc">
-                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                        <node concept="2ShNRf" id="1t08xKfJLAe" role="37wK5m">
-                          <node concept="1pGfFk" id="1t08xKfJLAf" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
-                            <node concept="3rM5sP" id="1t08xKfJLAg" role="37wK5m">
-                              <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJLAh" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJLAi" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLAj" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLAk" role="1dOa5D">
-                <node concept="psT0o" id="1t08xKfJLAl" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLAm" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLAn" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLAo" role="2ShVmc">
-                        <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
-                        <node concept="2ShNRf" id="1t08xKfJLAp" role="37wK5m">
-                          <node concept="1pGfFk" id="1t08xKfJLAq" role="2ShVmc">
-                            <ref role="37wK5l" to="mte6:~ModulesScope.&lt;init&gt;(java.lang.Iterable)" resolve="ModulesScope" />
-                            <node concept="2ShNRf" id="1t08xKfJLAr" role="37wK5m">
-                              <node concept="Tc6Ow" id="1t08xKfJLAs" role="2ShVmc">
-                                <node concept="3uibUv" id="1t08xKfJLAt" role="HW$YZ">
-                                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                                </node>
-                                <node concept="3rM5sP" id="1t08xKfJLAu" role="HW$Y0">
-                                  <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
-                                </node>
-                                <node concept="3rM5sP" id="1t08xKfJLAv" role="HW$Y0">
-                                  <property role="3rM5sR" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJLAw" role="3cqZAp" />
-          <node concept="3clFbH" id="1t08xKfJLAx" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJLAy" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLAz" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLA$" role="1dOa5D">
-                <node concept="1dREyB" id="1t08xKfJLA_" role="1dp2q7">
-                  <node concept="13_zln" id="1t08xKfJLAA" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-                <node concept="1dREyB" id="1t08xKfJLAB" role="1dp2q7">
-                  <node concept="13_zln" id="1t08xKfJLAC" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJLAD" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLAE" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLAF" role="1dOa5D">
-                <node concept="1dREyB" id="1t08xKfJLAG" role="1dp2q7">
-                  <node concept="13_zln" id="1t08xKfJLAH" role="lGtFl">
-                    <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJLAI" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLAJ" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLAK" role="1dOa5D">
-                <node concept="1dRE$e" id="1t08xKfJLAL" role="1dp2q7">
-                  <node concept="39Z4gp" id="1t08xKfJLAM" role="1dZqIC">
-                    <node concept="2ShNRf" id="1t08xKfJLAN" role="39Zaju">
-                      <node concept="1pGfFk" id="1t08xKfJLAO" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="13_zln" id="1t08xKfJLAP" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-                <node concept="1dREyB" id="1t08xKfJLAQ" role="1dp2q7">
-                  <node concept="13_zln" id="1t08xKfJLAR" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-                <node concept="psT0o" id="1t08xKfJLAS" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLAT" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLAU" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLAV" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJLAW" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLAX" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLAY" role="1dOa5D">
-                <node concept="1dREyB" id="1t08xKfJLAZ" role="1dp2q7">
-                  <node concept="13_zln" id="1t08xKfJLB0" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-                <node concept="psT0o" id="1t08xKfJLB1" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLB2" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLB3" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLB4" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="1t08xKfJLB5" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLB6" role="3clFbG">
-              <node concept="1dO9Bo" id="1t08xKfJLB7" role="1dOa5D">
-                <node concept="1dRE$e" id="1t08xKfJLB8" role="1dp2q7">
-                  <node concept="39Z4gp" id="1t08xKfJLB9" role="1dZqIC">
-                    <node concept="2ShNRf" id="1t08xKfJLBa" role="39Zaju">
-                      <node concept="1pGfFk" id="1t08xKfJLBb" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="13_zln" id="1t08xKfJLBc" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
-                  </node>
-                </node>
-                <node concept="psT0o" id="1t08xKfJLBd" role="1dp2q7">
-                  <node concept="psT0i" id="1t08xKfJLBe" role="psT0v">
-                    <node concept="2ShNRf" id="1t08xKfJLBf" role="psT0h">
-                      <node concept="1pGfFk" id="1t08xKfJLBg" role="2ShVmc">
-                        <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1t08xKfJLBh" role="3cqZAp" />
-          <node concept="3clFbF" id="1t08xKfJLBi" role="3cqZAp">
-            <node concept="2Jgcaq" id="1t08xKfJLBj" role="3clFbG" />
-          </node>
-          <node concept="3clFbH" id="1t08xKfJLBk" role="3cqZAp" />
         </node>
       </node>
     </node>

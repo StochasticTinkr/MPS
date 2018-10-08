@@ -67,7 +67,7 @@ public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem
   }
 
   public static final SimpleReportItemFlavour<QuickFixRuntimeAdapter, QuickFix_Runtime> FLAVOUR_QUICKFIX_RUNTIME =
-      new SimpleReportItemFlavour<>(QuickFixRuntimeAdapter.class, QuickFixRuntimeAdapter::getFixRuntime);
+      new SimpleReportItemFlavour<>("FLAVOUR_QUICKFIX_RUNTIME", QuickFixRuntimeAdapter.class, QuickFixRuntimeAdapter::getFixRuntime);
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {

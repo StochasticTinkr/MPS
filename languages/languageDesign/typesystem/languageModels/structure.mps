@@ -448,6 +448,7 @@
     <property role="34LRSv" value="error" />
     <property role="3GE5qa" value="definition.statement" />
     <property role="EcuMT" value="1175517767210" />
+    <property role="R4oN_" value="report typesystem error" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h6MkJ39" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -975,6 +976,7 @@
     <property role="34LRSv" value="warning" />
     <property role="3GE5qa" value="definition.statement" />
     <property role="EcuMT" value="1207055528241" />
+    <property role="R4oN_" value="report typesystem warning" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h$a7wWK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1265,6 +1267,7 @@
     <property role="34LRSv" value="info" />
     <property role="3GE5qa" value="definition.statement" />
     <property role="EcuMT" value="1224760201579" />
+    <property role="R4oN_" value="report typesystem info" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="hODpwdE" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

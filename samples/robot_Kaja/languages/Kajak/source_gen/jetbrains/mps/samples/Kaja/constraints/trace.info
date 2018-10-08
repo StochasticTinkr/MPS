@@ -211,7 +211,7 @@
       <unit id="6836281137582849334" at="81,32,85,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2$1$1$2" />
       <unit id="6836281137582849343" at="85,29,89,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2$1$1$3" />
       <unit id="4394627182934757713" at="43,15,54,5" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1" />
-      <unit id="6836281137582849308" at="75,298,91,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2$1$1" />
+      <unit id="6836281137582849308" at="75,315,91,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2$1$1" />
       <unit id="4394627182935253713" at="67,19,95,9" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2$1" />
       <unit id="4394627182935253713" at="59,154,97,5" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2" />
       <unit id="4394627182934757713" at="36,0,106,0" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints" />

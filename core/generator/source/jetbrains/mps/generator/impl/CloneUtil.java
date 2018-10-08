@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,8 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -72,20 +68,6 @@ public class CloneUtil {
     modelImports.copyImportedModelsFrom(myInputModel);
     modelImports.copyEmployedDevKitsFrom(myInputModel);
     modelImports.copyUsedLanguagesFrom(myInputModel);
-  }
-
-  /**
-   * The same as above, but also clones all module imports
-   */
-  public void cloneModelWithAllImports() {
-    cloneModelWithImports();
-    AbstractModule inputModule = (AbstractModule) myInputModel.getModule();
-    assert !(inputModule instanceof Language);
-    ModuleDescriptor moduleDescriptor = inputModule.getModuleDescriptor();
-    AbstractModule outputModule = (AbstractModule) myOutputModel.getModule();
-    for (Dependency dependency : moduleDescriptor.getDependencies()) {
-      outputModule.addDependency(dependency.getModuleRef(), dependency.isReexport());
-    }
   }
 
   public void cloneModel() {
