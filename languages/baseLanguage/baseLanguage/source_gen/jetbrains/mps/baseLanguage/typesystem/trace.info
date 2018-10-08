@@ -24865,35 +24865,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7927910736746150956">
     <file name="MethodCallsFixer_Quickfix_QuickFix.java">
-      <node id="7927910736746150956" at="14,47,15,132" concept="18" />
-      <node id="869282237625486039" at="17,44,18,33" concept="13" />
-      <node id="869282237623469050" at="20,35,21,71" concept="14" />
-      <node id="869282237627985553" at="21,71,22,99" concept="14" />
-      <node id="7927910736746151270" at="26,29,27,329" concept="6" />
-      <node id="7927910736746150956" at="14,0,17,0" concept="3" trace="MethodCallsFixer_Quickfix_QuickFix#()V" />
-      <node id="7927910736746150956" at="17,0,20,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="2235828751986250994" at="26,0,29,0" concept="11" trace="run#()V" />
-      <node id="2235828751986250990" at="24,25,29,11" concept="6" />
-      <node id="2235828751986250956" at="24,0,31,0" concept="11" trace="run#()V" />
-      <node id="869282237622661485" at="22,99,31,7" concept="6" />
-      <node id="7927910736746150956" at="20,0,33,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="7927910736746150956" at="14,47,15,132" />
-      <scope id="869282237625482740" at="17,44,18,33" />
-      <scope id="2235828751986250995" at="26,29,27,329" />
-      <scope id="7927910736746150956" at="14,0,17,0" />
-      <scope id="7927910736746150956" at="17,0,20,0">
+      <node id="7927910736746150956" at="12,47,13,132" concept="18" />
+      <node id="869282237625486039" at="15,44,16,33" concept="13" />
+      <node id="7972403131838222661" at="18,35,19,321" concept="6" />
+      <node id="7927910736746150956" at="12,0,15,0" concept="3" trace="MethodCallsFixer_Quickfix_QuickFix#()V" />
+      <node id="7927910736746150956" at="15,0,18,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7927910736746150956" at="18,0,21,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="7927910736746150956" at="12,47,13,132" />
+      <scope id="869282237625482740" at="15,44,16,33" />
+      <scope id="7927910736746150958" at="18,35,19,321" />
+      <scope id="7927910736746150956" at="12,0,15,0" />
+      <scope id="7927910736746150956" at="15,0,18,0">
         <var name="node" id="7927910736746150956" />
       </scope>
-      <scope id="2235828751986250994" at="26,0,29,0" />
-      <scope id="2235828751986250957" at="24,25,29,11" />
-      <scope id="2235828751986250956" at="24,0,31,0" />
-      <scope id="7927910736746150958" at="20,35,31,7" />
-      <scope id="7927910736746150956" at="20,0,33,0">
+      <scope id="7927910736746150956" at="18,0,21,0">
         <var name="node" id="7927910736746150956" />
       </scope>
-      <unit id="2235828751986250994" at="25,50,29,9" name="jetbrains.mps.baseLanguage.typesystem.MethodCallsFixer_Quickfix_QuickFix$1$1" />
-      <unit id="2235828751986250956" at="23,35,31,5" name="jetbrains.mps.baseLanguage.typesystem.MethodCallsFixer_Quickfix_QuickFix$1" />
-      <unit id="7927910736746150956" at="13,0,34,0" name="jetbrains.mps.baseLanguage.typesystem.MethodCallsFixer_Quickfix_QuickFix" />
+      <unit id="7927910736746150956" at="11,0,22,0" name="jetbrains.mps.baseLanguage.typesystem.MethodCallsFixer_Quickfix_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7938578788781949806">

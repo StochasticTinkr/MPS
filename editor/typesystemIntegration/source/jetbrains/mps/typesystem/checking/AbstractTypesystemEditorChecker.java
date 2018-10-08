@@ -151,13 +151,11 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
         });
 
         editorContext.flushEvents();
-        if (editorContext.getSelectionManager().getSelection() == null) {
-          EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-          EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-          if (leaf != null) {
-            editorContext.getEditorComponent().changeSelection(leaf);
-            leaf.setCaretX(caretX);
-          }
+        EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
+        EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+        if (leaf != null) {
+          editorContext.getEditorComponent().changeSelection(leaf);
+          leaf.setCaretX(caretX);
         }
       }, ModalityState.NON_MODAL);
     }

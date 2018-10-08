@@ -59492,52 +59492,17 @@
     </node>
     <node concept="Q5ZZ6" id="6S5AcYEKBKH" role="Q6x$H">
       <node concept="3clFbS" id="6S5AcYEKBKI" role="2VODD2">
-        <node concept="3SKdUt" id="KgjTrB6CfU" role="3cqZAp">
-          <node concept="3SKdUq" id="KgjTrB6CfW" role="3SKWNk">
-            <property role="3SKdUp" value="todo: this is a dirty hack to avoid selection from running away" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="KgjTrBnQUh" role="3cqZAp">
-          <node concept="3SKdUq" id="KgjTrBnQUj" role="3SKWNk">
-            <property role="3SKdUp" value="straight way is to do this using edtior context, but quickfixes now cannot use editor stuff" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="KgjTrB3z5H" role="3cqZAp">
-          <node concept="2YIFZM" id="KgjTrB3zeR" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="1bVj0M" id="1W7gAtGJHjc" role="37wK5m">
-              <node concept="3clFbS" id="1W7gAtGJHjd" role="1bW5cS">
-                <node concept="3clFbF" id="1W7gAtGJHjI" role="3cqZAp">
-                  <node concept="2OqwBi" id="1W7gAtGJHjJ" role="3clFbG">
-                    <node concept="2YIFZM" id="KgjTrAV2xE" role="2Oq$k0">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                      <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                    </node>
-                    <node concept="liA8E" id="1W7gAtGJHjL" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
-                      <node concept="1bVj0M" id="1W7gAtGJHjM" role="37wK5m">
-                        <node concept="3clFbS" id="1W7gAtGJHjN" role="1bW5cS">
-                          <node concept="3clFbF" id="6S5AcYEKBPA" role="3cqZAp">
-                            <node concept="37vLTI" id="6S5AcYEKCY2" role="3clFbG">
-                              <node concept="QwW4i" id="6S5AcYEKE1$" role="37vLTx">
-                                <ref role="QwW4h" node="6S5AcYEKBKX" resolve="properTarget" />
-                              </node>
-                              <node concept="2OqwBi" id="6S5AcYEKBY6" role="37vLTJ">
-                                <node concept="QwW4i" id="6S5AcYEKBP$" role="2Oq$k0">
-                                  <ref role="QwW4h" node="6S5AcYEKBKM" resolve="methodCall" />
-                                </node>
-                                <node concept="3TrEf2" id="6S5AcYEKC9X" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+        <node concept="3clFbF" id="6UzEAyBrt55" role="3cqZAp">
+          <node concept="37vLTI" id="6S5AcYEKCY2" role="3clFbG">
+            <node concept="QwW4i" id="6S5AcYEKE1$" role="37vLTx">
+              <ref role="QwW4h" node="6S5AcYEKBKX" resolve="properTarget" />
+            </node>
+            <node concept="2OqwBi" id="6S5AcYEKBY6" role="37vLTJ">
+              <node concept="QwW4i" id="6S5AcYEKBP$" role="2Oq$k0">
+                <ref role="QwW4h" node="6S5AcYEKBKM" resolve="methodCall" />
+              </node>
+              <node concept="3TrEf2" id="6S5AcYEKC9X" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
               </node>
             </node>
           </node>
