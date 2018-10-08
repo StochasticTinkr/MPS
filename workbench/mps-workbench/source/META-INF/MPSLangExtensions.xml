@@ -318,9 +318,8 @@
                     serviceImplementation="com.intellij.codeInsight.AutoPopupController"/>
     -->
 
-    <!-- MPS Patch-->
     <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
-                    serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
+                    serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleFacadeImpl"/>
 
     <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                     serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
