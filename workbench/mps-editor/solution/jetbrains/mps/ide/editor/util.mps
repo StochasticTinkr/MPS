@@ -319,7 +319,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -4592,8 +4592,7 @@
                   </node>
                 </node>
                 <node concept="3clFbJ" id="67we17RGNbg" role="3cqZAp">
-                  <node concept="3clFbC" id="1D0QuRYm$pd" role="3clFbw">
-                    <node concept="10Nm6u" id="1D0QuRYm$pe" role="3uHU7w" />
+                  <node concept="3y3z36" id="4Ffe2yj6AE2" role="3clFbw">
                     <node concept="2OqwBi" id="1D0QuRYm$pf" role="3uHU7B">
                       <node concept="37vLTw" id="1D0QuRYm$pg" role="2Oq$k0">
                         <ref role="3cqZAo" node="67we17RGNaE" resolve="myCurrentResults" />
@@ -4604,69 +4603,69 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="10Nm6u" id="1D0QuRYm$pe" role="3uHU7w" />
                   </node>
                   <node concept="3clFbS" id="67we17RGNbn" role="3clFbx">
-                    <node concept="3cpWs6" id="67we17RGNbo" role="3cqZAp" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="67we17RGNbq" role="3cqZAp">
-              <node concept="2OqwBi" id="67we17RH0fl" role="3clFbG">
-                <node concept="37vLTw" id="67we17RH0fk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="67we17RGNao" resolve="myAlarm" />
-                </node>
-                <node concept="liA8E" id="67we17RH0fm" role="2OqNvi">
-                  <ref role="37wK5l" to="9w4s:~Alarm.addRequest(java.lang.Runnable,int,com.intellij.openapi.application.ModalityState):void" resolve="addRequest" />
-                  <node concept="2ShNRf" id="67we17RH0fn" role="37wK5m">
-                    <node concept="YeOm9" id="67we17RH0fo" role="2ShVmc">
-                      <node concept="1Y3b0j" id="67we17RH0fp" role="YeSDq">
-                        <property role="1sVAO0" value="false" />
-                        <property role="1EXbeo" value="false" />
-                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                        <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                        <node concept="3clFb_" id="67we17RH0fq" role="jymVt">
-                          <property role="TrG5h" value="run" />
-                          <property role="DiZV1" value="false" />
-                          <property role="od$2w" value="false" />
-                          <node concept="2AHcQZ" id="67we17RH0fr" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                          </node>
-                          <node concept="3clFbS" id="67we17RH0fs" role="3clF47">
-                            <node concept="3clFbF" id="67we17RH0ft" role="3cqZAp">
-                              <node concept="2OqwBi" id="67we17RH0fu" role="3clFbG">
-                                <node concept="37vLTw" id="67we17RH0fv" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="67we17RGNao" resolve="myAlarm" />
-                                </node>
-                                <node concept="liA8E" id="67we17RWVQf" role="2OqNvi">
-                                  <ref role="37wK5l" to="9w4s:~Alarm.cancelAllRequests():int" resolve="cancelAllRequests" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="67we17RH0fx" role="3cqZAp">
-                              <node concept="1rXfSq" id="67we17RH0fy" role="3clFbG">
-                                <ref role="37wK5l" node="67we17RGNbH" resolve="refresh" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3Tm1VV" id="67we17RH0fz" role="1B3o_S" />
-                          <node concept="3cqZAl" id="67we17RH0f$" role="3clF45" />
+                    <node concept="3clFbF" id="67we17RGNbq" role="3cqZAp">
+                      <node concept="2OqwBi" id="67we17RH0fl" role="3clFbG">
+                        <node concept="37vLTw" id="67we17RH0fk" role="2Oq$k0">
+                          <ref role="3cqZAo" node="67we17RGNao" resolve="myAlarm" />
                         </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cmrfG" id="67we17RH0g4" role="37wK5m">
-                    <property role="3cmrfH" value="200" />
-                  </node>
-                  <node concept="2YIFZM" id="67we17RWzZB" role="37wK5m">
-                    <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
-                    <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
-                    <node concept="2OqwBi" id="67we17RWzZC" role="37wK5m">
-                      <node concept="37vLTw" id="4CAk1Ud8DNN" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4CAk1Ud8d_O" resolve="myPopup" />
-                      </node>
-                      <node concept="liA8E" id="67we17RWzZE" role="2OqNvi">
-                        <ref role="37wK5l" to="gspm:~JBPopup.getContent():javax.swing.JComponent" resolve="getContent" />
+                        <node concept="liA8E" id="67we17RH0fm" role="2OqNvi">
+                          <ref role="37wK5l" to="9w4s:~Alarm.addRequest(java.lang.Runnable,int,com.intellij.openapi.application.ModalityState):void" resolve="addRequest" />
+                          <node concept="2ShNRf" id="67we17RH0fn" role="37wK5m">
+                            <node concept="YeOm9" id="67we17RH0fo" role="2ShVmc">
+                              <node concept="1Y3b0j" id="67we17RH0fp" role="YeSDq">
+                                <property role="1sVAO0" value="false" />
+                                <property role="1EXbeo" value="false" />
+                                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                                <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                                <node concept="3clFb_" id="67we17RH0fq" role="jymVt">
+                                  <property role="TrG5h" value="run" />
+                                  <property role="DiZV1" value="false" />
+                                  <property role="od$2w" value="false" />
+                                  <node concept="2AHcQZ" id="67we17RH0fr" role="2AJF6D">
+                                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                                  </node>
+                                  <node concept="3clFbS" id="67we17RH0fs" role="3clF47">
+                                    <node concept="3clFbF" id="67we17RH0ft" role="3cqZAp">
+                                      <node concept="2OqwBi" id="67we17RH0fu" role="3clFbG">
+                                        <node concept="37vLTw" id="67we17RH0fv" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="67we17RGNao" resolve="myAlarm" />
+                                        </node>
+                                        <node concept="liA8E" id="67we17RWVQf" role="2OqNvi">
+                                          <ref role="37wK5l" to="9w4s:~Alarm.cancelAllRequests():int" resolve="cancelAllRequests" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="67we17RH0fx" role="3cqZAp">
+                                      <node concept="1rXfSq" id="67we17RH0fy" role="3clFbG">
+                                        <ref role="37wK5l" node="67we17RGNbH" resolve="refresh" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="3Tm1VV" id="67we17RH0fz" role="1B3o_S" />
+                                  <node concept="3cqZAl" id="67we17RH0f$" role="3clF45" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cmrfG" id="67we17RH0g4" role="37wK5m">
+                            <property role="3cmrfH" value="200" />
+                          </node>
+                          <node concept="2YIFZM" id="67we17RWzZB" role="37wK5m">
+                            <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                            <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
+                            <node concept="2OqwBi" id="67we17RWzZC" role="37wK5m">
+                              <node concept="37vLTw" id="4CAk1Ud8DNN" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4CAk1Ud8d_O" resolve="myPopup" />
+                              </node>
+                              <node concept="liA8E" id="67we17RWzZE" role="2OqNvi">
+                                <ref role="37wK5l" to="gspm:~JBPopup.getContent():javax.swing.JComponent" resolve="getContent" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

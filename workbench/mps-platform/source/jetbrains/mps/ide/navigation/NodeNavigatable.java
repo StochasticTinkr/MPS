@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Objects;
+
 /**
  * evgeny, 11/6/11
  */
@@ -53,6 +55,24 @@ public class NodeNavigatable extends BaseNavigatable {
       return null;
     }
     return node;
+  }
+
+  @Override
+  public int hashCode() {
+    return myNodePointer.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof NodeNavigatable) {
+      return Objects.equals(myNodePointer, ((NodeNavigatable) obj).myNodePointer);
+    }
+    return false;
+  }
+
+  @Override
+  public String toString() {
+    return "NodeNavigatable[" + myNodePointer + "]";
   }
 
   @NotNull

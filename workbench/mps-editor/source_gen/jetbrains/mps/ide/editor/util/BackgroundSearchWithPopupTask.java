@@ -62,17 +62,16 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
       synchronized (LOCK) {
         SNodeReference pointer = ((SNode) object).getReference();
         NodeNavigatable newNavigatable = new NodeNavigatable(mySettings.myProject, pointer);
-        if (SetSequence.fromSet(myCurrentResults).addElement(newNavigatable) == null) {
-          return;
+        if (SetSequence.fromSet(myCurrentResults).addElement(newNavigatable) != null) {
+          myAlarm.addRequest(new Runnable() {
+            @Override
+            public void run() {
+              myAlarm.cancelAllRequests();
+              refresh();
+            }
+          }, 200, ModalityState.stateForComponent(myPopup.getContent()));
         }
       }
-      myAlarm.addRequest(new Runnable() {
-        @Override
-        public void run() {
-          myAlarm.cancelAllRequests();
-          refresh();
-        }
-      }, 200, ModalityState.stateForComponent(myPopup.getContent()));
     }
   }
 
