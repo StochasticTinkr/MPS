@@ -16,9 +16,18 @@ public abstract class ReadableModelProperty<T> extends ValueProperty<T> {
     myEditorContext = editorContext;
   }
 
+  /**
+   * This method should be called right after creation of this class in order to complete initialization process.
+   * 
+   * @return this
+   */
+  public ReadableModelProperty init() {
+    synchronizeViewWithModel();
+    return this;
+  }
+
   private T safeGetModelPropertyValue() {
-    ModelAccessHelper ma = new ModelAccessHelper(myEditorContext.getRepository());
-    return ma.runReadAction(new Computable<T>() {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<T>() {
       public T compute() {
         return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<T>() {
           public T compute() {
