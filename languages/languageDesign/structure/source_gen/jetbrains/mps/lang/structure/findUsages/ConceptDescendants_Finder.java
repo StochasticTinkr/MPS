@@ -44,7 +44,7 @@ public class ConceptDescendants_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, final ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
+    monitor.start(getDescription(), 2);
     try {
       boolean isIntfc = SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
       if (isIntfc) {

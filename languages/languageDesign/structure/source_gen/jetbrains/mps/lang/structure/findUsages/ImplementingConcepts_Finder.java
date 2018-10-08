@@ -36,7 +36,7 @@ public class ImplementingConcepts_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, final SearchScope scope, final IFinder.FindCallback callback, final ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
+    monitor.start(getDescription(), 3);
     try {
       FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
         public void onUsageFound(@NotNull SearchResult<?> searchResult) {

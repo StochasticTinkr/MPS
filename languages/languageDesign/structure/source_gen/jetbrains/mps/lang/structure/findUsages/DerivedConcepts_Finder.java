@@ -39,7 +39,7 @@ public class DerivedConcepts_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
+    monitor.start(getDescription(), 1);
     try {
       final Queue<SNode> currentConcepts = QueueSequence.fromQueue(new LinkedList<SNode>());
       QueueSequence.fromQueue(currentConcepts).addLastElement(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
