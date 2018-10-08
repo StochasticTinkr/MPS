@@ -35,13 +35,13 @@ public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem
   private final QuickFixProvider myQuickFixProvider;
   private final SNodeReference myNode;
 
-  public QuickFixRuntimeAdapter(@NotNull LanguageRegistry languageRegistry, @NotNull SNode node, QuickFixProvider quickFixProvider) {
+  public QuickFixRuntimeAdapter(@NotNull LanguageRegistry languageRegistry, @NotNull SNodeReference node, QuickFixProvider quickFixProvider) {
     myLanguageRegistry = languageRegistry;
     myQuickFixProvider = quickFixProvider;
-    myNode = node.getReference();
+    myNode = node;
   }
 
-  /*package*/ QuickFix_Runtime getFixRuntime() {
+  public QuickFix_Runtime getFixRuntime() {
     return myQuickFixProvider.getQuickFix(myLanguageRegistry);
   }
 

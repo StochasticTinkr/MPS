@@ -1645,6 +1645,26 @@
                                   <node concept="3clFbS" id="2v0ve8x$pjD" role="2LFqv$">
                                     <node concept="3clFbJ" id="2v0ve8x$pjE" role="3cqZAp">
                                       <node concept="3clFbS" id="2v0ve8x$pjF" role="3clFbx">
+                                        <node concept="3clFbF" id="242XgDlLzGL" role="3cqZAp">
+                                          <node concept="2OqwBi" id="242XgDlL$5P" role="3clFbG">
+                                            <node concept="2YIFZM" id="242XgDlLzMP" role="2Oq$k0">
+                                              <ref role="37wK5l" to="strd:~QuickFixRuntimeEditorWrapper.getInstance(jetbrains.mps.errors.item.QuickFixBase):jetbrains.mps.typesystem.checking.QuickFixRuntimeEditorWrapper" resolve="getInstance" />
+                                              <ref role="1Pybhc" to="strd:~QuickFixRuntimeEditorWrapper" resolve="QuickFixRuntimeEditorWrapper" />
+                                              <node concept="37vLTw" id="242XgDlLzTl" role="37wK5m">
+                                                <ref role="3cqZAo" node="2v0ve8x$pk5" resolve="fix" />
+                                              </node>
+                                            </node>
+                                            <node concept="liA8E" id="242XgDlL$o6" role="2OqNvi">
+                                              <ref role="37wK5l" to="strd:~QuickFixRuntimeEditorWrapper.execute(jetbrains.mps.openapi.editor.EditorContext,boolean):void" resolve="execute" />
+                                              <node concept="37vLTw" id="242XgDlL$vt" role="37wK5m">
+                                                <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                                              </node>
+                                              <node concept="3clFbT" id="242XgDlL_5T" role="37wK5m">
+                                                <property role="3clFbU" value="false" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="3clFbF" id="2v0ve8x$pjG" role="3cqZAp">
                                           <node concept="2OqwBi" id="2v0ve8x$pjH" role="3clFbG">
                                             <node concept="liA8E" id="2v0ve8x$pjL" role="2OqNvi">
