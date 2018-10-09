@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage" uuid="f3061a53-9226-4cc5-a443-f952ceaf5816" languageVersion="7" moduleVersion="0">
+<language namespace="jetbrains.mps.baseLanguage" uuid="f3061a53-9226-4cc5-a443-f952ceaf5816" languageVersion="8" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />

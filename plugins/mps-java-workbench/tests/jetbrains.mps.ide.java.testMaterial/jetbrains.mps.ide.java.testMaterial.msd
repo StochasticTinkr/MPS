@@ -5,6 +5,9 @@
       <sourceRoot location="java" />
       <sourceRoot location="jetbrains" />
     </modelRoot>
+    <modelRoot contentPath="${module}/resources/testData/singleFiles" type="java_source_stubs">
+      <sourceRoot location="classwiface" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.ide.java" type="ideaPlugin" />

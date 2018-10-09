@@ -1558,7 +1558,7 @@
             <node concept="10Oyi0" id="13DhuT6A_Vk" role="1tU5fm" />
           </node>
           <node concept="3clFb_" id="13DhuT6A_Vn" role="jymVt">
-            <property role="1EzhhJ" value="true" />
+            <property role="1EzhhJ" value="false" />
             <property role="TrG5h" value="ifaceMethod" />
             <node concept="3uibUv" id="13DhuT6A_Wb" role="3clF45">
               <ref role="3uigEE" node="13DhuT6A_V5" resolve="ClassWithIface" />
