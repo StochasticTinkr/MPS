@@ -41,6 +41,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -239,17 +241,28 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     String moduleRefString = properties.get(SELECTION_FILTER_MODULE_REFERENCE);
     RangeSelectionFilter result;
     try {
-      Class filterClass = moduleRefString != null ? loadFromModule(moduleRefString, filterClassName) : Class.forName(filterClassName);
+      Class<? extends RangeSelectionFilter> filterClass;
+      if (moduleRefString != null) {
+        filterClass = loadFromModule(moduleRefString, filterClassName);
+      } else {
+        //noinspection unchecked
+        filterClass = (Class<? extends RangeSelectionFilter>) Class.forName(filterClassName);
+      }
+
       if (filterClass == null) {
         throw new SelectionStoreException(
-                                             "Can't load selection filter class: " + filterClassName +
-                                             (moduleRefString != null ? "" : "module reference: " + moduleRefString));
+            "Can't load selection filter class: " + filterClassName +
+            (moduleRefString != null ? "" : "module reference: " + moduleRefString));
       }
-      Object filterInstance = filterClass.newInstance();
-      if (filterInstance instanceof RangeSelectionFilter) {
-        result = (RangeSelectionFilter) filterInstance;
-      } else {
-        throw new SelectionStoreException("Loaded filter class " + filterInstance + " is not instance of RangeSelectionFilter");
+
+      RangeSelectionFilter filterInstance = null;
+      try {
+        Constructor<? extends RangeSelectionFilter> constructor = filterClass.getConstructor(EditorContext.class);
+        result = constructor.newInstance(getEditorComponent().getEditorContext());
+      } catch (NoSuchMethodException e) {
+        // Suppressing the error and trying to use default constructor.
+        // TODO: remove this fallback after MPS 2018.3
+        result = filterClass.newInstance();
       }
     } catch (ClassNotFoundException e) {
       throw new SelectionStoreException("Filter class not found: " + e.getMessage());
@@ -257,12 +270,17 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       throw new SelectionStoreException("Can't instantiate filter class: " + e.getMessage());
     } catch (IllegalAccessException e) {
       throw new SelectionStoreException("Illegal access while instantiating filter class: " + e.getMessage());
+    } catch (InvocationTargetException e) {
+      throw new SelectionStoreException("Exception while executing constructor of filter class: " + e.getMessage());
+    } catch (IllegalArgumentException e) {
+      throw new SelectionStoreException("Illegal argument of constructor of filter class: " + e.getMessage());
     }
+
     result.loadFilter(properties);
     return result;
   }
 
-  private Class loadFromModule(String moduleRefString, String className) throws SelectionStoreException {
+  private Class<? extends RangeSelectionFilter> loadFromModule(String moduleRefString, String className) throws SelectionStoreException {
     SModuleReference moduleReference = PersistenceRegistry.getInstance().createModuleReference(moduleRefString);
     if (moduleReference == null) {
       throw new SelectionStoreException("Can't parse module reference: " + moduleRefString);
@@ -271,7 +289,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (module == null) {
       throw new SelectionStoreException("Can't find module: " + moduleRefString + " in the repository");
     }
-    return ClassLoaderManager.getInstance().getOwnClass(module, className);
+    //noinspection unchecked
+    return (Class<? extends RangeSelectionFilter>) ClassLoaderManager.getInstance().getOwnClass(module, className);
   }
 
   @NotNull
@@ -422,9 +441,10 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       this(null);
     }
 
-    protected EditorContext getEditorContext(){
+    protected EditorContext getEditorContext() {
       return myEditorContext;
     }
+
     public abstract boolean accept(SNode node);
 
     public void saveFilter(SelectionInfo info) {
@@ -435,7 +455,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
      */
     public abstract String getModuleReference();
 
-    public void loadFilter(Map<String, String> properties) {
+    public void loadFilter(Map<String, String> properties) throws SelectionRestoreException, SelectionStoreException {
     }
   }
 
