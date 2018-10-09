@@ -170,6 +170,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
@@ -1544,12 +1545,18 @@
                     <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
                   </node>
                 </node>
+                <node concept="3uibUv" id="2f5oWa0aMzu" role="3PaCim">
+                  <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
+                </node>
               </node>
               <node concept="liA8E" id="6hZLf2YoJ2P" role="2OqNvi">
                 <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
                 <node concept="2YIFZM" id="6hZLf2YoKEd" role="37wK5m">
                   <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
                   <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
+                  <node concept="3uibUv" id="2f5oWa0aZnt" role="3PaCim">
+                    <ref role="3uigEE" node="J2bOg02GHT" resolve="SearchResult" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -26,11 +26,13 @@ public class check_DefaultMethodIsNotAbstract_NonTypesystemRule extends Abstract
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "The 'abstract' and 'default' modifiers are not allowed together", "r:0396c9ff-0a4d-4e54-9678-835fc58468cd(jetbrains.mps.baseLanguage.jdk8.typesystem)", "1557757632988466920", null, errorTarget);
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.behavior.typesystem.RemoveAbstractFromTheMethod_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveAbstractModifier_QuickFix", false);
+          intentionProvider.putArgument("method", method);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveDefaultModifier_QuickFix", false);
+          intentionProvider.putArgument("method", method);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

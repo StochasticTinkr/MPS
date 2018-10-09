@@ -39,7 +39,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
+    monitor.start(getDescription(), 1);
     try {
       final Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
       QueueSequence.fromQueue(queue).addLastElement(node);

@@ -61,7 +61,7 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
 
   @Override
   protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, final ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
+    monitor.start(getDescription(), 1);
     try {
       // top-most ancestor by the lang.behavior 
       final SNode topMostOverriddenMethod = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(node);

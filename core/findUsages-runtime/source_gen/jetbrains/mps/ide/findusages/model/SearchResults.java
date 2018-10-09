@@ -46,7 +46,7 @@ public class SearchResults<T> implements UsagesList {
     SearchedObjects searchedObjects1 = one.getSearchedObjects();
     SearchedObjects searchedObjects2 = another.getSearchedObjects();
     SearchedObjects searchedObjects = SearchedObjects.union(searchedObjects1, searchedObjects2);
-    List<SearchResult> searchResults = Stream.concat(((List<SearchResult>) one.getSearchResults()).stream(), ((List<SearchResult>) another.getSearchResults()).stream()).collect(Collectors.toList());
+    List<SearchResult> searchResults = Stream.<SearchResult>concat(((List<SearchResult>) one.getSearchResults()).stream(), ((List<SearchResult>) another.getSearchResults()).stream()).collect(Collectors.<SearchResult>toList());
     return new SearchResults(searchedObjects, searchResults);
   }
 
