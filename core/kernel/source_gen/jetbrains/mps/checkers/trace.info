@@ -866,7 +866,7 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718154">
     <file name="TargetConceptChecker.java">
-      <node id="250369351434916685" at="23,60,24,43" concept="12" />
+      <node id="250369351434916685" at="23,60,24,47" concept="12" />
       <node id="3494917438986493937" at="27,74,28,66" concept="12" />
       <node id="7390982340086718180" at="33,39,34,50" concept="12" />
       <node id="7390982340086718188" at="36,9,37,71" concept="11" />
@@ -887,7 +887,7 @@
       <node id="7390982340086718237" at="42,0,52,5" concept="8" />
       <node id="7390982340086718161" at="30,0,54,0" concept="10" trace="checkNodeInEditor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <scope id="7390982340086718159" at="20,33,20,33" />
-      <scope id="250369351434915470" at="23,60,24,43" />
+      <scope id="250369351434915470" at="23,60,24,47" />
       <scope id="3494917438986493936" at="27,74,28,66" />
       <scope id="7390982340086718179" at="33,39,34,50" />
       <scope id="7390982340086718212" at="38,167,39,114" />

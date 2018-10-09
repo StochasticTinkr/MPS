@@ -44,22 +44,14 @@ import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
  * <li> Create a subclass of {@code FlavouredItem} with the method returning the flavour value
  * <li> Create a flavour object (instance of {@code ReportItemFlavour}) knowing about that method
  * <li> Call that method to get flavour value from an instance of dedicated subclass
- * <li> Call {@code ReportItemFlavour.tryToGet()} instead of checking via {@code instanceof} because
- * there can exists cases where flavour is present ({@code ReportItemFlavour.canGet()}) in item that is not an instance of that subclass.
- * For example, this can hold for {@code DelegatingFlavouredItem}.
+ * <li> Call {@code ReportItemFlavour.tryToGet()} instead of checking via {@code instanceof}.
  * </ul>
  */
 public interface FlavouredItem {
 
   Set<ReportItemFlavour<?, ?>> getIdFlavours();
 
-  interface DelegatingFlavouredItem extends FlavouredItem {
-    FlavouredItem getDelegate();
-  }
-
   abstract class ReportItemFlavour<I extends FlavouredItem, T> {
-    @Deprecated
-    @ToRemove(version = 2018.3)
     public abstract T get(I reportItem);
     @NotNull
     protected abstract Class<I> getApplicableClass();
@@ -70,19 +62,10 @@ public interface FlavouredItem {
       if (getApplicableClass().isAssignableFrom(reportItem.getClass())) {
         return get((I) reportItem);
       }
-      if (reportItem instanceof DelegatingFlavouredItem) {
-        return tryToGet(((DelegatingFlavouredItem) reportItem).getDelegate());
-      }
       return null;
     }
     public boolean canGet(FlavouredItem reportItem) {
-      if (getApplicableClass().isAssignableFrom(reportItem.getClass())) {
-        return true;
-      }
-      if (reportItem instanceof DelegatingFlavouredItem) {
-        return canGet(((DelegatingFlavouredItem) reportItem).getDelegate());
-      }
-      return false;
+      return getApplicableClass().isAssignableFrom(reportItem.getClass());
     }
     @Override
     public final String toString() {

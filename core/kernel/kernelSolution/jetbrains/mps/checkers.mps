@@ -4814,8 +4814,8 @@
       </node>
       <node concept="3clFbS" id="dTvp$YV4Ue" role="3clF47">
         <node concept="3clFbF" id="dTvp$YV5dd" role="3cqZAp">
-          <node concept="10M0yZ" id="dTvp$YV5dJ" role="3clFbG">
-            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
+          <node concept="10M0yZ" id="5NI6bHmdmu6" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TARGET_CONCEPTS" resolve="TARGET_CONCEPTS" />
             <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
           </node>
         </node>

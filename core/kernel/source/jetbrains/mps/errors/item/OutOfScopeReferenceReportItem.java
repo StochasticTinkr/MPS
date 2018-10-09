@@ -63,6 +63,6 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
 
   @Override
   public ItemKind getIssueKind() {
-    return IssueKindReportItem.CONSTRAINTS.deriveItemKind();
+    return IssueKindReportItem.REFERENCE_SCOPES.deriveItemKind();
   }
 }
