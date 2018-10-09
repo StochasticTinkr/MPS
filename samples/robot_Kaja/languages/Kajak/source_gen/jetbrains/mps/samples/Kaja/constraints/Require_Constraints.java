@@ -71,26 +71,24 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final Iterable<SNode> libraries = ListSequence.fromList(SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library"))).where(new IWhereFilter<SNode>() {
-                public boolean accept(final SNode library) {
-                  return ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, "jetbrains.mps.samples.Kaja.structure.Require"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return it != _context.getContextNode();
-                    }
-                  }).select(new ISelector<SNode, SNode>() {
-                    public SNode select(SNode it) {
-                      return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, 0x3cfcda239f1a104aL, "library"));
-                    }
-                  }).all(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return it != library;
-                    }
-                  });
-                }
-              });
-              return ListScope.forNamedElements(libraries);
-            }
+            final Iterable<SNode> libraries = ListSequence.fromList(SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library"))).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode library) {
+                return ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, "jetbrains.mps.samples.Kaja.structure.Require"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return it != _context.getContextNode();
+                  }
+                }).select(new ISelector<SNode, SNode>() {
+                  public SNode select(SNode it) {
+                    return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, 0x3cfcda239f1a104aL, "library"));
+                  }
+                }).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return it != library;
+                  }
+                });
+              }
+            });
+            return ListScope.forNamedElements(libraries);
           }
         };
       }

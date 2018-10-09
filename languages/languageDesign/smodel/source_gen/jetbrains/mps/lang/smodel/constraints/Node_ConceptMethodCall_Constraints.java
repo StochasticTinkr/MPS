@@ -54,69 +54,67 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
-              SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
+            SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
 
-              // any concept is AbstractConceptDeclaration, not mere BaseConcept 
-              SNode defaultConceptTypeValue = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
-              SNode defaultNodeTypeValue = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+            // any concept is AbstractConceptDeclaration, not mere BaseConcept 
+            SNode defaultConceptTypeValue = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+            SNode defaultNodeTypeValue = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
 
-              SNode conceptNode = null;
-              final Wrappers._boolean isStatic = new Wrappers._boolean(true);
-              //  when there's a concept type, there's no node to invoke instance method on. 
-              SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType")), false);
-              if ((conceptType != null)) {
-                SNode decl = SLinkOperations.getTarget(conceptType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, 0x5cab42cd97571cefL, "conceptDeclaraton"));
+            SNode conceptNode = null;
+            final Wrappers._boolean isStatic = new Wrappers._boolean(true);
+            //  when there's a concept type, there's no node to invoke instance method on. 
+            SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType")), false);
+            if ((conceptType != null)) {
+              SNode decl = SLinkOperations.getTarget(conceptType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, 0x5cab42cd97571cefL, "conceptDeclaraton"));
+              conceptNode = (decl != null ? decl : defaultConceptTypeValue);
+            }
+
+            if ((conceptNode == null)) {
+              SNode conceptNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), false);
+              if ((conceptNodeType != null)) {
+                SNode decl = SLinkOperations.getTarget(conceptNodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, 0x112da284156L, "conceptDeclaraton"));
                 conceptNode = (decl != null ? decl : defaultConceptTypeValue);
               }
-
-              if ((conceptNode == null)) {
-                SNode conceptNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), false);
-                if ((conceptNodeType != null)) {
-                  SNode decl = SLinkOperations.getTarget(conceptNodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, 0x112da284156L, "conceptDeclaraton"));
-                  conceptNode = (decl != null ? decl : defaultConceptTypeValue);
-                }
-              }
-              if ((conceptNode == null)) {
-                SNode conceptTypeLit = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4bf20760d53f89eaL, "jetbrains.mps.lang.smodel.structure.SConceptTypeLiteral")), false);
-                if ((conceptTypeLit != null)) {
-                  SNode decl = SLinkOperations.getTarget(conceptTypeLit, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4bf20760d53f89eaL, 0x4bf20760d53f89ebL, "conceptDeclaraton"));
-                  conceptNode = (decl != null ? decl : defaultConceptTypeValue);
-                }
-              }
-              if ((conceptNode == null)) {
-                SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType")), false);
-                if ((nodeType != null)) {
-                  SNode decl = SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
-                  conceptNode = (decl != null ? decl : defaultNodeTypeValue);
-                }
-                isStatic.value = false;
-              }
-
-              if ((conceptNode == null)) {
-                return new EmptyScope();
-              }
-
-              Iterable<SNode> methods = Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(conceptNode, enclosingNode)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == isStatic.value;
-                }
-              }).toListSequence();
-
-              // to remove? (ap) 
-              if (SNodeOperations.isInstanceOf(leftType, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"))) {
-                // conceptNode<> is subtype of node<AbstractConceptDeclaration>, why can't I invoke methods of the latter (used to workaround with node.conceptNode.asNode.methodCall, which is stupid) 
-                methods = Sequence.fromIterable(methods).concat(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(defaultConceptTypeValue, enclosingNode)).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == false;
-                  }
-                })).toListSequence();
-              }
-
-              return ListScope.forResolvableElements(methods);
             }
+            if ((conceptNode == null)) {
+              SNode conceptTypeLit = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4bf20760d53f89eaL, "jetbrains.mps.lang.smodel.structure.SConceptTypeLiteral")), false);
+              if ((conceptTypeLit != null)) {
+                SNode decl = SLinkOperations.getTarget(conceptTypeLit, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4bf20760d53f89eaL, 0x4bf20760d53f89ebL, "conceptDeclaraton"));
+                conceptNode = (decl != null ? decl : defaultConceptTypeValue);
+              }
+            }
+            if ((conceptNode == null)) {
+              SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType")), false);
+              if ((nodeType != null)) {
+                SNode decl = SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
+                conceptNode = (decl != null ? decl : defaultNodeTypeValue);
+              }
+              isStatic.value = false;
+            }
+
+            if ((conceptNode == null)) {
+              return new EmptyScope();
+            }
+
+            Iterable<SNode> methods = Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(conceptNode, enclosingNode)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == isStatic.value;
+              }
+            }).toListSequence();
+
+            // to remove? (ap) 
+            if (SNodeOperations.isInstanceOf(leftType, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"))) {
+              // conceptNode<> is subtype of node<AbstractConceptDeclaration>, why can't I invoke methods of the latter (used to workaround with node.conceptNode.asNode.methodCall, which is stupid) 
+              methods = Sequence.fromIterable(methods).concat(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(defaultConceptTypeValue, enclosingNode)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == false;
+                }
+              })).toListSequence();
+            }
+
+            return ListScope.forResolvableElements(methods);
           }
         };
       }

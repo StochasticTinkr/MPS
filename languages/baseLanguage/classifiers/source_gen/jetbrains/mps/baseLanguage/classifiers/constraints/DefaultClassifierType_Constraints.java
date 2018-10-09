@@ -51,15 +51,13 @@ public class DefaultClassifierType_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> classifiers = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"));
-              classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(IClassifier__BehaviorDescriptor.createType_idhEwJimy.invoke(it))), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType"));
-                }
-              }).toListSequence();
-              return ListScope.forResolvableElements(classifiers);
-            }
+            List<SNode> classifiers = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"));
+            classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(IClassifier__BehaviorDescriptor.createType_idhEwJimy.invoke(it))), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType"));
+              }
+            }).toListSequence();
+            return ListScope.forResolvableElements(classifiers);
           }
         };
       }

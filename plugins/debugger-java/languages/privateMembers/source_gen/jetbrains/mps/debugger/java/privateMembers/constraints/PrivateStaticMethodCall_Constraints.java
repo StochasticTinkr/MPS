@@ -51,19 +51,17 @@ public class PrivateStaticMethodCall_Constraints extends BaseConstraintsDescript
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall")))) {
-                return new EmptyScope();
-              }
-              SNode call = SNodeOperations.as(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"));
-
-              Iterable<SNode> staticMembers = (Iterable<SNode>) Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"))))).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-                }
-              });
-              return new NamedElementsScope(staticMembers);
+            if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall")))) {
+              return new EmptyScope();
             }
+            SNode call = SNodeOperations.as(_context.getContextNode(), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"));
+
+            Iterable<SNode> staticMembers = (Iterable<SNode>) Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"))))).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+              }
+            });
+            return new NamedElementsScope(staticMembers);
           }
         };
       }

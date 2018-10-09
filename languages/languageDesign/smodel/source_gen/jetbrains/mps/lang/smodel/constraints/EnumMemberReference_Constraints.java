@@ -49,16 +49,14 @@ public class EnumMemberReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation")) || SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10add1ded2bL, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"))) {
-                SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")));
-                if ((boolean) DataTypeDeclaration__BehaviorDescriptor.isEnum_idhKtFDel.invoke(datatype)) {
-                  return ListScope.forResolvableElements(SLinkOperations.getChildren(SNodeOperations.cast(datatype, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member")));
-                }
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation")) || SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10add1ded2bL, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"))) {
+              SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")));
+              if ((boolean) DataTypeDeclaration__BehaviorDescriptor.isEnum_idhKtFDel.invoke(datatype)) {
+                return ListScope.forResolvableElements(SLinkOperations.getChildren(SNodeOperations.cast(datatype, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member")));
               }
-              return new EmptyScope();
             }
+            return new EmptyScope();
           }
         };
       }

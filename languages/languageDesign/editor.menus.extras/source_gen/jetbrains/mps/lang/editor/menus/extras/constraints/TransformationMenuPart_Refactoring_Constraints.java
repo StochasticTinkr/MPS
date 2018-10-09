@@ -52,13 +52,13 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
             return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                SNode refactoringConcept = check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0c(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring")), MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x5fb04b74a77a0656L, "target")), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget")));
+                SNode refactoringConcept = check_w30ll_a0a0a0a0a0b0a0a0b0a1a0b0c(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring")), MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x5fb04b74a77a0656L, "target")), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget")));
                 if ((refactoringConcept == null)) {
                   return true;
                 }
 
                 SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), false, false);
-                return !(check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0c(check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(menu), refactoringConcept));
+                return !(check_w30ll_a0e0a0a0a0b0a0a0b0a1a0b0c(check_w30ll_a0a4a0a0a0a1a0a0a1a0b0a1a2(menu), refactoringConcept));
               }
             };
           }
@@ -67,19 +67,19 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
     });
     return references;
   }
-  private static SNode check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand) {
+  private static SNode check_w30ll_a0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, 0x5fb04b74a77a0596L, "concept"));
     }
     return null;
   }
-  private static boolean check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode refactoringConcept) {
+  private static boolean check_w30ll_a0e0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode refactoringConcept) {
     if (null != checkedDotOperand) {
       return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(checkedDotOperand, refactoringConcept);
     }
     return false;
   }
-  private static SNode check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
+  private static SNode check_w30ll_a0a4a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }

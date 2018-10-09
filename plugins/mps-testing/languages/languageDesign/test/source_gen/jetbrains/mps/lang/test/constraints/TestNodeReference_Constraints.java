@@ -49,19 +49,17 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              if (SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), false, false) != null) {
-                return ListScope.forResolvableElements(new ArrayList<SNode>());
-              }
-              SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getContextNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
-              List<SNode> result = new ArrayList<SNode>();
-              if (test != null) {
-                for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SAbstractConcept[]{}))) {
-                  ListSequence.fromList(result).addElement(node);
-                }
-              }
-              return ListScope.forResolvableElements(result);
+            if (SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), false, false) != null) {
+              return ListScope.forResolvableElements(new ArrayList<SNode>());
             }
+            SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getContextNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
+            List<SNode> result = new ArrayList<SNode>();
+            if (test != null) {
+              for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SAbstractConcept[]{}))) {
+                ListSequence.fromList(result).addElement(node);
+              }
+            }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

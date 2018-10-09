@@ -47,17 +47,15 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode orPattern = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, false);
-              return ListScope.forResolvableElements(check_8aolto_a0b0a0b0a0a0b0a1a0b0c(orPattern));
-            }
+            SNode orPattern = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, false);
+            return ListScope.forResolvableElements(check_8aolto_a0b0b0a0a0b0a1a0b0c(orPattern));
           }
         };
       }
     });
     return references;
   }
-  private static List<SNode> check_8aolto_a0b0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand) {
+  private static List<SNode> check_8aolto_a0b0b0a0a0b0a1a0b0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getChildren(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, 0x3b2f5e7b070d317eL, "variable"));
     }

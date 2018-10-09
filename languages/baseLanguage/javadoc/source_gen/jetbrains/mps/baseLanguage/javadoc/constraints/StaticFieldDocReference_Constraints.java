@@ -53,7 +53,7 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListScope.forResolvableElements(ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == _quotation_createNode_9aygvv_a0a0a0a0a0a0b0a0a0b0a1a0b0c();
+                return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == _quotation_createNode_9aygvv_a0a0a0a0a0b0a0a0b0a1a0b0c();
               }
             }));
           }
@@ -62,7 +62,7 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-  private static SNode _quotation_createNode_9aygvv_a0a0a0a0a0a0b0a0a0b0a1a0b0c() {
+  private static SNode _quotation_createNode_9aygvv_a0a0a0a0a0b0a0a0b0a1a0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10af9586f0cL, "PrivateVisibility"), null, null, false);

@@ -102,18 +102,16 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              if (!(SModuleOperations.isAspect(SNodeOperations.getModel(_context.getContextNode()), "constraints"))) {
-                return new EmptyScope();
-              }
-
-              SModel structure = check_guz8cy_a0c0a0b0a0a0b0a1a0b0e(Language.getLanguageForLanguageAspect(SNodeOperations.getModel(_context.getContextNode())));
-              if (structure == null) {
-                return new EmptyScope();
-              }
-
-              return new NamedElementsScope(SModelOperations.roots(structure, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
+            if (!(SModuleOperations.isAspect(SNodeOperations.getModel(_context.getContextNode()), "constraints"))) {
+              return new EmptyScope();
             }
+
+            SModel structure = check_guz8cy_a0c0b0a0a0b0a1a0b0e(Language.getLanguageForLanguageAspect(SNodeOperations.getModel(_context.getContextNode())));
+            if (structure == null) {
+              return new EmptyScope();
+            }
+
+            return new NamedElementsScope(SModelOperations.roots(structure, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
           }
         };
       }
@@ -133,16 +131,14 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode conceptNode = SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"));
-              return new FilteringScope(Scopes.forLanguageConcepts(conceptNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-                @Override
-                public boolean isExcluded(SNode n) {
-                  SNode otherConceptNode = SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-                  return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(otherConceptNode, conceptNode)) || SPropertyOperations.getBoolean(otherConceptNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
-                }
-              };
-            }
+            final SNode conceptNode = SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"));
+            return new FilteringScope(Scopes.forLanguageConcepts(conceptNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+              @Override
+              public boolean isExcluded(SNode n) {
+                SNode otherConceptNode = SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+                return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(otherConceptNode, conceptNode)) || SPropertyOperations.getBoolean(otherConceptNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
+              }
+            };
           }
         };
       }
@@ -152,7 +148,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   private static boolean staticCanBeARoot(SModel model) {
     return SModuleOperations.isAspect(model, "constraints") || SModelStereotype.isGeneratorModel(model);
   }
-  private static SModel check_guz8cy_a0c0a0b0a0a0b0a1a0b0e(Language checkedDotOperand) {
+  private static SModel check_guz8cy_a0c0b0a0a0b0a1a0b0e(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStructureModelDescriptor();
     }

@@ -38,9 +38,8 @@
       <node id="1588042961787737333" at="105,52,106,20" concept="5" />
       <node id="1588042961787737333" at="109,116,110,20" concept="5" />
       <node id="1588042961787737502" at="113,119,114,205" concept="1" />
-      <node id="1588042961787737333" at="118,56,119,42" concept="5" />
-      <node id="1588042961787417546" at="121,7,122,22" concept="5" />
-      <node id="1588042961787417546" at="124,0,125,0" concept="8" trace="breakingNode_fhl8yz_a0a0a0a0a1a0b0a1a3" />
+      <node id="1588042961787417546" at="116,7,117,22" concept="5" />
+      <node id="1588042961787417546" at="119,0,120,0" concept="8" trace="breakingNode_fhl8yz_a0a0a0a0a1a0b0a1a3" />
       <node id="1588042961787417546" at="32,0,35,0" concept="0" trace="TestSubstituteParentPropertyAndReference_Constraints#()V" />
       <node id="1588042961787417547" at="40,0,44,0" concept="3" trace="hasOwnValidator#()Z" />
       <node id="1588042961787620527" at="52,0,56,0" concept="3" trace="hasOwnGetter#()Z" />
@@ -53,19 +52,18 @@
       <node id="1588042961787737333" at="112,0,116,0" concept="3" trace="onReferenceSet#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1588042961787620527" at="56,0,61,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
       <node id="1588042961787620536" at="67,0,72,0" concept="3" trace="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="1588042961787737333" at="116,0,121,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
       <node id="1588042961787417547" at="44,0,50,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="1588042961787752168" at="92,122,98,14" concept="5" />
       <node id="1588042961787735495" at="91,0,100,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="1588042961787620527" at="50,7,61,7" concept="1" />
       <node id="1588042961787620536" at="61,7,72,7" concept="1" />
       <node id="1588042961787417547" at="38,119,50,7" concept="1" />
+      <node id="1588042961787737333" at="102,7,116,7" concept="1" />
       <node id="1588042961787735495" at="85,56,100,10" concept="5" />
       <node id="1588042961787735495" at="83,0,102,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="1588042961787737333" at="102,7,121,7" concept="1" />
       <node id="1588042961787735495" at="77,131,102,7" concept="1" />
       <node id="1588042961787417546" at="36,0,75,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
-      <node id="1588042961787417546" at="75,0,124,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <node id="1588042961787417546" at="75,0,119,0" concept="3" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="1588042961787417546" at="32,65,33,213" />
       <scope id="1588042961787417547" at="41,40,42,20" />
       <scope id="1588042961787620527" at="53,37,54,20" />
@@ -76,7 +74,6 @@
       <scope id="1588042961787737333" at="105,52,106,20" />
       <scope id="1588042961787737333" at="109,116,110,20" />
       <scope id="1588042961787737490" at="113,119,114,205" />
-      <scope id="1588042961787737333" at="118,56,119,42" />
       <scope id="1588042961787620527" at="57,42,59,30">
         <var name="propertyName" id="1588042961787620527" />
       </scope>
@@ -113,7 +110,6 @@
         <var name="node" id="1588042961787620536" />
         <var name="propertyValue" id="1588042961787620536" />
       </scope>
-      <scope id="1588042961787737333" at="116,0,121,0" />
       <scope id="1588042961787417547" at="44,0,50,0">
         <var name="node" id="1588042961787417547" />
         <var name="propertyValue" id="1588042961787417547" />
@@ -129,19 +125,18 @@
         <var name="properties" id="1588042961787417546" />
       </scope>
       <scope id="1588042961787417546" at="36,0,75,0" />
-      <scope id="1588042961787417546" at="76,90,122,22">
+      <scope id="1588042961787417546" at="76,90,117,22">
         <var name="references" id="1588042961787417546" />
       </scope>
-      <scope id="1588042961787417546" at="75,0,124,0" />
-      <unit id="1588042961787737333" at="119,19,119,41" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$5$1" />
+      <scope id="1588042961787417546" at="75,0,119,0" />
       <unit id="1588042961787752171" at="93,23,98,13" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$4$1$1" />
       <unit id="1588042961787620527" at="51,164,61,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$2" />
       <unit id="1588042961787620536" at="62,164,72,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$3" />
       <unit id="1588042961787417547" at="39,176,50,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$1" />
+      <unit id="1588042961787737333" at="103,170,116,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$5" />
       <unit id="1588042961787735495" at="86,19,100,9" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$4$1" />
-      <unit id="1588042961787737333" at="103,170,121,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$5" />
       <unit id="1588042961787735495" at="78,165,102,5" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints$4" />
-      <unit id="1588042961787417546" at="31,0,126,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints" />
+      <unit id="1588042961787417546" at="31,0,121,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints.TestSubstituteParentPropertyAndReference_Constraints" />
     </file>
   </root>
   <root nodeRef="r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)/705057939849524982">

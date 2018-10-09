@@ -121,28 +121,26 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              // links declared in hierarchy of enclosing concept. 
-              if (_context.getReferenceNode() == null) {
-                return null;
-              }
-              final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
-              List<SNode> result = new ArrayList<SNode>();
-              SNode enclosingConcept = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), true, false);
-              List<SNode> directSupers = AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(enclosingConcept);
-              for (SNode concept : ListSequence.fromList(directSupers)) {
-                List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(concept);
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    if (aggregation) {
-                      return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
-                    }
-                    return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
-                  }
-                }));
-              }
-              return ListScope.forResolvableElements(result);
+            // links declared in hierarchy of enclosing concept. 
+            if (_context.getReferenceNode() == null) {
+              return null;
             }
+            final boolean aggregation = SPropertyOperations.hasValue(_context.getReferenceNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+            List<SNode> result = new ArrayList<SNode>();
+            SNode enclosingConcept = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), true, false);
+            List<SNode> directSupers = AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(enclosingConcept);
+            for (SNode concept : ListSequence.fromList(directSupers)) {
+              List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(concept);
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  if (aggregation) {
+                    return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+                  }
+                  return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
+                }
+              }));
+            }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

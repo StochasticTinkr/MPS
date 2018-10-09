@@ -49,14 +49,12 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
-              List<SNode> result = new ArrayList<SNode>();
-              for (SNode node : nodes) {
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(node)));
-              }
-              return ListScope.forResolvableElements(result);
+            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
+            List<SNode> result = new ArrayList<SNode>();
+            for (SNode node : nodes) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(node)));
             }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

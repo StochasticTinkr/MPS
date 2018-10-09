@@ -57,19 +57,18 @@ public class QualifiedSuperMethodCall_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> ancestors = SNodeOperations.getNodeAncestors(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
-              List<SNode> result = new ArrayList<SNode>();
-              for (SNode clazz : ancestors) {
-                if (!(SNodeOperations.isInstanceOf(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
-                  ListSequence.fromList(result).addElement(clazz);
-                  if ((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(clazz)) {
-                    break;
-                  }
+            List<SNode> ancestors = SNodeOperations.getNodeAncestors(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
+            List<SNode> result = new ArrayList<SNode>();
+            for (SNode clazz : ancestors) {
+              if (!(SNodeOperations.isInstanceOf(clazz, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
+                ListSequence.fromList(result).addElement(clazz);
+                if ((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(clazz)) {
+                  break;
                 }
               }
-              return ListScope.forNamedElements(result);
             }
+
+            return ListScope.forNamedElements(result);
           }
         };
       }
@@ -102,7 +101,7 @@ public class QualifiedSuperMethodCall_Constraints extends BaseConstraintsDescrip
               }).first();
               MethodsScope scope = new MethodsScope(extendedClassifierType, Sequence.fromIterable(Members.visibleInstanceMethods(extendedClassifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(it));
+                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it));
                 }
               }));
               return scope;

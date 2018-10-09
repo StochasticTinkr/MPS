@@ -49,12 +49,10 @@ public class LabelPosition_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> labels = new ArrayList<SNode>();
-              SNode builder = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), true, false);
-              ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SAbstractConcept[]{})));
-              return ListScope.forResolvableElements(labels);
-            }
+            List<SNode> labels = new ArrayList<SNode>();
+            SNode builder = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), true, false);
+            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SAbstractConcept[]{})));
+            return ListScope.forResolvableElements(labels);
           }
         };
       }

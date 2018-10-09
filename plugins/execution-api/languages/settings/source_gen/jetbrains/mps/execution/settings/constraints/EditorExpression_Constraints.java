@@ -75,7 +75,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListScope.forResolvableElements(ListSequence.fromList(PersistentConfiguration__BehaviorDescriptor.getContextPersistentProperties_idO$iR4J$g22.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration")), (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_lq9qwe_b0a0a0a0a0a0a1a0a0a1a0b0a1a3());
+                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_lq9qwe_b0a0a0a0a0a1a0a0a1a0b0a1a3());
               }
             }));
           }
@@ -87,7 +87,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), true, false) != null);
   }
-  private static SNode createTemplatePersistentConfigurationType_lq9qwe_b0a0a0a0a0a0a1a0a0a1a0b0a1a3() {
+  private static SNode createTemplatePersistentConfigurationType_lq9qwe_b0a0a0a0a0a1a0a0a1a0b0a1a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), null, null, false);
     return n1;
