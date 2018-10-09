@@ -49,6 +49,8 @@ public class FileDeltaCollector implements StreamHandler {
   }
   @Override
   public boolean touch(String name) {
+    // TODO seems that we no longer need this method, remove along with StreamHandler rewrite to use InputStream/ISProvider instead of present 
+    //      approach that keeps copies of all TextUnits 
     IFile file = getFile(name);
     myDelta.kept(file);
     return file.exists();

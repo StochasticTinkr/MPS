@@ -2,7 +2,7 @@
 <model ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -1761,6 +1761,16 @@
         </node>
       </node>
       <node concept="3clFbS" id="3zGGVE6UVvH" role="3clF47">
+        <node concept="3SKdUt" id="3NK3q5VcLkm" role="3cqZAp">
+          <node concept="3SKdUq" id="3NK3q5VcLko" role="3SKWNk">
+            <property role="3SKdUp" value="TODO seems that we no longer need this method, remove along with StreamHandler rewrite to use InputStream/ISProvider instead of present" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3NK3q5VcLYG" role="3cqZAp">
+          <node concept="3SKdUq" id="3NK3q5VcLYI" role="3SKWNk">
+            <property role="3SKdUp" value="     approach that keeps copies of all TextUnits" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="3zGGVE6W0af" role="3cqZAp">
           <node concept="3cpWsn" id="3zGGVE6W0ag" role="3cpWs9">
             <property role="TrG5h" value="file" />

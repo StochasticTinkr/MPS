@@ -19,6 +19,10 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.DefaultStreamManager;
+import java.util.function.Consumer;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -52,6 +56,28 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // each file of retained model reported as kept 
     Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(myModule, retainedModels, myPath2File);
     ListSequence.fromList(myRetainedFilesDelta).addSequence(Sequence.fromIterable(retainedFilesDelta));
+  }
+
+  /*package*/ void collectRetainedFiles2(GenerationDependenciesCache genDeps, Iterable<SModel> retainedModels) {
+    // each file of retained model reported as kept 
+    final IFile outputRoot = null;
+    IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
+    // XXX FilesDelta need IFile just for the sake of delta merge (it's possible to merge only deltas that share common 'key' prefix, which is file) 
+    final FilesDelta fd = new FilesDelta(actualOutputRoot);
+    for (SModel m : Sequence.fromIterable(retainedModels)) {
+      GenerationDependencies gdc = genDeps.get(m);
+      if (gdc == null) {
+        continue;
+      }
+      final IFile outputDir = DefaultStreamManager.Provider.getOutputDir(m);
+      IFile actualModelOutputLoc = myPath2File.invoke(outputDir.getPath());
+      gdc.reportGeneratedFiles(actualOutputRoot, actualModelOutputLoc, new Consumer<IFile>() {
+        public void accept(IFile f) {
+          fd.kept(f);
+        }
+      });
+    }
+    ListSequence.fromList(myRetainedFilesDelta).addElement(fd);
   }
 
   /*package*/ void collectGeneratedFiles(GenerationDependenciesCache genDeps, SModel generatedInputModel) {
@@ -104,11 +130,14 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 
   /*package*/ FileDeltaCollector newStreamHandler(IFile outputDir) {
+    // FDC needs actual path as it creates IFile from filename string at that location. Besides, dir is used as a key for FilesDelta there. 
     return new FileDeltaCollector(myPath2File.invoke(outputDir.getPath()), myFileStorage);
   }
 
   /*package*/ void updateWith(IFile outputDir, FileDeltaCollector fdc) {
-    // this method to be used in conjunction with getModuleWideStaleFiles 
+    // this method to be used in conjunction with getModuleWideDelta 
+    // fdc is result of earlier newStreamHandler call. Here, we find collector of stale files for output root that is ancestor of supplied delta (fdc) 
+    // and update it with written/kept files so that some of the stale files are not anymore. 
     for (IFile f : SetSequence.fromSet(myStaleFileCollectors.keySet())) {
       // didn't find a mechanism to figure out f.isAncestor(outputDir), resort to DirUtil. Beware x/source_gen.caches starts with x/source_gen; DirUtil cares to ensure there's slash 
       if (DirUtil.startsWith(outputDir.getPath(), f.getPath())) {

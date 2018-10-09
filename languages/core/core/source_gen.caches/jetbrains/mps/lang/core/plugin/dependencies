@@ -95,7 +95,10 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.function.Consumer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.DefaultStreamManager" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -104,6 +107,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.RetainedUtil" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
@@ -175,7 +179,6 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.cache.CacheGenLayout" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.CrossModelEnvironment" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -218,7 +221,6 @@
     <classNode dependClassName="jetbrains.mps.text.impl.BLDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.text.impl.DebugInfoBuilder" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.util.IStatus" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

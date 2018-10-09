@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -23,7 +22,6 @@ import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -69,13 +67,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
       update(status.getInputModel(), cache);
 
       handler.saveStream(getCacheFileName(), cache.toXml());
-
-      if (InternalFlag.isInternalMode()) {
-        String trace = cache.extractDependenciesTraces();
-        if (trace != null) {
-          handler.saveStream(getCacheFileName() + ".trace", trace);
-        }
-      }
     }
   }
 

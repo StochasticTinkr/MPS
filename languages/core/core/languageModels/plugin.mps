@@ -2,14 +2,14 @@
 <model ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
+    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
@@ -40,6 +40,7 @@
     <import index="kpbf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text.impl(MPS.Core/)" />
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
     <import index="b0pz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.facets(MPS.Core/)" />
+    <import index="lvdd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.cache(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1586,6 +1587,16 @@
                                     </node>
                                     <node concept="3clFbJ" id="6DQXNvOkOuL" role="3cqZAp">
                                       <node concept="3clFbS" id="6DQXNvOkOuN" role="3clFbx">
+                                        <node concept="3SKdUt" id="3NK3q5VbKbM" role="3cqZAp">
+                                          <node concept="3SKdUq" id="3NK3q5VbKbO" role="3SKWNk">
+                                            <property role="3SKdUp" value="there could be few output model per same input resource, and as long as we need to report delta per input resource (TResource)," />
+                                          </node>
+                                        </node>
+                                        <node concept="3SKdUt" id="3NK3q5VbKAD" role="3cqZAp">
+                                          <node concept="3SKdUq" id="3NK3q5VbKAF" role="3SKWNk">
+                                            <property role="3SKdUp" value="collect deltas for all output models with a help of RDC instance cached against input resource" />
+                                          </node>
+                                        </node>
                                         <node concept="3clFbF" id="6DQXNvOkYPE" role="3cqZAp">
                                           <node concept="37vLTI" id="6DQXNvOkZ91" role="3clFbG">
                                             <node concept="2ShNRf" id="6DQXNvOkZr3" role="37vLTx">
@@ -1839,30 +1850,26 @@
                                             </node>
                                           </node>
                                         </node>
-                                        <node concept="3clFbF" id="ECV7zt8yWS" role="3cqZAp">
-                                          <node concept="2OqwBi" id="ECV7zt8yXF" role="3clFbG">
-                                            <node concept="37vLTw" id="ECV7zt8yWQ" role="2Oq$k0">
+                                        <node concept="3clFbF" id="3NK3q5VbLks" role="3cqZAp">
+                                          <node concept="2OqwBi" id="3NK3q5VbLzw" role="3clFbG">
+                                            <node concept="37vLTw" id="3NK3q5VbLkq" role="2Oq$k0">
                                               <ref role="3cqZAo" node="ECV7zt8xu9" resolve="genDeps" />
                                             </node>
-                                            <node concept="liA8E" id="ECV7zt8z8t" role="2OqNvi">
-                                              <ref role="37wK5l" to="w8cm:~GenerationDependencies.update(org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String):void" resolve="update" />
-                                              <node concept="2YIFZM" id="ECV7zt8zvo" role="37wK5m">
-                                                <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
-                                                <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
-                                                <node concept="2OqwBi" id="ECV7zt8zK0" role="37wK5m">
-                                                  <node concept="37vLTw" id="ECV7zt8zII" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="ECV7zt8t4M" resolve="tu" />
-                                                  </node>
-                                                  <node concept="liA8E" id="ECV7zt8zW3" role="2OqNvi">
-                                                    <ref role="37wK5l" to="ao3:~TextUnit.getStartNode():org.jetbrains.mps.openapi.model.SNode" resolve="getStartNode" />
-                                                  </node>
-                                                </node>
-                                              </node>
-                                              <node concept="2OqwBi" id="ECV7zt8$ng" role="37wK5m">
-                                                <node concept="37vLTw" id="ECV7zt8$lG" role="2Oq$k0">
+                                            <node concept="liA8E" id="3NK3q5VbLU6" role="2OqNvi">
+                                              <ref role="37wK5l" to="w8cm:~GenerationDependencies.update(java.lang.String,java.lang.String):void" resolve="update" />
+                                              <node concept="2OqwBi" id="3NK3q5VbMqj" role="37wK5m">
+                                                <node concept="37vLTw" id="3NK3q5VbM8H" role="2Oq$k0">
                                                   <ref role="3cqZAo" node="ECV7zt8t4M" resolve="tu" />
                                                 </node>
-                                                <node concept="liA8E" id="ECV7zt8$pN" role="2OqNvi">
+                                                <node concept="liA8E" id="3NK3q5VbMLR" role="2OqNvi">
+                                                  <ref role="37wK5l" to="ao3:~TextUnit.getFilePath():java.lang.String" resolve="getFilePath" />
+                                                </node>
+                                              </node>
+                                              <node concept="2OqwBi" id="3NK3q5VbO10" role="37wK5m">
+                                                <node concept="37vLTw" id="3NK3q5VbNsK" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="ECV7zt8t4M" resolve="tu" />
+                                                </node>
+                                                <node concept="liA8E" id="3NK3q5VbOqf" role="2OqNvi">
                                                   <ref role="37wK5l" to="ao3:~TextUnit.getFileName():java.lang.String" resolve="getFileName" />
                                                 </node>
                                               </node>
@@ -2011,58 +2018,6 @@
                                         </node>
                                         <node concept="liA8E" id="ECV7zt8uLW" role="2OqNvi">
                                           <ref role="37wK5l" to="ao3:~TextGenResult.getUnits():java.util.List" resolve="getUnits" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="3SKdUt" id="ECV7zt8RiG" role="3cqZAp">
-                                      <node concept="3SKdUq" id="ECV7zt8RiI" role="3SKWNk">
-                                        <property role="3SKdUp" value="let the world know unchanged files are still in use" />
-                                      </node>
-                                    </node>
-                                    <node concept="1DcWWT" id="ECV7zt8OqT" role="3cqZAp">
-                                      <node concept="3clFbS" id="ECV7zt8OqV" role="2LFqv$">
-                                        <node concept="1DcWWT" id="ECV7zt8S_M" role="3cqZAp">
-                                          <node concept="3clFbS" id="ECV7zt8S_O" role="2LFqv$">
-                                            <node concept="3clFbF" id="ECV7zt8S6r" role="3cqZAp">
-                                              <node concept="2OqwBi" id="ECV7zt8Sgq" role="3clFbG">
-                                                <node concept="37vLTw" id="ECV7zt8S6p" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="3QuLV9OzOaD" resolve="javaSourcesLoc" />
-                                                </node>
-                                                <node concept="liA8E" id="ECV7zt8SqQ" role="2OqNvi">
-                                                  <ref role="37wK5l" to="iqmz:3zGGVE6UVvB" resolve="touch" />
-                                                  <node concept="37vLTw" id="ECV7zt8TPU" role="37wK5m">
-                                                    <ref role="3cqZAo" node="ECV7zt8S_P" resolve="fname" />
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="3cpWsn" id="ECV7zt8S_P" role="1Duv9x">
-                                            <property role="TrG5h" value="fname" />
-                                            <node concept="17QB3L" id="ECV7zt8TCm" role="1tU5fm" />
-                                          </node>
-                                          <node concept="2OqwBi" id="ECV7zt8Tb7" role="1DdaDG">
-                                            <node concept="37vLTw" id="ECV7zt8T9R" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="ECV7zt8OqW" resolve="rdep" />
-                                            </node>
-                                            <node concept="liA8E" id="ECV7zt8Teo" role="2OqNvi">
-                                              <ref role="37wK5l" to="w8cm:~GenerationRootDependencies.getFiles():java.util.List" resolve="getFiles" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                      <node concept="3cpWsn" id="ECV7zt8OqW" role="1Duv9x">
-                                        <property role="TrG5h" value="rdep" />
-                                        <node concept="3uibUv" id="ECV7zt8PcR" role="1tU5fm">
-                                          <ref role="3uigEE" to="w8cm:~GenerationRootDependencies" resolve="GenerationRootDependencies" />
-                                        </node>
-                                      </node>
-                                      <node concept="2OqwBi" id="ECV7zt8Q3Z" role="1DdaDG">
-                                        <node concept="37vLTw" id="ECV7zt8PLv" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="ECV7zt8xu9" resolve="genDeps" />
-                                        </node>
-                                        <node concept="liA8E" id="ECV7zt8Q$a" role="2OqNvi">
-                                          <ref role="37wK5l" to="w8cm:~GenerationDependencies.getUnchangedDependencies():java.util.List" resolve="getUnchangedDependencies" />
                                         </node>
                                       </node>
                                     </node>
@@ -2302,7 +2257,7 @@
                                     </node>
                                     <node concept="3SKdUt" id="6Fk9mCuW6nH" role="3cqZAp">
                                       <node concept="3SKdUq" id="6Fk9mCuW6nI" role="3SKWNk">
-                                        <property role="3SKdUp" value="FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaManager and report delta from ModuleStaleFileManager" />
+                                        <property role="3SKdUp" value="FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaCollector and report delta from ModuleStaleFileManager" />
                                       </node>
                                     </node>
                                     <node concept="3clFbF" id="6DQXNvOlN0y" role="3cqZAp">
@@ -5946,6 +5901,216 @@
       </node>
       <node concept="3cqZAl" id="6Fk9mCuOZyi" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="7I2oKni0s_H" role="jymVt" />
+    <node concept="3clFb_" id="7I2oKni0r2b" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="collectRetainedFiles2" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="7I2oKni0wmi" role="3clF46">
+        <property role="TrG5h" value="genDeps" />
+        <node concept="3uibUv" id="7I2oKni0xZ4" role="1tU5fm">
+          <ref role="3uigEE" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7I2oKni0r2c" role="3clF46">
+        <property role="TrG5h" value="retainedModels" />
+        <node concept="A3Dl8" id="7I2oKni0r2d" role="1tU5fm">
+          <node concept="3uibUv" id="7I2oKni0r2e" role="A3Ik2">
+            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="7I2oKni0r2f" role="3clF47">
+        <node concept="3SKdUt" id="7I2oKni0r2g" role="3cqZAp">
+          <node concept="3SKdUq" id="7I2oKni0r2h" role="3SKWNk">
+            <property role="3SKdUp" value="each file of retained model reported as kept" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7I2oKni0Jae" role="3cqZAp">
+          <node concept="3cpWsn" id="7I2oKni0Jaf" role="3cpWs9">
+            <property role="TrG5h" value="outputRoot" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7I2oKni0Ja5" role="1tU5fm">
+              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+            </node>
+            <node concept="10Nm6u" id="3NK3q5VcQQ1" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3OyIYtgL_U" role="3cqZAp">
+          <node concept="3cpWsn" id="3OyIYtgL_V" role="3cpWs9">
+            <property role="TrG5h" value="actualOutputRoot" />
+            <node concept="3uibUv" id="3OyIYtgL_J" role="1tU5fm">
+              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+            </node>
+            <node concept="2Sg_IR" id="3OyIYtgL_W" role="33vP2m">
+              <node concept="37vLTw" id="3OyIYtgL_X" role="2SgG2M">
+                <ref role="3cqZAo" node="6Fk9mCuZ8GX" resolve="myPath2File" />
+              </node>
+              <node concept="2OqwBi" id="3OyIYtgL_Y" role="2SgHGx">
+                <node concept="37vLTw" id="3OyIYtgL_Z" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7I2oKni0Jaf" resolve="outputRoot" />
+                </node>
+                <node concept="liA8E" id="3OyIYtgLA0" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3OyIYtgZh2" role="3cqZAp">
+          <node concept="3SKdUq" id="3OyIYtgZh4" role="3SKWNk">
+            <property role="3SKdUp" value="XXX FilesDelta need IFile just for the sake of delta merge (it's possible to merge only deltas that share common 'key' prefix, which is file)" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3OyIYtgPgs" role="3cqZAp">
+          <node concept="3cpWsn" id="3OyIYtgPgt" role="3cpWs9">
+            <property role="TrG5h" value="fd" />
+            <node concept="3uibUv" id="3OyIYtgPgu" role="1tU5fm">
+              <ref role="3uigEE" to="rk9m:s2Jv$gDl8s" resolve="FilesDelta" />
+            </node>
+            <node concept="2ShNRf" id="3OyIYtgP$U" role="33vP2m">
+              <node concept="1pGfFk" id="3OyIYtgSIb" role="2ShVmc">
+                <ref role="37wK5l" to="rk9m:s2Jv$gDl8u" resolve="FilesDelta" />
+                <node concept="37vLTw" id="3OyIYtgWTs" role="37wK5m">
+                  <ref role="3cqZAo" node="3OyIYtgL_V" resolve="actualOutputRoot" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="7I2oKni0A2T" role="3cqZAp">
+          <node concept="2GrKxI" id="7I2oKni0A2V" role="2Gsz3X">
+            <property role="TrG5h" value="m" />
+          </node>
+          <node concept="37vLTw" id="7I2oKni0ApL" role="2GsD0m">
+            <ref role="3cqZAo" node="7I2oKni0r2c" resolve="retainedModels" />
+          </node>
+          <node concept="3clFbS" id="7I2oKni0A2Z" role="2LFqv$">
+            <node concept="3cpWs8" id="7I2oKni0AJn" role="3cqZAp">
+              <node concept="3cpWsn" id="7I2oKni0AJo" role="3cpWs9">
+                <property role="TrG5h" value="gdc" />
+                <node concept="3uibUv" id="7I2oKni0AJm" role="1tU5fm">
+                  <ref role="3uigEE" to="w8cm:~GenerationDependencies" resolve="GenerationDependencies" />
+                </node>
+                <node concept="2OqwBi" id="7I2oKni0AJp" role="33vP2m">
+                  <node concept="37vLTw" id="7I2oKni0AJq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7I2oKni0wmi" resolve="genDeps" />
+                  </node>
+                  <node concept="liA8E" id="7I2oKni0AJr" role="2OqNvi">
+                    <ref role="37wK5l" to="lvdd:~BaseModelCache.get(org.jetbrains.mps.openapi.model.SModel):java.lang.Object" resolve="get" />
+                    <node concept="2GrUjf" id="7I2oKni0AJs" role="37wK5m">
+                      <ref role="2Gs0qQ" node="7I2oKni0A2V" resolve="m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="7I2oKni0BE9" role="3cqZAp">
+              <node concept="3clFbS" id="7I2oKni0BEb" role="3clFbx">
+                <node concept="3N13vt" id="7I2oKni0BO1" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="7I2oKni0BLD" role="3clFbw">
+                <node concept="10Nm6u" id="7I2oKni0BN3" role="3uHU7w" />
+                <node concept="37vLTw" id="7I2oKni0BGP" role="3uHU7B">
+                  <ref role="3cqZAo" node="7I2oKni0AJo" resolve="gdc" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="7I2oKni0GUC" role="3cqZAp">
+              <node concept="3cpWsn" id="7I2oKni0GUD" role="3cpWs9">
+                <property role="TrG5h" value="outputDir" />
+                <property role="3TUv4t" value="true" />
+                <node concept="3uibUv" id="7I2oKni0GUE" role="1tU5fm">
+                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                </node>
+                <node concept="2YIFZM" id="7I2oKni0GUF" role="33vP2m">
+                  <ref role="1Pybhc" to="80j5:~DefaultStreamManager$Provider" resolve="DefaultStreamManager.Provider" />
+                  <ref role="37wK5l" to="80j5:~DefaultStreamManager$Provider.getOutputDir(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputDir" />
+                  <node concept="2GrUjf" id="7I2oKni0HpA" role="37wK5m">
+                    <ref role="2Gs0qQ" node="7I2oKni0A2V" resolve="m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="3OyIYtgZHb" role="3cqZAp">
+              <node concept="3cpWsn" id="3OyIYtgZHc" role="3cpWs9">
+                <property role="TrG5h" value="actualModelOutputLoc" />
+                <node concept="3uibUv" id="3OyIYtgZGL" role="1tU5fm">
+                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                </node>
+                <node concept="2Sg_IR" id="3OyIYtgZHd" role="33vP2m">
+                  <node concept="37vLTw" id="3OyIYtgZHe" role="2SgG2M">
+                    <ref role="3cqZAo" node="6Fk9mCuZ8GX" resolve="myPath2File" />
+                  </node>
+                  <node concept="2OqwBi" id="3OyIYtgZHf" role="2SgHGx">
+                    <node concept="37vLTw" id="3OyIYtgZHg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7I2oKni0GUD" resolve="outputDir" />
+                    </node>
+                    <node concept="liA8E" id="3OyIYtgZHh" role="2OqNvi">
+                      <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7I2oKni0ym$" role="3cqZAp">
+              <node concept="2OqwBi" id="7I2oKni0BR_" role="3clFbG">
+                <node concept="37vLTw" id="7I2oKni0AJt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7I2oKni0AJo" resolve="gdc" />
+                </node>
+                <node concept="liA8E" id="4ibwS5tKXwT" role="2OqNvi">
+                  <ref role="37wK5l" to="w8cm:~GenerationDependencies.reportGeneratedFiles(jetbrains.mps.vfs.IFile,jetbrains.mps.vfs.IFile,java.util.function.Consumer):void" resolve="reportGeneratedFiles" />
+                  <node concept="37vLTw" id="3OyIYtgLA1" role="37wK5m">
+                    <ref role="3cqZAo" node="3OyIYtgL_V" resolve="actualOutputRoot" />
+                  </node>
+                  <node concept="37vLTw" id="3OyIYtgZHi" role="37wK5m">
+                    <ref role="3cqZAo" node="3OyIYtgZHc" resolve="actualModelOutputLoc" />
+                  </node>
+                  <node concept="1bVj0M" id="3OyIYtgIVV" role="37wK5m">
+                    <node concept="3clFbS" id="3OyIYtgIVX" role="1bW5cS">
+                      <node concept="3clFbF" id="3OyIYtgWW_" role="3cqZAp">
+                        <node concept="2OqwBi" id="3OyIYtgX9c" role="3clFbG">
+                          <node concept="37vLTw" id="3OyIYtgWW$" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3OyIYtgPgt" resolve="fd" />
+                          </node>
+                          <node concept="liA8E" id="3OyIYtgXlF" role="2OqNvi">
+                            <ref role="37wK5l" to="rk9m:s2Jv$gDl8M" resolve="kept" />
+                            <node concept="37vLTw" id="3OyIYtgYCm" role="37wK5m">
+                              <ref role="3cqZAo" node="3OyIYtgLfP" resolve="f" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="3OyIYtgLfP" role="1bW2Oz">
+                      <property role="TrG5h" value="f" />
+                      <node concept="3uibUv" id="3OyIYtgLfO" role="1tU5fm">
+                        <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7I2oKni0r2q" role="3cqZAp">
+          <node concept="2OqwBi" id="7I2oKni0r2r" role="3clFbG">
+            <node concept="37vLTw" id="7I2oKni0r2s" role="2Oq$k0">
+              <ref role="3cqZAo" node="6Fk9mCuP4bs" resolve="myRetainedFilesDelta" />
+            </node>
+            <node concept="TSZUe" id="3NK3q5VcTZ_" role="2OqNvi">
+              <node concept="37vLTw" id="3NK3q5VcTZB" role="25WWJ7">
+                <ref role="3cqZAo" node="3OyIYtgPgt" resolve="fd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7I2oKni0r2v" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="6Fk9mCuP0TA" role="jymVt" />
     <node concept="3clFb_" id="6Fk9mCuP0Vo" role="jymVt">
       <property role="TrG5h" value="collectGeneratedFiles" />
@@ -6273,6 +6438,11 @@
         <ref role="3uigEE" to="iqmz:3zGGVE6UVeQ" resolve="FileDeltaCollector" />
       </node>
       <node concept="3clFbS" id="6Fk9mCuVdTe" role="3clF47">
+        <node concept="3SKdUt" id="3NK3q5VcZS7" role="3cqZAp">
+          <node concept="3SKdUq" id="3NK3q5VcZS9" role="3SKWNk">
+            <property role="3SKdUp" value="FDC needs actual path as it creates IFile from filename string at that location. Besides, dir is used as a key for FilesDelta there." />
+          </node>
+        </node>
         <node concept="3cpWs6" id="6Fk9mCuVgBX" role="3cqZAp">
           <node concept="2ShNRf" id="6Fk9mCuVgCb" role="3cqZAk">
             <node concept="1pGfFk" id="6Fk9mCuVgCc" role="2ShVmc">
@@ -6311,7 +6481,17 @@
       <node concept="3clFbS" id="6Fk9mCuPV9b" role="3clF47">
         <node concept="3SKdUt" id="6Fk9mCuV6Qe" role="3cqZAp">
           <node concept="3SKdUq" id="6Fk9mCuV6RI" role="3SKWNk">
-            <property role="3SKdUp" value="this method to be used in conjunction with getModuleWideStaleFiles" />
+            <property role="3SKdUp" value="this method to be used in conjunction with getModuleWideDelta" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3NK3q5VcWI1" role="3cqZAp">
+          <node concept="3SKdUq" id="3NK3q5VcWI3" role="3SKWNk">
+            <property role="3SKdUp" value="fdc is result of earlier newStreamHandler call. Here, we find collector of stale files for output root that is ancestor of supplied delta (fdc)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3NK3q5VcX3g" role="3cqZAp">
+          <node concept="3SKdUq" id="3NK3q5VcX3i" role="3SKWNk">
+            <property role="3SKdUp" value="and update it with written/kept files so that some of the stale files are not anymore." />
           </node>
         </node>
         <node concept="2Gpval" id="2P4orzLxx2D" role="3cqZAp">

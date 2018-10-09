@@ -53,8 +53,6 @@ import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import java.util.HashSet;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.text.impl.BLDependenciesBuilder;
 import jetbrains.mps.text.impl.DebugInfoBuilder;
@@ -302,6 +300,8 @@ public class TextGen_Facet extends IFacet.Stub {
                     public void run() {
                       ResourceDeltaCollector rdm = MapSequence.fromMap(deltas2).get(inputResource);
                       if (rdm == null) {
+                        // there could be few output model per same input resource, and as long as we need to report delta per input resource (TResource), 
+                        // collect deltas for all output models with a help of RDC instance cached against input resource 
                         rdm = new ResourceDeltaCollector();
                         MapSequence.fromMap(deltas2).put(inputResource, rdm);
                       }
@@ -325,7 +325,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       for (TextUnit tu : tgr.getUnits()) {
                         TextUnit.Status tgState = tu.getState();
                         assert tgState != TextUnit.Status.Undefined;
-                        genDeps.update(TracingUtil.getInput(tu.getStartNode()), tu.getFileName());
+                        genDeps.update(tu.getFilePath(), tu.getFileName());
                         if (tgState == TextUnit.Status.Empty) {
                           continue;
                         }
@@ -337,12 +337,6 @@ public class TextGen_Facet extends IFacet.Stub {
                           monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(String.format("Duplicate unit name %s in model %s, output likely corrupt", tu.getFileName(), tgr.getModel().getName()))));
                         }
                         javaSourcesLoc.saveStream(tu.getFileName(), tu.getBytes());
-                      }
-                      // let the world know unchanged files are still in use 
-                      for (GenerationRootDependencies rdep : genDeps.getUnchangedDependencies()) {
-                        for (String fname : rdep.getFiles()) {
-                          javaSourcesLoc.touch(fname);
-                        }
                       }
                       // 
                       // Update caches and auxiliary artifacts 
@@ -361,7 +355,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       staleFilesManager.updateWith(javaOutputDir, javaSourcesLoc);
                       staleFilesManager.updateWith(cacheOutputDir, cachesLocation);
                       // collect delta for (module, model) pair to get dispatched as TResource later (staleFilesManager could do it with DResource only) 
-                      // FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaManager and report delta from ModuleStaleFileManager 
+                      // FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaCollector and report delta from ModuleStaleFileManager 
                       rdm.addDelta(javaSourcesLoc.getDelta());
                       rdm.addDelta(cachesLocation.getDelta());
                     }
