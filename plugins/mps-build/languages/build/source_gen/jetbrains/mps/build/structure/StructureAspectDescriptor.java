@@ -628,6 +628,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L);
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/8266314125996864018");
+    b.version(2);
     b.prop("path", 0x72b7d8e699d63213L, "8266314125996864019");
     b.alias("file by absolute path");
     return b.create();
