@@ -91,6 +91,32 @@
       <unit id="2025581204008535354" at="13,0,41,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/2144524799093561372">
+    <file name="SelectNext_OnTopLevelInspectorNode_Test.java">
+      <node id="2144524799093561372" at="18,52,19,25" concept="4" />
+      <node id="2144524799093561372" at="23,74,24,76" concept="1" />
+      <node id="2144524799093561372" at="29,52,30,19" concept="4" />
+      <node id="2144524799093561372" at="34,51,35,72" concept="1" />
+      <node id="2144524799093561382" at="35,72,36,73" concept="1" />
+      <node id="2144524799093561372" at="15,0,17,0" concept="3" trace="ourParamCache" />
+      <node id="2144524799093561372" at="18,0,21,0" concept="0" trace="SelectNext_OnTopLevelInspectorNode_Test#()V" />
+      <node id="2144524799093561372" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="2144524799093561372" at="22,0,26,0" concept="2" trace="test_SelectNext_OnTopLevelInspectorNode#()V" />
+      <node id="2144524799093561372" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2144524799093561372" at="18,52,19,25" />
+      <scope id="2144524799093561372" at="23,74,24,76" />
+      <scope id="2144524799093561372" at="29,52,30,19" />
+      <scope id="2144524799093561372" at="34,51,36,73" />
+      <scope id="2144524799093561372" at="18,0,21,0" />
+      <scope id="2144524799093561372" at="29,0,32,0">
+        <var name="owner" id="2144524799093561372" />
+      </scope>
+      <scope id="2144524799093561372" at="22,0,26,0" />
+      <scope id="2144524799093561372" at="33,0,38,0" />
+      <unit id="2144524799093561372" at="27,0,39,0" name="jetbrains.mps.lang.editor.selection.test.SelectNext_OnTopLevelInspectorNode_Test$TestBody" />
+      <unit id="2144524799093561372" at="13,0,40,0" name="jetbrains.mps.lang.editor.selection.test.SelectNext_OnTopLevelInspectorNode_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/3756708898179593010">
     <file name="SelectAllNonSelectableRootThroughNonSelectable_Test.java">
       <node id="3756708898179593010" at="21,64,22,25" concept="4" />
@@ -391,6 +417,32 @@
       <scope id="7023440913657702620" at="35,0,41,0" />
       <unit id="7023440913657702620" at="29,0,42,0" name="jetbrains.mps.lang.editor.selection.test.GoToReference_Test$TestBody" />
       <unit id="7023440913657702620" at="15,0,43,0" name="jetbrains.mps.lang.editor.selection.test.GoToReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7627714699894335141">
+    <file name="SelectPrevious_OnTopLevelInspectorNode_Test.java">
+      <node id="7627714699894335141" at="18,56,19,25" concept="4" />
+      <node id="7627714699894335141" at="23,78,24,80" concept="1" />
+      <node id="7627714699894335141" at="29,52,30,19" concept="4" />
+      <node id="7627714699894335141" at="34,51,35,72" concept="1" />
+      <node id="2144524799093356615" at="35,72,36,77" concept="1" />
+      <node id="7627714699894335141" at="15,0,17,0" concept="3" trace="ourParamCache" />
+      <node id="7627714699894335141" at="18,0,21,0" concept="0" trace="SelectPrevious_OnTopLevelInspectorNode_Test#()V" />
+      <node id="7627714699894335141" at="29,0,32,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7627714699894335141" at="22,0,26,0" concept="2" trace="test_SelectPrevious_OnTopLevelInspectorNode#()V" />
+      <node id="7627714699894335141" at="33,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7627714699894335141" at="18,56,19,25" />
+      <scope id="7627714699894335141" at="23,78,24,80" />
+      <scope id="7627714699894335141" at="29,52,30,19" />
+      <scope id="7627714699894335141" at="34,51,36,77" />
+      <scope id="7627714699894335141" at="18,0,21,0" />
+      <scope id="7627714699894335141" at="29,0,32,0">
+        <var name="owner" id="7627714699894335141" />
+      </scope>
+      <scope id="7627714699894335141" at="22,0,26,0" />
+      <scope id="7627714699894335141" at="33,0,38,0" />
+      <unit id="7627714699894335141" at="27,0,39,0" name="jetbrains.mps.lang.editor.selection.test.SelectPrevious_OnTopLevelInspectorNode_Test$TestBody" />
+      <unit id="7627714699894335141" at="13,0,40,0" name="jetbrains.mps.lang.editor.selection.test.SelectPrevious_OnTopLevelInspectorNode_Test" />
     </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7789927720473863959">

@@ -2,11 +2,11 @@
 <model ref="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)">
   <persistence version="9" />
   <languages>
-    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -31,6 +31,7 @@
       <concept id="1229194968594" name="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" flags="ng" index="LIFWc">
         <property id="6268941039745498163" name="selectionStart" index="p6zMq" />
         <property id="6268941039745498165" name="selectionEnd" index="p6zMs" />
+        <property id="1977980803835239937" name="isInInspector" index="2ElMOe" />
         <property id="1229194968596" name="caretPosition" index="LIFWa" />
         <property id="1229194968595" name="cellId" index="LIFWd" />
         <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
@@ -1470,6 +1471,80 @@
         </node>
       </node>
       <node concept="10MCW0" id="3gywHr8yNyB" role="10MCVZ" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1R2Sv5dZdws">
+    <property role="3GE5qa" value="nextPrev" />
+    <property role="TrG5h" value="SelectNext_OnTopLevelInspectorNode" />
+    <node concept="10MCW0" id="1R2Sv5dZdwt" role="LiRBU">
+      <node concept="10MCW0" id="1R2Sv5dZdwv" role="10MCVZ">
+        <node concept="LIFWc" id="1R2Sv5dZdww" role="lGtFl">
+          <property role="2ElMOe" value="true" />
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="defaultEditor_InspectorCell" />
+        </node>
+      </node>
+      <node concept="10MCW0" id="1R2Sv5dZdwu" role="10MCVZ" />
+    </node>
+    <node concept="10MCW0" id="1R2Sv5dZdwx" role="LiZbd">
+      <node concept="10MCW0" id="1R2Sv5dZdwz" role="10MCVZ">
+        <node concept="LIFWc" id="1R2Sv5dZdw$" role="lGtFl">
+          <property role="2ElMOe" value="true" />
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="defaultEditor_InspectorCell" />
+        </node>
+      </node>
+      <node concept="10MCW0" id="1R2Sv5dZdwy" role="10MCVZ" />
+    </node>
+    <node concept="3clFbS" id="1R2Sv5dZdw_" role="LjaKd">
+      <node concept="2HxZob" id="1R2Sv5dZdwA" role="3cqZAp">
+        <node concept="1iFQzN" id="1R2Sv5dZdwB" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6Br5xGJeyq_">
+    <property role="3GE5qa" value="nextPrev" />
+    <property role="TrG5h" value="SelectPrevious_OnTopLevelInspectorNode" />
+    <node concept="10MCW0" id="6Br5xGJeyrm" role="LiRBU">
+      <node concept="10MCW0" id="6Br5xGJeyrw" role="10MCVZ" />
+      <node concept="10MCW0" id="6Br5xGJeyr_" role="10MCVZ">
+        <node concept="LIFWc" id="1R2Sv5dYoJM" role="lGtFl">
+          <property role="2ElMOe" value="true" />
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="defaultEditor_InspectorCell" />
+        </node>
+      </node>
+    </node>
+    <node concept="10MCW0" id="1R2Sv5dYoJW" role="LiZbd">
+      <node concept="10MCW0" id="1R2Sv5dYoJX" role="10MCVZ" />
+      <node concept="10MCW0" id="1R2Sv5dYoJY" role="10MCVZ">
+        <node concept="LIFWc" id="1R2Sv5dZdwi" role="lGtFl">
+          <property role="2ElMOe" value="true" />
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="defaultEditor_InspectorCell" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="1R2Sv5dYrx9" role="LjaKd">
+      <node concept="2HxZob" id="1R2Sv5dYrx7" role="3cqZAp">
+        <node concept="1iFQzN" id="1R2Sv5dYrxl" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
