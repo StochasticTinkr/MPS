@@ -7,7 +7,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -723,7 +723,7 @@
           <property role="TrG5h" value="TypeVars" />
         </node>
         <node concept="3clFb_" id="66hA68pgQXL" role="jymVt">
-          <property role="1EzhhJ" value="true" />
+          <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="method1" />
           <node concept="3cqZAl" id="66hA68pgQXM" role="3clF45" />
           <node concept="3Tm1VV" id="66hA68pgQXN" role="1B3o_S" />
@@ -748,7 +748,7 @@
           </node>
         </node>
         <node concept="3clFb_" id="66hA68pgQY4" role="jymVt">
-          <property role="1EzhhJ" value="true" />
+          <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="getSuperY" />
           <node concept="3Tm1VV" id="66hA68pgQY6" role="1B3o_S" />
           <node concept="3clFbS" id="66hA68pgQY7" role="3clF47" />
@@ -762,7 +762,7 @@
           </node>
         </node>
         <node concept="3clFb_" id="4H_f$Zog6YW" role="jymVt">
-          <property role="1EzhhJ" value="true" />
+          <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="circularRefs" />
           <node concept="3cqZAl" id="4H_f$Zog6YY" role="3clF45" />
           <node concept="3Tm1VV" id="4H_f$Zog6YZ" role="1B3o_S" />

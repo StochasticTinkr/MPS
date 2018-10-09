@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -4887,7 +4887,7 @@
     <property role="TrG5h" value="IMessageFormat" />
     <node concept="3Tm1VV" id="2doG_VG50$N" role="1B3o_S" />
     <node concept="3clFb_" id="2doG_VG50$O" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="escapeBuildMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50$P" role="1B3o_S" />
@@ -4907,7 +4907,7 @@
       <node concept="3clFbS" id="2doG_VG50$U" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50$V" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="escapeBuildMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50$W" role="1B3o_S" />
@@ -4923,7 +4923,7 @@
       <node concept="3clFbS" id="2doG_VG50_1" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_2" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getLinesSeparator" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_3" role="1B3o_S" />
@@ -4931,7 +4931,7 @@
       <node concept="3clFbS" id="2doG_VG50_5" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestStart" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_7" role="1B3o_S" />
@@ -4947,7 +4947,7 @@
       <node concept="3clFbS" id="2doG_VG50_c" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_d" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestFinish" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_e" role="1B3o_S" />
@@ -4963,7 +4963,7 @@
       <node concept="3clFbS" id="2doG_VG50_j" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_k" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestFailure" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_l" role="1B3o_S" />
@@ -4999,7 +4999,7 @@
       <node concept="3clFbS" id="2doG_VG50_w" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_x" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isBuildServerMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_y" role="1B3o_S" />
@@ -5017,7 +5017,7 @@
       <node concept="3clFbS" id="2doG_VG50_B" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_C" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="hasContinuation" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_D" role="1B3o_S" />

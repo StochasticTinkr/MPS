@@ -12,7 +12,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -13232,7 +13232,7 @@
             <property role="TrG5h" value="E" />
           </node>
           <node concept="3clFb_" id="6LWpe4m2sSY" role="jymVt">
-            <property role="1EzhhJ" value="true" />
+            <property role="1EzhhJ" value="false" />
             <property role="TrG5h" value="process" />
             <property role="DiZV1" value="false" />
             <property role="od$2w" value="false" />

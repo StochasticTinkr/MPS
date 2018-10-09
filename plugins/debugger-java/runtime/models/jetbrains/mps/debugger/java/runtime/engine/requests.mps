@@ -2,7 +2,7 @@
 <model ref="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -169,7 +169,7 @@
       <ref role="3uigEE" node="2wxFklq8Gs9" resolve="Requestor" />
     </node>
     <node concept="3clFb_" id="2wxFklq8Mle" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="processClassPrepare" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2wxFklq8Mlf" role="1B3o_S" />
@@ -198,7 +198,7 @@
       <ref role="3uigEE" node="2wxFklq8Gs9" resolve="Requestor" />
     </node>
     <node concept="3clFb_" id="2wxFklq8UNl" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isRequestHitByEvent" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2wxFklq8UNm" role="1B3o_S" />
@@ -219,7 +219,7 @@
       <node concept="3clFbS" id="2wxFklq8UNs" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2wxFklq8UNt" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSuspendPolicy" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2wxFklq8UNu" role="1B3o_S" />

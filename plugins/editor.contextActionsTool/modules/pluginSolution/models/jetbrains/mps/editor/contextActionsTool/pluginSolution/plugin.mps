@@ -6,7 +6,7 @@
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -773,7 +773,7 @@
     <property role="3GE5qa" value="components" />
     <property role="TrG5h" value="ItemExecutor" />
     <node concept="3clFb_" id="7pClCNYb7Is" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="execute" />
       <node concept="3clFbS" id="7pClCNYb7Iv" role="3clF47" />
@@ -2209,7 +2209,7 @@
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="IItem" />
       <node concept="3clFb_" id="7pClCNY6zia" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="getLabel" />
         <node concept="3clFbS" id="7pClCNY6zid" role="3clF47" />
@@ -2217,7 +2217,7 @@
         <node concept="17QB3L" id="7pClCNY6zcB" role="3clF45" />
       </node>
       <node concept="3clFb_" id="7pClCNY6zSu" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="getIcon" />
         <node concept="3clFbS" id="7pClCNY6zSx" role="3clF47" />
@@ -2227,7 +2227,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="7pClCNY6$va" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="getFolderName" />
         <node concept="3clFbS" id="7pClCNY6$vd" role="3clF47" />
@@ -2235,7 +2235,7 @@
         <node concept="17QB3L" id="7pClCNY6$pn" role="3clF45" />
       </node>
       <node concept="3clFb_" id="7pClCNY6$Zi" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="getTooltip" />
         <node concept="3clFbS" id="7pClCNY6$Zl" role="3clF47" />
@@ -2244,7 +2244,7 @@
       </node>
       <node concept="2tJIrI" id="7pClCNY6_6B" role="jymVt" />
       <node concept="3clFb_" id="7pClCNY7wmw" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="isVisible" />
         <node concept="3clFbS" id="7pClCNY7wmz" role="3clF47" />
@@ -2252,7 +2252,7 @@
         <node concept="10P_77" id="7pClCNY7teb" role="3clF45" />
       </node>
       <node concept="3clFb_" id="46W80XAeuvd" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="getCommandPolicy" />
         <node concept="3clFbS" id="46W80XAeuvg" role="3clF47" />
@@ -2265,7 +2265,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="7pClCNY6_yG" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="execute" />
         <node concept="3clFbS" id="7pClCNY6_yJ" role="3clF47" />

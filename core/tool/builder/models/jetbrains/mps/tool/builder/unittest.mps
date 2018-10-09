@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
@@ -692,7 +692,7 @@
     <property role="TrG5h" value="ITestReporter" />
     <node concept="3Tm1VV" id="2doG_VG7LJr" role="1B3o_S" />
     <node concept="3clFb_" id="2doG_VG7LJs" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="runFinished" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJt" role="1B3o_S" />
@@ -700,7 +700,7 @@
       <node concept="3clFbS" id="2doG_VG7LJv" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LJw" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testStarted" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJx" role="1B3o_S" />
@@ -715,7 +715,7 @@
       <node concept="3clFbS" id="2doG_VG7LJ_" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LJA" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testFinished" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJB" role="1B3o_S" />
@@ -730,7 +730,7 @@
       <node concept="3clFbS" id="2doG_VG7LJF" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LJG" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testFailed" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJH" role="1B3o_S" />
@@ -759,7 +759,7 @@
       <node concept="3clFbS" id="2doG_VG7LJP" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LJQ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testOutputLine" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJR" role="1B3o_S" />
@@ -781,7 +781,7 @@
       <node concept="3clFbS" id="2doG_VG7LJX" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LJY" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testErrorLine" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LJZ" role="1B3o_S" />
@@ -803,7 +803,7 @@
       <node concept="3clFbS" id="2doG_VG7LK5" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LK6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="outputLine" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LK7" role="1B3o_S" />
@@ -818,7 +818,7 @@
       <node concept="3clFbS" id="2doG_VG7LKb" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LKc" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="errorLine" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LKd" role="1B3o_S" />
@@ -955,7 +955,7 @@
     <property role="TrG5h" value="UnitTestListener" />
     <node concept="3Tm1VV" id="2doG_VG7LL1" role="1B3o_S" />
     <node concept="3clFb_" id="2doG_VG7LL2" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testStarted" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LL3" role="1B3o_S" />
@@ -970,7 +970,7 @@
       <node concept="3clFbS" id="2doG_VG7LL7" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LL8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testFailed" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LL9" role="1B3o_S" />
@@ -999,7 +999,7 @@
       <node concept="3clFbS" id="2doG_VG7LLh" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LLi" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="testFinished" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LLj" role="1B3o_S" />
@@ -1014,7 +1014,7 @@
       <node concept="3clFbS" id="2doG_VG7LLn" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LLo" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="logMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LLp" role="1B3o_S" />
@@ -1029,7 +1029,7 @@
       <node concept="3clFbS" id="2doG_VG7LLt" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG7LLu" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="logError" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG7LLv" role="1B3o_S" />

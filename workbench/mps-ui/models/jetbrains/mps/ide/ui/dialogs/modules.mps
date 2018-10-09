@@ -2,7 +2,7 @@
 <model ref="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -1758,7 +1758,7 @@
       <property role="TrG5h" value="ModuleCreationSettingsListener" />
       <node concept="3Tm1VV" id="g46k2sd2Wq" role="1B3o_S" />
       <node concept="3clFb_" id="g46k2sd68G" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="changed" />
         <node concept="3clFbS" id="g46k2sd68J" role="3clF47" />

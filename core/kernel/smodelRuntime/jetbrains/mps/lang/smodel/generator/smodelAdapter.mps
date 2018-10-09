@@ -7,7 +7,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -15535,7 +15535,7 @@
   <node concept="3HP615" id="5zEkxuKhq2w">
     <property role="TrG5h" value="IAttributeDescriptor" />
     <node concept="3clFb_" id="5zEkxuKhq3y" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="match" />
       <node concept="3Tm1VV" id="5zEkxuKhq3z" role="1B3o_S" />
       <node concept="10P_77" id="5zEkxuKhq3$" role="3clF45" />
@@ -15551,7 +15551,7 @@
       <node concept="3clFbS" id="5zEkxuKhq3C" role="3clF47" />
     </node>
     <node concept="3clFb_" id="5zEkxuKhq3X" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="update" />
       <node concept="37vLTG" id="5zEkxuKhq41" role="3clF46">
         <property role="TrG5h" value="attribute" />

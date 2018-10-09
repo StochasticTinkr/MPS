@@ -7,7 +7,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
   </languages>
@@ -6512,7 +6512,7 @@
     <property role="TrG5h" value="IChecker" />
     <property role="3GE5qa" value="root" />
     <node concept="3clFb_" id="3xfDcbRdDB8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3clFbS" id="3xfDcbRdDBb" role="3clF47" />
@@ -7168,7 +7168,7 @@
         <property role="2bfB8j" value="false" />
         <property role="TrG5h" value="ErrorSkipCondition" />
         <node concept="3clFb_" id="45Q6RD6uvTH" role="jymVt">
-          <property role="1EzhhJ" value="true" />
+          <property role="1EzhhJ" value="false" />
           <property role="2aFKle" value="false" />
           <property role="TrG5h" value="skipSingleNode" />
           <node concept="3clFbS" id="45Q6RD6uvTI" role="3clF47" />
@@ -7180,7 +7180,7 @@
           </node>
         </node>
         <node concept="3clFb_" id="45Q6RD6uvHx" role="jymVt">
-          <property role="1EzhhJ" value="true" />
+          <property role="1EzhhJ" value="false" />
           <property role="2aFKle" value="false" />
           <property role="TrG5h" value="skipSubtree" />
           <node concept="3clFbS" id="45Q6RD6uvH$" role="3clF47" />
@@ -7950,7 +7950,7 @@
       <property role="2bfB8j" value="false" />
       <property role="TrG5h" value="IteratorWithProgress" />
       <node concept="3clFb_" id="IMyJ9Jwbwv" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="remainingSize" />
         <node concept="10Oyi0" id="IMyJ9JwbGD" role="3clF45" />
         <node concept="3Tm1VV" id="IMyJ9Jwbwy" role="1B3o_S" />
@@ -7962,7 +7962,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="IMyJ9JwZ0v" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="nextItem" />
         <node concept="1LlUBW" id="IMyJ9JwZMh" role="3clF45">
           <node concept="16syzq" id="IMyJ9Jx01J" role="1Lm7xW">
@@ -8973,7 +8973,7 @@
     <property role="TrG5h" value="IAbstractChecker" />
     <node concept="3clFb_" id="4SGXHKgYYAZ" role="jymVt">
       <property role="TrG5h" value="check" />
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <node concept="3clFbS" id="4SGXHKgYYB0" role="3clF47" />
       <node concept="3Tm1VV" id="4SGXHKgYYB1" role="1B3o_S" />
       <node concept="37vLTG" id="4SGXHKgYYB2" role="3clF46">

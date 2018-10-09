@@ -2,7 +2,7 @@
 <model ref="r:b682db9b-749d-487b-b097-cbd5d76b3049(jetbrains.mps.ide.java.testMaterial4)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -457,7 +457,7 @@
     <property role="TrG5h" value="OrdinaryInterfaceWithInnerClasses" />
     <node concept="3Tm1VV" id="2OnbqFWkZ17" role="1B3o_S" />
     <node concept="3clFb_" id="2OnbqFWkZ1g" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="foo" />
       <node concept="3Tm1VV" id="2OnbqFWkZ1h" role="1B3o_S" />
       <node concept="3cqZAl" id="2OnbqFWkZ1i" role="3clF45" />

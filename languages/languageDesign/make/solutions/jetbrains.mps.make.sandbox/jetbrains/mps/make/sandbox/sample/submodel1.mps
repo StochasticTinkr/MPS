@@ -2,7 +2,7 @@
 <model ref="r:f9656055-0f14-4d17-b95d-d4f70ae376c5(jetbrains.mps.make.sandbox.sample.submodel1)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports />
   <registry>

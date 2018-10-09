@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="81a3307b-d10f-4e90-8043-ff6aa5380c33" name="jetbrains.mps.samples.requirementTracking.Traces" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="uq0e" ref="r:a1d097a7-0850-4256-bc79-d04ba5618094(jetbrains.mps.samples.Specification.coreRequirements)" />
@@ -106,10 +106,10 @@
       </node>
       <node concept="3PfD8P" id="3BHdE7cVCDS" role="lGtFl">
         <node concept="3PeMUF" id="4mfny7WbiE0" role="3Pemqw">
-          <ref role="3PeMUL" to="uq0e:3BHdE7cNfr0" resolve="Reading and writting objects must work quickly" />
+          <ref role="3PeMUL" to="uq0e:3BHdE7cNfr0" resolve="Read/write of objects must work quickly" />
         </node>
         <node concept="3PeMUF" id="3BHdE7cVCFm" role="3Pemqw">
-          <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="The storage must be encrypted" />
+          <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="Encrypt the storage" />
         </node>
       </node>
     </node>
@@ -140,7 +140,7 @@
           </node>
           <node concept="3PfD8P" id="3BHdE7cVD7p" role="lGtFl">
             <node concept="3PeMUF" id="3BHdE7cVD7E" role="3Pemqw">
-              <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="The storage must be encrypted" />
+              <ref role="3PeMUL" to="uq0e:3BHdE7cNftK" resolve="Encrypt the storage" />
             </node>
           </node>
         </node>
@@ -190,7 +190,7 @@
     <node concept="3Tm1VV" id="3BHdE7cOUrq" role="1B3o_S" />
     <node concept="3PfD8P" id="3BHdE7cVC7F" role="lGtFl">
       <node concept="3PeMUF" id="3BHdE7cVC8G" role="3Pemqw">
-        <ref role="3PeMUL" to="uq0e:3BHdE7cNfr0" resolve="Reading and writting objects must work quickly" />
+        <ref role="3PeMUL" to="uq0e:3BHdE7cNfr0" resolve="Read/write of objects must work quickly" />
       </node>
     </node>
   </node>

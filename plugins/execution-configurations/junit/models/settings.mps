@@ -8,7 +8,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
@@ -7654,7 +7654,7 @@
   <node concept="3HP615" id="6gip8EcJ8Kt">
     <property role="TrG5h" value="Synchronizer" />
     <node concept="3clFb_" id="6gip8EcJ8KF" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="sync" />
       <node concept="3cqZAl" id="6gip8EcJ8KH" role="3clF45" />
       <node concept="3Tm1VV" id="6gip8EcJ8KI" role="1B3o_S" />
@@ -7890,7 +7890,7 @@
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Updater" />
       <node concept="3clFb_" id="59fG_Y4ykc2" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="updateMe" />
         <node concept="3clFbS" id="59fG_Y4ykc5" role="3clF47" />

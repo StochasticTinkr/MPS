@@ -2,7 +2,7 @@
 <model ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -1362,14 +1362,14 @@
     <property role="TrG5h" value="IdeaJavaCompiler" />
     <node concept="3Tm1VV" id="2_5NjuZKW3k" role="1B3o_S" />
     <node concept="3clFb_" id="3RgaFyKP9hF" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isValid" />
       <node concept="10P_77" id="3RgaFyKP9hJ" role="3clF45" />
       <node concept="3Tm1VV" id="3RgaFyKP9hH" role="1B3o_S" />
       <node concept="3clFbS" id="3RgaFyKP9hI" role="3clF47" />
     </node>
     <node concept="3clFb_" id="42gV918qhxZ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="compileModules" />
       <node concept="3uibUv" id="3E_ABgyyzwE" role="3clF45">
         <ref role="3uigEE" to="vqh0:~CompilationResult" resolve="CompilationResult" />

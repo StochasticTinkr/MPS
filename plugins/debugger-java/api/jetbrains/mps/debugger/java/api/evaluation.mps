@@ -4,7 +4,7 @@
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="y3sp" ref="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
@@ -1466,7 +1466,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="46sxDGTfnGn" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="invoke" />
         <property role="DiZV1" value="false" />
         <node concept="3uibUv" id="2klhnAmr849" role="Sfmx6">
@@ -1513,7 +1513,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="4jzwNwQQ6gW" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="invoke" />
         <property role="DiZV1" value="false" />
         <node concept="3Tm1VV" id="4jzwNwQQ6gX" role="1B3o_S" />

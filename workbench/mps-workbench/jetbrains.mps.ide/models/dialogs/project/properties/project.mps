@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="nh3n" ref="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)" />
@@ -2692,7 +2692,7 @@
       <node concept="3Tm1VV" id="6JcTxuSCw00" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="6JcTxuSCvZJ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponent" />
       <node concept="3clFbS" id="6JcTxuSCvZM" role="3clF47" />
       <node concept="3Tm1VV" id="6JcTxuSCvZL" role="1B3o_S" />
@@ -2701,21 +2701,21 @@
       </node>
     </node>
     <node concept="3clFb_" id="6JcTxuSCvZN" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isModified" />
       <node concept="3clFbS" id="6JcTxuSCvZQ" role="3clF47" />
       <node concept="3Tm1VV" id="6JcTxuSCvZP" role="1B3o_S" />
       <node concept="10P_77" id="6JcTxuSCvZO" role="3clF45" />
     </node>
     <node concept="3clFb_" id="6JcTxuSCvZR" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="apply" />
       <node concept="3clFbS" id="6JcTxuSCvZU" role="3clF47" />
       <node concept="3Tm1VV" id="6JcTxuSCvZT" role="1B3o_S" />
       <node concept="3cqZAl" id="6JcTxuSCvZS" role="3clF45" />
     </node>
     <node concept="3clFb_" id="6JcTxuSCvZV" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="reset" />
       <node concept="3clFbS" id="6JcTxuSCvZY" role="3clF47" />
       <node concept="3Tm1VV" id="6JcTxuSCvZX" role="1B3o_S" />

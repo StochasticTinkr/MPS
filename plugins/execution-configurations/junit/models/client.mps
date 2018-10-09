@@ -12,7 +12,7 @@
     <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
     <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
@@ -1553,7 +1553,7 @@
       <node concept="3Tqbb2" id="56tRMpP_ejN" role="3ztrMU" />
     </node>
     <node concept="3clFb_" id="56tRMpP_ej8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getNode" />
       <node concept="3Tm1VV" id="56tRMpP_ej9" role="1B3o_S" />
       <node concept="3clFbS" id="56tRMpP_eja" role="3clF47" />
@@ -1571,7 +1571,7 @@
     </node>
     <node concept="2tJIrI" id="723FpCMRRlD" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejc" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getNodePointer" />
       <node concept="3Tm1VV" id="56tRMpP_ejd" role="1B3o_S" />
       <node concept="3clFbS" id="56tRMpP_eje" role="3clF47" />
@@ -1581,7 +1581,7 @@
     </node>
     <node concept="2tJIrI" id="723FpCMRRhk" role="jymVt" />
     <node concept="3clFb_" id="723FpCMRRsp" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getTestNodeModule" />
       <node concept="3clFbS" id="723FpCMRRss" role="3clF47" />
@@ -1635,7 +1635,7 @@
     </node>
     <node concept="2tJIrI" id="723FpCMRRju" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isTestCase" />
       <node concept="10P_77" id="56tRMpP_ejh" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_eji" role="1B3o_S" />
@@ -1650,7 +1650,7 @@
     </node>
     <node concept="2tJIrI" id="1XbiPVz$XhJ" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejk" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTestCase" />
       <node concept="3uibUv" id="56tRMpP_ejl" role="3clF45">
         <ref role="3uigEE" node="56tRMpP_ej7" resolve="ITestNodeWrapper" />
@@ -1668,7 +1668,7 @@
     </node>
     <node concept="2tJIrI" id="1XbiPVz$XkN" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejp" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTestMethods" />
       <node concept="A3Dl8" id="56tRMpP_ejq" role="3clF45">
         <node concept="3uibUv" id="56tRMpP_ejr" role="A3Ik2">
@@ -1683,7 +1683,7 @@
     </node>
     <node concept="2tJIrI" id="1XbiPVz$Xvp" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejv" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getName" />
       <node concept="17QB3L" id="56tRMpP_ejw" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_ejx" role="1B3o_S" />
@@ -1701,7 +1701,7 @@
     </node>
     <node concept="2tJIrI" id="1XbiPVz$X16" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ej$" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getFqName" />
       <node concept="17QB3L" id="56tRMpP_ej_" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_ejA" role="1B3o_S" />
@@ -1718,7 +1718,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="56tRMpP_ejD" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getCachedFqName" />
       <node concept="17QB3L" id="56tRMpP_ejE" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_ejF" role="1B3o_S" />
@@ -1758,7 +1758,7 @@
     </node>
     <node concept="2tJIrI" id="1XbiPVz_7qv" role="jymVt" />
     <node concept="3clFb_" id="56tRMpP_ejH" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTestRunParameters" />
       <node concept="3uibUv" id="46IpDBc0Ygp" role="3clF45">
         <ref role="3uigEE" node="46IpDBc0vKu" resolve="TestParameters" />
@@ -1771,7 +1771,7 @@
     </node>
     <node concept="2tJIrI" id="40J2CKBlFPX" role="jymVt" />
     <node concept="3clFb_" id="40J2CKBlFWh" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="canRunInProcess" />
       <node concept="3clFbS" id="40J2CKBlFWk" role="3clF47" />
@@ -4466,7 +4466,7 @@
     <property role="3GE5qa" value="listener" />
     <node concept="3Tm1VV" id="56tRMpP_Y8y" role="1B3o_S" />
     <node concept="3clFb_" id="56tRMpP_Y8u" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="update" />
       <node concept="3cqZAl" id="56tRMpP_Y8v" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8w" role="1B3o_S" />
@@ -4514,7 +4514,7 @@
     <property role="TrG5h" value="TestStateListener" />
     <property role="3GE5qa" value="listener" />
     <node concept="3clFb_" id="4e85Rl_r5YJ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="onProcessNotified" />
       <node concept="3clFbS" id="4e85Rl_r5YM" role="3clF47" />
@@ -4522,7 +4522,7 @@
       <node concept="3cqZAl" id="4e85Rl_r5X0" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2Zbjobgn6E8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="onTestRunStarted" />
       <node concept="3clFbS" id="2Zbjobgn6Eb" role="3clF47" />
@@ -4530,7 +4530,7 @@
       <node concept="3cqZAl" id="2Zbjobgn6Dz" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2ZbjobgnxUg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="onTestRunFinished" />
       <node concept="3clFbS" id="2ZbjobgnxUh" role="3clF47" />
@@ -4539,7 +4539,7 @@
     </node>
     <node concept="3Tm1VV" id="56tRMpP_Y94" role="1B3o_S" />
     <node concept="3clFb_" id="56tRMpP_Y8$" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTestStart" />
       <node concept="3cqZAl" id="56tRMpP_Y8_" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8A" role="1B3o_S" />
@@ -4552,7 +4552,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="56tRMpP_Y8E" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTestFinish" />
       <node concept="3cqZAl" id="56tRMpP_Y8F" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8G" role="1B3o_S" />
@@ -4565,7 +4565,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="56tRMpP_Y8K" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTestFailure" />
       <node concept="3cqZAl" id="56tRMpP_Y8L" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8M" role="1B3o_S" />
@@ -4578,7 +4578,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="56tRMpP_Y8Q" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTestAssumptionFailure" />
       <node concept="3cqZAl" id="56tRMpP_Y8R" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8S" role="1B3o_S" />
@@ -4591,7 +4591,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="2Zbjobgn$z3" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTestIgnored" />
       <node concept="3cqZAl" id="2Zbjobgn$z4" role="3clF45" />
       <node concept="3Tm1VV" id="2Zbjobgn$z5" role="1B3o_S" />
@@ -4604,7 +4604,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="56tRMpP_Y8W" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="onTermination" />
       <node concept="3cqZAl" id="56tRMpP_Y8X" role="3clF45" />
       <node concept="3Tm1VV" id="56tRMpP_Y8Y" role="1B3o_S" />
@@ -4621,7 +4621,7 @@
     </node>
     <node concept="2tJIrI" id="4e85Rl_qXrM" role="jymVt" />
     <node concept="3clFb_" id="4e85Rl_qXwo" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="onTextAvailable" />
       <node concept="3clFbS" id="4e85Rl_qXwr" role="3clF47" />
