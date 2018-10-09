@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import javax.swing.JComponent;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -12,24 +13,28 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
-import jetbrains.mps.ide.project.ProjectHelper;
-import javax.swing.JComponent;
-import java.awt.Dimension;
-import com.intellij.openapi.ui.Splitter;
 import java.awt.BorderLayout;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.BorderFactory;
+import com.intellij.openapi.ui.Splitter;
+import com.intellij.ui.components.panels.NonOpaquePanel;
+import com.intellij.execution.testframework.ui.SameHeightPanel;
+import java.awt.Color;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
+import javax.swing.border.CompoundBorder;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.SideBorder;
+import java.awt.Dimension;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.util.ui.UIUtil;
 import javax.swing.JTable;
 import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.execution.process.ProcessListener;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 import com.intellij.ide.util.PropertiesComponent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
@@ -43,60 +48,96 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
   private static final String SPLITTER_SIZE_PROPERTY = UnitTestOptions.PREFIX + ".UnitTestViewComponent" + ".splitter";
+
   private final TestRunState myTestState;
-  private final TestOutputComponent myOutputComponent;
+  private final TestOutputContainer myTestOutputContainer;
   private final TestTree myTreeComponent;
-  private final ProgressLine myProgressLineComponent;
-  private final TestToolbarPanel myActionToolComponent;
+  private final TestProgressLine myProgressLineComponent;
+  private final TestToolbarPanel myToolbarPanel;
+  private final JComponent myOutputToolbarComponent;
   private final MPSProject myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
+  private final StatisticsTableModel myStatisticsModel;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
+
   public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
+    super(new BorderLayout());
     myProject = ProjectHelper.fromIdeaProject(project);
     myTestState = testRunState;
-    StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
+    myStatisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, myProject, this);
+    myTreeComponent.setBorder(BorderFactory.createEmptyBorder(0, 3, 0, 0));
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
-    myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
+    myToolbarPanel = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
-    JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
+    JComponent leftPanel = createTreePanel(myToolbarPanel, myTreeComponent);
+    myProgressLineComponent = new TestProgressLine();
+    myTestOutputContainer = new TestOutputContainer(console);
+    myTestOutputContainer.init();
+    myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, myStatisticsModel, myTestOutputContainer));
+    myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, myStatisticsModel, myTestOutputContainer));
+    myTreeComponent.init();
 
-    myProgressLineComponent = new ProgressLine(myTestState);
-    myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
-    myOutputComponent = new TestOutputComponent(console, myTestState);
-    myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, statisticsModel, myOutputComponent));
-    myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, statisticsModel, myOutputComponent));
+    Splitter leftSplitter = new Splitter(false);
+    initSplitterProportion(leftSplitter, 0.2f, "tree");
+    leftSplitter.setFirstComponent(leftPanel);
+    add(leftSplitter, BorderLayout.CENTER);
 
-    JPanel rightPanel = createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
+    JComponent testOutput = myTestOutputContainer.getComponent();
+    JPanel rightPanel = new NonOpaquePanel(new BorderLayout());
+    JPanel middleOutputPanel = new NonOpaquePanel(new BorderLayout());
+    setMinimumWidthOfTheProgressToZero(myProgressLineComponent);
+    middleOutputPanel.add(SameHeightPanel.wrap(myProgressLineComponent, myToolbarPanel), BorderLayout.NORTH);
+    testOutput.setFocusable(true);
+    final Color editorBackground = EditorColorsManager.getInstance().getGlobalScheme().getDefaultBackground();
+    testOutput.setBorder(new CompoundBorder(IdeBorderFactory.createBorder(SideBorder.RIGHT), new SideBorder(editorBackground, SideBorder.LEFT)));
+    middleOutputPanel.add(testOutput, BorderLayout.CENTER);
+    myOutputToolbarComponent = createActionsToolbar(console);
+    middleOutputPanel.add(myOutputToolbarComponent, BorderLayout.EAST);
 
-    Splitter splitter = new Splitter(false);
-    initSplitterProportion(splitter, 0.2f, "tree");
-    splitter.setFirstComponent(leftPanel);
-    splitter.setSecondComponent(rightPanel);
-    setLayout(new BorderLayout());
+    Splitter rightSplitter = new Splitter(false);
+    initSplitterProportion(rightSplitter, 0.5f, "statistic");
+    rightSplitter.setFirstComponent(middleOutputPanel);
+    JComponent statistics = createStatisticsComponent(myStatisticsModel);
+    rightSplitter.setSecondComponent(statistics);
+    rightPanel.add(rightSplitter, BorderLayout.CENTER);
+    leftSplitter.setSecondComponent(rightPanel);
 
-    add(splitter, BorderLayout.CENTER);
-
-    myTestState.addView(myTreeComponent);
-    myTestState.addView(myProgressLineComponent);
-    myTestState.addView(myOutputComponent);
+    myTestState.addListener(myTreeComponent);
+    myTestState.addUpdateListener(myProgressLineComponent);
+    myTestState.addListener(myTestOutputContainer);
     addCloseListener(closeListener);
   }
+
+  private void setMinimumWidthOfTheProgressToZero(final TestProgressLine myProgressLineComponent) {
+    myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
+  }
+
+  @Override
+  public void addNotify() {
+    super.addNotify();
+    // progress line goes until the text output bar with actions 
+    myProgressLineComponent.setBorder(BorderFactory.createEmptyBorder(3, 0, 0, myOutputToolbarComponent.getPreferredSize().width));
+  }
+
   public JComponent createActionsToolbar(ConsoleView console) {
     DefaultActionGroup group = new DefaultActionGroup(console.createConsoleActions());
     ActionManager manager = ActionManager.getInstance();
-    ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    ActionToolbar toolbar = manager.createActionToolbar("TestRunnerResults", group, false);
     toolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     return toolbar.getComponent();
   }
-  private JComponent createTreeComponent(JComponent toolbar, JComponent tree) {
+
+  private JPanel createTreePanel(JComponent toolbar, JComponent tree) {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
+    scrollPane.putClientProperty(UIUtil.KEEP_BORDER_SIDES, SideBorder.TOP);
     treePanel.add(scrollPane, BorderLayout.CENTER);
     treePanel.add(toolbar, BorderLayout.NORTH);
     return treePanel;
   }
+
   private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
     JTable statisticsTable = new JBTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
@@ -104,59 +145,28 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     tablePanel.add(new JBScrollPane(statisticsTable));
     return tablePanel;
   }
-  public ProcessListener getProcessListener() {
-    return myProgressLineComponent.getProcessListener();
-  }
+
   @Override
   public void dispose() {
-    myOutputComponent.dispose();
+    myTestState.removeListener(myTreeComponent);
+    myTestState.removeUpdateListener(myProgressLineComponent);
+    myTestState.removeListener(myTestOutputContainer);
+    myStatisticsModel.dispose();
+    myTestOutputContainer.dispose();
     myTreeComponent.dispose();
     invokeCloseListeners();
   }
+
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
     ListSequence.fromList(myListeners).addElement(listener);
   }
+
   public void invokeCloseListeners() {
     for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(myListeners)) {
       listener.invoke();
     }
   }
-  private JPanel createOutputComponent(ConsoleView console, JComponent progressLine, JComponent testOutput, StatisticsTableModel statisticsModel) {
-    JPanel rightPanel = new JPanel(new GridBagLayout());
 
-    JComponent stackTraceActions = createActionsToolbar(console);
-    stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
-
-    Splitter outputStatisticSplitter = new Splitter(false);
-    initSplitterProportion(outputStatisticSplitter, 0.5f, "statistic");
-    outputStatisticSplitter.setFirstComponent(testOutput);
-    JComponent statistics = createStatisticsComponent(statisticsModel);
-    outputStatisticSplitter.setSecondComponent(statistics);
-
-
-    GridBagConstraints c = new GridBagConstraints();
-    rightPanel.setBorder(null);
-    c.fill = GridBagConstraints.VERTICAL;
-    c.anchor = GridBagConstraints.LINE_START;
-    c.gridx = 0;
-    c.gridy = 1;
-    c.weighty = 1;
-    c.weightx = 0;
-    rightPanel.add(stackTraceActions, c);
-    c.fill = GridBagConstraints.HORIZONTAL;
-    c.gridx = 1;
-    c.gridy = 0;
-    c.weighty = 0;
-    c.weightx = 1;
-    rightPanel.add(progressLine, c);
-    c.fill = GridBagConstraints.BOTH;
-    c.gridx = 1;
-    c.gridy = 1;
-    c.weighty = 1;
-    c.weightx = 1;
-    rightPanel.add(outputStatisticSplitter, c);
-    return rightPanel;
-  }
   public void initSplitterProportion(final Splitter splitter, float defaultProportion, final String id) {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
     String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
@@ -184,6 +194,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     public MyTreePanel(LayoutManager manager) {
       super(manager);
     }
+
     @Nullable
     @Override
     public Object getData(@NonNls String dataId) {

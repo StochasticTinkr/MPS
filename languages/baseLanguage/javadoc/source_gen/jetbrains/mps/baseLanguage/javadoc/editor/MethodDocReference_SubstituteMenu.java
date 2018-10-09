@@ -44,7 +44,7 @@ public class MethodDocReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_wsoffm_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_wsoffm_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_wsoffm_a() {
       super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference"), MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L, 0x1ec532ec2531d2d4L, "methodDeclaration"));

@@ -12,10 +12,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -99,16 +95,6 @@
     <property role="34LRSv" value="&gt;pattern&lt;" />
     <property role="EcuMT" value="1136720037777" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="gyDMOui" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="patternNode" />
-      <property role="IQ2ns" value="1136720037778" />
-      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      <node concept="asaX9" id="24Vo$dbdh$I" role="lGtFl">
-        <property role="YLPcu" value="MPS 3.4" />
-        <property role="YLQ7P" value="Convert/migrate to use Quotation" />
-      </node>
-    </node>
     <node concept="1TJgyj" id="7Qbh0xggLjd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="pattern" />

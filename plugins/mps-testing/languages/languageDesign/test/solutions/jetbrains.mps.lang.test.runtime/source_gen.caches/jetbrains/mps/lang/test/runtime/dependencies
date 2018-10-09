@@ -22,6 +22,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.List" />
@@ -71,6 +72,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseMigrationTestBody" file="BaseMigrationTestBody.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -81,11 +83,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodeDifference" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.references.ImmatureReferences" />
     <classNode dependClassName="jetbrains.mps.smodel.references.UnregisteredNodes" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -93,16 +97,15 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTestBody" file="BaseTestBody.java">
-    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
@@ -118,14 +121,13 @@
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
@@ -137,7 +139,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentSetupException" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.util.Reference" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -146,7 +151,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.After" />
-    <classNode dependClassName="org.junit.Before" />
+    <classNode dependClassName="org.junit.AssumptionViolatedException" />
+    <classNode dependClassName="org.junit.Rule" />
+    <classNode dependClassName="org.junit.rules.TestRule" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
   </dependency>
@@ -319,6 +328,14 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.RunWithCommand" file="RunWithCommand.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runners.model.Statement" />
+    <classNode extendsClassName="org.junit.rules.TestRule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestParametersCache" file="TestParametersCache.java">
     <classNode dependClassName="java.lang.Class" />

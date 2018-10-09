@@ -16,7 +16,6 @@ import java.util.Collections;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
 
 public class RefactoringMenuItemBase extends ActionItemBase {
   protected final TransformationMenuContext _context;
@@ -53,6 +52,6 @@ public class RefactoringMenuItemBase extends ActionItemBase {
     }
 
     Object targetEntity = (refactoringTarget.allowMultipleTargets() ? Collections.singletonList(node) : node);
-    return RefactoringUtil.isApplicable(refactoring, targetEntity);
+    return RefactoringAccess.getInstance().isApplicable(refactoring, targetEntity);
   }
 }

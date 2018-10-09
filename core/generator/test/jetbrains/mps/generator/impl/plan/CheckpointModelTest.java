@@ -18,9 +18,12 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
+import jetbrains.mps.generator.GenerationPlanBuilder;
+import jetbrains.mps.generator.GenerationPlanBuilder.BuilderOption;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
@@ -47,6 +50,7 @@ import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 import org.hamcrest.CoreMatchers;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
@@ -67,13 +71,15 @@ import org.junit.rules.ErrorCollector;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * @author Artem Tikhomirov
  */
 public class CheckpointModelTest implements EnvironmentAware {
-  private static Project mpsProject;
+  private Project mpsProject;
+  private LanguageRegistry myLanguageRegistry;
 
   @Rule
   public final ErrorCollector myErrors = new ErrorCollector();
@@ -89,6 +95,7 @@ public class CheckpointModelTest implements EnvironmentAware {
   @Before
   public void setup() {
     mpsProject = myEnv.openProject(new File(PathManager.getUserDir(), "languages/languageDesign/generator/project.xmodel.test1"));
+    myLanguageRegistry = myEnv.getPlatform().findComponent(LanguageRegistry.class);
   }
 
   @After
@@ -238,7 +245,7 @@ public class CheckpointModelTest implements EnvironmentAware {
     GenerationStatus[] genStatus = new GenerationStatus[2];
     mpsProject.getModelAccess().runWriteAction(() -> {
       SLanguage lang1 = MetaAdapterFactory.getLanguage(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, "jetbrains.mps.generator.test.xmodel.lang1");
-      final Transform step1 = new Transform(getGenerators(lang1));
+      final Transform step1 = new Transform(getGenerators(findGenerator(lang1, null)));
       final Transform step2 = new Transform(getBaseLanguageGenerators());
       final PlanIdentity planIdentity = new PlanIdentity("test.plan.3");
       final Checkpoint cp1 = new Checkpoint(new CheckpointIdentity(planIdentity, "aaa"));
@@ -310,7 +317,7 @@ public class CheckpointModelTest implements EnvironmentAware {
         Generator collectionsGeneratorInstance = (Generator) collectionsGenerator.resolve(mpsProject.getRepository());
         Generator blInternalGeneratorInstance = (Generator) blInternalGenerator.resolve(mpsProject.getRepository());
         Generator baselangGeneratorInstance = (Generator) baselangGenerator.resolve(mpsProject.getRepository());
-        final LanguageRegistry languageRegistry = LanguageRegistry.getInstance(mpsProject.getRepository());
+        final LanguageRegistry languageRegistry = myLanguageRegistry;
         Collection<TemplateModule> engagedGenerators = new ArrayList<>();
         engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(closuresGeneratorInstance)));
         engagedGenerators.add(((TemplateModule) languageRegistry.getGenerator(collectionsGeneratorInstance)));
@@ -345,26 +352,71 @@ public class CheckpointModelTest implements EnvironmentAware {
     myErrors.checkThat(t3.getTransformations().size(), CoreMatchers.equalTo(8)); // 3 from BL + 5 from collections
   }
 
+  @Test
+  public void testPlanFork() {
+    ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
+      @Override
+      public ModelGenerationPlan compute() {
+        RegularPlanBuilder planBuilder = new RegularPlanBuilder(myLanguageRegistry, Collections.emptyList());
+        planBuilder.applyGenerators(Collections.singleton(findGenerator(LANGUAGE_ENTITY, null).getModuleReference()), BuilderOption.None);
+        GenerationPlanBuilder branchBuilder = planBuilder.fork();
+        planBuilder.applyGenerators(Collections.singleton(findGenerator(LANGUAGE_PROPERTY, "property2class").getModuleReference()), BuilderOption.None);
+        branchBuilder.applyGenerators(Collections.singleton(findGenerator(LANGUAGE_PROPERTY, "property2xml").getModuleReference()), BuilderOption.None);
+        branchBuilder.wrapUp(new PlanIdentity("forkedPlan"));
+        return planBuilder.wrapUp(new PlanIdentity("p1"));
+      }
+    });
+    Assert.assertNotNull(plan);
+    Assert.assertEquals(3, plan.getSteps().size()); // entity, fork, property2class
+    myErrors.checkThat(plan.getSteps().get(0), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(1), CoreMatchers.instanceOf(Step.class));
+    myErrors.checkThat(plan.getSteps().get(2), CoreMatchers.instanceOf(Transform.class));
+
+    GenerationStatus genStatus = new ModelAccessHelper(mpsProject.getRepository()).runWriteAction(() -> {
+      final SModel m = resolve(PersistenceFacade.getInstance().createModelReference("r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)"));
+      GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
+      final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
+      GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider).messages(myGeneratorMessages);
+      tmProvider.initCheckpointModule(); // XXX there are no checkpoints in the plan, do I need this?
+      GenerationStatus rv = genFacade.process(new EmptyProgressMonitor(), m);
+      tmProvider.publishAll();
+      return rv;
+    });
+    myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
+    myErrors.checkThat("Fork results in 2 models", genStatus.getOutputModels().size(), CoreMatchers.equalTo(2));
+    // assert roots of the second model
+  }
+
+  final SLanguage LANGUAGE_ENTITY = MetaAdapterFactory.getLanguage(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, "jetbrains.mps.generator.test.crossmodel.entity");
+  final SLanguage LANGUAGE_PROPERTY = MetaAdapterFactory.getLanguage(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, "jetbrains.mps.generator.test.crossmodel.property");
+
   // utility to obtain generators of j.m.g.test.crossmodel.property language
-  private static List<TemplateMappingConfiguration> getCrossmodelPropertyGenerators() {
-    return getGenerators(MetaAdapterFactory.getLanguage(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, "jetbrains.mps.generator.test.crossmodel.property"));
+  private List<TemplateMappingConfiguration> getCrossmodelPropertyGenerators() {
+    return getGenerators(findGenerator(LANGUAGE_PROPERTY, "property2class"));
   }
 
   // utility to obtain generators of j.m.g.test.crossmodel.entity language
-  private static List<TemplateMappingConfiguration> getCrossmodelEntityGenerators() {
-    return getGenerators(MetaAdapterFactory.getLanguage(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, "jetbrains.mps.generator.test.crossmodel.entity"));
+  private List<TemplateMappingConfiguration> getCrossmodelEntityGenerators() {
+    return getGenerators(findGenerator(LANGUAGE_ENTITY, "entity2bean"));
   }
 
-  private static List<TemplateMappingConfiguration> getBaseLanguageGenerators() {
-    return getGenerators(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
+  private List<TemplateMappingConfiguration> getBaseLanguageGenerators() {
+    return getGenerators(findGenerator(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), null));
   }
 
-
-  private static List<TemplateMappingConfiguration> getGenerators(SLanguage language) {
-    final LanguageRegistry lr = LanguageRegistry.getInstance(mpsProject.getRepository());
-    final GeneratorRuntime g1 = lr.getLanguage(language).getGenerators().iterator().next();
-    return getGenerators(g1);
-
+  // null for generatorAlias means take the first one
+  private GeneratorRuntime findGenerator(SLanguage language, @Nullable String generatorAlias) {
+    Collection<? extends GeneratorRuntime> generators = myLanguageRegistry.getLanguage(language).getGenerators();
+    if (generatorAlias == null) {
+      return generators.iterator().next();
+    } else {
+      for (GeneratorRuntime gr : generators) {
+        if (gr instanceof TemplateModule && ((TemplateModule) gr).getAlias().endsWith(generatorAlias)) {
+          return gr;
+        }
+      }
+      throw new IllegalArgumentException(String.format("No generator with alias %s found in language %s", generatorAlias, language));
+    }
   }
 
   private static List<TemplateMappingConfiguration> getGenerators(GeneratorRuntime gr) {

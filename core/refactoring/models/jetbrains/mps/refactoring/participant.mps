@@ -102,7 +102,10 @@
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
@@ -3481,6 +3484,17 @@
         <node concept="17QB3L" id="3KqYwoBJglo" role="1tU5fm" />
       </node>
     </node>
+    <node concept="3clFb_" id="7PqTV1oWyly" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getRefactoringName" />
+      <node concept="3clFbS" id="7PqTV1oWyl_" role="3clF47" />
+      <node concept="3Tm1VV" id="7PqTV1oWylA" role="1B3o_S" />
+      <node concept="17QB3L" id="7PqTV1oWyn6" role="3clF45" />
+      <node concept="2AHcQZ" id="1j$ykQp3Zth" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3KqYwoBJfVx" role="jymVt" />
     <node concept="3clFb_" id="3KqYwoBJ0Rs" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -3531,6 +3545,34 @@
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="7PqTV1oWFvR" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myName" />
+      <property role="3TUv4t" value="true" />
+      <node concept="17QB3L" id="7PqTV1oWFeL" role="1tU5fm" />
+      <node concept="3Tm6S6" id="7PqTV1oWFLN" role="1B3o_S" />
+    </node>
+    <node concept="3clFbW" id="7PqTV1oWHU5" role="jymVt">
+      <node concept="3cqZAl" id="7PqTV1oWHU6" role="3clF45" />
+      <node concept="3Tm1VV" id="7PqTV1oWHU7" role="1B3o_S" />
+      <node concept="3clFbS" id="7PqTV1oWHU8" role="3clF47">
+        <node concept="3clFbF" id="7PqTV1oWHU9" role="3cqZAp">
+          <node concept="37vLTI" id="7PqTV1oWHUa" role="3clFbG">
+            <node concept="37vLTw" id="7PqTV1oWIFN" role="37vLTx">
+              <ref role="3cqZAo" node="7PqTV1oWIx1" resolve="name" />
+            </node>
+            <node concept="37vLTw" id="7PqTV1oWHUc" role="37vLTJ">
+              <ref role="3cqZAo" node="7PqTV1oWFvR" resolve="myName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7PqTV1oWIx1" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="7PqTV1oWIx0" role="1tU5fm" />
       </node>
     </node>
     <node concept="2tJIrI" id="FLkVtyCRAI" role="jymVt" />
@@ -3589,6 +3631,20 @@
             <node concept="37vLTw" id="FLkVtyCVkc" role="3ElQJh">
               <ref role="3cqZAo" node="FLkVtyCREI" resolve="myObjects" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="7PqTV1oWyU0" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getRefactoringName" />
+      <node concept="3Tm1VV" id="7PqTV1oWyU2" role="1B3o_S" />
+      <node concept="17QB3L" id="7PqTV1oWyU3" role="3clF45" />
+      <node concept="3clFbS" id="7PqTV1oWyU4" role="3clF47">
+        <node concept="3cpWs6" id="7PqTV1oWH3U" role="3cqZAp">
+          <node concept="37vLTw" id="7PqTV1oWHmv" role="3cqZAk">
+            <ref role="3cqZAo" node="7PqTV1oWFvR" resolve="myName" />
           </node>
         </node>
       </node>

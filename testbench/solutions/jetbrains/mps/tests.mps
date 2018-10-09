@@ -53,6 +53,8 @@
     <import index="3skg" ref="r:cbdcb51c-64a3-4f95-8704-5b9a754c9773(jetbrains.mps.generator.editor.tests@tests)" />
     <import index="mpm6" ref="r:05c4fa32-3688-4db6-b828-4373b1de41d9(jetbrains.mps.lang.quotation.test.editorTest@tests)" />
     <import index="2j2z" ref="r:809bd876-c877-4bf5-8f9e-fbd73017df4f(jetbrains.mps.lang.pattern.editorTest@tests)" />
+    <import index="uro6" ref="r:b7700ddb-0ad2-4309-a33f-b642f5922d06(jetbrains.mps.internalCollections.test.dataFlow@tests)" />
+    <import index="34tp" ref="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -315,6 +317,12 @@
     </node>
     <node concept="lpD6D" id="2m_lP2P5XVD" role="lpD6w">
       <ref role="lpD7u" to="tp82:1kw0gpBy2$0" resolve="ReduceFold_Test" />
+    </node>
+    <node concept="lpD6D" id="4ot0ThrB$cn" role="lpD6w">
+      <ref role="lpD7u" to="uro6:18g32Aioz8T" resolve="Collections_DataFlow_Test" />
+    </node>
+    <node concept="lpD6D" id="4ot0ThrB$cU" role="lpD6w">
+      <ref role="lpD7u" to="34tp:18g32Aioz8T" resolve="TypeCheckingErrors" />
     </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P5XVP">

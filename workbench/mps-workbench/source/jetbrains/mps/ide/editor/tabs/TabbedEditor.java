@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.editor.tabs;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -27,6 +28,7 @@ import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.ui.ShadowAction;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -38,16 +40,15 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -65,6 +66,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class TabbedEditor extends BaseNodeEditor {
@@ -75,8 +77,8 @@ public class TabbedEditor extends BaseNodeEditor {
   private final ShadowAction myNextTabAction, myPrevTabAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
-  private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
-  private final FileStatusChangeListener myFileStatusListener = new FileStatusChangeListener();
+  private final RepoChangeListener myRepoChangeListener;
+  private final FileStatusChangeListener myFileStatusListener;
 
   private final EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
@@ -86,17 +88,14 @@ public class TabbedEditor extends BaseNodeEditor {
       if (comp != null) {
         myTabsPanel.remove(comp);
       }
-      myProject.getModelAccess().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          if (myDisposed) {
-            return;
-          }
-          installTabsComponent();
-          if (node != null) {
-            myTabsComponent.updateTabs();
-            myTabsComponent.editNode(node);
-          }
+      myProject.getModelAccess().runReadInEDT(() -> {
+        if (myDisposed) {
+          return;
+        }
+        installTabsComponent();
+        if (node != null) {
+          myTabsComponent.updateTabs();
+          myTabsComponent.editNode(node);
         }
       });
     }
@@ -104,6 +103,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private final MPSNodeVirtualFile myVirtualFile;
   private boolean myDisposed;
+  private final Disposable myDisposable = Disposer.newDisposable(TabbedEditor.class.getName());
 
   public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull Project mpsProject) {
     super(mpsProject);
@@ -116,14 +116,15 @@ public class TabbedEditor extends BaseNodeEditor {
     // bloody BaseNodeEditor makes us know about layout used there
     getComponent().add(myTabsPanel, BorderLayout.SOUTH);
 
+    myRepoChangeListener = myProject instanceof MPSProject ? ((MPSProject) myProject).getProject().getComponent(RepoChangeListener.class) : null;
+    myFileStatusListener = myProject instanceof MPSProject ? ((MPSProject) myProject).getProject().getComponent(FileStatusChangeListener.class) : null;
+
     installTabsComponent();
 
-    showNode(myBaseNode.resolve(myProject.getRepository()), false);
-
     myNextTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.nextTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent(), this::dispose);
+        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent(), myDisposable);
     myPrevTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.prevTab()),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent(), this::dispose);
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent(), myDisposable);
 
     final AnAction addAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
       @Override
@@ -135,8 +136,6 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    myRepoChangeListener.subscribeTo(myProject.getRepository());
-    myFileStatusListener.attach(myProject);
   }
 
   private void installTabsComponent() {
@@ -144,21 +143,22 @@ public class TabbedEditor extends BaseNodeEditor {
       myTabsComponent.dispose();
     }
     final NodeChangeCallback nodeChangeCallback = newNode -> showNodeInternal(newNode);
-    final CreateModeCallback createAspectCallback = new CreateModeCallback() {
-      @Override
-      public void create(RelationDescriptor tab) {
-        // FIXME what if we create two+ aspects in a row, who's responsible to dispose inactive CreatePanel instances?
-        final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new SetTabsComponentNode(), tab);
-        showComponent(cp);
-        final IdeFocusManager fm = IdeFocusManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-        fm.doWhenFocusSettlesDown(() -> fm.requestFocus(cp, false));
-      }
+    final CreateModeCallback createAspectCallback = relationDescriptor -> {
+      // FIXME what if we create two+ aspects in a row, who's responsible to dispose inactive CreatePanel instances?
+      final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new SetTabsComponentNode(), relationDescriptor);
+      showComponent(cp);
+      final IdeFocusManager fm = IdeFocusManager.getInstance(((MPSProject)myProject).getProject());
+      fm.doWhenFocusSettlesDown(() -> fm.requestFocus(cp, false));
     };
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback,
-        ProjectHelper.toIdeaProject(myProject));
+        ((MPSProject)myProject).getProject());
 
-    myRepoChangeListener.setTabController(myTabsComponent);
-    myFileStatusListener.setTabController(myTabsComponent, myBaseNode);
+    if (myRepoChangeListener != null) {
+      myRepoChangeListener.addTabComponent(myTabsComponent);
+    }
+    if (myFileStatusListener != null) {
+      myFileStatusListener.addTabsComponent(myTabsComponent, myBaseNode);
+    }
 
     JComponent c = myTabsComponent.getComponent();
     if (c != null) {
@@ -169,13 +169,16 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public void dispose() {
     myDisposed = true;
-    myFileStatusListener.detach();
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
-    myProject.getModelAccess().runReadAction(() -> {
-      myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
-      myNameListener.detach();
-    });
+    Disposer.dispose(myDisposable);
+    myProject.getModelAccess().runReadAction(myNameListener::detach);
+    if (myRepoChangeListener != null) {
+      myRepoChangeListener.removeTabComponent(myTabsComponent);
+    }
+    if (myFileStatusListener != null) {
+      myFileStatusListener.removeTabsComponent(myTabsComponent, myBaseNode);
+    }
     myTabsComponent.dispose();
     super.dispose();
   }
@@ -194,7 +197,7 @@ public class TabbedEditor extends BaseNodeEditor {
   public void showNode(SNode node, boolean select) {
     SNodeReference currentNodeReference = getCurrentlyEditedNode();
     SNodeReference newNodeReference = node.getReference();
-    if (currentNodeReference != null && currentNodeReference.equals(newNodeReference)) {
+    if (newNodeReference.equals(currentNodeReference)) {
       return;
     }
 
@@ -251,7 +254,7 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   /*package*/ void updateProperties() {
-    final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+    final com.intellij.openapi.project.Project project = ((MPSProject)myProject).getProject();
     FileEditorManagerEx manager = FileEditorManagerEx.getInstanceEx(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile != null) {
@@ -320,9 +323,12 @@ public class TabbedEditor extends BaseNodeEditor {
     return state;
   }
 
-  protected void saveState(TabbedEditorState state) {
+  @Override
+  protected void saveState(BaseEditorState state) {
     super.saveState(state);
-    state.setNode(getCurrentlyEditedNode());
+    if (state instanceof TabbedEditorState) {
+      ((TabbedEditorState) state).setNode(getCurrentlyEditedNode());
+    }
   }
 
   @Override
@@ -385,14 +391,14 @@ public class TabbedEditor extends BaseNodeEditor {
     }
 
     public boolean equals(Object obj) {
-      return obj instanceof TabbedEditorState && super.equals(obj) && EqualUtil.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
+      return obj instanceof TabbedEditorState && super.equals(obj) && Objects.equals(((TabbedEditorState) obj).myCurrentNode, myCurrentNode);
     }
   }
 
   private static class BaseNavigationAction extends AnAction {
     private final Runnable myDelegate;
 
-    public BaseNavigationAction(Runnable delegate) {
+    BaseNavigationAction(Runnable delegate) {
       myDelegate = delegate;
       setEnabledInModalContext(true);
     }

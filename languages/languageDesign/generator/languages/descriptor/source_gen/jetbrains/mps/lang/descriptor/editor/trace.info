@@ -60,7 +60,7 @@
       <node id="3919235298192600928" at="70,47,71,34" concept="1" />
       <node id="3919235298192600928" at="71,34,72,22" concept="6" />
       <node id="3919235298192592793" at="74,40,75,174" concept="5" />
-      <node id="3919235298192592793" at="79,39,80,141" concept="6" />
+      <node id="3919235298192592793" at="79,39,80,131" concept="6" />
       <node id="3919235298192592793" at="82,36,83,60" concept="1" />
       <node id="3919235298192592793" at="83,60,84,48" concept="1" />
       <node id="3919235298192592793" at="84,48,85,58" concept="1" />
@@ -82,7 +82,7 @@
       <node id="3919235298192592793" at="112,87,113,145" concept="6" />
       <node id="3919235298192592793" at="114,10,115,22" concept="6" />
       <node id="3919235298192592805" at="120,0,121,0" concept="2" trace="myReferencingNode" />
-      <node id="3919235298192592805" at="122,119,123,21" concept="8" />
+      <node id="3919235298192592805" at="122,109,123,21" concept="8" />
       <node id="3919235298192592805" at="123,21,124,42" concept="1" />
       <node id="3919235298192592805" at="124,42,125,20" concept="1" />
       <node id="3919235298192592805" at="128,41,129,32" concept="6" />
@@ -116,7 +116,7 @@
       <node id="3919235298192592793" at="77,72,82,36" concept="5" />
       <node id="3919235298192592793" at="105,301,110,7" concept="5" />
       <node id="3919235298192592793" at="110,7,115,22" concept="3" />
-      <node id="3919235298192592805" at="122,0,127,0" concept="0" trace="Inline_Builder_jxarjp_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3919235298192592805" at="122,0,127,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3919235298192592805" at="132,0,137,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3919235298192600925" at="150,308,155,11" concept="5" />
       <node id="3919235298192600925" at="155,11,160,26" concept="3" />
@@ -130,7 +130,7 @@
       <node id="3919235298192592793" at="74,0,117,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3919235298192592793" at="51,26,52,18" />
       <scope id="3919235298192592793" at="55,39,56,32" />
-      <scope id="3919235298192592793" at="79,39,80,141" />
+      <scope id="3919235298192592793" at="79,39,80,131" />
       <scope id="3919235298192592793" at="107,39,108,113" />
       <scope id="3919235298192592805" at="128,41,129,32" />
       <scope id="3919235298192592805" at="134,28,135,20" />
@@ -149,7 +149,7 @@
       <scope id="3919235298192592793" at="107,0,110,0">
         <var name="it" id="3919235298192592793" />
       </scope>
-      <scope id="3919235298192592805" at="122,119,125,20" />
+      <scope id="3919235298192592805" at="122,109,125,20" />
       <scope id="3919235298192592805" at="128,0,131,0" />
       <scope id="3919235298192600925" at="152,0,155,0">
         <var name="it" id="3919235298192600925" />
@@ -203,9 +203,9 @@
       <scope id="3919235298192592793" at="74,0,117,0" />
       <unit id="3919235298192592793" at="78,74,82,9" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$1$1" />
       <unit id="3919235298192592793" at="106,102,110,5" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$2" />
-      <unit id="3919235298192600925" at="151,104,155,9" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$Inline_Builder_jxarjp_a1a$1" />
+      <unit id="3919235298192600925" at="151,104,155,9" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3919235298192592793" at="76,42,95,5" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$1" />
-      <unit id="3919235298192592805" at="117,0,166,0" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$Inline_Builder_jxarjp_a1a" />
+      <unit id="3919235298192592805" at="117,0,166,0" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a$Inline_Builder0" />
       <unit id="3919235298192592793" at="40,0,167,0" name="jetbrains.mps.lang.descriptor.editor.GeneratorDescriptor_EditorBuilder_a" />
     </file>
     <file name="GeneratorDescriptor_InspectorBuilder_a.java">

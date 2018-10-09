@@ -43,7 +43,7 @@ public class DefaultClassCreator_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_8tkoyu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8tkoyu_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8tkoyu_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier"));
@@ -65,7 +65,7 @@ public class DefaultClassCreator_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new DefaultClassCreator_SmartReference.SMP_ReferenceScope_8tkoyu_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

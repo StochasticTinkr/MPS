@@ -6,7 +6,9 @@
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
 
   <application-components>
-    <!-- no application components -->
+    <component>
+      <implementation-class>jetbrains.mps.plugin.IdeaGoToDeclarationInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -23,11 +25,14 @@
   </project-components>
 
   <actions>
-    <!-- no actions -->
+    <action id="install.idea.plugin" text="Install IntelliJ IDEA Plugin"
+            class="jetbrains.mps.plugin.InstallIDEAPlugin_Action">
+      <add-to-group group-id="ToolsMenu" relative-to-action="Internal" anchor="after"/>
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.NavigationProvider implementation="jetbrains.mps.plugin.IdeaNavigationProvider"/>
+    <mps.CodeNavigationProvider implementation="jetbrains.mps.plugin.IdeaCodeNavigationProvider"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

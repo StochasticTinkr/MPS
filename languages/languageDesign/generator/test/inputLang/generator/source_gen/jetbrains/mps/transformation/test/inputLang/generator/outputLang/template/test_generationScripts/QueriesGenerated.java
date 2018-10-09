@@ -18,34 +18,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
-  public static boolean createRootRule_Condition_zu1o_a0(final CreateRootRuleContext _context) {
+  public static boolean createRootRule_Condition_0_0(final CreateRootRuleContext _context) {
     return QueriesUtil.isTest1(_context.getInputModel());
   }
-  public static boolean baseMappingRule_Condition_a0a0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_0(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, 0x11645bf6873L, "option"), "option_1", "option_default");
   }
-  public static boolean baseMappingRule_Condition_a0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_1(final BaseMappingRuleContext _context) {
     if (!(SPropertyOperations.hasValue(SNodeOperations.as(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1", "none"))) {
       return false;
     }
     return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, 0x11645bf6873L, "option"), "drop_it", "option_default"));
   }
-  public static boolean baseMappingRule_Condition_a1(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_2(final BaseMappingRuleContext _context) {
     if (!(SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1", "none"))) {
       return false;
     }
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, 0x11645bf6873L, "option"), "drop_it", "option_default");
   }
-  public static boolean baseMappingRule_Condition_a0_0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_3(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1", "none");
   }
-  public static Object propertyMacro_GetPropertyValue_11951689843360(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
     return "OutputRoot by MappingRule from input name: " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static void mappingScript_CodeBlock_a(final MappingScriptContext _context) {
+  public static void mappingScript_CodeBlock_3(final MappingScriptContext _context) {
     // test1 only 
     if (!(QueriesUtil.isTest1(_context.getModel()))) {
       return;
@@ -56,7 +56,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(inputRoot, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Input Root created by pre-process script");
     SPropertyOperations.set(inputRoot, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1");
   }
-  public static void mappingScript_CodeBlock_a_0(final MappingScriptContext _context) {
+  public static void mappingScript_CodeBlock_4(final MappingScriptContext _context) {
     // test1 only 
     Object object = _context.getStepObject("run post-processing");
     if (object == null) {

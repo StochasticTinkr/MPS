@@ -57,7 +57,7 @@
       <node id="2178507174411801858" at="85,47,86,34" concept="1" />
       <node id="2178507174411801858" at="86,34,87,22" concept="6" />
       <node id="2178507174411801757" at="89,40,90,175" concept="5" />
-      <node id="2178507174411801757" at="94,39,95,140" concept="6" />
+      <node id="2178507174411801757" at="94,39,95,130" concept="6" />
       <node id="2178507174411801757" at="97,37,98,60" concept="1" />
       <node id="2178507174411801757" at="98,60,99,48" concept="1" />
       <node id="2178507174411801757" at="99,48,100,58" concept="1" />
@@ -79,7 +79,7 @@
       <node id="2178507174411801757" at="127,87,128,145" concept="6" />
       <node id="2178507174411801757" at="129,10,130,22" concept="6" />
       <node id="2178507174411801860" at="135,0,136,0" concept="2" trace="myReferencingNode" />
-      <node id="2178507174411801860" at="137,119,138,21" concept="9" />
+      <node id="2178507174411801860" at="137,109,138,21" concept="9" />
       <node id="2178507174411801860" at="138,21,139,42" concept="1" />
       <node id="2178507174411801860" at="139,42,140,20" concept="1" />
       <node id="2178507174411801860" at="143,41,144,32" concept="6" />
@@ -167,7 +167,7 @@
       <node id="2178507174411801757" at="92,72,97,37" concept="5" />
       <node id="2178507174411801757" at="120,301,125,7" concept="5" />
       <node id="2178507174411801757" at="125,7,130,22" concept="3" />
-      <node id="2178507174411801860" at="137,0,142,0" concept="0" trace="Inline_Builder_jnzu2k_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2178507174411801860" at="137,0,142,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2178507174411801860" at="147,0,152,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2178507174411801861" at="165,308,170,11" concept="5" />
       <node id="2178507174411801861" at="170,11,175,26" concept="3" />
@@ -189,7 +189,7 @@
       <node id="2178507174411801757" at="89,0,132,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2178507174411801757" at="63,26,64,18" />
       <scope id="2178507174411801757" at="67,39,68,32" />
-      <scope id="2178507174411801757" at="94,39,95,140" />
+      <scope id="2178507174411801757" at="94,39,95,130" />
       <scope id="2178507174411801757" at="122,39,123,113" />
       <scope id="2178507174411801860" at="143,41,144,32" />
       <scope id="2178507174411801860" at="149,28,150,20" />
@@ -216,7 +216,7 @@
       <scope id="2178507174411801757" at="122,0,125,0">
         <var name="it" id="2178507174411801757" />
       </scope>
-      <scope id="2178507174411801860" at="137,119,140,20" />
+      <scope id="2178507174411801860" at="137,109,140,20" />
       <scope id="2178507174411801860" at="143,0,146,0" />
       <scope id="2178507174411801861" at="167,0,170,0">
         <var name="it" id="2178507174411801861" />
@@ -314,9 +314,9 @@
       <scope id="2178507174411801757" at="89,0,132,0" />
       <unit id="2178507174411801757" at="93,74,97,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$1$1" />
       <unit id="2178507174411801757" at="121,102,125,5" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$2" />
-      <unit id="2178507174411801861" at="166,104,170,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$Inline_Builder_jnzu2k_a1a$1" />
+      <unit id="2178507174411801861" at="166,104,170,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="2178507174411801757" at="91,42,110,5" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$1" />
-      <unit id="2178507174411801860" at="132,0,181,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$Inline_Builder_jnzu2k_a1a" />
+      <unit id="2178507174411801860" at="132,0,181,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$Inline_Builder0" />
       <unit id="2178507174411801757" at="203,0,256,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a$fieldsListHandler_jnzu2k_d0" />
       <unit id="2178507174411801757" at="52,0,266,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigure_EditorBuilder_a" />
     </file>
@@ -345,7 +345,7 @@
       <node id="2178507174411802125" at="67,48,68,49" concept="1" />
       <node id="2178507174411802073" at="68,49,69,22" concept="6" />
       <node id="2178507174411802073" at="71,40,72,181" concept="5" />
-      <node id="2178507174411802073" at="76,39,77,149" concept="6" />
+      <node id="2178507174411802073" at="76,39,77,139" concept="6" />
       <node id="2178507174411802073" at="79,43,80,60" concept="1" />
       <node id="2178507174411802073" at="80,60,81,48" concept="1" />
       <node id="2178507174411802073" at="81,48,82,58" concept="1" />
@@ -367,7 +367,7 @@
       <node id="2178507174411802073" at="109,87,110,145" concept="6" />
       <node id="2178507174411802073" at="111,10,112,22" concept="6" />
       <node id="2178507174411802123" at="117,0,118,0" concept="2" trace="myReferencingNode" />
-      <node id="2178507174411802123" at="119,119,120,21" concept="9" />
+      <node id="2178507174411802123" at="119,109,120,21" concept="9" />
       <node id="2178507174411802123" at="120,21,121,42" concept="1" />
       <node id="2178507174411802123" at="121,42,122,20" concept="1" />
       <node id="2178507174411802123" at="125,41,126,32" concept="6" />
@@ -408,7 +408,7 @@
       <node id="2178507174411802073" at="74,72,79,43" concept="5" />
       <node id="2178507174411802073" at="102,301,107,7" concept="5" />
       <node id="2178507174411802073" at="107,7,112,22" concept="3" />
-      <node id="2178507174411802123" at="119,0,124,0" concept="0" trace="Inline_Builder_82o9ej_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2178507174411802123" at="119,0,124,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2178507174411802123" at="129,0,134,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2178507174411802124" at="147,308,152,11" concept="5" />
       <node id="2178507174411802124" at="152,11,157,26" concept="3" />
@@ -422,7 +422,7 @@
       <node id="2178507174411802073" at="71,0,114,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2178507174411802073" at="54,26,55,18" />
       <scope id="2178507174411802073" at="58,39,59,32" />
-      <scope id="2178507174411802073" at="76,39,77,149" />
+      <scope id="2178507174411802073" at="76,39,77,139" />
       <scope id="2178507174411802073" at="104,39,105,113" />
       <scope id="2178507174411802123" at="125,41,126,32" />
       <scope id="2178507174411802123" at="131,28,132,20" />
@@ -441,7 +441,7 @@
       <scope id="2178507174411802073" at="104,0,107,0">
         <var name="it" id="2178507174411802073" />
       </scope>
-      <scope id="2178507174411802123" at="119,119,122,20" />
+      <scope id="2178507174411802123" at="119,109,122,20" />
       <scope id="2178507174411802123" at="125,0,128,0" />
       <scope id="2178507174411802124" at="149,0,152,0">
         <var name="it" id="2178507174411802124" />
@@ -496,9 +496,9 @@
       <scope id="2178507174411802073" at="71,0,114,0" />
       <unit id="2178507174411802073" at="75,74,79,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$1$1" />
       <unit id="2178507174411802073" at="103,102,107,5" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$2" />
-      <unit id="2178507174411802124" at="148,104,152,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$Inline_Builder_82o9ej_a0a$1" />
+      <unit id="2178507174411802124" at="148,104,152,9" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="2178507174411802073" at="73,42,92,5" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$1" />
-      <unit id="2178507174411802123" at="114,0,163,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$Inline_Builder_82o9ej_a0a" />
+      <unit id="2178507174411802123" at="114,0,163,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a$Inline_Builder0" />
       <unit id="2178507174411802073" at="43,0,173,0" name="jetbrains.mps.lang.editor.figures.editor.ExternalViewFigureParameter_EditorBuilder_a" />
     </file>
   </root>

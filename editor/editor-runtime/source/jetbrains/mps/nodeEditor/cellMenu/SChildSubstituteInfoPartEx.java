@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
-import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;

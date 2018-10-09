@@ -15,15 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
-import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;

@@ -2772,6 +2772,107 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3wNUq1jZYjv" role="3cqZAp">
+          <node concept="3cpWsn" id="3wNUq1jZYjw" role="3cpWs9">
+            <property role="TrG5h" value="insertRowBeforeAction" />
+            <node concept="3uibUv" id="3wNUq1jZYju" role="1tU5fm">
+              <ref role="3uigEE" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
+            </node>
+            <node concept="2ShNRf" id="3wNUq1jZYjx" role="33vP2m">
+              <node concept="YeOm9" id="3wNUq1jZYjy" role="2ShVmc">
+                <node concept="1Y3b0j" id="3wNUq1jZYjz" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
+                  <ref role="37wK5l" to="3ahc:~AbstractCellAction.&lt;init&gt;()" resolve="AbstractCellAction" />
+                  <node concept="3Tm1VV" id="3wNUq1jZYj$" role="1B3o_S" />
+                  <node concept="3clFb_" id="3wNUq1jZYj_" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="execute" />
+                    <node concept="3Tm1VV" id="3wNUq1jZYjA" role="1B3o_S" />
+                    <node concept="3cqZAl" id="3wNUq1jZYjB" role="3clF45" />
+                    <node concept="3clFbS" id="3wNUq1jZYjC" role="3clF47">
+                      <node concept="3clFbF" id="3wNUq1jZYjD" role="3cqZAp">
+                        <node concept="2OqwBi" id="3wNUq1jZYjE" role="3clFbG">
+                          <node concept="37vLTw" id="3wNUq1jZYjF" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7oCDJDn_QjY" resolve="myModel" />
+                          </node>
+                          <node concept="liA8E" id="3wNUq1jZYjG" role="2OqNvi">
+                            <ref role="37wK5l" node="1ECxnmDmUGQ" resolve="insertRow" />
+                            <node concept="37vLTw" id="3wNUq1jZYjH" role="37wK5m">
+                              <ref role="3cqZAo" node="4X0XnVPrLzG" resolve="rowNumber" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="3wNUq1jZYjI" role="3clF46">
+                      <property role="TrG5h" value="editorContext" />
+                      <node concept="3uibUv" id="3wNUq1jZYjJ" role="1tU5fm">
+                        <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="3wNUq1jZYjK" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3wNUq1k0q7b" role="3cqZAp">
+          <node concept="3cpWsn" id="3wNUq1k0q7c" role="3cpWs9">
+            <property role="TrG5h" value="insertRowAfterAction" />
+            <node concept="3uibUv" id="3wNUq1k0q7a" role="1tU5fm">
+              <ref role="3uigEE" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
+            </node>
+            <node concept="2ShNRf" id="3wNUq1k0q7d" role="33vP2m">
+              <node concept="YeOm9" id="3wNUq1k0q7e" role="2ShVmc">
+                <node concept="1Y3b0j" id="3wNUq1k0q7f" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
+                  <ref role="37wK5l" to="3ahc:~AbstractCellAction.&lt;init&gt;()" resolve="AbstractCellAction" />
+                  <node concept="3Tm1VV" id="3wNUq1k0q7g" role="1B3o_S" />
+                  <node concept="3clFb_" id="3wNUq1k0q7h" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="execute" />
+                    <node concept="3Tm1VV" id="3wNUq1k0q7i" role="1B3o_S" />
+                    <node concept="3cqZAl" id="3wNUq1k0q7j" role="3clF45" />
+                    <node concept="37vLTG" id="3wNUq1k0q7k" role="3clF46">
+                      <property role="TrG5h" value="editorContext" />
+                      <node concept="3uibUv" id="3wNUq1k0q7l" role="1tU5fm">
+                        <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="3wNUq1k0q7m" role="3clF47">
+                      <node concept="3clFbF" id="3wNUq1k0q7n" role="3cqZAp">
+                        <node concept="2OqwBi" id="3wNUq1k0q7o" role="3clFbG">
+                          <node concept="37vLTw" id="3wNUq1k0q7p" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7oCDJDn_QjY" resolve="myModel" />
+                          </node>
+                          <node concept="liA8E" id="3wNUq1k0q7q" role="2OqNvi">
+                            <ref role="37wK5l" node="1ECxnmDmUGQ" resolve="insertRow" />
+                            <node concept="3cpWs3" id="3wNUq1k0q7r" role="37wK5m">
+                              <node concept="37vLTw" id="3wNUq1k0q7s" role="3uHU7B">
+                                <ref role="3cqZAo" node="4X0XnVPrLzG" resolve="rowNumber" />
+                              </node>
+                              <node concept="3cmrfG" id="3wNUq1k0q7t" role="3uHU7w">
+                                <property role="3cmrfH" value="1" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="3wNUq1k0q7u" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="4V7ztH0RQg8" role="3cqZAp">
           <node concept="9aQIb" id="4V7ztH0RTC1" role="9aQIa">
             <node concept="3clFbS" id="4V7ztH0RTC2" role="9aQI4">
@@ -2783,50 +2884,8 @@
                       <ref role="Rm8GQ" to="f4zo:~CellActionType.INSERT" resolve="INSERT" />
                       <ref role="1Px2BO" to="f4zo:~CellActionType" resolve="CellActionType" />
                     </node>
-                    <node concept="2ShNRf" id="4X0XnVPrLxH" role="37wK5m">
-                      <node concept="YeOm9" id="4X0XnVPrLxI" role="2ShVmc">
-                        <node concept="1Y3b0j" id="4X0XnVPrLxJ" role="YeSDq">
-                          <property role="2bfB8j" value="true" />
-                          <ref role="1Y3XeK" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
-                          <ref role="37wK5l" to="3ahc:~AbstractCellAction.&lt;init&gt;()" resolve="AbstractCellAction" />
-                          <node concept="3Tm1VV" id="4X0XnVPrLxK" role="1B3o_S" />
-                          <node concept="3clFb_" id="4X0XnVPrLxL" role="jymVt">
-                            <property role="1EzhhJ" value="false" />
-                            <property role="TrG5h" value="execute" />
-                            <node concept="3Tm1VV" id="4X0XnVPrLxM" role="1B3o_S" />
-                            <node concept="3cqZAl" id="4X0XnVPrLxN" role="3clF45" />
-                            <node concept="37vLTG" id="4X0XnVPrLxO" role="3clF46">
-                              <property role="TrG5h" value="editorContext" />
-                              <node concept="3uibUv" id="yfjzwdo1wT" role="1tU5fm">
-                                <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-                              </node>
-                            </node>
-                            <node concept="3clFbS" id="4X0XnVPrLxQ" role="3clF47">
-                              <node concept="3clFbF" id="4X0XnVPrL$a" role="3cqZAp">
-                                <node concept="2OqwBi" id="4X0XnVPrL$c" role="3clFbG">
-                                  <node concept="37vLTw" id="2BHiRxeuL6y" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7oCDJDn_QjY" resolve="myModel" />
-                                  </node>
-                                  <node concept="liA8E" id="4X0XnVPrL$g" role="2OqNvi">
-                                    <ref role="37wK5l" node="1ECxnmDmUGQ" resolve="insertRow" />
-                                    <node concept="3cpWs3" id="4V7ztH0RTC5" role="37wK5m">
-                                      <node concept="37vLTw" id="2BHiRxgmIgW" role="3uHU7B">
-                                        <ref role="3cqZAo" node="4X0XnVPrLzG" resolve="rowNumber" />
-                                      </node>
-                                      <node concept="3cmrfG" id="4V7ztH0RTC8" role="3uHU7w">
-                                        <property role="3cmrfH" value="1" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="2AHcQZ" id="3tYsUK_t5Py" role="2AJF6D">
-                              <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="3wNUq1k0q7v" role="37wK5m">
+                      <ref role="3cqZAo" node="3wNUq1k0q7c" resolve="insertRowAfterAction" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3GM_nagTyYi" role="2Oq$k0">
@@ -2837,24 +2896,19 @@
             </node>
           </node>
           <node concept="3clFbS" id="4V7ztH0RQg9" role="3clFbx">
-            <node concept="3clFbF" id="4V7ztH0RQgd" role="3cqZAp">
-              <node concept="2OqwBi" id="4V7ztH0RQgp" role="3clFbG">
-                <node concept="liA8E" id="4V7ztH0RQgt" role="2OqNvi">
-                  <ref role="37wK5l" to="hox0:~Style.set(jetbrains.mps.openapi.editor.style.StyleAttribute,java.lang.Object):void" resolve="set" />
-                  <node concept="10M0yZ" id="4V7ztH0RTBY" role="37wK5m">
-                    <ref role="3cqZAo" to="5ueo:~StyleAttributes.LAST_POSITION_ALLOWED" resolve="LAST_POSITION_ALLOWED" />
-                    <ref role="1PxDUh" to="5ueo:~StyleAttributes" resolve="StyleAttributes" />
-                  </node>
-                  <node concept="3clFbT" id="4V7ztH0RTC0" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
+            <node concept="3clFbF" id="3wNUq1k0kHO" role="3cqZAp">
+              <node concept="2OqwBi" id="3wNUq1k0kHP" role="3clFbG">
+                <node concept="37vLTw" id="3wNUq1k0kHQ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4X0XnVPrLxy" resolve="emptyCell" />
                 </node>
-                <node concept="2OqwBi" id="4V7ztH0RQgf" role="2Oq$k0">
-                  <node concept="liA8E" id="4V7ztH0RQgj" role="2OqNvi">
-                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                <node concept="liA8E" id="3wNUq1k0kHR" role="2OqNvi">
+                  <ref role="37wK5l" to="f4zo:~EditorCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType,jetbrains.mps.openapi.editor.cells.CellAction):void" resolve="setAction" />
+                  <node concept="Rm8GO" id="3wNUq1k0oQH" role="37wK5m">
+                    <ref role="Rm8GQ" to="f4zo:~CellActionType.INSERT" resolve="INSERT" />
+                    <ref role="1Px2BO" to="f4zo:~CellActionType" resolve="CellActionType" />
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTBR_" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4X0XnVPrLxy" resolve="emptyCell" />
+                  <node concept="37vLTw" id="3wNUq1k0kHT" role="37wK5m">
+                    <ref role="3cqZAo" node="3wNUq1jZYjw" resolve="insertRowBeforeAction" />
                   </node>
                 </node>
               </node>
@@ -2875,45 +2929,8 @@
                 <ref role="Rm8GQ" to="f4zo:~CellActionType.INSERT_BEFORE" resolve="INSERT_BEFORE" />
                 <ref role="1Px2BO" to="f4zo:~CellActionType" resolve="CellActionType" />
               </node>
-              <node concept="2ShNRf" id="2aJi2xfh1d4" role="37wK5m">
-                <node concept="YeOm9" id="2aJi2xfh1d6" role="2ShVmc">
-                  <node concept="1Y3b0j" id="2aJi2xfh1d7" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
-                    <ref role="37wK5l" to="3ahc:~AbstractCellAction.&lt;init&gt;()" resolve="AbstractCellAction" />
-                    <node concept="3Tm1VV" id="2aJi2xfh1d8" role="1B3o_S" />
-                    <node concept="3clFb_" id="2aJi2xfh1d9" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="execute" />
-                      <node concept="3Tm1VV" id="2aJi2xfh1da" role="1B3o_S" />
-                      <node concept="3cqZAl" id="2aJi2xfh1db" role="3clF45" />
-                      <node concept="3clFbS" id="2aJi2xfh1de" role="3clF47">
-                        <node concept="3clFbF" id="2aJi2xfh1df" role="3cqZAp">
-                          <node concept="2OqwBi" id="2aJi2xfh1dh" role="3clFbG">
-                            <node concept="37vLTw" id="2BHiRxeu_BI" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7oCDJDn_QjY" resolve="myModel" />
-                            </node>
-                            <node concept="liA8E" id="2aJi2xfh1dl" role="2OqNvi">
-                              <ref role="37wK5l" node="1ECxnmDmUGQ" resolve="insertRow" />
-                              <node concept="37vLTw" id="2BHiRxglpPj" role="37wK5m">
-                                <ref role="3cqZAo" node="4X0XnVPrLzG" resolve="rowNumber" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="37vLTG" id="2aJi2xfh1dc" role="3clF46">
-                        <property role="TrG5h" value="editorContext" />
-                        <node concept="3uibUv" id="yfjzwdo1wW" role="1tU5fm">
-                          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-                        </node>
-                      </node>
-                      <node concept="2AHcQZ" id="3tYsUK_t6fW" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+              <node concept="37vLTw" id="3wNUq1jZYjL" role="37wK5m">
+                <ref role="3cqZAo" node="3wNUq1jZYjw" resolve="insertRowBeforeAction" />
               </node>
             </node>
           </node>

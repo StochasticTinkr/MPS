@@ -19,10 +19,8 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelName;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
  * Helps to calculates such options as java package, model name for the model creation procedure

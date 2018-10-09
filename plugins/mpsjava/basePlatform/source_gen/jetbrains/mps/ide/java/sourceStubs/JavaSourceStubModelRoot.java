@@ -22,6 +22,7 @@ import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
+import jetbrains.mps.persistence.CopyFileBasedModelRootHelper;
 
 public class JavaSourceStubModelRoot extends FileBasedModelRoot implements CopyableModelRoot<JavaSourceStubModelRoot> {
   private static final Logger LOG = Logger.getLogger(JavaSourceStubModelRoot.class);
@@ -112,8 +113,8 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot implements Copya
   }
 
   @Override
-  public void copyTo(@NotNull JavaSourceStubModelRoot root) throws CopyNotSupportedException {
-    super.copyContentRootAndFiles(root);
+  public void copyTo(@NotNull JavaSourceStubModelRoot targetModelRoot) throws CopyNotSupportedException {
+    new CopyFileBasedModelRootHelper(this, targetModelRoot).copy();
   }
 
 

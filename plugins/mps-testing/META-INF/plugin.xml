@@ -14,14 +14,14 @@
   ~ limitations under the License.
   -->
 
-<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+<idea-plugin>
   <id>jetbrains.mps.testing</id>
   <name>MPS Testing</name>
   <category>Custom Languages</category>
   <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
-  <version>2018.2</version>
+  <version>2018.2.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="181.1" until-build="183.*"/>
+  <idea-version since-build="182.1" until-build="183.*"/>
 
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.lang</depends>

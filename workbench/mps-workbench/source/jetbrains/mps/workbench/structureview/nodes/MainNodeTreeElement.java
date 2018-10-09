@@ -23,6 +23,8 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -31,6 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainNodeTreeElement implements StructureViewTreeElement {
+  private static final Logger LOG = LogManager.getLogger(MainNodeTreeElement.class);
+
   private final MPSProject myProject;
   private final SNodeReference myNode;
 
@@ -53,10 +57,14 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
       public void run() {
         SNode node = myNode.resolve(myProject.getRepository());
         for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
-          for (SNode aspectNode : tab.getNodes(node)) {
-            SNode baseNode = tab.getBaseNode(aspectNode);
-            boolean bijection = (baseNode == node || baseNode == null);
-            result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
+          try {
+            for (SNode aspectNode : tab.getNodes(node)) {
+              SNode baseNode = tab.getBaseNode(aspectNode);
+              boolean bijection = (baseNode == node || baseNode == null);
+              result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
+            }
+          } catch (Throwable t) {
+            LOG.error("Exception in extension: ", t);
           }
         }
       }

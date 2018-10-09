@@ -28,7 +28,7 @@ class MPSProperties extends ProductProperties {
                  "intellij.platform.externalSystem.impl"]
 
         productLayout.bundledPluginModules = [
-                "intellij.vcs.git", "intellij.platform.remoteServers.git", "intellij.java.remoteServers.git", "intellij.vcs.svn", "intellij.vcs.cvs",
+                "intellij.vcs.git", "intellij.platform.remoteServers.git", "intellij.java.remoteServers.git", "intellij.vcs.svn", "intellij.vcs.github", "intellij.vcs.cvs",
                 "intellij.terminal"
                 /*, "properties", "ant"*/
         ]
@@ -51,7 +51,6 @@ class MPSProperties extends ProductProperties {
                 withProjectLibrary("purejavacomm") // for terminal plugin
                 withoutProjectLibrary("Ant")
                 withoutProjectLibrary("Gradle")
-                withoutProjectLibrary("com.twelvemonkeys.imageio:imageio-tiff:3.2.1")
                 excludeFromModule("intellij.java.resources", "META-INF/IdeaPlugin.xml")
                 excludeFromModule("intellij.java.resources", "componentSets/*")
                 excludeFromModule("intellij.java.resources", "ProductivityFeaturesRegistry.xml")
@@ -113,6 +112,9 @@ class MPSProperties extends ProductProperties {
         // copy jre version
         context.ant.copy(file: "$context.paths.communityHome/build/dependencies/gradle.properties",
                 todir: "$targetDirectory/build/dependencies/")
+
+        //for compatibility with users projects which refer to IDEA_HOME/lib/annotations.jar
+        context.ant.move(file: "$targetDirectory/lib/annotations-java5.jar", tofile: "$targetDirectory/lib/annotations.jar")
     }
 
     @Override

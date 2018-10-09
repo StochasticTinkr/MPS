@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +29,8 @@ import com.intellij.execution.ExecutionException;
 public class JUnitCommand_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitCommand_Test.class, "${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public JUnitCommand_Test() {
     super(ourParamCache);
@@ -34,15 +38,19 @@ public class JUnitCommand_Test extends BaseTransformationTest {
 
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
+    new JUnitCommand_Test.TestBody(this).test_startSimpleBTestCase();
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
+    new JUnitCommand_Test.TestBody(this).test_startFailedBTestCase();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_startSimpleBTestCase() throws Exception {
       this.checkTests(new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "8128243960970299078")), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }

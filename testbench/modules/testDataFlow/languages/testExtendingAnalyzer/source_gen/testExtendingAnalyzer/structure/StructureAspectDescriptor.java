@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNullSafeDotExpression = createDescriptorForNullSafeDotExpression();
   /*package*/ final ConceptDescriptor myConceptNullUnsafeDotExpression = createDescriptorForNullUnsafeDotExpression();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.NullSafeDotExpression:
         return myConceptNullSafeDotExpression;
       case LanguageConceptSwitch.NullUnsafeDotExpression:
@@ -39,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForNullSafeDotExpression() {
@@ -47,6 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.DotExpression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L);
     b.origin("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)/1417601170173058089");
+    b.version(2);
     b.alias("safe");
     return b.create();
   }
@@ -55,6 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.DotExpression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L);
     b.origin("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)/1417601170173057582");
+    b.version(2);
     b.alias("unsafe");
     return b.create();
   }

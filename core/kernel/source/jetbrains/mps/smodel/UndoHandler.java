@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.annotation.ToRemove;
 
 public interface UndoHandler {
   /**

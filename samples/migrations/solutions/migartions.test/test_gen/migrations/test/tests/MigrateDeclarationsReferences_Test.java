@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,17 +27,24 @@ public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(MigrateDeclarationsReferences_Test.class, "${module}/../..", "r:fd0f5486-f8ee-4117-b081-77c304b23496(migrations.test.tests@tests)", false);
 
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
+
   public MigrateDeclarationsReferences_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_MigrateDeclarationsReferences_Test() throws Throwable {
-    runTest("migrations.test.tests.MigrateDeclarationsReferences_Test$TestBody", "testMethod", true);
+    new MigrateDeclarationsReferences_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseMigrationTestBody {
+  /*package*/ static class TestBody extends BaseMigrationTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public Collection<SNode> getInputNodes() {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("7169675881805361841"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("6626913010124184458"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));

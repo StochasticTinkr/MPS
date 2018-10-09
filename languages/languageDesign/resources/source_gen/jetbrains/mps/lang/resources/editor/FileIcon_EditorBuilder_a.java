@@ -20,12 +20,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.resources.behavior.FileIcon__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import jetbrains.mps.editor.runtime.EditorUtil;
@@ -127,18 +123,18 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     return editorCell;
   }
   private EditorCell createImage_0() {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getModel(myNode).getModule();
-    imagePath = (new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        return MacrosFactory.forModule(((AbstractModule) SNodeOperations.getModel(myNode).getModule())).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
-      }
-    }).invoke();
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(getEditorContext(), myNode, imageModule, imagePath);
+    EditorCell_Image editorCell = fromImageCellProvider0();
     editorCell.setCellId("Image_tl1n57_a0a0a0");
     editorCell.setDescent(0);
     return editorCell;
+  }
+  private EditorCell_Image fromImageCellProvider0() {
+    String imagePath = (new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file"));
+      }
+    }).invoke();
+    return EditorCell_Image.createImageCell(getEditorContext(), myNode, imagePath);
   }
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<invalid path>");

@@ -44,7 +44,7 @@ public class IfInstanceOfVarReference_SubstituteMenu extends SubstituteMenuBase 
   }
 
 
-  public static class SMP_ReferenceScope_30k9yd_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_30k9yd_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_30k9yd_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357fca73L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration"));

@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;

@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.language;
 
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
-import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

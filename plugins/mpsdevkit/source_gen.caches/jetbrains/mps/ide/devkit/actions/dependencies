@@ -682,36 +682,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.InstallIDEAPlugin_Action" file="InstallIDEAPlugin_Action.java">
-    <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
-    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
-    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
-    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl" file="IntentionActionsProviderImpl.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -881,7 +851,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.InstallIDEAPlugin_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.IntentionsGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageHierarchy_Action" />
@@ -952,7 +921,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratedQueriesOpener" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratedCodeOpener" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

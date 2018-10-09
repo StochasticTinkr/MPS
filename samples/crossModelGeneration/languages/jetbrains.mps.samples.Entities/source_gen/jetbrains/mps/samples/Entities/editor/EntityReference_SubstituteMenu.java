@@ -44,7 +44,7 @@ public class EntityReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_c8rze0_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_c8rze0_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_c8rze0_a() {
       super(MetaAdapterFactory.getConcept(0x7917ee54129c42c6L, 0x8b53ba6a5e718e32L, 0x384147f70ea2a91bL, "jetbrains.mps.samples.Entities.structure.EntityReference"), MetaAdapterFactory.getReferenceLink(0x7917ee54129c42c6L, 0x8b53ba6a5e718e32L, 0x384147f70ea2a91bL, 0x384147f70ea2a91cL, "target"));

@@ -2,7 +2,7 @@
   <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-    <option name="VM_PARAMETERS" value="-client -ea -Xmx4096m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2018.1 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
+    <option name="VM_PARAMETERS" value="-client -ea -Xmx4096m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot; -Dapple.awt.graphics.UseQuartz=true -Dide.mac.message.dialogs.as.sheets=false -Didea.paths.selector=MPSSRC2018.2 -Dintellij.config.imported.in.current.session=true -Dawt.useSystemAAFontSettings=lcd -XX:MaxJavaStackTraceDepth=10000 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />

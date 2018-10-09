@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InvalidUseOfBoundTypes_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InvalidUseOfBoundTypes_Test() {
     super(ourParamCache);
@@ -25,67 +29,71 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624927426896() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927426896", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6923385624927426896();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795767328() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795767328", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795767328();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624929530242() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624929530242", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6923385624929530242();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795771260() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795771260", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795771260();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624928690780() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624928690780", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6923385624928690780();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795771535() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795771535", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795771535();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368246786() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368246786", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6405539316368246786();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795772004() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795772004", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795772004();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298938() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298938", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6405539316368298938();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795772509() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795772509", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795772509();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298991() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298991", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6405539316368298991();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795773025() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795773025", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795773025();
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795773624() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795773624", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_ErrorMessagesCheck4632498131795773624();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624927141945() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927141945", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6923385624927141945();
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368313510() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368313510", true);
+    new InvalidUseOfBoundTypes_Test.TestBody(this).test_NodeInvalidUseOfBoundTypeCheck6405539316368313510();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeInvalidUseOfBoundTypeCheck6923385624927426896() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927426896"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

@@ -80,6 +80,10 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     revealResults(newViewer, mpsProject.getName(), IdeIcons.PROJECT_ICON);
   }
   public CheckinHandler.ReturnResult checkModelsBeforeCommit(List<SModel> models) {
+    if (ListSequence.fromList(models).isEmpty()) {
+      return CheckinHandler.ReturnResult.COMMIT;
+    }
+
     ModelCheckerViewer viewer = createViewerForTab();
     viewer.checkModels(models, "models");
 

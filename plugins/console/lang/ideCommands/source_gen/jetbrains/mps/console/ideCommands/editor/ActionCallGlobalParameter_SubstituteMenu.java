@@ -44,7 +44,7 @@ public class ActionCallGlobalParameter_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_m01yxv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_m01yxv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_m01yxv_a() {
       super(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter"), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, 0x4d7759afce9587aaL, "declaration"));

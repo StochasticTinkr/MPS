@@ -44,7 +44,7 @@ public class PropertyVCSDescriptor_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_zfowks_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_zfowks_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_zfowks_a() {
       super(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, "jetbrains.mps.vcs.mergehints.structure.PropertyVCSDescriptor"), MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, 0x4f2cc0d970a4f877L, "prop"));

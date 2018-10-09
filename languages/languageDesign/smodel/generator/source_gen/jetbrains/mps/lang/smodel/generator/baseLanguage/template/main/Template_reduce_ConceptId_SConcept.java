@@ -49,7 +49,7 @@ public class Template_reduce_ConceptId_SConcept extends TemplateDeclarationBase 
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_69113703623495556370(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_r2ji7m_b0a0a0a1a3a2a5));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_101_0(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_r2ji7m_b0a0a0a1a3a2a5));
           if (switchInput2 == null) {
             {
               TemplateSwitchMapping switch2 = environment.getGenerator().getSwitch(templateSwitchNode_r2ji7m_a0a0c0a1a1a3a2a5);
@@ -81,7 +81,7 @@ public class Template_reduce_ConceptId_SConcept extends TemplateDeclarationBase 
       {
         final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_69113703623495556380(new PropertyMacroContext(context1, "0L", propertyMacro_r2ji7m_c0a0c0a0b0e0c0f))));
+          SNodeAccessUtil.setProperty(tnode5, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_101_0(new PropertyMacroContext(context1, "0L", propertyMacro_r2ji7m_c0a0c0a0b0e0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode5);
@@ -90,7 +90,7 @@ public class Template_reduce_ConceptId_SConcept extends TemplateDeclarationBase 
       {
         final SNode tnode6 = environment.createOutputNode(myConcepts[3]);
         try {
-          SNodeAccessUtil.setProperty(tnode6, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_69113703623495556510(new PropertyMacroContext(context1, "", propertyMacro_r2ji7m_c0a0c0a0b0f0c0f))));
+          SNodeAccessUtil.setProperty(tnode6, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_101_1(new PropertyMacroContext(context1, "", propertyMacro_r2ji7m_c0a0c0a0b0f0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode6);

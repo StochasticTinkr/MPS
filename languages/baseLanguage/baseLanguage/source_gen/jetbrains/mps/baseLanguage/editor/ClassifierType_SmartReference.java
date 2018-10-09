@@ -43,7 +43,7 @@ public class ClassifierType_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_in4rz7_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_in4rz7_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_in4rz7_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
@@ -65,7 +65,7 @@ public class ClassifierType_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ClassifierType_SmartReference.SMP_ReferenceScope_in4rz7_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

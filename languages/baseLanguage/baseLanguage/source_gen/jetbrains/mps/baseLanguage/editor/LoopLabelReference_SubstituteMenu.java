@@ -44,7 +44,7 @@ public class LoopLabelReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_6lvr1q_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_6lvr1q_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_6lvr1q_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L, "jetbrains.mps.baseLanguage.structure.LoopLabelReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L, 0x50c493bf955512aL, "loopLabel"));

@@ -98,6 +98,14 @@ public final class TransitionTrace {
   }
 
   /**
+   * DO NOT USE!
+   * Intended solely for use from TransitionTracePersistence.load()
+   */
+  /*package*/ void setOrigin(SNode receiver, SNodeId origin) {
+    doSet(receiver, origin);
+  }
+
+  /**
    * Output node derives its origin from the given input node.
    * If output node already got an origin, it's preserved.
    * If input node has no trace, output node gets none as well.

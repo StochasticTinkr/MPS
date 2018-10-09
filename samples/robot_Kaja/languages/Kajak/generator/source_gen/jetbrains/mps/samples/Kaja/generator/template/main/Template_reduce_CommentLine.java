@@ -41,7 +41,7 @@ public class Template_reduce_CommentLine extends TemplateDeclarationBase {
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_64057004854362878360(new PropertyMacroContext(context1, "this is a comment", propertyMacro_h26r33_c0a0c0a0b0b0c0f))));
+          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_22_0(new PropertyMacroContext(context1, "this is a comment", propertyMacro_h26r33_c0a0c0a0b0b0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode2);

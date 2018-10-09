@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTransformationLocation_WithFeatures = createDescriptorForTransformationLocation_WithFeatures();
   /*package*/ final ConceptDescriptor myConceptTransformationLocation_WithoutFeatures = createDescriptorForTransformationLocation_WithoutFeatures();
   /*package*/ final ConceptDescriptor myConceptTransformationMenu_Test = createDescriptorForTransformationMenu_Test();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.TransformationFeature_Optional:
         return myConceptTransformationFeature_Optional;
       case LanguageConceptSwitch.TransformationFeature_Required:
@@ -54,7 +54,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForTransformationFeature_Optional() {
@@ -62,6 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485120029");
+    b.version(2);
     b.alias("optional");
     return b.create();
   }
@@ -70,6 +71,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485123544");
+    b.version(2);
     b.alias("required");
     return b.create();
   }
@@ -78,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/3743352646564998933");
+    b.version(2);
     b.alias("unavailable");
     return b.create();
   }
@@ -86,6 +89,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/6436886136983394210");
+    b.version(2);
     b.alias("test location");
     return b.create();
   }
@@ -94,6 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/3743352646564481246");
+    b.version(2);
     b.alias("location with a required and an optional feature");
     return b.create();
   }
@@ -102,6 +107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485168427");
+    b.version(2);
     b.alias("location with no available features");
     return b.create();
   }
@@ -110,6 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationMenu", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL);
     b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/2710939522624389503");
+    b.version(2);
     return b.create();
   }
 }

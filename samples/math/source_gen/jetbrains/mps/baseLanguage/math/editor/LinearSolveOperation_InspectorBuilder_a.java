@@ -46,7 +46,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new LinearSolveOperation_InspectorBuilder_a.Inline_Builder_kydwvz_a0a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new LinearSolveOperation_InspectorBuilder_a.Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_nullable_aggregation(cell);
         return cell;
       }
@@ -67,12 +67,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_kydwvz_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_kydwvz_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

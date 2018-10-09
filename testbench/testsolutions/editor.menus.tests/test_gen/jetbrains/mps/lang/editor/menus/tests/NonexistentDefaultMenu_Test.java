@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class NonexistentDefaultMenu_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NonexistentDefaultMenu_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public NonexistentDefaultMenu_Test() {
     super(ourParamCache);
@@ -25,11 +29,15 @@ public class NonexistentDefaultMenu_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test$TestBody", "test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810", true);
+    new NonexistentDefaultMenu_Test.TestBody(this).test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2153278993334499810"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

@@ -21,13 +21,11 @@ import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {

@@ -11,7 +11,7 @@ core/components/classes
 core/platform/classes
 core/vfs/classes
 core/kernel/classes
-core/kernel/resources/classes
+core/resources/classes
 core/model/classes
 core/module/classes
 core/logging/classes
@@ -30,8 +30,8 @@ core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
 core/migration-runtime/classes/
 core/textgen/classes
-core/kernel/jetbrains.mps.debug.api.info/classes
-core/kernel/dataFlowRuntime/classes
+core/jetbrains.mps.debug.api.info/classes
+core/dataFlowRuntime/classes
 core/mps-core/classes
 core/project/classes
 core/tool/builder/classes
@@ -61,7 +61,6 @@ workbench/resources_en/classes
 workbench/mps-tips/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/jetbrains.mps.ide/classes
-MPSPlugin/apiclasses
 :test
 core/tool/environment/classes
 testbench/classes

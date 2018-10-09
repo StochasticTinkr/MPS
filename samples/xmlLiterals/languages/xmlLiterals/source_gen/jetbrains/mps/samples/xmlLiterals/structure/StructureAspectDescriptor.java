@@ -17,10 +17,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptElementMacro = createDescriptorForElementMacro();
   /*package*/ final ConceptDescriptor myConceptTextMacro = createDescriptorForTextMacro();
   /*package*/ final ConceptDescriptor myConceptXmlLiteral = createDescriptorForXmlLiteral();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ElementMacro:
         return myConceptElementMacro;
       case LanguageConceptSwitch.TextMacro:
@@ -44,7 +44,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForElementMacro() {
@@ -52,6 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.xml.structure.XmlContent", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL);
     b.origin("r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)/9152904044274518122");
+    b.version(2);
     b.aggregate("expression", 0x7f05a5bbee380870L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("9152904044274518128").done();
     b.alias("$${");
     return b.create();
@@ -61,6 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.xml.structure.XmlText", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L);
     b.origin("r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)/9152904044274469601");
+    b.version(2);
     b.aggregate("expression", 0x7f05a5bbee374ae2L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("9152904044274469602").done();
     b.alias("${");
     return b.create();
@@ -70,6 +72,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)/9152904044274328259");
+    b.version(2);
     b.aggregate("element", 0x7f05a5bbee3522c4L).target(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L).optional(false).ordered(true).multiple(false).origin("9152904044274328260").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("xml literal");

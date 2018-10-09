@@ -75,6 +75,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.RefactoringAspectDescriptor" file="RefactoringAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod" />
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.runtime.RefactoringAspectBase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.RenameMethod" file="RenameMethod.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

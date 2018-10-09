@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,7 +31,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -251,6 +251,7 @@ public final class GeneratorMappings {
   /*package*/List<SNode> getSortedMappingKeys(String label) {
     ArrayList<Map.Entry<SNode, Object>> l = new ArrayList<>(myMappingNameAndInputNodeToOutputNodeMap.get(label).entrySet());
     Collections.sort(l, new Comparator<Entry<SNode, Object>>() {
+      private final ToStringComparator myToStringComparator = new ToStringComparator();
       @Override
       public int compare(Entry<SNode, Object> o1, Entry<SNode, Object> o2) {
         int v = compareKeys(o1.getKey(), o2.getKey());
@@ -268,11 +269,22 @@ public final class GeneratorMappings {
         if (v == 0) {
           // just in case presentation is the same (e.g. enumeration literals with the same name in different enums)
           // Hope, there could be no two nodes with the same presentation and same node id.
-          SNodeReference o1 = TracingUtil.getInput(n1);
-          SNodeReference o2 = TracingUtil.getInput(n2);
+          SNodeReference o1, o2;
+          do {
+            o1 = TracingUtil.getInput(n1);
+            o2 = TracingUtil.getInput(n2);
+            n1 = n1.getParent();
+            n2 = n2.getParent();
+            // original input node is recorded for a top template node only, if a child template node serves as a ML key, we can't
+            // find its input here unless traverse to parent.
+            // highlevel sample: 'Car' is transformed with map_EditorDeclaration to ConceptEditorDeclaration with child CellModel_Collection, that
+            // later serves as a key for 'cellFactory.factoryMethod' ML. Presentation for any CellModel_Collection is 'collection', and as long as it's
+            // child template node of map_EditorDeclaration template, it doesn't get original input value (map_EditorDeclaration does).
+          } while (o1 == null && o2 == null && n1 != null && n2 != null);
+
           if (o1 != null && o2 != null) {
             // use original input, if possible - actual input is from transient model
-            v = o1.getNodeId().toString().compareTo(o2.getNodeId().toString());
+            v = myToStringComparator.compare(o1.getNodeId(), o2.getNodeId());
           }
         }
         return v;

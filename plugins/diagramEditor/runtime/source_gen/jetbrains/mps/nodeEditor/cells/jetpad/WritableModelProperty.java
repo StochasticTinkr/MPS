@@ -10,11 +10,10 @@ import jetbrains.mps.nodeEditor.cells.ChangePropertyEditorCommand;
 
 public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> implements Property<T> {
   private final String myCommandId;
-  private final EditorContext myContext;
 
   public WritableModelProperty(String commandId, EditorContext context) {
+    super(context);
     myCommandId = commandId;
-    myContext = context;
     addHandler(new EventHandler<PropertyChangeEvent<T>>() {
       public void onEvent(PropertyChangeEvent<T> event) {
         safeSetModelPropertyValue(event.getNewValue());
@@ -23,7 +22,7 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
   }
 
   protected void safeSetModelPropertyValue(final T t) {
-    myContext.getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(myContext, myCommandId) {
+    myEditorContext.getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(myEditorContext, myCommandId) {
       protected void doExecute() {
         setModelPropertyValue(t);
       }

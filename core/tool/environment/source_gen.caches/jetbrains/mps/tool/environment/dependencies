@@ -11,10 +11,11 @@
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.CompositeProjectStrategy" file="CompositeProjectStrategy.java">
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentSetupException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
@@ -62,6 +63,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentSetupException" />
     <classNode dependClassName="jetbrains.mps.tool.environment.LibraryContributorHelper" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Log4jInitializer" />
     <classNode dependClassName="jetbrains.mps.tool.environment.PluginDescriptor" />
@@ -98,6 +100,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentSetupException" file="EnvironmentSetupException.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="java.lang.RuntimeException" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.environment.LibraryContributorHelper" file="LibraryContributorHelper.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -126,15 +133,11 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.Log4jInitializer" file="Log4jInitializer.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.StringReader" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.xml.DOMConfigurator" />
+    <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.PatternLayout" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
     <classNode dependClassName="java.io.File" />

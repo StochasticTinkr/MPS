@@ -10,7 +10,6 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
@@ -18,24 +17,16 @@ import java.awt.Dimension;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.icons.GlobalIconManager;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import org.jetbrains.mps.util.Condition;
-import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
 import javax.swing.Icon;
 
@@ -49,11 +40,8 @@ public class MappingDialog extends DialogWrapper {
     protected MPSTreeNode rebuild() {
       return MappingDialog.this.rebuildTree();
     }
-    @Override
-    protected void doInit(MPSTreeNode node, Runnable runnable) {
-      super.doInit(node, new ModelReadRunnable(myProject.getRepository().getModelAccess(), runnable));
-    }
   };
+
   public MappingDialog(MPSProject project, Language language) {
     super(project.getProject());
     setTitle("Choose Mapping Configuration");
@@ -69,17 +57,9 @@ public class MappingDialog extends DialogWrapper {
         if (e.getNewLeadSelectionPath() == null) {
           return;
         }
-        TreePath path = myTree.getSelectionModel().getSelectionPath();
-        if (path == null) {
-          return;
-        }
-        Object node = path.getLastPathComponent();
-        if (!(node instanceof NodeTargetProvider)) {
-          return;
-        }
-        SNodeReference treeNode = ((NodeTargetProvider) node).getNavigationTarget();
+        SNode treeNode = getSelectedNodeInTree();
         if (treeNode != null) {
-          new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(treeNode);
+          new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(treeNode.getReference());
         }
       }
     });
@@ -88,56 +68,80 @@ public class MappingDialog extends DialogWrapper {
 
     init();
   }
+
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
-  private MPSTreeNode rebuildTree() {
+
+  /*package*/ MPSTreeNode rebuildTree() {
     if (myLanguage == null) {
       return null;
     }
-    TextTreeNode root = new TextTreeNode("Generators");
-    for (final Generator generator : myLanguage.getGenerators()) {
-      MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getModuleName());
-      root.add(generatorTreeNode);
-      for (SModel md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = newTreeNode(GlobalIconManager.getInstance().getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
-        generatorTreeNode.add(modelTreeNode);
-        SModel model = md;
-        for (SNode node : SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
-          SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, Condition.FALSE_CONDITION);
-          modelTreeNode.add(nodeTreeNode);
+    final TextTreeNode root = new TextTreeNode("Generators");
+
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        GlobalIconManager iconManager = GlobalIconManager.getInstance();
+        for (final Generator generator : myLanguage.getGenerators()) {
+          MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getModuleName());
+          root.add(generatorTreeNode);
+          for (SModel md : generator.getOwnTemplateModels()) {
+            MPSTreeNode modelTreeNode = newTreeNode(iconManager.getIconFor(md), md.toString(), md.getName().getValue());
+            generatorTreeNode.add(modelTreeNode);
+            SModel model = md;
+            for (SNode node : SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
+              MPSTreeNode mcTreeNode = newTreeNode(iconManager.getIconFor(node), node.getNodeId().toString(), node.getPresentation());
+              mcTreeNode.setUserObject(node);
+              modelTreeNode.add(mcTreeNode);
+            }
+          }
         }
       }
-    }
+    });
     return root;
   }
+
   public SNode getResult() {
     return myResult;
   }
+
   @Override
   protected void doOKAction() {
-    Object[] selectedNode = myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
-      @Override
-      public boolean accept(Object p0) {
-        return true;
-      }
-    });
-    if (selectedNode.length != 1) {
+    if (myTree.getSelectionCount() != 1) {
       JOptionPane.showMessageDialog(this.getContentPane(), "Mapping Configuration node is not selected!");
     } else {
-      myResult = (SNode) ((SNodeTreeNode) selectedNode[0]).getSNode();
+      SNode selectedNode = getSelectedNodeInTree();
+      if (selectedNode != null) {
+        myResult = (SNode) selectedNode;
+      }
       myTree.dispose();
       super.doOKAction();
     }
   }
+
   @Override
   public void doCancelAction() {
     myTree.dispose();
     super.doCancelAction();
   }
-  private static MPSTreeNode newTreeNode(Icon icon, String nodeIdentifier, String text) {
+
+  /*package*/ SNode getSelectedNodeInTree() {
+    if (myTree.getSelectionCount() != 1) {
+      return null;
+    }
+    Object selectedNode = myTree.getSelectionPath().getLastPathComponent();
+    if (selectedNode instanceof MPSTreeNode) {
+      Object userObject = ((MPSTreeNode) selectedNode).getUserObject();
+      if (userObject instanceof SNode) {
+        return (SNode) userObject;
+      }
+    }
+    return null;
+  }
+
+  /*package*/ static MPSTreeNode newTreeNode(Icon icon, String nodeIdentifier, String text) {
     MPSTreeNode n = new MPSTreeNode();
     n.setNodeIdentifier(nodeIdentifier);
     n.setText(text);

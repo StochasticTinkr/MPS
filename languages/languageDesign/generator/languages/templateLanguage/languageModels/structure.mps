@@ -19,6 +19,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -2009,6 +2012,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8557539026538618631" />
       <ref role="20lvS9" to="tp25:5ZE7FBYYOp2" resolve="ConceptIdentity" />
+      <node concept="t5JxF" id="39TODbGt7Bz" role="lGtFl">
+        <property role="t5JxN" value="XXX shall use modelapi conterpart" />
+      </node>
     </node>
     <node concept="1TJgyi" id="7PoJpZpH$hA" role="1TKVEl">
       <property role="TrG5h" value="conceptId" />
@@ -2023,11 +2029,66 @@
     <node concept="PrWs8" id="7PoJpZpH$h$" role="PzmwI">
       <ref role="PrY4T" node="7PoJpZpHudo" resolve="NodeIdentity" />
     </node>
+    <node concept="t5JxF" id="39TODbGt7B_" role="lGtFl">
+      <property role="t5JxN" value="Implementation of NodeIdentity that is capable to reconstruct node instance with a help of preserved concept information. Unfortunate naming." />
+    </node>
   </node>
   <node concept="PlHQZ" id="7PoJpZpHudo">
     <property role="3GE5qa" value="crossmodel.vault" />
     <property role="TrG5h" value="NodeIdentity" />
     <property role="EcuMT" value="9032177546941555544" />
+    <node concept="t5JxF" id="39TODbGtasb" role="lGtFl">
+      <property role="t5JxN" value="Unlike modelapi.NodeIdentity, doesn't give access to SNodeReference, just SNodeId part" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="39TODbGtas8">
+    <property role="EcuMT" value="3637169702552512264" />
+    <property role="3GE5qa" value="crossmodel.vault" />
+    <property role="TrG5h" value="ElementaryNodeId" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="39TODbGtasd" role="1TKVEl">
+      <property role="TrG5h" value="nodeId" />
+      <property role="IQ2nx" value="3637169702552512269" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="39TODbGtdTB" role="lGtFl">
+        <property role="t5JxN" value="not datatype, see modelapi.NodePointer " />
+      </node>
+    </node>
+    <node concept="PrWs8" id="39TODbGtas9" role="PzmwI">
+      <ref role="PrY4T" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+    <node concept="t5JxF" id="39TODbGtasf" role="lGtFl">
+      <property role="t5JxN" value="Nothing but SNodeId serialization" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6UZRahyyZP8">
+    <property role="EcuMT" value="7980339663309897032" />
+    <property role="3GE5qa" value="crossmodel" />
+    <property role="TrG5h" value="OriginTrace" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="6UZRahyyZPd" role="1TKVEi">
+      <property role="IQ2ns" value="7980339663309897037" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+    <node concept="M6xJ_" id="6UZRahyyZP9" role="lGtFl">
+      <property role="Hh88m" value="originTrace" />
+      <node concept="tn0Fv" id="6UZRahyyZPb" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="6UZRahyzDdq" role="EQaZv">
+        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="t5JxF" id="6UZRahyyZPf" role="lGtFl">
+      <property role="t5JxN" value="We use this attribute to persist information about origin of a node in a checkpoint model (i.e. a node from previous CP that served as its source)" />
+    </node>
   </node>
 </model>
 

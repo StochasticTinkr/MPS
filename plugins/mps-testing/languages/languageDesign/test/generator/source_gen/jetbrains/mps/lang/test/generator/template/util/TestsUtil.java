@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.Logger;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,12 +31,17 @@ public final class TestsUtil {
   public static String getProjectPath(SModel model) {
     String projectPath = TestInfo__BehaviorDescriptor.getProjectPath_id4qWC2JVrBcn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo")), model);
     if (projectPath != null) {
-      return projectPath;
+      return NameUtil.escapeString(projectPath);
     }
     Logger.getLogger(TestsUtil.class).error(String.format("Model %s (from %s) doesn't specify project path in TestInfo!", SModelOperations.getModelName(model), model.getSource()));
     return "";
   }
 
+  /**
+   * 
+   * @deprecated drop once no reflective calls of test methods left (there are 2 uses in mbeddr)
+   */
+  @Deprecated
   public static String getTestBodyClassName(SNode testCase) {
     return ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(testCase) + "$" + NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")));
   }

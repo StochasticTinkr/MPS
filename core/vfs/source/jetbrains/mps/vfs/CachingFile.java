@@ -18,8 +18,6 @@ package jetbrains.mps.vfs;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 /**
  * An implementing class is supposed to cache (in its own way) the tangible information about files on disk
  * (e.g. file hierarchy).

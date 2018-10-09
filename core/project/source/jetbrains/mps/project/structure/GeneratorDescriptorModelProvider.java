@@ -171,7 +171,12 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
       BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
       for (SModel m : myModule.getModels()) {
         if (m instanceof GeneratableSModel && !SModelStereotype.isDescriptorModel(m)) {
-          modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) m).getModelHash(), Character.MAX_RADIX));
+          String h = ((GeneratableSModel) m).getModelHash();
+          // XXX model hash may be null when we fail to read file (e.g. MPS-28315).
+          //     I've got no idea how to handle this reliably, don't feel any predefined value (like -1) is reasonable here, therefore just prevent NPE
+          if (h != null) {
+            modelHash = modelHash.xor(new BigInteger(h, Character.MAX_RADIX));
+          }
         }
       }
       myHash = hash = modelHash.toString(Character.MAX_RADIX);

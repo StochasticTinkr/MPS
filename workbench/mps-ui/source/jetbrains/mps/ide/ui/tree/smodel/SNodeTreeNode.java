@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.GlobalIconManager;

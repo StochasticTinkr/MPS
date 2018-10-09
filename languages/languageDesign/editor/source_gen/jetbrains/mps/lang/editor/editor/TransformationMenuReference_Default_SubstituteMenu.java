@@ -50,7 +50,7 @@ public class TransformationMenuReference_Default_SubstituteMenu extends Substitu
   }
 
 
-  public static class SMP_ReferenceScope_fl7q7d_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_fl7q7d_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_fl7q7d_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default"), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
@@ -72,7 +72,7 @@ public class TransformationMenuReference_Default_SubstituteMenu extends Substitu
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new TransformationMenuReference_Default_SubstituteMenu.SMP_ReferenceScope_fl7q7d_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

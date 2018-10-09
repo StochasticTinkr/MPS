@@ -122,9 +122,9 @@ class MPSModuleCollector {
         for (GeneratorDescriptor generator : ld.getGenerators()) {
           String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(generator);
           de.addSourcePath(getCanonicalPath(generatorSrcPath));
-          // FIXME need a proper mechanism to discover classesGen folder of a module. Shall use JavaModuleFacet!
-          de.addClassGenPath(moduleDir.getDescendant("generator").getDescendant(AbstractModule.CLASSES_GEN));
-          break;
+          // FIXME need a proper mechanism to discover classesGen folder of a module.
+          // Next code comes from JavaModuleFacetImpl.getClassesGen(), would be great to reuse one rather than copy
+          de.addClassGenPath(myFileSystem.getFile(generatorSrcPath).getParent().getDescendant(AbstractModule.CLASSES_GEN));
         }
       }
     }

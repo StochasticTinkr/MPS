@@ -16,25 +16,27 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.IterableUtil;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * @author Radimir.Sorokin
  */
 public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
-
+  private static final Logger LOG = Logger.getLogger(ReferenceScopeSubstituteMenuPart.class);
   @NotNull
   private final SReferenceLink myReferenceLink;
 
@@ -56,11 +58,22 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     if (currentTarget != null) {
       link = currentTarget.getContainmentLink();
       position = IterableUtil.indexOf(parentNode.getChildren(link), currentTarget);
+    } else if (context.getLink() != null && parentNode.getConcept().getContainmentLinks().contains(context.getLink())) {
+      // todo we could have situations when parentNode's concept does not contains containment link because of SubstituteMenuContext#withLink() method
+      // todo we should create contract and make them consistent, but currently we need to pass consistent parameters of parent node and containmentLink to the getReferenceDescriptor
+      link = context.getLink();
     }
-    Scope scope = ModelConstraints.getReferenceDescriptor(parentNode, link, position, myReferenceLink, myConcept).getScope();
+
+    Scope scope;
+    try {
+      scope = ModelConstraints.getReferenceDescriptor(parentNode, link, position, myReferenceLink, myConcept).getScope();
+    } catch (Throwable t) {
+      LOG.error("Exception while executing code of geting the scope " + this, t);
+      return Collections.emptyList();
+    }
     Iterable<SNode> referents = scope.getAvailableElements(null);
     List<SubstituteMenuItem> result = new ArrayList<>();
-    for (SNode referent: referents) {
+    for (SNode referent : referents) {
       context.getEditorMenuTrace().pushTraceInfo();
       context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope action with target node: " + referent.getPresentation(), null));
       try {

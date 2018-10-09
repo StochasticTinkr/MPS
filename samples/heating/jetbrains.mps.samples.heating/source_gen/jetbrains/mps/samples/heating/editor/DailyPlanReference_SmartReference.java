@@ -43,7 +43,7 @@ public class DailyPlanReference_SmartReference extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_5a277g_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_5a277g_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_5a277g_a() {
       super(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, "jetbrains.mps.samples.heating.structure.DailyPlanReference"), MetaAdapterFactory.getReferenceLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, 0xcfa085c9af5e831L, "target"));
@@ -65,7 +65,7 @@ public class DailyPlanReference_SmartReference extends SubstituteMenuBase {
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new DailyPlanReference_SmartReference.SMP_ReferenceScope_5a277g_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

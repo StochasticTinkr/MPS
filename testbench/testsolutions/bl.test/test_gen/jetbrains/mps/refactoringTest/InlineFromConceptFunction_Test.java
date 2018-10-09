@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +27,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferen
 public class InlineFromConceptFunction_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InlineFromConceptFunction_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InlineFromConceptFunction_Test() {
     super(ourParamCache);
@@ -32,15 +36,19 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
 
   @Test
   public void test_deinition() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test$TestBody", "test_deinition", true);
+    new InlineFromConceptFunction_Test.TestBody(this).test_deinition();
   }
   @Test
   public void test_reference() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test$TestBody", "test_reference", true);
+    new InlineFromConceptFunction_Test.TestBody(this).test_reference();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_deinition() throws Exception {
       addNodeById("1230053266366");
       addNodeById("1230053266380");

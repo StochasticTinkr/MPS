@@ -57,6 +57,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static java.util.stream.Collectors.toCollection;
@@ -68,7 +69,6 @@ import static java.util.stream.Collectors.toCollection;
  * <p>
  * It listens for class loading events, calculate the plugin contributors which need to be updated and notifies these managers.
  * <p>
- * TODO: currently it reloads only the ModulePluginContributors, need to work on AbstractPluginFactories also. Makes sense to remove these factories at all
  */
 public class PluginLoaderRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLoaderRegistry.class);
@@ -79,6 +79,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private final DeployListener myClassesListener = new SchedulingUpdateListener();
   private final Set<PluginContributor> myCurrentContributors = new LinkedHashSet<>();
   private final Set<PluginLoader> myCurrentLoaders = new LinkedHashSet<>();
+  private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<>();
 
   private final AtomicBoolean myDirtyFlag = new AtomicBoolean(false);
 
@@ -102,6 +103,27 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     return new LinkedHashSet<>(contributors);
   }
+
+  private void fireAfterPluginsLoaded(List<PluginContributor> contributors) {
+    for (PluginReloadingListener listener : myReloadingListeners) {
+      listener.afterPluginsLoaded(contributors);
+    }
+  }
+
+  private void fireBeforePluginsUnloaded(List<PluginContributor> contributors) {
+    for (PluginReloadingListener listener : myReloadingListeners) {
+      listener.beforePluginsUnloaded(contributors);
+    }
+  }
+
+  public void addReloadingListener(@NotNull PluginReloadingListener listener) {
+    myReloadingListeners.add(listener);
+  }
+
+  public void removeReloadingListener(PluginReloadingListener listener) {
+    myReloadingListeners.remove(listener);
+  }
+
 
   @Nullable
   private static PluginContributor createPluginContributor(@NotNull ReloadableModule module) {
@@ -146,7 +168,11 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     try {
       monitor.start("Loading", pluginLoaders.size());
       for (final PluginLoader loader : pluginLoaders) {
-        loader.loadPlugins(new ArrayList<>(contributors));
+        List<PluginContributor> contribList = Collections.unmodifiableList(new ArrayList<>(contributors));
+        boolean loadedSmth = loader.loadPlugins(contribList);
+        if (loadedSmth) {
+          fireAfterPluginsLoaded(contribList);
+        }
         monitor.advance(1);
       }
     } finally {
@@ -166,7 +192,11 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     long beginTime = System.nanoTime();
     try {
       for (final PluginLoader loader : pluginLoaders) {
-        loader.unloadPlugins(new ArrayList<>(contributors));
+        List<PluginContributor> contribList = Collections.unmodifiableList(new ArrayList<>(contributors));
+        if (loader.hasPluginsFor(contribList)) {
+          fireBeforePluginsUnloaded(contribList);
+        }
+        loader.unloadPlugins(contribList);
         monitor.advance(1);
       }
     } finally {
@@ -215,7 +245,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     class ExtPointContributor extends PluginContributor {
       private final ComponentContributorExtension myExtension;
 
-      ExtPointContributor(ComponentContributorExtension extension) {
+      private ExtPointContributor(ComponentContributorExtension extension) {
         myExtension = extension;
       }
 
@@ -230,7 +260,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       @Override
       public BaseApplicationPlugin createApplicationPlugin() {
         if (myExtension.myApplicationPartContributor != null) {
-          return  instantiateSafe(myExtension.myApplicationPartContributor);
+          return instantiateSafe(myExtension.myApplicationPartContributor);
         }
         return null;
       }
@@ -357,7 +387,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       try {
         LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
         indicator.pushState();
-        indicator.setIndeterminate(true);
         monitor.start("Reloading MPS Plugins", 5);
         WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> doUpdate(monitor), indicator.getModalityState());
       } finally {
@@ -390,8 +419,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
 
     private void addIdeaExtPointPluginContributors(ProgressMonitor monitor) {
-      Set<PluginContributor> factories = new LinkedHashSet<>();
-      factories.addAll(getContributorsFromExtPoint());
+      Set<PluginContributor> factories = new LinkedHashSet<>(getContributorsFromExtPoint());
       factories.removeAll(myCurrentContributors);
       LOG.debug("Loading " + factories.size() + " Factories");
       loadContributors(factories, myCurrentLoaders, monitor.subTask(1));

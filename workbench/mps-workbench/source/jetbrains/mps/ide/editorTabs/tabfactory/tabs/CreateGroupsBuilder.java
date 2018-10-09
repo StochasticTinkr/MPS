@@ -20,13 +20,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.GlobalIconManager;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -40,6 +40,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
+  private static final Logger LOG = LogManager.getLogger(CreateGroupsBuilder.class);
+
   private final Project myProject;
   private final SNodeReference myBaseNode;
   private final NodeChangeCallback myCallback;
@@ -51,35 +53,38 @@ public class CreateGroupsBuilder {
   }
 
   public List<DefaultActionGroup> getCreateGroups(final Collection<RelationDescriptor> possibleTabs, @Nullable final RelationDescriptor currentAspect) {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<DefaultActionGroup>>() {
-      @Override
-      public List<DefaultActionGroup> compute() {
-        List<DefaultActionGroup> groups = new ArrayList<>();
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> {
+      List<DefaultActionGroup> groups = new ArrayList<>();
 
-        List<RelationDescriptor> tabs = new ArrayList<>(possibleTabs);
-        Collections.sort(tabs, new RelationComparator());
+      List<RelationDescriptor> tabs = new ArrayList<>(possibleTabs);
+      Collections.sort(tabs, new RelationComparator());
 
-        if (currentAspect != null) {
-          tabs.remove(currentAspect);
-          tabs.add(0, currentAspect);
-        }
-
-        for (final RelationDescriptor d : tabs) {
-          List<SNode> nodes = d.getNodes(myBaseNode.resolve(myProject.getRepository()));
-          if (!nodes.isEmpty() && d.isSingle()) {
-            continue;
-          }
-
-          DefaultActionGroup group = doGetCreateGroup(d);
-
-          if (tabs.indexOf(d) == 0) {
-            group.setPopup(false);
-          }
-
-          groups.add(group);
-        }
-        return groups;
+      if (currentAspect != null) {
+        tabs.remove(currentAspect);
+        tabs.add(0, currentAspect);
       }
+
+      for (final RelationDescriptor d : tabs) {
+        List<SNode> nodes = null;
+        try {
+          nodes = d.getNodes(myBaseNode.resolve(myProject.getRepository()));
+        } catch (Throwable t){
+          LOG.error("Exception in extension: ", t);
+          continue;
+        }
+        if (!nodes.isEmpty() && d.isSingle()) {
+          continue;
+        }
+
+        DefaultActionGroup group = doGetCreateGroup(d);
+
+        if (tabs.indexOf(d) == 0) {
+          group.setPopup(false);
+        }
+
+        groups.add(group);
+      }
+      return groups;
     });
   }
 

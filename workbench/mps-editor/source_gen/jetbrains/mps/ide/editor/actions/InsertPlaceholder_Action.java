@@ -57,7 +57,7 @@ public class InsertPlaceholder_Action extends BaseAction {
     }
 
     EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell)) {
+    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell) && (InsertUtil.isFirstCellOfTheNode(editorCell) || InsertUtil.isRightAfterChildrenCollection(editorCell))) {
       EditorActionUtils.callInsertPlaceholderBeforeAction(editorCell);
     } else {
       EditorActionUtils.callInsertPlaceholderAction(editorCell);

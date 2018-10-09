@@ -68,6 +68,9 @@ public class GenerateTask extends MpsLoadTask {
   public void setCreateStaticRefs(boolean useStaticRefs) {
     myGenProps.setCreateStaticRefs(useStaticRefs);
   }
+  public void setSkipUnmodifiedModels(boolean skipUnmodifiedModels) {
+    myGenProps.setSkipUnmodifiedModels(skipUnmodifiedModels);
+  }
   public void addConfiguredPlugin(Plugin plugin) {
     String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     if ((property == null || property.length() == 0)) {

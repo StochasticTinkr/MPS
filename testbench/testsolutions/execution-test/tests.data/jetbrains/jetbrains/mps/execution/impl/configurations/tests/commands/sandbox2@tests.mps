@@ -15,6 +15,7 @@
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <property id="6339244025081158986" name="needsNoWriteAction" index="3OwPAg" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
       </concept>
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
@@ -99,6 +100,7 @@
   </node>
   <node concept="1lH9Xt" id="5vTxdEz_CuU">
     <property role="TrG5h" value="WaitingTestCase_Test" />
+    <property role="3OwPAg" value="true" />
     <node concept="1LZb2c" id="5vTxdEz_CuV" role="1SL9yI">
       <property role="TrG5h" value="test1" />
       <node concept="3cqZAl" id="5vTxdEz_CuW" role="3clF45" />
@@ -127,17 +129,6 @@
         </node>
         <node concept="3vFxKo" id="5vTxdEz_CvO" role="3cqZAp">
           <node concept="3clFbT" id="5vTxdEz_CvS" role="3vFALc">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1LZb2c" id="5vTxdEz_PF7" role="1SL9yI">
-      <property role="TrG5h" value="test2" />
-      <node concept="3cqZAl" id="5vTxdEz_PF8" role="3clF45" />
-      <node concept="3clFbS" id="5vTxdEz_PF9" role="3clF47">
-        <node concept="3vFxKo" id="5vTxdEz_PFa" role="3cqZAp">
-          <node concept="3clFbT" id="5vTxdEz_PFb" role="3vFALc">
             <property role="3clFbU" value="false" />
           </node>
         </node>

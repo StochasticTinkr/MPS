@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class UnusedFields_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedFields_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public UnusedFields_Test() {
     super(ourParamCache);
@@ -25,119 +29,123 @@ public class UnusedFields_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck8129007564264183307() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264183307", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264183307();
   }
   @Test
   public void test_NodeErrorCheck8129007564264201539() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264201539", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264201539();
   }
   @Test
   public void test_NodeErrorCheck8129007564264258408() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264258408", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264258408();
   }
   @Test
   public void test_NodeErrorCheck8129007564264741195() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264741195", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264741195();
   }
   @Test
   public void test_NodeErrorCheck8129007564264258940() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264258940", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264258940();
   }
   @Test
   public void test_NodeErrorCheck8129007564264259403() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264259403", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264259403();
   }
   @Test
   public void test_NodeErrorCheck8129007564264259935() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264259935", true);
+    new UnusedFields_Test.TestBody(this).test_NodeErrorCheck8129007564264259935();
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264174973() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264174973", true);
+    new UnusedFields_Test.TestBody(this).test_ErrorMessagesCheck8129007564264174973();
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264202932() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264202932", true);
+    new UnusedFields_Test.TestBody(this).test_ErrorMessagesCheck8129007564264202932();
   }
   @Test
   public void test_NodeWarningCheck8129007564264204542() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264204542", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264204542();
   }
   @Test
   public void test_NodeWarningCheck8129007564264206968() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264206968", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264206968();
   }
   @Test
   public void test_NodeWarningCheck5303038120596588890() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck5303038120596588890", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck5303038120596588890();
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264207116() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264207116", true);
+    new UnusedFields_Test.TestBody(this).test_ErrorMessagesCheck8129007564264207116();
   }
   @Test
   public void test_NodeWarningCheck8129007564264207668() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264207668", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264207668();
   }
   @Test
   public void test_NodeWarningCheck8129007564264355259() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264355259", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264355259();
   }
   @Test
   public void test_NodeWarningCheck8129007564264752913() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264752913", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264752913();
   }
   @Test
   public void test_NodeWarningCheck8129007564264233837() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264233837", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264233837();
   }
   @Test
   public void test_NodeWarningCheck8129007564264928589() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264928589", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264928589();
   }
   @Test
   public void test_NodeWarningCheck8129007564264930520() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264930520", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264930520();
   }
   @Test
   public void test_NodeWarningCheck8129007564264242225() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264242225", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264242225();
   }
   @Test
   public void test_NodeWarningCheck8129007564264253108() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264253108", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264253108();
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264253493() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264253493", true);
+    new UnusedFields_Test.TestBody(this).test_ErrorMessagesCheck8129007564264253493();
   }
   @Test
   public void test_NodeWarningCheck8129007564264256239() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264256239", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264256239();
   }
   @Test
   public void test_NodeWarningCheck8129007564264268731() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264268731", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck8129007564264268731();
   }
   @Test
   public void test_ErrorMessagesCheck1855868101957045111() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck1855868101957045111", true);
+    new UnusedFields_Test.TestBody(this).test_ErrorMessagesCheck1855868101957045111();
   }
   @Test
   public void test_NodeWarningCheck1855868101957102635() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957102635", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck1855868101957102635();
   }
   @Test
   public void test_NodeWarningCheck1855868101957107421() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957107421", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck1855868101957107421();
   }
   @Test
   public void test_NodeWarningCheck1855868101957111173() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957111173", true);
+    new UnusedFields_Test.TestBody(this).test_NodeWarningCheck1855868101957111173();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck8129007564264183307() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8129007564264183307"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

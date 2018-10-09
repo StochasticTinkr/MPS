@@ -40,46 +40,60 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       case 9:
         return Collections.<IDataFlowBuilder>singletonList(new ComparisonRule_DataFlow());
       case 10:
-        return Collections.<IDataFlowBuilder>singletonList(new ImmediateSupertypesExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new GetOperationType_DataFlow());
       case 11:
-        return Collections.<IDataFlowBuilder>singletonList(new InequationReplacementRule_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ImmediateSupertypesExpression_DataFlow());
       case 12:
-        return Collections.<IDataFlowBuilder>singletonList(new InfoStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new InequationReplacementRule_DataFlow());
       case 13:
-        return Collections.<IDataFlowBuilder>singletonList(new IsSubtypeExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new InfoStatement_DataFlow());
       case 14:
-        return Collections.<IDataFlowBuilder>singletonList(new MatchStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new IsSubtypeExpression_DataFlow());
       case 15:
-        return Collections.<IDataFlowBuilder>singletonList(new MatchStatementItem_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new LinkPatternVariableReference_DataFlow());
       case 16:
-        return Collections.<IDataFlowBuilder>singletonList(new NormalTypeClause_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new MatchStatement_DataFlow());
       case 17:
-        return Collections.<IDataFlowBuilder>singletonList(new PatternCondition_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new MatchStatementItem_DataFlow());
       case 18:
-        return Collections.<IDataFlowBuilder>singletonList(new PropertyNameTarget_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new NormalTypeClause_DataFlow());
       case 19:
-        return Collections.<IDataFlowBuilder>singletonList(new ReferenceRoleTarget_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PatternCondition_DataFlow());
       case 20:
-        return Collections.<IDataFlowBuilder>singletonList(new ReportErrorStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PatternVariableReference_DataFlow());
       case 21:
-        return Collections.<IDataFlowBuilder>singletonList(new SubstituteTypeRule_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PropertyNameTarget_DataFlow());
       case 22:
-        return Collections.<IDataFlowBuilder>singletonList(new TypeOfExpression_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new PropertyPatternVariableReference_DataFlow());
       case 23:
-        return Collections.<IDataFlowBuilder>singletonList(new TypeVarDeclaration_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new QuickFixArgumentReference_DataFlow());
       case 24:
-        return Collections.<IDataFlowBuilder>singletonList(new TypeVarReference_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new QuickFixFieldReference_DataFlow());
       case 25:
-        return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntention_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ReferenceRoleTarget_DataFlow());
       case 26:
-        return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntentionArgument_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new ReportErrorStatement_DataFlow());
       case 27:
-        return Collections.<IDataFlowBuilder>singletonList(new WarningStatement_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new SubstituteTypeRule_DataFlow());
       case 28:
+        return Collections.<IDataFlowBuilder>singletonList(new TypeOfExpression_DataFlow());
+      case 29:
+        return Collections.<IDataFlowBuilder>singletonList(new TypeVarDeclaration_DataFlow());
+      case 30:
+        return Collections.<IDataFlowBuilder>singletonList(new TypeVarReference_DataFlow());
+      case 31:
+        return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntention_DataFlow());
+      case 32:
+        return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntentionArgument_DataFlow());
+      case 33:
+        return Collections.<IDataFlowBuilder>singletonList(new WarningStatement_DataFlow());
+      case 34:
         return Collections.<IDataFlowBuilder>singletonList(new WhenConcreteStatement_DataFlow());
+      case 35:
+        return Collections.<IDataFlowBuilder>singletonList(new WhenConcreteVariableReference_DataFlow());
       default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11c22f6c964L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1120ebd8531L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1122952fb1dL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112295a8fecL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54de8fdL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f85df7bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11c22f6c964L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fd11186b7L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1120ebd8531L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1122952fb1dL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112295a8fecL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d10036L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8479b55dL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54de8fdL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f85df7bL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L)).seal();
 }

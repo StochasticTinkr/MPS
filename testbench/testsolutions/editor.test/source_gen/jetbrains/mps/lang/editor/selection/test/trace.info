@@ -372,8 +372,8 @@
       <node id="7023440913657702620" at="25,53,26,55" concept="1" />
       <node id="7023440913657702620" at="31,52,32,19" concept="4" />
       <node id="7023440913657702620" at="36,51,37,53" concept="1" />
-      <node id="7023440913657719793" at="37,53,38,83" concept="1" />
-      <node id="7023440913657764558" at="38,83,39,83" concept="1" />
+      <node id="7023440913657719793" at="37,53,38,78" concept="1" />
+      <node id="7023440913657764558" at="38,78,39,83" concept="1" />
       <node id="7023440913657702620" at="17,0,19,0" concept="3" trace="ourParamCache" />
       <node id="7023440913657702620" at="20,0,23,0" concept="0" trace="GoToReference_Test#()V" />
       <node id="7023440913657702620" at="31,0,34,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />

@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +23,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class BreakStatement_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(BreakStatement_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public BreakStatement_Test() {
     super(ourParamCache);
@@ -28,23 +32,27 @@ public class BreakStatement_Test extends BaseTransformationTest {
 
   @Test
   public void test_noBreaks() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_noBreaks", true);
+    new BreakStatement_Test.TestBody(this).test_noBreaks();
   }
   @Test
   public void test_oneBreak() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneBreak", true);
+    new BreakStatement_Test.TestBody(this).test_oneBreak();
   }
   @Test
   public void test_oneContionue() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneContionue", true);
+    new BreakStatement_Test.TestBody(this).test_oneContionue();
   }
   @Test
   public void test_breakAndContinue() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_breakAndContinue", true);
+    new BreakStatement_Test.TestBody(this).test_breakAndContinue();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_noBreaks() throws Exception {
       addNodeById("1230052480264");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052480270"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))))));

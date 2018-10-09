@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 class CellActionExecutorFinder {
 
@@ -58,7 +59,7 @@ class CellActionExecutorFinder {
       CellActionExecuter cellActionExecuter = CellActionExecuter.getExecutableExecuter(currentCell, myActionType, myEditorContext);
       if (cellActionExecuter != null) {
         if (myActionType == CellActionType.INSERT) {
-          myResult = getOverridingRightBoundaryActionExecuter(cellActionExecuter, myEditorCell, myActionType);
+          myResult = getOverridingRightBoundaryActionExecuter(cellActionExecuter, myEditorCell);
         } else {
           myResult = cellActionExecuter;
         }
@@ -70,10 +71,18 @@ class CellActionExecutorFinder {
 
   }
 
-  private CellActionExecuter getOverridingRightBoundaryActionExecuter(CellActionExecuter actionExecuter, EditorCell editorCell, CellActionType type) {
+  private CellActionExecuter getOverridingRightBoundaryActionExecuter(CellActionExecuter actionExecuter, EditorCell editorCell) {
     CellActionExecuter result = actionExecuter;
+    SNode node = editorCell.getSNode();
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return result;
+    }
     for (EditorCell_Collection currentCell = editorCell.getParent(); currentCell != null && CellTraversalUtil.getLastLeaf(currentCell) == editorCell;
          currentCell = currentCell.getParent()) {
+      if (node.equals(currentCell.getSNode()) || node.equals(currentCell.getSNode())) {
+        continue;
+      }
       CellActionExecuter overridingCellActionExecuter = CellActionExecuter.getExecutableExecuter(currentCell, myActionType, myEditorContext);
       if (overridingCellActionExecuter != null) {
         result = overridingCellActionExecuter;

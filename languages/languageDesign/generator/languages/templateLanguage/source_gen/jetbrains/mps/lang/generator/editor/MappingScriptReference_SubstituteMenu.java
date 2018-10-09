@@ -44,7 +44,7 @@ public class MappingScriptReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_co4dbn_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_co4dbn_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_co4dbn_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, 0x116597b663aL, "mappingScript"));

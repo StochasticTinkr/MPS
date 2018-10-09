@@ -44,7 +44,7 @@ public class EditorOperationCall_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_dak3eo_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_dak3eo_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_dak3eo_a() {
       super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, "jetbrains.mps.execution.settings.structure.EditorOperationCall"), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, 0xd244b712f910131L, "editorOperationDeclaration"));

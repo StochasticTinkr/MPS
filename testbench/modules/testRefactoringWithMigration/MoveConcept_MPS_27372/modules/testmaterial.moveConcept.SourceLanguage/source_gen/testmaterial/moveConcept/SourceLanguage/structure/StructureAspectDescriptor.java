@@ -17,10 +17,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMovePropertyContainer = createDescriptorForMovePropertyContainer();
   /*package*/ final ConceptDescriptor myConceptMovePropertyInstance = createDescriptorForMovePropertyInstance();
   /*package*/ final ConceptDescriptor myConceptMovePropertySupercontainer = createDescriptorForMovePropertySupercontainer();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.MoveConcept_A:
         return myConceptMoveConcept_A;
       case LanguageConceptSwitch.MoveConcept_B:
@@ -48,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForMoveConcept_A() {
@@ -56,6 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/6006982468244407213");
+    b.version(2);
     b.prop("prop", 0x535d16ba7fbdf83fL, "6006982468244994111");
     return b.create();
   }
@@ -65,6 +66,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("testmaterial.moveConcept.SourceLanguage.structure.MoveConcept_A", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x535d16ba7fb503adL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/1204068184860841");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMovePropertyContainer() {
@@ -72,6 +74,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c3L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/493339661774729917");
+    b.version(2);
     b.prop("moveProperty", 0x6d8b1cefdb1b2beL, "493339661774729918");
     return b.create();
   }
@@ -81,12 +84,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2bdL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/493339661774729920");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMovePropertySupercontainer() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testmaterial.moveConcept.SourceLanguage", "MovePropertySupercontainer", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c3L);
     b.interface_();
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/493339661774729923");
+    b.version(2);
     return b.create();
   }
 }

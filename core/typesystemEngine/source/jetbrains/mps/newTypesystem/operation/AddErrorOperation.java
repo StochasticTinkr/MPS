@@ -17,8 +17,6 @@ package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class AddErrorOperation extends AbstractOperation {
   private final IErrorReporter myError;

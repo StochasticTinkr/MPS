@@ -25,14 +25,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.project.Project;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Implement this to have your own appender.
  */
 public abstract class MPSAppenderBase extends AppenderSkeleton {
-  private static volatile int ourCount = 0;
+  private final static AtomicInteger ourCount = new AtomicInteger(0);
 
   public MPSAppenderBase() {
-    this("MPS_APPENDER_" + ourCount++);
+    this("MPS_APPENDER_" + ourCount.getAndIncrement());
   }
 
   @SuppressWarnings("ParameterHidesMemberVariable")

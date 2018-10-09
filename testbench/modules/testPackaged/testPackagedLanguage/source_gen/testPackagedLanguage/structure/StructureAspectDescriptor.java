@@ -13,10 +13,10 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestConcept = createDescriptorForTestConcept();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.TestConcept:
         return myConceptTestConcept;
       default:
@@ -36,13 +36,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForTestConcept() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testPackagedLanguage", "TestConcept", 0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL);
     b.class_(false, false, false);
     b.origin("r:ab99e75d-0184-4aec-b7b1-2939b54c2f7a(testPackagedLanguage.structure)/6919151941181560079");
+    b.version(2);
     return b.create();
   }
 }

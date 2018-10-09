@@ -20,7 +20,6 @@ import jetbrains.mps.util.EqualUtil;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import java.util.Collection;
-import java.util.Map;
 
 public interface ProjectMigrationWithOptions extends ProjectMigration {
 

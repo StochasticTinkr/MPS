@@ -23,7 +23,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Model with data that could get gradually loaded in subsequent steps.

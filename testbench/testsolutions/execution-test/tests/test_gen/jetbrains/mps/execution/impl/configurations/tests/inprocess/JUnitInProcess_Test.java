@@ -10,6 +10,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
@@ -33,22 +34,25 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitInProcess_Test.class, "${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
 
-
   public JUnitInProcess_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_startSimpleTestCase() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
+    new JUnitInProcess_Test.TestBody(this).test_startSimpleTestCase();
   }
   @Test
   public void test_startFailedTestCase() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
+    new JUnitInProcess_Test.TestBody(this).test_startFailedTestCase();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_startSimpleTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380"));
       this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
@@ -64,7 +68,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         final TestRunState runState = new TestRunState(testNodes);
 
-        Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
+        Executor processExecutor = new JUnitInProcessExecutor(myProject, "testtest", testNodes);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -83,16 +87,16 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         int failedMustBe = ListSequence.fromList(failure).count();
         if (exitCode != failedMustBe) {
-          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitCode);
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", not to " + exitCode);
         } else if (exitCode < 0) {
           Assert.fail("Process is running for too long");
         }
         if (runState.getFailedTests() != failedMustBe) {
-          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.getFailedTests());
+          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", not to " + runState.getFailedTests());
         }
         int completedMustBe = ListSequence.fromList(failure).count() + ListSequence.fromList(success).count();
         if (runState.getCompletedTests() != completedMustBe) {
-          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.getFailedTests());
+          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", not to " + runState.getFailedTests());
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());

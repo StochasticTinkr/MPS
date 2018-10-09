@@ -7,7 +7,7 @@ import jetbrains.mps.plugins.PluginReloadingListener;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.plugins.PluginLoaderRegistry;
 import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
 import com.intellij.execution.ui.RunContentDescriptor;
@@ -45,12 +45,12 @@ import org.jetbrains.annotations.Nullable;
 public class RunConfigurationsStateManager implements ProjectComponent, PluginReloadingListener {
   private static final Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
   private final Project myProject;
-  private final ProjectPluginManager myProjectPluginManager;
+  private final PluginLoaderRegistry myRegistry;
   private final RunConfigurationsStateManager.RunConfigurationsState myState = new RunConfigurationsStateManager.RunConfigurationsState();
 
-  public RunConfigurationsStateManager(Project project, ProjectPluginManager pluginManager) {
+  public RunConfigurationsStateManager(Project project, PluginLoaderRegistry registry) {
     myProject = project;
-    myProjectPluginManager = pluginManager;
+    myRegistry = registry;
   }
 
   @Override
@@ -73,12 +73,12 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
   @Override
   public void projectOpened() {
-    myProjectPluginManager.addReloadingListener(RunConfigurationsStateManager.this);
+    myRegistry.addReloadingListener(RunConfigurationsStateManager.this);
   }
 
   @Override
   public void projectClosed() {
-    myProjectPluginManager.removeReloadingListener(this);
+    myRegistry.removeReloadingListener(this);
   }
 
   public void initRunConfigurations() {

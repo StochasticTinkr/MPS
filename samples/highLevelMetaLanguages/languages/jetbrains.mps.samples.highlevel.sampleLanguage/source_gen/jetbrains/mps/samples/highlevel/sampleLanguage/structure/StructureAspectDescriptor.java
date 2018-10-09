@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCar = createDescriptorForCar();
   /*package*/ final ConceptDescriptor myConceptPerson = createDescriptorForPerson();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Car:
         return myConceptCar;
       case LanguageConceptSwitch.Person:
@@ -39,13 +39,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForCar() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.sampleLanguage", "Car", 0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a618L);
     b.class_(false, false, true);
     b.origin("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)/3778147542048941592");
+    b.version(2);
     b.prop("model", 0x346ead2c08d7a61dL);
     b.prop("year", 0x346ead2c08d7a61fL);
     return b.create();
@@ -54,6 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.sampleLanguage", "Person", 0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a611L);
     b.class_(false, false, true);
     b.origin("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)/3778147542048941585");
+    b.version(2);
     b.prop("name", 0x346ead2c08d7a613L);
     b.prop("age", 0x346ead2c08d7a615L);
     return b.create();

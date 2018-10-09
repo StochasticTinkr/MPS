@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(FieldCanBeLocalVar_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public FieldCanBeLocalVar_Test() {
     super(ourParamCache);
@@ -25,43 +29,47 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929411102", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeFieldCanBeConvertedIntoCheck6923385624929411102();
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624927778166() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624927778166", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeFieldCanBeConvertedIntoCheck6923385624927778166();
   }
   @Test
   public void test_NodeIsAssignedButNeverAccessedCheck6923385624927778168() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927778168", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeIsAssignedButNeverAccessedCheck6923385624927778168();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2857825852305588892() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305588892", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2857825852305588892();
   }
   @Test
   public void test_ErrorMessagesCheck6640766779615226140() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_ErrorMessagesCheck6640766779615226140", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_ErrorMessagesCheck6640766779615226140();
   }
   @Test
   public void test_ErrorMessagesCheck4400998065754588523() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_ErrorMessagesCheck4400998065754588523", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_ErrorMessagesCheck4400998065754588523();
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck4400998065754643596() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754643596", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeFieldCanBeConvertedIntoCheck4400998065754643596();
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644137() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754644137", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeFieldCanBeConvertedIntoCheck4400998065754644137();
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644682() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754644682", true);
+    new FieldCanBeLocalVar_Test.TestBody(this).test_NodeFieldCanBeConvertedIntoCheck4400998065754644682();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929411102"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

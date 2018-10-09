@@ -16,12 +16,19 @@ public class RefactoringSessionImpl implements RefactoringSession {
   private static final Logger LOG = LogManager.getLogger(RefactoringSessionImpl.class);
   private List<Runnable> myChanges = ListSequence.fromList(new ArrayList<Runnable>());
   private Map<String, Object> myObjects = MapSequence.fromMap(new HashMap<String, Object>());
+  private final String myName;
+  public RefactoringSessionImpl(String name) {
+    myName = name;
+  }
 
   public void putObject(String id, Object object) {
     MapSequence.fromMap(myObjects).put(id, object);
   }
   public Object getObject(String id) {
     return MapSequence.fromMap(myObjects).get(id);
+  }
+  public String getRefactoringName() {
+    return myName;
   }
   public void registerChange(Runnable change) {
     ListSequence.fromList(myChanges).addElement(change);

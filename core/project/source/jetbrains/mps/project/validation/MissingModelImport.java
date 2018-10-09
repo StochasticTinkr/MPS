@@ -21,7 +21,6 @@ import jetbrains.mps.errors.item.ModelReportItemBase;
 import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.errors.item.QuickFixReportItem;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;

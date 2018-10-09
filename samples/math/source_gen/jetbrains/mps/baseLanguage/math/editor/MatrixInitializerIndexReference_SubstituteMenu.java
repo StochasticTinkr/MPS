@@ -44,7 +44,7 @@ public class MatrixInitializerIndexReference_SubstituteMenu extends SubstituteMe
   }
 
 
-  public static class SMP_ReferenceScope_2x2usv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_2x2usv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2x2usv_a() {
       super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getReferenceLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, 0x5650ac0d4240f275L, "index"));

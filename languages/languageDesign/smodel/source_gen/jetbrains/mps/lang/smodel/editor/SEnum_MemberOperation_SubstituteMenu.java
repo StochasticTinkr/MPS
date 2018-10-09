@@ -44,7 +44,7 @@ public class SEnum_MemberOperation_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_umo79n_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_umo79n_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_umo79n_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L, "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L, 0x120ed37e692L, "member"));

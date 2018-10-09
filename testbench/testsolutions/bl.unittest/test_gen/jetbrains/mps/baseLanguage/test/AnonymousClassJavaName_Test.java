@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.behavior.AnonymousClass__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,7 +20,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class AnonymousClassJavaName_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(AnonymousClassJavaName_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public AnonymousClassJavaName_Test() {
     super(ourParamCache);
@@ -25,11 +29,15 @@ public class AnonymousClassJavaName_Test extends BaseTransformationTest {
 
   @Test
   public void test_testJavaNames() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test$TestBody", "test_testJavaNames", true);
+    new AnonymousClassJavaName_Test.TestBody(this).test_testJavaNames();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testJavaNames() throws Exception {
       addNodeById("6649467621789725811");
       assert AnonymousClass__BehaviorDescriptor.getJavaName_id2_jKYQ0K_an.invoke(SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("6649467621789782586"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x1133e3b449aL, "AnonymousClassCreator"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"))).endsWith("Foo$Bar$1");

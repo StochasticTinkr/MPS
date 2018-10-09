@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.make.script.IScriptController;
@@ -22,12 +23,18 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.messages.IMessageHandler;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.messages.IMessage;
 
 public abstract class BaseGeneratorWorker extends MpsWorker {
+  private boolean mySkipUnmodifiedModels;
+
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
@@ -41,6 +48,8 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     boolean warnings = !(gp.isHideWarnings());
     int threadCount = gp.getParallelThreads();
     final boolean useStaticRefs = gp.isCreateStaticRefs();
+    mySkipUnmodifiedModels = gp.isSkipUnmodifiedModels();
+
     settings.setStrictMode(strictMode);
     if (strictMode) {
       settings.setParallelGenerator(parallelMode);
@@ -53,7 +62,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     settings.setShowBadChildWarning(warnings);
     settings.setCreateStaticReferences(useStaticRefs);
     settings.setCheckModelsBeforeGeneration(false);
-    info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s, static references to replace dynamic is %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)], onoff[(useStaticRefs ? 0 : 1)]));
+    info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s, static references to replace dynamic is %s, skip unmodified models is %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)], onoff[(useStaticRefs ? 0 : 1)], onoff[(mySkipUnmodifiedModels ? 0 : 1)]));
   }
 
   protected void showStatistic() {
@@ -78,6 +87,15 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     }
     info(s.toString());
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, modules)).toListSequence();
+    if (mySkipUnmodifiedModels && Sequence.fromIterable(resources).all(new IWhereFilter<MResource>() {
+      public boolean accept(MResource it) {
+        return Sequence.fromIterable(it.models()).isEmpty();
+      }
+    })) {
+      info("No models to generate. Skipping generation.");
+      return;
+    }
+
     myEnvironment.flushAllEvents();
     final MakeSession session = new MakeSession(project, new BaseGeneratorWorker.MyMessageHandler(), true);
     JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions);
@@ -96,7 +114,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     myEnvironment.flushAllEvents();
   }
 
-  protected Iterable<MResource> collectResources(Project project, final Collection<SModule> modules) {
+  protected Iterable<MResource> collectResources(final Project project, final Collection<SModule> modules) {
     // FIXME it's odd to have distinct set of modules but lock repository to access its modules. 
     // Shall rather keem modules as part of the project 
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
@@ -105,8 +123,18 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
         for (SModule mod : modules) {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(mod.getModels()));
         }
+
+        if (mySkipUnmodifiedModels) {
+          List<SModel> modelsList = (models.value == null ? ListSequence.fromList(new ArrayList<SModel>()) : Sequence.fromIterable(models.value).toListSequence());
+          int numberOfAllModels = ListSequence.fromList(modelsList).count();
+
+          ModelGenerationStatusManager mgsm = project.getComponent(ModelGenerationStatusManager.class);
+          models.value = mgsm.getModifiedModels(modelsList);
+          info("Found " + Sequence.fromIterable(models.value).count() + " modified models out of " + numberOfAllModels + " total models.");
+        }
       }
     });
+
     // XXX resources() needs model access, isn't it? 
     return Sequence.fromIterable(new ModelsToResources(models.value).resources()).ofType(MResource.class);
   }

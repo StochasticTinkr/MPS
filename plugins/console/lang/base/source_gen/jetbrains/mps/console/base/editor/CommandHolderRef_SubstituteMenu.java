@@ -44,7 +44,7 @@ public class CommandHolderRef_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_ckvqv2_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ckvqv2_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ckvqv2_a() {
       super(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, "jetbrains.mps.console.base.structure.CommandHolderRef"), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"));

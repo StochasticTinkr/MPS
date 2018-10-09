@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTransformationFeature_Icon = createDescriptorForTransformationFeature_Icon();
   /*package*/ final ConceptDescriptor myConceptTransformationFeature_Tooltip = createDescriptorForTransformationFeature_Tooltip();
   /*package*/ final ConceptDescriptor myConceptTransformationLocation_ContextActionsTool = createDescriptorForTransformationLocation_ContextActionsTool();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.QueryFunction_TransformationMenu_Icon:
         return myConceptQueryFunction_TransformationMenu_Icon;
       case LanguageConceptSwitch.QueryFunction_TransformationMenu_Tooltip:
@@ -50,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForQueryFunction_TransformationMenu_Icon() {
@@ -58,6 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L);
     b.origin("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)/8954657570916342474");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("query");
     return b.create();
@@ -67,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L);
     b.origin("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)/7291101478621922220");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("query");
     return b.create();
@@ -76,6 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
     b.origin("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)/8954657570916342471");
+    b.version(2);
     b.aggregate("query", 0x7c45559defbb1da3L).target(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1acaL).optional(true).ordered(true).multiple(false).origin("8954657570916343203").done();
     b.alias("icon");
     return b.create();
@@ -85,6 +88,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
     b.origin("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)/8954657570916343205");
+    b.version(2);
     b.aggregate("query", 0x7c45559defbb1da6L).target(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x652f322a3695c3acL).optional(true).ordered(true).multiple(false).origin("8954657570916343206").done();
     b.alias("tooltip");
     return b.create();
@@ -94,6 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
     b.origin("r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)/8954657570916343208");
+    b.version(2);
     b.alias("context actions tool");
     return b.create();
   }

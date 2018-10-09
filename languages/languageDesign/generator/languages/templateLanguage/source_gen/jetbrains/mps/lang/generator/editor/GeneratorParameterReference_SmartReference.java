@@ -44,7 +44,7 @@ public class GeneratorParameterReference_SmartReference extends SubstituteMenuBa
   }
 
 
-  public static class SMP_ReferenceScope_zgxupi_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_zgxupi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_zgxupi_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, "jetbrains.mps.lang.generator.structure.GeneratorParameterReference"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x90726ff283cbf8cL, "declaration"));
@@ -66,7 +66,7 @@ public class GeneratorParameterReference_SmartReference extends SubstituteMenuBa
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new GeneratorParameterReference_SmartReference.SMP_ReferenceScope_zgxupi_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

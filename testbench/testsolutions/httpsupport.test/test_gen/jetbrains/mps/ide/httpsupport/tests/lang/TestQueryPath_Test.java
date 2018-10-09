@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class TestQueryPath_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestQueryPath_Test.class, "${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestQueryPath_Test() {
     super(ourParamCache);
@@ -25,27 +29,31 @@ public class TestQueryPath_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck529363524336252998() throws Throwable {
-    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336252998", true);
+    new TestQueryPath_Test.TestBody(this).test_ErrorMessagesCheck529363524336252998();
   }
   @Test
   public void test_NodeEmptySegmnetCheck529363524336253171() throws Throwable {
-    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_NodeEmptySegmnetCheck529363524336253171", true);
+    new TestQueryPath_Test.TestBody(this).test_NodeEmptySegmnetCheck529363524336253171();
   }
   @Test
   public void test_ErrorMessagesCheck529363524336253166() throws Throwable {
-    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336253166", true);
+    new TestQueryPath_Test.TestBody(this).test_ErrorMessagesCheck529363524336253166();
   }
   @Test
   public void test_ErrorMessagesCheck529363524336254130() throws Throwable {
-    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336254130", true);
+    new TestQueryPath_Test.TestBody(this).test_ErrorMessagesCheck529363524336254130();
   }
   @Test
   public void test_ErrorMessagesCheck529363524336254163() throws Throwable {
-    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336254163", true);
+    new TestQueryPath_Test.TestBody(this).test_ErrorMessagesCheck529363524336254163();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck529363524336252998() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("529363524336252998"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

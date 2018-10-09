@@ -72,9 +72,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected BaseEditorTestBody(TransformationTest owner) {
-    // this is what BaseTransformationTest.runTest() used to do 
-    myModel = owner.getTransientModelDescriptor();
-    myProject = owner.getProject();
+    super(owner);
   }
 
   public abstract void testMethodImpl() throws Exception;
@@ -162,7 +160,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
                 SNode editedNode = myBefore;
                 NodesMatcher nm = new NodesMatcher(editedNode, myResult);
                 List<NodeDifference> diff = nm.diff();
-                Assert.assertTrue(diff.isEmpty());
+                if (!(diff.isEmpty())) {
+                  StringBuilder sb = new StringBuilder();
+                  for (NodeDifference nd : diff) {
+                    sb.append(nd.print());
+                  }
+                  Assert.fail(sb.toString());
+                }
                 if (myFinish != null) {
                   myFinish.assertSelectionIsTheSame(myCurrentEditorComponent, (Map<SNode, SNode>) nm.getMap());
                 }

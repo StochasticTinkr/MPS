@@ -84,7 +84,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a0a(getEditorContext(), getNode(), targetNode).createCell();
+            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "persistentConfiguration");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -114,12 +114,12 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_c5arh5_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_c5arh5_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -172,7 +172,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a1a(getEditorContext(), getNode(), targetNode).createCell();
+            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "persistentConfiguration");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -205,12 +205,12 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_c5arh5_a1a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_c5arh5_a1a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

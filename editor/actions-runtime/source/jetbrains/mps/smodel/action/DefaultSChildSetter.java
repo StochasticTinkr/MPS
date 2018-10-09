@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;

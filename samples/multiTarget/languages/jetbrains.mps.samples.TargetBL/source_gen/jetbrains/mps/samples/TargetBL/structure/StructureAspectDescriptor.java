@@ -13,10 +13,10 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIncludeBLTarget = createDescriptorForIncludeBLTarget();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.IncludeBLTarget:
         return myConceptIncludeBLTarget;
       default:
@@ -36,13 +36,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForIncludeBLTarget() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.TargetBL", "IncludeBLTarget", 0x2be98ea6ab104fb3L, 0x8aadddec015f4320L, 0x6e7027ecccdf0b98L);
     b.class_(false, false, true);
     b.origin("r:c0438ea6-d2b1-4733-881f-d4cc1aae0e59(jetbrains.mps.samples.TargetBL.structure)/7957904439566601112");
+    b.version(2);
     return b.create();
   }
 }

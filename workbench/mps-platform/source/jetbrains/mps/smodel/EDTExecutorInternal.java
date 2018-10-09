@@ -230,7 +230,7 @@ final class EDTExecutorInternal implements Disposable {
     try {
       taskPassed = task.tryRun();
       if (!taskPassed) {
-        LOG.warn("refused in the task execution: " + task);
+        LOG.debug("refused in the task execution: " + task);
       }
     } catch (TaskIsOutdated ignored) {
       LOG.warn("The scheduled task has expired", ignored);

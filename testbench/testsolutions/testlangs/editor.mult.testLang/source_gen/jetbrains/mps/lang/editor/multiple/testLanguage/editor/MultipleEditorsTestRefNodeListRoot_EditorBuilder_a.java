@@ -442,7 +442,7 @@ import java.util.Collections;
     protected void createInnerCells() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a9c0()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints0()).toGenericArray(String.class));
         getCellFactory().removeCellContextHints();
         super.createInnerCells();
         setInnerCellsContext();
@@ -450,7 +450,7 @@ import java.util.Collections;
         getCellFactory().popCellContext();
       }
     }
-    private Iterable<String> getEditorHints_or70v3_a9c0() {
+    private Iterable<String> getEditorHints0() {
       if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x4de57101fd1b39a6L, "projectionType"), "rich", null)) {
         return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
       } else if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x4de57101fd1b39a6L, "projectionType"), "compact", null)) {
@@ -607,18 +607,18 @@ import java.util.Collections;
     protected void createInnerCells() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a()).toGenericArray(String.class));
-        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_or70v3_a3m2a_0()).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints1()).toGenericArray(String.class));
+        getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints2()).toGenericArray(String.class));
         super.createInnerCells();
         setInnerCellsContext();
       } finally {
         getCellFactory().popCellContext();
       }
     }
-    private Iterable<String> getEditorHints_or70v3_a3m2a() {
+    private Iterable<String> getEditorHints1() {
       return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x7b24bcecbf6315eL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
     }
-    private Iterable<String> getEditorHints_or70v3_a3m2a_0() {
+    private Iterable<String> getEditorHints2() {
       return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x7b24bcecbf6315eL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
     }
   }

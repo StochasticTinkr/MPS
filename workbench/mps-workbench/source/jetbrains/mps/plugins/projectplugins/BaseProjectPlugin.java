@@ -33,7 +33,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,6 +43,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private static final Logger LOG = LogManager.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
+  private MPSProject myMPSProject;
 
   private List<BaseTool> myTools = new ArrayList<BaseTool>();
   private EDTAccessor<List<BaseTool>> myInitializedTools = new EDTAccessor<>(new ArrayList<>());
@@ -61,11 +61,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return new ArrayList<>();
   }
 
-  //remove after 3.3
-  protected List<BaseGeneratedTool> initAllTools(Project project) {
-    return new ArrayList<>();
-  }
-
   protected List<BaseTool> initAllTools1(Project project) {
     return new ArrayList<>();
   }
@@ -79,10 +74,9 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
     List<ProjectPluginPart> rv = new ArrayList<>();
     fillCustomParts(rv);
-    MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     for (ProjectPluginPart part : rv) {
       try {
-        part.init(mpsProject);
+        part.init(myMPSProject);
       } catch (Throwable th) {
         LOG.error(String.format("Failed to initialize part %s of project plugin %s", part.getClass(), getClass()), th);
       }
@@ -94,15 +88,9 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     // no-op, subclasses shall override if they want to supply any plugin parts.
   }
 
-  @NotNull
-  private ModelAccess getModelAccess() {
-    ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
-    assert modelAccess != null;
-    return modelAccess;
-  }
-
   public final void init(@NotNull final Project project) {
     myProject = project;
+    myMPSProject = ProjectHelper.fromIdeaProject(myProject);
 
     initTabbedEditors1(project);
     initCustomParts1(project);
@@ -121,7 +109,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   protected void initTools1() {
     try {
-      myTools.addAll(initAllTools(myProject));
       myTools.addAll(initAllTools1(myProject));
     } catch (Throwable t) {
       LOG.error("Exception on tools init:", t);
@@ -186,11 +173,10 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   }
 
   private void disposeCustomPluginParts(final List<BaseCustomProjectPlugin> customPluginsToDispose) {
-    MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
     for (BaseCustomProjectPlugin part : customPluginsToDispose) {
       try {
         if (part instanceof ProjectPluginPart) {
-          ((ProjectPluginPart) part).dispose(mpsProject);
+          ((ProjectPluginPart) part).dispose(myMPSProject);
         } else {
           part.dispose();
         }

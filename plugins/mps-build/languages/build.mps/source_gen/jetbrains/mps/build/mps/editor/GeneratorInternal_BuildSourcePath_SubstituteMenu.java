@@ -44,7 +44,7 @@ public class GeneratorInternal_BuildSourcePath_SubstituteMenu extends Substitute
   }
 
 
-  public static class SMP_ReferenceScope_jsl8ks_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_jsl8ks_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_jsl8ks_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, 0x44e5dd192e77725fL, "targetPath"));

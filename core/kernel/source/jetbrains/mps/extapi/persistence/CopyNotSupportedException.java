@@ -18,8 +18,11 @@ package jetbrains.mps.extapi.persistence;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * The exception which might be thrown during copying.
- * Means that there are some problems which make the operation impossible to accomplish.
+ * The exception which might be thrown during copying. Means
+ * that there are some problems with copying module/model root/model
+ * that make the operation impossible to accomplish. Exception shall
+ * contain a meaningful error message that describes why a particular
+ * module/model root/model can not be copied.
  *
  * @author apyshkin
  * @since 12/2/16 [3.5]

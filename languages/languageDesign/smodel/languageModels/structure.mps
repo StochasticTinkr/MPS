@@ -2552,11 +2552,19 @@
     <node concept="PrWs8" id="nJmxU5cSTH" role="PzmwI">
       <ref role="PrY4T" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
+    <node concept="asaX9" id="7k$14oQrlDi" role="lGtFl">
+      <property role="YLQ7P" value="Use lang.modelapi.ModulePointer instead" />
+      <property role="YLPcu" value="2018.2" />
+    </node>
   </node>
   <node concept="PlHQZ" id="nJmxU5cSSu">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="ModuleIdentity" />
     <property role="EcuMT" value="427659576753753630" />
+    <node concept="asaX9" id="7k$14oQrlDk" role="lGtFl">
+      <property role="YLQ7P" value="Use lang.modelapi.ModuleIdentity instead" />
+      <property role="YLPcu" value="2018.2" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1t9FffgebJy">
     <property role="3GE5qa" value="reference.module" />

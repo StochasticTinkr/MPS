@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class ImplicitEnumMethodImplementation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ImplicitEnumMethodImplementation_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ImplicitEnumMethodImplementation_Test() {
     super(ourParamCache);
@@ -25,39 +29,43 @@ public class ImplicitEnumMethodImplementation_Test extends BaseTransformationTes
 
   @Test
   public void test_ErrorMessagesCheck8841676161362742012() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362742012", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_ErrorMessagesCheck8841676161362742012();
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362742874() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362742874", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_ErrorMessagesCheck8841676161362742874();
   }
   @Test
   public void test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735();
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362737481() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362737481", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_ErrorMessagesCheck8841676161362737481();
   }
   @Test
   public void test_NodeEnumConstantHasUnimplementedCheck8841676161362737703() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumConstantHasUnimplementedCheck8841676161362737703", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_NodeEnumConstantHasUnimplementedCheck8841676161362737703();
   }
   @Test
   public void test_NodeEnumConstantHasUnimplementedCheck8841676161362737723() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumConstantHasUnimplementedCheck8841676161362737723", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_NodeEnumConstantHasUnimplementedCheck8841676161362737723();
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362737639() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362737639", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_ErrorMessagesCheck8841676161362737639();
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362738093() throws Throwable {
-    runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362738093", true);
+    new ImplicitEnumMethodImplementation_Test.TestBody(this).test_ErrorMessagesCheck8841676161362738093();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck8841676161362742012() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8841676161362742012"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

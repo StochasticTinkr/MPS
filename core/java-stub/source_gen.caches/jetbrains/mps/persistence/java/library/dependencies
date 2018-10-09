@@ -58,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.java.stub.JavaPackageNameStub" />
     <classNode dependClassName="jetbrains.mps.java.stub.PackageScopeControl" />
+    <classNode dependClassName="jetbrains.mps.persistence.CopyFileBasedModelRootHelper" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

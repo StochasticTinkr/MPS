@@ -44,7 +44,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());
     addAction(new ImplementBehaviorMethod_Action());
-    addAction(new InstallIDEAPlugin_Action());
     addAction(new LanguageHierarchy_Action());
     addAction(new NavigateToGeneratedCode_Action());
     addAction(new NewAccessoryModel_Action());

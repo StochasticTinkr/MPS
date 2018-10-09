@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class UnreachableStatements_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnreachableStatements_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public UnreachableStatements_Test() {
     super(ourParamCache);
@@ -25,83 +29,87 @@ public class UnreachableStatements_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929494062", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnusedVariableWarningCheck6923385624929494062();
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck6923385624927474426() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927474426", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableNodeErrorCheck6923385624927474426();
   }
   @Test
   public void test_ErrorMessagesCheck1216895632608() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck1216895632608", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck1216895632608();
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120514171() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120514171", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableCodeCheck2557916264120514171();
   }
   @Test
   public void test_ErrorMessagesCheck2557916264120514158() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2557916264120514158", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck2557916264120514158();
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8245314650935054824", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableNodeErrorCheck8245314650935054824();
   }
   @Test
   public void test_ErrorMessagesCheck8245314650935052537() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8245314650935052537", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8245314650935052537();
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813176762", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableNodeErrorCheck8768955936813176762();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813173396() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813173396", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813173396();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813179061() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813179061", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813179061();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813180900() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813180900", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813180900();
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813195443() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813195443", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableNodeErrorCheck8768955936813195443();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813186030() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813186030", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813186030();
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120793751() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120793751", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableCodeCheck2557916264120793751();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813197377() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813197377", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813197377();
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813203327() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813203327", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck8768955936813203327();
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck2575419463997245412() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck2575419463997245412", true);
+    new UnreachableStatements_Test.TestBody(this).test_NodeUnreachableNodeErrorCheck2575419463997245412();
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997245406() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997245406", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck2575419463997245406();
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997271506() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997271506", true);
+    new UnreachableStatements_Test.TestBody(this).test_ErrorMessagesCheck2575419463997271506();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929494062"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

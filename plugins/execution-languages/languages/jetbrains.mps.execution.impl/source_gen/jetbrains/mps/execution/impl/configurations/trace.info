@@ -38,14 +38,14 @@
     <file name="RunConfigurationsStateManager.java">
       <node id="5145867626676099642" at="46,0,47,0" concept="11" trace="LOG" />
       <node id="5145867626676112745" at="47,0,48,0" concept="4" trace="myProject" />
-      <node id="1667993328519712712" at="48,0,49,0" concept="4" trace="myProjectPluginManager" />
+      <node id="1667993328519712712" at="48,0,49,0" concept="4" trace="myRegistry" />
       <node id="8565799187151772365" at="49,0,50,0" concept="4" trace="myState" />
-      <node id="5145867626676112762" at="51,93,52,24" concept="3" />
-      <node id="1667993328519712717" at="52,24,53,43" concept="3" />
+      <node id="5145867626676112762" at="51,88,52,24" concept="3" />
+      <node id="1667993328519712717" at="52,24,53,26" concept="3" />
       <node id="1667993328519775408" at="57,72,58,28" concept="3" />
       <node id="1667993328519775411" at="62,75,63,31" concept="3" />
-      <node id="1386329086796083768" at="75,31,76,84" concept="3" />
-      <node id="1386329086796091574" at="80,31,81,57" concept="3" />
+      <node id="1386329086796083768" at="75,31,76,72" concept="3" />
+      <node id="1386329086796091574" at="80,31,81,45" concept="3" />
       <node id="5145867626676112782" at="85,33,86,13" concept="9" />
       <node id="8565799187151772402" at="87,5,88,27" concept="3" />
       <node id="5145867626676112835" at="91,42,92,37" concept="0" />
@@ -94,7 +94,7 @@
       <node id="5145867626676113015" at="148,0,151,0" concept="7" trace="getRunManager#()Lcom/intellij/execution/impl/RunManagerImpl;" />
       <node id="778004717327684279" at="159,0,162,0" concept="12" trace="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/execution/impl/configurations/RunConfigurationsStateManager;" />
       <node id="970872252592981508" at="182,44,185,7" concept="6" />
-      <node id="5145867626676112756" at="51,0,55,0" concept="2" trace="RunConfigurationsStateManager#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/plugins/projectplugins/ProjectPluginManager;)V" />
+      <node id="5145867626676112756" at="51,0,55,0" concept="2" trace="RunConfigurationsStateManager#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/plugins/PluginLoaderRegistry;)V" />
       <node id="1667993328519773933" at="56,0,60,0" concept="7" trace="afterPluginsLoaded#(Ljava/util/List;)V" />
       <node id="1667993328519773937" at="61,0,65,0" concept="7" trace="beforePluginsUnloaded#(Ljava/util/List;)V" />
       <node id="5145867626676112766" at="74,0,78,0" concept="7" trace="projectOpened#()V" />
@@ -119,8 +119,8 @@
       <scope id="8565799187151772195" at="164,37,164,37" />
       <scope id="1667993328519773936" at="57,72,58,28" />
       <scope id="1667993328519773940" at="62,75,63,31" />
-      <scope id="5145867626676112769" at="75,31,76,84" />
-      <scope id="5145867626676112773" at="80,31,81,57" />
+      <scope id="5145867626676112769" at="75,31,76,72" />
+      <scope id="5145867626676112773" at="80,31,81,45" />
       <scope id="5145867626676112781" at="85,33,86,13" />
       <scope id="5108287150807336576" at="105,47,106,102" />
       <scope id="5108287150807336567" at="110,47,111,113" />
@@ -133,7 +133,7 @@
       <scope id="5145867626676113092" at="155,36,156,37" />
       <scope id="778004717327684282" at="159,76,160,69" />
       <scope id="970872252592981509" at="183,42,184,70" />
-      <scope id="5145867626676112761" at="51,93,53,43" />
+      <scope id="5145867626676112761" at="51,88,53,26" />
       <scope id="5145867626676112834" at="91,42,93,35" />
       <scope id="8565799187151772192" at="164,0,166,0" />
       <scope id="7276157616189155455" at="173,44,175,54">
@@ -156,8 +156,8 @@
         <var name="project" id="778004717327692580" />
       </scope>
       <scope id="5145867626676112756" at="51,0,55,0">
-        <var name="pluginManager" id="1667993328519712446" />
         <var name="project" id="5145867626676112759" />
+        <var name="registry" id="1667993328519712446" />
       </scope>
       <scope id="1667993328519773933" at="56,0,60,0">
         <var name="contributors" id="2555040969573847964" />

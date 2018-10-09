@@ -42,7 +42,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.util.IconLoader;
 import org.apache.log4j.Level;
 
 public class BaseIconManager {
@@ -209,8 +208,7 @@ public class BaseIconManager {
       return MapSequence.fromMap(myResToIcon).get(ir);
     }
 
-    // Quick fix for usable platform update: non strict icon search to avoid RuntimeException and unusable MPS 
-    Icon icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider(), false, false);
+    Icon icon = IconLoadingUtil.loadIcon(ir.getResourceId(), ir.getProvider());
     if (icon == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Icon was not found for " + ir);

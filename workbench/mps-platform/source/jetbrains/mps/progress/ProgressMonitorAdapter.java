@@ -16,12 +16,6 @@
 package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.MessageType;
-import com.intellij.openapi.wm.IdeFrame;
-import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.wm.ex.StatusBarEx;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,9 +27,10 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
 
   public ProgressMonitorAdapter(@NotNull ProgressIndicator indicator) {
     myIndicator = indicator;
-    if (myIndicator.isIndeterminate()) {
-      myIndicator.setIndeterminate(false);
-    }
+    /* As ProgressMonitorAdapter#update uses ProgressIndicator#setFraction,
+    * we have to take into account AbstractProgressIndicatorBase#setFraction check for indicator indeterminate state
+    * */
+    myIndicator.setIndeterminate(false);
   }
 
   @Override

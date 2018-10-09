@@ -174,6 +174,11 @@ public class SModelOperations {
    * Doesn't look at actual model content (i.e. what concept instances are there).
    * <p>
    * To obtain closure including extended/extending languages, use {@link jetbrains.mps.smodel.SLanguageHierarchy}
+   * </p>
+   * <p>
+   * IMPORTANT: For a {@code model} that is not attached to a repository, set of used languages may be incomplete (MPS needs to resolve
+   * used DevKit modules to tell languages they expose).
+   * </p>
    * @return set of languages imported by the model, either directly or through devkit
    * @since 3.3
    */

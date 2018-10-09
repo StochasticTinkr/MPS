@@ -8632,7 +8632,7 @@
   </node>
   <node concept="sE7Ow" id="6aMABdhBfrn">
     <property role="TrG5h" value="GenerateMainMethod" />
-    <property role="2uzpH1" value="main(Strins[] args)" />
+    <property role="2uzpH1" value="main(Strings[] args)" />
     <property role="3GE5qa" value="generate" />
     <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLMw" role="32lrUH">

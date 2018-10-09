@@ -129,6 +129,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -894,6 +897,34 @@
       <node concept="37vLTG" id="6J7GhdRUHY5" role="3clF46">
         <property role="TrG5h" value="useStaticRefs" />
         <node concept="10P_77" id="6J7GhdRUHY4" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="dVfA4asyIT" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setSkipUnmodifiedModels" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="dVfA4asyIW" role="3clF47">
+        <node concept="3clFbF" id="dVfA4as$vi" role="3cqZAp">
+          <node concept="2OqwBi" id="dVfA4as$xT" role="3clFbG">
+            <node concept="37vLTw" id="dVfA4as$vh" role="2Oq$k0">
+              <ref role="3cqZAo" node="2XB5puvn4iK" resolve="myGenProps" />
+            </node>
+            <node concept="liA8E" id="dVfA4as$Et" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:dVfA4aqZjs" resolve="setSkipUnmodifiedModels" />
+              <node concept="37vLTw" id="dVfA4as$Ia" role="37wK5m">
+                <ref role="3cqZAo" node="dVfA4aszD5" resolve="skipUnmodifiedModels" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dVfA4asxUK" role="1B3o_S" />
+      <node concept="3cqZAl" id="dVfA4asxZI" role="3clF45" />
+      <node concept="37vLTG" id="dVfA4aszD5" role="3clF46">
+        <property role="TrG5h" value="skipUnmodifiedModels" />
+        <node concept="10P_77" id="dVfA4aszD4" role="1tU5fm" />
       </node>
     </node>
     <node concept="3clFb_" id="QkG2t1byP_" role="jymVt">

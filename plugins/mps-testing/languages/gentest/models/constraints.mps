@@ -118,96 +118,103 @@
         </node>
         <node concept="3clFbJ" id="6VhyYlfJFOa" role="3cqZAp">
           <node concept="3clFbS" id="6VhyYlfJFOc" role="3clFbx">
-            <node concept="3cpWs8" id="2kP5W5yTc3h" role="3cqZAp">
-              <node concept="3cpWsn" id="2kP5W5yTc3i" role="3cpWs9">
-                <property role="TrG5h" value="arg" />
-                <node concept="3Tqbb2" id="2kP5W5yTc3c" role="1tU5fm">
-                  <ref role="ehGHo" to="lur:uLQNrGW9LE" resolve="TestArgument" />
-                </node>
-                <node concept="2OqwBi" id="2kP5W5yTc3j" role="33vP2m">
-                  <node concept="1PxgMI" id="2kP5W5yTc3k" role="2Oq$k0">
-                    <property role="1BlNFB" value="true" />
-                    <node concept="chp4Y" id="2kP5W5yTc3l" role="3oSUPX">
-                      <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
+            <node concept="3clFbJ" id="5wiIlPAvPnX" role="3cqZAp">
+              <node concept="3clFbS" id="5wiIlPAvPnZ" role="3clFbx">
+                <node concept="3cpWs8" id="2kP5W5yTc3h" role="3cqZAp">
+                  <node concept="3cpWsn" id="2kP5W5yTc3i" role="3cpWs9">
+                    <property role="TrG5h" value="arg" />
+                    <node concept="3Tqbb2" id="2kP5W5yTc3c" role="1tU5fm">
+                      <ref role="ehGHo" to="lur:uLQNrGW9LE" resolve="TestArgument" />
                     </node>
-                    <node concept="2H4GUG" id="2kP5W5yTc3m" role="1m5AlR" />
-                  </node>
-                  <node concept="3TrEf2" id="2kP5W5yTc3n" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lur:uLQNrGWd1s" resolve="arg" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="2kP5W5yTb0N" role="3cqZAp">
-              <node concept="22lmx$" id="2kP5W5yTcoo" role="3cqZAk">
-                <node concept="2OqwBi" id="2kP5W5yTcXr" role="3uHU7B">
-                  <node concept="37vLTw" id="2kP5W5yTcAH" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2kP5W5yTc3i" resolve="arg" />
-                  </node>
-                  <node concept="3w_OXm" id="2kP5W5yTdpA" role="2OqNvi" />
-                </node>
-                <node concept="2OqwBi" id="2kP5W5yT9M9" role="3uHU7w">
-                  <node concept="2OqwBi" id="2kP5W5yT8Pb" role="2Oq$k0">
-                    <node concept="37vLTw" id="2kP5W5yTc3o" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2kP5W5yTc3i" resolve="arg" />
-                    </node>
-                    <node concept="2yIwOk" id="2kP5W5yT9gW" role="2OqNvi" />
-                  </node>
-                  <node concept="3O6GUB" id="2kP5W5yTaf5" role="2OqNvi">
-                    <node concept="chp4Y" id="2kP5W5yTazN" role="3QVz_e">
-                      <ref role="cht4Q" to="lur:uLQNrGW9LI" resolve="ModelArgument" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="22lmx$" id="6VhyYlfJH_J" role="3clFbw">
-            <node concept="2OqwBi" id="6VhyYlfJM7r" role="3uHU7w">
-              <node concept="2DA6wF" id="6VhyYlfJHLf" role="2Oq$k0" />
-              <node concept="liA8E" id="6VhyYlfJMC7" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="359W_D" id="6VhyYlfJMKH" role="37wK5m">
-                  <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
-                  <ref role="359W_F" to="lur:uLQNrGWd1z" resolve="transformationPlan" />
-                </node>
-              </node>
-            </node>
-            <node concept="22lmx$" id="6VhyYlfJKgR" role="3uHU7B">
-              <node concept="1Wc70l" id="2kP5W5yT2kD" role="3uHU7B">
-                <node concept="1Wc70l" id="2kP5W5yT5lk" role="3uHU7B">
-                  <node concept="3y3z36" id="2kP5W5yT62R" role="3uHU7B">
-                    <node concept="10Nm6u" id="2kP5W5yT6i$" role="3uHU7w" />
-                    <node concept="2H4GUG" id="2kP5W5yT5_g" role="3uHU7B" />
-                  </node>
-                  <node concept="2OqwBi" id="2kP5W5yT2U0" role="3uHU7w">
-                    <node concept="2DD5aU" id="2kP5W5yT2y$" role="2Oq$k0" />
-                    <node concept="3O6GUB" id="2kP5W5yT3n2" role="2OqNvi">
-                      <node concept="chp4Y" id="2kP5W5yT3A_" role="3QVz_e">
-                        <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
+                    <node concept="2OqwBi" id="2kP5W5yTc3j" role="33vP2m">
+                      <node concept="1PxgMI" id="2kP5W5yTc3k" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="2kP5W5yTc3l" role="3oSUPX">
+                          <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
+                        </node>
+                        <node concept="2H4GUG" id="2kP5W5yTc3m" role="1m5AlR" />
+                      </node>
+                      <node concept="3TrEf2" id="2kP5W5yTc3n" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lur:uLQNrGWd1s" resolve="arg" />
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="6VhyYlfJIDR" role="3uHU7w">
-                  <node concept="2DA6wF" id="6VhyYlfJFVu" role="2Oq$k0" />
-                  <node concept="liA8E" id="6VhyYlfJJ6e" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="359W_D" id="6VhyYlfJGqL" role="37wK5m">
-                      <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
-                      <ref role="359W_F" to="lur:uLQNrGWd1u" resolve="inputModel" />
+                <node concept="3cpWs6" id="2kP5W5yTb0N" role="3cqZAp">
+                  <node concept="22lmx$" id="2kP5W5yTcoo" role="3cqZAk">
+                    <node concept="2OqwBi" id="2kP5W5yTcXr" role="3uHU7B">
+                      <node concept="37vLTw" id="2kP5W5yTcAH" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2kP5W5yTc3i" resolve="arg" />
+                      </node>
+                      <node concept="3w_OXm" id="2kP5W5yTdpA" role="2OqNvi" />
+                    </node>
+                    <node concept="2OqwBi" id="2kP5W5yT9M9" role="3uHU7w">
+                      <node concept="2OqwBi" id="2kP5W5yT8Pb" role="2Oq$k0">
+                        <node concept="37vLTw" id="2kP5W5yTc3o" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2kP5W5yTc3i" resolve="arg" />
+                        </node>
+                        <node concept="2yIwOk" id="2kP5W5yT9gW" role="2OqNvi" />
+                      </node>
+                      <node concept="3O6GUB" id="2kP5W5yTaf5" role="2OqNvi">
+                        <node concept="chp4Y" id="2kP5W5yTazN" role="3QVz_e">
+                          <ref role="cht4Q" to="lur:uLQNrGW9LI" resolve="ModelArgument" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="6VhyYlfJKLU" role="3uHU7w">
-                <node concept="2DA6wF" id="6VhyYlfJKsZ" role="2Oq$k0" />
-                <node concept="liA8E" id="6VhyYlfJLme" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="359W_D" id="6VhyYlfJLys" role="37wK5m">
-                    <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
-                    <ref role="359W_F" to="lur:uLQNrGWd1w" resolve="referenceModel" />
+              <node concept="22lmx$" id="5wiIlPAvPRq" role="3clFbw">
+                <node concept="2OqwBi" id="6VhyYlfJM7r" role="3uHU7w">
+                  <node concept="2DA6wF" id="6VhyYlfJHLf" role="2Oq$k0" />
+                  <node concept="liA8E" id="6VhyYlfJMC7" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="359W_D" id="6VhyYlfJMKH" role="37wK5m">
+                      <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
+                      <ref role="359W_F" to="lur:uLQNrGWd1z" resolve="transformationPlan" />
+                    </node>
                   </node>
+                </node>
+                <node concept="22lmx$" id="5wiIlPAvR6l" role="3uHU7B">
+                  <node concept="2OqwBi" id="6VhyYlfJKLU" role="3uHU7w">
+                    <node concept="2DA6wF" id="6VhyYlfJKsZ" role="2Oq$k0" />
+                    <node concept="liA8E" id="6VhyYlfJLme" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="359W_D" id="6VhyYlfJLys" role="37wK5m">
+                        <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
+                        <ref role="359W_F" to="lur:uLQNrGWd1w" resolve="referenceModel" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6VhyYlfJIDR" role="3uHU7B">
+                    <node concept="2DA6wF" id="6VhyYlfJFVu" role="2Oq$k0" />
+                    <node concept="liA8E" id="6VhyYlfJJ6e" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="359W_D" id="6VhyYlfJGqL" role="37wK5m">
+                        <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
+                        <ref role="359W_F" to="lur:uLQNrGWd1u" resolve="inputModel" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5wiIlPAvU4Z" role="3cqZAp">
+              <node concept="3SKdUq" id="5wiIlPAvU51" role="3SKWNk">
+                <property role="3SKdUp" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="2kP5W5yT5lk" role="3clFbw">
+            <node concept="3y3z36" id="2kP5W5yT62R" role="3uHU7B">
+              <node concept="10Nm6u" id="2kP5W5yT6i$" role="3uHU7w" />
+              <node concept="2H4GUG" id="2kP5W5yT5_g" role="3uHU7B" />
+            </node>
+            <node concept="2OqwBi" id="2kP5W5yT2U0" role="3uHU7w">
+              <node concept="2DD5aU" id="2kP5W5yT2y$" role="2Oq$k0" />
+              <node concept="3O6GUB" id="2kP5W5yT3n2" role="2OqNvi">
+                <node concept="chp4Y" id="2kP5W5yT3A_" role="3QVz_e">
+                  <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
                 </node>
               </node>
             </node>
@@ -215,6 +222,127 @@
         </node>
         <node concept="3cpWs6" id="6VhyYlfJQit" role="3cqZAp">
           <node concept="3clFbT" id="6VhyYlfJQHo" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5wiIlPAvMD6">
+    <ref role="1M2myG" to="lur:5wiIlPAvMBp" resolve="TransformationMatchManyAssertion" />
+    <node concept="9SLcT" id="5wiIlPAvMD7" role="9SGkU">
+      <node concept="3clFbS" id="5wiIlPAvMD8" role="2VODD2">
+        <node concept="3SKdUt" id="5wiIlPAvMKq" role="3cqZAp">
+          <node concept="3SKdUq" id="5wiIlPAvMKr" role="3SKWNk">
+            <property role="3SKdUp" value="this assertion is allowed to reference arguments that point to model only." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5wiIlPAvNsa" role="3cqZAp">
+          <node concept="3SKdUq" id="5wiIlPAvNsc" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME introduce an argument kind to hold collection of models and allow to reference it from referenceModels" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5wiIlPAvMKs" role="3cqZAp">
+          <node concept="3clFbS" id="5wiIlPAvMKt" role="3clFbx">
+            <node concept="3clFbJ" id="5wiIlPAvUAg" role="3cqZAp">
+              <node concept="3clFbS" id="5wiIlPAvUAi" role="3clFbx">
+                <node concept="3cpWs8" id="5wiIlPAvMKu" role="3cqZAp">
+                  <node concept="3cpWsn" id="5wiIlPAvMKv" role="3cpWs9">
+                    <property role="TrG5h" value="arg" />
+                    <node concept="3Tqbb2" id="5wiIlPAvMKw" role="1tU5fm">
+                      <ref role="ehGHo" to="lur:uLQNrGW9LE" resolve="TestArgument" />
+                    </node>
+                    <node concept="2OqwBi" id="5wiIlPAvMKx" role="33vP2m">
+                      <node concept="1PxgMI" id="5wiIlPAvMKy" role="2Oq$k0">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="5wiIlPAvMKz" role="3oSUPX">
+                          <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
+                        </node>
+                        <node concept="2H4GUG" id="5wiIlPAvMK$" role="1m5AlR" />
+                      </node>
+                      <node concept="3TrEf2" id="5wiIlPAvMK_" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lur:uLQNrGWd1s" resolve="arg" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="5wiIlPAvMKA" role="3cqZAp">
+                  <node concept="22lmx$" id="5wiIlPAvMKB" role="3cqZAk">
+                    <node concept="2OqwBi" id="5wiIlPAvMKC" role="3uHU7B">
+                      <node concept="37vLTw" id="5wiIlPAvMKD" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5wiIlPAvMKv" resolve="arg" />
+                      </node>
+                      <node concept="3w_OXm" id="5wiIlPAvMKE" role="2OqNvi" />
+                    </node>
+                    <node concept="2OqwBi" id="5wiIlPAvMKF" role="3uHU7w">
+                      <node concept="2OqwBi" id="5wiIlPAvMKG" role="2Oq$k0">
+                        <node concept="37vLTw" id="5wiIlPAvMKH" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5wiIlPAvMKv" resolve="arg" />
+                        </node>
+                        <node concept="2yIwOk" id="5wiIlPAvMKI" role="2OqNvi" />
+                      </node>
+                      <node concept="3O6GUB" id="5wiIlPAvMKJ" role="2OqNvi">
+                        <node concept="chp4Y" id="5wiIlPAvMKK" role="3QVz_e">
+                          <ref role="cht4Q" to="lur:uLQNrGW9LI" resolve="ModelArgument" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="22lmx$" id="5wiIlPAvVBb" role="3clFbw">
+                <node concept="22lmx$" id="5wiIlPAw0FQ" role="3uHU7B">
+                  <node concept="2OqwBi" id="5wiIlPAvML0" role="3uHU7B">
+                    <node concept="2DA6wF" id="5wiIlPAvML1" role="2Oq$k0" />
+                    <node concept="liA8E" id="5wiIlPAvML2" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="359W_D" id="5wiIlPAvML3" role="37wK5m">
+                        <ref role="359W_E" to="lur:5wiIlPAvMBp" resolve="TransformationMatchManyAssertion" />
+                        <ref role="359W_F" to="lur:5wiIlPAvMBr" resolve="inputModel" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="5wiIlPAvWSe" role="3uHU7w">
+                    <node concept="2DA6wF" id="5wiIlPAvWSf" role="2Oq$k0" />
+                    <node concept="liA8E" id="5wiIlPAvWSg" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="359W_D" id="5wiIlPAvWSh" role="37wK5m">
+                        <ref role="359W_E" to="lur:5wiIlPAvMBp" resolve="TransformationMatchManyAssertion" />
+                        <ref role="359W_F" to="lur:5wiIlPAvMBs" resolve="referenceModels" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5wiIlPAvMKM" role="3uHU7w">
+                  <node concept="2DA6wF" id="5wiIlPAvMKN" role="2Oq$k0" />
+                  <node concept="liA8E" id="5wiIlPAvMKO" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="359W_D" id="5wiIlPAvMKP" role="37wK5m">
+                      <ref role="359W_E" to="lur:uLQNrGWd1n" resolve="TransformationMatchAssertion" />
+                      <ref role="359W_F" to="lur:uLQNrGWd1z" resolve="transformationPlan" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="5wiIlPAvMKS" role="3clFbw">
+            <node concept="3y3z36" id="5wiIlPAvMKT" role="3uHU7B">
+              <node concept="10Nm6u" id="5wiIlPAvMKU" role="3uHU7w" />
+              <node concept="2H4GUG" id="5wiIlPAvMKV" role="3uHU7B" />
+            </node>
+            <node concept="2OqwBi" id="5wiIlPAvMKW" role="3uHU7w">
+              <node concept="2DD5aU" id="5wiIlPAvMKX" role="2Oq$k0" />
+              <node concept="3O6GUB" id="5wiIlPAvMKY" role="2OqNvi">
+                <node concept="chp4Y" id="5wiIlPAvMKZ" role="3QVz_e">
+                  <ref role="cht4Q" to="lur:uLQNrGWd1r" resolve="ArgumentReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5wiIlPAvML8" role="3cqZAp">
+          <node concept="3clFbT" id="5wiIlPAvML9" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>

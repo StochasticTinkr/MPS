@@ -50,7 +50,7 @@ public class MatchVariableReferenceRegexp_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_8lasyq_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8lasyq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8lasyq_a() {
       super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, 0x1118e0a5335L, "match"));
@@ -72,7 +72,7 @@ public class MatchVariableReferenceRegexp_SubstituteMenu extends SubstituteMenuB
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new MatchVariableReferenceRegexp_SubstituteMenu.SMP_ReferenceScope_8lasyq_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

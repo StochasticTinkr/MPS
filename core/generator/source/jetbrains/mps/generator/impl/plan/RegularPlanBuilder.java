@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.GenerationPlanBuilder;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Fork;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
@@ -43,12 +44,19 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * XXX Now, I don't like the idea both plan builder and its client (GenPlanTranslator) need runtime information about deployed modules. I shall restrict
+ *  API of this class to identity of generators/languages/MCs. Then, both present interpreted and future generated plan translation code could be simple and
+ *  straightforward, without a need to figure out particular TemplateModule from a runtime registry it hardly has access to.
+ *
+ * XXX myEngagedGenerators are in use only during wrapUp. Perhaps, shall pass them at this moment, rather than at construction time?
+ *
  * Though I hate the name as it doesn't tell anything, it's a plan builder for regular use, targeted
  * for everyday scenarios like model make in IDE. Name alternatives are ScopedPlanBuilder, RestrictExtendsPB and others of the same degree of imperfection.
  * Likely, we'll need different approaches to extension processing, and the name shall reflect the approach, but at the moment I can't come up with a better one.
@@ -98,24 +106,24 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
       lr.getGenerators().stream().filter(TemplateModule.class::isInstance).map(TemplateModule.class::cast).forEach(tm::add);
     }
     // Perhaps, shall record LanguageEntry and build set of templates when required?
-    mySteps.add(new TransformEntry(tm, true, false));
+    mySteps.add(new TransformEntry(this, tm, true, false));
   }
 
   @Override
   public void applyGenerator(@NotNull SModule... generators) {
-    mySteps.add(new TransformEntry(asTemplateModules(generators), true, false));
+    mySteps.add(new TransformEntry(this, asTemplateModules(generators), true, false));
   }
 
   @Override
   public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
-    mySteps.add(new TransformEntry(asTemplateModules(generator), false, false));
+    mySteps.add(new TransformEntry(this, asTemplateModules(generator), false, false));
   }
 
   @Override
   public void applyGenerators(@NotNull Collection<SModuleReference> generators, @NotNull BuilderOption... options) {
     boolean withExtended = BuilderOption.WithExtendedGenerators.presentIn(options);
     boolean respectPriorityRules = withExtended && BuilderOption.WithPriorityRules.presentIn(options);
-    mySteps.add(new TransformEntry(asTemplateModules(generators), !withExtended, respectPriorityRules));
+    mySteps.add(new TransformEntry(this, asTemplateModules(generators), !withExtended, respectPriorityRules));
   }
 
   @Override
@@ -140,6 +148,7 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     mySteps.forEach(s -> s.reportInvolvedGenerators(explicitlyMentioned));
     HashSet<TemplateModule> availableAsExt = new HashSet<>(myEngagedGenerators);
     // FIXME quite ineffective way to deal with LanguageRuntime.getGenerators producing new instance of TemplateModule each time asked.
+    // XXX with no interpreted generators instantiated from LR.getGenerators, can get rid of this code.
     availableAsExt.removeIf(tm -> explicitlyMentioned.stream().anyMatch(m -> m.getModuleReference().equals(tm.getModuleReference())));
     class S {
       public final TemplateModule generator;
@@ -155,6 +164,8 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     for (TemplateModule extCandidate : availableAsExt) {
       topoOrder[i++] = new S(extCandidate);
     }
+    // FIXME Comparator violates transitive constraint: given C -> B -> A, it answers A < B and B < C, but tells A == C
+    //       see https://youtrack.jetbrains.com/issue/MPS-27394
     Arrays.sort(topoOrder, (o1, o2) -> {
       // o2 needs o1, then o1 < o2
       if (o2.directlyExtendedGenerators.contains(o1.generator.getModuleReference())) {
@@ -199,13 +210,28 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
       }
     }
     ArrayList<Step> steps = new ArrayList<>(mySteps.size());
-    mySteps.forEach(s -> s.createStep(RegularPlanBuilder.this, steps));
+    mySteps.forEach(s -> s.createStep(steps));
     return new RigidGenerationPlan(planIdentity, steps);
   }
 
   @Override
   public GenerationPlanBuilder fork() {
-    throw new UnsupportedOperationException();
+    final ForkEntry forkStep = new ForkEntry();
+    mySteps.add(forkStep);
+    return new RegularPlanBuilder(myLanguageRegistry, myEngagedGenerators, myMessageHandler) {
+      @NotNull
+      @Override
+      public ModelGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity) {
+        forkStep.steps(getEntries());
+        // blank, non-null return value, shall be ignored
+        return new RigidGenerationPlan(planIdentity, Collections.emptyList());
+      }
+    };
+  }
+
+  // just to ensure subclass in fork() accesses right mySteps field (not the one from enclosing entry)
+  protected final List<StepEntry> getEntries() {
+    return mySteps;
   }
 
   private Collection<TemplateModule> asTemplateModules(@NotNull Collection<SModuleReference> generators) {
@@ -259,27 +285,30 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     void reportInvolvedGenerators(Collection<TemplateModule> result);
 
     /**
+     * Step has a chance to 'consume' {@code extCandidate} generator if the step explicitly lists any of {@code directExtendedGenerators} as engaged.
+     * 'Consumed' here doesn't mean other steps could not consume it as well. Basically, its PlanBulder telling its step entries: "look, here's a generator
+     * I'd like to put somewhere, grab it if you like".
      * @param directExtendedGenerators generators directly extended by {@code extCandidate}, just an handy, calculated-once set.
      * @param extCandidate generator
-     * @return {@code true} if {@code extCandidate} has been consumed by the step as an extension (doesn't mean other steps could not consume it as well)
      */
     void registerIfIntersects(Collection<SModuleReference> directExtendedGenerators, TemplateModule extCandidate);
 
     /**
-     * @param planBuilder do I need this?
      * @param steps ordered collection to receive new plan step(s) according to this entry.
      */
-    void createStep(RegularPlanBuilder planBuilder, List<Step> steps);
+    void createStep(List<Step> steps);
   }
 
   private static class TransformEntry implements StepEntry {
+    private final RegularPlanBuilder myPlanBuilder;
     private final ArrayList<TemplateModule> myGenerators;
     private final boolean myIsSealed; // true if no extensions are considered.
     // true if shall read priority rules from specified generators and break this step further down to smaller according to these rules.
     private final boolean myRespectPriorityRules;
     private final ArrayList<TemplateModule> myExtensions = new ArrayList<>(4);
 
-    TransformEntry(Collection<TemplateModule> generators, boolean isSealed, boolean respectPriorityRules) {
+    TransformEntry(RegularPlanBuilder planBuilder, Collection<TemplateModule> generators, boolean isSealed, boolean respectPriorityRules) {
+      myPlanBuilder = planBuilder;
       myGenerators = new ArrayList<>(generators);
       myIsSealed = isSealed;
       myRespectPriorityRules = respectPriorityRules;
@@ -306,10 +335,10 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     }
 
     @Override
-    public void createStep(RegularPlanBuilder planBuilder, List<Step> steps) {
+    public void createStep(List<Step> steps) {
       Stream<TemplateModule> generators = Stream.concat(myGenerators.stream(), myExtensions.stream());
       if (!myIsSealed && myRespectPriorityRules) {
-        final boolean isBeforeCheckpoint = planBuilder.isNextStepIsPersistedCheckpoint(this);
+        final boolean isBeforeCheckpoint = myPlanBuilder.isNextStepIsPersistedCheckpoint(this);
         GenerationPartitioner gp = new GenerationPartitioner(generators.collect(Collectors.toList()));
         List<List<TemplateMappingConfiguration>> mappingSets = gp.createMappingSets();
         // if there's only 1 step, there's no need to collect its labels for propagation, they are already there in the last (and only) set of MLs.
@@ -347,7 +376,7 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     }
 
     @Override
-    public void createStep(RegularPlanBuilder planBuilder, List<Step> steps) {
+    public void createStep(List<Step> steps) {
       steps.add(new Checkpoint(myIdentity, myIsSynchOnly));
     }
   }
@@ -375,8 +404,34 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     }
 
     @Override
-    public void createStep(RegularPlanBuilder planBuilder, List<Step> steps) {
+    public void createStep(List<Step> steps) {
       steps.add(new Transform(myElements));
+    }
+  }
+
+  private static class ForkEntry implements StepEntry {
+    private List<StepEntry> mySteps = Collections.emptyList();
+
+    public void steps(List<StepEntry> steps) {
+      assert !steps.contains(this) : "Fork step shall not include itself";
+      mySteps = steps;
+    }
+
+    @Override
+    public void reportInvolvedGenerators(Collection<TemplateModule> result) {
+      mySteps.forEach(s -> s.reportInvolvedGenerators(result));
+    }
+
+    @Override
+    public void registerIfIntersects(Collection<SModuleReference> directExtendedGenerators, TemplateModule extCandidate) {
+      mySteps.forEach(s -> s.registerIfIntersects(directExtendedGenerators, extCandidate));
+    }
+
+    @Override
+    public void createStep(List<Step> steps) {
+      final ArrayList<Step> branch = new ArrayList<>();
+      mySteps.forEach(s -> s.createStep(branch));
+      steps.add(new Fork(branch));
     }
   }
 }

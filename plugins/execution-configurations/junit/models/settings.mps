@@ -10,7 +10,6 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
   </languages>
   <imports>
     <import index="xk9i" ref="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)" />
@@ -50,6 +49,7 @@
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
+    <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -282,6 +282,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -462,21 +465,20 @@
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myModelRef" />
-      <property role="3TUv4t" value="true" />
+      <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="40zq_XS$OOk" role="1B3o_S" />
-      <node concept="3uibUv" id="40zq_XS$Pjk" role="1tU5fm">
-        <ref role="3uigEE" to="18ew:~Reference" resolve="Reference" />
-        <node concept="3uibUv" id="40zq_XS$PJO" role="11_B2D">
-          <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-        </node>
+      <node concept="3uibUv" id="40zq_XS$PJO" role="1tU5fm">
+        <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
       </node>
-      <node concept="2ShNRf" id="40zq_XSA3UE" role="33vP2m">
-        <node concept="1pGfFk" id="40zq_XSA6vu" role="2ShVmc">
-          <ref role="37wK5l" to="18ew:~Reference.&lt;init&gt;()" resolve="Reference" />
-          <node concept="3uibUv" id="40zq_XSAbgo" role="1pMfVU">
-            <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-          </node>
-        </node>
+    </node>
+    <node concept="312cEg" id="4n0HNtiPQZy" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myFindUsages" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="4n0HNtiPPgi" role="1B3o_S" />
+      <node concept="3uibUv" id="4n0HNtiPQT3" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~FindUsagesFacade" resolve="FindUsagesFacade" />
       </node>
     </node>
     <node concept="2tJIrI" id="40zq_XSz8OR" role="jymVt" />
@@ -491,6 +493,29 @@
             </node>
             <node concept="37vLTw" id="40zq_XSzb4C" role="37vLTJ">
               <ref role="3cqZAo" node="40zq_XSz9Zf" resolve="myMpsProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4n0HNtiQ7w9" role="3cqZAp">
+          <node concept="3SKdUq" id="4n0HNtiQ7wb" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME unfortunately, FindUsagesFacade is not CoreComponent, therefore have to use FindUsagesManager" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n0HNtiPTQZ" role="3cqZAp">
+          <node concept="37vLTI" id="4n0HNtiPUyQ" role="3clFbG">
+            <node concept="2OqwBi" id="4n0HNtiPX6q" role="37vLTx">
+              <node concept="37vLTw" id="4n0HNtiPW9K" role="2Oq$k0">
+                <ref role="3cqZAo" node="7Huyr6Rse0N" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="4n0HNtiPXy2" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="4n0HNtiQ6jz" role="37wK5m">
+                  <ref role="3VsUkX" to="yctd:~FindUsagesManager" resolve="FindUsagesManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="4n0HNtiPTQX" role="37vLTJ">
+              <ref role="3cqZAo" node="4n0HNtiPQZy" resolve="myFindUsages" />
             </node>
           </node>
         </node>
@@ -544,34 +569,11 @@
                       </node>
                       <node concept="3clFbJ" id="5gyVhZ1blAU" role="3cqZAp">
                         <node concept="3clFbS" id="5gyVhZ1blAV" role="3clFbx">
-                          <node concept="3clFbF" id="40zq_XS$QUP" role="3cqZAp">
-                            <node concept="2OqwBi" id="40zq_XS$RJG" role="3clFbG">
-                              <node concept="37vLTw" id="40zq_XS$QUN" role="2Oq$k0">
-                                <ref role="3cqZAo" node="40zq_XS$PJR" resolve="myModelRef" />
-                              </node>
-                              <node concept="liA8E" id="40zq_XS$RX4" role="2OqNvi">
-                                <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object):void" resolve="set" />
-                                <node concept="37vLTw" id="40zq_XS$SLr" role="37wK5m">
-                                  <ref role="3cqZAo" node="5gyVhZ1blAM" resolve="modelRef" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="5gyVhZ1blB3" role="3cqZAp">
-                            <node concept="2OqwBi" id="5gyVhZ1blB4" role="3clFbG">
-                              <node concept="Xjq3P" id="5gyVhZ1blB5" role="2Oq$k0">
-                                <ref role="1HBi2w" node="5gyVhZ1blAd" resolve="ModelChooser" />
-                              </node>
-                              <node concept="liA8E" id="5gyVhZ1blB6" role="2OqNvi">
-                                <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.setText(java.lang.String):void" resolve="setText" />
-                                <node concept="2OqwBi" id="7ZsPHXTsgq3" role="37wK5m">
-                                  <node concept="37vLTw" id="7ZsPHXTsfFa" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="5gyVhZ1blAM" resolve="modelRef" />
-                                  </node>
-                                  <node concept="liA8E" id="7ZsPHXTshaJ" role="2OqNvi">
-                                    <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
-                                  </node>
-                                </node>
+                          <node concept="3clFbF" id="4n0HNtiQAjJ" role="3cqZAp">
+                            <node concept="1rXfSq" id="4n0HNtiQAjH" role="3clFbG">
+                              <ref role="37wK5l" node="40zq_XS$I06" resolve="setModel" />
+                              <node concept="37vLTw" id="4n0HNtiQBbw" role="37wK5m">
+                                <ref role="3cqZAo" node="5gyVhZ1blAM" resolve="modelRef" />
                               </node>
                             </node>
                           </node>
@@ -656,6 +658,22 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="4n0HNtiQBqM" role="3cqZAp">
+                    <node concept="3cpWsn" id="4n0HNtiQBqN" role="3cpWs9">
+                      <property role="TrG5h" value="scope" />
+                      <node concept="3uibUv" id="4n0HNtiQBqJ" role="1tU5fm">
+                        <ref role="3uigEE" to="mte5:~ProjectScope" resolve="ProjectScope" />
+                      </node>
+                      <node concept="2ShNRf" id="4n0HNtiQBqO" role="33vP2m">
+                        <node concept="1pGfFk" id="4n0HNtiQBqP" role="2ShVmc">
+                          <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                          <node concept="37vLTw" id="4n0HNtiQBqQ" role="37wK5m">
+                            <ref role="3cqZAo" node="40zq_XSz9Zf" resolve="myMpsProject" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3cpWs8" id="1KUoCipv$hg" role="3cqZAp">
                     <node concept="3cpWsn" id="1KUoCipv$hh" role="3cpWs9">
                       <property role="TrG5h" value="usages" />
@@ -666,19 +684,13 @@
                         </node>
                       </node>
                       <node concept="2OqwBi" id="1KUoCipv$hk" role="33vP2m">
-                        <node concept="2YIFZM" id="1KUoCipv$hl" role="2Oq$k0">
-                          <ref role="1Pybhc" to="lui2:~FindUsagesFacade" resolve="FindUsagesFacade" />
-                          <ref role="37wK5l" to="lui2:~FindUsagesFacade.getInstance():org.jetbrains.mps.openapi.module.FindUsagesFacade" resolve="getInstance" />
+                        <node concept="37vLTw" id="4n0HNtiQ9EP" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4n0HNtiPQZy" resolve="myFindUsages" />
                         </node>
                         <node concept="liA8E" id="1KUoCipv$hm" role="2OqNvi">
                           <ref role="37wK5l" to="lui2:~FindUsagesFacade.findInstances(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,boolean,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findInstances" />
-                          <node concept="2ShNRf" id="2shlJwNK$2b" role="37wK5m">
-                            <node concept="1pGfFk" id="2shlJwNKBl0" role="2ShVmc">
-                              <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
-                              <node concept="37vLTw" id="2shlJwNKDpR" role="37wK5m">
-                                <ref role="3cqZAo" node="40zq_XSz9Zf" resolve="myMpsProject" />
-                              </node>
-                            </node>
+                          <node concept="37vLTw" id="4n0HNtiQBqR" role="37wK5m">
+                            <ref role="3cqZAo" node="4n0HNtiQBqN" resolve="scope" />
                           </node>
                           <node concept="2YIFZM" id="1KUoCipv$ho" role="37wK5m">
                             <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
@@ -749,6 +761,59 @@
                       <node concept="3Tqbb2" id="1KUoCipv$i5" role="1tU5fm" />
                     </node>
                   </node>
+                  <node concept="3SKdUt" id="4MQktoK0Oiv" role="3cqZAp">
+                    <node concept="3SKdUq" id="4MQktoK0Oix" role="3SKWNk">
+                      <property role="3SKdUp" value="chances are there are @tests models with test concepts that doesn't extend odd ITestCase (e.g. GeneratorTest), doesn't hurt to" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="4MQktoK1gqN" role="3cqZAp">
+                    <node concept="3SKdUq" id="4MQktoK1gqP" role="3SKWNk">
+                      <property role="3SKdUp" value="list all @tests model (after all, why would anyone use that stereotype then?)" />
+                    </node>
+                  </node>
+                  <node concept="1DcWWT" id="4MQktoK0fo0" role="3cqZAp">
+                    <node concept="3clFbS" id="4MQktoK0fo2" role="2LFqv$">
+                      <node concept="3clFbJ" id="4MQktoK0lUo" role="3cqZAp">
+                        <node concept="3clFbS" id="4MQktoK0lUq" role="3clFbx">
+                          <node concept="3clFbF" id="4MQktoK0DlQ" role="3cqZAp">
+                            <node concept="2OqwBi" id="4MQktoK0EX7" role="3clFbG">
+                              <node concept="37vLTw" id="4MQktoK0DlO" role="2Oq$k0">
+                                <ref role="3cqZAo" node="40zq_XSzjSM" resolve="modelRefs" />
+                              </node>
+                              <node concept="liA8E" id="4MQktoK0GIw" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~Collection.add(java.lang.Object):boolean" resolve="add" />
+                                <node concept="2OqwBi" id="4MQktoK0JhF" role="37wK5m">
+                                  <node concept="37vLTw" id="4MQktoK0IAO" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4MQktoK0fo3" resolve="m" />
+                                  </node>
+                                  <node concept="aIX43" id="4MQktoK0LcZ" role="2OqNvi" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2YIFZM" id="4MQktoK0wEd" role="3clFbw">
+                          <ref role="37wK5l" to="w1kc:~SModelStereotype.isTestModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isTestModel" />
+                          <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                          <node concept="37vLTw" id="4MQktoK0yJP" role="37wK5m">
+                            <ref role="3cqZAo" node="4MQktoK0fo3" resolve="m" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="4MQktoK0fo3" role="1Duv9x">
+                      <property role="TrG5h" value="m" />
+                      <node concept="H_c77" id="4MQktoK0gBR" role="1tU5fm" />
+                    </node>
+                    <node concept="2OqwBi" id="4n0HNtiQGVc" role="1DdaDG">
+                      <node concept="37vLTw" id="4n0HNtiQFuk" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4n0HNtiQBqN" resolve="scope" />
+                      </node>
+                      <node concept="liA8E" id="4MQktoK06lG" role="2OqNvi">
+                        <ref role="37wK5l" to="mte5:~FindUsagesScope.getModels():java.lang.Iterable" resolve="getModels" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -782,35 +847,13 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="40zq_XS$I07" role="3clF47">
-        <node concept="3clFbF" id="40zq_XS$I08" role="3cqZAp">
-          <node concept="2OqwBi" id="40zq_XS$I09" role="3clFbG">
-            <node concept="2OqwBi" id="40zq_XS$I0a" role="2Oq$k0">
-              <node concept="37vLTw" id="40zq_XS$I0b" role="2Oq$k0">
-                <ref role="3cqZAo" node="40zq_XSz9Zf" resolve="myMpsProject" />
-              </node>
-              <node concept="liA8E" id="40zq_XS$I0c" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
+        <node concept="3clFbF" id="4n0HNtiQt1n" role="3cqZAp">
+          <node concept="37vLTI" id="4n0HNtiQtCN" role="3clFbG">
+            <node concept="37vLTw" id="4n0HNtiQvy2" role="37vLTx">
+              <ref role="3cqZAo" node="40zq_XS$I0$" resolve="model" />
             </node>
-            <node concept="liA8E" id="40zq_XS$I0d" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="40zq_XS$I0e" role="37wK5m">
-                <node concept="3clFbS" id="40zq_XS$I0f" role="1bW5cS">
-                  <node concept="3clFbF" id="40zq_XS$I0r" role="3cqZAp">
-                    <node concept="2OqwBi" id="40zq_XS$I0s" role="3clFbG">
-                      <node concept="37vLTw" id="40zq_XS$UPK" role="2Oq$k0">
-                        <ref role="3cqZAo" node="40zq_XS$PJR" resolve="myModelRef" />
-                      </node>
-                      <node concept="liA8E" id="40zq_XS$I0u" role="2OqNvi">
-                        <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object):void" resolve="set" />
-                        <node concept="37vLTw" id="4Zh$Fg2XhCj" role="37wK5m">
-                          <ref role="3cqZAo" node="40zq_XS$I0$" resolve="model" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+            <node concept="37vLTw" id="4n0HNtiQt1l" role="37vLTJ">
+              <ref role="3cqZAo" node="40zq_XS$PJR" resolve="myModelRef" />
             </node>
           </node>
         </node>
@@ -849,19 +892,17 @@
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="40zq_XS$I0D" role="3clF47">
         <node concept="3cpWs6" id="40zq_XS$I0E" role="3cqZAp">
-          <node concept="2OqwBi" id="40zq_XS$I0F" role="3cqZAk">
-            <node concept="37vLTw" id="40zq_XS$TMi" role="2Oq$k0">
-              <ref role="3cqZAo" node="40zq_XS$PJR" resolve="myModelRef" />
-            </node>
-            <node concept="liA8E" id="40zq_XS$I0H" role="2OqNvi">
-              <ref role="37wK5l" to="18ew:~Reference.get():java.lang.Object" resolve="get" />
-            </node>
+          <node concept="37vLTw" id="40zq_XS$TMi" role="3cqZAk">
+            <ref role="3cqZAo" node="40zq_XS$PJR" resolve="myModelRef" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="40zq_XS$I0I" role="1B3o_S" />
       <node concept="3uibUv" id="40zq_XS_PEF" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+      </node>
+      <node concept="2AHcQZ" id="4n0HNtiQyGg" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3Tm1VV" id="5gyVhZ1blAl" role="1B3o_S" />
@@ -887,21 +928,20 @@
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myModuleRef" />
-      <property role="3TUv4t" value="true" />
+      <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="40zq_XSxU5h" role="1B3o_S" />
-      <node concept="3uibUv" id="40zq_XSxUOe" role="1tU5fm">
-        <ref role="3uigEE" to="18ew:~Reference" resolve="Reference" />
-        <node concept="3uibUv" id="40zq_XSxVgJ" role="11_B2D">
-          <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-        </node>
+      <node concept="3uibUv" id="40zq_XSxVgJ" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
       </node>
-      <node concept="2ShNRf" id="40zq_XSy0yx" role="33vP2m">
-        <node concept="1pGfFk" id="40zq_XSxZHl" role="2ShVmc">
-          <ref role="37wK5l" to="18ew:~Reference.&lt;init&gt;()" resolve="Reference" />
-          <node concept="3uibUv" id="40zq_XSxZHm" role="1pMfVU">
-            <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-          </node>
-        </node>
+    </node>
+    <node concept="312cEg" id="4MQktoK2lem" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myFindUsages" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="4MQktoK2len" role="1B3o_S" />
+      <node concept="3uibUv" id="4MQktoK2leo" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~FindUsagesFacade" resolve="FindUsagesFacade" />
       </node>
     </node>
     <node concept="2tJIrI" id="40zq_XSw9mX" role="jymVt" />
@@ -916,6 +956,29 @@
             </node>
             <node concept="37vLTw" id="40zq_XSww2h" role="37vLTJ">
               <ref role="3cqZAo" node="40zq_XSwt3v" resolve="myMpsProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4MQktoK2nI2" role="3cqZAp">
+          <node concept="3SKdUq" id="4MQktoK2nI3" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME unfortunately, FindUsagesFacade is not CoreComponent, therefore have to use FindUsagesManager" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4MQktoK2nI4" role="3cqZAp">
+          <node concept="37vLTI" id="4MQktoK2nI5" role="3clFbG">
+            <node concept="2OqwBi" id="4MQktoK2nI6" role="37vLTx">
+              <node concept="37vLTw" id="4MQktoK2nI7" role="2Oq$k0">
+                <ref role="3cqZAo" node="7Huyr6Rt1s8" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="4MQktoK2nI8" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="4MQktoK2nI9" role="37wK5m">
+                  <ref role="3VsUkX" to="yctd:~FindUsagesManager" resolve="FindUsagesManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="4MQktoK2nIa" role="37vLTJ">
+              <ref role="3cqZAo" node="4MQktoK2lem" resolve="myFindUsages" />
             </node>
           </node>
         </node>
@@ -969,34 +1032,11 @@
                       </node>
                       <node concept="3clFbJ" id="5gyVhZ1blCY" role="3cqZAp">
                         <node concept="3clFbS" id="5gyVhZ1blCZ" role="3clFbx">
-                          <node concept="3clFbF" id="40zq_XSxWix" role="3cqZAp">
-                            <node concept="2OqwBi" id="40zq_XSy2bD" role="3clFbG">
-                              <node concept="37vLTw" id="40zq_XSy1nw" role="2Oq$k0">
-                                <ref role="3cqZAo" node="40zq_XSxVgM" resolve="myModuleRef" />
-                              </node>
-                              <node concept="liA8E" id="40zq_XSy2p1" role="2OqNvi">
-                                <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object):void" resolve="set" />
-                                <node concept="37vLTw" id="40zq_XSy385" role="37wK5m">
-                                  <ref role="3cqZAo" node="5gyVhZ1blCP" resolve="ref" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="5gyVhZ1blD7" role="3cqZAp">
-                            <node concept="2OqwBi" id="5gyVhZ1blD8" role="3clFbG">
-                              <node concept="Xjq3P" id="5gyVhZ1blD9" role="2Oq$k0">
-                                <ref role="1HBi2w" node="5gyVhZ1blCg" resolve="ModuleChooser" />
-                              </node>
-                              <node concept="liA8E" id="5gyVhZ1blDa" role="2OqNvi">
-                                <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.setText(java.lang.String):void" resolve="setText" />
-                                <node concept="2OqwBi" id="40zq_XSwA_0" role="37wK5m">
-                                  <node concept="37vLTw" id="40zq_XSw_Me" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="5gyVhZ1blCP" resolve="ref" />
-                                  </node>
-                                  <node concept="liA8E" id="40zq_XSwAJ9" role="2OqNvi">
-                                    <ref role="37wK5l" to="lui2:~SModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
-                                  </node>
-                                </node>
+                          <node concept="3clFbF" id="4MQktoK2e4k" role="3cqZAp">
+                            <node concept="1rXfSq" id="4MQktoK2e4i" role="3clFbG">
+                              <ref role="37wK5l" node="40zq_XSx_ZT" resolve="setModule" />
+                              <node concept="37vLTw" id="4MQktoK2eWD" role="37wK5m">
+                                <ref role="3cqZAo" node="5gyVhZ1blCP" resolve="ref" />
                               </node>
                             </node>
                           </node>
@@ -1094,9 +1134,8 @@
                         </node>
                       </node>
                       <node concept="2OqwBi" id="1KUoCipvEYT" role="33vP2m">
-                        <node concept="2YIFZM" id="1KUoCipvEYU" role="2Oq$k0">
-                          <ref role="1Pybhc" to="lui2:~FindUsagesFacade" resolve="FindUsagesFacade" />
-                          <ref role="37wK5l" to="lui2:~FindUsagesFacade.getInstance():org.jetbrains.mps.openapi.module.FindUsagesFacade" resolve="getInstance" />
+                        <node concept="37vLTw" id="4MQktoK2qdp" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4MQktoK2lem" resolve="myFindUsages" />
                         </node>
                         <node concept="liA8E" id="1KUoCipvEYV" role="2OqNvi">
                           <ref role="37wK5l" to="lui2:~FindUsagesFacade.findInstances(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,boolean,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findInstances" />
@@ -1210,35 +1249,13 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="40zq_XSx_ZW" role="3clF47">
-        <node concept="3clFbF" id="40zq_XSxBlV" role="3cqZAp">
-          <node concept="2OqwBi" id="40zq_XSxDJQ" role="3clFbG">
-            <node concept="2OqwBi" id="40zq_XSxD8O" role="2Oq$k0">
-              <node concept="37vLTw" id="40zq_XSxBlU" role="2Oq$k0">
-                <ref role="3cqZAo" node="40zq_XSwt3v" resolve="myMpsProject" />
-              </node>
-              <node concept="liA8E" id="40zq_XSxDEJ" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
+        <node concept="3clFbF" id="40zq_XSy3cQ" role="3cqZAp">
+          <node concept="37vLTI" id="4MQktoK2gpt" role="3clFbG">
+            <node concept="37vLTw" id="4MQktoK2hYi" role="37vLTx">
+              <ref role="3cqZAo" node="40zq_XSxAg5" resolve="module" />
             </node>
-            <node concept="liA8E" id="40zq_XSxE9u" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="40zq_XSxFRg" role="37wK5m">
-                <node concept="3clFbS" id="40zq_XSxFRh" role="1bW5cS">
-                  <node concept="3clFbF" id="40zq_XSy3cQ" role="3cqZAp">
-                    <node concept="2OqwBi" id="40zq_XSy3cR" role="3clFbG">
-                      <node concept="37vLTw" id="40zq_XSy3cS" role="2Oq$k0">
-                        <ref role="3cqZAo" node="40zq_XSxVgM" resolve="myModuleRef" />
-                      </node>
-                      <node concept="liA8E" id="40zq_XSy3cT" role="2OqNvi">
-                        <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object):void" resolve="set" />
-                        <node concept="37vLTw" id="4Zh$Fg2XcNL" role="37wK5m">
-                          <ref role="3cqZAo" node="40zq_XSxAg5" resolve="module" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+            <node concept="37vLTw" id="40zq_XSy3cS" role="37vLTJ">
+              <ref role="3cqZAo" node="40zq_XSxVgM" resolve="myModuleRef" />
             </node>
           </node>
         </node>
@@ -1277,19 +1294,17 @@
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="40zq_XS$C6E" role="3clF47">
         <node concept="3cpWs6" id="40zq_XS$DqS" role="3cqZAp">
-          <node concept="2OqwBi" id="40zq_XS$G9W" role="3cqZAk">
-            <node concept="37vLTw" id="40zq_XS$F5m" role="2Oq$k0">
-              <ref role="3cqZAo" node="40zq_XSxVgM" resolve="myModuleRef" />
-            </node>
-            <node concept="liA8E" id="40zq_XS$Gza" role="2OqNvi">
-              <ref role="37wK5l" to="18ew:~Reference.get():java.lang.Object" resolve="get" />
-            </node>
+          <node concept="37vLTw" id="40zq_XS$F5m" role="3cqZAk">
+            <ref role="3cqZAo" node="40zq_XSxVgM" resolve="myModuleRef" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="40zq_XS$BNN" role="1B3o_S" />
       <node concept="3uibUv" id="40zq_XS$C6_" role="3clF45">
         <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="2AHcQZ" id="4MQktoK2j36" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3Tm1VV" id="5gyVhZ1blCo" role="1B3o_S" />

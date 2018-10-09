@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +28,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ReplaceOutputVaryable_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ReplaceOutputVaryable_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ReplaceOutputVaryable_Test() {
     super(ourParamCache);
@@ -33,11 +37,15 @@ public class ReplaceOutputVaryable_Test extends BaseTransformationTest {
 
   @Test
   public void test_ReplaceOutputVaryableTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test$TestBody", "test_ReplaceOutputVaryableTest", true);
+    new ReplaceOutputVaryable_Test.TestBody(this).test_ReplaceOutputVaryableTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ReplaceOutputVaryableTest() throws Exception {
       addNodeById("8155843501977551480");
       addNodeById("8155843501977560834");

@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.selectionRestoring;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**

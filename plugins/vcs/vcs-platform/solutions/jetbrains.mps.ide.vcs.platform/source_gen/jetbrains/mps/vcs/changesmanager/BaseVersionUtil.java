@@ -9,19 +9,19 @@ import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.diff.DiffProvider;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.Change;
+import java.io.IOException;
+import org.apache.log4j.Level;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.changes.BinaryContentRevision;
 import com.intellij.openapi.vcs.VcsException;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
@@ -36,7 +36,6 @@ import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.io.InputStream;
-import java.io.IOException;
 import java.io.ByteArrayInputStream;
 import java.util.Collections;
 
@@ -49,30 +48,35 @@ public class BaseVersionUtil {
   }
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
+    // returns the same content if file is not in changelist 
     try {
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
-      if (vcs == null) {
+      ChangeListManager manager = ChangeListManager.getInstance(project);
+      Change change = manager.getChange(file);
+
+      if (change == null) {
+        // no changes, use current file content 
+        try {
+          return file.contentsToByteArray();
+        } catch (IOException ex) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("IOException during getting base version content of file " + file.getPath(), ex);
+          }
+          return null;
+        }
+      }
+
+      ContentRevision beforeRevision = change.getBeforeRevision();
+      if (beforeRevision == null) {
         return null;
       }
-      DiffProvider diffProvider = vcs.getDiffProvider();
-      if (diffProvider == null) {
-        return null;
+      if (beforeRevision instanceof BinaryContentRevision) {
+        return ((BinaryContentRevision) beforeRevision).getBinaryContent();
+      } else {
+        return beforeRevision.getContent();
       }
-      VcsRevisionNumber revisionNumber = diffProvider.getCurrentRevision(file);
-      if (revisionNumber == null) {
-        return null;
-      }
-      ContentRevision revision = diffProvider.createFileContent(revisionNumber, file);
-      if (revision == null) {
-        return null;
-      }
-      if (revision instanceof BinaryContentRevision) {
-        return ((BinaryContentRevision) revision).getBinaryContent();
-      }
-      return revision.getContent();
     } catch (VcsException ex) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("VcsException during getting base version content: ", ex);
+        LOG.warn("VcsException during getting base version content of file " + file.getPath(), ex);
       }
       return null;
     }
@@ -86,26 +90,29 @@ public class BaseVersionUtil {
         return null;
       }
       VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
-      if (vFile == null || ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile) == null) {
+      ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(project);
+      if (vFile == null || vcsManager == null || vcsManager.getVcsFor(vFile) == null) {
         return null;
       }
 
       Object content = BaseVersionUtil.getBaseVersionContent(vFile, project);
       if (content == null) {
-        FileStatus status = FileStatusManager.getInstance(project).getStatus(vFile);
+        FileStatusManager fileStatusManager = FileStatusManager.getInstance(project);
+        FileStatus status = fileStatusManager.getStatus(vFile);
         if (status != FileStatus.NOT_CHANGED) {
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Base version content is null while file status is " + status);
+            LOG.error("Base version content of file " + vFile.getPath() + " is null while status is " + status);
           }
         }
         return null;
       }
       String ext = vFile.getExtension();
 
-
       byte[] modelData = (content instanceof String ? ((String) content).getBytes(FileUtil.DEFAULT_CHARSET) : (byte[]) content);
       return VCSPersistenceUtil.loadModel(modelData, ext);
+
     } else if (ds instanceof FilePerRootDataSource) {
+
       FilePerRootDataSource rds = (FilePerRootDataSource) ds;
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());
       for (String stream : rds.getAvailableStreams()) {

@@ -10,7 +10,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
+import jetbrains.mps.ide.generator.GeneratedCodeOpener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -58,14 +58,14 @@ public class NavigateToGeneratedCode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).open(NavigateToGeneratedCode_Action.this.getNodeToNavigate(event.getData(MPSCommonDataKeys.NODE), event));
+        new GeneratedCodeOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).open(NavigateToGeneratedCode_Action.this.getNodeToNavigate(event.getData(MPSCommonDataKeys.NODE), event));
       }
     });
   }
   /*package*/ SNode getNodeToNavigate(SNode current, final AnActionEvent event) {
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(current, null, true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).canOpen(it);
+        return new GeneratedCodeOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).canOpen(it);
       }
     });
   }

@@ -21,32 +21,43 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/1755573558911655916">
     <file name="ReadableModelProperty.java">
-      <node id="1755573558917166350" at="11,34,12,12" concept="16" />
-      <node id="1755573558917744008" at="12,12,13,37" concept="5" />
-      <node id="1755573558917160146" at="19,30,20,43" concept="11" />
-      <node id="1755573558911740318" at="26,0,27,0" concept="9" trace="getModelPropertyValue#()null" />
-      <node id="1755573558917249269" at="27,42,28,37" concept="5" />
-      <node id="1755573558917160144" at="19,0,22,0" concept="9" trace="compute#()null" />
-      <node id="1755573558917204474" at="27,0,30,0" concept="9" trace="synchronizeViewWithModel#()V" />
-      <node id="1755573558911740210" at="11,0,15,0" concept="3" trace="ReadableModelProperty#()V" />
-      <node id="1755573558917160142" at="17,26,22,11" concept="11" />
-      <node id="1755573558917160140" at="17,0,24,0" concept="9" trace="compute#()null" />
-      <node id="1755573558917160135" at="15,41,24,7" concept="11" />
-      <node id="1755573558916998133" at="15,0,26,0" concept="9" trace="safeGetModelPropertyValue#()null" />
-      <scope id="1755573558917160145" at="19,30,20,43" />
-      <scope id="1755573558911740318" at="26,0,27,0" />
-      <scope id="1755573558917204478" at="27,42,28,37" />
-      <scope id="1755573558911740213" at="11,34,13,37" />
-      <scope id="1755573558917160144" at="19,0,22,0" />
-      <scope id="1755573558917204474" at="27,0,30,0" />
-      <scope id="1755573558911740210" at="11,0,15,0" />
-      <scope id="1755573558917160141" at="17,26,22,11" />
-      <scope id="1755573558917160140" at="17,0,24,0" />
-      <scope id="1755573558916998137" at="15,41,24,7" />
-      <scope id="1755573558916998133" at="15,0,26,0" />
-      <unit id="1755573558917160144" at="18,77,22,9" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1$1" />
-      <unit id="1755573558917160140" at="16,52,24,5" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1" />
-      <unit id="1755573558911655916" at="10,0,31,0" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
+      <node id="5745417932115046005" at="14,0,15,0" concept="6" trace="myEditorContext" />
+      <node id="1755573558917166350" at="22,34,23,12" concept="16" />
+      <node id="5745417932115048911" at="23,12,24,27" concept="5" />
+      <node id="1755573558917744008" at="24,27,25,37" concept="5" />
+      <node id="5745417932115046009" at="28,61,29,36" concept="5" />
+      <node id="5745417932115137387" at="32,41,33,158" concept="10" />
+      <node id="1755573558917160146" at="37,30,38,43" concept="11" />
+      <node id="1755573558911740318" at="45,0,46,0" concept="9" trace="getModelPropertyValue#()null" />
+      <node id="1755573558917249269" at="47,42,48,37" concept="5" />
+      <node id="5745417932115042594" at="28,0,31,0" concept="3" trace="ReadableModelProperty#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1755573558917160144" at="37,0,40,0" concept="9" trace="compute#()null" />
+      <node id="1755573558917204474" at="47,0,50,0" concept="9" trace="synchronizeViewWithModel#()V" />
+      <node id="1755573558917160142" at="35,26,40,11" concept="11" />
+      <node id="1755573558911740210" at="20,0,27,0" concept="3" trace="ReadableModelProperty#()V" />
+      <node id="1755573558917160140" at="35,0,42,0" concept="9" trace="compute#()null" />
+      <node id="5745417932115226765" at="33,158,42,7" concept="11" />
+      <node id="1755573558916998133" at="32,0,44,0" concept="9" trace="safeGetModelPropertyValue#()null" />
+      <scope id="5745417932115042598" at="28,61,29,36" />
+      <scope id="1755573558917160145" at="37,30,38,43" />
+      <scope id="1755573558911740318" at="45,0,46,0" />
+      <scope id="1755573558917204478" at="47,42,48,37" />
+      <scope id="1755573558911740213" at="22,34,25,37" />
+      <scope id="5745417932115042594" at="28,0,31,0">
+        <var name="editorContext" id="5745417932115045878" />
+      </scope>
+      <scope id="1755573558917160144" at="37,0,40,0" />
+      <scope id="1755573558917204474" at="47,0,50,0" />
+      <scope id="1755573558917160141" at="35,26,40,11" />
+      <scope id="1755573558911740210" at="20,0,27,0" />
+      <scope id="1755573558917160140" at="35,0,42,0" />
+      <scope id="1755573558916998137" at="32,41,42,7">
+        <var name="ma" id="5745417932115137388" />
+      </scope>
+      <scope id="1755573558916998133" at="32,0,44,0" />
+      <unit id="1755573558917160144" at="36,77,40,9" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1$1" />
+      <unit id="1755573558917160140" at="34,32,42,5" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1" />
+      <unit id="1755573558911655916" at="13,0,51,0" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
     </file>
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/2574029987319042393">
@@ -302,39 +313,38 @@
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/5374841768510233685">
     <file name="WritableModelProperty.java">
       <node id="5374841768510407270" at="12,0,13,0" concept="6" trace="myCommandId" />
-      <node id="5425249249171853659" at="13,0,14,0" concept="6" trace="myContext" />
-      <node id="5425249249171834197" at="15,73,16,28" concept="5" />
-      <node id="5425249249171862400" at="16,28,17,24" concept="5" />
-      <node id="5425249249171834218" at="19,57,20,55" concept="5" />
-      <node id="5425249249171895147" at="27,34,28,33" concept="5" />
-      <node id="5374841768510277826" at="32,0,33,0" concept="9" trace="setModelPropertyValue#(null)V" />
-      <node id="5425249249171834211" at="19,0,22,0" concept="9" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
-      <node id="5425249249171888467" at="27,0,30,0" concept="9" trace="doExecute#()V" />
-      <node id="5425249249171834205" at="17,24,22,7" concept="5" />
-      <node id="2837398282090980629" at="25,55,30,7" concept="5" />
-      <node id="5374841768510277788" at="25,0,32,0" concept="9" trace="safeSetModelPropertyValue#(null)V" />
-      <node id="5425249249171834193" at="15,0,24,0" concept="3" trace="WritableModelProperty#(Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <scope id="5425249249171834217" at="19,57,20,55" />
-      <scope id="5425249249171888471" at="27,34,28,33" />
-      <scope id="5374841768510277826" at="32,0,33,0">
+      <node id="5745417932115235198" at="14,73,15,19" concept="16" />
+      <node id="5425249249171834197" at="15,19,16,28" concept="5" />
+      <node id="5425249249171834218" at="18,57,19,55" concept="5" />
+      <node id="5425249249171895147" at="26,34,27,33" concept="5" />
+      <node id="5374841768510277826" at="31,0,32,0" concept="9" trace="setModelPropertyValue#(null)V" />
+      <node id="5425249249171834211" at="18,0,21,0" concept="9" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+      <node id="5425249249171888467" at="26,0,29,0" concept="9" trace="doExecute#()V" />
+      <node id="5425249249171834205" at="16,28,21,7" concept="5" />
+      <node id="2837398282090980629" at="24,55,29,7" concept="5" />
+      <node id="5374841768510277788" at="24,0,31,0" concept="9" trace="safeSetModelPropertyValue#(null)V" />
+      <node id="5425249249171834193" at="14,0,23,0" concept="3" trace="WritableModelProperty#(Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="5425249249171834217" at="18,57,19,55" />
+      <scope id="5425249249171888471" at="26,34,27,33" />
+      <scope id="5374841768510277826" at="31,0,32,0">
         <var name="value" id="5374841768510277827" />
       </scope>
-      <scope id="5425249249171834211" at="19,0,22,0">
+      <scope id="5425249249171834211" at="18,0,21,0">
         <var name="event" id="5425249249171834214" />
       </scope>
-      <scope id="5425249249171888467" at="27,0,30,0" />
-      <scope id="5374841768510277793" at="25,55,30,7" />
-      <scope id="5425249249171834196" at="15,73,22,7" />
-      <scope id="5374841768510277788" at="25,0,32,0">
+      <scope id="5425249249171888467" at="26,0,29,0" />
+      <scope id="5374841768510277793" at="24,55,29,7" />
+      <scope id="5425249249171834196" at="14,73,21,7" />
+      <scope id="5374841768510277788" at="24,0,31,0">
         <var name="t" id="5374841768510277791" />
       </scope>
-      <scope id="5425249249171834193" at="15,0,24,0">
+      <scope id="5425249249171834193" at="14,0,23,0">
         <var name="commandId" id="5425249249171834225" />
         <var name="context" id="5425249249171834227" />
       </scope>
-      <unit id="5425249249171834209" at="18,19,22,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
-      <unit id="5425249249171888461" at="26,66,30,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
-      <unit id="5374841768510233685" at="11,0,34,0" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
+      <unit id="5425249249171834209" at="17,19,21,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
+      <unit id="5425249249171888461" at="25,72,29,5" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
+      <unit id="5374841768510233685" at="11,0,33,0" name="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     </file>
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784369">

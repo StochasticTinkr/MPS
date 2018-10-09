@@ -25,6 +25,7 @@ import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -79,7 +80,7 @@ public class BuildSolutionRunnerAspect_Constraints extends BaseConstraintsDescri
     return references;
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    if (parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator")) {
+    if ((boolean) BaseConcept__BehaviorDescriptor.isInTemplates_idhEwIMij.invoke(parentNode)) {
       // anything in generator 
       return true;
     }

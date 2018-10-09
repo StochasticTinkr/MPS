@@ -23,7 +23,6 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import jetbrains.mps.core.aspects.behaviour.api.SParameter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.apache.log4j.LogManager;

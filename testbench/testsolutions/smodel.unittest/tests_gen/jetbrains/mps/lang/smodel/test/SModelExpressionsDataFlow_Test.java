@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class SModelExpressionsDataFlow_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SModelExpressionsDataFlow_Test.class, "${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SModelExpressionsDataFlow_Test() {
     super(ourParamCache);
@@ -25,51 +29,55 @@ public class SModelExpressionsDataFlow_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck931754141965267346() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck931754141965267346", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck931754141965267346();
   }
   @Test
   public void test_ErrorMessagesCheck3016266886293102695() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck3016266886293102695", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck3016266886293102695();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499155433() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499155433", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499155433();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499165976() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499165976", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499165976();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499167109() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499167109", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499167109();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499171707() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499171707", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499171707();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499174525() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499174525", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499174525();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499178993() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499178993", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499178993();
   }
   @Test
   public void test_ErrorMessagesCheck2201735946499190158() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck2201735946499190158", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck2201735946499190158();
   }
   @Test
   public void test_ErrorMessagesCheck3564379068314712774() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck3564379068314712774", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck3564379068314712774();
   }
   @Test
   public void test_ErrorMessagesCheck3564379068314715334() throws Throwable {
-    runTest("jetbrains.mps.lang.smodel.test.SModelExpressionsDataFlow_Test$TestBody", "test_ErrorMessagesCheck3564379068314715334", true);
+    new SModelExpressionsDataFlow_Test.TestBody(this).test_ErrorMessagesCheck3564379068314715334();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck931754141965267346() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("931754141965267346"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

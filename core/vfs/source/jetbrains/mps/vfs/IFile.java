@@ -21,7 +21,6 @@ import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.io.IOException;

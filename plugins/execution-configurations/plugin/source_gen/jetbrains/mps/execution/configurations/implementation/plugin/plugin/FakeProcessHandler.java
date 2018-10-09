@@ -18,7 +18,7 @@ import java.io.OutputStream;
 import com.intellij.openapi.util.Key;
 import java.io.Reader;
 
-public class FakeProcessHandler extends BaseOSProcessHandler {
+public abstract class FakeProcessHandler extends BaseOSProcessHandler {
   private static final Logger LOG = LogManager.getLogger(FakeProcessHandler.class);
   private final FakeProcess myFakeProcess;
   private final Future<?> myFuture;
@@ -147,7 +147,7 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
     @NotNull
     @Override
     protected Future<?> executeOnPooledThread(@NotNull Runnable runnable) {
-      return FakeProcessHandler.this.executeOnPooledThread(runnable);
+      return FakeProcessHandler.this.executeTask(runnable);
     }
 
     @Override

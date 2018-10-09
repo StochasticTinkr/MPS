@@ -44,7 +44,7 @@ public class EventVariableReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_8sx8tt_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8sx8tt_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8sx8tt_a() {
       super(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, 0x102ea8aa283L, "eventVariable"));

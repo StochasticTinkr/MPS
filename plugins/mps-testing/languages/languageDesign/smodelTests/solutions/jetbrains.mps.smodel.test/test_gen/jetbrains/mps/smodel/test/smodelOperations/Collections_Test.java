@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class Collections_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(Collections_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public Collections_Test() {
     super(ourParamCache);
@@ -25,19 +29,23 @@ public class Collections_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeUnnamedWarningCheck6405893568802055213() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_NodeUnnamedWarningCheck6405893568802055213", true);
+    new Collections_Test.TestBody(this).test_NodeUnnamedWarningCheck6405893568802055213();
   }
   @Test
   public void test_NodeUnnamedWarningCheck9095983673872173449() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_NodeUnnamedWarningCheck9095983673872173449", true);
+    new Collections_Test.TestBody(this).test_NodeUnnamedWarningCheck9095983673872173449();
   }
   @Test
   public void test_ErrorMessagesCheck6405539316368555030() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_ErrorMessagesCheck6405539316368555030", true);
+    new Collections_Test.TestBody(this).test_ErrorMessagesCheck6405539316368555030();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeUnnamedWarningCheck6405893568802055213() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6405893568802055213"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

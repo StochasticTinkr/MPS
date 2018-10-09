@@ -159,7 +159,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQW" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/buildProject.png" />
+      <property role="1iqoE4" value="${module}/icons/build.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RPz6WoY4Ck">

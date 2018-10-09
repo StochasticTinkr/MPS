@@ -44,7 +44,7 @@ public class ArgumentReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_cdtjrp_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_cdtjrp_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_cdtjrp_a() {
       super(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, "jetbrains.mps.lang.test.generator.structure.ArgumentReference"), MetaAdapterFactory.getReferenceLink(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d05bL, 0x7b1db36ecf0d05cL, "arg"));

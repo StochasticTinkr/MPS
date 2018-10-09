@@ -47,7 +47,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a0(new MapRootRuleContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_0_0(new MapRootRuleContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -62,12 +62,12 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a0_0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_0_1(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weavingRule_ContextQuery_0_0(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {

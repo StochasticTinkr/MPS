@@ -37,7 +37,7 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_12187400733910(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0f))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_2_0(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0f))));
     } finally {
     }
     FragmentResult rv = nodeFragment(0, tnode1);

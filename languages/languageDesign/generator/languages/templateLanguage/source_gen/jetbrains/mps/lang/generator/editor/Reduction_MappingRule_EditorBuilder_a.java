@@ -132,7 +132,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new Reduction_MappingRule_EditorBuilder_a.Inline_Builder_c84kqv_a0b1a(getEditorContext(), getNode(), targetNode).createCell();
+            return new Reduction_MappingRule_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "labelDeclaration");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -162,12 +162,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_c84kqv_a0b1a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_c84kqv_a0b1a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -213,5 +213,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public Set<SConceptId> getAncestorsIds() {
     reportWarn();
     return Collections.emptySet();
+  }
+
+  @Override
+  public SConceptId getStubConceptId() {
+    return null;
+  }
+
+  @Override
+  public int getVersion() {
+    // we are capable to tell getStubConceptId()
+    return 2;
   }
 }

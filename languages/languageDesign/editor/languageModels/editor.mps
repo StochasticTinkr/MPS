@@ -48,6 +48,7 @@
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
+    <import index="25zl" ref="r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -26074,7 +26075,7 @@
           <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
         </node>
         <node concept="3F1sOY" id="6cap0kYbLLL" role="3EZMnx">
-          <property role="1$x2rV" value="&lt;default visible text&gt;" />
+          <property role="1$x2rV" value="&lt;same as matching text&gt;" />
           <ref role="1NtTu8" to="tpc2:6cap0kYbLKY" resolve="visibleTextFunction" />
         </node>
       </node>
@@ -26344,6 +26345,33 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3zvXnQYGbuX">
+    <ref role="1XX52x" to="tpc2:CFBzaakS6G" resolve="ModuleImageProvider" />
+    <node concept="3EZMnI" id="3zvXnQYGbuZ" role="2wV5jI">
+      <node concept="3EZMnI" id="3zvXnQYGbvg" role="3EZMnx">
+        <node concept="3F0ifn" id="3zvXnQYGbvq" role="3EZMnx">
+          <property role="3F0ifm" value="module:" />
+        </node>
+        <node concept="2iRfu4" id="3zvXnQYGbvh" role="2iSdaV" />
+        <node concept="3F1sOY" id="3zvXnQYGbv6" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:3zvXnQYGbuj" resolve="moduleRef" />
+          <node concept="A1WHu" id="7k$14oQsUQ1" role="3vIgyS">
+            <ref role="A1WHt" to="25zl:7k$14oQs2hn" resolve="ContextRepositoryModules_TM" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="3zvXnQYGbvu" role="3EZMnx">
+        <node concept="2iRfu4" id="3zvXnQYGbvv" role="2iSdaV" />
+        <node concept="3F0ifn" id="3zvXnQYGbvF" role="3EZMnx">
+          <property role="3F0ifm" value="file:" />
+        </node>
+        <node concept="3F0A7n" id="3zvXnQYGbvc" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:3zvXnQYGbuh" resolve="imagePath" />
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="3zvXnQYGbv2" role="2iSdaV" />
     </node>
   </node>
 </model>

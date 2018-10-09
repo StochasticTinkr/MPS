@@ -44,7 +44,7 @@ public class ExtensionFieldReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_9jmsc4_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_9jmsc4_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_9jmsc4_a() {
       super(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, "jetbrains.mps.lang.extension.structure.ExtensionFieldReference"), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, 0x61a62b43e1534e9fL, "declaration"));

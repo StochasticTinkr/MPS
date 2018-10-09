@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;

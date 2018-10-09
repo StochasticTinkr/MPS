@@ -44,7 +44,7 @@ public class ConceptEditorHintDeclarationReference_SubstituteMenu extends Substi
   }
 
 
-  public static class SMP_ReferenceScope_u44k0l_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_u44k0l_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_u44k0l_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, 0x527faacef66db74dL, "hint"));

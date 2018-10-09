@@ -17,10 +17,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptChildConceptWeaveEachMany = createDescriptorForChildConceptWeaveEachMany();
   /*package*/ final ConceptDescriptor myConceptChildConceptWeaveMany = createDescriptorForChildConceptWeaveMany();
   /*package*/ final ConceptDescriptor myConceptRootConcept = createDescriptorForRootConcept();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ChildConceptWeave:
         return myConceptChildConceptWeave;
       case LanguageConceptSwitch.ChildConceptWeaveEach:
@@ -48,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForChildConceptWeave() {
@@ -56,6 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)/6186432342008329116");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForChildConceptWeaveEach() {
@@ -63,6 +64,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)/6186432342008329114");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForChildConceptWeaveEachMany() {
@@ -70,6 +72,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)/6186432342008533347");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForChildConceptWeaveMany() {
@@ -77,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)/6186432342008533337");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRootConcept() {
@@ -84,6 +88,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)/6186432342008318668");
+    b.version(2);
     b.aggregate("weave", 0x55da9f701c64f39eL).target(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39cL).optional(true).ordered(true).multiple(true).origin("6186432342008329118").done();
     b.aggregate("weaveEach", 0x55da9f701c64f39fL).target(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c64f39aL).optional(true).ordered(true).multiple(true).origin("6186432342008329119").done();
     b.aggregate("weaveMany", 0x55da9f701c68116eL).target(0xffafcf63cbe64e5cL, 0x9717541f01743ac7L, 0x55da9f701c681159L).optional(true).ordered(true).multiple(true).origin("6186432342008533358").done();

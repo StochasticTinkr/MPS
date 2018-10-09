@@ -11,13 +11,13 @@
   </root>
   <root nodeRef="r:8074a1a0-69fe-4403-9d35-7a6021037b63(L1.generator.template.main@generator)/3842746946078421956">
     <file name="QueriesGenerated.java">
-      <node id="3842746946078480419" at="24,113,25,16" concept="0" />
+      <node id="3842746946078480419" at="24,88,25,16" concept="0" />
       <node id="3842746946078468712" at="25,16,26,13" concept="1" />
       <node id="3842746946078461645" at="30,14,31,191" concept="0" />
-      <node id="3842746946078461645" at="51,15,52,91" concept="1" />
-      <node id="3842746946078461646" at="24,0,28,0" concept="2" trace="propertyMacro_GetPropertyValue_38427469460784512040#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
-      <scope id="3842746946078461645" at="51,15,52,91" />
-      <scope id="3842746946078461647" at="24,113,26,13" />
+      <node id="3842746946078461645" at="51,15,52,66" concept="1" />
+      <node id="3842746946078461646" at="24,0,28,0" concept="2" trace="propertyMacro_GetValue_0_0#(Ljetbrains/mps/generator/template/PropertyMacroContext;)Ljava/lang/Object;" />
+      <scope id="3842746946078461645" at="51,15,52,66" />
+      <scope id="3842746946078461647" at="24,88,26,13" />
       <scope id="3842746946078461646" at="24,0,28,0">
         <var name="_context" id="3842746946078461646" />
       </scope>

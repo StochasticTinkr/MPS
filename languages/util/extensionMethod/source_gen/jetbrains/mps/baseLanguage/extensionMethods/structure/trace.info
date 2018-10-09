@@ -15,7 +15,7 @@
       <unit at="10,0,44,0" name="jetbrains.mps.baseLanguage.extensionMethods.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,147,0" name="jetbrains.mps.baseLanguage.extensionMethods.structure.StructureAspectDescriptor" />
+      <unit at="16,0,156,0" name="jetbrains.mps.baseLanguage.extensionMethods.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/1550313277221324859">
@@ -38,19 +38,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1550313277221324859" at="18,0,19,0" concept="1" trace="myConceptExtensionMethodCall" />
       <node id="1550313277221324859" at="43,53,44,44" concept="4" />
-      <node id="1550313277221324859" at="79,77,80,197" concept="3" />
-      <node id="1550313277221324859" at="80,197,81,34" concept="0" />
-      <node id="1550313277221324859" at="81,34,82,71" concept="0" />
-      <node id="1550313277221324859" at="82,71,83,71" concept="0" />
-      <node id="1550313277221324859" at="83,71,84,130" concept="0" />
-      <node id="1550313277221324859" at="84,130,85,49" concept="0" />
-      <node id="1550313277221324859" at="85,49,86,22" concept="4" />
-      <node id="1550313277221324859" at="79,0,88,0" concept="6" trace="createDescriptorForExtensionMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1550313277221324859" at="80,77,81,197" concept="3" />
+      <node id="1550313277221324859" at="81,197,82,34" concept="0" />
+      <node id="1550313277221324859" at="82,34,83,71" concept="0" />
+      <node id="1550313277221324859" at="83,71,84,71" concept="0" />
+      <node id="1550313277221324859" at="84,71,85,130" concept="0" />
+      <node id="1550313277221324859" at="85,130,86,17" concept="0" />
+      <node id="1550313277221324859" at="86,17,87,49" concept="0" />
+      <node id="1550313277221324859" at="87,49,88,22" concept="4" />
+      <node id="1550313277221324859" at="80,0,90,0" concept="6" trace="createDescriptorForExtensionMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1550313277221324859" at="43,53,44,44" />
-      <scope id="1550313277221324859" at="79,77,86,22">
+      <scope id="1550313277221324859" at="80,77,88,22">
         <var name="b" id="1550313277221324859" />
       </scope>
-      <scope id="1550313277221324859" at="79,0,88,0" />
+      <scope id="1550313277221324859" at="80,0,90,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/1550313277222152185">
@@ -73,19 +74,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1550313277222152185" at="19,0,20,0" concept="1" trace="myConceptExtensionMethodDeclaration" />
       <node id="1550313277222152185" at="45,60,46,51" concept="4" />
-      <node id="1550313277222152185" at="88,84,89,204" concept="3" />
-      <node id="1550313277222152185" at="89,204,90,34" concept="0" />
-      <node id="1550313277222152185" at="90,34,91,132" concept="0" />
-      <node id="1550313277222152185" at="91,132,92,71" concept="0" />
-      <node id="1550313277222152185" at="92,71,93,130" concept="0" />
-      <node id="8022092943109605394" at="93,130,94,199" concept="0" />
-      <node id="1550313277222152185" at="94,199,95,22" concept="4" />
-      <node id="1550313277222152185" at="88,0,97,0" concept="6" trace="createDescriptorForExtensionMethodDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1550313277222152185" at="90,84,91,204" concept="3" />
+      <node id="1550313277222152185" at="91,204,92,34" concept="0" />
+      <node id="1550313277222152185" at="92,34,93,132" concept="0" />
+      <node id="1550313277222152185" at="93,132,94,71" concept="0" />
+      <node id="1550313277222152185" at="94,71,95,130" concept="0" />
+      <node id="1550313277222152185" at="95,130,96,17" concept="0" />
+      <node id="8022092943109605394" at="96,17,97,199" concept="0" />
+      <node id="1550313277222152185" at="97,199,98,22" concept="4" />
+      <node id="1550313277222152185" at="90,0,100,0" concept="6" trace="createDescriptorForExtensionMethodDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1550313277222152185" at="45,60,46,51" />
-      <scope id="1550313277222152185" at="88,84,95,22">
+      <scope id="1550313277222152185" at="90,84,98,22">
         <var name="b" id="1550313277222152185" />
       </scope>
-      <scope id="1550313277222152185" at="88,0,97,0" />
+      <scope id="1550313277222152185" at="90,0,100,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/1894531970723270160">
@@ -108,19 +110,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1894531970723270160" at="25,0,26,0" concept="1" trace="myConceptTypeExtension" />
       <node id="1894531970723270160" at="57,47,58,38" concept="4" />
-      <node id="1894531970723270160" at="137,71,138,191" concept="3" />
-      <node id="1894531970723270160" at="138,191,139,33" concept="0" />
-      <node id="1894531970723270160" at="139,33,140,162" concept="0" />
-      <node id="1894531970723270160" at="140,162,141,130" concept="0" />
-      <node id="1894531970723323134" at="141,130,142,192" concept="0" />
-      <node id="1894531970723270160" at="142,192,143,30" concept="0" />
-      <node id="1894531970723270160" at="143,30,144,22" concept="4" />
-      <node id="1894531970723270160" at="137,0,146,0" concept="6" trace="createDescriptorForTypeExtension#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1894531970723270160" at="145,71,146,191" concept="3" />
+      <node id="1894531970723270160" at="146,191,147,33" concept="0" />
+      <node id="1894531970723270160" at="147,33,148,162" concept="0" />
+      <node id="1894531970723270160" at="148,162,149,130" concept="0" />
+      <node id="1894531970723270160" at="149,130,150,17" concept="0" />
+      <node id="1894531970723323134" at="150,17,151,192" concept="0" />
+      <node id="1894531970723270160" at="151,192,152,30" concept="0" />
+      <node id="1894531970723270160" at="152,30,153,22" concept="4" />
+      <node id="1894531970723270160" at="145,0,155,0" concept="6" trace="createDescriptorForTypeExtension#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1894531970723270160" at="57,47,58,38" />
-      <scope id="1894531970723270160" at="137,71,144,22">
+      <scope id="1894531970723270160" at="145,71,153,22">
         <var name="b" id="1894531970723270160" />
       </scope>
-      <scope id="1894531970723270160" at="137,0,146,0" />
+      <scope id="1894531970723270160" at="145,0,155,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/1973189701690850247">
@@ -143,18 +146,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1973189701690850247" at="21,0,22,0" concept="1" trace="myConceptExtensionStaticFieldReference" />
       <node id="1973189701690850247" at="49,63,50,54" concept="4" />
-      <node id="1973189701690850247" at="104,87,105,207" concept="3" />
-      <node id="1973189701690850247" at="105,207,106,34" concept="0" />
-      <node id="1973189701690850247" at="106,34,107,128" concept="0" />
-      <node id="1973189701690850247" at="107,128,108,130" concept="0" />
-      <node id="1973189701690850247" at="108,130,109,49" concept="0" />
-      <node id="1973189701690850247" at="109,49,110,22" concept="4" />
-      <node id="1973189701690850247" at="104,0,112,0" concept="6" trace="createDescriptorForExtensionStaticFieldReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1973189701690850247" at="108,87,109,207" concept="3" />
+      <node id="1973189701690850247" at="109,207,110,34" concept="0" />
+      <node id="1973189701690850247" at="110,34,111,128" concept="0" />
+      <node id="1973189701690850247" at="111,128,112,130" concept="0" />
+      <node id="1973189701690850247" at="112,130,113,17" concept="0" />
+      <node id="1973189701690850247" at="113,17,114,49" concept="0" />
+      <node id="1973189701690850247" at="114,49,115,22" concept="4" />
+      <node id="1973189701690850247" at="108,0,117,0" concept="6" trace="createDescriptorForExtensionStaticFieldReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1973189701690850247" at="49,63,50,54" />
-      <scope id="1973189701690850247" at="104,87,110,22">
+      <scope id="1973189701690850247" at="108,87,115,22">
         <var name="b" id="1973189701690850247" />
       </scope>
-      <scope id="1973189701690850247" at="104,0,112,0" />
+      <scope id="1973189701690850247" at="108,0,117,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/1973189701691027447">
@@ -177,17 +181,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="1973189701691027447" at="20,0,21,0" concept="1" trace="myConceptExtensionStaticFieldDeclaration" />
       <node id="1973189701691027447" at="47,65,48,56" concept="4" />
-      <node id="1973189701691027447" at="97,89,98,209" concept="3" />
-      <node id="1973189701691027447" at="98,209,99,34" concept="0" />
-      <node id="1973189701691027447" at="99,34,100,130" concept="0" />
-      <node id="1973189701691027447" at="100,130,101,130" concept="0" />
-      <node id="1973189701691027447" at="101,130,102,22" concept="4" />
-      <node id="1973189701691027447" at="97,0,104,0" concept="6" trace="createDescriptorForExtensionStaticFieldDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="1973189701691027447" at="100,89,101,209" concept="3" />
+      <node id="1973189701691027447" at="101,209,102,34" concept="0" />
+      <node id="1973189701691027447" at="102,34,103,130" concept="0" />
+      <node id="1973189701691027447" at="103,130,104,130" concept="0" />
+      <node id="1973189701691027447" at="104,130,105,17" concept="0" />
+      <node id="1973189701691027447" at="105,17,106,22" concept="4" />
+      <node id="1973189701691027447" at="100,0,108,0" concept="6" trace="createDescriptorForExtensionStaticFieldDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1973189701691027447" at="47,65,48,56" />
-      <scope id="1973189701691027447" at="97,89,102,22">
+      <scope id="1973189701691027447" at="100,89,106,22">
         <var name="b" id="1973189701691027447" />
       </scope>
-      <scope id="1973189701691027447" at="97,0,104,0" />
+      <scope id="1973189701691027447" at="100,0,108,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/3316739663067157299">
@@ -210,19 +215,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="3316739663067157299" at="24,0,25,0" concept="1" trace="myConceptThisExtensionExpression" />
       <node id="3316739663067157299" at="55,57,56,48" concept="4" />
-      <node id="3316739663067157299" at="128,81,129,201" concept="3" />
-      <node id="3316739663067157299" at="129,201,130,34" concept="0" />
-      <node id="3316739663067157299" at="130,34,131,121" concept="0" />
-      <node id="3316739663067157299" at="131,121,132,130" concept="0" />
-      <node id="3316739663067157299" at="132,130,133,49" concept="0" />
-      <node id="3316739663067157299" at="133,49,134,20" concept="0" />
-      <node id="3316739663067157299" at="134,20,135,22" concept="4" />
-      <node id="3316739663067157299" at="128,0,137,0" concept="6" trace="createDescriptorForThisExtensionExpression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3316739663067157299" at="135,81,136,201" concept="3" />
+      <node id="3316739663067157299" at="136,201,137,34" concept="0" />
+      <node id="3316739663067157299" at="137,34,138,121" concept="0" />
+      <node id="3316739663067157299" at="138,121,139,130" concept="0" />
+      <node id="3316739663067157299" at="139,130,140,17" concept="0" />
+      <node id="3316739663067157299" at="140,17,141,49" concept="0" />
+      <node id="3316739663067157299" at="141,49,142,20" concept="0" />
+      <node id="3316739663067157299" at="142,20,143,22" concept="4" />
+      <node id="3316739663067157299" at="135,0,145,0" concept="6" trace="createDescriptorForThisExtensionExpression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3316739663067157299" at="55,57,56,48" />
-      <scope id="3316739663067157299" at="128,81,135,22">
+      <scope id="3316739663067157299" at="135,81,143,22">
         <var name="b" id="3316739663067157299" />
       </scope>
-      <scope id="3316739663067157299" at="128,0,137,0" />
+      <scope id="3316739663067157299" at="135,0,145,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/7685333756920172912">
@@ -246,18 +252,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7685333756920172912" at="22,0,23,0" concept="1" trace="myConceptLocalExtendedMethodCall" />
       <node id="7685333756920172912" at="51,57,52,48" concept="4" />
-      <node id="7685333756920172912" at="112,81,113,201" concept="3" />
-      <node id="7685333756920172912" at="113,201,114,34" concept="0" />
-      <node id="7685333756920172912" at="114,34,115,125" concept="0" />
-      <node id="7685333756920172912" at="115,125,116,130" concept="0" />
-      <node id="7685333756920172912" at="116,130,117,49" concept="0" />
-      <node id="7685333756920172912" at="117,49,118,22" concept="4" />
-      <node id="7685333756920172912" at="112,0,120,0" concept="6" trace="createDescriptorForLocalExtendedMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7685333756920172912" at="117,81,118,201" concept="3" />
+      <node id="7685333756920172912" at="118,201,119,34" concept="0" />
+      <node id="7685333756920172912" at="119,34,120,125" concept="0" />
+      <node id="7685333756920172912" at="120,125,121,130" concept="0" />
+      <node id="7685333756920172912" at="121,130,122,17" concept="0" />
+      <node id="7685333756920172912" at="122,17,123,49" concept="0" />
+      <node id="7685333756920172912" at="123,49,124,22" concept="4" />
+      <node id="7685333756920172912" at="117,0,126,0" concept="6" trace="createDescriptorForLocalExtendedMethodCall#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7685333756920172912" at="51,57,52,48" />
-      <scope id="7685333756920172912" at="112,81,118,22">
+      <scope id="7685333756920172912" at="117,81,124,22">
         <var name="b" id="7685333756920172912" />
       </scope>
-      <scope id="7685333756920172912" at="112,0,120,0" />
+      <scope id="7685333756920172912" at="117,0,126,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/8022092943109322131">
@@ -280,18 +287,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="8022092943109322131" at="23,0,24,0" concept="1" trace="myConceptSimpleExtensionMethodsContainer" />
       <node id="8022092943109322131" at="53,65,54,56" concept="4" />
-      <node id="8022092943109322131" at="120,89,121,209" concept="3" />
-      <node id="8022092943109322131" at="121,209,122,33" concept="0" />
-      <node id="8022092943109322131" at="122,33,123,162" concept="0" />
-      <node id="8022092943109322131" at="123,162,124,130" concept="0" />
-      <node id="8022092943109322131" at="124,130,125,49" concept="0" />
-      <node id="8022092943109322131" at="125,49,126,22" concept="4" />
-      <node id="8022092943109322131" at="120,0,128,0" concept="6" trace="createDescriptorForSimpleExtensionMethodsContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8022092943109322131" at="126,89,127,209" concept="3" />
+      <node id="8022092943109322131" at="127,209,128,33" concept="0" />
+      <node id="8022092943109322131" at="128,33,129,162" concept="0" />
+      <node id="8022092943109322131" at="129,162,130,130" concept="0" />
+      <node id="8022092943109322131" at="130,130,131,17" concept="0" />
+      <node id="8022092943109322131" at="131,17,132,49" concept="0" />
+      <node id="8022092943109322131" at="132,49,133,22" concept="4" />
+      <node id="8022092943109322131" at="126,0,135,0" concept="6" trace="createDescriptorForSimpleExtensionMethodsContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8022092943109322131" at="53,65,54,56" />
-      <scope id="8022092943109322131" at="120,89,126,22">
+      <scope id="8022092943109322131" at="126,89,133,22">
         <var name="b" id="8022092943109322131" />
       </scope>
-      <scope id="8022092943109322131" at="120,0,128,0" />
+      <scope id="8022092943109322131" at="126,0,135,0" />
     </file>
   </root>
   <root nodeRef="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)/8022092943110829337">
@@ -319,15 +327,16 @@
       <node id="8022092943110829337" at="71,130,72,71" concept="0" />
       <node id="8022092943110829337" at="72,71,73,71" concept="0" />
       <node id="8022092943110829337" at="73,71,74,130" concept="0" />
-      <node id="8022092943110829339" at="74,130,75,199" concept="0" />
-      <node id="1973189701690661983" at="75,199,76,204" concept="0" />
-      <node id="8022092943110829337" at="76,204,77,22" concept="4" />
-      <node id="8022092943110829337" at="68,0,79,0" concept="6" trace="createDescriptorForBaseExtensionMethodContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8022092943110829337" at="74,130,75,17" concept="0" />
+      <node id="8022092943110829339" at="75,17,76,199" concept="0" />
+      <node id="1973189701690661983" at="76,199,77,204" concept="0" />
+      <node id="8022092943110829337" at="77,204,78,22" concept="4" />
+      <node id="8022092943110829337" at="68,0,80,0" concept="6" trace="createDescriptorForBaseExtensionMethodContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8022092943110829337" at="41,62,42,53" />
-      <scope id="8022092943110829337" at="68,86,77,22">
+      <scope id="8022092943110829337" at="68,86,78,22">
         <var name="b" id="8022092943110829337" />
       </scope>
-      <scope id="8022092943110829337" at="68,0,79,0" />
+      <scope id="8022092943110829337" at="68,0,80,0" />
     </file>
   </root>
 </debug-info>

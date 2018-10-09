@@ -236,22 +236,24 @@ public class EditorCell_Table extends EditorCell_Collection {
     EditorCell emptyCell = new EditorCell_Empty(getContext(), getSNode());
     emptyCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
     emptyCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-    if (beggining) {
-      emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-    } else {
-      emptyCell.setAction(CellActionType.INSERT, new AbstractCellAction() {
-        @Override
-        public void execute(EditorContext editorContext) {
-          myModel.insertRow(rowNumber + 1);
-        }
-      });
-    }
-    emptyCell.setAction(CellActionType.INSERT_BEFORE, new AbstractCellAction() {
+    AbstractCellAction insertRowBeforeAction = new AbstractCellAction() {
       @Override
       public void execute(EditorContext editorContext) {
         myModel.insertRow(rowNumber);
       }
-    });
+    };
+    AbstractCellAction insertRowAfterAction = new AbstractCellAction() {
+      @Override
+      public void execute(EditorContext editorContext) {
+        myModel.insertRow(rowNumber + 1);
+      }
+    };
+    if (beggining) {
+      emptyCell.setAction(CellActionType.INSERT, insertRowBeforeAction);
+    } else {
+      emptyCell.setAction(CellActionType.INSERT, insertRowAfterAction);
+    }
+    emptyCell.setAction(CellActionType.INSERT_BEFORE, insertRowBeforeAction);
     emptyCell.setCellId(cellId + ((beggining ? "_firstCell" : "_lastCell")));
     return emptyCell;
   }

@@ -3,13 +3,13 @@
         "Plugin/DTD"
         "http://plugins.intellij.net/plugin.dtd"
         >
-<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+<idea-plugin>
   <id>jetbrains.mps.ide.mpsmigration</id>
   <name>Migration 2018.2</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
-  <version>2018.2</version>
+  <version>2018.2.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="181.1" until-build="183.*"/>
+  <idea-version since-build="182.1" until-build="183.*"/>
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
   <depends>jetbrains.mps.ide.java</depends>
@@ -24,6 +24,7 @@
     <component>
       <implementation-class>jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1</implementation-class>
       <implementation-class>jetbrains.mps.ide.mpsmigration.v_2017_2.Migrations_2017_2</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.v_2018_2.Migrations_2018_2</implementation-class>
     </component>
   </application-components>
 </idea-plugin>

@@ -87,6 +87,7 @@ public class TestSubstituteParentPropertyAndRef_Subconcept_RefMenuPart extends T
         _context = context;
       }
 
+
       @Nullable
       @Override
       public boolean canExecute(String pattern) {

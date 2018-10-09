@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class PrivateField_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(PrivateField_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public PrivateField_Test() {
     super(ourParamCache);
@@ -25,27 +29,31 @@ public class PrivateField_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeFieldIsNeverUsedCheck6923385624929265058() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeFieldIsNeverUsedCheck6923385624929265058", true);
+    new PrivateField_Test.TestBody(this).test_NodeFieldIsNeverUsedCheck6923385624929265058();
   }
   @Test
   public void test_NodeIsAssignedButNeverAccessedCheck6923385624927087560() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927087560", true);
+    new PrivateField_Test.TestBody(this).test_NodeIsAssignedButNeverAccessedCheck6923385624927087560();
   }
   @Test
   public void test_NodeIsNeverAssignedCheck6923385624929108909() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsNeverAssignedCheck6923385624929108909", true);
+    new PrivateField_Test.TestBody(this).test_NodeIsNeverAssignedCheck6923385624929108909();
   }
   @Test
   public void test_ErrorMessagesCheck7970711249077314345() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_ErrorMessagesCheck7970711249077314345", true);
+    new PrivateField_Test.TestBody(this).test_ErrorMessagesCheck7970711249077314345();
   }
   @Test
   public void test_NodeWarningCheck8129007564265008834() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeWarningCheck8129007564265008834", true);
+    new PrivateField_Test.TestBody(this).test_NodeWarningCheck8129007564265008834();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeFieldIsNeverUsedCheck6923385624929265058() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929265058"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

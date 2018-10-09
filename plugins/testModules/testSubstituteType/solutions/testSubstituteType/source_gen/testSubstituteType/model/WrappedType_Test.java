@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class WrappedType_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(WrappedType_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public WrappedType_Test() {
     super(ourParamCache);
@@ -25,39 +29,43 @@ public class WrappedType_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeTypeCheck1470921783545306146() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545306146", true);
+    new WrappedType_Test.TestBody(this).test_NodeTypeCheck1470921783545306146();
   }
   @Test
   public void test_NodeTypeCheck1470921783545306158() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545306158", true);
+    new WrappedType_Test.TestBody(this).test_NodeTypeCheck1470921783545306158();
   }
   @Test
   public void test_NodeTypeCheck3904815702877839590() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck3904815702877839590", true);
+    new WrappedType_Test.TestBody(this).test_NodeTypeCheck3904815702877839590();
   }
   @Test
   public void test_NodeTypeCheck3904815702877839445() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck3904815702877839445", true);
+    new WrappedType_Test.TestBody(this).test_NodeTypeCheck3904815702877839445();
   }
   @Test
   public void test_NodeTypeCheck1470921783545282539() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545282539", true);
+    new WrappedType_Test.TestBody(this).test_NodeTypeCheck1470921783545282539();
   }
   @Test
   public void test_NodeErrorCheck1252378774017462261() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeErrorCheck1252378774017462261", true);
+    new WrappedType_Test.TestBody(this).test_NodeErrorCheck1252378774017462261();
   }
   @Test
   public void test_NodeErrorCheck1470921783545305313() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeErrorCheck1470921783545305313", true);
+    new WrappedType_Test.TestBody(this).test_NodeErrorCheck1470921783545305313();
   }
   @Test
   public void test_ErrorMessagesCheck1252378774017462295() throws Throwable {
-    runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_ErrorMessagesCheck1252378774017462295", true);
+    new WrappedType_Test.TestBody(this).test_ErrorMessagesCheck1252378774017462295();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeTypeCheck1470921783545306146() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("1470921783545306146"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

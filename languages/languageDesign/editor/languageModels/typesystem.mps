@@ -412,6 +412,7 @@
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1240687580870" name="jetbrains.mps.baseLanguage.collections.structure.JoinOperation" flags="nn" index="3uJxvA">
         <child id="1240687658305" name="delimiter" index="3uJOhx" />
       </concept>
@@ -6486,6 +6487,124 @@
     <node concept="1YaCAy" id="6eKAVO7W_S1" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tpc2:2snskYs0Tuc" resolve="TransformationMenuPart_PropertyMenu" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3wNUq1k0N5b">
+    <property role="TrG5h" value="check_CellActionMapDeclarationBackspaceWillBeAdded" />
+    <property role="3GE5qa" value="CellActionMap" />
+    <node concept="3clFbS" id="3wNUq1k0N5c" role="18ibNy">
+      <node concept="3cpWs8" id="3wNUq1k0R07" role="3cqZAp">
+        <node concept="3cpWsn" id="3wNUq1k0R08" role="3cpWs9">
+          <property role="TrG5h" value="deleteItem" />
+          <node concept="3Tqbb2" id="3wNUq1k0QZK" role="1tU5fm">
+            <ref role="ehGHo" to="tpc2:g_hA7BD" resolve="CellActionMapItem" />
+          </node>
+          <node concept="2OqwBi" id="3wNUq1k0R09" role="33vP2m">
+            <node concept="2OqwBi" id="3wNUq1k0R0a" role="2Oq$k0">
+              <node concept="2OqwBi" id="3wNUq1k0R0b" role="2Oq$k0">
+                <node concept="3Tsc0h" id="3wNUq1k0R0c" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpc2:g_h_SO1" resolve="item" />
+                </node>
+                <node concept="1YBJjd" id="3wNUq1k0R0d" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3wNUq1k0N5V" resolve="cellActionMapDeclaration" />
+                </node>
+              </node>
+              <node concept="3zZkjj" id="3wNUq1k0R0e" role="2OqNvi">
+                <node concept="1bVj0M" id="3wNUq1k0R0f" role="23t8la">
+                  <node concept="3clFbS" id="3wNUq1k0R0g" role="1bW5cS">
+                    <node concept="3clFbF" id="3wNUq1k0R0h" role="3cqZAp">
+                      <node concept="2OqwBi" id="3wNUq1k0R0i" role="3clFbG">
+                        <node concept="2OqwBi" id="3wNUq1k0R0j" role="2Oq$k0">
+                          <node concept="37vLTw" id="3wNUq1k0R0k" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3wNUq1k0R0o" resolve="it" />
+                          </node>
+                          <node concept="3TrcHB" id="3wNUq1k0R0l" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpc2:g_hAc3q" resolve="actionId" />
+                          </node>
+                        </node>
+                        <node concept="3t7uKx" id="3wNUq1k0R0m" role="2OqNvi">
+                          <node concept="uoxfO" id="3wNUq1k0R0n" role="3t7uKA">
+                            <ref role="uo_Cq" to="tpc2:g_hAxAO" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="3wNUq1k0R0o" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="3wNUq1k0R0p" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1uHKPH" id="3wNUq1k0R0q" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3wNUq1k0N5d" role="3cqZAp">
+        <node concept="3clFbS" id="3wNUq1k0N5e" role="3clFbx">
+          <node concept="Dpp1Q" id="3wNUq1k0OGv" role="3cqZAp">
+            <node concept="Xl_RD" id="3wNUq1k0OGx" role="Dpw9R">
+              <property role="Xl_RC" value="The action item same to DELETE will be added with the BACKSPACE id" />
+            </node>
+            <node concept="37vLTw" id="3wNUq1k0RIL" role="2OEOjV">
+              <ref role="3cqZAo" node="3wNUq1k0R08" resolve="deleteItem" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="4mbZJU7Q4iK" role="3clFbw">
+          <node concept="2OqwBi" id="3wNUq1k0RnG" role="3uHU7B">
+            <node concept="37vLTw" id="3wNUq1k0R0r" role="2Oq$k0">
+              <ref role="3cqZAo" node="3wNUq1k0R08" resolve="deleteItem" />
+            </node>
+            <node concept="3x8VRR" id="3wNUq1k0RIm" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="4mbZJU7Q4j3" role="3uHU7w">
+            <node concept="2OqwBi" id="4mbZJU7Q4j4" role="2Oq$k0">
+              <node concept="2OqwBi" id="4mbZJU7Q4j5" role="2Oq$k0">
+                <node concept="3Tsc0h" id="4mbZJU7Q4j7" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpc2:g_h_SO1" resolve="item" />
+                </node>
+                <node concept="1YBJjd" id="3wNUq1k0OxD" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3wNUq1k0N5V" resolve="cellActionMapDeclaration" />
+                </node>
+              </node>
+              <node concept="3zZkjj" id="4mbZJU7Q4j8" role="2OqNvi">
+                <node concept="1bVj0M" id="4mbZJU7Q4j9" role="23t8la">
+                  <node concept="3clFbS" id="4mbZJU7Q4ja" role="1bW5cS">
+                    <node concept="3clFbF" id="4mbZJU7Q4jb" role="3cqZAp">
+                      <node concept="2OqwBi" id="4mbZJU7Q4jc" role="3clFbG">
+                        <node concept="2OqwBi" id="4mbZJU7Q4jd" role="2Oq$k0">
+                          <node concept="37vLTw" id="4mbZJU7Q4je" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4mbZJU7Q4ji" resolve="it" />
+                          </node>
+                          <node concept="3TrcHB" id="4mbZJU7Q4jf" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpc2:g_hAc3q" resolve="actionId" />
+                          </node>
+                        </node>
+                        <node concept="3t7uKx" id="4mbZJU7Q4jg" role="2OqNvi">
+                          <node concept="uoxfO" id="4mbZJU7Q4jh" role="3t7uKA">
+                            <ref role="uo_Cq" to="tpc2:7P1WhNABvta" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="4mbZJU7Q4ji" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="4mbZJU7Q4jj" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1v1jN8" id="4mbZJU7Q4jk" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wNUq1k0N5V" role="1YuTPh">
+      <property role="TrG5h" value="cellActionMapDeclaration" />
+      <ref role="1YaFvo" to="tpc2:g_h_SNY" resolve="CellActionMapDeclaration" />
     </node>
   </node>
 </model>

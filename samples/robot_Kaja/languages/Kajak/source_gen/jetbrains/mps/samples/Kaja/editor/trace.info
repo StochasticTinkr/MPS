@@ -3342,7 +3342,7 @@
       <node id="3308300503039700885" at="73,5,74,22" concept="7" />
       <node id="4394627182935332610" at="76,46,77,375" concept="7" />
       <node id="3308300503039700885" at="79,40,80,174" concept="6" />
-      <node id="3308300503039700885" at="84,39,85,133" concept="7" />
+      <node id="3308300503039700885" at="84,39,85,123" concept="7" />
       <node id="3308300503039700885" at="87,37,88,60" concept="2" />
       <node id="3308300503039700885" at="88,60,89,48" concept="2" />
       <node id="3308300503039700885" at="89,48,90,58" concept="2" />
@@ -3364,7 +3364,7 @@
       <node id="3308300503039700885" at="117,87,118,145" concept="7" />
       <node id="3308300503039700885" at="119,10,120,22" concept="7" />
       <node id="3308300503039700890" at="125,0,126,0" concept="3" trace="myReferencingNode" />
-      <node id="3308300503039700890" at="127,119,128,21" concept="10" />
+      <node id="3308300503039700890" at="127,109,128,21" concept="10" />
       <node id="3308300503039700890" at="128,21,129,42" concept="2" />
       <node id="3308300503039700890" at="129,42,130,20" concept="2" />
       <node id="3308300503039700890" at="133,41,134,32" concept="7" />
@@ -3411,7 +3411,7 @@
       <node id="3308300503039700885" at="82,72,87,37" concept="6" />
       <node id="3308300503039700885" at="110,301,115,7" concept="6" />
       <node id="3308300503039700885" at="115,7,120,22" concept="4" />
-      <node id="3308300503039700890" at="127,0,132,0" concept="1" trace="Inline_Builder_wwx4md_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3308300503039700890" at="127,0,132,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3308300503039700890" at="137,0,142,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3308300503039700892" at="159,308,164,11" concept="6" />
       <node id="3308300503039700892" at="164,11,169,26" concept="4" />
@@ -3427,7 +3427,7 @@
       <scope id="3308300503039700885" at="61,39,62,32" />
       <scope id="4394627182935319761" at="71,37,72,51" />
       <scope id="4394627182935332609" at="76,46,77,375" />
-      <scope id="3308300503039700885" at="84,39,85,133" />
+      <scope id="3308300503039700885" at="84,39,85,123" />
       <scope id="3308300503039700885" at="112,39,113,113" />
       <scope id="3308300503039700890" at="133,41,134,32" />
       <scope id="3308300503039700890" at="139,28,140,20" />
@@ -3447,7 +3447,7 @@
       <scope id="3308300503039700885" at="112,0,115,0">
         <var name="it" id="3308300503039700885" />
       </scope>
-      <scope id="3308300503039700890" at="127,119,130,20" />
+      <scope id="3308300503039700890" at="127,109,130,20" />
       <scope id="3308300503039700890" at="133,0,136,0" />
       <scope id="3308300503039700892" at="161,0,164,0">
         <var name="it" id="3308300503039700892" />
@@ -3503,9 +3503,9 @@
       <scope id="3308300503039700885" at="79,0,122,0" />
       <unit id="3308300503039700885" at="83,74,87,9" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$1$1" />
       <unit id="3308300503039700885" at="111,102,115,5" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$2" />
-      <unit id="3308300503039700892" at="160,104,164,9" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$Inline_Builder_wwx4md_a0a$1" />
+      <unit id="3308300503039700892" at="160,104,164,9" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3308300503039700885" at="81,42,100,5" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$1" />
-      <unit id="3308300503039700890" at="122,0,175,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$Inline_Builder_wwx4md_a0a" />
+      <unit id="3308300503039700890" at="122,0,175,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a$Inline_Builder0" />
       <unit id="3308300503039700885" at="46,0,185,0" name="jetbrains.mps.samples.Kaja.editor.RoutineCall_EditorBuilder_a" />
     </file>
   </root>
@@ -4148,7 +4148,7 @@
       <node id="4394627182934757457" at="76,40,77,34" concept="2" />
       <node id="4394627182934757457" at="77,34,78,22" concept="7" />
       <node id="4394627182934757452" at="80,40,81,171" concept="6" />
-      <node id="4394627182934757452" at="85,39,86,129" concept="7" />
+      <node id="4394627182934757452" at="85,39,86,119" concept="7" />
       <node id="4394627182934757452" at="88,34,89,60" concept="2" />
       <node id="4394627182934757452" at="89,60,90,48" concept="2" />
       <node id="4394627182934757452" at="90,48,91,43" concept="2" />
@@ -4166,7 +4166,7 @@
       <node id="4394627182934757452" at="111,87,112,145" concept="7" />
       <node id="4394627182934757452" at="113,10,114,22" concept="7" />
       <node id="4394627182934757461" at="119,0,120,0" concept="3" trace="myReferencingNode" />
-      <node id="4394627182934757461" at="121,119,122,21" concept="10" />
+      <node id="4394627182934757461" at="121,109,122,21" concept="10" />
       <node id="4394627182934757461" at="122,21,123,42" concept="2" />
       <node id="4394627182934757461" at="123,42,124,20" concept="2" />
       <node id="4394627182934757461" at="127,41,128,32" concept="7" />
@@ -4200,7 +4200,7 @@
       <node id="4394627182934757452" at="83,72,88,34" concept="6" />
       <node id="4394627182934757452" at="104,301,109,7" concept="6" />
       <node id="4394627182934757452" at="109,7,114,22" concept="4" />
-      <node id="4394627182934757461" at="121,0,126,0" concept="1" trace="Inline_Builder_7hmin7_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4394627182934757461" at="121,0,126,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4394627182934757461" at="131,0,136,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4394627182934757463" at="149,308,154,11" concept="6" />
       <node id="4394627182934757463" at="154,11,159,26" concept="4" />
@@ -4213,7 +4213,7 @@
       <node id="4394627182934757452" at="80,0,116,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4394627182934757452" at="53,26,54,18" />
       <scope id="4394627182934757452" at="57,39,58,32" />
-      <scope id="4394627182934757452" at="85,39,86,129" />
+      <scope id="4394627182934757452" at="85,39,86,119" />
       <scope id="4394627182934757452" at="106,39,107,113" />
       <scope id="4394627182934757461" at="127,41,128,32" />
       <scope id="4394627182934757461" at="133,28,134,20" />
@@ -4232,7 +4232,7 @@
       <scope id="4394627182934757452" at="106,0,109,0">
         <var name="it" id="4394627182934757452" />
       </scope>
-      <scope id="4394627182934757461" at="121,119,124,20" />
+      <scope id="4394627182934757461" at="121,109,124,20" />
       <scope id="4394627182934757461" at="127,0,130,0" />
       <scope id="4394627182934757463" at="151,0,154,0">
         <var name="it" id="4394627182934757463" />
@@ -4281,9 +4281,9 @@
       <scope id="4394627182934757452" at="80,0,116,0" />
       <unit id="4394627182934757452" at="84,74,88,9" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$1$1" />
       <unit id="4394627182934757452" at="105,102,109,5" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$2" />
-      <unit id="4394627182934757463" at="150,104,154,9" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$Inline_Builder_7hmin7_a1a$1" />
+      <unit id="4394627182934757463" at="150,104,154,9" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="4394627182934757452" at="82,42,94,5" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$1" />
-      <unit id="4394627182934757461" at="116,0,165,0" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$Inline_Builder_7hmin7_a1a" />
+      <unit id="4394627182934757461" at="116,0,165,0" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a$Inline_Builder0" />
       <unit id="4394627182934757452" at="42,0,166,0" name="jetbrains.mps.samples.Kaja.editor.Require_EditorBuilder_a" />
     </file>
   </root>

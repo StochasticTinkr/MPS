@@ -18,9 +18,7 @@ package jetbrains.mps.generator.impl.dependencies;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Don't want to use <code>jetbrains.mps.util.Interner</code> as it's an overkill for our single-threaded case, I don't like its name, and perhaps

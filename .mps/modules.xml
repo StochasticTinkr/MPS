@@ -6,6 +6,7 @@
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-api/jetbrains.mps.lang.behavior.api.msd" folder="core.aspects.behavior" />
       <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/jetbrains.mps.lang.behavior.runtime.msd" folder="core.aspects.behavior" />
+      <modulePath path="$PROJECT_DIR$/core/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.migration.devkit/jetbrains.mps.devkit.aspect.migration.devkit" folder="core.aspects.descriptor" />
@@ -20,10 +21,7 @@
       <modulePath path="$PROJECT_DIR$/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" folder="core.aspects.findUsages" />
       <modulePath path="$PROJECT_DIR$/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/core/java-stub/jetbrains.mps.java.stub.msd" folder="core.kernel" />
-      <modulePath path="$PROJECT_DIR$/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" folder="core.kernel" />
-      <modulePath path="$PROJECT_DIR$/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" folder="core.languages.pattern" />
-      <modulePath path="$PROJECT_DIR$/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
@@ -32,6 +30,7 @@
       <modulePath path="$PROJECT_DIR$/core/persistence/jetbrains.mps.persistence.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" folder="core.aspects.refactoring" />
       <modulePath path="$PROJECT_DIR$/core/refactoring/jetbrains.mps.refactoring.msd" folder="core.aspects.refactoring" />
+      <modulePath path="$PROJECT_DIR$/core/resources/jetbrains.mps.smodel.resources.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/core/squery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" folder="core.languages.smodel.query" />
       <modulePath path="$PROJECT_DIR$/core/tool/ant/jetbrains.mps.tool.ant.msd" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/core/tool/builder/jetbrains.mps.tool.builder.msd" folder="core.tool" />
@@ -179,11 +178,11 @@
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.actions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/devkit/jetbrains.mps.console.devkit.devkit" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommandsRuntime/jetbrains.mps.console.ideCommands.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" folder="platform.console" />
-      <modulePath path="$PROJECT_DIR$/plugins/console/lang/devkit/jetbrains.mps.console.devkit.devkit" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/scripts/jetbrains.mps.console.scripts.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/scriptsRuntime/jetbrains.mps.console.scripts.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="workbench.debugger" />
@@ -232,7 +231,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/language/jetbrains.mps.ide.httpsupport.mpl" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/nodeaccess/jetbrains.mps.ide.httpsupport.nodeaccess.msd" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/jetbrains.mps.ide.httpsupport.runtime.msd" folder="platform.httpsupport" />
-      <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/MPSPlugin/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migration/migration-platform/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/migration/migration-workbench/solutions/migration.workbench/jetbrains.mps.migration.workbench.msd" folder="platform.migration" />
@@ -309,6 +308,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/jetbrains.mps.devkit.aspect.vcs/jetbrains.mps.devkit.aspect.vcs.devkit" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.ide.vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.vcs.mergehints.plugin/jetbrains.mps.vcs.mergehints.plugin.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/mergehints.runtime/jetbrains.mps.vcs.mergehints.runtime.msd" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-platform/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" folder="platform.vcs" />

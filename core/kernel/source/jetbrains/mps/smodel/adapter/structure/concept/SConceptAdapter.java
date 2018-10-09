@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,19 +63,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     if (cd == null) {
       return false;
     }
-
-    if (cd instanceof CompiledConceptDescriptor && ((CompiledConceptDescriptor) cd).getVersion() <= 0) {
-      SNode conceptDecl = getDeclarationNode();
-      if (conceptDecl == null) {
-        return false;
-      }
-      if (!conceptDecl.isInstanceOfConcept(SNodeUtil.concept_ConceptDeclaration)) {
-        return false;
-      }
-      return SPropertyOperations.getBoolean(conceptDecl,SNodeUtil.property_Concept_Rootable);
-    } else {
-      return cd.isRootable();
-    }
+    return cd.isRootable();
   }
 
   @Override

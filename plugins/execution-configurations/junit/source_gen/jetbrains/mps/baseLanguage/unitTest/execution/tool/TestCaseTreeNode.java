@@ -5,10 +5,11 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.jetbrains.annotations.NotNull;
 
-/*package*/ class TestCaseTreeNode extends BaseTestTreeNode {
+/*package*/ class TestCaseTreeNode extends NonRootTestTreeNode {
   private final ITestNodeWrapper myTestCase;
 
   public TestCaseTreeNode(@NotNull ITestNodeWrapper testCase) {
+    assert testCase.isTestCase();
     myTestCase = testCase;
     setUserObject(testCase);
     setToggleClickCount(-1);
@@ -22,7 +23,8 @@ import org.jetbrains.annotations.NotNull;
   }
 
   @Override
-  public ITestNodeWrapper getTestWrapper() {
+  @NotNull
+  public ITestNodeWrapper getTestNode() {
     return myTestCase;
   }
 }

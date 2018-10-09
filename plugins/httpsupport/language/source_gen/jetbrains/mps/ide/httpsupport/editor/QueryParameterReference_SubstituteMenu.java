@@ -44,7 +44,7 @@ public class QueryParameterReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_g6s5w7_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_g6s5w7_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_g6s5w7_a() {
       super(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, 0x205f4376c5884e96L, "queryParameter"));

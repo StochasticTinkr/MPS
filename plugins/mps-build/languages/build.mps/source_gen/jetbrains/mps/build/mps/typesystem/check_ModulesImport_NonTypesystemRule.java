@@ -20,6 +20,7 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -49,9 +50,16 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         if (repo != null && msg.getHintObject() instanceof SNodeReference) {
           location = ((SNodeReference) msg.getHintObject()).resolve(repo);
         }
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(location, msg.getText(), "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "7141285424006551198", null, errorTarget);
+        if (msg.getKind() == MessageKind.ERROR) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(location, msg.getText(), "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "7141285424006551198", null, errorTarget);
+          }
+        } else if (msg.getKind() == MessageKind.WARNING) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(location, msg.getText(), "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2799875068636550272", null, errorTarget);
+          }
         }
       }
     });

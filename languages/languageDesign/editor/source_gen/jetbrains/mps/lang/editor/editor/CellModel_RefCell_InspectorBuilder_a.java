@@ -154,7 +154,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1a3a(getEditorContext(), getNode(), targetNode).createCell();
+            return new CellModel_RefCell_InspectorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "relationDeclaration");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -196,12 +196,12 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_lfsepz_a1a3a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_lfsepz_a1a3a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -275,7 +275,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1b3a(getEditorContext(), myNode, effectiveNode).createCell();
+        EditorCell cell = new CellModel_RefCell_InspectorBuilder_a.Inline_Builder1(getEditorContext(), myNode, effectiveNode).createCell();
         installDeleteActions_notnull(cell);
         return cell;
       }
@@ -296,12 +296,12 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_lfsepz_a1b3a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_lfsepz_a1b3a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -329,7 +329,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
         protected EditorCell createReferenceCell(final SNode targetNode) {
           EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
             public EditorCell compute() {
-              return new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1b3a.Inline_Builder_lfsepz_a0a0b1d0(getEditorContext(), getNode(), targetNode).createCell();
+              return new CellModel_RefCell_InspectorBuilder_a.Inline_Builder1.Inline_Builder2(getEditorContext(), getNode(), targetNode).createCell();
             }
           }, targetNode, "conceptDeclaration");
           CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -359,12 +359,12 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
       } else
       return editorCell;
     }
-    /*package*/ static class Inline_Builder_lfsepz_a0a0b1d0 extends AbstractEditorBuilder {
+    /*package*/ static class Inline_Builder2 extends AbstractEditorBuilder {
       @NotNull
       private SNode myNode;
       private SNode myReferencingNode;
 
-      /*package*/ Inline_Builder_lfsepz_a0a0b1d0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+      /*package*/ Inline_Builder2(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
         super(context);
         myReferencingNode = referencingNode;
         myNode = node;

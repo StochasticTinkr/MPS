@@ -256,9 +256,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     if (getRepository() instanceof MPSModuleRepository) {
       ((MPSModuleRepository) getRepository()).invalidateCaches();
     }
-    // XXX in fact, getRepository could be ProjectRepository that delegates to MPSModuleRepository, and to clean at least this module's scope,
-    //     do it here explicitly.
-    ((ModuleScope) getScope()).invalidateCaches();
   }
 
   // fixme: remove, use #setModuleDescriptor instead

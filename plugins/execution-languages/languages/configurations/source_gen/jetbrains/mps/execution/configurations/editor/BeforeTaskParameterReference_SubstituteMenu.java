@@ -44,7 +44,7 @@ public class BeforeTaskParameterReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_3p5155_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_3p5155_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3p5155_a() {
       super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));

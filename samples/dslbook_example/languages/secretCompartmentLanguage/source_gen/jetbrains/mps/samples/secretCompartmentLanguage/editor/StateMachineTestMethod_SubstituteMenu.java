@@ -44,7 +44,7 @@ public class StateMachineTestMethod_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_ro57qv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ro57qv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ro57qv_a() {
       super(MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"), MetaAdapterFactory.getReferenceLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, 0x116c1f8ec2bL, "finalState"));

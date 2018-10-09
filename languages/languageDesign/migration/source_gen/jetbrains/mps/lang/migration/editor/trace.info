@@ -148,7 +148,7 @@
       <node id="2770867049910679864" at="82,40,83,34" concept="2" />
       <node id="2770867049910679864" at="83,34,84,22" concept="7" />
       <node id="2770867049910679858" at="86,40,87,171" concept="6" />
-      <node id="2770867049910679858" at="91,39,92,142" concept="7" />
+      <node id="2770867049910679858" at="91,39,92,132" concept="7" />
       <node id="2770867049910679858" at="94,33,95,60" concept="2" />
       <node id="2770867049910679858" at="95,60,96,48" concept="2" />
       <node id="2770867049910679858" at="96,48,97,43" concept="2" />
@@ -166,7 +166,7 @@
       <node id="2770867049910679858" at="117,87,118,145" concept="7" />
       <node id="2770867049910679858" at="119,10,120,22" concept="7" />
       <node id="2770867049910679945" at="125,0,126,0" concept="3" trace="myReferencingNode" />
-      <node id="2770867049910679945" at="127,119,128,21" concept="9" />
+      <node id="2770867049910679945" at="127,109,128,21" concept="9" />
       <node id="2770867049910679945" at="128,21,129,42" concept="2" />
       <node id="2770867049910679945" at="129,42,130,20" concept="2" />
       <node id="2770867049910679945" at="133,41,134,32" concept="7" />
@@ -209,7 +209,7 @@
       <node id="2770867049910679858" at="89,72,94,33" concept="6" />
       <node id="2770867049910679858" at="110,301,115,7" concept="6" />
       <node id="2770867049910679858" at="115,7,120,22" concept="4" />
-      <node id="2770867049910679945" at="127,0,132,0" concept="1" trace="Inline_Builder_vf35ih_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2770867049910679945" at="127,0,132,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2770867049910679945" at="137,0,142,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2770867049910679969" at="155,308,160,11" concept="6" />
       <node id="2770867049910679969" at="160,11,165,26" concept="4" />
@@ -223,7 +223,7 @@
       <node id="2770867049910679858" at="86,0,122,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2770867049910679858" at="54,26,55,18" />
       <scope id="2770867049910679858" at="58,39,59,32" />
-      <scope id="2770867049910679858" at="91,39,92,142" />
+      <scope id="2770867049910679858" at="91,39,92,132" />
       <scope id="2770867049910679858" at="112,39,113,113" />
       <scope id="2770867049910679945" at="133,41,134,32" />
       <scope id="2770867049910679945" at="139,28,140,20" />
@@ -245,7 +245,7 @@
       <scope id="2770867049910679858" at="112,0,115,0">
         <var name="it" id="2770867049910679858" />
       </scope>
-      <scope id="2770867049910679945" at="127,119,130,20" />
+      <scope id="2770867049910679945" at="127,109,130,20" />
       <scope id="2770867049910679945" at="133,0,136,0" />
       <scope id="2770867049910679969" at="157,0,160,0">
         <var name="it" id="2770867049910679969" />
@@ -300,9 +300,9 @@
       <scope id="2770867049910679858" at="86,0,122,0" />
       <unit id="2770867049910679858" at="90,74,94,9" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$1$1" />
       <unit id="2770867049910679858" at="111,102,115,5" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$2" />
-      <unit id="2770867049910679969" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$Inline_Builder_vf35ih_a2a$1" />
+      <unit id="2770867049910679969" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="2770867049910679858" at="88,42,100,5" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$1" />
-      <unit id="2770867049910679945" at="122,0,171,0" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$Inline_Builder_vf35ih_a2a" />
+      <unit id="2770867049910679945" at="122,0,171,0" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a$Inline_Builder0" />
       <unit id="2770867049910679858" at="43,0,182,0" name="jetbrains.mps.lang.migration.editor.IncludeMigrationPart_EditorBuilder_a" />
     </file>
   </root>
@@ -694,7 +694,7 @@
       <node id="3220955710218124666" at="68,31,69,48" concept="2" />
       <node id="3220955710218124660" at="69,48,70,22" concept="7" />
       <node id="3220955710218124660" at="72,40,73,176" concept="6" />
-      <node id="3220955710218124660" at="77,39,78,154" concept="7" />
+      <node id="3220955710218124660" at="77,39,78,144" concept="7" />
       <node id="3220955710218124660" at="80,38,81,60" concept="2" />
       <node id="3220955710218124660" at="81,60,82,48" concept="2" />
       <node id="3220955710218124660" at="82,48,83,58" concept="2" />
@@ -720,7 +720,7 @@
       <node id="3220955710218124660" at="114,87,115,145" concept="7" />
       <node id="3220955710218124660" at="116,10,117,22" concept="7" />
       <node id="3220955710218124669" at="122,0,123,0" concept="3" trace="myReferencingNode" />
-      <node id="3220955710218124669" at="124,119,125,21" concept="9" />
+      <node id="3220955710218124669" at="124,109,125,21" concept="9" />
       <node id="3220955710218124669" at="125,21,126,42" concept="2" />
       <node id="3220955710218124669" at="126,42,127,20" concept="2" />
       <node id="3220955710218124669" at="130,41,131,32" concept="7" />
@@ -757,7 +757,7 @@
       <node id="3220955710218124660" at="75,72,80,38" concept="6" />
       <node id="3220955710218124660" at="107,301,112,7" concept="6" />
       <node id="3220955710218124660" at="112,7,117,22" concept="4" />
-      <node id="3220955710218124669" at="124,0,129,0" concept="1" trace="Inline_Builder_1qbsjw_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3220955710218124669" at="124,0,129,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3220955710218124669" at="134,0,139,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3220955710218124671" at="155,308,160,11" concept="6" />
       <node id="3220955710218124671" at="160,11,165,26" concept="4" />
@@ -770,7 +770,7 @@
       <node id="3220955710218124660" at="72,0,119,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3220955710218124660" at="56,26,57,18" />
       <scope id="3220955710218124660" at="60,39,61,32" />
-      <scope id="3220955710218124660" at="77,39,78,154" />
+      <scope id="3220955710218124660" at="77,39,78,144" />
       <scope id="3220955710218124660" at="109,39,110,113" />
       <scope id="3220955710218124669" at="130,41,131,32" />
       <scope id="3220955710218124669" at="136,28,137,20" />
@@ -789,7 +789,7 @@
       <scope id="3220955710218124660" at="109,0,112,0">
         <var name="it" id="3220955710218124660" />
       </scope>
-      <scope id="3220955710218124669" at="124,119,127,20" />
+      <scope id="3220955710218124669" at="124,109,127,20" />
       <scope id="3220955710218124669" at="130,0,133,0" />
       <scope id="3220955710218124671" at="157,0,160,0">
         <var name="it" id="3220955710218124671" />
@@ -841,9 +841,9 @@
       <scope id="3220955710218124660" at="72,0,119,0" />
       <unit id="3220955710218124660" at="76,74,80,9" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$1$1" />
       <unit id="3220955710218124660" at="108,102,112,5" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$2" />
-      <unit id="3220955710218124671" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$Inline_Builder_1qbsjw_a0a$1" />
+      <unit id="3220955710218124671" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3220955710218124660" at="74,42,93,5" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$1" />
-      <unit id="3220955710218124669" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$Inline_Builder_1qbsjw_a0a" />
+      <unit id="3220955710218124669" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="3220955710218124660" at="45,0,172,0" name="jetbrains.mps.lang.migration.editor.PropertyPatternVariableReference_EditorBuilder_a" />
     </file>
   </root>
@@ -870,7 +870,7 @@
       <node id="3220955710218442495" at="68,31,69,48" concept="2" />
       <node id="3220955710218442494" at="69,48,70,22" concept="7" />
       <node id="3220955710218442494" at="72,40,73,176" concept="6" />
-      <node id="3220955710218442494" at="77,39,78,150" concept="7" />
+      <node id="3220955710218442494" at="77,39,78,140" concept="7" />
       <node id="3220955710218442494" at="80,38,81,60" concept="2" />
       <node id="3220955710218442494" at="81,60,82,48" concept="2" />
       <node id="3220955710218442494" at="82,48,83,58" concept="2" />
@@ -896,7 +896,7 @@
       <node id="3220955710218442494" at="114,87,115,145" concept="7" />
       <node id="3220955710218442494" at="116,10,117,22" concept="7" />
       <node id="3220955710218442498" at="122,0,123,0" concept="3" trace="myReferencingNode" />
-      <node id="3220955710218442498" at="124,119,125,21" concept="9" />
+      <node id="3220955710218442498" at="124,109,125,21" concept="9" />
       <node id="3220955710218442498" at="125,21,126,42" concept="2" />
       <node id="3220955710218442498" at="126,42,127,20" concept="2" />
       <node id="3220955710218442498" at="130,41,131,32" concept="7" />
@@ -933,7 +933,7 @@
       <node id="3220955710218442494" at="75,72,80,38" concept="6" />
       <node id="3220955710218442494" at="107,301,112,7" concept="6" />
       <node id="3220955710218442494" at="112,7,117,22" concept="4" />
-      <node id="3220955710218442498" at="124,0,129,0" concept="1" trace="Inline_Builder_wvkzjd_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3220955710218442498" at="124,0,129,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3220955710218442498" at="134,0,139,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3220955710218442499" at="155,308,160,11" concept="6" />
       <node id="3220955710218442499" at="160,11,165,26" concept="4" />
@@ -946,7 +946,7 @@
       <node id="3220955710218442494" at="72,0,119,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3220955710218442494" at="56,26,57,18" />
       <scope id="3220955710218442494" at="60,39,61,32" />
-      <scope id="3220955710218442494" at="77,39,78,150" />
+      <scope id="3220955710218442494" at="77,39,78,140" />
       <scope id="3220955710218442494" at="109,39,110,113" />
       <scope id="3220955710218442498" at="130,41,131,32" />
       <scope id="3220955710218442498" at="136,28,137,20" />
@@ -965,7 +965,7 @@
       <scope id="3220955710218442494" at="109,0,112,0">
         <var name="it" id="3220955710218442494" />
       </scope>
-      <scope id="3220955710218442498" at="124,119,127,20" />
+      <scope id="3220955710218442498" at="124,109,127,20" />
       <scope id="3220955710218442498" at="130,0,133,0" />
       <scope id="3220955710218442499" at="157,0,160,0">
         <var name="it" id="3220955710218442499" />
@@ -1017,9 +1017,9 @@
       <scope id="3220955710218442494" at="72,0,119,0" />
       <unit id="3220955710218442494" at="76,74,80,9" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$1$1" />
       <unit id="3220955710218442494" at="108,102,112,5" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$2" />
-      <unit id="3220955710218442499" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$Inline_Builder_wvkzjd_a0a$1" />
+      <unit id="3220955710218442499" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3220955710218442494" at="74,42,93,5" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$1" />
-      <unit id="3220955710218442498" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$Inline_Builder_wvkzjd_a0a" />
+      <unit id="3220955710218442498" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="3220955710218442494" at="45,0,172,0" name="jetbrains.mps.lang.migration.editor.LinkPatternVariableReference_EditorBuilder_a" />
     </file>
   </root>
@@ -1740,7 +1740,7 @@
       <node id="4144229974054378594" at="61,31,62,48" concept="2" />
       <node id="4144229974054378391" at="62,48,63,22" concept="7" />
       <node id="4144229974054378391" at="65,40,66,171" concept="6" />
-      <node id="4144229974054378391" at="70,39,71,137" concept="7" />
+      <node id="4144229974054378391" at="70,39,71,127" concept="7" />
       <node id="4144229974054378391" at="73,33,74,60" concept="2" />
       <node id="4144229974054378391" at="74,60,75,48" concept="2" />
       <node id="4144229974054378391" at="75,48,76,58" concept="2" />
@@ -1762,7 +1762,7 @@
       <node id="4144229974054378391" at="103,87,104,145" concept="7" />
       <node id="4144229974054378391" at="105,10,106,22" concept="7" />
       <node id="4144229974054378596" at="111,0,112,0" concept="3" trace="myReferencingNode" />
-      <node id="4144229974054378596" at="113,119,114,21" concept="9" />
+      <node id="4144229974054378596" at="113,109,114,21" concept="9" />
       <node id="4144229974054378596" at="114,21,115,42" concept="2" />
       <node id="4144229974054378596" at="115,42,116,20" concept="2" />
       <node id="4144229974054378596" at="119,41,120,45" concept="7" />
@@ -1785,7 +1785,7 @@
       <node id="4144229974054378391" at="68,72,73,33" concept="6" />
       <node id="4144229974054378391" at="96,301,101,7" concept="6" />
       <node id="4144229974054378391" at="101,7,106,22" concept="4" />
-      <node id="4144229974054378596" at="113,0,118,0" concept="1" trace="Inline_Builder_v3r5ix_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4144229974054378596" at="113,0,118,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4144229974054378596" at="123,0,128,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4144229974054378391" at="79,0,86,0" concept="5" trace="createErrorCell#(Ljava/lang/String;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4144229974054378391" at="57,0,65,0" concept="5" trace="createCollection_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1795,7 +1795,7 @@
       <node id="4144229974054378391" at="65,0,108,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4144229974054378391" at="49,26,50,18" />
       <scope id="4144229974054378391" at="53,39,54,32" />
-      <scope id="4144229974054378391" at="70,39,71,137" />
+      <scope id="4144229974054378391" at="70,39,71,127" />
       <scope id="4144229974054378391" at="98,39,99,113" />
       <scope id="4144229974054378596" at="119,41,120,45" />
       <scope id="4144229974054378596" at="125,28,126,20" />
@@ -1809,7 +1809,7 @@
       <scope id="4144229974054378391" at="98,0,101,0">
         <var name="it" id="4144229974054378391" />
       </scope>
-      <scope id="4144229974054378596" at="113,119,116,20" />
+      <scope id="4144229974054378596" at="113,109,116,20" />
       <scope id="4144229974054378596" at="119,0,122,0" />
       <scope id="4144229974054378391" at="42,0,46,0">
         <var name="context" id="4144229974054378391" />
@@ -1854,7 +1854,7 @@
       <unit id="4144229974054378391" at="69,74,73,9" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a$1$1" />
       <unit id="4144229974054378391" at="97,102,101,5" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a$2" />
       <unit id="4144229974054378391" at="67,42,86,5" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a$1" />
-      <unit id="4144229974054378596" at="108,0,138,0" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a$Inline_Builder_v3r5ix_a0a" />
+      <unit id="4144229974054378596" at="108,0,138,0" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a$Inline_Builder0" />
       <unit id="4144229974054378391" at="38,0,139,0" name="jetbrains.mps.lang.migration.editor.OrderDependency_EditorBuilder_a" />
     </file>
   </root>
@@ -1903,7 +1903,7 @@
       <node id="3211321119092748746" at="99,47,100,34" concept="2" />
       <node id="3211321119092748746" at="100,34,101,22" concept="7" />
       <node id="4950161090496559655" at="103,40,104,171" concept="6" />
-      <node id="4950161090496559655" at="108,39,109,136" concept="7" />
+      <node id="4950161090496559655" at="108,39,109,126" concept="7" />
       <node id="4950161090496559655" at="111,33,112,60" concept="2" />
       <node id="4950161090496559655" at="112,60,113,48" concept="2" />
       <node id="4950161090496559655" at="113,48,114,58" concept="2" />
@@ -1925,7 +1925,7 @@
       <node id="4950161090496559655" at="141,87,142,145" concept="7" />
       <node id="4950161090496559655" at="143,10,144,22" concept="7" />
       <node id="8260330507836156626" at="149,0,150,0" concept="3" trace="myReferencingNode" />
-      <node id="8260330507836156626" at="151,119,152,21" concept="9" />
+      <node id="8260330507836156626" at="151,109,152,21" concept="9" />
       <node id="8260330507836156626" at="152,21,153,42" concept="2" />
       <node id="8260330507836156626" at="153,42,154,20" concept="2" />
       <node id="8260330507836156626" at="157,41,158,32" concept="7" />
@@ -1962,7 +1962,7 @@
       <node id="4950161090496559655" at="106,72,111,33" concept="6" />
       <node id="4950161090496559655" at="134,301,139,7" concept="6" />
       <node id="4950161090496559655" at="139,7,144,22" concept="4" />
-      <node id="8260330507836156626" at="151,0,156,0" concept="1" trace="Inline_Builder_dkp63v_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8260330507836156626" at="151,0,156,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8260330507836156626" at="161,0,166,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8260330507836156633" at="179,308,184,11" concept="6" />
       <node id="8260330507836156633" at="184,11,189,26" concept="4" />
@@ -1980,7 +1980,7 @@
       <scope id="4950161090496559655" at="56,39,57,32" />
       <scope id="3211321119092748822" at="84,41,85,118" />
       <scope id="3211321119092748822" at="93,15,94,40" />
-      <scope id="4950161090496559655" at="108,39,109,136" />
+      <scope id="4950161090496559655" at="108,39,109,126" />
       <scope id="4950161090496559655" at="136,39,137,113" />
       <scope id="8260330507836156626" at="157,41,158,32" />
       <scope id="8260330507836156626" at="163,28,164,20" />
@@ -2005,7 +2005,7 @@
       <scope id="4950161090496559655" at="136,0,139,0">
         <var name="it" id="4950161090496559655" />
       </scope>
-      <scope id="8260330507836156626" at="151,119,154,20" />
+      <scope id="8260330507836156626" at="151,109,154,20" />
       <scope id="8260330507836156626" at="157,0,160,0" />
       <scope id="8260330507836156633" at="181,0,184,0">
         <var name="it" id="8260330507836156633" />
@@ -2068,9 +2068,9 @@
       <unit id="3211321119092748822" at="83,102,87,7" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$1" />
       <unit id="4950161090496559655" at="107,74,111,9" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$2$1" />
       <unit id="4950161090496559655" at="135,102,139,5" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$3" />
-      <unit id="8260330507836156633" at="180,104,184,9" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$Inline_Builder_dkp63v_a2a$1" />
+      <unit id="8260330507836156633" at="180,104,184,9" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="4950161090496559655" at="105,42,124,5" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$2" />
-      <unit id="8260330507836156626" at="146,0,195,0" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$Inline_Builder_dkp63v_a2a" />
+      <unit id="8260330507836156626" at="146,0,195,0" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a$Inline_Builder0" />
       <unit id="4950161090496559655" at="41,0,196,0" name="jetbrains.mps.lang.migration.editor.DataDependency_EditorBuilder_a" />
     </file>
   </root>
@@ -3071,7 +3071,7 @@
       <node id="5722749943445027859" at="91,40,92,34" concept="2" />
       <node id="5722749943445027859" at="92,34,93,22" concept="7" />
       <node id="5820409521797704979" at="95,40,96,173" concept="6" />
-      <node id="5820409521797704979" at="100,39,101,145" concept="7" />
+      <node id="5820409521797704979" at="100,39,101,135" concept="7" />
       <node id="5820409521797704979" at="103,35,104,60" concept="2" />
       <node id="5820409521797704979" at="104,60,105,48" concept="2" />
       <node id="5820409521797704979" at="105,48,106,43" concept="2" />
@@ -3090,7 +3090,7 @@
       <node id="5820409521797704979" at="127,87,128,145" concept="7" />
       <node id="5820409521797704979" at="129,10,130,22" concept="7" />
       <node id="5722749943445027902" at="135,0,136,0" concept="3" trace="myReferencingNode" />
-      <node id="5722749943445027902" at="137,119,138,21" concept="9" />
+      <node id="5722749943445027902" at="137,109,138,21" concept="9" />
       <node id="5722749943445027902" at="138,21,139,42" concept="2" />
       <node id="5722749943445027902" at="139,42,140,20" concept="2" />
       <node id="5722749943445027902" at="143,41,144,32" concept="7" />
@@ -3132,7 +3132,7 @@
       <node id="5820409521797704979" at="98,72,103,35" concept="6" />
       <node id="5820409521797704979" at="120,301,125,7" concept="6" />
       <node id="5820409521797704979" at="125,7,130,22" concept="4" />
-      <node id="5722749943445027902" at="137,0,142,0" concept="1" trace="Inline_Builder_r5derk_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5722749943445027902" at="137,0,142,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5722749943445027902" at="147,0,152,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5722749943445027922" at="165,308,170,11" concept="6" />
       <node id="5722749943445027922" at="170,11,175,26" concept="4" />
@@ -3148,7 +3148,7 @@
       <node id="5820409521797704979" at="95,0,132,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="5820409521797704979" at="53,26,54,18" />
       <scope id="5820409521797704979" at="57,39,58,32" />
-      <scope id="5820409521797704979" at="100,39,101,145" />
+      <scope id="5820409521797704979" at="100,39,101,135" />
       <scope id="5820409521797704979" at="122,39,123,113" />
       <scope id="5722749943445027902" at="143,41,144,32" />
       <scope id="5722749943445027902" at="149,28,150,20" />
@@ -3167,7 +3167,7 @@
       <scope id="5820409521797704979" at="122,0,125,0">
         <var name="it" id="5820409521797704979" />
       </scope>
-      <scope id="5722749943445027902" at="137,119,140,20" />
+      <scope id="5722749943445027902" at="137,109,140,20" />
       <scope id="5722749943445027902" at="143,0,146,0" />
       <scope id="5722749943445027922" at="167,0,170,0">
         <var name="it" id="5722749943445027922" />
@@ -3230,9 +3230,9 @@
       <scope id="5820409521797704979" at="95,0,132,0" />
       <unit id="5820409521797704979" at="99,74,103,9" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$1$1" />
       <unit id="5820409521797704979" at="121,102,125,5" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$2" />
-      <unit id="5722749943445027922" at="166,104,170,9" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$Inline_Builder_r5derk_a3a$1" />
+      <unit id="5722749943445027922" at="166,104,170,9" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="5820409521797704979" at="97,42,109,5" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$1" />
-      <unit id="5722749943445027902" at="132,0,181,0" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$Inline_Builder_r5derk_a3a" />
+      <unit id="5722749943445027902" at="132,0,181,0" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a$Inline_Builder0" />
       <unit id="5820409521797704979" at="42,0,192,0" name="jetbrains.mps.lang.migration.editor.ProducedDataDeclaration_EditorBuilder_a" />
     </file>
   </root>
@@ -3369,7 +3369,7 @@
       <node id="6129256022887940263" at="68,31,69,48" concept="2" />
       <node id="6129256022887940262" at="69,48,70,22" concept="7" />
       <node id="6129256022887940262" at="72,40,73,176" concept="6" />
-      <node id="6129256022887940262" at="77,39,78,150" concept="7" />
+      <node id="6129256022887940262" at="77,39,78,140" concept="7" />
       <node id="6129256022887940262" at="80,38,81,60" concept="2" />
       <node id="6129256022887940262" at="81,60,82,48" concept="2" />
       <node id="6129256022887940262" at="82,48,83,58" concept="2" />
@@ -3395,7 +3395,7 @@
       <node id="6129256022887940262" at="114,87,115,145" concept="7" />
       <node id="6129256022887940262" at="116,10,117,22" concept="7" />
       <node id="6129256022887940266" at="122,0,123,0" concept="3" trace="myReferencingNode" />
-      <node id="6129256022887940266" at="124,119,125,21" concept="9" />
+      <node id="6129256022887940266" at="124,109,125,21" concept="9" />
       <node id="6129256022887940266" at="125,21,126,42" concept="2" />
       <node id="6129256022887940266" at="126,42,127,20" concept="2" />
       <node id="6129256022887940266" at="130,41,131,32" concept="7" />
@@ -3432,7 +3432,7 @@
       <node id="6129256022887940262" at="75,72,80,38" concept="6" />
       <node id="6129256022887940262" at="107,301,112,7" concept="6" />
       <node id="6129256022887940262" at="112,7,117,22" concept="4" />
-      <node id="6129256022887940266" at="124,0,129,0" concept="1" trace="Inline_Builder_637yhj_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6129256022887940266" at="124,0,129,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6129256022887940266" at="134,0,139,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6129256022887940267" at="155,308,160,11" concept="6" />
       <node id="6129256022887940267" at="160,11,165,26" concept="4" />
@@ -3445,7 +3445,7 @@
       <node id="6129256022887940262" at="72,0,119,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="6129256022887940262" at="56,26,57,18" />
       <scope id="6129256022887940262" at="60,39,61,32" />
-      <scope id="6129256022887940262" at="77,39,78,150" />
+      <scope id="6129256022887940262" at="77,39,78,140" />
       <scope id="6129256022887940262" at="109,39,110,113" />
       <scope id="6129256022887940266" at="130,41,131,32" />
       <scope id="6129256022887940266" at="136,28,137,20" />
@@ -3464,7 +3464,7 @@
       <scope id="6129256022887940262" at="109,0,112,0">
         <var name="it" id="6129256022887940262" />
       </scope>
-      <scope id="6129256022887940266" at="124,119,127,20" />
+      <scope id="6129256022887940266" at="124,109,127,20" />
       <scope id="6129256022887940266" at="130,0,133,0" />
       <scope id="6129256022887940267" at="157,0,160,0">
         <var name="it" id="6129256022887940267" />
@@ -3516,9 +3516,9 @@
       <scope id="6129256022887940262" at="72,0,119,0" />
       <unit id="6129256022887940262" at="76,74,80,9" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$1$1" />
       <unit id="6129256022887940262" at="108,102,112,5" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$2" />
-      <unit id="6129256022887940267" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$Inline_Builder_637yhj_a0a$1" />
+      <unit id="6129256022887940267" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="6129256022887940262" at="74,42,93,5" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$1" />
-      <unit id="6129256022887940266" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$Inline_Builder_637yhj_a0a" />
+      <unit id="6129256022887940266" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="6129256022887940262" at="45,0,172,0" name="jetbrains.mps.lang.migration.editor.ListPatternVariableReference_EditorBuilder_a" />
     </file>
   </root>
@@ -3545,7 +3545,7 @@
       <node id="8293956702609999793" at="66,31,67,48" concept="2" />
       <node id="7153805464398835506" at="67,48,68,22" concept="7" />
       <node id="7153805464398835506" at="70,40,71,179" concept="6" />
-      <node id="7153805464398835506" at="75,39,76,145" concept="7" />
+      <node id="7153805464398835506" at="75,39,76,135" concept="7" />
       <node id="7153805464398835506" at="78,41,79,60" concept="2" />
       <node id="7153805464398835506" at="79,60,80,48" concept="2" />
       <node id="7153805464398835506" at="80,48,81,58" concept="2" />
@@ -3570,7 +3570,7 @@
       <node id="7153805464398835506" at="111,87,112,145" concept="7" />
       <node id="7153805464398835506" at="113,10,114,22" concept="7" />
       <node id="8293956702609999794" at="119,0,120,0" concept="3" trace="myReferencingNode" />
-      <node id="8293956702609999794" at="121,119,122,21" concept="9" />
+      <node id="8293956702609999794" at="121,109,122,21" concept="9" />
       <node id="8293956702609999794" at="122,21,123,42" concept="2" />
       <node id="8293956702609999794" at="123,42,124,20" concept="2" />
       <node id="8293956702609999794" at="127,41,128,32" concept="7" />
@@ -3607,7 +3607,7 @@
       <node id="7153805464398835506" at="73,72,78,41" concept="6" />
       <node id="7153805464398835506" at="104,301,109,7" concept="6" />
       <node id="7153805464398835506" at="109,7,114,22" concept="4" />
-      <node id="8293956702609999794" at="121,0,126,0" concept="1" trace="Inline_Builder_tjtxbf_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8293956702609999794" at="121,0,126,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8293956702609999794" at="131,0,136,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8293956702609999796" at="152,308,157,11" concept="6" />
       <node id="8293956702609999796" at="157,11,162,26" concept="4" />
@@ -3620,7 +3620,7 @@
       <node id="7153805464398835506" at="70,0,116,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7153805464398835506" at="54,26,55,18" />
       <scope id="7153805464398835506" at="58,39,59,32" />
-      <scope id="7153805464398835506" at="75,39,76,145" />
+      <scope id="7153805464398835506" at="75,39,76,135" />
       <scope id="7153805464398835506" at="106,39,107,113" />
       <scope id="8293956702609999794" at="127,41,128,32" />
       <scope id="8293956702609999794" at="133,28,134,20" />
@@ -3639,7 +3639,7 @@
       <scope id="7153805464398835506" at="106,0,109,0">
         <var name="it" id="7153805464398835506" />
       </scope>
-      <scope id="8293956702609999794" at="121,119,124,20" />
+      <scope id="8293956702609999794" at="121,109,124,20" />
       <scope id="8293956702609999794" at="127,0,130,0" />
       <scope id="8293956702609999796" at="154,0,157,0">
         <var name="it" id="8293956702609999796" />
@@ -3691,9 +3691,9 @@
       <scope id="7153805464398835506" at="70,0,116,0" />
       <unit id="7153805464398835506" at="74,74,78,9" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$1$1" />
       <unit id="7153805464398835506" at="105,102,109,5" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$2" />
-      <unit id="8293956702609999796" at="153,104,157,9" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$Inline_Builder_tjtxbf_a0a$1" />
+      <unit id="8293956702609999796" at="153,104,157,9" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="7153805464398835506" at="72,42,91,5" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$1" />
-      <unit id="8293956702609999794" at="116,0,168,0" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$Inline_Builder_tjtxbf_a0a" />
+      <unit id="8293956702609999794" at="116,0,168,0" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="7153805464398835506" at="43,0,169,0" name="jetbrains.mps.lang.migration.editor.DataDependencyReference_EditorBuilder_a" />
     </file>
   </root>
@@ -3720,7 +3720,7 @@
       <node id="7262022590472072773" at="61,31,62,48" concept="2" />
       <node id="7308518162511507357" at="62,48,63,22" concept="7" />
       <node id="7308518162511507357" at="65,40,66,176" concept="6" />
-      <node id="7308518162511507357" at="70,39,71,148" concept="7" />
+      <node id="7308518162511507357" at="70,39,71,138" concept="7" />
       <node id="7308518162511507357" at="73,38,74,60" concept="2" />
       <node id="7308518162511507357" at="74,60,75,48" concept="2" />
       <node id="7308518162511507357" at="75,48,76,58" concept="2" />
@@ -3742,7 +3742,7 @@
       <node id="7308518162511507357" at="103,87,104,145" concept="7" />
       <node id="7308518162511507357" at="105,10,106,22" concept="7" />
       <node id="7262022590472072774" at="111,0,112,0" concept="3" trace="myReferencingNode" />
-      <node id="7262022590472072774" at="113,119,114,21" concept="9" />
+      <node id="7262022590472072774" at="113,109,114,21" concept="9" />
       <node id="7262022590472072774" at="114,21,115,42" concept="2" />
       <node id="7262022590472072774" at="115,42,116,20" concept="2" />
       <node id="7262022590472072774" at="119,41,120,45" concept="7" />
@@ -3765,7 +3765,7 @@
       <node id="7308518162511507357" at="68,72,73,38" concept="6" />
       <node id="7308518162511507357" at="96,301,101,7" concept="6" />
       <node id="7308518162511507357" at="101,7,106,22" concept="4" />
-      <node id="7262022590472072774" at="113,0,118,0" concept="1" trace="Inline_Builder_m9k0nt_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7262022590472072774" at="113,0,118,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7262022590472072774" at="123,0,128,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7308518162511507357" at="79,0,86,0" concept="5" trace="createErrorCell#(Ljava/lang/String;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="7308518162511507357" at="57,0,65,0" concept="5" trace="createCollection_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -3775,7 +3775,7 @@
       <node id="7308518162511507357" at="65,0,108,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7308518162511507357" at="49,26,50,18" />
       <scope id="7308518162511507357" at="53,39,54,32" />
-      <scope id="7308518162511507357" at="70,39,71,148" />
+      <scope id="7308518162511507357" at="70,39,71,138" />
       <scope id="7308518162511507357" at="98,39,99,113" />
       <scope id="7262022590472072774" at="119,41,120,45" />
       <scope id="7262022590472072774" at="125,28,126,20" />
@@ -3789,7 +3789,7 @@
       <scope id="7308518162511507357" at="98,0,101,0">
         <var name="it" id="7308518162511507357" />
       </scope>
-      <scope id="7262022590472072774" at="113,119,116,20" />
+      <scope id="7262022590472072774" at="113,109,116,20" />
       <scope id="7262022590472072774" at="119,0,122,0" />
       <scope id="7308518162511507357" at="42,0,46,0">
         <var name="context" id="7308518162511507357" />
@@ -3834,7 +3834,7 @@
       <unit id="7308518162511507357" at="69,74,73,9" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a$1$1" />
       <unit id="7308518162511507357" at="97,102,101,5" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a$2" />
       <unit id="7308518162511507357" at="67,42,86,5" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a$1" />
-      <unit id="7262022590472072774" at="108,0,138,0" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a$Inline_Builder_m9k0nt_a0a" />
+      <unit id="7262022590472072774" at="108,0,138,0" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a$Inline_Builder0" />
       <unit id="7308518162511507357" at="38,0,139,0" name="jetbrains.mps.lang.migration.editor.RefactoringOrderDependency_EditorBuilder_a" />
     </file>
   </root>
@@ -3875,7 +3875,7 @@
       <node id="7431903976166107734" at="84,40,85,34" concept="2" />
       <node id="7431903976166107734" at="85,34,86,22" concept="7" />
       <node id="7431903976166107720" at="88,40,89,171" concept="6" />
-      <node id="7431903976166107720" at="93,39,94,141" concept="7" />
+      <node id="7431903976166107720" at="93,39,94,131" concept="7" />
       <node id="7431903976166107720" at="96,33,97,60" concept="2" />
       <node id="7431903976166107720" at="97,60,98,48" concept="2" />
       <node id="7431903976166107720" at="98,48,99,58" concept="2" />
@@ -3897,7 +3897,7 @@
       <node id="7431903976166107720" at="126,87,127,145" concept="7" />
       <node id="7431903976166107720" at="128,10,129,22" concept="7" />
       <node id="7431903976166108400" at="134,0,135,0" concept="3" trace="myReferencingNode" />
-      <node id="7431903976166108400" at="136,119,137,21" concept="9" />
+      <node id="7431903976166108400" at="136,109,137,21" concept="9" />
       <node id="7431903976166108400" at="137,21,138,42" concept="2" />
       <node id="7431903976166108400" at="138,42,139,20" concept="2" />
       <node id="7431903976166108400" at="142,41,143,45" concept="7" />
@@ -3933,7 +3933,7 @@
       <node id="7431903976166107720" at="91,72,96,33" concept="6" />
       <node id="7431903976166107720" at="119,301,124,7" concept="6" />
       <node id="7431903976166107720" at="124,7,129,22" concept="4" />
-      <node id="7431903976166108400" at="136,0,141,0" concept="1" trace="Inline_Builder_ni94rq_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7431903976166108400" at="136,0,141,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7431903976166108400" at="146,0,151,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7431903976166107733" at="73,0,79,0" concept="5" trace="createConstant_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="7431903976166107720" at="102,0,109,0" concept="5" trace="createErrorCell#(Ljava/lang/String;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -3948,7 +3948,7 @@
       <scope id="3194280909367711031" at="157,39,157,39" />
       <scope id="7431903976166107720" at="54,26,55,18" />
       <scope id="7431903976166107720" at="58,39,59,32" />
-      <scope id="7431903976166107720" at="93,39,94,141" />
+      <scope id="7431903976166107720" at="93,39,94,131" />
       <scope id="7431903976166107720" at="121,39,122,113" />
       <scope id="7431903976166108400" at="142,41,143,45" />
       <scope id="7431903976166108400" at="148,28,149,20" />
@@ -3967,7 +3967,7 @@
       <scope id="7431903976166107720" at="121,0,124,0">
         <var name="it" id="7431903976166107720" />
       </scope>
-      <scope id="7431903976166108400" at="136,119,139,20" />
+      <scope id="7431903976166108400" at="136,109,139,20" />
       <scope id="7431903976166108400" at="142,0,145,0" />
       <scope id="3194280909367711031" at="154,0,157,0" />
       <scope id="3194280909367711031" at="159,0,162,0">
@@ -4029,9 +4029,9 @@
       <scope id="7431903976166107720" at="88,0,131,0" />
       <unit id="7431903976166107720" at="92,74,96,9" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$1$1" />
       <unit id="7431903976166107720" at="120,102,124,5" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$2" />
-      <unit id="3194280909367711031" at="153,90,162,7" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$Inline_Builder_ni94rq_a2a$1" />
+      <unit id="3194280909367711031" at="153,90,162,7" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="7431903976166107720" at="90,42,109,5" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$1" />
-      <unit id="7431903976166108400" at="131,0,172,0" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$Inline_Builder_ni94rq_a2a" />
+      <unit id="7431903976166108400" at="131,0,172,0" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="7431903976166107720" at="43,0,182,0" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_EditorBuilder_a" />
     </file>
   </root>
@@ -4370,7 +4370,7 @@
       <node id="7527743013695058366" at="68,31,69,48" concept="2" />
       <node id="7527743013695058365" at="69,48,70,22" concept="7" />
       <node id="7527743013695058365" at="72,40,73,176" concept="6" />
-      <node id="7527743013695058365" at="77,39,78,150" concept="7" />
+      <node id="7527743013695058365" at="77,39,78,140" concept="7" />
       <node id="7527743013695058365" at="80,38,81,60" concept="2" />
       <node id="7527743013695058365" at="81,60,82,48" concept="2" />
       <node id="7527743013695058365" at="82,48,83,58" concept="2" />
@@ -4396,7 +4396,7 @@
       <node id="7527743013695058365" at="114,87,115,145" concept="7" />
       <node id="7527743013695058365" at="116,10,117,22" concept="7" />
       <node id="7527743013695058369" at="122,0,123,0" concept="3" trace="myReferencingNode" />
-      <node id="7527743013695058369" at="124,119,125,21" concept="9" />
+      <node id="7527743013695058369" at="124,109,125,21" concept="9" />
       <node id="7527743013695058369" at="125,21,126,42" concept="2" />
       <node id="7527743013695058369" at="126,42,127,20" concept="2" />
       <node id="7527743013695058369" at="130,41,131,32" concept="7" />
@@ -4433,7 +4433,7 @@
       <node id="7527743013695058365" at="75,72,80,38" concept="6" />
       <node id="7527743013695058365" at="107,301,112,7" concept="6" />
       <node id="7527743013695058365" at="112,7,117,22" concept="4" />
-      <node id="7527743013695058369" at="124,0,129,0" concept="1" trace="Inline_Builder_1x8nz9_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7527743013695058369" at="124,0,129,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7527743013695058369" at="134,0,139,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7527743013695058370" at="155,308,160,11" concept="6" />
       <node id="7527743013695058370" at="160,11,165,26" concept="4" />
@@ -4446,7 +4446,7 @@
       <node id="7527743013695058365" at="72,0,119,0" concept="5" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="7527743013695058365" at="56,26,57,18" />
       <scope id="7527743013695058365" at="60,39,61,32" />
-      <scope id="7527743013695058365" at="77,39,78,150" />
+      <scope id="7527743013695058365" at="77,39,78,140" />
       <scope id="7527743013695058365" at="109,39,110,113" />
       <scope id="7527743013695058369" at="130,41,131,32" />
       <scope id="7527743013695058369" at="136,28,137,20" />
@@ -4465,7 +4465,7 @@
       <scope id="7527743013695058365" at="109,0,112,0">
         <var name="it" id="7527743013695058365" />
       </scope>
-      <scope id="7527743013695058369" at="124,119,127,20" />
+      <scope id="7527743013695058369" at="124,109,127,20" />
       <scope id="7527743013695058369" at="130,0,133,0" />
       <scope id="7527743013695058370" at="157,0,160,0">
         <var name="it" id="7527743013695058370" />
@@ -4517,9 +4517,9 @@
       <scope id="7527743013695058365" at="72,0,119,0" />
       <unit id="7527743013695058365" at="76,74,80,9" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$1$1" />
       <unit id="7527743013695058365" at="108,102,112,5" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$2" />
-      <unit id="7527743013695058370" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$Inline_Builder_1x8nz9_a0a$1" />
+      <unit id="7527743013695058370" at="156,104,160,9" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="7527743013695058365" at="74,42,93,5" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$1" />
-      <unit id="7527743013695058369" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$Inline_Builder_1x8nz9_a0a" />
+      <unit id="7527743013695058369" at="119,0,171,0" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="7527743013695058365" at="45,0,172,0" name="jetbrains.mps.lang.migration.editor.NodePatternVariableReference_EditorBuilder_a" />
     </file>
   </root>

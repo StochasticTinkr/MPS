@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,7 +27,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(ChangeSignatureOfStaticMethod_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public ChangeSignatureOfStaticMethod_Test() {
     super(ourParamCache);
@@ -32,11 +36,15 @@ public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest {
 
   @Test
   public void test_ChangeSignatureOfStaticMethod() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test$TestBody", "test_ChangeSignatureOfStaticMethod", true);
+    new ChangeSignatureOfStaticMethod_Test.TestBody(this).test_ChangeSignatureOfStaticMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ChangeSignatureOfStaticMethod() throws Exception {
       addNodeById("1230052903079");
       addNodeById("1230052903110");

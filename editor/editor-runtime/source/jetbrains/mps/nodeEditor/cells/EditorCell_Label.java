@@ -28,8 +28,8 @@ import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
-import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -52,7 +52,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -477,22 +476,24 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   @Override
-  public boolean processTextChanged(InputMethodEvent e) {
-    String text = InputMethodListenerImpl.getText(e);
-    if (!isEditable() || text == null) {
+  public boolean processTextChanged(TextChangeEvent textChangeEvent) {
+    if (!isEditable()) {
       return false;
     }
-    ModelAccess modelAccess = getContext().getRepository().getModelAccess();
 
-    if (!myTextLine.hasNonTrivialSelection()) {
-      // selecting last symbol entered by user in order to replace if with the result fo input method processing
-      int caretPosition = getCaretPosition();
-      if (isCaretPositionAllowed(caretPosition - 1)) {
-        setCaretPosition(caretPosition - 1, true);
-      }
+    if (myTextLine.hasNonTrivialSelection()) {
+      myTextLine.resetSelection();
     }
-    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(text, true, null, getContext());
-    modelAccess.executeCommand(keyTypedCommand);
+    int selectionStart = Math.max(getCaretPosition() - textChangeEvent.getOffset(), 0);
+    while (!isCaretPositionAllowed(selectionStart) && selectionStart < getCaretPosition()) {
+      selectionStart++;
+    }
+    if (selectionStart < getCaretPosition()) {
+      setCaretPosition(selectionStart, true);
+    }
+
+    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(textChangeEvent.getText(), true, null, getContext());
+    getContext().getRepository().getModelAccess().executeCommand(keyTypedCommand);
     if (keyTypedCommand.getResult()) {
       getEditor().relayout();
     }

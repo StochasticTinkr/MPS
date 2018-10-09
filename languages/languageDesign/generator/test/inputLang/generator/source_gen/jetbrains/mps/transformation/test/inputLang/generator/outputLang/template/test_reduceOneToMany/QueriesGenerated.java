@@ -14,19 +14,19 @@ import java.util.ArrayList;
 
 @Generated
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_a0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_0(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "reduceOneToMany", "none");
   }
-  public static boolean baseMappingRule_Condition_a0_0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_1(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "reduceOneToMany", "none");
   }
-  public static boolean baseMappingRule_Condition_a0_1(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_6_0(final BaseMappingRuleContext _context) {
     return false;
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getChildren(_context.getNode());
   }
-  public static Iterable<SNode> sourceNodesQuery_a1a0(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2_0(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
 }

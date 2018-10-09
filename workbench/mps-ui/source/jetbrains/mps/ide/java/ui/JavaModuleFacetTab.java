@@ -32,7 +32,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.ItemRemovable;
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser;
@@ -73,7 +73,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private final JavaModuleFacetImpl myJavaModuleFacet;
 
   public JavaModuleFacetTab(JavaModuleFacetImpl javaModuleFacet) {
-    super(javaModuleFacet.getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("facet.java.tip"));
+    super(javaModuleFacet.getFacetPresentation(), General.Java, PropertiesBundle.message("facet.java.tip"));
     myJavaModuleFacet = javaModuleFacet;
   }
 

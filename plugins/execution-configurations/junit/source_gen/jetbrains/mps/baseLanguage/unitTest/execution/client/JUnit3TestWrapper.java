@@ -13,28 +13,28 @@ import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   private final String myQualifiedName;
   private final String myName;
-  private final List<ITestNodeWrapper> myMethods;
+  private final List<JUnit3MethodWrapper> myMethods;
 
   public JUnit3TestWrapper(SNode classConcept) {
-    super(classConcept, false, AbstractTestWrapper.needsMPS(classConcept));
+    super(classConcept, true, AbstractTestWrapper.needsMPS(classConcept));
     myQualifiedName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(classConcept);
     myName = SPropertyOperations.getString(classConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     myMethods = Sequence.fromIterable(SNodeOperations.ofConcept(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classConcept)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return JUnit3MethodWrapper.isTestMethod(it);
       }
-    }).select(new ISelector<SNode, ITestNodeWrapper>() {
-      public ITestNodeWrapper select(SNode it) {
-        return TestNodeWrapperFactory.tryToWrap(it);
+    }).select(new ISelector<SNode, JUnit3MethodWrapper>() {
+      public JUnit3MethodWrapper select(SNode it) {
+        return new JUnit3MethodWrapper(JUnit3TestWrapper.this, it);
       }
-    }).where(new NotNullWhereFilter<ITestNodeWrapper>()).toListSequence();
+    }).toListSequence();
   }
 
   @Override
@@ -56,6 +56,10 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    return myMethods;
+    return ListSequence.fromList(myMethods).select(new ISelector<JUnit3MethodWrapper, ITestNodeWrapper>() {
+      public ITestNodeWrapper select(JUnit3MethodWrapper it) {
+        return (ITestNodeWrapper) it;
+      }
+    });
   }
 }

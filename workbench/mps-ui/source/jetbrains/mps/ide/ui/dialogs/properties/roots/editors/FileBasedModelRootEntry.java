@@ -31,11 +31,10 @@ import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -59,7 +58,6 @@ import java.awt.Stroke;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
 
 import static com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST;
 import static com.intellij.uiDesigner.core.GridConstraints.ANCHOR_NORTHWEST;
@@ -178,7 +176,11 @@ public final class FileBasedModelRootEntry implements ModelRootEntry<FileBasedMo
     if (virtualFile != null && virtualFile.exists()) {
       HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(pathPresentation, foreground);
       hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
-      hyperlinkLabel.addHyperlinkListener(e -> myFileBasedModelRootEditor.selectFile(sourceRoot.getAbsolutePath()));
+      hyperlinkLabel.addHyperlinkListener(e -> {
+        if (myFileBasedModelRootEditor != null) {
+          myFileBasedModelRootEditor.selectFile(sourceRoot.getAbsolutePath());
+        }
+      });
       registerTextComponent(hyperlinkLabel, foreground);
       label2Return = hyperlinkLabel;
     }

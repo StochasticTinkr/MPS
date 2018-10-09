@@ -44,7 +44,7 @@ public class CustomMapCreator_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_dxd0az_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_dxd0az_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_dxd0az_a() {
       super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator"), MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, 0x15e2150d4bff8a6aL, "containerDeclaration"));

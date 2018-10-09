@@ -5,11 +5,12 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
-/*package*/ class TestMethodTreeNode extends BaseTestTreeNode {
+/*package*/ class TestMethodTreeNode extends NonRootTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestMethod;
 
   public TestMethodTreeNode(@NotNull ITestNodeWrapper testMethod) {
+    assert !(testMethod.isTestCase());
     setUserObject(testMethod);
     myTestMethod = testMethod;
     setNodeIdentifier(myTestMethod.getNodePointer().toString());
@@ -35,7 +36,8 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
   }
 
   @Override
-  public ITestNodeWrapper getTestWrapper() {
+  @NotNull
+  public ITestNodeWrapper getTestNode() {
     return myTestMethod;
   }
 }

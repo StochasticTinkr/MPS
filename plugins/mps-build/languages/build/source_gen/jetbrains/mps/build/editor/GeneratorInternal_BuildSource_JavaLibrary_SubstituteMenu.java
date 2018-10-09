@@ -44,7 +44,7 @@ public class GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu extends Su
   }
 
 
-  public static class SMP_ReferenceScope_vxr8sy_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_vxr8sy_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_vxr8sy_a() {
       super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary"), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, 0x44e5dd192e7c0e70L, "targetLibrary"));

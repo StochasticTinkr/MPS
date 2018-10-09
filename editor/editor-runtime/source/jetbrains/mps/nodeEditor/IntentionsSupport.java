@@ -23,7 +23,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -36,17 +36,21 @@ import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.intentions.icons.IntentionIconProvider;
+import jetbrains.mps.nodeEditor.EditorComponent.EditorDisposeListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -54,17 +58,15 @@ import javax.swing.AbstractAction;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -72,16 +74,16 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
-  static final long INTENTION_SHOW_DELAY = 1000;
+  private static final long INTENTION_SHOW_DELAY = 1000;
 
   private AbstractAction myShowIntentionsAction;
-  private Point myLightBulbLocation = new Point();
-  private LightBulbMenu myLightBulb;
+  private final Point myLightBulbLocation = new Point();
+  private final LightBulbMenu myLightBulb;
 
-  private AtomicReference<Thread> myShowIntentionsThread = new AtomicReference<Thread>();
+  private final AtomicReference<Thread> myShowIntentionsThread = new AtomicReference<>();
 
   @NotNull
-  private EditorComponent myEditor;
+  private final EditorComponent myEditor;
 
   public IntentionsSupport(@NotNull EditorComponent editor) {
     myEditor = editor;
@@ -103,7 +105,7 @@ public class IntentionsSupport {
     };
     myEditor.registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    myEditor.addFocusListener(new FocusAdapter() {
+    final FocusAdapter focusListener = new FocusAdapter() {
       @Override
       public void focusGained(FocusEvent e) {
         updateIntentionsStatus();
@@ -112,11 +114,14 @@ public class IntentionsSupport {
       @Override
       public void focusLost(FocusEvent e) {
         hideLightBulb();
+        // If editor lost focus, thread can be stopped - it will be any way restarted on focus gain
+        stopIntentionThread();
       }
-    });
+    };
+    myEditor.addFocusListener(focusListener);
 
 
-    myEditor.getSelectionManager().addSelectionListener((editorComponent, oldSelection, newSelection) -> {
+    final SelectionListener selectionListener = (editorComponent, oldSelection, newSelection) -> {
       if (oldSelection == newSelection) {
         return;
       }
@@ -124,25 +129,42 @@ public class IntentionsSupport {
         return;
       }
       updateIntentionsStatus();
-    });
+    };
+    myEditor.getSelectionManager().addSelectionListener(selectionListener);
+
+    final EditorDisposeListener disposeListener = new EditorDisposeListener() {
+      @Override
+      public void editorWillBeDisposed(@NotNull EditorComponent component) {
+        stopIntentionThread();
+        myEditor.removeFocusListener(focusListener);
+        myEditor.getSelectionManager().removeSelectionListener(selectionListener);
+        myEditor.removeDisposeListener(this);
+      }
+    };
+    myEditor.addDisposeListener(disposeListener);
   }
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) {
       return;
     }
-    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor) || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) {
+    final SModel model = myEditor.getSelectedNode() == null ? null : myEditor.getSelectedNode().getModel();
+    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor) || model == null || SModelOperations.isReadOnly(model)) {
       return;
     }
 
     showIntentionsMenu();
   }
 
-  private void updateIntentionsStatus() {
-    Thread thread = myShowIntentionsThread.get();
+  private void stopIntentionThread() {
+    Thread thread = myShowIntentionsThread.getAndSet(null);
     if (thread != null) {
       thread.interrupt();
     }
+  }
+
+  private void updateIntentionsStatus() {
+    stopIntentionThread();
 
     hideLightBulb();
 
@@ -156,15 +178,9 @@ public class IntentionsSupport {
           }
 
           final boolean[] forceReturn = {false};
-          try {
-            SwingUtilities.invokeAndWait(() -> {
-              myEditor.getRepository().getModelAccess().runReadAction(()->{
-                forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor);
-              });
-            });
-          } catch (InterruptedException | InvocationTargetException e) {
-            return;
-          }
+          ApplicationManager.getApplication().invokeAndWait(
+              () -> myEditor.getRepository().getModelAccess().runReadAction(
+                  () -> forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor)));
 
           if (forceReturn[0]) {
             return;
@@ -197,9 +213,7 @@ public class IntentionsSupport {
           });
 
         } catch (InterruptedException e) {
-
-        } catch (RuntimeInterruptedException e) {
-
+          // Can be interrupted on editor focus lost or dispose
         } finally {
           myShowIntentionsThread.compareAndSet(this, null);
         }
@@ -274,9 +288,7 @@ public class IntentionsSupport {
 
     List<AnAction> intentionActions = new ArrayList<>();
     for (IntentionActionsProvider provider : Extensions.getExtensions(IntentionActionsProvider.EP_NAME)) {
-      for (AnAction action : provider.getIntentionActions(intention)) {
-        intentionActions.add(action);
-      }
+      intentionActions.addAll(Arrays.asList(provider.getIntentionActions(intention)));
     }
 
     if (intentionActions.isEmpty()) {
@@ -307,8 +319,7 @@ public class IntentionsSupport {
 
   private BaseGroup getIntentionsGroup(final DataContext dataContext) {
     // intentions
-    List<Pair<IntentionExecutable, SNode>> groupItems = new ArrayList<>();
-    groupItems.addAll(getEnabledIntentions());
+    List<Pair<IntentionExecutable, SNode>> groupItems = new ArrayList<>(getEnabledIntentions());
 
     // actions as intentions
     List<AnAction> actions = new ArrayList<>();
@@ -397,6 +408,12 @@ public class IntentionsSupport {
     return result;
   }
 
+
+  /**
+   * @deprecated is not used any more
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public boolean isLightBulbVisible() {
     return myLightBulb.isVisible();
   }

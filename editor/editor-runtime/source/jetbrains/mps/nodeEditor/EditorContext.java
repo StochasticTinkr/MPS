@@ -28,7 +28,6 @@ import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;

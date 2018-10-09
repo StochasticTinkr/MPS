@@ -44,7 +44,7 @@ public class BwfSubTaskDependency_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_oyyw70_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_oyyw70_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_oyyw70_a() {
       super(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, 0x2670d5989d5b49b9L, "target"));

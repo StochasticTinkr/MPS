@@ -17,7 +17,6 @@ package org.jetbrains.mps.util;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 

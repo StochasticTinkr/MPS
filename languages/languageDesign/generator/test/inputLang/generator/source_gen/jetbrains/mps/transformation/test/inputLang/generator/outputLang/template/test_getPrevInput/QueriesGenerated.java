@@ -18,85 +18,85 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 
 @Generated
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_a0(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_0(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "getPrevInputTest", "none");
   }
-  public static boolean baseMappingRule_Condition_a1(final BaseMappingRuleContext _context) {
+  public static boolean rule_Condition_0_1(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "getPrevInputTest", "none");
   }
-  public static Object propertyMacro_GetPropertyValue_12023272066760(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_0(final PropertyMacroContext _context) {
     SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
     return "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_12023277787450(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_1(final PropertyMacroContext _context) {
     SNode inputNode = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
     return "LEVEL 1: " + SPropertyOperations.getString(inputNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_12023279494460(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_2(final PropertyMacroContext _context) {
     SNode inputNode = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
     return "LEVEL 2: " + SPropertyOperations.getString(inputNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_12022564955460(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_3(final PropertyMacroContext _context) {
     return "created from " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_12023384670410(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
     return "created from " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static boolean ifMacro_Condition_12023277787450(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1_0(final IfMacroContext _context) {
     return true;
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
     _context.showInformationMessage(_context.getNode(), "MAP LEVEL1 " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a1a(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_1(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL, 0x117ebec4674L, "inputChild"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a2a(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_2(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL, 0x117ebec4674L, "inputChild"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a0a_0(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a1a_0(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2_1(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL, 0x117ebec4674L, "inputChild"));
   }
-  public static Iterable<SNode> sourceNodesQuery_a2a_0(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2_2(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL, 0x117ebec4674L, "inputChild"));
   }
-  public static SNode mapSrcMacro_mapper_12023384670420(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_map_2_0(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
     String text = "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), text);
     return result;
   }
-  public static SNode mapSrcMacro_mapper_12023384670610(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_map_2_1(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
     String text = "LEVEL 1: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), text);
     return result;
   }
-  public static SNode mapSrcMacro_mapper_12023384670850(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_map_2_2(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
     String text = "LEVEL 2: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), text);
     return result;
   }
-  public static void mapSrcMacro_post_mapper_12022564955460(final MapSrcMacroPostProcContext _context) {
+  public static void mapSrcMacro_post_1_0(final MapSrcMacroPostProcContext _context) {
     _context.showInformationMessage(_context.getNode(), "POST-PROC LEVEL1 " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static void mapSrcMacro_post_mapper_12022564955461(final MapSrcMacroPostProcContext _context) {
+  public static void mapSrcMacro_post_1_1(final MapSrcMacroPostProcContext _context) {
     _context.showInformationMessage(_context.getNode(), "TEST post-proc (I in)");
     _context.showInformationMessage(_context.getOutputNode(), "TEST post-proc (I out)");
   }
-  public static void mapSrcMacro_post_mapper_12023384670420(final MapSrcMacroPostProcContext _context) {
+  public static void mapSrcMacro_post_2_0(final MapSrcMacroPostProcContext _context) {
     _context.showInformationMessage(_context.getNode(), "TEST post proc (II in)");
     _context.showInformationMessage(_context.getOutputNode(), "TEST post proc (II out)");
   }
-  public static void mapSrcMacro_post_mapper_12023384670850(final MapSrcMacroPostProcContext _context) {
+  public static void mapSrcMacro_post_2_1(final MapSrcMacroPostProcContext _context) {
     _context.showInformationMessage(_context.getOutputNode(), "TEST post-proc (III)");
   }
 }

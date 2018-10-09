@@ -44,7 +44,7 @@ public class ListPatternVariableReference_SubstituteMenu extends SubstituteMenuB
   }
 
 
-  public static class SMP_ReferenceScope_dmsze5_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_dmsze5_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_dmsze5_a() {
       super(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, 0x550f7de0eda8c07bL, "declaration"));

@@ -134,6 +134,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
@@ -328,6 +331,9 @@
                   <node concept="1pGfFk" id="5vTxdEzyTYU" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="1jxXqW" id="2qFJdjDA_N2" role="37wK5m" />
+                    <node concept="Xl_RD" id="4ABEs7CXaG6" role="37wK5m">
+                      <property role="Xl_RC" value="testtest" />
+                    </node>
                     <node concept="37vLTw" id="5vTxdEzyTYV" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzyTYt" resolve="testNodes" />
                     </node>
@@ -500,7 +506,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="2SyXq5Nk0cL" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -545,7 +551,7 @@
                           <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                         </node>
                         <node concept="liA8E" id="2SyXq5Nj49Z" role="2OqNvi">
-                          <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                          <ref role="37wK5l" to="sfqd:7B_GGkKFYTc" resolve="getFailedTests" />
                         </node>
                       </node>
                       <node concept="3cpWs3" id="5vTxdEzyTZI" role="3uHU7B">
@@ -558,7 +564,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5vTxdEzyTZO" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -574,7 +580,7 @@
                     <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                   </node>
                   <node concept="liA8E" id="2SyXq5NiRZR" role="2OqNvi">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                    <ref role="37wK5l" to="sfqd:7B_GGkKFYTc" resolve="getFailedTests" />
                   </node>
                 </node>
               </node>
@@ -609,7 +615,7 @@
                           <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                         </node>
                         <node concept="liA8E" id="2SyXq5NjpGv" role="2OqNvi">
-                          <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                          <ref role="37wK5l" to="sfqd:7B_GGkKFYTc" resolve="getFailedTests" />
                         </node>
                       </node>
                       <node concept="3cpWs3" id="2SyXq5NjpGw" role="3uHU7B">
@@ -625,7 +631,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="2SyXq5NjpGA" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -641,7 +647,7 @@
                     <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                   </node>
                   <node concept="liA8E" id="2SyXq5NjpGH" role="2OqNvi">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_ffE" resolve="getCompletedTests" />
+                    <ref role="37wK5l" to="sfqd:7B_GGkKFCvn" resolve="getCompletedTests" />
                   </node>
                 </node>
               </node>
@@ -874,6 +880,9 @@
                   <node concept="1pGfFk" id="5vTxdEzz10z" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="1jxXqW" id="2qFJdjDACkA" role="37wK5m" />
+                    <node concept="Xl_RD" id="4ABEs7CXkYX" role="37wK5m">
+                      <property role="Xl_RC" value="testtest" />
+                    </node>
                     <node concept="37vLTw" id="5vTxdEzz10$" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzz122" resolve="testNodes" />
                     </node>
@@ -1186,7 +1195,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5vTxdEzz11t" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>
@@ -1200,25 +1209,6 @@
                 <node concept="10M0yZ" id="5vTxdEzAB2K" role="3uHU7w">
                   <ref role="1PxDUh" to="ic9i:5vt46J2P0fS" resolve="FakeProcess" />
                   <ref role="3cqZAo" to="ic9i:5vTxdEz_7L3" resolve="TERMINATION_CODE" />
-                </node>
-              </node>
-              <node concept="3eNFk2" id="5vTxdEzz11z" role="3eNLev">
-                <node concept="3eOVzh" id="5vTxdEzz11$" role="3eO9$A">
-                  <node concept="3cmrfG" id="5vTxdEzz11_" role="3uHU7w">
-                    <property role="3cmrfH" value="0" />
-                  </node>
-                  <node concept="37vLTw" id="5vTxdEzAJsi" role="3uHU7B">
-                    <ref role="3cqZAo" node="5vTxdEzAGtO" resolve="exitcode" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="5vTxdEzz11B" role="3eOfB_">
-                  <node concept="3xETmq" id="5vTxdEzz11C" role="3cqZAp">
-                    <node concept="3_1$Yv" id="5vTxdEzz11D" role="3_9lra">
-                      <node concept="Xl_RD" id="5vTxdEzz11E" role="3_1BAH">
-                        <property role="Xl_RC" value="Process is running for too long" />
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -1325,6 +1315,37 @@
         </node>
       </node>
       <node concept="3clFbS" id="7iQDiGjjSJh" role="3clF47">
+        <node concept="3clFbF" id="xTUx3Lkz1W" role="3cqZAp">
+          <node concept="2ShNRf" id="xTUx3Lkz1X" role="3clFbG">
+            <node concept="YeOm9" id="xTUx3Lkz1Y" role="2ShVmc">
+              <node concept="1Y3b0j" id="xTUx3Lkz1Z" role="YeSDq">
+                <property role="2bfB8j" value="true" />
+                <ref role="1Y3XeK" to="9w4s:~WaitFor" resolve="WaitFor" />
+                <ref role="37wK5l" to="9w4s:~WaitFor.&lt;init&gt;(int)" resolve="WaitFor" />
+                <node concept="3Tm1VV" id="xTUx3Lkz20" role="1B3o_S" />
+                <node concept="3clFb_" id="xTUx3Lkz21" role="jymVt">
+                  <property role="1EzhhJ" value="false" />
+                  <property role="TrG5h" value="condition" />
+                  <property role="DiZV1" value="false" />
+                  <property role="IEkAT" value="false" />
+                  <node concept="3Tmbuc" id="xTUx3Lkz22" role="1B3o_S" />
+                  <node concept="10P_77" id="xTUx3Lkz23" role="3clF45" />
+                  <node concept="3clFbS" id="xTUx3Lkz24" role="3clF47">
+                    <node concept="3clFbF" id="xTUx3Lkz25" role="3cqZAp">
+                      <node concept="3clFbT" id="xTUx3Lk_A$" role="3clFbG">
+                        <property role="3clFbU" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cmrfG" id="xTUx3Lkz2a" role="37wK5m">
+                  <property role="3cmrfH" value="1000" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="xTUx3Lkz1E" role="3cqZAp" />
         <node concept="3clFbF" id="7iQDiGjjSJi" role="3cqZAp">
           <node concept="2ShNRf" id="7iQDiGjjSJj" role="3clFbG">
             <node concept="YeOm9" id="7iQDiGjjSJk" role="2ShVmc">
@@ -1493,6 +1514,9 @@
                   <node concept="1pGfFk" id="5XEoQWrnLC" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="1jxXqW" id="2qFJdjDAEin" role="37wK5m" />
+                    <node concept="Xl_RD" id="4ABEs7CXlQM" role="37wK5m">
+                      <property role="Xl_RC" value="testtest" />
+                    </node>
                     <node concept="37vLTw" id="5XEoQWrnLD" role="37wK5m">
                       <ref role="3cqZAo" node="5XEoQWrnLb" resolve="testNodes" />
                     </node>
@@ -1638,7 +1662,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5XEoQWrnMy" role="3uHU7w">
-                          <property role="Xl_RC" value=", but " />
+                          <property role="Xl_RC" value=", not to " />
                         </node>
                       </node>
                     </node>

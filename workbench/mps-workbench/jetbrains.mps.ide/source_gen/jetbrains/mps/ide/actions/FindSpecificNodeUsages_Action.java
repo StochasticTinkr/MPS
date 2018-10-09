@@ -76,6 +76,5 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
         fuh.invoke();
       }
     });
-
   }
 }

@@ -50,7 +50,7 @@ public class GetToolInProjectOperation_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_8l9mrv_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_8l9mrv_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_8l9mrv_a() {
       super(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2115L, "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation"), MetaAdapterFactory.getReferenceLink(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2115L, 0x9766f9338aa2116L, "tool"));
@@ -72,7 +72,7 @@ public class GetToolInProjectOperation_SubstituteMenu extends SubstituteMenuBase
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new GetToolInProjectOperation_SubstituteMenu.SMP_ReferenceScope_8l9mrv_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

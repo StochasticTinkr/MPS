@@ -44,7 +44,7 @@ public class PropertyQualifier_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_tf6bsx_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_tf6bsx_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_tf6bsx_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccadL, "jetbrains.mps.lang.smodel.structure.PropertyQualifier"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccadL, 0x26b292a5afc7ccafL, "property"));

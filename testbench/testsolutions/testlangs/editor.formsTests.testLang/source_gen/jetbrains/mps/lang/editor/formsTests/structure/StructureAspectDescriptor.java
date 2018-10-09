@@ -15,10 +15,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptUsesPlatformCheckbox = createDescriptorForUsesPlatformCheckbox();
   /*package*/ final ConceptDescriptor myConceptUsesTextCheckbox = createDescriptorForUsesTextCheckbox();
   /*package*/ final ConceptDescriptor myConceptVariousCheckboxes = createDescriptorForVariousCheckboxes();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -29,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.UsesPlatformCheckbox:
         return myConceptUsesPlatformCheckbox;
       case LanguageConceptSwitch.UsesTextCheckbox:
@@ -42,13 +42,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForUsesPlatformCheckbox() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.formsTests", "UsesPlatformCheckbox", 0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L);
     b.class_(false, false, true);
     b.origin("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)/7013563450911355561");
+    b.version(2);
     b.prop("property", 0x61552ecc953bf2aaL, "7013563450911355562");
     return b.create();
   }
@@ -56,6 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.formsTests", "UsesTextCheckbox", 0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L);
     b.class_(false, false, true);
     b.origin("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)/5347446703374102164");
+    b.version(2);
     b.prop("property", 0x4a35f271d9f26e95L, "5347446703374102165");
     return b.create();
   }
@@ -63,6 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.formsTests", "VariousCheckboxes", 0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL);
     b.class_(false, false, true);
     b.origin("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)/312429380032619373");
+    b.version(2);
     b.prop("booleanProperty1", 0x455f8dda63d636eL, "312429380032619374");
     b.prop("booleanProperty2", 0x3bf28179462bcb27L, "4319657350470028071");
     return b.create();

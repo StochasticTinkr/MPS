@@ -2753,7 +2753,7 @@
       <node concept="3Tm1VV" id="6sKuV4a33ug" role="1B3o_S" />
       <node concept="3cqZAl" id="6sKuV4a33ui" role="3clF45" />
       <node concept="37vLTG" id="6sKuV4a33uj" role="3clF46">
-        <property role="TrG5h" value="root" />
+        <property role="TrG5h" value="targetModelRoot" />
         <node concept="3uibUv" id="6sKuV4a33up" role="1tU5fm">
           <ref role="3uigEE" node="5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
         </node>
@@ -2766,10 +2766,18 @@
       </node>
       <node concept="3clFbS" id="6sKuV4a33uq" role="3clF47">
         <node concept="3clFbF" id="6sKuV4a33EM" role="3cqZAp">
-          <node concept="3nyPlj" id="6sKuV4a33EL" role="3clFbG">
-            <ref role="37wK5l" to="ends:~FileBasedModelRoot.copyContentRootAndFiles(jetbrains.mps.extapi.persistence.FileBasedModelRoot):void" resolve="copyContentRootAndFiles" />
-            <node concept="37vLTw" id="6sKuV4a3q2M" role="37wK5m">
-              <ref role="3cqZAo" node="6sKuV4a33uj" resolve="root" />
+          <node concept="2OqwBi" id="65B7LrMVfBR" role="3clFbG">
+            <node concept="2ShNRf" id="65B7LrMV9D$" role="2Oq$k0">
+              <node concept="1pGfFk" id="65B7LrMVbi$" role="2ShVmc">
+                <ref role="37wK5l" to="pa15:~CopyFileBasedModelRootHelper.&lt;init&gt;(jetbrains.mps.extapi.persistence.FileBasedModelRoot,jetbrains.mps.extapi.persistence.FileBasedModelRoot)" resolve="CopyFileBasedModelRootHelper" />
+                <node concept="Xjq3P" id="65B7LrMVbm5" role="37wK5m" />
+                <node concept="37vLTw" id="65B7LrMVeUW" role="37wK5m">
+                  <ref role="3cqZAo" node="6sKuV4a33uj" resolve="targetModelRoot" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="65B7LrMVfO6" role="2OqNvi">
+              <ref role="37wK5l" to="pa15:~CopyFileBasedModelRootHelper.copy():void" resolve="copy" />
             </node>
           </node>
         </node>

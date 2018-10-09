@@ -14,8 +14,8 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class ModelProperties {
   private final List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
@@ -89,11 +89,11 @@ public class ModelProperties {
     Set<SModuleReference> devKitsInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
     Set<SModuleReference> devKitsInProperties = new HashSet<SModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
+    SRepository repository = myModelDescriptor.getRepository();
     for (SModuleReference dk : devKitsInProperties) {
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
-      assert devKit != null;
-      SModel model = myModelDescriptor;
-      ((SModelInternal) model).addDevKit(dk);
+      if (dk.resolve(repository) instanceof DevKit) {
+        ((SModelInternal) myModelDescriptor).addDevKit(dk);
+      }
     }
   }
   private void removeUnusedDevKits() {

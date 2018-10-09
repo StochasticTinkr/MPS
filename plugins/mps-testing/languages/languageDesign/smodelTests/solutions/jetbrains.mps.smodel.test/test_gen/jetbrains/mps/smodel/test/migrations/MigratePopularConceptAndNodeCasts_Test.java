@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,17 +26,24 @@ public class MigratePopularConceptAndNodeCasts_Test extends BaseTransformationTe
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(MigratePopularConceptAndNodeCasts_Test.class, "${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
 
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
+
   public MigratePopularConceptAndNodeCasts_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_MigratePopularConceptAndNodeCasts_Test() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.migrations.MigratePopularConceptAndNodeCasts_Test$TestBody", "testMethod", true);
+    new MigratePopularConceptAndNodeCasts_Test.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseMigrationTestBody {
+  /*package*/ static class TestBody extends BaseMigrationTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public Collection<SNode> getInputNodes() {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("5476670926299714765"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));

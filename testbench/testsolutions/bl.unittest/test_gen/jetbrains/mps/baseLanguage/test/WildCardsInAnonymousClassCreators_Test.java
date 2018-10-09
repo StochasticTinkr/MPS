@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(WildCardsInAnonymousClassCreators_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public WildCardsInAnonymousClassCreators_Test() {
     super(ourParamCache);
@@ -25,27 +29,31 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
 
   @Test
   public void test_ErrorMessagesCheck8187342170694474094() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694474094", true);
+    new WildCardsInAnonymousClassCreators_Test.TestBody(this).test_ErrorMessagesCheck8187342170694474094();
   }
   @Test
   public void test_NodeSupertypeMayNotSpecifyCheck6923385624928216045() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624928216045", true);
+    new WildCardsInAnonymousClassCreators_Test.TestBody(this).test_NodeSupertypeMayNotSpecifyCheck6923385624928216045();
   }
   @Test
   public void test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011", true);
+    new WildCardsInAnonymousClassCreators_Test.TestBody(this).test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011();
   }
   @Test
   public void test_ErrorMessagesCheck8187342170694475514() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694475514", true);
+    new WildCardsInAnonymousClassCreators_Test.TestBody(this).test_ErrorMessagesCheck8187342170694475514();
   }
   @Test
   public void test_ErrorMessagesCheck8187342170694479318() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694479318", true);
+    new WildCardsInAnonymousClassCreators_Test.TestBody(this).test_ErrorMessagesCheck8187342170694479318();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck8187342170694474094() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8187342170694474094"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

@@ -10,6 +10,5 @@ public class EditorInternalAddition_ActionGroup extends GeneratedActionGroup {
     super("EditorInternalAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    EditorInternalAddition_ActionGroup.this.addAction("jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action");
   }
 }

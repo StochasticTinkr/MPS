@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 

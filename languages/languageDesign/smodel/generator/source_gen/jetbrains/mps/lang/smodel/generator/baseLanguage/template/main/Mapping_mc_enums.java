@@ -31,7 +31,7 @@ public class Mapping_mc_enums extends MapConfigBase implements TemplateMappingCo
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_c6f4d0_a(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mc_Condition_56(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {

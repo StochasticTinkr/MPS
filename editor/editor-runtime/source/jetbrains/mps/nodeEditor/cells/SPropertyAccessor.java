@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * User: shatalin

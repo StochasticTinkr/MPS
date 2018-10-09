@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -66,7 +64,7 @@ public class ClassLoadersHolder {
 
   public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher, EDTDispatcher dispatcher) {
     myRepository = repository;
-    myCLRegistry = new MPSClassLoadersRegistry(this, modulesWatcher, repository, dispatcher);
+    myCLRegistry = new MPSClassLoadersRegistry(this, modulesWatcher, dispatcher);
   }
 
   public void init() {

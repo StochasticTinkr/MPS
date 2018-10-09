@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
@@ -15,7 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 public class EnumerationDatatypes_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(EnumerationDatatypes_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public EnumerationDatatypes_Test() {
     super(ourParamCache);
@@ -23,27 +27,31 @@ public class EnumerationDatatypes_Test extends BaseTransformationTest {
 
   @Test
   public void test_enumMemberPresentation() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberPresentation", true);
+    new EnumerationDatatypes_Test.TestBody(this).test_enumMemberPresentation();
   }
   @Test
   public void test_enumMemberValue() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberValue", true);
+    new EnumerationDatatypes_Test.TestBody(this).test_enumMemberValue();
   }
   @Test
   public void test_enumMemberForValue() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberForValue", true);
+    new EnumerationDatatypes_Test.TestBody(this).test_enumMemberForValue();
   }
   @Test
   public void test_enumMemberName() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberName", true);
+    new EnumerationDatatypes_Test.TestBody(this).test_enumMemberName();
   }
   @Test
   public void test_enumMemberForName() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberForName", true);
+    new EnumerationDatatypes_Test.TestBody(this).test_enumMemberForName();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_enumMemberPresentation() throws Exception {
       Assert.assertEquals(SEnumOperations.getMember(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests", 0x125bc18df9d40ef9L, "Enum_CustomIdentifier", 0x125bc18df9d40efaL, "value_1").getPresentation(), "presentation_1");
       Assert.assertEquals(SEnumOperations.getMember(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests", 0x125bc18df9d40ef9L, "Enum_CustomIdentifier", 0x125bc18df9d40efbL, "value_2").getPresentation(), "presentation_2");

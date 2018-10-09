@@ -2364,9 +2364,9 @@
               <property role="3cmrfH" value="1" />
             </node>
           </node>
-          <node concept="10M0yZ" id="74p82hCZ0B3" role="37wK5m">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$ToolWindows" resolve="MPSIcons.ToolWindows" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$ToolWindows.ClassHierarchyView" resolve="ClassHierarchyView" />
+          <node concept="10M0yZ" id="2NeqUakg5Ky" role="37wK5m">
+            <ref role="3cqZAo" to="z2i8:~AllIcons$Toolwindows.ToolWindowHierarchy" resolve="ToolWindowHierarchy" />
+            <ref role="1PxDUh" to="z2i8:~AllIcons$Toolwindows" resolve="AllIcons.Toolwindows" />
           </node>
         </node>
       </node>

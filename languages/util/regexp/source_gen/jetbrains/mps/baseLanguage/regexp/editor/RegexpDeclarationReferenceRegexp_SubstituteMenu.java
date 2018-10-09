@@ -44,7 +44,7 @@ public class RegexpDeclarationReferenceRegexp_SubstituteMenu extends SubstituteM
   }
 
 
-  public static class SMP_ReferenceScope_xnowcq_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_xnowcq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_xnowcq_a() {
       super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, 0x1117f594636L, "regexp"));

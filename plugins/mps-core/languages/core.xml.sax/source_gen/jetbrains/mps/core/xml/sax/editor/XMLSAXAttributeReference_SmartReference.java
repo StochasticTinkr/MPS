@@ -44,7 +44,7 @@ public class XMLSAXAttributeReference_SmartReference extends SubstituteMenuBase 
   }
 
 
-  public static class SMP_ReferenceScope_k75wpb_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_k75wpb_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_k75wpb_a() {
       super(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c9L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference"), MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c9L, 0x1f6c736337b5e2caL, "attribute"));
@@ -66,7 +66,7 @@ public class XMLSAXAttributeReference_SmartReference extends SubstituteMenuBase 
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new XMLSAXAttributeReference_SmartReference.SMP_ReferenceScope_k75wpb_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

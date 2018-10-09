@@ -13,6 +13,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -24,6 +25,13 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+        <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
+      </concept>
+      <concept id="7862711839422615221" name="jetbrains.mps.lang.structure.structure.DocumentationObjectiveRef" flags="ng" index="t5JxR">
+        <reference id="7862711839422615222" name="target" index="t5JxO" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
@@ -4604,9 +4612,19 @@
     <node concept="PrWs8" id="54iik1dcchH" role="PzmwI">
       <ref role="PrY4T" node="54iik1dcchE" resolve="ImagePathProvider" />
     </node>
+    <node concept="asaX9" id="CFBzaakLXe" role="lGtFl">
+      <property role="YLQ7P" value="Requires implementors to retrive an SModule instance and to supply it with awkward tuple" />
+      <property role="YLPcu" value="2018.2" />
+    </node>
+    <node concept="t5JxF" id="CFBzaakSMa" role="lGtFl">
+      <property role="t5JxN" value="Replace with ModuleImageProvider that doesn't require client to deal with SModule instance" />
+      <node concept="t5JxR" id="CFBzaakSMf" role="t5JxU">
+        <ref role="t5JxO" node="CFBzaakS6G" resolve="ModuleImageProvider" />
+      </node>
+    </node>
   </node>
   <node concept="PlHQZ" id="54iik1dcchE">
-    <property role="3GE5qa" value="QueryFunction" />
+    <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="ImagePathProvider" />
     <property role="EcuMT" value="5841812207174730858" />
   </node>
@@ -6744,6 +6762,28 @@
   <node concept="PlHQZ" id="1o9RazL_awo">
     <property role="EcuMT" value="1588042961790478360" />
     <property role="TrG5h" value="IReferenceContextProvider" />
+  </node>
+  <node concept="1TIwiD" id="CFBzaakS6G">
+    <property role="EcuMT" value="732853304284119468" />
+    <property role="TrG5h" value="ModuleImageProvider" />
+    <property role="34LRSv" value="image from module" />
+    <property role="R4oN_" value="file name relative to module" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3zvXnQYGbuj" role="1TKVEi">
+      <property role="IQ2ns" value="4098264106349410195" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="moduleRef" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="dvox:k2ZBl8Cedx" resolve="ModulePointer" />
+    </node>
+    <node concept="PrWs8" id="CFBzaakS6H" role="PzmwI">
+      <ref role="PrY4T" node="54iik1dcchE" resolve="ImagePathProvider" />
+    </node>
+    <node concept="1TJgyi" id="3zvXnQYGbuh" role="1TKVEl">
+      <property role="IQ2nx" value="4098264106349410193" />
+      <property role="TrG5h" value="imagePath" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
 </model>
 

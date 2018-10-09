@@ -10,6 +10,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
@@ -35,18 +36,21 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitInProcessUndo_Test.class, "${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
 
-
   public JUnitInProcessUndo_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_startTrickyTestCase() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody", "test_startTrickyTestCase", false);
+    new JUnitInProcessUndo_Test.TestBody(this).test_startTrickyTestCase();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_startTrickyTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", "4177017564823046256"));
       this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
@@ -61,7 +65,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         final TestRunState runState = new TestRunState(testNodes);
 
-        Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
+        Executor processExecutor = new JUnitInProcessExecutor(myProject, "testtest", testNodes);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -76,7 +80,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
         process.addProcessListener(new UnitTestProcessListener(runState));
         int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         if (exitcode != ListSequence.fromList(failure).count()) {
-          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", not to " + exitcode);
         } else if (exitcode < 0) {
           Assert.fail("Process is running for too long");
         }

@@ -7,6 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
+/**
+ * Denotes JUnit test classes (both JUnit version 3 and 4) that expect MPS instance up and running.
+ * AbstractTestWrapper#needsMPS uses it to figure out proper test executor (i.e. one that starts MPS vs another bare console one).
+ */
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.METHOD, ElementType.TYPE})
 public @interface MPSLaunch {

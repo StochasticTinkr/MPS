@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class UnusedFinalFields_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedFinalFields_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public UnusedFinalFields_Test() {
     super(ourParamCache);
@@ -25,31 +29,35 @@ public class UnusedFinalFields_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck8129007564265890534() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265890534", true);
+    new UnusedFinalFields_Test.TestBody(this).test_NodeErrorCheck8129007564265890534();
   }
   @Test
   public void test_NodeErrorCheck8129007564265890539() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265890539", true);
+    new UnusedFinalFields_Test.TestBody(this).test_NodeErrorCheck8129007564265890539();
   }
   @Test
   public void test_NodeErrorCheck8129007564265900849() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265900849", true);
+    new UnusedFinalFields_Test.TestBody(this).test_NodeErrorCheck8129007564265900849();
   }
   @Test
   public void test_NodeErrorCheck1855868101957039779() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck1855868101957039779", true);
+    new UnusedFinalFields_Test.TestBody(this).test_NodeErrorCheck1855868101957039779();
   }
   @Test
   public void test_ErrorMessagesCheck8129007564265890591() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_ErrorMessagesCheck8129007564265890591", true);
+    new UnusedFinalFields_Test.TestBody(this).test_ErrorMessagesCheck8129007564265890591();
   }
   @Test
   public void test_NodeErrorCheck8129007564265921306() throws Throwable {
-    runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265921306", true);
+    new UnusedFinalFields_Test.TestBody(this).test_NodeErrorCheck8129007564265921306();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck8129007564265890534() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8129007564265890534"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

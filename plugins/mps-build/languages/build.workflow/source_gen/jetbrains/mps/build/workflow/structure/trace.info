@@ -15,7 +15,7 @@
       <unit at="10,0,82,0" name="jetbrains.mps.build.workflow.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,394,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+      <unit at="14,0,422,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/144710003695346438">
@@ -38,20 +38,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="144710003695346438" at="24,0,25,0" concept="1" trace="myConceptBwfJavaLibrary" />
       <node id="144710003695346438" at="76,48,77,39" concept="4" />
-      <node id="144710003695346438" at="199,72,200,176" concept="3" />
-      <node id="144710003695346438" at="200,176,201,34" concept="0" />
-      <node id="144710003695346438" at="201,34,202,133" concept="0" />
-      <node id="144710003695346438" at="202,133,203,71" concept="0" />
-      <node id="144710003695346438" at="203,71,204,114" concept="0" />
-      <node id="144710003695346441" at="204,114,205,199" concept="0" />
-      <node id="144710003695346438" at="205,199,206,28" concept="0" />
-      <node id="144710003695346438" at="206,28,207,22" concept="4" />
-      <node id="144710003695346438" at="199,0,209,0" concept="6" trace="createDescriptorForBwfJavaLibrary#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="144710003695346438" at="208,72,209,176" concept="3" />
+      <node id="144710003695346438" at="209,176,210,34" concept="0" />
+      <node id="144710003695346438" at="210,34,211,133" concept="0" />
+      <node id="144710003695346438" at="211,133,212,71" concept="0" />
+      <node id="144710003695346438" at="212,71,213,114" concept="0" />
+      <node id="144710003695346438" at="213,114,214,17" concept="0" />
+      <node id="144710003695346441" at="214,17,215,199" concept="0" />
+      <node id="144710003695346438" at="215,199,216,28" concept="0" />
+      <node id="144710003695346438" at="216,28,217,22" concept="4" />
+      <node id="144710003695346438" at="208,0,219,0" concept="6" trace="createDescriptorForBwfJavaLibrary#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="144710003695346438" at="76,48,77,39" />
-      <scope id="144710003695346438" at="199,72,207,22">
+      <scope id="144710003695346438" at="208,72,217,22">
         <var name="b" id="144710003695346438" />
       </scope>
-      <scope id="144710003695346438" at="199,0,209,0" />
+      <scope id="144710003695346438" at="208,0,219,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/144710003695507915">
@@ -74,19 +75,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="144710003695507915" at="25,0,26,0" concept="1" trace="myConceptBwfJavaLibraryReference" />
       <node id="144710003695507915" at="78,57,79,48" concept="4" />
-      <node id="144710003695507915" at="209,81,210,185" concept="3" />
-      <node id="144710003695507915" at="210,185,211,34" concept="0" />
-      <node id="144710003695507915" at="211,34,212,136" concept="0" />
-      <node id="144710003695507915" at="212,136,213,114" concept="0" />
-      <node id="144710003695507916" at="213,114,214,167" concept="0" />
-      <node id="144710003695507915" at="214,167,215,23" concept="0" />
-      <node id="144710003695507915" at="215,23,216,22" concept="4" />
-      <node id="144710003695507915" at="209,0,218,0" concept="6" trace="createDescriptorForBwfJavaLibraryReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="144710003695507915" at="219,81,220,185" concept="3" />
+      <node id="144710003695507915" at="220,185,221,34" concept="0" />
+      <node id="144710003695507915" at="221,34,222,136" concept="0" />
+      <node id="144710003695507915" at="222,136,223,114" concept="0" />
+      <node id="144710003695507915" at="223,114,224,17" concept="0" />
+      <node id="144710003695507916" at="224,17,225,167" concept="0" />
+      <node id="144710003695507915" at="225,167,226,23" concept="0" />
+      <node id="144710003695507915" at="226,23,227,22" concept="4" />
+      <node id="144710003695507915" at="219,0,229,0" concept="6" trace="createDescriptorForBwfJavaLibraryReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="144710003695507915" at="78,57,79,48" />
-      <scope id="144710003695507915" at="209,81,216,22">
+      <scope id="144710003695507915" at="219,81,227,22">
         <var name="b" id="144710003695507915" />
       </scope>
-      <scope id="144710003695507915" at="209,0,218,0" />
+      <scope id="144710003695507915" at="219,0,229,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2059109515400477499">
@@ -109,21 +111,22 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2059109515400477499" at="17,0,18,0" concept="1" trace="myConceptBwfAntTaskDeclaration" />
       <node id="2059109515400477499" at="62,55,63,46" concept="4" />
-      <node id="2059109515400477499" at="142,79,143,184" concept="3" />
-      <node id="2059109515400477499" at="143,184,144,34" concept="0" />
-      <node id="2059109515400477499" at="144,34,145,133" concept="0" />
-      <node id="2059109515400477499" at="145,133,146,71" concept="0" />
-      <node id="2059109515400477499" at="146,71,147,115" concept="0" />
-      <node id="2059109515400477502" at="147,115,148,68" concept="0" />
-      <node id="2059109515400477503" at="148,68,149,172" concept="0" />
-      <node id="2059109515400477499" at="149,172,150,27" concept="0" />
-      <node id="2059109515400477499" at="150,27,151,22" concept="4" />
-      <node id="2059109515400477499" at="142,0,153,0" concept="6" trace="createDescriptorForBwfAntTaskDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2059109515400477499" at="144,79,145,184" concept="3" />
+      <node id="2059109515400477499" at="145,184,146,34" concept="0" />
+      <node id="2059109515400477499" at="146,34,147,133" concept="0" />
+      <node id="2059109515400477499" at="147,133,148,71" concept="0" />
+      <node id="2059109515400477499" at="148,71,149,115" concept="0" />
+      <node id="2059109515400477499" at="149,115,150,17" concept="0" />
+      <node id="2059109515400477502" at="150,17,151,68" concept="0" />
+      <node id="2059109515400477503" at="151,68,152,172" concept="0" />
+      <node id="2059109515400477499" at="152,172,153,27" concept="0" />
+      <node id="2059109515400477499" at="153,27,154,22" concept="4" />
+      <node id="2059109515400477499" at="144,0,156,0" concept="6" trace="createDescriptorForBwfAntTaskDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2059109515400477499" at="62,55,63,46" />
-      <scope id="2059109515400477499" at="142,79,151,22">
+      <scope id="2059109515400477499" at="144,79,154,22">
         <var name="b" id="2059109515400477499" />
       </scope>
-      <scope id="2059109515400477499" at="142,0,153,0" />
+      <scope id="2059109515400477499" at="144,0,156,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/244868996532667532">
@@ -146,19 +149,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="244868996532667532" at="18,0,19,0" concept="1" trace="myConceptBwfCustomMacro" />
       <node id="244868996532667532" at="64,48,65,39" concept="4" />
-      <node id="244868996532667532" at="153,72,154,176" concept="3" />
-      <node id="244868996532667532" at="154,176,155,34" concept="0" />
-      <node id="244868996532667532" at="155,34,156,133" concept="0" />
-      <node id="244868996532667532" at="156,133,157,114" concept="0" />
-      <node id="244868996532667535" at="157,114,158,198" concept="0" />
-      <node id="244868996532667532" at="158,198,159,28" concept="0" />
-      <node id="244868996532667532" at="159,28,160,22" concept="4" />
-      <node id="244868996532667532" at="153,0,162,0" concept="6" trace="createDescriptorForBwfCustomMacro#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="244868996532667532" at="156,72,157,176" concept="3" />
+      <node id="244868996532667532" at="157,176,158,34" concept="0" />
+      <node id="244868996532667532" at="158,34,159,133" concept="0" />
+      <node id="244868996532667532" at="159,133,160,114" concept="0" />
+      <node id="244868996532667532" at="160,114,161,17" concept="0" />
+      <node id="244868996532667535" at="161,17,162,198" concept="0" />
+      <node id="244868996532667532" at="162,198,163,28" concept="0" />
+      <node id="244868996532667532" at="163,28,164,22" concept="4" />
+      <node id="244868996532667532" at="156,0,166,0" concept="6" trace="createDescriptorForBwfCustomMacro#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="244868996532667532" at="64,48,65,39" />
-      <scope id="244868996532667532" at="153,72,160,22">
+      <scope id="244868996532667532" at="156,72,164,22">
         <var name="b" id="244868996532667532" />
       </scope>
-      <scope id="244868996532667532" at="153,0,162,0" />
+      <scope id="244868996532667532" at="156,0,166,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2529023923283121115">
@@ -181,19 +185,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2529023923283121115" at="34,0,35,0" concept="1" trace="myConceptBwfProjectPartStatement" />
       <node id="2529023923283121115" at="96,57,97,48" concept="4" />
-      <node id="2529023923283121115" at="309,81,310,186" concept="3" />
-      <node id="2529023923283121115" at="310,186,311,34" concept="0" />
-      <node id="2529023923283121115" at="311,34,312,131" concept="0" />
-      <node id="2529023923283121115" at="312,131,313,115" concept="0" />
-      <node id="2529023923283121117" at="313,115,314,198" concept="0" />
-      <node id="2529023923283121115" at="314,198,315,28" concept="0" />
-      <node id="2529023923283121115" at="315,28,316,22" concept="4" />
-      <node id="2529023923283121115" at="309,0,318,0" concept="6" trace="createDescriptorForBwfProjectPartStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2529023923283121115" at="328,81,329,186" concept="3" />
+      <node id="2529023923283121115" at="329,186,330,34" concept="0" />
+      <node id="2529023923283121115" at="330,34,331,131" concept="0" />
+      <node id="2529023923283121115" at="331,131,332,115" concept="0" />
+      <node id="2529023923283121115" at="332,115,333,17" concept="0" />
+      <node id="2529023923283121117" at="333,17,334,198" concept="0" />
+      <node id="2529023923283121115" at="334,198,335,28" concept="0" />
+      <node id="2529023923283121115" at="335,28,336,22" concept="4" />
+      <node id="2529023923283121115" at="328,0,338,0" concept="6" trace="createDescriptorForBwfProjectPartStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2529023923283121115" at="96,57,97,48" />
-      <scope id="2529023923283121115" at="309,81,316,22">
+      <scope id="2529023923283121115" at="328,81,336,22">
         <var name="b" id="2529023923283121115" />
       </scope>
-      <scope id="2529023923283121115" at="309,0,318,0" />
+      <scope id="2529023923283121115" at="328,0,338,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2529023923283158037">
@@ -216,20 +221,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2529023923283158037" at="16,0,17,0" concept="1" trace="myConceptBwfAntTaskBundleDeclaration" />
       <node id="2529023923283158037" at="60,61,61,52" concept="4" />
-      <node id="2529023923283158037" at="132,85,133,190" concept="3" />
-      <node id="2529023923283158037" at="133,190,134,34" concept="0" />
-      <node id="2529023923283158037" at="134,34,135,133" concept="0" />
-      <node id="2529023923283158037" at="135,133,136,115" concept="0" />
-      <node id="2529023923283158047" at="136,115,137,67" concept="0" />
-      <node id="2529023923283158048" at="137,67,138,172" concept="0" />
-      <node id="2529023923283158037" at="138,172,139,31" concept="0" />
-      <node id="2529023923283158037" at="139,31,140,22" concept="4" />
-      <node id="2529023923283158037" at="132,0,142,0" concept="6" trace="createDescriptorForBwfAntTaskBundleDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2529023923283158037" at="133,85,134,190" concept="3" />
+      <node id="2529023923283158037" at="134,190,135,34" concept="0" />
+      <node id="2529023923283158037" at="135,34,136,133" concept="0" />
+      <node id="2529023923283158037" at="136,133,137,115" concept="0" />
+      <node id="2529023923283158037" at="137,115,138,17" concept="0" />
+      <node id="2529023923283158047" at="138,17,139,67" concept="0" />
+      <node id="2529023923283158048" at="139,67,140,172" concept="0" />
+      <node id="2529023923283158037" at="140,172,141,31" concept="0" />
+      <node id="2529023923283158037" at="141,31,142,22" concept="4" />
+      <node id="2529023923283158037" at="133,0,144,0" concept="6" trace="createDescriptorForBwfAntTaskBundleDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2529023923283158037" at="60,61,61,52" />
-      <scope id="2529023923283158037" at="132,85,140,22">
+      <scope id="2529023923283158037" at="133,85,142,22">
         <var name="b" id="2529023923283158037" />
       </scope>
-      <scope id="2529023923283158037" at="132,0,142,0" />
+      <scope id="2529023923283158037" at="133,0,144,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284546673">
@@ -252,23 +258,24 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284546673" at="32,0,33,0" concept="1" trace="myConceptBwfProject" />
       <node id="2769948622284546673" at="92,44,93,35" concept="4" />
-      <node id="2769948622284546673" at="290,68,291,173" concept="3" />
-      <node id="2769948622284546673" at="291,173,292,33" concept="0" />
-      <node id="2769948622284546673" at="292,33,293,71" concept="0" />
-      <node id="2769948622284546673" at="293,71,294,76" concept="0" />
-      <node id="2769948622284546673" at="294,76,295,115" concept="0" />
-      <node id="7385586609667765566" at="295,115,296,74" concept="0" />
-      <node id="5178006408628608654" at="296,74,297,72" concept="0" />
-      <node id="2769948622284574304" at="297,72,298,197" concept="0" />
-      <node id="7306485738221455031" at="298,197,299,199" concept="0" />
-      <node id="2769948622284546673" at="299,199,300,38" concept="0" />
-      <node id="2769948622284546673" at="300,38,301,22" concept="4" />
-      <node id="2769948622284546673" at="290,0,303,0" concept="6" trace="createDescriptorForBwfProject#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284546673" at="307,68,308,173" concept="3" />
+      <node id="2769948622284546673" at="308,173,309,33" concept="0" />
+      <node id="2769948622284546673" at="309,33,310,71" concept="0" />
+      <node id="2769948622284546673" at="310,71,311,76" concept="0" />
+      <node id="2769948622284546673" at="311,76,312,115" concept="0" />
+      <node id="2769948622284546673" at="312,115,313,17" concept="0" />
+      <node id="7385586609667765566" at="313,17,314,74" concept="0" />
+      <node id="5178006408628608654" at="314,74,315,72" concept="0" />
+      <node id="2769948622284574304" at="315,72,316,197" concept="0" />
+      <node id="7306485738221455031" at="316,197,317,199" concept="0" />
+      <node id="2769948622284546673" at="317,199,318,38" concept="0" />
+      <node id="2769948622284546673" at="318,38,319,22" concept="4" />
+      <node id="2769948622284546673" at="307,0,321,0" concept="6" trace="createDescriptorForBwfProject#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284546673" at="92,44,93,35" />
-      <scope id="2769948622284546673" at="290,68,301,22">
+      <scope id="2769948622284546673" at="307,68,319,22">
         <var name="b" id="2769948622284546673" />
       </scope>
-      <scope id="2769948622284546673" at="290,0,303,0" />
+      <scope id="2769948622284546673" at="307,0,321,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284546675">
@@ -291,22 +298,23 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284546675" at="38,0,39,0" concept="1" trace="myConceptBwfTask" />
       <node id="2769948622284546675" at="104,41,105,32" concept="4" />
-      <node id="2769948622284546675" at="345,65,346,170" concept="3" />
-      <node id="2769948622284546675" at="346,170,347,34" concept="0" />
-      <node id="2769948622284546675" at="347,34,348,133" concept="0" />
-      <node id="2769948622284546675" at="348,133,349,71" concept="0" />
-      <node id="2769948622284546675" at="349,71,350,76" concept="0" />
-      <node id="2769948622284546675" at="350,76,351,115" concept="0" />
-      <node id="2769948622284574302" at="351,115,352,204" concept="0" />
-      <node id="2769948622284546679" at="352,204,353,200" concept="0" />
-      <node id="2769948622284546675" at="353,200,354,20" concept="0" />
-      <node id="2769948622284546675" at="354,20,355,22" concept="4" />
-      <node id="2769948622284546675" at="345,0,357,0" concept="6" trace="createDescriptorForBwfTask#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284546675" at="368,65,369,170" concept="3" />
+      <node id="2769948622284546675" at="369,170,370,34" concept="0" />
+      <node id="2769948622284546675" at="370,34,371,133" concept="0" />
+      <node id="2769948622284546675" at="371,133,372,71" concept="0" />
+      <node id="2769948622284546675" at="372,71,373,76" concept="0" />
+      <node id="2769948622284546675" at="373,76,374,115" concept="0" />
+      <node id="2769948622284546675" at="374,115,375,17" concept="0" />
+      <node id="2769948622284574302" at="375,17,376,204" concept="0" />
+      <node id="2769948622284546679" at="376,204,377,200" concept="0" />
+      <node id="2769948622284546675" at="377,200,378,20" concept="0" />
+      <node id="2769948622284546675" at="378,20,379,22" concept="4" />
+      <node id="2769948622284546675" at="368,0,381,0" concept="6" trace="createDescriptorForBwfTask#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284546675" at="104,41,105,32" />
-      <scope id="2769948622284546675" at="345,65,355,22">
+      <scope id="2769948622284546675" at="368,65,379,22">
         <var name="b" id="2769948622284546675" />
       </scope>
-      <scope id="2769948622284546675" at="345,0,357,0" />
+      <scope id="2769948622284546675" at="368,0,381,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284546677">
@@ -329,23 +337,24 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284546677" at="36,0,37,0" concept="1" trace="myConceptBwfSubTask" />
       <node id="2769948622284546677" at="100,44,101,35" concept="4" />
-      <node id="2769948622284546677" at="325,68,326,173" concept="3" />
-      <node id="2769948622284546677" at="326,173,327,34" concept="0" />
-      <node id="2769948622284546677" at="327,34,328,71" concept="0" />
-      <node id="2769948622284546677" at="328,71,329,71" concept="0" />
-      <node id="2769948622284546677" at="329,71,330,76" concept="0" />
-      <node id="2769948622284546677" at="330,76,331,115" concept="0" />
-      <node id="2769948622284605953" at="331,115,332,197" concept="0" />
-      <node id="3961775458390293275" at="332,197,333,198" concept="0" />
-      <node id="2769948622284606050" at="333,198,334,202" concept="0" />
-      <node id="2769948622284546677" at="334,202,335,23" concept="0" />
-      <node id="2769948622284546677" at="335,23,336,22" concept="4" />
-      <node id="2769948622284546677" at="325,0,338,0" concept="6" trace="createDescriptorForBwfSubTask#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284546677" at="346,68,347,173" concept="3" />
+      <node id="2769948622284546677" at="347,173,348,34" concept="0" />
+      <node id="2769948622284546677" at="348,34,349,71" concept="0" />
+      <node id="2769948622284546677" at="349,71,350,71" concept="0" />
+      <node id="2769948622284546677" at="350,71,351,76" concept="0" />
+      <node id="2769948622284546677" at="351,76,352,115" concept="0" />
+      <node id="2769948622284546677" at="352,115,353,17" concept="0" />
+      <node id="2769948622284605953" at="353,17,354,197" concept="0" />
+      <node id="3961775458390293275" at="354,197,355,198" concept="0" />
+      <node id="2769948622284606050" at="355,198,356,202" concept="0" />
+      <node id="2769948622284546677" at="356,202,357,23" concept="0" />
+      <node id="2769948622284546677" at="357,23,358,22" concept="4" />
+      <node id="2769948622284546677" at="346,0,360,0" concept="6" trace="createDescriptorForBwfSubTask#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284546677" at="100,44,101,35" />
-      <scope id="2769948622284546677" at="325,68,336,22">
+      <scope id="2769948622284546677" at="346,68,358,22">
         <var name="b" id="2769948622284546677" />
       </scope>
-      <scope id="2769948622284546677" at="325,0,338,0" />
+      <scope id="2769948622284546677" at="346,0,360,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284546695">
@@ -367,16 +376,17 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284546695" at="33,0,34,0" concept="1" trace="myConceptBwfProjectPart" />
       <node id="2769948622284546695" at="94,48,95,39" concept="4" />
-      <node id="2769948622284546695" at="303,72,304,177" concept="3" />
-      <node id="2769948622284546695" at="304,177,305,33" concept="0" />
-      <node id="2769948622284546695" at="305,33,306,115" concept="0" />
-      <node id="2769948622284546695" at="306,115,307,22" concept="4" />
-      <node id="2769948622284546695" at="303,0,309,0" concept="6" trace="createDescriptorForBwfProjectPart#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284546695" at="321,72,322,177" concept="3" />
+      <node id="2769948622284546695" at="322,177,323,33" concept="0" />
+      <node id="2769948622284546695" at="323,33,324,115" concept="0" />
+      <node id="2769948622284546695" at="324,115,325,17" concept="0" />
+      <node id="2769948622284546695" at="325,17,326,22" concept="4" />
+      <node id="2769948622284546695" at="321,0,328,0" concept="6" trace="createDescriptorForBwfProjectPart#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284546695" at="94,48,95,39" />
-      <scope id="2769948622284546695" at="303,72,307,22">
+      <scope id="2769948622284546695" at="321,72,326,22">
         <var name="b" id="2769948622284546695" />
       </scope>
-      <scope id="2769948622284546695" at="303,0,309,0" />
+      <scope id="2769948622284546695" at="321,0,328,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284574294">
@@ -399,17 +409,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284574294" at="39,0,40,0" concept="1" trace="myConceptBwfTaskDependency" />
       <node id="2769948622284574294" at="106,51,107,42" concept="4" />
-      <node id="2769948622284574294" at="357,75,358,180" concept="3" />
-      <node id="2769948622284574294" at="358,180,359,34" concept="0" />
-      <node id="2769948622284574294" at="359,34,360,115" concept="0" />
-      <node id="2769948622284574295" at="360,115,361,170" concept="0" />
-      <node id="2769948622284574294" at="361,170,362,22" concept="4" />
-      <node id="2769948622284574294" at="357,0,364,0" concept="6" trace="createDescriptorForBwfTaskDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284574294" at="381,75,382,180" concept="3" />
+      <node id="2769948622284574294" at="382,180,383,34" concept="0" />
+      <node id="2769948622284574294" at="383,34,384,115" concept="0" />
+      <node id="2769948622284574294" at="384,115,385,17" concept="0" />
+      <node id="2769948622284574295" at="385,17,386,170" concept="0" />
+      <node id="2769948622284574294" at="386,170,387,22" concept="4" />
+      <node id="2769948622284574294" at="381,0,389,0" concept="6" trace="createDescriptorForBwfTaskDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284574294" at="106,51,107,42" />
-      <scope id="2769948622284574294" at="357,75,362,22">
+      <scope id="2769948622284574294" at="381,75,387,22">
         <var name="b" id="2769948622284574294" />
       </scope>
-      <scope id="2769948622284574294" at="357,0,364,0" />
+      <scope id="2769948622284574294" at="381,0,389,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284605880">
@@ -432,17 +443,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284605880" at="37,0,38,0" concept="1" trace="myConceptBwfSubTaskDependency" />
       <node id="2769948622284605880" at="102,54,103,45" concept="4" />
-      <node id="2769948622284605880" at="338,78,339,183" concept="3" />
-      <node id="2769948622284605880" at="339,183,340,34" concept="0" />
-      <node id="2769948622284605880" at="340,34,341,115" concept="0" />
-      <node id="2769948622284605881" at="341,115,342,170" concept="0" />
-      <node id="2769948622284605880" at="342,170,343,22" concept="4" />
-      <node id="2769948622284605880" at="338,0,345,0" concept="6" trace="createDescriptorForBwfSubTaskDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284605880" at="360,78,361,183" concept="3" />
+      <node id="2769948622284605880" at="361,183,362,34" concept="0" />
+      <node id="2769948622284605880" at="362,34,363,115" concept="0" />
+      <node id="2769948622284605880" at="363,115,364,17" concept="0" />
+      <node id="2769948622284605881" at="364,17,365,170" concept="0" />
+      <node id="2769948622284605880" at="365,170,366,22" concept="4" />
+      <node id="2769948622284605880" at="360,0,368,0" concept="6" trace="createDescriptorForBwfSubTaskDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284605880" at="102,54,103,45" />
-      <scope id="2769948622284605880" at="338,78,343,22">
+      <scope id="2769948622284605880" at="360,78,366,22">
         <var name="b" id="2769948622284605880" />
       </scope>
-      <scope id="2769948622284605880" at="338,0,345,0" />
+      <scope id="2769948622284605880" at="360,0,368,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284605979">
@@ -465,17 +477,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="2769948622284605979" at="35,0,36,0" concept="1" trace="myConceptBwfStatement" />
       <node id="2769948622284605979" at="98,46,99,37" concept="4" />
-      <node id="2769948622284605979" at="318,70,319,175" concept="3" />
-      <node id="2769948622284605979" at="319,175,320,34" concept="0" />
-      <node id="2769948622284605979" at="320,34,321,115" concept="0" />
-      <node id="2769948622284605979" at="321,115,322,23" concept="0" />
-      <node id="2769948622284605979" at="322,23,323,22" concept="4" />
-      <node id="2769948622284605979" at="318,0,325,0" concept="6" trace="createDescriptorForBwfStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284605979" at="338,70,339,175" concept="3" />
+      <node id="2769948622284605979" at="339,175,340,34" concept="0" />
+      <node id="2769948622284605979" at="340,34,341,115" concept="0" />
+      <node id="2769948622284605979" at="341,115,342,17" concept="0" />
+      <node id="2769948622284605979" at="342,17,343,23" concept="0" />
+      <node id="2769948622284605979" at="343,23,344,22" concept="4" />
+      <node id="2769948622284605979" at="338,0,346,0" concept="6" trace="createDescriptorForBwfStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284605979" at="98,46,99,37" />
-      <scope id="2769948622284605979" at="318,70,323,22">
+      <scope id="2769948622284605979" at="338,70,344,22">
         <var name="b" id="2769948622284605979" />
       </scope>
-      <scope id="2769948622284605979" at="318,0,325,0" />
+      <scope id="2769948622284605979" at="338,0,346,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284768359">
@@ -502,15 +515,16 @@
       <node id="2769948622284768359" at="124,178,125,34" concept="0" />
       <node id="2769948622284768359" at="125,34,126,131" concept="0" />
       <node id="2769948622284768359" at="126,131,127,115" concept="0" />
-      <node id="2769948622284768360" at="127,115,128,201" concept="0" />
-      <node id="2769948622284768359" at="128,201,129,19" concept="0" />
-      <node id="2769948622284768359" at="129,19,130,22" concept="4" />
-      <node id="2769948622284768359" at="123,0,132,0" concept="6" trace="createDescriptorForBwfAntStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2769948622284768359" at="127,115,128,17" concept="0" />
+      <node id="2769948622284768360" at="128,17,129,201" concept="0" />
+      <node id="2769948622284768359" at="129,201,130,19" concept="0" />
+      <node id="2769948622284768359" at="130,19,131,22" concept="4" />
+      <node id="2769948622284768359" at="123,0,133,0" concept="6" trace="createDescriptorForBwfAntStatement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2769948622284768359" at="58,49,59,40" />
-      <scope id="2769948622284768359" at="123,73,130,22">
+      <scope id="2769948622284768359" at="123,73,131,22">
         <var name="b" id="2769948622284768359" />
       </scope>
-      <scope id="2769948622284768359" at="123,0,132,0" />
+      <scope id="2769948622284768359" at="123,0,133,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/3961775458390032824">
@@ -533,22 +547,23 @@
     <file name="StructureAspectDescriptor.java">
       <node id="3961775458390032824" at="42,0,43,0" concept="1" trace="myConceptBwfTaskPart" />
       <node id="3961775458390032824" at="112,45,113,36" concept="4" />
-      <node id="3961775458390032824" at="381,69,382,174" concept="3" />
-      <node id="3961775458390032824" at="382,174,383,34" concept="0" />
-      <node id="3961775458390032824" at="383,34,384,133" concept="0" />
-      <node id="3961775458390032824" at="384,133,385,76" concept="0" />
-      <node id="3961775458390032824" at="385,76,386,115" concept="0" />
-      <node id="3961775458390032825" at="386,115,387,168" concept="0" />
-      <node id="3961775458390032826" at="387,168,388,200" concept="0" />
-      <node id="3961775458390352322" at="388,200,389,214" concept="0" />
-      <node id="3961775458390032824" at="389,214,390,25" concept="0" />
-      <node id="3961775458390032824" at="390,25,391,22" concept="4" />
-      <node id="3961775458390032824" at="381,0,393,0" concept="6" trace="createDescriptorForBwfTaskPart#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3961775458390032824" at="408,69,409,174" concept="3" />
+      <node id="3961775458390032824" at="409,174,410,34" concept="0" />
+      <node id="3961775458390032824" at="410,34,411,133" concept="0" />
+      <node id="3961775458390032824" at="411,133,412,76" concept="0" />
+      <node id="3961775458390032824" at="412,76,413,115" concept="0" />
+      <node id="3961775458390032824" at="413,115,414,17" concept="0" />
+      <node id="3961775458390032825" at="414,17,415,168" concept="0" />
+      <node id="3961775458390032826" at="415,168,416,200" concept="0" />
+      <node id="3961775458390352322" at="416,200,417,214" concept="0" />
+      <node id="3961775458390032824" at="417,214,418,25" concept="0" />
+      <node id="3961775458390032824" at="418,25,419,22" concept="4" />
+      <node id="3961775458390032824" at="408,0,421,0" concept="6" trace="createDescriptorForBwfTaskPart#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3961775458390032824" at="112,45,113,36" />
-      <scope id="3961775458390032824" at="381,69,391,22">
+      <scope id="3961775458390032824" at="408,69,419,22">
         <var name="b" id="3961775458390032824" />
       </scope>
-      <scope id="3961775458390032824" at="381,0,393,0" />
+      <scope id="3961775458390032824" at="408,0,421,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/4755209551904389307">
@@ -571,33 +586,34 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4755209551904389307" at="26,0,27,0" concept="1" trace="myConceptBwfJavaModule" />
       <node id="4755209551904389307" at="80,47,81,38" concept="4" />
-      <node id="4755209551904389307" at="218,71,219,176" concept="3" />
-      <node id="4755209551904389307" at="219,176,220,34" concept="0" />
-      <node id="4755209551904389307" at="220,34,221,133" concept="0" />
-      <node id="4755209551904389307" at="221,133,222,71" concept="0" />
-      <node id="4755209551904389307" at="222,71,223,115" concept="0" />
-      <node id="7385586609667649463" at="223,115,224,71" concept="0" />
-      <node id="927724900262033861" at="224,71,225,74" concept="0" />
-      <node id="927724900262398947" at="225,74,226,65" concept="0" />
-      <node id="927724900262398958" at="226,65,227,67" concept="0" />
-      <node id="4416461515995149317" at="227,67,228,63" concept="0" />
-      <node id="2059109515400306584" at="228,63,229,67" concept="0" />
-      <node id="6998860900671418236" at="229,67,230,74" concept="0" />
-      <node id="6998860900671530572" at="230,74,231,74" concept="0" />
-      <node id="1476884141930130693" at="231,74,232,74" concept="0" />
-      <node id="7926701909975416101" at="232,74,233,201" concept="0" />
-      <node id="1659807394254493213" at="233,201,234,203" concept="0" />
-      <node id="4755209551904389320" at="234,203,235,204" concept="0" />
-      <node id="6520682027041170530" at="235,204,236,200" concept="0" />
-      <node id="733309334557882230" at="236,200,237,207" concept="0" />
-      <node id="4755209551904389307" at="237,207,238,35" concept="0" />
-      <node id="4755209551904389307" at="238,35,239,22" concept="4" />
-      <node id="4755209551904389307" at="218,0,241,0" concept="6" trace="createDescriptorForBwfJavaModule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4755209551904389307" at="229,71,230,176" concept="3" />
+      <node id="4755209551904389307" at="230,176,231,34" concept="0" />
+      <node id="4755209551904389307" at="231,34,232,133" concept="0" />
+      <node id="4755209551904389307" at="232,133,233,71" concept="0" />
+      <node id="4755209551904389307" at="233,71,234,115" concept="0" />
+      <node id="4755209551904389307" at="234,115,235,17" concept="0" />
+      <node id="7385586609667649463" at="235,17,236,71" concept="0" />
+      <node id="927724900262033861" at="236,71,237,74" concept="0" />
+      <node id="927724900262398947" at="237,74,238,65" concept="0" />
+      <node id="927724900262398958" at="238,65,239,67" concept="0" />
+      <node id="4416461515995149317" at="239,67,240,63" concept="0" />
+      <node id="2059109515400306584" at="240,63,241,67" concept="0" />
+      <node id="6998860900671418236" at="241,67,242,74" concept="0" />
+      <node id="6998860900671530572" at="242,74,243,74" concept="0" />
+      <node id="1476884141930130693" at="243,74,244,74" concept="0" />
+      <node id="7926701909975416101" at="244,74,245,201" concept="0" />
+      <node id="1659807394254493213" at="245,201,246,203" concept="0" />
+      <node id="4755209551904389320" at="246,203,247,204" concept="0" />
+      <node id="6520682027041170530" at="247,204,248,200" concept="0" />
+      <node id="733309334557882230" at="248,200,249,207" concept="0" />
+      <node id="4755209551904389307" at="249,207,250,35" concept="0" />
+      <node id="4755209551904389307" at="250,35,251,22" concept="4" />
+      <node id="4755209551904389307" at="229,0,253,0" concept="6" trace="createDescriptorForBwfJavaModule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4755209551904389307" at="80,47,81,38" />
-      <scope id="4755209551904389307" at="218,71,239,22">
+      <scope id="4755209551904389307" at="229,71,251,22">
         <var name="b" id="4755209551904389307" />
       </scope>
-      <scope id="4755209551904389307" at="218,0,241,0" />
+      <scope id="4755209551904389307" at="229,0,253,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/4755209551904389316">
@@ -620,18 +636,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4755209551904389316" at="27,0,28,0" concept="1" trace="myConceptBwfJavaModuleReference" />
       <node id="4755209551904389316" at="82,56,83,47" concept="4" />
-      <node id="4755209551904389316" at="241,80,242,185" concept="3" />
-      <node id="4755209551904389316" at="242,185,243,34" concept="0" />
-      <node id="4755209551904389316" at="243,34,244,136" concept="0" />
-      <node id="4755209551904389316" at="244,136,245,115" concept="0" />
-      <node id="4755209551904389317" at="245,115,246,170" concept="0" />
-      <node id="4755209551904389316" at="246,170,247,22" concept="4" />
-      <node id="4755209551904389316" at="241,0,249,0" concept="6" trace="createDescriptorForBwfJavaModuleReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4755209551904389316" at="253,80,254,185" concept="3" />
+      <node id="4755209551904389316" at="254,185,255,34" concept="0" />
+      <node id="4755209551904389316" at="255,34,256,136" concept="0" />
+      <node id="4755209551904389316" at="256,136,257,115" concept="0" />
+      <node id="4755209551904389316" at="257,115,258,17" concept="0" />
+      <node id="4755209551904389317" at="258,17,259,170" concept="0" />
+      <node id="4755209551904389316" at="259,170,260,22" concept="4" />
+      <node id="4755209551904389316" at="253,0,262,0" concept="6" trace="createDescriptorForBwfJavaModuleReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4755209551904389316" at="82,56,83,47" />
-      <scope id="4755209551904389316" at="241,80,247,22">
+      <scope id="4755209551904389316" at="253,80,260,22">
         <var name="b" id="4755209551904389316" />
       </scope>
-      <scope id="4755209551904389316" at="241,0,249,0" />
+      <scope id="4755209551904389316" at="253,0,262,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6520682027040940623">
@@ -654,20 +671,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6520682027040940623" at="29,0,30,0" concept="1" trace="myConceptBwfMacroListImport" />
       <node id="6520682027040940623" at="86,52,87,43" concept="4" />
-      <node id="6520682027040940623" at="262,76,263,181" concept="3" />
-      <node id="6520682027040940623" at="263,181,264,34" concept="0" />
-      <node id="6520682027040940623" at="264,34,265,133" concept="0" />
-      <node id="6520682027040940623" at="265,133,266,115" concept="0" />
-      <node id="6520682027040940624" at="266,115,267,65" concept="0" />
-      <node id="6520682027040940625" at="267,65,268,73" concept="0" />
-      <node id="6520682027040940623" at="268,73,269,29" concept="0" />
-      <node id="6520682027040940623" at="269,29,270,22" concept="4" />
-      <node id="6520682027040940623" at="262,0,272,0" concept="6" trace="createDescriptorForBwfMacroListImport#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6520682027040940623" at="276,76,277,181" concept="3" />
+      <node id="6520682027040940623" at="277,181,278,34" concept="0" />
+      <node id="6520682027040940623" at="278,34,279,133" concept="0" />
+      <node id="6520682027040940623" at="279,133,280,115" concept="0" />
+      <node id="6520682027040940623" at="280,115,281,17" concept="0" />
+      <node id="6520682027040940624" at="281,17,282,65" concept="0" />
+      <node id="6520682027040940625" at="282,65,283,73" concept="0" />
+      <node id="6520682027040940623" at="283,73,284,29" concept="0" />
+      <node id="6520682027040940623" at="284,29,285,22" concept="4" />
+      <node id="6520682027040940623" at="276,0,287,0" concept="6" trace="createDescriptorForBwfMacroListImport#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6520682027040940623" at="86,52,87,43" />
-      <scope id="6520682027040940623" at="262,76,270,22">
+      <scope id="6520682027040940623" at="276,76,285,22">
         <var name="b" id="6520682027040940623" />
       </scope>
-      <scope id="6520682027040940623" at="262,0,272,0" />
+      <scope id="6520682027040940623" at="276,0,287,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6647099934206976110">
@@ -689,16 +707,17 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6647099934206976110" at="22,0,23,0" concept="1" trace="myConceptBwfJavaDependency" />
       <node id="6647099934206976110" at="72,51,73,42" concept="4" />
-      <node id="6647099934206976110" at="185,75,186,180" concept="3" />
-      <node id="6647099934206976110" at="186,180,187,33" concept="0" />
-      <node id="6647099934206976110" at="187,33,188,115" concept="0" />
-      <node id="6647099934206976110" at="188,115,189,22" concept="4" />
-      <node id="6647099934206976110" at="185,0,191,0" concept="6" trace="createDescriptorForBwfJavaDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6647099934206976110" at="192,75,193,180" concept="3" />
+      <node id="6647099934206976110" at="193,180,194,33" concept="0" />
+      <node id="6647099934206976110" at="194,33,195,115" concept="0" />
+      <node id="6647099934206976110" at="195,115,196,17" concept="0" />
+      <node id="6647099934206976110" at="196,17,197,22" concept="4" />
+      <node id="6647099934206976110" at="192,0,199,0" concept="6" trace="createDescriptorForBwfJavaDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6647099934206976110" at="72,51,73,42" />
-      <scope id="6647099934206976110" at="185,75,189,22">
+      <scope id="6647099934206976110" at="192,75,197,22">
         <var name="b" id="6647099934206976110" />
       </scope>
-      <scope id="6647099934206976110" at="185,0,191,0" />
+      <scope id="6647099934206976110" at="192,0,199,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6647099934206976119">
@@ -722,19 +741,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6647099934206976119" at="21,0,22,0" concept="1" trace="myConceptBwfJavaClassPath" />
       <node id="6647099934206976119" at="70,50,71,41" concept="4" />
-      <node id="6647099934206976119" at="176,74,177,179" concept="3" />
-      <node id="6647099934206976119" at="177,179,178,34" concept="0" />
-      <node id="6647099934206976119" at="178,34,179,136" concept="0" />
-      <node id="6647099934206976119" at="179,136,180,115" concept="0" />
-      <node id="7926701909975791137" at="180,115,181,203" concept="0" />
-      <node id="6647099934206976119" at="181,203,182,18" concept="0" />
-      <node id="6647099934206976119" at="182,18,183,22" concept="4" />
-      <node id="6647099934206976119" at="176,0,185,0" concept="6" trace="createDescriptorForBwfJavaClassPath#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6647099934206976119" at="182,74,183,179" concept="3" />
+      <node id="6647099934206976119" at="183,179,184,34" concept="0" />
+      <node id="6647099934206976119" at="184,34,185,136" concept="0" />
+      <node id="6647099934206976119" at="185,136,186,115" concept="0" />
+      <node id="6647099934206976119" at="186,115,187,17" concept="0" />
+      <node id="7926701909975791137" at="187,17,188,203" concept="0" />
+      <node id="6647099934206976119" at="188,203,189,18" concept="0" />
+      <node id="6647099934206976119" at="189,18,190,22" concept="4" />
+      <node id="6647099934206976119" at="182,0,192,0" concept="6" trace="createDescriptorForBwfJavaClassPath#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6647099934206976119" at="70,50,71,41" />
-      <scope id="6647099934206976119" at="176,74,183,22">
+      <scope id="6647099934206976119" at="182,74,190,22">
         <var name="b" id="6647099934206976119" />
       </scope>
-      <scope id="6647099934206976119" at="176,0,185,0" />
+      <scope id="6647099934206976119" at="182,0,192,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6647099934207069200">
@@ -757,20 +777,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6647099934207069200" at="30,0,31,0" concept="1" trace="myConceptBwfPathDeclaration" />
       <node id="6647099934207069200" at="88,52,89,43" concept="4" />
-      <node id="6647099934207069200" at="272,76,273,181" concept="3" />
-      <node id="6647099934207069200" at="273,181,274,34" concept="0" />
-      <node id="6647099934207069200" at="274,34,275,133" concept="0" />
-      <node id="6647099934207069200" at="275,133,276,71" concept="0" />
-      <node id="6647099934207069200" at="276,71,277,115" concept="0" />
-      <node id="6647099934207071047" at="277,115,278,199" concept="0" />
-      <node id="6647099934207069200" at="278,199,279,20" concept="0" />
-      <node id="6647099934207069200" at="279,20,280,22" concept="4" />
-      <node id="6647099934207069200" at="272,0,282,0" concept="6" trace="createDescriptorForBwfPathDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6647099934207069200" at="287,76,288,181" concept="3" />
+      <node id="6647099934207069200" at="288,181,289,34" concept="0" />
+      <node id="6647099934207069200" at="289,34,290,133" concept="0" />
+      <node id="6647099934207069200" at="290,133,291,71" concept="0" />
+      <node id="6647099934207069200" at="291,71,292,115" concept="0" />
+      <node id="6647099934207069200" at="292,115,293,17" concept="0" />
+      <node id="6647099934207071047" at="293,17,294,199" concept="0" />
+      <node id="6647099934207069200" at="294,199,295,20" concept="0" />
+      <node id="6647099934207069200" at="295,20,296,22" concept="4" />
+      <node id="6647099934207069200" at="287,0,298,0" concept="6" trace="createDescriptorForBwfPathDeclaration#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6647099934207069200" at="88,52,89,43" />
-      <scope id="6647099934207069200" at="272,76,280,22">
+      <scope id="6647099934207069200" at="287,76,296,22">
         <var name="b" id="6647099934207069200" />
       </scope>
-      <scope id="6647099934207069200" at="272,0,282,0" />
+      <scope id="6647099934207069200" at="287,0,298,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6647099934207069215">
@@ -793,18 +814,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6647099934207069215" at="31,0,32,0" concept="1" trace="myConceptBwfPathReference" />
       <node id="6647099934207069215" at="90,50,91,41" concept="4" />
-      <node id="6647099934207069215" at="282,74,283,179" concept="3" />
-      <node id="6647099934207069215" at="283,179,284,34" concept="0" />
-      <node id="6647099934207069215" at="284,34,285,127" concept="0" />
-      <node id="6647099934207069215" at="285,127,286,115" concept="0" />
-      <node id="6647099934207069216" at="286,115,287,170" concept="0" />
-      <node id="6647099934207069215" at="287,170,288,22" concept="4" />
-      <node id="6647099934207069215" at="282,0,290,0" concept="6" trace="createDescriptorForBwfPathReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6647099934207069215" at="298,74,299,179" concept="3" />
+      <node id="6647099934207069215" at="299,179,300,34" concept="0" />
+      <node id="6647099934207069215" at="300,34,301,127" concept="0" />
+      <node id="6647099934207069215" at="301,127,302,115" concept="0" />
+      <node id="6647099934207069215" at="302,115,303,17" concept="0" />
+      <node id="6647099934207069216" at="303,17,304,170" concept="0" />
+      <node id="6647099934207069215" at="304,170,305,22" concept="4" />
+      <node id="6647099934207069215" at="298,0,307,0" concept="6" trace="createDescriptorForBwfPathReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6647099934207069215" at="90,50,91,41" />
-      <scope id="6647099934207069215" at="282,74,288,22">
+      <scope id="6647099934207069215" at="298,74,305,22">
         <var name="b" id="6647099934207069215" />
       </scope>
-      <scope id="6647099934207069215" at="282,0,290,0" />
+      <scope id="6647099934207069215" at="298,0,307,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6896005762093571400">
@@ -827,23 +849,24 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6896005762093571400" at="28,0,29,0" concept="1" trace="myConceptBwfMacro" />
       <node id="6896005762093571400" at="84,42,85,33" concept="4" />
-      <node id="6896005762093571400" at="249,66,250,171" concept="3" />
-      <node id="6896005762093571400" at="250,171,251,34" concept="0" />
-      <node id="6896005762093571400" at="251,34,252,133" concept="0" />
-      <node id="6896005762093571400" at="252,133,253,71" concept="0" />
-      <node id="6896005762093571400" at="253,71,254,115" concept="0" />
-      <node id="6896005762093571402" at="254,115,255,71" concept="0" />
-      <node id="6896005762093571406" at="255,71,256,80" concept="0" />
-      <node id="6896005762093571407" at="256,80,257,69" concept="0" />
-      <node id="6921160174096663384" at="257,69,258,72" concept="0" />
-      <node id="6896005762093571400" at="258,72,259,21" concept="0" />
-      <node id="6896005762093571400" at="259,21,260,22" concept="4" />
-      <node id="6896005762093571400" at="249,0,262,0" concept="6" trace="createDescriptorForBwfMacro#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6896005762093571400" at="262,66,263,171" concept="3" />
+      <node id="6896005762093571400" at="263,171,264,34" concept="0" />
+      <node id="6896005762093571400" at="264,34,265,133" concept="0" />
+      <node id="6896005762093571400" at="265,133,266,71" concept="0" />
+      <node id="6896005762093571400" at="266,71,267,115" concept="0" />
+      <node id="6896005762093571400" at="267,115,268,17" concept="0" />
+      <node id="6896005762093571402" at="268,17,269,71" concept="0" />
+      <node id="6896005762093571406" at="269,71,270,80" concept="0" />
+      <node id="6896005762093571407" at="270,80,271,69" concept="0" />
+      <node id="6921160174096663384" at="271,69,272,72" concept="0" />
+      <node id="6896005762093571400" at="272,72,273,21" concept="0" />
+      <node id="6896005762093571400" at="273,21,274,22" concept="4" />
+      <node id="6896005762093571400" at="262,0,276,0" concept="6" trace="createDescriptorForBwfMacro#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6896005762093571400" at="84,42,85,33" />
-      <scope id="6896005762093571400" at="249,66,260,22">
+      <scope id="6896005762093571400" at="262,66,274,22">
         <var name="b" id="6896005762093571400" />
       </scope>
-      <scope id="6896005762093571400" at="249,0,262,0" />
+      <scope id="6896005762093571400" at="262,0,276,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/7306485738221315929">
@@ -866,18 +889,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7306485738221315929" at="23,0,24,0" concept="1" trace="myConceptBwfJavaDescriptor" />
       <node id="7306485738221315929" at="74,51,75,42" concept="4" />
-      <node id="7306485738221315929" at="191,75,192,180" concept="3" />
-      <node id="7306485738221315929" at="192,180,193,34" concept="0" />
-      <node id="7306485738221315929" at="193,34,194,133" concept="0" />
-      <node id="7306485738221315929" at="194,133,195,115" concept="0" />
-      <node id="7306485738221315929" at="195,115,196,31" concept="0" />
-      <node id="7306485738221315929" at="196,31,197,22" concept="4" />
-      <node id="7306485738221315929" at="191,0,199,0" concept="6" trace="createDescriptorForBwfJavaDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7306485738221315929" at="199,75,200,180" concept="3" />
+      <node id="7306485738221315929" at="200,180,201,34" concept="0" />
+      <node id="7306485738221315929" at="201,34,202,133" concept="0" />
+      <node id="7306485738221315929" at="202,133,203,115" concept="0" />
+      <node id="7306485738221315929" at="203,115,204,17" concept="0" />
+      <node id="7306485738221315929" at="204,17,205,31" concept="0" />
+      <node id="7306485738221315929" at="205,31,206,22" concept="4" />
+      <node id="7306485738221315929" at="199,0,208,0" concept="6" trace="createDescriptorForBwfJavaDescriptor#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7306485738221315929" at="74,51,75,42" />
-      <scope id="7306485738221315929" at="191,75,197,22">
+      <scope id="7306485738221315929" at="199,75,206,22">
         <var name="b" id="7306485738221315929" />
       </scope>
-      <scope id="7306485738221315929" at="191,0,199,0" />
+      <scope id="7306485738221315929" at="199,0,208,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/7306485738221391506">
@@ -900,20 +924,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7306485738221391506" at="40,0,41,0" concept="1" trace="myConceptBwfTaskLibrary" />
       <node id="7306485738221391506" at="108,48,109,39" concept="4" />
-      <node id="7306485738221391506" at="364,72,365,177" concept="3" />
-      <node id="7306485738221391506" at="365,177,366,33" concept="0" />
-      <node id="7306485738221391506" at="366,33,367,71" concept="0" />
-      <node id="7306485738221391506" at="367,71,368,115" concept="0" />
-      <node id="7306485738221391508" at="368,115,369,197" concept="0" />
-      <node id="7306485738221455030" at="369,197,370,199" concept="0" />
-      <node id="7306485738221391506" at="370,199,371,35" concept="0" />
-      <node id="7306485738221391506" at="371,35,372,22" concept="4" />
-      <node id="7306485738221391506" at="364,0,374,0" concept="6" trace="createDescriptorForBwfTaskLibrary#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7306485738221391506" at="389,72,390,177" concept="3" />
+      <node id="7306485738221391506" at="390,177,391,33" concept="0" />
+      <node id="7306485738221391506" at="391,33,392,71" concept="0" />
+      <node id="7306485738221391506" at="392,71,393,115" concept="0" />
+      <node id="7306485738221391506" at="393,115,394,17" concept="0" />
+      <node id="7306485738221391508" at="394,17,395,197" concept="0" />
+      <node id="7306485738221455030" at="395,197,396,199" concept="0" />
+      <node id="7306485738221391506" at="396,199,397,35" concept="0" />
+      <node id="7306485738221391506" at="397,35,398,22" concept="4" />
+      <node id="7306485738221391506" at="389,0,400,0" concept="6" trace="createDescriptorForBwfTaskLibrary#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7306485738221391506" at="108,48,109,39" />
-      <scope id="7306485738221391506" at="364,72,372,22">
+      <scope id="7306485738221391506" at="389,72,398,22">
         <var name="b" id="7306485738221391506" />
       </scope>
-      <scope id="7306485738221391506" at="364,0,374,0" />
+      <scope id="7306485738221391506" at="389,0,400,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/7306485738221471031">
@@ -936,17 +961,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7306485738221471031" at="41,0,42,0" concept="1" trace="myConceptBwfTaskLibraryDependency" />
       <node id="7306485738221471031" at="110,58,111,49" concept="4" />
-      <node id="7306485738221471031" at="374,82,375,187" concept="3" />
-      <node id="7306485738221471031" at="375,187,376,34" concept="0" />
-      <node id="7306485738221471031" at="376,34,377,115" concept="0" />
-      <node id="7306485738221471032" at="377,115,378,170" concept="0" />
-      <node id="7306485738221471031" at="378,170,379,22" concept="4" />
-      <node id="7306485738221471031" at="374,0,381,0" concept="6" trace="createDescriptorForBwfTaskLibraryDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7306485738221471031" at="400,82,401,187" concept="3" />
+      <node id="7306485738221471031" at="401,187,402,34" concept="0" />
+      <node id="7306485738221471031" at="402,34,403,115" concept="0" />
+      <node id="7306485738221471031" at="403,115,404,17" concept="0" />
+      <node id="7306485738221471032" at="404,17,405,170" concept="0" />
+      <node id="7306485738221471031" at="405,170,406,22" concept="4" />
+      <node id="7306485738221471031" at="400,0,408,0" concept="6" trace="createDescriptorForBwfTaskLibraryDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7306485738221471031" at="110,58,111,49" />
-      <scope id="7306485738221471031" at="374,82,379,22">
+      <scope id="7306485738221471031" at="400,82,406,22">
         <var name="b" id="7306485738221471031" />
       </scope>
-      <scope id="7306485738221471031" at="374,0,381,0" />
+      <scope id="7306485738221471031" at="400,0,408,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/7926701909975416091">
@@ -969,17 +995,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="7926701909975416091" at="20,0,21,0" concept="1" trace="myConceptBwfFileSet" />
       <node id="7926701909975416091" at="68,44,69,35" concept="4" />
-      <node id="7926701909975416091" at="169,68,170,173" concept="3" />
-      <node id="7926701909975416091" at="170,173,171,34" concept="0" />
-      <node id="7926701909975416091" at="171,34,172,115" concept="0" />
-      <node id="7926701909975416092" at="172,115,173,200" concept="0" />
-      <node id="7926701909975416091" at="173,200,174,22" concept="4" />
-      <node id="7926701909975416091" at="169,0,176,0" concept="6" trace="createDescriptorForBwfFileSet#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7926701909975416091" at="174,68,175,173" concept="3" />
+      <node id="7926701909975416091" at="175,173,176,34" concept="0" />
+      <node id="7926701909975416091" at="176,34,177,115" concept="0" />
+      <node id="7926701909975416091" at="177,115,178,17" concept="0" />
+      <node id="7926701909975416092" at="178,17,179,200" concept="0" />
+      <node id="7926701909975416091" at="179,200,180,22" concept="4" />
+      <node id="7926701909975416091" at="174,0,182,0" concept="6" trace="createDescriptorForBwfFileSet#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7926701909975416091" at="68,44,69,35" />
-      <scope id="7926701909975416091" at="169,68,174,22">
+      <scope id="7926701909975416091" at="174,68,180,22">
         <var name="b" id="7926701909975416091" />
       </scope>
-      <scope id="7926701909975416091" at="169,0,176,0" />
+      <scope id="7926701909975416091" at="174,0,182,0" />
     </file>
   </root>
   <root nodeRef="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/8292198017262926588">
@@ -1002,17 +1029,18 @@
     <file name="StructureAspectDescriptor.java">
       <node id="8292198017262926588" at="19,0,20,0" concept="1" trace="myConceptBwfDependency" />
       <node id="8292198017262926588" at="66,47,67,38" concept="4" />
-      <node id="8292198017262926588" at="162,71,163,176" concept="3" />
-      <node id="8292198017262926588" at="163,176,164,34" concept="0" />
-      <node id="8292198017262926588" at="164,34,165,115" concept="0" />
-      <node id="8292198017262926600" at="165,115,166,63" concept="0" />
-      <node id="8292198017262926588" at="166,63,167,22" concept="4" />
-      <node id="8292198017262926588" at="162,0,169,0" concept="6" trace="createDescriptorForBwfDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8292198017262926588" at="166,71,167,176" concept="3" />
+      <node id="8292198017262926588" at="167,176,168,34" concept="0" />
+      <node id="8292198017262926588" at="168,34,169,115" concept="0" />
+      <node id="8292198017262926588" at="169,115,170,17" concept="0" />
+      <node id="8292198017262926600" at="170,17,171,63" concept="0" />
+      <node id="8292198017262926588" at="171,63,172,22" concept="4" />
+      <node id="8292198017262926588" at="166,0,174,0" concept="6" trace="createDescriptorForBwfDependency#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8292198017262926588" at="66,47,67,38" />
-      <scope id="8292198017262926588" at="162,71,167,22">
+      <scope id="8292198017262926588" at="166,71,172,22">
         <var name="b" id="8292198017262926588" />
       </scope>
-      <scope id="8292198017262926588" at="162,0,169,0" />
+      <scope id="8292198017262926588" at="166,0,174,0" />
     </file>
   </root>
 </debug-info>

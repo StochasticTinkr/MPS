@@ -44,7 +44,7 @@ public class LinkVCSDescriptor_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_3e9fi_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_3e9fi_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3e9fi_a() {
       super(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, "jetbrains.mps.vcs.mergehints.structure.LinkVCSDescriptor"), MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, 0x4f2cc0d970a4f877L, "lnk"));

@@ -4,16 +4,17 @@ package CloneModule.test.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.testbench.EnvironmentAwareTestCase;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
+import junit.framework.Assert;
+import jetbrains.mps.generator.CustomGenerationModuleFacet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.AbstractModule;
-import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -22,27 +23,28 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
-import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.util.Reference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper;
+import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 
 @MPSLaunch
 public class CloneModule_Test extends EnvironmentAwareTestCase {
-  private static final Logger LOG = LogManager.getLogger(CloneModule_Test.class);
   private static final String PROJECT_PATH = "testbench/modules/testCloneModule/";
   private static final String SUFFIX = "_testclone";
+  private static final SModuleReference XML = PersistenceFacade.getInstance().createModuleReference("04399201-cb79-4edc-8d1a-e2b946892642(XML)");
+  private static final SModuleReference PER_ROOT = PersistenceFacade.getInstance().createModuleReference("1b06eede-ff4f-40f3-92e8-3cf27f8127bd(PER_ROOT)");
+  private static final SModuleReference BINARY = PersistenceFacade.getInstance().createModuleReference("6c080adc-7c51-4b56-a8e2-17397071f3cc(BINARY)");
+  private static final SModuleReference FACETS = PersistenceFacade.getInstance().createModuleReference("7ce8a6e5-ae18-4e78-8ec6-bb6474929f4f(FACETS)");
+  private static final SModuleReference TEST_LANG = PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)");
+  private static final SModuleReference TEST_LANG_ACCESORIES = PersistenceFacade.getInstance().createModuleReference("eee56556-94d4-4d71-a8ea-0e2403133b8d(TestLanguage_ACCESORIES)");
   private IFile clonedModulesDirectory;
   private MPSProject project;
-  private final SModuleReference XML = PersistenceFacade.getInstance().createModuleReference("04399201-cb79-4edc-8d1a-e2b946892642(XML)");
-  private final SModuleReference PER_ROOT = PersistenceFacade.getInstance().createModuleReference("1b06eede-ff4f-40f3-92e8-3cf27f8127bd(PER_ROOT)");
-  private final SModuleReference BINARY = PersistenceFacade.getInstance().createModuleReference("6c080adc-7c51-4b56-a8e2-17397071f3cc(BINARY)");
-  private final SModuleReference TEST_LANG = PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)");
-  private final SModuleReference TEST_LANG_ACCESORIES = PersistenceFacade.getInstance().createModuleReference("eee56556-94d4-4d71-a8ea-0e2403133b8d(TestLanguage_ACCESORIES)");
   public void test_cloneXMLSolution() throws Exception {
     testModule(resolveSolution(XML), MPSExtentions.DOT_SOLUTION);
   }
@@ -52,6 +54,19 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
   public void test_cloneBinarySolution() throws Exception {
     testModule(resolveSolution(BINARY), MPSExtentions.DOT_SOLUTION);
   }
+  public void test_cloneFacets() throws Exception {
+    Solution copyFacetsModule = as_i3fixg_a0a0a31(testModule(resolveSolution(FACETS), MPSExtentions.DOT_SOLUTION), Solution.class);
+
+    IdeaPluginModuleFacet ideaPluginModuleFacet = copyFacetsModule.getFacet(IdeaPluginModuleFacet.class);
+    Assert.assertNotNull(ideaPluginModuleFacet);
+    Assert.assertEquals("test.plugin.id", ideaPluginModuleFacet.getPluginId());
+
+    CustomGenerationModuleFacet customGenerationModuleFacet = copyFacetsModule.getFacet(CustomGenerationModuleFacet.class);
+    Assert.assertNotNull(customGenerationModuleFacet);
+    // TODO Current behavior is that reference in facets is not updated in module clone 
+    // TODO Fix this test when facets copying become done right 
+    Assert.assertEquals(PersistenceFacade.getInstance().createModelReference("r:785f2a6c-c64a-4974-9501-91ce4789a01c(FACETS.genplan@genplan)"), customGenerationModuleFacet.getPlanModelReference());
+  }
   public void test_cloneLanguage() throws Exception {
     testModule(resolveLanguage(TEST_LANG), MPSExtentions.DOT_LANGUAGE);
   }
@@ -60,7 +75,7 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
 
     AbstractModule module = testModule(originalLang, MPSExtentions.DOT_LANGUAGE);
     Assert.assertTrue("Language clone is not a language", module instanceof Language);
-    final Language clonedLang = as_i3fixg_a0a4a41(module, Language.class);
+    final Language clonedLang = as_i3fixg_a0a4a51(module, Language.class);
 
     final Wrappers._T<List<SModel>> originalAccesoryModels = new Wrappers._T<List<SModel>>();
     final Wrappers._T<List<SModel>> clonedAccesoryModels = new Wrappers._T<List<SModel>>();
@@ -96,17 +111,14 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
     myEnvironment.closeProject(project);
   }
 
+
   public static void checkModule(AbstractModule module) {
     MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>();
     ValidationUtil.validateModule(module, processor);
-    if (!(processor.getErrors().isEmpty())) {
-      for (String error : processor.getErrors()) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Error found while checking '" + module + "': " + error);
-        }
-      }
-      org.junit.Assert.fail();
-    }
+    List<String> errors = processor.getErrors();
+    ListSequence.fromList(errors).addSequence(ListSequence.fromList(processor.getWarnings()));
+
+    Assert.assertTrue("Cloned module has errors:\n\t" + IterableUtils.join(ListSequence.fromList(errors), "\n\t"), ListSequence.fromList(errors).isEmpty());
   }
 
   public void executeUnderLock(final Runnable runnable) {
@@ -165,8 +177,13 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
 
         IFile copyLocation = clonedModulesDirectory.getDescendant(clonedModuleName + moduleFileNameExtension);
         CopyModuleHelper helper = new CopyModuleHelper(project, originalModule, clonedModuleName, copyLocation, "");
-        clonedModule.value = helper.copy();
+        try {
+          clonedModule.value = helper.copy();
+        } catch (CopyNotSupportedException e) {
+          Assert.fail("Cloning should be supported for module " + originalModule.getModuleName() + ". Actually got CopyNotSupportedException: " + e.getMessage());
+        }
 
+        Assert.assertNotNull(clonedModule.value);
         Assert.assertEquals(clonedModule.value.getModuleName(), clonedModuleName);
 
         checkModule(originalModule);
@@ -175,7 +192,10 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
     });
     return clonedModule.value;
   }
-  private static <T> T as_i3fixg_a0a4a41(Object o, Class<T> type) {
+  private static <T> T as_i3fixg_a0a0a31(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_i3fixg_a0a4a51(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

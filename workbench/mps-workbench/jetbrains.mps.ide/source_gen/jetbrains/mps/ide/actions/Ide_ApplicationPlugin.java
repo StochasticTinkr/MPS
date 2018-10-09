@@ -50,7 +50,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixModuleImportsInProject_Action());
     addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
-    addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
@@ -121,7 +120,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new EditorActionsAddition_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
-    addGroup(new EditorPopupEx_Goto_ActionGroup());
     addGroup(new EditorPopup_Show_ActionGroup());
     addGroup(new FavoritesPopupWrapper_ActionGroup());
     addGroup(new FavoritesPopup_ActionGroup());
@@ -244,7 +242,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
-    insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzePlatform_ActionGroupother", null);

@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 public class RefactoringAccessImpl extends RefactoringAccessEx implements ApplicationComponent {
   private static final int MAX_SEARCH_RESULTS = 30000;
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
+    super(coreComponents.getPlatform());
   }
   @Override
   public void initComponent() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -52,8 +53,10 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
 
   @Override
   public Collection<TemplateModule> getGenerators() {
-    ArrayList<TemplateModule> rv = new ArrayList<TemplateModule>(mySteps.length);
-    for (Step p : mySteps) {
+    ArrayList<TemplateModule> rv = new ArrayList<TemplateModule>(mySteps.length * 2);
+    ArrayDeque<Step> queue = new ArrayDeque<>(Arrays.asList(mySteps));
+    while (!queue.isEmpty()) {
+      Step p = queue.removeFirst();
       if (p instanceof Transform) {
         for (TemplateModel tm : ((Transform) p).getTemplateModels()) {
           TemplateModule templateModule = tm.getModule();
@@ -63,6 +66,8 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
             rv.add(templateModule);
           }
         }
+      } else if (p instanceof Fork) {
+        queue.addAll(((Fork) p).getBranch());
       }
     }
     return rv;

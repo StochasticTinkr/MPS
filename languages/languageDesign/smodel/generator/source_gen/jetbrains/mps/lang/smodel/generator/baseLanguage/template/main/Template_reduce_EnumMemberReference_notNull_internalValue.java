@@ -37,7 +37,7 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_11393371056990(new PropertyMacroContext(context, "_internal_value_", propertyMacro_gvjlvq_c0a0c0a0c0f))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_3_0(new PropertyMacroContext(context, "_internal_value_", propertyMacro_gvjlvq_c0a0c0a0c0f))));
     } finally {
     }
     FragmentResult rv = nodeFragment(0, tnode1);

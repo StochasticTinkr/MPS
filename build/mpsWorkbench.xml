@@ -14,6 +14,7 @@
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
+  <property name="mps.generator.skipUnmodifiedModels" value="false" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -355,7 +356,6 @@
     <jar destfile="${build.layout}/lib/mps-workbench.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-workbench" />
       <fileset dir="${build.tmp}/java/out/typesystem-ui" />
-      <fileset dir="${build.tmp}/java/out/MpsSupport" />
       <fileset dir="${mps_home}/workbench/mps-ui/source_gen">
         <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
       </fileset>
@@ -388,7 +388,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.mps-workbench, java.compile.MpsSupport, java.compile.startup, java.compile.jetbrains.mps.lang.plugin.standalone, java.compile.jetbrains.mps.lang.plugin.standalone#481983775135098857, java.compile.jetbrains.mps.lang.core.pluginSolution, java.compile.jetbrains.mps.lang.script.pluginSolution, java.compile.jetbrains.mps.lang.typesystem.pluginSolution, java.compile.jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution, java.compile.jetbrains.mps.lang.migration.actions" />
+  <target name="compileJava" depends="java.compile.typesystem-ui, java.compile.mps-workbench, java.compile.startup, java.compile.jetbrains.mps.lang.plugin.standalone, java.compile.jetbrains.mps.lang.plugin.standalone#481983775135098857, java.compile.jetbrains.mps.lang.core.pluginSolution, java.compile.jetbrains.mps.lang.script.pluginSolution, java.compile.jetbrains.mps.lang.typesystem.pluginSolution, java.compile.jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution, java.compile.jetbrains.mps.lang.migration.actions" />
   
   <target name="processResources" />
   
@@ -400,7 +400,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${artifacts.mpsTesting}/mps-testing" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -610,18 +610,6 @@
       <fileset dir="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
         <exclude name="idea/IdeaApplicationInfo.xml" />
       </fileset>
-    </copy>
-  </target>
-  
-  <target name="java.compile.MpsSupport">
-    <mkdir dir="${build.tmp}/java/out/MpsSupport" />
-    <javac2 destdir="${build.tmp}/java/out/MpsSupport" fork="false" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/MPSPlugin/source-api" />
-      <classpath refid="path.jdk.classpath" />
-    </javac2>
-    <copy todir="${build.tmp}/java/out/MpsSupport">
-      <fileset dir="${mps_home}/MPSPlugin/source-api" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

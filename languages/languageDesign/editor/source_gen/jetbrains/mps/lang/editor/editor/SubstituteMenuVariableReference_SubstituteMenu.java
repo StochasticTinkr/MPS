@@ -44,7 +44,7 @@ public class SubstituteMenuVariableReference_SubstituteMenu extends SubstituteMe
   }
 
 
-  public static class SMP_ReferenceScope_g4q34h_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_g4q34h_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_g4q34h_a() {
       super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));

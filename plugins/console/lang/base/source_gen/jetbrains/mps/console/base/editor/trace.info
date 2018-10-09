@@ -686,7 +686,7 @@
       <node id="328850564594145441" at="71,5,72,22" concept="7" />
       <node id="328850564594145530" at="74,45,75,95" concept="7" />
       <node id="328850564594145441" at="77,40,78,170" concept="6" />
-      <node id="328850564594145441" at="82,39,83,159" concept="7" />
+      <node id="328850564594145441" at="82,39,83,149" concept="7" />
       <node id="328850564594145441" at="85,33,86,60" concept="2" />
       <node id="328850564594145441" at="86,60,87,48" concept="2" />
       <node id="328850564594145441" at="87,48,88,43" concept="2" />
@@ -704,7 +704,7 @@
       <node id="328850564594145441" at="108,87,109,145" concept="7" />
       <node id="328850564594145441" at="110,10,111,22" concept="7" />
       <node id="328850564594145535" at="116,0,117,0" concept="3" trace="myReferencingNode" />
-      <node id="328850564594145535" at="118,119,119,21" concept="11" />
+      <node id="328850564594145535" at="118,109,119,21" concept="11" />
       <node id="328850564594145535" at="119,21,120,42" concept="2" />
       <node id="328850564594145535" at="120,42,121,20" concept="2" />
       <node id="328850564594145535" at="124,41,125,45" concept="7" />
@@ -749,7 +749,7 @@
       <node id="328850564594145441" at="80,72,85,33" concept="6" />
       <node id="328850564594145441" at="101,301,106,7" concept="6" />
       <node id="328850564594145441" at="106,7,111,22" concept="4" />
-      <node id="328850564594145535" at="118,0,123,0" concept="1" trace="Inline_Builder_clzyhh_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="328850564594145535" at="118,0,123,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="328850564594145535" at="128,0,133,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="328850564594145441" at="149,0,154,0" concept="5" trace="getMatchingTextProvider#()Ljetbrains/mps/smodel/action/IReferentPresentationProvider;" />
       <node id="328850564594145441" at="154,0,159,0" concept="5" trace="getVisibleMatchingTextProvider#()Ljetbrains/mps/smodel/action/IReferentPresentationProvider;" />
@@ -767,7 +767,7 @@
       <scope id="328850564594145441" at="67,31,68,37" />
       <scope id="328850564594145441" at="69,12,70,51" />
       <scope id="328850564594145529" at="74,45,75,95" />
-      <scope id="328850564594145441" at="82,39,83,159" />
+      <scope id="328850564594145441" at="82,39,83,149" />
       <scope id="328850564594145441" at="103,39,104,113" />
       <scope id="328850564594145535" at="124,41,125,45" />
       <scope id="328850564594145535" at="130,28,131,20" />
@@ -790,7 +790,7 @@
       <scope id="328850564594145441" at="103,0,106,0">
         <var name="it" id="328850564594145441" />
       </scope>
-      <scope id="328850564594145535" at="118,119,121,20" />
+      <scope id="328850564594145535" at="118,109,121,20" />
       <scope id="328850564594145535" at="124,0,127,0" />
       <scope id="328850564594145547" at="162,0,165,0" />
       <scope id="328850564594145547" at="167,0,170,0">
@@ -843,7 +843,7 @@
       <unit id="328850564594145547" at="161,88,170,5" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a$3" />
       <unit id="328850564594145441" at="79,42,91,5" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a$1" />
       <unit id="328850564594145441" at="146,0,160,0" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a$INodeWithReference_target_cellMenu_clzyhh_a0a0" />
-      <unit id="328850564594145535" at="113,0,146,0" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a$Inline_Builder_clzyhh_a0a" />
+      <unit id="328850564594145535" at="113,0,146,0" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a$Inline_Builder0" />
       <unit id="328850564594145441" at="44,0,181,0" name="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent_ComponentBuilder_a" />
     </file>
     <file name="PresentationProviders.java">
@@ -2732,7 +2732,7 @@
       <node id="6928665434433762048" at="64,31,65,48" concept="2" />
       <node id="6928665434433761876" at="65,48,66,22" concept="7" />
       <node id="6928665434433761876" at="68,40,69,172" concept="6" />
-      <node id="6928665434433761876" at="73,39,74,142" concept="7" />
+      <node id="6928665434433761876" at="73,39,74,132" concept="7" />
       <node id="6928665434433761876" at="76,34,77,60" concept="2" />
       <node id="6928665434433761876" at="77,60,78,48" concept="2" />
       <node id="6928665434433761876" at="78,48,79,58" concept="2" />
@@ -2754,7 +2754,7 @@
       <node id="6928665434433761876" at="106,87,107,145" concept="7" />
       <node id="6928665434433761876" at="108,10,109,22" concept="7" />
       <node id="6928665434433762049" at="114,0,115,0" concept="3" trace="myReferencingNode" />
-      <node id="6928665434433762049" at="116,119,117,21" concept="11" />
+      <node id="6928665434433762049" at="116,109,117,21" concept="11" />
       <node id="6928665434433762049" at="117,21,118,42" concept="2" />
       <node id="6928665434433762049" at="118,42,119,20" concept="2" />
       <node id="6928665434433762049" at="122,41,123,45" concept="7" />
@@ -2780,7 +2780,7 @@
       <node id="6928665434433761876" at="71,72,76,34" concept="6" />
       <node id="6928665434433761876" at="99,301,104,7" concept="6" />
       <node id="6928665434433761876" at="104,7,109,22" concept="4" />
-      <node id="6928665434433762049" at="116,0,121,0" concept="1" trace="Inline_Builder_nmmm44_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6928665434433762049" at="116,0,121,0" concept="1" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6928665434433762049" at="126,0,131,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6928665434433761876" at="144,0,149,0" concept="5" trace="getMatchingTextProvider#()Ljetbrains/mps/smodel/action/IReferentPresentationProvider;" />
       <node id="6928665434433761876" at="149,0,154,0" concept="5" trace="getVisibleMatchingTextProvider#()Ljetbrains/mps/smodel/action/IReferentPresentationProvider;" />
@@ -2793,7 +2793,7 @@
       <scope id="6928665434433761876" at="142,64,142,64" />
       <scope id="6928665434433761876" at="52,26,53,18" />
       <scope id="6928665434433761876" at="56,39,57,32" />
-      <scope id="6928665434433761876" at="73,39,74,142" />
+      <scope id="6928665434433761876" at="73,39,74,132" />
       <scope id="6928665434433761876" at="101,39,102,113" />
       <scope id="6928665434433762049" at="122,41,123,45" />
       <scope id="6928665434433762049" at="128,28,129,20" />
@@ -2810,7 +2810,7 @@
       <scope id="6928665434433761876" at="101,0,104,0">
         <var name="it" id="6928665434433761876" />
       </scope>
-      <scope id="6928665434433762049" at="116,119,119,20" />
+      <scope id="6928665434433762049" at="116,109,119,20" />
       <scope id="6928665434433762049" at="122,0,125,0" />
       <scope id="6928665434433761876" at="45,0,49,0">
         <var name="context" id="6928665434433761876" />
@@ -2858,7 +2858,7 @@
       <unit id="6928665434433761876" at="100,102,104,5" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a$2" />
       <unit id="6928665434433761876" at="141,0,155,0" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a$HelpConceptReference_command_cellMenu_nmmm44_a0a0" />
       <unit id="6928665434433761876" at="70,42,89,5" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a$1" />
-      <unit id="6928665434433762049" at="111,0,141,0" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a$Inline_Builder_nmmm44_a0a" />
+      <unit id="6928665434433762049" at="111,0,141,0" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="6928665434433761876" at="41,0,156,0" name="jetbrains.mps.console.base.editor.HelpConceptReference_EditorBuilder_a" />
     </file>
     <file name="PresentationProviders.java">

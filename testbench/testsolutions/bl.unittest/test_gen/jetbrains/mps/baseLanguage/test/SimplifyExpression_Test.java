@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class SimplifyExpression_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SimplifyExpression_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SimplifyExpression_Test() {
     super(ourParamCache);
@@ -25,163 +29,167 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeTheConditionIsAlwaysCheck8245314650934534145() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck8245314650934534145", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck8245314650934534145();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck8626468694781659666() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8626468694781659666", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck8626468694781659666();
   }
   @Test
   public void test_NodeWarningCheck4477106456906133459() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeWarningCheck4477106456906133459", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeWarningCheck4477106456906133459();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck8245314650934533632() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck8245314650934533632", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck8245314650934533632();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck8245314650934533563() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck8245314650934533563", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck8245314650934533563();
   }
   @Test
   public void test_NodeTheTernaryOperatorConditionCheck8245314650934576457() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheTernaryOperatorConditionCheck8245314650934576457", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheTernaryOperatorConditionCheck8245314650934576457();
   }
   @Test
   public void test_NodeTheTernaryOperatorConditionCheck8245314650934580399() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheTernaryOperatorConditionCheck8245314650934580399", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheTernaryOperatorConditionCheck8245314650934580399();
   }
   @Test
   public void test_NodeWarningCheck4477106456906157513() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeWarningCheck4477106456906157513", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeWarningCheck4477106456906157513();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck8245314650934554098() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8245314650934554098", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck8245314650934554098();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456913936588() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456913936588", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456913936588();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck2857825852308765476() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck2857825852308765476", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck2857825852308765476();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck8626468694779692282() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8626468694779692282", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck8626468694779692282();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck8626468694779705042() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8626468694779705042", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck8626468694779705042();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456914053028() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456914053028", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456914053028();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456906125988() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456906125988", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456906125988();
   }
   @Test
   public void test_NodeTheNotLogicalExpressionCheck8626468694778147706() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck8626468694778147706", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheNotLogicalExpressionCheck8626468694778147706();
   }
   @Test
   public void test_NodeTheNotLogicalExpressionCheck8626468694778663594() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck8626468694778663594", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheNotLogicalExpressionCheck8626468694778663594();
   }
   @Test
   public void test_ErrorMessagesCheck2857825852308723301() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_ErrorMessagesCheck2857825852308723301", true);
+    new SimplifyExpression_Test.TestBody(this).test_ErrorMessagesCheck2857825852308723301();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456910957951() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456910957951", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456910957951();
   }
   @Test
   public void test_NodeTheNotLogicalExpressionCheck4477106456913804782() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck4477106456913804782", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheNotLogicalExpressionCheck4477106456913804782();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456910420974() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456910420974", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456910420974();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456911678890() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911678890", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456911678890();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456911590715() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911590715", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456911590715();
   }
   @Test
   public void test_NodeTheNotLogicalExpressionCheck4477106456913803784() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck4477106456913803784", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheNotLogicalExpressionCheck4477106456913803784();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456911594718() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911594718", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456911594718();
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456911698964() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911698964", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeCanBeSimplifiedCheck4477106456911698964();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281476793() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281476793", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281476793();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281479396() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281479396", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281479396();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281476816() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281476816", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281476816();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281476829() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281476829", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281476829();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691276100939() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691276100939", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691276100939();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck875204272651629221() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck875204272651629221", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck875204272651629221();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281975567() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281975567", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281975567();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691282430650() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691282430650", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691282430650();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck875204272651629086() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck875204272651629086", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck875204272651629086();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691281975597() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691281975597", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691281975597();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2403546691278265076() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691278265076", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck2403546691278265076();
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck875204272651628917() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck875204272651628917", true);
+    new SimplifyExpression_Test.TestBody(this).test_NodeTheConditionIsAlwaysCheck875204272651628917();
   }
   @Test
   public void test_ErrorMessagesCheck4477106456910414383() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_ErrorMessagesCheck4477106456910414383", true);
+    new SimplifyExpression_Test.TestBody(this).test_ErrorMessagesCheck4477106456910414383();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeTheConditionIsAlwaysCheck8245314650934534145() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8245314650934534145"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

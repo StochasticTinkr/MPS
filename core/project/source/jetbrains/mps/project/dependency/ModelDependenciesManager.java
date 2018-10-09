@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -40,6 +39,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * NOTE: THIS CLASS MAKES DUBIOUS ASSUMPTIONS, USES SOME DEPRECATED API, ITS USE IS DISCOURAGED.
+ * Chances are we replace it with another facility or drop altogether (there's little value in model dependency caching)
+ * <p>
  * Build (and optionally maintain) set of all languages, imported directly and indirectly.
  * The manager represents snapshot of all imported languages and doesn't update in unless {@link #invalidate() invalidated}.
  * With {@link #trackModelChanges()} it tracks changes in the designated model and updates own state appropriately.
@@ -82,28 +84,18 @@ public class ModelDependenciesManager {
    */
   public Collection<SLanguage> getAllImportedLanguagesIds() {
     final SModel model = myModel;
-    if (model == null) throw new IllegalStateException("access after disposal");
+    if (model == null) {
+      throw new IllegalStateException("access after disposal");
+    }
 
     Collection<SLanguage> tlVal = myCachedDeps;
     if (tlVal == null) {
       // I can live with expense of two+ threads building identical set simultaneously (microseconds)
       // and competing to set it to save use of synchronization primitives
-      tlVal = buildAllLanguages(model, new LinkedHashSet<SLanguage>());
+      tlVal = buildAllLanguages(model, new LinkedHashSet<>());
       myCachedDeps = tlVal = Collections.unmodifiableCollection(tlVal);
     }
     return tlVal;
-  }
-
-  public Collection<SModuleReference> getAllImportedLanguages() {
-    List<SModuleReference> result = new ArrayList<SModuleReference>();
-    for (SLanguage lang : getAllImportedLanguagesIds()) {
-      SModule sourceModule = lang.getSourceModule();
-
-      if (sourceModule!=null) {
-        result.add(sourceModule.getModuleReference());
-      }
-    }
-    return result;
   }
 
   public void dispose() {
@@ -132,15 +124,22 @@ public class ModelDependenciesManager {
     myCachedDeps = null;
   }
 
+  // XXX similar to AbstractModule#getUsedLanguages
   protected Collection<SLanguage> buildAllLanguages(@NotNull SModel model, @NotNull Collection<SLanguage> result) {
-    for (SLanguage lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguageIds()) {
+    ModelImports modelImports = new ModelImports(model);
+    for (SLanguage lang : modelImports.getUsedLanguages()) {
       handle(lang, result);
     }
+    SRepository repository = model.getRepository();
+    if (repository == null) {
+      return result;
+    }
 
-    for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
-      DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
-      if (devkit == null) continue;
-      handle(devkit, result);
+    for (SModuleReference dk : modelImports.getUsedDevKits()) {
+      SModule devkit = dk.resolve(repository);
+      if (devkit instanceof DevKit) {
+        handle(((DevKit) devkit), result);
+      }
     }
     return result;
   }

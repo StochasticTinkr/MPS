@@ -15,7 +15,7 @@
       <unit at="10,0,30,0" name="jetbrains.mps.build.mps.runner.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,65,0" name="jetbrains.mps.build.mps.runner.structure.StructureAspectDescriptor" />
+      <unit at="14,0,67,0" name="jetbrains.mps.build.mps.runner.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)/4173297143638832582">
@@ -39,18 +39,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="4173297143638832582" at="16,0,17,0" concept="1" trace="myConceptBuildSolutionRunnerPlugin" />
       <node id="4173297143638832582" at="34,59,35,50" concept="4" />
-      <node id="4173297143638832582" at="56,83,57,190" concept="3" />
-      <node id="4173297143638832582" at="57,190,58,34" concept="0" />
-      <node id="4173297143638832582" at="58,34,59,121" concept="0" />
-      <node id="4173297143638832582" at="59,121,60,117" concept="0" />
-      <node id="4173297143638832582" at="60,117,61,26" concept="0" />
-      <node id="4173297143638832582" at="61,26,62,22" concept="4" />
-      <node id="4173297143638832582" at="56,0,64,0" concept="6" trace="createDescriptorForBuildSolutionRunnerPlugin#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4173297143638832582" at="57,83,58,190" concept="3" />
+      <node id="4173297143638832582" at="58,190,59,34" concept="0" />
+      <node id="4173297143638832582" at="59,34,60,121" concept="0" />
+      <node id="4173297143638832582" at="60,121,61,117" concept="0" />
+      <node id="4173297143638832582" at="61,117,62,17" concept="0" />
+      <node id="4173297143638832582" at="62,17,63,26" concept="0" />
+      <node id="4173297143638832582" at="63,26,64,22" concept="4" />
+      <node id="4173297143638832582" at="57,0,66,0" concept="6" trace="createDescriptorForBuildSolutionRunnerPlugin#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4173297143638832582" at="34,59,35,50" />
-      <scope id="4173297143638832582" at="56,83,62,22">
+      <scope id="4173297143638832582" at="57,83,64,22">
         <var name="b" id="4173297143638832582" />
       </scope>
-      <scope id="4173297143638832582" at="56,0,64,0" />
+      <scope id="4173297143638832582" at="57,0,66,0" />
     </file>
   </root>
   <root nodeRef="r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)/4173297143638950526">
@@ -79,15 +80,16 @@
       <node id="4173297143638950526" at="48,121,49,75" concept="0" />
       <node id="4173297143638950526" at="49,75,50,76" concept="0" />
       <node id="4173297143638950526" at="50,76,51,117" concept="0" />
-      <node id="6102524510011680401" at="51,117,52,171" concept="0" />
-      <node id="4173297143638950526" at="52,171,53,24" concept="0" />
-      <node id="4173297143638950526" at="53,24,54,22" concept="4" />
-      <node id="4173297143638950526" at="45,0,56,0" concept="6" trace="createDescriptorForBuildSolutionRunnerAspect#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="4173297143638950526" at="51,117,52,17" concept="0" />
+      <node id="6102524510011680401" at="52,17,53,171" concept="0" />
+      <node id="4173297143638950526" at="53,171,54,24" concept="0" />
+      <node id="4173297143638950526" at="54,24,55,22" concept="4" />
+      <node id="4173297143638950526" at="45,0,57,0" concept="6" trace="createDescriptorForBuildSolutionRunnerAspect#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="4173297143638950526" at="32,59,33,50" />
-      <scope id="4173297143638950526" at="45,83,54,22">
+      <scope id="4173297143638950526" at="45,83,55,22">
         <var name="b" id="4173297143638950526" />
       </scope>
-      <scope id="4173297143638950526" at="45,0,56,0" />
+      <scope id="4173297143638950526" at="45,0,57,0" />
     </file>
   </root>
 </debug-info>

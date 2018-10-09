@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,17 +26,24 @@ public class MigrateScopes2 extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(MigrateScopes2.class, "${mps_home}", "r:8feb8c9c-c715-455e-9cef-348e70ef202e(jetbrains.mps.console.migration@tests)", false);
 
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
+
   public MigrateScopes2() {
     super(ourParamCache);
   }
 
   @Test
   public void test_MigrateScopes2() throws Throwable {
-    runTest("jetbrains.mps.console.migration.MigrateScopes2$TestBody", "testMethod", true);
+    new MigrateScopes2.TestBody(this).testMethod();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseMigrationTestBody {
+  /*package*/ static class TestBody extends BaseMigrationTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     @Override
     public Collection<SNode> getInputNodes() {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("6252282388794542816"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));

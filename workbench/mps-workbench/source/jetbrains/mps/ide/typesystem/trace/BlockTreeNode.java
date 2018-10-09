@@ -21,7 +21,6 @@ import com.intellij.ui.JBColor;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import java.awt.Color;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.state.blocks.BlockKind;

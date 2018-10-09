@@ -44,7 +44,7 @@ public class Rule_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_oxbbz2_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_oxbbz2_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_oxbbz2_a() {
       super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer"));

@@ -41,4 +41,5 @@ public class BasicTest1 extends BaseGeneratorTest {
     SModel rm = myArg_NoClosures;
     assertMatch(t.getOutputModel(), rm);
   }
+
 }

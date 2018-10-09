@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
-import jetbrains.mps.nodeEditor.ui.InputMethodListenerImpl;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +31,6 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Window;
-import java.awt.event.InputMethodEvent;
 import java.awt.event.KeyEvent;
 
 /**
@@ -121,8 +120,9 @@ public class NodeSubstitutePatternEditor {
     return false;
   }
 
-  public boolean processTextChanged(InputMethodEvent inputEvent) {
-    if (myEditorActivated && myEditorWindow.processTextChanged(inputEvent)) {
+  public boolean processTextChanged(TextChangeEvent textChangeEvent) {
+    if (myEditorActivated) {
+      myEditorWindow.processTextChanged(textChangeEvent);
       mySavedCaretPosition = 0;
       return true;
     }
@@ -216,23 +216,13 @@ public class NodeSubstitutePatternEditor {
       return false;
     }
 
-    public boolean processTextChanged(InputMethodEvent inputEvent) {
-      String text = InputMethodListenerImpl.getText(inputEvent);
-      if (text == null) {
-        return false;
-      }
+    public void processTextChanged(TextChangeEvent textChangeEvent) {
       String oldText = myTextLine.getText();
-      int caretPosition = myTextLine.getCaretPosition();
-      if (caretPosition > 0) {
-        // replacing last symbol before the caret with the text from input method
-        caretPosition--;
-      }
-
-      changeText(oldText.substring(0, caretPosition) + text);
-      myTextLine.setCaretPosition(caretPosition + text.length());
+      int keptTextEndIndex = Math.max(myTextLine.getCaretPosition() - textChangeEvent.getOffset(), 0);
+      changeText(oldText.substring(0, keptTextEndIndex) + textChangeEvent.getText());
+      myTextLine.setCaretPosition(keptTextEndIndex + textChangeEvent.getText().length());
       relayout();
       repaint();
-      return true;
     }
 
     private boolean processKeyTypedInternal(KeyEvent keyEvent) {

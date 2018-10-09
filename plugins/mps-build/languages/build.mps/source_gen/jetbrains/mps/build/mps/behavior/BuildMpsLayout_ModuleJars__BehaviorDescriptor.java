@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -45,6 +46,16 @@ public final class BuildMpsLayout_ModuleJars__BehaviorDescriptor extends BaseBHD
     String parentLocation = helper.getContentLocation(parent);
     String languageLocation = parentLocation + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".jar";
     helper.putLocation(__thisNode__, languageLocation);
+    // XXX next is location() implementation moved to a proper moment of time, for the reason see BuildMpsLayout_Plugin_Behavior#unpack 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"))) {
+      languageLocation = languageLocation.substring(0, languageLocation.length() - ".jar".length());
+      int i = 0;
+      for (SNode gm : Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x6d1df6c2700aeb88L, "managedGenerators")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6d1df6c2700aeb81L, 0x6d1df6c2700aeb82L, "generator")))) {
+        // see property macro for module-generator.jar name in reduce_BuildMpsLayout_ModuleJars 
+        helper.putLayoutRelativePath(__thisNode__, gm, languageLocation + ((i > 0 ? String.format("-%d-generator.jar", i) : "-generator.jar")));
+        i++;
+      }
+    }
   }
   /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
     if (artifactId instanceof SNode) {
@@ -52,6 +63,13 @@ public final class BuildMpsLayout_ModuleJars__BehaviorDescriptor extends BaseBHD
       String languageLocation = helper.getLocation(__thisNode__);
 
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+        // XXX utilize values calculated above in unpack() 
+        // try pre-calculated location 
+        String layoutRelativePath = helper.getLayoutRelativePath(__thisNode__, node);
+        if ((layoutRelativePath != null && layoutRelativePath.length() > 0)) {
+          return layoutRelativePath;
+        }
+        // fallback to default path calculation, which doesn't respect multiple generators per language, by the way. 
         return languageLocation.substring(0, languageLocation.length() - ".jar".length()) + "-generator.jar";
       }
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {

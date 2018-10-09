@@ -22,8 +22,6 @@ import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
@@ -32,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.ArrayList;
@@ -253,22 +250,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //--------------------------------------------------
 
-  // TODO: !!
-  // FIXME: we should invalidate caches only in specific modules
-  // The problem is that the scope collects transitive dependencies as well
   public void invalidateCaches() {
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (Project p : ProjectManager.getInstance().getOpenedProjects()) {
-          p.getScope().invalidateCaches();
-        }
-        for (SModule m : getModules()) {
-          SearchScope moduleScope = ((AbstractModule) m).getScope();
-          ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
-        }
-      }
-    });
+    // used to invalidate ModuleScope, but since it's gone, does this method make any sense?
+    // left empty for now as its uses record places we need to pay attention to (e.g. if we need to drop some caches in the future)
   }
 
   //------------------listeners--------------------

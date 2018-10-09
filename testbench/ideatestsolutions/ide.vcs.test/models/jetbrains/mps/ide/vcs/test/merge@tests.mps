@@ -129,6 +129,7 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
+        <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
@@ -908,6 +909,34 @@
                 <property role="3SKdUp" value="Given there's odd magic with ourEnabled and the fact it's VCS, I don't want to dive into this sh!t now." />
               </node>
             </node>
+            <node concept="3clFbF" id="5PCG$7kHdqm" role="3cqZAp">
+              <node concept="2OqwBi" id="5PCG$7kHfme" role="3clFbG">
+                <node concept="2OqwBi" id="5PCG$7kHeeL" role="2Oq$k0">
+                  <node concept="37vLTw" id="5PCG$7kHdqk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
+                  </node>
+                  <node concept="liA8E" id="5PCG$7kHffo" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5PCG$7kHfwL" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                  <node concept="1bVj0M" id="5PCG$7kHfPE" role="37wK5m">
+                    <node concept="3clFbS" id="5PCG$7kHfPF" role="1bW5cS" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5PCG$7kHga8" role="3cqZAp">
+              <node concept="3SKdUq" id="5PCG$7kHgaa" role="3SKWNk">
+                <property role="3SKdUp" value="By some reason batch event processor flushing is paused during project initializing, we flush it this way" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5PCG$7kHgx2" role="3cqZAp">
+              <node concept="3SKdUq" id="5PCG$7kHgx4" role="3SKWNk">
+                <property role="3SKdUp" value=" see ClassLoaderManager#runNonReloadableTransaction()" />
+              </node>
+            </node>
           </node>
           <node concept="3clFbC" id="nUYGvAYI3P" role="3clFbw">
             <node concept="10Nm6u" id="nUYGvAYIJu" role="3uHU7w" />
@@ -1303,16 +1332,20 @@
       <node concept="3Tmbuc" id="7HgS$Vk5KkK" role="1B3o_S" />
       <node concept="3cqZAl" id="3oUomEoMJsJ" role="3clF45" />
       <node concept="3clFbS" id="3oUomEoMJsL" role="3clF47">
-        <node concept="3clFbF" id="3oUomEoMiL2" role="3cqZAp">
-          <node concept="2YIFZM" id="3oUomEoMiL3" role="3clFbG">
-            <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
-            <node concept="2OqwBi" id="3oUomEoMiL4" role="37wK5m">
-              <node concept="37vLTw" id="2BHiRxeukwO" role="2Oq$k0">
-                <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
-              </node>
-              <node concept="liA8E" id="3oUomEoMiL6" role="2OqNvi">
-                <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
+        <node concept="1X3_iC" id="5PCG$7kH1K6" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="3oUomEoMiL2" role="8Wnug">
+            <node concept="2YIFZM" id="3oUomEoMiL3" role="3clFbG">
+              <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+              <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
+              <node concept="2OqwBi" id="3oUomEoMiL4" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxeukwO" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
+                </node>
+                <node concept="liA8E" id="3oUomEoMiL6" role="2OqNvi">
+                  <ref role="37wK5l" to="lcr:2JwSLRbzn5Q" resolve="getChangeSet" />
+                </node>
               </node>
             </node>
           </node>
@@ -10431,6 +10464,79 @@
       </node>
     </node>
     <node concept="2tJIrI" id="56cvcsnGtAA" role="jymVt" />
+    <node concept="312cEu" id="5PCG$7kDFEQ" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="WaitForChangesManagerTask" />
+      <node concept="3clFb_" id="5PCG$7kDGkA" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="run" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="5PCG$7kDGkB" role="1B3o_S" />
+        <node concept="3cqZAl" id="5PCG$7kDGkD" role="3clF45" />
+        <node concept="3clFbS" id="5PCG$7kDGkE" role="3clF47">
+          <node concept="3cpWs8" id="5PCG$7kDGoa" role="3cqZAp">
+            <node concept="3cpWsn" id="5PCG$7kDGob" role="3cpWs9">
+              <property role="TrG5h" value="commandQueue" />
+              <node concept="3uibUv" id="5PCG$7kDGoc" role="1tU5fm">
+                <ref role="3uigEE" to="lcr:3eE6dTgTyYL" resolve="SimpleCommandQueue" />
+              </node>
+              <node concept="2OqwBi" id="5PCG$7kDGod" role="33vP2m">
+                <node concept="liA8E" id="5PCG$7kDGoe" role="2OqNvi">
+                  <ref role="37wK5l" to="lcr:2JwSLRbyYWE" resolve="getCommandQueue" />
+                </node>
+                <node concept="2YIFZM" id="5PCG$7kDGof" role="2Oq$k0">
+                  <ref role="37wK5l" to="lcr:2JwSLRbyYP0" resolve="getInstance" />
+                  <ref role="1Pybhc" to="lcr:2JwSLRbyYN6" resolve="CurrentDifferenceRegistry" />
+                  <node concept="37vLTw" id="5PCG$7kDGog" role="37wK5m">
+                    <ref role="3cqZAo" node="56cvcsnEV9K" resolve="myProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="5PCG$7kDGoh" role="3cqZAp">
+            <node concept="3clFbS" id="5PCG$7kDGoi" role="3clFbx">
+              <node concept="3clFbF" id="5PCG$7kDGoj" role="3cqZAp">
+                <node concept="1rXfSq" id="5PCG$7kDGok" role="3clFbG">
+                  <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5PCG$7kDGol" role="3clFbw">
+              <node concept="37vLTw" id="5PCG$7kDGom" role="2Oq$k0">
+                <ref role="3cqZAo" node="5PCG$7kDGob" resolve="commandQueue" />
+              </node>
+              <node concept="liA8E" id="5PCG$7kDGon" role="2OqNvi">
+                <ref role="37wK5l" to="lcr:5PCG$7kDnHo" resolve="isEmpty" />
+              </node>
+            </node>
+            <node concept="9aQIb" id="5PCG$7kDGoo" role="9aQIa">
+              <node concept="3clFbS" id="5PCG$7kDGop" role="9aQI4">
+                <node concept="3clFbF" id="5PCG$7kDHgr" role="3cqZAp">
+                  <node concept="2OqwBi" id="5PCG$7kDHza" role="3clFbG">
+                    <node concept="37vLTw" id="5PCG$7kDHgq" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5PCG$7kDGob" resolve="commandQueue" />
+                    </node>
+                    <node concept="liA8E" id="5PCG$7kDHIM" role="2OqNvi">
+                      <ref role="37wK5l" to="lcr:3eE6dTgTRlP" resolve="addTask" />
+                      <node concept="Xjq3P" id="5PCG$7kDI4p" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5PCG$7kDGkF" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="5PCG$7kDGk1" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+      </node>
+      <node concept="3Tm6S6" id="5PCG$7kEcRF" role="1B3o_S" />
+    </node>
     <node concept="3clFb_" id="11TrveYpy6S" role="jymVt">
       <property role="TrG5h" value="waitForChangesManager" />
       <node concept="3cqZAl" id="11TrveYpy6T" role="3clF45" />
@@ -10457,13 +10563,9 @@
                     </node>
                     <node concept="liA8E" id="3oUomEoN5nv" role="2OqNvi">
                       <ref role="37wK5l" to="lcr:3eE6dTgTRlP" resolve="addTask" />
-                      <node concept="1bVj0M" id="3oUomEoN5nw" role="37wK5m">
-                        <node concept="3clFbS" id="3oUomEoN5nx" role="1bW5cS">
-                          <node concept="3clFbF" id="3oUomEoN5nH" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyyYnw" role="3clFbG">
-                              <ref role="37wK5l" node="3oUomEoN5n0" resolve="waitCompleted" />
-                            </node>
-                          </node>
+                      <node concept="2ShNRf" id="5PCG$7kDImn" role="37wK5m">
+                        <node concept="HV5vD" id="5PCG$7kEbM2" role="2ShVmc">
+                          <ref role="HV5vE" node="5PCG$7kDFEQ" resolve="ChangesManagerTestWaitHelper.WaitForChangesManagerTask" />
                         </node>
                       </node>
                     </node>
@@ -10570,77 +10672,88 @@
             </node>
             <node concept="3clFbJ" id="4SyTannWE$d" role="3cqZAp">
               <node concept="3clFbS" id="4SyTannWE$f" role="3clFbx">
-                <node concept="SfApY" id="7YTeVpqHnlW" role="3cqZAp">
-                  <node concept="3clFbS" id="7YTeVpqHnlX" role="SfCbr">
-                    <node concept="3clFbF" id="4SyTannWGrT" role="3cqZAp">
-                      <node concept="2OqwBi" id="4SyTannWGrV" role="3clFbG">
-                        <node concept="37vLTw" id="4SyTannWGrW" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+                <node concept="2$JKZl" id="6V9nI$uU0sG" role="3cqZAp">
+                  <node concept="3clFbS" id="6V9nI$uU0sI" role="2LFqv$">
+                    <node concept="2GUZhq" id="6V9nI$uU128" role="3cqZAp">
+                      <node concept="3clFbS" id="7YTeVpqHnlX" role="2GV8ay">
+                        <node concept="3clFbF" id="4SyTannWGrT" role="3cqZAp">
+                          <node concept="2OqwBi" id="4SyTannWGrV" role="3clFbG">
+                            <node concept="37vLTw" id="4SyTannWGrW" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+                            </node>
+                            <node concept="liA8E" id="4SyTannWGrX" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Object.wait(long):void" resolve="wait" />
+                              <node concept="37vLTw" id="4SyTannWGEt" role="37wK5m">
+                                <ref role="3cqZAo" node="4SyTannWiq9" resolve="timeout" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
-                        <node concept="liA8E" id="4SyTannWGrX" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Object.wait(long):void" resolve="wait" />
-                          <node concept="37vLTw" id="4SyTannWGEt" role="37wK5m">
-                            <ref role="3cqZAo" node="4SyTannWiq9" resolve="timeout" />
+                      </node>
+                      <node concept="TDmWw" id="7YTeVpqHnlS" role="TEXxN">
+                        <node concept="3clFbS" id="7YTeVpqHnlT" role="TDEfX">
+                          <node concept="3clFbF" id="7YTeVpqHn$L" role="3cqZAp">
+                            <node concept="2OqwBi" id="7YTeVpqHnLW" role="3clFbG">
+                              <node concept="37vLTw" id="7YTeVpqHn$K" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7YTeVpqHnlU" resolve="e" />
+                              </node>
+                              <node concept="liA8E" id="7YTeVpqHocM" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWsn" id="7YTeVpqHnlU" role="TDEfY">
+                          <property role="TrG5h" value="e" />
+                          <node concept="3uibUv" id="7YTeVpqHnlV" role="1tU5fm">
+                            <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="6V9nI$uU12b" role="2GVbov">
+                        <node concept="3clFbJ" id="7YTeVpqHl55" role="3cqZAp">
+                          <node concept="3clFbS" id="7YTeVpqHl57" role="3clFbx">
+                            <node concept="3SKdUt" id="7YTeVpqIryG" role="3cqZAp">
+                              <node concept="3SKdUq" id="7YTeVpqIryI" role="3SKWNk">
+                                <property role="3SKdUp" value="Reset flag for next calls" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="7YTeVpqHmhM" role="3cqZAp">
+                              <node concept="37vLTI" id="7YTeVpqHmDS" role="3clFbG">
+                                <node concept="3clFbT" id="7YTeVpqHmJz" role="37vLTx">
+                                  <property role="3clFbU" value="true" />
+                                </node>
+                                <node concept="37vLTw" id="7YTeVpqHmhK" role="37vLTJ">
+                                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="7YTeVpqHPQX" role="3cqZAp">
+                              <node concept="2OqwBi" id="7YTeVpqHQfp" role="3clFbG">
+                                <node concept="10M0yZ" id="7YTeVpqHPSY" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+                                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                                </node>
+                                <node concept="liA8E" id="7YTeVpqHQ_r" role="2OqNvi">
+                                  <ref role="37wK5l" to="guwi:~PrintStream.print(java.lang.String):void" resolve="print" />
+                                  <node concept="Xl_RD" id="7YTeVpqHRnR" role="37wK5m">
+                                    <property role="Xl_RC" value="Runnable did not call waitCompleted. Ended by timeout" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3fqX7Q" id="7YTeVpqHoqG" role="3clFbw">
+                            <node concept="37vLTw" id="7YTeVpqHoqI" role="3fr31v">
+                              <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="TDmWw" id="7YTeVpqHnlS" role="TEbGg">
-                    <node concept="3clFbS" id="7YTeVpqHnlT" role="TDEfX">
-                      <node concept="3clFbF" id="7YTeVpqHn$L" role="3cqZAp">
-                        <node concept="2OqwBi" id="7YTeVpqHnLW" role="3clFbG">
-                          <node concept="37vLTw" id="7YTeVpqHn$K" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7YTeVpqHnlU" resolve="e" />
-                          </node>
-                          <node concept="liA8E" id="7YTeVpqHocM" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWsn" id="7YTeVpqHnlU" role="TDEfY">
-                      <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="7YTeVpqHnlV" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="7YTeVpqHl55" role="3cqZAp">
-                  <node concept="3clFbS" id="7YTeVpqHl57" role="3clFbx">
-                    <node concept="3SKdUt" id="7YTeVpqIryG" role="3cqZAp">
-                      <node concept="3SKdUq" id="7YTeVpqIryI" role="3SKWNk">
-                        <property role="3SKdUp" value="Reset flag for next calls" />
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="7YTeVpqHmhM" role="3cqZAp">
-                      <node concept="37vLTI" id="7YTeVpqHmDS" role="3clFbG">
-                        <node concept="3clFbT" id="7YTeVpqHmJz" role="37vLTx">
-                          <property role="3clFbU" value="true" />
-                        </node>
-                        <node concept="37vLTw" id="7YTeVpqHmhK" role="37vLTJ">
-                          <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="7YTeVpqHPQX" role="3cqZAp">
-                      <node concept="2OqwBi" id="7YTeVpqHQfp" role="3clFbG">
-                        <node concept="10M0yZ" id="7YTeVpqHPSY" role="2Oq$k0">
-                          <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-                          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                        </node>
-                        <node concept="liA8E" id="7YTeVpqHQ_r" role="2OqNvi">
-                          <ref role="37wK5l" to="guwi:~PrintStream.print(java.lang.String):void" resolve="print" />
-                          <node concept="Xl_RD" id="7YTeVpqHRnR" role="37wK5m">
-                            <property role="Xl_RC" value="Runnable did not call waitCompleted. Ended by timeout" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3fqX7Q" id="7YTeVpqHoqG" role="3clFbw">
-                    <node concept="37vLTw" id="7YTeVpqHoqI" role="3fr31v">
+                  <node concept="3fqX7Q" id="6V9nI$uU0KO" role="2$JKZa">
+                    <node concept="37vLTw" id="6V9nI$uU0KQ" role="3fr31v">
                       <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
                     </node>
                   </node>

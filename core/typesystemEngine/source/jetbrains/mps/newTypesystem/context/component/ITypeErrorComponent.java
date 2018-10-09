@@ -1,7 +1,6 @@
 package jetbrains.mps.newTypesystem.context.component;
 
 import jetbrains.mps.errors.IErrorReporter;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Created with IntelliJ IDEA.

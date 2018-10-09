@@ -44,7 +44,7 @@ public class WarningStatementReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_ctm0sw_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_ctm0sw_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ctm0sw_a() {
       super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b386d76L, "jetbrains.mps.lang.test.structure.WarningStatementReference"), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"));

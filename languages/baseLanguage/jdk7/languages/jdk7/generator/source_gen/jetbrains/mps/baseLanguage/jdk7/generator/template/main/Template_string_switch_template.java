@@ -46,7 +46,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
       TemplateContext context1 = context.subContext();
       {
         final List<SNode> tlist2 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_a0a0a0(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_a36rdq_b0a0a1a1a2a5));
+        final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1_0(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_a36rdq_b0a0a1a1a2a5));
         for (SNode itnode2 : loopList2) {
           if (itnode2 == null) {
             continue;
@@ -58,7 +58,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
             {
               final SNode tnode4 = environment.createOutputNode(myConcepts[2]);
               try {
-                SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4006428025504222120(new PropertyMacroContext(context3, "42", propertyMacro_a36rdq_c0a0c0a0b0b0d0c0b0c0f))));
+                SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_1_0(new PropertyMacroContext(context3, "42", propertyMacro_a36rdq_c0a0c0a0b0b0d0c0b0c0f))));
               } finally {
               }
               tnode3.addChild(myAggregationLinks[0], tnode4);
@@ -66,7 +66,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
             }
             {
               Collection<SNode> tlist5 = null;
-              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4006428025504222290(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_a36rdq_b0a0c0c0d0c0b0c0f));
+              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1_0(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_a36rdq_b0a0c0c0d0c0b0c0f));
               tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_a36rdq_b0a0c0c0d0c0b0c0f, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422229", context3);
               for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
                 tnode3.addChild(myAggregationLinks[1], child6);
@@ -86,7 +86,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
       }
       {
         Collection<SNode> tlist8 = null;
-        final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_4006428025504222460(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_a36rdq_b0a0c0c0c0f));
+        final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_1_1(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_a36rdq_b0a0c0c0c0f));
         tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_a36rdq_b0a0c0c0c0f, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422246", context1);
         for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
           tnode1.addChild(myAggregationLinks[3], child9);
@@ -123,7 +123,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
                       }
                       {
                         Collection<SNode> tlist15 = null;
-                        final Iterable<SNode> copyListInput15 = QueriesGenerated.sourceNodesQuery_a0a0a0a0a0(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_a36rdq_b0a0a1a2a1a1a1a3a1a3a1a3a2a5));
+                        final Iterable<SNode> copyListInput15 = QueriesGenerated.sourceNodesQuery_1_1(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_a36rdq_b0a0a1a2a1a1a1a3a1a3a1a3a2a5));
                         tlist15 = environment.copyNodes(copyListInput15, copySrcListMacro_a36rdq_b0a0a1a2a1a1a1a3a1a3a1a3a2a5, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083863", context7);
                         for (SNode child16 : TemplateUtil.asNotNull(tlist15)) {
                           tnode13.addChild(myAggregationLinks[5], child16);
@@ -147,7 +147,7 @@ public class Template_string_switch_template extends TemplateDeclarationBase {
           }
           {
             Collection<SNode> tlist17 = null;
-            final SNode copySrcInput17 = QueriesGenerated.sourceNodeQuery_37085768440650511830(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_a36rdq_b0a0c0e0b0d0c0f));
+            final SNode copySrcInput17 = QueriesGenerated.sourceNodeQuery_1_2(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_a36rdq_b0a0c0e0b0d0c0f));
             tlist17 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput17), copySrcMacro_a36rdq_b0a0c0e0b0d0c0f, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065051183", context4);
             for (SNode child18 : TemplateUtil.asNotNull(tlist17)) {
               tnode10.addChild(myAggregationLinks[8], child18);

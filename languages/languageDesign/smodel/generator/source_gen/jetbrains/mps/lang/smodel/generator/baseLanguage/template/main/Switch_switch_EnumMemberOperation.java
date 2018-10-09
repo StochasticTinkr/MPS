@@ -61,7 +61,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_27333969195529761080(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8rqa92_b0a0c0d0c0b7));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_125_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8rqa92_b0a0c0d0c0b7));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_8rqa92_b0a0c0d0c0b7, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919552976108", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -79,7 +79,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a1_5(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_125_0(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -91,7 +91,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_27333969195529794270(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8rqa92_b0a0c0d0c0c8));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_125_1(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_8rqa92_b0a0c0d0c0c8));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_8rqa92_b0a0c0d0c0c8, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919552979427", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -109,7 +109,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a2_2(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_125_1(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -127,7 +127,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_27333969195529801120(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_8rqa92_b0a0c0d0b0d0c0c9));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_125_2(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_8rqa92_b0a0c0d0b0d0c0c9));
               tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_8rqa92_b0a0c0d0b0d0c0c9, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919552980112", context2);
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
@@ -150,7 +150,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a3_2(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_125_2(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
@@ -168,7 +168,7 @@ public class Switch_switch_EnumMemberOperation extends TemplateSwitchBase implem
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist3 = null;
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_27333969195529810890(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_8rqa92_b0a0c0d0b0d0c0c01));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_125_3(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_8rqa92_b0a0c0d0b0d0c0c01));
               tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_8rqa92_b0a0c0d0b0d0c0c01, "tpl/r:00000000-0000-4000-0000-011c89590303/2733396919552981089", context2);
               for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);

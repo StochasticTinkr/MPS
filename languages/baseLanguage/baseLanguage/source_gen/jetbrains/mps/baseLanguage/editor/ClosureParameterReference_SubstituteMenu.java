@@ -44,7 +44,7 @@ public class ClosureParameterReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_s9pff1_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_s9pff1_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_s9pff1_a() {
       super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, 0x10c7edc81a4L, "closureParameter"));

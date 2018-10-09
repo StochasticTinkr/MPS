@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeAncestor;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
@@ -29,10 +28,8 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {

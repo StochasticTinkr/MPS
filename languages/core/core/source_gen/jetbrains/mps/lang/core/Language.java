@@ -19,6 +19,8 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.lang.core.migration.MigrationDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.lang.core.plugin.FacetAspectDescriptor;
+import jetbrains.mps.refactoring.runtime.RefactoringAspect;
+import jetbrains.mps.lang.core.refactorings.RefactoringAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.core.structure.ConceptPresentationAspectImpl;
@@ -72,6 +74,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == MakeAspectDescriptor.class) {
       return aspectClass.cast(new FacetAspectDescriptor());
+    }
+    if (aspectClass == RefactoringAspect.class) {
+      return aspectClass.cast(new RefactoringAspectDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new jetbrains.mps.lang.core.structure.StructureAspectDescriptor());

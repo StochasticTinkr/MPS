@@ -11,17 +11,22 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.migration.util.DeprecatedNodeProperties;
 import jetbrains.mps.ide.migration.util.DeprecatedUtil;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.migration.global.MigrationProblemHandler;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ShowDeprecatedUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -57,17 +62,28 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
-      public void run() {
-        Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
-        SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
-        Set<SNode> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-        Set<SNode> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-        Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-        MapSequence.fromMap(result).put("Deprecated library stuff", depLibs);
-        MapSequence.fromMap(result).put("Deprecated project stuff", depProj);
-        event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
+    new Task.Backgroundable(event.getData(CommonDataKeys.PROJECT), "Searching", true, PerformInBackgroundOption.DEAF) {
+      private SearchResults<SNode> searchResults = new SearchResults<SNode>();
+      @Override
+      public void run(@NotNull final ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
+        event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
+            SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
+            Map<SNode, DeprecatedNodeProperties> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+            Map<SNode, DeprecatedNodeProperties> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+
+            CategoryKind locationCategoryKind = CategoryKind.DEFAULT_CATEGORY_KIND;
+            UsagesFormattingUtil.addResults(searchResults, new Pair(locationCategoryKind, "Deprecated library stuff"), depLibs);
+            UsagesFormattingUtil.addResults(searchResults, new Pair(locationCategoryKind, "Deprecated project stuff"), depProj);
+          }
+        });
       }
-    });
+      @Override
+      public void onSuccess() {
+        event.getData(CommonDataKeys.PROJECT).getComponent(UsagesViewTool.class).show(searchResults, "No usages found");
+      }
+    }.queue();
   }
 }

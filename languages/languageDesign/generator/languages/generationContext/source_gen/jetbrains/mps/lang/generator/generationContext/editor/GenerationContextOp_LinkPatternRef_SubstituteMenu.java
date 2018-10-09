@@ -44,7 +44,7 @@ public class GenerationContextOp_LinkPatternRef_SubstituteMenu extends Substitut
   }
 
 
-  public static class SMP_ReferenceScope_vgky1m_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_vgky1m_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_vgky1m_a() {
       super(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef"), MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, 0x186874d40ed9c75bL, "linkPatternVar"));

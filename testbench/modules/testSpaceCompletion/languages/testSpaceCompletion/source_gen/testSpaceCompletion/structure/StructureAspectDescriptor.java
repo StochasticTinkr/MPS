@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptABCEEG = createDescriptorForABCEEG();
   /*package*/ final ConceptDescriptor myConceptBAC = createDescriptorForBAC();
   /*package*/ final ConceptDescriptor myConceptBCA = createDescriptorForBCA();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.ABC:
         return myConceptABC;
       case LanguageConceptSwitch.ABCDE:
@@ -54,7 +54,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForABC() {
@@ -62,6 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764952689");
+    b.version(2);
     b.alias("abc");
     return b.create();
   }
@@ -70,6 +71,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954956");
+    b.version(2);
     b.alias("abc de");
     return b.create();
   }
@@ -78,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954968");
+    b.version(2);
     b.alias("abc de f");
     return b.create();
   }
@@ -86,6 +89,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/3586175963764954964");
+    b.version(2);
     b.alias("abc de g");
     return b.create();
   }
@@ -94,6 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/7653661050353915512");
+    b.version(2);
     b.alias("abc Ee G");
     return b.create();
   }
@@ -102,6 +107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/8933061889659252101");
+    b.version(2);
     b.alias("bac");
     return b.create();
   }
@@ -110,6 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)/8933061889659259091");
+    b.version(2);
     b.alias("bca");
     return b.create();
   }

@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)/1293230950168428284">
     <file name="InternalClassifier_Test.java">
-      <node id="1293230950168428284" at="17,36,18,25" concept="2" />
-      <node id="1293230950168428284" at="13,0,15,0" concept="1" trace="ourParamCache" />
-      <node id="1293230950168428284" at="17,0,20,0" concept="0" trace="InternalClassifier_Test#()V" />
-      <scope id="1293230950168428284" at="17,36,18,25" />
-      <scope id="1293230950168428284" at="17,0,20,0" />
-      <unit id="1293230950168428284" at="22,0,27,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test$TestBody" />
-      <unit id="1293230950168428284" at="11,0,28,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test" />
+      <node id="1293230950168428284" at="21,36,22,25" concept="3" />
+      <node id="1293230950168428284" at="28,52,29,19" concept="3" />
+      <node id="1293230950168428284" at="16,0,18,0" concept="2" trace="ourParamCache" />
+      <node id="1293230950168428284" at="18,0,20,0" concept="1" trace="myWithCommandRule" />
+      <node id="1293230950168428284" at="21,0,24,0" concept="0" trace="InternalClassifier_Test#()V" />
+      <node id="1293230950168428284" at="28,0,31,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <scope id="1293230950168428284" at="21,36,22,25" />
+      <scope id="1293230950168428284" at="28,52,29,19" />
+      <scope id="1293230950168428284" at="21,0,24,0" />
+      <scope id="1293230950168428284" at="28,0,31,0">
+        <var name="owner" id="1293230950168428284" />
+      </scope>
+      <unit id="1293230950168428284" at="26,0,35,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test$TestBody" />
+      <unit id="1293230950168428284" at="14,0,36,0" name="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test" />
     </file>
   </root>
 </debug-info>

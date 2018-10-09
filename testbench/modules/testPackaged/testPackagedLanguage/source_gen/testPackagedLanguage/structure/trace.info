@@ -18,7 +18,7 @@
       <unit at="10,0,28,0" name="testPackagedLanguage.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,49,0" name="testPackagedLanguage.structure.StructureAspectDescriptor" />
+      <unit at="14,0,50,0" name="testPackagedLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ab99e75d-0184-4aec-b7b1-2939b54c2f7a(testPackagedLanguage.structure)/6919151941181560079">
@@ -45,13 +45,14 @@
       <node id="6919151941181560079" at="42,69,43,166" concept="3" />
       <node id="6919151941181560079" at="43,166,44,34" concept="0" />
       <node id="6919151941181560079" at="44,34,45,107" concept="0" />
-      <node id="6919151941181560079" at="45,107,46,22" concept="4" />
-      <node id="6919151941181560079" at="42,0,48,0" concept="6" trace="createDescriptorForTestConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6919151941181560079" at="45,107,46,17" concept="0" />
+      <node id="6919151941181560079" at="46,17,47,22" concept="4" />
+      <node id="6919151941181560079" at="42,0,49,0" concept="6" trace="createDescriptorForTestConcept#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6919151941181560079" at="31,45,32,36" />
-      <scope id="6919151941181560079" at="42,69,46,22">
+      <scope id="6919151941181560079" at="42,69,47,22">
         <var name="b" id="6919151941181560079" />
       </scope>
-      <scope id="6919151941181560079" at="42,0,48,0" />
+      <scope id="6919151941181560079" at="42,0,49,0" />
     </file>
   </root>
 </debug-info>

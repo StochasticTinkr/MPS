@@ -308,7 +308,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.common.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.common.tip"));
+      super(PropertiesBundle.message("mps.properties.common.title"), AllIcons.General.Settings, PropertiesBundle.message("mps.properties.common.tip"));
     }
 
     protected abstract String getConfigItemName();
@@ -487,7 +487,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JBTable myUsedLangsTable;
 
     public UsedLanguagesTab() {
-      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.LANGUAGE_ICON,
+      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), General.UsedLanguages,
           PropertiesBundle.message("mps.properties.usedlanguages.tip"));
     }
 

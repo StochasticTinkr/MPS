@@ -11,6 +11,11 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="RefactoringAspectDescriptor.java">
+      <unit at="11,0,29,0" name="jetbrains.mps.baseLanguage.refactorings.RefactoringAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/2869783065404758436">
     <file name="MakeFieldFinal.java">
       <node id="2869783065404758436" at="17,52,18,39" concept="8" />
@@ -67,6 +72,9 @@
       </scope>
       <unit id="2869783065404822208" at="10,0,29,0" name="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" />
     </file>
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="2869783065404758436" at="17,43,18,45" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/3051706240924250100">
     <file name="SafeDeleteMethod.java">
@@ -105,6 +113,9 @@
     </file>
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/3051706240924250145">
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="3051706240924250145" at="20,52,21,54" concept="2" />
+    </file>
     <file name="SafeDeleteConceptMethod.java">
       <node id="3051706240924250145" at="20,52,21,48" concept="8" />
       <node id="3051706240924250145" at="23,39,24,40" concept="8" />
@@ -256,8 +267,14 @@
       </scope>
       <unit id="5161277940733430261" at="11,0,30,0" name="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target" />
     </file>
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="5161277940733430086" at="19,46,20,52" concept="2" />
+    </file>
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/7874812549549771289">
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="7874812549549771289" at="16,41,17,43" concept="2" />
+    </file>
     <file name="RenameMethod.java">
       <node id="7874812549549772010" at="23,25,24,42" concept="2" />
       <node id="7874812549549771289" at="26,52,27,37" concept="8" />
@@ -522,6 +539,9 @@
         <var name="entity" id="9118878263582108237" />
       </scope>
       <unit id="9118878263582108237" at="11,0,30,0" name="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic_Target" />
+    </file>
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="9118878263582100185" at="18,45,19,46" concept="2" />
     </file>
   </root>
 </debug-info>

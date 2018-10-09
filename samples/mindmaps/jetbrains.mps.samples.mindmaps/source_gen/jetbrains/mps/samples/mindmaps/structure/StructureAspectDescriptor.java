@@ -18,10 +18,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSpecializes = createDescriptorForSpecializes();
   /*package*/ final ConceptDescriptor myConceptThought = createDescriptorForThought();
   /*package*/ final ConceptDescriptor myConceptVisualBox = createDescriptorForVisualBox();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.CoreThrought:
         return myConceptCoreThrought;
       case LanguageConceptSwitch.MindMap:
@@ -51,7 +51,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForCoreThrought() {
@@ -59,6 +59,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.mindmaps.structure.Thought", 0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/5058522826399342676");
+    b.version(2);
     b.alias("core thought");
     return b.create();
   }
@@ -67,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/79242395703866767");
+    b.version(2);
     b.aggregate("thoughts", 0x1198689ff14c5d6L).target(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L).optional(true).ordered(true).multiple(true).origin("79242395703887318").done();
     b.aggregate("relationships", 0x1198689ff14c5dbL).target(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L).optional(true).ordered(true).multiple(true).origin("79242395703887323").done();
     return b.create();
@@ -75,6 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.mindmaps", "Relationship", 0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L);
     b.class_(false, false, false);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/79242395703884499");
+    b.version(2);
     b.associate("source", 0x517b79625769ba9eL).target(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L).optional(false).origin("5871420002487876254").done();
     b.associate("target", 0x1198689ff14c5dfL).target(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L).optional(false).origin("79242395703887327").done();
     b.alias("relationship");
@@ -85,6 +88,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.mindmaps.structure.Relationship", 0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/5058522826399262785");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForThought() {
@@ -93,6 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.mindmaps.structure.VisualBox", 0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/79242395703884488");
+    b.version(2);
     b.alias("thought");
     return b.create();
   }
@@ -100,6 +105,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.mindmaps", "VisualBox", 0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff15ca26L);
     b.class_(false, true, false);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/79242395703953958");
+    b.version(2);
     b.prop("x", 0x1198689ff15ca27L, "79242395703953959");
     b.prop("y", 0x1198689ff15ca29L, "79242395703953961");
     b.prop("myIsClicked", 0x517b79625760f822L, "5871420002487302178");

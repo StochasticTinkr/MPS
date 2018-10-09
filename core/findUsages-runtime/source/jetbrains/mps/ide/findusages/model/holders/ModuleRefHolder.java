@@ -17,7 +17,6 @@ package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;

@@ -10,6 +10,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
@@ -39,18 +40,21 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitInProcessTermination_Test.class, "${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
 
-
   public JUnitInProcessTermination_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_terminate() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody", "test_terminate", false);
+    new JUnitInProcessTermination_Test.TestBody(this).test_terminate();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_terminate() throws Exception {
       this.startAndTerminate(new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090")));
     }
@@ -60,7 +64,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
       try {
         final TestRunState runState = new TestRunState(testNodes);
 
-        Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
+        Executor processExecutor = new JUnitInProcessExecutor(myProject, "testtest", testNodes);
         final TestInProcessRunState lightState = TestInProcessRunState.getInstance();
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
@@ -91,9 +95,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         latch.await(10, TimeUnit.SECONDS);
         int exitcode = exitCode[0];
         if (exitcode != FakeProcess.TERMINATION_CODE) {
-          Assert.fail("Exit code must be equal to " + FakeProcess.TERMINATION_CODE + ", but " + exitcode);
-        } else if (exitcode < 0) {
-          Assert.fail("Process is running for too long");
+          Assert.fail("Exit code must be equal to " + FakeProcess.TERMINATION_CODE + ", not to " + exitcode);
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());
@@ -105,6 +107,12 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
       }
     }
     public void waitForRunToStart(final TestInProcessRunState lightState) {
+      new WaitFor(1000) {
+        protected boolean condition() {
+          return false;
+        }
+      };
+
       new WaitFor(5 * 1000) {
         protected boolean condition() {
           return lightState.isRunning();

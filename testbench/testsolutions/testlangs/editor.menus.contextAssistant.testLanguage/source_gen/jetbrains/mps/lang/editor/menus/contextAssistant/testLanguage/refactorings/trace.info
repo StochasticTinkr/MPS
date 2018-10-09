@@ -6,6 +6,11 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="RefactoringAspectDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.refactorings.RefactoringAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:938571aa-9d7b-41d5-a017-4298d540d66c(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.refactorings)/4736696158596280783">
     <file name="AppendOneToName.java">
       <node id="4736696158596280783" at="14,52,15,40" concept="4" />
@@ -61,6 +66,9 @@
         <var name="entity" id="4736696158596280805" />
       </scope>
       <unit id="4736696158596280805" at="11,0,33,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.refactorings.AppendOneToName_Target" />
+    </file>
+    <file name="RefactoringAspectDescriptor.java">
+      <node id="4736696158596280783" at="16,41,17,46" concept="1" />
     </file>
   </root>
 </debug-info>

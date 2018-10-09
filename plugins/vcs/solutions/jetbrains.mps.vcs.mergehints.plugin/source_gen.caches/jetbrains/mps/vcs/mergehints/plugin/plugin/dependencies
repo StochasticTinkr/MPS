@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.plugin.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconLoadingUtil" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.plugin.Plugin_ProjectPlugin" file="Plugin_ProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.plugin.plugin.Version_Control_TabDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.plugin.VersionControl_Order" file="VersionControl_Order.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode extendsClassName="jetbrains.mps.plugins.relations.BaseOrder" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergehints.plugin.plugin.Version_Control_TabDescriptor" file="Version_Control_TabDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.plugin.plugin.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.plugin.plugin.VersionControl_Order" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
+  </dependency>
+</dependenciesRoot>
+

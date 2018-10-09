@@ -471,15 +471,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5L2z0zs$1cS" role="jymVt" />
-    <node concept="312cEg" id="5L2z0zs$cLp" role="jymVt">
-      <property role="TrG5h" value="myShouldSleepOnInit" />
-      <node concept="3Tm6S6" id="5L2z0zs$cLq" role="1B3o_S" />
-      <node concept="10P_77" id="5L2z0zs$etH" role="1tU5fm" />
-      <node concept="3clFbT" id="5L2z0zs$hwB" role="33vP2m">
-        <property role="3clFbU" value="true" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2QIvLbam1Ak" role="jymVt" />
     <node concept="312cEg" id="2QIvLbalWyl" role="jymVt">
       <property role="TrG5h" value="myErrorPanel" />
       <node concept="3Tm6S6" id="2QIvLbalWyj" role="1B3o_S" />
@@ -781,58 +772,6 @@
             <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx._init():void" resolve="_init" />
           </node>
         </node>
-        <node concept="3clFbH" id="301Q3qjjQlN" role="3cqZAp" />
-        <node concept="3clFbJ" id="5L2z0zs$$Z_" role="3cqZAp">
-          <node concept="3clFbS" id="5L2z0zs$$ZB" role="3clFbx">
-            <node concept="SfApY" id="1zaRC58xUbc" role="3cqZAp">
-              <node concept="3clFbS" id="1zaRC58xUbe" role="SfCbr">
-                <node concept="3SKdUt" id="5cfG2XjGT0l" role="3cqZAp">
-                  <node concept="3SKdUq" id="5cfG2XjGT0n" role="3SKWNk">
-                    <property role="3SKdUp" value="this is to allow Idea UI to finish the &quot;transition&quot; to a new wizard step before running task" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="1zaRC58xwBK" role="3cqZAp">
-                  <node concept="2YIFZM" id="1zaRC58xwRF" role="3clFbG">
-                    <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
-                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-                    <node concept="3cmrfG" id="1zaRC58xxg4" role="37wK5m">
-                      <property role="3cmrfH" value="1000" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="TDmWw" id="1zaRC58xUbf" role="TEbGg">
-                <node concept="3cpWsn" id="1zaRC58xUbh" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="1zaRC58xVbR" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="1zaRC58xUbl" role="TDEfX">
-                  <node concept="3SKdUt" id="1zaRC58xVZA" role="3cqZAp">
-                    <node concept="3SKdUq" id="1zaRC58xVZB" role="3SKWNk">
-                      <property role="3SKdUp" value="do nothing" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="5L2z0zs$Akx" role="3cqZAp">
-              <node concept="37vLTI" id="5L2z0zs$ASA" role="3clFbG">
-                <node concept="3clFbT" id="5L2z0zs$B2S" role="37vLTx">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="5L2z0zs$Akv" role="37vLTJ">
-                  <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="37vLTw" id="5L2z0zs$_jN" role="3clFbw">
-            <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="301Q3qjjTte" role="3cqZAp" />
         <node concept="3clFbF" id="301Q3qjkhQy" role="3cqZAp">
           <node concept="1rXfSq" id="301Q3qjkbpU" role="3clFbG">
             <ref role="37wK5l" node="301Q3qjkbpQ" resolve="executeToFirstError" />
@@ -1218,17 +1157,6 @@
             </node>
             <node concept="liA8E" id="5L2z0zs$jBN" role="2OqNvi">
               <ref role="37wK5l" node="PobQbOdfwK" resolve="isComplete" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="5L2z0zs$rfi" role="3cqZAp" />
-        <node concept="3clFbF" id="5L2z0zs$oUm" role="3cqZAp">
-          <node concept="37vLTI" id="5L2z0zs$qLI" role="3clFbG">
-            <node concept="3clFbT" id="5L2z0zs$qYl" role="37vLTx">
-              <property role="3clFbU" value="false" />
-            </node>
-            <node concept="37vLTw" id="5L2z0zs$oUk" role="37vLTJ">
-              <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
             </node>
           </node>
         </node>
@@ -8749,6 +8677,23 @@
                                     </node>
                                   </node>
                                 </node>
+                                <node concept="3clFbF" id="3$4siPNdmv8" role="3cqZAp">
+                                  <node concept="2OqwBi" id="3$4siPNdmFt" role="3clFbG">
+                                    <node concept="1eOMI4" id="3$4siPNdsgK" role="2Oq$k0">
+                                      <node concept="10QFUN" id="3$4siPNdsgJ" role="1eOMHV">
+                                        <node concept="2GrUjf" id="3$4siPNdsgI" role="10QFUP">
+                                          <ref role="2Gs0qQ" node="4OwAxHM6eh" resolve="module" />
+                                        </node>
+                                        <node concept="3uibUv" id="3$4siPNdspO" role="10QFUM">
+                                          <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="3$4siPNdsG0" role="2OqNvi">
+                                      <ref role="37wK5l" to="z1c3:~AbstractModule.save():void" resolve="save" />
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                             </node>
                             <node concept="2OqwBi" id="1h9zT9abiY9" role="ukAjM">
@@ -8766,54 +8711,6 @@
                         <ref role="3cqZAo" node="1h9zT9abiXn" resolve="modalityState" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="1h9zT9abDQP" role="3cqZAp">
-              <node concept="2OqwBi" id="1h9zT9abDQQ" role="3clFbG">
-                <node concept="2YIFZM" id="1h9zT9abDQR" role="2Oq$k0">
-                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-                </node>
-                <node concept="liA8E" id="1h9zT9abDQS" role="2OqNvi">
-                  <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-                  <node concept="1bVj0M" id="1h9zT9abDQT" role="37wK5m">
-                    <property role="3yWfEV" value="true" />
-                    <node concept="3clFbS" id="1h9zT9abDQU" role="1bW5cS">
-                      <node concept="1QHqEO" id="1h9zT9abDQV" role="3cqZAp">
-                        <node concept="1QHqEC" id="1h9zT9abDQW" role="1QHqEI">
-                          <node concept="3clFbS" id="1h9zT9abDQX" role="1bW5cS">
-                            <node concept="3clFbF" id="12C4aFiPSKh" role="3cqZAp">
-                              <node concept="2OqwBi" id="12C4aFiPSKi" role="3clFbG">
-                                <node concept="2OqwBi" id="12C4aFiPSKj" role="2Oq$k0">
-                                  <node concept="37vLTw" id="12C4aFiPSKk" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="cQNMA1JbLx" resolve="project" />
-                                  </node>
-                                  <node concept="liA8E" id="12C4aFiPSKl" role="2OqNvi">
-                                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="12C4aFiPSKm" role="2OqNvi">
-                                  <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2OqwBi" id="1h9zT9abDR5" role="ukAjM">
-                          <node concept="37vLTw" id="1h9zT9abDR6" role="2Oq$k0">
-                            <ref role="3cqZAo" node="cQNMA1JbLx" resolve="project" />
-                          </node>
-                          <node concept="liA8E" id="1h9zT9abDR7" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="1h9zT9abDR8" role="37wK5m">
-                    <ref role="3cqZAo" node="1h9zT9abiXn" resolve="modalityState" />
                   </node>
                 </node>
               </node>

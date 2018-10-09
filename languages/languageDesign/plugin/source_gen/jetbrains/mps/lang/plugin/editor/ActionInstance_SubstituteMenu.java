@@ -44,7 +44,7 @@ public class ActionInstance_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_2cluuu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_2cluuu_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2cluuu_a() {
       super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, 0x1181da2f27fL, "action"));

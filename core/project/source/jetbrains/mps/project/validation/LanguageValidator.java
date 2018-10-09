@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,6 +167,8 @@ public class LanguageValidator {
       }
     }
 
+    VisibilityUtil visibilityHelper = VisibilityUtil.forModule(myLanguage);
+
     for (SModelReference accessory : myLanguage.getModuleDescriptor().getAccessoryModels()) {
       //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
       //but I'll not delete it until accessories removal just to have some warning on project consistency
@@ -177,7 +179,7 @@ public class LanguageValidator {
         }
         continue;
       }
-      if (!VisibilityUtil.isVisible(myLanguage, accModel)) {
+      if (!visibilityHelper.isVisible(accModel)) {
         if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
           return;
         }

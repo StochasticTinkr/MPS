@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,7 +37,8 @@ import jetbrains.mps.smodel.SReference;
 public class NodePointers_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NodePointers_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public NodePointers_Test() {
     super(ourParamCache);
@@ -42,122 +46,126 @@ public class NodePointers_Test extends BaseTransformationTest {
 
   @Test
   public void test_ResolveData() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_ResolveData", true);
+    new NodePointers_Test.TestBody(this).test_ResolveData();
   }
   @Test
   public void test_PointerEquality() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_PointerEquality", true);
+    new NodePointers_Test.TestBody(this).test_PointerEquality();
   }
   @Test
   public void test_IsOperation() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_IsOperation", true);
+    new NodePointers_Test.TestBody(this).test_IsOperation();
   }
   @Test
   public void test_SetPtrOperation() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_SetPtrOperation", true);
+    new NodePointers_Test.TestBody(this).test_SetPtrOperation();
   }
   @Test
   public void test_ResolveDataModel() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_ResolveDataModel", true);
+    new NodePointers_Test.TestBody(this).test_ResolveDataModel();
   }
   @Test
   public void test_ModelPointerEquality() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_ModelPointerEquality", true);
+    new NodePointers_Test.TestBody(this).test_ModelPointerEquality();
   }
   @Test
   public void test_NodePointerGetModelOp() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodePointerGetModelOp", true);
+    new NodePointers_Test.TestBody(this).test_NodePointerGetModelOp();
   }
   @Test
   public void test_OperationsNullSafe() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_OperationsNullSafe", true);
+    new NodePointers_Test.TestBody(this).test_OperationsNullSafe();
   }
   @Test
   public void test_NodeTypeCheck535833678907605667() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678907605667", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678907605667();
   }
   @Test
   public void test_NodeTypeCheck535833678907609256() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678907609256", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678907609256();
   }
   @Test
   public void test_NodeTypeCheck535833678905705670() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678905705670", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678905705670();
   }
   @Test
   public void test_NodeTypeCheck535833678905709959() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678905709959", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678905709959();
   }
   @Test
   public void test_NodeTargetNodeNotFoundInRepositoryCheck535833678906728045() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTargetNodeNotFoundInRepositoryCheck535833678906728045", true);
+    new NodePointers_Test.TestBody(this).test_NodeTargetNodeNotFoundInRepositoryCheck535833678906728045();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905879477() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905879477", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905879477();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905721739() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905721739", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905721739();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905852712() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905852712", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905852712();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905854558() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905854558", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905854558();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905860220() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905860220", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905860220();
   }
   @Test
   public void test_NodeTypeCheck535833678905910987() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678905910987", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678905910987();
   }
   @Test
   public void test_NodeTypeCheck535833678905916302() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678905916302", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678905916302();
   }
   @Test
   public void test_NodeTypeCheck535833678905993796() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678905993796", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678905993796();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678905987697() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678905987697", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678905987697();
   }
   @Test
   public void test_NodeTypeCheck535833678906005800() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck535833678906005800", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck535833678906005800();
   }
   @Test
   public void test_NodeTypeSystemCheck535833678906363602() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeSystemCheck535833678906363602", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeSystemCheck535833678906363602();
   }
   @Test
   public void test_NodeTypeCheck6012981979751350087() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck6012981979751350087", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck6012981979751350087();
   }
   @Test
   public void test_NodeTypeCheck6012981979751302141() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_NodeTypeCheck6012981979751302141", true);
+    new NodePointers_Test.TestBody(this).test_NodeTypeCheck6012981979751302141();
   }
   @Test
   public void test_ErrorMessagesCheck535833678905969550() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test$TestBody", "test_ErrorMessagesCheck535833678905969550", true);
+    new NodePointers_Test.TestBody(this).test_ErrorMessagesCheck535833678905969550();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_ResolveData() throws Exception {
       addNodeById("535833678905714232");
       SNode data = this.resolveData();
 
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), data);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0d0a33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0d0d33());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
     }
@@ -186,7 +194,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678908607806"));
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0e0d33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0e0g33());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
 
@@ -194,7 +202,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), classifier);
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0i0d33());
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0i0g33());
         Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
       }
     }
@@ -322,7 +330,7 @@ public class NodePointers_Test extends BaseTransformationTest {
     public SModel resolveDataModel() {
       return SPointerOperations.resolveModel(PersistenceFacade.getInstance().createModelReference("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)"), myProject.getRepository());
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0d0a33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0d0d33() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -352,14 +360,14 @@ public class NodePointers_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0e0d33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0e0g33() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
       quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)"), facade.createNodeId("535833678908607806")));
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_hosvw_a0a0b0i0d33() {
+    private static SNode _quotation_createNode_hosvw_a0a0b0i0g33() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

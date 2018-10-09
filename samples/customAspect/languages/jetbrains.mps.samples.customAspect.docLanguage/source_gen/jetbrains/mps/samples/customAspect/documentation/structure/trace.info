@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.samples.customAspect.documentation.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,51,0" name="jetbrains.mps.samples.customAspect.documentation.structure.StructureAspectDescriptor" />
+      <unit at="14,0,52,0" name="jetbrains.mps.samples.customAspect.documentation.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:554f8053-4df6-4aa3-9ecf-e71658269bf9(jetbrains.mps.samples.customAspect.documentation.structure)/2897519568668510002">
@@ -41,15 +41,16 @@
       <node id="2897519568668510002" at="42,78,43,203" concept="3" />
       <node id="2897519568668510002" at="43,203,44,33" concept="0" />
       <node id="2897519568668510002" at="44,33,45,135" concept="0" />
-      <node id="2897519568668511728" at="45,135,46,63" concept="0" />
-      <node id="2897519568668513334" at="46,63,47,164" concept="0" />
-      <node id="2897519568668510002" at="47,164,48,22" concept="4" />
-      <node id="2897519568668510002" at="42,0,50,0" concept="6" trace="createDescriptorForConceptDocumentation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="2897519568668510002" at="45,135,46,17" concept="0" />
+      <node id="2897519568668511728" at="46,17,47,63" concept="0" />
+      <node id="2897519568668513334" at="47,63,48,164" concept="0" />
+      <node id="2897519568668510002" at="48,164,49,22" concept="4" />
+      <node id="2897519568668510002" at="42,0,51,0" concept="6" trace="createDescriptorForConceptDocumentation#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="2897519568668510002" at="31,54,32,45" />
-      <scope id="2897519568668510002" at="42,78,48,22">
+      <scope id="2897519568668510002" at="42,78,49,22">
         <var name="b" id="2897519568668510002" />
       </scope>
-      <scope id="2897519568668510002" at="42,0,50,0" />
+      <scope id="2897519568668510002" at="42,0,51,0" />
     </file>
   </root>
 </debug-info>

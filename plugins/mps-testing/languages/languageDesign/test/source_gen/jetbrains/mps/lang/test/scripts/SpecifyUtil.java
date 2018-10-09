@@ -39,6 +39,7 @@ public class SpecifyUtil {
       checker = new TestsErrorsChecker(containingRoot);
       errors = checker.getErrors(node);
       ourLastTimestamp = System.currentTimeMillis();
+      ourLastCheck = new WeakReference<TestsErrorsChecker>(checker);
     } else {
       errors = checker.getErrors(node);
     }

@@ -93,13 +93,13 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a1_0(new ReductionRuleQueryContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_0_3(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_89007642487443226510(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ief6mt_b0a0d0c8));
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_0_4(new SourceSubstituteMacroNodeContext(context, copySrcMacro_ief6mt_b0a0d0c8));
       tlist1 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput1), copySrcMacro_ief6mt_b0a0d0c8, "tpl/r:00000000-0000-4000-0000-011c89590606/8900764248744322651", context.subContext("sd"));
       TemplateContext context1 = context.subContext("sd");
       final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c77f1e98L, "VariableReference"));
@@ -107,7 +107,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         environment.resolve(new RefResolver(tnode2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context1, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107455263"), "i") {
           @Override
           public Object resolve() {
-            return QueriesGenerated.referenceMacro_GetReferent_42656361163630900860(createQueryContext());
+            return QueriesGenerated.referenceMacro_GetReferent_0_0(createQueryContext());
           }
         });
       } finally {
@@ -171,7 +171,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
           final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7efL, "LocalVariableDeclaration"));
           try {
             environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234");
-            SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_60105434421986812340(new PropertyMacroContext(context1, "i", propertyMacro_ief6mt_c0a0c0b0b0b0c0b11))));
+            SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_0_1(new PropertyMacroContext(context1, "i", propertyMacro_ief6mt_c0a0c0b0b0b0c0b11))));
             TemplateContext context2 = context1.subContext();
             {
               final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940d22479L, "IntegerType"));
@@ -203,7 +203,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         {
           final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7efL, "LocalVariableDeclaration"));
           try {
-            SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_60105434421986812380(new PropertyMacroContext(context3, "e", propertyMacro_ief6mt_c0a0c0a0b0b0e0b11))));
+            SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_0_2(new PropertyMacroContext(context3, "e", propertyMacro_ief6mt_c0a0c0a0b0b0e0b11))));
             TemplateContext context4 = context3.subContext();
             {
               final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940d22479L, "IntegerType"));
@@ -257,7 +257,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_a(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_0(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -273,7 +273,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_b(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_1(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -296,7 +296,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
                     TemplateContext context4 = context3.subContext();
                     {
                       Collection<SNode> tlist5 = null;
-                      final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_26813058942882835120(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ief6mt_b0a0c0b0b0b0b0b0b0b0f0b31));
+                      final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_0_0(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ief6mt_b0a0c0b0b0b0b0b0b0b0f0b31));
                       tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_ief6mt_b0a0c0b0b0b0b0b0b0b0f0b31, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288283512", context4);
                       for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
                         tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), child6);
@@ -314,7 +314,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
                     TemplateContext context5 = context3.subContext();
                     {
                       Collection<SNode> tlist8 = null;
-                      final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_26813058942882834950(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_ief6mt_b0a0c0b0b0c0b0b0b0b0f0b31));
+                      final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_0_1(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_ief6mt_b0a0c0b0b0c0b0b0b0b0f0b31));
                       tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_ief6mt_b0a0c0b0b0c0b0b0b0b0f0b31, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288283495", context5);
                       for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
                         tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), child9);
@@ -347,7 +347,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_c(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_2(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -358,7 +358,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_26813058942883878170(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ief6mt_b0a0c0b0f0b41));
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_0_2(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ief6mt_b0a0c0b0f0b41));
           tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_ief6mt_b0a0c0b0f0b41, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288387817", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), child3);
@@ -367,7 +367,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         }
         {
           Collection<SNode> tlist4 = null;
-          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_26813058942883878160(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ief6mt_b0a0c0c0f0b41));
+          final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_0_3(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ief6mt_b0a0c0c0f0b41));
           tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_ief6mt_b0a0c0c0f0b41, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288387816", context1);
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), child5);
@@ -385,13 +385,13 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_d(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_3(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
       final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
       final TemplateContext context = templateContext.subContext(pattern);
-      Collection<SNode> tlist1 = new Template_processStatement().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0d(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a4a1p))), ((String) context.getPatternVariable("patternVar_jobName")), ((SNode) context.getPatternVariable("patternVar_myExpr")), 12, true);
+      Collection<SNode> tlist1 = new Template_processStatement().apply(context, ((String) QueriesGenerated.templateArgumentQuery_0_0(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a4a1p))), ((String) context.getPatternVariable("patternVar_jobName")), ((SNode) context.getPatternVariable("patternVar_myExpr")), 12, true);
       return tlist1;
     }
   }
@@ -401,7 +401,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_e(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_4(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -430,7 +430,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
                 {
                   final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"));
                   try {
-                    SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_21638196959139458650(new PropertyMacroContext(context3, "", propertyMacro_ief6mt_c0a0c0a0b0b0b0c0b0b0f0b61))));
+                    SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_0_0(new PropertyMacroContext(context3, "", propertyMacro_ief6mt_c0a0c0a0b0b0b0c0b0b0f0b61))));
                   } finally {
                   }
                   tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode5);
@@ -466,7 +466,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_f(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_5(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -482,7 +482,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_g(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_6(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -528,7 +528,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
-      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_zu1o_h(new PatternRuleContext(templateContext, getRuleNode()));
+      final GeneratedMatchingPattern pattern = QueriesGenerated.patternRule_Condition_0_7(new PatternRuleContext(templateContext, getRuleNode()));
       if (pattern == null) {
         return null;
       }
@@ -571,17 +571,17 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_0_0(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weavingRule_ContextQuery_0_0(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_a0a(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068")));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_0_0(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068")));
       for (SNode itnode : weaveEachList1) {
         if (itnode == null) {
           continue;
@@ -602,17 +602,17 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.baseMappingRule_Condition_a1(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.rule_Condition_0_1(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a1(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weavingRule_ContextQuery_0_1(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_a0b(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076075773")));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_0_1(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076075773")));
       for (SNode itnode : weaveEachList1) {
         if (itnode == null) {
           continue;

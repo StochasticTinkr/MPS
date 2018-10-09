@@ -5,6 +5,9 @@ package jetbrains.mps.ide.editor.actions;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 /*package*/ class InsertUtil {
   /*package*/ static boolean isAtFirstPositionOfCellWithCaret(EditorCell editorCell) {
@@ -17,5 +20,33 @@ import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
       }
     }
     return false;
+  }
+  /*package*/ static boolean isFirstCellOfTheNode(@NotNull EditorCell editorCell) {
+    while (editorCell != null && !(editorCell.isBig())) {
+      if (editorCell.getPrevSibling() != null) {
+        return false;
+      }
+      editorCell = editorCell.getParent();
+    }
+    return true;
+  }
+  /*package*/ static boolean isRightAfterChildrenCollection(@NotNull EditorCell editorCell) {
+    while (editorCell != null && !(editorCell.isBig())) {
+      if (editorCell.getPrevSibling() != null) {
+        return InsertUtil.isCellWithRole(editorCell.getPrevSibling());
+      }
+      editorCell = editorCell.getParent();
+    }
+    return false;
+  }
+  private static boolean isCellWithRole(@NotNull EditorCell editorCell) {
+    if (!(editorCell instanceof EditorCell_Collection)) {
+      return false;
+    }
+    EditorCell_Collection collection = (EditorCell_Collection) editorCell;
+    while (collection.getSRole() == null && collection.getCellsCount() == 1 && collection.firstCell() instanceof EditorCell_Collection) {
+      collection = ((EditorCell_Collection) collection.firstCell());
+    }
+    return collection.getSRole() != null && collection.getSRole() instanceof SContainmentLink;
   }
 }

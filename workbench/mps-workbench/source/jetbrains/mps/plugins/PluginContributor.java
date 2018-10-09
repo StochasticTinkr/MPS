@@ -17,15 +17,18 @@ package jetbrains.mps.plugins;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * hashCode() and equals() must be overridden for PluginContributor!
  */
 public class PluginContributor extends AbstractPluginFactory {
+  @Nullable
   public BaseProjectPlugin createProjectPlugin() {
     return null;
   }
 
+  @Nullable
   public BaseApplicationPlugin createApplicationPlugin() {
     return null;
   }

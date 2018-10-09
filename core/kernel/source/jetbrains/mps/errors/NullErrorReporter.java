@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.Collections;
 import java.util.List;
 
 // this class is only for compatibility with generated code which can call reportError() with some invalid data passed

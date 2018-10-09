@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
-import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.util.BrowseFilesListener;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -97,10 +97,12 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_E
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.scope.VisibleDepsSearchScope;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
-import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.EditorDeclarationScanner;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.Computable;
@@ -108,7 +110,7 @@ import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ModelComputeRunnable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.Nls;
@@ -117,6 +119,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -186,9 +190,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     super(project);
     // XXX for whatever reason, it looks like we are not inside read although passing SModule here (e.g. ModuleProperties_Action doesn't bother to get one). Why?
     //     Same for ModelPropertiesConfigurable, btw.
-    //     For scenario when module comes not from the project's repo, use of GetModuleRepo looks odd as we lock project repo
+    //     For scenario when module comes not from the project's repo, use of module.getRepository looks odd as we lock project repo
     //     to get data of a module from a different repository (although one can pretend that locking project repo locks all dependency repositories as well).
-    myModuleRepository = new ModelComputeRunnable<>(new GetModuleRepo(module)).runRead(project.getModelAccess());
+    myModuleRepository = module.getRepository();
     myModule = (AbstractModule) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
     myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
@@ -290,7 +294,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JTextField myGeneratorAlias;
     private JSpinner myLanguageVersion;
     private JSpinner myModuleVersion;
-    private DefaultScope myPlanPickScope;
+    private DevkitVisibleScope myPlanPickScope;
     private GenPlanPickPanel myPlanPanel;
 
     @Override
@@ -397,17 +401,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         return panel;
       } else if (myModule instanceof DevKit) {
-        myPlanPickScope = new DefaultScope() {
-          @Override
-          protected Set<SModule> getInitialModules() {
-            return new HashSet<>(((DevKit) myModule).getExportedSolutions());
-          }
-
-          @Override
-          protected Collection<Language> getInitialUsedLanguages() {
-            return ((DevKit) myModule).getExportedLanguages();
-          }
-        };
+        // XXX
+        myPlanPickScope = new DevkitVisibleScope(myModuleRepository, (DevKit) myModule);
         myPlanPanel = new GenPlanPickPanel(myProject, myPlanPickScope, "Generation plan for models using this devkit");
         myPlanPanel.setPlanModel(((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan());
         return myPlanPanel;
@@ -493,7 +488,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModuleDescriptor instanceof DevkitDescriptor) {
         myModuleDependenciesTab.apply();
         ((DevkitDescriptor) myModuleDescriptor).setAssociatedPlan(myPlanPanel.getPlanModel());
-        myPlanPickScope.invalidateCaches();
+        myPlanPickScope.reset();
       } else {
         if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
           // here we imply getGenOutPath uses ProjectPathUtil.getGeneratorOutputPath
@@ -595,12 +590,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myModuleRepository.getModelAccess().runReadAction(() -> {
         // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
         if (myModule instanceof Language) {
+          // XXX Next code to find 'true' extends dependencies is pretty similar to LanguageValidator, is there any chance to share it?
           SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
           if (structureAspect != null) {
             // we keep lang.core.structure reference, if any, just not to warn about superfluous lang.core import
             ConceptDeclarationScanner cds = new ConceptDeclarationScanner();
             cds.scan(structureAspect);
             cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
+          }
+          SModel editorModel = LanguageAspect.EDITOR.get((Language) myModule);
+          if (editorModel != null) {
+            EditorDeclarationScanner eds = new EditorDeclarationScanner();
+            eds.scan(editorModel);
+            eds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
           }
           ModelScanner tms = new ModelScanner();
           for (Generator g : ((Language) myModule).getOwnedGenerators()) {
@@ -676,7 +678,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           return combo;
         }
         DependenciesTableItem rowItem = myDependTableModel.getValueAt(row);
-        List items = getItemsForCell(rowItem);
+        List<SDependencyScope> items = getItemsForCell(rowItem);
         for (Object o : items) {
           combo.addItem(o);
         }
@@ -1050,7 +1052,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
-      super(PropertiesBundle.message("module.generator.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("module.generator.tip"));
+      super(PropertiesBundle.message("module.generator.title"), General.GeneratorPriorities, PropertiesBundle.message("module.generator.tip"));
       myGenerator = generator;
       myDepGenerators = depGenerators;
     }
@@ -1413,7 +1415,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public class AddFacetsTab extends BaseTab {
 
     public AddFacetsTab() {
-      super(PropertiesBundle.message("module.facets.title"), AllIcons.General.Settings, PropertiesBundle.message("module.facets.tip"));
+      super(PropertiesBundle.message("module.facets.title"), Nodes.Plugin, PropertiesBundle.message("module.facets.tip"));
     }
 
     @Override
@@ -1575,26 +1577,69 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  /*
-   * FIXME myModule.getRepository requires read action (implementation, not API), while mpsProject.getRepository does not
-   * Not sure whether which one is right (both seem reasonable, repository of a module might change, repository of the project could not)
-   * and I need module's repo to check for dependency availability.
-   * The problem is that I need a repo to run the command to get the repo, which does look stupid, perhaps,
-   * myModule.getRepository shall be relaxed to give SRepo without read action or we shall use SModuleReference and project's repo instead of
-   * myModule (SModule instance) throughout whole ModulePropertiesConfigurable. One more alternative is to have myModule.getProject().getRepo()
-   * (i.e. something that gives access to module's repo without need for read action. Present use of myProject.getRepo to run the command
-   * basically does exactly that, although a bit indirectly)
-   */
-  private static class GetModuleRepo implements Computable<SRepository> {
-    private final SModule myModule;
+  /*package*/ final static class DevkitVisibleScope implements SearchScope {
+    private final SRepository myRepository;
+    private final DevKit myModule;
+    private VisibleDepsSearchScope myDelegate;
 
-    public GetModuleRepo(@NotNull SModule module) {
+    // XXX In fact, shall look into ModuleDependenciesTab and myDependTableModel, to avoid extra apply() to get new deps,
+    //     but I'm too lazy to spend time on this subtle difference
+    public DevkitVisibleScope(SRepository repository, DevKit module) {
+      myRepository = repository;
       myModule = module;
     }
 
+    private void init() {
+      // don't deal with multi-threading, the scope is local for single thread
+      if (myDelegate == null) {
+        // XXX not sure whether I shall use exportedSolutions vs allExportedSolutions (latter seems right but the idea of the scope was it
+        //     would walk dependencies itself. OTOH, as long as it has no idea we're looking at a devkit, how would it know to walk extended devkits?)
+        //     What I don't like about 'all', especially allExportedLanguageIds, is that behind the scene there's resolve for module references, while
+        //     used languages has to be recorded/computed SLanguage w/o need to resolve language module first. Once we have Devkit API in a proper way
+        //     (shall expose languages as 'SLanguage', not as SModuleReference/Language module, we can refactor this code.
+        Collection<SLanguage> exportedLanguages = IterableUtil.asCollection(myModule.getAllExportedLanguageIds());
+        myDelegate = new VisibleDepsSearchScope(myRepository, myModule.getAllExportedSolutions(), exportedLanguages);
+      }
+    }
+
+    /*package*/ void reset() {
+      myDelegate = null;
+    }
+
+    @NotNull
     @Override
-    public SRepository compute() {
-      return myModule.getRepository();
+    public Iterable<SModule> getModules() {
+      init();
+      return myDelegate.getModules();
+    }
+
+
+    @NotNull
+    @Override
+    public Iterable<SModel> getModels() {
+      init();
+      return myDelegate.getModels();
+    }
+
+    @Nullable
+    @Override
+    public SModel resolve(@NotNull SModelReference reference) {
+      init();
+      return myDelegate.resolve(reference);
+    }
+
+    @Nullable
+    @Override
+    public SModule resolve(@NotNull SModuleReference reference) {
+      init();
+      return myDelegate.resolve(reference);
+    }
+
+    @Nullable
+    @Override
+    public SNode resolve(@NotNull SNodeReference reference) {
+      init();
+      return myDelegate.resolve(reference);
     }
   }
 }

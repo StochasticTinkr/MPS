@@ -113,7 +113,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -409,6 +411,24 @@
                 <node concept="2YIFZM" id="1CWvv8TgVZ2" role="37vLTx">
                   <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
                   <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5E0FesSKVjZ" role="3cqZAp">
+              <node concept="37vLTI" id="5E0FesSKVY8" role="3clFbG">
+                <node concept="2ShNRf" id="5E0FesSKW6r" role="37vLTx">
+                  <node concept="1pGfFk" id="5E0FesSKXTI" role="2ShVmc">
+                    <ref role="37wK5l" to="mpcv:~WeakReference.&lt;init&gt;(java.lang.Object)" resolve="WeakReference" />
+                    <node concept="3uibUv" id="5E0FesSKXYa" role="1pMfVU">
+                      <ref role="3uigEE" to="tp6m:3fCX6WCBvHP" resolve="TestsErrorsChecker" />
+                    </node>
+                    <node concept="37vLTw" id="5E0FesSKY01" role="37wK5m">
+                      <ref role="3cqZAo" node="WvgGJd6441" resolve="checker" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="5E0FesSKVjX" role="37vLTJ">
+                  <ref role="3cqZAo" node="1CWvv8TgHDH" resolve="ourLastCheck" />
                 </node>
               </node>
             </node>

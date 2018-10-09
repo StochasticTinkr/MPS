@@ -33,6 +33,7 @@ public class InputMethodRequestsImpl implements InputMethodRequests {
 
   public InputMethodRequestsImpl(EditorComponent component) {
     myEditorComponent = component;
+    component.addInputMethodListener(new InputMethodListenerImpl(component));
   }
 
   @Override

@@ -44,7 +44,7 @@ public class DataDependencyReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_dny9mp_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_dny9mp_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_dny9mp_a() {
       super(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, "jetbrains.mps.lang.migration.structure.DataDependencyReference"), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, 0x63476c2ad9bcd739L, "dataDependency"));

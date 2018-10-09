@@ -19,7 +19,6 @@ import org.jetbrains.mps.annotations.ImmutableReturn;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 

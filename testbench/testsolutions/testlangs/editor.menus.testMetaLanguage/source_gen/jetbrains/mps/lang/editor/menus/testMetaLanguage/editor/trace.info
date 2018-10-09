@@ -49,7 +49,7 @@
       <node id="1638911550608588104" at="75,47,76,34" concept="1" />
       <node id="1638911550608588104" at="76,34,77,22" concept="6" />
       <node id="2710939522624389554" at="79,40,80,183" concept="5" />
-      <node id="2710939522624389554" at="84,39,85,145" concept="6" />
+      <node id="2710939522624389554" at="84,39,85,135" concept="6" />
       <node id="2710939522624389554" at="87,45,88,60" concept="1" />
       <node id="2710939522624389554" at="88,60,89,48" concept="1" />
       <node id="2710939522624389554" at="89,48,90,58" concept="1" />
@@ -76,7 +76,7 @@
       <node id="2710939522624389554" at="122,87,123,145" concept="6" />
       <node id="2710939522624389554" at="124,10,125,22" concept="6" />
       <node id="3464370922898061303" at="130,0,131,0" concept="2" trace="myReferencingNode" />
-      <node id="3464370922898061303" at="132,119,133,21" concept="8" />
+      <node id="3464370922898061303" at="132,109,133,21" concept="8" />
       <node id="3464370922898061303" at="133,21,134,42" concept="1" />
       <node id="3464370922898061303" at="134,42,135,20" concept="1" />
       <node id="3464370922898061303" at="138,41,139,32" concept="6" />
@@ -116,7 +116,7 @@
       <node id="2710939522624389554" at="82,72,87,45" concept="5" />
       <node id="2710939522624389554" at="115,301,120,7" concept="5" />
       <node id="2710939522624389554" at="120,7,125,22" concept="3" />
-      <node id="3464370922898061303" at="132,0,137,0" concept="0" trace="Inline_Builder_s38dn5_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3464370922898061303" at="132,0,137,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3464370922898061303" at="142,0,147,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3464370922898061304" at="160,308,165,11" concept="5" />
       <node id="3464370922898061304" at="165,11,170,26" concept="3" />
@@ -131,7 +131,7 @@
       <node id="2710939522624389554" at="79,0,127,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2710939522624389554" at="55,26,56,18" />
       <scope id="2710939522624389554" at="59,39,60,32" />
-      <scope id="2710939522624389554" at="84,39,85,145" />
+      <scope id="2710939522624389554" at="84,39,85,135" />
       <scope id="2710939522624389554" at="117,39,118,113" />
       <scope id="3464370922898061303" at="138,41,139,32" />
       <scope id="3464370922898061303" at="144,28,145,20" />
@@ -150,7 +150,7 @@
       <scope id="2710939522624389554" at="117,0,120,0">
         <var name="it" id="2710939522624389554" />
       </scope>
-      <scope id="3464370922898061303" at="132,119,135,20" />
+      <scope id="3464370922898061303" at="132,109,135,20" />
       <scope id="3464370922898061303" at="138,0,141,0" />
       <scope id="3464370922898061304" at="162,0,165,0">
         <var name="it" id="3464370922898061304" />
@@ -210,9 +210,9 @@
       <scope id="2710939522624389554" at="79,0,127,0" />
       <unit id="2710939522624389554" at="83,74,87,9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$1$1" />
       <unit id="2710939522624389554" at="116,102,120,5" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$2" />
-      <unit id="3464370922898061304" at="161,104,165,9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$Inline_Builder_s38dn5_a1a$1" />
+      <unit id="3464370922898061304" at="161,104,165,9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="2710939522624389554" at="81,42,100,5" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$1" />
-      <unit id="3464370922898061303" at="127,0,176,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$Inline_Builder_s38dn5_a1a" />
+      <unit id="3464370922898061303" at="127,0,176,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a$Inline_Builder0" />
       <unit id="2710939522624389554" at="44,0,185,0" name="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.TransformationMenu_Test_EditorBuilder_a" />
     </file>
   </root>

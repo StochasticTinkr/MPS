@@ -73,6 +73,7 @@
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelFactoryService" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -101,7 +102,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactoryType" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />

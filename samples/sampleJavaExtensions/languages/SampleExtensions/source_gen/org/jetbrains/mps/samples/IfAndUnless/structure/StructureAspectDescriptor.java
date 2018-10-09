@@ -19,10 +19,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMyIfStatement = createDescriptorForMyIfStatement();
   /*package*/ final ConceptDescriptor myConceptTrueFlow = createDescriptorForTrueFlow();
   /*package*/ final ConceptDescriptor myConceptUnlessStatement = createDescriptorForUnlessStatement();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.FalseFlow:
         return myConceptFalseFlow;
       case LanguageConceptSwitch.Flow:
@@ -50,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForFalseFlow() {
@@ -58,6 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL);
     b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075998500");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }
@@ -67,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.StatementList", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
     b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075912399");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }
@@ -75,6 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075912394");
+    b.version(2);
     b.aggregate("condition", 0xd403d58ad448ccdL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("954830572075912397").done();
     b.aggregate("body", 0xd403d58ad448cceL).target(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL).optional(false).ordered(true).multiple(false).origin("954830572075912398").done();
     b.aggregate("alternative", 0xd403d58ad457e4dL).target(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L).optional(false).ordered(true).multiple(false).origin("954830572075974221").done();
@@ -87,6 +90,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL);
     b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075998495");
+    b.version(2);
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     return b.create();
   }
@@ -95,6 +99,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/393299394024627213");
+    b.version(2);
     b.aggregate("condition", 0x57547b70f36dc0eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("393299394024627214").done();
     b.aggregate("body", 0x57547b70f36dc1cL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("393299394024627228").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

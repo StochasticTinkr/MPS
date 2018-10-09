@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
@@ -24,7 +23,6 @@ import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;

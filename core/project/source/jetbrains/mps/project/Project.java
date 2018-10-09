@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -30,9 +30,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * MPS Project abstraction. Project may rely on the idea Project or it may not.
@@ -191,19 +189,14 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return myDisposed;
   }
 
-  public final class ProjectScope extends DefaultScope {
+  public final class ProjectScope extends BaseScope {
+    @NotNull
     @Override
-    protected Set<SModule> getInitialModules() {
+    public Iterable<SModule> getModules() {
       List<Project> openProjects = ProjectManager.getInstance().getOpenedProjects();
       assert openProjects.contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 
-      Set<SModule> result = new HashSet<SModule>();
-      result.addAll(getProjectModules());
-
-      for (Language l : getProjectModules(Language.class)) {
-        result.addAll(l.getOwnedGenerators());
-      }
-      return result;
+      return getProjectModulesWithGenerators();
     }
   }
 }

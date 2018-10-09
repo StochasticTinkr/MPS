@@ -339,7 +339,6 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
 
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
-    copyContentRootAndFiles(targetModelRoot);
     new CopyDefaultModelRootHelper(this, targetModelRoot).copy();
   }
 

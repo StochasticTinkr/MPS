@@ -8,6 +8,7 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -15,30 +16,26 @@ public class WaitingTestCase_Test_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(WaitingTestCase_Test_Test.class, "${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
 
-
   public WaitingTestCase_Test_Test() {
     super(ourParamCache);
   }
 
   @Test
   public void test_test1() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test1", true);
-  }
-  @Test
-  public void test_test2() throws Throwable {
-    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test2", true);
+    new WaitingTestCase_Test_Test.TestBody(this).test_test1();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_test1() throws Exception {
       try {
         Thread.sleep(5000);
       } catch (InterruptedException e) {
       }
-      Assert.assertFalse(false);
-    }
-    public void test_test2() throws Exception {
       Assert.assertFalse(false);
     }
 

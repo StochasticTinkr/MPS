@@ -93,7 +93,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    boolean shouldShowReflectiveEditor = ReflectiveHintsManager.shouldShowReflectiveEditor(getCellContext());
+    EditorCellContext cellContext = getCellContext();
+    assert cellContext != null;
+    boolean shouldShowReflectiveEditor = ReflectiveHintsManager.shouldShowReflectiveEditor(cellContext);
     EditorCell result = null;
     SConcept concept = node.getConcept();
     ConceptEditor editor = shouldShowReflectiveEditor ? null : getCachedEditor(concept, excludedEditors);

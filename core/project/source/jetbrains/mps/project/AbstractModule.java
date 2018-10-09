@@ -31,9 +31,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.smodel.DefaultScope;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.scope.VisibleDepsSearchScope;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.util.EqualUtil;
@@ -71,7 +69,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -123,7 +120,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<>();
-  private ModuleScope myScope = new ModuleScope();
 
   private boolean myChanged = false;
 
@@ -216,7 +212,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       usedLanguages.addAll(modelInternal.importedLanguageIds());
       devkits.addAll(modelInternal.importedDevkits());
     }
-    // XXX why don't we respect extended devkits here?
+    // XXX why don't we respect extended devkits here? DevKit.get*All*ExportedLanguageIds does this for us, but as long as we've got repository here
+    //     why let devkit module bother to get it again?
+    // XXX pretty similar to SModelOperations.getAllLanguageImports(sModel) and to ModelDependenciesManager#getAllImportedLanguagesIds()
     final SRepository repository = getRepository();
     if (repository != null) {
       for (SModuleReference devkitRef : devkits) {
@@ -264,10 +262,20 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public final void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
+    setModuleDescriptor(moduleDescriptor, true);
+  }
+
+  /**
+   * sometimes we do not need to mark the reloaded module as changed (e.g. in the cases when we reload from the disk)
+   */
+  /*package*/ final void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, boolean setAsChanged) {
     assertCanChange();
     doSetModuleDescriptor(moduleDescriptor);
-    setChanged();
+    if (setAsChanged) {
+      setChanged();
+    }
+
     reloadAfterDescriptorChange();
     fireChanged();
     dependenciesChanged();
@@ -708,8 +716,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @NotNull
   public SearchScope getScope() {
-//    assertCanRead(); what's the reason to guard access to the field?
-    return myScope;
+    //    assertCanRead(); XXX There was no reason to guard access to the field, but now there's a class that initializes at construction time.
+    return new VisibleDepsSearchScope(getRepository(), this);
   }
 
   @Override
@@ -851,8 +859,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // call super.dependenciesChanged() at the end
 
     // todo: as we haven't dependencies listeners...
-
-    myScope.invalidateCaches();
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -879,44 +885,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Iterable<SModuleFacet> getFacets() {
     return Collections.unmodifiableSet(myFacets);
-  }
-
-  public class ModuleScope extends DefaultScope {
-    protected ModuleScope() {
-    }
-
-    public AbstractModule getModule() {
-      return AbstractModule.this;
-    }
-
-    @Override
-    protected Set<SModule> getInitialModules() {
-      Set<SModule> result = new HashSet<>();
-      result.add(AbstractModule.this);
-      return result;
-    }
-
-    @Override
-    protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<>();
-      for (SLanguage l : AbstractModule.this.getUsedLanguages()) {
-        SModule langModule = l.getSourceModule();
-        if (langModule instanceof Language) {
-          result.add((Language) langModule);
-        }
-      }
-      if (AbstractModule.this instanceof Language) {
-        result.add((Language) AbstractModule.this);
-      }
-      if (AbstractModule.this instanceof Generator) {
-        result.add(((Generator) AbstractModule.this).getSourceLanguage());
-      }
-      return result;
-    }
-
-    public String toString() {
-      return "Scope of module " + AbstractModule.this;
-    }
   }
 
   /**

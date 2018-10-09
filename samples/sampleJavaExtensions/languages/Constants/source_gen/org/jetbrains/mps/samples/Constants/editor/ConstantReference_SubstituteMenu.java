@@ -44,7 +44,7 @@ public class ConstantReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_jmi3wo_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_jmi3wo_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_jmi3wo_a() {
       super(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"), MetaAdapterFactory.getReferenceLink(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, 0x37600150f5294666L, "original"));

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;

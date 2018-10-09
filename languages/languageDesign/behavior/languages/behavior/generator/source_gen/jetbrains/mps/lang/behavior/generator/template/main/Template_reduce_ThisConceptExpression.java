@@ -38,7 +38,7 @@ public class Template_reduce_ThisConceptExpression extends TemplateDeclarationBa
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[0], context, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "1703835097132705989"), "thisConcept") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_17038350971327059880(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_11_0(createQueryContext());
         }
       });
     } finally {

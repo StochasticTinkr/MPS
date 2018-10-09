@@ -22,6 +22,8 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.MPSProject;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,6 +32,8 @@ import java.util.List;
 import java.util.Set;
 
 public class TabsMPSEditorFactory extends NodeEditorFactoryBase {
+  private static final Logger LOG = LogManager.getLogger(TabsMPSEditorFactory.class);
+
   private final MPSProject myProject;
   private final ProjectPluginManager myManager;
   private final EditorSettings myEditorSettings;
@@ -51,11 +55,15 @@ public class TabsMPSEditorFactory extends NodeEditorFactoryBase {
     }
     final SNode node = context.getNode();
     for (RelationDescriptor d : getTabDescriptors()) {
-      if (!d.isApplicable(node)) {
-        continue;
-      }
-      if (!d.getNodes(node).isEmpty()) {
-        return true;
+      try {
+        if (!d.isApplicable(node)) {
+          continue;
+        }
+        if (!d.getNodes(node).isEmpty()) {
+          return true;
+        }
+      } catch (Throwable t) {
+        LOG.error("Exception was thrown from extension: ", t);
       }
     }
     return false;
@@ -79,7 +87,12 @@ public class TabsMPSEditorFactory extends NodeEditorFactoryBase {
       return null;
     }
     for (RelationDescriptor d : getTabDescriptors()) {
-      SNode baseNode = d.getBaseNode(aspect);
+      SNode baseNode = null;
+      try {
+        baseNode = d.getBaseNode(aspect);
+      } catch (Throwable t) {
+        LOG.error("Exception was thrown from RelationDescriptor: ", t);
+      }
       if (baseNode == aspect) {
         continue;
       }

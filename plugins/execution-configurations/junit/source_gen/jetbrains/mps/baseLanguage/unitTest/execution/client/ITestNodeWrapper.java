@@ -42,13 +42,30 @@ public interface ITestNodeWrapper<N extends SNode> {
   @NotNull
   SModuleReference getTestNodeModule();
 
+  /**
+   * Seemingly there are test cases (java class) and test methods depending on this method
+   */
   boolean isTestCase();
+
+  /**
+   * 
+   * @return enclosing test case if it is not a test case itself, null otherwise
+   */
   @Nullable
   ITestNodeWrapper getTestCase();
+
   @NotNull
   Iterable<ITestNodeWrapper> getTestMethods();
+
+  /**
+   * name is a simple name (not fq name), ie for a test = java class we would see a simple name
+   */
   @NonNls
   String getName();
+
+  /**
+   * fqname for test classes
+   */
   @NonNls
   String getFqName();
   /**
@@ -58,6 +75,7 @@ public interface ITestNodeWrapper<N extends SNode> {
   @Deprecated
   @ToRemove(version = 2018.1)
   String getCachedFqName();
+
   @NotNull
   TestParameters getTestRunParameters();
 

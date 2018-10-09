@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import java.util.Set;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
@@ -34,7 +37,8 @@ import java.util.HashSet;
 public class SNodeReadAccess_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeReadAccess_Test.class, "${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SNodeReadAccess_Test() {
     super(ourParamCache);
@@ -42,67 +46,71 @@ public class SNodeReadAccess_Test extends BaseTransformationTest {
 
   @Test
   public void test_checkContract() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_checkContract", true);
+    new SNodeReadAccess_Test.TestBody(this).test_checkContract();
   }
   @Test
   public void test_addChild() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_addChild", true);
+    new SNodeReadAccess_Test.TestBody(this).test_addChild();
   }
   @Test
   public void test_getChildren() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getChildren", true);
+    new SNodeReadAccess_Test.TestBody(this).test_getChildren();
   }
   @Test
   public void test_getProperty() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getProperty", true);
+    new SNodeReadAccess_Test.TestBody(this).test_getProperty();
   }
   @Test
   public void test_getReference() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReference", true);
+    new SNodeReadAccess_Test.TestBody(this).test_getReference();
   }
   @Test
   public void test_getReferenceTarget() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReferenceTarget", true);
+    new SNodeReadAccess_Test.TestBody(this).test_getReferenceTarget();
   }
   @Test
   public void test_getUserObject() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getUserObject", true);
+    new SNodeReadAccess_Test.TestBody(this).test_getUserObject();
   }
   @Test
   public void test_hasProperty() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_hasProperty", true);
+    new SNodeReadAccess_Test.TestBody(this).test_hasProperty();
   }
   @Test
   public void test_insertChildBefore() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_insertChildBefore", true);
+    new SNodeReadAccess_Test.TestBody(this).test_insertChildBefore();
   }
   @Test
   public void test_putUserObject() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_putUserObject", true);
+    new SNodeReadAccess_Test.TestBody(this).test_putUserObject();
   }
   @Test
   public void test_removeChild() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_removeChild", true);
+    new SNodeReadAccess_Test.TestBody(this).test_removeChild();
   }
   @Test
   public void test_setProperty() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setProperty", true);
+    new SNodeReadAccess_Test.TestBody(this).test_setProperty();
   }
   @Test
   public void test_setReference() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReference", true);
+    new SNodeReadAccess_Test.TestBody(this).test_setReference();
   }
   @Test
   public void test_setReferenceTarget() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReferenceTarget", true);
+    new SNodeReadAccess_Test.TestBody(this).test_setReferenceTarget();
   }
   @Test
   public void test_parameterLessMethods() throws Throwable {
-    runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_parameterLessMethods", true);
+    new SNodeReadAccess_Test.TestBody(this).test_parameterLessMethods();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_checkContract() throws Exception {
       addNodeById("8150353254540236423");
       addNodeById("8150353254540236549");

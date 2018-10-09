@@ -16,11 +16,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-
-import java.util.Set;
 
 /**
  * The client points the file he wants to know about and also

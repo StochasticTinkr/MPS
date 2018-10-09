@@ -3388,7 +3388,7 @@
       <node concept="312cEg" id="5nwF1Zq42_u" role="jymVt">
         <property role="TrG5h" value="ancestorsProvider" />
         <node concept="3uibUv" id="5hfNQWytJMS" role="1tU5fm">
-          <ref role="3uigEE" to="ge2m:4a0HOMfn9z7" resolve="ConceptAncestorsProvider" />
+          <ref role="3uigEE" to="u42p:4a0HOMfn9z7" resolve="ConceptAncestorsProvider" />
         </node>
         <node concept="3Tm6S6" id="5nwF1Zq42_v" role="1B3o_S" />
       </node>
@@ -3441,7 +3441,7 @@
               </node>
               <node concept="2ShNRf" id="5nwF1Zq42_A" role="37vLTx">
                 <node concept="1pGfFk" id="5nwF1Zq42_B" role="2ShVmc">
-                  <ref role="37wK5l" to="ge2m:4a0HOMfn9za" resolve="ConceptAncestorsProvider" />
+                  <ref role="37wK5l" to="u42p:4a0HOMfn9za" resolve="ConceptAncestorsProvider" />
                 </node>
               </node>
             </node>
@@ -3460,7 +3460,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1cFWKi3Neye" role="2OqNvi">
-                  <ref role="37wK5l" to="ge2m:4a0HOMfn9ze" resolve="getDescendants" />
+                  <ref role="37wK5l" to="u42p:4a0HOMfn9ze" resolve="getDescendants" />
                   <node concept="37vLTw" id="1cFWKi3Neyf" role="37wK5m">
                     <ref role="3cqZAo" node="5nwF1Zq3Trr" resolve="node" />
                   </node>
@@ -4558,7 +4558,19 @@
       </node>
       <node concept="3cqZAl" id="52KjdOfMVHt" role="3clF45" />
       <node concept="3Tm1VV" id="52KjdOfMVHu" role="1B3o_S" />
-      <node concept="3clFbS" id="52KjdOfMVHv" role="3clF47" />
+      <node concept="3clFbS" id="52KjdOfMVHv" role="3clF47">
+        <node concept="XkiVB" id="5pnQe_fuvwg" role="3cqZAp">
+          <ref role="37wK5l" to="u42p:5pnQe_fsUe1" resolve="RefactoringAccessEx" />
+          <node concept="2OqwBi" id="5pnQe_fuwMI" role="37wK5m">
+            <node concept="37vLTw" id="5pnQe_fuww8" role="2Oq$k0">
+              <ref role="3cqZAo" node="3R1M2I6RHAP" resolve="coreComponents" />
+            </node>
+            <node concept="liA8E" id="5pnQe_fuxnn" role="2OqNvi">
+              <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="52KjdOfMXhO" role="jymVt">
       <property role="IEkAT" value="false" />

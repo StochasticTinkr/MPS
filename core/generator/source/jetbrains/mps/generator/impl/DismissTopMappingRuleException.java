@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateContext;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Intention: stop rule evaluation and report a message

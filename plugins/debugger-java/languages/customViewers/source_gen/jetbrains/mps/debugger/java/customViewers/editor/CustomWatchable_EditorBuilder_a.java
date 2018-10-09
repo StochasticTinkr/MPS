@@ -37,8 +37,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -163,18 +163,18 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createImage_0() {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getModel(myNode).getModule();
-    imagePath = (new _FunctionTypes._return_P0_E0<String>() {
+    EditorCell_Image editorCell = fromImageCellProvider0();
+    editorCell.setCellId("Image_rpujt6_a0b1a");
+    editorCell.setDescent(0);
+    return editorCell;
+  }
+  private EditorCell_Image fromImageCellProvider0() {
+    String imagePath = (new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b7665563ef3L, 0x47047b76655643d4L, "iconPath"));
       }
     }).invoke();
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(getEditorContext(), myNode, imageModule, imagePath);
-    editorCell.setCellId("Image_rpujt6_a0b1a");
-    editorCell.setDescent(0);
-    return editorCell;
+    return EditorCell_Image.createImageCell(getEditorContext(), myNode, imagePath);
   }
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();

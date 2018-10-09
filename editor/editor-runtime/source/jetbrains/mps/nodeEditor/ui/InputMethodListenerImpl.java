@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.ui;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.keyboard.TextChangeEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.event.InputMethodEvent;
 import java.awt.event.InputMethodListener;
@@ -28,14 +30,15 @@ import java.text.CharacterIterator;
  */
 public class InputMethodListenerImpl implements InputMethodListener {
   private final EditorComponent myEditorComponent;
+  private String myUncommittedText = "";
 
-  public InputMethodListenerImpl(EditorComponent editorComponent) {
+  InputMethodListenerImpl(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
   @Override
   public void inputMethodTextChanged(InputMethodEvent event) {
-    if (myEditorComponent.peekKeyboardHandler().processTextChanged(myEditorComponent.getEditorContext(), event)) {
+    if (myEditorComponent.peekKeyboardHandler().processTextChanged(myEditorComponent.getEditorContext(), createTextChangeEvent(event))) {
       event.consume();
       myEditorComponent.repaintExternalComponent();
     }
@@ -43,6 +46,37 @@ public class InputMethodListenerImpl implements InputMethodListener {
 
   @Override
   public void caretPositionChanged(InputMethodEvent event) {
+  }
+
+  @NotNull
+  private TextChangeEvent createTextChangeEvent(InputMethodEvent event) {
+    AttributedCharacterIterator text = event.getText();
+    int committedCharacterCount = event.getCommittedCharacterCount();
+
+    int offset;
+    if (myUncommittedText.isEmpty() && committedCharacterCount > 0 && text != null) {
+      // replacing last entered char with committed text immediately
+      // "press & hold -> choose" mode to enter symbols like: ē
+      // in this case we receive event with (one) committed character without any
+      // preceding event containing uncommitted chars
+      // TODO: ? for mac os only ?
+      offset = 1;
+    } else {
+      offset = myUncommittedText.length();
+    }
+
+    String replacementText;
+    if (text != null) {
+      StringBuilder wholeText = new StringBuilder();
+      for (char c = text.first(); c != CharacterIterator.DONE; c = text.next()) {
+        wholeText.append(c);
+      }
+      replacementText = wholeText.toString();
+      myUncommittedText = wholeText.length() > committedCharacterCount ? wholeText.substring(committedCharacterCount) : "";
+    } else {
+      replacementText = myUncommittedText = "";
+    }
+    return new TextChangeEvent(replacementText, offset);
   }
 
   /**

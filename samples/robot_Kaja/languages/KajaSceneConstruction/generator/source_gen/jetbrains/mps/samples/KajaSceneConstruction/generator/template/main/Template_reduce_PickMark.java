@@ -65,7 +65,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                           {
                             final SNode tnode7 = environment.createOutputNode(myConcepts[4]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736144610(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0f))));
+                              SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_0(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0f))));
                             } finally {
                             }
                             tnode6.addChild(myAggregationLinks[0], tnode7);
@@ -74,7 +74,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                           {
                             final SNode tnode8 = environment.createOutputNode(myConcepts[4]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736144730(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0f))));
+                              SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_1(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0f))));
                             } finally {
                             }
                             tnode6.addChild(myAggregationLinks[0], tnode8);
@@ -101,7 +101,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                                   {
                                     final SNode tnode12 = environment.createOutputNode(myConcepts[4]);
                                     try {
-                                      SNodeAccessUtil.setProperty(tnode12, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736144740(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
+                                      SNodeAccessUtil.setProperty(tnode12, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_2(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
                                     } finally {
                                     }
                                     tnode11.addChild(myAggregationLinks[0], tnode12);
@@ -110,7 +110,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                                   {
                                     final SNode tnode13 = environment.createOutputNode(myConcepts[4]);
                                     try {
-                                      SNodeAccessUtil.setProperty(tnode13, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736144860(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
+                                      SNodeAccessUtil.setProperty(tnode13, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_3(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
                                     } finally {
                                     }
                                     tnode11.addChild(myAggregationLinks[0], tnode13);
@@ -225,7 +225,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                       {
                         final SNode tnode24 = environment.createOutputNode(myConcepts[4]);
                         try {
-                          SNodeAccessUtil.setProperty(tnode24, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736484680(new PropertyMacroContext(context16, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0f))));
+                          SNodeAccessUtil.setProperty(tnode24, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_4(new PropertyMacroContext(context16, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0f))));
                         } finally {
                         }
                         tnode23.addChild(myAggregationLinks[0], tnode24);
@@ -244,7 +244,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                       {
                         final SNode tnode26 = environment.createOutputNode(myConcepts[4]);
                         try {
-                          SNodeAccessUtil.setProperty(tnode26, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_32106973202736484770(new PropertyMacroContext(context17, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0f))));
+                          SNodeAccessUtil.setProperty(tnode26, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_4_5(new PropertyMacroContext(context17, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0f))));
                         } finally {
                         }
                         tnode25.addChild(myAggregationLinks[0], tnode26);

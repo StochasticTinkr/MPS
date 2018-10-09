@@ -35,6 +35,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
 import java.util.Objects;
@@ -295,20 +296,12 @@ public class MigrationTask {
             project.getRepository().getModelAccess().executeCommand(new Runnable() {
               public void run() {
                 mySession.getMigrationRegistry().doUpdateImportVersions(module);
+                ((AbstractModule) module).save();
               }
             });
           }
         }, modalityState);
       }
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-          project.getRepository().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              project.getRepository().saveAll();
-            }
-          });
-        }
-      }, modalityState);
     } finally {
       myCurrentChange.finish();
       myCurrentChange = null;

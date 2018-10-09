@@ -18,10 +18,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPropertiesDeclaration = createDescriptorForPropertiesDeclaration();
   /*package*/ final ConceptDescriptor myConceptPropertiesFile = createDescriptorForPropertiesFile();
   /*package*/ final ConceptDescriptor myConceptPropertiesLine = createDescriptorForPropertiesLine();
-  private final LanguageConceptSwitch myConceptIndex;
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
   }
 
   @Override
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.PropertiesComment:
         return myConceptPropertiesComment;
       case LanguageConceptSwitch.PropertiesDeclaration:
@@ -47,7 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForPropertiesComment() {
@@ -55,6 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.core.properties.structure.PropertiesLine", 0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L);
     b.origin("r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)/3961775458390522585");
+    b.version(2);
     b.prop("text", 0x36fb0dc9fd3a3adaL, "3961775458390522586");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("#");
@@ -66,6 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.core.properties.structure.PropertiesLine", 0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)/3961775458390522561");
+    b.version(2);
     b.prop("value", 0x36fb0dc9fd3a3ae4L, "3961775458390522596");
     b.alias("property");
     return b.create();
@@ -76,6 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.parent(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L);
     b.origin("r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)/3961775458390517588");
+    b.version(2);
     b.aggregate("lines", 0x36fb0dc9fd3a3ac3L).target(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L).optional(true).ordered(true).multiple(true).origin("3961775458390522563").done();
     b.alias("properties file");
     return b.create();
@@ -84,6 +87,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.core.properties", "PropertiesLine", 0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L);
     b.class_(false, false, false);
     b.origin("r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)/3961775458390522562");
+    b.version(2);
     b.alias("<empty line>");
     return b.create();
   }

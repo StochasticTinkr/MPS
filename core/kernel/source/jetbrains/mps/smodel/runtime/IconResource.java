@@ -22,7 +22,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
@@ -33,7 +32,10 @@ public class IconResource {
   private String myClassName; //used to make IconResources unique and avoid things like MPS-24005
   private WeakReference<Class> myResourceProvider;
 
-  public IconResource(@NotNull String iconResId, @NotNull  Class resourceProvider) {
+  /**
+   * iconResId has the same contract as the Class.getResource(String)'s parameter
+   */
+  public IconResource(@NotNull String iconResId, @NotNull Class resourceProvider) {
     myIconResId = iconResId;
     myClassName = resourceProvider.getName();
     myResourceProvider = new WeakReference<Class>(resourceProvider);

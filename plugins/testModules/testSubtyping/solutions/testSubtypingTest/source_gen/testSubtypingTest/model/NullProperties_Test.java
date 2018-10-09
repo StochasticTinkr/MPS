@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class NullProperties_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(NullProperties_Test.class, "${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public NullProperties_Test() {
     super(ourParamCache);
@@ -25,27 +29,31 @@ public class NullProperties_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeErrorCheck8681827087508331151() throws Throwable {
-    runTest("testSubtypingTest.model.NullProperties_Test$TestBody", "test_NodeErrorCheck8681827087508331151", true);
+    new NullProperties_Test.TestBody(this).test_NodeErrorCheck8681827087508331151();
   }
   @Test
   public void test_NodeErrorCheck8681827087508331336() throws Throwable {
-    runTest("testSubtypingTest.model.NullProperties_Test$TestBody", "test_NodeErrorCheck8681827087508331336", true);
+    new NullProperties_Test.TestBody(this).test_NodeErrorCheck8681827087508331336();
   }
   @Test
   public void test_ErrorMessagesCheck706089536802542545() throws Throwable {
-    runTest("testSubtypingTest.model.NullProperties_Test$TestBody", "test_ErrorMessagesCheck706089536802542545", true);
+    new NullProperties_Test.TestBody(this).test_ErrorMessagesCheck706089536802542545();
   }
   @Test
   public void test_ErrorMessagesCheck706089536802542565() throws Throwable {
-    runTest("testSubtypingTest.model.NullProperties_Test$TestBody", "test_ErrorMessagesCheck706089536802542565", true);
+    new NullProperties_Test.TestBody(this).test_ErrorMessagesCheck706089536802542565();
   }
   @Test
   public void test_ErrorMessagesCheck706089536802542585() throws Throwable {
-    runTest("testSubtypingTest.model.NullProperties_Test$TestBody", "test_ErrorMessagesCheck706089536802542585", true);
+    new NullProperties_Test.TestBody(this).test_ErrorMessagesCheck706089536802542585();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeErrorCheck8681827087508331151() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("8681827087508331151"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

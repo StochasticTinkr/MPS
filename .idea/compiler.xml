@@ -127,6 +127,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/inputLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/property/gen2/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/property/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/property/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/source_gen" includeSubdirectories="true" />
@@ -691,6 +692,8 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/languages/TestLanguage_ACCESORIES/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/BINARY/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/BINARY/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/FACETS/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/FACETS/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/PER_ROOT/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/PER_ROOT/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/XML/source_gen" includeSubdirectories="true" />
@@ -883,3 +886,4 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
+

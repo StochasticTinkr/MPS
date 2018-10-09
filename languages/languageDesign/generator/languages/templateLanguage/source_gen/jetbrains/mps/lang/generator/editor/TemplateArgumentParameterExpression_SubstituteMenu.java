@@ -44,7 +44,7 @@ public class TemplateArgumentParameterExpression_SubstituteMenu extends Substitu
   }
 
 
-  public static class SMP_ReferenceScope_e5rkdz_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_e5rkdz_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_e5rkdz_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, 0x457655815a794e7aL, "parameter"));

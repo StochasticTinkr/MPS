@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class TestAnalyzerWithModeSpecified_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestAnalyzerWithModeSpecified_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestAnalyzerWithModeSpecified_Test() {
     super(ourParamCache);
@@ -25,15 +29,19 @@ public class TestAnalyzerWithModeSpecified_Test extends BaseTransformationTest {
 
   @Test
   public void test_ErrorMessagesCheck2955426575106132885() throws Throwable {
-    runTest("analyzers.test.tests.TestAnalyzerWithModeSpecified_Test$TestBody", "test_ErrorMessagesCheck2955426575106132885", true);
+    new TestAnalyzerWithModeSpecified_Test.TestBody(this).test_ErrorMessagesCheck2955426575106132885();
   }
   @Test
   public void test_NodeErrorCheck2955426575106132965() throws Throwable {
-    runTest("analyzers.test.tests.TestAnalyzerWithModeSpecified_Test$TestBody", "test_NodeErrorCheck2955426575106132965", true);
+    new TestAnalyzerWithModeSpecified_Test.TestBody(this).test_NodeErrorCheck2955426575106132965();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_ErrorMessagesCheck2955426575106132885() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2955426575106132885"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

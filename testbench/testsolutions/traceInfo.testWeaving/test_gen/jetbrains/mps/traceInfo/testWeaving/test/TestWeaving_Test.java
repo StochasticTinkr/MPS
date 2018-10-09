@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,7 +19,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class TestWeaving_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestWeaving_Test.class, "${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestWeaving_Test() {
     super(ourParamCache);
@@ -24,39 +28,43 @@ public class TestWeaving_Test extends BaseTransformationTest {
 
   @Test
   public void test_weave() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weave", true);
+    new TestWeaving_Test.TestBody(this).test_weave();
   }
   @Test
   public void test_weaveEach() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEach", true);
+    new TestWeaving_Test.TestBody(this).test_weaveEach();
   }
   @Test
   public void test_weaveMany() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveMany", true);
+    new TestWeaving_Test.TestBody(this).test_weaveMany();
   }
   @Test
   public void test_weaveEachMany() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachMany", true);
+    new TestWeaving_Test.TestBody(this).test_weaveEachMany();
   }
   @Test
   public void test_weaveInterpreted() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveInterpreted", true);
+    new TestWeaving_Test.TestBody(this).test_weaveInterpreted();
   }
   @Test
   public void test_weaveEachInterpreted() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachInterpreted", true);
+    new TestWeaving_Test.TestBody(this).test_weaveEachInterpreted();
   }
   @Test
   public void test_weaveManyInterpreted() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveManyInterpreted", true);
+    new TestWeaving_Test.TestBody(this).test_weaveManyInterpreted();
   }
   @Test
   public void test_weaveEachManyInterpreted() throws Throwable {
-    runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachManyInterpreted", true);
+    new TestWeaving_Test.TestBody(this).test_weaveEachManyInterpreted();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_weave() throws Exception {
       new TestUtil(myProject).testWeave(SNodeOperations.getNode("r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)", "6186432342008485032"), SLinkOperations.getChildren(SNodeOperations.getNode("r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)", "6186432342008485032"), MetaAdapterFactory.getContainmentLink(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, 0x55da9f701c64f39eL, "weave")), 11);
     }

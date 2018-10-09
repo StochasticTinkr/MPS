@@ -136,6 +136,9 @@
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="7862711839422606209" name="jetbrains.mps.build.mps.structure.BuildMps_GeneratorRef" flags="ng" index="t5LP3">
+        <reference id="7862711839422606210" name="generator" index="t5LP0" />
+      </concept>
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
@@ -158,7 +161,9 @@
       <concept id="763829979718664966" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleResources" flags="ng" index="3rtmxn">
         <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
-      <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
+      <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9">
+        <reference id="868963075225252684" name="sourceLanguage" index="hH5Ss" />
+      </concept>
       <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
         <property id="4356762679305675654" name="packagedLocation" index="3yLZsk" />
         <child id="4356762679305675653" name="path" index="3yLZsn" />
@@ -179,6 +184,7 @@
         <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
       </concept>
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD">
+        <child id="7862711839422606216" name="managedGenerators" index="t5LPa" />
         <child id="3189788309731917348" name="runtime" index="1E1XAP" />
         <child id="9200313594498201639" name="generator" index="1TViLv" />
       </concept>
@@ -2440,6 +2446,183 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L6C" resolve="jetbrains.mps.lang.generator" />
           </node>
         </node>
+        <node concept="3bR9La" id="7uEMFG4SGoe" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJxw" resolve="jetbrains.mps.generator.crossmodel.sandbox" />
+        </node>
+        <node concept="3bR9La" id="7uEMFG4SGry" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJ9X" resolve="jetbrains.mps.generator.test.crossmodel.entity" />
+        </node>
+        <node concept="3bR9La" id="1l1jHO6iBpB" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJIL" resolve="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
+        </node>
+        <node concept="3bR9La" id="7uEMFG4SGuS" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+        </node>
+        <node concept="3bR9La" id="1l1jHO6iBiL" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9VJRe" resolve="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+        </node>
+        <node concept="3bR9La" id="1l1jHO6iBmb" role="3bR37C">
+          <ref role="3bR37D" node="tvZ$I9W3a2" resolve="jetbrains.mps.generator.test.crossmodel.property#g2" />
+        </node>
+      </node>
+    </node>
+    <node concept="2G$12M" id="tvZ$I9VJ41" role="3989C9">
+      <property role="TrG5h" value="crossmodel-sample" />
+      <node concept="1E1JtD" id="tvZ$I9VJ9X" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.entity" />
+        <property role="3LESm3" value="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="tvZ$I9VJ9Y" role="3LF7KH">
+          <node concept="2Ry0Ak" id="tvZ$I9VJck" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="tvZ$I9VJeD" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="tvZ$I9VJge" role="2Ry0An">
+                <property role="2Ry0Am" value="generator" />
+                <node concept="2Ry0Ak" id="tvZ$I9VJhN" role="2Ry0An">
+                  <property role="2Ry0Am" value="test" />
+                  <node concept="2Ry0Ak" id="tvZ$I9VJjo" role="2Ry0An">
+                    <property role="2Ry0Am" value="entity" />
+                    <node concept="2Ry0Ak" id="tvZ$I9VJkX" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.generator.test.crossmodel.entity.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1yeLz9" id="tvZ$I9VJIL" role="1TViLv">
+          <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718" />
+          <property role="3LESm3" value="0748f69c-0f19-4fe4-84a5-b51ed82f0548" />
+          <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="tvZ$I9VJLd" role="3bR37C">
+            <node concept="3bR9La" id="tvZ$I9VJLe" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="tvZ$I9VK7r" role="3bR37C">
+            <node concept="3bR9La" id="tvZ$I9VK7s" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="tvZ$I9VJRe" resolve="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtD" id="tvZ$I9VJov" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.property" />
+        <property role="3LESm3" value="dc1cc948-6f43-4687-90cb-17dd5cb27219" />
+        <property role="2GAjPV" value="false" />
+        <node concept="t5LP3" id="7uEMFG4UURK" role="t5LPa">
+          <ref role="t5LP0" node="tvZ$I9W3a2" resolve="jetbrains.mps.generator.test.crossmodel.property#g2" />
+        </node>
+        <node concept="55IIr" id="tvZ$I9VJq7" role="3LF7KH">
+          <node concept="2Ry0Ak" id="tvZ$I9VJq8" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="tvZ$I9VJq9" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="tvZ$I9VJqa" role="2Ry0An">
+                <property role="2Ry0Am" value="generator" />
+                <node concept="2Ry0Ak" id="tvZ$I9VJqb" role="2Ry0An">
+                  <property role="2Ry0Am" value="test" />
+                  <node concept="2Ry0Ak" id="tvZ$I9VJu5" role="2Ry0An">
+                    <property role="2Ry0Am" value="property" />
+                    <node concept="2Ry0Ak" id="tvZ$I9VJvE" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.generator.test.crossmodel.property.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1yeLz9" id="tvZ$I9VJRe" role="1TViLv">
+          <property role="BnDLt" value="false" />
+          <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.property#5533782486491461721" />
+          <property role="3LESm3" value="708caccd-8eb1-451b-a7a7-f8ae5e214206" />
+          <property role="2GAjPV" value="false" />
+          <node concept="55IIr" id="tvZ$I9VJRf" role="3LF7KH" />
+          <node concept="1SiIV0" id="2mQTeHwHl_n" role="3bR37C">
+            <node concept="3bR9La" id="2mQTeHwHl_o" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="2mQTeHwHl_p" role="3bR37C">
+            <node concept="3bR9La" id="2mQTeHwHl_q" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtA" id="tvZ$I9VJxw" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.generator.crossmodel.sandbox" />
+        <property role="3LESm3" value="381c65cf-580d-4518-a354-e370843af551" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="tvZ$I9VJyA" role="3LF7KH">
+          <node concept="2Ry0Ak" id="tvZ$I9VJyB" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="tvZ$I9VJyC" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="tvZ$I9VJyD" role="2Ry0An">
+                <property role="2Ry0Am" value="generator" />
+                <node concept="2Ry0Ak" id="tvZ$I9VJyE" role="2Ry0An">
+                  <property role="2Ry0Am" value="test" />
+                  <node concept="2Ry0Ak" id="tvZ$I9VJBk" role="2Ry0An">
+                    <property role="2Ry0Am" value="crossmodel" />
+                    <node concept="2Ry0Ak" id="tvZ$I9VJCT" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.generator.crossmodel.sandbox.msd" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="tvZ$I9VJL_" role="3bR37C">
+          <node concept="3bR9La" id="tvZ$I9VJLA" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="tvZ$I9VJLB" role="3bR37C">
+          <node concept="3bR9La" id="tvZ$I9VJLC" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="tvZ$I9VJ9X" resolve="jetbrains.mps.generator.test.crossmodel.entity" />
+          </node>
+        </node>
+      </node>
+      <node concept="1yeLz9" id="tvZ$I9W3a2" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.generator.test.crossmodel.property#g2" />
+        <property role="3LESm3" value="0748f69c-0123-4fe4-84a5-b51ed82f0548" />
+        <property role="2GAjPV" value="false" />
+        <ref role="hH5Ss" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+        <node concept="55IIr" id="tvZ$I9W3a5" role="3LF7KH">
+          <node concept="2Ry0Ak" id="2mQTeHwBJyg" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="2mQTeHwBJ_W" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="2mQTeHwBJDC" role="2Ry0An">
+                <property role="2Ry0Am" value="generator" />
+                <node concept="2Ry0Ak" id="2mQTeHwBJES" role="2Ry0An">
+                  <property role="2Ry0Am" value="test" />
+                  <node concept="2Ry0Ak" id="2mQTeHwBJUF" role="2Ry0An">
+                    <property role="2Ry0Am" value="property" />
+                    <node concept="2Ry0Ak" id="2mQTeHwBJXa" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.generator.test.crossmodel.property.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="3yaq6Y8lnOk" role="3989C9">
@@ -2756,6 +2939,22 @@
         </node>
         <node concept="L2wRC" id="3yaq6Y8lnSV" role="39821P">
           <ref role="L2wRA" node="3yaq6Y8lnQf" resolve="jetbrains.mps.traceInfo.testWeavingInterpreted.data" />
+        </node>
+      </node>
+      <node concept="398223" id="tvZ$I9VJGG" role="39821P">
+        <node concept="3_J27D" id="tvZ$I9VJGI" role="Nbhlr">
+          <node concept="3Mxwew" id="tvZ$I9VJHL" role="3MwsjC">
+            <property role="3MwjfP" value="crossmodel" />
+          </node>
+        </node>
+        <node concept="L2wRC" id="tvZ$I9VJHN" role="39821P">
+          <ref role="L2wRA" node="tvZ$I9VJ9X" resolve="jetbrains.mps.generator.test.crossmodel.entity" />
+        </node>
+        <node concept="L2wRC" id="2rr9SDxzmhy" role="39821P">
+          <ref role="L2wRA" node="tvZ$I9VJov" resolve="jetbrains.mps.generator.test.crossmodel.property" />
+        </node>
+        <node concept="L2wRC" id="2rr9SDxzmm1" role="39821P">
+          <ref role="L2wRA" node="tvZ$I9VJxw" resolve="jetbrains.mps.generator.crossmodel.sandbox" />
         </node>
       </node>
       <node concept="398223" id="5kOge16AvCb" role="39821P">
@@ -7487,6 +7686,18 @@
         <node concept="3bR9La" id="1Ue8MQkfJs_" role="1SiIV1">
           <property role="3bR36h" value="false" />
           <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="4ot0ThrzVj3" role="3bR37C">
+        <node concept="3bR9La" id="4ot0ThrzVj4" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="4ot0ThrzVj5" role="3bR37C">
+        <node concept="3bR9La" id="4ot0ThrzVj6" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
         </node>
       </node>
     </node>

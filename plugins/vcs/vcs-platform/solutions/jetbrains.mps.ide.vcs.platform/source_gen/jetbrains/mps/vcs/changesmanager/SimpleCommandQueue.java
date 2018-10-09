@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.changesmanager;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.util.Queue;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
@@ -14,7 +13,7 @@ public class SimpleCommandQueue {
   private Thread myThread;
   private boolean myDisposed = false;
   private boolean myHadExceptions = false;
-  private final Queue<Runnable> myQueue = new LinkedList<Runnable>();
+  private final LinkedList<SimpleCommandQueue.QueueElem> myQueue = new LinkedList<SimpleCommandQueue.QueueElem>();
   public SimpleCommandQueue(@NotNull String threadName) {
     myThread = new SimpleCommandQueue.MyExecutorThread(threadName);
     myThread.start();
@@ -27,11 +26,20 @@ public class SimpleCommandQueue {
     }
   }
   public void addTask(@NotNull Runnable task) {
+    addTask(task, null);
+  }
+  public void addTask(@NotNull Runnable task, Object key) {
+    // removes task with the same key if any 
     synchronized (myQueue) {
-      myQueue.add(task);
+      SimpleCommandQueue.QueueElem elem = new SimpleCommandQueue.QueueElem(task, key);
+      if (key != null) {
+        myQueue.remove(elem);
+      }
+      myQueue.add(elem);
       myQueue.notify();
     }
   }
+
   public void dispose() {
     myDisposed = true;
     myThread.interrupt();
@@ -52,6 +60,11 @@ public class SimpleCommandQueue {
   public boolean hadExceptions() {
     return myHadExceptions;
   }
+  public boolean isEmpty() {
+    synchronized (myQueue) {
+      return myQueue.isEmpty();
+    }
+  }
   private class MyExecutorThread extends Thread {
     public MyExecutorThread(@NotNull String name) {
       super(name);
@@ -71,7 +84,7 @@ public class SimpleCommandQueue {
               return;
             }
           }
-          task = myQueue.poll();
+          task = myQueue.poll().getTask();
         }
         try {
           task.run();
@@ -84,6 +97,38 @@ public class SimpleCommandQueue {
           }
           myHadExceptions = true;
         }
+      }
+    }
+  }
+
+  /*package*/ static class QueueElem {
+    private final Runnable myTask;
+    private final Object myKey;
+    public QueueElem(Runnable task) {
+      this(task, null);
+    }
+    public QueueElem(Runnable task, Object key) {
+      myTask = task;
+      myKey = key;
+    }
+    public Runnable getTask() {
+      return myTask;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o instanceof SimpleCommandQueue.QueueElem && myKey != null) {
+        return myKey.equals(((SimpleCommandQueue.QueueElem) o).myKey);
+      } else {
+        return super.equals(o);
+      }
+    }
+    @Override
+    public int hashCode() {
+      if (myKey != null) {
+        return myKey.hashCode();
+      } else {
+        return super.hashCode();
       }
     }
   }

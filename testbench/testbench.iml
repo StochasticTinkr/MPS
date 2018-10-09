@@ -64,7 +64,6 @@
     <orderEntry type="module" module-name="vcs-core" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" scope="TEST" />
     <orderEntry type="module" module-name="console" scope="RUNTIME" />
-    <orderEntry type="module" module-name="migrationAssistant" scope="TEST" />
     <orderEntry type="module" module-name="migrations-runtime" scope="TEST" />
     <orderEntry type="module" module-name="textgen" scope="TEST" />
     <orderEntry type="module" module-name="components" />

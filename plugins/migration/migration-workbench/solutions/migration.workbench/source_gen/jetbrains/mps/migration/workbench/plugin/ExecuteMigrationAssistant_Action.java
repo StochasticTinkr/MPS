@@ -14,10 +14,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.migration.MigrationRegistry;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import com.intellij.openapi.ui.Messages;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -56,19 +52,6 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
-
-    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-    final MigrationRegistry component = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationRegistry.class);
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        jetbrains.mps.project.Project p = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"));
-        migrationRequired.value = component.isMigrationRequired() || component.importVersionsUpdateRequired(MigrationModuleUtil.getMigrateableModulesFromProject(p));
-      }
-    });
-    if (!(migrationRequired.value)) {
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
-    } else {
-      mt.postponeMigration(true);
-    }
+    mt.postponeMigration(true);
   }
 }

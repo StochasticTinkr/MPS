@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
@@ -29,17 +28,11 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsDispatchable {
   private final SReferenceLink myReferenceLink;

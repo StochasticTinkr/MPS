@@ -44,7 +44,7 @@ public class ConceptDeclarationReference_SubstituteMenu extends SubstituteMenuBa
   }
 
 
-  public static class SMP_ReferenceScope_uyjq0f_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_uyjq0f_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_uyjq0f_a() {
       super(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL, "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference"), MetaAdapterFactory.getReferenceLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL, 0x5058b4b262ffd5dfL, "conceptDeclaration"));

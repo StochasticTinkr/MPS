@@ -44,7 +44,7 @@ public class ExtractStaticInnerClassCreator_SmartReference extends SubstituteMen
   }
 
 
-  public static class SMP_ReferenceScope_369k9v_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_369k9v_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_369k9v_a() {
       super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x50cc34ef144c9181L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
@@ -66,7 +66,7 @@ public class ExtractStaticInnerClassCreator_SmartReference extends SubstituteMen
     protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
       return new ExtractStaticInnerClassCreator_SmartReference.SMP_ReferenceScope_369k9v_a.Item(context, referencedNode, getConcept(), getReferenceLink());
     }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
+    private class Item extends ReferenceScopeSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       private final SNode referencedNode;
       private EditorMenuTraceInfo myTraceInfo;

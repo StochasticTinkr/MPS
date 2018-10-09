@@ -16,8 +16,6 @@ import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import jetbrains.mps.util.test.CachesUtil;
-import com.intellij.util.ui.UIUtil;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.ui.MessageType;
 
 public class JUnitExecutor implements Executor {
@@ -83,10 +81,6 @@ public class JUnitExecutor implements Executor {
   }
 
   private void showWarning() {
-    UIUtil.invokeLaterIfNeeded(new Runnable() {
-      public void run() {
-        ToolWindowManager.getInstance(myProject).notifyByBalloon(myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the chosen directory is locked by another run.\nThe option will be turned off.");
-      }
-    });
+    TestsUIUtil.notifyByBalloon(myProject, myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the chosen directory is locked by another run.\nThe option will be turned off.");
   }
 }

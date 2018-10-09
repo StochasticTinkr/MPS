@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,18 +44,16 @@ import java.util.stream.Collectors;
 class MPSClassLoadersRegistry {
   private static final Logger LOG = LogManager.getLogger(ClassLoadersHolder.class);
 
-  private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
-  private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
-  private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<ModuleClassLoader>();
+  private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<>();
+  private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<>();
+  private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<>();
   private final ClassLoadersHolder myClHolder;
   private final ModulesWatcher myModulesWatcher;
-  private final SRepository myRepository;
   private volatile EDTDispatcher myDispatcher;
 
-  public MPSClassLoadersRegistry(ClassLoadersHolder clHolder, ModulesWatcher modulesWatcher, SRepository repository, EDTDispatcher dispatcher) {
+  public MPSClassLoadersRegistry(ClassLoadersHolder clHolder, ModulesWatcher modulesWatcher, EDTDispatcher dispatcher) {
     myClHolder = clHolder;
     myModulesWatcher = modulesWatcher;
-    myRepository = repository;
     myDispatcher = dispatcher;
   }
 
@@ -79,8 +75,8 @@ class MPSClassLoadersRegistry {
   }
 
   public Set<SModuleReference> doUnloadModules(Collection<SModuleReference> toUnload) {
-    Set<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
-    Collection<ModuleClassLoader> toDispose = new LinkedHashSet<ModuleClassLoader>();
+    Set<SModuleReference> unloaded = new LinkedHashSet<>();
+    Collection<ModuleClassLoader> toDispose = new LinkedHashSet<>();
     for (SModuleReference mRef : toUnload) {
       if (!myMPSLoadableModules.containsKey(mRef)) {
         LOG.error("", new IllegalStateException("Module " + mRef + " is not loaded -- cannot unload"));
@@ -112,7 +108,7 @@ class MPSClassLoadersRegistry {
   }
 
   public Set<ReloadableModule> onLazyLoaded(Collection<ReloadableModule> toLoadLazy) {
-    Set<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
+    Set<ReloadableModule> lazyLoaded = new LinkedHashSet<>();
     for (ReloadableModule module : toLoadLazy) {
       SModuleReference mRef = module.getModuleReference();
       ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);
@@ -142,7 +138,7 @@ class MPSClassLoadersRegistry {
 
   @NotNull
   private List<ModuleClassLoader> createModuleCLs(final Collection<? extends ReloadableModule> toLoad) {
-    final List<ModuleClassLoader> moduleClassLoaders = new ArrayList<ModuleClassLoader>();
+    final List<ModuleClassLoader> moduleClassLoaders = new ArrayList<>();
     for (ReloadableModule module : toLoad) {
       ModuleClassLoader moduleClassLoader = createModuleClassLoader(module);
       moduleClassLoaders.add(moduleClassLoader);
@@ -151,7 +147,6 @@ class MPSClassLoadersRegistry {
   }
 
   private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
-    myRepository.getModelAccess().checkReadAccess(); // need for new ModuleClassLoader()
     LOG.debug("Creating ModuleClassLoader for " + module);
     Collection<ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
     final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, () -> deps.stream()
@@ -180,8 +175,10 @@ class MPSClassLoadersRegistry {
    * Double invokeAndLater because we need to allow EDT activities under progress [AP]
    */
   public void flushDisposeQueue() {
-    if (myDisposeQueue.isEmpty()) return;
-    final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
+    if (myDisposeQueue.isEmpty()) {
+      return;
+    }
+    final List<ModuleClassLoader> toDispose = new ArrayList<>(myDisposeQueue);
     myDispatcher.invokeInEDT(() -> {
       LOG.debug("Disposing " + toDispose.size() + " class loaders");
       for (ModuleClassLoader classLoader : toDispose) {

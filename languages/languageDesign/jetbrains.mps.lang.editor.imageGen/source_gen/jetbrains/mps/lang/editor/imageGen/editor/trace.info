@@ -73,7 +73,7 @@
       <node id="2359976223560031637" at="113,40,114,34" concept="1" />
       <node id="2359976223560031637" at="114,34,115,22" concept="6" />
       <node id="2359976223560030263" at="117,40,118,169" concept="5" />
-      <node id="2359976223560030263" at="122,39,123,136" concept="6" />
+      <node id="2359976223560030263" at="122,39,123,126" concept="6" />
       <node id="2359976223560030263" at="125,31,126,60" concept="1" />
       <node id="2359976223560030263" at="126,60,127,48" concept="1" />
       <node id="2359976223560030263" at="127,48,128,54" concept="1" />
@@ -91,7 +91,7 @@
       <node id="2359976223560030263" at="148,87,149,145" concept="6" />
       <node id="2359976223560030263" at="150,10,151,22" concept="6" />
       <node id="3245637733310278071" at="156,0,157,0" concept="2" trace="myReferencingNode" />
-      <node id="3245637733310278071" at="158,119,159,21" concept="8" />
+      <node id="3245637733310278071" at="158,109,159,21" concept="8" />
       <node id="3245637733310278071" at="159,21,160,42" concept="1" />
       <node id="3245637733310278071" at="160,42,161,20" concept="1" />
       <node id="3245637733310278071" at="164,41,165,45" concept="6" />
@@ -328,7 +328,7 @@
       <node id="2359976223560030263" at="120,72,125,31" concept="5" />
       <node id="2359976223560030263" at="141,301,146,7" concept="5" />
       <node id="2359976223560030263" at="146,7,151,22" concept="3" />
-      <node id="3245637733310278071" at="158,0,163,0" concept="0" trace="Inline_Builder_ess7oq_a4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3245637733310278071" at="158,0,163,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3245637733310278071" at="168,0,173,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3245637733310278135" at="174,0,179,0" concept="4" trace="createReferencePresentation_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2359976223560034778" at="260,306,265,9" concept="5" />
@@ -375,7 +375,7 @@
       <node id="2359976223560030263" at="117,0,153,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="2359976223560030263" at="58,26,59,18" />
       <scope id="2359976223560030263" at="62,39,63,32" />
-      <scope id="2359976223560030263" at="122,39,123,136" />
+      <scope id="2359976223560030263" at="122,39,123,126" />
       <scope id="2359976223560030263" at="143,39,144,113" />
       <scope id="3245637733310278071" at="164,41,165,45" />
       <scope id="3245637733310278071" at="170,28,171,20" />
@@ -411,7 +411,7 @@
       <scope id="2359976223560030263" at="143,0,146,0">
         <var name="it" id="2359976223560030263" />
       </scope>
-      <scope id="3245637733310278071" at="158,119,161,20" />
+      <scope id="3245637733310278071" at="158,109,161,20" />
       <scope id="3245637733310278071" at="164,0,167,0" />
       <scope id="3245637733310278135" at="174,56,177,24">
         <var name="editorCell" id="3245637733310278135" />
@@ -608,7 +608,7 @@
       <unit id="1380214350863064688" at="385,102,389,7" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a$5" />
       <unit id="3245637733309853559" at="452,102,456,7" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a$6" />
       <unit id="2359976223560030263" at="119,42,131,5" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a$1" />
-      <unit id="3245637733310278071" at="153,0,180,0" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a$Inline_Builder_ess7oq_a4a" />
+      <unit id="3245637733310278071" at="153,0,180,0" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a$Inline_Builder0" />
       <unit id="2359976223560030263" at="47,0,476,0" name="jetbrains.mps.lang.editor.imageGen.editor.ImageGenerator_EditorBuilder_a" />
     </file>
   </root>

@@ -37,7 +37,7 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final List<SNode> tlist1 = new ArrayList<SNode>();
-    final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_a1a0(new SourceSubstituteMacroNodesContext(context, loopMacroRef_vff4zh_b0a0a2a5));
+    final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_2_0(new SourceSubstituteMacroNodesContext(context, loopMacroRef_vff4zh_b0a0a2a5));
     for (SNode itnode1 : loopList1) {
       if (itnode1 == null) {
         continue;

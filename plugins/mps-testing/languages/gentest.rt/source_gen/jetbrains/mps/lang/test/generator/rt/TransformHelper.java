@@ -13,6 +13,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationTaskRecorder;
 import jetbrains.mps.generator.GeneratorTask;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Collection;
 
 public final class TransformHelper {
   private final SRepository myRepository;
@@ -67,5 +68,9 @@ public final class TransformHelper {
 
   public SModel getOutputModel() {
     return getResult().getOutputModel();
+  }
+
+  public Collection<SModel> getOutputModels() {
+    return getResult().getOutputModels();
   }
 }

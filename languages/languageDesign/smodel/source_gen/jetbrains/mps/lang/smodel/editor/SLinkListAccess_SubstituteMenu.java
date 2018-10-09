@@ -44,7 +44,7 @@ public class SLinkListAccess_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public static class SMP_ReferenceScope_x9z1qc_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_x9z1qc_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_x9z1qc_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f970c119L, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f970c119L, 0x108f974c962L, "link"));

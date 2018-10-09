@@ -3123,7 +3123,7 @@
     </node>
     <node concept="13i0hz" id="M76vXnqh08" role="13h7CS">
       <property role="TrG5h" value="getTopAncestorCellModel" />
-      <node concept="3Tm6S6" id="M76vXnqlJI" role="1B3o_S" />
+      <node concept="3Tm1VV" id="3B90mCswSAu" role="1B3o_S" />
       <node concept="3Tqbb2" id="M76vXnqlJT" role="3clF45">
         <ref role="ehGHo" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
       </node>
@@ -14062,6 +14062,18 @@
               <node concept="2qgKlT" id="2D1PBM_bzbp" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="dzpa5H5_9l" role="3cqZAp">
+          <node concept="2OqwBi" id="dzpa5H5_9m" role="3clFbG">
+            <node concept="TSZUe" id="dzpa5H5_9n" role="2OqNvi">
+              <node concept="35c_gC" id="dzpa5H5_9o" role="25WWJ7">
+                <ref role="35c_gD" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="dzpa5H5_9p" role="2Oq$k0">
+              <ref role="3cqZAo" node="2D1PBM_bzbi" resolve="result" />
             </node>
           </node>
         </node>

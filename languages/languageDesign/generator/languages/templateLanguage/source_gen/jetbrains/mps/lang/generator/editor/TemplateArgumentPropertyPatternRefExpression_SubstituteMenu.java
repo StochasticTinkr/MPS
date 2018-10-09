@@ -44,7 +44,7 @@ public class TemplateArgumentPropertyPatternRefExpression_SubstituteMenu extends
   }
 
 
-  public static class SMP_ReferenceScope_bp9vrc_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_bp9vrc_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_bp9vrc_a() {
       super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, 0x42d71bfbeb1a5de9L, "propertyPattern"));

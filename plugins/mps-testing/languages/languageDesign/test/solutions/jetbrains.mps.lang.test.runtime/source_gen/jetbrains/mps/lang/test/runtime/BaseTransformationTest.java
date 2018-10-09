@@ -8,16 +8,22 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.tool.environment.Environment;
+import org.junit.Rule;
+import org.junit.rules.TestRule;
 import org.jetbrains.annotations.NotNull;
-import org.junit.Before;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.tool.environment.EnvironmentSetupException;
+import org.junit.AssumptionViolatedException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.junit.runners.model.Statement;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -26,6 +32,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import org.junit.After;
+import org.junit.runner.Description;
 
 public abstract class BaseTransformationTest implements TransformationTest, EnvironmentAware {
   private static final Logger LOG = LogManager.getLogger(BaseTransformationTest.class);
@@ -35,12 +42,17 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   private final TestParametersCache myParamCache;
   private Environment myEnvironment;
 
+  @Rule
+  public final TestRule myBeforeAsRule;
+
   public BaseTransformationTest() {
     myParamCache = null;
+    myBeforeAsRule = new BaseTransformationTest.AlternativeBefore();
   }
 
   protected BaseTransformationTest(TestParametersCache paramCache) {
     myParamCache = paramCache;
+    myBeforeAsRule = new BaseTransformationTest.AlternativeBefore(this);
   }
 
   @Override
@@ -48,76 +60,97 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     myEnvironment = env;
   }
 
-  @Before
-  public void setup() throws Exception {
+  /**
+   * To respect @Rule in subclasses, has to be invoked as part of a TestRule, not with @Before
+   */
+  /*package*/ void setup() throws Exception {
     if (myParamCache != null) {
       //  invokes this.initTest() for the first test in the class, reuse initialized values for subsequent tests from the same class 
       myParamCache.populate(this);
     }
   }
 
+  /**
+   * 
+   * @deprecated Use {@link jetbrains.mps.lang.test.runtime.TestParametersCache } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void initTest(@NotNull String projectPath, final String model) throws Exception {
     initTest(projectPath, model, false);
   }
 
+  /**
+   * 
+   * @deprecated Use {@link jetbrains.mps.lang.test.runtime.TestParametersCache } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void initTest(@NotNull String projectPath, final String model, boolean reOpenProject) throws Exception {
     // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
     // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
     if (myEnvironment == null) {
-      String m = String.format("Test %s needs an Environment instance to access %s project instance", getClass().getName(), projectPath);
-      throw new IllegalStateException(m);
+      throw new BaseTransformationTest.EnvironmentIsNullException(this.getClass().getName(), projectPath);
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing the test");
     }
 
+    if ((projectPath == null || projectPath.length() == 0)) {
+      throw new BaseTransformationTest.ProjectPathIsNullException();
+    }
     // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
     if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
-      throw new IllegalStateException("You shall specify project path with TestInfo root.");
+      throw new BaseTransformationTest.ExpandedProjectPathIsNullException(projectPath);
     }
-    File projectToOpen = new File(expandedProjectPath);
-    Project p = myEnvironment.openProject(projectToOpen);
-    if (reOpenProject) {
-      myEnvironment.closeProject(p);
-      p = myEnvironment.openProject(projectToOpen);
-    }
-    setProject(p);
-    final SRepository repository = p.getRepository();
-    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        // FIXME drop command, needed for transient/temp model initialization only 
-        repository.getModelAccess().executeCommand(new Runnable() {
-          @Override
-          public void run() {
-            SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
-            SModel modelDescriptor = modelRef.resolve(repository);
-            if (modelDescriptor == null) {
-              throw new IllegalStateException(String.format("Can't find model %s in supplied repository %s.", model, repository));
-            }
-            BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
-            // FIXME drop init(), move to TestParametersCache 
-            BaseTransformationTest.this.init();
-          }
-        });
+    try {
+      File projectToOpen = new File(expandedProjectPath);
+      Project p = myEnvironment.openProject(projectToOpen);
+      if (reOpenProject) {
+        myEnvironment.closeProject(p);
+        p = myEnvironment.openProject(projectToOpen);
       }
-    });
-    if (exception != null) {
-      throw new RuntimeException(exception);
+      setProject(p);
+      final SRepository repository = p.getRepository();
+      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          // FIXME drop command, needed for transient/temp model initialization only 
+          repository.getModelAccess().executeCommand(new Runnable() {
+            @Override
+            public void run() {
+              SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
+              SModel modelDescriptor = modelRef.resolve(repository);
+              if (modelDescriptor == null) {
+                throw new BaseTransformationTest.CouldNotFindModelException(String.format("Can't find model %s in supplied repository %s.", model, repository));
+              }
+              BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
+              // FIXME drop init(), move to TestParametersCache 
+              BaseTransformationTest.this.init();
+            }
+          });
+        }
+      });
+      if (exception != null) {
+        throw new BaseTransformationTest.MPSTestModelInitializationException("Exception during model initialization", exception);
+      }
+      clearSystemClipboard();
+    } catch (EnvironmentSetupException envException) {
+      throw new AssumptionViolatedException("Failed to open the project using the given environemnt", envException);
     }
-
-    clearSystemClipboard();
-
-    // XXX do I need that? 
-    myEnvironment.flushAllEvents();
   }
 
+  /**
+   * 
+   * @deprecated replace this method with direct instantiation of test body class and invocation of a test method, there's no reason to use reflection
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
       LOG.info("Running the test " + methodName);
     }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
-    final Throwable[] error = new Throwable[1];
 
     clazz.value = getClass().getClassLoader().loadClass(className);
 
@@ -125,41 +158,53 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     clazz.value.getField("myModel").set(obj, getTransientModelDescriptor());
     clazz.value.getField("myProject").set(obj, getProject());
     if (runInCommand) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          getProject().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              error[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
-            }
-          });
+      runInCommand(new Statement() {
+        public void evaluate() throws Throwable {
+          BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
         }
       });
     } else {
-      error[0] = this.tryToRunTest(clazz.value, methodName, obj);
-    }
-    if (error[0] != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Test failed");
-      }
-      throw error[0];
+      this.tryToRunTest(clazz.value, methodName, obj);
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Test passed");
     }
   }
 
-  /*package*/ Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
-    Throwable exception = null;
+  /*package*/ void tryToRunTest(Class clazz, String methodName, Object obj) throws Throwable {
     try {
       clazz.getMethod(methodName).invoke(obj);
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     } catch (IllegalAccessException e) {
       e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      exception = e.getTargetException();
+    } catch (InvocationTargetException ex) {
+      throw ex.getTargetException();
     }
-    return exception;
+  }
+
+  /*package*/ final void runInCommand(final Statement c) throws Throwable {
+    // Indeed, it's not very nice to use Statement from junit here, but I don't want to introduce own Runnable capable of throwing Throwable, 
+    // and Statement is the one readily available and the one I need from RuntWithCommand rule anyway. 
+    final Reference<Throwable> ex = new Reference<Throwable>(null);
+    final Runnable r = new Runnable() {
+      public void run() {
+        try {
+          c.evaluate();
+        } catch (Throwable th) {
+          ex.set(th);
+        }
+      }
+    };
+    // FIXME shall replace project's model access with MA to BaseTestBody.myModel (initialized with #getTransientModelDescriptor() value) as it's the model we deal with 
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        getProject().getModelAccess().executeCommand(r);
+      }
+    });
+    if (ex.get() != null) {
+      throw ex.get();
+    }
   }
 
   /**
@@ -236,5 +281,67 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   @Override
   public void setProject(Project project) {
     myProject = project;
+  }
+
+  private static class EnvironmentIsNullException extends AssumptionViolatedException {
+    public EnvironmentIsNullException(@NotNull String testName, @NotNull String projectPath) {
+      super(String.format("The test '%s' needs an Environment instance to access the project at '%s'", testName, projectPath));
+    }
+  }
+
+  private static class ProjectPathIsNullException extends AssumptionViolatedException {
+    public ProjectPathIsNullException() {
+      super("The project path was not specified in the TestInfo root.");
+    }
+  }
+
+  private static class ExpandedProjectPathIsNullException extends AssumptionViolatedException {
+    public ExpandedProjectPathIsNullException(@NotNull String projectPath) {
+      super(String.format("The macros in the project path '%s' is reduced to null", projectPath));
+    }
+  }
+
+  private static class CouldNotFindModelException extends AssumptionViolatedException {
+    public CouldNotFindModelException(@NotNull String msg) {
+      super(msg);
+    }
+  }
+
+  private static class MPSTestModelInitializationException extends AssumptionViolatedException {
+    public MPSTestModelInitializationException(@NotNull String msg, Throwable realCause) {
+      super(msg, realCause);
+    }
+  }
+
+  /**
+   * This is an alternative to a setup() method annotated with @Before, to deal with peculiarities of JUnit processing of @Rule and @Before.
+   * Subclasses of BaseTransformationTest may use own @Rule, and their statement would wrap not only test method itself, but also @Before and @After methods as well (see BlockJUnit4ClassRunner#methodBlock).
+   * Therefore, if we place initialization code in @Before method of this class, it's invoked from inside a statement created by TestRule of a subclass. If that TestRule uses any facilities of the base class
+   * (e.g. project/transient model), it fails as these are not yet initialized. With AlternativeBefore rule, we get into regular @Rule sequence. Rules are processed from sibling to parent (see TestClass#scanAnnotatedMembers())
+   * therefore @Rule from superclass gives outer Statement and is executed first. Therefore, AlternativeBefore from BTT is executed sooner than any rule from test subclass and initialize the test properly.
+   * NOTE, we have to use field with @Rule, not method with @Rule annotation as BlockJUnit4ClassRunner#getTestRules() adds methods with @Rule first, therefore placing their Statements in the end of execution chain.
+   */
+  private static class AlternativeBefore implements TestRule {
+    private final BaseTransformationTest myTest;
+    /*package*/ AlternativeBefore() {
+      // legacy, to remove once 2018.2 is out, to handle case when there's no TestParametersCache. 
+      myTest = null;
+    }
+    /*package*/ AlternativeBefore(BaseTransformationTest test) {
+      myTest = test;
+    }
+
+    @Override
+    public Statement apply(final Statement base, Description description) {
+      if (myTest == null) {
+        return base;
+      }
+      return new Statement() {
+        public void evaluate() throws Throwable {
+          myTest.setup();
+          base.evaluate();
+        }
+      };
+    }
   }
 }

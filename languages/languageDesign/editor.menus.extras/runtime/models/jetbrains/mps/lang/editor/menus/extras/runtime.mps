@@ -229,11 +229,16 @@
             <node concept="3uibUv" id="46W80XA3Eye" role="1tU5fm">
               <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
             </node>
-            <node concept="2YIFZM" id="46W80XA3EFG" role="33vP2m">
-              <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
-              <ref role="37wK5l" to="ge2m:4a0HOMfn6Wr" resolve="getRefactoringByClassName" />
-              <node concept="37vLTw" id="46W80XA3EGK" role="37wK5m">
-                <ref role="3cqZAo" node="46W80XA3xdc" resolve="myRefactoringClassName" />
+            <node concept="2OqwBi" id="10tOJLdlAwD" role="33vP2m">
+              <node concept="2YIFZM" id="10tOJLdlAot" role="2Oq$k0">
+                <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
+                <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
+              </node>
+              <node concept="liA8E" id="10tOJLdlAGd" role="2OqNvi">
+                <ref role="37wK5l" to="y38:10tOJLdhm35" resolve="getRefactoringByClassName" />
+                <node concept="37vLTw" id="10tOJLdlAPU" role="37wK5m">
+                  <ref role="3cqZAo" node="46W80XA3xdc" resolve="myRefactoringClassName" />
+                </node>
               </node>
             </node>
           </node>
@@ -786,14 +791,19 @@
           </node>
         </node>
         <node concept="3cpWs6" id="7GARn1zPCVe" role="3cqZAp">
-          <node concept="2YIFZM" id="7GARn1zPCVf" role="3cqZAk">
-            <ref role="37wK5l" to="ge2m:4YlI$qnBQUc" resolve="isApplicable" />
-            <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
-            <node concept="37vLTw" id="7GARn1zPCVg" role="37wK5m">
-              <ref role="3cqZAo" node="7GARn1zPCVk" resolve="refactoring" />
+          <node concept="2OqwBi" id="6CS$e10Dmq3" role="3cqZAk">
+            <node concept="2YIFZM" id="6CS$e10DlFk" role="2Oq$k0">
+              <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
+              <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
             </node>
-            <node concept="37vLTw" id="7GARn1zPCVh" role="37wK5m">
-              <ref role="3cqZAo" node="7GARn1zPCV5" resolve="targetEntity" />
+            <node concept="liA8E" id="6CS$e10Dn9V" role="2OqNvi">
+              <ref role="37wK5l" to="y38:10tOJLdi0g7" resolve="isApplicable" />
+              <node concept="37vLTw" id="7GARn1zPCVg" role="37wK5m">
+                <ref role="3cqZAo" node="7GARn1zPCVk" resolve="refactoring" />
+              </node>
+              <node concept="37vLTw" id="7GARn1zPCVh" role="37wK5m">
+                <ref role="3cqZAo" node="7GARn1zPCV5" resolve="targetEntity" />
+              </node>
             </node>
           </node>
         </node>

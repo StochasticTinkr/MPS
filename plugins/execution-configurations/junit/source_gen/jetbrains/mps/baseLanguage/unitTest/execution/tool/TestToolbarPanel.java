@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,13 +21,14 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 public class TestToolbarPanel extends JPanel {
   private final TestTree myTree;
   private final FailedTestOccurrenceNavigator myNavigator;
+
   public TestToolbarPanel(TestTree tree, FailedTestOccurrenceNavigator navigator) {
     super(new BorderLayout());
     myTree = tree;
     myNavigator = navigator;
-    setLayout(new BorderLayout());
     init();
   }
+
   private void init() {
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
     actionGroup.addAll(createHidePassedAction(), cteateTrackRunningAction());
@@ -38,26 +38,30 @@ public class TestToolbarPanel extends JPanel {
     actionGroup.addAll(createNextOccurrenceAction(), createPreviousOccurrenceAction());
     actionGroup.addSeparator();
     actionGroup.addAction(createSelectFirstFailedAction());
-    ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
-    add(toolbarActions.getComponent(), BorderLayout.WEST);
+    ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.TESTTREE_VIEW_TOOLBAR, actionGroup, true);
+    add(toolbarActions.getComponent(), BorderLayout.CENTER);
   }
+
   private ToggleAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", AllIcons.RunConfigurations.HidePassed) {
       {
         setSelected(null, UnitTestOptions.isHidePassed());
       }
+
       @Override
       public void setSelected(AnActionEvent event, boolean value) {
         UnitTestOptions.setHidePassed(value);
-        myTree.hidePassed(value);
+        myTree.rebuildNow();
+        myTree.expandAll();
       }
+
       @Override
       public boolean isSelected(AnActionEvent p0) {
         return UnitTestOptions.isHidePassed();
       }
     };
   }
+
   private ToggleAction cteateTrackRunningAction() {
     return new ToggleAction("Track Running Test", "Select currently running test in tree", AllIcons.RunConfigurations.TrackTests) {
       {
@@ -73,6 +77,7 @@ public class TestToolbarPanel extends JPanel {
       }
     };
   }
+
   private AnAction createCollapseAllAction() {
     return new AnAction("Collapse All", "Collapse all test suites", Icons.COLLAPSE_ICON) {
       {
@@ -89,6 +94,7 @@ public class TestToolbarPanel extends JPanel {
       }
     };
   }
+
   private AnAction createExpandAllAction() {
     return new AnAction("Expand All", "Expande all test suites", Icons.EXPAND_ICON) {
       {
@@ -100,6 +106,7 @@ public class TestToolbarPanel extends JPanel {
       }
     };
   }
+
   private AnAction createNextOccurrenceAction() {
     return new AnAction("Next Failed Test", "Navigate to the next occurrence", AllIcons.Actions.NextOccurence) {
       {
@@ -113,6 +120,7 @@ public class TestToolbarPanel extends JPanel {
       }
     };
   }
+
   private AnAction createPreviousOccurrenceAction() {
     return new AnAction("Previous Failed Test", "Navigate to the previous occurrence", AllIcons.Actions.PreviousOccurence) {
       {
@@ -126,27 +134,31 @@ public class TestToolbarPanel extends JPanel {
       }
     };
   }
+
   private ToggleAction createSelectFirstFailedAction() {
     return new ToggleAction("Select First Failed Test When Finished", "", AllIcons.RunConfigurations.SelectFirstDefect) {
       {
-        setSelected(null, UnitTestOptions.isSelectFirstFailded());
+        setSelected(null, UnitTestOptions.isSelectFirstFailed());
       }
       @Override
       public void setSelected(AnActionEvent event, boolean setectFirstFailed) {
-        UnitTestOptions.setSelectFirstFailded(setectFirstFailed);
+        UnitTestOptions.setSelectFirstFailed(setectFirstFailed);
       }
       @Override
       public boolean isSelected(AnActionEvent event) {
-        return UnitTestOptions.isSelectFirstFailded();
+        return UnitTestOptions.isSelectFirstFailed();
       }
     };
   }
+
   private AnAction createRerunFailedTestAction() {
     return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", AllIcons.RunConfigurations.RerunFailedTests) {
       @Override
       public void actionPerformed(AnActionEvent p0) {
-        if (myTree.hasFailedTests()) {
-          myTree.buildFailedTestTree();
+        if (myTree.hasNotPassedTests()) {
+          UnitTestOptions.setHidePassed(false);
+          myTree.rebuildNow();
+          myTree.expandAll();
         }
       }
     };

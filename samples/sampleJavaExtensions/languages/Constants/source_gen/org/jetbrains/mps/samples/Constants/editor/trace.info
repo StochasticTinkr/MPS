@@ -395,7 +395,7 @@
       <node id="3990190717072393833" at="65,31,66,48" concept="1" />
       <node id="3990190717072393831" at="66,48,67,22" concept="6" />
       <node id="3990190717072393831" at="69,40,70,172" concept="5" />
-      <node id="3990190717072393831" at="74,39,75,139" concept="6" />
+      <node id="3990190717072393831" at="74,39,75,129" concept="6" />
       <node id="3990190717072393831" at="77,35,78,60" concept="1" />
       <node id="3990190717072393831" at="78,60,79,48" concept="1" />
       <node id="3990190717072393831" at="79,48,80,58" concept="1" />
@@ -417,7 +417,7 @@
       <node id="3990190717072393831" at="107,87,108,145" concept="6" />
       <node id="3990190717072393831" at="109,10,110,22" concept="6" />
       <node id="3990190717072393834" at="115,0,116,0" concept="2" trace="myReferencingNode" />
-      <node id="3990190717072393834" at="117,119,118,21" concept="8" />
+      <node id="3990190717072393834" at="117,109,118,21" concept="8" />
       <node id="3990190717072393834" at="118,21,119,42" concept="1" />
       <node id="3990190717072393834" at="119,42,120,20" concept="1" />
       <node id="3990190717072393834" at="123,41,124,32" concept="6" />
@@ -454,7 +454,7 @@
       <node id="3990190717072393831" at="72,72,77,35" concept="5" />
       <node id="3990190717072393831" at="100,301,105,7" concept="5" />
       <node id="3990190717072393831" at="105,7,110,22" concept="3" />
-      <node id="3990190717072393834" at="117,0,122,0" concept="0" trace="Inline_Builder_ue2hde_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3990190717072393834" at="117,0,122,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3990190717072393834" at="127,0,132,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3990190717072393836" at="148,308,153,11" concept="5" />
       <node id="3990190717072393836" at="153,11,158,26" concept="3" />
@@ -467,7 +467,7 @@
       <node id="3990190717072393831" at="69,0,112,0" concept="4" trace="createRefCell_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3990190717072393831" at="53,26,54,18" />
       <scope id="3990190717072393831" at="57,39,58,32" />
-      <scope id="3990190717072393831" at="74,39,75,139" />
+      <scope id="3990190717072393831" at="74,39,75,129" />
       <scope id="3990190717072393831" at="102,39,103,113" />
       <scope id="3990190717072393834" at="123,41,124,32" />
       <scope id="3990190717072393834" at="129,28,130,20" />
@@ -486,7 +486,7 @@
       <scope id="3990190717072393831" at="102,0,105,0">
         <var name="it" id="3990190717072393831" />
       </scope>
-      <scope id="3990190717072393834" at="117,119,120,20" />
+      <scope id="3990190717072393834" at="117,109,120,20" />
       <scope id="3990190717072393834" at="123,0,126,0" />
       <scope id="3990190717072393836" at="150,0,153,0">
         <var name="it" id="3990190717072393836" />
@@ -537,9 +537,9 @@
       <scope id="3990190717072393831" at="69,0,112,0" />
       <unit id="3990190717072393831" at="73,74,77,9" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$1$1" />
       <unit id="3990190717072393831" at="101,102,105,5" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$2" />
-      <unit id="3990190717072393836" at="149,104,153,9" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$Inline_Builder_ue2hde_a0a$1" />
+      <unit id="3990190717072393836" at="149,104,153,9" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="3990190717072393831" at="71,42,90,5" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$1" />
-      <unit id="3990190717072393834" at="112,0,164,0" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$Inline_Builder_ue2hde_a0a" />
+      <unit id="3990190717072393834" at="112,0,164,0" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a$Inline_Builder0" />
       <unit id="3990190717072393831" at="42,0,165,0" name="org.jetbrains.mps.samples.Constants.editor.ConstantReference_EditorBuilder_a" />
     </file>
   </root>

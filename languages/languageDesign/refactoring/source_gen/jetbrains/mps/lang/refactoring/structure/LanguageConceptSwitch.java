@@ -43,21 +43,20 @@ public final class LanguageConceptSwitch {
   public static final int NodeOperation = 31;
   public static final int NodeTarget = 32;
   public static final int NodesOperation = 33;
-  public static final int OperationContextOperation = 34;
-  public static final int ProjectOperation = 35;
-  public static final int Refactoring = 36;
-  public static final int RefactoringAction = 37;
-  public static final int RefactoringArgument = 38;
-  public static final int RefactoringArgumentReference = 39;
-  public static final int RefactoringContext_ConceptFunctionParameter = 40;
-  public static final int RefactoringField = 41;
-  public static final int RefactoringFieldReference = 42;
-  public static final int RefactoringParameter = 43;
-  public static final int RefactoringParameterReference = 44;
-  public static final int RefactoringTarget = 45;
-  public static final int RepositoryOperation = 46;
-  public static final int ScopeOperation = 47;
-  public static final int UpdateModelProcedure = 48;
+  public static final int ProjectOperation = 34;
+  public static final int Refactoring = 35;
+  public static final int RefactoringAction = 36;
+  public static final int RefactoringArgument = 37;
+  public static final int RefactoringArgumentReference = 38;
+  public static final int RefactoringContext_ConceptFunctionParameter = 39;
+  public static final int RefactoringField = 40;
+  public static final int RefactoringFieldReference = 41;
+  public static final int RefactoringParameter = 42;
+  public static final int RefactoringParameterReference = 43;
+  public static final int RefactoringTarget = 44;
+  public static final int RepositoryOperation = 45;
+  public static final int ScopeOperation = 46;
+  public static final int UpdateModelProcedure = 47;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3ecd7c84cde345deL, 0x886c135ecc69b742L);
@@ -95,7 +94,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x6e6245e06b616473L, NodeOperation);
     builder.put(0x5fb04b74a77a056cL, NodeTarget);
     builder.put(0x6e6245e06b616475L, NodesOperation);
-    builder.put(0x6e6245e06b616477L, OperationContextOperation);
     builder.put(0x6e6245e06b616479L, ProjectOperation);
     builder.put(0x5fb04b74a778e245L, Refactoring);
     builder.put(0x2cfffca8ff395f2fL, RefactoringAction);

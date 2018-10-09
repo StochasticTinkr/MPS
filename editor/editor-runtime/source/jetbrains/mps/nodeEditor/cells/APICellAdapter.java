@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -68,12 +69,12 @@ public class APICellAdapter {
     final SubstituteInfo substituteInfoWithPatternMatchingFilter =
         NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
 
-    if (cell instanceof EditorCell_Collection) {
+    if (!(cell instanceof EditorCell_Label)) {
       return false;
     }
-    final String pattern = cell.renderText().getText();
+    final String pattern = ((EditorCell_Label) cell).getText();
 
-    if (pattern.equals("")) {
+    if (pattern.isEmpty()) {
       return false;
     }
 

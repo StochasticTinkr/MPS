@@ -17,7 +17,6 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.vfs.FileSystemEvent;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

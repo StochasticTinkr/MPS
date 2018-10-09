@@ -32,7 +32,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
       }
     }));
 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "logging", "openapi", "smodel", "make-runtime", "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "util", "vfs", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {

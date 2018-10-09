@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.instructions.InstructionBuilder;
 import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContextImpl;
@@ -27,7 +30,8 @@ import java.util.Objects;
 public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(TestProgramWithModeSpecified_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public TestProgramWithModeSpecified_Test() {
     super(ourParamCache);
@@ -35,19 +39,23 @@ public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
 
   @Test
   public void test_testNonEmptyInstructionsWithModeSpecified() throws Throwable {
-    runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithModeSpecified", true);
+    new TestProgramWithModeSpecified_Test.TestBody(this).test_testNonEmptyInstructionsWithModeSpecified();
   }
   @Test
   public void test_testNonEmptyInstructionsWithMoreSpecificModeSpecified() throws Throwable {
-    runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithMoreSpecificModeSpecified", true);
+    new TestProgramWithModeSpecified_Test.TestBody(this).test_testNonEmptyInstructionsWithMoreSpecificModeSpecified();
   }
   @Test
   public void test_testEmptyInstructionsWithModeSpecified() throws Throwable {
-    runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testEmptyInstructionsWithModeSpecified", true);
+    new TestProgramWithModeSpecified_Test.TestBody(this).test_testEmptyInstructionsWithModeSpecified();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_testNonEmptyInstructionsWithModeSpecified() throws Exception {
       addNodeById("2955426575105884967");
       MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.singletonList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));

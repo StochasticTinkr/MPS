@@ -44,7 +44,7 @@ public class ConceptTextGenDeclaration_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_kletrw_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_kletrw_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kletrw_a() {
       super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, 0x11f3c7a3d4dL, "conceptDeclaration"));

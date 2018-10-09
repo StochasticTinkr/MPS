@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;

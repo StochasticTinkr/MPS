@@ -34,7 +34,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
       case 0:
         if (true) {
           // Concept: PatternExpression 
-          intentions = new IntentionFactory[8];
+          intentions = new IntentionFactory[7];
           intentions[0] = new CreatePatternVariable_Intention();
           intentions[1] = new CreatePropertyPatternVariable_Intention();
           intentions[2] = new CreateListPattern_Intention();
@@ -42,7 +42,6 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           intentions[4] = new CreateAsPattern_Intention();
           intentions[5] = new CreateActionAsPattern_Intention();
           intentions[6] = new CreateOrPattern_Intention();
-          intentions[7] = new ConvertPatternNodeToQuotation_Intention();
         }
         break;
       default:
@@ -54,7 +53,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[8];
+    IntentionFactory[] rv = new IntentionFactory[7];
     rv[0] = new CreatePatternVariable_Intention();
     rv[1] = new CreatePropertyPatternVariable_Intention();
     rv[2] = new CreateListPattern_Intention();
@@ -62,7 +61,6 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[4] = new CreateAsPattern_Intention();
     rv[5] = new CreateActionAsPattern_Intention();
     rv[6] = new CreateOrPattern_Intention();
-    rv[7] = new ConvertPatternNodeToQuotation_Intention();
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L)).seal();

@@ -22,17 +22,26 @@ import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -107,13 +116,26 @@ public abstract class SimpleTypecheckingContext<
 
   @Override
   public SNode getTypeOf_generationMode(final SNode node) {
+    // at generation time, transient models are not part of a repository,
+    // therefore we have to build their language scope here with a help of extra context knowledge
     long start = System.nanoTime();
-    SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return getTypechecking().computeTypesForNodeDuringGeneration(node);
+    SModel sModel = node.getModel();
+    SNode result;
+    Computable<SNode> computable = () -> getTypechecking().computeTypesForNodeDuringGeneration(node);
+    if (sModel != null) {
+      ModelImports modelImports = new ModelImports(sModel);
+      HashSet<SLanguage> usedLanguages = new HashSet<>(modelImports.getUsedLanguages());
+      for (SModuleReference dkRef : modelImports.getUsedDevKits()) {
+        SModule module = dkRef.resolve(MPSModuleRepository.getInstance());
+        if (module instanceof DevKit) {
+          usedLanguages.addAll(IterableUtil.asCollection(((DevKit) module).getAllExportedLanguageIds()));
+        }
       }
-    });
+      result = LanguageScopeExecutor.execWithMultiLanguageScope(usedLanguages, computable);
+    } else {
+      // XXX this is the way it was; although may build set of languages in use from the node's hierarchy and restrict scope only to those
+      result = LanguageScopeExecutor.execWithGlobalScope(computable);
+    }
     TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
     return result;
   }
@@ -304,7 +326,7 @@ public abstract class SimpleTypecheckingContext<
 
   @Override
   public TypeSubstitution getSubstitution(final SNode origNode) {
-    return LanguageScopeExecutor.execWithLanguageScope(null, new Computable<TypeSubstitution>() {
+    return LanguageScopeExecutor.execWithGlobalScope(new Computable<TypeSubstitution>() {
       @Override
       public TypeSubstitution compute() {
         return getTypechecking().getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this);

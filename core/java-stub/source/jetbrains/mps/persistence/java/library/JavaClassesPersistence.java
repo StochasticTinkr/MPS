@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.java.stub.JavaPackageModelId;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;

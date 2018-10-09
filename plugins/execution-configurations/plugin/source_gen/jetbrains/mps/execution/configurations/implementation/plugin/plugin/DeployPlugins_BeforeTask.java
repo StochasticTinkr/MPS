@@ -32,6 +32,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.execution.ui.RunContentDescriptor;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.execution.ui.actions.CloseAction;
 import com.intellij.execution.ExecutionManager;
@@ -117,7 +118,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           consolePanel.add(actionToolbar.getComponent(), BorderLayout.WEST);
           consolePanel.add(console[0].getComponent(), BorderLayout.CENTER);
 
-          RunContentDescriptor descriptor = new RunContentDescriptor(console[0], process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a81a4e);
+          RunContentDescriptor descriptor = new RunContentDescriptor(console[0], process.value, consolePanel, "Deploy plugins", MPSIcons.Ant.Build);
 
           group.add(ActionManager.getInstance().getAction("Stop"));
           group.addSeparator();

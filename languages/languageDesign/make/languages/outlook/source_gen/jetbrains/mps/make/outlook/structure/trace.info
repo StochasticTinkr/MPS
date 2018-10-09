@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.make.outlook.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,51,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
+      <unit at="14,0,52,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)/5608160002100057298">
@@ -42,14 +42,15 @@
       <node id="5608160002100057298" at="43,168,44,33" concept="0" />
       <node id="5608160002100057298" at="44,33,45,71" concept="0" />
       <node id="5608160002100057298" at="45,71,46,113" concept="0" />
-      <node id="5608160002100058529" at="46,113,47,197" concept="0" />
-      <node id="5608160002100057298" at="47,197,48,22" concept="4" />
-      <node id="5608160002100057298" at="42,0,50,0" concept="6" trace="createDescriptorForOutlook#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5608160002100057298" at="46,113,47,17" concept="0" />
+      <node id="5608160002100058529" at="47,17,48,197" concept="0" />
+      <node id="5608160002100057298" at="48,197,49,22" concept="4" />
+      <node id="5608160002100057298" at="42,0,51,0" concept="6" trace="createDescriptorForOutlook#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5608160002100057298" at="31,41,32,32" />
-      <scope id="5608160002100057298" at="42,65,48,22">
+      <scope id="5608160002100057298" at="42,65,49,22">
         <var name="b" id="5608160002100057298" />
       </scope>
-      <scope id="5608160002100057298" at="42,0,50,0" />
+      <scope id="5608160002100057298" at="42,0,51,0" />
     </file>
   </root>
 </debug-info>

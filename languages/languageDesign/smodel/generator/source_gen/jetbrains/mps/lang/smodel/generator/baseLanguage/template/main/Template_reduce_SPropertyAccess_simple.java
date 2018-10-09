@@ -43,13 +43,13 @@ public class Template_reduce_SPropertyAccess_simple extends TemplateDeclarationB
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[1], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139275804876"), "getString") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_11392758048670(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_2_0(createQueryContext());
         }
       });
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_11392758048700(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_dkiczw_b0a0c0d0c0f));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_2_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_dkiczw_b0a0c0d0c0f));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_dkiczw_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1139275804870", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -58,7 +58,7 @@ public class Template_reduce_SPropertyAccess_simple extends TemplateDeclarationB
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_65067506103193685630(new SourceSubstituteMacroNodeContext(context1, includeMacro_dkiczw_b0a0a1a4a2a5));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_2_1(new SourceSubstituteMacroNodeContext(context1, includeMacro_dkiczw_b0a0a1a4a2a5));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
           tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(context2);

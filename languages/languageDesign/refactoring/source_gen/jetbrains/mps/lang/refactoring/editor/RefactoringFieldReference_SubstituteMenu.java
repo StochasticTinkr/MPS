@@ -44,7 +44,7 @@ public class RefactoringFieldReference_SubstituteMenu extends SubstituteMenuBase
   }
 
 
-  public static class SMP_ReferenceScope_7f70ab_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_7f70ab_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_7f70ab_a() {
       super(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL, "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration"));

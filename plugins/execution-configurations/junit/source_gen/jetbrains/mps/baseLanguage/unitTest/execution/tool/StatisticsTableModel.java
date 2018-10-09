@@ -7,14 +7,22 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.event.TableModelListener;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeKey;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener;
-import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent;
 import org.jetbrains.annotations.Nullable;
-import java.util.Map;
+import jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestMethodNodeKey;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestCaseNodeKey;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.event.TableModelEvent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,89 +32,122 @@ public class StatisticsTableModel implements TableModel {
   private final List<TableModelListener> myListeners = ListSequence.fromList(new ArrayList<TableModelListener>());
   private List<TestStatisticsRow> myRows;
   private List<TestStatisticsRow> myFilteredRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
-  protected String myFilterTestCase = null;
-  protected String myFilterTestMethod = null;
-  private final TestNameMap<TestCaseRow, TestMethodRow> myMap = new TestNameMap<TestCaseRow, TestMethodRow>();
+  private TestNodeKey myFilter = null;
+  private final Map<TestNodeKey, TestStatisticsRow> myNodeKey2RowMap = MapSequence.fromMap(new HashMap<TestNodeKey, TestStatisticsRow>());
   private final TestRunState myState;
+  private final TestStateListener myTestStateListener;
 
   public StatisticsTableModel(TestRunState state) {
     myState = state;
-    setTests(state.getTestsMap());
-    myState.addListener(new TestStateListener() {
+    initFromTests(state.getTestsMap());
+    myTestStateListener = new TestStateAdapter() {
       @Override
-      public void onTestStart(TestEvent event) {
+      public void onTestStart(TestNodeEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
-          row.setStartTime(event.getTime());
-          row.setUsageBefore(event.getMemoryUsage());
+          row.setStartTime(event.getRawEvent().getTime());
+          row.setUsageBefore(event.getRawEvent().getMemoryUsage());
           fireTableChanged();
         }
       }
+
       @Nullable
-      private TestMethodRow findRowForEvent(TestEvent event) {
-        return getRow(event.getTestCaseName(), event.getTestMethodName());
+      private TestMethodRow findRowForEvent(TestNodeEvent event) {
+        return getRow(event.getTestKey());
       }
+
       @Override
-      public void onTestFinish(TestEvent event) {
+      public void onTestFinish(TestNodeEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
-          row.setFinishTime(event.getTime());
-          row.setUsageAfter(event.getMemoryUsage());
+          row.setFinishTime(event.getRawEvent().getTime());
+          row.setUsageAfter(event.getRawEvent().getMemoryUsage());
           if (row.getFailed() == 0 && row.getErrored() == 0) {
             row.setSucceed();
           }
           fireTableChanged();
         }
       }
+
       @Override
-      public void onTestFailure(TestEvent event) {
+      public void onTestFailure(TestNodeEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
           row.setErrored();
           fireTableChanged();
         }
       }
+
       @Override
-      public void onTestAssumptionFailure(TestEvent event) {
+      public void onTestAssumptionFailure(TestNodeEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
           row.setFailed();
           fireTableChanged();
         }
       }
+
+
       @Override
-      public void onLooseTest(String className, String methodName) {
-        TestMethodRow row = getRow(className, methodName);
+      public void onTermination(TerminationTestEvent event) {
+        {
+          Iterator<TestMethodNodeKey> notRunTest_it = ListSequence.fromList(event.getNotRanTests()).iterator();
+          TestMethodNodeKey notRunTest_var;
+          while (notRunTest_it.hasNext()) {
+            notRunTest_var = notRunTest_it.next();
+            onLooseTest(notRunTest_var, event.isTerminatedCorrectly());
+          }
+        }
+      }
+
+      public void onLooseTest(TestNodeKey notRunTest, boolean isTerminatedCorrectly) {
+        TestMethodRow row = getRow(notRunTest);
         if (row != null) {
-          row.setErrored();
+          if (!(isTerminatedCorrectly)) {
+            row.setErrored();
+          }
           fireTableChanged();
         }
       }
-    });
+    };
+
+    myState.addListener(myTestStateListener);
   }
 
-  private void setTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
+  public void dispose() {
+    myState.removeListener(myTestStateListener);
+  }
+
+  private void initFromTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
     myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
     TotalRow totalRow = new TotalRow();
     ListSequence.fromList(myRows).addElement(totalRow);
-    myMap.clear();
+    MapSequence.fromMap(myNodeKey2RowMap).clear();
     for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(tests).keySet())) {
-      TestCaseRow testCaseRow = new TestCaseRow(testCase);
+      TestCaseNodeKey testCaseKey = new TestCaseNodeKey(testCase);
+      TestCaseRow testCaseRow = new TestCaseRow(testCaseKey);
       totalRow.addRow(testCaseRow);
       ListSequence.fromList(myRows).addElement(testCaseRow);
-      myMap.put(testCase, testCaseRow);
+      MapSequence.fromMap(myNodeKey2RowMap).put(testCaseKey, testCaseRow);
       for (ITestNodeWrapper testMethod : ListSequence.fromList(MapSequence.fromMap(tests).get(testCase))) {
-        TestMethodRow testMethodRow = new TestMethodRow(testMethod);
+        TestMethodNodeKey methodKey = new TestMethodNodeKey(testMethod);
+        TestMethodRow testMethodRow = new TestMethodRow(methodKey);
         testCaseRow.addRow(testMethodRow);
         ListSequence.fromList(myRows).addElement(testMethodRow);
-        myMap.put(testCase, testMethod, testMethodRow);
+        MapSequence.fromMap(myNodeKey2RowMap).put(methodKey, testMethodRow);
       }
     }
     filter();
   }
 
-  public TestMethodRow getRow(String testCase, String testMethod) {
-    return myMap.get(testCase, testMethod);
+
+  @Nullable
+  public TestMethodRow getRow(@NotNull TestNodeKey testNodeKey) {
+    TestStatisticsRow row = MapSequence.fromMap(myNodeKey2RowMap).get(testNodeKey);
+    if (row instanceof TestMethodRow) {
+      return (TestMethodRow) row;
+    }
+    return null;
   }
 
   private void fireTableChanged() {
@@ -130,16 +171,15 @@ public class StatisticsTableModel implements TableModel {
     return ListSequence.fromList(myFilteredRows).getElement(rowIndex);
   }
 
-  public void setFilter(String testCase, String testMethod) {
-    myFilterTestCase = testCase;
-    myFilterTestMethod = testMethod;
+  public void setFilter(@Nullable TestNodeKey key) {
+    myFilter = key;
     filter();
   }
 
   private void filter() {
     myFilteredRows = ListSequence.fromList(myRows).where(new IWhereFilter<TestStatisticsRow>() {
       public boolean accept(TestStatisticsRow it) {
-        return it.matches(myFilterTestCase, myFilterTestMethod);
+        return it.matches(myFilter);
       }
     }).toListSequence();
     fireTableChanged();

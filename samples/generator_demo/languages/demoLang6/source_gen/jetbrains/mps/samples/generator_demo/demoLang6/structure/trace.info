@@ -15,7 +15,7 @@
       <unit at="10,0,30,0" name="jetbrains.mps.samples.generator_demo.demoLang6.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,64,0" name="jetbrains.mps.samples.generator_demo.demoLang6.structure.StructureAspectDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.samples.generator_demo.demoLang6.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101855363">
@@ -42,15 +42,16 @@
       <node id="3978102045101855363" at="46,187,47,34" concept="0" />
       <node id="3978102045101855363" at="47,34,48,120" concept="0" />
       <node id="3978102045101855363" at="48,120,49,133" concept="0" />
-      <node id="3978102045101855475" at="49,133,50,63" concept="0" />
-      <node id="3978102045101855363" at="50,63,51,22" concept="0" />
-      <node id="3978102045101855363" at="51,22,52,22" concept="4" />
-      <node id="3978102045101855363" at="45,0,54,0" concept="6" trace="createDescriptorForButton#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3978102045101855363" at="49,133,50,17" concept="0" />
+      <node id="3978102045101855475" at="50,17,51,63" concept="0" />
+      <node id="3978102045101855363" at="51,63,52,22" concept="0" />
+      <node id="3978102045101855363" at="52,22,53,22" concept="4" />
+      <node id="3978102045101855363" at="45,0,55,0" concept="6" trace="createDescriptorForButton#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3978102045101855363" at="32,40,33,31" />
-      <scope id="3978102045101855363" at="45,64,52,22">
+      <scope id="3978102045101855363" at="45,64,53,22">
         <var name="b" id="3978102045101855363" />
       </scope>
-      <scope id="3978102045101855363" at="45,0,54,0" />
+      <scope id="3978102045101855363" at="45,0,55,0" />
     </file>
   </root>
   <root nodeRef="r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101856876">
@@ -73,19 +74,20 @@
     <file name="StructureAspectDescriptor.java">
       <node id="3978102045101856876" at="16,0,17,0" concept="1" trace="myConceptLabel" />
       <node id="3978102045101856876" at="34,39,35,30" concept="4" />
-      <node id="3978102045101856876" at="54,63,55,186" concept="3" />
-      <node id="3978102045101856876" at="55,186,56,34" concept="0" />
-      <node id="3978102045101856876" at="56,34,57,120" concept="0" />
-      <node id="3978102045101856876" at="57,120,58,133" concept="0" />
-      <node id="3978102045101856886" at="58,133,59,63" concept="0" />
-      <node id="3978102045101856876" at="59,63,60,21" concept="0" />
-      <node id="3978102045101856876" at="60,21,61,22" concept="4" />
-      <node id="3978102045101856876" at="54,0,63,0" concept="6" trace="createDescriptorForLabel#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3978102045101856876" at="55,63,56,186" concept="3" />
+      <node id="3978102045101856876" at="56,186,57,34" concept="0" />
+      <node id="3978102045101856876" at="57,34,58,120" concept="0" />
+      <node id="3978102045101856876" at="58,120,59,133" concept="0" />
+      <node id="3978102045101856876" at="59,133,60,17" concept="0" />
+      <node id="3978102045101856886" at="60,17,61,63" concept="0" />
+      <node id="3978102045101856876" at="61,63,62,21" concept="0" />
+      <node id="3978102045101856876" at="62,21,63,22" concept="4" />
+      <node id="3978102045101856876" at="55,0,65,0" concept="6" trace="createDescriptorForLabel#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3978102045101856876" at="34,39,35,30" />
-      <scope id="3978102045101856876" at="54,63,61,22">
+      <scope id="3978102045101856876" at="55,63,63,22">
         <var name="b" id="3978102045101856876" />
       </scope>
-      <scope id="3978102045101856876" at="54,0,63,0" />
+      <scope id="3978102045101856876" at="55,0,65,0" />
     </file>
   </root>
 </debug-info>

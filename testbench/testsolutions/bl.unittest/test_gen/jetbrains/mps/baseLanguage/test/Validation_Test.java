@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class Validation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(Validation_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public Validation_Test() {
     super(ourParamCache);
@@ -25,39 +29,43 @@ public class Validation_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929443716() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443716", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929443716();
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929443718() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443718", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929443718();
   }
   @Test
   public void test_ErrorMessagesCheck7868761255934329326() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_ErrorMessagesCheck7868761255934329326", true);
+    new Validation_Test.TestBody(this).test_ErrorMessagesCheck7868761255934329326();
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929451248() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451248", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929451248();
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929451250() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451250", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929451250();
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929609456() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609456", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929609456();
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929609458() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609458", true);
+    new Validation_Test.TestBody(this).test_NodeRecursiveConstructorInvocationCheck6923385624929609458();
   }
   @Test
   public void test_NodeIllegalCombinationOfModifiersCheck6923385624927426848() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeIllegalCombinationOfModifiersCheck6923385624927426848", true);
+    new Validation_Test.TestBody(this).test_NodeIllegalCombinationOfModifiersCheck6923385624927426848();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeRecursiveConstructorInvocationCheck6923385624929443716() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929443716"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

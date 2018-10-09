@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class SampleConstraints_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SampleConstraints_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SampleConstraints_Test() {
     super(ourParamCache);
@@ -25,19 +29,23 @@ public class SampleConstraints_Test extends BaseTransformationTest {
 
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724", true);
+    new SampleConstraints_Test.TestBody(this).test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724();
   }
   @Test
   public void test_NodeUnknownRuleCheck2675718132411786726() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeUnknownRuleCheck2675718132411786726", true);
+    new SampleConstraints_Test.TestBody(this).test_NodeUnknownRuleCheck2675718132411786726();
   }
   @Test
   public void test_ErrorMessagesCheck7638302724810894630() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_ErrorMessagesCheck7638302724810894630", true);
+    new SampleConstraints_Test.TestBody(this).test_ErrorMessagesCheck7638302724810894630();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2675718132411786724"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));

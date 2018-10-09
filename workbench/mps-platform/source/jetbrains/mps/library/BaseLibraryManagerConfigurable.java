@@ -18,8 +18,6 @@ package jetbrains.mps.library;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;

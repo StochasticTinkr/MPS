@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.style;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;

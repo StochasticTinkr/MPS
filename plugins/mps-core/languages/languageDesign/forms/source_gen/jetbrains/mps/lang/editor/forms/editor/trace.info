@@ -433,7 +433,7 @@
       <node id="5364344611674795511" at="208,40,209,34" concept="1" />
       <node id="5364344611674795511" at="209,34,210,22" concept="6" />
       <node id="312429380032637971" at="212,40,213,183" concept="5" />
-      <node id="312429380032637971" at="217,39,218,141" concept="6" />
+      <node id="312429380032637971" at="217,39,218,130" concept="6" />
       <node id="312429380032637971" at="220,46,221,60" concept="1" />
       <node id="312429380032637971" at="221,60,222,48" concept="1" />
       <node id="312429380032637971" at="222,48,223,43" concept="1" />
@@ -451,7 +451,7 @@
       <node id="312429380032637971" at="243,87,244,145" concept="6" />
       <node id="312429380032637971" at="245,10,246,22" concept="6" />
       <node id="1140223082034" at="251,0,252,0" concept="2" trace="myReferencingNode" />
-      <node id="1140223082034" at="253,120,254,21" concept="9" />
+      <node id="1140223082034" at="253,109,254,21" concept="9" />
       <node id="1140223082034" at="254,21,255,42" concept="1" />
       <node id="1140223082034" at="255,42,256,20" concept="1" />
       <node id="1140223082034" at="259,41,260,32" concept="6" />
@@ -533,7 +533,7 @@
       <node id="312429380032637971" at="215,72,220,46" concept="5" />
       <node id="312429380032637971" at="236,301,241,7" concept="5" />
       <node id="312429380032637971" at="241,7,246,22" concept="3" />
-      <node id="1140223082034" at="253,0,258,0" concept="0" trace="Inline_Builder_47umt4_a1d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1140223082034" at="253,0,258,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1140223082034" at="263,0,268,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1140223090803" at="281,308,286,11" concept="5" />
       <node id="1140223090803" at="286,11,291,26" concept="3" />
@@ -568,7 +568,7 @@
       <scope id="312429380032637971" at="155,42,156,156" />
       <scope id="312429380032637971" at="172,17,173,42" />
       <scope id="312429380032637971" at="176,40,177,23" />
-      <scope id="312429380032637971" at="217,39,218,141" />
+      <scope id="312429380032637971" at="217,39,218,130" />
       <scope id="312429380032637971" at="238,39,239,113" />
       <scope id="1140223082034" at="259,41,260,32" />
       <scope id="1140223082034" at="265,28,266,20" />
@@ -601,7 +601,7 @@
       <scope id="312429380032637971" at="238,0,241,0">
         <var name="it" id="312429380032637971" />
       </scope>
-      <scope id="1140223082034" at="253,120,256,20" />
+      <scope id="1140223082034" at="253,109,256,20" />
       <scope id="1140223082034" at="259,0,262,0" />
       <scope id="1140223090803" at="283,0,286,0">
         <var name="it" id="1140223090803" />
@@ -742,9 +742,9 @@
       <scope id="312429380032637971" at="212,0,248,0" />
       <unit id="312429380032637971" at="216,74,220,9" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$1$1" />
       <unit id="312429380032637971" at="237,102,241,5" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$2" />
-      <unit id="1140223090803" at="282,104,286,9" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$Inline_Builder_47umt4_a1d0$1" />
+      <unit id="1140223090803" at="282,104,286,9" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="312429380032637971" at="214,42,226,5" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$1" />
-      <unit id="1140223082034" at="248,0,297,0" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$Inline_Builder_47umt4_a1d0" />
+      <unit id="1140223082034" at="248,0,297,0" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$Inline_Builder0" />
       <unit id="312429380032637971" at="312,0,363,0" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$labelSingleRoleHandler_47umt4_e0" />
       <unit id="312429380032637971" at="126,0,180,0" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a$uiSingleRoleHandler_47umt4_b2a" />
       <unit id="312429380032637971" at="51,0,371,0" name="jetbrains.mps.lang.editor.forms.editor.CellModel_Checkbox_EditorBuilder_a" />

@@ -256,11 +256,11 @@
       <node concept="3Tm6S6" id="4tDMPuHd$PF" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="1s_TLxa8SZ8" role="jymVt">
-      <property role="TrG5h" value="myProjectPluginManager" />
+      <property role="TrG5h" value="myRegistry" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1s_TLxa8SZ9" role="1B3o_S" />
-      <node concept="3uibUv" id="3L9OXzBsJMb" role="1tU5fm">
-        <ref role="3uigEE" to="xj2j:~ProjectPluginManager" resolve="ProjectPluginManager" />
+      <node concept="3uibUv" id="3IHTOEQKeHh" role="1tU5fm">
+        <ref role="3uigEE" to="y8sq:~PluginLoaderRegistry" resolve="PluginLoaderRegistry" />
       </node>
     </node>
     <node concept="312cEg" id="7rvPfCBwHFd" role="jymVt">
@@ -287,9 +287,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="1s_TLxa8SUY" role="3clF46">
-        <property role="TrG5h" value="pluginManager" />
-        <node concept="3uibUv" id="3L9OXzBsRTP" role="1tU5fm">
-          <ref role="3uigEE" to="xj2j:~ProjectPluginManager" resolve="ProjectPluginManager" />
+        <property role="TrG5h" value="registry" />
+        <node concept="3uibUv" id="3IHTOEQKeHG" role="1tU5fm">
+          <ref role="3uigEE" to="y8sq:~PluginLoaderRegistry" resolve="PluginLoaderRegistry" />
         </node>
       </node>
       <node concept="3clFbS" id="4tDMPuHd$PT" role="3clF47">
@@ -306,10 +306,10 @@
         <node concept="3clFbF" id="1s_TLxa8SZd" role="3cqZAp">
           <node concept="37vLTI" id="1s_TLxa8SZf" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm6b$" role="37vLTx">
-              <ref role="3cqZAo" node="1s_TLxa8SUY" resolve="pluginManager" />
+              <ref role="3cqZAo" node="1s_TLxa8SUY" resolve="registry" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuTpa" role="37vLTJ">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myRegistry" />
             </node>
           </node>
         </node>
@@ -400,10 +400,10 @@
         <node concept="3clFbF" id="1cXeJmohr8S" role="3cqZAp">
           <node concept="2OqwBi" id="1cXeJmohr8T" role="3clFbG">
             <node concept="37vLTw" id="1cXeJmohr8U" role="2Oq$k0">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myRegistry" />
             </node>
             <node concept="liA8E" id="1cXeJmohr8V" role="2OqNvi">
-              <ref role="37wK5l" to="xj2j:~ProjectPluginManager.addReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="addReloadingListener" />
+              <ref role="37wK5l" to="y8sq:~PluginLoaderRegistry.addReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="addReloadingListener" />
               <node concept="Xjq3P" id="1cXeJmohr8W" role="37wK5m">
                 <ref role="1HBi2w" node="4tDMPuHdxCU" resolve="RunConfigurationsStateManager" />
               </node>
@@ -424,10 +424,10 @@
         <node concept="3clFbF" id="1cXeJmoht2Q" role="3cqZAp">
           <node concept="2OqwBi" id="1cXeJmoht2R" role="3clFbG">
             <node concept="37vLTw" id="1cXeJmoht2S" role="2Oq$k0">
-              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myProjectPluginManager" />
+              <ref role="3cqZAo" node="1s_TLxa8SZ8" resolve="myRegistry" />
             </node>
             <node concept="liA8E" id="1cXeJmoht2T" role="2OqNvi">
-              <ref role="37wK5l" to="xj2j:~ProjectPluginManager.removeReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="removeReloadingListener" />
+              <ref role="37wK5l" to="y8sq:~PluginLoaderRegistry.removeReloadingListener(jetbrains.mps.plugins.PluginReloadingListener):void" resolve="removeReloadingListener" />
               <node concept="Xjq3P" id="1cXeJmoht2U" role="37wK5m" />
             </node>
           </node>

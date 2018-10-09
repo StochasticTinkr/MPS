@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,7 +25,8 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class SimpleFindForIntroduceLocalVariable_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SimpleFindForIntroduceLocalVariable_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SimpleFindForIntroduceLocalVariable_Test() {
     super(ourParamCache);
@@ -30,11 +34,15 @@ public class SimpleFindForIntroduceLocalVariable_Test extends BaseTransformation
 
   @Test
   public void test_SimpleFindAndMoveForIntroduceLocalVariableTest() throws Throwable {
-    runTest("jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test$TestBody", "test_SimpleFindAndMoveForIntroduceLocalVariableTest", true);
+    new SimpleFindForIntroduceLocalVariable_Test.TestBody(this).test_SimpleFindAndMoveForIntroduceLocalVariableTest();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_SimpleFindAndMoveForIntroduceLocalVariableTest() throws Exception {
       addNodeById("7568753874916226563");
       addNodeById("7568753874916226633");

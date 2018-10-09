@@ -1043,7 +1043,7 @@
       <node id="5447719361346490762" at="89,12,90,24" concept="7" />
       <node id="5447719361346490762" at="91,15,92,40" concept="1" />
       <node id="5447719361346490757" at="95,40,96,169" concept="6" />
-      <node id="5447719361346490757" at="100,39,101,134" concept="7" />
+      <node id="5447719361346490757" at="100,39,101,124" concept="7" />
       <node id="5447719361346490757" at="103,31,104,60" concept="1" />
       <node id="5447719361346490757" at="104,60,105,48" concept="1" />
       <node id="5447719361346490757" at="105,48,106,43" concept="1" />
@@ -1062,7 +1062,7 @@
       <node id="5447719361346490757" at="129,87,130,145" concept="7" />
       <node id="5447719361346490757" at="131,10,132,22" concept="7" />
       <node id="3607579524910560683" at="137,0,138,0" concept="2" trace="myReferencingNode" />
-      <node id="3607579524910560683" at="139,119,140,21" concept="9" />
+      <node id="3607579524910560683" at="139,109,140,21" concept="9" />
       <node id="3607579524910560683" at="140,21,141,42" concept="1" />
       <node id="3607579524910560683" at="141,42,142,20" concept="1" />
       <node id="3607579524910560683" at="145,41,146,32" concept="7" />
@@ -1100,7 +1100,7 @@
       <node id="5447719361346490757" at="98,72,103,31" concept="6" />
       <node id="5447719361346490757" at="122,301,127,7" concept="6" />
       <node id="5447719361346490757" at="127,7,132,22" concept="4" />
-      <node id="3607579524910560683" at="139,0,144,0" concept="0" trace="Inline_Builder_84i1v2_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3607579524910560683" at="139,0,144,0" concept="0" trace="Inline_Builder0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3607579524910560683" at="149,0,154,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3607579524910560685" at="167,308,172,11" concept="6" />
       <node id="3607579524910560685" at="172,11,177,26" concept="4" />
@@ -1116,7 +1116,7 @@
       <scope id="5447719361346490757" at="55,39,56,32" />
       <scope id="5447719361346490762" at="82,41,83,118" />
       <scope id="5447719361346490762" at="91,15,92,40" />
-      <scope id="5447719361346490757" at="100,39,101,134" />
+      <scope id="5447719361346490757" at="100,39,101,124" />
       <scope id="5447719361346490757" at="118,15,119,90" />
       <scope id="5447719361346490757" at="124,39,125,113" />
       <scope id="3607579524910560683" at="145,41,146,32" />
@@ -1142,7 +1142,7 @@
       <scope id="5447719361346490757" at="124,0,127,0">
         <var name="it" id="5447719361346490757" />
       </scope>
-      <scope id="3607579524910560683" at="139,119,142,20" />
+      <scope id="3607579524910560683" at="139,109,142,20" />
       <scope id="3607579524910560683" at="145,0,148,0" />
       <scope id="3607579524910560685" at="169,0,172,0">
         <var name="it" id="3607579524910560685" />
@@ -1195,9 +1195,9 @@
       <unit id="5447719361346490762" at="81,102,85,7" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$1" />
       <unit id="5447719361346490757" at="99,74,103,9" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$2$1" />
       <unit id="5447719361346490757" at="123,102,127,5" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$3" />
-      <unit id="3607579524910560685" at="168,104,172,9" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$Inline_Builder_84i1v2_a1a$1" />
+      <unit id="3607579524910560685" at="168,104,172,9" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$Inline_Builder0$1" />
       <unit id="5447719361346490757" at="97,42,109,5" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$2" />
-      <unit id="3607579524910560683" at="134,0,183,0" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$Inline_Builder_84i1v2_a1a" />
+      <unit id="3607579524910560683" at="134,0,183,0" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a$Inline_Builder0" />
       <unit id="5447719361346490757" at="40,0,184,0" name="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_EditorBuilder_a" />
     </file>
   </root>

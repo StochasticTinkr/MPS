@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +30,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeGetReferencesOperation_Test.class, "${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public SNodeGetReferencesOperation_Test() {
     super(ourParamCache);
@@ -35,39 +39,43 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
 
   @Test
   public void test_size() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_size", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_size();
   }
   @Test
   public void test_target() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_target", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_target();
   }
   @Test
   public void test_linkDeclaration() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_linkDeclaration", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_linkDeclaration();
   }
   @Test
   public void test_roles() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_roles", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_roles();
   }
   @Test
   public void test_resolveInfo() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_resolveInfo", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_resolveInfo();
   }
   @Test
   public void test_unspecifiedReferences() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unspecifiedReferences", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_unspecifiedReferences();
   }
   @Test
   public void test_unresolvedReference() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unresolvedReference", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_unresolvedReference();
   }
   @Test
   public void test_forNull() throws Throwable {
-    runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forNull", true);
+    new SNodeGetReferencesOperation_Test.TestBody(this).test_forNull();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
     public void test_size() throws Exception {
       addNodeById("2906110183022219846");
       addNodeById("2906110183022219807");
@@ -153,7 +161,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       });
       Assert.assertEquals(1, Sequence.fromIterable(unspecifiedReferences).count());
       SReference theReference = Sequence.fromIterable(unspecifiedReferences).first();
-      Assert.assertEquals(unspecifiedReferenceName, check_s3ecl5_a31a5o(SLinkOperations.getRefLink(theReference)));
+      Assert.assertEquals(unspecifiedReferenceName, check_s3ecl5_a31a8o(SLinkOperations.getRefLink(theReference)));
       Assert.assertEquals(SNodeOperations.cast(getNodeById("2906110183022219849"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x3dd540b968e9fc4L, "GrandChild"))), SLinkOperations.getTargetNode(theReference));
     }
     public void test_unresolvedReference() throws Exception {
@@ -211,7 +219,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       SNodeAccessUtil.setReferenceTarget(input, referenceName, referenceTarget);
       return referenceName;
     }
-    private static String check_s3ecl5_a31a5o(SReferenceLink checkedDotOperand) {
+    private static String check_s3ecl5_a31a8o(SReferenceLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

@@ -16,16 +16,11 @@
 package jetbrains.mps.nodeEditor.checking;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public interface EditorChecker {

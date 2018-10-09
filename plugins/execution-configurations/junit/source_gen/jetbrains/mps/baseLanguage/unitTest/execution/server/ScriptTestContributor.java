@@ -17,6 +17,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.annotations.Nullable;
 import org.junit.runner.Description;
 
 /**
@@ -52,14 +53,14 @@ import org.junit.runner.Description;
         final PersistenceFacade pf = myEnv.getPlatform().findComponent(PersistenceRegistry.class);
         final ArrayList<Request> rv = new ArrayList<Request>();
         for (ExecutorScript.TestRecord tr : CollectionSequence.fromCollection(myExecScript.getTests())) {
-          SModule testModule = pf.createModuleReference(tr.myTestModule).resolve(repo);
+          SModule testModule0 = pf.createModuleReference(tr.myTestModule).resolve(repo);
           final Exception failure;
-          ReloadableModule classProvider = null;
-          if (testModule instanceof ReloadableModule) {
-            classProvider = (ReloadableModule) testModule;
+          ReloadableModule testModule = null;
+          if (testModule0 instanceof ReloadableModule) {
+            testModule = (ReloadableModule) testModule0;
             failure = null;
           } else {
-            if (testModule == null) {
+            if (testModule0 == null) {
               failure = new Exception(String.format("Failed to find test module %s", tr.myTestModule));
             } else {
               failure = new Exception(String.format("Test module %s is not capable to load classes", tr.myTestModule));
@@ -67,22 +68,60 @@ import org.junit.runner.Description;
           }
 
           for (int i = 0; i < tr.myTestQualifiedName.size(); i++) {
-            String className = tr.myTestQualifiedName.get(i);
-            if (classProvider == null) {
-              assert failure != null;
-              rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(className))));
-            } else {
-              try {
-                Class<?> testClass = classProvider.getOwnClass(className);
-                rv.add(Request.runner(myRunnerBuilder.safeRunnerForClass(testClass)));
-              } catch (Exception ex) {
-                rv.add(Request.runner(new AssumptionFailedRunner(failure, Description.createSuiteDescription(className))));
-              }
-            }
+            String qualifiedName = tr.myTestQualifiedName.get(i);
+            String isTestCaseProp = tr.isTestCase.get(i);
+            boolean isTestCase = Boolean.valueOf(isTestCaseProp) == Boolean.TRUE;
+            Request request = (isTestCase ? processTestCase(testModule, failure, qualifiedName) : processTestMethod(testModule, failure, qualifiedName));
+            rv.add(request);
           }
         }
         return rv;
       }
     });
+
+  }
+
+  @NotNull
+  private Request processTestCase(@Nullable ReloadableModule testModule, Exception failure, String fqName) {
+    if (testModule == null) {
+      assert failure != null;
+      return createFailedRequestForClass(fqName, failure);
+    }
+    try {
+      Class<?> testClass = testModule.getOwnClass(fqName);
+      return Request.runner(myRunnerBuilder.safeRunnerForClass(testClass));
+    } catch (Exception ex) {
+      return createFailedRequestForClass(fqName, ex);
+    }
+  }
+
+  @NotNull
+  private Request processTestMethod(@Nullable ReloadableModule testModule, Exception failure, String qualifiedName) {
+    int indexOfLastDot = qualifiedName.lastIndexOf('.');
+    if (indexOfLastDot < 0) {
+      return createFailedRequestForMethod(qualifiedName, "", new IllegalStateException("The qualified name of the test " + qualifiedName + " does not contain '.'"));
+    }
+    String testFqName = qualifiedName.substring(0, indexOfLastDot);
+    String methodName = qualifiedName.substring(indexOfLastDot + 1);
+    if (testModule == null) {
+      assert failure != null;
+      return createFailedRequestForMethod(testFqName, methodName, failure);
+    }
+    try {
+      Class<?> testClass = testModule.getOwnClass(testFqName);
+      Request classRequest = Request.runner(myRunnerBuilder.safeRunnerForClass(testClass));
+      Request filteredRequest = classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
+      return filteredRequest;
+    } catch (Exception ex) {
+      return createFailedRequestForMethod(testFqName, methodName, ex);
+    }
+  }
+
+  private Request createFailedRequestForClass(String fqName, Exception e) {
+    return Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
+  }
+
+  private Request createFailedRequestForMethod(String testFqName, String methodName, Exception e) {
+    return Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
   }
 }

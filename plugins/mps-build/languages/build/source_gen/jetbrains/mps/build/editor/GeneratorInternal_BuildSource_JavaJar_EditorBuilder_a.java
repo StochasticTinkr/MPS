@@ -78,7 +78,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new GeneratorInternal_BuildSource_JavaJar_EditorBuilder_a.Inline_Builder_g0zw24_a1a(getEditorContext(), getNode(), targetNode).createCell();
+            return new GeneratorInternal_BuildSource_JavaJar_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
         }, targetNode, "targetJar");
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
@@ -115,12 +115,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_g0zw24_a1a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_g0zw24_a1a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
@@ -143,7 +143,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       return editorCell;
     }
     private EditorCell createRefNode_0() {
-      SingleRoleCellProvider provider = new GeneratorInternal_BuildSource_JavaJar_EditorBuilder_a.Inline_Builder_g0zw24_a1a.pathSingleRoleHandler_g0zw24_a0a1a(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"), getEditorContext());
+      SingleRoleCellProvider provider = new GeneratorInternal_BuildSource_JavaJar_EditorBuilder_a.Inline_Builder0.pathSingleRoleHandler_g0zw24_a0a1a(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"), getEditorContext());
       return provider.createCell();
     }
     private static class pathSingleRoleHandler_g0zw24_a0a1a extends SingleRoleCellProvider {

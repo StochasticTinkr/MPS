@@ -6,8 +6,11 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
+import org.junit.Rule;
+import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,7 +20,8 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 public class InstanceMethodTypeArgumentMatch_Test extends BaseTransformationTest {
   @ClassRule
   public static final TestParametersCache ourParamCache = new TestParametersCache(InstanceMethodTypeArgumentMatch_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-
+  @Rule
+  public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
   public InstanceMethodTypeArgumentMatch_Test() {
     super(ourParamCache);
@@ -25,167 +29,171 @@ public class InstanceMethodTypeArgumentMatch_Test extends BaseTransformationTest
 
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512839185() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512839185", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512839185();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927021579() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927021579", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624927021579();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512847809() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512847809", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512847809();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927441074() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927441074", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624927441074();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512856434() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512856434", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512856434();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929572892() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929572892", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929572892();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512865058() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512865058", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512865058();
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929362829() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929362829", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeVariableInitializerIsRedundantWarningCheck6923385624929362829();
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512873683() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512873683", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeUnusedLocalVariableCheck215889526512873683();
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927009930() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927009930", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIncorrectNumberOfTypeCheck6923385624927009930();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929166530() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929166530", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929166530();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929708692() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929708692", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929708692();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927049150() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927049150", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927049150();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928378725() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928378725", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928378725();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927611666() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927611666", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927611666();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929723190() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929723190", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929723190();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929895287() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929895287", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929895287();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927258655() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927258655", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927258655();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929700991() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929700991", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929700991();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928822960() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928822960", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928822960();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927647367() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927647367", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927647367();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927575360() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927575360", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927575360();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929215028() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929215028", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929215028();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927277632() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927277632", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927277632();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928923997() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928923997", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928923997();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928928918() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928928918", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928928918();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927080539() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927080539", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927080539();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927748937() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927748937", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927748937();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928028310() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928028310", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928028310();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928777915() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928777915", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928777915();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929577261() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929577261", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929577261();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928383085() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928383085", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928383085();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928303471() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928303471", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928303471();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928966307() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928966307", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624928966307();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929162156() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929162156", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624929162156();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927120256() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927120256", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927120256();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927908709() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927908709", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927908709();
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927944514() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927944514", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_NodeIsNotValidSubstituteForCheck6923385624927944514();
   }
   @Test
   public void test_ErrorMessagesCheck4817790028255000239() throws Throwable {
-    runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_ErrorMessagesCheck4817790028255000239", true);
+    new InstanceMethodTypeArgumentMatch_Test.TestBody(this).test_ErrorMessagesCheck4817790028255000239();
   }
 
-  @MPSLaunch
-  public static class TestBody extends BaseTestBody {
+  /*package*/ static class TestBody extends BaseTestBody {
+
+    /*package*/ TestBody(TransformationTest owner) {
+      super(owner);
+    }
+
 
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927501558"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
