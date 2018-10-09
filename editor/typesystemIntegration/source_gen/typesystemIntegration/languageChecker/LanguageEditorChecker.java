@@ -57,10 +57,9 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
 
   private final ErrorComponents myErrorComponents;
 
-  private RefScopeCheckerInEditor myScopeChecker;
   public LanguageEditorChecker(@NotNull SRepository projectRepo) {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
-    SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
+    SetSequence.fromSet(myRules).addElement(new RefScopeCheckerInEditor());
     SetSequence.fromSet(myRules).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker().withoutBrokenReferences());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
@@ -148,7 +147,6 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
       if (typeCheckingContext != null) {
         typeCheckingContext.setIsNonTypesystemComputation();
       }
-      myScopeChecker.setEditorComponent((EditorComponent) editorContext.getEditorComponent());
       return errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository(), cancellable);
     } finally {
       if (typeCheckingContext != null) {

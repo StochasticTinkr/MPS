@@ -59,7 +59,11 @@ public class QuickFixRuntimeEditorWrapper {
     editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
       @Override
       public void doExecute() {
-        myQuickFix.execute(editorContext.getRepository());
+        if (myQuickFix instanceof EditorContextQuickfix) {
+          ((EditorContextQuickfix) myQuickFix).execute(editorContext);
+        } else {
+          myQuickFix.execute(editorContext.getRepository());
+        }
       }
     });
   }
