@@ -606,7 +606,8 @@ public class NodeEditorActions {
       }
       if (selection instanceof SingularSelection) {
         EditorCell editorCell = ((SingularSelection) selection).getEditorCell();
-        return editorCell.getSNode().getParent() != null;
+        // we cannot enlarge selection for root nodes or top-level nodes in editor
+        return editorCell.getSNode().getParent() != null && editorCell.getSNode() != context.getEditorComponent().getEditedNode();
       }
       return false;
     }
