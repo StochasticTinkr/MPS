@@ -12,11 +12,13 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class CanBeChildFail_Constraints extends BaseConstraintsDescriptor {
-  public CanBeChildFail_Constraints() {
-    super(MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL, "constraints.test.structure.CanBeChildFail"));
+public class TestConstraintsInheritance_Derived1_Constrained_Constraints extends BaseConstraintsDescriptor {
+  public TestConstraintsInheritance_Derived1_Constrained_Constraints() {
+    super(MetaAdapterFactory.getInterfaceConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L, "constraints.test.structure.TestConstraintsInheritance_Derived1_Constrained"));
   }
 
   @Override
@@ -35,7 +37,7 @@ public class CanBeChildFail_Constraints extends BaseConstraintsDescriptor {
     };
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    return false;
+    return !(SPropertyOperations.getBoolean((SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, "constraints.test.structure.TestConstraintsInheritance_Container"))), MetaAdapterFactory.getProperty(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, 0x50b9acb92ed7312aL, "triggerD1")));
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)", "730305212589427430");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)", "5816870305080501534");
 }

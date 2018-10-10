@@ -14,9 +14,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class CanBeParentFail_Constraints extends BaseConstraintsDescriptor {
-  public CanBeParentFail_Constraints() {
-    super(MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL, "constraints.test.structure.CanBeParentFail"));
+public class TestConstraintsInvocation_CanBeParentFail_Constraints extends BaseConstraintsDescriptor {
+  public TestConstraintsInvocation_CanBeParentFail_Constraints() {
+    super(MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL, "constraints.test.structure.TestConstraintsInvocation_CanBeParentFail"));
   }
 
   @Override
@@ -35,7 +35,7 @@ public class CanBeParentFail_Constraints extends BaseConstraintsDescriptor {
     };
   }
   private static boolean staticCanBeAParent(SNode node, SNode childNode, SAbstractConcept childConcept, SContainmentLink link) {
-    return !(childConcept.equals(MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L, "constraints.test.structure.Child")));
+    return !(childConcept.equals(MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L, "constraints.test.structure.TestConstraintsInvocation_Child")));
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)", "730305212589401486");
 }

@@ -34,5 +34,58 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="TestConstraints.test.ConstraintsReferenceInheritence_Handler1_Test" file="ConstraintsReferenceInheritence_Handler1_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="TestConstraints.test.ConstraintsReferenceInheritence_Handler2_Test" file="ConstraintsReferenceInheritence_Handler2_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="TestConstraints.test.ConstraintsReferenceInheritence_Handler3_Test" file="ConstraintsReferenceInheritence_Handler3_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="TestConstraints.test.ConstraintsReferenceInheritence_Scopes_Test" file="ConstraintsReferenceInheritence_Scopes_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.RunWithCommand" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Rule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
 </dependenciesRoot>
 

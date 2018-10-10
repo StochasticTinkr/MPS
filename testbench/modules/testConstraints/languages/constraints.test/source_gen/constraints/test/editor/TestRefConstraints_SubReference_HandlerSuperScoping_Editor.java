@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class Container_Editor extends DefaultNodeEditor {
+public class TestRefConstraints_SubReference_HandlerSuperScoping_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new Container_EditorBuilder_a(editorContext, node).createCell();
+    return new TestRefConstraints_SubReference_HandlerSuperScoping_EditorBuilder_a(editorContext, node).createCell();
   }
 }

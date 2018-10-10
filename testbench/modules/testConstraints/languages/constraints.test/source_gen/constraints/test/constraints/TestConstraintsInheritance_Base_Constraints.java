@@ -16,9 +16,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class Derived2_Constrained_Constraints extends BaseConstraintsDescriptor {
-  public Derived2_Constrained_Constraints() {
-    super(MetaAdapterFactory.getInterfaceConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L, "constraints.test.structure.Derived2_Constrained"));
+public class TestConstraintsInheritance_Base_Constraints extends BaseConstraintsDescriptor {
+  public TestConstraintsInheritance_Base_Constraints() {
+    super(MetaAdapterFactory.getInterfaceConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL, "constraints.test.structure.TestConstraintsInheritance_Base"));
   }
 
   @Override
@@ -37,7 +37,7 @@ public class Derived2_Constrained_Constraints extends BaseConstraintsDescriptor 
     };
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    return !(SPropertyOperations.getBoolean((SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, "constraints.test.structure.Container"))), MetaAdapterFactory.getProperty(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, 0x50b9acb92ed7312dL, "triggerD2")));
+    return !(SPropertyOperations.getBoolean((SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, "constraints.test.structure.TestConstraintsInheritance_Container"))), MetaAdapterFactory.getProperty(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L, 0x50b9acb92ed73128L, "triggerBase")));
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)", "5816870305080509283");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)", "5816870305080488341");
 }
