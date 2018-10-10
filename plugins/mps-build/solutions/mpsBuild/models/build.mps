@@ -8123,10 +8123,10 @@
             <ref role="3bR37D" node="7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7H2tuUsEQDg" role="3bR37C">
-          <node concept="3bR9La" id="7H2tuUsEQDh" role="1SiIV1">
+        <node concept="1SiIV0" id="2h_Fs2zJ11M" role="3bR37C">
+          <node concept="3bR9La" id="2h_Fs2zJ11N" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6KZA" resolve="jetbrains.mps.baseLanguage.classifiers" />
+            <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
       </node>
