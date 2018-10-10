@@ -7,26 +7,30 @@ import java.util.Comparator;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.util.Function;
 import jetbrains.mps.ide.editor.util.renderer.BaseRenderer;
+import jetbrains.mps.util.annotation.ToRemove;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import com.intellij.openapi.ui.popup.JBPopup;
-import com.intellij.ui.components.JBList;
-import com.intellij.ui.SortedListModel;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.ListCellRenderer;
+import jetbrains.mps.classloading.ModuleClassLoader;
+import javax.swing.JList;
+import com.intellij.ui.components.JBList;
+import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
-import java.util.List;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.ui.SortedListModel;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.Nullable;
 import java.util.function.Consumer;
-import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import javax.swing.ListSelectionModel;
-import jetbrains.mps.classloading.ModuleClassLoader;
 
 public final class GoToContextMenuHelper {
   private final Project myProject;
@@ -34,6 +38,70 @@ public final class GoToContextMenuHelper {
   private final Comparator<NodeNavigatable> myComparator;
   private final Function<NodeNavigatable, String> myNamerForFiltering;
   private final BaseRenderer myRenderer;
+
+  /**
+   * left for the mbeddr compatibility
+   * 
+   * @deprecated use the new method instead
+   */
+  @Deprecated
+  @ToRemove(version = 183)
+  public static void showMenu(Project project, String title, List<SNodeReference> nodes, final BaseRenderer renderer, RelativePoint point) {
+    if (ListSequence.fromList(nodes).isEmpty()) {
+      return;
+    }
+    List<NodeNavigatable> navigatables = new ArrayList<NodeNavigatable>();
+    for (SNodeReference node : nodes) {
+      navigatables.add(new NodeNavigatable(project, node));
+    }
+    Collections.sort(navigatables, new Comparator<NodeNavigatable>() {
+      @Override
+      public int compare(NodeNavigatable o1, NodeNavigatable o2) {
+        return getText(o1).compareTo(getText(o2));
+      }
+
+      private String getText(NodeNavigatable element) {
+        return element.getNodePointer().toString();
+      }
+    });
+    openTargets(point, navigatables, title, renderer);
+  }
+
+  @ToRemove(version = 183)
+  @Deprecated
+  private static void openTargets(RelativePoint p, List<NodeNavigatable> targets, String title, ListCellRenderer listRenderer) {
+    assert !(GoToContextMenuHelper.class.getClassLoader() instanceof ModuleClassLoader) : "if this class is loaded by a reloadable classloader, this will cause memleaks. See MPS-13481";
+    if (targets.isEmpty()) {
+      return;
+    }
+    if (targets.size() == 1) {
+      targets.get(0).navigate(true);
+    } else {
+      final JList list = new JBList(targets.toArray());
+      list.setCellRenderer(listRenderer);
+      new PopupChooserBuilder(list).setTitle(title).setMovable(true).setItemChoosenCallback(new Runnable() {
+        @Override
+        public void run() {
+          int[] ids = list.getSelectedIndices();
+          if (ids == null || ids.length == 0) {
+            return;
+          }
+          Object[] selectedElements = list.getSelectedValues();
+          for (Object element : selectedElements) {
+            NodeNavigatable selected = (NodeNavigatable) element;
+            selected.navigate(true);
+          }
+        }
+      }).createPopup().show(p);
+    }
+  }
+
+  public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {
+    if (inputEvent instanceof MouseEvent) {
+      return new RelativePoint(((MouseEvent) inputEvent));
+    }
+    return new RelativePoint((EditorComponent) selectedCell.getEditorComponent(), new Point(selectedCell.getX(), selectedCell.getY()));
+  }
 
   private static final Comparator<SNodeReference> DEFAULT_COMPARATOR = new Comparator<SNodeReference>() {
     @Override
@@ -50,6 +118,7 @@ public final class GoToContextMenuHelper {
     public final JBPopup myPopup;
     public final JBList<NodeNavigatable> myJBList;
     public final SortedListModel<NodeNavigatable> myListModel;
+
     public ContextMenuComposite(@NotNull JBPopup popup, @NotNull JBList<NodeNavigatable> jbList, @NotNull SortedListModel<NodeNavigatable> listModel) {
       myPopup = popup;
       myJBList = jbList;
@@ -73,13 +142,6 @@ public final class GoToContextMenuHelper {
 
   public GoToContextMenuHelper(@NotNull MPSProject project, @NotNull CaptionFunction captionFun, @NotNull BaseRenderer renderer) {
     this(project, captionFun, renderer, null, null);
-  }
-
-  public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {
-    if (inputEvent instanceof MouseEvent) {
-      return new RelativePoint(((MouseEvent) inputEvent));
-    }
-    return new RelativePoint((EditorComponent) selectedCell.getEditorComponent(), new Point(selectedCell.getX(), selectedCell.getY()));
   }
 
   @NotNull
