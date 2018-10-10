@@ -559,7 +559,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
     private EditorCell createReferencePresentation_0() {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x10fd54746ddL, "template")));
-      editorCell.setCellId("ReferencePresentation_pxqe0v_a0d0");
+      editorCell.setCellId("templateName");
       return editorCell;
     }
   }

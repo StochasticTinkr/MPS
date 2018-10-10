@@ -3561,7 +3561,11 @@
         <property role="1$x2rV" value="&lt;no template&gt;" />
         <ref role="1NtTu8" to="tpf8:gZlhOrt" resolve="template" />
         <node concept="1sVBvm" id="gZliaeC" role="1sWHZn">
-          <node concept="3SHvHV" id="2fA4VmRaTU7" role="2wV5jI" />
+          <node concept="3SHvHV" id="2fA4VmRaTU7" role="2wV5jI">
+            <node concept="2SqB2G" id="3ciHSU5wk2n" role="2SqHTX">
+              <property role="TrG5h" value="templateName" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="l2Vlx" id="i0NjrgX" role="2iSdaV" />
