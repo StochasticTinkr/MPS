@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.DefaultStreamManager;
 import java.util.function.Consumer;
@@ -62,8 +63,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // each file of retained model reported as kept 
     final IFile outputRoot = null;
     IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
-    // XXX FilesDelta need IFile just for the sake of delta merge (it's possible to merge only deltas that share common 'key' prefix, which is file) 
-    final FilesDelta fd = new FilesDelta(actualOutputRoot);
+    final FilesDelta fd = new FilesDelta(new DeltaKey(new Object[]{myModule}));
     for (SModel m : Sequence.fromIterable(retainedModels)) {
       GenerationDependencies gdc = genDeps.get(m);
       if (gdc == null) {
@@ -107,7 +107,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // Could ne new FDC() right in the facet code and then feed this manager with fdc.getDelta() result 
     FileDeltaCollector rv = myModelLocationStreams.get(outputDir);
     if (rv == null) {
-      rv = newStreamHandler(outputDir);
+      // FIXME model arg for newStreamHandler could not be null 
+      rv = newStreamHandler(null, outputDir);
       myModelLocationStreams.put(outputDir, rv);
     }
     return rv;
@@ -129,9 +130,10 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 
 
-  /*package*/ FileDeltaCollector newStreamHandler(IFile outputDir) {
-    // FDC needs actual path as it creates IFile from filename string at that location. Besides, dir is used as a key for FilesDelta there. 
-    return new FileDeltaCollector(myPath2File.invoke(outputDir.getPath()), myFileStorage);
+  /*package*/ FileDeltaCollector newStreamHandler(SModel model, IFile outputDir) {
+    DeltaKey dk = new DeltaKey(new Object[]{model.getModule(), model});
+    // FDC needs actual path as it creates IFile from filename string at that location 
+    return new FileDeltaCollector(new FilesDelta(dk), myPath2File.invoke(outputDir.getPath()), myFileStorage);
   }
 
   /*package*/ void updateWith(IFile outputDir, FileDeltaCollector fdc) {
@@ -156,15 +158,17 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // walk delta of each MyModelLocationStreams.values() + mySourceGenStreams and record files were modified and therefore we shall not delete 
     // then for each file we treat as generated (either we've walked source_gen or we've read cached information with generated files paths) 
     // check if it's in the first list, and for those missing report 'stale'. 
-    List<IDelta> rv = ListSequence.fromListWithValues(new ArrayList<IDelta>(), myRetainedFilesDelta);
     if (mySourceGenStreams != null) {
       for (StaleFilesCollector fc : CollectionSequence.fromCollection(myStaleFileCollectors.values())) {
         fc.recordFilesToKeep(mySourceGenStreams.getDelta());
       }
     }
+    FilesDelta d = new FilesDelta(new DeltaKey(new Object[]{myModule}));
     for (StaleFilesCollector fc : CollectionSequence.fromCollection(myStaleFileCollectors.values())) {
-      ListSequence.fromList(rv).addElement(fc.reportStaleFiles());
+      fc.reportStaleFilesInto(d);
     }
+    List<IDelta> rv = ListSequence.fromListWithValues(new ArrayList<IDelta>(), myRetainedFilesDelta);
+    ListSequence.fromList(rv).addElement(d);
     return rv;
   }
 

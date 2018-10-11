@@ -26,6 +26,7 @@ import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -81,7 +82,7 @@ public class Makeup_Facet extends IFacet.Stub {
               subProgress_a0a0a.start("Markup textgen outcome", Sequence.fromIterable(input).count() + 2);
 
               final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
-              final List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
+              List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
 
               // XXX can I ask e.g. project for its FS? 
               final FileSystem localFileSystem = FileSystem.getInstance();
@@ -103,6 +104,7 @@ public class Makeup_Facet extends IFacet.Stub {
                 if (outputModelRepo == null) {
                   outputModelRepo = monitor.getSession().getProject().getRepository();
                 }
+                final FilesDelta d = new FilesDelta(new DeltaKey(new Object[]{res.getModule(), res.getModel()}));
                 outputModelRepo.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
                     for (TextUnit tu : generatedTextUnits) {
@@ -124,16 +126,15 @@ public class Makeup_Facet extends IFacet.Stub {
                       // next code could be outside of model read 
                       IFile destFile = localFileSystem.getFile(destination);
                       boolean changed = fp.saveContent(destFile, tu.getBytes());
-                      FilesDelta d = new FilesDelta(destFile.getParent());
                       if (changed) {
                         d.written(destFile);
                       } else {
                         d.kept(destFile);
                       }
-                      ListSequence.fromList(deltas).addElement(d);
                     }
                   }
                 });
+                ListSequence.fromList(deltas).addElement(d);
                 subProgress_a0a0a.advance(1);
                 subProgress_a0a0a.step(res.getModel().getName().getLongName());
               }

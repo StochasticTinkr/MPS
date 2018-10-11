@@ -117,7 +117,7 @@ public class StaleFilesCollector {
 
   /**
    * May be invoked multiple times, updates internal state of what files are considered 'touched' according to delta supplied
-   * These files are not reported as 'stale' from {@link jetbrains.mps.internal.make.runtime.util.StaleFilesCollector#reportStaleFiles() }
+   * These files are not reported as 'stale' by {@link jetbrains.mps.internal.make.runtime.util.StaleFilesCollector#reportStaleFilesInto(FilesDelta) }
    */
   public void recordFilesToKeep(FilesDelta delta) {
     delta.acceptVisitor(new FilesDelta.Visitor() {
@@ -134,13 +134,7 @@ public class StaleFilesCollector {
     });
   }
 
-  public FilesDelta reportStaleFiles() {
-    FilesDelta rv = new FilesDelta(rootDir);
-    reportStaleFilesInto(rv);
-    return rv;
-  }
-
-  private void reportStaleFilesInto(FilesDelta delta) {
+  public void reportStaleFilesInto(FilesDelta delta) {
     for (IFile f : collectFilesToDelete()) {
       delta.stale(f);
     }

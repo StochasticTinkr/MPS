@@ -12,14 +12,31 @@ public class FileDeltaCollector implements StreamHandler {
   private final IFile myOutputDir;
   private final FileProcessor myProcessor;
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.internal.make.runtime.java.FileDeltaCollector#FileDeltaCollector(FilesDelta, IFile, FileProcessor) } instead
+   */
+  @Deprecated
   public FileDeltaCollector(IFile outputDir, FileProcessor fileProcessor) {
-    myDelta = new FilesDelta(outputDir);
+    this(new FilesDelta(outputDir), outputDir, fileProcessor);
+  }
+
+  /**
+   * 
+   * @param delta added streams are reported to this delta
+   * @param outputDir file created by simple names are relative to this directory
+   * @param fileProcessor holds file contents
+   */
+  public FileDeltaCollector(FilesDelta delta, IFile outputDir, FileProcessor fileProcessor) {
+    myDelta = delta;
     myOutputDir = outputDir;
     myProcessor = fileProcessor;
   }
+
   public FilesDelta getDelta() {
     return myDelta;
   }
+
   @Override
   public void saveStream(String name, String content) {
     IFile file = getFile(name);

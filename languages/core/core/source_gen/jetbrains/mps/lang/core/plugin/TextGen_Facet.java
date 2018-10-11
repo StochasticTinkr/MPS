@@ -316,8 +316,8 @@ public class TextGen_Facet extends IFacet.Stub {
                       // except to pass to staleFileManager 
                       final IFile javaOutputDir = DefaultStreamManager.Provider.getOutputDir(inputResource.model());
                       final IFile cacheOutputDir = DefaultStreamManager.Provider.getCachesDir(inputResource.model());
-                      FileDeltaCollector javaSourcesLoc = staleFilesManager.newStreamHandler(javaOutputDir);
-                      FileDeltaCollector cachesLocation = staleFilesManager.newStreamHandler(cacheOutputDir);
+                      FileDeltaCollector javaSourcesLoc = staleFilesManager.newStreamHandler(inputResource.model(), javaOutputDir);
+                      FileDeltaCollector cachesLocation = staleFilesManager.newStreamHandler(inputResource.model(), cacheOutputDir);
                       // 
                       // Serialize outcome 
                       GenerationDependencies genDeps = inputResource.status().getDependencies();
@@ -361,11 +361,12 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   });
                 }
+                List<IDelta> moduleWideStaleFiles = ListSequence.fromList(new ArrayList<IDelta>());
                 for (ModuleStaleFileManager sfm : CollectionSequence.fromCollection(moduleStaleFilesMap.values())) {
                   // StaleFilesCollector.reportStaleFiles, inside, walks FS, let it do the job prior to flushing anything to disk not to get confused with new files 
-                  List<IDelta> moduleWideStaleFiles = sfm.getModuleWideDelta();
-                  _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(moduleWideStaleFiles))));
+                  ListSequence.fromList(moduleWideStaleFiles).addSequence(ListSequence.fromList(sfm.getModuleWideDelta()));
                 }
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(moduleWideStaleFiles))));
 
                 // flush stream handlers 
                 if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
