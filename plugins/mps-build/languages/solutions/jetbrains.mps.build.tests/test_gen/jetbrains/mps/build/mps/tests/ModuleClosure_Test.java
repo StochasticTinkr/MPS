@@ -17,6 +17,7 @@ import java.util.HashSet;
 import jetbrains.mps.build.mps.util.MPSModulesPartitioner;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @MPSLaunch
 public class ModuleClosure_Test extends EnvironmentAwareTestCase {
@@ -89,6 +90,46 @@ public class ModuleClosure_Test extends EnvironmentAwareTestCase {
         Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(s));
         Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(rt));
         Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(l));
+      }
+    });
+  }
+  public void test_moduleUsedLanguageOfUsedLanguageIsInRTDeps() throws Exception {
+    myProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SModel m = null;
+        SNode project1 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+        SNode rt1 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
+        SPropertyOperations.assign(rt1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "rt1");
+        SNode rt2 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
+        SPropertyOperations.assign(rt2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "rt2");
+        SNode l2 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
+        SPropertyOperations.assign(l2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "l2");
+        SNode l1 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
+        SPropertyOperations.assign(l1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "l1");
+        ListSequence.fromList(SLinkOperations.getChildren(project1, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(rt1);
+        ListSequence.fromList(SLinkOperations.getChildren(project1, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(rt2);
+        ListSequence.fromList(SLinkOperations.getChildren(project1, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(l1);
+        ListSequence.fromList(SLinkOperations.getChildren(project1, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(l2);
+
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(l1, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, 0x2c4467914643d2d3L, "language"), l2);
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(l1, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x2c4467914643be24L, "runtime"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, 0x2c4467914644b6e4L, "solution"), rt1);
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(l2, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x2c4467914643be24L, "runtime"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, 0x2c4467914644b6e4L, "solution"), rt2);
+
+        SNode project2 = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+        SNode sln = SModelOperations.createNewNode(m, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
+        ListSequence.fromList(SLinkOperations.getChildren(project2, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(sln);
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(project2, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"), project1);
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(sln, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage")), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, 0x2c4467914643d2d3L, "language"), l1);
+
+        Set<SNode> clAsSet = SetSequence.fromSet(new HashSet<SNode>());
+        MPSModulesPartitioner p = new MPSModulesPartitioner(project2);
+        p.buildChunks();
+        p.buildExternalDependencies();
+        SetSequence.fromSet(clAsSet).addSequence(Sequence.fromIterable(p.getExternal()));
+        Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(rt1));
+        Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(rt2));
+        Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(l1));
+        Assert.assertTrue(SetSequence.fromSet(clAsSet).contains(l2));
       }
     });
   }
