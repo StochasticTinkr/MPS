@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9bzbenqcj5wwh89nzonsoasg34r10qh" />
+<product version="3" modelHash="9bzbenqcj5wwh89nzonsoasg34r10qh">
+  <files names="CreateX_Test.java:CreateY_Test.java:Create_Test.java:RemoveY_Test.java" />
+</product>
 

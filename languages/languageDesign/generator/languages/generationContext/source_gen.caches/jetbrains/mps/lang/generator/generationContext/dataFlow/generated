@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1g0mgi8vde0y4p15eyo110bfk1rlwo1" />
+<product version="3" modelHash="-1g0mgi8vde0y4p15eyo110bfk1rlwo1">
+  <files names="DataFlowAspectDescriptorImpl.java:GenerationContextOp_CreateIndexedName_DataFlow.java:GenerationContextOp_CreateUniqueName_DataFlow.java:GenerationContextOp_GetCopiedOutputByInput_DataFlow.java:GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow.java:GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow.java:GenerationContextOp_GetOutputByLabelAndInput_DataFlow.java:GenerationContextOp_GetOutputListByLabelAndInput_DataFlow.java:GenerationContextOp_ShowMessageBase_DataFlow.java:GenerationContextOp_UserObjectAccessBase_DataFlow.java" />
+</product>
 

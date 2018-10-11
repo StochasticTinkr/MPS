@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d4gguvruocmmab6v88tpht4uagmjdot" />
+<product version="3" modelHash="-d4gguvruocmmab6v88tpht4uagmjdot">
+  <files names="TypesystemDescriptor.java:typeof_OverrideAnnotation_InferenceRule.java:typeof_OverridingPrimNumConstant_InferenceRule.java:typeof_UnconditionalOverrideAnnotation_InferenceRule.java" />
+</product>
 

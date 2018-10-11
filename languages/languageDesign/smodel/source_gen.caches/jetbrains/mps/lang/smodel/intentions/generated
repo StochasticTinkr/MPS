@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="af6qroimj0qvdre1jcpmtngksoqfkrr" />
+<product version="3" modelHash="af6qroimj0qvdre1jcpmtngksoqfkrr">
+  <files names="AddOperationParameter_Intention.java:AddSNodeCastStatement_Intention.java:ChangeAsCast_Intention.java:ConceptName2Concept_Intention.java:ConceptNodeType2NodeType_Intention.java:ConceptNodeType2SConceptType_Intention.java:ConceptRef2Concept_Intention.java:ConvertCastToNodeCast_Intention.java:ConvertCastToSConceptType_Intention.java:ConvertConceptNodeToSCOncept_Intention.java:ConvertInstanceofToNodeInstanceof_Intention.java:ConvertLinkSetToAssignment_Intention.java:ConvertPropertySetToAssignment_Intention.java:IntentionsDescriptor.java:LinkName2Link_Intention.java:LinkRef2Link_Intention.java:PropertyName2Property_Intention.java:ReplaceConceptIsWithConceptEquals_Intention.java:ReplaceWithModuleRef_Intention.java:ReplaceWithPointer_Intention.java:ReplaceWithResolveExpr_Intention.java:Replace_ListType_withNodeListType_Intention.java" />
+</product>
 

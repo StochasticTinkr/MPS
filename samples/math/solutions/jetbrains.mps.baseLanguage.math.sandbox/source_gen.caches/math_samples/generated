@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5cprdpm3w1rl48abr495ptsyspg1r14" />
+<product version="3" modelHash="-5cprdpm3w1rl48abr495ptsyspg1r14">
+  <files names="Sample.java" />
+</product>
 

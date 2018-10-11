@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8ksrev5mq8yt7zlknu9nqolxde1tobp" />
+<product version="3" modelHash="8ksrev5mq8yt7zlknu9nqolxde1tobp">
+  <files names="TypesystemDescriptor.java:WatchableListIsAListOrWatchables_SubtypingRule.java:WatchableListIsAList_SubtypingRule.java:typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule.java:typeof_HighLevelWatchableCreator_InferenceRule.java:typeof_WatchablesListCreator_InferenceRule.java" />
+</product>
 

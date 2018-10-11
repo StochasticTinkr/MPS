@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ddh226x5n14q5e2uxonq7l8bz1obfow" />
+<product version="3" modelHash="-ddh226x5n14q5e2uxonq7l8bz1obfow">
+  <files names="MigratePopularConceptAndNodeCasts_Test.java" />
+</product>
 

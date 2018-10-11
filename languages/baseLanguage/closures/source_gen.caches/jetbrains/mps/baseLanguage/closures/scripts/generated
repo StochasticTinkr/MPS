@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e656upsu3ilb8kfz4531blfmurm42gl" />
+<product version="3" modelHash="e656upsu3ilb8kfz4531blfmurm42gl">
+  <files names="ScriptsDescriptor.java:UpdateClosuresRuntime_MigrationScript.java:UpdateRuntimeUtil_MigrationScript.java" />
+</product>
 

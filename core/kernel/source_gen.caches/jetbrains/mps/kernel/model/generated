@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5tfcy8sajm2zo6n96z62wowg9fjm48d" />
+<product version="3" modelHash="5tfcy8sajm2zo6n96z62wowg9fjm48d">
+  <files names="MissingDependenciesFixer.java:SModelUtil.java" />
+</product>
 

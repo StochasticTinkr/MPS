@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="anhbwtqmsxts3hnxppsxib7hiqh19wa" />
+<product version="3" modelHash="anhbwtqmsxts3hnxppsxib7hiqh19wa">
+  <files names="Base_Constraints.java:CanBeAncestorFail_Constraints.java:CanBeChildFail_Constraints.java:CanBeParentFail_Constraints.java:ConstraintsAspectDescriptor.java:Derived1_Constrained_Constraints.java:Derived2_Constrained_Constraints.java" />
+</product>
 

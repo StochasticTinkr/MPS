@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="54gpsnixegsx5l6tzeaqxslv13s0r4z" />
+<product version="3" modelHash="54gpsnixegsx5l6tzeaqxslv13s0r4z">
+  <files names="AbstractMigrationScriptHelper.java:RunMigrationScriptAction.java:RunMigrationScriptsDialog.java:ScriptsActionGroupHelper.java" />
+</product>
 

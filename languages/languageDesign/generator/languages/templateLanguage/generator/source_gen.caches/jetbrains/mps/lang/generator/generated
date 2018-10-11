@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4c5r1z2bk1kq45g84tsh3iso239ku2f" />
+<product version="3" modelHash="4c5r1z2bk1kq45g84tsh3iso239ku2f">
+  <files names="Generator.java" />
+</product>
 

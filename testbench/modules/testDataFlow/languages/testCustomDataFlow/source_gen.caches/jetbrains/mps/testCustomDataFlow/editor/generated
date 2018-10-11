@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="21vboz2s3jt5uvh28buvs8asnb6otv7" />
+<product version="3" modelHash="21vboz2s3jt5uvh28buvs8asnb6otv7">
+  <files names="EditorAspectDescriptorImpl.java:IntraProceduralSpecific_BuilderMode_Editor.java:IntraProceduralSpecific_BuilderMode_EditorBuilder_a.java" />
+</product>
 

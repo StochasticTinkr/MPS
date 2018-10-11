@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7mjw2uyyz3o6dqxf17v35oe9ohkpt4e" />
+<product version="3" modelHash="7mjw2uyyz3o6dqxf17v35oe9ohkpt4e">
+  <files names="FailedTestCase_Test_Test.java:SimpleTestCase_Test_Test.java:WaitingTestCase_Test_Test.java" />
+</product>
 

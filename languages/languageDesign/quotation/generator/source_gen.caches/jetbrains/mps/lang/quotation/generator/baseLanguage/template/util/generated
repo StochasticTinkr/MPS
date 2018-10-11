@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dc5lbk8z4w46prxloecukifh4efk3k9" />
+<product version="3" modelHash="-dc5lbk8z4w46prxloecukifh4efk3k9">
+  <files names="QuotationUtil.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bgurj2d0zjrykpe7tmhnaxztne19y96" />
+<product version="3" modelHash="bgurj2d0zjrykpe7tmhnaxztne19y96">
+  <files names="BootstrapMakeFacets.java:FacetAspectDescriptor.java:FacetManifest.java:JavaCompile_Facet.java:MPSMake.java:Make_Facet.java:ReloadClasses_Facet.java" />
+</product>
 

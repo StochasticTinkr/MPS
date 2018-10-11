@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3q10iqivu4k3ubv81netgwp7h1ao3cy" />
+<product version="3" modelHash="-3q10iqivu4k3ubv81netgwp7h1ao3cy">
+  <files names="NewDevKitDialog.java" />
+</product>
 

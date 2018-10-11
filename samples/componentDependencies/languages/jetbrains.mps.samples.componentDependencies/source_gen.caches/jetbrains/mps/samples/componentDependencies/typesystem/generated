@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="864gfe1gg2dkejmyws4940czl8r3ikh" />
+<product version="3" modelHash="864gfe1gg2dkejmyws4940czl8r3ikh">
+  <files names="TypesystemDescriptor.java:check_Component_NonTypesystemRule.java:check_Dependency_NonTypesystemRule.java" />
+</product>
 

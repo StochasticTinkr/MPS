@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9j9jmhzo57ckdhap06v4q074scllawm" />
+<product version="3" modelHash="9j9jmhzo57ckdhap06v4q074scllawm">
+  <files names="ConceptPresentationAspectImpl.java:IconContainer.java:LanguageConceptSwitch.java:RefactoringTargetKind_Enum.java:RefactoringTargetKind_Enum_PropertySupport.java:StructureAspectDescriptor.java" />
+</product>
 

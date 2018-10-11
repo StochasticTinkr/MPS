@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2eyb347wjmkid6jw60quahntaz8lo19" />
+<product version="3" modelHash="2eyb347wjmkid6jw60quahntaz8lo19">
+  <files names="IntentionsDescriptor.java:ReplaceWithConstantValue_Intention.java:ReplaceWithFieldReference_Intention.java:add_parameter_to_InternalClassifierType_Intention.java" />
+</product>
 

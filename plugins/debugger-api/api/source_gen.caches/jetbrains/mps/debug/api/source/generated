@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ahqoj8y7723c2uqxcdxee6bsdfizbl9" />
+<product version="3" modelHash="ahqoj8y7723c2uqxcdxee6bsdfizbl9">
+  <files names="IPositionProvider.java:NodePositionProvider.java:NodeSourcePosition.java:PositionProvider.java:SourcePosition.java:TextPositionProvider.java:TextSourcePosition.java" />
+</product>
 

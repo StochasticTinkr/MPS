@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7gycrwtt3rsy17n9eonir7ruc3mudmo" />
+<product version="3" modelHash="7gycrwtt3rsy17n9eonir7ruc3mudmo">
+  <files names="BlockContentView.java:BoxFigureExt.java:MPSRectView.java:PolygonContentView.java" />
+</product>
 

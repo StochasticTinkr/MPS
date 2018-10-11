@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d873qtu8943i2awqbsjjfbz5vdecku4" />
+<product version="3" modelHash="d873qtu8943i2awqbsjjfbz5vdecku4">
+  <files names="AssumptionFailedRunner.java:CommandLineTestsContributor.java:CommandOutputStream.java:DefaultRunListener.java:DefaultTestExecutor.java:ExecutorScript.java:InProcessExecutionFilter.java:JUnitTestExecutor.java:NodeWrappersTestsContributor.java:ScriptTestContributor.java:StoppableRunner.java:TestExecutor.java:TestsContributor.java:WithPlatformTestExecutor.java" />
+</product>
 

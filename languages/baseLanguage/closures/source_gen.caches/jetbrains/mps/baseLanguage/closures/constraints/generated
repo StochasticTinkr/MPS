@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-567yz9awh6ajun0i434xh5hjqu5sxkz" />
+<product version="3" modelHash="-567yz9awh6ajun0i434xh5hjqu5sxkz">
+  <files names="AbstractFunctionType_Constraints.java:ClassifierTypeUtil.java:CompactInvokeFunctionExpression_Constraints.java:ConstraintsAspectDescriptor.java:ControlAbstractionContainer_Constraints.java:ControlAbstractionDeclaration_Constraints.java:FunctionMethodDeclaration_Constraints.java:FunctionType_Constraints.java:InvokeFunctionOperation_Constraints.java:UnboundClosureParameterDeclaration_Constraints.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6uefmhtsc9ijkeqlhc1i51rjx1eno9t" />
+<product version="3" modelHash="6uefmhtsc9ijkeqlhc1i51rjx1eno9t">
+  <files names="TestUtil.java:TestWeaving_Test.java" />
+</product>
 

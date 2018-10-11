@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ew5xlu34jxj1t7540jglwhuoq4yt9bi" />
+<product version="3" modelHash="ew5xlu34jxj1t7540jglwhuoq4yt9bi">
+  <files names="AbstractEnvironment.java:CompositeProjectStrategy.java:Environment.java:EnvironmentAware.java:EnvironmentBase.java:EnvironmentConfig.java:EnvironmentContainer.java:EnvironmentSetupException.java:LibraryContributorHelper.java:Log4jInitializer.java:MpsEnvironment.java:PluginDescriptor.java:ProjectContainer.java:ProjectModulesFiller.java:ProjectStrategy.java:ProjectStrategyBase.java:Retainable.java" />
+</product>
 

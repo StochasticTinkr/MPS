@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c2lk14v8v2gveqvnr2jal4oswczygwf" />
+<product version="3" modelHash="c2lk14v8v2gveqvnr2jal4oswczygwf">
+  <files names="BackgroundSearchTask.java:BackgroundSearchWithPopupTask.java:CaptionFunction.java:EditorComponentUtil.java:GoToContextMenuHelper.java:GoToHelper.java:NamerFactory.java:PopupSettingsBuilder.java" />
+</product>
 

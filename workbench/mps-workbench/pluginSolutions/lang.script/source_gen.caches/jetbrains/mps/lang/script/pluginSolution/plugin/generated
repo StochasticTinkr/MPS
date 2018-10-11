@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9sw6nfadrxct9q6ll50i3n215bvlnvl" />
+<product version="3" modelHash="9sw6nfadrxct9q6ll50i3n215bvlnvl">
+  <files names="PluginSolution_ApplicationPlugin.java:RunMigrationScripts_Action.java:ScriptsForSelection_ActionGroup.java:ScriptsGlobally_ActionGroup.java:ScriptsMenuBuilder.java" />
+</product>
 

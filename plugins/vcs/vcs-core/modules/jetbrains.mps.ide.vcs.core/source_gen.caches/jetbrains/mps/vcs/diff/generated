@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7t89xx2hsz30q7r71kxdkazve075lks" />
+<product version="3" modelHash="-7t89xx2hsz30q7r71kxdkazve075lks">
+  <files names="ChangeSet.java:ChangeSetBuilder.java:ChangeSetImpl.java:ModelChangeSet.java:StructChangeSet.java:StructChangeSetBuilder.java:StructChangeSetImpl.java" />
+</product>
 

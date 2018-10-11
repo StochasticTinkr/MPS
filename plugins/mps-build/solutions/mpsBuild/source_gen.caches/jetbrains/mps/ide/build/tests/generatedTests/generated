@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6m35cxqmcxaceq86n64okcbw2746fqt" />
+<product version="3" modelHash="-6m35cxqmcxaceq86n64okcbw2746fqt">
+  <files names="mpsTestModules.xml" />
+</product>
 

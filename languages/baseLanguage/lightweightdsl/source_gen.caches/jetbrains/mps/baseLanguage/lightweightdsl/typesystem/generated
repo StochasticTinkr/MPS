@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-81qf0ww5k25saa25ssvjl55g443lk4y" />
+<product version="3" modelHash="-81qf0ww5k25saa25ssvjl55g443lk4y">
+  <files names="CheckUtil.java:ClassLikeMethodChecker.java:ClassLikeMethodErrorNotifier.java:ClassLikeMethodFixer.java:ClassLikeMethodProblemVisitor.java:DependentType_subtypeOfItsValue_SubtypingRule.java:DependentType_supertypeOfItsValue_InequationReplacementRule.java:FixMethodAutomatically_QuickFix.java:TypesystemDescriptor.java:check_ClassLikeMember_unique_NonTypesystemRule.java:check_ClassLikeMethod_NonTypesystemRule.java:check_ClassLikeProperty_NonTypesystemRule.java:check_ClassLike_allRequired_NonTypesystemRule.java:check_CustomMemberDeclaration_NonTypesystemRule.java:fix_SignatureMismatch_QuickFix.java:typeof_ClassLikeDescriptor_InferenceRule.java:typeof_DepType_InferenceRule.java:typeof_LocalMethodCall_InferenceRule.java:typeof_ParameterDescriptor_InferenceRule.java" />
+</product>
 

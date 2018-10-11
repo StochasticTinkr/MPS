@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="czs2ccyiq4cktth4uom7o5t6pba7hnj" />
+<product version="3" modelHash="czs2ccyiq4cktth4uom7o5t6pba7hnj">
+  <files names="TypesystemDescriptor.java:check_FactoryMigrationScriptPath_NonTypesystemRule.java:check_PullUpMethod_NonTypesystemRule.java:typeof_MigrationScriptPart_node_InferenceRule.java" />
+</product>
 

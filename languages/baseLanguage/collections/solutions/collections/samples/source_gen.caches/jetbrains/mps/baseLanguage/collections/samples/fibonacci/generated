@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-65ef2vgdfo6j2zqc3av0tewu7z8ik1v" />
+<product version="3" modelHash="-65ef2vgdfo6j2zqc3av0tewu7z8ik1v">
+  <files names="FibonacciSequence.java:Main.java" />
+</product>
 

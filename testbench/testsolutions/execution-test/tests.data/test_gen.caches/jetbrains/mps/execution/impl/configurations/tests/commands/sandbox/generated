@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ebi0jns7c6gxv0iqkhcvkccs439epra" />
+<product version="3" modelHash="-ebi0jns7c6gxv0iqkhcvkccs439epra">
+  <files names="FailedBTestCase_Test.java:Main.java:SimpleBTestCase_Test.java" />
+</product>
 

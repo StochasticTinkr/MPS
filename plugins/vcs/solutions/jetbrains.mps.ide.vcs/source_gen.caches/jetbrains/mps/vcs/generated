@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9iroh56vkvzi5z8fzahbby6qsbpxqr4" />
+<product version="3" modelHash="9iroh56vkvzi5z8fzahbby6qsbpxqr4">
+  <files names="MPSVcsManager.java:MPSVcsProjectConfiguration.java:MergeDriverPackerImpl.java:TestMergeDialog.java:VcsGeneratedFilesPanel.java" />
+</product>
 

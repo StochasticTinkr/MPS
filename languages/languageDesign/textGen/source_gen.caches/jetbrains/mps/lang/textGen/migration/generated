@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="799c7zwk3mlifehzgk8w7run0bqknra" />
+<product version="3" modelHash="799c7zwk3mlifehzgk8w7run0bqknra">
+  <files names="MigrationDescriptor.java:UseDevkit.java" />
+</product>
 

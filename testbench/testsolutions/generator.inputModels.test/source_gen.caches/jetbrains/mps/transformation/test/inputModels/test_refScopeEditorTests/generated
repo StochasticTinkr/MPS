@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6u25cuc21su02v6r6aujero2ky0500v" />
+<product version="3" modelHash="-6u25cuc21su02v6r6aujero2ky0500v">
+  <files names="refScopeInInputLang_paramConflict_Test.java:refScopeInInputLang_superMeth_Test.java:refScopesInInputLang_Test.java" />
+</product>
 

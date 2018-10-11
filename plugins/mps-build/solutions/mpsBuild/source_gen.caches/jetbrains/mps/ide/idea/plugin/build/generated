@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9pe21mmdvtqfgjqt6txb2gnkumaomnc" />
+<product version="3" modelHash="-9pe21mmdvtqfgjqt6txb2gnkumaomnc">
+  <files names="mpsEditorTestsPlugin.xml:mpsIdeaMigration.xml:mpsIdeaVcs.xml:mpsJavaIdeaPlugin.xml:mpsJpsIdea.xml:mpsPlugin.xml:mpsPluginCommon.xml:mpsPluginCore.xml:mpsPluginDist.xml:mpsPluginTesting.xml:mpsPluginTests.xml" />
+</product>
 

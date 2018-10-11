@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ar7jz58n24bu5f0auonmtxwag9kqs25" />
+<product version="3" modelHash="ar7jz58n24bu5f0auonmtxwag9kqs25">
+  <files names="MigrateHelpURL.java:MigrateLanguageReference.java:MigrationDescriptor.java" />
+</product>
 

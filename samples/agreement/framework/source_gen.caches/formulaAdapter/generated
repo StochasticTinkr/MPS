@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-67vxkqab3zxpnc53lrzg4zrhl5gt54" />
+<product version="3" modelHash="-67vxkqab3zxpnc53lrzg4zrhl5gt54">
+  <files names="FeeMoney.java:MoneyAdapter.java:MoneyAddOperation.java:MoneyConstant.java:MoneyMultiplyOperation.java:PostingRule_Formula.java:QuantityConstant.java:QuantityGreaterThanOperation.java:UsageDouble.java:UsageQuantity.java:ValueDouble.java:ValueQuantity.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-19ab3dfft7cqxeg4z9xgjncsy2xvmp0" />
+<product version="3" modelHash="-19ab3dfft7cqxeg4z9xgjncsy2xvmp0">
+  <files names="AllModulesDataType.java:Arg.java:CustomMPSLoadTask.java:ExcludeNested.java:JvmArgs.java:MPSClasspathUtil.java:Macro.java:MigrationTask.java:ModuleDataType.java:ModuleJarDataType.java:ModulesDataType.java:MpsLoadTask.java:MyExecuteStreamHandler.java:RepositoryDataType.java" />
+</product>
 

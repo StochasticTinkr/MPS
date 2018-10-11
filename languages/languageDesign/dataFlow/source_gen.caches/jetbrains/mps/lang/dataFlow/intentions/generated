@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="lg21z99g0un3ev3jw8wixfo6tqs683" />
+<product version="3" modelHash="lg21z99g0un3ev3jw8wixfo6tqs683">
+  <files names="AddMayBeUnreachable_Intention.java:AddModeToDataFlowBuilder_Intention.java:IntentionsDescriptor.java:RemoveMayBeUnreachable_Intention.java" />
+</product>
 

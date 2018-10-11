@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8ok29ielz3e13oi50tb5mf59p2ara9w" />
+<product version="3" modelHash="8ok29ielz3e13oi50tb5mf59p2ara9w">
+  <files names="ChildConceptWeaveEachMany_Editor.java:ChildConceptWeaveEachMany_EditorBuilder_a.java:ChildConceptWeaveEach_Editor.java:ChildConceptWeaveEach_EditorBuilder_a.java:ChildConceptWeaveMany_Editor.java:ChildConceptWeaveMany_EditorBuilder_a.java:ChildConceptWeave_Editor.java:ChildConceptWeave_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:RootConcept_Editor.java:RootConcept_EditorBuilder_a.java" />
+</product>
 

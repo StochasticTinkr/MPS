@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="96d32jnkm79afppunfpp9fpp0of50zu" />
+<product version="3" modelHash="96d32jnkm79afppunfpp9fpp0of50zu">
+  <files names="ExecuteRerunnableMigrations_Action.java:FindDeprecatedCodeWithNoUsages_Action.java:FindDeprecatedCode_Action.java:FindUsagesOfDeprecated_Action.java:LanguageMigrations_ActionGroup.java:MigrationTestConfigDialog.java:MigrationsMenuLegacyCode_ActionGroup.java:MigrationsMenu_ActionGroup.java:Migrations_ActionGroup.java:ProjectMigrations_ActionGroup.java:RunMigration.java:RunMigrationAssistant_Action.java:RunPreUpdateCheck_Action.java:RunProjectMigration_Action.java:TestMigrationSession.java:TestMigrationWizard_Action.java:ToolsInternalAddition_ActionGroup.java:UsagesFormattingUtil.java:Workbench_ApplicationPlugin.java:_Adapters.java:plugin.xml" />
+</product>
 

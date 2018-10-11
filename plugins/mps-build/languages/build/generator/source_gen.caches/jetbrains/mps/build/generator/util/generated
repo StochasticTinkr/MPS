@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="apz467p66ecfh4kupvc9i9egzgpmd5c" />
+<product version="3" modelHash="apz467p66ecfh4kupvc9i9egzgpmd5c">
+  <files names="JavaExternalLibraryHelper.java" />
+</product>
 

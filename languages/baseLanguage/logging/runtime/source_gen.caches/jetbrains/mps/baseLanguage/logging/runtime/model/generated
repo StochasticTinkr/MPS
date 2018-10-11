@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bywubns8oyj2w8516f1xwqlk0zgvzyv" />
+<product version="3" modelHash="bywubns8oyj2w8516f1xwqlk0zgvzyv">
+  <files names="LoggingRuntime.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bxtqqp2hthkpr8klcrp8n30xonpksq2" />
+<product version="3" modelHash="-bxtqqp2hthkpr8klcrp8n30xonpksq2">
+  <files names="ConceptPresentationAspectImpl.java:FourHex_PropertySupport.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java:_StringRegexp_PropertySupport.java" />
+</product>
 

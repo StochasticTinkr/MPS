@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9dgpf7f1i8gba87rl016rk25dqvvqft" />
+<product version="3" modelHash="9dgpf7f1i8gba87rl016rk25dqvvqft">
+  <files names="JUnitLibsRepackaging.java:Migrations_2017_2.java" />
+</product>
 

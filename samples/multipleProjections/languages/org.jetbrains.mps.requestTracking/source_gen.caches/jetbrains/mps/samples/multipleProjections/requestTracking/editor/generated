@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-15trstsgy21v7cmcfdww57bfyyybp6t" />
+<product version="3" modelHash="-15trstsgy21v7cmcfdww57bfyyybp6t">
+  <files names="EditorAspectDescriptorImpl.java:WorkflowContainer_Editor.java:WorkflowContainer_EditorBuilder_a.java:Workflow_Editor.java:Workflow_EditorBuilder_a.java" />
+</product>
 

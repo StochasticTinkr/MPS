@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9f5ugtv7do9ojyspmozy0jj0nefg5g9" />
+<product version="3" modelHash="-9f5ugtv7do9ojyspmozy0jj0nefg5g9">
+  <files names="AddNecessaryParenthsToNotExpressions.java:AddReturnTypeToConstructorDeclaration.java:MigrationDescriptor.java:Pattern_88yha8_a0a6.java:Pattern_88yha8_a1a6.java:Pattern_fbexqr_a0a5.java:RemoveUsagesOfDeprecatedProperty.java:Remove_IBLDeprecatable_IsDeprecated_Property.java:ReplaceDeprecatedVarReferencesWithVariableReference.java:ReplaceOldCommentWithGenericComment_CommentedStatementsBlock.java:ReplaceSingleLineCommentsWithGenericComments.java:SetIsAbstractPropertyInInterfaceMethods.java" />
+</product>
 

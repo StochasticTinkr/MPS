@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6am8pkjx3kbrh2ot85dkpcax3pwsqyx" />
+<product version="3" modelHash="-6am8pkjx3kbrh2ot85dkpcax3pwsqyx">
+  <files names="MigrationDescriptor.java:SampleRefMigration.java" />
+</product>
 

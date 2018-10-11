@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="401qpz5qz7b2ec0nadzh2y222z1o020" />
+<product version="3" modelHash="401qpz5qz7b2ec0nadzh2y222z1o020">
+  <files names="BHTest_Test.java" />
+</product>
 

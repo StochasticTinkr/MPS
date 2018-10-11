@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9k67x7v97im0oa6ml2undkbcrwf8mvx" />
+<product version="3" modelHash="-9k67x7v97im0oa6ml2undkbcrwf8mvx">
+  <files names="RootCustom.java" />
+</product>
 

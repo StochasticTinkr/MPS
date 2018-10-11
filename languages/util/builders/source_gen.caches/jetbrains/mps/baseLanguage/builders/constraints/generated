@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6t02goyhv9ruqon2mm19y6x61ux4bd0" />
+<product version="3" modelHash="6t02goyhv9ruqon2mm19y6x61ux4bd0">
+  <files names="AsTypeBuilder_Constraints.java:BaseSimpleBuilderDeclaration_Constraints.java:BeanBuilder_Constraints.java:BeanPropertyBuilder_Constraints.java:ConstraintsAspectDescriptor.java:ResultExpression_Constraints.java:SimpleBuilderChildExpression_Constraints.java:SimpleBuilderDeclaration_Constraints.java:SimpleBuilderExpression_Constraints.java:SimpleBuilderParameterReference_Constraints.java:SimpleBuilderPropertyBuilder_Constraints.java:SimpleBuilderPropertyExpression_Constraints.java:SimpleBuilder_Constraints.java" />
+</product>
 

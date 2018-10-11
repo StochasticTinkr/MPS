@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-37mafo404e9z7gm21fe2424b8b9or19" />
+<product version="3" modelHash="-37mafo404e9z7gm21fe2424b8b9or19">
+  <files names="RuleTypeRenderer.java" />
+</product>
 

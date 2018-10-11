@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a3ukjlc7rfjustlzdd8a6lr2boo0a7y" />
+<product version="3" modelHash="-a3ukjlc7rfjustlzdd8a6lr2boo0a7y">
+  <files names="Flags.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9llcun1to2aa9nxhnq0fyldg8syoucw" />
+<product version="3" modelHash="-9llcun1to2aa9nxhnq0fyldg8syoucw">
+  <files names="CalculatedWatchable.java:CustomJavaWatchable.java:JavaLocalVariable.java:JavaStaticContext.java:JavaStaticField.java:JavaThisObject.java:JavaWatchable.java:JavaWatchablesCategory.java" />
+</product>
 

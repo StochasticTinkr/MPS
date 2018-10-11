@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3rtaysn9ox9eu0iwfrhadl0wicxec5s" />
+<product version="3" modelHash="-3rtaysn9ox9eu0iwfrhadl0wicxec5s">
+  <files names="CheckboxUI_Text_validity_NonTypesystemRule.java:TypesystemDescriptor.java" />
+</product>
 

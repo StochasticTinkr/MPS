@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d4418sxet7ezvizl4efvzr5igspwq9y" />
+<product version="3" modelHash="-d4418sxet7ezvizl4efvzr5igspwq9y">
+  <files names="MigrationDescriptor.java:MigrationScript_1.java" />
+</product>
 

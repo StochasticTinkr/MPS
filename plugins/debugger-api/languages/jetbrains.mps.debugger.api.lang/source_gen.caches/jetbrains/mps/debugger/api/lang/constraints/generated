@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8cewr5i1uo8hdywnkipbtmqasjw3uz7" />
+<product version="3" modelHash="-8cewr5i1uo8hdywnkipbtmqasjw3uz7">
+  <files names="ConstraintsAspectDescriptor.java:CreateBreakpointOperation_Constraints.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="99hqcvr8sbzh60myup5gun0j2bccphb" />
+<product version="3" modelHash="99hqcvr8sbzh60myup5gun0j2bccphb">
+  <files names="NewModuleUtil.java" />
+</product>
 

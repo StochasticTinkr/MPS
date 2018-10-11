@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8vab6ozurv4bssptbb995rkxjsm7caj" />
+<product version="3" modelHash="-8vab6ozurv4bssptbb995rkxjsm7caj">
+  <files names="BehaviorAspectDescriptor.java:OrderDeclaration__BehaviorDescriptor.java:OrderReference__BehaviorDescriptor.java:Order__BehaviorDescriptor.java" />
+</product>
 

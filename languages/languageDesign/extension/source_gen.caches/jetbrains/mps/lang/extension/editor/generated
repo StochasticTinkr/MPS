@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="p88sn8i3sngjcum104n8j8ncjlfsq0" />
+<product version="3" modelHash="p88sn8i3sngjcum104n8j8ncjlfsq0">
+  <files names="EditorAspectDescriptorImpl.java:ExtensionDeclaration_Editor.java:ExtensionDeclaration_EditorBuilder_a.java:ExtensionDeclaration_SubstituteMenu.java:ExtensionFieldDeclaration_Editor.java:ExtensionFieldDeclaration_EditorBuilder_a.java:ExtensionFieldReference_Editor.java:ExtensionFieldReference_EditorBuilder_a.java:ExtensionFieldReference_SubstituteMenu.java:ExtensionPointDeclaration_Editor.java:ExtensionPointDeclaration_EditorBuilder_a.java:ExtensionPointExpression_Editor.java:ExtensionPointExpression_EditorBuilder_a.java:ExtensionPointExpression_InspectorBuilder_a.java:ExtensionPointType_Editor.java:ExtensionPointType_EditorBuilder_a.java:Extension_Editor.java:Extension_EditorBuilder_a.java:GetExtensionObjectsOperation_Editor.java:GetExtensionObjectsOperation_EditorBuilder_a.java" />
+</product>
 

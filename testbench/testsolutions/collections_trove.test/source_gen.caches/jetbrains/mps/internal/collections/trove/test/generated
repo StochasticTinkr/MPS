@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9c89d9jfykf6s62kebnky09bhv10p5i" />
+<product version="3" modelHash="9c89d9jfykf6s62kebnky09bhv10p5i">
+  <files names="PrimList_Test.java:PrimMap_Test.java:PrimSet_Test.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ehrjbynqgdr8fmirw54cv1gxred6sui" />
+<product version="3" modelHash="ehrjbynqgdr8fmirw54cv1gxred6sui">
+  <files names="ConceptHasSubconceptsEditorMessage.java:DescendantsLookup.java:OverrideConceptsChecker.java" />
+</product>
 

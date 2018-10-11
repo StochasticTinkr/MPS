@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="vopz3vi9klmien0v3kde3wang3kemc" />
+<product version="3" modelHash="vopz3vi9klmien0v3kde3wang3kemc">
+  <files names="AnalyzeClasspath_Action.java:ChangeMethodSignatureDialog.java:ChangeMethodSignature_Action.java:MigrateSourcesToMPS_Action.java:NewModelFromSource_Action.java" />
+</product>
 

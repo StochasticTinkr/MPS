@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a3nqvbxuv8fafvv4wf56hk6ktcec60u" />
+<product version="3" modelHash="a3nqvbxuv8fafvv4wf56hk6ktcec60u">
+  <files names="ActionAspectDescriptorImpl.java:PasteOverridingForDefaultMethodsAsWell_PasteWrapper_0.java:copyPasteExtendingWithDefaultModifier_CopyPreProcessor_0.java:copyPasteExtendingWithDefaultModifier_PastePostProcessor_0.java" />
+</product>
 

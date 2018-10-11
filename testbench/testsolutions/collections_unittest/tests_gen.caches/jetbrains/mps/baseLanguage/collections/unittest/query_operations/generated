@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-90cfvfwkoqj9ds1z4gmd1nchnq327xr" />
+<product version="3" modelHash="-90cfvfwkoqj9ds1z4gmd1nchnq327xr">
+  <files names="ForEach_Test1.java:ForEach_loop_Test1.java:Mapping_Test1_Test.java:Where_Select_Test1_Test.java" />
+</product>
 

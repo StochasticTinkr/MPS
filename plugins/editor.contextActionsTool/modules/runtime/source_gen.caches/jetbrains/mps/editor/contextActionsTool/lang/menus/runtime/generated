@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1posj8vznzqn6dnmyavdfgy22wasviw" />
+<product version="3" modelHash="1posj8vznzqn6dnmyavdfgy22wasviw">
+  <files names="MenuLocations.java:SidebarActionItem.java" />
+</product>
 
