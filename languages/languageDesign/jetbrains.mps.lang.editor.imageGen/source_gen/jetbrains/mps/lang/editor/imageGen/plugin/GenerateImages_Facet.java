@@ -30,20 +30,20 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
+import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.vfs.FileSystem;
-import java.io.OutputStream;
-import java.io.IOException;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IPropertiesPool;
 
@@ -118,11 +118,12 @@ public class GenerateImages_Facet extends IFacet.Stub {
                       if (!(MapSequence.fromMap(folder2PrintRunnables).containsKey(outputDir))) {
                         MapSequence.fromMap(folder2PrintRunnables).put(outputDir, ListSequence.fromList(new ArrayList<PrintNodeRunnable>()));
                       }
+                      final DeltaKey dk = new DeltaKey(new Object[]{modelsPair._0().getModule(), modelsPair._0()});
                       for (SNode imageGenerator : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(modelsPair._1(), MetaAdapterFactory.getConcept(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, "jetbrains.mps.lang.editor.imageGen.structure.ImageGenerator")))) {
                         SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad2528389ad26L, "id")));
                         SNode node = modelsPair._0().getNode(nodeId);
 
-                        PrintNodeRunnable printRunnable = new PrintNodeRunnable(node.getReference(), repository, SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName")));
+                        PrintNodeRunnable printRunnable = new PrintNodeRunnable(node.getReference(), repository, SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName")), dk);
                         if (SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat")) != null) {
                           printRunnable.setImageFormat(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat")));
                         }
@@ -140,23 +141,21 @@ public class GenerateImages_Facet extends IFacet.Stub {
                 });
 
                 List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
-                List<Tuples._2<IFile, byte[]>> fileContentsToWrite = ListSequence.fromList(new ArrayList<Tuples._2<IFile, byte[]>>());
+                final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
                 ProgressMonitor printingFoldersMonitor = progressMonitor.subTask(1);
                 printingFoldersMonitor.start("Printing folders", MapSequence.fromMap(folder2PrintRunnables).count());
                 for (IFile folder : SetSequence.fromSet(MapSequence.fromMap(folder2PrintRunnables).keySet())) {
-                  FilesDelta fd = new FilesDelta(folder);
-                  ListSequence.fromList(deltaList).addElement(fd);
-                  new StaleFilesCollector(folder).updateDelta(fd);
-
+                  List<PrintNodeRunnable> printers = MapSequence.fromMap(folder2PrintRunnables).get(folder);
                   ProgressMonitor printFilesMonitor = printingFoldersMonitor.subTask(1);
-                  printFilesMonitor.start("Printing files", ListSequence.fromList(MapSequence.fromMap(folder2PrintRunnables).get(folder)).count());
-                  for (PrintNodeRunnable printNodeRunnable : ListSequence.fromList(MapSequence.fromMap(folder2PrintRunnables).get(folder))) {
+                  printFilesMonitor.start("Printing files", ListSequence.fromList(printers).count());
+                  for (PrintNodeRunnable printNodeRunnable : ListSequence.fromList(printers)) {
                     printFilesMonitor.step(printNodeRunnable.getFileName());
                     repository.getModelAccess().runWriteInEDT(printNodeRunnable);
                     if (printNodeRunnable.waitForExecution()) {
-                      IFile outputFile = folder.getDescendant(printNodeRunnable.getFileName());
-                      ListSequence.fromList(fileContentsToWrite).addElement(MultiTuple.<IFile,byte[]>from(outputFile, printNodeRunnable.getResult()));
-                      fd.written(outputFile);
+                      FilesDelta fd = new FilesDelta(printNodeRunnable.getDeltaKey());
+                      ListSequence.fromList(deltaList).addElement(fd);
+                      FileDeltaCollector fdc = new FileDeltaCollector(fd, folder, fp);
+                      fdc.saveStream(printNodeRunnable.getFileName(), printNodeRunnable.getResult());
                     } else {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(printNodeRunnable.getErrorMessage())));
                     }
@@ -168,36 +167,16 @@ public class GenerateImages_Facet extends IFacet.Stub {
 
                 _output_7crsqe_a0a = Sequence.fromIterable(_output_7crsqe_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
 
-                ProgressMonitor saveFilesMonitor = progressMonitor.subTask(1);
-                saveFilesMonitor.start("Saving images", ListSequence.fromList(fileContentsToWrite).count());
-                for (Tuples._2<IFile, byte[]> fileContent : ListSequence.fromList(fileContentsToWrite)) {
-                  saveFilesMonitor.step(fileContent._0().getName());
-                  final IFile fileToWrite = fileContent._0();
-                  final byte[] bytes = fileContent._1();
-                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                    public void run() {
-                      OutputStream stream = null;
-                      try {
-                        stream = fileToWrite.openOutputStream();
-                        stream.write(bytes);
-                      } catch (IOException e) {
-                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(e.toString())));
-                      } finally {
-                        if (stream != null) {
-                          try {
-                            stream.close();
-                          } catch (IOException ignored) {
-                          }
-                        }
-                      }
-                    }
-                  }))) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
-                    return new IResult.FAILURE(_output_7crsqe_a0a);
+                progressMonitor.step("Saving images");
+                if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                  public void run() {
+                    fp.flushChanges();
                   }
-                  saveFilesMonitor.advance(1);
+                }))) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
+                  return new IResult.FAILURE(_output_7crsqe_a0a);
                 }
-                saveFilesMonitor.done();
+                progressMonitor.advance(1);
               } finally {
                 progressMonitor.done();
               }
