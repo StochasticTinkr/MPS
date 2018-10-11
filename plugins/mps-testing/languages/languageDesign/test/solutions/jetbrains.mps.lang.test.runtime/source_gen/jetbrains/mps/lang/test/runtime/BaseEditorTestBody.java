@@ -47,7 +47,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import com.intellij.openapi.command.impl.CurrentEditorProvider;
+import com.intellij.openapi.fileEditor.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Level;
 

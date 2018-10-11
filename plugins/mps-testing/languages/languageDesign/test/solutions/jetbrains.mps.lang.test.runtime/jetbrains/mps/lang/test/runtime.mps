@@ -7,8 +7,8 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
@@ -80,6 +80,7 @@
     <import index="4szu" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.references(MPS.Core/)" />
     <import index="a19p" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.rules(JUnit/)" />
     <import index="cvlm" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner(JUnit/)" />
+    <import index="ubtp" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor.impl(MPS.IDEA/)" />
     <import index="tp5o" ref="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" implicit="true" />
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" implicit="true" />
   </imports>
@@ -4070,12 +4071,12 @@
         <node concept="3cpWs8" id="62Gc_ZTlp$g" role="3cqZAp">
           <node concept="3cpWsn" id="62Gc_ZTlp$h" role="3cpWs9">
             <property role="TrG5h" value="oldEditorProvider" />
-            <node concept="3uibUv" id="62Gc_ZTlp$e" role="1tU5fm">
-              <ref role="3uigEE" to="xgff:~CurrentEditorProvider" resolve="CurrentEditorProvider" />
+            <node concept="3uibUv" id="W$tpmjf4B2" role="1tU5fm">
+              <ref role="3uigEE" to="ubtp:~CurrentEditorProvider" resolve="CurrentEditorProvider" />
             </node>
             <node concept="2OqwBi" id="62Gc_ZTlp$i" role="33vP2m">
               <node concept="liA8E" id="62Gc_ZTlp$j" role="2OqNvi">
-                <ref role="37wK5l" to="xgff:~UndoManagerImpl.getEditorProvider():com.intellij.openapi.command.impl.CurrentEditorProvider" resolve="getEditorProvider" />
+                <ref role="37wK5l" to="xgff:~UndoManagerImpl.getEditorProvider():com.intellij.openapi.fileEditor.impl.CurrentEditorProvider" resolve="getEditorProvider" />
               </node>
               <node concept="37vLTw" id="62Gc_ZTlp$k" role="2Oq$k0">
                 <ref role="3cqZAo" node="62Gc_ZTkYZW" resolve="undoManager" />
@@ -4089,13 +4090,13 @@
               <ref role="3cqZAo" node="62Gc_ZTkYZW" resolve="undoManager" />
             </node>
             <node concept="liA8E" id="62Gc_ZTlpiD" role="2OqNvi">
-              <ref role="37wK5l" to="xgff:~UndoManagerImpl.setEditorProvider(com.intellij.openapi.command.impl.CurrentEditorProvider):void" resolve="setEditorProvider" />
+              <ref role="37wK5l" to="xgff:~UndoManagerImpl.setEditorProvider(com.intellij.openapi.fileEditor.impl.CurrentEditorProvider):void" resolve="setEditorProvider" />
               <node concept="2ShNRf" id="62Gc_ZTlpiE" role="37wK5m">
                 <node concept="YeOm9" id="62Gc_ZTlpiF" role="2ShVmc">
                   <node concept="1Y3b0j" id="62Gc_ZTlpiG" role="YeSDq">
                     <property role="2bfB8j" value="true" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <ref role="1Y3XeK" to="xgff:~CurrentEditorProvider" resolve="CurrentEditorProvider" />
+                    <ref role="1Y3XeK" to="ubtp:~CurrentEditorProvider" resolve="CurrentEditorProvider" />
                     <node concept="3Tm1VV" id="62Gc_ZTlpiH" role="1B3o_S" />
                     <node concept="3clFb_" id="62Gc_ZTlpiI" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -4178,7 +4179,7 @@
               <ref role="3cqZAo" node="62Gc_ZTkYZW" resolve="undoManager" />
             </node>
             <node concept="liA8E" id="62Gc_ZTlx3p" role="2OqNvi">
-              <ref role="37wK5l" to="xgff:~UndoManagerImpl.setEditorProvider(com.intellij.openapi.command.impl.CurrentEditorProvider):void" resolve="setEditorProvider" />
+              <ref role="37wK5l" to="xgff:~UndoManagerImpl.setEditorProvider(com.intellij.openapi.fileEditor.impl.CurrentEditorProvider):void" resolve="setEditorProvider" />
               <node concept="37vLTw" id="62Gc_ZTlx3q" role="37wK5m">
                 <ref role="3cqZAo" node="62Gc_ZTlp$h" resolve="oldEditorProvider" />
               </node>

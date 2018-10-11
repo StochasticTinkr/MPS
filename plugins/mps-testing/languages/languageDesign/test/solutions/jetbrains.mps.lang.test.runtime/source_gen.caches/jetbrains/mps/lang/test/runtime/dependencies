@@ -7,10 +7,10 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.command.impl.CurrentEditorProvider" />
     <classNode dependClassName="com.intellij.openapi.command.impl.UndoManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.command.undo.UndoManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.impl.CurrentEditorProvider" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
