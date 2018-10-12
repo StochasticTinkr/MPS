@@ -5961,155 +5961,43 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="59L961e3o5" role="3cqZAp">
-          <node concept="3SKdUq" id="59L961e3o7" role="3SKWNk">
-            <property role="3SKdUp" value="we need caches location, therefore look into GTF presence prior to isGenerateIntoModelFolder check" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="5pk83j3xWct" role="3cqZAp">
           <node concept="3cpWsn" id="5pk83j3xWcu" role="3cpWs9">
             <property role="TrG5h" value="outputRoot" />
-            <property role="3TUv4t" value="false" />
+            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="5pk83j3xWcv" role="1tU5fm">
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
-            <node concept="10Nm6u" id="59L961e9u$" role="33vP2m" />
+            <node concept="2OqwBi" id="5pk83j3xWcw" role="33vP2m">
+              <node concept="37vLTw" id="5pk83j3xWcx" role="2Oq$k0">
+                <ref role="3cqZAo" node="5pk83j3xWcj" resolve="gtf" />
+              </node>
+              <node concept="liA8E" id="5pk83j3xWcy" role="2OqNvi">
+                <ref role="37wK5l" to="b0pz:~GenerationTargetFacet.getOutputRoot(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputRoot" />
+                <node concept="37vLTw" id="5pk83j3yaVq" role="37wK5m">
+                  <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="5pk83j3xWcL" role="3cqZAp">
           <node concept="3cpWsn" id="5pk83j3xWcM" role="3cpWs9">
             <property role="TrG5h" value="outputDir" />
-            <property role="3TUv4t" value="false" />
+            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="5pk83j3xWcN" role="1tU5fm">
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
-            <node concept="10Nm6u" id="59L961e9DZ" role="33vP2m" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="59L961dTAH" role="3cqZAp">
-          <node concept="3clFbS" id="59L961dTAJ" role="3clFbx">
-            <node concept="3clFbF" id="59L961e8tk" role="3cqZAp">
-              <node concept="37vLTI" id="59L961e8yw" role="3clFbG">
-                <node concept="37vLTI" id="59L961e8Hz" role="37vLTx">
-                  <node concept="37vLTw" id="59L961e8_j" role="37vLTJ">
-                    <ref role="3cqZAo" node="5pk83j3xWcM" resolve="outputDir" />
-                  </node>
-                  <node concept="2OqwBi" id="59L961e7EK" role="37vLTx">
-                    <node concept="2OqwBi" id="59L961e7iM" role="2Oq$k0">
-                      <node concept="1eOMI4" id="59L961e71i" role="2Oq$k0">
-                        <node concept="10QFUN" id="59L961e5YT" role="1eOMHV">
-                          <node concept="3uibUv" id="59L961e64$" role="10QFUM">
-                            <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
-                          </node>
-                          <node concept="2OqwBi" id="59L961e6Ir" role="10QFUP">
-                            <node concept="37vLTw" id="59L961e6Fr" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
-                            </node>
-                            <node concept="liA8E" id="59L961e6Wz" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="59L961e7Bp" role="2OqNvi">
-                        <ref role="37wK5l" to="ends:~FileDataSource.getFile():jetbrains.mps.vfs.IFile" resolve="getFile" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="59L961e8jb" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="59L961e8ti" role="37vLTJ">
-                  <ref role="3cqZAo" node="5pk83j3xWcu" resolve="outputRoot" />
-                </node>
+            <node concept="2OqwBi" id="5pk83j3xWcO" role="33vP2m">
+              <node concept="37vLTw" id="5pk83j3xWcP" role="2Oq$k0">
+                <ref role="3cqZAo" node="5pk83j3xWcj" resolve="gtf" />
               </node>
-            </node>
-          </node>
-          <node concept="1Wc70l" id="59L961e4y2" role="3clFbw">
-            <node concept="2ZW3vV" id="59L961e55$" role="3uHU7w">
-              <node concept="3uibUv" id="59L961e5dz" role="2ZW6by">
-                <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
-              </node>
-              <node concept="2OqwBi" id="59L961e4Kc" role="2ZW6bz">
-                <node concept="37vLTw" id="59L961e4Fc" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
-                </node>
-                <node concept="liA8E" id="59L961e4ZB" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
-                </node>
-              </node>
-            </node>
-            <node concept="1Wc70l" id="59L961e1ct" role="3uHU7B">
-              <node concept="2ZW3vV" id="59L961dU6p" role="3uHU7B">
-                <node concept="3uibUv" id="59L961e0MU" role="2ZW6by">
-                  <ref role="3uigEE" to="g3l6:~GeneratableSModel" resolve="GeneratableSModel" />
-                </node>
-                <node concept="37vLTw" id="59L961dTRt" role="2ZW6bz">
+              <node concept="liA8E" id="5pk83j3xWcQ" role="2OqNvi">
+                <ref role="37wK5l" to="b0pz:~GenerationTargetFacet.getOutputLocation(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputLocation" />
+                <node concept="37vLTw" id="5pk83j3ybkm" role="37wK5m">
                   <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="59L961e1E9" role="3uHU7w">
-                <node concept="1eOMI4" id="59L961e1tD" role="2Oq$k0">
-                  <node concept="10QFUN" id="59L961e1tA" role="1eOMHV">
-                    <node concept="3uibUv" id="59L961e1zo" role="10QFUM">
-                      <ref role="3uigEE" to="g3l6:~GeneratableSModel" resolve="GeneratableSModel" />
-                    </node>
-                    <node concept="37vLTw" id="59L961e1tF" role="10QFUP">
-                      <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="59L961e1NW" role="2OqNvi">
-                  <ref role="37wK5l" to="g3l6:~GeneratableSModel.isGenerateIntoModelFolder():boolean" resolve="isGenerateIntoModelFolder" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="59L961e9Jq" role="3cqZAp">
-          <node concept="3clFbS" id="59L961e9Js" role="3clFbx">
-            <node concept="3clFbF" id="59L961dRsQ" role="3cqZAp">
-              <node concept="37vLTI" id="59L961dRsS" role="3clFbG">
-                <node concept="2OqwBi" id="5pk83j3xWcw" role="37vLTx">
-                  <node concept="37vLTw" id="5pk83j3xWcx" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5pk83j3xWcj" resolve="gtf" />
-                  </node>
-                  <node concept="liA8E" id="5pk83j3xWcy" role="2OqNvi">
-                    <ref role="37wK5l" to="b0pz:~GenerationTargetFacet.getOutputRoot(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputRoot" />
-                    <node concept="37vLTw" id="5pk83j3yaVq" role="37wK5m">
-                      <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="59L961dRsW" role="37vLTJ">
-                  <ref role="3cqZAo" node="5pk83j3xWcu" resolve="outputRoot" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="59L961dRJZ" role="3cqZAp">
-              <node concept="37vLTI" id="59L961dRK1" role="3clFbG">
-                <node concept="2OqwBi" id="5pk83j3xWcO" role="37vLTx">
-                  <node concept="37vLTw" id="5pk83j3xWcP" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5pk83j3xWcj" resolve="gtf" />
-                  </node>
-                  <node concept="liA8E" id="5pk83j3xWcQ" role="2OqNvi">
-                    <ref role="37wK5l" to="b0pz:~GenerationTargetFacet.getOutputLocation(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputLocation" />
-                    <node concept="37vLTw" id="5pk83j3ybkm" role="37wK5m">
-                      <ref role="3cqZAo" node="5pk83j3xRCQ" resolve="m" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="59L961dRK5" role="37vLTJ">
-                  <ref role="3cqZAo" node="5pk83j3xWcM" resolve="outputDir" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="59L961eam_" role="3clFbw">
-            <node concept="10Nm6u" id="59L961eavo" role="3uHU7w" />
-            <node concept="37vLTw" id="59L961ea3t" role="3uHU7B">
-              <ref role="3cqZAo" node="5pk83j3xWcu" resolve="outputRoot" />
             </node>
           </node>
         </node>

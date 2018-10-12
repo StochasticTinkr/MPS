@@ -48,10 +48,14 @@ public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
   @Nullable
   @Override
   default IFile getOutputRoot(@NotNull SModel model) {
-    if (SModelStereotype.isTestModel(model)) {
-      return getTestsOutputPath();
+    if (!SModelStereotype.isTestModel(model)) {
+      return null;
     }
-    return null;
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
+    }
+    return getTestsOutputPath();
   }
 
   @Nullable
@@ -68,6 +72,10 @@ public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
   default IFile getOutputLocation(@NotNull SModel model) {
     if (!SModelStereotype.isTestModel(model)) {
       return null;
+    }
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
     }
     IFile root = getTestsOutputPath();
     return root == null ? null : FileGenerationUtil.getDefaultOutputDir(model, root);

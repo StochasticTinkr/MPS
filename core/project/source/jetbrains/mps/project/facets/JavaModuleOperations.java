@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.project.facets;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -22,7 +25,9 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -87,5 +92,19 @@ public class JavaModuleOperations {
 
   private static Iterable<SModule> getJavaModules(Collection<? extends SModule> modules) {
     return modules.stream().filter(module -> module.getFacet(JavaModuleFacet.class) != null).collect(Collectors.toList());
+  }
+
+  // didn't find better place for the method. Need to expose it for existing GenerationTargetFacet implementations and would
+  // like to avoid uses elsewhere, and remove eventually.
+  /*package*/ static IFile getOverriddenOutputDir(SModel md) {
+    if (md instanceof GeneratableSModel) {
+      boolean useModelFolder = ((GeneratableSModel) md).isGenerateIntoModelFolder();
+      DataSource source = md.getSource();
+      if (useModelFolder && source instanceof FileDataSource) {
+        IFile file = ((FileDataSource) source).getFile();
+        return file.getParent();
+      }
+    }
+    return null;
   }
 }

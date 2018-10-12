@@ -25,8 +25,6 @@ import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import java.util.function.Consumer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 /*package*/ class ModuleStaleFileManager {
@@ -93,16 +91,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     if (gtf == null) {
       return;
     }
-    // we need caches location, therefore look into GTF presence prior to isGenerateIntoModelFolder check 
-    IFile outputRoot = null;
-    IFile outputDir = null;
-    if (m instanceof GeneratableSModel && ((GeneratableSModel) m).isGenerateIntoModelFolder() && m.getSource() instanceof FileDataSource) {
-      outputRoot = outputDir = ((FileDataSource) m.getSource()).getFile().getParent();
-    }
-    if (outputRoot == null) {
-      outputRoot = gtf.getOutputRoot(m);
-      outputDir = gtf.getOutputLocation(m);
-    }
+    final IFile outputRoot = gtf.getOutputRoot(m);
+    final IFile outputDir = gtf.getOutputLocation(m);
     if (outputDir == null || outputRoot == null) {
       return;
     }
