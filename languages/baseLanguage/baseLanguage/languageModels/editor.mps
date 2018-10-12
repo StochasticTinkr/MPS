@@ -61122,8 +61122,8 @@
               </node>
               <node concept="3clFbF" id="1wEcoXjIEC7" role="3cqZAp">
                 <node concept="2YIFZM" id="1wEcoXjIEC8" role="3clFbG">
-                  <ref role="37wK5l" node="5d7cDYKUJMp" />
-                  <ref role="1Pybhc" node="5d7cDYKUJE_" />
+                  <ref role="37wK5l" node="5d7cDYKUJMp" resolve="rewireMethodReferences" />
+                  <ref role="1Pybhc" node="5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
                   <node concept="7Obwk" id="1wEcoXjIECm" role="37wK5m" />
                   <node concept="37vLTw" id="1wEcoXjIECa" role="37wK5m">
                     <ref role="3cqZAo" node="1wEcoXjIEC2" resolve="staticMethod" />
@@ -61139,7 +61139,7 @@
                       <property role="3cmrfH" value="-1" />
                     </node>
                     <node concept="2TlHUq" id="1wEcoXjIECh" role="lGT1i">
-                      <ref role="2TlMyj" node="5kmCgHXRVxR" />
+                      <ref role="2TlMyj" node="5kmCgHXRVxR" resolve="staticModifier" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="1wEcoXjIECi" role="2Oq$k0">
@@ -61204,7 +61204,7 @@
                       <property role="3cmrfH" value="-1" />
                     </node>
                     <node concept="2TlHUq" id="1wEcoXjIECP" role="lGT1i">
-                      <ref role="2TlMyj" node="5kmCgHXRUBB" />
+                      <ref role="2TlMyj" node="5kmCgHXRUBB" resolve="abstractModifier" />
                     </node>
                   </node>
                   <node concept="7Obwk" id="1wEcoXjIECV" role="2Oq$k0" />
@@ -62035,6 +62035,28 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="64iZc9npxxI" role="3cqZAp">
+            <node concept="3cpWsn" id="64iZc9npxxL" role="3cpWs9">
+              <property role="TrG5h" value="methodCallNode" />
+              <node concept="3Tqbb2" id="64iZc9npxxG" role="1tU5fm">
+                <ref role="ehGHo" to="tpee:hxndl_i" resolve="IMethodCall" />
+              </node>
+              <node concept="2OqwBi" id="64iZc9npHcA" role="33vP2m">
+                <node concept="2OqwBi" id="64iZc9npy9Z" role="2Oq$k0">
+                  <node concept="0IXxy" id="64iZc9npy1z" role="2Oq$k0" />
+                  <node concept="z$bX8" id="64iZc9np_uw" role="2OqNvi">
+                    <node concept="1xIGOp" id="64iZc9npEG_" role="1xVPHs" />
+                    <node concept="1xMEDy" id="64iZc9npF8v" role="1xVPHs">
+                      <node concept="chp4Y" id="64iZc9npFm_" role="ri$Ld">
+                        <ref role="cht4Q" to="tpee:hxndl_i" resolve="IMethodCall" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1uHKPH" id="64iZc9npJ0J" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbJ" id="1knX_y6rL7B" role="3cqZAp">
             <node concept="3clFbS" id="1knX_y6rL7D" role="3clFbx">
               <node concept="YS8fn" id="1knX_y6rNWS" role="3cqZAp">
@@ -62064,7 +62086,9 @@
                   <ref role="3cqZAo" node="1knX_y6rJeQ" resolve="ancestors" />
                 </node>
                 <node concept="3JPx81" id="1knX_y6rNSd" role="2OqNvi">
-                  <node concept="0IXxy" id="1knX_y6rNSe" role="25WWJ7" />
+                  <node concept="37vLTw" id="64iZc9npJ3e" role="25WWJ7">
+                    <ref role="3cqZAo" node="64iZc9npxxL" resolve="methodCallNode" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -62087,7 +62111,9 @@
                         <ref role="3cqZAo" node="1knX_y6rJeQ" resolve="ancestors" />
                       </node>
                       <node concept="2WmjW8" id="1knX_y6vpS_" role="2OqNvi">
-                        <node concept="0IXxy" id="1knX_y6vpSA" role="25WWJ7" />
+                        <node concept="37vLTw" id="64iZc9npJ5Q" role="25WWJ7">
+                          <ref role="3cqZAo" node="64iZc9npxxL" resolve="methodCallNode" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -62123,7 +62149,9 @@
                 <node concept="2YIFZM" id="28$D10lLU2I" role="3clFbG">
                   <ref role="37wK5l" to="fnmy:KgjTrC3DEQ" resolve="replaceFromEditor" />
                   <ref role="1Pybhc" to="fnmy:2Jvt1sWfvHp" resolve="MethodResolveUtil" />
-                  <node concept="0IXxy" id="25imKQSf4jL" role="37wK5m" />
+                  <node concept="37vLTw" id="64iZc9npJfL" role="37wK5m">
+                    <ref role="3cqZAo" node="64iZc9npxxL" resolve="methodCallNode" />
+                  </node>
                 </node>
               </node>
               <node concept="3clFbF" id="25imKQSf3M7" role="3cqZAp">

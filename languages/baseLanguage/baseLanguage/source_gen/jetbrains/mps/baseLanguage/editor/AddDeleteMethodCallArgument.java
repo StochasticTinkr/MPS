@@ -80,13 +80,14 @@ public class AddDeleteMethodCallArgument {
       public void execute_internal(EditorContext editorContext, SNode node) {
         SNode contextNode = editorContext.getSelectedNode();
         List<SNode> ancestors = SNodeOperations.getNodeAncestors(contextNode, null, true);
-        if (!(ListSequence.fromList(ancestors).contains(node))) {
+        SNode methodCallNode = ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), true)).first();
+        if (!(ListSequence.fromList(ancestors).contains(methodCallNode))) {
           throw new IllegalStateException("ancestors: " + ancestors.toString());
         }
-        SNode lastArgument = ListSequence.fromList(ancestors).getElement(ListSequence.fromList(ancestors).indexOf(node) - 1);
+        SNode lastArgument = ListSequence.fromList(ancestors).getElement(ListSequence.fromList(ancestors).indexOf(methodCallNode) - 1);
         if (SNodeOperations.hasRole(lastArgument, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
           SNode newArgument = SNodeOperations.insertNextSiblingChild(lastArgument, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null));
-          MethodResolveUtil.replaceFromEditor(node);
+          MethodResolveUtil.replaceFromEditor(methodCallNode);
           SelectionUtil.selectNode(editorContext, newArgument);
         }
       }
