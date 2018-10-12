@@ -118,7 +118,7 @@ public class GenerateImages_Facet extends IFacet.Stub {
                       if (!(MapSequence.fromMap(folder2PrintRunnables).containsKey(outputDir))) {
                         MapSequence.fromMap(folder2PrintRunnables).put(outputDir, ListSequence.fromList(new ArrayList<PrintNodeRunnable>()));
                       }
-                      final DeltaKey dk = new DeltaKey(new Object[]{modelsPair._0().getModule(), modelsPair._0()});
+                      final DeltaKey dk = new DeltaKey(modelsPair._0().getModule(), modelsPair._0());
                       for (SNode imageGenerator : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(modelsPair._1(), MetaAdapterFactory.getConcept(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, "jetbrains.mps.lang.editor.imageGen.structure.ImageGenerator")))) {
                         SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad2528389ad26L, "id")));
                         SNode node = modelsPair._0().getNode(nodeId);

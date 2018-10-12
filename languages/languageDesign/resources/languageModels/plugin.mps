@@ -23,7 +23,6 @@
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="iqmz" ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -103,10 +102,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -496,25 +491,18 @@
                                   <node concept="2ShNRf" id="m01hLOQ_w" role="37wK5m">
                                     <node concept="1pGfFk" id="m01hLORDf" role="2ShVmc">
                                       <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                                      <node concept="2ShNRf" id="m01hLOSpK" role="37wK5m">
-                                        <node concept="3g6Rrh" id="m01hLOU8L" role="2ShVmc">
-                                          <node concept="3uibUv" id="m01hLOSr2" role="3g7fb8">
-                                            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                          </node>
-                                          <node concept="2OqwBi" id="m01hLOW$5" role="3g7hyw">
-                                            <node concept="2JrnkZ" id="m01hLQ0nV" role="2Oq$k0">
-                                              <node concept="2GrUjf" id="m01hLOUU7" role="2JrQYb">
-                                                <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
-                                              </node>
-                                            </node>
-                                            <node concept="liA8E" id="m01hLQ1fo" role="2OqNvi">
-                                              <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                            </node>
-                                          </node>
-                                          <node concept="2GrUjf" id="m01hLQ21T" role="3g7hyw">
+                                      <node concept="2OqwBi" id="m01hLOW$5" role="37wK5m">
+                                        <node concept="2JrnkZ" id="m01hLQ0nV" role="2Oq$k0">
+                                          <node concept="2GrUjf" id="m01hLOUU7" role="2JrQYb">
                                             <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
                                           </node>
                                         </node>
+                                        <node concept="liA8E" id="m01hLQ1fo" role="2OqNvi">
+                                          <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                                        </node>
+                                      </node>
+                                      <node concept="2GrUjf" id="m01hLQ21T" role="37wK5m">
+                                        <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
                                       </node>
                                     </node>
                                   </node>

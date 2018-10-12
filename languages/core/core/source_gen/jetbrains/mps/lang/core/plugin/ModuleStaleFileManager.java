@@ -63,7 +63,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // each file of retained model reported as kept 
     final IFile outputRoot = null;
     IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
-    final FilesDelta fd = new FilesDelta(new DeltaKey(new Object[]{myModule}));
+    final FilesDelta fd = new FilesDelta(new DeltaKey(myModule));
     for (SModel m : Sequence.fromIterable(retainedModels)) {
       GenerationDependencies gdc = genDeps.get(m);
       if (gdc == null) {
@@ -131,7 +131,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 
   /*package*/ FileDeltaCollector newStreamHandler(SModel model, IFile outputDir) {
-    DeltaKey dk = new DeltaKey(new Object[]{model.getModule(), model});
+    DeltaKey dk = new DeltaKey(model.getModule(), model);
     // FDC needs actual path as it creates IFile from filename string at that location 
     return new FileDeltaCollector(new FilesDelta(dk), myPath2File.invoke(outputDir.getPath()), myFileStorage);
   }
@@ -163,7 +163,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         fc.recordFilesToKeep(mySourceGenStreams.getDelta());
       }
     }
-    FilesDelta d = new FilesDelta(new DeltaKey(new Object[]{myModule}));
+    FilesDelta d = new FilesDelta(new DeltaKey(myModule));
     for (StaleFilesCollector fc : CollectionSequence.fromCollection(myStaleFileCollectors.values())) {
       fc.reportStaleFilesInto(d);
     }

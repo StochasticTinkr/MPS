@@ -15,10 +15,10 @@ import java.util.Arrays;
 public final class DeltaKey {
   private final Object[] myKey;
 
-  public DeltaKey(Object[] key) {
+  public DeltaKey(Object... key) {
     // for safety, may want to copy array (with distinct copy cons for internal uses) 
     // however, expect this class to be used from within MPS only, by qualified developers that 
-    // won't modify array once passed here. 
+    // in most cases would pass just a list of values (not Object[]), and even if they pass Object[], they won't modify in afterwards 
     myKey = key;
   }
 
@@ -28,7 +28,6 @@ public final class DeltaKey {
       if (!(Objects.equals(myKey[commonLength], other.myKey[commonLength]))) {
         break;
       }
-
     }
     return new DeltaKey(Arrays.copyOfRange(myKey, 0, commonLength));
   }

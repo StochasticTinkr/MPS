@@ -205,10 +205,6 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
-      </concept>
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
       </concept>
@@ -5003,18 +4999,11 @@
                             <node concept="2ShNRf" id="7d2uRZe7GiF" role="37wK5m">
                               <node concept="1pGfFk" id="7d2uRZe7GOk" role="2ShVmc">
                                 <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                                <node concept="2ShNRf" id="7d2uRZe7GR5" role="37wK5m">
-                                  <node concept="3g6Rrh" id="7d2uRZe7HiW" role="2ShVmc">
-                                    <node concept="3uibUv" id="7d2uRZe7GVi" role="3g7fb8">
-                                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                    </node>
-                                    <node concept="37vLTw" id="7d2uRZe7Hqw" role="3g7hyw">
-                                      <ref role="3cqZAo" node="6sUZr58sWqs" resolve="module" />
-                                    </node>
-                                    <node concept="37vLTw" id="7d2uRZe7HwQ" role="3g7hyw">
-                                      <ref role="3cqZAo" node="6sUZr58t687" resolve="m" />
-                                    </node>
-                                  </node>
+                                <node concept="37vLTw" id="7d2uRZe7Hqw" role="37wK5m">
+                                  <ref role="3cqZAo" node="6sUZr58sWqs" resolve="module" />
+                                </node>
+                                <node concept="37vLTw" id="7d2uRZe7HwQ" role="37wK5m">
+                                  <ref role="3cqZAo" node="6sUZr58t687" resolve="m" />
                                 </node>
                               </node>
                             </node>
@@ -5919,15 +5908,8 @@
                 <node concept="2ShNRf" id="C1ce8Wb5OQ" role="37wK5m">
                   <node concept="1pGfFk" id="C1ce8Wb6vd" role="2ShVmc">
                     <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                    <node concept="2ShNRf" id="C1ce8Wb6U0" role="37wK5m">
-                      <node concept="3g6Rrh" id="C1ce8Wb7O3" role="2ShVmc">
-                        <node concept="3uibUv" id="C1ce8Wb75t" role="3g7fb8">
-                          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                        </node>
-                        <node concept="37vLTw" id="C1ce8Wb8fQ" role="3g7hyw">
-                          <ref role="3cqZAo" node="6Fk9mCuOZpY" resolve="myModule" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="5pk83j3tr5N" role="37wK5m">
+                      <ref role="3cqZAo" node="6Fk9mCuOZpY" resolve="myModule" />
                     </node>
                   </node>
                 </node>
@@ -6408,23 +6390,16 @@
             <node concept="2ShNRf" id="m01hLN46i" role="33vP2m">
               <node concept="1pGfFk" id="m01hLN4_Y" role="2ShVmc">
                 <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                <node concept="2ShNRf" id="m01hLN4B5" role="37wK5m">
-                  <node concept="3g6Rrh" id="m01hLN6fJ" role="2ShVmc">
-                    <node concept="3uibUv" id="m01hLN5P4" role="3g7fb8">
-                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                    </node>
-                    <node concept="2OqwBi" id="m01hLN6_r" role="3g7hyw">
-                      <node concept="37vLTw" id="m01hLN6wG" role="2Oq$k0">
-                        <ref role="3cqZAo" node="m01hLMKbE" resolve="model" />
-                      </node>
-                      <node concept="liA8E" id="m01hLN6GN" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="m01hLN6Lr" role="3g7hyw">
-                      <ref role="3cqZAo" node="m01hLMKbE" resolve="model" />
-                    </node>
+                <node concept="2OqwBi" id="m01hLN6_r" role="37wK5m">
+                  <node concept="37vLTw" id="m01hLN6wG" role="2Oq$k0">
+                    <ref role="3cqZAo" node="m01hLMKbE" resolve="model" />
                   </node>
+                  <node concept="liA8E" id="m01hLN6GN" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="m01hLN6Lr" role="37wK5m">
+                  <ref role="3cqZAo" node="m01hLMKbE" resolve="model" />
                 </node>
               </node>
             </node>
@@ -6701,15 +6676,8 @@
                 <node concept="2ShNRf" id="m01hLO9$6" role="37wK5m">
                   <node concept="1pGfFk" id="m01hLOa46" role="2ShVmc">
                     <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                    <node concept="2ShNRf" id="m01hLOa5K" role="37wK5m">
-                      <node concept="3g6Rrh" id="m01hLOaEJ" role="2ShVmc">
-                        <node concept="3uibUv" id="m01hLOafh" role="3g7fb8">
-                          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                        </node>
-                        <node concept="37vLTw" id="m01hLOaX5" role="3g7hyw">
-                          <ref role="3cqZAo" node="6Fk9mCuOZpY" resolve="myModule" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="5pk83j3tDfK" role="37wK5m">
+                      <ref role="3cqZAo" node="6Fk9mCuOZpY" resolve="myModule" />
                     </node>
                   </node>
                 </node>

@@ -40,6 +40,9 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1219920932475" name="jetbrains.mps.baseLanguage.structure.VariableArityType" flags="in" index="8X2XB">
+        <child id="1219921048460" name="componentType" index="8Xvag" />
+      </concept>
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -3105,7 +3108,7 @@
         <node concept="TZ5HI" id="m01hLL824" role="3nqlJM">
           <node concept="TZ5HA" id="m01hLL825" role="3HnX3l">
             <node concept="1dT_AC" id="m01hLL9Hm" role="1dT_Ay">
-              <property role="1dT_AB" value="use cons that takes FilesDelta, as use of IFile here is confusing, it's merely a hierarchical indicator to merge deltas, and is unrelated to IFiles recorded." />
+              <property role="1dT_AB" value="use cons that takes DeltaKey, as use of IFile here is confusing, it's merely a hierarchical indicator to merge deltas, and is unrelated to IFiles recorded." />
             </node>
           </node>
         </node>
@@ -7479,7 +7482,7 @@
         </node>
         <node concept="3SKdUt" id="m01hLKGP1" role="3cqZAp">
           <node concept="3SKdUq" id="m01hLKGP3" role="3SKWNk">
-            <property role="3SKdUp" value="won't modify array once passed here." />
+            <property role="3SKdUp" value="in most cases would pass just a list of values (not Object[]), and even if they pass Object[], they won't modify in afterwards" />
           </node>
         </node>
         <node concept="3clFbF" id="m01hLGDt_" role="3cqZAp">
@@ -7496,14 +7499,14 @@
       <node concept="3Tm1VV" id="m01hLKqBk" role="1B3o_S" />
       <node concept="37vLTG" id="m01hLGD8N" role="3clF46">
         <property role="TrG5h" value="key" />
-        <node concept="10Q1$e" id="m01hLIlOw" role="1tU5fm">
-          <node concept="3uibUv" id="m01hLIlOt" role="10Q1$1">
+        <node concept="8X2XB" id="5pk83j3te34" role="1tU5fm">
+          <node concept="3uibUv" id="5pk83j3tdwk" role="8Xvag">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="m01hLGzmm" role="jymVt" />
+    <node concept="2tJIrI" id="5pk83j3tbNo" role="jymVt" />
     <node concept="3clFb_" id="m01hLGzwZ" role="jymVt">
       <property role="TrG5h" value="commonPrefix" />
       <node concept="3uibUv" id="m01hLGzEX" role="3clF45">
@@ -7554,7 +7557,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="m01hLIWfn" role="3cqZAp" />
           </node>
           <node concept="3eOVzh" id="m01hLJ0Fp" role="1Dwp0S">
             <node concept="2YIFZM" id="m01hLJ1oj" role="3uHU7w">

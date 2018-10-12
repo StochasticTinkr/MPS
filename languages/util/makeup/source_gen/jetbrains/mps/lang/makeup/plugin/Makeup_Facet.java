@@ -103,7 +103,7 @@ public class Makeup_Facet extends IFacet.Stub {
                 if (outputModelRepo == null) {
                   outputModelRepo = monitor.getSession().getProject().getRepository();
                 }
-                final FilesDelta d = new FilesDelta(new DeltaKey(new Object[]{res.getModule(), res.getModel()}));
+                final FilesDelta d = new FilesDelta(new DeltaKey(res.getModule(), res.getModel()));
                 outputModelRepo.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
                     for (TextUnit tu : generatedTextUnits) {

@@ -64,7 +64,7 @@ public final class RetainedUtil {
         GenerationTargetFacet gtf = (GenerationTargetFacet) mf;
         IFile[] outputLocations = new IFile[2];
         for (SModel m : smd) {
-          FilesDelta fd = new FilesDelta(new DeltaKey(new Object[]{module, m}));
+          FilesDelta fd = new FilesDelta(new DeltaKey(module, m));
           ListSequence.fromList(deltas).addElement(fd);
           outputLocations[0] = gtf.getOutputLocation(m);
           outputLocations[1] = gtf.getOutputCacheLocation(m);

@@ -23,7 +23,7 @@ public class FilesDelta implements IDelta {
 
   /**
    * 
-   * @deprecated use cons that takes FilesDelta, as use of IFile here is confusing, it's merely a hierarchical indicator to merge deltas, and is unrelated to IFiles recorded.
+   * @deprecated use cons that takes DeltaKey, as use of IFile here is confusing, it's merely a hierarchical indicator to merge deltas, and is unrelated to IFiles recorded.
    */
   @Deprecated
   public FilesDelta(IFile dir) {

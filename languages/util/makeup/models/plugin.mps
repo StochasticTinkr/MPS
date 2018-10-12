@@ -103,10 +103,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -506,27 +502,20 @@
                         <node concept="2ShNRf" id="m01hLQH5N" role="37wK5m">
                           <node concept="1pGfFk" id="m01hLQH_Y" role="2ShVmc">
                             <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                            <node concept="2ShNRf" id="m01hLQI4e" role="37wK5m">
-                              <node concept="3g6Rrh" id="m01hLQKDe" role="2ShVmc">
-                                <node concept="3uibUv" id="m01hLQK79" role="3g7fb8">
-                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                </node>
-                                <node concept="2OqwBi" id="m01hLQLjm" role="3g7hyw">
-                                  <node concept="2GrUjf" id="m01hLQKXY" role="2Oq$k0">
-                                    <ref role="2Gs0qQ" node="13TYo4FzYHQ" resolve="res" />
-                                  </node>
-                                  <node concept="liA8E" id="m01hLQMpC" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpcq:2Op6w9TzkM7" resolve="getModule" />
-                                  </node>
-                                </node>
-                                <node concept="2OqwBi" id="m01hLQPq0" role="3g7hyw">
-                                  <node concept="2GrUjf" id="m01hLQOk5" role="2Oq$k0">
-                                    <ref role="2Gs0qQ" node="13TYo4FzYHQ" resolve="res" />
-                                  </node>
-                                  <node concept="liA8E" id="m01hLU4Rn" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpcq:2Op6w9TzkM3" resolve="getModel" />
-                                  </node>
-                                </node>
+                            <node concept="2OqwBi" id="m01hLQLjm" role="37wK5m">
+                              <node concept="2GrUjf" id="m01hLQKXY" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="13TYo4FzYHQ" resolve="res" />
+                              </node>
+                              <node concept="liA8E" id="m01hLQMpC" role="2OqNvi">
+                                <ref role="37wK5l" to="tpcq:2Op6w9TzkM7" resolve="getModule" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="m01hLQPq0" role="37wK5m">
+                              <node concept="2GrUjf" id="m01hLQOk5" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="13TYo4FzYHQ" resolve="res" />
+                              </node>
+                              <node concept="liA8E" id="m01hLU4Rn" role="2OqNvi">
+                                <ref role="37wK5l" to="tpcq:2Op6w9TzkM3" resolve="getModel" />
                               </node>
                             </node>
                           </node>

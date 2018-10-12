@@ -104,7 +104,7 @@ public class Binaries_Facet extends IFacet.Stub {
                       final IFile outputDir = Target_make.vars(pa.global()).pathToFile().invoke(SModelOperations.getOutputLocation(model).getPath());
                       final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
                       ListSequence.fromList(fpList).addElement(fp);
-                      final FilesDelta fd = new FilesDelta(new DeltaKey(new Object[]{model.getModule(), model}));
+                      final FilesDelta fd = new FilesDelta(new DeltaKey(model.getModule(), model));
                       ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).translate(new ITranslator2<SNode, Tuples._2<IFile, byte[]>>() {
                         public Iterable<Tuples._2<IFile, byte[]>> translate(SNode it) {
                           return (List<Tuples._2<IFile, byte[]>>) Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputDir);

@@ -1762,8 +1762,8 @@
       <node id="7438536672422434244" at="60,87,61,0" concept="12" />
       <node id="7438536672422419408" at="63,48,64,63" concept="9" />
       <node id="7438536672422420955" at="64,63,65,47" concept="9" />
-      <node id="8305336451673796361" at="66,30,67,80" concept="9" />
-      <node id="8305336451673859429" at="67,80,68,55" concept="4" />
+      <node id="8305336451673796361" at="66,30,67,66" concept="9" />
+      <node id="8305336451673859429" at="67,66,68,55" concept="4" />
       <node id="7438536672422448585" at="68,55,69,56" concept="4" />
       <node id="7438536672422454678" at="69,56,70,61" concept="4" />
       <node id="7438536672422483985" at="72,28,73,23" concept="3" />
@@ -1906,7 +1906,7 @@
       <node id="8899784690286833808" at="62,112,63,52" concept="11" />
       <node id="8899784690286916238" at="63,52,64,34" concept="9" />
       <node id="68832656057637242" at="64,34,65,70" concept="9" />
-      <node id="68832656057652252" at="65,70,66,79" concept="9" />
+      <node id="68832656057652252" at="65,70,66,65" concept="9" />
       <node id="8899784690286881751" at="67,60,68,50" concept="9" />
       <node id="8899784690286886145" at="69,24,70,17" concept="3" />
       <node id="8899784690286907048" at="71,7,72,76" concept="9" />
@@ -1940,8 +1940,8 @@
       <node id="7697818800797502154" at="123,25,124,59" concept="4" />
       <node id="3261839477076816583" at="125,5,126,87" concept="4" />
       <node id="7697818800797531636" at="126,87,127,14" concept="10" />
-      <node id="6192537296185290" at="133,82,134,71" concept="9" />
-      <node id="4391024623894134279" at="134,71,135,87" concept="11" />
+      <node id="6192537296185290" at="133,82,134,57" concept="9" />
+      <node id="4391024623894134279" at="134,57,135,87" concept="11" />
       <node id="7697818800798632445" at="135,87,136,110" concept="10" />
       <node id="7697818800798592398" at="139,72,140,69" concept="11" />
       <node id="4391024623894121345" at="140,69,141,151" concept="11" />
@@ -1958,7 +1958,7 @@
       <node id="7697818800797188346" at="158,144,159,141" concept="11" />
       <node id="7697818800797190393" at="159,141,160,78" concept="11" />
       <node id="7697818800798584364" at="162,104,163,60" concept="4" />
-      <node id="6192537296466527" at="165,5,166,72" concept="9" />
+      <node id="6192537296466527" at="165,5,166,58" concept="9" />
       <node id="6192537296487581" at="167,102,168,33" concept="4" />
       <node id="6963988520673871277" at="169,5,170,101" concept="9" />
       <node id="6963988520673899203" at="170,101,171,44" concept="4" />
@@ -1967,7 +1967,7 @@
       <node id="8899784690286885513" at="68,50,71,7" concept="7" />
       <node id="68832656057626363" at="75,0,78,0" concept="8" trace="accept#(Ljetbrains/mps/vfs/IFile;)V" />
       <node id="3261839477076739906" at="161,37,164,7" concept="6" />
-      <node id="3261839477076770972" at="166,72,169,5" concept="6" />
+      <node id="3261839477076770972" at="166,58,169,5" concept="6" />
       <node id="7697818800798098818" at="175,0,178,0" concept="8" trace="flushChanges#()V" />
       <node id="7697818800797134549" at="93,0,97,0" concept="8" trace="getModuleWideStreamHandler#()Ljetbrains/mps/internal/make/runtime/java/FileDeltaCollector;" />
       <node id="3261839477076657131" at="45,123,50,5" concept="6" />
@@ -1981,7 +1981,7 @@
       <node id="3261839477077053609" at="142,94,150,5" concept="6" />
       <node id="7697818800796995288" at="83,0,92,0" concept="8" trace="collectGeneratedFiles#(Ljetbrains/mps/generator/impl/dependencies/GenerationDependenciesCache;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="7697818800797484565" at="117,0,129,0" concept="8" trace="completeDelta#()Ljava/util/List;" />
-      <node id="8899784690286878905" at="66,79,79,5" concept="6" />
+      <node id="8899784690286878905" at="66,65,79,5" concept="6" />
       <node id="7697818800796986779" at="41,0,55,0" concept="2" trace="ModuleStaleFileManager#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljetbrains/mps/messages/IMessageHandler;)V" />
       <node id="7697818800797108575" at="102,0,116,0" concept="8" trace="getStreamHandler#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/internal/make/runtime/java/FileDeltaCollector;" />
       <node id="7697818800797233736" at="139,0,156,0" concept="8" trace="updateWith#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/java/FileDeltaCollector;)V" />
@@ -2012,7 +2012,7 @@
         <var name="fc" id="3261839477076739908" />
       </scope>
       <scope id="3261839477077110311" at="161,37,164,7" />
-      <scope id="3261839477076770972" at="166,72,169,5">
+      <scope id="3261839477076770972" at="166,58,169,5">
         <var name="fc" id="3261839477076770974" />
       </scope>
       <scope id="7697818800798098818" at="175,0,178,0" />
@@ -2052,7 +2052,7 @@
         <var name="rv" id="7697818800797148403" />
       </scope>
       <scope id="7697818800797484565" at="117,0,129,0" />
-      <scope id="8899784690286878905" at="66,79,79,5">
+      <scope id="8899784690286878905" at="66,65,79,5">
         <var name="m" id="8899784690286878907" />
       </scope>
       <scope id="7697818800796986779" at="41,0,55,0">

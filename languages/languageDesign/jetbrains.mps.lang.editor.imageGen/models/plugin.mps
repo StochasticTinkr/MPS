@@ -200,10 +200,6 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -772,34 +768,27 @@
                               <node concept="2ShNRf" id="C1ce8WcXCV" role="33vP2m">
                                 <node concept="1pGfFk" id="C1ce8WcYyG" role="2ShVmc">
                                   <ref role="37wK5l" to="rk9m:m01hLGCPm" resolve="DeltaKey" />
-                                  <node concept="2ShNRf" id="C1ce8WcYX4" role="37wK5m">
-                                    <node concept="3g6Rrh" id="C1ce8Wd0TZ" role="2ShVmc">
-                                      <node concept="3uibUv" id="C1ce8WcYXj" role="3g7fb8">
-                                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                      </node>
-                                      <node concept="2OqwBi" id="C1ce8Wd3Mj" role="3g7hyw">
-                                        <node concept="2JrnkZ" id="C1ce8WdVwY" role="2Oq$k0">
-                                          <node concept="1LFfDK" id="C1ce8Wd2ON" role="2JrQYb">
-                                            <node concept="3cmrfG" id="C1ce8Wd3fQ" role="1LF_Uc">
-                                              <property role="3cmrfH" value="0" />
-                                            </node>
-                                            <node concept="2GrUjf" id="C1ce8Wd25h" role="1LFl5Q">
-                                              <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="modelsPair" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="liA8E" id="C1ce8WdW5S" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                        </node>
-                                      </node>
-                                      <node concept="1LFfDK" id="C1ce8WdYcG" role="3g7hyw">
-                                        <node concept="3cmrfG" id="C1ce8WdYcH" role="1LF_Uc">
+                                  <node concept="2OqwBi" id="C1ce8Wd3Mj" role="37wK5m">
+                                    <node concept="2JrnkZ" id="C1ce8WdVwY" role="2Oq$k0">
+                                      <node concept="1LFfDK" id="C1ce8Wd2ON" role="2JrQYb">
+                                        <node concept="3cmrfG" id="C1ce8Wd3fQ" role="1LF_Uc">
                                           <property role="3cmrfH" value="0" />
                                         </node>
-                                        <node concept="2GrUjf" id="C1ce8WdYcI" role="1LFl5Q">
+                                        <node concept="2GrUjf" id="C1ce8Wd25h" role="1LFl5Q">
                                           <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="modelsPair" />
                                         </node>
                                       </node>
+                                    </node>
+                                    <node concept="liA8E" id="C1ce8WdW5S" role="2OqNvi">
+                                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                                    </node>
+                                  </node>
+                                  <node concept="1LFfDK" id="C1ce8WdYcG" role="37wK5m">
+                                    <node concept="3cmrfG" id="C1ce8WdYcH" role="1LF_Uc">
+                                      <property role="3cmrfH" value="0" />
+                                    </node>
+                                    <node concept="2GrUjf" id="C1ce8WdYcI" role="1LFl5Q">
+                                      <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="modelsPair" />
                                     </node>
                                   </node>
                                 </node>
