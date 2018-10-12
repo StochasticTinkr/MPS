@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.typesystem.checking;
+package jetbrains.mps.nodeEditor.checking;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.errors.item.QuickFixBase;

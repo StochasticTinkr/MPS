@@ -18,6 +18,5 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="mps-icons" />
-    <orderEntry type="module" module-name="typesystemIntegration" />
   </component>
 </module>

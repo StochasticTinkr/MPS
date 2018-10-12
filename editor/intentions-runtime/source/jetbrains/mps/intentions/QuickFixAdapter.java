@@ -23,7 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
-import jetbrains.mps.typesystem.checking.QuickFixRuntimeEditorWrapper;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;

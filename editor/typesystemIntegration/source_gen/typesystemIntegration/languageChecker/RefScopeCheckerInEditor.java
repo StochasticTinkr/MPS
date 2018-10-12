@@ -6,7 +6,7 @@ import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.typesystem.checking.EditorContextQuickfix;
+import jetbrains.mps.nodeEditor.checking.EditorContextQuickfix;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SNode;

@@ -144,6 +144,7 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="java.util.Collections" />
     <classNode extendsClassName="typesystemIntegration.languageChecker.LanguageEditorCheckerBase" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.LanguageEditorCheckerBase" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.DisposableEditorChecker" />
   </dependency>
@@ -197,17 +198,18 @@
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" file="RefScopeCheckerInEditor.java">
     <classNode dependClassName="jetbrains.mps.resolve.ReferenceResolverUtils" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorContextQuickfix" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.EditorContextQuickfix" />
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode extendsClassName="jetbrains.mps.checkers.RefScopeChecker" />
   </dependency>
 </dependenciesRoot>
