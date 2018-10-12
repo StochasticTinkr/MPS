@@ -7039,96 +7039,15 @@
         </node>
       </node>
       <node concept="3clFbS" id="3Z7JN3sqKoV" role="3clF47">
-        <node concept="3clFbJ" id="3Z7JN3sr4US" role="3cqZAp">
-          <node concept="3clFbS" id="3Z7JN3sr4UU" role="3clFbx">
-            <node concept="3cpWs6" id="3Z7JN3sr59z" role="3cqZAp">
-              <node concept="2YIFZM" id="3Z7JN3sr8hu" role="3cqZAk">
-                <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
-                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="3Z7JN3sr54T" role="3clFbw">
-            <node concept="10Nm6u" id="3Z7JN3sr57X" role="3uHU7w" />
-            <node concept="37vLTw" id="3Z7JN3sr4XS" role="3uHU7B">
-              <ref role="3cqZAo" node="3Z7JN3sqMjZ" resolve="gd" />
-            </node>
+        <node concept="3SKdUt" id="59L961f3fy" role="3cqZAp">
+          <node concept="3SKdUq" id="59L961f3f$" role="3SKWNk">
+            <property role="3SKdUp" value="XXX shall report generated children from GD, but as long as there's no use and the class likely to cease, decided to left unimplemented." />
           </node>
         </node>
-        <node concept="3cpWs8" id="3Z7JN3srbBl" role="3cqZAp">
-          <node concept="3cpWsn" id="3Z7JN3srbBo" role="3cpWs9">
-            <property role="TrG5h" value="rv" />
-            <node concept="_YKpA" id="3Z7JN3srbBh" role="1tU5fm">
-              <node concept="3uibUv" id="3Z7JN3srda$" role="_ZDj9">
-                <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="3Z7JN3srdEl" role="33vP2m">
-              <node concept="Tc6Ow" id="3Z7JN3sre6c" role="2ShVmc">
-                <node concept="3uibUv" id="3Z7JN3sreJp" role="HW$YZ">
-                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="3Z7JN3srgJU" role="3cqZAp">
-          <node concept="3clFbS" id="3Z7JN3srgJW" role="2LFqv$">
-            <node concept="1DcWWT" id="3Z7JN3srk6H" role="3cqZAp">
-              <node concept="3clFbS" id="3Z7JN3srk6J" role="2LFqv$">
-                <node concept="3clFbF" id="3Z7JN3srmUH" role="3cqZAp">
-                  <node concept="2OqwBi" id="3Z7JN3srnuQ" role="3clFbG">
-                    <node concept="37vLTw" id="3Z7JN3srmUF" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3Z7JN3srbBo" resolve="rv" />
-                    </node>
-                    <node concept="TSZUe" id="3Z7JN3sroaa" role="2OqNvi">
-                      <node concept="2OqwBi" id="3Z7JN3srpvJ" role="25WWJ7">
-                        <node concept="37vLTw" id="3Z7JN3sroDy" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2OwcOGauG4Z" resolve="rootDir" />
-                        </node>
-                        <node concept="liA8E" id="3Z7JN3srpKo" role="2OqNvi">
-                          <ref role="37wK5l" to="3ju5:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
-                          <node concept="37vLTw" id="3Z7JN3srq0D" role="37wK5m">
-                            <ref role="3cqZAo" node="3Z7JN3srk6K" resolve="file" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="3Z7JN3srk6K" role="1Duv9x">
-                <property role="TrG5h" value="file" />
-                <node concept="17QB3L" id="3Z7JN3srko7" role="1tU5fm" />
-              </node>
-              <node concept="2OqwBi" id="3Z7JN3srlYc" role="1DdaDG">
-                <node concept="37vLTw" id="3Z7JN3srlFV" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3Z7JN3srgJX" resolve="grd" />
-                </node>
-                <node concept="liA8E" id="3Z7JN3srmmY" role="2OqNvi">
-                  <ref role="37wK5l" to="w8cm:~GenerationRootDependencies.getFiles():java.util.List" resolve="getFiles" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="3Z7JN3srgJX" role="1Duv9x">
-            <property role="TrG5h" value="grd" />
-            <node concept="3uibUv" id="3Z7JN3srirB" role="1tU5fm">
-              <ref role="3uigEE" to="w8cm:~GenerationRootDependencies" resolve="GenerationRootDependencies" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="3Z7JN3srje7" role="1DdaDG">
-            <node concept="37vLTw" id="3Z7JN3sriXq" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Z7JN3sqMjZ" resolve="gd" />
-            </node>
-            <node concept="liA8E" id="3Z7JN3srjzl" role="2OqNvi">
-              <ref role="37wK5l" to="w8cm:~GenerationDependencies.getRootDependencies():java.util.List" resolve="getRootDependencies" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="3Z7JN3srqiN" role="3cqZAp">
-          <node concept="37vLTw" id="3Z7JN3srs_j" role="3cqZAk">
-            <ref role="3cqZAo" node="3Z7JN3srbBo" resolve="rv" />
+        <node concept="3cpWs6" id="3Z7JN3sr59z" role="3cqZAp">
+          <node concept="2YIFZM" id="3Z7JN3sr8hu" role="3cqZAk">
+            <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
+            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
           </node>
         </node>
       </node>
@@ -7452,6 +7371,33 @@
     </node>
     <node concept="2tJIrI" id="2OwcOGauJyq" role="jymVt" />
     <node concept="3Tm1VV" id="2OwcOGat_us" role="1B3o_S" />
+    <node concept="3UR2Jj" id="59L961eEwr" role="lGtFl">
+      <node concept="TZ5HA" id="59L961eEws" role="TZ5H$">
+        <node concept="1dT_AC" id="59L961eEwt" role="1dT_Ay">
+          <property role="1dT_AB" value="IMPORTANT Use of this class is discouraged." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="59L961eHOg" role="TZ5H$">
+        <node concept="1dT_AC" id="59L961eHOh" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="59L961eHPc" role="TZ5H$">
+        <node concept="1dT_AC" id="59L961eHPd" role="1dT_Ay">
+          <property role="1dT_AB" value="The class is informed about FS changes walks FS to find out existing files and report those unchanged as stale." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="59L961eHRa" role="TZ5H$">
+        <node concept="1dT_AC" id="59L961eHRb" role="1dT_Ay">
+          <property role="1dT_AB" value="As a drawback, need an external mechanism to tell non-generated files under generated location." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="59L961eHQa" role="TZ5H$">
+        <node concept="1dT_AC" id="59L961eHQb" role="1dT_Ay">
+          <property role="1dT_AB" value="MPS doesn't use it for TextGen as we record names of generated files and don't need to walk FS any more" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="m01hLGhpT">
     <property role="TrG5h" value="DeltaKey" />

@@ -1805,18 +1805,36 @@
         </node>
       </node>
       <node concept="3clFbS" id="3zGGVE6UVvA" role="3clF47">
-        <node concept="3cpWs8" id="3zGGVE6W1Vo" role="3cqZAp">
-          <node concept="3cpWsn" id="3zGGVE6W1Vp" role="3cpWs9">
-            <property role="TrG5h" value="file" />
-            <node concept="3uibUv" id="3zGGVE6W1Vq" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-            </node>
-            <node concept="1rXfSq" id="3zGGVE6W1Vr" role="33vP2m">
+        <node concept="3clFbF" id="59L961iwI4" role="3cqZAp">
+          <node concept="1rXfSq" id="59L961iwI2" role="3clFbG">
+            <ref role="37wK5l" node="59L961iuE0" resolve="saveStream" />
+            <node concept="1rXfSq" id="3zGGVE6W1Vr" role="37wK5m">
               <ref role="37wK5l" node="3zGGVE6VAj$" resolve="getFile" />
               <node concept="37vLTw" id="3zGGVE6W1Vs" role="37wK5m">
                 <ref role="3cqZAo" node="3zGGVE6UVvx" resolve="name" />
               </node>
             </node>
+            <node concept="37vLTw" id="59L961ixC9" role="37wK5m">
+              <ref role="3cqZAo" node="3zGGVE6UVvz" resolve="content" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3zGGVE6ZNrQ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="59L961itoA" role="jymVt" />
+    <node concept="3clFb_" id="59L961iuE0" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="saveStream" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="59L961iuE3" role="3clF47">
+        <node concept="3SKdUt" id="4IRCAVi7Je$" role="3cqZAp">
+          <node concept="3SKdUq" id="4IRCAVi7JeA" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME this is in fact part of future proper API for StreamHandler, once we allow arbitrary path for TextGen units" />
           </node>
         </node>
         <node concept="3clFbJ" id="3zGGVE6W1Vt" role="3cqZAp">
@@ -1826,7 +1844,7 @@
                 <node concept="liA8E" id="3zGGVE6W1Vx" role="2OqNvi">
                   <ref role="37wK5l" to="rk9m:s2Jv$gDl8_" resolve="written" />
                   <node concept="37vLTw" id="3zGGVE6W1Vy" role="37wK5m">
-                    <ref role="3cqZAo" node="3zGGVE6W1Vp" resolve="file" />
+                    <ref role="3cqZAo" node="59L961iv39" resolve="file" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3zGGVE6W1Vz" role="2Oq$k0">
@@ -1842,10 +1860,10 @@
             <node concept="liA8E" id="3zGGVE6W1VA" role="2OqNvi">
               <ref role="37wK5l" node="3A8r4RO6URm" resolve="saveContent" />
               <node concept="37vLTw" id="3zGGVE6W1VB" role="37wK5m">
-                <ref role="3cqZAo" node="3zGGVE6W1Vp" resolve="file" />
+                <ref role="3cqZAo" node="59L961iv39" resolve="file" />
               </node>
               <node concept="37vLTw" id="3zGGVE6W2Jt" role="37wK5m">
-                <ref role="3cqZAo" node="3zGGVE6UVvz" resolve="content" />
+                <ref role="3cqZAo" node="59L961iv_P" resolve="content" />
               </node>
             </node>
           </node>
@@ -1856,7 +1874,7 @@
                   <node concept="liA8E" id="3zGGVE6W1VH" role="2OqNvi">
                     <ref role="37wK5l" to="rk9m:s2Jv$gDl8M" resolve="kept" />
                     <node concept="37vLTw" id="3zGGVE6W1VI" role="37wK5m">
-                      <ref role="3cqZAo" node="3zGGVE6W1Vp" resolve="file" />
+                      <ref role="3cqZAo" node="59L961iv39" resolve="file" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3zGGVE6W1VJ" role="2Oq$k0">
@@ -1868,10 +1886,22 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="3zGGVE6ZNrQ" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      <node concept="3Tm1VV" id="59L961iubT" role="1B3o_S" />
+      <node concept="3cqZAl" id="59L961iuzX" role="3clF45" />
+      <node concept="37vLTG" id="59L961iv39" role="3clF46">
+        <property role="TrG5h" value="file" />
+        <node concept="3uibUv" id="59L961iv38" role="1tU5fm">
+          <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="59L961iv_P" role="3clF46">
+        <property role="TrG5h" value="content" />
+        <node concept="10Q1$e" id="59L961iw6J" role="1tU5fm">
+          <node concept="10PrrI" id="59L961ivXE" role="10Q1$1" />
+        </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="59L961itrS" role="jymVt" />
     <node concept="3clFb_" id="3zGGVE6UVvB" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="touch" />

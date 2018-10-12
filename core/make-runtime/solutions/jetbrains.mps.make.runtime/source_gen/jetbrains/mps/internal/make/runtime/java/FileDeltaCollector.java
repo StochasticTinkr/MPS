@@ -57,13 +57,18 @@ public class FileDeltaCollector implements StreamHandler {
   }
   @Override
   public void saveStream(String name, byte[] content) {
-    IFile file = getFile(name);
+    saveStream(getFile(name), content);
+  }
+
+  public void saveStream(IFile file, byte[] content) {
+    // FIXME this is in fact part of future proper API for StreamHandler, once we allow arbitrary path for TextGen units 
     if (myProcessor.saveContent(file, content)) {
       myDelta.written(file);
     } else {
       myDelta.kept(file);
     }
   }
+
   @Override
   public boolean touch(String name) {
     // TODO seems that we no longer need this method, remove along with StreamHandler rewrite to use InputStream/ISProvider instead of present 

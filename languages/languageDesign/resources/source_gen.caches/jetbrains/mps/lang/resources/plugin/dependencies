@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.NotNullWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
