@@ -14,7 +14,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
-import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.util.Cancellable;
@@ -65,13 +64,15 @@ public abstract class LanguageEditorCheckerBase extends BaseEditorChecker implem
 
   @Override
   public boolean isLaterThan(EditorChecker checker) {
-    if (checker instanceof TypesEditorChecker) {
-      return true;
+    // since this is default editor checker, 
+    // every other checker knows whether it should be later or earlier than this one 
+    if (checker instanceof LanguageEditorCheckerBase) {
+      return false;
     }
-    if (checker instanceof AutoResolver) {
-      return true;
+    if (checker.isLaterThan(this)) {
+      return false;
     }
-    return false;
+    return true;
   }
 
   @NotNull

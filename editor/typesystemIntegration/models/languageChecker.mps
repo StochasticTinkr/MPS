@@ -525,42 +525,55 @@
         </node>
       </node>
       <node concept="3clFbS" id="2v0ve8x$pdk" role="3clF47">
-        <node concept="3clFbJ" id="2v0ve8x$pdl" role="3cqZAp">
-          <node concept="3clFbS" id="2v0ve8x$pdm" role="3clFbx">
-            <node concept="3cpWs6" id="2v0ve8x$pdn" role="3cqZAp">
-              <node concept="3clFbT" id="2v0ve8x$pdo" role="3cqZAk">
-                <property role="3clFbU" value="true" />
+        <node concept="3SKdUt" id="5NI6bHmj3hx" role="3cqZAp">
+          <node concept="3SKdUq" id="5NI6bHmj56p" role="3SKWNk">
+            <property role="3SKdUp" value="since this is default editor checker," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5NI6bHmj5aD" role="3cqZAp">
+          <node concept="3SKdUq" id="5NI6bHmj5aF" role="3SKWNk">
+            <property role="3SKdUp" value="every other checker knows whether it should be later or earlier than this one" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5NI6bHmiE$5" role="3cqZAp">
+          <node concept="3clFbS" id="5NI6bHmiE$7" role="3clFbx">
+            <node concept="3cpWs6" id="5NI6bHmiIri" role="3cqZAp">
+              <node concept="3clFbT" id="5NI6bHmiIsf" role="3cqZAk">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="2v0ve8x$pdp" role="3clFbw">
-            <node concept="3uibUv" id="2v0ve8x$pdq" role="2ZW6by">
-              <ref role="3uigEE" to="strd:~TypesEditorChecker" resolve="TypesEditorChecker" />
+          <node concept="2ZW3vV" id="5NI6bHmiHRz" role="3clFbw">
+            <node concept="3uibUv" id="5NI6bHmiI1u" role="2ZW6by">
+              <ref role="3uigEE" node="6qi2OtU3ufq" resolve="LanguageEditorCheckerBase" />
             </node>
-            <node concept="37vLTw" id="2v0ve8x$pdr" role="2ZW6bz">
+            <node concept="37vLTw" id="5NI6bHmiGo7" role="2ZW6bz">
               <ref role="3cqZAo" node="2v0ve8x$pdi" resolve="checker" />
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="2v0ve8x$pds" role="3cqZAp">
-          <node concept="3clFbS" id="2v0ve8x$pdt" role="3clFbx">
-            <node concept="3cpWs6" id="36YhQHI7M5V" role="3cqZAp">
-              <node concept="3clFbT" id="36YhQHI7QMd" role="3cqZAk">
-                <property role="3clFbU" value="true" />
+        <node concept="3clFbJ" id="5NI6bHmiLyA" role="3cqZAp">
+          <node concept="3clFbS" id="5NI6bHmiLyC" role="3clFbx">
+            <node concept="3cpWs6" id="5NI6bHmiNYq" role="3cqZAp">
+              <node concept="3clFbT" id="5NI6bHmiNZp" role="3cqZAk">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="2v0ve8x$pdH" role="3clFbw">
-            <node concept="3uibUv" id="36YhQHI7Hvx" role="2ZW6by">
-              <ref role="3uigEE" node="4nkKl$KPUHv" resolve="AutoResolver" />
-            </node>
-            <node concept="37vLTw" id="2v0ve8x$pdJ" role="2ZW6bz">
+          <node concept="2OqwBi" id="5NI6bHmiN$J" role="3clFbw">
+            <node concept="37vLTw" id="5NI6bHmiNmp" role="2Oq$k0">
               <ref role="3cqZAo" node="2v0ve8x$pdi" resolve="checker" />
+            </node>
+            <node concept="liA8E" id="5NI6bHmiNLp" role="2OqNvi">
+              <ref role="37wK5l" to="n70j:~EditorChecker.isLaterThan(jetbrains.mps.nodeEditor.checking.EditorChecker):boolean" resolve="isLaterThan" />
+              <node concept="Xjq3P" id="5NI6bHmiNU6" role="37wK5m" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="2v0ve8x$pdK" role="3cqZAp">
-          <node concept="3clFbT" id="2v0ve8x$pdL" role="3cqZAk" />
+        <node concept="3cpWs6" id="5NI6bHmiQW3" role="3cqZAp">
+          <node concept="3clFbT" id="5NI6bHmiSfM" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2v0ve8x$pdM" role="2AJF6D">
