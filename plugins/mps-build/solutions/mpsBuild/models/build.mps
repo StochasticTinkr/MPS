@@ -6458,6 +6458,12 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="64iZc9nkQi$" role="3bR37C">
+          <node concept="3bR9La" id="64iZc9nkQi_" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7G8F81M9IGs" role="2G$12L">
         <property role="BnDLt" value="true" />

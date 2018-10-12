@@ -20,7 +20,7 @@ public abstract class SpecificChecker extends IChecker.AbstractModelChecker<Issu
   }
   @Override
   public void check(SModel toCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
-    List<? extends IssueKindReportItem> errors = checkModel(toCheck, monitor);
+    List<? extends IssueKindReportItem> errors = checkModel(toCheck, repository, monitor);
     for (IssueKindReportItem error : errors) {
       errorCollector.consume(error);
     }

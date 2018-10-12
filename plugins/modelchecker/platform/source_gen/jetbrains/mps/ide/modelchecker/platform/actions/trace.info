@@ -798,11 +798,11 @@
     <file name="SpecificChecker.java">
       <node id="842888854126415913" at="15,104,16,46" concept="20" />
       <node id="611563321809336271" at="18,128,19,46" concept="20" />
-      <node id="5633148658972000521" at="22,140,23,78" concept="11" />
+      <node id="5633148658972000521" at="22,140,23,90" concept="11" />
       <node id="5633148658972000533" at="24,46,25,36" concept="5" />
       <node id="7780545028898651134" at="15,0,18,0" concept="10" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <node id="611563321809336265" at="18,0,21,0" concept="10" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <node id="842888854126576922" at="23,78,26,5" concept="8" />
+      <node id="842888854126576922" at="23,90,26,5" concept="8" />
       <node id="5633148658972000508" at="21,0,28,0" concept="10" trace="check#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
       <scope id="7780545028898651139" at="15,104,16,46" />
       <scope id="611563321809336270" at="18,128,19,46" />
@@ -816,7 +816,7 @@
         <var name="progressContext" id="611563321809336276" />
         <var name="repository" id="611563321809351737" />
       </scope>
-      <scope id="842888854126576922" at="23,78,26,5">
+      <scope id="842888854126576922" at="23,90,26,5">
         <var name="error" id="842888854126576925" />
       </scope>
       <scope id="5633148658972000520" at="22,140,26,5">

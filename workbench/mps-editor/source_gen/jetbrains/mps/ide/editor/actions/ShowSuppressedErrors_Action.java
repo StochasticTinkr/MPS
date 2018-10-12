@@ -27,9 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
-import jetbrains.mps.ide.editor.util.CustomizedNavigatableRenderer;
 
 public class ShowSuppressedErrors_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -86,7 +83,7 @@ public class ShowSuppressedErrors_Action extends BaseAction {
         title.value = "Errors suppressed for " + ((String) BHReflection.invoke0(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), SMethodTrimmedId.create("nodeDescription", null, "4oS1ku9jIXr")));
       }
     });
-    RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
-    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title.value, navigatables, new CustomizedNavigatableRenderer(), relativePoint, false);
+    ListSequence.fromList(AttributeOperations.getAttributeList(((SNode) MapSequence.fromMap(_params).get("selectedNode")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")))).clear();
+    // todo 
   }
 }
