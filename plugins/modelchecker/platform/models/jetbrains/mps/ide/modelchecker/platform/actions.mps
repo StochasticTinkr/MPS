@@ -3012,6 +3012,19 @@
             <ref role="uiZuM" node="3J4tNviCaHD" resolve="ModelCheckerSettings.CheckingLevel" />
           </node>
         </node>
+        <node concept="3clFbF" id="60ZMMrPTQFn" role="3cqZAp">
+          <node concept="2OqwBi" id="60ZMMrPTSWJ" role="3clFbG">
+            <node concept="37vLTw" id="60ZMMrPTQFl" role="2Oq$k0">
+              <ref role="3cqZAo" node="63oasX2fiCm" resolve="myCheckingLevelSlider" />
+            </node>
+            <node concept="liA8E" id="60ZMMrPTVs2" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~JSlider.setInverted(boolean):void" resolve="setInverted" />
+              <node concept="3clFbT" id="60ZMMrPTVVH" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="63oasX2fkTC" role="3cqZAp">
           <node concept="2OqwBi" id="63oasX2fll7" role="3clFbG">
             <node concept="37vLTw" id="63oasX2fkTA" role="2Oq$k0">

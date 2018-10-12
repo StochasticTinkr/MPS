@@ -42,6 +42,7 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     for (ModelCheckerSettings.CheckingLevel level : ModelCheckerSettings.CheckingLevel.values()) {
       t.put(level.ordinal(), new JLabel(level.getPresentation()));
     }
+    myCheckingLevelSlider.setInverted(true);
     myCheckingLevelSlider.setLabelTable(t);
     myCheckingLevelSlider.setPaintLabels(true);
     myCheckingLevelSlider.setPaintTicks(true);
