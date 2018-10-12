@@ -54,7 +54,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import sun.font.FontDesignMetrics;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractListModel;
@@ -347,8 +346,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       }
     }, KeyStroke.getKeyStroke('F', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-
-    myList.setFixedCellHeight(FontDesignMetrics.getMetrics(myList.getFont()).getHeight() + 5);
+    myList.setFixedCellHeight(myList.getFontMetrics(myList.getFont()).getHeight() + 5);
 
     final AbstractAction openCurrentMessage = new AbstractAction() {
       @Override
