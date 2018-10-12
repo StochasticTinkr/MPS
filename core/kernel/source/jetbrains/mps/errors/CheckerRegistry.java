@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.errors;
 
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.checkers.ModelPropertiesChecker;
 import jetbrains.mps.checkers.ModuleChecker;
-import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
 import jetbrains.mps.project.validation.StructureChecker;
@@ -37,17 +37,11 @@ public final class CheckerRegistry {
 
   private void registerCoreCheckers() {
     registerChecker(new ConstraintsChecker());
-    registerChecker(new RefScopeChecker());
     registerChecker(new TargetConceptChecker());
     registerChecker(new UsedLanguagesChecker());
     registerChecker(new StructureChecker().withoutBrokenReferences());
     registerChecker(new ModelPropertiesChecker());
     registerChecker(new ModuleChecker());
-
-    //todo: register from plugins
-    //registerChecker(new TypesystemChecker());
-    //registerChecker(new UnresolvedReferencesChecker());
-    //registerChecker(new GeneratorTemplatesChecker());
   }
 
   public void registerChecker(IChecker<?, ?> checker) {
@@ -60,6 +54,16 @@ public final class CheckerRegistry {
 
   public List<IChecker<?, ?>> getCheckers() {
     return new ArrayList<>(myCheckers);
+  }
+
+  public List<AbstractNodeCheckerInEditor> getEditorCheckers() {
+    List<AbstractNodeCheckerInEditor> result = new ArrayList<>();
+    for (IChecker<?, ?> checker: myCheckers){
+      if (checker instanceof AbstractNodeCheckerInEditor) {
+        result.add((AbstractNodeCheckerInEditor) checker);
+      }
+    }
+    return result;
   }
 
   public void clear() {

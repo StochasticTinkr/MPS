@@ -15,11 +15,11 @@ import jetbrains.mps.resolve.ReferenceResolverUtils;
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   @Override
   protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
-    return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately);
+    return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, executeImmediately);
   }
 
   private static class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix implements EditorContextQuickfix {
-    public ResolveReferenceEditorBasedQuickFix(SReference reference, SRepository repository, boolean executeImmediately) {
+    public ResolveReferenceEditorBasedQuickFix(SReference reference, boolean executeImmediately) {
       super(reference, executeImmediately);
     }
     @Override

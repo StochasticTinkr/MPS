@@ -1102,6 +1102,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -1114,7 +1115,6 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.util.CustomizedNavigatableRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuUtil" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />

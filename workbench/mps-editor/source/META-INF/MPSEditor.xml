@@ -41,6 +41,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.editor.resolver.EditorResolverComponent</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.typesystem.checking.EditorCheckerComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

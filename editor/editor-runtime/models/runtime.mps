@@ -65,8 +65,11 @@
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="dl8v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.validation(MPS.Core/)" implicit="true" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -457,6 +460,9 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="2423417345669755629" name="whichError" index="1eyWvh" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -6356,8 +6362,8 @@
     <node concept="3Tm1VV" id="77iVR6LYgNS" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6qi2OtU3ufq">
-    <property role="TrG5h" value="LanguageEditorCheckerBase" />
-    <property role="1sVAO0" value="true" />
+    <property role="TrG5h" value="LanguageEditorChecker" />
+    <property role="1sVAO0" value="false" />
     <node concept="312cEg" id="2v0ve8x$p7l" role="jymVt">
       <property role="TrG5h" value="myMessagesChanged" />
       <node concept="3Tm6S6" id="2v0ve8x$p7m" role="1B3o_S" />
@@ -6409,8 +6415,8 @@
                 <node concept="3uibUv" id="5NI6bHmfkL5" role="HW$YZ">
                   <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
                 </node>
-                <node concept="37vLTw" id="5NI6bHmf_6y" role="I$8f6">
-                  <ref role="3cqZAo" node="5NI6bHmesto" resolve="rules" />
+                <node concept="1rXfSq" id="5NI6bHmkA5_" role="I$8f6">
+                  <ref role="37wK5l" node="5NI6bHmgiDw" resolve="checkers" />
                 </node>
               </node>
             </node>
@@ -6444,12 +6450,35 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="37vLTG" id="5NI6bHmesto" role="3clF46">
-        <property role="TrG5h" value="rules" />
-        <node concept="_YKpA" id="5NI6bHmetoP" role="1tU5fm">
-          <node concept="3uibUv" id="5NI6bHmetys" role="_ZDj9">
-            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
+    </node>
+    <node concept="2tJIrI" id="5NI6bHmkryS" role="jymVt" />
+    <node concept="2YIFZL" id="5NI6bHmgiDw" role="jymVt">
+      <property role="TrG5h" value="checkers" />
+      <node concept="3Tm1VV" id="5NI6bHmgiDz" role="1B3o_S" />
+      <node concept="3clFbS" id="5NI6bHmgiD$" role="3clF47">
+        <node concept="3clFbF" id="5NI6bHmkqFq" role="3cqZAp">
+          <node concept="2OqwBi" id="5NI6bHmkkxa" role="3clFbG">
+            <node concept="2OqwBi" id="5NI6bHmkkxb" role="2Oq$k0">
+              <node concept="2YIFZM" id="5NI6bHmkkxc" role="2Oq$k0">
+                <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
+                <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
+              </node>
+              <node concept="liA8E" id="5NI6bHmkkxd" role="2OqNvi">
+                <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
+              </node>
+            </node>
+            <node concept="liA8E" id="5NI6bHmkkxe" role="2OqNvi">
+              <ref role="37wK5l" to="2gg1:~CheckerRegistry.getEditorCheckers():java.util.List" resolve="getEditorCheckers" />
+            </node>
           </node>
+          <node concept="15s5l7" id="5NI6bHmkqVe" role="lGtFl">
+            <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/1185363855090]&quot;;" />
+          </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="5NI6bHmgmTA" role="3clF45">
+        <node concept="3uibUv" id="5NI6bHmgmTB" role="_ZDj9">
+          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
         </node>
       </node>
     </node>
@@ -6506,7 +6535,7 @@
           </node>
           <node concept="2ZW3vV" id="5NI6bHmiHRz" role="3clFbw">
             <node concept="3uibUv" id="5NI6bHmiI1u" role="2ZW6by">
-              <ref role="3uigEE" node="6qi2OtU3ufq" resolve="LanguageEditorCheckerBase" />
+              <ref role="3uigEE" node="6qi2OtU3ufq" resolve="LanguageEditorChecker" />
             </node>
             <node concept="37vLTw" id="5NI6bHmiGo7" role="2ZW6bz">
               <ref role="3cqZAo" node="2v0ve8x$pdi" resolve="checker" />
@@ -7513,7 +7542,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="242XgDlMrCS" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
+                  <ref role="37wK5l" to="lui2:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
                   <node concept="1bVj0M" id="2v0ve8x$pjw" role="37wK5m">
                     <node concept="3clFbS" id="2v0ve8x$pjx" role="1bW5cS">
                       <node concept="3clFbF" id="2v0ve8x$pjy" role="3cqZAp">
@@ -8839,17 +8868,13 @@
                 </node>
                 <node concept="3clFbH" id="2v0ve8x$pmd" role="3cqZAp" />
                 <node concept="3clFbF" id="242XgDlMxeQ" role="3cqZAp">
-                  <node concept="2OqwBi" id="242XgDlMxNx" role="3clFbG">
-                    <node concept="2OqwBi" id="242XgDlMxyF" role="2Oq$k0">
-                      <node concept="37vLTw" id="242XgDlMxeO" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7c5YJMXranc" resolve="myRepository" />
-                      </node>
-                      <node concept="liA8E" id="242XgDlMxH8" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                      </node>
+                  <node concept="2OqwBi" id="7o6aOSHnxF$" role="3clFbG">
+                    <node concept="2YIFZM" id="7o6aOSHnxsJ" role="2Oq$k0">
+                      <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                      <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                     </node>
-                    <node concept="liA8E" id="242XgDlMxWl" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
+                    <node concept="liA8E" id="7o6aOSHnxX4" role="2OqNvi">
+                      <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
                       <node concept="1bVj0M" id="2v0ve8x$pmi" role="37wK5m">
                         <node concept="3clFbS" id="2v0ve8x$pmj" role="1bW5cS">
                           <node concept="3clFbF" id="2v0ve8x$pmk" role="3cqZAp">

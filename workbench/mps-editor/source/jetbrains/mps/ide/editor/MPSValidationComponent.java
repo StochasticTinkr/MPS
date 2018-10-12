@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import jetbrains.mps.editor.runtime.LanguageEditorChecker;
 import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -27,7 +28,6 @@ import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import typesystemIntegration.languageChecker.AutoResolver;
-import typesystemIntegration.languageChecker.LanguageEditorChecker;
 
 import java.util.Stack;
 

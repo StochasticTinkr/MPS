@@ -10,9 +10,10 @@ import java.util.Set;
 import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import java.util.List;
+import jetbrains.mps.validation.ValidationSettings;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -43,17 +44,21 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
-public abstract class LanguageEditorCheckerBase extends BaseEditorChecker implements DisposableEditorChecker {
-  private static final Logger LOG = LogManager.getLogger(LanguageEditorCheckerBase.class);
+public class LanguageEditorChecker extends BaseEditorChecker implements DisposableEditorChecker {
+  private static final Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private boolean myMessagesChanged = false;
   private boolean myForceRunQuickFixes = false;
   private Set<AbstractNodeCheckerInEditor> myRules;
 
   private final ErrorComponents myErrorComponents;
 
-  public LanguageEditorCheckerBase(@NotNull SRepository projectRepo, List<AbstractNodeCheckerInEditor> rules) {
-    myRules = SetSequence.fromSetWithValues(new LinkedHashSet<AbstractNodeCheckerInEditor>(), rules);
+  public LanguageEditorChecker(@NotNull SRepository projectRepo) {
+    myRules = SetSequence.fromSetWithValues(new LinkedHashSet<AbstractNodeCheckerInEditor>(), checkers());
     myErrorComponents = new ErrorComponents(projectRepo);
+  }
+
+  public static List<AbstractNodeCheckerInEditor> checkers() {
+    return ValidationSettings.getInstance().getCheckerRegistry().getEditorCheckers();
   }
 
   @Override
@@ -65,7 +70,7 @@ public abstract class LanguageEditorCheckerBase extends BaseEditorChecker implem
   public boolean isLaterThan(EditorChecker checker) {
     // since this is default editor checker, 
     // every other checker knows whether it should be later or earlier than this one 
-    if (checker instanceof LanguageEditorCheckerBase) {
+    if (checker instanceof LanguageEditorChecker) {
       return false;
     }
     if (checker.isLaterThan(this)) {
@@ -179,7 +184,7 @@ public abstract class LanguageEditorCheckerBase extends BaseEditorChecker implem
     final boolean wasForceRunQuickFixes = myForceRunQuickFixes;
     myForceRunQuickFixes = false;
     if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
-      editorContext.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
+      editorContext.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
           editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
             public void run() {

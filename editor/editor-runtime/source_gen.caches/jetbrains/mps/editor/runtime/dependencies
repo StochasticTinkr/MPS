@@ -83,6 +83,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.ErrorComponents" file="ErrorComponents.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -156,7 +157,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.LanguageEditorCheckerBase" file="LanguageEditorCheckerBase.java">
+  <dependency className="jetbrains.mps.editor.runtime.LanguageEditorChecker" file="LanguageEditorChecker.java">
     <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -190,6 +191,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.util.Cancellable" />
+    <classNode dependClassName="jetbrains.mps.validation.ValidationSettings" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
