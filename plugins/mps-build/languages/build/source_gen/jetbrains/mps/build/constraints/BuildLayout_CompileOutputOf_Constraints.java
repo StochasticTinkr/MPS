@@ -66,10 +66,8 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd27L, "jetbrains.mps.build.structure.BuildSource_CompilablePart"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd27L, "jetbrains.mps.build.structure.BuildSource_CompilablePart"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

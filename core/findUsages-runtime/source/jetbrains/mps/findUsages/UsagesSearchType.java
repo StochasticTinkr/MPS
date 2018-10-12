@@ -16,18 +16,17 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -40,13 +39,14 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
   }
 
   @Override
-  public Set<SReference> search(Set<SNode> nodes, @NotNull SearchScope scope, @NotNull ProgressMonitor monitor) {
-    final HashSet<SReference> rv = new HashSet<>();
-    CollectConsumer<SReference> consumer = new CollectConsumer<>(rv);
+  public void search(Set<SNode> nodes, @NotNull SearchScope scope, @NotNull Consumer<SReference> consumer, @NotNull ProgressMonitor monitor) {
     Collection<FindUsagesParticipant> participants = PersistenceRegistry.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 4);
     try {
+      if (monitor.isCanceled()) {
+        return;
+      }
       Collection<SModel> current = new LinkedHashSet<>();
       Collection<SModel> simpleSearch = new LinkedHashSet<>();
       for (SModel m : IterableUtil.asCollection(scope.getModels())) {
@@ -59,10 +59,13 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
+        if (monitor.isCanceled()) {
+          return;
+        }
         participant.findUsages(current, nodes, consumer, sModel -> {
           assert !(sModel instanceof EditableSModel && ((EditableSModel) sModel).isChanged());
           next.remove(sModel);
-        });
+        }, monitor);
         current = next;
         monitor.advance(1);
       }
@@ -73,8 +76,8 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       showNoFastFindTipIfNeeded(current);
       current.addAll(simpleSearch);
       for (SModel m : current) {
-        subMonitor.step(m.getModelName());
-        nf.collectUsages(m);
+        subMonitor.step(m.getName().getSimpleName());
+        nf.collectUsages(m, monitor);
         if (monitor.isCanceled()) {
           break;
         }
@@ -84,6 +87,5 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
     } finally {
       monitor.done();
     }
-    return rv;
   }
 }

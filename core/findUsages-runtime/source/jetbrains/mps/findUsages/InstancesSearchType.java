@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -43,10 +42,9 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
   }
 
   @Override
-  public Set<SNode> search(Set<SAbstractConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
+  public void search(Set<SAbstractConcept> elements, SearchScope scope, Consumer<SNode> consumer, @NotNull ProgressMonitor monitor) {
     assert !elements.contains(null);
 
-    CollectConsumer<SNode> consumer = new CollectConsumer<>(new HashSet<>());
     Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
@@ -71,7 +69,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
 
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
-        participant.findInstances(current, queryConcepts, consumer, sModel -> next.remove(sModel));
+        participant.findInstances(current, queryConcepts, consumer, next::remove);
         current = next;
         monitor.advance(1);
       }
@@ -81,8 +79,8 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       showNoFastFindTipIfNeeded(current);
       current.addAll(simpleSearch);
       for (SModel m : current) {
-        subMonitor.step(m.getModelName());
-        FindUsagesUtil.collectInstances(m, queryConcepts, consumer);
+        subMonitor.step(m.getName().getSimpleName());
+        FindUsagesUtil.collectInstances(m, queryConcepts, consumer, monitor);
         if (monitor.isCanceled()) {
           break;
         }
@@ -92,6 +90,5 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
     } finally {
       monitor.done();
     }
-    return (Set<SNode>) consumer.getResult();
   }
 }

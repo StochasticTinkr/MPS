@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="gul8s4epzojy85hix8brl87ymxq55z" />
+<product version="3" modelHash="-2cnfrw2mov53qyam1l3t1n6htya3v2t">
+  <files names="BaseTestClass.java:CustomPropertyAccess_Test.java:CustomPropertyReferences1_Test.java:CustomPropertyReferences2_Test.java:CustomPropertyReferences3_Test.java:PropertiesTest_Test.java:TestClass.java" />
+</product>
 

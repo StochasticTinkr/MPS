@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bvpwsjhm0nn0z7lx90dq47t4ziakgr3" />
+<product version="3" modelHash="bvpwsjhm0nn0z7lx90dq47t4ziakgr3">
+  <files names="ConceptFunctionParameter_editorContext_SubstituteMenu.java:ConceptFunctionParameter_model_SubstituteMenu.java:ConceptFunctionParameter_node_SubstituteMenu.java:ConceptFunctionParameter_operationContext_SubstituteMenu.java:ConceptFunctionParameter_progressMonitor_SubstituteMenu.java:ConceptFunctionParameter_scope_SubstituteMenu.java:EditorAspectDescriptorImpl.java:SharedStyles_StyleSheet.java" />
+</product>
 

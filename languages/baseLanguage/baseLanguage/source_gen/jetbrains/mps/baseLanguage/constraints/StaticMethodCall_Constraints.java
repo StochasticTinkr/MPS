@@ -79,23 +79,21 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")))) {
-                return new EmptyScope();
-              }
-              Scope visibleClassifiersScope = ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
-              Project project = SModuleOperations.getProjectForModule(SNodeOperations.getModel(_context.getContextNode()).getModule());
-              if (project != null && !(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project).getTargetJavaVersion().isAtLeast(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_8))) {
-                return new FilteringScope(visibleClassifiersScope) {
+            if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")))) {
+              return new EmptyScope();
+            }
+            Scope visibleClassifiersScope = ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
+            Project project = SModuleOperations.getProjectForModule(SNodeOperations.getModel(_context.getContextNode()).getModule());
+            if (project != null && !(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project).getTargetJavaVersion().isAtLeast(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_8))) {
+              return new FilteringScope(visibleClassifiersScope) {
 
-                  @Override
-                  public boolean isExcluded(SNode node) {
-                    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-                  }
-                };
-              } else {
-                return visibleClassifiersScope;
-              }
+                @Override
+                public boolean isExcluded(SNode node) {
+                  return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+                }
+              };
+            } else {
+              return visibleClassifiersScope;
             }
           }
         };

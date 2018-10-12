@@ -275,8 +275,8 @@
                               <node concept="37vLTw" id="5Vvmn_QkWXM" role="2Oq$k0">
                                 <ref role="3cqZAo" node="5Vvmn_QkWXP" resolve="it" />
                               </node>
-                              <node concept="2qgKlT" id="5Vvmn_QkWXO" role="2OqNvi">
-                                <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                              <node concept="2qgKlT" id="Z4zold0i0d" role="2OqNvi">
+                                <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                               </node>
                             </node>
                           </node>

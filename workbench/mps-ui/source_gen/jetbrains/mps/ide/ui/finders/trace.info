@@ -697,43 +697,43 @@
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/6355759290342865490">
     <file name="ModelImportsUsagesFinder.java">
-      <node id="1937421445113937526" at="25,34,26,31" concept="10" />
-      <node id="6355759290342865505" at="29,73,30,70" concept="9" />
-      <node id="6355759290342865510" at="30,70,31,55" concept="9" />
-      <node id="6355759290342865520" at="32,46,33,27" concept="10" />
-      <node id="6355759290342865526" at="34,5,35,61" concept="9" />
-      <node id="1618307767166254519" at="35,61,36,57" concept="4" />
-      <node id="6355759290342865625" at="36,57,37,138" concept="9" />
-      <node id="6355759290342865647" at="39,33,40,29" concept="10" />
-      <node id="6355759290342865655" at="41,7,42,88" concept="4" />
-      <node id="6355759290342865666" at="43,5,44,25" concept="10" />
-      <node id="6355759290342865493" at="22,0,24,0" concept="2" trace="ModelImportsUsagesFinder#()V" />
-      <node id="6355759290342865518" at="31,55,34,5" concept="7" />
-      <node id="6355759290342865642" at="38,43,41,7" concept="7" />
-      <node id="1937421445113936233" at="24,0,28,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
-      <node id="6355759290342865637" at="37,138,43,5" concept="6" />
-      <node id="6355759290342865497" at="28,0,46,0" concept="8" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <scope id="6355759290342865496" at="22,37,22,37" />
-      <scope id="1937421445113936244" at="25,34,26,31" />
-      <scope id="6355759290342865519" at="32,46,33,27" />
-      <scope id="6355759290342865646" at="39,33,40,29" />
-      <scope id="6355759290342865493" at="22,0,24,0" />
-      <scope id="1937421445113936233" at="24,0,28,0" />
-      <scope id="6355759290342865641" at="38,43,42,88" />
-      <scope id="6355759290342865637" at="37,138,43,5">
+      <node id="1937421445113937526" at="27,34,28,31" concept="10" />
+      <node id="6355759290342865505" at="33,73,34,70" concept="9" />
+      <node id="6355759290342865510" at="34,70,35,55" concept="9" />
+      <node id="6355759290342865520" at="36,46,37,27" concept="10" />
+      <node id="6355759290342865526" at="38,5,39,61" concept="9" />
+      <node id="1618307767166254519" at="39,61,40,57" concept="4" />
+      <node id="6355759290342865625" at="40,57,41,138" concept="9" />
+      <node id="6355759290342865647" at="43,33,44,29" concept="10" />
+      <node id="6355759290342865655" at="45,7,46,88" concept="4" />
+      <node id="6355759290342865666" at="47,5,48,25" concept="10" />
+      <node id="6355759290342865493" at="23,0,25,0" concept="2" trace="ModelImportsUsagesFinder#()V" />
+      <node id="6355759290342865518" at="35,55,38,5" concept="7" />
+      <node id="6355759290342865642" at="42,43,45,7" concept="7" />
+      <node id="1937421445113936233" at="26,0,30,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
+      <node id="6355759290342865637" at="41,138,47,5" concept="6" />
+      <node id="6355759290342865497" at="31,0,50,0" concept="8" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <scope id="6355759290342865496" at="23,37,23,37" />
+      <scope id="1937421445113936244" at="27,34,28,31" />
+      <scope id="6355759290342865519" at="36,46,37,27" />
+      <scope id="6355759290342865646" at="43,33,44,29" />
+      <scope id="6355759290342865493" at="23,0,25,0" />
+      <scope id="1937421445113936233" at="26,0,30,0" />
+      <scope id="6355759290342865641" at="42,43,46,88" />
+      <scope id="6355759290342865637" at="41,138,47,5">
         <var name="modelDescriptor" id="6355759290342865639" />
       </scope>
-      <scope id="6355759290342865504" at="29,73,44,25">
+      <scope id="6355759290342865504" at="33,73,48,25">
         <var name="modelReference" id="6355759290342865527" />
         <var name="searchResults" id="6355759290342865506" />
         <var name="usages" id="6355759290342865626" />
         <var name="value" id="6355759290342865511" />
       </scope>
-      <scope id="6355759290342865497" at="28,0,46,0">
+      <scope id="6355759290342865497" at="31,0,50,0">
         <var name="monitor" id="6355759290342865502" />
         <var name="query" id="6355759290342865500" />
       </scope>
-      <unit id="6355759290342865490" at="21,0,47,0" name="jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder" />
+      <unit id="6355759290342865490" at="22,0,51,0" name="jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder" />
     </file>
   </root>
 </debug-info>

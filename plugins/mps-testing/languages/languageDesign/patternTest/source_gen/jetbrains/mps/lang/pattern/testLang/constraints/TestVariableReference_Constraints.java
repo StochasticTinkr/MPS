@@ -52,18 +52,16 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> variables = SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, "jetbrains.mps.lang.pattern.testLang.structure.PatternTest"), false, false), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{});
-              List<SNode> result = new ArrayList<SNode>();
-              Set<String> names = new HashSet();
-              for (SNode var : variables) {
-                if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
-                  ListSequence.fromList(result).addElement(var);
-                  names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-                }
+            List<SNode> variables = SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, "jetbrains.mps.lang.pattern.testLang.structure.PatternTest"), false, false), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{});
+            List<SNode> result = new ArrayList<SNode>();
+            Set<String> names = new HashSet();
+            for (SNode var : variables) {
+              if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
+                ListSequence.fromList(result).addElement(var);
+                names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
-              return ListScope.forResolvableElements(result);
             }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

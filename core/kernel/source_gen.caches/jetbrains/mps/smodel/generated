@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dtwe7pmeju3z97fcgu6y21mlf8eznc4" />
+<product version="3" modelHash="dvrl64cindcoryfkhsord8lv7rffxhs">
+  <files names="BootstrapLanguages.java:ConceptDeclarationScanner.java:EditorDeclarationScanner.java:SNodeUtil.java:SmartReferentUtil.java" />
+</product>
 

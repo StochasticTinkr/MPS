@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bwrs8p4t1dav87tfg98o2gnwfr14dfn" />
+<product version="3" modelHash="-e3ab0o8e2uh70er2frufsb1c3okj836">
+  <files names="TerminationTestEvent.java:TestCaseNodeKey.java:TestCaseStringKey.java:TestEventMessage.java:TestKey.java:TestMethodNodeKey.java:TestMethodStringKey.java:TestNodeEvent.java:TestNodeKey.java:TestNodeKeyFactory.java:TestRawEvent.java:TestRawKey.java:TestType.java:TextTestEvent.java" />
+</product>
 

@@ -47,13 +47,11 @@ public class IMenu_Default_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SConcept acd = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-              if (!(SNodeOperations.getModel(_context.getContextNode()).getModule() instanceof Language)) {
-                return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, acd);
-              }
-              return Scopes.forConceptsInSameLanguage(SNodeOperations.getModel(_context.getContextNode()), acd);
+            SConcept acd = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+            if (!(SNodeOperations.getModel(_context.getContextNode()).getModule() instanceof Language)) {
+              return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, acd);
             }
+            return Scopes.forConceptsInSameLanguage(SNodeOperations.getModel(_context.getContextNode()), acd);
           }
         };
       }

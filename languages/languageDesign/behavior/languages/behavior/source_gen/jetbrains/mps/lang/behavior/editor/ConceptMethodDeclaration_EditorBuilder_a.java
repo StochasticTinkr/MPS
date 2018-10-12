@@ -70,6 +70,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonStyleClass;
 
 /*package*/ class ConceptMethodDeclaration_EditorBuilder_a extends AbstractEditorBuilder {
@@ -577,7 +578,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     return editorCell;
   }
   private boolean nodeCondition_gmtuod_a01c0() {
-    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"));
+    return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasBody_id10BRnhak8m8.invoke(myNode));
   }
   private EditorCell createConstant_8() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");

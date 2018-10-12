@@ -45,13 +45,11 @@ public class NamedNodeReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode parent = ((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()));
-              if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"))) {
-                return NamedNodeReferencesScope.createDescendantsScope(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference")), MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target")));
-              } else {
-                return NamedNodeReferencesScope.createRootsScope(SNodeOperations.getModel(_context.getContextNode()));
-              }
+            SNode parent = ((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()));
+            if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"))) {
+              return NamedNodeReferencesScope.createDescendantsScope(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference")), MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target")));
+            } else {
+              return NamedNodeReferencesScope.createRootsScope(SNodeOperations.getModel(_context.getContextNode()));
             }
           }
         };

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6h68i7w6gu5fg3ovrio40pppznv4u3f" />
+<product version="3" modelHash="6h68i7w6gu5fg3ovrio40pppznv4u3f">
+  <files names="ScriptsDescriptor.java" />
+</product>
 

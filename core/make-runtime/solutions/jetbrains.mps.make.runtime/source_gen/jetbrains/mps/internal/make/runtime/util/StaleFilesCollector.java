@@ -24,9 +24,15 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import java.util.Collections;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
+/**
+ * IMPORTANT Use of this class is discouraged.
+ * 
+ * The class is informed about FS changes walks FS to find out existing files and report those unchanged as stale.
+ * As a drawback, need an external mechanism to tell non-generated files under generated location.
+ * MPS doesn't use it for TextGen as we record names of generated files and don't need to walk FS any more
+ */
 public class StaleFilesCollector {
   private IFile rootDir;
   private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
@@ -103,21 +109,13 @@ public class StaleFilesCollector {
   }
 
   private List<IFile> knownGeneratedChildren(GenerationDependencies gd) {
-    if (gd == null) {
-      return Collections.emptyList();
-    }
-    List<IFile> rv = ListSequence.fromList(new ArrayList<IFile>());
-    for (GenerationRootDependencies grd : gd.getRootDependencies()) {
-      for (String file : grd.getFiles()) {
-        ListSequence.fromList(rv).addElement(rootDir.getDescendant(file));
-      }
-    }
-    return rv;
+    // XXX shall report generated children from GD, but as long as there's no use and the class likely to cease, decided to left unimplemented. 
+    return Collections.emptyList();
   }
 
   /**
    * May be invoked multiple times, updates internal state of what files are considered 'touched' according to delta supplied
-   * These files are not reported as 'stale' from {@link jetbrains.mps.internal.make.runtime.util.StaleFilesCollector#reportStaleFiles() }
+   * These files are not reported as 'stale' by {@link jetbrains.mps.internal.make.runtime.util.StaleFilesCollector#reportStaleFilesInto(FilesDelta) }
    */
   public void recordFilesToKeep(FilesDelta delta) {
     delta.acceptVisitor(new FilesDelta.Visitor() {
@@ -134,13 +132,7 @@ public class StaleFilesCollector {
     });
   }
 
-  public FilesDelta reportStaleFiles() {
-    FilesDelta rv = new FilesDelta(rootDir);
-    reportStaleFilesInto(rv);
-    return rv;
-  }
-
-  private void reportStaleFilesInto(FilesDelta delta) {
+  public void reportStaleFilesInto(FilesDelta delta) {
     for (IFile f : collectFilesToDelete()) {
       delta.stale(f);
     }

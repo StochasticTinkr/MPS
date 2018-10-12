@@ -9,7 +9,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -45,6 +45,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -1267,11 +1268,13 @@
         <ref role="3uigEE" node="72Fa_thHKfr" resolve="ClassifierSuccessors.Finder" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDYsWi" role="jymVt" />
     <node concept="3clFbW" id="3ohKLrgURCZ" role="jymVt">
       <node concept="3cqZAl" id="3ohKLrgURD0" role="3clF45" />
       <node concept="3Tm1VV" id="3ohKLrgURD1" role="1B3o_S" />
       <node concept="3clFbS" id="3ohKLrgURD2" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAVy" role="jymVt" />
     <node concept="3clFb_" id="3ohKLrgUTXo" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
@@ -1292,6 +1295,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAVz" role="jymVt" />
     <node concept="3clFb_" id="3ohKLrgUTXs" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="init" />
@@ -1312,11 +1316,12 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAV$" role="jymVt" />
     <node concept="3clFb_" id="3ohKLrgUTXK" role="jymVt">
       <property role="TrG5h" value="isIndexReady" />
       <node concept="37vLTG" id="3Y0VgWjvTG7" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4My7loyoQCQ" role="1tU5fm">
+        <node concept="3uibUv" id="4SN3DOd0vim" role="1tU5fm">
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
@@ -1349,6 +1354,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAV_" role="jymVt" />
     <node concept="3clFb_" id="3ohKLrgUTXS" role="jymVt">
       <property role="TrG5h" value="getDerivedClassifiers" />
       <node concept="37vLTG" id="3Y0VgWjvTGk" role="3clF46">
@@ -1401,6 +1407,7 @@
         <ref role="2I9WkF" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAVA" role="jymVt" />
     <node concept="3clFb_" id="72Fa_thHN9S" role="jymVt">
       <property role="TrG5h" value="setFinder" />
       <node concept="3cqZAl" id="72Fa_thHN9T" role="3clF45" />
@@ -1424,6 +1431,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDWAVB" role="jymVt" />
     <node concept="2YIFZL" id="3ohKLrgUVZY" role="jymVt">
       <property role="TrG5h" value="getInstance" />
       <node concept="3uibUv" id="3ohKLrgUW02" role="3clF45">
@@ -1438,12 +1446,13 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6SwJoDYsac" role="jymVt" />
     <node concept="3HP615" id="72Fa_thHKfr" role="jymVt">
       <property role="TrG5h" value="Finder" />
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="72Fa_thHKfs" role="1B3o_S" />
       <node concept="3clFb_" id="72Fa_thHN9A" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getDerivedClassifiers" />
         <node concept="37vLTG" id="72Fa_thHN9F" role="3clF46">
           <property role="TrG5h" value="classifier" />
@@ -1464,7 +1473,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="72Fa_thHKft" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="isIndexReady" />
         <node concept="37vLTG" id="72Fa_thHN9y" role="3clF46">
           <property role="TrG5h" value="project" />

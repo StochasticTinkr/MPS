@@ -1881,7 +1881,7 @@
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="ChildHandler" />
       <node concept="3clFb_" id="1E52KywBXqY" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="apply" />
         <node concept="3uibUv" id="1E52KyxaaXr" role="Sfmx6">
           <ref role="3uigEE" to="kart:~SAXException" resolve="SAXException" />

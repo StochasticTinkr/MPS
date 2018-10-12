@@ -4,6 +4,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -16,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -26,6 +26,7 @@ public class AspectMethodsFinder extends BaseFinder implements Finder {
   public AspectMethodsFinder() {
   }
   @Override
+  @NotNull
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     // I've got no idea what aspect methods it looks for. MPS Integration plugin in Idea takes PsiMethod and pass here package statement and method name 
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();

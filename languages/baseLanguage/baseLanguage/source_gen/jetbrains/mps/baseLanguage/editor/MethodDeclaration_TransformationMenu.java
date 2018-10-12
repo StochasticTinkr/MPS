@@ -19,17 +19,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.GroupMenuPart;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Logger;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
-import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class MethodDeclaration_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
@@ -71,187 +67,32 @@ public class MethodDeclaration_TransformationMenu extends TransformationMenuBase
       });
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1());
+      result.add(new MethodDeclaration_TransformationMenu.TMP_Include_vger07_a1());
     }
     return result;
   }
 
-  public class TMP_Group_vger07_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Override
-    protected boolean isApplicable(TransformationMenuContext _context) {
-      return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
-    }
-
+  public class TMP_Include_vger07_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944390")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "MethodDeclaration_final_native_sync_all_mods", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "4125212090862461585")));
       try {
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
       }
     }
+
+    @Nullable
     @Override
-    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_a0b(), new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_b0b(), new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_c0b());
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), "jetbrains.mps.baseLanguage.editor.MethodDeclaration_final_native_sync_all_mods");
     }
-    private class TMP_Action_vger07_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_a0b.Item item = new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_a0b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944402")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
 
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "final";
-        }
-
-        @Override
-        public void execute(@NotNull String pattern) {
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "" + (true));
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), _context.getNode(), "finalModifier", -1);
-        }
-
-
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
-    }
-    private class TMP_Action_vger07_b0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_b0b.Item item = new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_b0b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944429")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
-
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "synchronized";
-        }
-
-        @Override
-        public void execute(@NotNull String pattern) {
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"), "" + (true));
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), _context.getNode(), "synchronizedModifier", -1);
-        }
-
-
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
-    }
-    private class TMP_Action_vger07_c0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_c0b.Item item = new MethodDeclaration_TransformationMenu.TMP_Group_vger07_a1.TMP_Action_vger07_c0b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944456")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
-
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "native";
-        }
-
-        @Override
-        public void execute(@NotNull String pattern) {
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"), "" + (true));
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), _context.getNode(), "nativeModifier", -1);
-        }
-
-
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
-    }
   }
 }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-98yz1iabfidzc5swkoq2zmoe4pat4qk" />
+<product version="3" modelHash="-98yz1iabfidzc5swkoq2zmoe4pat4qk">
+  <files names="buildA.xml:buildB.xml:buildC.xml:buildCore.properties:buildCore.xml:buildD.xml:buildE.xml:buildPlugin.xml:buildY.xml:buildZ.xml:buildZZ.xml" />
+</product>
 

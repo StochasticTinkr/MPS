@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="34w85m1r2x7w4m9s0do9534uttt67hr" />
+<product version="3" modelHash="-32oo252kzutw7vmop1424fi0shqstqa">
+  <files names="CycleHelper.java:SubTaskOrderHelper.java:TaskLibrariesHelper.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cpetolhr4zr88hdd4x0lp31lv0fz75s" />
+<product version="3" modelHash="-cpetolhr4zr88hdd4x0lp31lv0fz75s">
+  <files names="ConceptPresentationAspectImpl.java:LanguageConceptSwitch.java:Strategy.java:Strategy_PropertySupport.java:StructureAspectDescriptor.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b11jjpvcu0xpxiq1l2mouzi5uwhjrtl" />
+<product version="3" modelHash="b11jjpvcu0xpxiq1l2mouzi5uwhjrtl">
+  <files names="ConvertMyIfToIf_Intention.java:IntentionsDescriptor.java:SurroundWithUnless_Intention.java:TurnToIfStatement_Intention.java:UnwrapUnlessBlock_Intention.java" />
+</product>
 

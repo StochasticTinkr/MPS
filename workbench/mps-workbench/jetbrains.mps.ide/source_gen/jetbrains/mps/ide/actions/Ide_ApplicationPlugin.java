@@ -50,12 +50,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixModuleImportsInProject_Action());
     addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
-    addAction(new GoToImplementingBehaviorMethod_Action());
+    addAction(new GoToConceptDescendants_Action());
+    addAction(new GoToImplementationBehaviorMethod_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
-    addAction(new GoToOverriddenBehaviorMethod_Action());
     addAction(new GoToRule_Action());
+    addAction(new GoToSuperBehaviorMethod_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());
@@ -164,6 +165,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
+    addGroup(new StructurePopup_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
@@ -241,7 +243,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, FlyingActions_ActionGroup.ID, null);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, "EditorPopup_ActionGroupfind", null);
-    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
@@ -262,6 +264,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
+    insertGroupIntoAnother(StructurePopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
   public List<BaseKeymapChanges> initKeymaps() {

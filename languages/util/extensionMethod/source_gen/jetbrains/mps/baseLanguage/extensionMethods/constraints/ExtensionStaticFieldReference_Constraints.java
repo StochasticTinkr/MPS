@@ -46,10 +46,8 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode container = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), false, false);
-              return ListScope.forResolvableElements(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x1b622d944bbb1c5fL, "staticFields")));
-            }
+            SNode container = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), false, false);
+            return ListScope.forResolvableElements(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x1b622d944bbb1c5fL, "staticFields")));
           }
         };
       }

@@ -43,10 +43,8 @@ public class RefTestParamRef_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e00L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e00L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

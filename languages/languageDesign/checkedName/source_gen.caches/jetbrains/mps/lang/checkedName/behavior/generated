@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8atmtjnh47ufuz8mnu4xh0jg27ejiaq" />
+<product version="3" modelHash="8atmtjnh47ufuz8mnu4xh0jg27ejiaq">
+  <files names="BehaviorAspectDescriptor.java:ICheckedNamePolicy__BehaviorDescriptor.java" />
+</product>
 

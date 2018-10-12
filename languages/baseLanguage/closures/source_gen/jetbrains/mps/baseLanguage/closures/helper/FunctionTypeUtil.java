@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import java.util.LinkedList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -92,7 +93,7 @@ with_throws:
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))).findFirst(new IWhereFilter<SNode>() {
       @Override
       public boolean accept(SNode m) {
-        return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && SPropertyOperations.getBoolean(m, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"));
+        return !("equals".equals(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) && (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(m);
       }
     });
   }

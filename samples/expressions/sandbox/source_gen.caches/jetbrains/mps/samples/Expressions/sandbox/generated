@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4rf9iseic0lqaafj29rr06v1yh3izdf" />
+<product version="3" modelHash="5hd3pysy6r3egrpx790lg7dt1dw4vo9">
+  <files names="Main.java:Simple.java:TypeError.java" />
+</product>
 

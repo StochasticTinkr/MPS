@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dt5y6hnqyyct5wk83q3w6um9lmbnuj2" />
+<product version="3" modelHash="-60dg02xsascuw0tx1yv7yarjxdvouyi">
+  <files names="BehaviorAspectDescriptor.java:ExtractStatementListExpression__BehaviorDescriptor.java:ExtractStaticInnerClassExpression__BehaviorDescriptor.java:ExtractStaticMethodExpression__BehaviorDescriptor.java:ExtractStaticMethod_CallExpression__BehaviorDescriptor.java:InternalAnonymousClass__BehaviorDescriptor.java:InternalClassCreator__BehaviorDescriptor.java:InternalNewExpression__BehaviorDescriptor.java:InternalPartialFieldReference__BehaviorDescriptor.java:InternalPartialInstanceMethodCall__BehaviorDescriptor.java:InternalStaticMethodCall__BehaviorDescriptor.java:InternalSuperMethodCallOperation__BehaviorDescriptor.java:InternalVariableReference__BehaviorDescriptor.java" />
+</product>
 

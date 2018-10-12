@@ -50,18 +50,16 @@ public class Transition_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Iterable<SNode> allEventsInPath = ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, "jetbrains.mps.samples.StateChart.structure.Stateful"), true)).translate(new ITranslator2<SNode, SNode>() {
-                public Iterable<SNode> translate(SNode it) {
-                  return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, 0x148d06483264e4b1L, "availableTriggers"));
-                }
-              });
-              return new ListScope(allEventsInPath) {
-                public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L, "jetbrains.mps.samples.StateChart.structure.Event")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
-            }
+            Iterable<SNode> allEventsInPath = ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, "jetbrains.mps.samples.StateChart.structure.Stateful"), true)).translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode it) {
+                return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, 0x148d06483264e4b1L, "availableTriggers"));
+              }
+            });
+            return new ListScope(allEventsInPath) {
+              public String getName(SNode child) {
+                return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L, "jetbrains.mps.samples.StateChart.structure.Event")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+              }
+            };
           }
         };
       }
@@ -81,10 +79,8 @@ public class Transition_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L, "jetbrains.mps.samples.StateChart.structure.State"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L, "jetbrains.mps.samples.StateChart.structure.State"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

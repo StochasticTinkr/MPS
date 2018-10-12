@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d6f1qq3340dt1xtw416bmqlbnhfywzk" />
+<product version="3" modelHash="-d6f1qq3340dt1xtw416bmqlbnhfywzk">
+  <files names="EditorAspectDescriptorImpl.java:GeneratorDescriptor_Editor.java:GeneratorDescriptor_EditorBuilder_a.java:GeneratorDescriptor_InspectorBuilder_a.java:GeneratorDescriptor_SubstituteMenu.java:GeneratorInternal_Aspect_SubstituteMenu.java:LanguageDescriptor_Editor.java:LanguageDescriptor_EditorBuilder_a.java" />
+</product>
 

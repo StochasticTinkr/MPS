@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-br3fzv5063tvk65xhlalxpxm7auq8k3" />
+<product version="3" modelHash="-br3fzv5063tvk65xhlalxpxm7auq8k3">
+  <files names="BehaviorAspectDescriptor.java:ExpressionHelpProvider__BehaviorDescriptor.java:HelpProvider__BehaviorDescriptor.java:InstancesExpression__BehaviorDescriptor.java:ModelsExpression__BehaviorDescriptor.java:ModulesExpression__BehaviorDescriptor.java:NodesExpression__BehaviorDescriptor.java:OperationHelpProvider__BehaviorDescriptor.java:QueryExpression__BehaviorDescriptor.java:ReferencesExpression__BehaviorDescriptor.java:UsagesExpression__BehaviorDescriptor.java" />
+</product>
 

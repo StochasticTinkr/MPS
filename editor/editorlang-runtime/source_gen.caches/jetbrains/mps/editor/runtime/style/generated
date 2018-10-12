@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ygh53kmn60ma7fxorhbwi6ofz2ievo" />
+<product version="3" modelHash="39xuuq8vhwemsie0y4i86vg0jqgevy2">
+  <files names="AbstractStyleClass.java:AbstractStyleKey.java:ParametersInformation.java:SideTransformTagUtils.java:StyledTextPrinter.java" />
+</product>
 

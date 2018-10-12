@@ -28,7 +28,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
@@ -122,7 +121,7 @@ public class ShowImplementations_Action extends BaseAction {
         String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
         final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((MPSProject) MapSequence.fromMap(_params).get("project")));
 
-        JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPreferredFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+        JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPreferredFocusableComponent()).setRequestFocus(true).setProject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject()).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
             modelAccess.executeCommandInEDT(new Runnable() {

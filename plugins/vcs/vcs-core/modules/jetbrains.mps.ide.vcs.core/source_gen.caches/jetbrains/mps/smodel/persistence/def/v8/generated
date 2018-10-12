@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9i9kh2tvvsn7kycxshawg23msmqjqdh" />
+<product version="3" modelHash="7io4i3hi5pabnsw9rixugy3dlqx945w">
+  <files names="HashProvider8.java:LineToContentMapReader8Handler.java:ModelPersistence8.java:ModelReader8Handler.java:PersistenceUtil.java" />
+</product>
 

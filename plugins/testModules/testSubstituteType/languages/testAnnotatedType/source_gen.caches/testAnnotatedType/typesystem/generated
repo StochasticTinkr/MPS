@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-555i1nqyohsah9nugacivdoybpfg9h2" />
+<product version="3" modelHash="-555i1nqyohsah9nugacivdoybpfg9h2">
+  <files names="PrimInt_subtypeOf_PrimLong_SubtypingRule.java:TypesystemDescriptor.java:substituteType_SubstituteAnnotation_SubstituteTypeRule.java:typeof_PrimNumConstant_InferenceRule.java" />
+</product>
 

@@ -49,41 +49,39 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode n = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), true, false);
-              List<SNode> indices = new ArrayList<SNode>();
-              while (n != null) {
+            SNode n = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), true, false);
+            List<SNode> indices = new ArrayList<SNode>();
+            while (n != null) {
+              {
+                SNode matchedNode_5upoaw_a0c0b0a0a0b0a1a0b0c = n;
                 {
-                  SNode matchedNode_5upoaw_a0c0a0b0a0a0b0a1a0b0c = n;
+                  boolean matches_5upoaw_a0a2a1a0a0a1a0b0a1a2 = false;
                   {
-                    boolean matches_5upoaw_a0a2a0a1a0a0a1a0b0a1a2 = false;
+                    SNode matchingNode_5upoaw_a0a2a1a0a0a1a0b0a1a2 = n;
+                    if (matchingNode_5upoaw_a0a2a1a0a0a1a0b0a1a2 != null) {
+                      matches_5upoaw_a0a2a1a0a0a1a0b0a1a2 = matchingNode_5upoaw_a0a2a1a0a0a1a0b0a1a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
+                    }
+                  }
+                  if (matches_5upoaw_a0a2a1a0a0a1a0b0a1a2) {
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25cL, "colIndex")));
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25bL, "rowIndex")));
+                  } else {
+                    boolean matches_5upoaw_b0a2a1a0a0a1a0b0a1a2 = false;
                     {
-                      SNode matchingNode_5upoaw_a0a2a0a1a0a0a1a0b0a1a2 = n;
-                      if (matchingNode_5upoaw_a0a2a0a1a0a0a1a0b0a1a2 != null) {
-                        matches_5upoaw_a0a2a0a1a0a0a1a0b0a1a2 = matchingNode_5upoaw_a0a2a0a1a0a0a1a0b0a1a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
+                      SNode matchingNode_5upoaw_b0a2a1a0a0a1a0b0a1a2 = n;
+                      if (matchingNode_5upoaw_b0a2a1a0a0a1a0b0a1a2 != null) {
+                        matches_5upoaw_b0a2a1a0a0a1a0b0a1a2 = matchingNode_5upoaw_b0a2a1a0a0a1a0b0a1a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
                       }
                     }
-                    if (matches_5upoaw_a0a2a0a1a0a0a1a0b0a1a2) {
-                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25cL, "colIndex")));
-                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25bL, "rowIndex")));
-                    } else {
-                      boolean matches_5upoaw_b0a2a0a1a0a0a1a0b0a1a2 = false;
-                      {
-                        SNode matchingNode_5upoaw_b0a2a0a1a0a0a1a0b0a1a2 = n;
-                        if (matchingNode_5upoaw_b0a2a0a1a0a0a1a0b0a1a2 != null) {
-                          matches_5upoaw_b0a2a0a1a0a0a1a0b0a1a2 = matchingNode_5upoaw_b0a2a0a1a0a0a1a0b0a1a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
-                        }
-                      }
-                      if (matches_5upoaw_b0a2a0a1a0a0a1a0b0a1a2) {
-                        ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, 0x5650ac0d424d0fb7L, "rowIndex")));
-                      }
+                    if (matches_5upoaw_b0a2a1a0a0a1a0b0a1a2) {
+                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0b0a0a0b0a1a0b0c, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, 0x5650ac0d424d0fb7L, "rowIndex")));
                     }
                   }
                 }
-                n = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), false, false);
               }
-              return ListScope.forResolvableElements(indices);
+              n = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), false, false);
             }
+            return ListScope.forResolvableElements(indices);
           }
         };
       }

@@ -2,9 +2,9 @@
 <model ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -221,6 +221,7 @@
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
@@ -307,7 +308,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -789,11 +790,11 @@
                 <node concept="3N13vt" id="4GM03FJm5zI" role="3cqZAp" />
               </node>
               <node concept="2OqwBi" id="4GM03FJm5zJ" role="3clFbw">
+                <node concept="2qgKlT" id="4c$BrPwbcJ1" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+                </node>
                 <node concept="37vLTw" id="3GM_nagT_IG" role="2Oq$k0">
                   <ref role="3cqZAo" node="4GM03FJm5$e" resolve="method" />
-                </node>
-                <node concept="3TrcHB" id="4GM03FJm5zL" role="2OqNvi">
-                  <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
                 </node>
               </node>
             </node>
@@ -1824,6 +1825,23 @@
     <node concept="13i0hz" id="hWjvGyi" role="13h7CS">
       <property role="TrG5h" value="isAbstract" />
       <ref role="13i0hy" to="tpek:hWjv7RO" resolve="isAbstract" />
+      <node concept="P$JXv" id="10BRnhaktKk" role="lGtFl">
+        <node concept="TZ5HI" id="10BRnhaktKl" role="3nqlJM">
+          <node concept="TZ5HA" id="10BRnhaktKm" role="3HnX3l">
+            <node concept="1dT_AC" id="10BRnhaktPc" role="1dT_Ay">
+              <property role="1dT_AB" value="use #isAnAbstractMethod or #hasBody methods instead" />
+            </node>
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4SpJmwPNdhW" role="TZ5H$">
+          <node concept="1dT_AC" id="4SpJmwPNdhX" role="1dT_Ay">
+            <property role="1dT_AB" value="seems that there were two semantics for this method. These are separated now into two new methods" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="10BRnhaktKn" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
       <node concept="3clFbS" id="hWjvGyk" role="3clF47">
         <node concept="3cpWs6" id="hWjvKV0" role="3cqZAp">
           <node concept="2OqwBi" id="hWjvM5h" role="3cqZAk">
@@ -1836,6 +1854,44 @@
       </node>
       <node concept="10P_77" id="hWjvIII" role="3clF45" />
       <node concept="3Tm1VV" id="hWjvK11" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="10BRnhakoSp" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="hasBody" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:10BRnhak8m8" resolve="hasBody" />
+      <node concept="3Tm1VV" id="10BRnhakoSq" role="1B3o_S" />
+      <node concept="3clFbS" id="10BRnhakoSv" role="3clF47">
+        <node concept="3cpWs6" id="10BRnhakpLd" role="3cqZAp">
+          <node concept="3fqX7Q" id="10BRnhakqp0" role="3cqZAk">
+            <node concept="2OqwBi" id="10BRnhakszJ" role="3fr31v">
+              <node concept="13iPFW" id="10BRnhaksbK" role="2Oq$k0" />
+              <node concept="3TrcHB" id="10BRnhaktFt" role="2OqNvi">
+                <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="10BRnhakoSw" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="4c$BrPvTR0F" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="isAnAbstractMethod" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+      <node concept="3Tm1VV" id="4c$BrPvTR0G" role="1B3o_S" />
+      <node concept="3clFbS" id="4c$BrPvTR0V" role="3clF47">
+        <node concept="3clFbF" id="4c$BrPvTRuF" role="3cqZAp">
+          <node concept="2OqwBi" id="4c$BrPvTS4I" role="3clFbG">
+            <node concept="13iPFW" id="4c$BrPvTRuA" role="2Oq$k0" />
+            <node concept="3TrcHB" id="4c$BrPvTTch" role="2OqNvi">
+              <ref role="3TsBF5" to="1i04:hP3i0m2" resolve="isAbstract" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="4c$BrPvTR0W" role="3clF45" />
     </node>
     <node concept="13i0hz" id="4mmymf_0zm4" role="13h7CS">
       <property role="TrG5h" value="getNearestOverriddenMethod" />

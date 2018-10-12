@@ -49,14 +49,12 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> result = new ArrayList<SNode>();
-              List<SNode> tgList = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
-              for (SNode tg : tgList) {
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f4b821fc5L, "operation"))));
-              }
-              return ListScope.forResolvableElements(result);
+            List<SNode> result = new ArrayList<SNode>();
+            List<SNode> tgList = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
+            for (SNode tg : tgList) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f4b821fc5L, "operation"))));
             }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

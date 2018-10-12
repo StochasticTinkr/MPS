@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cjjmd4xvgoaasm3t30yjbr9szhj7snb" />
+<product version="3" modelHash="9tlcmxo2iv8zs2ofb51hi4lt16gzgh6">
+  <files names="NodeFileStatusMappingExt.java:NodeTabColorProvider.java" />
+</product>
 

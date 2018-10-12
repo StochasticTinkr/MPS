@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5ojrscrckj34ilnqys55196zgemnlyc" />
+<product version="3" modelHash="edk93f714rpq2ko9v2ns0l1o8j6x88n">
+  <files names="Main_lists.java" />
+</product>
 

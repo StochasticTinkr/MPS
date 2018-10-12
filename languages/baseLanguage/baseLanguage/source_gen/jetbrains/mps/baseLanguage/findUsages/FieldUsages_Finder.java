@@ -7,9 +7,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -44,7 +46,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
       List<SNode> fieldDeclarations = new ArrayList<SNode>();
@@ -55,13 +57,14 @@ public class FieldUsages_Finder extends GeneratedFinder {
       // 
       for (SNode fieldDeclaration : ListSequence.fromList(fieldDeclarations)) {
         for (SNode fieldUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, monitor.subTask(1)))) {
-          ListSequence.fromList(_results).addElement(fieldUsage);
+          callback.onUsageFound(createSingleResult(fieldUsage));
         }
       }
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);

@@ -66,21 +66,19 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              SNode contextBuilder = Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder")), enclosingNode);
-              SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(contextBuilder), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false);
-              if (classifierType == null) {
-                return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
-              }
-              List<SNode> methods = new ArrayList<SNode>();
-              for (SNode method : Members.visibleInstanceMethods(classifierType, enclosingNode)) {
-                if (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == 1 && BeanPropertyBuilder__BehaviorDescriptor.getPropertyName_id2kIZjjSEvS7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) != null) {
-                  ListSequence.fromList(methods).addElement(method);
-                }
-              }
-              return ListScope.forResolvableElements(methods);
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            SNode contextBuilder = Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPv$c.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder")), enclosingNode);
+            SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(contextBuilder), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false);
+            if (classifierType == null) {
+              return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
             }
+            List<SNode> methods = new ArrayList<SNode>();
+            for (SNode method : Members.visibleInstanceMethods(classifierType, enclosingNode)) {
+              if (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == 1 && BeanPropertyBuilder__BehaviorDescriptor.getPropertyName_id2kIZjjSEvS7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) != null) {
+                ListSequence.fromList(methods).addElement(method);
+              }
+            }
+            return ListScope.forResolvableElements(methods);
           }
         };
       }

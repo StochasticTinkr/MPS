@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect__BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import java.util.Set;
@@ -104,7 +105,7 @@ public final class ConceptBehavior__BehaviorDescriptor extends BaseBHDescriptor 
       if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) {
         continue;
       }
-      if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"))) {
+      if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(method)) {
         continue;
       }
       if (SNodeOperations.getParent(method) == __thisNode__) {

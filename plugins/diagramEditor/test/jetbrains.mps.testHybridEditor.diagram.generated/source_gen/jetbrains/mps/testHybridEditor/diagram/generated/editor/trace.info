@@ -656,7 +656,7 @@
       <node id="984069744394712651" at="90,8,91,47" concept="2" />
       <node id="984069744394712651" at="91,47,92,209" concept="2" />
       <node id="984069744394892428" at="94,50,95,334" concept="8" />
-      <node id="984069744394892428" at="97,8,98,46" concept="2" />
+      <node id="984069744394892428" at="97,15,98,46" concept="2" />
       <node id="984069744394988843" at="100,55,101,175" concept="8" />
       <node id="984069744394988843" at="103,65,104,178" concept="2" />
       <node id="984069744394988843" at="106,8,107,47" concept="2" />
@@ -799,7 +799,7 @@
       <node id="2353136177975278085" at="49,0,53,0" concept="1" trace="BlockInstance_diagram_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2353136177975278085" at="231,0,235,0" concept="6" trace="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
       <node id="2353136177975278085" at="54,0,59,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="984069744394892428" at="92,209,97,8" concept="2" />
+      <node id="984069744394892428" at="92,209,97,15" concept="2" />
       <node id="2353136177975278085" at="166,0,171,0" concept="6" trace="set#(Ljava/lang/Boolean;)V" />
       <node id="2353136177975278085" at="195,0,200,0" concept="6" trace="set#(Ljava/lang/Boolean;)V" />
       <node id="2353136177975278085" at="219,61,224,22" concept="2" />

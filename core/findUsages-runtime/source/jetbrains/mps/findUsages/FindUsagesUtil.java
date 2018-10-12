@@ -17,11 +17,13 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collection;
 
@@ -45,8 +47,12 @@ public class FindUsagesUtil {
    * Finds exact instances of the provided concepts in the model.
    * FIXME refactor into {@code NodeInstanceFinder} similar to {@link NodeUsageFinder}.
    */
-  public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
+  public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer,
+                                      @NotNull ProgressMonitor monitor) {
     for (SAbstractConcept concept : concepts) {
+      if (monitor.isCanceled()) {
+        return;
+      }
       for (SNode instance : FastNodeFinderManager.get(model).getNodes(concept, false)) {
         consumer.consume(instance);
       }

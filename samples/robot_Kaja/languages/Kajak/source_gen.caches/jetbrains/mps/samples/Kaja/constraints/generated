@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-v62hx5iccadxc3z4ikz58lj3aph3ec" />
+<product version="3" modelHash="-v62hx5iccadxc3z4ikz58lj3aph3ec">
+  <files names="ConstraintsAspectDescriptor.java:Require_Constraints.java:RoutineCall_Constraints.java:RoutineDefinition_Constraints.java" />
+</product>
 

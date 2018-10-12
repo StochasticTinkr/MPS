@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6gt0ly4j7r2w9lgg0yqbgq1z0m18nvp" />
+<product version="3" modelHash="-5jdhkkyvziww06rd4b8qcxbzvaehev">
+  <files names="ConstraintsInheritence_Test.java:ConstraintsInvocation_Test.java:ConstraintsReferenceInheritence_Handler1_Test.java:ConstraintsReferenceInheritence_Handler2_Test.java:ConstraintsReferenceInheritence_Handler3_Test.java:ConstraintsReferenceInheritence_Scopes_Test.java" />
+</product>
 

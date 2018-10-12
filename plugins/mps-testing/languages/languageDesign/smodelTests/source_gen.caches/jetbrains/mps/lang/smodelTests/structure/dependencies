@@ -11,45 +11,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_CustomIdentifier" file="Enum_CustomIdentifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_CustomIdentifier_PropertySupport" file="Enum_CustomIdentifier_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.Enum_CustomIdentifier" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromInternalValue" file="Enum_DeriveFromInternalValue.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromInternalValue_PropertySupport" file="Enum_DeriveFromInternalValue_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromInternalValue" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromPresentation" file="Enum_DeriveFromPresentation.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromPresentation_PropertySupport" file="Enum_DeriveFromPresentation_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.Enum_DeriveFromPresentation" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodelTests.structure.LanguageConceptSwitch" file="LanguageConceptSwitch.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndexBuilder" />
@@ -67,6 +28,84 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomDefaultValue" file="TestEnum_CustomDefaultValue.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomDefaultValue_PropertySupport" file="TestEnum_CustomDefaultValue_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomDefaultValue" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomIdentifier" file="TestEnum_CustomIdentifier.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomIdentifier_PropertySupport" file="TestEnum_CustomIdentifier_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_CustomIdentifier" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromInternalValue" file="TestEnum_DeriveFromInternalValue.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromInternalValue_PropertySupport" file="TestEnum_DeriveFromInternalValue_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromInternalValue" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromPresentation" file="TestEnum_DeriveFromPresentation.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromPresentation_PropertySupport" file="TestEnum_DeriveFromPresentation_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_DeriveFromPresentation" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_FirstMemberDefaultValue" file="TestEnum_FirstMemberDefaultValue.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_FirstMemberDefaultValue_PropertySupport" file="TestEnum_FirstMemberDefaultValue_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_FirstMemberDefaultValue" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_NoDefaultValue" file="TestEnum_NoDefaultValue.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodelTests.structure.TestEnum_NoDefaultValue_PropertySupport" file="TestEnum_NoDefaultValue_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodelTests.structure.TestEnum_NoDefaultValue" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
 </dependenciesRoot>
 

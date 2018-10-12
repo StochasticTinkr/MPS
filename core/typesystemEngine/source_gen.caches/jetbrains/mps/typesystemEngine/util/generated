@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dm56pp8q3unrd95gki6zc0p6i0cv4q" />
+<product version="3" modelHash="-8joi3epbig0sbddhzgpbadf0b94g898">
+  <files names="CoerceUtil.java:LatticeUtil.java:TypeSystemUtil.java" />
+</product>
 

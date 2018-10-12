@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="59x0cids5qhezuicsd7fgdjpe997359" />
+<product version="3" modelHash="-6njde2t1ak48u6u4awc76hhpum6iato">
+  <files names="CodeStyleSettings.java:CodeStyleSettingsRegistry.java:IdentifierConstraintsUtil.java:OverridingMethodsFinder.java" />
+</product>
 

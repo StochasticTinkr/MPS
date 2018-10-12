@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ajspq7lm0gkf788ild5j4ysy7iazkc" />
+<product version="3" modelHash="-6ajspq7lm0gkf788ild5j4ysy7iazkc">
+  <files names="ConstraintsAspectDescriptor.java:XMLSAXAttributeReference_Constraints.java:XMLSAXBreakStatement_Constraints.java:XMLSAXChildRule_Constraints.java:XMLSAXFieldReference_Constraints.java:XMLSAXLocatorExpression_Constraints.java:XMLSAXNodeRuleParamRef_Constraints.java" />
+</product>
 

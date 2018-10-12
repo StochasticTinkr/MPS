@@ -44536,7 +44536,7 @@
     <property role="3GE5qa" value="contextualclasses" />
     <property role="TrG5h" value="GenericCellCreationContext" />
     <node concept="3clFb_" id="7GOmDNDA$WW" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getEditorContext" />
       <node concept="3uibUv" id="7GOmDNDA_0D" role="3clF45">
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
@@ -44546,7 +44546,7 @@
     </node>
     <node concept="2tJIrI" id="7GOmDNDA_1T" role="jymVt" />
     <node concept="3clFb_" id="7GOmDNDA_5M" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getNode" />
       <node concept="3clFbS" id="7GOmDNDA_5P" role="3clF47" />

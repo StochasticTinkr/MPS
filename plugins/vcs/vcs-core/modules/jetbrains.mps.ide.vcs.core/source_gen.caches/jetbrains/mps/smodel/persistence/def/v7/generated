@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a5ovmq5vtszdck5luqunbxkollbxtbq" />
+<product version="3" modelHash="-4sdm69xq1bcaeqpu6t97yk5nv92yjqa">
+  <files names="LineToContentMapReader7Handler.java:ModelPersistence7.java:ModelReader7Handler.java:ReadHelper.java" />
+</product>
 

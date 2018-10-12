@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="constraints.test.constraints.Base_Constraints" file="Base_Constraints.java">
+  <dependency className="constraints.test.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInheritance_Base_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInheritance_Derived1_Constrained_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInheritance_Derived2_Constrained_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInvocation_CanBeAncestorFail_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInvocation_CanBeChildFail_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestConstraintsInvocation_CanBeParentFail_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_BaseReference_Handler_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_BaseReference_Scoping_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_SubReference_HandlerSuperHandler_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_SubReference_HandlerSuperScoping_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_SubReference_ScopingSuperHandler_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_SubReference_ScopingSuperScoping_Constraints" />
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_Target_Constraints" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestConstraintsInheritance_Base_Constraints" file="TestConstraintsInheritance_Base_Constraints.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -17,7 +40,41 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="constraints.test.constraints.CanBeAncestorFail_Constraints" file="CanBeAncestorFail_Constraints.java">
+  <dependency className="constraints.test.constraints.TestConstraintsInheritance_Derived1_Constrained_Constraints" file="TestConstraintsInheritance_Derived1_Constrained_Constraints.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestConstraintsInheritance_Derived2_Constrained_Constraints" file="TestConstraintsInheritance_Derived2_Constrained_Constraints.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestConstraintsInvocation_CanBeAncestorFail_Constraints" file="TestConstraintsInvocation_CanBeAncestorFail_Constraints.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -32,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="constraints.test.constraints.CanBeChildFail_Constraints" file="CanBeChildFail_Constraints.java">
+  <dependency className="constraints.test.constraints.TestConstraintsInvocation_CanBeChildFail_Constraints" file="TestConstraintsInvocation_CanBeChildFail_Constraints.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -47,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="constraints.test.constraints.CanBeParentFail_Constraints" file="CanBeParentFail_Constraints.java">
+  <dependency className="constraints.test.constraints.TestConstraintsInvocation_CanBeParentFail_Constraints" file="TestConstraintsInvocation_CanBeParentFail_Constraints.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -62,54 +119,147 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="constraints.test.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="constraints.test.constraints.Base_Constraints" />
-    <classNode dependClassName="constraints.test.constraints.CanBeAncestorFail_Constraints" />
-    <classNode dependClassName="constraints.test.constraints.CanBeChildFail_Constraints" />
-    <classNode dependClassName="constraints.test.constraints.CanBeParentFail_Constraints" />
-    <classNode dependClassName="constraints.test.constraints.Derived1_Constrained_Constraints" />
-    <classNode dependClassName="constraints.test.constraints.Derived2_Constrained_Constraints" />
+  <dependency className="constraints.test.constraints.TestRefConstraints_BaseReference_Handler_Constraints" file="TestRefConstraints_BaseReference_Handler_Constraints.java">
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_Constants" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
-  </dependency>
-  <dependency className="constraints.test.constraints.Derived1_Constrained_Constraints" file="Derived1_Constrained_Constraints.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="constraints.test.constraints.Derived2_Constrained_Constraints" file="Derived2_Constrained_Constraints.java">
-    <classNode dependClassName="java.lang.Boolean" />
+  <dependency className="constraints.test.constraints.TestRefConstraints_BaseReference_Scoping_Constraints" file="TestRefConstraints_BaseReference_Scoping_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_Constants" file="TestRefConstraints_Constants.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_SubReference_HandlerSuperHandler_Constraints" file="TestRefConstraints_SubReference_HandlerSuperHandler_Constraints.java">
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_Constants" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_SubReference_HandlerSuperScoping_Constraints" file="TestRefConstraints_SubReference_HandlerSuperScoping_Constraints.java">
+    <classNode dependClassName="constraints.test.constraints.TestRefConstraints_Constants" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_SubReference_ScopingSuperHandler_Constraints" file="TestRefConstraints_SubReference_ScopingSuperHandler_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_SubReference_ScopingSuperScoping_Constraints" file="TestRefConstraints_SubReference_ScopingSuperScoping_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="constraints.test.constraints.TestRefConstraints_Target_Constraints" file="TestRefConstraints_Target_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_DefaultScopeProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
 </dependenciesRoot>

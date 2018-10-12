@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b5g75gd678okawakddggv1rfoxsr89" />
+<product version="3" modelHash="-b5g75gd678okawakddggv1rfoxsr89">
+  <files names="InPlaceCheckpointDeclarations.java:MigrationDescriptor.java" />
+</product>
 

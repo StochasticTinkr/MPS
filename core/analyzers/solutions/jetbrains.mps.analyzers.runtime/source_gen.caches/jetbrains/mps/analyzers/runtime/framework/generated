@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e425surcl6rym4qgahtml3pkspnf5pb" />
+<product version="3" modelHash="-3wmw3lt63a3ewrohksuiiel20ig9q3">
+  <files names="CustomAnalyzerRunner.java:DataFlowConstructor.java:GeneratedInstruction.java" />
+</product>
 

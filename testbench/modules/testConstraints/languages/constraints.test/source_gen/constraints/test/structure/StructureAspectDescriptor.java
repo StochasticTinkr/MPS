@@ -12,19 +12,27 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptBase = createDescriptorForBase();
-  /*package*/ final ConceptDescriptor myConceptCanBeAncestorFail = createDescriptorForCanBeAncestorFail();
-  /*package*/ final ConceptDescriptor myConceptCanBeChildFail = createDescriptorForCanBeChildFail();
-  /*package*/ final ConceptDescriptor myConceptCanBeParentFail = createDescriptorForCanBeParentFail();
-  /*package*/ final ConceptDescriptor myConceptChild = createDescriptorForChild();
-  /*package*/ final ConceptDescriptor myConceptConcept_CC = createDescriptorForConcept_CC();
-  /*package*/ final ConceptDescriptor myConceptConcept_CI = createDescriptorForConcept_CI();
-  /*package*/ final ConceptDescriptor myConceptConcept_II = createDescriptorForConcept_II();
-  /*package*/ final ConceptDescriptor myConceptContainer = createDescriptorForContainer();
-  /*package*/ final ConceptDescriptor myConceptDerived1_Constrained = createDescriptorForDerived1_Constrained();
-  /*package*/ final ConceptDescriptor myConceptDerived1_Inherited = createDescriptorForDerived1_Inherited();
-  /*package*/ final ConceptDescriptor myConceptDerived2_Constrained = createDescriptorForDerived2_Constrained();
-  /*package*/ final ConceptDescriptor myConceptDerived2_Inherited = createDescriptorForDerived2_Inherited();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Base = createDescriptorForTestConstraintsInheritance_Base();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Concept_CC = createDescriptorForTestConstraintsInheritance_Concept_CC();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Concept_CI = createDescriptorForTestConstraintsInheritance_Concept_CI();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Concept_II = createDescriptorForTestConstraintsInheritance_Concept_II();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Container = createDescriptorForTestConstraintsInheritance_Container();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Derived1_Constrained = createDescriptorForTestConstraintsInheritance_Derived1_Constrained();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Derived1_Inherited = createDescriptorForTestConstraintsInheritance_Derived1_Inherited();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Derived2_Constrained = createDescriptorForTestConstraintsInheritance_Derived2_Constrained();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Derived2_Inherited = createDescriptorForTestConstraintsInheritance_Derived2_Inherited();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInvocation_CanBeAncestorFail = createDescriptorForTestConstraintsInvocation_CanBeAncestorFail();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInvocation_CanBeChildFail = createDescriptorForTestConstraintsInvocation_CanBeChildFail();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInvocation_CanBeParentFail = createDescriptorForTestConstraintsInvocation_CanBeParentFail();
+  /*package*/ final ConceptDescriptor myConceptTestConstraintsInvocation_Child = createDescriptorForTestConstraintsInvocation_Child();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_BaseReference_Handler = createDescriptorForTestRefConstraints_BaseReference_Handler();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_BaseReference_Scoping = createDescriptorForTestRefConstraints_BaseReference_Scoping();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_Container = createDescriptorForTestRefConstraints_Container();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_SubReference_HandlerSuperHandler = createDescriptorForTestRefConstraints_SubReference_HandlerSuperHandler();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_SubReference_HandlerSuperScoping = createDescriptorForTestRefConstraints_SubReference_HandlerSuperScoping();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_SubReference_ScopingSuperHandler = createDescriptorForTestRefConstraints_SubReference_ScopingSuperHandler();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_SubReference_ScopingSuperScoping = createDescriptorForTestRefConstraints_SubReference_ScopingSuperScoping();
+  /*package*/ final ConceptDescriptor myConceptTestRefConstraints_Target = createDescriptorForTestRefConstraints_Target();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -33,39 +41,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBase, myConceptCanBeAncestorFail, myConceptCanBeChildFail, myConceptCanBeParentFail, myConceptChild, myConceptConcept_CC, myConceptConcept_CI, myConceptConcept_II, myConceptContainer, myConceptDerived1_Constrained, myConceptDerived1_Inherited, myConceptDerived2_Constrained, myConceptDerived2_Inherited);
+    return Arrays.asList(myConceptTestConstraintsInheritance_Base, myConceptTestConstraintsInheritance_Concept_CC, myConceptTestConstraintsInheritance_Concept_CI, myConceptTestConstraintsInheritance_Concept_II, myConceptTestConstraintsInheritance_Container, myConceptTestConstraintsInheritance_Derived1_Constrained, myConceptTestConstraintsInheritance_Derived1_Inherited, myConceptTestConstraintsInheritance_Derived2_Constrained, myConceptTestConstraintsInheritance_Derived2_Inherited, myConceptTestConstraintsInvocation_CanBeAncestorFail, myConceptTestConstraintsInvocation_CanBeChildFail, myConceptTestConstraintsInvocation_CanBeParentFail, myConceptTestConstraintsInvocation_Child, myConceptTestRefConstraints_BaseReference_Handler, myConceptTestRefConstraints_BaseReference_Scoping, myConceptTestRefConstraints_Container, myConceptTestRefConstraints_SubReference_HandlerSuperHandler, myConceptTestRefConstraints_SubReference_HandlerSuperScoping, myConceptTestRefConstraints_SubReference_ScopingSuperHandler, myConceptTestRefConstraints_SubReference_ScopingSuperScoping, myConceptTestRefConstraints_Target);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.Base:
-        return myConceptBase;
-      case LanguageConceptSwitch.CanBeAncestorFail:
-        return myConceptCanBeAncestorFail;
-      case LanguageConceptSwitch.CanBeChildFail:
-        return myConceptCanBeChildFail;
-      case LanguageConceptSwitch.CanBeParentFail:
-        return myConceptCanBeParentFail;
-      case LanguageConceptSwitch.Child:
-        return myConceptChild;
-      case LanguageConceptSwitch.Concept_CC:
-        return myConceptConcept_CC;
-      case LanguageConceptSwitch.Concept_CI:
-        return myConceptConcept_CI;
-      case LanguageConceptSwitch.Concept_II:
-        return myConceptConcept_II;
-      case LanguageConceptSwitch.Container:
-        return myConceptContainer;
-      case LanguageConceptSwitch.Derived1_Constrained:
-        return myConceptDerived1_Constrained;
-      case LanguageConceptSwitch.Derived1_Inherited:
-        return myConceptDerived1_Inherited;
-      case LanguageConceptSwitch.Derived2_Constrained:
-        return myConceptDerived2_Constrained;
-      case LanguageConceptSwitch.Derived2_Inherited:
-        return myConceptDerived2_Inherited;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Base:
+        return myConceptTestConstraintsInheritance_Base;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Concept_CC:
+        return myConceptTestConstraintsInheritance_Concept_CC;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Concept_CI:
+        return myConceptTestConstraintsInheritance_Concept_CI;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Concept_II:
+        return myConceptTestConstraintsInheritance_Concept_II;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Container:
+        return myConceptTestConstraintsInheritance_Container;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Derived1_Constrained:
+        return myConceptTestConstraintsInheritance_Derived1_Constrained;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Derived1_Inherited:
+        return myConceptTestConstraintsInheritance_Derived1_Inherited;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Derived2_Constrained:
+        return myConceptTestConstraintsInheritance_Derived2_Constrained;
+      case LanguageConceptSwitch.TestConstraintsInheritance_Derived2_Inherited:
+        return myConceptTestConstraintsInheritance_Derived2_Inherited;
+      case LanguageConceptSwitch.TestConstraintsInvocation_CanBeAncestorFail:
+        return myConceptTestConstraintsInvocation_CanBeAncestorFail;
+      case LanguageConceptSwitch.TestConstraintsInvocation_CanBeChildFail:
+        return myConceptTestConstraintsInvocation_CanBeChildFail;
+      case LanguageConceptSwitch.TestConstraintsInvocation_CanBeParentFail:
+        return myConceptTestConstraintsInvocation_CanBeParentFail;
+      case LanguageConceptSwitch.TestConstraintsInvocation_Child:
+        return myConceptTestConstraintsInvocation_Child;
+      case LanguageConceptSwitch.TestRefConstraints_BaseReference_Handler:
+        return myConceptTestRefConstraints_BaseReference_Handler;
+      case LanguageConceptSwitch.TestRefConstraints_BaseReference_Scoping:
+        return myConceptTestRefConstraints_BaseReference_Scoping;
+      case LanguageConceptSwitch.TestRefConstraints_Container:
+        return myConceptTestRefConstraints_Container;
+      case LanguageConceptSwitch.TestRefConstraints_SubReference_HandlerSuperHandler:
+        return myConceptTestRefConstraints_SubReference_HandlerSuperHandler;
+      case LanguageConceptSwitch.TestRefConstraints_SubReference_HandlerSuperScoping:
+        return myConceptTestRefConstraints_SubReference_HandlerSuperScoping;
+      case LanguageConceptSwitch.TestRefConstraints_SubReference_ScopingSuperHandler:
+        return myConceptTestRefConstraints_SubReference_ScopingSuperHandler;
+      case LanguageConceptSwitch.TestRefConstraints_SubReference_ScopingSuperScoping:
+        return myConceptTestRefConstraints_SubReference_ScopingSuperScoping;
+      case LanguageConceptSwitch.TestRefConstraints_Target:
+        return myConceptTestRefConstraints_Target;
       default:
         return null;
     }
@@ -75,45 +99,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForBase() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Base", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Base() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Base", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.interface_();
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488191");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForCanBeAncestorFail() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeAncestorFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ebL);
-    b.class_(false, false, false);
-    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965611");
-    b.version(2);
-    b.aggregate("child", 0x7438d976714223edL).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965613").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForCanBeChildFail() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeChildFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL);
-    b.class_(false, false, false);
-    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965610");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForCanBeParentFail() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "CanBeParentFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL);
-    b.class_(false, false, false);
-    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965612");
-    b.version(2);
-    b.aggregate("child", 0x7438d976714223f8L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965624").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForChild() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Child", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L);
-    b.class_(false, false, false);
-    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/730305212589577121");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForConcept_CC() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Concept_CC", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a75fL);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Concept_CC() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Concept_CC", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a75fL);
     b.class_(false, false, false);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L);
@@ -122,8 +116,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("CF - composition of D1 & D2 CFs");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConcept_CI() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Concept_CI", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a775L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Concept_CI() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Concept_CI", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a775L);
     b.class_(false, false, false);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
@@ -131,8 +125,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConcept_II() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Concept_II", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a785L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Concept_II() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Concept_II", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7a785L);
     b.class_(false, false, false);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7311cL);
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
@@ -141,8 +135,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("CF - composition of D1 & D2 CFs. D2 & D1 inherites Base CF. Hence, CF - Base CF ");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForContainer() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Container", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Container() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Container", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730f4L);
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488180");
     b.version(2);
@@ -152,36 +146,138 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("node", 0x50b9acb92ed73126L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL).optional(true).ordered(true).multiple(false).origin("5816870305080488230").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDerived1_Constrained() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Derived1_Constrained", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Derived1_Constrained() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Derived1_Constrained", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73116L);
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488214");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDerived1_Inherited() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Derived1_Inherited", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7311cL);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Derived1_Inherited() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Derived1_Inherited", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed7311cL);
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488220");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDerived2_Constrained() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Derived2_Constrained", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Derived2_Constrained() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Derived2_Constrained", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73112L);
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488210");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDerived2_Inherited() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "Derived2_Inherited", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
+  private static ConceptDescriptor createDescriptorForTestConstraintsInheritance_Derived2_Inherited() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInheritance_Derived2_Inherited", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed73124L);
     b.interface_();
     b.parent(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488228");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestConstraintsInvocation_CanBeAncestorFail() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInvocation_CanBeAncestorFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ebL);
+    b.class_(false, false, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965611");
+    b.version(2);
+    b.aggregate("child", 0x7438d976714223edL).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965613").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestConstraintsInvocation_CanBeChildFail() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInvocation_CanBeChildFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223eaL);
+    b.class_(false, false, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965610");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestConstraintsInvocation_CanBeParentFail() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInvocation_CanBeParentFail", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x7438d976714223ecL);
+    b.class_(false, false, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/8374682609824965612");
+    b.version(2);
+    b.aggregate("child", 0x7438d976714223f8L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L).optional(true).ordered(true).multiple(false).origin("8374682609824965624").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestConstraintsInvocation_Child() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestConstraintsInvocation_Child", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0xa2290b8b60493a1L);
+    b.class_(false, false, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/730305212589577121");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_BaseReference_Handler() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_BaseReference_Handler", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a30660588e212L);
+    b.class_(false, true, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748379648530");
+    b.version(2);
+    b.associate("target", 0x244a30660588e2f1L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c74L).optional(false).origin("2614955748379648753").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_BaseReference_Scoping() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_BaseReference_Scoping", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c73L);
+    b.class_(false, true, false);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238643");
+    b.version(2);
+    b.associate("target", 0x244a306605641d21L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c74L).optional(false).origin("2614955748377238817").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_Container() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_Container", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641cdfL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238751");
+    b.version(2);
+    b.aggregate("references_scoping", 0x244a306605641ce0L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c73L).optional(true).ordered(true).multiple(true).origin("2614955748377238752").done();
+    b.aggregate("references_handler", 0x244a30660589f1aaL).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a30660588e212L).optional(true).ordered(true).multiple(true).origin("2614955748379718058").done();
+    b.aggregate("targets", 0x244a306605641ce3L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c74L).optional(true).ordered(true).multiple(true).origin("2614955748377238755").done();
+    b.alias("ref constraints test container");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_SubReference_HandlerSuperHandler() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_SubReference_HandlerSuperHandler", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a3066058dc091L);
+    b.class_(false, false, false);
+    b.super_("constraints.test.structure.TestRefConstraints_BaseReference_Handler", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a30660588e212L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748379967633");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_SubReference_HandlerSuperScoping() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_SubReference_HandlerSuperScoping", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c7fL);
+    b.class_(false, false, false);
+    b.super_("constraints.test.structure.TestRefConstraints_BaseReference_Scoping", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c73L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238655");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_SubReference_ScopingSuperHandler() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_SubReference_ScopingSuperHandler", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a3066058dc08eL);
+    b.class_(false, false, false);
+    b.super_("constraints.test.structure.TestRefConstraints_BaseReference_Handler", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a30660588e212L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748379967630");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_SubReference_ScopingSuperScoping() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_SubReference_ScopingSuperScoping", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c7eL);
+    b.class_(false, false, false);
+    b.super_("constraints.test.structure.TestRefConstraints_BaseReference_Scoping", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c73L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238654");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestRefConstraints_Target() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("constraints.test", "TestRefConstraints_Target", 0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x244a306605641c74L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238644");
+    b.version(2);
+    b.prop("debug", 0x244a306605641c7bL, "2614955748377238651");
+    b.prop("inScope", 0x244a306605641c80L, "2614955748377238656");
+    b.prop("inScopeAdvanced", 0x244a30660589f055L, "2614955748379717717");
+    b.alias("target");
     return b.create();
   }
 }

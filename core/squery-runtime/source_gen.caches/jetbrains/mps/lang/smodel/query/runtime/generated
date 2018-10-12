@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ljqjcwkeyb9jt4q4tourqhhgjg71hr" />
+<product version="3" modelHash="3ikzyew4qz9huo7cads3tkiyw95wvse">
+  <files names="CommandUtil.java:QueryExecutionContext.java" />
+</product>
 

@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="4rvk" ref="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" />
@@ -3240,7 +3240,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="9D0Ba05uYk" role="1B3o_S" />
       <node concept="3clFb_" id="9D0Ba05uYg" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="beforeDialogShown" />
         <node concept="3cqZAl" id="9D0Ba05uYh" role="3clF45" />
         <node concept="3Tm1VV" id="9D0Ba05uYi" role="1B3o_S" />

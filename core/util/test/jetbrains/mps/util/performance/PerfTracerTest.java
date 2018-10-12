@@ -54,7 +54,7 @@ public class PerfTracerTest {
       Assert.fail(String.format("Too fast, %dms instead of ~%dms", actual, expectedMean));
     }
     if (actual > expectedHigh) {
-      Assert.fail(String.format("Unexpected delays, %dms instead of ~dms", actual, expectedMean));
+      Assert.fail(String.format("Unexpected delays, %dms instead of ~%dms", actual, expectedMean));
     }
   }
 

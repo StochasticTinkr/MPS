@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1221,7 +1221,6 @@
         </node>
         <node concept="PMmxH" id="4bnBAeByBuF" role="3EZMnx">
           <ref role="PMmxG" to="tpen:h9AUA0X" resolve="_Component_Visibility" />
-          <ref role="1ERwB7" to="tpen:h9EA$1S" resolve="_InstanceMethodDeclaration_AddAbstract" />
         </node>
         <node concept="3F0ifn" id="4bnBAeByBuG" role="3EZMnx">
           <property role="3F0ifm" value="final" />
@@ -1364,10 +1363,10 @@
           <node concept="3clFbS" id="2DQYZoTrox2" role="2VODD2">
             <node concept="3clFbF" id="2DQYZoTrox4" role="3cqZAp">
               <node concept="2OqwBi" id="2DQYZoTrox6" role="3clFbG">
-                <node concept="pncrf" id="2DQYZoTrox5" role="2Oq$k0" />
-                <node concept="3TrcHB" id="2DQYZoTroND" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                <node concept="2qgKlT" id="4c$BrPwfS1Y" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
                 </node>
+                <node concept="pncrf" id="2DQYZoTrox5" role="2Oq$k0" />
               </node>
             </node>
           </node>

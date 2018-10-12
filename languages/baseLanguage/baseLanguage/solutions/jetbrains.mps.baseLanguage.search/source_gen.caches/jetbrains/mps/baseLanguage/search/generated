@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2ar9g1zf7c6d8jw5bymbxkuh3gd4vlq" />
+<product version="3" modelHash="-2durr9rzcgf5e9uzucbvcuy6ezkqx6h">
+  <files names="BaseLanguageUtil.java:ClassifierSuccessors.java:MPSBaseLanguage.java:MpsScopesUtil.java:VisibilityUtil.java" />
+</product>
 

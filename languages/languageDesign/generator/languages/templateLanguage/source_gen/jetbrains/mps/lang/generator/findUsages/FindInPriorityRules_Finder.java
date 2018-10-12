@@ -6,8 +6,9 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -44,7 +45,7 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, final List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
       SModel modelOfSelectedMC = SNodeOperations.getModel(node);
@@ -54,7 +55,7 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
       final String selectedNodeId = node.getNodeId().toString();
       _FunctionTypes._void_P1_E0<? super SNode> addResultFunc = new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode it) {
-          ListSequence.fromList(_results).addElement(it);
+          callback.onUsageFound(createSingleResult(it));
         }
       };
       for (SModel projectStructureModel : projectStructureModule.getModels()) {
@@ -79,6 +80,7 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
 
   @Nullable
   @Override

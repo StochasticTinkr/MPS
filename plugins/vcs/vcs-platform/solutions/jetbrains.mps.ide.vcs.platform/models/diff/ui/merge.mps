@@ -7,7 +7,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
@@ -9083,7 +9083,7 @@
   <node concept="3HP615" id="5$xqaErb5$G">
     <property role="TrG5h" value="ISaveMergedModel" />
     <node concept="3clFb_" id="7LCpE5eWcu6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="save" />
       <node concept="3clFbS" id="7LCpE5eWcu9" role="3clF47" />

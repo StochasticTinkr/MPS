@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8e9than94x5ze3y4q61xmikzp3zkrh7" />
+<product version="3" modelHash="-1qu267yb05gvrbxuye3zm39qoqpqcon">
+  <files names="MacroTest_Test.java:TestContext.java:TestRelativePathHelper_Test.java:TestTemporalPaths_Test.java" />
+</product>
 

@@ -165,14 +165,13 @@ public class ClassifierLoader {
     }
   }
 
-
   private boolean isIgnored() {
     return myOnlyPublic && (myClassReader.getAccess() & Opcodes.ACC_PUBLIC) == 0;
   }
 
   private static byte[] readClass(IFile file) {
     try {
-      byte[] result = null;
+      byte[] result;
       InputStream inp = null;
       try {
         inp = file.openInputStream();

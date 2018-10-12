@@ -69,13 +69,11 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode template = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), false, false);
-              if ((template == null)) {
-                return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
-              }
-              return ListScope.forResolvableElements(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, 0xd244b712f910115L, "templateParameter")));
+            SNode template = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), false, false);
+            if ((template == null)) {
+              return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
             }
+            return ListScope.forResolvableElements(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, 0xd244b712f910115L, "templateParameter")));
           }
         };
       }

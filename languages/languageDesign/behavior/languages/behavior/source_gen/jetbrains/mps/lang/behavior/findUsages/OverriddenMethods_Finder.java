@@ -11,17 +11,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -54,56 +60,52 @@ public class OverriddenMethods_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, final ProgressMonitor monitor) {
+    monitor.start(getDescription(), 1);
     try {
       // top-most ancestor by the lang.behavior 
-      monitor.start("Overridden methods", 10);
-      ConceptMRO methodResolutionOrder = new ConceptMRO();
-      AbstractConceptWrap wrapper = AbstractConceptWrap.wrap(ConceptMethodDeclaration__BehaviorDescriptor.getContainingConcept_idi3POAMX.invoke(node));
-      List<AbstractConceptWrap> linearization = methodResolutionOrder.calcLinearization(wrapper);
-      monitor.advance(5);
-      ProgressMonitor subMonitor = monitor.subTask(5);
-      subMonitor.start("", linearization.size());
-      try {
-        final SNode topMostOverriddenMethod = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(node);
-        for (AbstractConceptWrap wrap : ListSequence.fromList(linearization)) {
-          subMonitor.advance(1);
-          SNode ancestorConcept = wrap.getPeer();
-          if (ancestorConcept == ConceptMethodDeclaration__BehaviorDescriptor.getContainingConcept_idi3POAMX.invoke(node)) {
-            continue;
-          }
-          SModel aspectModel = SModuleOperations.getAspect(SNodeOperations.getModel(ancestorConcept).getModule(), "behavior");
-          if (aspectModel == null) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Could not found the aspect behavior model while looking for the ancestors for the concept '" + ancestorConcept + "'");
+      final SNode topMostOverriddenMethod = ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(node);
+      FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
+        public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+          SNode nodeParam = (SNode) searchResult.getObject();
+          new _FunctionTypes._void_P1_E0<SNode>() {
+            public void invoke(SNode ancestorConcept) {
+              if (ancestorConcept == ConceptMethodDeclaration__BehaviorDescriptor.getContainingConcept_idi3POAMX.invoke(node)) {
+                return;
+              }
+              SModel aspectModel = SModuleOperations.getAspect(SNodeOperations.getModel(ancestorConcept).getModule(), "behavior");
+              if (aspectModel == null) {
+                if (LOG.isEnabledFor(Level.ERROR)) {
+                  LOG.error("Could not found the aspect behavior model while looking for the ancestors for the concept '" + ancestorConcept + "'");
+                }
+                return;
+              }
+              if (monitor.isCanceled()) {
+                return;
+              }
+              SNode ancestorBehavior = SNodeOperations.cast(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspects_id4G9PD8$NvPM.invoke(SNodeOperations.cast(ancestorConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), aspectModel)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
+                }
+              }).first(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
+              List<SNode> candidateMethodsInAncestor = ListSequence.fromList(SLinkOperations.getChildren(ancestorBehavior, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(it) == topMostOverriddenMethod;
+                }
+              }).toListSequence();
+              // supposedly there are no more than one method 
+              for (SNode candidateMethod : ListSequence.fromList(candidateMethodsInAncestor)) {
+                callback.onUsageFound(createSingleResult(candidateMethod));
+              }
             }
-            continue;
-          }
-          if (monitor.isCanceled()) {
-            return;
-          }
-          SNode ancestorBehavior = SNodeOperations.cast(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspects_id4G9PD8$NvPM.invoke(ancestorConcept, aspectModel)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
-            }
-          }).first(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
-          List<SNode> candidateMethodsInAncestor = ListSequence.fromList(SLinkOperations.getChildren(ancestorBehavior, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethod_idhP3pnNO.invoke(it) == topMostOverriddenMethod;
-            }
-          }).toListSequence();
-          // supposedly there are no more than one method 
-          for (SNode candidateMethod : ListSequence.fromList(candidateMethodsInAncestor)) {
-            ListSequence.fromList(_results).addElement(candidateMethod);
-          }
+          }.invoke(nodeParam);
         }
-      } finally {
-        subMonitor.done();
-      }
+      }, new SearchQuery(ConceptMethodDeclaration__BehaviorDescriptor.getContainingConcept_idi3POAMX.invoke(node), scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.ConceptAncestors_Finder"));
     } finally {
       monitor.done();
     }
   }
+
 
   @Nullable
   @Override

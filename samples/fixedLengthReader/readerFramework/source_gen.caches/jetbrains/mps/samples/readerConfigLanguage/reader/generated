@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cf2213f0mx9le670gs8kzt39nnu8obz" />
+<product version="3" modelHash="bbyhrwms4qol9cnwlrtelijxoqrqg5u">
+  <files names="Reader.java:ReaderStrategy.java" />
+</product>
 

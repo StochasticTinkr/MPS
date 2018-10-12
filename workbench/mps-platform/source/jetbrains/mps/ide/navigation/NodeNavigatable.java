@@ -19,15 +19,17 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Objects;
 
 /**
  * evgeny, 11/6/11
  */
 public class NodeNavigatable extends BaseNavigatable {
-
-  private SNodeReference myNodePointer;
+  private final SNodeReference myNodePointer;
 
   public NodeNavigatable(@NotNull Project project, @NotNull SNodeReference nodePointer) {
     super(project);
@@ -36,16 +38,45 @@ public class NodeNavigatable extends BaseNavigatable {
 
   @Override
   public void doNavigate(final boolean focus) {
-    SNode node = myNodePointer.resolve(myProject.getRepository());
+    SNode node = resolveNode();
     if (node == null) {
-      LogManager.getLogger(NodeNavigatable.class).info("clicked node was deleted");
       return;
     }
 
-    NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
+    boolean select = !(node.getModel() != null && node.getParent() == null);
+    NavigationSupport.getInstance().openNode(myProject, node, focus, select);
   }
 
-  public SNodeReference getNodePointer() {
+  @Nullable
+  private SNode resolveNode() {
+    SNode node = myNodePointer.resolve(myProject.getRepository());
+    if (node == null) {
+      LogManager.getLogger(NodeNavigatable.class).info("The clicked node " + myNodePointer + " was deleted");
+      return null;
+    }
+    return node;
+  }
+
+  @Override
+  public int hashCode() {
+    return myNodePointer.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof NodeNavigatable) {
+      return Objects.equals(myNodePointer, ((NodeNavigatable) obj).myNodePointer);
+    }
+    return false;
+  }
+
+  @Override
+  public String toString() {
+    return "NodeNavigatable[" + myNodePointer + "]";
+  }
+
+  @NotNull
+  public final SNodeReference getNodePointer() {
     return myNodePointer;
   }
 }

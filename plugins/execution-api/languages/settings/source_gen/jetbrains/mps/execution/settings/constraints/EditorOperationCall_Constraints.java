@@ -55,19 +55,17 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode instance = SLinkOperations.getTarget(SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
-              SNode editorType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType")), false);
-              if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")) == null)) {
-                return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
-              }
-              List<SNode> operations = SettingsEditor__BehaviorDescriptor.getDeclaredOperations_idO$iR4J$gbn.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")), MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, 0xd244b712f910021L, "editor")));
-              return ListScope.forResolvableElements(ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return ((SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (EditorOperationDeclaration__BehaviorDescriptor.getJavaMethod_idO$iR4J$gaJ.invoke(it) != null) : (EditorOperationDeclaration__BehaviorDescriptor.getPublicJavaMethod_idbkrofm9Fgz.invoke(it) != null));
-                }
-              }));
+            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
+            SNode editorType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType")), false);
+            if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")) == null)) {
+              return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
             }
+            List<SNode> operations = SettingsEditor__BehaviorDescriptor.getDeclaredOperations_idO$iR4J$gbn.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")), MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, 0xd244b712f910021L, "editor")));
+            return ListScope.forResolvableElements(ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return ((SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (EditorOperationDeclaration__BehaviorDescriptor.getJavaMethod_idO$iR4J$gaJ.invoke(it) != null) : (EditorOperationDeclaration__BehaviorDescriptor.getPublicJavaMethod_idbkrofm9Fgz.invoke(it) != null));
+              }
+            }));
           }
         };
       }

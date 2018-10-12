@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7wb6onr67lb4jopzyq7woplej4x984o" />
+<product version="3" modelHash="7wb6onr67lb4jopzyq7woplej4x984o">
+  <files names="BehaviorAspectDescriptor.java:BuildModuleTestsPlugin__BehaviorDescriptor.java:BuildMpsLayout_TestModuleGroup__BehaviorDescriptor.java:BuildMpsLayout_TestModule__BehaviorDescriptor.java:BuildMpsLayout_TestModules_Content__BehaviorDescriptor.java:BuildMpsLayout_TestModules__BehaviorDescriptor.java" />
+</product>
 

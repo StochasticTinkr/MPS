@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7kvp8z8g9c6oiu6uqkgm3lg2h8zne57" />
+<product version="3" modelHash="-6a12gbsczrrajzip9dj8fe2n8cpn2t0">
+  <files names="RegexpOperations.java:Replacer.java" />
+</product>
 

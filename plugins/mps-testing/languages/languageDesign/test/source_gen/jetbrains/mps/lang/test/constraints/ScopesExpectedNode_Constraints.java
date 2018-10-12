@@ -48,28 +48,26 @@ public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              if (!(SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")))) {
-                return null;
-              }
-              SNode scopesTest = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
-              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, check_1jj8js_c0a0d0a0b0a0a0b0a1a0b0c(check_1jj8js_a2a0a3a0a1a0a0a1a0b0a1a2(ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(scopesTest))));
-              return modelPlusImportedScope;
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            if (!(SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")))) {
+              return null;
             }
+            SNode scopesTest = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
+            ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, check_1jj8js_c0a0d0b0a0a0b0a1a0b0c(check_1jj8js_a2a0a3a1a0a0a1a0b0a1a2(ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(scopesTest))));
+            return modelPlusImportedScope;
           }
         };
       }
     });
     return references;
   }
-  private static SAbstractConcept check_1jj8js_c0a0d0a0b0a0a0b0a1a0b0c(SReferenceLink checkedDotOperand) {
+  private static SAbstractConcept check_1jj8js_c0a0d0b0a0a0b0a1a0b0c(SReferenceLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetConcept();
     }
     return null;
   }
-  private static SReferenceLink check_1jj8js_a2a0a3a0a1a0a0a1a0b0a1a2(SReference checkedDotOperand) {
+  private static SReferenceLink check_1jj8js_a2a0a3a1a0a0a1a0b0a1a2(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }

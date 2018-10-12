@@ -69,10 +69,8 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode analyzer = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), false, false);
-              return ListScope.forResolvableElements(ListSequence.fromList(SLinkOperations.getChildren(analyzer, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x2e25b6b7919ac138L, "instruction"))).concat(Sequence.fromIterable(SLinkOperations.collectMany(SLinkOperations.collect(SLinkOperations.getChildren(analyzer, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x73e1fea9c173f804L, "usedContainers")), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter")), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c172b8b1L, 0x73e1fea9c172d0e9L, "instruction")))));
-            }
+            SNode analyzer = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), false, false);
+            return ListScope.forResolvableElements(ListSequence.fromList(SLinkOperations.getChildren(analyzer, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x2e25b6b7919ac138L, "instruction"))).concat(Sequence.fromIterable(SLinkOperations.collectMany(SLinkOperations.collect(SLinkOperations.getChildren(analyzer, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x73e1fea9c173f804L, "usedContainers")), MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter")), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c172b8b1L, 0x73e1fea9c172d0e9L, "instruction")))));
           }
         };
       }

@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" name="jetbrains.mps.lang.editor.figures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="jqfx" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)" />
@@ -8271,7 +8271,7 @@
   <node concept="3HP615" id="1o1N$5kfrU_">
     <property role="TrG5h" value="DragHandler" />
     <node concept="3clFb_" id="1o1N$5kfsCE" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dragStarted" />
       <node concept="3cqZAl" id="1o1N$5kfsCG" role="3clF45" />
       <node concept="3Tm1VV" id="1o1N$5kfsCH" role="1B3o_S" />
@@ -8284,7 +8284,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="1o1N$5kfviu" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="updatePosition" />
       <node concept="3cqZAl" id="1o1N$5kfviv" role="3clF45" />
       <node concept="3Tm1VV" id="1o1N$5kfviw" role="1B3o_S" />
@@ -8297,7 +8297,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="1o1N$5kfvjW" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dragStopped" />
       <node concept="3cqZAl" id="1o1N$5kfvjX" role="3clF45" />
       <node concept="3Tm1VV" id="1o1N$5kfvjY" role="1B3o_S" />

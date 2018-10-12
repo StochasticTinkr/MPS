@@ -16,6 +16,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -39,6 +40,7 @@ public class MigrationScriptFinder extends BaseFinder {
     return "Migration Scripts";
   }
   @Override
+  @NotNull
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
     SearchScope queryScope = query.getScope();

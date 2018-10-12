@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
@@ -3862,7 +3862,7 @@
             <node concept="3nyPlj" id="3ReTDvBw9vF" role="3clFbG">
               <ref role="37wK5l" to="lui2:~SRepositoryContentAdapter.stopListening(org.jetbrains.mps.openapi.module.SRepository):void" resolve="stopListening" />
               <node concept="37vLTw" id="3ReTDvBw9vE" role="37wK5m">
-                <ref role="3cqZAo" node="3ReTDvBw9v_" />
+                <ref role="3cqZAo" node="3ReTDvBw9v_" resolve="repository" />
               </node>
             </node>
           </node>
@@ -6023,14 +6023,14 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <node concept="3clFbS" id="4biA4YBz_64" role="3clF47" />
       <node concept="10P_77" id="4biA4YBz_6f" role="3clF45" />
       <node concept="3Tm1VV" id="4biA4YBz_6j" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4biA4YBAXjK" role="jymVt" />
     <node concept="3clFb_" id="4biA4YBnY_p" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getProjectMigrations" />
       <node concept="3vKaQO" id="4biA4YBo0mo" role="3clF45">
         <node concept="3uibUv" id="4biA4YBo0mq" role="3O5elw">
@@ -6041,7 +6041,7 @@
       <node concept="3clFbS" id="4biA4YBnY_t" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4biA4YBo0AI" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModuleMigrations" />
       <node concept="3vKaQO" id="4biA4YBo0Lr" role="3clF45">
         <node concept="3uibUv" id="4biA4YBo0Rv" role="3O5elw">
@@ -6061,7 +6061,7 @@
     </node>
     <node concept="2tJIrI" id="4biA4YBAUES" role="jymVt" />
     <node concept="3clFb_" id="4biA4YBAIVQ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="nextModuleStep" />
       <property role="DiZV1" value="false" />
       <node concept="37vLTG" id="4biA4YBAIVR" role="3clF46">
@@ -6080,7 +6080,7 @@
       <node concept="3clFbS" id="4biA4YBAIVW" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4biA4YBARrw" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="nextProjectStep" />
       <node concept="37vLTG" id="4biA4YBARrx" role="3clF46">
@@ -6101,7 +6101,7 @@
     </node>
     <node concept="2tJIrI" id="4biA4YBnYus" role="jymVt" />
     <node concept="3clFb_" id="2V3ml1v0OWM" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="importVersionsUpdateRequired" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -6118,7 +6118,7 @@
       <node concept="10P_77" id="2V3ml1v0OWS" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2V3ml1v0Sjr" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doUpdateImportVersions" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -6224,7 +6224,7 @@
     <property role="TrG5h" value="IStartupMigrationExecutor" />
     <node concept="3clFb_" id="xb$P2Bh9Hu" role="jymVt">
       <property role="TrG5h" value="setRebuildHandler" />
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <node concept="3cqZAl" id="xb$P2Bh9Hv" role="3clF45" />
       <node concept="3Tm1VV" id="xb$P2Bh9Hw" role="1B3o_S" />
       <node concept="3clFbS" id="xb$P2Bh9Hx" role="3clF47" />
@@ -10087,7 +10087,7 @@
   <node concept="3HP615" id="xB9FQhi9bJ">
     <property role="TrG5h" value="MigrationChecker" />
     <node concept="3clFb_" id="xB9FQhiR$4" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="checkMigrations" />
       <node concept="37vLTG" id="PobQbO8pf0" role="3clF46">
@@ -10110,7 +10110,7 @@
       <node concept="3cqZAl" id="xB9FQhiRzn" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2wbhCYFHct5" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="checkLibs" />
       <node concept="37vLTG" id="2wbhCYFJgg6" role="3clF46">
         <property role="TrG5h" value="m" />
@@ -10138,7 +10138,7 @@
       <node concept="3clFbS" id="2wbhCYFHctb" role="3clF47" />
     </node>
     <node concept="3clFb_" id="xB9FQhiuXN" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="checkProject" />
       <node concept="37vLTG" id="2wbhCYFJgIi" role="3clF46">
         <property role="TrG5h" value="m" />
@@ -10160,7 +10160,7 @@
       <node concept="3clFbS" id="xB9FQhiuXR" role="3clF47" />
     </node>
     <node concept="3clFb_" id="xB9FQhiv6a" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findNotMigrated" />
       <node concept="37vLTG" id="2wbhCYFJhbc" role="3clF46">
         <property role="TrG5h" value="m" />
@@ -11910,7 +11910,7 @@
     <property role="TrG5h" value="MigrationExecutor" />
     <node concept="3clFb_" id="4biA4YBoReJ" role="jymVt">
       <property role="TrG5h" value="executeModuleMigration" />
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="4biA4YBoReK" role="3clF46">
         <property role="TrG5h" value="sa" />
         <node concept="3uibUv" id="4biA4YBoReL" role="1tU5fm">
@@ -11923,7 +11923,7 @@
     </node>
     <node concept="3clFb_" id="4biA4YBoZIr" role="jymVt">
       <property role="TrG5h" value="executeProjectMigration" />
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="4biA4YBoZIs" role="3clF46">
         <property role="TrG5h" value="pm" />
         <node concept="3uibUv" id="4biA4YBp0lh" role="1tU5fm">

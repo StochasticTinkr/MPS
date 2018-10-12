@@ -67,6 +67,7 @@ public class FileProcessor {
     return false;
   }
   public void filesToDelete(Collection<IFile> files) {
+    // FIXME remove? 
     myFilesToDelete.addAll(files);
   }
   public void flushChanges() {

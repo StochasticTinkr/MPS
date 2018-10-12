@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-lvsrdiwjf6fdruqqcdacouu719jojk" />
+<product version="3" modelHash="-lvsrdiwjf6fdruqqcdacouu719jojk">
+  <files names="TypesystemDescriptor.java:check_VarVariableDeclaration_NonTypesystemRule.java:typeof_VarVariableDeclaration_InferenceRule.java" />
+</product>
 

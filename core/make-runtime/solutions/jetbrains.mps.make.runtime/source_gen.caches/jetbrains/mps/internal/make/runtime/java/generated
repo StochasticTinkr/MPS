@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-das3v0tfc8lmk4fey2t83pzh3tjstwg" />
+<product version="3" modelHash="cp375trdx10q0hdfbshi2jptchwg36s">
+  <files names="FileDeltaCollector.java:FileProcessor.java:IdeaJavaCompiler.java" />
+</product>
 

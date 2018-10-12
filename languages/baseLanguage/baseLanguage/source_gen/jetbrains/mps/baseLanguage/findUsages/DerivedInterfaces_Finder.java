@@ -5,14 +5,19 @@ package jetbrains.mps.baseLanguage.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -33,29 +38,33 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, final IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
-      List<SNode> derived = new ArrayList<SNode>();
-      ListSequence.fromList(derived).addElement(node);
-      // 
-      int passed = 0;
-      while (ListSequence.fromList(derived).count() != passed) {
-        SNode passingNode = ListSequence.fromList(derived).getElement(passed);
-        for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", passingNode, scope, monitor.subTask(1))) {
-          if (SNodeOperations.hasRole(nodeUsage, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
-            ListSequence.fromList(derived).addElement(SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
+      final Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
+      QueueSequence.fromQueue(queue).addLastElement(node);
+      while (QueueSequence.fromQueue(queue).isNotEmpty()) {
+        SNode nextNode = QueueSequence.fromQueue(queue).removeFirstElement();
+        FindUtils.searchForResults(monitor.subTask(1), new IFinder.FindCallback() {
+          public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+            SNode nodeParam = (SNode) searchResult.getObject();
+            new _FunctionTypes._void_P1_E0<SNode>() {
+              public void invoke(SNode nodeUsage) {
+                if (SNodeOperations.hasRole(nodeUsage, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
+                  SNode foundIntfc = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
+                  callback.onUsageFound(createSingleResult(foundIntfc));
+                  QueueSequence.fromQueue(queue).addLastElement(foundIntfc);
+                }
+              }
+            }.invoke(nodeParam);
           }
-        }
-        if (passingNode != node) {
-          ListSequence.fromList(_results).addElement(passingNode);
-        }
-        passed++;
+        }, new SearchQuery(nextNode, scope), FindUtils.getFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
       }
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Derived Interfaces";

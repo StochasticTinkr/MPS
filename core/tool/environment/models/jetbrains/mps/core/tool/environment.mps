@@ -547,7 +547,7 @@
   <node concept="3HP615" id="HKKzfMjqRV">
     <property role="TrG5h" value="Environment" />
     <node concept="3clFb_" id="2BGPXkEw$sz" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createEmptyProject" />
       <node concept="3uibUv" id="$Ws9FwrZnH" role="3clF45">
         <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
@@ -570,7 +570,7 @@
     </node>
     <node concept="2tJIrI" id="2BGPXkEw$y$" role="jymVt" />
     <node concept="3clFb_" id="6rx4kZDk5oX" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createProject" />
       <node concept="3uibUv" id="6rx4kZDk5pd" role="3clF45">
         <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
@@ -602,7 +602,7 @@
     </node>
     <node concept="2tJIrI" id="5A5jZrz4e44" role="jymVt" />
     <node concept="3clFb_" id="6rx4kZDjWg4" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="openProject" />
       <node concept="37vLTG" id="6rx4kZDk2U6" role="3clF46">
         <property role="TrG5h" value="projectFile" />
@@ -624,7 +624,7 @@
     </node>
     <node concept="2tJIrI" id="3hj1t46fwe9" role="jymVt" />
     <node concept="3clFb_" id="3hj1t46fvYr" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="closeProject" />
       <node concept="3clFbS" id="3hj1t46fvYu" role="3clF47" />
@@ -660,7 +660,7 @@
     </node>
     <node concept="2tJIrI" id="3hj1t46fvUE" role="jymVt" />
     <node concept="3clFb_" id="6rx4kZDk5rd" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
       <node concept="3cqZAl" id="6rx4kZDk5rf" role="3clF45" />
       <node concept="3Tm1VV" id="6rx4kZDk5rg" role="1B3o_S" />
@@ -675,7 +675,7 @@
     </node>
     <node concept="2tJIrI" id="5A5jZrz36b7" role="jymVt" />
     <node concept="3clFb_" id="3eUNqOk4fPx" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="flushAllEvents" />
       <node concept="3clFbS" id="3eUNqOk4fP$" role="3clF47" />
@@ -691,7 +691,7 @@
     </node>
     <node concept="2tJIrI" id="8Pnvxglo9c" role="jymVt" />
     <node concept="3clFb_" id="8Pnvxgloc_" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPlatform" />
       <node concept="3uibUv" id="8Pnvxglohb" role="3clF45">
         <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
@@ -5507,7 +5507,7 @@
     <property role="3GE5qa" value="strategy" />
     <property role="TrG5h" value="ProjectStrategy" />
     <node concept="3clFb_" id="5A5jZrz4rwV" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="create" />
       <node concept="3clFbS" id="5A5jZrz4rwY" role="3clF47" />
@@ -5529,7 +5529,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="2BGPXkEv84x" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="isApplicable" />
       <node concept="3clFbS" id="2BGPXkEv84$" role="3clF47" />
@@ -6710,7 +6710,7 @@
   <node concept="3HP615" id="3pEStHM3RRT">
     <property role="TrG5h" value="Retainable" />
     <node concept="3clFb_" id="3pEStHM3RSa" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="retain" />
       <node concept="3clFbS" id="3pEStHM3RSd" role="3clF47" />
@@ -6726,7 +6726,7 @@
     </node>
     <node concept="3Tm1VV" id="3pEStHM3RRU" role="1B3o_S" />
     <node concept="3clFb_" id="3pEStHM3RSS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="release" />
       <node concept="3clFbS" id="3pEStHM3RSV" role="3clF47" />
@@ -6751,7 +6751,7 @@
   <node concept="3HP615" id="7KC1aYnI6jD">
     <property role="TrG5h" value="EnvironmentAware" />
     <node concept="3clFb_" id="7KC1aYnI6li" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="setEnvironment" />
       <node concept="3clFbS" id="7KC1aYnI6ll" role="3clF47" />

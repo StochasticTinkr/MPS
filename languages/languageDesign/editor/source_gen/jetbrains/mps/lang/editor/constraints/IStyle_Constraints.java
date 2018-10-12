@@ -52,32 +52,30 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              AbstractModule contextModule = (AbstractModule) SNodeOperations.getModel(_context.getContextNode()).getModule();
+            AbstractModule contextModule = (AbstractModule) SNodeOperations.getModel(_context.getContextNode()).getModule();
 
-              Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-              for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
-                if (module instanceof Language) {
-                  SetSequence.fromSet(contextLanguages).addElement((Language) module);
-                }
+            Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
+            for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
+              if (module instanceof Language) {
+                SetSequence.fromSet(contextLanguages).addElement((Language) module);
               }
-
-              Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
-                public SModel select(Language it) {
-                  return SModuleOperations.getAspect(it, "editor");
-                }
-              }).where(new IWhereFilter<SModel>() {
-                public boolean accept(SModel it) {
-                  return it != null;
-                }
-              }).translate(new ITranslator2<SModel, SNode>() {
-                public Iterable<SNode> translate(SModel it) {
-                  return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
-                }
-              });
-
-              return ListScope.forResolvableElements(Sequence.fromIterable(styles).toListSequence());
             }
+
+            Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+              public SModel select(Language it) {
+                return SModuleOperations.getAspect(it, "editor");
+              }
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return it != null;
+              }
+            }).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel it) {
+                return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
+              }
+            });
+
+            return ListScope.forResolvableElements(Sequence.fromIterable(styles).toListSequence());
           }
         };
       }

@@ -8,7 +8,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
@@ -5289,7 +5289,7 @@
     <property role="TrG5h" value="TransformationTest" />
     <property role="3GE5qa" value="transformation" />
     <node concept="3clFb_" id="e$hNri9cbB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getProject" />
       <node concept="3Tm1VV" id="e$hNri9cbD" role="1B3o_S" />
       <node concept="3clFbS" id="e$hNri9cbE" role="3clF47" />
@@ -5303,7 +5303,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="e$hNri9ceN" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModelDescriptor" />
       <node concept="3clFbS" id="e$hNri9ceQ" role="3clF47" />
       <node concept="3Tm1VV" id="e$hNri9ceP" role="1B3o_S" />
@@ -5317,7 +5317,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="e$hNri9cfd" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTransientModelDescriptor" />
       <node concept="3Tm1VV" id="e$hNri9cfe" role="1B3o_S" />
       <node concept="3clFbS" id="e$hNri9cff" role="3clF47" />
@@ -8634,7 +8634,7 @@
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="EditorTestRunnable" />
       <node concept="3clFb_" id="14TMHtHucDr" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
         <property role="TrG5h" value="run" />
         <node concept="3clFbS" id="14TMHtHucDu" role="3clF47" />

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cgw6gb90clb7ucs2s2d1xn2lgnj9is6" />
+<product version="3" modelHash="bhu6kthtsadgevw3h9qa31w6pwka2w9">
+  <files names="ASMAnnotation.java:ASMArrayType.java:ASMBoundedType.java:ASMClass.java:ASMClassType.java:ASMEnumValue.java:ASMExtendsType.java:ASMField.java:ASMFormalTypeParameter.java:ASMMethod.java:ASMParameterizedType.java:ASMPrimitiveType.java:ASMSuperType.java:ASMType.java:ASMTypeVariable.java:ASMUnboundedType.java:ASMVarArgType.java:NullSignatureVisitor.java:SignatureVisitorAdapter.java:TypeUtil.java" />
+</product>
 

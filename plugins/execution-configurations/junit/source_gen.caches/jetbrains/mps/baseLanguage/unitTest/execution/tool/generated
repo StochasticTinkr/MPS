@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1waz3e9l04mkn0cl372sfuqhnh0p0x5" />
+<product version="3" modelHash="-238n525ive4rsfu2ttdsx01p041sp00">
+  <files names="BaseTestOccurenceNavigator.java:FailedTestOccurrenceNavigator.java:LeafTestMessage.java:MessageContainerBase.java:MessageFilter.java:MessagesContainer.java:MethodMessageContainer.java:NonRootTestTreeNode.java:Printable.java:Printer.java:RootMessageContainer.java:RootTestTreeNode.java:StatisticsRowRenderer.java:StatisticsTableModel.java:TestCaseMessageContainer.java:TestCaseRow.java:TestCaseTreeNode.java:TestContainerRow.java:TestMessage.java:TestMethodRow.java:TestMethodTreeNode.java:TestOutputContainer.java:TestProgressLine.java:TestState.java:TestStatisticsRow.java:TestToolbarPanel.java:TestTree.java:TestTreeIconRepainter.java:TestTreeNode.java:TestTreeRootMouseListener.java:TestTreeSelectionListener.java:TotalRow.java:UnitTestOptions.java:UnitTestViewComponent.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="10kns1c6h245kvw9tsopxmm67jwncm5" />
+<product version="3" modelHash="10kns1c6h245kvw9tsopxmm67jwncm5">
+  <files names="ActionMapImportTesterExtension_Editor.java:ActionMapImportTesterExtension_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:MapExt.java" />
+</product>
 

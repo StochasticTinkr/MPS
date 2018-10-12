@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="494kf96rti2f340fi7jjcjy8vq5q2u7" />
+<product version="3" modelHash="-6vct5k9eibia7mjuqg2ffghbtpbipyd">
+  <files names="EditorAspectDescriptorImpl.java:LogLowFirstCell.java:LogLowLevelStatement_Editor.java:LogLowLevelStatement_EditorBuilder_a.java:LogLowLevelStatement_SubstituteMenu.java:LogStatement_Editor.java:LogStatement_EditorBuilder_a.java:LogStatement_InspectorBuilder_a.java:LogStatement_SubstituteMenu.java:MsgFirstCell.java:MsgStatement_Editor.java:MsgStatement_EditorBuilder_a.java:MsgStatement_SubstituteMenu.java:PrintStatement_Editor.java:PrintStatement_EditorBuilder_a.java:ReplaceLogWithMessage.java:ReplaceMessageWithLog.java:loggingLowLevel_nodeSubstitute_Contribution.java:loggingMsg_nodeSubstitute_Contribution.java:logging_nodeSubstitute_Contribution.java" />
+</product>
 

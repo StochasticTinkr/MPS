@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-en7f9a7ne3keeh2ikb6bbsdx8xjfpl6" />
+<product version="3" modelHash="32lcm50dsvegok1hwzd9ip5fbjp028o">
+  <files names="ConsoleTestReporter.java:ITestReporter.java:UnitTestAdapter.java:UnitTestListener.java:UnitTestOutputReader.java:UnitTestRunner.java:XmlTestReporter.java" />
+</product>
 

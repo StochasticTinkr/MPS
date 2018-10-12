@@ -17,8 +17,6 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet" file="GenerateImages_Facet.java">
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -38,8 +36,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
     <classNode dependClassName="jetbrains.mps.lang.editor.imageGen.plugin.PrintNodeRunnable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -85,6 +85,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.imageio.ImageIO" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.HeadlessEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

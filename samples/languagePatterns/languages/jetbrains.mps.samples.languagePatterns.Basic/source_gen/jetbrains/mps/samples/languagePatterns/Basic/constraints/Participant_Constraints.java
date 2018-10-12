@@ -52,34 +52,32 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode concert = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert"), false, false);
-              final SNode performance = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance"), true, false);
+            final SNode concert = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert"), false, false);
+            final SNode performance = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance"), true, false);
 
-              final List<SNode> allSingers = SLinkOperations.getChildren(concert, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, 0x34c8853ae7895c8bL, "performers"));
+            final List<SNode> allSingers = SLinkOperations.getChildren(concert, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, 0x34c8853ae7895c8bL, "performers"));
 
-              final Iterable<SNode> alreadyParticipatingSingersButMe = ListSequence.fromList(SLinkOperations.getChildren(performance, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, 0x34c8853ae78de9acL, "participants"))).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return !(Objects.equals(it, _context.getReferenceNode()));
-                }
-              }).select(new ISelector<SNode, SNode>() {
-                public SNode select(SNode participant) {
-                  return SLinkOperations.getTarget(participant, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, 0x34c8853ae78e59fcL, "singer"));
-                }
-              });
+            final Iterable<SNode> alreadyParticipatingSingersButMe = ListSequence.fromList(SLinkOperations.getChildren(performance, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, 0x34c8853ae78de9acL, "participants"))).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(Objects.equals(it, _context.getReferenceNode()));
+              }
+            }).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode participant) {
+                return SLinkOperations.getTarget(participant, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, 0x34c8853ae78e59fcL, "singer"));
+              }
+            });
 
-              Iterable<SNode> candidates = ListSequence.fromList(allSingers).where(new IWhereFilter<SNode>() {
-                public boolean accept(final SNode singer) {
-                  return Sequence.fromIterable(alreadyParticipatingSingersButMe).all(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode participatingSinger) {
-                      return !(Objects.equals(participatingSinger, singer));
-                    }
-                  });
-                }
-              });
+            Iterable<SNode> candidates = ListSequence.fromList(allSingers).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode singer) {
+                return Sequence.fromIterable(alreadyParticipatingSingersButMe).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode participatingSinger) {
+                    return !(Objects.equals(participatingSinger, singer));
+                  }
+                });
+              }
+            });
 
-              return ListScope.forNamedElements(candidates);
-            }
+            return ListScope.forNamedElements(candidates);
           }
         };
       }

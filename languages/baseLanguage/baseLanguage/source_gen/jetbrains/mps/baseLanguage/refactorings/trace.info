@@ -123,7 +123,7 @@
       <node id="3051706240924250176" at="27,56,28,84" concept="2" />
       <node id="3051706240924250215" at="30,88,31,104" concept="8" />
       <node id="3051706240924250189" at="33,86,34,233" concept="7" />
-      <node id="3051706240924250198" at="34,233,35,247" concept="8" />
+      <node id="3051706240924250198" at="34,233,35,245" concept="8" />
       <node id="3051706240924250145" at="18,0,20,0" concept="1" trace="SafeDeleteConceptMethod#()V" />
       <node id="3051706240924250145" at="20,0,23,0" concept="6" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
       <node id="3051706240924250145" at="23,0,26,0" concept="6" trace="getUserFriendlyName#()Ljava/lang/String;" />
@@ -138,7 +138,7 @@
       <scope id="3051706240924250166" at="26,69,28,84">
         <var name="method" id="3051706240924250168" />
       </scope>
-      <scope id="3051706240924250188" at="33,86,35,247">
+      <scope id="3051706240924250188" at="33,86,35,245">
         <var name="method" id="3051706240924250190" />
       </scope>
       <scope id="3051706240924250145" at="20,0,23,0" />

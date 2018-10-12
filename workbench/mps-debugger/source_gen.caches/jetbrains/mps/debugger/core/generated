@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1h6njyau71ud9cbrzxs0i3mw9hcv1nn" />
+<product version="3" modelHash="-cmtzew6f4ifs8a7t096sm8yxfg0p6l7">
+  <files names="CurrentLinePainter.java:CurrentLinePositionComponentEx.java:DebuggerCellPainter.java" />
+</product>
 

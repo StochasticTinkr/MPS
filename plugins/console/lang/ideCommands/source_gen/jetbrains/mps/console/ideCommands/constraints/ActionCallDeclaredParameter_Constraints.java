@@ -70,21 +70,19 @@ public class ActionCallDeclaredParameter_Constraints extends BaseConstraintsDesc
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"))) {
-                return new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression")), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587aeL, "action")))).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"));
-                  }
-                }).select(new ISelector<SNode, SNode>() {
-                  public SNode select(SNode it) {
-                    return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"));
-                  }
-                }));
-              }
-              return null;
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"))) {
+              return new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression")), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587aeL, "action")))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"));
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"));
+                }
+              }));
             }
+            return null;
           }
         };
       }

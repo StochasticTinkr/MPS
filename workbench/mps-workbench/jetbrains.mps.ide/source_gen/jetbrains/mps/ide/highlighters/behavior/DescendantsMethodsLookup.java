@@ -5,6 +5,7 @@ package jetbrains.mps.ide.highlighters.behavior;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -14,26 +15,30 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.annotations.Mutable;
+import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 
 /*package*/ final class DescendantsMethodsLookup {
   private final Cancellable myCancellable;
   private final SNode myBehavior;
   private final int myMaxResultsToCollect;
   private final SearchScope myScope;
+  private final EditorMessageOwner myOwner;
 
-  public DescendantsMethodsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode behavior, int maxResultsToCollect) {
+  public DescendantsMethodsLookup(@NotNull Cancellable cancellable, @NotNull SearchScope scope, @NotNull SNode behavior, EditorMessageOwner owner, int maxResultsToCollect) {
     myCancellable = cancellable;
     myScope = scope;
     myBehavior = behavior;
+    myOwner = owner;
     myMaxResultsToCollect = maxResultsToCollect;
   }
 
@@ -41,7 +46,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   /*package*/ List<EditorMessage> calcMessages() {
     List<EditorMessage> result = ListSequence.fromList(new ArrayList<EditorMessage>());
     for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(myBehavior, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method")))) {
-      if (((boolean) (Boolean) BHReflection.invoke0(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), SMethodTrimmedId.create("isVirtual", MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "6WSEafdhbZX"))) || SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"))) {
+      if (((boolean) (Boolean) BHReflection.invoke0(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), SMethodTrimmedId.create("isVirtual", MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "6WSEafdhbZX"))) || ((boolean) (Boolean) BHReflection.invoke0(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("isAnAbstractMethod", null, "28P2dHxCoRl")))) {
         EditorMessage msgForMethod = calcMessage(method);
         if (msgForMethod != null) {
           ListSequence.fromList(result).addElement(msgForMethod);
@@ -55,35 +60,41 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   }
 
   @Nullable
-  /*package*/ EditorMessage calcMessage(SNode method) {
-    Set<SNode> overrides = new LinkedHashSet<SNode>();
-    addDescendantsOverrides(myCancellable, method, overrides);
+  private EditorMessage calcMessage(SNode method) {
+    Set<SNode> overrides = findDescendantsOverrides(myCancellable, method);
     if (SetSequence.fromSet(overrides).count() > myMaxResultsToCollect) {
-      return new MethodIsOverriddenEditorMessage(method, null, null);
+      return new MethodIsOverriddenEditorMessage(method, null, myOwner);
     } else {
       if (SetSequence.fromSet(overrides).isEmpty()) {
         return null;
       }
-      return new MethodIsOverriddenEditorMessage(method, SetSequence.fromSet(overrides).toListSequence(), null);
+      return new MethodIsOverriddenEditorMessage(method, SetSequence.fromSet(overrides).toListSequence(), myOwner);
     }
   }
 
-  private void addDescendantsOverrides(final Cancellable cancellable, SNode currentMethod, @Mutable Set<SNode> result) {
-    ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
+  private Set<SNode> findDescendantsOverrides(final Cancellable cancellable, SNode method) {
+    final Set<SNode> result = new LinkedHashSet<SNode>();
+    final ProgressMonitor monitor = new EmptyProgressMonitorWithCancellable(cancellable) {
       @Override
       public boolean isCanceled() {
         return super.isCanceled();
       }
     };
-    // fixme need async analogue of this operation 
-    Set<Object> resultObjects = FindUtils.getSearchResults(monitor, currentMethod, myScope, "jetbrains.mps.lang.behavior.findUsages.ImplementingMethods_Finder").getResultObjects();
-    for (Object resultObj : resultObjects) {
-      if (resultObj instanceof SNode) {
-        SNode res = (SNode) resultObj;
-        if (SNodeOperations.isInstanceOf(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-          SetSequence.fromSet(result).addElement(SNodeOperations.cast(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
-        }
+    FindUtils.searchForResults(monitor, new IFinder.FindCallback() {
+      public void onUsageFound(@NotNull SearchResult<?> searchResult) {
+        SNode nodeParam = (SNode) searchResult.getObject();
+        new _FunctionTypes._void_P1_E0<SNode>() {
+          public void invoke(SNode res) {
+            if (SNodeOperations.isInstanceOf(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+              SetSequence.fromSet(result).addElement(SNodeOperations.cast(res, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
+              if (SetSequence.fromSet(result).count() > myMaxResultsToCollect) {
+                monitor.cancel();
+              }
+            }
+          }
+        }.invoke(nodeParam);
       }
-    }
+    }, new SearchQuery(method, myScope), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
+    return result;
   }
 }

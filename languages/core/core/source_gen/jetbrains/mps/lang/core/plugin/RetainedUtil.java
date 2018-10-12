@@ -15,10 +15,13 @@ import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
+import java.util.List;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
-import java.util.List;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 
 public final class RetainedUtil {
   private RetainedUtil() {
@@ -54,13 +57,15 @@ public final class RetainedUtil {
     // to translate delta's IFile to proper location (make.pathToFile) and leave this class straighforward delta builder without 
     // knowledge of path translation? 
     // FIXME need make.pathToFile to take IFile instead of String, it's odd to go there and back 
-    final Map<IFile, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<IFile, FilesDelta>());
+    final List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
 
     for (SModuleFacet mf : module.getFacets()) {
       if (mf instanceof GenerationTargetFacet) {
         GenerationTargetFacet gtf = (GenerationTargetFacet) mf;
         IFile[] outputLocations = new IFile[2];
         for (SModel m : smd) {
+          FilesDelta fd = new FilesDelta(new DeltaKey(module, m));
+          ListSequence.fromList(deltas).addElement(fd);
           outputLocations[0] = gtf.getOutputLocation(m);
           outputLocations[1] = gtf.getOutputCacheLocation(m);
           for (IFile f : outputLocations) {
@@ -68,24 +73,14 @@ public final class RetainedUtil {
               continue;
             }
             IFile actualOutput = getFile.invoke(f.getPath());
-            // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
-            IFile parent = actualOutput.getParent();
-            FilesDelta fd = MapSequence.fromMap(dir2delta).get(parent);
-            if (fd == null) {
-              MapSequence.fromMap(dir2delta).put(parent, fd = new FilesDelta(parent));
-            }
             fd.kept(actualOutput);
             // sort of workaround, report files to keep explicitly, otherwise a directory[kept] with subdirectories[kept] doesn't protect files under directory/ itself 
             List<IFile> children = actualOutput.getChildren();
-            fd = MapSequence.fromMap(dir2delta).get(actualOutput);
             if (children != null && children.size() > 0) {
               for (IFile child : children) {
                 // folders are output locations and therefore those to kept would get retained, if necessary, with the code above. 
                 if (child.isDirectory()) {
                   continue;
-                }
-                if (fd == null) {
-                  MapSequence.fromMap(dir2delta).put(actualOutput, fd = new FilesDelta(actualOutput));
                 }
                 fd.kept(child);
               }
@@ -94,6 +89,6 @@ public final class RetainedUtil {
         }
       }
     }
-    return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).ofType(IDelta.class);
+    return ListSequence.fromList(deltas).ofType(IDelta.class);
   }
 }

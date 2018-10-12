@@ -89,26 +89,31 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.ModuleStaleFileManager" file="ModuleStaleFileManager.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.function.Consumer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.RetainedUtil" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
+    <classNode dependClassName="jetbrains.mps.project.facets.GenerationTargetFacet" />
+    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
+    <classNode dependClassName="jetbrains.mps.project.facets.TestsFacet" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -123,14 +128,17 @@
   <dependency className="jetbrains.mps.lang.core.plugin.RetainedUtil" file="RetainedUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -171,11 +179,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.DefaultStreamManager" />
     <classNode dependClassName="jetbrains.mps.generator.impl.cache.CacheGenLayout" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.CrossModelEnvironment" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -218,10 +224,8 @@
     <classNode dependClassName="jetbrains.mps.text.impl.BLDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.text.impl.DebugInfoBuilder" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.util.IStatus" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

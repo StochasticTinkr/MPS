@@ -49,14 +49,12 @@ public class TargetDependency_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Iterable<SNode> relatedFacets = FacetDeclaration__BehaviorDescriptor.allRelated_id7fB872uckWE.invoke(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
-              return ListScope.forResolvableElements(Sequence.fromIterable(relatedFacets).translate(new ITranslator2<SNode, SNode>() {
-                public Iterable<SNode> translate(SNode it) {
-                  return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, new SAbstractConcept[]{});
-                }
-              }));
-            }
+            Iterable<SNode> relatedFacets = FacetDeclaration__BehaviorDescriptor.allRelated_id7fB872uckWE.invoke(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
+            return ListScope.forResolvableElements(Sequence.fromIterable(relatedFacets).translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode it) {
+                return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, new SAbstractConcept[]{});
+              }
+            }));
           }
         };
       }

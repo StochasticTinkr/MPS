@@ -49,17 +49,15 @@ public class TransformationMenuPart_PropertyMenu_Constraints extends BaseConstra
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), true, false);
-              SNode concept = IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(menu);
-              Iterable<SNode> properties = AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept);
-              return new SimpleScope(properties) {
-                @Nullable
-                public String getReferenceText(@NotNull SNode target) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
-            }
+            SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), true, false);
+            SNode concept = IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(menu);
+            Iterable<SNode> properties = AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept);
+            return new SimpleScope(properties) {
+              @Nullable
+              public String getReferenceText(@NotNull SNode target) {
+                return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+              }
+            };
           }
         };
       }

@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="digr" ref="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)" />
@@ -4992,7 +4992,7 @@
     <property role="TrG5h" value="ISample" />
     <node concept="3Tm1VV" id="5GhXmmtIMNA" role="1B3o_S" />
     <node concept="3clFb_" id="5GhXmmtIMNB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSample" />
       <node concept="17QB3L" id="5GhXmmtIMP1" role="3clF45" />
       <node concept="3Tm1VV" id="5GhXmmtIMND" role="1B3o_S" />

@@ -88,7 +88,7 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
 
   @Override
   public Collection<CopyPreProcessor> getCopyPreProcessors() {
-    return Arrays.asList(new CopyPreProcessor[]{new BL_CopyPasteHandlers_CopyPreProcessor_0()});
+    return Arrays.asList(new CopyPreProcessor[]{new BL_CopyPasteHandlers_CopyPreProcessor_0(), new BL_CopyPasteHandlers_CopyPreProcessor_1()});
   }
   @Override
   public Collection<PastePostProcessor> getPastePostProcessors() {

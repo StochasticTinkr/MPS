@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SReference;
 public class ResolveUtil {
   public ResolveUtil() {
   }
+
   public static List<SNode> parameterTypes(SNode method, SNode instanceType, SNode classifier) {
     List<SNode> result = ListSequence.fromList(new LinkedList<SNode>());
     boolean containsVars = false;
@@ -60,6 +61,7 @@ public class ResolveUtil {
     }
     return result;
   }
+
   public static SNode getConcreteClassifierType(SNode typeWithVars, SNode classifierSubtype) {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{});
@@ -74,6 +76,7 @@ public class ResolveUtil {
     }
     return result;
   }
+
   public static SNode getConcreteSuperClassifierType(List<SNode> frontier, SNode classifier) {
     SNode concreteMethodClassifierType = null;
     while (!(ListSequence.fromList(frontier).isEmpty())) {
@@ -102,9 +105,11 @@ public class ResolveUtil {
     }
     return concreteMethodClassifierType;
   }
+
   public static SNode processMethodToImplement(SNode enclosingClassifier, SNode method) {
     SNode declaringClassifier = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     SNode result = SNodeOperations.copyNode(method);
+    ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, 0x203eeb62af522fb1L, "modifiers"))).clear();
     List<SNode> initialClassifierTypes = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(enclosingClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       SNode classConcept = SNodeOperations.cast(enclosingClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
@@ -124,8 +129,7 @@ public class ResolveUtil {
       for (SNode intfc : SLinkOperations.getChildren(classConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))) {
         ListSequence.fromList(initialClassifierTypes).addElement(intfc);
       }
-    }
-    if (SNodeOperations.isInstanceOf(enclosingClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+    } else if (SNodeOperations.isInstanceOf(enclosingClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SNode interfaceConcept = SNodeOperations.cast(enclosingClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
       for (SNode intfc : SLinkOperations.getChildren(interfaceConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
         ListSequence.fromList(initialClassifierTypes).addElement(intfc);
@@ -147,13 +151,14 @@ public class ResolveUtil {
           if (0 <= index && index < ListSequence.fromList(params).count()) {
             SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
           } else {
-            SNodeOperations.replaceWithAnother(varRef, _quotation_createNode_txu8l3_a0a0a0b0c0a0k0e());
+            SNodeOperations.replaceWithAnother(varRef, _quotation_createNode_txu8l3_a0a0a0b0c0a0k0i());
           }
         }
       }
     }
     return result;
   }
+
   public static boolean goodArguments(Iterable<SNode> parameterTypes, List<SNode> arguments) {
     if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"))) {
       if (Sequence.fromIterable(parameterTypes).count() - 1 > ListSequence.fromList(arguments).count()) {
@@ -213,7 +218,7 @@ public class ResolveUtil {
       return false;
     }
   }
-  private static SNode _quotation_createNode_txu8l3_a0a0a0b0c0a0k0e() {
+  private static SNode _quotation_createNode_txu8l3_a0a0a0b0c0a0k0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

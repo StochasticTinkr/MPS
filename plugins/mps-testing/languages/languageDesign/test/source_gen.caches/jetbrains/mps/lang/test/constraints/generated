@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3g3wwmgobj66umhe16vdynrm60asoej" />
+<product version="3" modelHash="3g3wwmgobj66umhe16vdynrm60asoej">
+  <files names="ConstraintsAspectDescriptor.java:MigrationReference_Constraints.java:MigrationTestCase_Constraints.java:ScopesExpectedNode_Constraints.java:ScopesTest_Constraints.java:TestNodeReference_Constraints.java" />
+</product>
 

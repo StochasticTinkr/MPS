@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" file="AbstractConceptWrap.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptWrap" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.InterfaceConceptWrap" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptAncestors_Finder" file="ConceptAncestors_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptMRO" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptDescendants_Finder" file="ConceptDescendants_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModelsScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" file="ConceptInstances_Finder.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -7,6 +61,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
@@ -18,6 +73,7 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -29,16 +85,88 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptMRO" file="ConceptMRO.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptWrap" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.C3StarMethodResolutionOrder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ConceptWrap" file="ConceptWrap.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.InterfaceConceptWrap" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedConcepts_Finder" file="DerivedConcepts_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.Queue" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder" file="DerivedInterfaceConcepts_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.Queue" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" file="ExactConceptInstances_Finder.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -53,23 +181,61 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptAncestors_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptDescendants_Finder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.DerivedConcepts_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.DerivedInterfaceConcepts_Finder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.ImplementingConcepts_Finder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.StraightDescendants_Finder" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.FinderRegistry" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.ImplementingConcepts_Finder" file="ImplementingConcepts_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.InterfaceConceptWrap" file="InterfaceConceptWrap.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.api.AbstractConceptLike" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.findUsages.AbstractConceptWrap" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" file="LinkInstances_Finder.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -79,6 +245,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -92,12 +259,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -105,23 +271,46 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder" file="PropertyInstances_Finder.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.findUsages.StraightDescendants_Finder" file="StraightDescendants_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModelsScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />

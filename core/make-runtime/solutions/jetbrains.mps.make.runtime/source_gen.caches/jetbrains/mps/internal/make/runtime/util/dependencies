@@ -8,6 +8,14 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode extendsClassName="jetbrains.mps.make.IHName" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaKey" file="DeltaKey.java">
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" file="DeltaReconciler.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -37,6 +45,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.util.FilesDelta" file="FilesDelta.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -49,9 +58,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDeltaVisitor" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -118,7 +127,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.info.GeneratorPathsComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

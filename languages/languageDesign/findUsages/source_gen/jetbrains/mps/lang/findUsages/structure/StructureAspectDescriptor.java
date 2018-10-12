@@ -24,11 +24,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptFinderDeclaration = createDescriptorForFinderDeclaration();
   /*package*/ final ConceptDescriptor myConceptFinderReference = createDescriptorForFinderReference();
   /*package*/ final ConceptDescriptor myConceptFinderReferenceExpression = createDescriptorForFinderReferenceExpression();
+  /*package*/ final ConceptDescriptor myConceptForEachNodeFoundClosureParameterDeclaration = createDescriptorForForEachNodeFoundClosureParameterDeclaration();
   /*package*/ final ConceptDescriptor myConceptIsApplicableBlock = createDescriptorForIsApplicableBlock();
   /*package*/ final ConceptDescriptor myConceptIsUsedByDefault = createDescriptorForIsUsedByDefault();
   /*package*/ final ConceptDescriptor myConceptIsVisibleBlock = createDescriptorForIsVisibleBlock();
   /*package*/ final ConceptDescriptor myConceptMakeResultProvider = createDescriptorForMakeResultProvider();
   /*package*/ final ConceptDescriptor myConceptNodeStatement = createDescriptorForNodeStatement();
+  /*package*/ final ConceptDescriptor myConceptOnEachFoundNodeCallback = createDescriptorForOnEachFoundNodeCallback();
+  /*package*/ final ConceptDescriptor myConceptOnEachNodeFoundByExpression = createDescriptorForOnEachNodeFoundByExpression();
   /*package*/ final ConceptDescriptor myConceptResultStatement = createDescriptorForResultStatement();
   /*package*/ final ConceptDescriptor myConceptSearchedNodesBlock = createDescriptorForSearchedNodesBlock();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -39,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractFinderDeclaration, myConceptCategorizeBlock, myConceptCheckCancelledStatusStatement, myConceptConceptFunctionParameter_node, myConceptExecuteFinderExpression, myConceptExecuteFindersGetSearchResults, myConceptFindBlock, myConceptFinderDeclaration, myConceptFinderReference, myConceptFinderReferenceExpression, myConceptIsApplicableBlock, myConceptIsUsedByDefault, myConceptIsVisibleBlock, myConceptMakeResultProvider, myConceptNodeStatement, myConceptResultStatement, myConceptSearchedNodesBlock);
+    return Arrays.asList(myConceptAbstractFinderDeclaration, myConceptCategorizeBlock, myConceptCheckCancelledStatusStatement, myConceptConceptFunctionParameter_node, myConceptExecuteFinderExpression, myConceptExecuteFindersGetSearchResults, myConceptFindBlock, myConceptFinderDeclaration, myConceptFinderReference, myConceptFinderReferenceExpression, myConceptForEachNodeFoundClosureParameterDeclaration, myConceptIsApplicableBlock, myConceptIsUsedByDefault, myConceptIsVisibleBlock, myConceptMakeResultProvider, myConceptNodeStatement, myConceptOnEachFoundNodeCallback, myConceptOnEachNodeFoundByExpression, myConceptResultStatement, myConceptSearchedNodesBlock);
   }
 
   @Override
@@ -66,6 +69,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFinderReference;
       case LanguageConceptSwitch.FinderReferenceExpression:
         return myConceptFinderReferenceExpression;
+      case LanguageConceptSwitch.ForEachNodeFoundClosureParameterDeclaration:
+        return myConceptForEachNodeFoundClosureParameterDeclaration;
       case LanguageConceptSwitch.IsApplicableBlock:
         return myConceptIsApplicableBlock;
       case LanguageConceptSwitch.IsUsedByDefault:
@@ -76,6 +81,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptMakeResultProvider;
       case LanguageConceptSwitch.NodeStatement:
         return myConceptNodeStatement;
+      case LanguageConceptSwitch.OnEachFoundNodeCallback:
+        return myConceptOnEachFoundNodeCallback;
+      case LanguageConceptSwitch.OnEachNodeFoundByExpression:
+        return myConceptOnEachNodeFoundByExpression;
       case LanguageConceptSwitch.ResultStatement:
         return myConceptResultStatement;
       case LanguageConceptSwitch.SearchedNodesBlock:
@@ -204,6 +213,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("finder");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForForEachNodeFoundClosureParameterDeclaration() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.findUsages", "ForEachNodeFoundClosureParameterDeclaration", 0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16d39f72L);
+    b.class_(true, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L);
+    b.origin("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)/1237139122105327474");
+    b.version(2);
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIsApplicableBlock() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.findUsages", "IsApplicableBlock", 0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a94L);
     b.class_(false, false, false);
@@ -254,6 +272,30 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("foundNode", 0x11774086327L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1200242582311").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("add node");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForOnEachFoundNodeCallback() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.findUsages", "OnEachFoundNodeCallback", 0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16caa96eL);
+    b.class_(true, false, false);
+    b.super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", 0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L);
+    b.origin("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)/1237139122104740206");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForOnEachNodeFoundByExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.findUsages", "OnEachNodeFoundByExpression", 0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x5f5488291166ada7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.origin("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)/6869265041613827495");
+    b.version(2);
+    b.aggregate("callback", 0x112b337a16d3e09aL).target(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16caa96eL).optional(false).ordered(true).multiple(false).origin("1237139122105344154").done();
+    b.aggregate("queryNode", 0x5f5488291166ada8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6869265041613827496").done();
+    b.aggregate("queryScope", 0x5f5488291166ada9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("6869265041613827497").done();
+    b.aggregate("monitor", 0x5f5488291166adaaL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("6869265041613827498").done();
+    b.aggregate("finders", 0x5f54882911688990L).target(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL).optional(false).ordered(true).multiple(true).origin("6869265041613949328").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("on each node");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForResultStatement() {

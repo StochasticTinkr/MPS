@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="awrec5opr1ebkl7azfk88vqx5n6clh1" />
+<product version="3" modelHash="awrec5opr1ebkl7azfk88vqx5n6clh1">
+  <files names="ActionTestSidetransformTestAncestor_Constraints.java:ActionTestSidetransformTestContainer_Constraints.java:ConstraintsAspectDescriptor.java" />
+</product>
 

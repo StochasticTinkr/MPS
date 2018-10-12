@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6sbvkkwix7ks36i7blzsxwxnnbs1imb" />
+<product version="3" modelHash="-cbqm5xipkamw3gg3jbzviexyetfp4p3">
+  <files names="TransformatorBuilder.java" />
+</product>
 

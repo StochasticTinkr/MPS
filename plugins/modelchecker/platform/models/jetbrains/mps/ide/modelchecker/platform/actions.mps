@@ -1311,6 +1311,12 @@
         </node>
       </node>
       <node concept="3clFbW" id="3J4tNviCbwz" role="jymVt">
+        <node concept="37vLTG" id="3GsVPVaNCk5" role="3clF46">
+          <property role="TrG5h" value="kindLevel" />
+          <node concept="3uibUv" id="3GsVPVaNCJa" role="1tU5fm">
+            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+          </node>
+        </node>
         <node concept="3cqZAl" id="3J4tNviCbw$" role="3clF45" />
         <node concept="3clFbS" id="3J4tNviCbwB" role="3clF47">
           <node concept="3clFbF" id="3GsVPVaNDnY" role="3cqZAp">
@@ -1342,12 +1348,6 @@
                 <ref role="3cqZAo" node="5bed3YcLpSn" resolve="myChecks" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="37vLTG" id="3GsVPVaNCk5" role="3clF46">
-          <property role="TrG5h" value="kindLevel" />
-          <node concept="3uibUv" id="3GsVPVaNCJa" role="1tU5fm">
-            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
           </node>
         </node>
         <node concept="37vLTG" id="3J4tNviCbB4" role="3clF46">

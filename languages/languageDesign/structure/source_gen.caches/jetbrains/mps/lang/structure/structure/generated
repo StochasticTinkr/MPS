@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-58syrx87793hwapf0i4yh4uucqii2tz" />
+<product version="3" modelHash="-58syrx87793hwapf0i4yh4uucqii2tz">
+  <files names="Cardinality.java:Cardinality_PropertySupport.java:ChildrenIncomingReferencesPolicy.java:ChildrenIncomingReferencesPolicy_PropertySupport.java:ConceptPresentationAspectImpl.java:EnumerationMemberIdentifierPolicy.java:EnumerationMemberIdentifierPolicy_PropertySupport.java:IDNumber_PropertySupport.java:IconContainer.java:InstanceIncomingReferencesPolicy.java:InstanceIncomingReferencesPolicy_PropertySupport.java:LanguageConceptSwitch.java:LinkMetaclass.java:LinkMetaclass_PropertySupport.java:StaticScope.java:StaticScope_PropertySupport.java:StructureAspectDescriptor.java" />
+</product>
 

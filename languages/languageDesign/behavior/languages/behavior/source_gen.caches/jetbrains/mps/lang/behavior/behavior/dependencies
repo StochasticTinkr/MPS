@@ -39,6 +39,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />

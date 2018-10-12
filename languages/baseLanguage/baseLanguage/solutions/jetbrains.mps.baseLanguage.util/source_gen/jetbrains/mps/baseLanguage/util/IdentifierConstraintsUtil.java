@@ -13,6 +13,4 @@ public class IdentifierConstraintsUtil {
   public static boolean isJavaReserved(String s) {
     return SetSequence.fromSet(javaKeywordsAndConstants).contains(s);
   }
-
-
 }

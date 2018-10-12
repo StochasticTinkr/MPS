@@ -51,23 +51,21 @@ public class RequirementEntryReference_Constraints extends BaseConstraintsDescri
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode currentTrace = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd3a494L, "jetbrains.mps.samples.requirementTracking.Traces.structure.RequirementTrace"), true, false);
+            final SNode currentTrace = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd3a494L, "jetbrains.mps.samples.requirementTracking.Traces.structure.RequirementTrace"), true, false);
 
-              List<SNode> allEntries = SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL, "jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure.Entry"));
+            List<SNode> allEntries = SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x6144ad334164d7eL, 0xbbaf076e158e80cfL, 0x39ed36a1ccc9c4ebL, "jetbrains.mps.samples.requirementTracking.RequirementDefinition.structure.Entry"));
 
-              Iterable<SNode> possibleTargets = ListSequence.fromList(allEntries).where(new IWhereFilter<SNode>() {
-                public boolean accept(final SNode entry) {
-                  return ListSequence.fromList(SLinkOperations.getChildren(currentTrace, MetaAdapterFactory.getContainmentLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd3a494L, 0x39ed36a1ccd45001L, "mentions"))).all(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return Objects.equals(it, _context.getReferenceNode()) || (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd6180aL, 0x39ed36a1ccd61810L, "targetEntry")) == null) || !(Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd6180aL, 0x39ed36a1ccd61810L, "targetEntry")), entry));
-                    }
-                  });
-                }
-              });
+            Iterable<SNode> possibleTargets = ListSequence.fromList(allEntries).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode entry) {
+                return ListSequence.fromList(SLinkOperations.getChildren(currentTrace, MetaAdapterFactory.getContainmentLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd3a494L, 0x39ed36a1ccd45001L, "mentions"))).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return Objects.equals(it, _context.getReferenceNode()) || (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd6180aL, 0x39ed36a1ccd61810L, "targetEntry")) == null) || !(Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x81a3307bd10f4e90L, 0x8043ff6aa5380c33L, 0x39ed36a1ccd6180aL, 0x39ed36a1ccd61810L, "targetEntry")), entry));
+                  }
+                });
+              }
+            });
 
-              return ListScope.forNamedElements(possibleTargets);
-            }
+            return ListScope.forNamedElements(possibleTargets);
           }
         };
       }

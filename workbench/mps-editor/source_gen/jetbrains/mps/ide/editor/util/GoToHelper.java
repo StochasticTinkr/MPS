@@ -4,52 +4,52 @@ package jetbrains.mps.ide.editor.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import com.intellij.ui.awt.RelativePoint;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.util.ModelComputeRunnable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
 
 public final class GoToHelper {
   private GoToHelper() {
   }
 
-  public static void executeFinders(final SNode node, final MPSProject mpsProject, final String title, final IInterfacedFinder finder, final RelativePoint relativePoint) {
-    final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
-    Task.Backgroundable task = new Task.Backgroundable(mpsProject.getProject(), "Searching...", true, PerformInBackgroundOption.ALWAYS_BACKGROUND) {
-      public void run(@NotNull final ProgressIndicator indicator) {
-        mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            // XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures. 
-            // We desperately need a mechanism to match stub classes with their MPS origins. 
-            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), new SearchQuery(node, new GlobalScope(mpsProject.getRepository())), (IFinder) finder).getResultObjects()) {
-              if (sr instanceof SNode) {
-                ListSequence.fromList(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
-              }
-            }
-          }
-        });
-      }
+  @Deprecated
+  public static void showPopupAndSearchNodeInBackground(final SNode node, final MPSProject project, final CaptionFunction captionFun, final Finder finder, final RelativePoint point) {
+    SearchQuery query = createNodeQuery(project.getRepository(), node, null);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(project);
+    settings.query(query).captionFun(captionFun).finders(finder).point(point);
+    showPopupAndSearchInBackground(settings);
+  }
 
+  public static SearchQuery createNodeQuery(final SRepository repository, final SNode node, @Nullable final SearchScope scope) {
+    ModelAccess modelAccess = repository.getModelAccess();
+    SearchQuery query = new ModelComputeRunnable<SearchQuery>(new Computable<SearchQuery>() {
       @Override
-      public void onSuccess() {
-        GoToContextMenuUtil.showNodeMenu(mpsProject, title, ListSequence.fromList(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
+      public SearchQuery compute() {
+        if (scope == null) {
+          return new SearchQuery(node, new GlobalScope(repository));
+        }
+        return new SearchQuery(node, scope);
       }
-    };
-    ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
+    }).runRead(modelAccess);
+    return query;
+  }
+
+  public static void showPopupAndSearchNodeInBackground(@NotNull final PopupSettingsBuilder settings) {
+    showPopupAndSearchInBackground(settings);
+  }
+
+  public static void showPopupAndSearchInBackground(@NotNull final PopupSettingsBuilder settings) {
+    Task.Backgroundable task = new BackgroundSearchWithPopupTask(settings);
+    ProgressManager.getInstance().run(task);
   }
 }

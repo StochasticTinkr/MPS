@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1o0e1h18jtflthg7x29xfa8i770nt06" />
+<product version="3" modelHash="-e3e5kk5krkeyg0xhcqb8kth2rvxaxat">
+  <files names="ConstraintsAspectDescriptor.java:DispatchModifier_Constraints.java" />
+</product>
 

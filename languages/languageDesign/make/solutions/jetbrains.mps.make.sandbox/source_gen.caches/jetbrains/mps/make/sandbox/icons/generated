@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1gljvu86s5m3sqvjw0jjbajuo9s6tul" />
+<product version="3" modelHash="-36u8ko94fy7ad9r6pnfz185whkjghfu">
+  <files names="DummyAction_Action.java:Foo.java" />
+</product>
 

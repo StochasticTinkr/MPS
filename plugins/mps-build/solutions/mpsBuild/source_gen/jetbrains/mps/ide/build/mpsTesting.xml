@@ -492,6 +492,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk8.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
@@ -550,8 +551,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/text/jetbrains.mps.lang.text.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />

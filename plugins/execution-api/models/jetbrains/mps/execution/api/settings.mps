@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
@@ -202,7 +202,7 @@
       <ref role="3uigEE" to="zn9m:~JDOMExternalizable" resolve="JDOMExternalizable" />
     </node>
     <node concept="3clFb_" id="3oW7HLfqDqX" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="checkConfiguration" />
       <node concept="3cqZAl" id="3oW7HLfqDqY" role="3clF45" />
       <node concept="3Tm1VV" id="3oW7HLfqDqZ" role="1B3o_S" />
@@ -230,7 +230,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="3oW7HLfqDr2" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getEditor" />
       <node concept="3uibUv" id="3oW7HLfqDr3" role="3clF45">
         <ref role="3uigEE" node="3oW7HLfqDrn" resolve="SettingsEditorEx" />
@@ -261,7 +261,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="3oW7HLfqDr8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createCloneTemplate" />
       <node concept="3Tm1VV" id="3oW7HLfqDr9" role="1B3o_S" />
       <node concept="3clFbS" id="3oW7HLfqDra" role="3clF47" />
@@ -606,7 +606,7 @@
       <ref role="3uigEE" node="3oW7HLfqDqW" resolve="IPersistentConfiguration" />
     </node>
     <node concept="3clFb_" id="3oW7HLfqDrh" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getEditorEx" />
       <node concept="2lzX1y" id="3oW7HLfqDri" role="3clF47" />
       <node concept="3Tm1VV" id="3oW7HLfqDrj" role="1B3o_S" />
@@ -644,7 +644,7 @@
   <node concept="3HP615" id="qCQmZRT2wq">
     <property role="TrG5h" value="PersistentConfigurationContext" />
     <node concept="3clFb_" id="qCQmZRTcql" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getProject" />
       <node concept="3clFbS" id="qCQmZRTcqo" role="3clF47" />

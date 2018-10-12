@@ -43,10 +43,8 @@ public class DelTestChildWithSmartReference_Constraints extends BaseConstraintsD
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7a6a3ef59ad69daeL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestNodeToReference"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7a6a3ef59ad69daeL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestNodeToReference"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

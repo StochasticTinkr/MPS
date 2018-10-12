@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5i6a7oiuxq5zjx9mqs4esmcg8nd6rd8" />
+<product version="3" modelHash="-4pc78kfa88288fpgl5dn2v3gyhrs2v0">
+  <files names="ClassPrepareRequestor.java:IRequestManager.java:LocatableEventRequestor.java:Requestor.java:StepRequestor.java" />
+</product>
 

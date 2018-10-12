@@ -46,10 +46,8 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode plan = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), true, false);
-              return ListScope.forResolvableElements(SNodeOperations.getNodeDescendants(plan, null, false, new SAbstractConcept[]{}));
-            }
+            SNode plan = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), true, false);
+            return ListScope.forResolvableElements(SNodeOperations.getNodeDescendants(plan, null, false, new SAbstractConcept[]{}));
           }
         };
       }

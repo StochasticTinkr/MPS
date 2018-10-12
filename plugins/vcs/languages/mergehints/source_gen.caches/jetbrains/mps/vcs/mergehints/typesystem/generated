@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2c8vjh3rra5apkjffx25eyajl2pt53p" />
+<product version="3" modelHash="2c8vjh3rra5apkjffx25eyajl2pt53p">
+  <files names="CheckNoDuplicatedConceptHints_NonTypesystemRule.java:CheckNoDuplicatedLinkHints_NonTypesystemRule.java:CheckNoDuplicatedPropertyHints_NonTypesystemRule.java:TypesystemDescriptor.java" />
+</product>
 

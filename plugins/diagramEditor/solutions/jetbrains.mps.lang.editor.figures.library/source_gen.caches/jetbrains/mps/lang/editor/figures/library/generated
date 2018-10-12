@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5s001t7tx28pl0dnxrvbc7b8joo9gts" />
+<product version="3" modelHash="kibdaw9kquriojk1sfmtpsucchscz5">
+  <files names="AbstractVerticalLayoutFigure.java:BoxFigure.java:NamedBoxFigure.java" />
+</product>
 

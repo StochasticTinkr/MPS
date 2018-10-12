@@ -49,14 +49,12 @@ public class TypesystemIntentionArgument_Constraints extends BaseConstraintsDesc
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> nodes = new ArrayList<SNode>();
-              SNode helginsIntention = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), true, false);
-              if (helginsIntention != null) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(helginsIntention, MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, 0x11b3667ec7bL, "quickFix")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b36163865L, 0x11b361ae27eL, "quickFixArgument"))));
-              }
-              return ListScope.forResolvableElements(nodes);
+            List<SNode> nodes = new ArrayList<SNode>();
+            SNode helginsIntention = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), true, false);
+            if (helginsIntention != null) {
+              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(helginsIntention, MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, 0x11b3667ec7bL, "quickFix")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b36163865L, 0x11b361ae27eL, "quickFixArgument"))));
             }
+            return ListScope.forResolvableElements(nodes);
           }
         };
       }

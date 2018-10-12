@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1tbra393le70g040kz8q557l9xu6ezd" />
+<product version="3" modelHash="-a6leyizsqym2kv57tifpesn56wcvpir">
+  <files names="ExtensionDescriptor.java:FacetAspectDescriptor.java:FacetManifest.java:Generate_Facet.java:ModuleStaleFileManager.java:ResourceDeltaCollector.java:RetainedUtil.java:TextGenOutcomeResource.java:TextGen_Facet.java" />
+</product>
 

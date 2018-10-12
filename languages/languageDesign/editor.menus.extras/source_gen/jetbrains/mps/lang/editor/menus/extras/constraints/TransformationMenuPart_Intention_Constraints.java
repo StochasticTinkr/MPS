@@ -58,7 +58,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
                 }
 
                 SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), false, false);
-                return !(check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(menu), intentionConcept));
+                return !(check_qffvkf_a0e0a0a0a0b0a0a0b0a1a0b0c(check_qffvkf_a0a4a0a0a0a1a0a0a1a0b0a1a2(menu), intentionConcept));
               }
             };
           }
@@ -67,13 +67,13 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
     });
     return references;
   }
-  private static boolean check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode intentionConcept) {
+  private static boolean check_qffvkf_a0e0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode intentionConcept) {
     if (null != checkedDotOperand) {
       return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(checkedDotOperand, intentionConcept);
     }
     return false;
   }
-  private static SNode check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
+  private static SNode check_qffvkf_a0a4a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }

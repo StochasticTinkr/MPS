@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eia02od6rs0weq1rxspf3aosbaeno8p" />
+<product version="3" modelHash="-eia02od6rs0weq1rxspf3aosbaeno8p">
+  <files names="AddRemoveFigureAttribute_Intention.java:AddRemoveFigureParameterAttributeField_Intention.java:AddRemoveFigureParameterAttributeMethod_Intention.java:AddRemoveFigureParameterAttributePropertySpecification_Intention.java:IntentionsDescriptor.java" />
+</product>
 

@@ -51,15 +51,13 @@ public class CellModel_Checkbox_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode editorComponent = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), true, false);
-              SNode editedConcept = AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent);
-              return ListScope.forResolvableElements(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(editedConcept)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return (boolean) DataTypeDeclaration__BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType")));
-                }
-              }));
-            }
+            SNode editorComponent = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), true, false);
+            SNode editedConcept = AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent);
+            return ListScope.forResolvableElements(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(editedConcept)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return (boolean) DataTypeDeclaration__BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType")));
+              }
+            }));
           }
         };
       }

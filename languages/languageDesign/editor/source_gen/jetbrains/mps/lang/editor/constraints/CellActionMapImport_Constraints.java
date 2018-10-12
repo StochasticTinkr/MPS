@@ -43,10 +43,8 @@ public class CellActionMapImport_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

@@ -70,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />

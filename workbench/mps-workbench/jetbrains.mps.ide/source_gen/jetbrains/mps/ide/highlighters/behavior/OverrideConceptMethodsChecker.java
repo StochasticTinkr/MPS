@@ -55,11 +55,11 @@ public final class OverrideConceptMethodsChecker extends BaseEventProcessingEdit
 
   @NotNull
   private List<EditorMessage> calculateEditorMessages(SNode behavior, Cancellable cancellable) {
-    List<EditorMessage> ancestors = new AncestorsMethodsLookup(cancellable, new GlobalScope(myProject), behavior, MAX_ITEMS_TO_SHOW).calcMessages();
+    List<EditorMessage> ancestors = new AncestorsMethodsLookup(cancellable, new GlobalScope(myProject), behavior, this, MAX_ITEMS_TO_SHOW).calcMessages();
     if (cancellable.isCancelled()) {
       return ancestors;
     }
-    List<EditorMessage> descendants = new DescendantsMethodsLookup(cancellable, new GlobalScope(myProject), behavior, MAX_ITEMS_TO_SHOW).calcMessages();
+    List<EditorMessage> descendants = new DescendantsMethodsLookup(cancellable, new GlobalScope(myProject), behavior, this, MAX_ITEMS_TO_SHOW).calcMessages();
     return ListSequence.fromList(ancestors).union(ListSequence.fromList(descendants)).toListSequence();
   }
 }

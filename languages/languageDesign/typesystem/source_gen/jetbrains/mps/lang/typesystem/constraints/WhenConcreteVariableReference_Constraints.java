@@ -49,17 +49,15 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> whenConcreteStatements = SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), false);
-              List<SNode> declarations = new ArrayList<SNode>();
-              for (SNode whenConcreteStatement : whenConcreteStatements) {
-                SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, 0x118bd03e53bL, "argumentRepresentator"));
-                if (variableDeclaration != null) {
-                  ListSequence.fromList(declarations).addElement(variableDeclaration);
-                }
+            List<SNode> whenConcreteStatements = SNodeOperations.getNodeAncestors(_context.getContextNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), false);
+            List<SNode> declarations = new ArrayList<SNode>();
+            for (SNode whenConcreteStatement : whenConcreteStatements) {
+              SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, 0x118bd03e53bL, "argumentRepresentator"));
+              if (variableDeclaration != null) {
+                ListSequence.fromList(declarations).addElement(variableDeclaration);
               }
-              return ListScope.forResolvableElements(declarations);
             }
+            return ListScope.forResolvableElements(declarations);
           }
         };
       }

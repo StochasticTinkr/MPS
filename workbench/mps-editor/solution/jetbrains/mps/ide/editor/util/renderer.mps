@@ -2,24 +2,19 @@
 <model ref="r:74ecf5af-2b45-470e-b13c-a863221987cf(jetbrains.mps.ide.editor.util.renderer)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="kx0u" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.navigation(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="5b0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.presentation(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
-    <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -331,7 +326,6 @@
     <node concept="3Tm1VV" id="1pHoCUaw9dU" role="1B3o_S" />
     <node concept="3clFb_" id="1pHoCUaw9dV" role="jymVt">
       <property role="TrG5h" value="getElementText" />
-      <node concept="3Tmbuc" id="3m6U0jmP23O" role="1B3o_S" />
       <node concept="3clFbS" id="1pHoCUaw9dW" role="3clF47">
         <node concept="3cpWs6" id="1pHoCUaw9e9" role="3cqZAp">
           <node concept="2OqwBi" id="1pHoCUaw9ea" role="3cqZAk">
@@ -355,6 +349,7 @@
           <ref role="3uigEE" to="kx0u:~NodeNavigatable" resolve="NodeNavigatable" />
         </node>
       </node>
+      <node concept="3Tmbuc" id="3m6U0jmP23O" role="1B3o_S" />
       <node concept="2AHcQZ" id="1pHoCUaw9ej" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -542,7 +537,6 @@
     <node concept="2tJIrI" id="3m6U0jmPe7X" role="jymVt" />
     <node concept="3clFb_" id="1pHoCUaw9fD" role="jymVt">
       <property role="TrG5h" value="getElementText" />
-      <node concept="3Tmbuc" id="3m6U0jmPeo_" role="1B3o_S" />
       <node concept="2AHcQZ" id="1pHoCUaw9fE" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -659,6 +653,7 @@
           </node>
         </node>
       </node>
+      <node concept="3Tmbuc" id="3m6U0jmPeo_" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="3m6U0jmPoW3" role="jymVt" />
     <node concept="3clFb_" id="1pHoCUaw9g_" role="jymVt">
@@ -925,13 +920,13 @@
     <node concept="3clFb_" id="1pHoCUawrce" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getElementText" />
-      <node concept="3Tmbuc" id="3m6U0jmOcFJ" role="1B3o_S" />
       <node concept="37vLTG" id="1pHoCUawrcf" role="3clF46">
         <property role="TrG5h" value="element" />
         <node concept="16syzq" id="1pHoCUawrcg" role="1tU5fm">
           <ref role="16sUi3" node="1pHoCUawrfb" resolve="T" />
         </node>
       </node>
+      <node concept="3Tmbuc" id="3m6U0jmOcFJ" role="1B3o_S" />
       <node concept="3uibUv" id="1pHoCUawrci" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>

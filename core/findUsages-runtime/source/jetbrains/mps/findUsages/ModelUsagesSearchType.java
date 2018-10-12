@@ -39,8 +39,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
   }
 
   @Override
-  public Set<SModel> search(Set<SModelReference> models, SearchScope scope, @NotNull ProgressMonitor monitor) {
-    CollectConsumer<SModel> consumer = new CollectConsumer(new HashSet<SModel>());
+  public void search(Set<SModelReference> models, SearchScope scope, Consumer<SModel> consumer, @NotNull ProgressMonitor monitor) {
     Collection<FindUsagesParticipant> participants = PersistenceRegistry.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding model(s) usages...", participants.size() + 4);
@@ -48,7 +47,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
       Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<>(current);
-        participant.findModelUsages(current, models, consumer, sModel -> next.remove(sModel));
+        participant.findModelUsages(current, models, consumer, next::remove);
         current = next;
         monitor.advance(1);
       }
@@ -56,7 +55,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
       for (SModel m : current) {
-        subMonitor.step(m.getModelName());
+        subMonitor.step(m.getName().getSimpleName());
         if (FindUsagesUtil.hasModelUsages(m, models)) {
           consumer.consume(m);
         }
@@ -67,6 +66,5 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
     } finally {
       monitor.done();
     }
-    return (Set<SModel>) consumer.getResult();
   }
 }

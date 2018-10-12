@@ -124,6 +124,7 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk8.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -161,8 +162,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
-      <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
-      <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/languages/text/jetbrains.mps.lang.text.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
@@ -263,6 +262,7 @@
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+      <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk8.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -299,8 +299,6 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
-      <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
-      <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <pathelement location="${artifacts.mps}/languages/text/jetbrains.mps.lang.text.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-behavior-api.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-behavior-runtime.jar" />

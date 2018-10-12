@@ -800,10 +800,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_InterfaceMethods_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_LeftParen_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -817,6 +813,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_LongLiteral_within_range_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_MethodBody_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

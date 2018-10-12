@@ -75,20 +75,18 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode classifier = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-              if (classifier == null) {
-                return new EmptyScope();
-              }
-              final SNode enclosingProperty = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
-              SNode classifierType = _quotation_createNode_yrz94z_a0d0a0b0a0a0b0a1a0b0d(classifier);
-              // sic! classifierType.getMembers(), not clasifier.getMembers() 
-              return new NamedElementsScope(Sequence.fromIterable(SNodeOperations.ofConcept(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"))).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return (boolean) ClassifierMember__BehaviorDescriptor.isVisible_id70J2WaK_oVl.invoke(it, classifier, _context.getContextNode()) && Objects.equals(it, enclosingProperty);
-                }
-              }));
+            final SNode classifier = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+            if (classifier == null) {
+              return new EmptyScope();
             }
+            final SNode enclosingProperty = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
+            SNode classifierType = _quotation_createNode_yrz94z_a0d0b0a0a0b0a1a0b0d(classifier);
+            // sic! classifierType.getMembers(), not clasifier.getMembers() 
+            return new NamedElementsScope(Sequence.fromIterable(SNodeOperations.ofConcept(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(classifierType), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"))).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return (boolean) ClassifierMember__BehaviorDescriptor.isVisible_id70J2WaK_oVl.invoke(it, classifier, _context.getContextNode()) && Objects.equals(it, enclosingProperty);
+              }
+            }));
           }
         };
       }
@@ -98,7 +96,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false) != null;
   }
-  private static SNode _quotation_createNode_yrz94z_a0d0a0b0a0a0b0a1a0b0d(Object parameter_1) {
+  private static SNode _quotation_createNode_yrz94z_a0d0b0a0a0b0a1a0b0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

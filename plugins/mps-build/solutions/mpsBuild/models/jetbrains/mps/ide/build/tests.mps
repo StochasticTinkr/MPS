@@ -7508,6 +7508,12 @@
           </node>
         </node>
       </node>
+      <node concept="1SiIV0" id="3ciHSU5yUs4" role="3bR37C">
+        <node concept="3bR9La" id="3ciHSU5yUs5" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtA" id="2w4VT5Ubdsy" role="3989C9">
       <property role="BnDLt" value="true" />

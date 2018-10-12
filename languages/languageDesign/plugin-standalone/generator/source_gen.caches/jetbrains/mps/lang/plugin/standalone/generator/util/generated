@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4qye3lng4kd63uwun9sqq7h2k01kjzh" />
+<product version="3" modelHash="-4qye3lng4kd63uwun9sqq7h2k01kjzh">
+  <files names="PluginUtils.java" />
+</product>
 

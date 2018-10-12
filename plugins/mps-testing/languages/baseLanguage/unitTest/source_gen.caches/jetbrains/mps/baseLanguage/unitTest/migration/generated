@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1naj7e9l5jcds9ic9daidur9uy5gsl0" />
+<product version="3" modelHash="-b4vsnkxe4g1mloz0hlvsq50hfobbd4w">
+  <files names="MigrationDescriptor.java:RemoveInvisibleConstructorsInBTestCases.java" />
+</product>
 

@@ -2,7 +2,7 @@
 <model ref="r:6e687df6-afa2-4865-8e45-a302708b7fb3(jetbrains.mps.ide.java.sourceStubsUI)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <engage id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
   </languages>
   <imports>

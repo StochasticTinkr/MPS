@@ -152,6 +152,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
@@ -492,37 +493,29 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.AddMethodModifiersOnTypes" file="AddMethodModifiersOnTypes.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.MemberDeclarationRefactoringUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
@@ -5972,6 +5965,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.FloatingPointConstant_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.FloatingPointFloatConstant_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.FloatingPointFloatConstant_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ForReturnTypeOfTheMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ForStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ForeachStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component" />
@@ -6001,6 +5995,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_ApplySideTransforms_1" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_static_abstract" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.InstanceOfExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IntegerConstant_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IntegerConstant_SubstituteMenu" />
@@ -6012,6 +6007,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Interface_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.JavaImport_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.JavaImports_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.JavaModifier_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalInstanceFieldReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalInstanceFieldReference_Transform" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalInstanceMethodCall_SubstituteMenu" />
@@ -6033,6 +6029,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LowerBoundType_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.MethodCallFixer_AddFirstArgument" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.MethodDeclaration_TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.MethodDeclaration_final_native_sync_all_mods" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ModifierTransformationMenuHelper_TOREMOVE" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Modifier_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Modifier_TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ModifiersComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NestedNewExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NullLiteral_Editor" />
@@ -6153,7 +6154,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Visibility_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Visibility_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Visibility_TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Visibility_ext_1_RTransform_Menu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.WhileStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.WildCardType_ApplySideTransforms" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.WildCardType_Editor" />
@@ -6166,8 +6166,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addComment_Expression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addComment_Type" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addGenericParameter" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration_Type_default" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addGenericTypeVariableInDeclaration" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.addTypeAfterModifier" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.arrayAccess" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.arrayBrackets" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.assert_" />
@@ -6183,6 +6184,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.convertVariableAssignmentToVarDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.csharp_rTransform" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ctor_IncompleteFromModifier" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ctor_IncompleteMember" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ctor_IncompleteMemberInInterface" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ctor_InterfaceMemberBasedOnIncomplete" />
@@ -6196,7 +6198,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.expressionToParenthesis" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.expression_to_varaible_declaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.finalOnTypesInVariables" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.genericDeclaration_ext_4" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.genericDeclaration_right" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ifStatement" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ifStatement_" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.instanceOf" />
@@ -7553,6 +7555,35 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ForReturnTypeOfTheMethod" file="ForReturnTypeOfTheMethod.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ForStatement_Editor" file="ForStatement_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ForStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ForStatement_InspectorBuilder_a" />
@@ -7777,36 +7808,29 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.GenericDeclaration_TransformationMenu" file="GenericDeclaration_TransformationMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.GenericNewExpression_Editor" file="GenericNewExpression_Editor.java">
@@ -8743,19 +8767,16 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteFinalInBaseMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteNativeInMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteSynchronizedInBaseMethod" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_AddAbstract" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_RemoveAbstract" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -8826,6 +8847,34 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_TransformationMenu" file="InstanceMethodDeclaration_TransformationMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_static_abstract" file="InstanceMethodDeclaration_static_abstract.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -8836,13 +8885,11 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -9257,6 +9304,33 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.JavaModifier_SubstituteMenu" file="JavaModifier_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="java.util.function.Predicate" />
+    <classNode dependClassName="java.util.stream.Collectors" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConceptMenusPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.ConceptDescendantsCache" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.LocalInstanceFieldReference_SubstituteMenu" file="LocalInstanceFieldReference_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
@@ -9996,35 +10070,232 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.MethodDeclaration_TransformationMenu" file="MethodDeclaration_TransformationMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.MethodDeclaration_final_native_sync_all_mods" file="MethodDeclaration_final_native_sync_all_mods.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.menus.SubstituteItemProxy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ModifierTransformationMenuHelper_TOREMOVE" file="ModifierTransformationMenuHelper_TOREMOVE.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.menus.SubstituteItemProxy" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.Modifier_SubstituteMenu" file="Modifier_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="java.util.function.Predicate" />
+    <classNode dependClassName="java.util.stream.Collectors" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConceptMenusPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.ConceptDescendantsCache" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.Modifier_TransformationMenu" file="Modifier_TransformationMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ModifiersComponent" file="ModifiersComponent.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ModifiersComponent_ComponentBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ModifiersComponent_ComponentBuilder_a" file="ModifiersComponent_ComponentBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ModifiersInsertHandler" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClass" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ModifiersInsertHandler" file="ModifiersInsertHandler.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.NestedNewExpression_Editor" file="NestedNewExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.NestedNewExpression_EditorBuilder_a" />
@@ -12045,12 +12316,10 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -14583,32 +14852,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.Visibility_ext_1_RTransform_Menu" file="Visibility_ext_1_RTransform_Menu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.WhileStatement_Editor" file="WhileStatement_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.WhileStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.WhileStatement_InspectorBuilder_a" />
@@ -15036,13 +15279,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_AddAbstract" file="_InstanceMethodDeclaration_AddAbstract.java">
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor._InstanceMethodDeclaration_RemoveAbstract" file="_InstanceMethodDeclaration_RemoveAbstract.java">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.CursorFocusUtils" />
@@ -15239,45 +15475,38 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration" file="addGenericTypeDeclaration.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration_Type_default" file="addGenericTypeDeclaration_Type_default.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.addGenericTypeVariableInDeclaration" file="addGenericTypeVariableInDeclaration.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -15291,13 +15520,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
@@ -15307,7 +15535,34 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.addTypeAfterModifier" file="addTypeAfterModifier.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
@@ -15835,6 +16090,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.ctor_IncompleteFromModifier" file="ctor_IncompleteFromModifier.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ctor_IncompleteMember" file="ctor_IncompleteMember.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -15850,6 +16117,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart" />
@@ -15888,6 +16157,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart" />
@@ -15920,6 +16191,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
@@ -15953,6 +16225,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
@@ -16287,37 +16560,30 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.genericDeclaration_ext_4" file="genericDeclaration_ext_4.java">
+  <dependency className="jetbrains.mps.baseLanguage.editor.genericDeclaration_right" file="genericDeclaration_right.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ifStatement" file="ifStatement.java">

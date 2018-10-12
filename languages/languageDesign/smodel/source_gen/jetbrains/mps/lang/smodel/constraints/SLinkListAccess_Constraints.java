@@ -51,16 +51,14 @@ public class SLinkListAccess_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              // links with cardinality 0..n or 1..n 
-              SNode dotOperandConcept = SNodeOperation__BehaviorDescriptor.getLeftNodeConcept_idhEwJdFJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")), SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
-              List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(dotOperandConcept);
-              return ListScope.forResolvableElements(ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
-                }
-              }).toListSequence());
-            }
+            // links with cardinality 0..n or 1..n 
+            SNode dotOperandConcept = SNodeOperation__BehaviorDescriptor.getLeftNodeConcept_idhEwJdFJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")), SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")));
+            List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(dotOperandConcept);
+            return ListScope.forResolvableElements(ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
+              }
+            }).toListSequence());
           }
         };
       }

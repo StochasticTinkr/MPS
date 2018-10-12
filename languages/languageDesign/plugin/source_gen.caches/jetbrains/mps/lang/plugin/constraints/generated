@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9id8tcia0llyut0tqsos2q45zgp4amw" />
+<product version="3" modelHash="9id8tcia0llyut0tqsos2q45zgp4amw">
+  <files names="ActionConstructionParameterDeclaration_Constraints.java:ActionDataParameterDeclaration_Constraints.java:ActionDeclaration_Constraints.java:ActionGroupDeclaration_Constraints.java:ActionInstance_Constraints.java:ActionParameterDeclaration_Constraints.java:ActionParameterReference_Constraints.java:AddElementStatement_Constraints.java:AddStatement_Constraints.java:BaseProjectOperation_Constraints.java:ConceptCondition_Constraints.java:ConstraintsAspectDescriptor.java:DataParameterKeysScope.java:EditableModel_Constraints.java:GroupAnchor_Constraints.java:IdeaInitializerDescriptor_Constraints.java:InterfaceExtentionPoint_Constraints.java:ModificationStatement_Constraints.java:Order_Constraints.java:Separator_Constraints.java:ShortcutChange_Constraints.java:SmartDisposeClosureParameterDeclaration_Constraints.java:TabbedToolOperation_Constraints.java:ToolInstanceExpression_Constraints.java:UpdateBlock_Constraints.java" />
+</product>
 

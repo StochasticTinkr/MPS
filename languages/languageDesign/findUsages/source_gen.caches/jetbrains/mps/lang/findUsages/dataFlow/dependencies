@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ExecuteFinderExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ExecuteFindersGetSearchResults_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.NodeStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.OnEachNodeFoundByExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ResultStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -31,6 +32,14 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.dataFlow.NodeStatement_DataFlow" file="NodeStatement_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.findUsages.dataFlow.OnEachNodeFoundByExpression_DataFlow" file="OnEachNodeFoundByExpression_DataFlow.java">
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

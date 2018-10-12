@@ -15,6 +15,9 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -30,7 +33,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -73,7 +75,10 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   }
 
   @Override
-  public void findUsages(Collection<SModel> models, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
+  public void findUsages(Collection<SModel> models, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
     nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it.getNodeId() instanceof SNodeId.Foreign;
@@ -93,12 +98,15 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
 
     for (Map.Entry<SModel, Collection<SNode>> e : candidates.entrySet()) {
-      new NodeUsageFinder(e.getValue(), consumer).collectUsages(e.getKey());
+      new NodeUsageFinder(e.getValue(), consumer).collectUsages(e.getKey(), monitor);
     }
   }
 
   @Override
-  public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+  public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
     final SLanguage bl = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
     concepts = SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
@@ -108,7 +116,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
     MultiMap<SModel, SAbstractConcept> candidates = findCandidates(models, concepts, processedConsumer, null);
     for (Map.Entry<SModel, Collection<SAbstractConcept>> e : candidates.entrySet()) {
-      FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer);
+      FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer, monitor);
     }
   }
 

@@ -8,6 +8,10 @@ import java.util.Collection;
 import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
+import jetbrains.mps.openapi.actions.descriptor.CopyPreProcessor;
+import java.util.Arrays;
+import jetbrains.mps.openapi.actions.descriptor.PastePostProcessor;
+import jetbrains.mps.openapi.actions.descriptor.PasteWrapper;
 
 public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor implements ActionAspectDescriptor {
 
@@ -16,4 +20,16 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     return Collections.<NodeFactory>emptyList();
   }
 
+  @Override
+  public Collection<CopyPreProcessor> getCopyPreProcessors() {
+    return Arrays.asList(new CopyPreProcessor[]{new copyPasteExtendingWithDefaultModifier_CopyPreProcessor_0()});
+  }
+  @Override
+  public Collection<PastePostProcessor> getPastePostProcessors() {
+    return Arrays.asList(new PastePostProcessor[]{new copyPasteExtendingWithDefaultModifier_PastePostProcessor_0()});
+  }
+  @Override
+  public Collection<PasteWrapper> getPasteWrappers() {
+    return Arrays.asList(new PasteWrapper[]{new PasteOverridingForDefaultMethodsAsWell_PasteWrapper_0()});
+  }
 }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-20opj9uicx45b14y5e97m3nur0jk2zo" />
+<product version="3" modelHash="-5xsef5gs2tdu0adav1rsq61ai74lptm">
+  <files names="ClassifierCacher.java:InternalModelsFindUsagesParticipant.java:StubModelsFastFindSupport.java:StubModelsIndexer.java" />
+</product>
 

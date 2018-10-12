@@ -19,23 +19,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.GroupMenuPart;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Logger;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
-import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class InstanceMethodDeclaration_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
@@ -77,143 +67,32 @@ public class InstanceMethodDeclaration_TransformationMenu extends Transformation
       });
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1());
+      result.add(new InstanceMethodDeclaration_TransformationMenu.TMP_Include_s1zz2p_a1());
     }
     return result;
   }
 
-  public class TMP_Group_s1zz2p_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Override
-    protected boolean isApplicable(TransformationMenuContext _context) {
-      return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
-    }
-
+  public class TMP_Include_s1zz2p_a1 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944494")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "InstanceMethodDeclaration_static_abstract", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "4125212090862461581")));
       try {
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
       }
     }
+
+    @Nullable
     @Override
-    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_b0b());
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+      final SNode node = _context.getNode();
+      final EditorContext editorContext = _context.getEditorContext();
+
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_static_abstract");
     }
-    private class TMP_Action_s1zz2p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_a0b.Item item = new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_a0b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944506")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
 
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "static";
-        }
-
-        @Override
-        public void execute(@NotNull String pattern) {
-          SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-          MemberDeclarationRefactoringUtil.rewireMethodReferences(_context.getNode(), staticMethod);
-
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), staticMethod, "staticModifier", -1);
-        }
-
-
-        @Nullable
-        @Override
-        public SAbstractConcept getOutputConcept() {
-          return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-        }
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
-    }
-    private class TMP_Action_s1zz2p_b0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_b0b.Item item = new InstanceMethodDeclaration_TransformationMenu.TMP_Group_s1zz2p_a1.TMP_Action_s1zz2p_b0b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944538")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
-
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "abstract";
-        }
-
-        @Override
-        public void execute(@NotNull String pattern) {
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (true));
-          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).clear();
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), _context.getNode(), "abstractModifier", -1);
-        }
-
-
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
-    }
   }
 }

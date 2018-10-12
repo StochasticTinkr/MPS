@@ -48,28 +48,26 @@ public class SPropertyAccess_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode dotExpression = null;
-              if (_context.getReferenceNode() == null) {
-                dotExpression = SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-              } else {
-                SNode parent = SNodeOperations.getParent(_context.getReferenceNode());
+            SNode dotExpression = null;
+            if (_context.getReferenceNode() == null) {
+              dotExpression = SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+            } else {
+              SNode parent = SNodeOperations.getParent(_context.getReferenceNode());
+              if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+                dotExpression = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+              } else if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
+                parent = SNodeOperations.getParent(parent);
                 if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
                   dotExpression = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-                } else if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
-                  parent = SNodeOperations.getParent(parent);
-                  if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
-                    dotExpression = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-                  }
                 }
               }
+            }
 
-              if (dotExpression != null) {
-                SNode dotOperandConcept = SNodeOperation__BehaviorDescriptor.getLeftNodeConcept_idhEwJdFJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")), dotExpression);
-                return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(dotOperandConcept));
-              } else {
-                return new EmptyScope();
-              }
+            if (dotExpression != null) {
+              SNode dotOperandConcept = SNodeOperation__BehaviorDescriptor.getLeftNodeConcept_idhEwJdFJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")), dotExpression);
+              return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(dotOperandConcept));
+            } else {
+              return new EmptyScope();
             }
           }
         };

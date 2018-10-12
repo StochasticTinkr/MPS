@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="aehf2v90pkmw8bnmr7wqeiuavta25u4" />
+<product version="3" modelHash="aehf2v90pkmw8bnmr7wqeiuavta25u4">
+  <files names="DocumentedConcept_Editor.java:DocumentedConcept_EditorBuilder_a.java:EditorAspectDescriptorImpl.java" />
+</product>
 

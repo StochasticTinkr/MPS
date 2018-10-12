@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dqce24njqxvoojx53z1tplde4su1cxd" />
+<product version="3" modelHash="-dqce24njqxvoojx53z1tplde4su1cxd">
+  <files names="NullProperties_Test.java:Subtyping_Test.java" />
+</product>
 

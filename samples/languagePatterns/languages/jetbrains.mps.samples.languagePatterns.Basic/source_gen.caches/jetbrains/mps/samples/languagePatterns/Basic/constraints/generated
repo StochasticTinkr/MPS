@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-35e46034k8vcbi8dhgy1qzr1oq68j2x" />
+<product version="3" modelHash="-35e46034k8vcbi8dhgy1qzr1oq68j2x">
+  <files names="ComponentUsage_Constraints.java:ConstraintsAspectDescriptor.java:OperationOnAddress_Constraints.java:Participant_Constraints.java:Performance_Constraints.java:Singer_Constraints.java" />
+</product>
 

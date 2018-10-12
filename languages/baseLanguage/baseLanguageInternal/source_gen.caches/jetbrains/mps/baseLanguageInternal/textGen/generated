@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-191sts40v026qgdz1ddzxd066g3kikp" />
+<product version="3" modelHash="-191sts40v026qgdz1ddzxd066g3kikp">
+  <files names="BaseLangInternal.java:InternalAnonymousClassCreator_TextGen.java:InternalAnonymousClass_TextGen.java:InternalClassCreator_TextGen.java:InternalClassExpression_TextGen.java:InternalClassifierType_TextGen.java:InternalNewExpression_TextGen.java:InternalPartialFieldReference_TextGen.java:InternalPartialInstanceMethodCall_TextGen.java:InternalStaticFieldReference_TextGen.java:InternalStaticMethodCall_TextGen.java:InternalSuperMethodCallOperation_TextGen.java:InternalThisExpression_TextGen.java:InternalVariableReference_TextGen.java:TextGenAspectDescriptor.java:TypeHintExpression_TextGen.java" />
+</product>
 

@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c89590370(jetbrains.mps.baseLanguage.classifiers.editor)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -155,7 +155,6 @@
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
-        <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="1198512004906" name="focusPolicyApplicable" index="cStSX" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
@@ -549,7 +548,6 @@
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
       <node concept="PMmxH" id="hLrKZ74" role="3EZMnx">
-        <ref role="1ERwB7" to="tpen:h9EA$1S" resolve="_InstanceMethodDeclaration_AddAbstract" />
         <ref role="PMmxG" to="tpen:h9AUA0X" resolve="_Component_Visibility" />
       </node>
       <node concept="PMmxH" id="hLrKZ76" role="3EZMnx">
@@ -1449,7 +1447,7 @@
       </node>
       <node concept="mvV$s" id="1wEcoXjJ$Pk" role="1Qtc8A">
         <node concept="A1WHu" id="1wEcoXjJ$Pd" role="A14EM">
-          <ref role="A1WHt" to="tpen:1wEcoXjIDFB" resolve="genericDeclaration_ext_4" />
+          <ref role="A1WHt" to="tpen:1wEcoXjIDFB" resolve="genericDeclaration_right" />
         </node>
       </node>
       <node concept="mvV$s" id="1wEcoXjJ$Pl" role="1Qtc8A">

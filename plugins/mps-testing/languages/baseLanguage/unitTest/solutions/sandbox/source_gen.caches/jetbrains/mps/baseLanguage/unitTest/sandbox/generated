@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bmzg5ckntwxnim0o4nv6tqfncn1drpk" />
+<product version="3" modelHash="41osnonuilxacuf1p3uwq0jiryl1h58">
+  <files names="AbstractTest4Class.java:AbstractTestClass.java:SimpleRunner.java:Test3.java:Test4.java:TestMain.java:Test_Test.java" />
+</product>
 

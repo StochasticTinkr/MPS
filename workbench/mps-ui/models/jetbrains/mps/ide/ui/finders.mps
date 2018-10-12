@@ -2,8 +2,8 @@
 <model ref="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -21,6 +21,7 @@
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3762,6 +3763,7 @@
       <node concept="3cqZAl" id="5wOcmpULBDn" role="3clF45" />
       <node concept="3clFbS" id="5wOcmpULBDo" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="1D0QuRYmrjn" role="jymVt" />
     <node concept="3clFb_" id="1Fz6CCofn_D" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDescription" />
@@ -3781,6 +3783,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1D0QuRYmraI" role="jymVt" />
     <node concept="3clFb_" id="5wOcmpULBDp" role="jymVt">
       <property role="TrG5h" value="find" />
       <node concept="3Tm1VV" id="5wOcmpULBDq" role="1B3o_S" />
@@ -3994,6 +3997,9 @@
       </node>
       <node concept="2AHcQZ" id="5wOcmpULBG4" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="1D0QuRYmq_9" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3UR2Jj" id="5wOcmpULCxr" role="lGtFl">

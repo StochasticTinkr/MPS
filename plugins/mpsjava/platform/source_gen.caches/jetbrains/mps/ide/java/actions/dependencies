@@ -38,6 +38,70 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.DefaultBLClassComparator" file="DefaultBLClassComparator.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="java.util.Comparator" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.DefaultBLClassNameFilter" file="DefaultBLClassNameFilter.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.ModelComputeRunnable" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="com.intellij.util.Function" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.DefaultBLMethodComparator" file="DefaultBLMethodComparator.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="java.util.Comparator" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.DefaultBLMethodNameFilter" file="DefaultBLMethodNameFilter.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.ModelComputeRunnable" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="com.intellij.util.Function" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ExtensionDescriptor" file="ExtensionDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -391,104 +455,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" file="GoToInheritedClassifier_Action.java">
-    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
-    <classNode dependClassName="com.intellij.openapi.progress.impl.BackgroundableProcessIndicator" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.function.Consumer" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.actions.GoToOverridenClassMethod_Action" file="GoToOverridenClassMethod_Action.java">
-    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
-    <classNode dependClassName="com.intellij.openapi.progress.impl.BackgroundableProcessIndicator" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
-    <classNode dependClassName="java.awt.event.InputEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.actions.GoToOverridingClassMethod_Action" file="GoToOverridingClassMethod_Action.java">
+  <dependency className="jetbrains.mps.ide.java.actions.GoToImplementationClassMethod_Action" file="GoToImplementationClassMethod_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.event.InputEvent" />
@@ -497,12 +464,17 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCodeInsightBundle" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToContextMenuUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLMethodComparator" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLMethodNameFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -513,6 +485,76 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" file="GoToInheritedClassifier_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.event.InputEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCodeInsightBundle" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLClassComparator" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLClassNameFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.GoToSuperClassMethod_Action" file="GoToSuperClassMethod_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.event.InputEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCodeInsightBundle" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.CaptionFunction" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.GoToHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLMethodComparator" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.DefaultBLMethodNameFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ImplementMethod_Action" file="ImplementMethod_Action.java">
@@ -961,11 +1003,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.util.GroupedNodesChooser" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.OverrideImplementMethodsHelper" file="OverrideImplementMethodsHelper.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

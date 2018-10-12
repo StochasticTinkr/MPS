@@ -315,7 +315,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     }
 
     @Override
-    public Object getData(@NonNls String dataId) {
+    public Object getData(@NotNull String dataId) {
       if (getParent() == null) {
         if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {
           return MPSFileNodeEditor.this;

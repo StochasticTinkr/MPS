@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="tpru" ref="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" />
@@ -2428,7 +2428,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="6FFoA$ya05n" role="1B3o_S" />
       <node concept="3clFb_" id="6FFoA$ya05o" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getModel" />
         <node concept="3uibUv" id="IYmOvnFBy3" role="3clF45">
           <ref role="3uigEE" to="i1lu:IYmOvnu1Zm" resolve="IEvaluationContainer" />
@@ -4387,7 +4387,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="6ra8WUbIhvX" role="1B3o_S" />
       <node concept="3clFb_" id="6ra8WUbIhvR" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="updateErrorText" />
         <node concept="3cqZAl" id="6ra8WUbIhvS" role="3clF45" />
         <node concept="3Tm1VV" id="6ra8WUbIhvT" role="1B3o_S" />

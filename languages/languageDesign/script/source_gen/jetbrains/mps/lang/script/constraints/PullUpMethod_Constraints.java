@@ -70,20 +70,18 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode ancestor = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"), true, false);
-              return new SimpleScope(ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, 0x5c5c94143857349bL, "newClassifier")))).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-                }
-              })) {
-                @Nullable
-                @Override
-                public String getReferenceText(@NotNull SNode target) {
-                  return target.getName();
-                }
-              };
-            }
+            SNode ancestor = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"), true, false);
+            return new SimpleScope(ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, 0x5c5c94143857349bL, "newClassifier")))).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+              }
+            })) {
+              @Nullable
+              @Override
+              public String getReferenceText(@NotNull SNode target) {
+                return target.getName();
+              }
+            };
           }
         };
       }

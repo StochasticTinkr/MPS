@@ -43,10 +43,8 @@ public class DataDependencyReference_Constraints extends BaseConstraintsDescript
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

@@ -10,9 +10,6 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 
 public class CustomInstructionsContainerReference_Constraints extends BaseConstraintsDescriptor {
   public CustomInstructionsContainerReference_Constraints() {
@@ -22,13 +19,7 @@ public class CustomInstructionsContainerReference_Constraints extends BaseConstr
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
-    references.put(MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L), this) {
-      @Nullable
-      @Override
-      public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {};
-      }
-    });
+    references.put(MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L), this) {});
     return references;
   }
 }

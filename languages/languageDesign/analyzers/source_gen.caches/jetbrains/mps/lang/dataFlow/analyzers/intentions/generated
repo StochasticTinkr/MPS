@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ynomcm769snvq0bud1y7i63w5sq16t" />
+<product version="3" modelHash="4ynomcm769snvq0bud1y7i63w5sq16t">
+  <files names="AddModeToAnalyzerRunnerCreator_Intention.java:AddModeToRule_Intention.java:IntentionsDescriptor.java" />
+</product>
 

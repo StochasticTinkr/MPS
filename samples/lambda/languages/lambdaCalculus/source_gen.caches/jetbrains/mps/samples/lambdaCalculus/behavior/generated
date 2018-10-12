@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="98w4khwrmnzlvn6i3pj1fnuua7ox7ea" />
+<product version="3" modelHash="ciank3i4zlmvd0iiksgwht4h5b31tnj">
+  <files names="AbstractionVarRef__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:FunctionType__BehaviorDescriptor.java:LambdaAbstraction__BehaviorDescriptor.java:LambdaApplication__BehaviorDescriptor.java:LambdaExpression__BehaviorDescriptor.java:LetExpression__BehaviorDescriptor.java:LetRef__BehaviorDescriptor.java:VariableOwner__BehaviorDescriptor.java" />
+</product>
 

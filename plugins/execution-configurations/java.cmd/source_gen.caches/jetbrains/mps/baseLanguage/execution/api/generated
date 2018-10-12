@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5dg04vjck90a363rhpb1sqcwf0k1a4g" />
+<product version="3" modelHash="3pvpbamnm01jdb95hndtuejftt370w5">
+  <files names="JarManifestBuilder.java:JavaConfigurationEditorComponent.java:JavaRunParameters.java:JavaRunParameters_Configuration.java:JavaRunParameters_Configuration_Editor.java:Java_Command.java:JvmArgs.java" />
+</product>
 

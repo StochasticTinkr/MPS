@@ -19,6 +19,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -45,6 +48,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -2963,8 +2967,8 @@
       <property role="IQ2nx" value="1224848525476" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="5u2GAt806ms" role="lGtFl">
-        <property role="YLQ7P" value="BaseLanguage elements are now considerred deprecated solely based on the presence of the @Deprecated annotation on them" />
         <property role="YLPcu" value="2018.3" />
+        <property role="YLQ7P" value="BaseLanguage elements are now considerred deprecated solely based on the presence of the @Deprecated annotation on them" />
       </node>
     </node>
     <node concept="PrWs8" id="hOIEijf" role="PrDN$">
@@ -4249,6 +4253,9 @@
     <node concept="PrWs8" id="38nmGbAZciQ" role="PzmwI">
       <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
     </node>
+    <node concept="PrWs8" id="3$ZGCDjhBX0" role="PzmwI">
+      <ref role="PrY4T" node="20YUQaJkyY_" resolve="IHasModifiers" />
+    </node>
     <node concept="1TJgyi" id="38nmGbAZqYk" role="1TKVEl">
       <property role="TrG5h" value="static" />
       <property role="IQ2nx" value="3609453419506282388" />
@@ -4406,6 +4413,16 @@
     <ref role="1TJDcQ" node="gEShNN5" resolve="GenericNewExpression" />
     <node concept="PrWs8" id="6kfBYRWHrp_" role="PzmwI">
       <ref role="PrY4T" node="hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="10BRnhaa76o">
+    <property role="EcuMT" value="1164142520228671896" />
+    <property role="TrG5h" value="JavaModifier" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" node="25pbpTNtsmA" resolve="Modifier" />
+    <node concept="t5JxF" id="10BRnhaa76p" role="lGtFl">
+      <property role="t5JxN" value="pure java modifier. Note that for the historical reasons all the java modifiers are still implemented via the concept properties" />
     </node>
   </node>
 </model>

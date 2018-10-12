@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="65ia6r9n4s37g2xkzwyem32pnstcjp6" />
+<product version="3" modelHash="2stca2je0ydx41i9z9ku7l1f66ich7m">
+  <files names="Askfoo_Query.java:Bar_Option.java:FacetAspectDescriptor.java:FacetManifest.java:Generator_Test.java:Generator__Facet.java:Maker__Facet.java:TextGen__Facet.java:Worker__Facet.java" />
+</product>
 

@@ -6,7 +6,25 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="12,0,29,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
+      <unit at="12,0,31,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:b6a70233-79fe-4a79-a356-99338b0be46c(jetbrains.mps.baseLanguage.jdk8.textGen)/4838165336399917874">
+    <file name="DefaultModifier_TextGen.java">
+      <node id="4838165336399917874" at="11,54,12,55" concept="2" />
+      <node id="4838165336399917919" at="12,55,13,26" concept="0" />
+      <node id="4838165336399917874" at="10,0,15,0" concept="1" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="4838165336399917874" at="11,54,13,26">
+        <var name="tgs" id="4838165336399917874" />
+      </scope>
+      <scope id="4838165336399917874" at="10,0,15,0">
+        <var name="ctx" id="4838165336399917874" />
+      </scope>
+      <unit id="4838165336399917874" at="9,0,16,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.DefaultModifier_TextGen" />
+    </file>
+    <file name="TextGenAspectDescriptor.java">
+      <node id="4838165336399917874" at="22,49,23,45" concept="3" />
+      <scope id="4838165336399917874" at="22,49,23,45" />
     </file>
   </root>
   <root nodeRef="r:b6a70233-79fe-4a79-a356-99338b0be46c(jetbrains.mps.baseLanguage.jdk8.textGen)/6434864236541625324">
@@ -25,8 +43,8 @@
       <unit id="6434864236541625324" at="12,0,21,0" name="jetbrains.mps.baseLanguage.jdk8.textGen.SuperInterfaceMethodCall_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="6434864236541625324" at="22,58,23,54" concept="3" />
-      <scope id="6434864236541625324" at="22,58,23,54" />
+      <node id="6434864236541625324" at="24,58,25,54" concept="3" />
+      <scope id="6434864236541625324" at="24,58,25,54" />
     </file>
   </root>
 </debug-info>

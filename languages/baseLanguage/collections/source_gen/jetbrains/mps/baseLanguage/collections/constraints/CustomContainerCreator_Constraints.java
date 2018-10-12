@@ -52,14 +52,12 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode expr = SNodeOperations.as((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
-              return ListScope.forResolvableElements(((expr != null) ? Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable__BehaviorDescriptor.deriveType_idhEwIVPz.invoke(SNodeOperations.as(SNodeOperations.getParent(expr), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), expr))).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c7e0L, 0x54a5d587c1f3c83fL, "containerType")))), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType")));
-                }
-              }) : Sequence.fromIterable(Collections.<SNode>emptyList())));
-            }
+            SNode expr = SNodeOperations.as((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+            return ListScope.forResolvableElements(((expr != null) ? Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable__BehaviorDescriptor.deriveType_idhEwIVPz.invoke(SNodeOperations.as(SNodeOperations.getParent(expr), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), expr))).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c7e0L, 0x54a5d587c1f3c83fL, "containerType")))), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType")));
+              }
+            }) : Sequence.fromIterable(Collections.<SNode>emptyList())));
           }
         };
       }

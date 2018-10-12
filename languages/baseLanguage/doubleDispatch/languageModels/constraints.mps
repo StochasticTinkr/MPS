@@ -12,6 +12,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -24,6 +25,10 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -59,13 +64,23 @@
           </node>
         </node>
         <node concept="3clFbF" id="147CB3QsUht" role="3cqZAp">
-          <node concept="2OqwBi" id="147CB3QsUhu" role="3clFbG">
-            <node concept="1mIQ4w" id="147CB3QsUhv" role="2OqNvi">
-              <node concept="chp4Y" id="147CB3QsUhw" role="cj9EA">
-                <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+          <node concept="22lmx$" id="7$vLFyJdNgk" role="3clFbG">
+            <node concept="2OqwBi" id="7$vLFyJdNEO" role="3uHU7w">
+              <node concept="nLn13" id="7$vLFyJdNsk" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="7$vLFyJdNZr" role="2OqNvi">
+                <node concept="chp4Y" id="7$vLFyJdOf0" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:38nmGbAZc61" resolve="IncompleteMemberDeclaration" />
+                </node>
               </node>
             </node>
-            <node concept="nLn13" id="147CB3QsUhx" role="2Oq$k0" />
+            <node concept="2OqwBi" id="147CB3QsUhu" role="3uHU7B">
+              <node concept="1mIQ4w" id="147CB3QsUhv" role="2OqNvi">
+                <node concept="chp4Y" id="147CB3QsUhw" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+                </node>
+              </node>
+              <node concept="nLn13" id="147CB3QsUhx" role="2Oq$k0" />
+            </node>
           </node>
         </node>
       </node>

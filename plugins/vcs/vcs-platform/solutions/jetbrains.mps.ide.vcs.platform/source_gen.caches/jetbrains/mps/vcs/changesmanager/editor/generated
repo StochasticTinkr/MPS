@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="86lqjdsia1c4r5b9q1exgnyl98npafx" />
+<product version="3" modelHash="5huen0d07qs29639akmaufa4phkbn9k">
+  <files names="BaseVersionEditorComponent.java:ChangeStripsPainter.java:ChangesStripActionsHelper.java:EditorHighlighter.java:EditorHighlighterFactory.java:PopupPanel.java:StripsChangeGroupLayout.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2qy0ooxpposz6pj9u74ei6z5japw269" />
+<product version="3" modelHash="2qy0ooxpposz6pj9u74ei6z5japw269">
+  <files names="BaseInstructionOperation_Constraints.java:ConstraintsAspectDescriptor.java:DataFlowBuilderDeclaration_Constraints.java:EmitStatement_Constraints.java:GetCodeForExpression_Constraints.java:LabelPosition_Constraints.java" />
+</product>
 

@@ -2,18 +2,18 @@
 <model ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="u42p" ref="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" />
@@ -825,9 +825,6 @@
         <node concept="3cpWs8" id="3ly2gVlmz4f" role="3cqZAp">
           <node concept="3cpWsn" id="3ly2gVlmz4g" role="3cpWs9">
             <property role="TrG5h" value="refactoringBody" />
-            <node concept="3uibUv" id="3ly2gVlmz4h" role="1tU5fm">
-              <ref role="3uigEE" node="2EZTs$tsIo8" resolve="RefactoringProcessor.RefactoringBody" />
-            </node>
             <node concept="2ShNRf" id="1knX_y6nHic" role="33vP2m">
               <node concept="1pGfFk" id="1knX_y6nHGY" role="2ShVmc">
                 <ref role="37wK5l" node="1knX_y6ntsC" resolve="RenameRefactoringBody" />
@@ -850,6 +847,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="3ly2gVlmz4h" role="1tU5fm">
+              <ref role="3uigEE" node="2EZTs$tsIo8" resolve="RefactoringProcessor.RefactoringBody" />
             </node>
           </node>
         </node>
@@ -1087,7 +1087,7 @@
   <node concept="3HP615" id="1F5g4zQqSPt">
     <property role="TrG5h" value="MoveNodesAction" />
     <node concept="3clFb_" id="1F5g4zQxi0e" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getName" />
       <node concept="3clFbS" id="1F5g4zQxi0h" role="3clF47" />
@@ -1095,7 +1095,7 @@
       <node concept="17QB3L" id="1F5g4zQxhZ9" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1F5g4zQqTc8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isApplicable" />
       <node concept="37vLTG" id="1F5g4zQqTiW" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -1112,7 +1112,7 @@
       <node concept="3clFbS" id="1F5g4zQqTcc" role="3clF47" />
     </node>
     <node concept="3clFb_" id="1F5g4zQqUnD" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="execute" />
       <node concept="37vLTG" id="1F5g4zQqUoH" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -3382,14 +3382,14 @@
       <property role="TrG5h" value="RefactoringBody" />
       <node concept="3clFb_" id="2EZTs$ts_ce" role="jymVt">
         <property role="TrG5h" value="getRefactoringName" />
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <node concept="3Tm1VV" id="2EZTs$ts_cf" role="1B3o_S" />
         <node concept="3clFbS" id="2EZTs$ts_cg" role="3clF47" />
         <node concept="17QB3L" id="2EZTs$ts_mJ" role="3clF45" />
       </node>
       <node concept="3clFb_" id="2EZTs$ts_Dv" role="jymVt">
         <property role="TrG5h" value="getAllAvailableParticipants" />
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <node concept="3Tm1VV" id="2EZTs$ts_Dw" role="1B3o_S" />
         <node concept="3clFbS" id="2EZTs$ts_Dx" role="3clF47" />
         <node concept="3uibUv" id="3ly2gVlnhAA" role="3clF45">
@@ -3411,7 +3411,7 @@
       </node>
       <node concept="3clFb_" id="2EZTs$tsEDp" role="jymVt">
         <property role="TrG5h" value="findInitialStates" />
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <node concept="3Tm1VV" id="2EZTs$tsEDq" role="1B3o_S" />
         <node concept="3clFbS" id="2EZTs$tsEDr" role="3clF47" />
         <node concept="_YKpA" id="2EZTs$tsEKn" role="3clF45">
@@ -3422,7 +3422,7 @@
       </node>
       <node concept="3clFb_" id="2EZTs$tsFaN" role="jymVt">
         <property role="TrG5h" value="doRefactor" />
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <node concept="37vLTG" id="2EZTs$tte4J" role="3clF46">
           <property role="TrG5h" value="participantStates" />
           <node concept="A3Dl8" id="2EZTs$tsFdH" role="1tU5fm">
@@ -3473,7 +3473,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="3ly2gVln_Kj" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getFinalStateFor" />
         <node concept="37vLTG" id="3ly2gVlnBxl" role="3clF46">
           <property role="TrG5h" value="initialState" />
@@ -3496,7 +3496,7 @@
       </node>
       <node concept="3clFb_" id="2EZTs$tsFHd" role="jymVt">
         <property role="TrG5h" value="doCleanup" />
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <node concept="3cqZAl" id="2EZTs$tsFHf" role="3clF45" />
         <node concept="3Tm1VV" id="2EZTs$tsFHg" role="1B3o_S" />
         <node concept="3clFbS" id="2EZTs$tsFHh" role="3clF47" />

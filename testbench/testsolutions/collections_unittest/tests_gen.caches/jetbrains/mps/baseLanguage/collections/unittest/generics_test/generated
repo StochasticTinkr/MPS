@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-12k29cly25th9zyhhoh7g6pprkooknh" />
+<product version="3" modelHash="8wcscwdtcfazs5mc5s2o0yqshh0669n">
+  <files names="BooleanSequence.java:Generics1_Test.java:IntegerSequence.java:MySequence.java" />
+</product>
 

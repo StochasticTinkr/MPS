@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1s9qu5jbzj1grmbrckvrfjm8nooiurb" />
+<product version="3" modelHash="-d7trupob7x92cb83irvu6rna93khmwc">
+  <files names="JavaSourceStubsModelRootEntry.java:JavaSourceStubsModelRootEntryFactory.java" />
+</product>
 

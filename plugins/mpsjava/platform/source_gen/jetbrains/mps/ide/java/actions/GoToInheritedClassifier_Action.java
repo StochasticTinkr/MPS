@@ -15,38 +15,21 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import com.intellij.openapi.progress.ProgressIndicator;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.GlobalScope;
-import java.util.function.Consumer;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
+import java.awt.event.InputEvent;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.editor.util.CaptionFunction;
 import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.impl.BackgroundableProcessIndicator;
+import jetbrains.mps.ide.editor.util.PopupSettingsBuilder;
+import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.MPSCodeInsightBundle;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -98,15 +81,8 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
+      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -118,75 +94,34 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     final SNode classifier = ((SNode) MapSequence.fromMap(_params).get("classifierNode"));
     final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-    final Wrappers._boolean isInterface = new Wrappers._boolean();
+    final Wrappers._boolean isClass = new Wrappers._boolean();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          isInterface.value = true;
-        } else {
-          isInterface.value = false;
-        }
+        isClass.value = SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
     });
-
-    final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
-
-    Task.Backgroundable task = new Task.Backgroundable(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true, PerformInBackgroundOption.ALWAYS_BACKGROUND) {
-      @Override
-      public void run(@NotNull final ProgressIndicator indicator) {
-        modelAccess.runReadAction(new Runnable() {
-          public void run() {
-            final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-            if (isInterface.value) {
-              SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
-              results.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
-                public void accept(SearchResult<Object> searchResult) {
-                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
-                }
-              });
-            } else {
-              SearchResults results1 = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-              results1.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
-                public void accept(SearchResult<Object> searchResult) {
-                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
-                }
-              });
-              SearchResults results2 = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), classifier, new GlobalScope(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository()), "jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
-              results2.getSearchResults().forEach(new Consumer<SearchResult<Object>>() {
-                public void accept(SearchResult<Object> searchResult) {
-                  ListSequence.fromList(result).addElement((SNode) searchResult.getObject());
-                }
-              });
-            }
-            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(result).select(new ISelector<SNode, SNodePointer>() {
-              public SNodePointer select(SNode it) {
-                return new SNodePointer(it);
-              }
-            }));
-            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
-              }
-            }).translate(new ITranslator2<SNode, SNodePointer>() {
-              public Iterable<SNodePointer> translate(SNode it) {
-                return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
-                  public SNodePointer select(SNode e) {
-                    return new SNodePointer(e);
-                  }
-                });
-              }
-            }));
+    InputEvent inputEvent = event.getInputEvent();
+    SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    DefaultBLClassComparator comparator = new DefaultBLClassComparator(repository);
+    DefaultBLClassNameFilter nameFilter = new DefaultBLClassNameFilter(repository);
+    CaptionFunction caption = GoToInheritedClassifier_Action.this.captionFun(((MPSProject) MapSequence.fromMap(_params).get("project")), classifier, _params);
+    DefaultNodeRenderer renderer = new DefaultNodeRenderer(repository);
+    PopupSettingsBuilder settings = new PopupSettingsBuilder(((MPSProject) MapSequence.fromMap(_params).get("project"))).captionFun(caption).renderer(renderer).queryFromNode(classifier).pointFromCellAndEvent(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), inputEvent).comparator(comparator).nameFilter(nameFilter);
+    if (isClass.value) {
+      GoToHelper.showPopupAndSearchNodeInBackground(settings.finders(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder")));
+    } else {
+      GoToHelper.showPopupAndSearchNodeInBackground(settings.finders(FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder"), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder")));
+    }
+  }
+  private CaptionFunction captionFun(final MPSProject mpsProject, final SNode node, final Map<String, Object> _params) {
+    return new CaptionFunction() {
+      public String caption(final int usagesFound, final boolean finished) {
+        return new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<String>() {
+          public String compute() {
+            return MPSCodeInsightBundle.message("goto.implementation.chooserTitle", SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), usagesFound, (finished ? "" : " so far"));
           }
         });
       }
-
-      @Override
-      public void onSuccess() {
-        RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
-        String title = "Choose inherited class to navigate to";
-        GoToContextMenuUtil.showNodeMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
-      }
     };
-    ProgressManager.getInstance().runProcessWithProgressAsynchronously(task, new BackgroundableProcessIndicator(task));
   }
 }

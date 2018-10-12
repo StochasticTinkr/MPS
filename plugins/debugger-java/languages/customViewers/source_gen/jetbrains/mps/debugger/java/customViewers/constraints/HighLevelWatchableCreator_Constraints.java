@@ -50,13 +50,11 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> result = new ArrayList<SNode>();
-              for (SNode container : SModelOperations.roots(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"))) {
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, 0x47047b766556943eL, "watchable"))));
-              }
-              return ListScope.forResolvableElements(result);
+            List<SNode> result = new ArrayList<SNode>();
+            for (SNode container : SModelOperations.roots(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"))) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, 0x47047b766556943eL, "watchable"))));
             }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

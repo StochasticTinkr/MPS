@@ -82,7 +82,7 @@ public final class EnumClass__BehaviorDescriptor extends BaseBHDescriptor {
       public boolean accept(final SNode toBeImplemented) {
         return !(ListSequence.fromList(ownMethods).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode own) {
-            return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(own)) && (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(toBeImplemented, own);
+            return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAnAbstractMethod_id28P2dHxCoRl.invoke(own)) && (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(toBeImplemented, own);
           }
         }));
       }

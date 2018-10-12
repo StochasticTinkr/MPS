@@ -43,10 +43,8 @@ public class ForEachVariableReference_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
-              return (scope == null ? new EmptyScope() : scope);
-            }
+            Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+            return (scope == null ? new EmptyScope() : scope);
           }
         };
       }

@@ -18,8 +18,8 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
+import jetbrains.mps.make.delta.IDelta;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -27,12 +27,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
-import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
+import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.smodel.resources.DResource;
@@ -80,9 +82,9 @@ public class Binaries_Facet extends IFacet.Stub {
               progressMonitor.start("Copying resources", 2);
               progressMonitor.step("Collecting");
 
+              final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
               try {
                 final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
-                final List<FileProcessor> fpList = ListSequence.fromList(new ArrayList<FileProcessor>());
 
                 // XXX there seems to be no need to depend from Generate task now? 
                 final SRepository repository = monitor.getSession().getProject().getRepository();
@@ -101,26 +103,26 @@ public class Binaries_Facet extends IFacet.Stub {
 
                     for (SModel model : Sequence.fromIterable(models)) {
                       final IFile outputDir = Target_make.vars(pa.global()).pathToFile().invoke(SModelOperations.getOutputLocation(model).getPath());
-                      final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
-                      ListSequence.fromList(fpList).addElement(fp);
-                      final FilesDelta fd = new FilesDelta(outputDir);
-                      ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).translate(new ITranslator2<SNode, Tuples._2<IFile, byte[]>>() {
+                      Iterable<Tuples._2<IFile, byte[]>> generatedBinaryFiles = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).translate(new ITranslator2<SNode, Tuples._2<IFile, byte[]>>() {
                         public Iterable<Tuples._2<IFile, byte[]>> translate(SNode it) {
                           return (List<Tuples._2<IFile, byte[]>>) Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputDir);
                         }
-                      }).where(new NotNullWhereFilter<Tuples._2<IFile, byte[]>>()).visitAll(new IVisitor<Tuples._2<IFile, byte[]>>() {
+                      }).where(new NotNullWhereFilter<Tuples._2<IFile, byte[]>>());
+                      if (Sequence.fromIterable(generatedBinaryFiles).isEmpty()) {
+                        continue;
+                      }
+
+                      final FileDeltaCollector fdc = new FileDeltaCollector(new FilesDelta(new DeltaKey(model.getModule(), model)), outputDir, fp);
+                      Sequence.fromIterable(generatedBinaryFiles).visitAll(new IVisitor<Tuples._2<IFile, byte[]>>() {
                         public void visit(Tuples._2<IFile, byte[]> d) {
                           if (d._1() != null) {
-                            if (fp.saveContent(d._0(), d._1())) {
-                              fd.written(d._0());
-                            } else {
-                              fd.kept(d._0());
-                            }
+                            fdc.saveStream(d._0(), d._1());
                           }
                         }
                       });
-                      new StaleFilesCollector(outputDir).updateDelta(fd);
-                      ListSequence.fromList(deltaList).addElement(fd);
+                      // though StaleFilesCollector is discouraged, we need to delete old resource files, therefore we have to use it here unless we move Resource processing into textgen aspect 
+                      new StaleFilesCollector(outputDir).updateDelta(fdc.getDelta());
+                      ListSequence.fromList(deltaList).addElement(fdc.getDelta());
                     }
                   }
                 });
@@ -132,9 +134,7 @@ public class Binaries_Facet extends IFacet.Stub {
 
                 FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
-                    for (FileProcessor fp : ListSequence.fromList(fpList)) {
-                      fp.flushChanges();
-                    }
+                    fp.flushChanges();
                   }
                 });
               } finally {

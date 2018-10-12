@@ -51,26 +51,24 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Iterable<SNode> unusedComponents = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"))).where(new IWhereFilter<SNode>() {
-                public boolean accept(final SNode b) {
-                  return ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode u) {
-                      return !(Objects.equals(u, _context.getContextNode()));
-                    }
-                  }).all(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode u) {
-                      return !(Objects.equals(SLinkOperations.getTarget(u, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, 0x4ed97160b0a7fba5L, "usedComponent")), b));
-                    }
-                  });
-                }
-              });
-              return new ListScope(unusedComponents) {
-                public String getName(SNode child) {
-                  return (String) Component__BehaviorDescriptor.fullName_id4Vpsm2KEoLo.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component")));
-                }
-              };
-            }
+            Iterable<SNode> unusedComponents = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"))).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode b) {
+                return ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode u) {
+                    return !(Objects.equals(u, _context.getContextNode()));
+                  }
+                }).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode u) {
+                    return !(Objects.equals(SLinkOperations.getTarget(u, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, 0x4ed97160b0a7fba5L, "usedComponent")), b));
+                  }
+                });
+              }
+            });
+            return new ListScope(unusedComponents) {
+              public String getName(SNode child) {
+                return (String) Component__BehaviorDescriptor.fullName_id4Vpsm2KEoLo.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component")));
+              }
+            };
           }
         };
       }

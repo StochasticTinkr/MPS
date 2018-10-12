@@ -50,7 +50,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createRefNode_0());
-    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
   private EditorCell createConstant_0() {
@@ -116,14 +115,5 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     protected String getNoTargetText() {
       return "<no foundNode>";
     }
-  }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
-    editorCell.setCellId("Constant_sbkml9_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }

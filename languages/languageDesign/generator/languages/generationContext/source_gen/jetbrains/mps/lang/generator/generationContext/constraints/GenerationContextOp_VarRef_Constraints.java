@@ -58,17 +58,15 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode contextNode = _context.getContextNode();
-              List<SNode> vars = new ArrayList<SNode>();
-              while ((contextNode != null)) {
-                if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro"))) {
-                  ListSequence.fromList(vars).addElement(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro")));
-                }
-                contextNode = TraverseUtil.parent(contextNode);
+            SNode contextNode = _context.getContextNode();
+            List<SNode> vars = new ArrayList<SNode>();
+            while ((contextNode != null)) {
+              if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro"))) {
+                ListSequence.fromList(vars).addElement(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro")));
               }
-              return ListScope.forResolvableElements(vars);
+              contextNode = TraverseUtil.parent(contextNode);
             }
+            return ListScope.forResolvableElements(vars);
           }
         };
       }

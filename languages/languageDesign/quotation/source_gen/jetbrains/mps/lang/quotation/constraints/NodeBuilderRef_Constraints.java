@@ -71,13 +71,11 @@ public class NodeBuilderRef_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode lval = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), true, false);
-              if (lval == null) {
-                return new EmptyScope();
-              }
-              return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, MetaAdapterByDeclaration.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(lval, MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))));
+            SNode lval = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), true, false);
+            if (lval == null) {
+              return new EmptyScope();
             }
+            return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, MetaAdapterByDeclaration.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(lval, MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))));
           }
         };
       }

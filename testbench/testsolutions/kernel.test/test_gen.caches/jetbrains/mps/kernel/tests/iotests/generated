@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5klq009ceauimji61mdo4i4txmvozit" />
+<product version="3" modelHash="5egfwp9ng54pdcbs1lc0siih0xa4eds">
+  <files names="FacetDescriptorsIO_Test.java:TestUtils.java" />
+</product>
 

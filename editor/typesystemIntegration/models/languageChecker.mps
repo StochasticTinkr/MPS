@@ -44,9 +44,9 @@
     <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
-    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="dl8v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.validation(MPS.Core/)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1993,6 +1993,9 @@
     <node concept="312cEu" id="1$3BPv3W06D" role="jymVt">
       <property role="TrG5h" value="ResolveReferenceEditorBasedQuickFix" />
       <property role="2bfB8j" value="false" />
+      <node concept="3uibUv" id="5NI6bHmdZDf" role="EKbjA">
+        <ref role="3uigEE" to="n70j:~EditorContextQuickfix" resolve="EditorContextQuickfix" />
+      </node>
       <node concept="3Tm6S6" id="2uxkWp9XtiP" role="1B3o_S" />
       <node concept="3clFbW" id="1$3BPv3W06F" role="jymVt">
         <node concept="3cqZAl" id="1$3BPv3W06G" role="3clF45" />
@@ -2152,9 +2155,6 @@
       </node>
       <node concept="3uibUv" id="5s7RUu7Mr9r" role="1zkMxy">
         <ref role="3uigEE" to="wsw7:1$3BPv3W06D" resolve="RefScopeChecker.ResolveReferenceQuickFix" />
-      </node>
-      <node concept="3uibUv" id="5NI6bHmdZDf" role="EKbjA">
-        <ref role="3uigEE" to="n70j:~EditorContextQuickfix" resolve="EditorContextQuickfix" />
       </node>
     </node>
     <node concept="3Tm1VV" id="2uxkWp9VnLd" role="1B3o_S" />

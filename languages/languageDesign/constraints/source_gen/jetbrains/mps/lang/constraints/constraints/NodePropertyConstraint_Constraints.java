@@ -48,19 +48,17 @@ public class NodePropertyConstraint_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              // properties declared in specified concept 
-              SNode applicableConcept = NodePropertyConstraint__BehaviorDescriptor.getApplicableConcept_idhEwIoOT.invoke(_context.getReferenceNode());
-              if (applicableConcept == null) {
-                SNode root = SNodeOperations.getContainingRoot(_context.getContextNode());
-                if (SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
-                  applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"));
-                } else {
-                  applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
-                }
+            // properties declared in specified concept 
+            SNode applicableConcept = NodePropertyConstraint__BehaviorDescriptor.getApplicableConcept_idhEwIoOT.invoke(_context.getReferenceNode());
+            if (applicableConcept == null) {
+              SNode root = SNodeOperations.getContainingRoot(_context.getContextNode());
+              if (SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
+                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"));
+              } else {
+                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
               }
-              return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(applicableConcept));
             }
+            return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(applicableConcept));
           }
         };
       }

@@ -27,10 +27,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.stream.IntStream" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaKey" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.TextGenOutcomeResource" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />

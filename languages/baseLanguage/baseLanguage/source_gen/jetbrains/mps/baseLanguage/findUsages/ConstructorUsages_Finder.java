@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -41,13 +42,13 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
       // search for straight usages & search for SUPER calls 
       // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS 
       for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
-        ListSequence.fromList(_results).addElement(nodeUsage);
+        callback.onUsageFound(createSingleResult(nodeUsage));
       }
       // WORKAROUND - FIND SUPER() CALLS 
       for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), scope, monitor.subTask(1)))) {
@@ -68,7 +69,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
                 }
               }
               if (thisConstructor) {
-                ListSequence.fromList(_results).addElement(invocationNode);
+                callback.onUsageFound(createSingleResult(invocationNode));
               }
             }
           }
@@ -88,7 +89,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
               }
             }
             if (thisConstructor) {
-              ListSequence.fromList(_results).addElement(enumConstant);
+              callback.onUsageFound(createSingleResult(enumConstant));
             }
           }
         }
@@ -97,6 +98,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Constructor Usages";

@@ -2,10 +2,10 @@
 <model ref="r:6e42326f-4bc0-4b77-a711-f3d4535f48d5(jetbrains.mps.ide.script.plugin.migrationtool)">
   <persistence version="9" />
   <languages>
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="7" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
   </languages>
   <imports>
     <import index="tp33" ref="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" />
@@ -3153,6 +3153,9 @@
       <node concept="2AHcQZ" id="3tYsUK_S1Vt" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+      <node concept="2AHcQZ" id="1jwh7LzqNEN" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
     <node concept="3clFb_" id="6m98d5YYbKm" role="jymVt">
       <property role="TrG5h" value="getRefactoring" />
@@ -3318,7 +3321,7 @@
     <property role="TrG5h" value="ResultsListener" />
     <node concept="3Tm1VV" id="DTcS_lxT1P" role="1B3o_S" />
     <node concept="3clFb_" id="DTcS_lxT1Q" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="resultsChanged" />
       <property role="DiZV1" value="false" />
       <node concept="37vLTG" id="DTcS_ly7T4" role="3clF46">
@@ -3539,12 +3542,15 @@
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="DTcS_lxVfB" role="11_B2D">
                 <ref role="3uigEE" to="9erk:~SearchResult" resolve="SearchResult" />
-                <node concept="3uibUv" id="DTcS_lxVfD" role="11_B2D">
+                <node concept="3uibUv" id="1VgT8rg7SZ5" role="11_B2D">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="DTcS_lxT39" role="33vP2m">
+              <node concept="liA8E" id="6hZLf2XJWJI" role="2OqNvi">
+                <ref role="37wK5l" to="9erk:~SearchResults.getNotNullResults():java.util.List" resolve="getNotNullResults" />
+              </node>
               <node concept="2OqwBi" id="DTcS_lxT3a" role="2Oq$k0">
                 <node concept="37vLTw" id="2BHiRxeulxH" role="2Oq$k0">
                   <ref role="3cqZAo" node="DTcS_lxT1W" resolve="myFinder" />
@@ -3552,9 +3558,6 @@
                 <node concept="liA8E" id="DTcS_lxT3c" role="2OqNvi">
                   <ref role="37wK5l" node="6m98d5YYbKy" resolve="getLastSearchResults" />
                 </node>
-              </node>
-              <node concept="liA8E" id="DTcS_lxT3d" role="2OqNvi">
-                <ref role="37wK5l" to="9erk:~SearchResults.getAliveResults():java.util.List" resolve="getAliveResults" />
               </node>
             </node>
           </node>
@@ -3568,6 +3571,9 @@
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="DTcS_lxVf$" role="1tU5fm">
               <ref role="3uigEE" to="9erk:~SearchResult" resolve="SearchResult" />
+              <node concept="3uibUv" id="1VgT8rg7U3Q" role="11_B2D">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="DTcS_lxT3i" role="2LFqv$">

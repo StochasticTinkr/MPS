@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_DefaultModifier;
   private ConceptPresentation props_SuperInterfaceMethodCall;
 
   @Override
@@ -16,6 +17,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.DefaultModifier:
+        if (props_DefaultModifier == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the 'default' modifier for an interface method");
+          cpb.rawPresentation("default");
+          props_DefaultModifier = cpb.create();
+        }
+        return props_DefaultModifier;
       case LanguageConceptSwitch.SuperInterfaceMethodCall:
         if (props_SuperInterfaceMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

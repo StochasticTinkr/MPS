@@ -77,19 +77,17 @@ public class ReferenceReductionRule_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              if (_context.getReferenceNode() == null) {
-                return new EmptyScope();
-              }
-              final SNode linkOwner = LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link")));
-
-              return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-                @Override
-                public boolean isExcluded(SNode node) {
-                  return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(node, linkOwner));
-                }
-              };
+            if (_context.getReferenceNode() == null) {
+              return new EmptyScope();
             }
+            final SNode linkOwner = LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link")));
+
+            return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+              @Override
+              public boolean isExcluded(SNode node) {
+                return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(node, linkOwner));
+              }
+            };
           }
         };
       }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8kvnul3zhf63ehh6fa2asaemwze58ir" />
+<product version="3" modelHash="2zek1vxnqyxga43j6ewolbmw2gw0l75">
+  <files names="ConceptAndSuperConceptsCache.java:ConceptAndSuperConceptsScope.java:Datasets.java:IReferenceInfoResolver.java:SModelSearchUtil.java" />
+</product>
 
