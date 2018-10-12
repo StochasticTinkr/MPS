@@ -128,6 +128,7 @@ public interface IssueKindReportItem extends ReportItem {
   }
 
   enum KindLevel {
+    PROJECT("project"),
     STRUCTURE("structure"),
     CONSTRAINTS("constraints"),
     TYPESYSTEM("typesystem"),
@@ -144,9 +145,9 @@ public interface IssueKindReportItem extends ReportItem {
   CheckerCategory TARGET_CONCEPTS = new CheckerCategory(KindLevel.CONSTRAINTS, "target concepts");
   CheckerCategory REFERENCE_SCOPES = new CheckerCategory(KindLevel.CONSTRAINTS, "reference scopes");
   CheckerCategory TYPESYSTEM = new CheckerCategory(KindLevel.CONSTRAINTS, "typesystem");
-  CheckerCategory MODEL_PROPERTIES = new CheckerCategory(KindLevel.STRUCTURE,"model properties");
+  CheckerCategory MODEL_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"model properties");
   CheckerCategory LANGUAGE_IMPORTS = new CheckerCategory(KindLevel.STRUCTURE,"language imports");
-  CheckerCategory MODULE_PROPERTIES = new CheckerCategory(KindLevel.STRUCTURE,"module properties");
+  CheckerCategory MODULE_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"module properties");
   CheckerCategory ENVIRONMENT_PROBLEM = new CheckerCategory(KindLevel.STRUCTURE,"environment problem");
 
   ItemKind TARGET_CONCEPT = TARGET_CONCEPTS.deriveItemKind();

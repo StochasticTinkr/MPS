@@ -38,6 +38,7 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.errors.item.QuickFixReportItem;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -184,22 +185,17 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     final boolean wasForceRunQuickFixes = myForceRunQuickFixes;
     myForceRunQuickFixes = false;
     if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
-      editorContext.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
-            public void run() {
-              for (QuickFixBase fix : quickFixesToExecute) {
-                if (fix.isAlive(editorContext.getRepository())) {
-                  QuickFixRuntimeEditorWrapper.getInstance(fix).execute(editorContext, false);
-                  fix.execute(editorContext.getRepository());
-                  if (wasForceRunQuickFixes) {
-                    // forcing to execute quickFixes for all errors reported on the modified model 
-                    myForceRunQuickFixes = true;
-                  }
-                }
+          for (QuickFixBase fix : quickFixesToExecute) {
+            if (fix.isAlive(editorContext.getRepository())) {
+              QuickFixRuntimeEditorWrapper.getInstance(fix).execute(editorContext, false);
+              if (wasForceRunQuickFixes) {
+                // forcing to execute quickFixes for all errors reported on the modified model 
+                myForceRunQuickFixes = true;
               }
             }
-          });
+          }
         }
       });
     }

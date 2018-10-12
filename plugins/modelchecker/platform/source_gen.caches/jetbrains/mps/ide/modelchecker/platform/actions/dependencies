@@ -130,12 +130,14 @@
     <classNode dependClassName="jetbrains.mps.checkers.RefScopeChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.UsedLanguagesChecker" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.UnresolvedReferencesChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.validation.StructureChecker" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
+    <classNode dependClassName="jetbrains.mps.validation.ValidationSettings" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

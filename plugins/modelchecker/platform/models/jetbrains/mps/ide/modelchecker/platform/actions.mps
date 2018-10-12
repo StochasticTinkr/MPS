@@ -565,8 +565,186 @@
       </node>
       <node concept="3Tm1VV" id="3etVqSRKzvj" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="3etVqSRKzrD" role="jymVt">
+    <node concept="3clFb_" id="3GsVPVaO85s" role="jymVt">
       <property role="TrG5h" value="getSpecificCheckers" />
+      <node concept="3clFbS" id="3GsVPVaO85t" role="3clF47">
+        <node concept="3cpWs8" id="3GsVPVaO85u" role="3cqZAp">
+          <node concept="3cpWsn" id="3GsVPVaO85v" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="3GsVPVaO85_" role="1tU5fm">
+              <node concept="3uibUv" id="3GsVPVaO85A" role="_ZDj9">
+                <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
+                <node concept="3qTvmN" id="3GsVPVaO85B" role="11_B2D" />
+                <node concept="3qTvmN" id="3GsVPVaO85C" role="11_B2D" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="3GsVPVaOZSb" role="33vP2m">
+              <node concept="Tc6Ow" id="3GsVPVaOZGz" role="2ShVmc">
+                <node concept="3uibUv" id="3GsVPVaOZG$" role="HW$YZ">
+                  <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
+                  <node concept="3qTvmN" id="3GsVPVaOZG_" role="11_B2D" />
+                  <node concept="3qTvmN" id="3GsVPVaOZGA" role="11_B2D" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3GsVPVaOyVE" role="3cqZAp">
+          <node concept="3cpWsn" id="3GsVPVaOyVF" role="3cpWs9">
+            <property role="TrG5h" value="checkingLevel" />
+            <node concept="3uibUv" id="3GsVPVaOyVD" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+            </node>
+            <node concept="2OqwBi" id="3GsVPVaOyVG" role="33vP2m">
+              <node concept="2OqwBi" id="3GsVPVaOyVH" role="2Oq$k0">
+                <node concept="37vLTw" id="3GsVPVaOyVI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3etVqSRKzph" resolve="myState" />
+                </node>
+                <node concept="2OwXpG" id="3GsVPVaOyVJ" role="2OqNvi">
+                  <ref role="2Oxat5" node="1VtEqfXHaMH" resolve="myCheckingLevel" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3GsVPVaOyVK" role="2OqNvi">
+                <ref role="37wK5l" node="3GsVPVaN$vv" resolve="getKindLevel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="3GsVPVaOHoC" role="3cqZAp">
+          <node concept="2GrKxI" id="3GsVPVaOHoE" role="2Gsz3X">
+            <property role="TrG5h" value="checker" />
+          </node>
+          <node concept="3clFbS" id="3GsVPVaOHoI" role="2LFqv$">
+            <node concept="3cpWs8" id="3GsVPVaQ2kQ" role="3cqZAp">
+              <node concept="3cpWsn" id="3GsVPVaQ2kR" role="3cpWs9">
+                <property role="TrG5h" value="checkerLevel" />
+                <node concept="3uibUv" id="3GsVPVaQ2kn" role="1tU5fm">
+                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+                </node>
+                <node concept="2OqwBi" id="3GsVPVaQ2kS" role="33vP2m">
+                  <node concept="2OqwBi" id="3GsVPVaQ2kT" role="2Oq$k0">
+                    <node concept="2GrUjf" id="3GsVPVaQ2kU" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="3GsVPVaOHoE" resolve="checker" />
+                    </node>
+                    <node concept="liA8E" id="3GsVPVaQ2kV" role="2OqNvi">
+                      <ref role="37wK5l" to="k2t0:~IChecker.getCategory():jetbrains.mps.errors.item.IssueKindReportItem$CheckerCategory" resolve="getCategory" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3GsVPVaQ2kW" role="2OqNvi">
+                    <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.getKindLevel():jetbrains.mps.errors.item.IssueKindReportItem$KindLevel" resolve="getKindLevel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3KaCP$" id="3GsVPVaOTKF" role="3cqZAp">
+              <node concept="37vLTw" id="3GsVPVaQ2kX" role="3KbGdf">
+                <ref role="3cqZAo" node="3GsVPVaQ2kR" resolve="checkerLevel" />
+              </node>
+              <node concept="3KbdKl" id="3GsVPVaOV6U" role="3KbHQx">
+                <node concept="Rm8GO" id="3GsVPVaOW92" role="3Kbmr1">
+                  <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.MANUAL" resolve="MANUAL" />
+                  <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+                </node>
+                <node concept="3clFbS" id="3GsVPVaOV6W" role="3Kbo56">
+                  <node concept="3clFbJ" id="3GsVPVaO86P" role="3cqZAp">
+                    <node concept="3clFbS" id="3GsVPVaO86Q" role="3clFbx">
+                      <node concept="3clFbF" id="3GsVPVaO86R" role="3cqZAp">
+                        <node concept="2OqwBi" id="3GsVPVaO86S" role="3clFbG">
+                          <node concept="TSZUe" id="3GsVPVaO86T" role="2OqNvi">
+                            <node concept="2GrUjf" id="3GsVPVaOXZn" role="25WWJ7">
+                              <ref role="2Gs0qQ" node="3GsVPVaOHoE" resolve="checker" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="3GsVPVaO86W" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3GsVPVaO85v" resolve="result" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1rXfSq" id="3GsVPVaO86X" role="3clFbw">
+                      <ref role="37wK5l" node="1VtEqfXH_WQ" resolve="isIncludeAdditionalChecks" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="3GsVPVaQ1$E" role="3Kb1Dw">
+                <node concept="3clFbJ" id="3GsVPVaQ1Xl" role="3cqZAp">
+                  <node concept="3clFbS" id="3GsVPVaQ1Xn" role="3clFbx">
+                    <node concept="3clFbF" id="3GsVPVaQ6wm" role="3cqZAp">
+                      <node concept="2OqwBi" id="3GsVPVaQ6wn" role="3clFbG">
+                        <node concept="TSZUe" id="3GsVPVaQ6wo" role="2OqNvi">
+                          <node concept="2GrUjf" id="3GsVPVaQ6wp" role="25WWJ7">
+                            <ref role="2Gs0qQ" node="3GsVPVaOHoE" resolve="checker" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="3GsVPVaQ6wq" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3GsVPVaO85v" resolve="result" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2dkUwp" id="3GsVPVaQoPa" role="3clFbw">
+                    <node concept="2OqwBi" id="3GsVPVaQ3sZ" role="3uHU7B">
+                      <node concept="37vLTw" id="3GsVPVaQ2V0" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3GsVPVaQ2kR" resolve="checkerLevel" />
+                      </node>
+                      <node concept="liA8E" id="3GsVPVaQ3Qr" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Enum.compareTo(java.lang.Enum):int" resolve="compareTo" />
+                        <node concept="37vLTw" id="3GsVPVaQ4w$" role="37wK5m">
+                          <ref role="3cqZAo" node="3GsVPVaOyVF" resolve="checkingLevel" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cmrfG" id="3GsVPVaQpsf" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3GsVPVaOk6H" role="2GsD0m">
+            <node concept="2OqwBi" id="3GsVPVaOk6I" role="2Oq$k0">
+              <node concept="2YIFZM" id="3GsVPVaOk6J" role="2Oq$k0">
+                <ref role="37wK5l" to="dl8v:~ValidationSettings.getInstance():jetbrains.mps.validation.ValidationSettings" resolve="getInstance" />
+                <ref role="1Pybhc" to="dl8v:~ValidationSettings" resolve="ValidationSettings" />
+              </node>
+              <node concept="liA8E" id="3GsVPVaOk6K" role="2OqNvi">
+                <ref role="37wK5l" to="dl8v:~ValidationSettings.getCheckerRegistry():jetbrains.mps.errors.CheckerRegistry" resolve="getCheckerRegistry" />
+              </node>
+            </node>
+            <node concept="liA8E" id="3GsVPVaOk6L" role="2OqNvi">
+              <ref role="37wK5l" to="2gg1:~CheckerRegistry.getCheckers():java.util.List" resolve="getCheckers" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3GsVPVaOqG0" role="3cqZAp" />
+        <node concept="3cpWs6" id="3GsVPVaO86Y" role="3cqZAp">
+          <node concept="37vLTw" id="3GsVPVaO86Z" role="3cqZAk">
+            <ref role="3cqZAo" node="3GsVPVaO85v" resolve="result" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3GsVPVaO870" role="1B3o_S" />
+      <node concept="_YKpA" id="3GsVPVaO871" role="3clF45">
+        <node concept="3uibUv" id="3GsVPVaO872" role="_ZDj9">
+          <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
+          <node concept="3qTvmN" id="3GsVPVaO873" role="11_B2D" />
+          <node concept="3qTvmN" id="3GsVPVaO874" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3GsVPVaO875" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="3GsVPVaO876" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="3GsVPVaO877" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="3etVqSRKzrD" role="jymVt">
+      <property role="TrG5h" value="getSpecificCheckers_" />
       <node concept="3clFbS" id="3etVqSRKzrE" role="3clF47">
         <node concept="3cpWs8" id="3etVqSRKzrF" role="3cqZAp">
           <node concept="3cpWsn" id="3etVqSRKzrG" role="3cpWs9">
@@ -1046,32 +1224,54 @@
     <node concept="Qs71p" id="3J4tNviCaHD" role="jymVt">
       <property role="TrG5h" value="CheckingLevel" />
       <node concept="2tJIrI" id="3J4tNviCbty" role="jymVt" />
+      <node concept="312cEg" id="3GsVPVaNzA0" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="myKindLevel" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm6S6" id="3GsVPVaNxLl" role="1B3o_S" />
+        <node concept="3uibUv" id="3GsVPVaNz$3" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
+      </node>
       <node concept="QsSxf" id="3J4tNviCb0p" role="Qtgdg">
         <property role="TrG5h" value="BASIC" />
         <ref role="37wK5l" node="3J4tNviCbwz" resolve="ModelCheckerSettings.CheckingLevel" />
+        <node concept="Rm8GO" id="3GsVPVaNLx1" role="37wK5m">
+          <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.PROJECT" resolve="PROJECT" />
+          <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
         <node concept="Xl_RD" id="3J4tNviCb6X" role="37wK5m">
           <property role="Xl_RC" value="Basic" />
         </node>
         <node concept="Xl_RD" id="5bed3YcLtvp" role="37wK5m">
           <property role="Xl_RC" value="Project structure is correct" />
         </node>
-        <node concept="Xl_RD" id="5bed3YcLDGS" role="37wK5m">
-          <property role="Xl_RC" value="Each reference has target" />
-        </node>
       </node>
       <node concept="QsSxf" id="3J4tNviCb7w" role="Qtgdg">
         <property role="TrG5h" value="STRUCTURE" />
         <ref role="37wK5l" node="3J4tNviCbwz" resolve="ModelCheckerSettings.CheckingLevel" />
+        <node concept="Rm8GO" id="3GsVPVaNLAh" role="37wK5m">
+          <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.STRUCTURE" resolve="STRUCTURE" />
+          <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
         <node concept="Xl_RD" id="3J4tNviCbem" role="37wK5m">
           <property role="Xl_RC" value="Structure" />
         </node>
         <node concept="Xl_RD" id="5bed3YcLu2i" role="37wK5m">
           <property role="Xl_RC" value="Code conforms with languages' structure" />
         </node>
+        <node concept="Xl_RD" id="5bed3YcLDGS" role="37wK5m">
+          <property role="Xl_RC" value="Each reference has target" />
+        </node>
       </node>
       <node concept="QsSxf" id="3J4tNviCbeH" role="Qtgdg">
         <property role="TrG5h" value="CONSTRAINTS" />
         <ref role="37wK5l" node="3J4tNviCbwz" resolve="ModelCheckerSettings.CheckingLevel" />
+        <node concept="Rm8GO" id="3GsVPVaNLGb" role="37wK5m">
+          <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.CONSTRAINTS" resolve="CONSTRAINTS" />
+          <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
         <node concept="Xl_RD" id="3J4tNviCbly" role="37wK5m">
           <property role="Xl_RC" value="Constraints" />
         </node>
@@ -1082,6 +1282,10 @@
       <node concept="QsSxf" id="3J4tNviCblZ" role="Qtgdg">
         <property role="TrG5h" value="TYPESYSTEM" />
         <ref role="37wK5l" node="3J4tNviCbwz" resolve="ModelCheckerSettings.CheckingLevel" />
+        <node concept="Rm8GO" id="3GsVPVaNMDS" role="37wK5m">
+          <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.TYPESYSTEM" resolve="TYPESYSTEM" />
+          <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
         <node concept="Xl_RD" id="3J4tNviCbsZ" role="37wK5m">
           <property role="Xl_RC" value="Typesystem" />
         </node>
@@ -1109,6 +1313,16 @@
       <node concept="3clFbW" id="3J4tNviCbwz" role="jymVt">
         <node concept="3cqZAl" id="3J4tNviCbw$" role="3clF45" />
         <node concept="3clFbS" id="3J4tNviCbwB" role="3clF47">
+          <node concept="3clFbF" id="3GsVPVaNDnY" role="3cqZAp">
+            <node concept="37vLTI" id="3GsVPVaNEyF" role="3clFbG">
+              <node concept="37vLTw" id="3GsVPVaNFbq" role="37vLTx">
+                <ref role="3cqZAo" node="3GsVPVaNCk5" resolve="kindLevel" />
+              </node>
+              <node concept="37vLTw" id="3GsVPVaNDnW" role="37vLTJ">
+                <ref role="3cqZAo" node="3GsVPVaNzA0" resolve="myKindLevel" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="3J4tNviCbES" role="3cqZAp">
             <node concept="37vLTI" id="3J4tNviCbEU" role="3clFbG">
               <node concept="37vLTw" id="3J4tNviCbWU" role="37vLTJ">
@@ -1130,6 +1344,12 @@
             </node>
           </node>
         </node>
+        <node concept="37vLTG" id="3GsVPVaNCk5" role="3clF46">
+          <property role="TrG5h" value="kindLevel" />
+          <node concept="3uibUv" id="3GsVPVaNCJa" role="1tU5fm">
+            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+          </node>
+        </node>
         <node concept="37vLTG" id="3J4tNviCbB4" role="3clF46">
           <property role="TrG5h" value="presentation" />
           <node concept="3uibUv" id="3J4tNviCbB3" role="1tU5fm">
@@ -1141,6 +1361,20 @@
           <node concept="8X2XB" id="5bed3YcLDAp" role="1tU5fm">
             <node concept="3uibUv" id="5bed3YcLpMa" role="8Xvag">
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFb_" id="3GsVPVaN$vv" role="jymVt">
+        <property role="TrG5h" value="getKindLevel" />
+        <node concept="3uibUv" id="3GsVPVaN$vw" role="3clF45">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+        </node>
+        <node concept="3Tm1VV" id="3GsVPVaN$vx" role="1B3o_S" />
+        <node concept="3clFbS" id="3GsVPVaN$vy" role="3clF47">
+          <node concept="3clFbF" id="3GsVPVaN$vz" role="3cqZAp">
+            <node concept="37vLTw" id="3GsVPVaN$vu" role="3clFbG">
+              <ref role="3cqZAo" node="3GsVPVaNzA0" resolve="myKindLevel" />
             </node>
           </node>
         </node>
@@ -4361,7 +4595,7 @@
                     </node>
                     <node concept="2OqwBi" id="3pNk_u$aoX9" role="37wK5m">
                       <node concept="liA8E" id="3pNk_u$aoXa" role="2OqNvi">
-                        <ref role="37wK5l" node="3etVqSRKzrD" resolve="getSpecificCheckers" />
+                        <ref role="37wK5l" node="3GsVPVaO85s" resolve="getSpecificCheckers" />
                         <node concept="37vLTw" id="3pNk_u$axKp" role="37wK5m">
                           <ref role="3cqZAo" node="3pNk_u$axiz" resolve="mpsProject" />
                         </node>
@@ -6959,7 +7193,7 @@
               </node>
               <node concept="2OqwBi" id="3etVqSRKzMx" role="37wK5m">
                 <node concept="liA8E" id="3etVqSRKzMy" role="2OqNvi">
-                  <ref role="37wK5l" node="3etVqSRKzrD" resolve="getSpecificCheckers" />
+                  <ref role="37wK5l" node="3GsVPVaO85s" resolve="getSpecificCheckers" />
                   <node concept="37vLTw" id="2$1L9HI9xy5" role="37wK5m">
                     <ref role="3cqZAo" node="2K4NeDxB5Kx" resolve="myProject" />
                   </node>
