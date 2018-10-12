@@ -48,8 +48,6 @@ import java.util.concurrent.TimeUnit;
 import jetbrains.mps.text.TextUnit;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import java.util.HashSet;
@@ -221,7 +219,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 // collect changes in a module-wide context 
                 ModuleStaleFileManager sfm = moduleStaleFilesMap.get(resource.module());
                 if (sfm == null) {
-                  sfm = new ModuleStaleFileManager(resource.module(), Target_make.vars(pa.global()).pathToFile(), messageHandler);
+                  sfm = new ModuleStaleFileManager(resource.module(), Target_make.vars(pa.global()).pathToFile(), genDepsCache, messageHandler);
                   moduleStaleFilesMap.put(resource.module(), sfm);
                   sfm.collectRetainedFiles(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
                     public boolean accept(SModel smd) {
@@ -229,7 +227,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     }
                   }));
                 }
-                sfm.collectGeneratedFiles(genDepsCache, resource.model());
+                sfm.collectGeneratedFiles(resource.model());
               }
               final Project mpsProject = monitor.getSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
@@ -309,15 +307,12 @@ public class TextGen_Facet extends IFacet.Stub {
                       assert staleFilesManager != null;
 
                       // we'd like to report delta per (module, model) pair (DResource is not sufficient, there are TResource clients) 
-                      // therefore we use can't use cached FDC instance (staleFilesManager.getStreamHandler()) now, I don't want to report complete module 
-                      // delta for each model just not to face any trouble with delta merge. However, would like to get this fixed (get rid of TResource use and report  
-                      // single combined delta per module) 
-                      // beware, ModuleStaleFileManager is responsible to translate these values into actual fs locations accoring to make.pathToFile, don't use this values directly 
-                      // except to pass to staleFileManager 
-                      final IFile javaOutputDir = DefaultStreamManager.Provider.getOutputDir(inputResource.model());
-                      final IFile cacheOutputDir = DefaultStreamManager.Provider.getCachesDir(inputResource.model());
-                      FileDeltaCollector javaSourcesLoc = staleFilesManager.newStreamHandler(inputResource.model(), javaOutputDir);
-                      FileDeltaCollector cachesLocation = staleFilesManager.newStreamHandler(inputResource.model(), cacheOutputDir);
+                      // And I don't want to report complete module delta for each model just not to face any trouble with delta merge.  
+                      // Therefore, I don't use staleFilesManager.completeDelta, but report (module, model) deltas here with ResourceDeltaCollector 
+                      // and separately report module-wide delta with staleFilesManager.getModuleWideDelta. 
+                      // However, would like to get this fixed (get rid of TResource use and report single combined delta per module) 
+                      FileDeltaCollector javaSourcesLoc = staleFilesManager.getPrimaryStreamHandler(inputResource.model());
+                      FileDeltaCollector cachesLocation = staleFilesManager.getCacheStreamHandler(inputResource.model());
                       // 
                       // Serialize outcome 
                       GenerationDependencies genDeps = inputResource.status().getDependencies();
@@ -351,9 +346,6 @@ public class TextGen_Facet extends IFacet.Stub {
                       if (status.isError()) {
                         monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
                       }
-                      // next two lines are needed only as long ModuleStaleFileManager creates newStreamHandler(), and doesn't keep track of FilesDeltaCollector instances it has created. 
-                      staleFilesManager.updateWith(javaOutputDir, javaSourcesLoc);
-                      staleFilesManager.updateWith(cacheOutputDir, cachesLocation);
                       // collect delta for (module, model) pair to get dispatched as TResource later (staleFilesManager could do it with DResource only) 
                       // FIXME check if I can dispatch TResource without a model, if clients could tolerate that. If yes, get rid of ResourceDeltaCollector and report delta from ModuleStaleFileManager 
                       rdm.addDelta(javaSourcesLoc.getDelta());
@@ -363,7 +355,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
                 List<IDelta> moduleWideStaleFiles = ListSequence.fromList(new ArrayList<IDelta>());
                 for (ModuleStaleFileManager sfm : CollectionSequence.fromCollection(moduleStaleFilesMap.values())) {
-                  // StaleFilesCollector.reportStaleFiles, inside, walks FS, let it do the job prior to flushing anything to disk not to get confused with new files 
+                  // Though we no longer walk FS when completing the delta, let it do the job prior to flushing anything to disk not to get confused with new files just in case. 
                   ListSequence.fromList(moduleWideStaleFiles).addSequence(ListSequence.fromList(sfm.getModuleWideDelta()));
                 }
                 _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(moduleWideStaleFiles))));

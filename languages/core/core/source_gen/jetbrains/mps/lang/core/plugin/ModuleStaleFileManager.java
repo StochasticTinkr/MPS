@@ -9,106 +9,158 @@ import java.util.List;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import java.util.Map;
+import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
-import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.DeltaKey;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.DefaultStreamManager;
 import java.util.function.Consumer;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.make.runtime.util.DirUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 /*package*/ class ModuleStaleFileManager {
   private final SModule myModule;
   private final _FunctionTypes._return_P1_E0<? extends IFile, ? super String> myPath2File;
   private final List<IDelta> myRetainedFilesDelta = ListSequence.fromList(new ArrayList<IDelta>());
-  private final List<IDelta> myNonRootedDelta = ListSequence.fromList(new ArrayList<IDelta>());
-  private final FileDeltaCollector mySourceGenStreams;
+  private final List<IDelta> myStaleFilesDelta = ListSequence.fromList(new ArrayList<IDelta>());
   private final Map<IFile, FileDeltaCollector> myModelLocationStreams = new HashMap<IFile, FileDeltaCollector>();
   private final FileProcessor myFileStorage;
-  private final Map<IFile, StaleFilesCollector> myStaleFileCollectors = new HashMap<IFile, StaleFilesCollector>();
+  private final GenerationDependenciesCache myGenDeps;
 
-  public ModuleStaleFileManager(SModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile, IMessageHandler msgHandler) {
+  public ModuleStaleFileManager(SModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile, GenerationDependenciesCache genDeps, IMessageHandler msgHandler) {
     myModule = module;
     myFileStorage = new FileProcessor(msgHandler);
-    // XXX it seems I need StaleFilesCollector and hence module's output roots only if I'd like to walk FS and collect files. 
-    // If I can tell generated files by other means (e.g. read from 'generated'), I don't need to bother with output roots 
-    for (IFile outputRoot : SModuleOperations.getOutputRoots(module)) {
-      // quite likely I don't need dedicated StaleFilesCollector class as I could do the same here. OTOH, may want to encapsulate 
-      // different approaches to stale files (e.g. explicitly listed in 'generated' vs collected by root walking) there 
-      myStaleFileCollectors.put(outputRoot, new StaleFilesCollector(getFile.invoke(outputRoot.getPath())));
-    }
-    // FIXME initialize mySourceGenStreams once we start using paths from textgen 
-    mySourceGenStreams = null;
     myPath2File = getFile;
+    myGenDeps = genDeps;
+  }
+
+  private GenerationTargetFacet getGenerationTargetFacet(SModel model) {
+    // For a model, we need to find source_gen, test_gen location and relative model/qualified/name under respective output root 
+    // FIXME module facets and their output location management story is not complete, here is a hack to ensure test models are kept where they used to be 
+    if (SModelStereotype.isTestModel(model)) {
+      TestsFacet testsFacet = myModule.getFacet(TestsFacet.class);
+      if (testsFacet != null) {
+        return testsFacet;
+      }
+    }
+    //  SModuleOperations.getOutputRoots respected TestsFacet and JavaModuleFacet, therefore keep JMF with higher priority than any other GTF 
+    JavaModuleFacet jmf = myModule.getFacet(JavaModuleFacet.class);
+    if (jmf != null) {
+      return jmf;
+    }
+    // resort to any other 
+    return myModule.getFacet(GenerationTargetFacet.class);
   }
 
   /*package*/ void collectRetainedFiles(Iterable<SModel> retainedModels) {
-    // each file of retained model reported as kept 
+    // each file we know as generated from a retained model reported as kept 
+    final FilesDelta fd = new FilesDelta(new DeltaKey(myModule));
+    Consumer<IFile> f = new Consumer<IFile>() {
+      public void accept(IFile f) {
+        fd.kept(f);
+      }
+    };
+    for (SModel m : Sequence.fromIterable(retainedModels)) {
+      // I'm fine with retained delta as module-wide, known clients that utilize TResource care about fresh files 
+      visitGeneratedFiles(m, f);
+    }
+    ListSequence.fromList(myRetainedFilesDelta).addElement(fd);
+    // It's important to keep user files, and I'd rather say extra keep rather than deal with user files gone 
+    // FIXME remove this code after 2018.3 
     Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(myModule, retainedModels, myPath2File);
     ListSequence.fromList(myRetainedFilesDelta).addSequence(Sequence.fromIterable(retainedFilesDelta));
   }
 
-  /*package*/ void collectRetainedFiles2(GenerationDependenciesCache genDeps, Iterable<SModel> retainedModels) {
-    // each file of retained model reported as kept 
-    final IFile outputRoot = null;
-    IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
-    final FilesDelta fd = new FilesDelta(new DeltaKey(myModule));
-    for (SModel m : Sequence.fromIterable(retainedModels)) {
-      GenerationDependencies gdc = genDeps.get(m);
-      if (gdc == null) {
-        continue;
-      }
-      final IFile outputDir = DefaultStreamManager.Provider.getOutputDir(m);
-      IFile actualModelOutputLoc = myPath2File.invoke(outputDir.getPath());
-      gdc.reportGeneratedFiles(actualOutputRoot, actualModelOutputLoc, new Consumer<IFile>() {
-        public void accept(IFile f) {
-          fd.kept(f);
-        }
-      });
+  private void visitGeneratedFiles(SModel m, Consumer<IFile> visitor) {
+    GenerationDependencies gdc = myGenDeps.get(m);
+    if (gdc == null) {
+      return;
     }
-    ListSequence.fromList(myRetainedFilesDelta).addElement(fd);
+    // COMPATIBILITY: for 'generated' without file name information (we could detect here by GD's version), no file would be reported 
+    // both for retained and changed models. As long as no files would be marked as stale, I don't expect any unchaned file to be deleted then. 
+    final GenerationTargetFacet gtf = getGenerationTargetFacet(m);
+    if (gtf == null) {
+      return;
+    }
+    // we need caches location, therefore look into GTF presence prior to isGenerateIntoModelFolder check 
+    IFile outputRoot = null;
+    IFile outputDir = null;
+    if (m instanceof GeneratableSModel && ((GeneratableSModel) m).isGenerateIntoModelFolder() && m.getSource() instanceof FileDataSource) {
+      outputRoot = outputDir = ((FileDataSource) m.getSource()).getFile().getParent();
+    }
+    if (outputRoot == null) {
+      outputRoot = gtf.getOutputRoot(m);
+      outputDir = gtf.getOutputLocation(m);
+    }
+    if (outputDir == null || outputRoot == null) {
+      return;
+    }
+    IFile actualOutputRoot = myPath2File.invoke(outputRoot.getPath());
+    IFile actualModelOutputLoc = myPath2File.invoke(outputDir.getPath());
+    gdc.reportGeneratedFiles(actualOutputRoot, actualModelOutputLoc, visitor);
+    IFile outputCacheLocation = gtf.getOutputCacheLocation(m);
+    IFile actualCacheLocation = (outputCacheLocation == null ? null : myPath2File.invoke(outputCacheLocation.getPath()));
+    if (actualCacheLocation != null) {
+      visitor.accept(actualCacheLocation);
+    }
   }
 
-  /*package*/ void collectGeneratedFiles(GenerationDependenciesCache genDeps, SModel generatedInputModel) {
+  /*package*/ void collectGeneratedFiles(SModel generatedInputModel) {
     // each file of generated model reported as stale 
     // or collect files of generatedModels, then update with delta of generated, and those that left report as 'stale' (not to merge stale delta with written/touched) 
-    // 
-    // intentionally no myStaleFileCollector.recordGeneratedChildren() call, GenerationDependenciesCache doesn't list any file these days 
-    // TextGen used to do StaleFileCollector(javaOutputDir).recordGeneratedChildren(genDeps, inputModel) 
-    // however, with genDeps that don't keep files information, it's merely a no-op, hence no reason to bother calling it. 
-    // Besides, myStateFileCollector is not rooted at javaOutputDir, and I don't want to figure out whether it matters or not 
-  }
-
-  /*package*/ FileDeltaCollector getModuleWideStreamHandler() {
-    // per source_gen, for output into files with path, not just file name 
-    return mySourceGenStreams;
+    final FilesDelta fd = new FilesDelta(new DeltaKey(myModule, generatedInputModel));
+    visitGeneratedFiles(generatedInputModel, new Consumer<IFile>() {
+      public void accept(IFile f) {
+        fd.stale(f);
+      }
+    });
+    ListSequence.fromList(myStaleFilesDelta).addElement(fd);
   }
 
   /**
-   * This method is not in use now and is merely to suggest a future API, once we don't need to report delta for a (module, model) pair and can collect delta 
-   * for the whole module at once
+   * For now, as we report delta for a (module, model) pair, FDC instances recorded here are not in use (#completeDelta is not invoked).
+   * However, once there's no need for per resource delta, external code shall cease using getModuleWideDelta directly.
    */
-  /*package*/ FileDeltaCollector getStreamHandler(IFile outputDir) {
-    // transition stream handler to write files inside a standard model location 
-    // it seems that StreamHandler API needs are redesign. 
-    // 
+  /*package*/ FileDeltaCollector getPrimaryStreamHandler(SModel generatedInputModel) {
+    // stream handler to write files inside a standard model location by default 
+    // it seems that StreamHandler API needs are redesign - its use of IFile is just to produce descendant from filename. In fact, it may keep 
+    // arbitrary file. 
+    GenerationTargetFacet gtf = getGenerationTargetFacet(generatedInputModel);
+    if (gtf == null) {
+      throw new IllegalStateException();
+    }
+    IFile outputDir = gtf.getOutputLocation(generatedInputModel);
     // In fact, we are not obliged to cache FDC per output dir, it' just handy to keep them here to perform batched delta update later. 
-    // Could ne new FDC() right in the facet code and then feed this manager with fdc.getDelta() result 
+    // Could be new FDC() right in the facet code and then feed this manager with fdc.getDelta() result 
     FileDeltaCollector rv = myModelLocationStreams.get(outputDir);
     if (rv == null) {
-      // FIXME model arg for newStreamHandler could not be null 
-      rv = newStreamHandler(null, outputDir);
+      rv = newStreamHandler(generatedInputModel, outputDir);
+      myModelLocationStreams.put(outputDir, rv);
+    }
+    return rv;
+  }
+
+  /*package*/ FileDeltaCollector getCacheStreamHandler(SModel generatedInputModel) {
+    // almost identical to getPrimaryStreamHandler(), above, uses getOutputCacheLocation() 
+    GenerationTargetFacet gtf = getGenerationTargetFacet(generatedInputModel);
+    if (gtf == null) {
+      throw new IllegalStateException();
+    }
+    IFile outputDir = gtf.getOutputCacheLocation(generatedInputModel);
+    FileDeltaCollector rv = myModelLocationStreams.get(outputDir);
+    if (rv == null) {
+      rv = newStreamHandler(generatedInputModel, outputDir);
       myModelLocationStreams.put(outputDir, rv);
     }
     return rv;
@@ -118,9 +170,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     // pretty much the same code is in getModuleWideStaleFiles, the difference is that this method is to work in conjunction 
     // with getStreamHandler(), so that updateWith(newStreamHandler()) is not necessary (it's what foreach below does). 
     List<IDelta> rv = ListSequence.fromList(new ArrayList<IDelta>());
-    for (IFile f : SetSequence.fromSet(myModelLocationStreams.keySet())) {
-      FileDeltaCollector fdc = myModelLocationStreams.get(f);
-      updateWith(f, fdc);
+    for (FileDeltaCollector fdc : CollectionSequence.fromCollection(myModelLocationStreams.values())) {
       ListSequence.fromList(rv).addElement(fdc.getDelta());
     }
     ListSequence.fromList(rv).addSequence(ListSequence.fromList(getModuleWideDelta()));
@@ -128,47 +178,15 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   }
 
 
-
-
-  /*package*/ FileDeltaCollector newStreamHandler(SModel model, IFile outputDir) {
+  private FileDeltaCollector newStreamHandler(SModel model, IFile outputDir) {
     DeltaKey dk = new DeltaKey(model.getModule(), model);
     // FDC needs actual path as it creates IFile from filename string at that location 
     return new FileDeltaCollector(new FilesDelta(dk), myPath2File.invoke(outputDir.getPath()), myFileStorage);
   }
 
-  /*package*/ void updateWith(IFile outputDir, FileDeltaCollector fdc) {
-    // this method to be used in conjunction with getModuleWideDelta 
-    // fdc is result of earlier newStreamHandler call. Here, we find collector of stale files for output root that is ancestor of supplied delta (fdc) 
-    // and update it with written/kept files so that some of the stale files are not anymore. 
-    for (IFile f : SetSequence.fromSet(myStaleFileCollectors.keySet())) {
-      // didn't find a mechanism to figure out f.isAncestor(outputDir), resort to DirUtil. Beware x/source_gen.caches starts with x/source_gen; DirUtil cares to ensure there's slash 
-      if (DirUtil.startsWith(outputDir.getPath(), f.getPath())) {
-        // record a delta in a tracker for a first root that contains the output directory 
-        myStaleFileCollectors.get(f).recordFilesToKeep(fdc.getDelta());
-        return;
-      }
-    }
-    // generally shall not happen, although there are models that override location (see GeneratableSModel.isGenerateIntoModelFolder) and therefore we won't find entry 
-    // in myStaleFileCollectors (which is populated from module output roots) 
-    // Note, at the moment, I don't use this value (getModuleWideDelta doesn't need this as fdc's delta would be reported through ResourceDeltaCollector for (module, model) 
-    ListSequence.fromList(myNonRootedDelta).addElement(fdc.getDelta());
-  }
-
   /*package*/ List<IDelta> getModuleWideDelta() {
-    // walk delta of each MyModelLocationStreams.values() + mySourceGenStreams and record files were modified and therefore we shall not delete 
-    // then for each file we treat as generated (either we've walked source_gen or we've read cached information with generated files paths) 
-    // check if it's in the first list, and for those missing report 'stale'. 
-    if (mySourceGenStreams != null) {
-      for (StaleFilesCollector fc : CollectionSequence.fromCollection(myStaleFileCollectors.values())) {
-        fc.recordFilesToKeep(mySourceGenStreams.getDelta());
-      }
-    }
-    FilesDelta d = new FilesDelta(new DeltaKey(myModule));
-    for (StaleFilesCollector fc : CollectionSequence.fromCollection(myStaleFileCollectors.values())) {
-      fc.reportStaleFilesInto(d);
-    }
-    List<IDelta> rv = ListSequence.fromListWithValues(new ArrayList<IDelta>(), myRetainedFilesDelta);
-    ListSequence.fromList(rv).addElement(d);
+    List<IDelta> rv = ListSequence.fromListWithValues(new ArrayList<IDelta>(), myStaleFilesDelta);
+    ListSequence.fromList(rv).addSequence(ListSequence.fromList(myRetainedFilesDelta));
     return rv;
   }
 

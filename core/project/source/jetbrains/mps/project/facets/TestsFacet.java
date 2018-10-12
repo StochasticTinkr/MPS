@@ -47,22 +47,40 @@ public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
 
   @Nullable
   @Override
+  default IFile getOutputRoot(@NotNull SModel model) {
+    if (SModelStereotype.isTestModel(model)) {
+      return getTestsOutputPath();
+    }
+    return null;
+  }
+
+  @Nullable
+  @Override
+  default IFile getOutputCacheRoot(@NotNull SModel model) {
+    if (SModelStereotype.isTestModel(model)) {
+      return getOutputCacheRoot();
+    }
+    return null;
+  }
+
+  @Nullable
+  @Override
   default IFile getOutputLocation(@NotNull SModel model) {
-    IFile root = getTestsOutputPath();
-    if (root == null || !SModelStereotype.isTestModel(model)) {
+    if (!SModelStereotype.isTestModel(model)) {
       return null;
     }
-    return FileGenerationUtil.getDefaultOutputDir(model, root);
+    IFile root = getTestsOutputPath();
+    return root == null ? null : FileGenerationUtil.getDefaultOutputDir(model, root);
 
   }
 
   @Nullable
   @Override
   default IFile getOutputCacheLocation(@NotNull SModel model) {
-    IFile root = getTestsOutputPath();
-    if (root == null || !SModelStereotype.isTestModel(model)) {
+    if (!SModelStereotype.isTestModel(model)) {
       return null;
     }
-    return FileGenerationUtil.getDefaultOutputDir(model, FileGenerationUtil.getCachesDir(root));
+    IFile root = getOutputCacheRoot();
+    return root == null ? null : FileGenerationUtil.getDefaultOutputDir(model, root);
   }
 }

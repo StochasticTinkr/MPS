@@ -93,6 +93,17 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
     return outputRoot == null ? null : FileGenerationUtil.getCachesDir(outputRoot);
   }
 
+  @Nullable
+  @Override
+  default IFile getOutputRoot(@NotNull SModel model) {
+    return getOutputRoot();
+  }
+
+  @Nullable
+  @Override
+  default IFile getOutputCacheRoot(@NotNull SModel model) {
+    return getOutputCacheRoot();
+  }
 
   /**
    * E.g. source_gen/qualified/model/name/
