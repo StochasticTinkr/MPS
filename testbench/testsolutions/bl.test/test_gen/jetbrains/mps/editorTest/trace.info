@@ -19698,6 +19698,32 @@
       <unit id="7311202892961766807" at="13,0,44,0" name="jetbrains.mps.editorTest.PasteExpressionToFullyText_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7312822374746467227">
+    <file name="MethodCall_TypeSecondParameter_Test.java">
+      <node id="7312822374746467227" at="18,48,19,25" concept="11" />
+      <node id="7312822374746467227" at="23,70,24,72" concept="2" />
+      <node id="7312822374746467227" at="29,52,30,19" concept="11" />
+      <node id="7312822374746467227" at="34,51,35,72" concept="2" />
+      <node id="7312822374746467257" at="35,72,36,25" concept="2" />
+      <node id="7312822374746467227" at="15,0,17,0" concept="9" trace="ourParamCache" />
+      <node id="7312822374746467227" at="18,0,21,0" concept="1" trace="MethodCall_TypeSecondParameter_Test#()V" />
+      <node id="7312822374746467227" at="29,0,32,0" concept="1" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="7312822374746467227" at="22,0,26,0" concept="5" trace="test_MethodCall_TypeSecondParameter#()V" />
+      <node id="7312822374746467227" at="33,0,38,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7312822374746467227" at="18,48,19,25" />
+      <scope id="7312822374746467227" at="23,70,24,72" />
+      <scope id="7312822374746467227" at="29,52,30,19" />
+      <scope id="7312822374746467227" at="34,51,36,25" />
+      <scope id="7312822374746467227" at="18,0,21,0" />
+      <scope id="7312822374746467227" at="29,0,32,0">
+        <var name="owner" id="7312822374746467227" />
+      </scope>
+      <scope id="7312822374746467227" at="22,0,26,0" />
+      <scope id="7312822374746467227" at="33,0,38,0" />
+      <unit id="7312822374746467227" at="27,0,39,0" name="jetbrains.mps.editorTest.MethodCall_TypeSecondParameter_Test$TestBody" />
+      <unit id="7312822374746467227" at="13,0,40,0" name="jetbrains.mps.editorTest.MethodCall_TypeSecondParameter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7375190718711844353">
     <file name="AddParensToCastInDot_Test.java">
       <node id="7375190718711844353" at="18,38,19,25" concept="11" />
