@@ -46,7 +46,7 @@ public final class GoToContextMenuHelper {
    */
   @Deprecated
   @ToRemove(version = 183)
-  public static void showNodeMenu(Project project, String title, List<SNodeReference> nodes, final BaseRenderer renderer, RelativePoint point) {
+  public static void showMenu(Project project, String title, List<SNodeReference> nodes, final BaseRenderer renderer, RelativePoint point) {
     if (ListSequence.fromList(nodes).isEmpty()) {
       return;
     }

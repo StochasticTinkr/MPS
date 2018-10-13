@@ -80,7 +80,7 @@
       <node id="6984321651748351098" at="199,57,200,38" concept="10" />
       <node id="6984321651748537000" at="208,66,209,76" concept="10" />
       <node id="7052698666283758840" at="214,42,215,187" concept="0" />
-      <node id="1616056205644541779" at="49,144,52,5" concept="7" />
+      <node id="1616056205644541779" at="49,140,52,5" concept="7" />
       <node id="1616056205644541792" at="53,74,56,5" concept="6" />
       <node id="1616056205644510010" at="63,0,66,0" concept="8" trace="getText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljava/lang/String;" />
       <node id="1616056205644541840" at="73,185,76,5" concept="7" />
@@ -119,7 +119,7 @@
       <node id="1616056205644541856" at="79,10,96,5" concept="1" />
       <node id="7052698666284727379" at="147,0,166,0" concept="8" trace="showMenuWithNodes#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;)Ljetbrains/mps/ide/editor/util/GoToContextMenuHelper/ContextMenuComposite;" />
       <node id="1616056205644541846" at="76,5,96,5" concept="7" />
-      <node id="1616056205644541777" at="47,0,69,0" concept="13" trace="showNodeMenu#(Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/util/List;Ljetbrains/mps/ide/editor/util/renderer/BaseRenderer;Lcom/intellij/ui/awt/RelativePoint;)V" />
+      <node id="1616056205644541777" at="47,0,69,0" concept="13" trace="showMenu#(Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/util/List;Ljetbrains/mps/ide/editor/util/renderer/BaseRenderer;Lcom/intellij/ui/awt/RelativePoint;)V" />
       <node id="6984321651747151520" at="172,0,195,0" concept="8" trace="buildPopup#(Ljava/util/List;)Ljetbrains/mps/ide/editor/util/GoToContextMenuHelper/ContextMenuComposite;" />
       <node id="1616056205644541830" at="70,0,98,0" concept="13" trace="openTargets#(Lcom/intellij/ui/awt/RelativePoint;Ljava/util/List;Ljava/lang/String;Ljavax/swing/ListCellRenderer;)V" />
       <scope id="1616056205644541783" at="50,49,51,13" />
@@ -238,7 +238,7 @@
         <var name="menu" id="7052698666284727433" />
         <var name="model" id="7052698666284727389" />
       </scope>
-      <scope id="1616056205644541778" at="49,144,67,54">
+      <scope id="1616056205644541778" at="49,140,67,54">
         <var name="navigatables" id="1616056205644541786" />
       </scope>
       <scope id="7052698666284727379" at="147,0,166,0">

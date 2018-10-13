@@ -1737,7 +1737,7 @@
     <node concept="2tJIrI" id="2h_Fs2zIal6" role="jymVt" />
     <node concept="3Tm1VV" id="1pHoCUaw2wr" role="1B3o_S" />
     <node concept="2YIFZL" id="1pHoCUawyXh" role="jymVt">
-      <property role="TrG5h" value="showNodeMenu" />
+      <property role="TrG5h" value="showMenu" />
       <node concept="2AHcQZ" id="2h_Fs2zIpTC" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
