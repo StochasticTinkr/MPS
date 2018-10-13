@@ -18,8 +18,14 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeReportItemBase;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SNamedElement;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
@@ -32,7 +38,24 @@ public abstract class LanguageFeatureMissingError extends NodeReportItemBase {
   }
 
   public ReportItemFlavour<LanguageFeatureMissingError, SNamedElement> FLAVOUR_LANGUAGE_FEATURE =
-      new SimpleReportItemFlavour<>("FLAVOUR_LANGUAGE_FEATURE", LanguageFeatureMissingError.class, LanguageFeatureMissingError::getLanguageFeature);
+      new SimpleReportItemFlavour<LanguageFeatureMissingError, SNamedElement>("FLAVOUR_LANGUAGE_FEATURE", LanguageFeatureMissingError.class, LanguageFeatureMissingError::getLanguageFeature) {
+        @Override
+        public String serialize(SNamedElement value) {
+          if (value instanceof SAbstractConcept) {
+            return MetaIdHelper.getConcept((SAbstractConcept) value).serialize();
+          }
+          if (value instanceof SProperty) {
+            return MetaIdHelper.getProperty((SProperty) value).serialize();
+          }
+          if (value instanceof SContainmentLink) {
+            return MetaIdHelper.getAggregation((SContainmentLink) value).serialize();
+          }
+          if (value instanceof SReferenceLink) {
+            return MetaIdHelper.getAssociation((SReferenceLink) value).serialize();
+          }
+          return super.serialize(value);
+        }
+      };
 
   public abstract SNamedElement getLanguageFeature();
 
