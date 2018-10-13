@@ -16,9 +16,15 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.item.ReportItemBase.MultipleReportItemFlavour;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Function;
 
 public interface RuleIdFlavouredItem extends FlavouredItem {
 
@@ -38,7 +44,39 @@ public interface RuleIdFlavouredItem extends FlavouredItem {
 
   Collection<TypesystemRuleId> getRuleId();
 
-  MultipleReportItemFlavour<RuleIdFlavouredItem, TypesystemRuleId> FLAVOUR_RULE_ID =
-      new MultipleReportItemFlavour<>("FLAVOUR_RULE_ID", RuleIdFlavouredItem.class, RuleIdFlavouredItem::getRuleId);
+  RuleIdFlavour FLAVOUR_RULE_ID =
+      new RuleIdFlavour("FLAVOUR_RULE_ID");
+
+  class RuleIdFlavour extends MultipleReportItemFlavour<RuleIdFlavouredItem, TypesystemRuleId> implements SerializingFlavour<RuleIdFlavouredItem, Collection<TypesystemRuleId>> {
+    public RuleIdFlavour(String id) {
+      super(id, RuleIdFlavouredItem.class, RuleIdFlavouredItem::getRuleId);
+    }
+    @Override
+    public String serialize(Collection<TypesystemRuleId> value) {
+      StringBuilder result = new StringBuilder();
+      Iterator<TypesystemRuleId> iterator = value.iterator();
+      result.append("[");
+      if (iterator.hasNext()) {
+        result.append(iterator.next());
+      }
+      while (iterator.hasNext()) {
+        result.append(",");
+        result.append(iterator.next());
+      }
+      result.append("]");
+      return result.toString();
+    }
+    @Override
+    public Collection<TypesystemRuleId> deserialize(String s) {
+      List<TypesystemRuleId> result = new ArrayList<>();
+      for (String nodeRef : s.split("[\\[,\\]]")) {
+        if (nodeRef.isEmpty()) {
+          continue;
+        }
+        result.add(new TypesystemRuleId(PersistenceRegistry.getInstance().createNodeReference(nodeRef)));
+      }
+      return result;
+    }
+  }
 
 }

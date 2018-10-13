@@ -35,7 +35,7 @@ public class BackgroundSearchWithPopupTask extends BackgroundSearchTask {
   public BackgroundSearchWithPopupTask(@NotNull PopupSettingsBuilder settings) {
     super(settings.myProject, settings.query, settings.finders, "Searching...");
     mySettings = settings;
-    final GoToContextMenuHelper.ContextMenuComposite contextMenuComposite = new GoToContextMenuHelper(settings.myProject, settings.captionFun, settings.renderer, settings.comparator, settings.nameFilter).buildPopup();
+    final GoToContextMenuHelperBase.ContextMenuComposite<NodeNavigatable> contextMenuComposite = new GoToContextMenuHelper(settings.myProject, settings.captionFun, settings.renderer, settings.comparator, settings.nameFilter).buildPopup();
     myPopup = contextMenuComposite.myPopup;
     myList = contextMenuComposite.myJBList;
     myListModel = contextMenuComposite.myListModel;

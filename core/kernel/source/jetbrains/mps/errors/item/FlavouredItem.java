@@ -71,6 +71,13 @@ public interface FlavouredItem {
     public final String toString() {
       return getId();
     }
+    public String serialize(T value) {
+      return value.toString();
+    }
+  }
+
+  interface SerializingFlavour<I extends FlavouredItem, T> {
+    T deserialize(String s);
   }
 
   class FlavourPredicate implements Predicate<FlavouredItem> {
@@ -80,7 +87,12 @@ public interface FlavouredItem {
     }
     @Override
     public boolean test(FlavouredItem flavouredItem) {
-      return flavouredItem.toPredicate(flavouredItem.getIdFlavours()).myFlavours.entrySet().containsAll(myFlavours.entrySet());
+      HashMap<String, String> flavoursToTest = new HashMap<>(myFlavours);
+      flavoursToTest.remove(ReportItem.FLAVOUR_MESSAGE.getId());
+      return flavouredItem.toPredicate(flavouredItem.getIdFlavours()).myFlavours.entrySet().containsAll(flavoursToTest.entrySet());
+    }
+    public Map<String, String> getFlavours() {
+      return new HashMap<>(myFlavours);
     }
     public static FlavourPredicate deserialize(String s) {
       Map<String, String> flavours = new ListMap<>();
@@ -110,10 +122,11 @@ public interface FlavouredItem {
   default FlavourPredicate toPredicate(Set<ReportItemFlavour<?, ?>> idFlavours) {
     Map<String, String> flavours = new HashMap<>();
     idFlavours.remove(FLAVOUR_NODE);
+    idFlavours.add(ReportItem.FLAVOUR_MESSAGE);
     for (ReportItemFlavour flavour : idFlavours) {
       Object value = flavour.tryToGet(this);
       if (value != null) {
-        flavours.put(flavour.getId(), value.toString());
+        flavours.put(flavour.getId(), flavour.serialize(value));
       }
     }
     return new FlavourPredicate(flavours);

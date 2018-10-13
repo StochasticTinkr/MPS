@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-9604pbyj15v07obneafh2sepfosn9c5">
-  <files names="BackgroundSearchTask.java:BackgroundSearchWithPopupTask.java:CaptionFunction.java:CustomizedNavigatable.java:CustomizedNavigatableRenderer.java:EditorComponentUtil.java:GoToContextMenuHelper.java:GoToHelper.java:NamerFactory.java:PopupSettingsBuilder.java" />
+<product version="3" modelHash="-65o02qn72zyxaygq0mhgk2b6ursgv8i">
+  <files names="BackgroundSearchTask.java:BackgroundSearchWithPopupTask.java:CaptionFunction.java:CustomizedNavigatable.java:CustomizedNavigatableRenderer.java:EditorComponentUtil.java:GoToContextMenuHelper.java:GoToContextMenuHelperBase.java:GoToHelper.java:NamerFactory.java:PopupSettingsBuilder.java" />
 </product>
 
