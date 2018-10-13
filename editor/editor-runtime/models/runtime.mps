@@ -7536,79 +7536,103 @@
                   <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
                   <node concept="1bVj0M" id="2v0ve8x$pjw" role="37wK5m">
                     <node concept="3clFbS" id="2v0ve8x$pjx" role="1bW5cS">
-                      <node concept="1DcWWT" id="2v0ve8x$pjC" role="3cqZAp">
-                        <node concept="3clFbS" id="2v0ve8x$pjD" role="2LFqv$">
-                          <node concept="3clFbJ" id="2v0ve8x$pjE" role="3cqZAp">
-                            <node concept="3clFbS" id="2v0ve8x$pjF" role="3clFbx">
-                              <node concept="3clFbF" id="242XgDlLzGL" role="3cqZAp">
-                                <node concept="2OqwBi" id="242XgDlL$5P" role="3clFbG">
-                                  <node concept="2YIFZM" id="242XgDlLzMP" role="2Oq$k0">
-                                    <ref role="1Pybhc" to="n70j:~QuickFixRuntimeEditorWrapper" resolve="QuickFixRuntimeEditorWrapper" />
-                                    <ref role="37wK5l" to="n70j:~QuickFixRuntimeEditorWrapper.getInstance(jetbrains.mps.errors.item.QuickFixBase):jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper" resolve="getInstance" />
-                                    <node concept="37vLTw" id="242XgDlLzTl" role="37wK5m">
-                                      <ref role="3cqZAo" node="2v0ve8x$pk5" resolve="fix" />
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="242XgDlL$o6" role="2OqNvi">
-                                    <ref role="37wK5l" to="n70j:~QuickFixRuntimeEditorWrapper.execute(jetbrains.mps.openapi.editor.EditorContext,boolean):void" resolve="execute" />
-                                    <node concept="37vLTw" id="242XgDlL$vt" role="37wK5m">
-                                      <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
-                                    </node>
-                                    <node concept="3clFbT" id="242XgDlL_5T" role="37wK5m">
-                                      <property role="3clFbU" value="false" />
-                                    </node>
-                                  </node>
-                                </node>
+                      <node concept="3clFbF" id="64iZc9nx4U2" role="3cqZAp">
+                        <node concept="2OqwBi" id="64iZc9nx5Ot" role="3clFbG">
+                          <node concept="2OqwBi" id="64iZc9nx5u$" role="2Oq$k0">
+                            <node concept="2OqwBi" id="64iZc9nx5bq" role="2Oq$k0">
+                              <node concept="37vLTw" id="64iZc9nx4U0" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
                               </node>
-                              <node concept="3clFbJ" id="2v0ve8x$pjP" role="3cqZAp">
-                                <node concept="3clFbS" id="2v0ve8x$pjQ" role="3clFbx">
-                                  <node concept="3SKdUt" id="2v0ve8x$pjR" role="3cqZAp">
-                                    <node concept="3SKdUq" id="2v0ve8x$pjS" role="3SKWNk">
-                                      <property role="3SKdUp" value="forcing to execute quickFixes for all errors reported on the modified model" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbF" id="2v0ve8x$pjT" role="3cqZAp">
-                                    <node concept="37vLTI" id="2v0ve8x$pjU" role="3clFbG">
-                                      <node concept="3clFbT" id="2v0ve8x$pjV" role="37vLTx">
-                                        <property role="3clFbU" value="true" />
-                                      </node>
-                                      <node concept="37vLTw" id="2v0ve8x$pjW" role="37vLTJ">
-                                        <ref role="3cqZAo" node="2v0ve8x$p7p" resolve="myForceRunQuickFixes" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="37vLTw" id="2v0ve8x$pjX" role="3clFbw">
-                                  <ref role="3cqZAo" node="2v0ve8x$pjj" resolve="wasForceRunQuickFixes" />
-                                </node>
+                              <node concept="liA8E" id="64iZc9nx5mH" role="2OqNvi">
+                                <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                               </node>
                             </node>
-                            <node concept="2OqwBi" id="u6B29mIeK1" role="3clFbw">
-                              <node concept="37vLTw" id="u6B29mIewW" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2v0ve8x$pk5" resolve="fix" />
-                              </node>
-                              <node concept="liA8E" id="u6B29mIf3R" role="2OqNvi">
-                                <ref role="37wK5l" to="d6hs:~QuickFixBase.isAlive(org.jetbrains.mps.openapi.module.SRepository):boolean" resolve="isAlive" />
-                                <node concept="2OqwBi" id="u6B29mIfk3" role="37wK5m">
-                                  <node concept="37vLTw" id="u6B29mIf9J" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                            <node concept="liA8E" id="64iZc9nx5F4" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="64iZc9nx61A" role="2OqNvi">
+                            <ref role="37wK5l" to="lui2:~ModelAccess.executeUndoTransparentCommand(java.lang.Runnable):void" resolve="executeUndoTransparentCommand" />
+                            <node concept="1bVj0M" id="64iZc9nx6qv" role="37wK5m">
+                              <node concept="3clFbS" id="64iZc9nx6qw" role="1bW5cS">
+                                <node concept="1DcWWT" id="2v0ve8x$pjC" role="3cqZAp">
+                                  <node concept="3clFbS" id="2v0ve8x$pjD" role="2LFqv$">
+                                    <node concept="3clFbJ" id="2v0ve8x$pjE" role="3cqZAp">
+                                      <node concept="3clFbS" id="2v0ve8x$pjF" role="3clFbx">
+                                        <node concept="3clFbF" id="242XgDlLzGL" role="3cqZAp">
+                                          <node concept="2OqwBi" id="242XgDlL$5P" role="3clFbG">
+                                            <node concept="2YIFZM" id="242XgDlLzMP" role="2Oq$k0">
+                                              <ref role="1Pybhc" to="n70j:~QuickFixRuntimeEditorWrapper" resolve="QuickFixRuntimeEditorWrapper" />
+                                              <ref role="37wK5l" to="n70j:~QuickFixRuntimeEditorWrapper.getInstance(jetbrains.mps.errors.item.QuickFixBase):jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper" resolve="getInstance" />
+                                              <node concept="37vLTw" id="242XgDlLzTl" role="37wK5m">
+                                                <ref role="3cqZAo" node="2v0ve8x$pk5" resolve="fix" />
+                                              </node>
+                                            </node>
+                                            <node concept="liA8E" id="242XgDlL$o6" role="2OqNvi">
+                                              <ref role="37wK5l" to="n70j:~QuickFixRuntimeEditorWrapper.execute(jetbrains.mps.openapi.editor.EditorContext,boolean):void" resolve="execute" />
+                                              <node concept="37vLTw" id="242XgDlL$vt" role="37wK5m">
+                                                <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                                              </node>
+                                              <node concept="3clFbT" id="242XgDlL_5T" role="37wK5m">
+                                                <property role="3clFbU" value="false" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbJ" id="2v0ve8x$pjP" role="3cqZAp">
+                                          <node concept="3clFbS" id="2v0ve8x$pjQ" role="3clFbx">
+                                            <node concept="3SKdUt" id="2v0ve8x$pjR" role="3cqZAp">
+                                              <node concept="3SKdUq" id="2v0ve8x$pjS" role="3SKWNk">
+                                                <property role="3SKdUp" value="forcing to execute quickFixes for all errors reported on the modified model" />
+                                              </node>
+                                            </node>
+                                            <node concept="3clFbF" id="2v0ve8x$pjT" role="3cqZAp">
+                                              <node concept="37vLTI" id="2v0ve8x$pjU" role="3clFbG">
+                                                <node concept="3clFbT" id="2v0ve8x$pjV" role="37vLTx">
+                                                  <property role="3clFbU" value="true" />
+                                                </node>
+                                                <node concept="37vLTw" id="2v0ve8x$pjW" role="37vLTJ">
+                                                  <ref role="3cqZAo" node="2v0ve8x$p7p" resolve="myForceRunQuickFixes" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="37vLTw" id="2v0ve8x$pjX" role="3clFbw">
+                                            <ref role="3cqZAo" node="2v0ve8x$pjj" resolve="wasForceRunQuickFixes" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="u6B29mIeK1" role="3clFbw">
+                                        <node concept="37vLTw" id="u6B29mIewW" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2v0ve8x$pk5" resolve="fix" />
+                                        </node>
+                                        <node concept="liA8E" id="u6B29mIf3R" role="2OqNvi">
+                                          <ref role="37wK5l" to="d6hs:~QuickFixBase.isAlive(org.jetbrains.mps.openapi.module.SRepository):boolean" resolve="isAlive" />
+                                          <node concept="2OqwBi" id="u6B29mIfk3" role="37wK5m">
+                                            <node concept="37vLTw" id="u6B29mIf9J" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                                            </node>
+                                            <node concept="liA8E" id="u6B29mIfzC" role="2OqNvi">
+                                              <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
                                   </node>
-                                  <node concept="liA8E" id="u6B29mIfzC" role="2OqNvi">
-                                    <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                  <node concept="3cpWsn" id="2v0ve8x$pk5" role="1Duv9x">
+                                    <property role="TrG5h" value="fix" />
+                                    <node concept="3uibUv" id="a7HeXjVja2" role="1tU5fm">
+                                      <ref role="3uigEE" to="d6hs:~QuickFixBase" resolve="QuickFixBase" />
+                                    </node>
+                                  </node>
+                                  <node concept="37vLTw" id="2v0ve8x$pk9" role="1DdaDG">
+                                    <ref role="3cqZAo" node="2v0ve8x$phf" resolve="quickFixesToExecute" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="3cpWsn" id="2v0ve8x$pk5" role="1Duv9x">
-                          <property role="TrG5h" value="fix" />
-                          <node concept="3uibUv" id="a7HeXjVja2" role="1tU5fm">
-                            <ref role="3uigEE" to="d6hs:~QuickFixBase" resolve="QuickFixBase" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="2v0ve8x$pk9" role="1DdaDG">
-                          <ref role="3cqZAo" node="2v0ve8x$phf" resolve="quickFixesToExecute" />
                         </node>
                       </node>
                     </node>

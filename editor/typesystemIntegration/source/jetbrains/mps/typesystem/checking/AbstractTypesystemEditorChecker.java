@@ -135,7 +135,9 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
       myOnceExecutedQuickFixes.add(flavours);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
       ApplicationManager.getApplication().invokeLater(() -> {
-        QuickFixRuntimeEditorWrapper.getInstance(intention).execute(editorContext, true);
+        editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(() -> {
+            QuickFixRuntimeEditorWrapper.getInstance(intention).execute(editorContext, true);
+        });
       }, ModalityState.NON_MODAL);
     }
     return true;
