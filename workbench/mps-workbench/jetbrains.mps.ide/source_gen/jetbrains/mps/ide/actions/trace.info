@@ -3543,56 +3543,65 @@
       <node id="1236342883095" at="91,39,92,48" concept="6" />
     </file>
     <file name="SetBookmarkNoNumber_Action.java">
-      <node id="1236342883095" at="17,0,18,0" concept="16" trace="ICON" />
-      <node id="1236342883095" at="19,39,20,36" concept="18" />
-      <node id="1236342883095" at="20,36,21,35" concept="6" />
-      <node id="1236342883095" at="21,35,22,41" concept="6" />
-      <node id="1236342883095" at="25,32,26,16" concept="13" />
-      <node id="1236342883095" at="30,53,31,19" concept="13" />
-      <node id="1236342933122" at="33,5,34,54" concept="12" />
-      <node id="1236342933122" at="34,54,35,50" concept="6" />
-      <node id="8898893144448210207" at="36,22,37,21" concept="13" />
-      <node id="1236342914775" at="40,5,41,56" concept="12" />
-      <node id="1236342914775" at="41,56,42,53" concept="6" />
-      <node id="8898893144448210033" at="43,22,44,21" concept="13" />
-      <node id="1236342883095" at="46,5,47,16" concept="13" />
-      <node id="1236342945374" at="50,96,51,130" concept="12" />
-      <node id="1236342945383" at="51,130,52,94" concept="6" />
-      <node id="1236342883095" at="29,95,32,5" concept="10" />
-      <node id="8898893144448210207" at="35,50,38,7" concept="10" />
-      <node id="8898893144448210033" at="42,53,45,7" concept="10" />
-      <node id="1236342883095" at="24,0,28,0" concept="11" trace="isDumbAware#()Z" />
-      <node id="1236342883095" at="19,0,24,0" concept="4" trace="SetBookmarkNoNumber_Action#()V" />
-      <node id="1236342883095" at="49,0,54,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="1236342933122" at="32,5,39,5" concept="2" />
-      <node id="1236342914775" at="39,5,46,5" concept="2" />
-      <node id="1236342883095" at="28,0,49,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="1236342883095" at="25,32,26,16" />
-      <scope id="1236342883095" at="30,53,31,19" />
-      <scope id="8898893144448210207" at="36,22,37,21" />
-      <scope id="8898893144448210033" at="43,22,44,21" />
-      <scope id="1236342883095" at="50,96,52,94">
+      <node id="1236342883095" at="19,0,20,0" concept="16" trace="ICON" />
+      <node id="1236342883095" at="21,39,22,36" concept="18" />
+      <node id="1236342883095" at="22,36,23,35" concept="6" />
+      <node id="1236342883095" at="23,35,24,41" concept="6" />
+      <node id="1236342883095" at="27,32,28,16" concept="13" />
+      <node id="1942333868381098616" at="32,65,33,64" concept="6" />
+      <node id="1236342883095" at="38,53,39,19" concept="13" />
+      <node id="1236342933122" at="41,5,42,54" concept="12" />
+      <node id="1236342933122" at="42,54,43,50" concept="6" />
+      <node id="8898893144448210207" at="44,22,45,21" concept="13" />
+      <node id="1236342914775" at="48,5,49,56" concept="12" />
+      <node id="1236342914775" at="49,56,50,53" concept="6" />
+      <node id="8898893144448210033" at="51,22,52,21" concept="13" />
+      <node id="1236342883095" at="54,5,55,16" concept="13" />
+      <node id="1236342945374" at="58,96,59,130" concept="12" />
+      <node id="1236342945383" at="59,130,60,94" concept="6" />
+      <node id="1942333868381098611" at="31,89,34,5" concept="10" />
+      <node id="1236342883095" at="37,95,40,5" concept="10" />
+      <node id="8898893144448210207" at="43,50,46,7" concept="10" />
+      <node id="8898893144448210033" at="50,53,53,7" concept="10" />
+      <node id="1236342883095" at="26,0,30,0" concept="11" trace="isDumbAware#()Z" />
+      <node id="1236342883095" at="21,0,26,0" concept="4" trace="SetBookmarkNoNumber_Action#()V" />
+      <node id="1236342883095" at="57,0,62,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="1236342883095" at="30,0,36,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="1236342933122" at="40,5,47,5" concept="2" />
+      <node id="1236342914775" at="47,5,54,5" concept="2" />
+      <node id="1236342883095" at="36,0,57,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="1236342883095" at="27,32,28,16" />
+      <scope id="1942333868381098615" at="32,65,33,64" />
+      <scope id="1236342883095" at="38,53,39,19" />
+      <scope id="8898893144448210207" at="44,22,45,21" />
+      <scope id="8898893144448210033" at="51,22,52,21" />
+      <scope id="1236342883095" at="58,96,60,94">
         <var name="bookmarkManager" id="1236342945375" />
       </scope>
-      <scope id="1236342883095" at="19,39,22,41" />
-      <scope id="1236342883095" at="24,0,28,0" />
-      <scope id="1236342883095" at="19,0,24,0" />
-      <scope id="1236342933122" at="33,5,38,7">
+      <scope id="1236342883095" at="21,39,24,41" />
+      <scope id="1942333868381111955" at="31,89,34,5" />
+      <scope id="1236342883095" at="26,0,30,0" />
+      <scope id="1236342883095" at="21,0,26,0" />
+      <scope id="1236342933122" at="41,5,46,7">
         <var name="p" id="1236342933122" />
       </scope>
-      <scope id="1236342914775" at="40,5,45,7">
+      <scope id="1236342914775" at="48,5,53,7">
         <var name="p" id="1236342914775" />
       </scope>
-      <scope id="1236342883095" at="49,0,54,0">
+      <scope id="1236342883095" at="57,0,62,0">
         <var name="_params" id="1236342883095" />
         <var name="event" id="1236342883095" />
       </scope>
-      <scope id="1236342883095" at="29,95,47,16" />
-      <scope id="1236342883095" at="28,0,49,0">
+      <scope id="1236342883095" at="30,0,36,0">
         <var name="_params" id="1236342883095" />
         <var name="event" id="1236342883095" />
       </scope>
-      <unit id="1236342883095" at="16,0,55,0" name="jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action" />
+      <scope id="1236342883095" at="37,95,55,16" />
+      <scope id="1236342883095" at="36,0,57,0">
+        <var name="_params" id="1236342883095" />
+        <var name="event" id="1236342883095" />
+      </scope>
+      <unit id="1236342883095" at="18,0,63,0" name="jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1236348386008">

@@ -6844,6 +6844,46 @@
         </node>
       </node>
     </node>
+    <node concept="tkhdA" id="1FOz_N44gqi" role="tmbBb">
+      <node concept="3clFbS" id="1FOz_N44gqj" role="2VODD2">
+        <node concept="3clFbJ" id="1FOz_N44d9N" role="3cqZAp">
+          <node concept="2OqwBi" id="1FOz_N44eRW" role="3clFbw">
+            <node concept="10M0yZ" id="1FOz_N44eRV" role="2Oq$k0">
+              <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+              <ref role="3cqZAo" to="qkt:~ActionPlaces.TOUCHBAR_GENERAL" resolve="TOUCHBAR_GENERAL" />
+            </node>
+            <node concept="liA8E" id="1FOz_N44eRX" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="2OqwBi" id="1FOz_N44fif" role="37wK5m">
+                <node concept="tl45R" id="1FOz_N44f7c" role="2Oq$k0" />
+                <node concept="liA8E" id="1FOz_N44f$O" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~AnActionEvent.getPlace():java.lang.String" resolve="getPlace" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="1FOz_N44d9R" role="3clFbx">
+            <node concept="3clFbF" id="1FOz_N44d9S" role="3cqZAp">
+              <node concept="2OqwBi" id="1FOz_N44d9T" role="3clFbG">
+                <node concept="liA8E" id="1FOz_N44d9V" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
+                  <node concept="10M0yZ" id="1FOz_N44eTx" role="37wK5m">
+                    <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+                    <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.Checked" resolve="Checked" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="1FOz_N44fNf" role="2Oq$k0">
+                  <node concept="tl45R" id="1FOz_N44fD0" role="2Oq$k0" />
+                  <node concept="liA8E" id="1FOz_N44g5w" role="2OqNvi">
+                    <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="sE7Ow" id="hZs6NFo">
     <property role="TrG5h" value="OptimizeModelImports" />
