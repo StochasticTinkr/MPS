@@ -344,6 +344,8 @@
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/expressions/jetbrains.mps.samples.Expressions.mpl" folder="samples.expressions" />
       <modulePath path="$PROJECT_DIR$/samples/expressions/sandbox/jetbrains.mps.samples.Expressions.sandbox.msd" folder="samples.expressions" />
+      <modulePath path="$PROJECT_DIR$/samples/files/lang/jetbrains.mps.samples.files.mpl" folder="samples.files" />
+      <modulePath path="$PROJECT_DIR$/samples/files/sandbox/jetbrains.mps.samples.files.sandbox.msd" folder="samples.files" />
       <modulePath path="$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/myReaderConfiguration.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/jetbrains.mps.samples.readerConfigLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/fixedLengthReader/readerFramework/readerFramework.msd" folder="samples" />
