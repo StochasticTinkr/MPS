@@ -328,10 +328,16 @@ public class TextGen_Facet extends IFacet.Stub {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.format("Text outcome for %s has been generated with errors", tu.getFileName()))));
                           // fall through 
                         }
-                        if (!(seenFileNames.add(tu.getFileName()))) {
-                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(String.format("Duplicate unit name %s in model %s, output likely corrupt", tu.getFileName(), tgr.getModel().getName()))));
+                        if (tu.getFilePath() == null) {
+                          if (!(seenFileNames.add(tu.getFileName()))) {
+                            monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(String.format("Duplicate unit name %s in model %s, output likely corrupt", tu.getFileName(), tgr.getModel().getName()))));
+                          }
+                          javaSourcesLoc.saveStream(tu.getFileName(), tu.getBytes());
+                        } else {
+                          FileDeltaCollector fdc = staleFilesManager.newPrimaryStreamHandler(inputResource.model(), tu.getFilePath());
+                          fdc.saveStream(tu.getFileName(), tu.getBytes());
+                          rdm.addDelta(fdc.getDelta());
                         }
-                        javaSourcesLoc.saveStream(tu.getFileName(), tu.getBytes());
                       }
                       // 
                       // Update caches and auxiliary artifacts 

@@ -63,6 +63,10 @@ public interface TextGenModelOutline {
     registerTextUnit(unitName, null, encoding, input);
   }
 
+  default void registerTextUnit(@NotNull String unitName, @Nullable String path, SNode... input) {
+    registerTextUnit(unitName, path, null, input);
+  }
+
   /**
    * Complete set of options to construct a text unit.
    *
