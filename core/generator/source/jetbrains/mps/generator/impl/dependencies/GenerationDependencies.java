@@ -22,11 +22,9 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
 /**
@@ -67,23 +65,9 @@ public class GenerationDependencies {
     return myParametersHash;
   }
 
-  public Map<String, String> getExternalHashes() {
-    // FIXME drop uses and remove
-    return Collections.emptyMap();
-  }
-
   public List<GenerationRootDependencies> getRootDependencies() {
     // FIXME drop uses and remove
     return Collections.emptyList();
-  }
-
-  public List<GenerationRootDependencies> getUnchangedDependencies() {
-    // FIXME drop uses and remove
-    return Collections.emptyList();
-  }
-
-  public void update(@Nullable SNodeReference root, @NotNull String fileName) {
-    // FIXME drop uses and remove
   }
 
   public void update(@Nullable String path, @NotNull String fileName) {
