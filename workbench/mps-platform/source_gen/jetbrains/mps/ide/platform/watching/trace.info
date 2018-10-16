@@ -463,34 +463,26 @@
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567223337882">
     <file name="ReloadManager.java">
-      <node id="4774203567223344757" at="10,0,11,0" concept="15" trace="INSTANCE" />
-      <node id="8593695948618884238" at="19,27,20,87" concept="6" />
-      <node id="4774203567223345458" at="21,5,22,20" concept="12" />
-      <node id="4774203567223348625" at="25,0,26,0" concept="10" trace="runReload#(Ljava/lang/Class;Ljetbrains/mps/ide/platform/watching/ReloadAction;)V" />
-      <node id="4774203567243082912" at="26,0,27,0" concept="10" trace="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
-      <node id="4774203567243084244" at="27,0,28,0" concept="10" trace="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
-      <node id="4774203567245488904" at="28,0,29,0" concept="10" trace="computeNoReload#(Ljetbrains/mps/util/Computable;)null" />
-      <node id="5637031331333965098" at="29,0,30,0" concept="10" trace="flush#()V" />
-      <node id="8593695948618883706" at="18,45,21,5" concept="9" />
-      <node id="4774203567223345308" at="16,0,24,0" concept="16" trace="getInstance#()Ljetbrains/mps/ide/platform/watching/ReloadManager;" />
-      <scope id="8593695948618883708" at="19,27,20,87" />
-      <scope id="4774203567223348625" at="25,0,26,0">
+      <node id="4774203567223348625" at="8,0,9,0" concept="10" trace="runReload#(Ljava/lang/Class;Ljetbrains/mps/ide/platform/watching/ReloadAction;)V" />
+      <node id="4774203567243082912" at="9,0,10,0" concept="10" trace="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
+      <node id="4774203567243084244" at="10,0,11,0" concept="10" trace="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
+      <node id="4774203567245488904" at="11,0,12,0" concept="10" trace="computeNoReload#(Ljetbrains/mps/util/Computable;)null" />
+      <node id="5637031331333965098" at="12,0,13,0" concept="10" trace="flush#()V" />
+      <scope id="4774203567223348625" at="8,0,9,0">
         <var name="participantClass" id="4774203567223348627" />
         <var name="reloadAction" id="4774203567223348630" />
       </scope>
-      <scope id="4774203567243082912" at="26,0,27,0">
+      <scope id="4774203567243082912" at="9,0,10,0">
         <var name="listener" id="4774203567243083521" />
       </scope>
-      <scope id="4774203567243084244" at="27,0,28,0">
+      <scope id="4774203567243084244" at="10,0,11,0">
         <var name="listener" id="4774203567243084248" />
       </scope>
-      <scope id="4774203567245488904" at="28,0,29,0">
+      <scope id="4774203567245488904" at="11,0,12,0">
         <var name="computable" id="4774203567245495920" />
       </scope>
-      <scope id="5637031331333965098" at="29,0,30,0" />
-      <scope id="4774203567223345311" at="18,45,22,20" />
-      <scope id="4774203567223345308" at="16,0,24,0" />
-      <unit id="4774203567223337882" at="9,0,31,0" name="jetbrains.mps.ide.platform.watching.ReloadManager" />
+      <scope id="5637031331333965098" at="12,0,13,0" />
+      <unit id="4774203567223337882" at="7,0,14,0" name="jetbrains.mps.ide.platform.watching.ReloadManager" />
     </file>
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/5765100171650883094">

@@ -36,7 +36,6 @@
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="17wx" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.locks(JDK/)" />
     <import index="tcg7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.fileTypes(MPS.Platform/)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="hlw7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.save(MPS.Platform/)" />
@@ -71,14 +70,9 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
-        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
-        <reference id="1188214555875" name="key" index="2B6OnR" />
-        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1095950406618" name="jetbrains.mps.baseLanguage.structure.DivExpression" flags="nn" index="FJ1c_" />
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
@@ -329,9 +323,6 @@
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -7916,82 +7907,6 @@
   <node concept="312cEu" id="491od_XJZeq">
     <property role="TrG5h" value="ReloadManager" />
     <property role="1sVAO0" value="true" />
-    <node concept="Wx3nA" id="491od_XK0TP" role="jymVt">
-      <property role="TrG5h" value="INSTANCE" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="491od_XK0QQ" role="1B3o_S" />
-      <node concept="3uibUv" id="491od_XK0T4" role="1tU5fm">
-        <ref role="3uigEE" node="491od_XJZeq" resolve="ReloadManager" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="491od_XK19P" role="jymVt" />
-    <node concept="2YIFZL" id="491od_XK12s" role="jymVt">
-      <property role="TrG5h" value="getInstance" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="491od_XK12v" role="3clF47">
-        <node concept="3clFbJ" id="7t2WeWl969U" role="3cqZAp">
-          <node concept="3clFbS" id="7t2WeWl969W" role="3clFbx">
-            <node concept="3clFbF" id="7t2WeWl96ie" role="3cqZAp">
-              <node concept="37vLTI" id="7t2WeWl96lN" role="3clFbG">
-                <node concept="2OqwBi" id="7t2WeWl96ud" role="37vLTx">
-                  <node concept="2YIFZM" id="7t2WeWl96q4" role="2Oq$k0">
-                    <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                    <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-                  </node>
-                  <node concept="liA8E" id="7t2WeWl96DC" role="2OqNvi">
-                    <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                    <node concept="3VsKOn" id="1iFB90Pkutm" role="37wK5m">
-                      <ref role="3VsUkX" node="491od_XJZeq" resolve="ReloadManager" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="7t2WeWl96ic" role="37vLTJ">
-                  <ref role="3cqZAo" node="491od_XK0TP" resolve="INSTANCE" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="7t2WeWl96gC" role="3clFbw">
-            <node concept="10Nm6u" id="7t2WeWl96h5" role="3uHU7w" />
-            <node concept="37vLTw" id="7t2WeWl96aL" role="3uHU7B">
-              <ref role="3cqZAo" node="491od_XK0TP" resolve="INSTANCE" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="491od_XK14M" role="3cqZAp">
-          <node concept="37vLTw" id="491od_XK14L" role="3clFbG">
-            <ref role="3cqZAo" node="491od_XK0TP" resolve="INSTANCE" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="491od_XJZDz" role="1B3o_S" />
-      <node concept="3uibUv" id="491od_XJZFB" role="3clF45">
-        <ref role="3uigEE" node="491od_XJZeq" resolve="ReloadManager" />
-      </node>
-      <node concept="P$JXv" id="7t2WeWl909N" role="lGtFl">
-        <node concept="TZ5HI" id="7t2WeWl909O" role="3nqlJM">
-          <node concept="TZ5HA" id="7t2WeWl909P" role="3HnX3l">
-            <node concept="1dT_AC" id="7t2WeWl90cr" role="1dT_Ay">
-              <property role="1dT_AB" value="please use ReloadManagerComponent explicitly" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7t2WeWl90ck" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="7t2WeWl90ct" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="7t2WeWl935q" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="7t2WeWl936c" role="2B70Vg">
-            <property role="$nhwW" value="3.4" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="491od_XK9YM" role="jymVt" />
     <node concept="3clFb_" id="491od_XK1Qh" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="runReload" />

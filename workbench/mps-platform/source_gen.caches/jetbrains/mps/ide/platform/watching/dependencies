@@ -120,14 +120,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadListener" file="ReloadListener.java" />
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadManager" file="ReloadManager.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadAction" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadParticipant" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" file="ReloadManagerComponent.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
