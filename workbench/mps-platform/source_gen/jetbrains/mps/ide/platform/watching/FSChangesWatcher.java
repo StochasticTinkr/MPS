@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
@@ -19,6 +20,7 @@ import com.intellij.openapi.application.Application;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.function.Supplier;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
@@ -42,12 +44,14 @@ public class FSChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new FSChangesWatcher.BulkFileChangesListener();
-  private ReloadManagerComponent myReloadManager;
+  private final ReloadManagerComponent myReloadManager;
+  private final IdeaFileSystem myIdeaFileSystem;
 
-  public FSChangesWatcher(MessageBus bus, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
+  public FSChangesWatcher(MessageBus bus, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager, IdeaFileSystem ideaFileSystem) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myReloadManager = reloadManager;
+    myIdeaFileSystem = ideaFileSystem;
   }
 
   @NonNls
@@ -92,20 +96,21 @@ public class FSChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
-      if (ListSequence.fromList(events).all(new IWhereFilter<VFileEvent>() {
+      final List<VFileEvent> eventsOfInterest = ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
         public boolean accept(VFileEvent it) {
-          return VirtualFileUtils.isFileEventFromMPS(it);
+          return !(VirtualFileUtils.isFileEventFromMPS(it));
         }
-      })) {
+      }).ofType(VFileEvent.class).toListSequence();
+      if (ListSequence.fromList(eventsOfInterest).isEmpty()) {
         return;
       }
-      myReloadManager.runReload(FileProcessor.class, new ReloadAction<FileProcessor>() {
+      myReloadManager.runReload(getClass().getName(), new Supplier<FileProcessor>() {
+        public FileProcessor get() {
+          return new FileProcessor(myIdeaFileSystem);
+        }
+      }, new ReloadAction<FileProcessor>() {
         public void runAction(final FileProcessor participant) {
-          ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
-            public boolean accept(VFileEvent it) {
-              return !(VirtualFileUtils.isFileEventFromMPS(it));
-            }
-          }).visitAll(new IVisitor<VFileEvent>() {
+          ListSequence.fromList(eventsOfInterest).visitAll(new IVisitor<VFileEvent>() {
             public void visit(VFileEvent it) {
               if (LOG.isDebugEnabled()) {
                 LOG.debug("Got event " + it);

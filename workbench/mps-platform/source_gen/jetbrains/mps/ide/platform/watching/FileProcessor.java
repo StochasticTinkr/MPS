@@ -11,7 +11,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
-import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -36,15 +35,16 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
-public class FileProcessor extends ReloadParticipant {
+/*package*/ class FileProcessor extends ReloadParticipant {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
   private final FileSystemListenersContainer myListenersContainer;
   private final Map<FileSystemListener, FileProcessor.ListenerData> myListener2Data = new HashMap<FileSystemListener, FileProcessor.ListenerData>();
   private final Queue<FileSystemListener> myPostNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
-  private static final IdeaFileSystem FS = ((IdeaFileSystem) FileSystemExtPoint.getFS());
+  private final IdeaFileSystem FS;
 
-  public FileProcessor() {
-    myListenersContainer = FS.getListenersContainer();
+  /*package*/ FileProcessor(IdeaFileSystem fs) {
+    FS = fs;
+    myListenersContainer = fs.getListenersContainer();
   }
 
   @Override
