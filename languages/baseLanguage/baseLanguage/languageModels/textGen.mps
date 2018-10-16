@@ -12495,16 +12495,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="79YVnsaQ_Ak" role="3cqZAp">
-          <node concept="3SKdUq" id="79YVnsaQ_Am" role="3SKWNk">
-            <property role="3SKdUp" value="2. FIXME fileName construction is a hack. I can't access actual TU.getFileName() here. " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="79YVnsaQAn_" role="3cqZAp">
-          <node concept="3SKdUq" id="79YVnsaQAnA" role="3SKWNk">
-            <property role="3SKdUp" value="   Once I refactor ModelDependencies not to keep file name in RootDependencies object, I'd use 3-arg cons and drop the hack." />
-          </node>
-        </node>
         <node concept="3SKdUt" id="79YVnsaQCJ0" role="3cqZAp">
           <node concept="3SKdUq" id="79YVnsaQCJ2" role="3SKWNk">
             <property role="3SKdUp" value="3. Filtering and sorting of dependencies originate from TextGen legacy, left as is for now" />
@@ -12641,22 +12631,9 @@
         <node concept="3cpWs6" id="79YVnsaPI6E" role="3cqZAp">
           <node concept="2ShNRf" id="79YVnsaPI8c" role="3cqZAk">
             <node concept="1pGfFk" id="79YVnsaPOh3" role="2ShVmc">
-              <ref role="37wK5l" to="vmu8:E2BH9lAYof" resolve="RootDependencies" />
+              <ref role="37wK5l" to="vmu8:79YVnsaOePO" resolve="RootDependencies" />
               <node concept="37vLTw" id="79YVnsaQDzt" role="37wK5m">
                 <ref role="3cqZAo" node="79YVnsaQDzq" resolve="nodeFQName" />
-              </node>
-              <node concept="3cpWs3" id="79YVnsaQxQC" role="37wK5m">
-                <node concept="Xl_RD" id="79YVnsaQyx2" role="3uHU7w">
-                  <property role="Xl_RC" value=".java" />
-                </node>
-                <node concept="2OqwBi" id="79YVnsaQtuw" role="3uHU7B">
-                  <node concept="37vLTw" id="79YVnsaQsIT" role="2Oq$k0">
-                    <ref role="3cqZAo" node="79YVnsaQpEr" resolve="myClassifierNode" />
-                  </node>
-                  <node concept="3TrcHB" id="79YVnsaQv23" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
-                </node>
               </node>
               <node concept="37vLTw" id="79YVnsaRTqO" role="37wK5m">
                 <ref role="3cqZAo" node="79YVnsaRnU5" resolve="dep" />

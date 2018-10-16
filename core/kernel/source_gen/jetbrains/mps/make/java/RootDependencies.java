@@ -6,10 +6,10 @@ import java.util.List;
 import jetbrains.mps.util.InternAwareStringList;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
-import org.jdom.Attribute;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Collection;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class RootDependencies implements Comparable<RootDependencies> {
   private static final String CLASS_NAME = "className";
@@ -20,11 +20,12 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private final List<String> myDependNodes;
   private final List<String> myExtendsNodes;
   private String myClassName;
-  private String myFileName;
+
   /*package*/ RootDependencies() {
     myDependNodes = new InternAwareStringList();
     myExtendsNodes = new InternAwareStringList();
   }
+
   public RootDependencies(String nodeName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = InternUtil.intern(nodeName);
     if (dependNodes != null) {
@@ -39,7 +40,6 @@ public class RootDependencies implements Comparable<RootDependencies> {
     } else {
       myExtendsNodes = new InternAwareStringList(2);
     }
-
   }
 
   /**
@@ -49,16 +49,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
   @Deprecated
   public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
     this(nodeName, dependNodes, extendsNodes);
-    this.myFileName = InternUtil.intern(fileName);
   }
 
   public RootDependencies(Element element) {
     this();
     myClassName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
-    Attribute attr = element.getAttribute(FILE_NAME);
-    if (attr != null) {
-      myFileName = InternUtil.intern(attr.getValue());
-    }
     for (Element e : ((List<Element>) element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
         continue;
@@ -75,9 +70,6 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
   public void saveTo(Element element) {
     element.setAttribute(CLASS_NAME, myClassName);
-    if (myFileName != null) {
-      element.setAttribute(FILE_NAME, myFileName);
-    }
     for (String dependNodeName : this.myDependNodes) {
       Element e = new Element(DEPEND_CLASS);
       e.setAttribute(DEPEND_CLASS_NAME, dependNodeName);
@@ -101,17 +93,20 @@ public class RootDependencies implements Comparable<RootDependencies> {
   /*package*/ void addExtendsNode(String s) {
     myExtendsNodes.add(s);
   }
-  /*package*/ void setFileName(String fileName) {
-    this.myFileName = InternUtil.intern(fileName);
-  }
   /*package*/ void setClassName(String className) {
     this.myClassName = InternUtil.intern(className);
   }
   public String getClassName() {
     return myClassName;
   }
+  /**
+   * 
+   * @deprecated this class is about java dependencies, why would I care to keep a file name here?
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public String getFileName() {
-    return (myFileName == null ? myClassName : myFileName);
+    return myClassName;
   }
   @Override
   public int compareTo(RootDependencies p0) {

@@ -37,7 +37,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.util.InternAwareStringList" />
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
-    <classNode dependClassName="org.jdom.Attribute" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>

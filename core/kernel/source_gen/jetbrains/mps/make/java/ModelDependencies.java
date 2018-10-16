@@ -17,16 +17,16 @@ public class ModelDependencies {
   public ModelDependencies() {
   }
   public void addDependencies(RootDependencies newDependency) {
-    MapSequence.fromMap(myDependencies).put(newDependency.getFileName(), newDependency);
+    MapSequence.fromMap(myDependencies).put(newDependency.getClassName(), newDependency);
   }
   public Iterable<RootDependencies> getDependencies() {
     return MapSequence.fromMap(myDependencies).values();
   }
-  public RootDependencies getDependency(String fileName) {
-    return MapSequence.fromMap(myDependencies).get(fileName);
+  public RootDependencies getDependency(String className) {
+    return MapSequence.fromMap(myDependencies).get(className);
   }
   public void replaceRoot(RootDependencies rootDependencies) {
-    MapSequence.fromMap(myDependencies).put(rootDependencies.getFileName(), rootDependencies);
+    MapSequence.fromMap(myDependencies).put(rootDependencies.getClassName(), rootDependencies);
   }
   public Element toXml() {
     Element root = new Element(DEPENDENCIES_ROOT);
@@ -40,6 +40,7 @@ public class ModelDependencies {
     return root;
   }
   public static ModelDependencies fromXml(Element root) {
+    // FIXME duplicates parsing logic of BLDependencies sax parser! 
     ModelDependencies result = new ModelDependencies();
     for (Element e : ((List<Element>) root.getChildren(DEPENDENCY))) {
       result.addDependencies(new RootDependencies(e));

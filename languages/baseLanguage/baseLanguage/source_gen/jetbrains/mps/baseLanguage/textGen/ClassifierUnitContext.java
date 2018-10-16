@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import java.util.ArrayList;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Common context for any Classifier TextUnit (top-level), manages imports for shorter names and tracks dependencies 
@@ -100,8 +99,6 @@ public class ClassifierUnitContext implements RootDependencies.Source {
   public RootDependencies getDependencies() {
     // 1. nodeFQName comes from legacy TextGen 
     String nodeFQName = NameUtil.nodeFQName(myClassifierNode);
-    // 2. FIXME fileName construction is a hack. I can't access actual TU.getFileName() here.  
-    //    Once I refactor ModelDependencies not to keep file name in RootDependencies object, I'd use 3-arg cons and drop the hack. 
     // 3. Filtering and sorting of dependencies originate from TextGen legacy, left as is for now 
     myDepends.removeAll(myExtends);
     myDepends.remove(nodeFQName);
@@ -113,6 +110,6 @@ public class ClassifierUnitContext implements RootDependencies.Source {
     ArrayList<String> ext = new ArrayList<String>(myExtends);
     Collections.sort(dep);
     Collections.sort(ext);
-    return new RootDependencies(nodeFQName, SPropertyOperations.getString(myClassifierNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".java", dep, ext);
+    return new RootDependencies(nodeFQName, dep, ext);
   }
 }
