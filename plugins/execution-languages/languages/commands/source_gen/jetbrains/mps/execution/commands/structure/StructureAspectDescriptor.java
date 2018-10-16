@@ -8,10 +8,13 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuilderBlockStatement = createDescriptorForBuilderBlockStatement();
@@ -118,6 +121,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -206,7 +220,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L);
     b.origin("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)/856705193941281756");
     b.version(2);
-    b.prop("resolveInfo", 0xbe3a0d5ba1a2bddL, "856705193941281757");
+    b.property("resolveInfo", 0xbe3a0d5ba1a2bddL).type(PrimitiveTypeId.STRING).origin("856705193941281757").done();
     b.associate("parameter", 0xbe3a0d5ba1a2bdeL).target(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L).optional(false).origin("856705193941281758").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
@@ -290,7 +304,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration", 0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L);
     b.origin("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)/856705193941281762");
     b.version(2);
-    b.prop("isRequired", 0xbe3a0d5ba1a2be3L, "856705193941281763");
+    b.property("isRequired", 0xbe3a0d5ba1a2be3L).type(PrimitiveTypeId.BOOLEAN).origin("856705193941281763").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForKeyValueCommandPart() {
@@ -299,7 +313,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart", 0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xc58d43a818a1f80L);
     b.origin("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)/889694274152177535");
     b.version(2);
-    b.prop("dash", 0x166dfef12711aa49L, "1616228152991918665");
+    b.property("dash", 0x166dfef12711aa49L).type(PrimitiveTypeId.BOOLEAN).origin("1616228152991918665").done();
     b.aggregate("key", 0xc58d43a818a1f83L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("889694274152177539").done();
     b.aggregate("value", 0xc58d43a818a1f84L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("889694274152177540").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,51,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.structure.StructureAspectDescriptor" />
+      <unit at="16,0,64,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:6b2f78f4-2a26-4d24-a407-0f91df0625ef(jetbrains.mps.lang.editor.imageGen.testLanguage.structure)/2442780630506641388">
@@ -36,20 +36,20 @@
       <node id="2442780630506641388" at="15,116,16,52" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="2442780630506641388" at="15,0,16,0" concept="1" trace="myConceptExportAsImage" />
-      <node id="2442780630506641388" at="31,47,32,38" concept="4" />
-      <node id="2442780630506641388" at="42,71,43,195" concept="3" />
-      <node id="2442780630506641388" at="43,195,44,34" concept="0" />
-      <node id="2442780630506641388" at="44,34,45,127" concept="0" />
-      <node id="2442780630506641388" at="45,127,46,134" concept="0" />
-      <node id="2442780630506641388" at="46,134,47,17" concept="0" />
-      <node id="2442780630506641388" at="47,17,48,22" concept="4" />
-      <node id="2442780630506641388" at="42,0,50,0" concept="6" trace="createDescriptorForExportAsImage#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="2442780630506641388" at="31,47,32,38" />
-      <scope id="2442780630506641388" at="42,71,48,22">
+      <node id="2442780630506641388" at="17,0,18,0" concept="1" trace="myConceptExportAsImage" />
+      <node id="2442780630506641388" at="33,47,34,38" concept="4" />
+      <node id="2442780630506641388" at="55,71,56,195" concept="3" />
+      <node id="2442780630506641388" at="56,195,57,34" concept="0" />
+      <node id="2442780630506641388" at="57,34,58,127" concept="0" />
+      <node id="2442780630506641388" at="58,127,59,134" concept="0" />
+      <node id="2442780630506641388" at="59,134,60,17" concept="0" />
+      <node id="2442780630506641388" at="60,17,61,22" concept="4" />
+      <node id="2442780630506641388" at="55,0,63,0" concept="6" trace="createDescriptorForExportAsImage#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2442780630506641388" at="33,47,34,38" />
+      <scope id="2442780630506641388" at="55,71,61,22">
         <var name="b" id="2442780630506641388" />
       </scope>
-      <scope id="2442780630506641388" at="42,0,50,0" />
+      <scope id="2442780630506641388" at="55,0,63,0" />
     </file>
   </root>
 </debug-info>

@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -94,6 +97,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -107,8 +121,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
     b.origin("r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)/2522969319638091381");
     b.version(2);
-    b.prop("isErrorIntention", 0x2303633a9c3cc679L, "2522969319638091385");
-    b.prop("isAvailableInChildNodes", 0x2303633a9c3cc67aL, "2522969319638091386");
+    b.property("isErrorIntention", 0x2303633a9c3cc679L).type(PrimitiveTypeId.BOOLEAN).origin("2522969319638091385").done();
+    b.property("isAvailableInChildNodes", 0x2303633a9c3cc67aL).type(PrimitiveTypeId.BOOLEAN).origin("2522969319638091386").done();
     b.associate("forConcept", 0x2303633a9c3e6812L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("2522969319638198290").done();
     b.aggregate("descriptionFunction", 0x2303633a9c3cd0a9L).target(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81bfaa7L).optional(false).ordered(true).multiple(false).origin("2522969319638093993").done();
     b.aggregate("childFilterFunction", 0x2303633a9c3cd0aaL).target(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L).optional(true).ordered(true).multiple(false).origin("2522969319638093994").done();

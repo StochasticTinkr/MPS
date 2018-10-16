@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptField = createDescriptorForField();
@@ -41,6 +44,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -51,8 +65,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)/1116534962441");
     b.version(2);
-    b.prop("start", 0x103f6ac7723L, "1116535027491");
-    b.prop("end", 0x103f6ac8b77L, "1116535032695");
+    b.property("start", 0x103f6ac7723L).type(PrimitiveTypeId.INTEGER).origin("1116535027491").done();
+    b.property("end", 0x103f6ac8b77L).type(PrimitiveTypeId.INTEGER).origin("1116535032695").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMapping() {
@@ -61,8 +75,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)/1116534914096");
     b.version(2);
-    b.prop("code", 0x103f6abdf46L, "1116534988614");
-    b.prop("targetClass", 0x103f6ac00e8L, "1116534997224");
+    b.property("code", 0x103f6abdf46L).type(PrimitiveTypeId.STRING).origin("1116534988614").done();
+    b.property("targetClass", 0x103f6ac00e8L).type(PrimitiveTypeId.STRING).origin("1116534997224").done();
     b.aggregate("field", 0x103f6b56dcdL).target(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L).optional(true).ordered(true).multiple(true).origin("1116535614925").done();
     return b.create();
   }

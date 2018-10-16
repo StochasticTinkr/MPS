@@ -4,14 +4,18 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExpressionToReduceToStatement = createDescriptorForExpressionToReduceToStatement();
@@ -27,6 +31,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptRefTestMethodCall = createDescriptorForRefTestMethodCall();
   /*package*/ final ConceptDescriptor myConceptRefTestParam = createDescriptorForRefTestParam();
   /*package*/ final ConceptDescriptor myConceptRefTestParamRef = createDescriptorForRefTestParamRef();
+  /*package*/ final EnumerationDescriptor myEnumerationOption = new EnumerationDescriptor_Option();
+  /*package*/ final EnumerationDescriptor myEnumerationUseInTest = new EnumerationDescriptor_UseInTest();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -73,6 +79,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList(myEnumerationOption, myEnumerationUseInTest);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -102,7 +119,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode", 0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL);
     b.origin("r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1195171011194");
     b.version(2);
-    b.prop("option", 0x11645bf6873L, "1195171080307");
+    b.property("option", 0x11645bf6873L).type(MetaIdFactory.enumerationId(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a380abL)).origin("1195171080307").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInputNode_B() {
@@ -119,7 +136,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", 0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e69cb58aL);
     b.origin("r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1206462895210");
     b.version(2);
-    b.prop("key", 0x44696d5abe089ec8L, "4929591503636438728");
+    b.property("key", 0x44696d5abe089ec8L).type(PrimitiveTypeId.INTEGER).origin("4929591503636438728").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInputRoot() {
@@ -128,7 +145,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1195168316083");
     b.version(2);
-    b.prop("useInTest", 0x117eb48fdf5L, "1202243304949");
+    b.property("useInTest", 0x117eb48fdf5L).type(MetaIdFactory.enumerationId(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x117eb3f7611L)).origin("1202243304949").done();
     b.aggregate("inputChild", 0x11645abf534L).target(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL).optional(true).ordered(true).multiple(true).origin("1195169805620").done();
     return b.create();
   }
@@ -138,7 +155,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1209149421970");
     b.version(2);
-    b.prop("useInTest", 0x11986ed1901L, "1209149495553");
+    b.property("useInTest", 0x11986ed1901L).type(MetaIdFactory.enumerationId(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x117eb3f7611L)).origin("1209149495553").done();
     b.aggregate("statementList", 0x11986ec6379L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("1209149449081").done();
     return b.create();
   }

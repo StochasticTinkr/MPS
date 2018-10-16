@@ -4,10 +4,12 @@ package jetbrains.mps.lang.sharedConcepts.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
@@ -20,6 +22,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_operationContext = createDescriptorForConceptFunctionParameter_operationContext();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_progressMonitor = createDescriptorForConceptFunctionParameter_progressMonitor();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_scope = createDescriptorForConceptFunctionParameter_scope();
+  /*package*/ final EnumerationDescriptor myEnumerationNodePresentationOptions = new EnumerationDescriptor_NodePresentationOptions();
+  /*package*/ final EnumerationDescriptor myEnumerationOptions_DefaultCustom = new EnumerationDescriptor_Options_DefaultCustom();
+  /*package*/ final EnumerationDescriptor myEnumerationOptions_DefaultTrue = new EnumerationDescriptor_Options_DefaultTrue();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -51,6 +56,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList(myEnumerationNodePresentationOptions, myEnumerationOptions_DefaultCustom, myEnumerationOptions_DefaultTrue);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);

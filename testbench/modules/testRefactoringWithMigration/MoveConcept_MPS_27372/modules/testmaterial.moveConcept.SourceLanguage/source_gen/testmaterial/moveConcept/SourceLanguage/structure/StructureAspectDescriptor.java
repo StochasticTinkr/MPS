@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoveConcept_A = createDescriptorForMoveConcept_A();
@@ -47,6 +50,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -57,7 +71,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/6006982468244407213");
     b.version(2);
-    b.prop("prop", 0x535d16ba7fbdf83fL, "6006982468244994111");
+    b.property("prop", 0x535d16ba7fbdf83fL).type(PrimitiveTypeId.STRING).origin("6006982468244994111").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMoveConcept_B() {
@@ -75,7 +89,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c3L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(testmaterial.moveConcept.SourceLanguage.structure)/493339661774729917");
     b.version(2);
-    b.prop("moveProperty", 0x6d8b1cefdb1b2beL, "493339661774729918");
+    b.property("moveProperty", 0x6d8b1cefdb1b2beL).type(PrimitiveTypeId.STRING).origin("493339661774729918").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMovePropertyInstance() {

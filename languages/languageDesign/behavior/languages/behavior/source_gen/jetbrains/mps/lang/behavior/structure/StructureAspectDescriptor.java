@@ -8,10 +8,13 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptBehavior = createDescriptorForConceptBehavior();
@@ -61,6 +64,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -96,10 +110,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL);
     b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/1225194472830");
     b.version(2);
-    b.prop("isVirtual", 0x11d43480580L, "1225194472832");
-    b.prop("isPrivate", 0x11d43480581L, "1225194472833");
-    b.prop("isAbstract", 0x11d43480582L, "1225194472834");
-    b.prop("isStatic", 0x51613f7fe129b24dL, "5864038008284099149");
+    b.property("isVirtual", 0x11d43480580L).type(PrimitiveTypeId.BOOLEAN).origin("1225194472832").done();
+    b.property("isPrivate", 0x11d43480581L).type(PrimitiveTypeId.BOOLEAN).origin("1225194472833").done();
+    b.property("isAbstract", 0x11d43480582L).type(PrimitiveTypeId.BOOLEAN).origin("1225194472834").done();
+    b.property("isStatic", 0x51613f7fe129b24dL).type(PrimitiveTypeId.BOOLEAN).origin("5864038008284099149").done();
     b.associate("overriddenMethod", 0x11d4348057fL).target(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL).optional(true).origin("1225194472831").done();
     return b.create();
   }

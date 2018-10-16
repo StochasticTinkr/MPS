@@ -8,10 +8,13 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractFinderDeclaration = createDescriptorForAbstractFinderDeclaration();
@@ -93,6 +96,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -188,8 +202,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
     b.origin("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)/1197044488845");
     b.version(2);
-    b.prop("description", 0x116c9c44c38L, "1197385993272");
-    b.prop("longDescription", 0x1180ec04907L, "1202838325511");
+    b.property("description", 0x116c9c44c38L).type(PrimitiveTypeId.STRING).origin("1197385993272").done();
+    b.property("longDescription", 0x1180ec04907L).type(PrimitiveTypeId.STRING).origin("1202838325511").done();
     b.aggregate("isVisibleBlock", 0x11b36e6cbecL).target(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11b36e60151L).optional(true).ordered(true).multiple(false).origin("1216396839916").done();
     b.aggregate("isUsedByDefault", 0x1660f4e8320e447L).target(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1660f4e85a04a8fL).optional(true).ordered(true).multiple(false).origin("100784871544251463").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);

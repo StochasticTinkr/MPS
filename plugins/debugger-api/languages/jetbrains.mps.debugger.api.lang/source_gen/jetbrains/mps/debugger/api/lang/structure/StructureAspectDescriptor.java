@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -73,6 +76,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -91,7 +105,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)/3157158168562219319");
     b.version(2);
-    b.prop("isComplex", 0x79747203892d4cd6L, "8751745335399632086");
+    b.property("isComplex", 0x79747203892d4cd6L).type(PrimitiveTypeId.BOOLEAN).origin("8751745335399632086").done();
     b.associate("declaration", 0x2bd07aa080dfb939L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(true).origin("3157158168562219321").done();
     b.aggregate("createBreakpoint", 0x2bd07aa080dfb938L).target(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb93aL).optional(false).ordered(true).multiple(false).origin("3157158168562219320").done();
     b.aggregate("isApplicableBreakpoint", 0x2b1681328a5d11f6L).target(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2b1681328a5d4b64L).optional(true).ordered(true).multiple(false).origin("3104811047188238838").done();
@@ -161,8 +175,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)/2569394751387978473");
     b.version(2);
-    b.prop("kindName", 0x23a852e9c43bcaebL, "2569394751387978475");
-    b.prop("kindPresentation", 0x23a852e9c43bcaecL, "2569394751387978476");
+    b.property("kindName", 0x23a852e9c43bcaebL).type(PrimitiveTypeId.STRING).origin("2569394751387978475").done();
+    b.property("kindPresentation", 0x23a852e9c43bcaecL).type(PrimitiveTypeId.STRING).origin("2569394751387978476").done();
     b.aggregate("nodeExpression", 0x23a852e9c43bcafcL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2569394751387978492").done();
     b.aggregate("projectExpression", 0x23a852e9c43bcafdL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2569394751387978493").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
@@ -184,7 +198,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)/1104094430779068753");
     b.version(2);
-    b.prop("debuggerName", 0xf528808f912d155L, "1104094430779068757");
+    b.property("debuggerName", 0xf528808f912d155L).type(PrimitiveTypeId.STRING).origin("1104094430779068757").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("debugger");
     return b.create();
@@ -195,7 +209,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
     b.origin("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)/1104094430779063683");
     b.version(2);
-    b.prop("name", 0x23a852e9c43c456dL, "2569394751388009837");
+    b.property("name", 0x23a852e9c43c456dL).type(PrimitiveTypeId.STRING).origin("2569394751388009837").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("debugger type");
     return b.create();

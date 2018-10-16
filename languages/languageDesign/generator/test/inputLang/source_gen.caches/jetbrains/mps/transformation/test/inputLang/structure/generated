@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <product version="3" modelHash="965fxpuf9zxoykejb5c0rcnjfqq0bli">
-  <files names="ConceptPresentationAspectImpl.java:LanguageConceptSwitch.java:Option.java:Option_PropertySupport.java:StructureAspectDescriptor.java:UseInTest.java:UseInTest_PropertySupport.java" />
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_Option.java:EnumerationDescriptor_UseInTest.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

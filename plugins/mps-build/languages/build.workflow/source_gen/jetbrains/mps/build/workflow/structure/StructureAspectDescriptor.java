@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBwfAntStatement = createDescriptorForBwfAntStatement();
@@ -116,6 +119,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -136,7 +150,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.workflow.structure.BwfProjectPart", 0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2529023923283158037");
     b.version(2);
-    b.prop("resource", 0x2318e5dbdfc1e41fL, "2529023923283158047");
+    b.property("resource", 0x2318e5dbdfc1e41fL).type(PrimitiveTypeId.STRING).origin("2529023923283158047").done();
     b.associate("classpath", 0x2318e5dbdfc1e420L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L).optional(true).origin("2529023923283158048").done();
     b.alias("ant task bundle");
     return b.create();
@@ -148,7 +162,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2059109515400477499");
     b.version(2);
-    b.prop("classname", 0x1c936d31d3127b3eL, "2059109515400477502");
+    b.property("classname", 0x1c936d31d3127b3eL).type(PrimitiveTypeId.STRING).origin("2059109515400477502").done();
     b.associate("classpath", 0x1c936d31d3127b3fL).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L).optional(true).origin("2059109515400477503").done();
     b.alias("ant taskdef");
     return b.create();
@@ -168,7 +182,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/8292198017262926588");
     b.version(2);
-    b.prop("path", 0x7313ce29aa27bb08L, "8292198017262926600");
+    b.property("path", 0x7313ce29aa27bb08L).type(PrimitiveTypeId.STRING).origin("8292198017262926600").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBwfFileSet() {
@@ -233,15 +247,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/4755209551904389307");
     b.version(2);
-    b.prop("outputFolder", 0x667edfe4171f2fb7L, "7385586609667649463");
-    b.prop("generateDebugInfo", 0xcdff0e1a96739c5L, "927724900262033861");
-    b.prop("heapSize", 0xcdff0e1a96ccbe3L, "927724900262398947");
-    b.prop("noWarnings", 0xcdff0e1a96ccbeeL, "927724900262398958");
-    b.prop("fork", 0x3d4a6c597112f405L, "4416461515995149317");
-    b.prop("compiler", 0x1c936d31d30fdf98L, "2059109515400306584");
-    b.prop("javaLevelSource", 0x6120f2e858e3ef7cL, "6998860900671418236");
-    b.prop("javaLevelTarget", 0x6120f2e858e5a64cL, "6998860900671530572");
-    b.prop("compilerOptions", 0x147ef24d5e272d05L, "1476884141930130693");
+    b.property("outputFolder", 0x667edfe4171f2fb7L).type(PrimitiveTypeId.STRING).origin("7385586609667649463").done();
+    b.property("generateDebugInfo", 0xcdff0e1a96739c5L).type(PrimitiveTypeId.BOOLEAN).origin("927724900262033861").done();
+    b.property("heapSize", 0xcdff0e1a96ccbe3L).type(PrimitiveTypeId.INTEGER).origin("927724900262398947").done();
+    b.property("noWarnings", 0xcdff0e1a96ccbeeL).type(PrimitiveTypeId.BOOLEAN).origin("927724900262398958").done();
+    b.property("fork", 0x3d4a6c597112f405L).type(PrimitiveTypeId.BOOLEAN).origin("4416461515995149317").done();
+    b.property("compiler", 0x1c936d31d30fdf98L).type(PrimitiveTypeId.STRING).origin("2059109515400306584").done();
+    b.property("javaLevelSource", 0x6120f2e858e3ef7cL).type(PrimitiveTypeId.STRING).origin("6998860900671418236").done();
+    b.property("javaLevelTarget", 0x6120f2e858e5a64cL).type(PrimitiveTypeId.STRING).origin("6998860900671530572").done();
+    b.property("compilerOptions", 0x147ef24d5e272d05L).type(PrimitiveTypeId.STRING).origin("1476884141930130693").done();
     b.aggregate("sources", 0x6e014d63c07ebd25L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL).optional(false).ordered(true).multiple(false).origin("7926701909975416101").done();
     b.aggregate("resources", 0x1708d207f21b161dL).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL).optional(false).ordered(true).multiple(false).origin("1659807394254493213").done();
     b.aggregate("dependencies", 0x41fde5e4adce38c8L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL).optional(true).ordered(true).multiple(true).origin("4755209551904389320").done();
@@ -266,10 +280,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6896005762093571400");
     b.version(2);
-    b.prop("defaultValue", 0x5fb388b43aa25d4aL, "6896005762093571402");
-    b.prop("exportToProperiesFile", 0x5fb388b43aa25d4eL, "6896005762093571406");
-    b.prop("isLocation", 0x5fb388b43aa25d4fL, "6896005762093571407");
-    b.prop("uninitialized", 0x600ce6822a9cc358L, "6921160174096663384");
+    b.property("defaultValue", 0x5fb388b43aa25d4aL).type(PrimitiveTypeId.STRING).origin("6896005762093571402").done();
+    b.property("exportToProperiesFile", 0x5fb388b43aa25d4eL).type(PrimitiveTypeId.BOOLEAN).origin("6896005762093571406").done();
+    b.property("isLocation", 0x5fb388b43aa25d4fL).type(PrimitiveTypeId.BOOLEAN).origin("6896005762093571407").done();
+    b.property("uninitialized", 0x600ce6822a9cc358L).type(PrimitiveTypeId.BOOLEAN).origin("6921160174096663384").done();
     b.alias("macro");
     return b.create();
   }
@@ -279,8 +293,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.workflow.structure.BwfProjectPart", 0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6520682027040940623");
     b.version(2);
-    b.prop("prefix", 0x5a7e1dc16b0ca250L, "6520682027040940624");
-    b.prop("propertiesFile", 0x5a7e1dc16b0ca251L, "6520682027040940625");
+    b.property("prefix", 0x5a7e1dc16b0ca250L).type(PrimitiveTypeId.STRING).origin("6520682027040940624").done();
+    b.property("propertiesFile", 0x5a7e1dc16b0ca251L).type(PrimitiveTypeId.STRING).origin("6520682027040940625").done();
     b.alias("import macros");
     return b.create();
   }
@@ -311,8 +325,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/2769948622284546673");
     b.version(2);
-    b.prop("temporaryFolder", 0x667edfe41720f53eL, "7385586609667765566");
-    b.prop("baseDirectory", 0x47dbf964f7011e8eL, "5178006408628608654");
+    b.property("temporaryFolder", 0x667edfe41720f53eL).type(PrimitiveTypeId.STRING).origin("7385586609667765566").done();
+    b.property("baseDirectory", 0x47dbf964f7011e8eL).type(PrimitiveTypeId.STRING).origin("5178006408628608654").done();
     b.aggregate("parts", 0x2670d5989d5ace60L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L).optional(true).ordered(true).multiple(true).origin("2769948622284574304").done();
     b.aggregate("imports", 0x6565da114725c6b7L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L).optional(true).ordered(true).multiple(true).origin("7306485738221455031").done();
     b.alias("build workflow project");

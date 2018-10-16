@@ -12,6 +12,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.EnumerationDescriptor_TrimKind" file="EnumerationDescriptor_TrimKind.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.IconContainer" file="IconContainer.java">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
@@ -25,52 +35,21 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.EnumerationDescriptor_TrimKind" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.LanguageConceptSwitch" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptKind" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StaticScope" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind" file="TrimKind.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.LinkedList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" file="TrimKind_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TrimKind" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._CharConstant_String_PropertySupport" file="_CharConstant_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" file="_FPNumber_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._FloatNumberValue_PropertySupport" file="_FloatNumberValue_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._HexNumberValue_PropertySupport" file="_HexNumberValue_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" file="_Identifier_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._LongType_String_PropertySupport" file="_LongType_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
 </dependenciesRoot>
 

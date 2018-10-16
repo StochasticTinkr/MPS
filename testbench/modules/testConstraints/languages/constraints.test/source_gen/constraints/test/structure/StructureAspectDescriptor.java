@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestConstraintsInheritance_Base = createDescriptorForTestConstraintsInheritance_Base();
@@ -95,6 +98,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -140,9 +154,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/5816870305080488180");
     b.version(2);
-    b.prop("triggerBase", 0x50b9acb92ed73128L, "5816870305080488232");
-    b.prop("triggerD1", 0x50b9acb92ed7312aL, "5816870305080488234");
-    b.prop("triggerD2", 0x50b9acb92ed7312dL, "5816870305080488237");
+    b.property("triggerBase", 0x50b9acb92ed73128L).type(PrimitiveTypeId.BOOLEAN).origin("5816870305080488232").done();
+    b.property("triggerD1", 0x50b9acb92ed7312aL).type(PrimitiveTypeId.BOOLEAN).origin("5816870305080488234").done();
+    b.property("triggerD2", 0x50b9acb92ed7312dL).type(PrimitiveTypeId.BOOLEAN).origin("5816870305080488237").done();
     b.aggregate("node", 0x50b9acb92ed73126L).target(0x2b80057037584c14L, 0x86fb871266fb9d11L, 0x50b9acb92ed730ffL).optional(true).ordered(true).multiple(false).origin("5816870305080488230").done();
     return b.create();
   }
@@ -274,9 +288,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:35917c6a-b8ff-491f-83ca-d36ca2c36595(constraints.test.structure)/2614955748377238644");
     b.version(2);
-    b.prop("debug", 0x244a306605641c7bL, "2614955748377238651");
-    b.prop("inScope", 0x244a306605641c80L, "2614955748377238656");
-    b.prop("inScopeAdvanced", 0x244a30660589f055L, "2614955748379717717");
+    b.property("debug", 0x244a306605641c7bL).type(PrimitiveTypeId.STRING).origin("2614955748377238651").done();
+    b.property("inScope", 0x244a306605641c80L).type(PrimitiveTypeId.BOOLEAN).origin("2614955748377238656").done();
+    b.property("inScopeAdvanced", 0x244a30660589f055L).type(PrimitiveTypeId.BOOLEAN).origin("2614955748379717717").done();
     b.alias("target");
     return b.create();
   }

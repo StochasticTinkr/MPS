@@ -4,12 +4,16 @@ package jetbrains.mps.samples.heating.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplicability = createDescriptorForApplicability();
@@ -23,6 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSpecificDay = createDescriptorForSpecificDay();
   /*package*/ final ConceptDescriptor myConceptWeekDays = createDescriptorForWeekDays();
   /*package*/ final ConceptDescriptor myConceptWeekendDay = createDescriptorForWeekendDay();
+  /*package*/ final EnumerationDescriptor myEnumerationDayDataType = new EnumerationDescriptor_DayDataType();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -65,6 +70,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList(myEnumerationDayDataType);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -81,7 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128232717410");
     b.version(2);
-    b.prop("temperature", 0x4644aa4ce08aec70L, "5063359128232717424");
+    b.property("temperature", 0x4644aa4ce08aec70L).type(PrimitiveTypeId.INTEGER).origin("5063359128232717424").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDailyPlan() {
@@ -90,7 +106,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128232717391");
     b.version(2);
-    b.prop("displayName", 0x1dfff86fbfd92c74L, "2161719505004866676");
+    b.property("displayName", 0x1dfff86fbfd92c74L).type(PrimitiveTypeId.STRING).origin("2161719505004866676").done();
     b.aggregate("items", 0x4644aa4ce08aec57L).target(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L).optional(true).ordered(true).multiple(true).origin("5063359128232717399").done();
     b.aggregate("applicability", 0x40bcae6c0e686ffeL).target(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL).optional(false).ordered(true).multiple(false).origin("4664795093170417662").done();
     b.aggregate("customizes", 0xcfa085c9af881f8L).target(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L).optional(true).ordered(true).multiple(false).origin("935069066462790136").done();
@@ -110,8 +126,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.heating.structure.Applicability", 0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/4664795093170636139");
     b.version(2);
-    b.prop("start", 0x40bcae6c0e6bc59fL, "4664795093170636191");
-    b.prop("end", 0x40bcae6c0e6bc5a1L, "4664795093170636193");
+    b.property("start", 0x40bcae6c0e6bc59fL).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636191").done();
+    b.property("end", 0x40bcae6c0e6bc5a1L).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636193").done();
     b.alias("range");
     return b.create();
   }
@@ -138,7 +154,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5726447348463731062");
     b.version(2);
-    b.prop("start", 0x4f786d85fe28827cL, "5726447348463731324");
+    b.property("start", 0x4f786d85fe28827cL).type(PrimitiveTypeId.INTEGER).origin("5726447348463731324").done();
     b.aggregate("event", 0x4f786d85fe289dd1L).target(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L).optional(false).ordered(true).multiple(false).origin("5726447348463738321").done();
     return b.create();
   }
@@ -148,7 +164,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.heating.structure.Applicability", 0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/4664795093170605734");
     b.version(2);
-    b.prop("day", 0x40bcae6c0e6b4ea7L, "4664795093170605735");
+    b.property("day", 0x40bcae6c0e6b4ea7L).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170605735").done();
     b.alias("specific day");
     return b.create();
   }

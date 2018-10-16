@@ -4,12 +4,16 @@ package jetbrains.mps.samples.Kaja.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractCommand = createDescriptorForAbstractCommand();
@@ -41,6 +45,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTraceMessage = createDescriptorForTraceMessage();
   /*package*/ final ConceptDescriptor myConceptWest = createDescriptorForWest();
   /*package*/ final ConceptDescriptor myConceptWhile = createDescriptorForWhile();
+  /*package*/ final EnumerationDescriptor myEnumerationLookingDirection = new EnumerationDescriptor_LookingDirection();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -119,6 +124,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList(myEnumerationLookingDirection);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -145,7 +161,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/6405700485436287811");
     b.version(2);
-    b.prop("text", 0x58e59ea713fa2b45L, "6405700485436287813");
+    b.property("text", 0x58e59ea713fa2b45L).type(PrimitiveTypeId.STRING).origin("6405700485436287813").done();
     b.alias("#");
     return b.create();
   }
@@ -263,7 +279,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893078082");
     b.version(2);
-    b.prop("direction", 0x61fd16e423a38043L, "7060824959893078083");
+    b.property("direction", 0x61fd16e423a38043L).type(MetaIdFactory.enumerationId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x61fd16e423a34c05L)).origin("7060824959893078083").done();
     b.alias("looking");
     return b.create();
   }
@@ -301,7 +317,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/3308300503039660364");
     b.version(2);
-    b.prop("count", 0x2de971c785ecd14eL, "3308300503039660366");
+    b.property("count", 0x2de971c785ecd14eL).type(PrimitiveTypeId.INTEGER).origin("3308300503039660366").done();
     b.aggregate("body", 0x2de971c785ecd14fL).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL).optional(false).ordered(true).multiple(false).origin("3308300503039660367").done();
     b.alias("repeat");
     return b.create();
@@ -371,7 +387,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/3210697320273763054");
     b.version(2);
-    b.prop("message", 0x2c8eb033a8375aefL, "3210697320273763055");
+    b.property("message", 0x2c8eb033a8375aefL).type(PrimitiveTypeId.STRING).origin("3210697320273763055").done();
     b.alias("trace");
     return b.create();
   }

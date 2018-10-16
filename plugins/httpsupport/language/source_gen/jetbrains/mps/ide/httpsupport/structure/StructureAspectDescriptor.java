@@ -4,14 +4,19 @@ package jetbrains.mps.ide.httpsupport.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCanHandleRequestFunction = createDescriptorForCanHandleRequestFunction();
@@ -42,6 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSerializeFunction = createDescriptorForSerializeFunction();
   /*package*/ final ConceptDescriptor myConceptSerializedValueParameter = createDescriptorForSerializedValueParameter();
   /*package*/ final ConceptDescriptor myConceptValueToSerializeParameter = createDescriptorForValueToSerializeParameter();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeSegmentName = new ConstrainedStringDatatypeDescriptorImpl(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104face451L, "SegmentName", "r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/6040064942662280273", "[a-zA-Z0-9.\\-_~:@!$&'()*+,;=%]*");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -117,6 +123,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList(myCSDatatypeSegmentName);
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -270,7 +287,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144607426");
     b.version(2);
-    b.prop("portNumber", 0x6f2759b7139c32c3L, "8009469105144607427");
+    b.property("portNumber", 0x6f2759b7139c32c3L).type(PrimitiveTypeId.INTEGER).origin("8009469105144607427").done();
     b.alias("custom port");
     return b.create();
   }
@@ -288,7 +305,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/2332657309400282169");
     b.version(2);
-    b.prop("required", 0x205f4376c585b43dL, "2332657309400282173");
+    b.property("required", 0x205f4376c585b43dL).type(PrimitiveTypeId.BOOLEAN).origin("2332657309400282173").done();
     b.aggregate("parameterConverter", 0x46f064803fbfba0fL).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L).optional(false).ordered(true).multiple(false).origin("5111696079053634063").done();
     return b.create();
   }
@@ -315,7 +332,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/6040064942661848792");
     b.version(2);
-    b.prop("segment", 0x53d29f104face44fL, "6040064942662280271");
+    b.property("segment", 0x53d29f104face44fL).type(MetaIdFactory.constrainedStringDataTypeId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104face451L)).origin("6040064942662280271").done();
     b.alias("/");
     return b.create();
   }
@@ -362,7 +379,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.ide.httpsupport.structure.HttpRequestOperation", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b595d2L);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/6886330673564897217");
     b.version(2);
-    b.prop("type", 0x5f91294323b6503dL, "6886330673564897341");
+    b.property("type", 0x5f91294323b6503dL).type(PrimitiveTypeId.STRING).origin("6886330673564897341").done();
     b.aggregate("buffer", 0x5f91294323b6503fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6886330673564897343").done();
     b.alias("send response");
     return b.create();

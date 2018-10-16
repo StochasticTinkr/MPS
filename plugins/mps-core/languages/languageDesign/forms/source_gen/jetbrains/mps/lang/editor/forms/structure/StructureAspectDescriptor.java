@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -48,6 +51,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -89,8 +103,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L);
     b.origin("r:8598bcb3-b739-42c2-b1fc-32c367683d7c(jetbrains.mps.lang.editor.forms.structure)/1340057216891283515");
     b.version(2);
-    b.prop("trueText", 0x1298d6f05780e83eL, "1340057216891283518");
-    b.prop("falseText", 0x1298d6f05780e840L, "1340057216891283520");
+    b.property("trueText", 0x1298d6f05780e83eL).type(PrimitiveTypeId.STRING).origin("1340057216891283518").done();
+    b.property("falseText", 0x1298d6f05780e840L).type(PrimitiveTypeId.STRING).origin("1340057216891283520").done();
     b.alias("text");
     return b.create();
   }

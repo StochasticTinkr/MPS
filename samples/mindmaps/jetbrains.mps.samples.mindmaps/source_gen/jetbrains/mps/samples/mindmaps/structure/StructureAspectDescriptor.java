@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCoreThrought = createDescriptorForCoreThrought();
@@ -49,6 +52,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -106,9 +120,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)/79242395703953958");
     b.version(2);
-    b.prop("x", 0x1198689ff15ca27L, "79242395703953959");
-    b.prop("y", 0x1198689ff15ca29L, "79242395703953961");
-    b.prop("myIsClicked", 0x517b79625760f822L, "5871420002487302178");
+    b.property("x", 0x1198689ff15ca27L).type(PrimitiveTypeId.INTEGER).origin("79242395703953959").done();
+    b.property("y", 0x1198689ff15ca29L).type(PrimitiveTypeId.INTEGER).origin("79242395703953961").done();
+    b.property("myIsClicked", 0x517b79625760f822L).type(PrimitiveTypeId.BOOLEAN).origin("5871420002487302178").done();
     return b.create();
   }
 }

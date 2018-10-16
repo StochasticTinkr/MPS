@@ -8,10 +8,14 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAndSimpleMathExpression = createDescriptorForAndSimpleMathExpression();
@@ -106,6 +110,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -125,7 +140,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467208672407");
     b.version(2);
-    b.prop("operator", 0x1cc69153b82894eaL, "2073504467208672490");
+    b.property("operator", 0x1cc69153b82894eaL).type(PrimitiveTypeId.STRING).origin("2073504467208672490").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
@@ -182,7 +197,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467208536638");
     b.version(2);
-    b.prop("value", 0x1cc69153b826823fL, "2073504467208536639");
+    b.property("value", 0x1cc69153b826823fL).type(PrimitiveTypeId.BOOLEAN).origin("2073504467208536639").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleMathBooleanType() {
@@ -217,7 +232,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467210944676");
     b.version(2);
-    b.prop("value", 0x1cc69153b84b40a5L, "2073504467210944677");
+    b.property("value", 0x1cc69153b84b40a5L).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("2073504467210944677").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleMathFloatType() {
@@ -235,7 +250,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467208541194");
     b.version(2);
-    b.prop("value", 0x1cc69153b826940bL, "2073504467208541195");
+    b.property("value", 0x1cc69153b826940bL).type(PrimitiveTypeId.INTEGER).origin("2073504467208541195").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleMathIntegerType() {
@@ -253,7 +268,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467209943018");
     b.version(2);
-    b.prop("value", 0x1cc69153b83bf81eL, "2073504467209943070");
+    b.property("value", 0x1cc69153b83bf81eL).type(PrimitiveTypeId.INTEGER).origin("2073504467209943070").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleMathLongType() {

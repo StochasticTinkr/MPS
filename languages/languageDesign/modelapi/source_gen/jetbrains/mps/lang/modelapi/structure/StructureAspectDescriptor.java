@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptIdentity = createDescriptorForConceptIdentity();
@@ -59,6 +62,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -82,7 +96,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(true, false, false);
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/679099339649053840");
     b.version(2);
-    b.prop("value", 0x96ca5405afbf491L, "679099339649053841");
+    b.property("value", 0x96ca5405afbf491L).type(PrimitiveTypeId.STRING).origin("679099339649053841").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForModelPointer() {
@@ -91,7 +105,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L);
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193248");
     b.version(2);
-    b.prop("modelId", 0x19dc9460645c7f56L, "1863527487546097494");
+    b.property("modelId", 0x19dc9460645c7f56L).type(PrimitiveTypeId.STRING).origin("1863527487546097494").done();
     b.aggregate("name", 0x96ca5405afc2bccL).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L).optional(false).ordered(true).multiple(false).origin("679099339649067980").done();
     b.aggregate("moduleRef", 0x19dc9460645ce35cL).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L).optional(true).ordered(true).multiple(false).origin("1863527487546123100").done();
     return b.create();
@@ -109,8 +123,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L);
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193249");
     b.version(2);
-    b.prop("moduleName", 0x19dc9460645ae969L, "1863527487545993577");
-    b.prop("moduleId", 0x19dc9460645c7f5cL, "1863527487546097500");
+    b.property("moduleName", 0x19dc9460645ae969L).type(PrimitiveTypeId.STRING).origin("1863527487545993577").done();
+    b.property("moduleId", 0x19dc9460645c7f5cL).type(PrimitiveTypeId.STRING).origin("1863527487546097500").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNamedNodeReference() {
@@ -137,7 +151,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L);
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193247");
     b.version(2);
-    b.prop("nodeId", 0x45e1bb6ef159cf88L, "5035511943546916744");
+    b.property("nodeId", 0x45e1bb6ef159cf88L).type(PrimitiveTypeId.STRING).origin("5035511943546916744").done();
     b.aggregate("modelRef", 0x45e1bb6ef159cf84L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L).optional(false).ordered(true).multiple(false).origin("5035511943546916740").done();
     return b.create();
   }

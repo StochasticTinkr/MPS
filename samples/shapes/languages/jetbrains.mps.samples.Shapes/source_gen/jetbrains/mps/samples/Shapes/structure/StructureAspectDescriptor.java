@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCanvas = createDescriptorForCanvas();
@@ -50,6 +53,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -70,9 +84,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Shapes.structure.Shape", 0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L);
     b.origin("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)/5898776707557474712");
     b.version(2);
-    b.prop("x", 0x51dcaa29974fc199L, "5898776707557474713");
-    b.prop("y", 0x51dcaa29974fc19bL, "5898776707557474715");
-    b.prop("radius", 0x51dcaa29974fc19eL, "5898776707557474718");
+    b.property("x", 0x51dcaa29974fc199L).type(PrimitiveTypeId.INTEGER).origin("5898776707557474713").done();
+    b.property("y", 0x51dcaa29974fc19bL).type(PrimitiveTypeId.INTEGER).origin("5898776707557474715").done();
+    b.property("radius", 0x51dcaa29974fc19eL).type(PrimitiveTypeId.INTEGER).origin("5898776707557474718").done();
     b.alias("circle");
     return b.create();
   }
@@ -107,9 +121,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Shapes.structure.Shape", 0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L);
     b.origin("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)/5898776707557474722");
     b.version(2);
-    b.prop("upperLeftX", 0x51dcaa29974fc1a3L, "5898776707557474723");
-    b.prop("upperLeftY", 0x51dcaa29974fc1a5L, "5898776707557474725");
-    b.prop("size", 0x51dcaa29974fc1a8L, "5898776707557474728");
+    b.property("upperLeftX", 0x51dcaa29974fc1a3L).type(PrimitiveTypeId.INTEGER).origin("5898776707557474723").done();
+    b.property("upperLeftY", 0x51dcaa29974fc1a5L).type(PrimitiveTypeId.INTEGER).origin("5898776707557474725").done();
+    b.property("size", 0x51dcaa29974fc1a8L).type(PrimitiveTypeId.INTEGER).origin("5898776707557474728").done();
     b.alias("square");
     return b.create();
   }

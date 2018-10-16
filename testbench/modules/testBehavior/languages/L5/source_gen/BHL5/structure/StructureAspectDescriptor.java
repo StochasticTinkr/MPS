@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptC0 = createDescriptorForC0();
@@ -68,6 +71,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -120,7 +134,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL);
     b.origin("r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(BHL5.structure)/4577111222072317188");
     b.version(2);
-    b.prop("b", 0x3f852a67e913151eL, "4577111222072317214");
+    b.property("b", 0x3f852a67e913151eL).type(PrimitiveTypeId.BOOLEAN).origin("4577111222072317214").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForC6() {
@@ -146,7 +160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(BHL5.structure)/3845307305753121995");
     b.version(2);
-    b.prop("a", 0x355d469f0ba114e9L, "3845307305753122025");
+    b.property("a", 0x355d469f0ba114e9L).type(PrimitiveTypeId.STRING).origin("3845307305753122025").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI2() {
@@ -162,7 +176,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:2721a314-71a4-4f87-8d33-9d2d1cd9ce6c(BHL5.structure)/2668211767468772463");
     b.version(2);
-    b.prop("c", 0x6c4ee9d44295ea26L, "7804432302139107878");
+    b.property("c", 0x6c4ee9d44295ea26L).type(PrimitiveTypeId.STRING).origin("7804432302139107878").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForI4() {

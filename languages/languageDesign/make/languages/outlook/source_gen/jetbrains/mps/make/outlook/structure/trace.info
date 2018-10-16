@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.make.outlook.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,52,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
+      <unit at="16,0,65,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)/5608160002100057298">
@@ -36,21 +36,21 @@
       <node id="5608160002100057298" at="15,116,16,46" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="5608160002100057298" at="15,0,16,0" concept="1" trace="myConceptOutlook" />
-      <node id="5608160002100057298" at="31,41,32,32" concept="4" />
-      <node id="5608160002100057298" at="42,65,43,168" concept="3" />
-      <node id="5608160002100057298" at="43,168,44,33" concept="0" />
-      <node id="5608160002100057298" at="44,33,45,71" concept="0" />
-      <node id="5608160002100057298" at="45,71,46,113" concept="0" />
-      <node id="5608160002100057298" at="46,113,47,17" concept="0" />
-      <node id="5608160002100058529" at="47,17,48,197" concept="0" />
-      <node id="5608160002100057298" at="48,197,49,22" concept="4" />
-      <node id="5608160002100057298" at="42,0,51,0" concept="6" trace="createDescriptorForOutlook#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="5608160002100057298" at="31,41,32,32" />
-      <scope id="5608160002100057298" at="42,65,49,22">
+      <node id="5608160002100057298" at="17,0,18,0" concept="1" trace="myConceptOutlook" />
+      <node id="5608160002100057298" at="33,41,34,32" concept="4" />
+      <node id="5608160002100057298" at="55,65,56,168" concept="3" />
+      <node id="5608160002100057298" at="56,168,57,33" concept="0" />
+      <node id="5608160002100057298" at="57,33,58,71" concept="0" />
+      <node id="5608160002100057298" at="58,71,59,113" concept="0" />
+      <node id="5608160002100057298" at="59,113,60,17" concept="0" />
+      <node id="5608160002100058529" at="60,17,61,197" concept="0" />
+      <node id="5608160002100057298" at="61,197,62,22" concept="4" />
+      <node id="5608160002100057298" at="55,0,64,0" concept="6" trace="createDescriptorForOutlook#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="5608160002100057298" at="33,41,34,32" />
+      <scope id="5608160002100057298" at="55,65,62,22">
         <var name="b" id="5608160002100057298" />
       </scope>
-      <scope id="5608160002100057298" at="42,0,51,0" />
+      <scope id="5608160002100057298" at="55,0,64,0" />
     </file>
   </root>
 </debug-info>

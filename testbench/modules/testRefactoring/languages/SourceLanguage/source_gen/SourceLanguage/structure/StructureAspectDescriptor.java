@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptA = createDescriptorForA();
@@ -44,6 +47,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -53,7 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792701");
     b.version(2);
-    b.prop("propAstring", 0x2e4829759291ca60L, "3334961109014792800");
+    b.property("propAstring", 0x2e4829759291ca60L).type(PrimitiveTypeId.STRING).origin("3334961109014792800").done();
     b.aggregate("childA1", 0x2e4829759291ca44L).target(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291c9fdL).optional(true).ordered(true).multiple(false).origin("3334961109014792772").done();
     return b.create();
   }
@@ -64,7 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xe4cf406fc7e4ee7L, 0xa6f393f8c8dbdc64L, 0x2e4829759291ca00L);
     b.origin("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792702");
     b.version(2);
-    b.prop("propB", 0x2e4829759291ca40L, "3334961109014792768");
+    b.property("propB", 0x2e4829759291ca40L).type(PrimitiveTypeId.STRING).origin("3334961109014792768").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForC() {

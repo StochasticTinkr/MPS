@@ -8,10 +8,13 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptErrorType = createDescriptorForErrorType();
@@ -51,6 +54,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -102,7 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("testAnnotatedType.structure.PrimNumConstant", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL);
     b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071277973");
     b.version(2);
-    b.prop("isOverriding", 0x5b362c13a498895bL, "6572489169071278427");
+    b.property("isOverriding", 0x5b362c13a498895bL).type(PrimitiveTypeId.BOOLEAN).origin("6572489169071278427").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnconditionalOverrideAnnotation() {

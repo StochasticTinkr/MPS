@@ -4,14 +4,17 @@ package jetbrains.mps.baseLanguage.collections.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractContainerCreator = createDescriptorForAbstractContainerCreator();
@@ -185,6 +188,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptValueAccessOperation = createDescriptorForValueAccessOperation();
   /*package*/ final ConceptDescriptor myConceptVisitAllOperation = createDescriptorForVisitAllOperation();
   /*package*/ final ConceptDescriptor myConceptWhereOperation = createDescriptorForWhereOperation();
+  /*package*/ final EnumerationDescriptor myEnumerationLinkedHashMapOrder = new EnumerationDescriptor_LinkedHashMapOrder();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -546,6 +550,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList(myEnumerationLinkedHashMapOrder);
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -1467,7 +1482,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", 0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL);
     b.origin("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)/1240216724530");
     b.version(2);
-    b.prop("order", 0x120c2de2559L, "1240219919705");
+    b.property("order", 0x120c2de2559L).type(MetaIdFactory.enumerationId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2dd1862L)).origin("1240219919705").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("linked_hashmap");
     return b.create();

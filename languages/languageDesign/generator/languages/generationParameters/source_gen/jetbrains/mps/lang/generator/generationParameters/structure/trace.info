@@ -18,7 +18,7 @@
       <unit at="10,0,32,0" name="jetbrains.mps.lang.generator.generationParameters.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,82,0" name="jetbrains.mps.lang.generator.generationParameters.structure.StructureAspectDescriptor" />
+      <unit at="18,0,95,0" name="jetbrains.mps.lang.generator.generationParameters.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)/3064182000795631740">
@@ -39,24 +39,24 @@
       <node id="3064182000795631740" at="17,116,18,67" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="3064182000795631740" at="17,0,18,0" concept="1" trace="myConceptDefaultGenerationParameterId" />
-      <node id="3064182000795631740" at="35,62,36,53" concept="4" />
-      <node id="3064182000795631740" at="50,86,51,212" concept="3" />
-      <node id="3064182000795631740" at="51,212,52,34" concept="0" />
-      <node id="3064182000795631740" at="52,34,53,121" concept="0" />
-      <node id="3064182000795631740" at="53,121,54,136" concept="0" />
-      <node id="3064182000795631740" at="54,136,55,17" concept="0" />
-      <node id="3064182000795631810" at="55,17,56,173" concept="0" />
-      <node id="3064182000795631811" at="56,173,57,173" concept="0" />
-      <node id="3064182000795631740" at="57,173,58,49" concept="0" />
-      <node id="3064182000795631740" at="58,49,59,32" concept="0" />
-      <node id="3064182000795631740" at="59,32,60,22" concept="4" />
-      <node id="3064182000795631740" at="50,0,62,0" concept="6" trace="createDescriptorForDefaultGenerationParameterId#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="3064182000795631740" at="35,62,36,53" />
-      <scope id="3064182000795631740" at="50,86,60,22">
+      <node id="3064182000795631740" at="19,0,20,0" concept="1" trace="myConceptDefaultGenerationParameterId" />
+      <node id="3064182000795631740" at="37,62,38,53" concept="4" />
+      <node id="3064182000795631740" at="63,86,64,212" concept="3" />
+      <node id="3064182000795631740" at="64,212,65,34" concept="0" />
+      <node id="3064182000795631740" at="65,34,66,121" concept="0" />
+      <node id="3064182000795631740" at="66,121,67,136" concept="0" />
+      <node id="3064182000795631740" at="67,136,68,17" concept="0" />
+      <node id="3064182000795631810" at="68,17,69,173" concept="0" />
+      <node id="3064182000795631811" at="69,173,70,173" concept="0" />
+      <node id="3064182000795631740" at="70,173,71,49" concept="0" />
+      <node id="3064182000795631740" at="71,49,72,32" concept="0" />
+      <node id="3064182000795631740" at="72,32,73,22" concept="4" />
+      <node id="3064182000795631740" at="63,0,75,0" concept="6" trace="createDescriptorForDefaultGenerationParameterId#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="3064182000795631740" at="37,62,38,53" />
+      <scope id="3064182000795631740" at="63,86,73,22">
         <var name="b" id="3064182000795631740" />
       </scope>
-      <scope id="3064182000795631740" at="50,0,62,0" />
+      <scope id="3064182000795631740" at="63,0,75,0" />
     </file>
   </root>
   <root nodeRef="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)/8484425748929510068">
@@ -78,21 +78,21 @@
       <node id="8484425748929510068" at="18,67,19,64" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="8484425748929510068" at="18,0,19,0" concept="1" trace="myConceptDefaultGeneratorParameter" />
-      <node id="8484425748929510068" at="37,59,38,50" concept="4" />
-      <node id="8484425748929510068" at="62,83,63,209" concept="3" />
-      <node id="8484425748929510068" at="63,209,64,34" concept="0" />
-      <node id="8484425748929510068" at="64,34,65,75" concept="0" />
-      <node id="8484425748929510068" at="65,75,66,71" concept="0" />
-      <node id="8484425748929510068" at="66,71,67,136" concept="0" />
-      <node id="8484425748929510068" at="67,136,68,17" concept="0" />
-      <node id="8484425748929510068" at="68,17,69,22" concept="4" />
-      <node id="8484425748929510068" at="62,0,71,0" concept="6" trace="createDescriptorForDefaultGeneratorParameter#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="8484425748929510068" at="37,59,38,50" />
-      <scope id="8484425748929510068" at="62,83,69,22">
+      <node id="8484425748929510068" at="20,0,21,0" concept="1" trace="myConceptDefaultGeneratorParameter" />
+      <node id="8484425748929510068" at="39,59,40,50" concept="4" />
+      <node id="8484425748929510068" at="75,83,76,209" concept="3" />
+      <node id="8484425748929510068" at="76,209,77,34" concept="0" />
+      <node id="8484425748929510068" at="77,34,78,75" concept="0" />
+      <node id="8484425748929510068" at="78,75,79,71" concept="0" />
+      <node id="8484425748929510068" at="79,71,80,136" concept="0" />
+      <node id="8484425748929510068" at="80,136,81,17" concept="0" />
+      <node id="8484425748929510068" at="81,17,82,22" concept="4" />
+      <node id="8484425748929510068" at="75,0,84,0" concept="6" trace="createDescriptorForDefaultGeneratorParameter#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8484425748929510068" at="39,59,40,50" />
+      <scope id="8484425748929510068" at="75,83,82,22">
         <var name="b" id="8484425748929510068" />
       </scope>
-      <scope id="8484425748929510068" at="62,0,71,0" />
+      <scope id="8484425748929510068" at="75,0,84,0" />
     </file>
   </root>
   <root nodeRef="r:41fb14d2-a085-41df-8256-2db786d90029(jetbrains.mps.lang.generator.generationParameters.structure)/8484425748929510072">
@@ -114,22 +114,22 @@
       <node id="8484425748929510072" at="19,64,20,73" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="8484425748929510072" at="19,0,20,0" concept="1" trace="myConceptDefaultGeneratorParameterContainer" />
-      <node id="8484425748929510072" at="39,68,40,59" concept="4" />
-      <node id="8484425748929510072" at="71,92,72,218" concept="3" />
-      <node id="8484425748929510072" at="72,218,73,33" concept="0" />
-      <node id="8484425748929510072" at="73,33,74,71" concept="0" />
-      <node id="8484425748929510072" at="74,71,75,136" concept="0" />
-      <node id="8484425748929510072" at="75,136,76,17" concept="0" />
-      <node id="8484425748929510073" at="76,17,77,202" concept="0" />
-      <node id="8484425748929510072" at="77,202,78,36" concept="0" />
-      <node id="8484425748929510072" at="78,36,79,22" concept="4" />
-      <node id="8484425748929510072" at="71,0,81,0" concept="6" trace="createDescriptorForDefaultGeneratorParameterContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="8484425748929510072" at="39,68,40,59" />
-      <scope id="8484425748929510072" at="71,92,79,22">
+      <node id="8484425748929510072" at="21,0,22,0" concept="1" trace="myConceptDefaultGeneratorParameterContainer" />
+      <node id="8484425748929510072" at="41,68,42,59" concept="4" />
+      <node id="8484425748929510072" at="84,92,85,218" concept="3" />
+      <node id="8484425748929510072" at="85,218,86,33" concept="0" />
+      <node id="8484425748929510072" at="86,33,87,71" concept="0" />
+      <node id="8484425748929510072" at="87,71,88,136" concept="0" />
+      <node id="8484425748929510072" at="88,136,89,17" concept="0" />
+      <node id="8484425748929510073" at="89,17,90,202" concept="0" />
+      <node id="8484425748929510072" at="90,202,91,36" concept="0" />
+      <node id="8484425748929510072" at="91,36,92,22" concept="4" />
+      <node id="8484425748929510072" at="84,0,94,0" concept="6" trace="createDescriptorForDefaultGeneratorParameterContainer#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8484425748929510072" at="41,68,42,59" />
+      <scope id="8484425748929510072" at="84,92,92,22">
         <var name="b" id="8484425748929510072" />
       </scope>
-      <scope id="8484425748929510072" at="71,0,81,0" />
+      <scope id="8484425748929510072" at="84,0,94,0" />
     </file>
   </root>
 </debug-info>

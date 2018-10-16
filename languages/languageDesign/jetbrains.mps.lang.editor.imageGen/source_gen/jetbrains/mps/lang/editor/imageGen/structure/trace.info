@@ -18,7 +18,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.lang.editor.imageGen.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,57,0" name="jetbrains.mps.lang.editor.imageGen.structure.StructureAspectDescriptor" />
+      <unit at="18,0,72,0" name="jetbrains.mps.lang.editor.imageGen.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a7cbf330-9260-4b6d-8d53-3b6cb70171c0(jetbrains.mps.lang.editor.imageGen.structure)/2359976223559993484">
@@ -40,26 +40,26 @@
       <node id="2359976223559993484" at="15,116,16,53" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="2359976223559993484" at="15,0,16,0" concept="1" trace="myConceptImageGenerator" />
-      <node id="2359976223559993484" at="31,48,32,39" concept="4" />
-      <node id="2359976223559993484" at="42,72,43,183" concept="3" />
-      <node id="2359976223559993484" at="43,183,44,33" concept="0" />
-      <node id="2359976223559993484" at="44,33,45,71" concept="0" />
-      <node id="2359976223559993484" at="45,71,46,121" concept="0" />
-      <node id="2359976223559993484" at="46,121,47,17" concept="0" />
-      <node id="2359976223560030855" at="47,17,48,67" concept="0" />
-      <node id="3245637733309852966" at="48,67,49,61" concept="0" />
-      <node id="1380214350862969083" at="49,61,50,70" concept="0" />
-      <node id="1380214350862971625" at="50,70,51,64" concept="0" />
-      <node id="3245637733310277398" at="51,64,52,162" concept="0" />
-      <node id="2359976223559993484" at="52,162,53,21" concept="0" />
-      <node id="2359976223559993484" at="53,21,54,22" concept="4" />
-      <node id="2359976223559993484" at="42,0,56,0" concept="6" trace="createDescriptorForImageGenerator#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="2359976223559993484" at="31,48,32,39" />
-      <scope id="2359976223559993484" at="42,72,54,22">
+      <node id="2359976223559993484" at="19,0,20,0" concept="1" trace="myConceptImageGenerator" />
+      <node id="2359976223559993484" at="35,48,36,39" concept="4" />
+      <node id="2359976223559993484" at="57,72,58,183" concept="3" />
+      <node id="2359976223559993484" at="58,183,59,33" concept="0" />
+      <node id="2359976223559993484" at="59,33,60,71" concept="0" />
+      <node id="2359976223559993484" at="60,71,61,121" concept="0" />
+      <node id="2359976223559993484" at="61,121,62,17" concept="0" />
+      <node id="2359976223560030855" at="62,17,63,114" concept="0" />
+      <node id="3245637733309852966" at="63,114,64,108" concept="0" />
+      <node id="1380214350862969083" at="64,108,65,117" concept="0" />
+      <node id="1380214350862971625" at="65,117,66,188" concept="0" />
+      <node id="3245637733310277398" at="66,188,67,162" concept="0" />
+      <node id="2359976223559993484" at="67,162,68,21" concept="0" />
+      <node id="2359976223559993484" at="68,21,69,22" concept="4" />
+      <node id="2359976223559993484" at="57,0,71,0" concept="6" trace="createDescriptorForImageGenerator#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="2359976223559993484" at="35,48,36,39" />
+      <scope id="2359976223559993484" at="57,72,69,22">
         <var name="b" id="2359976223559993484" />
       </scope>
-      <scope id="2359976223559993484" at="42,0,56,0" />
+      <scope id="2359976223559993484" at="57,0,71,0" />
     </file>
   </root>
 </debug-info>

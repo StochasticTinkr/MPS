@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <product version="3" modelHash="61tg1jy5752dz927j1v8nht1bpn1ted">
-  <files names="ConceptPresentationAspectImpl.java:IconContainer.java:LanguageConceptSwitch.java:SideTransformSide.java:SideTransformSide_PropertySupport.java:StructureAspectDescriptor.java" />
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_SideTransformSide.java:IconContainer.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

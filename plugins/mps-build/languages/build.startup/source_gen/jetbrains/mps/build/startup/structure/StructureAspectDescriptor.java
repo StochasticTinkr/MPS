@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptClassPathItem = createDescriptorForClassPathItem();
@@ -50,6 +53,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -59,7 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)/3885435385580582153");
     b.version(2);
-    b.prop("path", 0x35ebd6e5b343750aL, "3885435385580582154");
+    b.property("path", 0x35ebd6e5b343750aL).type(PrimitiveTypeId.STRING).origin("3885435385580582154").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMpsStartupScript() {
@@ -68,8 +82,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)/3885435385580582152");
     b.version(2);
-    b.prop("startupFolder", 0x35ebd6e5b343750bL, "3885435385580582155");
-    b.prop("startupClass", 0x35ebd6e5b3443492L, "3885435385580631186");
+    b.property("startupFolder", 0x35ebd6e5b343750bL).type(PrimitiveTypeId.STRING).origin("3885435385580582155").done();
+    b.property("startupClass", 0x35ebd6e5b3443492L).type(PrimitiveTypeId.STRING).origin("3885435385580631186").done();
     b.associate("branding", 0x30a61e6d55f6abc9L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL).optional(true).origin("3505522814897007561").done();
     b.aggregate("bootClasspath", 0x35ebd6e5b3437728L).target(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L).optional(true).ordered(true).multiple(true).origin("3885435385580582696").done();
     b.aggregate("vmOptions", 0x35ebd6e5b3442664L).target(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL).optional(true).ordered(true).multiple(true).origin("3885435385580627556").done();
@@ -82,8 +96,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.startup.structure.VmOptions", 0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL);
     b.origin("r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)/3885435385580582732");
     b.version(2);
-    b.prop("options", 0x35ebd6e5b343774dL, "3885435385580582733");
-    b.prop("commented", 0x5115dda8df7dfca2L, "5842819808956906658");
+    b.property("options", 0x35ebd6e5b343774dL).type(PrimitiveTypeId.STRING).origin("3885435385580582733").done();
+    b.property("commented", 0x5115dda8df7dfca2L).type(PrimitiveTypeId.BOOLEAN).origin("5842819808956906658").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTextFile() {
@@ -100,7 +114,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)/1731640411964205218");
     b.version(2);
-    b.prop("text", 0x180805c7b1df77d9L, "1731640411964798937");
+    b.property("text", 0x180805c7b1df77d9L).type(PrimitiveTypeId.STRING).origin("1731640411964798937").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForVmOptions() {

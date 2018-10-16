@@ -8,8 +8,11 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractStateMachineElement = createDescriptorForAbstractStateMachineElement();
@@ -52,6 +55,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
+
+  @Override
+  public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
+    return Arrays.asList();
+  }
+
+  @Override
+  public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
+    return Arrays.asList();
+  }
+
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -114,7 +128,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", 0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL);
     b.origin("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)/763922957008729149");
     b.version(2);
-    b.prop("condition", 0xa99ffe1c8457441L, "763922957008729153");
+    b.property("condition", 0xa99ffe1c8457441L).type(PrimitiveTypeId.STRING).origin("763922957008729153").done();
     b.aggregate("fromState", 0xa99ffe1c845743eL).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L).optional(false).ordered(true).multiple(false).origin("763922957008729150").done();
     b.aggregate("toState", 0xa99ffe1c8457440L).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L).optional(false).ordered(true).multiple(false).origin("763922957008729152").done();
     b.aggregate("trigger", 0xa99ffe1c845743fL).target(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L).optional(false).ordered(true).multiple(false).origin("763922957008729151").done();
