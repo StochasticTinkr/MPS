@@ -5145,12 +5145,39 @@
             </node>
             <node concept="2ShNRf" id="RqKTrXUkf_" role="33vP2m">
               <node concept="1pGfFk" id="RqKTrXUmQE" role="2ShVmc">
-                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit" />
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit" />
                 <node concept="37vLTw" id="RqKTrXUmZb" role="37wK5m">
                   <ref role="3cqZAo" node="RqKTrXUb9U" resolve="node" />
                 </node>
                 <node concept="37vLTw" id="RqKTrXUnde" role="37wK5m">
                   <ref role="3cqZAo" node="RqKTrXUfwz" resolve="filename" />
+                </node>
+                <node concept="1rXfSq" id="hwfPVmbZrD" role="37wK5m">
+                  <ref role="37wK5l" node="3bBSY7NP2_F" resolve="getPath" />
+                  <node concept="37vLTw" id="hwfPVmc0x_" role="37wK5m">
+                    <ref role="3cqZAo" node="RqKTrXUb9U" resolve="node" />
+                  </node>
+                  <node concept="1W57fq" id="hwfPVmc56n" role="lGtFl">
+                    <node concept="3IZrLx" id="hwfPVmc56o" role="3IZSJc">
+                      <node concept="3clFbS" id="hwfPVmc56p" role="2VODD2">
+                        <node concept="3clFbF" id="hwfPVmc6bJ" role="3cqZAp">
+                          <node concept="2OqwBi" id="hwfPVmc6bL" role="3clFbG">
+                            <node concept="2OqwBi" id="hwfPVmc6bM" role="2Oq$k0">
+                              <node concept="3TrEf2" id="hwfPVmc6bO" role="2OqNvi">
+                                <ref role="3Tt5mk" to="2omo:6NuIk8swUPi" resolve="filePath" />
+                              </node>
+                              <node concept="30H73N" id="hwfPVmc7Qz" role="2Oq$k0" />
+                            </node>
+                            <node concept="1mIQ4w" id="hwfPVmc6bP" role="2OqNvi">
+                              <node concept="chp4Y" id="hwfPVmc6bQ" role="cj9EA">
+                                <ref role="cht4Q" to="2omo:6NuIk8swWsv" resolve="FilePathQuery" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node concept="2YIFZM" id="71yiq0mvZnH" role="37wK5m">
                   <ref role="37wK5l" to="7x5y:~Charset.forName(java.lang.String):java.nio.charset.Charset" resolve="forName" />

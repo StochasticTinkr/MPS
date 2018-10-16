@@ -1505,7 +1505,7 @@
             </node>
             <node concept="2ShNRf" id="7L" role="33vP2m">
               <node concept="1pGfFk" id="7M" role="2ShVmc">
-                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit" />
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit" />
                 <node concept="37vLTw" id="7N" role="37wK5m">
                   <ref role="3cqZAo" node="7c" resolve="node" />
                 </node>
