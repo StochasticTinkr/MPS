@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntStatement_Editor" file="BwfAntStatement_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntStatement_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntStatement_EditorBuilder_a" file="BwfAntStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
@@ -31,14 +31,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_Editor" file="BwfAntTaskBundleDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_EditorBuilder_a" file="BwfAntTaskBundleDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -78,14 +78,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor" file="BwfAntTaskDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_EditorBuilder_a" file="BwfAntTaskDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -125,14 +125,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor" file="BwfCustomMacro_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfCustomMacro_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfCustomMacro_EditorBuilder_a" file="BwfCustomMacro_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfCustomMacro_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -159,14 +159,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfDependency_Editor" file="BwfDependency_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfDependency_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfDependency_EditorBuilder_a" file="BwfDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -193,14 +193,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor" file="BwfFileSet_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfFileSet_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_EditorBuilder_a" file="BwfFileSet_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -223,7 +223,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu" file="BwfFileSet_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -253,14 +253,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_Editor" file="BwfJavaClassPath_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_EditorBuilder_a" file="BwfJavaClassPath_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -280,14 +280,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_Editor" file="BwfJavaDependency_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_EditorBuilder_a" file="BwfJavaDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -296,7 +296,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu" file="BwfJavaDependency_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -331,14 +331,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_Editor" file="BwfJavaDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_EditorBuilder_a" file="BwfJavaDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -353,14 +353,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor" file="BwfJavaLibraryReference_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_EditorBuilder_a" file="BwfJavaLibraryReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -399,14 +399,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor" file="BwfJavaLibrary_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_EditorBuilder_a" file="BwfJavaLibrary_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -449,14 +449,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor" file="BwfJavaModuleReference_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_EditorBuilder_a" file="BwfJavaModuleReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -497,7 +497,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_SubstituteMenu" file="BwfJavaModuleReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -518,7 +518,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor" file="BwfJavaModule_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaModule_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaModule_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -526,7 +526,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_EditorBuilder_a" file="BwfJavaModule_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -572,7 +572,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_InspectorBuilder_a" file="BwfJavaModule_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfJavaModule_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -626,14 +626,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacroListImport_Editor" file="BwfMacroListImport_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacroListImport_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfMacroListImport_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacroListImport_EditorBuilder_a" file="BwfMacroListImport_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacroListImport_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -667,7 +667,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_Editor" file="BwfMacro_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfMacro_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfMacro_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -675,7 +675,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_EditorBuilder_a" file="BwfMacro_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -710,7 +710,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_InspectorBuilder_a" file="BwfMacro_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfMacro_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -744,14 +744,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor" file="BwfPathDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_EditorBuilder_a" file="BwfPathDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -794,14 +794,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor" file="BwfPathReference_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfPathReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_EditorBuilder_a" file="BwfPathReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -846,7 +846,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu" file="BwfPathReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfPathReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -874,14 +874,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_Editor" file="BwfProjectPartStatement_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_EditorBuilder_a" file="BwfProjectPartStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
@@ -906,14 +906,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor" file="BwfProjectPart_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProjectPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPart_EditorBuilder_a" file="BwfProjectPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -927,14 +927,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProject_Editor" file="BwfProject_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProject_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProject_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfProject_EditorBuilder_a" file="BwfProject_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfProject_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -978,14 +978,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfStatement_Editor" file="BwfStatement_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfStatement_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfStatement_EditorBuilder_a" file="BwfStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -997,14 +997,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor" file="BwfSubTaskDependency_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_EditorBuilder_a" file="BwfSubTaskDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1045,7 +1045,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_SubstituteMenu" file="BwfSubTaskDependency_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1066,7 +1066,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms" file="BwfSubTask_ApplySideTransforms.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_ApplySideTransforms">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1092,14 +1092,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor" file="BwfSubTask_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfSubTask_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_EditorBuilder_a" file="BwfSubTask_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfSubTask_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -1146,14 +1146,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor" file="BwfTaskDependency_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_EditorBuilder_a" file="BwfTaskDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1194,7 +1194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_SubstituteMenu" file="BwfTaskDependency_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskDependency_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1215,14 +1215,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor" file="BwfTaskLibraryDependency_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_EditorBuilder_a" file="BwfTaskLibraryDependency_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1263,7 +1263,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_SubstituteMenu" file="BwfTaskLibraryDependency_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1284,14 +1284,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor" file="BwfTaskLibrary_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_EditorBuilder_a" file="BwfTaskLibrary_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -1334,14 +1334,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor" file="BwfTaskPart_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskPart_EditorBuilder_a" file="BwfTaskPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTaskPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -1395,14 +1395,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTask_Editor" file="BwfTask_Editor.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTask_Editor">
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTask_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.BwfTask_EditorBuilder_a" file="BwfTask_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.BwfTask_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -1450,7 +1450,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -1508,7 +1508,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies" file="add_dependencies.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -1540,7 +1540,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3" file="add_dependencies_BwfSubTask_ext_3.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfSubTask_ext_3">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -1572,7 +1572,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart" file="add_dependencies_BwfTaskPart.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTaskPart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -1604,7 +1604,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2" file="add_dependencies_BwfTask_ext_2.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.add_dependencies_BwfTask_ext_2">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -1636,7 +1636,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution" file="java_module_content_XmlBaseElement_Contribution.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.java_module_content_XmlBaseElement_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1667,7 +1667,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore" file="rt_SubTask_AfterOrBefore.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -1679,7 +1679,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet" file="workflowStyles_StyleSheet.java">
+  <dependency className="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.builder.paths.IRedirects" file="IRedirects.java">
+  <dependency className="jetbrains.mps.tool.builder.paths.IRedirects">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.paths.ModuleOutputPaths" file="ModuleOutputPaths.java">
+  <dependency className="jetbrains.mps.tool.builder.paths.ModuleOutputPaths">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.paths.OutputPathRedirects" file="OutputPathRedirects.java">
+  <dependency className="jetbrains.mps.tool.builder.paths.OutputPathRedirects">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

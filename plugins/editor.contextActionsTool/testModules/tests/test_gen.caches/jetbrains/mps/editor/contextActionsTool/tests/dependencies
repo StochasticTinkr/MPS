@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test" file="IconLoading_Test.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.NoClassDefFoundError" />
     <classNode dependClassName="java.lang.Override" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" file="FibonacciSequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Iterator" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.samples.fibonacci.Main" file="Main.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.samples.fibonacci.Main">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />

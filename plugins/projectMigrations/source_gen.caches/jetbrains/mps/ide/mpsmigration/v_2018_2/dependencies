@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2018_2.Migrations_2018_2" file="Migrations_2018_2.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2018_2.Migrations_2018_2">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v_2018_2.ReapplyPatternMigration" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2018_2.ReapplyPatternMigration" file="ReapplyPatternMigration.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2018_2.ReapplyPatternMigration">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

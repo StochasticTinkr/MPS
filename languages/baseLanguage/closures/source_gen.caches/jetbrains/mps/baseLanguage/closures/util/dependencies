@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.util.Constants" file="Constants.java" />
-  <dependency className="jetbrains.mps.baseLanguage.closures.util.RuntimeUtil" file="RuntimeUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.util.Constants" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.util.RuntimeUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

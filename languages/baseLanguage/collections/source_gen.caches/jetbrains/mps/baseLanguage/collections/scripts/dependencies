@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil" file="ListMigrationUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript" file="MigrationFromMapsToCollections_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript" file="MigrationToCollections_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationToUpdateAllConstants_MigrationScript" file="MigrationToUpdateAllConstants_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.MigrationToUpdateAllConstants_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -70,8 +70,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ParameterType" file="ParameterType.java" />
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ParameterType" />
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

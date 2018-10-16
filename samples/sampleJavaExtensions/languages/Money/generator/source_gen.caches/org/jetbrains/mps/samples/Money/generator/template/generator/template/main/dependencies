@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.Money.generator.template.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="org.jetbrains.mps.samples.Money.generator.template.generator.template.main.QueriesGenerated">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

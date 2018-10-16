@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.api.commands.AbstractCommandPart" file="AbstractCommandPart.java">
+  <dependency className="jetbrains.mps.execution.api.commands.AbstractCommandPart">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -12,18 +12,18 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.CommandPart" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.CommandPart" file="CommandPart.java">
+  <dependency className="jetbrains.mps.execution.api.commands.CommandPart">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.DefaultProcessHandler" file="DefaultProcessHandler.java">
+  <dependency className="jetbrains.mps.execution.api.commands.DefaultProcessHandler">
     <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
     <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.KeyValueCommandPart" file="KeyValueCommandPart.java">
+  <dependency className="jetbrains.mps.execution.api.commands.KeyValueCommandPart">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -33,7 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.AbstractCommandPart" />
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.CommandPart" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.ListCommandPart" file="ListCommandPart.java">
+  <dependency className="jetbrains.mps.execution.api.commands.ListCommandPart">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -52,13 +52,13 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.AbstractCommandPart" />
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.CommandPart" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.OutputRedirector" file="OutputRedirector.java">
+  <dependency className="jetbrains.mps.execution.api.commands.OutputRedirector">
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" file="ProcessHandlerBuilder.java">
+  <dependency className="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.configurations.GeneralCommandLine" />
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.commands.PropertyCommandPart" file="PropertyCommandPart.java">
+  <dependency className="jetbrains.mps.execution.api.commands.PropertyCommandPart">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.AbstractCommandPart" />
     <classNode extendsClassName="jetbrains.mps.execution.api.commands.CommandPart" />

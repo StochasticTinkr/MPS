@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.complex.runtime.Complex" file="Complex.java">
+  <dependency className="jetbrains.mps.samples.complex.runtime.Complex">
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

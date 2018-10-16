@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.analyzers.sandbox.test.Ff" file="Ff.java">
+  <dependency className="jetbrains.mps.analyzers.sandbox.test.Ff">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>

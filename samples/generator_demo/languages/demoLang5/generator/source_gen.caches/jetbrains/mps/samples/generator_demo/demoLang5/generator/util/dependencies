@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil" file="TextUtil.java">
+  <dependency className="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

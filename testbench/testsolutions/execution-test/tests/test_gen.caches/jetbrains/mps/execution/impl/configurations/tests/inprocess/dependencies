@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test" file="JUnitInProcessTermination_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test" file="JUnitInProcessUndo_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.lang.Exception" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test" file="JUnitInProcess_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.lang.Exception" />

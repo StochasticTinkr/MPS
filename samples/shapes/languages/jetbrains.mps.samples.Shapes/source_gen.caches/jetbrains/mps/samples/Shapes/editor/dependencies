@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_Editor" file="Canvas_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.Canvas_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_EditorBuilder_a" file="Canvas_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_Editor" file="Canvas_ScenePreview_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_EditorBuilder_a" file="Canvas_ScenePreview_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Canvas_ScenePreview_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -110,14 +110,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_Editor" file="Circle_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.Circle_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_EditorBuilder_a" file="Circle_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor" file="Circle_ShapePreview_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_EditorBuilder_a" file="Circle_ShapePreview_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_EditorBuilder_a">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -203,14 +203,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_Editor" file="ColorReference_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.ColorReference_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_EditorBuilder_a" file="ColorReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -251,7 +251,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_SubstituteMenu" file="ColorReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.ColorReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -272,14 +272,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Color_Editor" file="Color_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Color_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.Color_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Color_EditorBuilder_a" file="Color_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Color_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -309,7 +309,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -338,7 +338,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.ShapeColor" file="ShapeColor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.ShapeColor">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -349,7 +349,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.ShapeColor_ComponentBuilder_a" file="ShapeColor_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.ShapeColor_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -370,14 +370,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_Editor" file="Square_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.Square_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_EditorBuilder_a" file="Square_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -410,7 +410,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor" file="Square_ShapePreview_Editor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -422,7 +422,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_EditorBuilder_a" file="Square_ShapePreview_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_EditorBuilder_a">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Iterable" />

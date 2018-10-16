@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.CustomSelectAll_Test" file="CustomSelectAll_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.CustomSelectAll_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test" file="EndWithLineSelection_fromFirstCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test" file="EndWithLineSelection_fromLastCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.GoToReference_Test" file="GoToReference_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.GoToReference_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test" file="HomeWithLineSelection_fromFirstCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test" file="HomeWithLineSelection_fromLastCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test" file="RootEndWithLineSelectionFromFirstCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test" file="RootEndWithLineSelectionFromLastCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -99,7 +99,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" file="RootHomeWithLineSelectionFromFirstCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test" file="RootHomeWithLineSelectionFromLastCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllAndEsc_Test" file="SelectAllAndEsc_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllAndEsc_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -135,7 +135,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllAndSelectDown_Test" file="SelectAllAndSelectDown_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllAndSelectDown_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -147,7 +147,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test" file="SelectAllNonSelectableRootThroughNonSelectable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRoot_Test" file="SelectAllNonSelectableRoot_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRoot_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -175,7 +175,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAll_Test" file="SelectAll_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectAll_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test" file="SelectDownWithNodeRangeSelection_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -199,7 +199,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectNext_InChildListWithFilter_Test" file="SelectNext_InChildListWithFilter_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectNext_InChildListWithFilter_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectNext_OnTopLevelInspectorNode_Test" file="SelectNext_OnTopLevelInspectorNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectNext_OnTopLevelInspectorNode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -223,7 +223,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test" file="SelectPrevious_InChildListWithFilter_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -235,7 +235,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectPrevious_OnTopLevelInspectorNode_Test" file="SelectPrevious_OnTopLevelInspectorNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectPrevious_OnTopLevelInspectorNode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -247,7 +247,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpNonSelectableRoot_Test" file="SelectUpNonSelectableRoot_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpNonSelectableRoot_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -259,7 +259,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpThroughNonSelectable_Test" file="SelectUpThroughNonSelectable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpThroughNonSelectable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -271,7 +271,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test" file="SelectUpWithNodeRangeSelection_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -283,7 +283,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test" file="UpDownDummy_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -295,7 +295,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test" file="UpDownEntirely_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -307,7 +307,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test" file="UpDownStack_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -319,7 +319,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.selection.test.Up_Test" file="Up_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.selection.test.Up_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

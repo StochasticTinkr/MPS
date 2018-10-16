@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.common.FileOpenUtil" file="FileOpenUtil.java">
+  <dependency className="jetbrains.mps.ide.common.FileOpenUtil">
     <classNode dependClassName="com.intellij.navigation.ChooseByNameContributor" />
     <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.editor.LogicalPosition" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.common.LayoutUtil" file="LayoutUtil.java">
+  <dependency className="jetbrains.mps.ide.common.LayoutUtil">
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.Insets" />
   </dependency>

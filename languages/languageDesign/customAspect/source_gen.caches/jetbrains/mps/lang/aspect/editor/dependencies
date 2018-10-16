@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_Editor" file="AspectMethodDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_EditorBuilder_a" file="AspectMethodDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -100,14 +100,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_Editor" file="GenerationDescriptor_ByInterface_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_EditorBuilder_a" file="GenerationDescriptor_ByInterface_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -158,14 +158,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_Editor" file="GenerationDescriptor_Class_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_EditorBuilder_a" file="GenerationDescriptor_Class_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -207,14 +207,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_Editor" file="LanguageAspectDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_EditorBuilder_a" file="LanguageAspectDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -247,14 +247,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageReference_Editor" file="LanguageReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.LanguageReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageReference_EditorBuilder_a" file="LanguageReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.LanguageReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -291,14 +291,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_Editor" file="OldHelpURL_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.OldHelpURL_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_EditorBuilder_a" file="OldHelpURL_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_EditorBuilder_a">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -337,14 +337,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_Editor" file="SimpleAspectOrderRef_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_EditorBuilder_a" file="SimpleAspectOrderRef_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -385,7 +385,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_SubstituteMenu" file="SimpleAspectOrderRef_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -406,14 +406,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_Editor" file="SimpleLanguageAspectDescriptor_Editor.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_Editor">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_EditorBuilder_a" file="SimpleLanguageAspectDescriptor_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.highlighters.structure.ConceptHasSubconceptsEditorMessage" file="ConceptHasSubconceptsEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.highlighters.structure.ConceptHasSubconceptsEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.structure.DescendantsLookup" file="DescendantsLookup.java">
+  <dependency className="jetbrains.mps.ide.highlighters.structure.DescendantsLookup">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.structure.OverrideConceptsChecker" file="OverrideConceptsChecker.java">
+  <dependency className="jetbrains.mps.ide.highlighters.structure.OverrideConceptsChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />

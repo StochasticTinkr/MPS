@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="postingrules.agreement.AgreementRegistryBuilder" file="AgreementRegistryBuilder.java">
+  <dependency className="postingrules.agreement.AgreementRegistryBuilder">
     <classNode dependClassName="formulaAdapter.FeeMoney" />
     <classNode dependClassName="formulaAdapter.MoneyAdapter" />
     <classNode dependClassName="formulaAdapter.MoneyAddOperation" />

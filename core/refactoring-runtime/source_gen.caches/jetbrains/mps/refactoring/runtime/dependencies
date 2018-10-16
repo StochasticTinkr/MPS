@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.refactoring.runtime.RefactoringAspect" file="RefactoringAspect.java">
+  <dependency className="jetbrains.mps.refactoring.runtime.RefactoringAspect">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.runtime.RefactoringAspectBase" file="RefactoringAspectBase.java">
+  <dependency className="jetbrains.mps.refactoring.runtime.RefactoringAspectBase">
     <classNode extendsClassName="jetbrains.mps.refactoring.runtime.RefactoringAspect" />
   </dependency>
 </dependenciesRoot>

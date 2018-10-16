@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.editor.util.BackgroundSearchTask" file="BackgroundSearchTask.java">
+  <dependency className="jetbrains.mps.ide.editor.util.BackgroundSearchTask">
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="java.lang.Override" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.progress.Task" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask" file="BackgroundSearchWithPopupTask.java">
+  <dependency className="jetbrains.mps.ide.editor.util.BackgroundSearchWithPopupTask">
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -46,17 +46,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.util.BackgroundSearchTask" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.CaptionFunction" file="CaptionFunction.java">
+  <dependency className="jetbrains.mps.ide.editor.util.CaptionFunction">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.CustomizedNavigatable" file="CustomizedNavigatable.java">
+  <dependency className="jetbrains.mps.ide.editor.util.CustomizedNavigatable">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.pom.Navigatable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.CustomizedNavigatableRenderer" file="CustomizedNavigatableRenderer.java">
+  <dependency className="jetbrains.mps.ide.editor.util.CustomizedNavigatableRenderer">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.util.renderer.BaseRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.EditorComponentUtil" file="EditorComponentUtil.java">
+  <dependency className="jetbrains.mps.ide.editor.util.EditorComponentUtil">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.GoToContextMenuHelper" file="GoToContextMenuHelper.java">
+  <dependency className="jetbrains.mps.ide.editor.util.GoToContextMenuHelper">
     <classNode dependClassName="com.intellij.openapi.ui.popup.PopupChooserBuilder" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.ui.components.JBList" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.util.GoToContextMenuHelperBase" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.GoToContextMenuHelperBase" file="GoToContextMenuHelperBase.java">
+  <dependency className="jetbrains.mps.ide.editor.util.GoToContextMenuHelperBase">
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopup" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.PopupChooserBuilder" />
     <classNode dependClassName="com.intellij.pom.Navigatable" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.GoToHelper" file="GoToHelper.java">
+  <dependency className="jetbrains.mps.ide.editor.util.GoToHelper">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.NamerFactory" file="NamerFactory.java">
+  <dependency className="jetbrains.mps.ide.editor.util.NamerFactory">
     <classNode dependClassName="com.intellij.util.Function" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -181,7 +181,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.util.PopupSettingsBuilder" file="PopupSettingsBuilder.java">
+  <dependency className="jetbrains.mps.ide.editor.util.PopupSettingsBuilder">
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.util.Function" />
     <classNode dependClassName="java.awt.Point" />

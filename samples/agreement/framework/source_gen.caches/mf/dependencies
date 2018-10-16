@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="mf.BitemporalCollection" file="BitemporalCollection.java">
+  <dependency className="mf.BitemporalCollection">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.MfDate" />
     <classNode dependClassName="mf.SingleTemporalCollection" />
     <classNode extendsClassName="mf.TemporalCollection" />
   </dependency>
-  <dependency className="mf.BitemporalCollectionSuperclassTester" file="BitemporalCollectionSuperclassTester.java">
+  <dependency className="mf.BitemporalCollectionSuperclassTester">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.BitemporalCollection" />
     <classNode extendsClassName="mf.TemporalCollectionTester" />
   </dependency>
-  <dependency className="mf.BitemporalCollectionTester" file="BitemporalCollectionTester.java">
+  <dependency className="mf.BitemporalCollectionTester">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="junit.framework.TestSuite" />
@@ -23,13 +23,13 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.Currency" file="Currency.java">
+  <dependency className="mf.Currency">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.text.NumberFormat" />
     <classNode dependClassName="java.util.Locale" />
     <classNode extendsClassName="mf.Unit" />
   </dependency>
-  <dependency className="mf.DateRange" file="DateRange.java">
+  <dependency className="mf.DateRange">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="mf.MfDate" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
-  <dependency className="mf.DateRangeTester" file="DateRangeTester.java">
+  <dependency className="mf.DateRangeTester">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
@@ -48,10 +48,10 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.DoubleRange" file="DoubleRange.java">
+  <dependency className="mf.DoubleRange">
     <classNode dependClassName="java.lang.Double" />
   </dependency>
-  <dependency className="mf.DoubleRangeTester" file="DoubleRangeTester.java">
+  <dependency className="mf.DoubleRangeTester">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.DoubleRange" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.MfDate" file="MfDate.java">
+  <dependency className="mf.MfDate">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="java.util.GregorianCalendar" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
-  <dependency className="mf.MfDateTester" file="MfDateTester.java">
+  <dependency className="mf.MfDateTester">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Calendar" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.MfTester" file="MfTester.java">
+  <dependency className="mf.MfTester">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
@@ -94,7 +94,7 @@
     <classNode dependClassName="mf.MoneyTester" />
     <classNode dependClassName="mf.SingleTemporalCollectionTester" />
   </dependency>
-  <dependency className="mf.Money" file="Money.java">
+  <dependency className="mf.Money">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="mf.Currency" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
-  <dependency className="mf.MoneyTester" file="MoneyTester.java">
+  <dependency className="mf.MoneyTester">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -115,13 +115,13 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.NamedObject" file="NamedObject.java">
+  <dependency className="mf.NamedObject">
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="mf.Quantity" file="Quantity.java">
+  <dependency className="mf.Quantity">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Math" />
@@ -131,7 +131,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.Unit" />
   </dependency>
-  <dependency className="mf.QuantityTester" file="QuantityTester.java">
+  <dependency className="mf.QuantityTester">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.Registry" file="Registry.java">
+  <dependency className="mf.Registry">
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="java.util.Hashtable" />
     <classNode dependClassName="mf.NamedObject" />
   </dependency>
-  <dependency className="mf.SingleTemporalCollection" file="SingleTemporalCollection.java">
+  <dependency className="mf.SingleTemporalCollection">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -160,7 +160,7 @@
     <classNode dependClassName="mf.MfDate" />
     <classNode extendsClassName="mf.TemporalCollection" />
   </dependency>
-  <dependency className="mf.SingleTemporalCollectionTester" file="SingleTemporalCollectionTester.java">
+  <dependency className="mf.SingleTemporalCollectionTester">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.MfDate" />
@@ -169,11 +169,11 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="mf.TemporalCollectionTester" />
   </dependency>
-  <dependency className="mf.TemporalCollection" file="TemporalCollection.java">
+  <dependency className="mf.TemporalCollection">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="mf.MfDate" />
   </dependency>
-  <dependency className="mf.TemporalCollectionTester" file="TemporalCollectionTester.java">
+  <dependency className="mf.TemporalCollectionTester">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="mf.Unit" file="Unit.java">
+  <dependency className="mf.Unit">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.Quantity" />
     <classNode dependClassName="mf.Registry" />

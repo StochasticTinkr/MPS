@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList" file="AbstractSNodeList.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.util.ArrayList" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" file="AttributeOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.EmptyList" file="EmptyList.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.EmptyList">
     <classNode dependClassName="java.lang.IndexOutOfBoundsException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.util.AbstractList" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" file="IAttributeDescriptor.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -63,11 +63,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.NodeCastException" file="NodeCastException.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.NodeCastException">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" file="SConceptOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" file="SEnumOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" file="SLinkOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" file="SModelOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" file="SModuleOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -182,7 +182,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" file="SNodeOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -226,7 +226,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" file="SPointerOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -235,7 +235,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" file="SPropertyOperations.java">
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />

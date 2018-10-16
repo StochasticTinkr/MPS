@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tests.sraMigration.test.SmartRefAttrMigration_Test" file="SmartRefAttrMigration_Test.java">
+  <dependency className="jetbrains.mps.tests.sraMigration.test.SmartRefAttrMigration_Test">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.io.File" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" file="MultiTuple.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,6 +11,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" file="Tuples.java" />
+  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
 </dependenciesRoot>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo" file="EnumSPropertySubstituteInfo.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory" file="EnumSPropertyTransformationItemFactory.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

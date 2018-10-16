@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.traceInfo.testWeaving.data.TestGenerated" file="TestGenerated.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeaving.data.TestGenerated">
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeaving.data.TestInterpreted" file="TestInterpreted.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeaving.data.TestInterpreted">
     <classNode dependClassName="java.lang.System" />
   </dependency>
 </dependenciesRoot>

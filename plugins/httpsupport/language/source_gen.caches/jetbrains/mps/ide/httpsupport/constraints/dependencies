@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.HttpRequestOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.ParameterInitializer_Constraints" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.HttpRequestOperation_Constraints" file="HttpRequestOperation_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.HttpRequestOperation_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.ParameterInitializer_Constraints" file="ParameterInitializer_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.ParameterInitializer_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -72,11 +72,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.PortProvider_Constraints" file="PortProvider_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.PortProvider_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.Port_Constraints" file="Port_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.Port_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.QueryParameterReference_Constraints" file="QueryParameterReference_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.QueryParameterReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -110,15 +110,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.QueryParameter_Constraints" file="QueryParameter_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.QueryParameter_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints" file="RequestHandler_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.constraints.SerializeFunction_Constraints" file="SerializeFunction_Constraints.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.constraints.SerializeFunction_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

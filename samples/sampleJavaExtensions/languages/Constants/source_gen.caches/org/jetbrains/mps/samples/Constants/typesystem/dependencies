@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.typesystem.typeof_ConstantReference_InferenceRule" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.typesystem.typeof_Constant_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.typeof_ConstantReference_InferenceRule" file="typeof_ConstantReference_InferenceRule.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.typeof_ConstantReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.typeof_Constant_InferenceRule" file="typeof_Constant_InferenceRule.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.typesystem.typeof_Constant_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

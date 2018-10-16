@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy" file="ArrayValueProxy.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
     <classNode dependClassName="com.sun.jdi.ClassType" />
@@ -25,7 +25,7 @@
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.ValueProxy" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" file="MirrorUtilImpl.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.BooleanValue" />
     <classNode dependClassName="com.sun.jdi.ByteValue" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.NullValueProxy" file="NullValueProxy.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.NullValueProxy">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.NullPointerException" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy" file="ObjectValueProxy.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy">
     <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
     <classNode dependClassName="com.sun.jdi.ClassType" />
     <classNode dependClassName="com.sun.jdi.Field" />

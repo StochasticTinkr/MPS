@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" file="EvaluationException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException" file="EvaluationRuntimeException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" file="EvaluationUtils.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils">
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
     <classNode dependClassName="com.sun.jdi.ClassType" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.Evaluator" file="Evaluator.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.Evaluator">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -61,22 +61,22 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" file="InvalidEvaluatedExpressionException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" file="InvocationTargetEvaluationException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException" file="JdiRuntimeExceptionEvaluationException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException" file="TargetVMEvaluationException.java">
+  <dependency className="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException">
     <classNode dependClassName="com.sun.jdi.InvocationException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.ClassCastException" />

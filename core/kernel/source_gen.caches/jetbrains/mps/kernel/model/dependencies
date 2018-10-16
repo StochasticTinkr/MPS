@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.kernel.model.MissingDependenciesFixer" file="MissingDependenciesFixer.java">
+  <dependency className="jetbrains.mps.kernel.model.MissingDependenciesFixer">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.kernel.model.SModelUtil" file="SModelUtil.java">
+  <dependency className="jetbrains.mps.kernel.model.SModelUtil">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />

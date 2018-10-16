@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.DeleteRequirementTrace" file="DeleteRequirementTrace.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.DeleteRequirementTrace">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -32,14 +32,14 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_Editor" file="RequirementEntryReference_Editor.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_EditorBuilder_a" file="RequirementEntryReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -76,7 +76,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_SubstituteMenu" file="RequirementEntryReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementEntryReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -97,14 +97,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_Editor" file="RequirementTrace_Editor.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_EditorBuilder_a" file="RequirementTrace_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
@@ -116,7 +116,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_ShowTraces_Editor" file="RequirementTrace_ShowTraces_Editor.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_ShowTraces_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -128,7 +128,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_ShowTraces_EditorBuilder_a" file="RequirementTrace_ShowTraces_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.requirementTracking.Traces.editor.RequirementTrace_ShowTraces_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

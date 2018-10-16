@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.test.smodelOperations.Collections_Test" file="Collections_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.smodelOperations.Collections_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test" file="EnumerationDatatypes_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test" file="NodePointers_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.smodelOperations.NodePointers_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test" file="SLinkImplicitSelect_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test" file="SLinkListAccess_ListModifyingOperaions_Test.java">
+  <dependency className="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Throwable" />

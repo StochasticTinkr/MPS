@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.JavaDebugger" file="JavaDebugger.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.JavaDebugger">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugger" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider" file="JavaNodePositionProvider.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />

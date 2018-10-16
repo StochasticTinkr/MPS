@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.build.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.build.typesystem.check_BuildFileExcludeSelector_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.build.typesystem.check_BuildFileIncludeSelector_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.build.typesystem.check_BuildLayout_JarManifest_NonTypesystemRule" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildFileExcludeSelector_NonTypesystemRule" file="check_BuildFileExcludeSelector_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildFileExcludeSelector_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -31,7 +31,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildFileIncludeSelector_NonTypesystemRule" file="check_BuildFileIncludeSelector_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildFileIncludeSelector_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -46,7 +46,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_JarManifest_NonTypesystemRule" file="check_BuildLayout_JarManifest_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_JarManifest_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Jar_NonTypesystemRule" file="check_BuildLayout_Jar_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Jar_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Jar__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor" />
@@ -77,7 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Tar_NonTypesystemRule" file="check_BuildLayout_Tar_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Tar_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
@@ -94,7 +94,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Zip_NonTypesystemRule" file="check_BuildLayout_Zip_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildLayout_Zip_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
@@ -110,7 +110,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildProject_NonTypesystemRule" file="check_BuildProject_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildProject_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -125,7 +125,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildProject_unusedModules_NonTypesystemRule" file="check_BuildProject_unusedModules_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildProject_unusedModules_NonTypesystemRule">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -148,7 +148,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaLibraryJar_NonTypesystemRule" file="check_BuildSource_JavaLibraryJar_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaLibraryJar_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -163,7 +163,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaLibrary_NonTypesystemRule" file="check_BuildSource_JavaLibrary_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaLibrary_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -179,7 +179,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaOptions_NonTypesystemRule" file="check_BuildSource_JavaOptions_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildSource_JavaOptions_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -196,7 +196,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.check_BuildStringNotEmpty_NonTypesystemRule" file="check_BuildStringNotEmpty_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.typesystem.check_BuildStringNotEmpty_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -210,7 +210,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.build.typesystem.fixContainerName_QuickFix" file="fixContainerName_QuickFix.java">
+  <dependency className="jetbrains.mps.build.typesystem.fixContainerName_QuickFix">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

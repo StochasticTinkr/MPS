@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.regexp.examples.BaseLanguageIntegration" file="BaseLanguageIntegration.java">
+  <dependency className="jetbrains.mps.regexp.examples.BaseLanguageIntegration">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.regex.Matcher" />
@@ -8,13 +8,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations" />
     <classNode dependClassName="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0e" />
   </dependency>
-  <dependency className="jetbrains.mps.regexp.examples.EmailExample" file="EmailExample.java">
+  <dependency className="jetbrains.mps.regexp.examples.EmailExample">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="java.util.regex.Pattern" />
   </dependency>
-  <dependency className="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0e" file="_Replacer_efh9at_a0a0a0e.java">
+  <dependency className="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0e">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Matcher" />

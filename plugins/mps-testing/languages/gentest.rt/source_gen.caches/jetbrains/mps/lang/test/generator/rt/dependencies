@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.test.generator.rt.BaseGeneratorTest" file="BaseGeneratorTest.java">
+  <dependency className="jetbrains.mps.lang.test.generator.rt.BaseGeneratorTest">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Assume" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.generator.rt.TransformHelper" file="TransformHelper.java">
+  <dependency className="jetbrains.mps.lang.test.generator.rt.TransformHelper">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />

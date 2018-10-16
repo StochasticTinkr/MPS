@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx" file="BreakpointIconRenderrerEx.java">
+  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Cursor" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx" file="BreakpointPainterEx.java">
+  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" file="BreakpointsUiComponentEx.java">
+  <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

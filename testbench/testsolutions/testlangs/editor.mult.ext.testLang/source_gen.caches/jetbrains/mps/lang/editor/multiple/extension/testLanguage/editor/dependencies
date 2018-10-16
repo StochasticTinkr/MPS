@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestEditorComponentChild_compactRich" file="MultipleEditorsTestEditorComponentChild_compactRich.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestEditorComponentChild_compactRich">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestEditorComponentChild_compactRich_ComponentBuilder_a" file="MultipleEditorsTestEditorComponentChild_compactRich_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestEditorComponentChild_compactRich_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestMostSpecificChild_compact_rich_Editor" file="MultipleEditorsTestMostSpecificChild_compact_rich_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestMostSpecificChild_compact_rich_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestMostSpecificChild_compact_rich_EditorBuilder_a" file="MultipleEditorsTestMostSpecificChild_compact_rich_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.MultipleEditorsTestMostSpecificChild_compact_rich_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

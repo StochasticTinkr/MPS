@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.smodel.migration.ConceptNodeCheck" file="ConceptNodeCheck.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.ConceptNodeCheck">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateCastExpression" file="MigrateCastExpression.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateCastExpression">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateConceptSwitchToSConcept" file="MigrateConceptSwitchToSConcept.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateConceptSwitchToSConcept">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateDelete2Detach" file="MigrateDelete2Detach.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateDelete2Detach">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateModelReferenceExprWithRepo" file="MigrateModelReferenceExprWithRepo.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateModelReferenceExprWithRepo">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateOldNodePointerExpressions" file="MigrateOldNodePointerExpressions.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateOldNodePointerExpressions">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -168,7 +168,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs" file="MigrateOperationsAndNodeRefs.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -208,7 +208,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts" file="MigratePopularConceptAndNodeCasts.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -276,7 +276,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept" file="Migrate_ModelNodesOperation_concept.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -319,7 +319,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -340,7 +340,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.NodePointersTypesystem" file="NodePointersTypesystem.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.NodePointersTypesystem">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -365,141 +365,141 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_3qm329_a2a6" file="Pattern_3qm329_a2a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_3qm329_a2a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_3qm329_a3a6" file="Pattern_3qm329_a3a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_3qm329_a3a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a01a6" file="Pattern_qvpvui_a01a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a01a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a02a6" file="Pattern_qvpvui_a02a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a02a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a11a6" file="Pattern_qvpvui_a11a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a11a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a12a6" file="Pattern_qvpvui_a12a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a12a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a1a6" file="Pattern_qvpvui_a1a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a1a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a21a6" file="Pattern_qvpvui_a21a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a21a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a22a6" file="Pattern_qvpvui_a22a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a22a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a2a6" file="Pattern_qvpvui_a2a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a2a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a31a6" file="Pattern_qvpvui_a31a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a31a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a32a6" file="Pattern_qvpvui_a32a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a32a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a3a6" file="Pattern_qvpvui_a3a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a3a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a42a6" file="Pattern_qvpvui_a42a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a42a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a51a6" file="Pattern_qvpvui_a51a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a51a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a52a6" file="Pattern_qvpvui_a52a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a52a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a5a6" file="Pattern_qvpvui_a5a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a5a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a61a6" file="Pattern_qvpvui_a61a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a61a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a62a6" file="Pattern_qvpvui_a62a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a62a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a6a6" file="Pattern_qvpvui_a6a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a6a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a71a6" file="Pattern_qvpvui_a71a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a71a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a72a6" file="Pattern_qvpvui_a72a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a72a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a7a6" file="Pattern_qvpvui_a7a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a7a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a8a6" file="Pattern_qvpvui_a8a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a8a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a9a6" file="Pattern_qvpvui_a9a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_qvpvui_a9a6">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_vn1hs7_a0a6" file="Pattern_vn1hs7_a0a6.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_vn1hs7_a0a6">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_vs95qi_a0a5" file="Pattern_vs95qi_a0a5.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_vs95qi_a0a5">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.RemoveLanguageIdVersionProperty" file="RemoveLanguageIdVersionProperty.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.RemoveLanguageIdVersionProperty">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -515,7 +515,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.RemoveNodeConceptMethodCallDirectCallProperty" file="RemoveNodeConceptMethodCallDirectCallProperty.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.RemoveNodeConceptMethodCallDirectCallProperty">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -531,7 +531,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression" file="SNodeTypeCastExpression.java">
+  <dependency className="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test" file="ClosureLiteraltargetFunType_Test.java">
+  <dependency className="jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.closures.test.model.ClosureLiteraltargetIface_Test" file="ClosureLiteraltargetIface_Test.java">
+  <dependency className="jetbrains.mps.closures.test.model.ClosureLiteraltargetIface_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.closures.test.model.Generics_Test" file="Generics_Test.java">
+  <dependency className="jetbrains.mps.closures.test.model.Generics_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.closures.test.model.MockTemplateQueryContext" file="MockTemplateQueryContext.java">
+  <dependency className="jetbrains.mps.closures.test.model.MockTemplateQueryContext">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

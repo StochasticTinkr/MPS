@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" file="CollectionsLanguage.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage">
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" file="CustomContainersRegistry.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension" file="customContainers_extension.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass__BehaviorDescriptor" file="NonThreadSafeClass__BehaviorDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor" file="ParallelFor__BehaviorDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe__BehaviorDescriptor" file="ThreadSafe__BehaviorDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

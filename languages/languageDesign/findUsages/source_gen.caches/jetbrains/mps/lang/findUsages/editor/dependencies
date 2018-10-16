@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_Editor" file="CheckCancelledStatusStatement_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_EditorBuilder_a" file="CheckCancelledStatusStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ConceptFunctionParameter_node_SubstituteMenu" file="ConceptFunctionParameter_node_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ConceptFunctionParameter_node_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -55,14 +55,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor" file="ExecuteFinderExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_EditorBuilder_a" file="ExecuteFinderExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -112,14 +112,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_Editor" file="ExecuteFindersGetSearchResults_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_EditorBuilder_a" file="ExecuteFindersGetSearchResults_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ExecuteFindersGetSearchResults_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />
@@ -152,14 +152,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor" file="FinderDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_EditorBuilder_a" file="FinderDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -215,7 +215,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu" file="FinderDeclaration_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -236,14 +236,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReferenceExpression_Editor" file="FinderReferenceExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReferenceExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.FinderReferenceExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReferenceExpression_EditorBuilder_a" file="FinderReferenceExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReferenceExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -266,14 +266,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor" file="FinderReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.FinderReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_EditorBuilder_a" file="FinderReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -314,7 +314,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu" file="FinderReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -335,7 +335,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ForConstantCellsInTheExpression" file="ForConstantCellsInTheExpression.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ForConstantCellsInTheExpression">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -346,14 +346,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ForEachNodeFoundClosureParameterDeclaration_Editor" file="ForEachNodeFoundClosureParameterDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ForEachNodeFoundClosureParameterDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.ForEachNodeFoundClosureParameterDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ForEachNodeFoundClosureParameterDeclaration_EditorBuilder_a" file="ForEachNodeFoundClosureParameterDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ForEachNodeFoundClosureParameterDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -385,14 +385,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor" file="MakeResultProvider_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_EditorBuilder_a" file="MakeResultProvider_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParenStyleClass" />
@@ -421,14 +421,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.NodeStatement_Editor" file="NodeStatement_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.NodeStatement_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.NodeStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.NodeStatement_EditorBuilder_a" file="NodeStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.NodeStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -453,14 +453,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.OnEachNodeFoundByExpression_Editor" file="OnEachNodeFoundByExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.OnEachNodeFoundByExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.OnEachNodeFoundByExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.OnEachNodeFoundByExpression_EditorBuilder_a" file="OnEachNodeFoundByExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.OnEachNodeFoundByExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBraceStyleClass" />
@@ -509,7 +509,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ParameterActionMap" file="ParameterActionMap.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ParameterActionMap">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -519,14 +519,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ResultStatement_Editor" file="ResultStatement_Editor.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ResultStatement_Editor">
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.ResultStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.findUsages.editor.ResultStatement_EditorBuilder_a" file="ResultStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.findUsages.editor.ResultStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />

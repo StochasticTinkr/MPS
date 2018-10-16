@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.findusages.ClassifierCacher" file="ClassifierCacher.java">
+  <dependency className="jetbrains.mps.workbench.findusages.ClassifierCacher">
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="gnu.trove.THashMap" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.findusages.InternalModelsFindUsagesParticipant" file="InternalModelsFindUsagesParticipant.java">
+  <dependency className="jetbrains.mps.workbench.findusages.InternalModelsFindUsagesParticipant">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport" file="StubModelsFastFindSupport.java">
+  <dependency className="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport">
     <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndex" />
@@ -116,7 +116,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.findusages.StubModelsIndexer" file="StubModelsIndexer.java">
+  <dependency className="jetbrains.mps.workbench.findusages.StubModelsIndexer">
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdTableBuilding" />

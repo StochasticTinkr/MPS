@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test" file="BlockDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test" file="BlockHasNoDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ChangeNodeName_Test" file="ChangeNodeName_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ChangeNodeName_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CollapseDiagramVisibility_Test" file="CollapseDiagramVisibility_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CollapseDiagramVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNodeWithPosition_Test" file="CreateDiagramNodeWithPosition_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNodeWithPosition_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -99,7 +99,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNode_Test" file="CreateDiagramNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNode_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -113,7 +113,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateLink_Test" file="CreateLink_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreateLink_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -127,7 +127,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" file="CreatePort_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" file="DecoratorTestRunner.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner">
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -168,7 +168,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test" file="DeleteDiagramNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -183,7 +183,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DeleteLink_Test" file="DeleteLink_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.DeleteLink_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ExpandDiagramVisibility_Test" file="ExpandDiagramVisibility_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ExpandDiagramVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -216,7 +216,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.InitiallyCollapsedDiagramVisibility_Test" file="InitiallyCollapsedDiagramVisibility_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.InitiallyCollapsedDiagramVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -234,7 +234,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.InitiallyExpandedDiagramVisibility_Test" file="InitiallyExpandedDiagramVisibility_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.InitiallyExpandedDiagramVisibility_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -252,7 +252,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test" file="LinkDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -279,7 +279,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test" file="LinkHasNoDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -299,7 +299,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.MoveNode_Test" file="MoveNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.MoveNode_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -313,7 +313,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test" file="NegativeResizeNode_bottom_central_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -327,7 +327,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_right_Test" file="NegativeResizeNode_bottom_right_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_right_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -341,7 +341,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_right_central_Test" file="NegativeResizeNode_right_central_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_right_central_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -355,7 +355,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NoResizeNode_bottom_right_Test" file="NoResizeNode_bottom_right_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.NoResizeNode_bottom_right_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -369,7 +369,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test" file="PortDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -396,7 +396,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test" file="PortHasNoDecoratorTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -416,7 +416,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_centeral_Test" file="ResizeNode_bottom_centeral_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_centeral_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -430,7 +430,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test" file="ResizeNode_bottom_left_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -444,7 +444,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_right_Test" file="ResizeNode_bottom_right_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_right_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -458,7 +458,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_left_central_Test" file="ResizeNode_left_central_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_left_central_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -472,7 +472,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_right_central_Test" file="ResizeNode_right_central_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_right_central_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -486,7 +486,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_centeral_Test" file="ResizeNode_top_centeral_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_centeral_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -500,7 +500,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test" file="ResizeNode_top_left_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -514,7 +514,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_right_Test" file="ResizeNode_top_right_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_right_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -528,7 +528,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test" file="SelectAnotherNodeFromCode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -552,7 +552,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNode_Test" file="SelectAnotherNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNode_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -566,36 +566,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test" file="SelectDiagramFromNode_Test.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramNode_Test" file="SelectDiagramNode_Test.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagram_Test" file="SelectDiagram_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -610,7 +581,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectLink_Test" file="SelectLink_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramNode_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -624,7 +595,22 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectNodeOuter_Test" file="SelectNodeOuter_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagram_Test">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectLink_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -638,7 +624,21 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test" file="SelectPortQuery_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectNodeOuter_Test">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -663,7 +663,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectPort_Test" file="SelectPort_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectPort_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -677,7 +677,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test" file="ShowCompletionOnTheDiagram_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -692,7 +692,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.StopShowCompletionOnTheDiagram_Test" file="StopShowCompletionOnTheDiagram_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.StopShowCompletionOnTheDiagram_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -710,7 +710,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test" file="ToZeroSize_ResizeNode_bottom_right_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -724,7 +724,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectDiagramNode_Test" file="UnSelectDiagramNode_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectDiagramNode_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -739,7 +739,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectLink_Test" file="UnSelectLink_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectLink_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -754,7 +754,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test" file="UnSelectPort_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

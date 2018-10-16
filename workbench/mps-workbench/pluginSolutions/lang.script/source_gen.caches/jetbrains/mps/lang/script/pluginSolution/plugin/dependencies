@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.RunMigrationScripts_Action" file="RunMigrationScripts_Action.java">
+  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.RunMigrationScripts_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Frame" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsForSelection_ActionGroup" file="ScriptsForSelection_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsForSelection_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup" file="ScriptsGlobally_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" file="ScriptsMenuBuilder.java">
+  <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />

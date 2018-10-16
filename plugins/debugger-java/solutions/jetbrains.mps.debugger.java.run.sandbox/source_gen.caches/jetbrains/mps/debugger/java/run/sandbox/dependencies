@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.BaseClass" file="BaseClass.java" />
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.Data" file="Data.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.BaseClass" />
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.Data">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugCollections" file="DebugCollections.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugCollections">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" file="DebugObjects.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugObjects">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.debugger.java.run.sandbox.Data" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DerivedClass" file="DerivedClass.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.DerivedClass">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -43,11 +43,11 @@
     <classNode dependClassName="java.lang.System" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.run.sandbox.BaseClass" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.InnerClassTest" file="InnerClassTest.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.InnerClassTest">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" file="SeveralThreads.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Math" />
@@ -61,12 +61,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.debugger.java.run.sandbox.Data" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.TestTextSource" file="TestTextSource.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.TestTextSource">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.run.sandbox.UncaughtException" file="UncaughtException.java">
+  <dependency className="jetbrains.mps.debugger.java.run.sandbox.UncaughtException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.reflect.UndeclaredThrowableException" />
     <classNode dependClassName="java.security.PrivilegedActionException" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.Generator__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef__BehaviorDescriptor" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.Generator__BehaviorDescriptor" file="Generator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.Generator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef__BehaviorDescriptor" file="MappingConfigExternalRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef__BehaviorDescriptor" file="MappingConfigNormalRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefBase__BehaviorDescriptor" file="MappingConfigRefBase__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefBase__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefSet__BehaviorDescriptor" file="MappingConfigRefSet__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefSet__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -130,7 +130,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.ModelReference__BehaviorDescriptor" file="ModelReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.ModelReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor" file="ModuleReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -190,7 +190,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.project.behavior.Module__BehaviorDescriptor" file="Module__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.project.behavior.Module__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

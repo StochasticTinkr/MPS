@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" file="ProjectPrefsExtraPanel.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel">
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPointName" />
     <classNode dependClassName="javax.swing.JComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" file="ProjectProperties.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent">
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
@@ -53,7 +53,7 @@
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.ui.Modifiable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" file="ProjectPropertiesPrefsPage.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />

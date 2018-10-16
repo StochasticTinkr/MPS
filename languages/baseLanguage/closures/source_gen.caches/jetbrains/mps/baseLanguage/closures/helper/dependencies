@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget" file="AdaptableClassifierTarget.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" file="ClosureLiteralAdapterBuilder.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Objects" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" file="ClosureLiteralTarget.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget">
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -71,7 +71,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil" file="ClosureLiteralUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Flags" file="Flags.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Flags">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil" file="FunctionTypeUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -134,11 +134,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Keys" file="Keys.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Keys">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil" file="PrepStatementUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -155,7 +155,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil" file="StatementListUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher" file="TypeMatcher.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -184,13 +184,13 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Values" file="Values.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.Values">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" file="WrappersUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_Editor" file="AbstractAntiquotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_EditorBuilder_a" file="AbstractAntiquotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor" file="Antiquotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Antiquotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Antiquotation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_EditorBuilder_a" file="Antiquotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_InspectorBuilder_a" file="Antiquotation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -89,10 +89,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Colors" file="Colors.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Colors">
     <classNode dependClassName="java.awt.Color" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -126,7 +126,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu" file="GeneratorInternal_InternalReferenceHolder_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -138,7 +138,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu" file="GeneratorInternal_PropertyDescriptor_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu" file="GeneratorInternal_ReferenceDescriptor_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor" file="ListAntiquotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -170,7 +170,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_EditorBuilder_a" file="ListAntiquotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -214,7 +214,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_InspectorBuilder_a" file="ListAntiquotation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -235,14 +235,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_Editor" file="NodeBuilderExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_EditorBuilder_a" file="NodeBuilderExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -266,14 +266,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_Editor" file="NodeBuilderInitLink_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_EditorBuilder_a" file="NodeBuilderInitLink_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -326,7 +326,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" file="NodeBuilderInitLink_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -347,14 +347,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_Editor" file="NodeBuilderInitPart_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_EditorBuilder_a" file="NodeBuilderInitPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -363,14 +363,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_Editor" file="NodeBuilderInitProperty_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_EditorBuilder_a" file="NodeBuilderInitProperty_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -421,7 +421,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" file="NodeBuilderInitProperty_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -442,14 +442,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderList_Editor" file="NodeBuilderList_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderList_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderList_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderList_EditorBuilder_a" file="NodeBuilderList_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderList_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBracketStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBracketStyleClass" />
@@ -480,7 +480,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_Editor" file="NodeBuilderNode_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -488,7 +488,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_EditorBuilder_a" file="NodeBuilderNode_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -547,7 +547,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_InspectorBuilder_a" file="NodeBuilderNode_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CompactKeyWordStyleClass" />
@@ -571,7 +571,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" file="NodeBuilderNode_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -592,7 +592,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_Editor" file="NodeBuilderRef_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -600,7 +600,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_EditorBuilder_a" file="NodeBuilderRef_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -641,7 +641,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_InspectorBuilder_a" file="NodeBuilderRef_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -665,7 +665,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" file="NodeBuilderRef_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -686,14 +686,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilder_Editor" file="NodeBuilder_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilder_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilder_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilder_EditorBuilder_a" file="NodeBuilder_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilder_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -727,7 +727,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor" file="PropertyAntiquotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -735,7 +735,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_EditorBuilder_a" file="PropertyAntiquotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -779,7 +779,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_InspectorBuilder_a" file="PropertyAntiquotation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -801,7 +801,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_Editor" file="Quotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Quotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Quotation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -809,7 +809,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_EditorBuilder_a" file="Quotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenStyleClass" />
@@ -843,7 +843,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_InspectorBuilder_a" file="Quotation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -876,7 +876,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode" file="Quotation_quotedNode.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -902,7 +902,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor" file="ReferenceAntiquotation_Editor.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -910,7 +910,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_EditorBuilder_a" file="ReferenceAntiquotation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -954,7 +954,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_InspectorBuilder_a" file="ReferenceAntiquotation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
@@ -976,7 +976,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap" file="_CreateAntiquotationKeyMap.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
@@ -996,7 +996,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.editor._Quotation_createModel" file="_Quotation_createModel.java">
+  <dependency className="jetbrains.mps.lang.quotation.editor._Quotation_createModel">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />

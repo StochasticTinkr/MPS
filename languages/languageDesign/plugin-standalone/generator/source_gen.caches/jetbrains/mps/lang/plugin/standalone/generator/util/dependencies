@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.generator.util.PluginUtils" file="PluginUtils.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.generator.util.PluginUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.environment.IdeaEnvironment" file="IdeaEnvironment.java">
+  <dependency className="jetbrains.mps.tool.environment.IdeaEnvironment">
     <classNode dependClassName="com.intellij.ide.startup.StartupManagerEx" />
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.ActionLookupUtils" file="ActionLookupUtils.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.ActionLookupUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test" file="ApplicableIntention_IncludedInMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -37,7 +37,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test" file="InapplicableIntention_NotIncludedInMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test" file="PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test" file="RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -105,7 +105,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test" file="RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

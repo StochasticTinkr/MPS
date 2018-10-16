@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" file="Typeof_ApplicationPluginType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" file="Typeof_ProjectPluginType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -24,7 +24,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_GetPreferencesComponentInProjectOperation_InferenceRule" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_GetPreferencesComponentInProjectOperation_InferenceRule" file="typeof_GetPreferencesComponentInProjectOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_GetPreferencesComponentInProjectOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -46,7 +46,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_GetToolInProjectOperation_InferenceRule" file="typeof_GetToolInProjectOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_GetToolInProjectOperation_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -58,7 +58,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_PlatformAccessExpression_InferenceRule" file="typeof_PlatformAccessExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.typeof_PlatformAccessExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

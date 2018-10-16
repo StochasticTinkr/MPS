@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.ConceptPresentationAspectImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.structure.StructureAspectDescriptor" />
@@ -11,26 +11,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.LanguageConceptSwitch" file="LanguageConceptSwitch.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.LanguageConceptSwitch">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.MenuTraceEnum" file="MenuTraceEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.MenuTraceEnum">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.MenuTraceEnum_PropertySupport" file="MenuTraceEnum_PropertySupport.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.MenuTraceEnum_PropertySupport">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.structure.MenuTraceEnum" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.StructureAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -42,13 +42,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnum" file="SubstTestEnum.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnum">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnum_PropertySupport" file="SubstTestEnum_PropertySupport.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnum_PropertySupport">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

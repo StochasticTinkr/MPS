@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="typesystemIntegration.languageChecker.AutoResolver" file="AutoResolver.java">
+  <dependency className="typesystemIntegration.languageChecker.AutoResolver">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEventProcessingEditorChecker" />
   </dependency>
-  <dependency className="typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils" file="EditorBasedReferenceResolverUtils.java">
+  <dependency className="typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" file="RefScopeCheckerInEditor.java">
+  <dependency className="typesystemIntegration.languageChecker.RefScopeCheckerInEditor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />

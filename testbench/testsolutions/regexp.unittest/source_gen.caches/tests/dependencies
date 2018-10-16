@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="tests.Escaping_Test" file="Escaping_Test.java">
+  <dependency className="tests.Escaping_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="tests.Match_Test" file="Match_Test.java">
+  <dependency className="tests.Match_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -16,14 +16,14 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="tests.PerlReplace_Test" file="PerlReplace_Test.java">
+  <dependency className="tests.PerlReplace_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="tests.Replace_Test" file="Replace_Test.java">
+  <dependency className="tests.Replace_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Pattern" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="tests._Replacer_55w9mm_a0a0a0" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="tests.Statements_Test" file="Statements_Test.java">
+  <dependency className="tests.Statements_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Matcher" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="tests._Replacer_55w9mm_a0a0a0" file="_Replacer_55w9mm_a0a0a0.java">
+  <dependency className="tests._Replacer_55w9mm_a0a0a0">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Matcher" />

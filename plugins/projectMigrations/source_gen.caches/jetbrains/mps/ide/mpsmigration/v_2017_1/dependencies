@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring" file="EditorGeneratorRefactoring.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1" file="Migrations_2017_1.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles" file="RemoveHistoryFiles.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects" file="SetGenRequiredToEmptyAspects.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

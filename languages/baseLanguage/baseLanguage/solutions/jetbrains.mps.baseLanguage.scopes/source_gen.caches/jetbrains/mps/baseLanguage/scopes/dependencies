@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.BaseLanguageUtil" file="BaseLanguageUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.BaseLanguageUtil">
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils" file="ClassifierResolveUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" file="ClassifierScopeUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" file="ClassifierScopes.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopes">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -112,7 +112,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierSignature" file="ClassifierSignature.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierSignature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -120,7 +120,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifiersScope" file="ClassifiersScope.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifiersScope">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -141,7 +141,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.FilteringScope" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils" file="DefaultConstructorUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.FieldSignature" file="FieldSignature.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.FieldSignature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -161,7 +161,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil" file="GenericTypesUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil">
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MemberScopes" file="MemberScopes.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MemberScopes">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.Members" file="Members.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.Members">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor" />
@@ -197,7 +197,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" file="MembersPopulatingContext.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -221,7 +221,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil" file="MethodResolveUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -268,7 +268,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodSignature" file="MethodSignature.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodSignature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -285,7 +285,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodsScope" file="MethodsScope.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MethodsScope">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -309,7 +309,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.MigrationScopes" file="MigrationScopes.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.MigrationScopes">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -324,7 +324,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" file="RepositoryStateCacheUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -332,7 +332,7 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.Scopes" file="Scopes.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.Scopes">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
@@ -342,8 +342,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.Signature" file="Signature.java" />
-  <dependency className="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" file="VisibilityUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.Signature" />
+  <dependency className="jetbrains.mps.baseLanguage.scopes.VisibilityUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -363,7 +363,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope" file="VisibleClassConstructorsScope.java">
+  <dependency className="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

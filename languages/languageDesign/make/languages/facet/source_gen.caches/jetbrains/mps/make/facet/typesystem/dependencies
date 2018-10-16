@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule" file="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -14,7 +14,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_replaceWith_ClassifierType_QuickFix" file="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_replaceWith_ClassifierType_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.typesystem.typeof_TargetReferenceExpression_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_FacetJavaClassExpression_InferenceRule" file="typeof_FacetJavaClassExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_FacetJavaClassExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -49,7 +49,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_FacetReferenceExpression_InferenceRule" file="typeof_FacetReferenceExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_FacetReferenceExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -62,7 +62,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_ForeignParametersExpression_InferenceRule" file="typeof_ForeignParametersExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_ForeignParametersExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -77,7 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_InputResourcesParameter_InferenceRule" file="typeof_InputResourcesParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_InputResourcesParameter_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -97,7 +97,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_LocalParametersExpression_InferenceRule" file="typeof_LocalParametersExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_LocalParametersExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -113,7 +113,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_ResourceSpecificPropertiesExpression_InferenceRule" file="typeof_ResourceSpecificPropertiesExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_ResourceSpecificPropertiesExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -126,7 +126,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_TargetReferenceExpression_InferenceRule" file="typeof_TargetReferenceExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.make.facet.typesystem.typeof_TargetReferenceExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

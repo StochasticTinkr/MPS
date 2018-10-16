@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.pattern.typesystem.typeof_AsPattern_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.typesystem.typeof_LinkPatternVariableDeclaration_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.typesystem.typeof_ListPattern_InferenceRule" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_AsPattern_InferenceRule" file="typeof_AsPattern_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_AsPattern_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -25,7 +25,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_LinkPatternVariableDeclaration_InferenceRule" file="typeof_LinkPatternVariableDeclaration_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_LinkPatternVariableDeclaration_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -40,7 +40,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_ListPattern_InferenceRule" file="typeof_ListPattern_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_ListPattern_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -56,7 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PatternExpression_InferenceRule" file="typeof_PatternExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PatternExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -72,7 +72,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PatternVariableDeclaration_InferenceRule" file="typeof_PatternVariableDeclaration_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PatternVariableDeclaration_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -88,7 +88,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PropertyPatternVariableDeclaration_InferenceRule" file="typeof_PropertyPatternVariableDeclaration_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.pattern.typesystem.typeof_PropertyPatternVariableDeclaration_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

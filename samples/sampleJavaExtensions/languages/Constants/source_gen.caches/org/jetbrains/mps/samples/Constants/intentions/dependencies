@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.Constants.intentions.InlineConstant_Intention" file="InlineConstant_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.intentions.InlineConstant_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.intentions.IntroduceConstant_Intention" file="IntroduceConstant_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.intentions.IntroduceConstant_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -55,7 +55,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" file="SafeRemoveConstant_Intention.java">
+  <dependency className="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

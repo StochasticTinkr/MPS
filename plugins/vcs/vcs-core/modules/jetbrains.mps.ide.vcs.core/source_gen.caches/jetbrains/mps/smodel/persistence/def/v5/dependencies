@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" file="LineContentAccumulator.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Deque" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.xml.sax.Locator" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" file="LineToContentMapReader5Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5" file="ModelPersistence5.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
@@ -45,13 +45,13 @@
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5" file="ModelReader5.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.ModelReader4" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" file="ModelReader5Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

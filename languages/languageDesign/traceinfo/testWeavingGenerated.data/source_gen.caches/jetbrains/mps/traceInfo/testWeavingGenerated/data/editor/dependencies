@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEachMany_Editor" file="ChildConceptWeaveEachMany_Editor.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEachMany_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEachMany_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEachMany_EditorBuilder_a" file="ChildConceptWeaveEachMany_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEachMany_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -37,14 +37,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_Editor" file="ChildConceptWeaveEach_Editor.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_EditorBuilder_a" file="ChildConceptWeaveEach_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -74,14 +74,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_Editor" file="ChildConceptWeaveMany_Editor.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_EditorBuilder_a" file="ChildConceptWeaveMany_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -111,14 +111,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_Editor" file="ChildConceptWeave_Editor.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_EditorBuilder_a" file="ChildConceptWeave_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -164,14 +164,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_Editor" file="RootConcept_Editor.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_EditorBuilder_a" file="RootConcept_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

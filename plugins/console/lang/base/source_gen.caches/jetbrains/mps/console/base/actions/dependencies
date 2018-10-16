@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.base.actions.ActionAspectDescriptorImpl" file="ActionAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.console.base.actions.ActionAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -16,7 +16,7 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_0" file="blExpression_PasteWrapper_0.java">
+  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_0">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_1" file="blExpression_PasteWrapper_1.java">
+  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_1">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_2" file="blExpression_PasteWrapper_2.java">
+  <dependency className="jetbrains.mps.console.base.actions.blExpression_PasteWrapper_2">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.actions.printStatement_NodeFactories" file="printStatement_NodeFactories.java">
+  <dependency className="jetbrains.mps.console.base.actions.printStatement_NodeFactories">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />

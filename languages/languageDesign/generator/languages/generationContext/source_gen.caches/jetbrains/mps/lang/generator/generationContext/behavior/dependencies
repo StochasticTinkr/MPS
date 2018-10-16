@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef__BehaviorDescriptor" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef__BehaviorDescriptor" file="GenerationContextOp_ContextVarRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef__BehaviorDescriptor" file="GenerationContextOp_LinkPatternRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef__BehaviorDescriptor" file="GenerationContextOp_NodePatternRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef__BehaviorDescriptor" file="GenerationContextOp_PatternRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef__BehaviorDescriptor" file="GenerationContextOp_PropertyPatternRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -139,7 +139,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess__BehaviorDescriptor" file="GenerationContextOp_SessionObjectAccess__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -161,7 +161,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess__BehaviorDescriptor" file="GenerationContextOp_StepObjectAccess__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -183,7 +183,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess__BehaviorDescriptor" file="GenerationContextOp_TransientObjectAccess__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -205,7 +205,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase__BehaviorDescriptor" file="GenerationContextOp_UserObjectAccessBase__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -229,7 +229,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext__BehaviorDescriptor" file="TemplateFunctionParameter_generationContext__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

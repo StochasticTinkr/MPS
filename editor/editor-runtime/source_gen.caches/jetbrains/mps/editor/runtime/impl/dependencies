@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.runtime.impl.CellUtil" file="CellUtil.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.CellUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" file="LanguagesKeymapManager.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.LayoutConstraints" file="LayoutConstraints.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.LayoutConstraints">
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>

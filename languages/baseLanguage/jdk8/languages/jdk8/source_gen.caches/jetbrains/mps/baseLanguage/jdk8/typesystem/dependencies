@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveAbstractModifier_QuickFix" file="RemoveAbstractModifier_QuickFix.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveAbstractModifier_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveDefaultModifier_QuickFix" file="RemoveDefaultModifier_QuickFix.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.RemoveDefaultModifier_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -20,13 +20,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.typesystem.check_DefaultMethodIsNotAbstract_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.typesystem.check_SuperInterfaceMethodCall_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.check_DefaultMethodIsNotAbstract_NonTypesystemRule" file="check_DefaultMethodIsNotAbstract_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.check_DefaultMethodIsNotAbstract_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -41,7 +41,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.check_SuperInterfaceMethodCall_NonTypesystemRule" file="check_SuperInterfaceMethodCall_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.typesystem.check_SuperInterfaceMethodCall_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />

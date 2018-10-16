@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" file="AbstractInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" file="CommandLineGenerator.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="java.io.File" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalConfigFixesInstaller" file="GitGlobalConfigFixesInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalConfigFixesInstaller">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller" file="GitGlobalInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller" file="GitRepositoriesInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification" file="MergeDriverNotification.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.notification.Notification" />
@@ -135,7 +135,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverOptionsDialog" file="MergeDriverOptionsDialog.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverOptionsDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" file="MergeDriverPacker.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
@@ -199,7 +199,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" file="ScriptGenerator.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -218,7 +218,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.mergedriver.SvnInstaller" file="SvnInstaller.java">
+  <dependency className="jetbrains.mps.vcs.platform.mergedriver.SvnInstaller">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />

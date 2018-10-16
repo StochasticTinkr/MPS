@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.refactoring.test.test.AbstractRefactoringTest" file="AbstractRefactoringTest.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.AbstractRefactoringTest">
     <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.testbench.EnvironmentAwareTestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" file="HeadlessRefactoringUI.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test" file="MoveConceptRefactoring_Test.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.lang.Exception" />
@@ -120,7 +120,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.test.test.AbstractRefactoringTest" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.test.test.Refactoring_Test" file="Refactoring_Test.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.Refactoring_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />

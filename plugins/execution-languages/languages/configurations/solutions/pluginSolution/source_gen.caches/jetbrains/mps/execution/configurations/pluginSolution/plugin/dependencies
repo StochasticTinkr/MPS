@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddExecutor_Action" file="AddExecutor_Action.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddExecutor_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddProducer_Action" file="AddProducer_Action.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddProducer_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.BeforeTasksInitializer_ProjectPluginPart" file="BeforeTasksInitializer_ProjectPluginPart.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.BeforeTasksInitializer_ProjectPluginPart">
     <classNode dependClassName="com.intellij.execution.BeforeRunTask" />
     <classNode dependClassName="com.intellij.execution.BeforeRunTaskProvider" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
@@ -57,12 +57,12 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Executor_Order" file="Executor_Order.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Executor_Order">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.BaseOrder" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Executor_TabDescriptor" file="Executor_TabDescriptor.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Executor_TabDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.MakeNodePointers_BeforeTask" file="MakeNodePointers_BeforeTask.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.MakeNodePointers_BeforeTask">
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
@@ -113,14 +113,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddExecutor_Action" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddProducer_Action" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ExecutionConfigurations_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ProjectPlugin">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -132,12 +132,12 @@
     <classNode dependClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Producer_Order" file="Producer_Order.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Producer_Order">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.BaseOrder" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Producer_TabDescriptor" file="Producer_TabDescriptor.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Producer_TabDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Run_Configuration_TabDescriptor" file="Run_Configuration_TabDescriptor.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Run_Configuration_TabDescriptor">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -169,7 +169,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ExecutionConfigurations_ActionGroup" file="ShowAsIntentions_ExecutionConfigurations_ActionGroup.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ExecutionConfigurations_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

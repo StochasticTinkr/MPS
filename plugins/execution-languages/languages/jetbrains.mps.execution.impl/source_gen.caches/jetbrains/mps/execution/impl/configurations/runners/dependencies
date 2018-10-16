@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner" file="MPSProgramRunner.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner">
     <classNode dependClassName="com.intellij.execution.configurations.RunProfile" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
     <classNode dependClassName="java.lang.Override" />

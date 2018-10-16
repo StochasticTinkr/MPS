@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsCache" file="MethodCallsCache.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsCache">
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer" file="MethodCallsFixer.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsUpdateSession" file="MethodCallsUpdateSession.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsUpdateSession">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.UpdateSessionEventVisitor" file="UpdateSessionEventVisitor.java">
+  <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.UpdateSessionEventVisitor">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsUpdateSession" />

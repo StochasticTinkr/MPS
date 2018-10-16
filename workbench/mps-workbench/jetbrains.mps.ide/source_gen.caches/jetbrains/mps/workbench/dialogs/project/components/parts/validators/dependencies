@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" file="Validator.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator">
     <classNode dependClassName="java.lang.Object" />
   </dependency>
 </dependenciesRoot>

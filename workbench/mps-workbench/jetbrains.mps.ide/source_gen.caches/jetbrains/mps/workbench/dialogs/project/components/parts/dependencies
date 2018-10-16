@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" file="CopySupport.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport">
     <classNode dependClassName="java.awt.MenuItem" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.PopupMenu" />

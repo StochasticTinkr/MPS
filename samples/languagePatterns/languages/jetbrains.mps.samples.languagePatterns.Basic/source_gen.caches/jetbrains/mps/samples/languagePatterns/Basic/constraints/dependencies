@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints" file="ComponentUsage_Constraints.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.OperationOnAddress_Constraints" file="OperationOnAddress_Constraints.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.OperationOnAddress_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints" file="Participant_Constraints.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -94,7 +94,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints" file="Performance_Constraints.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -118,7 +118,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Singer_Constraints" file="Singer_Constraints.java">
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.constraints.Singer_Constraints">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

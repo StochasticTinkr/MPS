@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.DefaultModifier_Editor" file="DefaultModifier_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.DefaultModifier_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.editor.DefaultModifier_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.DefaultModifier_EditorBuilder_a" file="DefaultModifier_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.DefaultModifier_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution" file="SuperInterfaceMethodCall_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -71,14 +71,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Editor" file="SuperInterfaceMethodCall_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_EditorBuilder_a" file="SuperInterfaceMethodCall_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -118,7 +118,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_actions" file="SuperInterfaceMethodCall_actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.SuperInterfaceMethodCall_actions">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
@@ -129,7 +129,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.addCtorIncompleteFromModifier" file="addCtorIncompleteFromModifier.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.editor.addCtorIncompleteFromModifier">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

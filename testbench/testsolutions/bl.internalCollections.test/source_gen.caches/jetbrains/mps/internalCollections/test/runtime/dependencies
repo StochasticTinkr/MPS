@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internalCollections.test.runtime.Generics_Test" file="Generics_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.runtime.Generics_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.runtime.MPS13933" file="MPS13933.java">
+  <dependency className="jetbrains.mps.internalCollections.test.runtime.MPS13933">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />

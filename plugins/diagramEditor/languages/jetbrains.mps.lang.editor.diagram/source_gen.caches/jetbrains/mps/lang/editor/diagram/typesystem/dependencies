@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.CheckAbstractFigureParameter_exists_NonTypesystemRule" file="CheckAbstractFigureParameter_exists_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.CheckAbstractFigureParameter_exists_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -14,7 +14,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.typesystem.CheckAbstractFigureParameter_exists_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.typesystem.check_AbstractDiagramCreation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_DiagramNode_NonTypesystemRule" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_AbstractDiagramCreation_NonTypesystemRule" file="check_AbstractDiagramCreation_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_AbstractDiagramCreation_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -55,7 +55,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_DiagramNode_NonTypesystemRule" file="check_CellModel_DiagramNode_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_DiagramNode_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -77,7 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule" file="check_CellModel_Diagram_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -93,7 +93,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_Palette_NonTypesystemRule" file="check_Palette_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.check_Palette_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -105,7 +105,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_BLQueryArgument_InferenceRule" file="typeof_BLQueryArgument_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_BLQueryArgument_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -116,7 +116,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_CellModel_DiagramNode_InferenceRule" file="typeof_CellModel_DiagramNode_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_CellModel_DiagramNode_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -130,7 +130,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ConnectionEndBLQuery_InferenceRule" file="typeof_ConnectionEndBLQuery_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ConnectionEndBLQuery_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -143,7 +143,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_DiagramElementBLQuery_InferenceRule" file="typeof_DiagramElementBLQuery_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_DiagramElementBLQuery_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -156,7 +156,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_EditorNodeExpression_InferenceRule" file="typeof_EditorNodeExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_EditorNodeExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -172,7 +172,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FigureParameterMapping_InferenceRule" file="typeof_FigureParameterMapping_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FigureParameterMapping_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -184,7 +184,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromIdFunctionParameter_InferenceRule" file="typeof_FromIdFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromIdFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -197,7 +197,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromNodeFunctionParameter_InferenceRule" file="typeof_FromNodeFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromNodeFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -209,7 +209,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_LinkArgument_InferenceRule" file="typeof_LinkArgument_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_LinkArgument_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
@@ -225,7 +225,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_NodeFunctionParameter_InferenceRule" file="typeof_NodeFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_NodeFunctionParameter_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation__BehaviorDescriptor" />
@@ -242,7 +242,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_PropertyArgument_InferenceRule" file="typeof_PropertyArgument_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_PropertyArgument_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -254,7 +254,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToIdFunctionParameter_InferenceRule" file="typeof_ToIdFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToIdFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -267,7 +267,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToNodeFunctionParameter_InferenceRule" file="typeof_ToNodeFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToNodeFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -279,7 +279,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_XFunctionParameter_InferenceRule" file="typeof_XFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_XFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -291,7 +291,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_YFunctionParameter_InferenceRule" file="typeof_YFunctionParameter_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.typesystem.typeof_YFunctionParameter_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

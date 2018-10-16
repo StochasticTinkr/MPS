@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="constraints.test.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="constraints.test.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="constraints.test.editor.TestConstraintsInheritance_Container_Editor" />
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_Container_Editor" />
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_Editor" />
@@ -24,14 +24,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="constraints.test.editor.TestConstraintsInheritance_Container_Editor" file="TestConstraintsInheritance_Container_Editor.java">
+  <dependency className="constraints.test.editor.TestConstraintsInheritance_Container_Editor">
     <classNode dependClassName="constraints.test.editor.TestConstraintsInheritance_Container_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestConstraintsInheritance_Container_EditorBuilder_a" file="TestConstraintsInheritance_Container_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestConstraintsInheritance_Container_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -72,14 +72,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_Container_Editor" file="TestRefConstraints_Container_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_Container_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_Container_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_Container_EditorBuilder_a" file="TestRefConstraints_Container_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_Container_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -105,14 +105,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_Editor" file="TestRefConstraints_SubReference_HandlerSuperHandler_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_EditorBuilder_a" file="TestRefConstraints_SubReference_HandlerSuperHandler_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -151,7 +151,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_SubstituteMenu" file="TestRefConstraints_SubReference_HandlerSuperHandler_SubstituteMenu.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperHandler_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -179,14 +179,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_Editor" file="TestRefConstraints_SubReference_HandlerSuperScoping_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_EditorBuilder_a" file="TestRefConstraints_SubReference_HandlerSuperScoping_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -225,7 +225,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_SubstituteMenu" file="TestRefConstraints_SubReference_HandlerSuperScoping_SubstituteMenu.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_HandlerSuperScoping_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -253,14 +253,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_Editor" file="TestRefConstraints_SubReference_ScopingSuperHandler_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_EditorBuilder_a" file="TestRefConstraints_SubReference_ScopingSuperHandler_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -299,7 +299,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_SubstituteMenu" file="TestRefConstraints_SubReference_ScopingSuperHandler_SubstituteMenu.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperHandler_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -327,14 +327,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_Editor" file="TestRefConstraints_SubReference_ScopingSuperScoping_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_EditorBuilder_a" file="TestRefConstraints_SubReference_ScopingSuperScoping_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -373,7 +373,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_SubstituteMenu" file="TestRefConstraints_SubReference_ScopingSuperScoping_SubstituteMenu.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_SubReference_ScopingSuperScoping_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -401,14 +401,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_Target_Editor" file="TestRefConstraints_Target_Editor.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_Target_Editor">
     <classNode dependClassName="constraints.test.editor.TestRefConstraints_Target_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="constraints.test.editor.TestRefConstraints_Target_EditorBuilder_a" file="TestRefConstraints_Target_EditorBuilder_a.java">
+  <dependency className="constraints.test.editor.TestRefConstraints_Target_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

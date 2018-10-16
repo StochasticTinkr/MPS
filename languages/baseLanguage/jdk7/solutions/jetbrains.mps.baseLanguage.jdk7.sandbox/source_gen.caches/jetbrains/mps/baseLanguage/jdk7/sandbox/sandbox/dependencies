@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk7.sandbox.sandbox.TestClass" file="TestClass.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk7.sandbox.sandbox.TestClass">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Arrays" />

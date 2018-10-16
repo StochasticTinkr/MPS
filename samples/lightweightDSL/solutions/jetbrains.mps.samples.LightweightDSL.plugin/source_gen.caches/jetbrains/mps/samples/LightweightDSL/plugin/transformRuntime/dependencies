@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.DummyPipelineElement" file="DummyPipelineElement.java">
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.DummyPipelineElement">
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode extendsClassName="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" file="PipelineElement.java" />
+  <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" />
 </dependenciesRoot>
 

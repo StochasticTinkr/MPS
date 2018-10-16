@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript" file="UpdateTuplesRuntime_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

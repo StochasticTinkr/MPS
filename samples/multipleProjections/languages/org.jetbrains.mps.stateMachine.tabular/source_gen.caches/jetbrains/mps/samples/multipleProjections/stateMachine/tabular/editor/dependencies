@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_Editor" file="Event_hidden_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_EditorBuilder_a" file="Event_hidden_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachineSubstituteInfo" file="StateMachineSubstituteInfo.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachineSubstituteInfo">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachineTableModel" file="StateMachineTableModel.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachineTableModel">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachine_tabular_Editor" file="StateMachine_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachine_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachine_tabular_EditorBuilder_a" file="StateMachine_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.StateMachine_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_Editor" file="State_hidden_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -126,7 +126,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_EditorBuilder_a" file="State_hidden_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Transition_tabular_Editor" file="Transition_tabular_Editor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Transition_tabular_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Transition_tabular_EditorBuilder_a" file="Transition_tabular_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Transition_tabular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />

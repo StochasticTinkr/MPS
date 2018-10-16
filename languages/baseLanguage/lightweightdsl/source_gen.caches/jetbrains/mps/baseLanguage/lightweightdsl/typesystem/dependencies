@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.CheckUtil" file="CheckUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.CheckUtil">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" file="ClassLikeMethodChecker.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -29,14 +29,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodErrorNotifier" file="ClassLikeMethodErrorNotifier.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodErrorNotifier">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodProblemVisitor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodFixer" file="ClassLikeMethodFixer.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodFixer">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" />
@@ -48,13 +48,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodProblemVisitor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodProblemVisitor" file="ClassLikeMethodProblemVisitor.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodProblemVisitor">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_subtypeOfItsValue_SubtypingRule" file="DependentType_subtypeOfItsValue_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_subtypeOfItsValue_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeInstance__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_supertypeOfItsValue_InequationReplacementRule" file="DependentType_supertypeOfItsValue_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_supertypeOfItsValue_InequationReplacementRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeInstance__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -76,14 +76,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.FixMethodAutomatically_QuickFix" file="FixMethodAutomatically_QuickFix.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.FixMethodAutomatically_QuickFix">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodFixer" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_subtypeOfItsValue_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.DependentType_supertypeOfItsValue_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeMember_unique_NonTypesystemRule" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeMember_unique_NonTypesystemRule" file="check_ClassLikeMember_unique_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeMember_unique_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -118,7 +118,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeMethod_NonTypesystemRule" file="check_ClassLikeMethod_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeMethod_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodChecker" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.ClassLikeMethodErrorNotifier" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
@@ -133,7 +133,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeProperty_NonTypesystemRule" file="check_ClassLikeProperty_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLikeProperty_NonTypesystemRule">
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -152,7 +152,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLike_allRequired_NonTypesystemRule" file="check_ClassLike_allRequired_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_ClassLike_allRequired_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -169,7 +169,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_CustomMemberDeclaration_NonTypesystemRule" file="check_CustomMemberDeclaration_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.check_CustomMemberDeclaration_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.CheckUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -180,7 +180,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.fix_SignatureMismatch_QuickFix" file="fix_SignatureMismatch_QuickFix.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.fix_SignatureMismatch_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance__BehaviorDescriptor" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_ClassLikeDescriptor_InferenceRule" file="typeof_ClassLikeDescriptor_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_ClassLikeDescriptor_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLDescriptor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -212,7 +212,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_DepType_InferenceRule" file="typeof_DepType_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_DepType_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -226,7 +226,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_LocalMethodCall_InferenceRule" file="typeof_LocalMethodCall_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_LocalMethodCall_InferenceRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DependentTypeInstance__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -239,7 +239,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_ParameterDescriptor_InferenceRule" file="typeof_ParameterDescriptor_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.typesystem.typeof_ParameterDescriptor_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog" file="AbstractEvaluationDialog.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog" file="EditWatchDialog.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" file="EvaluationDialog.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" file="EvaluationPanel.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree" file="EvaluationTree.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
@@ -111,7 +111,7 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" file="EvaluationUi.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" file="WatchesPanel.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />

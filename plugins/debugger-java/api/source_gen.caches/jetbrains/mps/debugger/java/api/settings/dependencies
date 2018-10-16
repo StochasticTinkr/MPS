@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" file="DebugConnectionSettings.java">
+  <dependency className="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings" file="LocalConnectionSettings.java">
+  <dependency className="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings">
     <classNode dependClassName="com.intellij.util.net.NetUtils" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings" file="RemoteConnectionSettings.java">
+  <dependency className="jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings">
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />

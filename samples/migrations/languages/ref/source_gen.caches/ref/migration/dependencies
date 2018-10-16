@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="ref.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="ref.migration.MigrationDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="ref.migration.SampleRefMigration" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="ref.migration.SampleRefMigration" file="SampleRefMigration.java">
+  <dependency className="ref.migration.SampleRefMigration">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

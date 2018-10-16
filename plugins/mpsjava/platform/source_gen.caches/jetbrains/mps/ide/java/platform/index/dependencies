@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" file="ClassifierSuccessorsFinder.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder">
     <classNode dependClassName="com.intellij.openapi.module.Module" />
     <classNode dependClassName="com.intellij.openapi.project.DumbService" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -43,7 +43,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.psi.search.GlobalSearchScope" />
     <classNode dependClassName="com.intellij.util.indexing.DataIndexer" />

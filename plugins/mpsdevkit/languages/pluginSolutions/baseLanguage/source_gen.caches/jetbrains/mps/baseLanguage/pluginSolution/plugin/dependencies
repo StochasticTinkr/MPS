@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" file="AnalyzersActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.CreateMethodDeclaration_Action" file="CreateMethodDeclaration_Action.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.CreateMethodDeclaration_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CreateMethodDeclaration_Action" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameImplementingMethodsParticipant" file="RenameImplementingMethodsParticipant.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameImplementingMethodsParticipant">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -80,11 +80,11 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowAsIntentions_BL_ActionGroup" file="ShowAsIntentions_BL_ActionGroup.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowAsIntentions_BL_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" file="ShowNullDFA_Action.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticFieldRefactoringParticipant" file="StaticFieldRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticFieldRefactoringParticipant">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -125,7 +125,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticMemberRefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticMemberRefactoringParticipant" file="StaticMemberRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticMemberRefactoringParticipant">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticMethodRefactoringParticipant" file="StaticMethodRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.StaticMethodRefactoringParticipant">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

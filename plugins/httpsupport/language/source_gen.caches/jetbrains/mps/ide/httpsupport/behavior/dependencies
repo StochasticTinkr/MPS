@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter__BehaviorDescriptor" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction__BehaviorDescriptor" file="CanHandleRequestFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter__BehaviorDescriptor" file="DefaultParameterConverter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultValueFunction__BehaviorDescriptor" file="DefaultValueFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultValueFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DeserializeFunction__BehaviorDescriptor" file="DeserializeFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DeserializeFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.HandleRequestFunction__BehaviorDescriptor" file="HandleRequestFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.HandleRequestFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -166,7 +166,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IDEAPlatformPortProvider__BehaviorDescriptor" file="IDEAPlatformPortProvider__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IDEAPlatformPortProvider__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -189,7 +189,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IParameterConverter__BehaviorDescriptor" file="IParameterConverter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IParameterConverter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.MPSIntegrationPortProvider__BehaviorDescriptor" file="MPSIntegrationPortProvider__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.MPSIntegrationPortProvider__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -234,7 +234,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.MPSInternalPortProvider__BehaviorDescriptor" file="MPSInternalPortProvider__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.MPSInternalPortProvider__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -257,7 +257,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.Node_getURLOperation__BehaviorDescriptor" file="Node_getURLOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.Node_getURLOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -279,7 +279,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterReference__BehaviorDescriptor" file="ParameterConverterReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -303,7 +303,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.PortProvider__BehaviorDescriptor" file="PortProvider__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.PortProvider__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -325,7 +325,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.Port__BehaviorDescriptor" file="Port__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.Port__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -348,7 +348,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference__BehaviorDescriptor" file="QueryParameterReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -371,7 +371,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor" file="RequestHandler__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -403,7 +403,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor" file="RequestURLBuilderExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -430,7 +430,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.SerializeFunction__BehaviorDescriptor" file="SerializeFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.SerializeFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -458,7 +458,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.SerializedValueParameter__BehaviorDescriptor" file="SerializedValueParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.SerializedValueParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -482,7 +482,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ValueToSerializeParameter__BehaviorDescriptor" file="ValueToSerializeParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ValueToSerializeParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

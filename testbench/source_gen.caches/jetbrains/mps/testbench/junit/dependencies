@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.junit.DelegatingRunNotifier" file="DelegatingRunNotifier.java">
+  <dependency className="jetbrains.mps.testbench.junit.DelegatingRunNotifier">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Result" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.junit.runner.notification.StoppedByUserException" />
     <classNode extendsClassName="org.junit.runner.notification.RunNotifier" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.ExpectLogEvent" file="ExpectLogEvent.java">
+  <dependency className="jetbrains.mps.testbench.junit.ExpectLogEvent">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
@@ -17,13 +17,13 @@
     <classNode dependClassName="java.lang.annotation.Target" />
     <classNode dependClassName="org.apache.log4j.Priority" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.IgnoreLogEvents" file="IgnoreLogEvents.java">
+  <dependency className="jetbrains.mps.testbench.junit.IgnoreLogEvents">
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.IgnoringPatternErrorStream" file="IgnoringPatternErrorStream.java">
+  <dependency className="jetbrains.mps.testbench.junit.IgnoringPatternErrorStream">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.FilterOutputStream" />
     <classNode dependClassName="java.io.IOException" />
@@ -36,13 +36,13 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.Order" file="Order.java">
+  <dependency className="jetbrains.mps.testbench.junit.Order">
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.OrderComparator" file="OrderComparator.java">
+  <dependency className="jetbrains.mps.testbench.junit.OrderComparator">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.reflect.Method" />
@@ -50,13 +50,13 @@
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode extendsClassName="java.util.Comparator" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.UncleanTestExecutionException" file="UncleanTestExecutionException.java">
+  <dependency className="jetbrains.mps.testbench.junit.UncleanTestExecutionException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.testbench.util.Output" />
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.WatchingRunNotifier" file="WatchingRunNotifier.java">
+  <dependency className="jetbrains.mps.testbench.junit.WatchingRunNotifier">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

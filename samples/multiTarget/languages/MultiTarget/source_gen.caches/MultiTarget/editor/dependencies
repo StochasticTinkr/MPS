@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="MultiTarget.editor.Container_Editor" file="Container_Editor.java">
+  <dependency className="MultiTarget.editor.Container_Editor">
     <classNode dependClassName="MultiTarget.editor.Container_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="MultiTarget.editor.Container_EditorBuilder_a" file="Container_EditorBuilder_a.java">
+  <dependency className="MultiTarget.editor.Container_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="MultiTarget.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="MultiTarget.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="MultiTarget.editor.Container_Editor" />
     <classNode dependClassName="MultiTarget.editor.NumericValue_Editor" />
     <classNode dependClassName="MultiTarget.editor.StringValue_Editor" />
@@ -64,14 +64,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="MultiTarget.editor.NumericValue_Editor" file="NumericValue_Editor.java">
+  <dependency className="MultiTarget.editor.NumericValue_Editor">
     <classNode dependClassName="MultiTarget.editor.NumericValue_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="MultiTarget.editor.NumericValue_EditorBuilder_a" file="NumericValue_EditorBuilder_a.java">
+  <dependency className="MultiTarget.editor.NumericValue_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -101,14 +101,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="MultiTarget.editor.StringValue_Editor" file="StringValue_Editor.java">
+  <dependency className="MultiTarget.editor.StringValue_Editor">
     <classNode dependClassName="MultiTarget.editor.StringValue_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="MultiTarget.editor.StringValue_EditorBuilder_a" file="StringValue_EditorBuilder_a.java">
+  <dependency className="MultiTarget.editor.StringValue_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />

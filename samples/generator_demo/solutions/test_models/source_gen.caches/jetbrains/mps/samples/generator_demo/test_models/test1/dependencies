@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test1.Button" file="Button.java">
+  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test1.Button">
     <classNode dependClassName="java.awt.Container" />
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="javax.swing.JFrame" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test1.Label" file="Label.java">
+  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test1.Label">
     <classNode dependClassName="java.awt.Container" />
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.make.MakeTask" file="MakeTask.java">
+  <dependency className="jetbrains.mps.ide.make.MakeTask">
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -32,7 +32,7 @@
     <classNode extendsClassName="com.intellij.openapi.progress.Task" />
     <classNode extendsClassName="java.util.concurrent.Future" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
+  <dependency className="jetbrains.mps.ide.make.TextPreviewFile">
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileTypeRegistry" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.PlainTextFileType" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFile" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
+  <dependency className="jetbrains.mps.ide.make.UIQueryRelayStrategy">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
+  <dependency className="jetbrains.mps.ide.make.WorkbenchMakeService">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />

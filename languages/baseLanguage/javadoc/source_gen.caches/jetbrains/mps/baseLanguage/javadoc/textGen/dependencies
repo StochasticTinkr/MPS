@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.AuthorBlockDocTag_TextGen" file="AuthorBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.AuthorBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.BaseParameterReference_TextGen" file="BaseParameterReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.BaseParameterReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" file="ClassifierDocComment_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocReference_TextGen" file="ClassifierDocReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CodeInlineDocTag_TextGen" file="CodeInlineDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CodeInlineDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CodeSnippet_TextGen" file="CodeSnippet_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CodeSnippet_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CommentLine_TextGen" file="CommentLine_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.CommentLine_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DeprecatedBlockDocTag_TextGen" file="DeprecatedBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DeprecatedBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" file="DocCommentTextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen">
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DocTypeParameterReference_TextGen" file="DocTypeParameterReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DocTypeParameterReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -100,14 +100,14 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocComment_TextGen" file="FieldDocComment_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocComment_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocReference_TextGen" file="FieldDocReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.FieldDocReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -118,7 +118,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.HTMLElement_TextGen" file="HTMLElement_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.HTMLElement_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -129,13 +129,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.InheritDocInlineDocTag_TextGen" file="InheritDocInlineDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.InheritDocInlineDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.InlineTagCommentLinePart_TextGen" file="InlineTagCommentLinePart_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.InlineTagCommentLinePart_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.LinkInlineDocTag_TextGen" file="LinkInlineDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.LinkInlineDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" file="MethodDocComment_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -166,7 +166,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocReference_TextGen" file="MethodDocReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
@@ -179,7 +179,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ParameterBlockDocTag_TextGen" file="ParameterBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ParameterBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -189,7 +189,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ReturnBlockDocTag_TextGen" file="ReturnBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ReturnBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.SeeBlockDocTag_TextGen" file="SeeBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.SeeBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -208,7 +208,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.SinceBlockDocTag_TextGen" file="SinceBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.SinceBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -217,7 +217,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.StaticFieldDocReference_TextGen" file="StaticFieldDocReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.StaticFieldDocReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -228,7 +228,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextCommentLinePart_TextGen" file="TextCommentLinePart_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextCommentLinePart_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -236,7 +236,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.AuthorBlockDocTag_TextGen" />
@@ -271,7 +271,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" file="ThrowsBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -281,7 +281,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ValueInlineDocTag_TextGen" file="ValueInlineDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ValueInlineDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -289,7 +289,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.VersionBlockDocTag_TextGen" file="VersionBlockDocTag_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.VersionBlockDocTag_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

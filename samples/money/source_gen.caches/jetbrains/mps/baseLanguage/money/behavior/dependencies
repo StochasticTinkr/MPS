@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral__BehaviorDescriptor" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator__BehaviorDescriptor" file="MoneyCreator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall__BehaviorDescriptor" file="MoneyGetCurrencyMethodCall__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral__BehaviorDescriptor" file="MoneyLiteral__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyType__BehaviorDescriptor" file="MoneyType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.money.behavior.MoneyType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

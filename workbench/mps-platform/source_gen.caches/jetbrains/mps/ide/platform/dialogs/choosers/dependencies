@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" file="NodeChooserDialog.java">
+  <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog">
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNameModel" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" file="TreeStructureActionsOwner.java">
+  <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner">
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewModel" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.TreeAction" />

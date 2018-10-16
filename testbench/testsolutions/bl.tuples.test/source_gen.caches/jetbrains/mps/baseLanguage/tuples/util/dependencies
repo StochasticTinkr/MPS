@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.A" file="A.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.A">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -9,13 +9,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Foo" file="Foo.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Foo">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.MPS11114" file="MPS11114.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.MPS11114">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -24,22 +24,22 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Questionnable" file="Questionnable.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Questionnable">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.Runnable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Sample" file="Sample.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Sample">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Long" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.SharedPair" file="SharedPair.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.SharedPair">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Sum" file="Sum.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Sum">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Tpl" file="Tpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Tpl">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />

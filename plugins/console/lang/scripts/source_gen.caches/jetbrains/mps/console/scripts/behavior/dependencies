@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor" file="AbstractConsoleScript__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.scripts.behavior.ConsoleScript__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.scripts.behavior.RefactorOperation__BehaviorDescriptor" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.scripts.behavior.ConsoleScript__BehaviorDescriptor" file="ConsoleScript__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.scripts.behavior.ConsoleScript__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.scripts.behavior.RefactorOperation__BehaviorDescriptor" file="RefactorOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.scripts.behavior.RefactorOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" file="BaseLangInternal.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Object" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClassCreator_TextGen" file="InternalAnonymousClassCreator_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClassCreator_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClass_TextGen" file="InternalAnonymousClass_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClass_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassCreator_TextGen" file="InternalClassCreator_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassCreator_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassExpression_TextGen" file="InternalClassExpression_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassExpression_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassifierType_TextGen" file="InternalClassifierType_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalClassifierType_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen" file="InternalNewExpression_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialFieldReference_TextGen" file="InternalPartialFieldReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialFieldReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialInstanceMethodCall_TextGen" file="InternalPartialInstanceMethodCall_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialInstanceMethodCall_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticFieldReference_TextGen" file="InternalStaticFieldReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticFieldReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen" file="InternalStaticMethodCall_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalSuperMethodCallOperation_TextGen" file="InternalSuperMethodCallOperation_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalSuperMethodCallOperation_TextGen">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -149,13 +149,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalThisExpression_TextGen" file="InternalThisExpression_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalThisExpression_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalVariableReference_TextGen" file="InternalVariableReference_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.InternalVariableReference_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClassCreator_TextGen" />
@@ -186,7 +186,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen" file="TypeHintExpression_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

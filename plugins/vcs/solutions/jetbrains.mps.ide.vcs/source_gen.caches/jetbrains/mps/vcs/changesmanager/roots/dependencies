@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" file="NodeFileStatusMappingExt.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider" file="NodeTabColorProvider.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />

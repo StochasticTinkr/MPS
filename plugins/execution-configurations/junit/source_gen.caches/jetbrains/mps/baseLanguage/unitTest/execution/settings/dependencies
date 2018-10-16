@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.DefaultCachesPathChooser" file="DefaultCachesPathChooser.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.DefaultCachesPathChooser">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.InProcessJBCheckBox" file="InProcessJBCheckBox.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.InProcessJBCheckBox">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.ui.components.JBCheckBox" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent" file="JUnitConfigurationEditorComponent.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" file="JUnitRunTypes.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -102,7 +102,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" file="JUnitSettings_Configuration.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -147,7 +147,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" file="JUnitSettings_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
@@ -156,7 +156,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelChooser" file="ModelChooser.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelChooser">
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -185,7 +185,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelTestCollector" file="ModelTestCollector.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelTestCollector">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -202,7 +202,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestCollector" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleChooser" file="ModuleChooser.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleChooser">
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -228,7 +228,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleTestCollector" file="ModuleTestCollector.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleTestCollector">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -246,7 +246,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestCollector" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ProjectTestCollector" file="ProjectTestCollector.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ProjectTestCollector">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -261,8 +261,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestCollector" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer" file="Synchronizer.java" />
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestCollector" file="TestCollector.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestCollector">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
@@ -270,7 +270,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" file="TestListPanel.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -301,7 +301,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.ListPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils" file="TestUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.state.JavaUiState" file="JavaUiState.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.JavaUiState">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

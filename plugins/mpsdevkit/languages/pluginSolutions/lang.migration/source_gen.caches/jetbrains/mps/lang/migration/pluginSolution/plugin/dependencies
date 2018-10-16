@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -8,11 +8,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup" file="GoToAddition_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToTarget_Action" file="GoToTarget_Action.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToTarget_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LogBuilder" file="LogBuilder.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LogBuilder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder" file="MigrationScriptBuilder.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant" file="MoveNodeRefactoringLogParticipant.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -128,13 +128,13 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToTarget_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.SerializingParticipantState" file="SerializingParticipantState.java">
+  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.SerializingParticipantState">
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

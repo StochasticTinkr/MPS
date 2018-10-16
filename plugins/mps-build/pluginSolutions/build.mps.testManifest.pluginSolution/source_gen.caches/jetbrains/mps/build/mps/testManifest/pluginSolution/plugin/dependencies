@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.RefreshTestProject_Action" />
     <classNode dependClassName="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestBuildProject_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.RefreshTestProject_Action" file="RefreshTestProject_Action.java">
+  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.RefreshTestProject_Action">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
@@ -54,11 +54,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestBuildProject_ActionGroup" file="TestBuildProject_ActionGroup.java">
+  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestBuildProject_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestModuleBuildProjectTemplate" file="TestModuleBuildProjectTemplate.java">
+  <dependency className="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestModuleBuildProjectTemplate">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

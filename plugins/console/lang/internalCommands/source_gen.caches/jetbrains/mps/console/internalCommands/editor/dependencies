@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_Editor" file="ConsoleModelExpression_Editor.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_Editor">
     <classNode dependClassName="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_EditorBuilder_a" file="ConsoleModelExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_SubstituteMenu" file="ConsoleModelExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -45,14 +45,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.InternalMode_Editor" file="InternalMode_Editor.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.InternalMode_Editor">
     <classNode dependClassName="jetbrains.mps.console.internalCommands.editor.InternalMode_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.InternalMode_EditorBuilder_a" file="InternalMode_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.InternalMode_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.console.internalCommands.editor.ShowRepositoryCommand_SubstituteMenu" file="ShowRepositoryCommand_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.console.internalCommands.editor.ShowRepositoryCommand_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

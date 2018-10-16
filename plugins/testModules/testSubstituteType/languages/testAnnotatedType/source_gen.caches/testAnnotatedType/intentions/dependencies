@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testAnnotatedType.intentions.AddRemovePresenceAnnotation_Intention" file="AddRemovePresenceAnnotation_Intention.java">
+  <dependency className="testAnnotatedType.intentions.AddRemovePresenceAnnotation_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="testAnnotatedType.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="testAnnotatedType.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

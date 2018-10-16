@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper" file="AbstractMigrationScriptHelper.java">
+  <dependency className="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction" file="RunMigrationScriptAction.java">
+  <dependency className="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -52,7 +52,7 @@
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" file="RunMigrationScriptsDialog.java">
+  <dependency className="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog">
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.table.JBTable" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="javax.swing.JDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper" file="ScriptsActionGroupHelper.java">
+  <dependency className="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />

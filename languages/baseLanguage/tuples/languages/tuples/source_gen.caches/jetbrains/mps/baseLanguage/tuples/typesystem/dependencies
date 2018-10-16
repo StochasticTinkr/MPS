@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_extended_SubtypingRule" file="NamedTuple_subtypeOf_extended_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_extended_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" file="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -31,7 +31,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule" file="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -56,7 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_extended_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.typesystem.Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_NamedTupleDeclaration_extends_NonTypesystemRule" file="check_NamedTupleDeclaration_extends_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_NamedTupleDeclaration_extends_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration__BehaviorDescriptor" />
@@ -101,7 +101,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_NamedTupleType_NonTypesystemRule" file="check_NamedTupleType_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_NamedTupleType_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -115,7 +115,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_TupleComponentIsInScope_NonTypesystemRule" file="check_TupleComponentIsInScope_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.check_TupleComponentIsInScope_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration__BehaviorDescriptor" />
@@ -133,7 +133,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_IndexedTupleType_Object_ComparisonRule" file="comparable_IndexedTupleType_Object_ComparisonRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_IndexedTupleType_Object_ComparisonRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_NamedTupleType_Object_ComparisonRule" file="comparable_NamedTupleType_Object_ComparisonRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_NamedTupleType_Object_ComparisonRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTupleType_supertypeOf_namedTupleType_SubtypingRule" file="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTupleType_supertypeOf_namedTupleType_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
@@ -173,7 +173,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTuple_assignableTo_indexedTuple_InequationReplacementRule" file="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTuple_assignableTo_indexedTuple_InequationReplacementRule">
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_SubtypingRule" file="namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTupleDeclaration_ClassifierType_subtypeOf_namedTupleType_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -205,7 +205,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule" file="namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -222,7 +222,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTuple_assignableTo_namedTuple_InequationReplacementRule" file="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.namedTuple_assignableTo_namedTuple_InequationReplacementRule">
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -241,7 +241,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleLiteral_InferenceRule" file="typeof_IndexedTupleLiteral_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleLiteral_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -259,7 +259,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleMemberAccessExpression_InferenceRule" file="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleMemberAccessExpression_InferenceRule">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -285,7 +285,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleComponentAccessOperation_InferenceRule" file="typeof_NamedTupleComponentAccessOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleComponentAccessOperation_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -306,7 +306,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule" file="typeof_NamedTupleLiteral_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.HashMap" />

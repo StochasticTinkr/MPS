@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" file="AbstractLeftEditorHighlighterMessage.java">
+  <dependency className="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage">
     <classNode dependClassName="java.awt.Cursor" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultEditorMessage" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.EditorCell_Empty" file="EditorCell_Empty.java">
+  <dependency className="jetbrains.mps.editor.runtime.EditorCell_Empty">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Override" />
@@ -35,7 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.cells.optional.WithCaret" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.EditorUtil" file="EditorUtil.java">
+  <dependency className="jetbrains.mps.editor.runtime.EditorUtil">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.ErrorComponents" file="ErrorComponents.java">
+  <dependency className="jetbrains.mps.editor.runtime.ErrorComponents">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -114,14 +114,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.HeadlessEditorComponent" file="HeadlessEditorComponent.java">
+  <dependency className="jetbrains.mps.editor.runtime.HeadlessEditorComponent">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.IntelligentNodeMover" file="IntelligentNodeMover.java">
+  <dependency className="jetbrains.mps.editor.runtime.IntelligentNodeMover">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -157,7 +157,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.LanguageEditorChecker" file="LanguageEditorChecker.java">
+  <dependency className="jetbrains.mps.editor.runtime.LanguageEditorChecker">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
     <classNode dependClassName="java.lang.Override" />
@@ -204,7 +204,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.DisposableEditorChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.SideTransformInfoUtil" file="SideTransformInfoUtil.java">
+  <dependency className="jetbrains.mps.editor.runtime.SideTransformInfoUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />

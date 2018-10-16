@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" file="BaseVersionUtil.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.BaseVersionUtil">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracking" file="ChangesTracking.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracking">
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileDocumentManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifference" file="CurrentDifference.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifference">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -162,13 +162,13 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" file="CurrentDifferenceAdapter.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" file="CurrentDifferenceBroadcaster.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -184,12 +184,12 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" file="CurrentDifferenceListener.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener">
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.util.EventListener" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" file="CurrentDifferenceRegistry.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
@@ -230,7 +230,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.EventConsumingMapping" file="EventConsumingMapping.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.EventConsumingMapping">
     <classNode dependClassName="com.intellij.util.containers.BidirectionalMap" />
     <classNode dependClassName="com.intellij.util.containers.BidirectionalMultiMap" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -245,7 +245,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" file="NodeFileStatusMapping.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -285,7 +285,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider" file="NodeFileStatusProvider.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider">
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -303,11 +303,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.FileStatusProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.SModelCommandListener" file="SModelCommandListener.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.SModelCommandListener">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" file="SimpleCommandQueue.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue">
     <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />

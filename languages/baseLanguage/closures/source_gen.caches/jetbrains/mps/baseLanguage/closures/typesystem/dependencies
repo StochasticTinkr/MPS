@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.ClosureLiteralType_subtypeOf_ClassifierType_InequationReplacementRule" file="ClosureLiteralType_subtypeOf_ClassifierType_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.ClosureLiteralType_subtypeOf_ClassifierType_InequationReplacementRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule" file="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_Object_InequationReplacementRule" file="FunctionType_subtypeOf_Object_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_Object_InequationReplacementRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_40kvf0_a0a0a0g" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule" file="FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IInternalType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -77,11 +77,11 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_40kvf0_a0a0a0g" file="Pattern_40kvf0_a0a0a0g.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_40kvf0_a0a0a0g">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.ClosureLiteralType_subtypeOf_ClassifierType_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_Object_InequationReplacementRule" />
@@ -106,7 +106,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_ClosureLiteralDataFlow_NonTypesystemRule" file="check_ClosureLiteralDataFlow_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_ClosureLiteralDataFlow_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.DataFlowUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -118,7 +118,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_FunctionType_NonTypesystemRule" file="check_FunctionType_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_FunctionType_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -136,7 +136,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_ReturnStatement_NonTypesystemRule" file="check_ReturnStatement_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.check_ReturnStatement_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -149,7 +149,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" file="supertypesOf_ClassifierType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -177,7 +177,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClosureLiteralType_SubtypingRule" file="supertypesOf_ClosureLiteralType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClosureLiteralType_SubtypingRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil" />
@@ -193,7 +193,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule" file="typeof_ClosureArgReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -204,7 +204,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule" file="typeof_ClosureLiteral_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -236,7 +236,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_CompactInvokeFunctionExpression_InferenceRule" file="typeof_CompactInvokeFunctionExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_CompactInvokeFunctionExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -256,7 +256,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeExpression_InferenceRule" file="typeof_InvokeExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeExpression_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -278,7 +278,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeFunctionExpression_InferenceRule" file="typeof_InvokeFunctionExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeFunctionExpression_InferenceRule">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -299,7 +299,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeFunctionOperation_InferenceRule" file="typeof_InvokeFunctionOperation_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_InvokeFunctionOperation_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -318,7 +318,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_YieldAllStatement_InferenceRule" file="typeof_YieldAllStatement_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_YieldAllStatement_InferenceRule">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
@@ -333,7 +333,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.wildcardtype_comparable_ComparisonRule" file="wildcardtype_comparable_ComparisonRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.wildcardtype_comparable_ComparisonRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.dependencies.Cluster" file="Cluster.java">
+  <dependency className="jetbrains.mps.make.dependencies.Cluster">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
   </dependency>
-  <dependency className="jetbrains.mps.make.dependencies.MakeSequence" file="MakeSequence.java">
+  <dependency className="jetbrains.mps.make.dependencies.MakeSequence">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.make.dependencies.ModulesCluster" file="ModulesCluster.java">
+  <dependency className="jetbrains.mps.make.dependencies.ModulesCluster">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -71,7 +71,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.make.dependencies.ModulesClusterizer" file="ModulesClusterizer.java">
+  <dependency className="jetbrains.mps.make.dependencies.ModulesClusterizer">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />

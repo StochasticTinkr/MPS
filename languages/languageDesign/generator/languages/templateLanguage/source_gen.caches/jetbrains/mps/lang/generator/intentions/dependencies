@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddContext_Intention" file="AddContext_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddContext_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -23,7 +23,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" file="AddNodeMacroParam_copySrcMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -50,7 +50,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" file="AddNodeMacroParam_copySrclMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -77,7 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention" file="AddNodeMacroParam_ifMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -107,7 +107,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_loopMacro_Intention" file="AddNodeMacroParam_loopMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_loopMacro_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -134,7 +134,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention" file="AddNodeMacroParam_switch_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -162,7 +162,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacro_Intention" file="AddNodeMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddNodeMacro_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -181,7 +181,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddPropertyMacroParam_property_Intention" file="AddPropertyMacroParam_property_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddPropertyMacroParam_property_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -213,7 +213,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddPropertyMacro_Intention" file="AddPropertyMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddPropertyMacro_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -232,7 +232,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddReferenceMacroParam_link_Intention" file="AddReferenceMacroParam_link_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddReferenceMacroParam_link_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -261,7 +261,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.AddReferenceMacro_Intention" file="AddReferenceMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.AddReferenceMacro_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -280,7 +280,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertClassConceptToExtract_Intention" file="ConvertClassConceptToExtract_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertClassConceptToExtract_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -305,7 +305,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention" file="ConvertInlineTemplateToTemplateFragment_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -326,7 +326,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention" file="ConvertLoopWithCopySrc_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -347,7 +347,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertTemplateDeclRefToInlineTemplate_Intention" file="ConvertTemplateDeclRefToInlineTemplate_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ConvertTemplateDeclRefToInlineTemplate_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -373,7 +373,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.CreateScript_Intention" file="CreateScript_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.CreateScript_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -393,7 +393,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.DeleteTemplateMacro_Intention" file="DeleteTemplateMacro_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.DeleteTemplateMacro_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -409,7 +409,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -454,7 +454,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" file="MacroIntentionsUtil.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -476,7 +476,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" file="NewTemplateFragment_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -498,7 +498,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" file="NewTemplateInCreateRootRule_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -527,7 +527,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" file="NewTemplateInInlineSwitchCase_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -553,7 +553,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention" file="NewTemplateInInlineSwitchDefault_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -577,7 +577,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" file="NewTemplateInReductionRule_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -603,7 +603,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" file="NewTemplateInRootMappingRule_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -633,7 +633,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" file="NewTemplateInSwitchCase_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -659,7 +659,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchDefault_Intention" file="NewTemplateInSwitchDefault_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchDefault_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -683,7 +683,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" file="NewTemplateInWeaveEach_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -707,7 +707,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" file="NewTemplateInWeavingRule_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -734,17 +734,17 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.Pattern_iiuth6_a0a0a0a3a1" file="Pattern_iiuth6_a0a0a0a3a1.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.Pattern_iiuth6_a0a0a0a3a1">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.Pattern_iiuth6_a0a0a0d0b" file="Pattern_iiuth6_a0a0a0d0b.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.Pattern_iiuth6_a0a0a0d0b">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ReplaceIncludeWithCall_Intention" file="ReplaceIncludeWithCall_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ReplaceIncludeWithCall_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -766,7 +766,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention" file="ReplaceWithConcreteSubconcept_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -791,7 +791,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.intentions.UnwrapQueryExpression_Intention" file="UnwrapQueryExpression_Intention.java">
+  <dependency className="jetbrains.mps.lang.generator.intentions.UnwrapQueryExpression_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

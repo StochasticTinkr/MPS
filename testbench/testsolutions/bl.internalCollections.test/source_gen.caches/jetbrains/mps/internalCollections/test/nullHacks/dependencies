@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullEmpty_Test" file="NullEmpty_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullEmpty_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test" file="NullSequence_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test" file="NullValues_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

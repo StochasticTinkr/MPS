@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix" file="ImportUsedLanguage_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredLinkAttribute_QuickFix" file="RemoveUndeclaredLinkAttribute_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredLinkAttribute_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredPropertyAttribute_QuickFix" file="RemoveUndeclaredPropertyAttribute_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredPropertyAttribute_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -27,14 +27,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix" file="RemoveUndeclaredProperty_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix" file="RemoveUnknownChildren_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix" file="RemoveUnknownReference_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.core.typesystem.check_ChildAttribute_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.core.typesystem.check_DeprecatedReference_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.add_ChildAttribute_id_QuickFix" file="add_ChildAttribute_id_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.add_ChildAttribute_id_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -71,7 +71,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.add_LinkAttribute_id_QuickFix" file="add_LinkAttribute_id_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.add_LinkAttribute_id_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.add_PropertyAttribute_id_QuickFix" file="add_PropertyAttribute_id_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.add_PropertyAttribute_id_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_ChildAttribute_NonTypesystemRule" file="check_ChildAttribute_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_ChildAttribute_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -111,7 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_DeprecatedReference_NonTypesystemRule" file="check_DeprecatedReference_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_DeprecatedReference_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -127,7 +127,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" file="check_InstanceOfAbstract_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -140,7 +140,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" file="check_InstanceOfDeprecated_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -155,7 +155,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_LinkAttribute_NonTypesystemRule" file="check_LinkAttribute_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_LinkAttribute_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -177,7 +177,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_PropertyAttribute_NonTypesystemRule" file="check_PropertyAttribute_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_PropertyAttribute_NonTypesystemRule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -199,7 +199,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule" file="check_UnknownLinks_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -223,7 +223,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.fix_ChildAttribute_name_QuickFix" file="fix_ChildAttribute_name_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.fix_ChildAttribute_name_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -233,7 +233,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.fix_LinkAttribute_name_QuickFix" file="fix_LinkAttribute_name_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.fix_LinkAttribute_name_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -243,7 +243,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.typesystem.fix_PropertyAttribute_name_QuickFix" file="fix_PropertyAttribute_name_QuickFix.java">
+  <dependency className="jetbrains.mps.lang.core.typesystem.fix_PropertyAttribute_name_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

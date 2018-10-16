@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="JavaKaja.runtime.Cell" file="Cell.java">
+  <dependency className="JavaKaja.runtime.Cell">
     <classNode dependClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="JavaKaja.runtime.Direction" file="Direction.java" />
-  <dependency className="JavaKaja.runtime.KajaFrame" file="KajaFrame.java">
+  <dependency className="JavaKaja.runtime.Direction" />
+  <dependency className="JavaKaja.runtime.KajaFrame">
     <classNode dependClassName="JavaKaja.runtime.Cell" />
     <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="JavaKaja.runtime.VisualCell" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="javax.swing.UnsupportedLookAndFeelException" />
     <classNode dependClassName="javax.swing.plaf.metal.MetalLookAndFeel" />
   </dependency>
-  <dependency className="JavaKaja.runtime.VisualCell" file="VisualCell.java">
+  <dependency className="JavaKaja.runtime.VisualCell">
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />

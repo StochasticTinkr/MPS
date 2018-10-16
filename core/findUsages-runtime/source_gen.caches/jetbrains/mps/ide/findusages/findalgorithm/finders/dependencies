@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" file="BaseFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.CollectingCallback" file="CollectingCallback.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.CollectingCallback">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -15,11 +15,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" file="Finder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" file="GeneratedFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -51,7 +51,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" file="IFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.CollectingCallback" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" file="IInterfacedFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder" file="ReloadableFinder.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.FindersManager" />
@@ -82,7 +82,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects" file="SearchedObjects.java">
+  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.LinkedHashSet" />

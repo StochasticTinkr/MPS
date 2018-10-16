@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.MPSVcsManager" file="MPSVcsManager.java">
+  <dependency className="jetbrains.mps.vcs.MPSVcsManager">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.MPSVcsProjectConfiguration" file="MPSVcsProjectConfiguration.java">
+  <dependency className="jetbrains.mps.vcs.MPSVcsProjectConfiguration">
     <classNode dependClassName="com.intellij.ProjectTopics" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
@@ -61,7 +61,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.MergeDriverPackerImpl" file="MergeDriverPackerImpl.java">
+  <dependency className="jetbrains.mps.vcs.MergeDriverPackerImpl">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -78,7 +78,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.TestMergeDialog" file="TestMergeDialog.java">
+  <dependency className="jetbrains.mps.vcs.TestMergeDialog">
     <classNode dependClassName="com.intellij.diff.DiffManager" />
     <classNode dependClassName="com.intellij.diff.DiffRequestFactory" />
     <classNode dependClassName="com.intellij.diff.InvalidDiffRequestException" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesPanel" file="VcsGeneratedFilesPanel.java">
+  <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesPanel">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Override" />

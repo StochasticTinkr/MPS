@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.api.source.IPositionProvider" file="IPositionProvider.java">
+  <dependency className="jetbrains.mps.debug.api.source.IPositionProvider">
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.source.NodePositionProvider" file="NodePositionProvider.java">
+  <dependency className="jetbrains.mps.debug.api.source.NodePositionProvider">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
@@ -26,14 +26,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.IPositionProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.source.NodeSourcePosition" file="NodeSourcePosition.java">
+  <dependency className="jetbrains.mps.debug.api.source.NodeSourcePosition">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.SourcePosition" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.source.PositionProvider" file="PositionProvider.java">
+  <dependency className="jetbrains.mps.debug.api.source.PositionProvider">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -59,8 +59,8 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.source.SourcePosition" file="SourcePosition.java" />
-  <dependency className="jetbrains.mps.debug.api.source.TextPositionProvider" file="TextPositionProvider.java">
+  <dependency className="jetbrains.mps.debug.api.source.SourcePosition" />
+  <dependency className="jetbrains.mps.debug.api.source.TextPositionProvider">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Override" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.IPositionProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.api.source.TextSourcePosition" file="TextSourcePosition.java">
+  <dependency className="jetbrains.mps.debug.api.source.TextSourcePosition">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

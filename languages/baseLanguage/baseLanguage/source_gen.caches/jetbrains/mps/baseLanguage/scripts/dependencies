@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript" file="AddMissingOverrideAnnotations_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript" file="AddNativeFlagToAllMethods_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" file="BaseLanguageEnhancements_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateCanBeCoerced_MigrationScript" file="MigrateCanBeCoerced_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateCanBeCoerced_MigrationScript">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript" file="MigrateFloatConstants_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" file="RemoveThisWhereAppropriate_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation__BehaviorDescriptor" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" file="ShowJavaUtilReferences_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -135,7 +135,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript" file="UpdateCastExpressionParens_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
@@ -151,7 +151,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript" file="UpdateTernaryOperatorExpressionParens_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Objects" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript" file="WrapNotChildWithParens_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />

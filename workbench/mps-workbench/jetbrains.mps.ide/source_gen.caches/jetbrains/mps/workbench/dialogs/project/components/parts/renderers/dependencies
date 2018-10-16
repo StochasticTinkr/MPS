@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" file="PathRenderer.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" file="StringPathRenderer.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />

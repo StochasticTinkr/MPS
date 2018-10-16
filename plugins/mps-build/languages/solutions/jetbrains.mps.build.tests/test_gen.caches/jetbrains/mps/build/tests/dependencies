@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.tests.MacroTest_Test" file="MacroTest_Test.java">
+  <dependency className="jetbrains.mps.build.tests.MacroTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tests.TestContext" file="TestContext.java">
+  <dependency className="jetbrains.mps.build.tests.TestContext">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.build.util.Context" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tests.TestRelativePathHelper_Test" file="TestRelativePathHelper_Test.java">
+  <dependency className="jetbrains.mps.build.tests.TestRelativePathHelper_Test">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tests.TestTemporalPaths_Test" file="TestTemporalPaths_Test.java">
+  <dependency className="jetbrains.mps.build.tests.TestTemporalPaths_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

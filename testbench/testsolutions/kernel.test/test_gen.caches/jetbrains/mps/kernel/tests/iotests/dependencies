@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test" file="FacetDescriptorsIO_Test.java">
+  <dependency className="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.testbench.EnvironmentAwareTestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.kernel.tests.iotests.TestUtils" file="TestUtils.java">
+  <dependency className="jetbrains.mps.kernel.tests.iotests.TestUtils">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Mapping_main" file="Mapping_main.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Mapping_main">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -27,7 +27,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.MapConfigBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.QueriesGenerated">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Switch_switch_InputNode" file="Switch_switch_InputNode.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Switch_switch_InputNode">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -73,7 +73,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl" file="TemplateModelImpl.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -97,7 +97,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_MyOutputRoot2" file="Template_MyOutputRoot2.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_MyOutputRoot2">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -120,7 +120,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_produce_OutputNode" file="Template_produce_OutputNode.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_produce_OutputNode">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -146,7 +146,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_reduce_InputNode" file="Template_reduce_InputNode.java">
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.Template_reduce_InputNode">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

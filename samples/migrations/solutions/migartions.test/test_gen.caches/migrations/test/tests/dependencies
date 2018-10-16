@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="migrations.test.tests.MigrateDeclarationsReferences_Test" file="MigrateDeclarationsReferences_Test.java">
+  <dependency className="migrations.test.tests.MigrateDeclarationsReferences_Test">
     <classNode dependClassName="declarations.migration.MigrateDeclarations" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

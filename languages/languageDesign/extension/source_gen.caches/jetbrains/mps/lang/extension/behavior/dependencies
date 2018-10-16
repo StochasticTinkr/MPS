@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference__BehaviorDescriptor" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration__BehaviorDescriptor" file="ExtensionDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference__BehaviorDescriptor" file="ExtensionFieldReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFunction__BehaviorDescriptor" file="ExtensionFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter__BehaviorDescriptor" file="ExtensionObjectGetter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration__BehaviorDescriptor" file="ExtensionPointDeclaration__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression__BehaviorDescriptor" file="ExtensionPointExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -168,7 +168,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointType__BehaviorDescriptor" file="ExtensionPointType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -194,7 +194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.Extension__BehaviorDescriptor" file="Extension__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.Extension__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -217,7 +217,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescriptor" file="IRootWithUniqueName__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

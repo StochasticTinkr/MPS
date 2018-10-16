@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.AllConstant_Constraints" file="AllConstant_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.AllConstant_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AllConstant_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" file="CustomContainerCreator_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints" file="CustomContainerDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints" file="CustomMapCreator_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints" file="ForEachVariableReference_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.IApplicableToNothing_Constraints" file="IApplicableToNothing_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.IApplicableToNothing_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing__BehaviorDescriptor" />
@@ -145,7 +145,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints" file="MultiForEachVariableReference_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterDeclaration_Constraints" file="SmartClosureParameterDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterDeclaration_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

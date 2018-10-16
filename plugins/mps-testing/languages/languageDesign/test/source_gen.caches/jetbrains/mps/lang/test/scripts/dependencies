@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.test.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.test.scripts.ScriptsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" file="SpecifyRuleReferencesInTests_MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.scripts.SpecifyUtil" file="SpecifyUtil.java">
+  <dependency className="jetbrains.mps.lang.test.scripts.SpecifyUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.ref.WeakReference" />

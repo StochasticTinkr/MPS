@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.java.BLDependenciesHandler" file="BLDependenciesHandler.java">
+  <dependency className="jetbrains.mps.make.java.BLDependenciesHandler">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.make.java.ModelDependencies" file="ModelDependencies.java">
+  <dependency className="jetbrains.mps.make.java.ModelDependencies">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.make.java.RootDependencies" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
-  <dependency className="jetbrains.mps.make.java.RootDependencies" file="RootDependencies.java">
+  <dependency className="jetbrains.mps.make.java.RootDependencies">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

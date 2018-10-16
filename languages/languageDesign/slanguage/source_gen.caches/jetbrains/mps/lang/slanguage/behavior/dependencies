@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.slanguage.behavior.OfAspectOperation__BehaviorDescriptor" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation__BehaviorDescriptor" file="Model_IsAspectOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.slanguage.behavior.OfAspectOperation__BehaviorDescriptor" file="OfAspectOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.slanguage.behavior.OfAspectOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

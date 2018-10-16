@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction" file="AbstractCommentAction.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" file="CellAction_Comment.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncomment" file="CellAction_CommentOrUncomment.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncomment">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Uncomment" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild" file="CellAction_CommentOrUncommentChild.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -56,17 +56,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncomment" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode" file="CellAction_CommentOrUncommentCurrentSelectedNode.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncomment" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentNode" file="CellAction_CommentOrUncommentNode.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentNode">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncomment" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection" file="CellAction_CreateChildRangeSelection.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.NodeRangeSelection" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily" file="CellAction_DeleteEasily.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode" file="CellAction_DeleteSPropertyOrNode.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -96,13 +96,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple" file="CellAction_DeleteSimple.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" file="CellAction_DeleteSmart.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.ReadOnlyUtil" />
@@ -120,7 +120,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_InsertPlaceholder" file="CellAction_InsertPlaceholder.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_InsertPlaceholder">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Uncomment" file="CellAction_Uncomment.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Uncomment">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CommentMultipleNodesAction" file="CommentMultipleNodesAction.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CommentMultipleNodesAction">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
@@ -171,7 +171,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" file="CommentUtil.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -193,7 +193,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.NodeCommenter" file="NodeCommenter.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.NodeCommenter">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -208,7 +208,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.NodeUncommenter" file="NodeUncommenter.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.NodeUncommenter">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.NodeCommenter" />

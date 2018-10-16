@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" file="IEvaluationProvider.java">
+  <dependency className="jetbrains.mps.debug.api.evaluation.IEvaluationProvider">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

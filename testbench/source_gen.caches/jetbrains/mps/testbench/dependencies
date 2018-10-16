@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.EnvironmentAwareTestCase" file="EnvironmentAwareTestCase.java">
+  <dependency className="jetbrains.mps.testbench.EnvironmentAwareTestCase">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.PerformanceMessenger" file="PerformanceMessenger.java">
+  <dependency className="jetbrains.mps.testbench.PerformanceMessenger">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Long" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="org.junit.rules.TestRule" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.ProjectCloneSupport" file="ProjectCloneSupport.java">
+  <dependency className="jetbrains.mps.testbench.ProjectCloneSupport">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.IllegalStateException" />

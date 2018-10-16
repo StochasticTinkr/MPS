@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.workflow.generator.util.CycleHelper" file="CycleHelper.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.util.CycleHelper">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" file="SubTaskOrderHelper.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.Arrays" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.util.GraphUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.util.TaskLibrariesHelper" file="TaskLibrariesHelper.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.util.TaskLibrariesHelper">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.LinkedHashSet" />

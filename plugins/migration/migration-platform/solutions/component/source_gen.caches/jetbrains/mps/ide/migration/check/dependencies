@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem" file="DependencyOnNotMigratedLibProblem.java">
+  <dependency className="jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -9,7 +9,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.DependencyProblem" file="DependencyProblem.java">
+  <dependency className="jetbrains.mps.ide.migration.check.DependencyProblem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.MissingMigrationProblem" file="MissingMigrationProblem.java">
+  <dependency className="jetbrains.mps.ide.migration.check.MissingMigrationProblem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />

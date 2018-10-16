@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test" file="Concat_Test_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test" file="Contains_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test" file="Distinct_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test" file="ListOperations_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Map_Test" file="Map_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Map_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test" file="NaiveSetOperations_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Null_Test" file="Null_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Null_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test" file="SelectNotNullOperation_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SelectNotNullOperation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1" file="SimpleOperations1.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1" file="Sort_Test1.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -120,7 +120,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test" file="Union_Test.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

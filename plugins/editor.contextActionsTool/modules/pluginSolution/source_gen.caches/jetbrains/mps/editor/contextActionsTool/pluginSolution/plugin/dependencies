@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ChangeViewAction" file="ChangeViewAction.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ChangeViewAction">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ViewType" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ConceptInstanceActionHelper" file="ConceptInstanceActionHelper.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ConceptInstanceActionHelper">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool" file="ContextActionsTool_Tool.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsTool_Tool">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil" file="ContextActionsUtil.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil">
     <classNode dependClassName="com.intellij.openapi.util.Condition" />
     <classNode dependClassName="com.intellij.ui.tabs.TabInfo" />
     <classNode dependClassName="com.intellij.ui.tabs.impl.JBEditorTabs" />
@@ -48,13 +48,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.EmptyIcon" file="EmptyIcon.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.EmptyIcon">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="javax.swing.Icon" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ExpandCollapseIcon" file="ExpandCollapseIcon.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ExpandCollapseIcon">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="javax.swing.Icon" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ExpandingFlowLayout" file="ExpandingFlowLayout.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ExpandingFlowLayout">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Container" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -71,7 +71,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="java.awt.FlowLayout" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.Folder" file="Folder.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.Folder">
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Container" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.HoverLabel" file="HoverLabel.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.HoverLabel">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="javax.swing.JLabel" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ImageUtil" file="ImageUtil.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ImageUtil">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.awt.GraphicsConfiguration" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemConverter" file="ItemConverter.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemConverter">
     <classNode dependClassName="java.lang.LinkageError" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -149,10 +149,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemExecutor" file="ItemExecutor.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemExecutor">
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.PluginSolution_ProjectPlugin">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -161,7 +161,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ScaledIcon" file="ScaledIcon.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ScaledIcon">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Graphics2D" />
@@ -169,7 +169,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="javax.swing.Icon" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.SearchField" file="SearchField.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.SearchField">
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.awt.event.KeyListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -177,7 +177,7 @@
     <classNode dependClassName="javax.swing.event.DocumentListener" />
     <classNode extendsClassName="com.intellij.ui.SearchTextField" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" file="ToolComponent.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent">
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindow" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Font" />
@@ -212,7 +212,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController" file="ToolController.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
@@ -248,7 +248,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ItemExecutor" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ViewType" file="ViewType.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ViewType">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

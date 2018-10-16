@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.BarCheckedDots" file="BarCheckedDots.java">
+  <dependency className="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.BarCheckedDots">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.FooCheckedDots" file="FooCheckedDots.java">
+  <dependency className="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.FooCheckedDots">
     <classNode dependClassName="java.lang.Enum" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

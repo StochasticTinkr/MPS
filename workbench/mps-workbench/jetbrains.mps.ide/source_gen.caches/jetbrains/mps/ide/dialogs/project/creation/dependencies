@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" file="NewGeneratorDialog.java">
+  <dependency className="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" file="NewModelDialog.java">
+  <dependency className="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />

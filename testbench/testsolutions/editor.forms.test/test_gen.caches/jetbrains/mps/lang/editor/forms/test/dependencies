@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test" file="PlatformCheckbox_CLICK_Toggles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_SPACE_InImage_Toggles_Test" file="PlatformCheckbox_SPACE_InImage_Toggles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_SPACE_InImage_Toggles_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_SPACE_InLabel_Toggles_Test" file="PlatformCheckbox_SPACE_InLabel_Toggles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_SPACE_InLabel_Toggles_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_CLICK_Toggles_Test" file="TextCheckbox_CLICK_Toggles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_CLICK_Toggles_Test">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_KeepsSelection_Test" file="TextCheckbox_SPACE_KeepsSelection_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_KeepsSelection_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_Toggles_Test" file="TextCheckbox_SPACE_Toggles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_Toggles_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

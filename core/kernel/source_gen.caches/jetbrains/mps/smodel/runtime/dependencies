@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.runtime.LanguageAspectGenerator_Class" file="LanguageAspectGenerator_Class.java">
+  <dependency className="jetbrains.mps.smodel.runtime.LanguageAspectGenerator_Class">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageAspectGenerator" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.runtime.LanguageAspectGenerator_PerConcept" file="LanguageAspectGenerator_PerConcept.java">
+  <dependency className="jetbrains.mps.smodel.runtime.LanguageAspectGenerator_PerConcept">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

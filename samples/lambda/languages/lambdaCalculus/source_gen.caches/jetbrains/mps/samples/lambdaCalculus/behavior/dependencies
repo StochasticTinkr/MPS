@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef__BehaviorDescriptor" file="AbstractionVarRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType__BehaviorDescriptor" file="FunctionType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction__BehaviorDescriptor" file="LambdaAbstraction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication__BehaviorDescriptor" file="LambdaApplication__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -113,7 +113,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression__BehaviorDescriptor" file="LambdaExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression__BehaviorDescriptor" file="LetExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef__BehaviorDescriptor" file="LetRef__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -193,7 +193,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner__BehaviorDescriptor" file="VariableOwner__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

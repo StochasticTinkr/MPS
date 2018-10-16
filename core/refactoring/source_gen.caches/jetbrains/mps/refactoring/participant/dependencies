@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant" file="MoveModelRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" file="MoveNodeRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant">
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.NodeCopyTracker" file="NodeCopyTracker.java">
+  <dependency className="jetbrains.mps.refactoring.participant.NodeCopyTracker">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RecursiveParticipant" file="RecursiveParticipant.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RecursiveParticipant">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RefactoringParticipant" file="RefactoringParticipant.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RefactoringParticipant">
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" file="RefactoringParticipantBase.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RefactoringParticipantBase">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -76,13 +76,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RefactoringSession" file="RefactoringSession.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RefactoringSession">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" file="RefactoringSessionImpl.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RefactoringSessionImpl">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RefactoringUI" file="RefactoringUI.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RefactoringUI">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant" file="RenameNodeRefactoringParticipant.java">
+  <dependency className="jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />

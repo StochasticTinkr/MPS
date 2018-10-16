@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" file="AntModuleTestSuite.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite">
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.MpsTestsSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.AuditConstraints" file="AuditConstraints.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.AuditConstraints">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkers.ConstraintsChecker" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" file="AuditTypeSystem.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.AuditTypeSystem">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" file="BaseCheckModulesTest.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" file="BaseCheckerTest.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckerTest">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" file="BaseMpsSuite.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseMpsSuite">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" file="BaseProjectsTest.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseProjectsTest">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
@@ -121,7 +121,7 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.CheckProjectStructure" file="CheckProjectStructure.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.CheckProjectStructure">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -150,8 +150,8 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" file="CheckingTestStatistic.java" />
-  <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" file="MPSAuditConstraints.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
+  <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -160,7 +160,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditTypesystem" file="MPSAuditTypesystem.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditTypesystem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -168,7 +168,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.MpsTestsSuite" file="MpsTestsSuite.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.MpsTestsSuite">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -215,7 +215,7 @@
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.TestMakeUtil" file="TestMakeUtil.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.TestMakeUtil">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />

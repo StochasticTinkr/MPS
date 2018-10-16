@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.ActionAspectDescriptorImpl" file="ActionAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.ActionAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -16,7 +16,7 @@
     <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.PasteOverridingForDefaultMethodsAsWell_PasteWrapper_0" file="PasteOverridingForDefaultMethodsAsWell_PasteWrapper_0.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.PasteOverridingForDefaultMethodsAsWell_PasteWrapper_0">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.PasteWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.copyPasteExtendingWithDefaultModifier_CopyPreProcessor_0" file="copyPasteExtendingWithDefaultModifier_CopyPreProcessor_0.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.copyPasteExtendingWithDefaultModifier_CopyPreProcessor_0">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.CopyPreProcessor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.copyPasteExtendingWithDefaultModifier_PastePostProcessor_0" file="copyPasteExtendingWithDefaultModifier_PastePostProcessor_0.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.actions.copyPasteExtendingWithDefaultModifier_PastePostProcessor_0">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

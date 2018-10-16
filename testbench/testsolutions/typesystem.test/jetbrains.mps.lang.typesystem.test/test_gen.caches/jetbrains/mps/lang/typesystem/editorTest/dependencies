@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateComparableEquationStatementStrong_Test" file="TestCreateComparableEquationStatementStrong_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateComparableEquationStatementStrong_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateComparableEquationStatement_Test" file="TestCreateComparableEquationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateComparableEquationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateEquationStatement_Test" file="TestCreateEquationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateEquationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateGreaterThanInequationStatement_Test" file="TestCreateGreaterThanInequationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateGreaterThanInequationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateLessThanInequationStatement_Test" file="TestCreateLessThanInequationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateLessThanInequationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateStrongGreaterThanInequationStatement_Test" file="TestCreateStrongGreaterThanInequationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateStrongGreaterThanInequationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateStrongLessThanInequationStatement_Test" file="TestCreateStrongLessThanInequationStatement_Test.java">
+  <dependency className="jetbrains.mps.lang.typesystem.editorTest.TestCreateStrongLessThanInequationStatement_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

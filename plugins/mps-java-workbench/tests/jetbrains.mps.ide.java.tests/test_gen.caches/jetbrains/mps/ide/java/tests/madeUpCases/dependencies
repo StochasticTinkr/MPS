@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test" file="JavaToMps_Test.java">
+  <dependency className="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test" file="RoundTrip_Test.java">
+  <dependency className="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

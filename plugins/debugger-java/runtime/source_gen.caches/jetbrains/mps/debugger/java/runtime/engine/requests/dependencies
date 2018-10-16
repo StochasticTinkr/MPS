@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor" file="ClassPrepareRequestor.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor">
     <classNode dependClassName="com.sun.jdi.ReferenceType" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.IRequestManager" file="IRequestManager.java" />
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequestor" file="LocatableEventRequestor.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.IRequestManager" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequestor">
     <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" file="Requestor.java" />
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.StepRequestor" file="StepRequestor.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.StepRequestor">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
     <classNode dependClassName="com.sun.jdi.Location" />

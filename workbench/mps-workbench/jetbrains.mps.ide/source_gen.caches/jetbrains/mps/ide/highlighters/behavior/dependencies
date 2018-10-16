@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.AncestorsMethodsLookup" file="AncestorsMethodsLookup.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.AncestorsMethodsLookup">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.ConceptInheritanceHighlighter" file="ConceptInheritanceHighlighter.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.ConceptInheritanceHighlighter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.behavior.OverrideConceptMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.ide.highlighters.structure.OverrideConceptsChecker" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.DescendantsMethodsLookup" file="DescendantsMethodsLookup.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.DescendantsMethodsLookup">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -70,13 +70,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.EmptyProgressMonitorWithCancellable" file="EmptyProgressMonitorWithCancellable.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.EmptyProgressMonitorWithCancellable">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.util.Cancellable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.MethodIsOverriddenEditorMessage" file="MethodIsOverriddenEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.MethodIsOverriddenEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.MethodOverridesEditorMessage" file="MethodOverridesEditorMessage.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.MethodOverridesEditorMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.highlighters.behavior.OverrideConceptMethodsChecker" file="OverrideConceptMethodsChecker.java">
+  <dependency className="jetbrains.mps.ide.highlighters.behavior.OverrideConceptMethodsChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />

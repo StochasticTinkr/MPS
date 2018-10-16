@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internalCollections.test.dataFlow.Collections_DataFlow_Test_Test" file="Collections_DataFlow_Test_Test.java">
+  <dependency className="jetbrains.mps.internalCollections.test.dataFlow.Collections_DataFlow_Test_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

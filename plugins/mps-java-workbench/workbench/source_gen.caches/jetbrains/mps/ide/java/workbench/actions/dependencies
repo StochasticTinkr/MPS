@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.AnalyzeClasspath_Action" file="AnalyzeClasspath_Action.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.AnalyzeClasspath_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" file="ChangeMethodSignatureDialog.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action" file="ChangeMethodSignature_Action.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.awt.Frame" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.MigrateSourcesToMPS_Action" file="MigrateSourcesToMPS_Action.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.MigrateSourcesToMPS_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" file="NewModelFromSource_Action.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.actions.TouchBarDefault_shift_ActionGroup" file="TouchBarDefault_shift_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.actions.TouchBarDefault_shift_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

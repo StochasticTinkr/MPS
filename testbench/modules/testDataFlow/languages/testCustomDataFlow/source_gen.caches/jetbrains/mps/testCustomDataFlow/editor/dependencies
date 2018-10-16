@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testCustomDataFlow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.testCustomDataFlow.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -12,14 +12,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.testCustomDataFlow.editor.IntraProceduralSpecific_BuilderMode_Editor" file="IntraProceduralSpecific_BuilderMode_Editor.java">
+  <dependency className="jetbrains.mps.testCustomDataFlow.editor.IntraProceduralSpecific_BuilderMode_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.testCustomDataFlow.editor.IntraProceduralSpecific_BuilderMode_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.testCustomDataFlow.editor.IntraProceduralSpecific_BuilderMode_EditorBuilder_a" file="IntraProceduralSpecific_BuilderMode_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.testCustomDataFlow.editor.IntraProceduralSpecific_BuilderMode_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

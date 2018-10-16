@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" file="ArtifactsRelativePathHelper.java">
+  <dependency className="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.MPSModulesClosure" file="MPSModulesClosure.java">
+  <dependency className="jetbrains.mps.build.mps.util.MPSModulesClosure">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.util.iterable.RecursiveIterator" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.MPSModulesPartitioner" file="MPSModulesPartitioner.java">
+  <dependency className="jetbrains.mps.build.mps.util.MPSModulesPartitioner">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="jetbrains.mps.util.GraphUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModuleChecker" file="ModuleChecker.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModuleChecker">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModuleFinder" file="ModuleFinder.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModuleFinder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModuleLoader" file="ModuleLoader.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModuleLoader">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -214,7 +214,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleId" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderException" file="ModuleLoaderException.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderException">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -222,7 +222,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderUtils" file="ModuleLoaderUtils.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderUtils">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -245,7 +245,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.ModulePlugins" file="ModulePlugins.java">
+  <dependency className="jetbrains.mps.build.mps.util.ModulePlugins">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -269,7 +269,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.PathBuilder" file="PathBuilder.java">
+  <dependency className="jetbrains.mps.build.mps.util.PathBuilder">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -280,7 +280,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.PathConverter" file="PathConverter.java">
+  <dependency className="jetbrains.mps.build.mps.util.PathConverter">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.RequiredPlugins" file="RequiredPlugins.java">
+  <dependency className="jetbrains.mps.build.mps.util.RequiredPlugins">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -326,7 +326,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.util.VisibleModules" file="VisibleModules.java">
+  <dependency className="jetbrains.mps.build.mps.util.VisibleModules">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />

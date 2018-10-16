@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" file="AbstractWatchableNode.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode">
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tree.NodeTreeNode" file="NodeTreeNode.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tree.NodeTreeNode">
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tree.PlaceholderTreeNode" file="PlaceholderTreeNode.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tree.PlaceholderTreeNode">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tree.VariablesTree" file="VariablesTree.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tree.VariablesTree">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
@@ -74,7 +74,7 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tree.WatchableNode" file="WatchableNode.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tree.WatchableNode">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

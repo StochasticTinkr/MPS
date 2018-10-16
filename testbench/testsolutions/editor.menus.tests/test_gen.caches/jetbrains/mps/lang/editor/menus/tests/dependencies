@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test" file="ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.Action_CanExecuteIsGeneratedCorrectly_Test" file="Action_CanExecuteIsGeneratedCorrectly_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.Action_CanExecuteIsGeneratedCorrectly_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.Action_ExecuteIsGeneratedCorrectly_Test" file="Action_ExecuteIsGeneratedCorrectly_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.Action_ExecuteIsGeneratedCorrectly_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test" file="ContributionFromUnusedLanguage_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test" file="ContributionFromUsedLanguage_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -99,7 +99,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionScopes_Test" file="ContributionScopes_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.ContributionScopes_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test" file="EditorCellMenuScopes_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -131,7 +131,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test" file="FeaturesAndLocations_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test" file="IncludeDefaultMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -165,7 +165,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.Include_MenuAndTargetNodeCorrespondence_Test" file="Include_MenuAndTargetNodeCorrespondence_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.Include_MenuAndTargetNodeCorrespondence_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -191,7 +191,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.IncludingSubstituteMenuForEmptyCell_Test" file="IncludingSubstituteMenuForEmptyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.IncludingSubstituteMenuForEmptyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -210,7 +210,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test" file="LoadDefaultMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -229,7 +229,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test" file="LoadNamedMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -249,7 +249,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.MenuLoadingUtils" file="MenuLoadingUtils.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.MenuLoadingUtils">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -269,7 +269,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.NestedVariables_AreGeneratedCorrectly_Test" file="NestedVariables_AreGeneratedCorrectly_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.NestedVariables_AreGeneratedCorrectly_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -288,7 +288,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test" file="NonexistentDefaultMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -305,7 +305,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test" file="SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -318,7 +318,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test" file="SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -331,7 +331,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test" file="SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -346,7 +346,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test" file="SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -361,7 +361,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertDefaultToNamed_Test" file="SubstituteMenu_ConvertDefaultToNamed_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertDefaultToNamed_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -374,7 +374,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertNamedToDefault_Test" file="SubstituteMenu_ConvertNamedToDefault_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertNamedToDefault_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -387,7 +387,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertDefaultToNamed_Test" file="TransformationMenu_ConvertDefaultToNamed_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertDefaultToNamed_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -400,7 +400,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertNamedToDefault_Test" file="TransformationMenu_ConvertNamedToDefault_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertNamedToDefault_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -413,7 +413,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" file="UsedLanguagesUtils.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="junit.framework.Assert" />

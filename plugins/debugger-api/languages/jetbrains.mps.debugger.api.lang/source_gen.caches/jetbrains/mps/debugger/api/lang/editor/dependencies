@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_Editor" file="BreakpointCreator_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_EditorBuilder_a" file="BreakpointCreator_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -34,14 +34,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor" file="BreakpointableNodeItem_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_EditorBuilder_a" file="BreakpointableNodeItem_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.ChooseBreakpoint_Contribution" file="ChooseBreakpoint_Contribution.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.ChooseBreakpoint_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -108,14 +108,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_Editor" file="ConceptDeclarationReference_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_EditorBuilder_a" file="ConceptDeclarationReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -156,7 +156,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_SubstituteMenu" file="ConceptDeclarationReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -177,14 +177,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_Editor" file="CreateBreakpointOperation_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_EditorBuilder_a" file="CreateBreakpointOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -248,14 +248,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_Editor" file="DebuggerConfiguration_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_EditorBuilder_a" file="DebuggerConfiguration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -281,14 +281,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_Editor" file="DebuggerReference_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_EditorBuilder_a" file="DebuggerReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -322,7 +322,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_SubstituteMenu" file="DebuggerReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -359,14 +359,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerType_Editor" file="DebuggerType_Editor.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerType_Editor">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerType_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerType_EditorBuilder_a" file="DebuggerType_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.DebuggerType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -402,7 +402,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />

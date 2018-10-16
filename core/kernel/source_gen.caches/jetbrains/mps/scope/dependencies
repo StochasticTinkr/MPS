@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.scope.CompositeScope" file="CompositeScope.java">
+  <dependency className="jetbrains.mps.scope.CompositeScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.DelegatingScope" file="DelegatingScope.java">
+  <dependency className="jetbrains.mps.scope.DelegatingScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.EmptyScope" file="EmptyScope.java">
+  <dependency className="jetbrains.mps.scope.EmptyScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,12 +32,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.ErrorScope" file="ErrorScope.java">
+  <dependency className="jetbrains.mps.scope.ErrorScope">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.scope.EmptyScope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.FilteringByConceptScope" file="FilteringByConceptScope.java">
+  <dependency className="jetbrains.mps.scope.FilteringByConceptScope">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.FilteringScope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.FilteringByNameScope" file="FilteringByNameScope.java">
+  <dependency className="jetbrains.mps.scope.FilteringByNameScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.FilteringScope" file="FilteringScope.java">
+  <dependency className="jetbrains.mps.scope.FilteringScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.DelegatingScope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.ListScope" file="ListScope.java">
+  <dependency className="jetbrains.mps.scope.ListScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.ModelPlusImportedScope" file="ModelPlusImportedScope.java">
+  <dependency className="jetbrains.mps.scope.ModelPlusImportedScope">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.scope.ModelsScope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.ModelsScope" file="ModelsScope.java">
+  <dependency className="jetbrains.mps.scope.ModelsScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -121,7 +121,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.Scope" file="Scope.java">
+  <dependency className="jetbrains.mps.scope.Scope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -138,7 +138,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.scope.SimpleRoleScope" file="SimpleRoleScope.java">
+  <dependency className="jetbrains.mps.scope.SimpleRoleScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

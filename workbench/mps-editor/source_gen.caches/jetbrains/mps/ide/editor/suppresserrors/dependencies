@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker" file="SuppressErrorsChecker.java">
+  <dependency className="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEventProcessingEditorChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsMessage" file="SuppressErrorsMessage.java">
+  <dependency className="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsMessage">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Override" />

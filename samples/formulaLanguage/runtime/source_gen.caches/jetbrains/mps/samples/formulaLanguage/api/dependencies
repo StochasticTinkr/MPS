@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant" file="DoubleConstant.java">
+  <dependency className="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.formulaLanguage.api.Function" file="Function.java">
+  <dependency className="jetbrains.mps.samples.formulaLanguage.api.Function">
     <classNode dependClassName="java.lang.Object" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.formulaLanguage.api.IfFunction" file="IfFunction.java">
+  <dependency className="jetbrains.mps.samples.formulaLanguage.api.IfFunction">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" file="MultiplyOperation.java">
+  <dependency className="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

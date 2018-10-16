@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" file="ModelChooser.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser" file="StubRootChooser.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooser" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />

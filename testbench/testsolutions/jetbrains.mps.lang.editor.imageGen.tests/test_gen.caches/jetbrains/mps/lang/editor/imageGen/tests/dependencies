@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.Cls" file="Cls.java" />
-  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test" file="ImageExport_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.Cls" />
+  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.ImageExport_Test">
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.ImageLoader" file="ImageLoader.java">
+  <dependency className="jetbrains.mps.lang.editor.imageGen.tests.ImageLoader">
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
