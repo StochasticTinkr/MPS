@@ -17,6 +17,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.ClassPathReader;
 import jetbrains.mps.util.ClassType;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.SystemInfo;
@@ -46,8 +47,6 @@ public final class CommonPaths {
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
 
   private static final String REQUESTER_STRING = "Common paths";
-  private static final ClassPathCachingFacility ourClassPathCachingFacility = ClassPathCachingFacility.getInstance();
-
 
   //--------paths-----------
 
@@ -274,7 +273,7 @@ public final class CommonPaths {
     classPathReader.read().stream().forEach(param -> {
       File dir = new File(homePath, param);
       if (dir.exists()) {
-        result.add(ourClassPathCachingFacility.createFromPath(dir.getAbsolutePath(), REQUESTER_STRING));
+        result.add(RealClassPathItem.create(dir.getAbsolutePath(), REQUESTER_STRING));
       }
     });
   }
@@ -284,7 +283,7 @@ public final class CommonPaths {
     for (String basePath : PathManager.getHomePaths()) {
       UniPath fullPath = UniPath.fromString(basePath + File.separator + dependentPath).toSystemPath();
       if (new IoFile(fullPath).exists()) {
-        item.add(ourClassPathCachingFacility.createFromPath(fullPath.toString(), REQUESTER_STRING));
+        item.add(RealClassPathItem.create(fullPath.toString(), REQUESTER_STRING));
       }
     }
   }

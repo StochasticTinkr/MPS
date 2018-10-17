@@ -18,11 +18,11 @@ package jetbrains.mps.project.facets;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.reloading.RealClassPathItem;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -83,7 +83,7 @@ public class JavaModuleOperations {
     CompositeClassPathItem classPathItem = new CompositeClassPathItem();
 
     for (String path : classPath) {
-      IClassPathItem pathItem = ClassPathCachingFacility.getInstance().createFromPath(path, caller);
+      IClassPathItem pathItem = RealClassPathItem.create(path, caller);
       classPathItem.add(pathItem);
     }
 
