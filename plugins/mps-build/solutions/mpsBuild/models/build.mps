@@ -29401,6 +29401,15 @@
           <node concept="3LWZYq" id="4qSyqY5QLlw" role="1juEy9">
             <property role="3LWZYl" value="ant/src/*" />
           </node>
+          <node concept="3LWZYq" id="5$FmWuuZkCq" role="1juEy9">
+            <property role="3LWZYl" value="java-api.jar" />
+          </node>
+          <node concept="3LWZYq" id="5$FmWuuZkCX" role="1juEy9">
+            <property role="3LWZYl" value="java-impl.jar" />
+          </node>
+          <node concept="3LWZYq" id="5$FmWuuZkD5" role="1juEy9">
+            <property role="3LWZYl" value="java_resources_en.jar" />
+          </node>
         </node>
         <node concept="3ygNvl" id="1Z_UwmP8dJo" role="39821P">
           <ref role="3ygNvj" node="6S1jmf0xDGV" resolve="lib" />
