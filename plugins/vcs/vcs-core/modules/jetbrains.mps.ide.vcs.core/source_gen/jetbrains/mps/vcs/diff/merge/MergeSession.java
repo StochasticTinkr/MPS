@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
 import jetbrains.mps.vcs.util.MergeStrategy;
+import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -175,13 +176,9 @@ public final class MergeSession {
     myNodeCopier.restoreIds(false);
   }
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {
-    Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return ch instanceof NodeGroupChange;
-      }
-    }).visitAll(new IVisitor<ModelChange>() {
-      public void visit(ModelChange ch) {
-        ((NodeGroupChange) ch).prepare();
+    Sequence.fromIterable(changes).ofType(NodeGroupChange.class).visitAll(new IVisitor<NodeGroupChange>() {
+      public void visit(NodeGroupChange ch) {
+        ch.prepare();
       }
     });
     for (ModelChange c : Sequence.fromIterable(changes).sort(new Comparator<ModelChange>() {
@@ -218,7 +215,26 @@ public final class MergeSession {
         }
       }
     }
-    change.apply(myResultModel, myNodeCopier);
+    if (change instanceof NodeGroupChange && ((NodeGroupChange) change).getRoleLink().isMultiple()) {
+      // adjust conflicting changes: leave possibility to reject or insert them separately 
+      NodeGroupChange ngc = (NodeGroupChange) change;
+      List<NodeGroupChange> conflictedChanges = Sequence.fromIterable(getConflictedWith(ngc)).ofType(NodeGroupChange.class).toListSequence();
+      int anchorIndex = ngc.getEnd();
+      ngc.apply(myResultModel, myNodeCopier);
+      for (NodeGroupChange ch : ListSequence.fromList(conflictedChanges)) {
+        // add new changes only for insertions, we need ChangeSetImpl to manually add one change there 
+        // original conflicted changes will be resolved 
+        ChangeSetImpl changeSet = as_bow6nj_a0a2a5a4a13(ch.getChangeSet(), ChangeSetImpl.class);
+        assert changeSet != null;
+        NodeGroupChange newChange = new NodeGroupChange(changeSet, ch.getParentNodeId(), ch.getRoleLink(), anchorIndex, anchorIndex, ch.getResultBegin(), ch.getResultEnd());
+        changeSet.add(newChange);
+        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(ch.getRootId())).addElement(newChange);
+        ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(ch.getParentNodeId())).addElement(newChange);
+
+      }
+    } else {
+      change.apply(myResultModel, myNodeCopier);
+    }
     SetSequence.fromSet(myResolvedChanges).addElement(change);
     SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
     excludeChangesNoRestoreIds(getConflictedWith(change));
@@ -415,5 +431,8 @@ public final class MergeSession {
       checkedDotOperand.someChangesInvalidated();
     }
 
+  }
+  private static <T> T as_bow6nj_a0a2a5a4a13(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
