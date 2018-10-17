@@ -222,7 +222,7 @@ public final class CommonPaths {
     addIfExists(result, "lib/ecj-4.7.2.jar");
     addIfExists(result, "lib/guava-25.1-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
-    addIfExists(result, "lib/asm-all.jar");
+    addIfExists(result, "lib/asm-all-6.2.1.jar");
   }
 
   private static void addEditorJars(CompositeClassPathItem result) {
