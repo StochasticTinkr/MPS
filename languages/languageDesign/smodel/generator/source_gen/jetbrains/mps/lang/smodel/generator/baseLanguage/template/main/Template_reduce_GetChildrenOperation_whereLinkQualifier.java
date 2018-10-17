@@ -46,7 +46,7 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_59_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_hixxyp_b0a0c0d0c0g));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_52_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_hixxyp_b0a0c0d0c0g));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_hixxyp_b0a0c0d0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/6138621529960423805", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -56,7 +56,7 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
       {
         Collection<SNode> tlist4 = null;
         {
-          final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_59_1(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_hixxyp_b0a0a0a1a4a2a6));
+          final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_52_1(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_hixxyp_b0a0a0a1a4a2a6));
           if (switchInput4 == null) {
             tlist4 = Collections.emptyList();
           } else {

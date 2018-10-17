@@ -186,7 +186,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -225,7 +224,6 @@
             <property role="2$VJBR" value="1731640411964623579" />
             <node concept="2x4n5u" id="9" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="a" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
@@ -249,7 +247,6 @@
             <property role="2$VJBR" value="1731640411964623579" />
             <node concept="2x4n5u" id="f" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="g" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
@@ -273,7 +270,6 @@
             <property role="2$VJBR" value="1731640411964623579" />
             <node concept="2x4n5u" id="m" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="n" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
@@ -294,7 +290,6 @@
             <property role="2$VJBR" value="1731640411964672366" />
             <node concept="2x4n5u" id="r" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="s" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />

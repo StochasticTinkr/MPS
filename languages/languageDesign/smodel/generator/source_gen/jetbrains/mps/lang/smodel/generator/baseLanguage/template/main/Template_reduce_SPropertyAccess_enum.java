@@ -49,13 +49,13 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       environment.resolve(new RefResolver(tnode1, myAssociationLinks[1], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146249898894"), "getString_def") {
         @Override
         public Object resolve() {
-          return QueriesGenerated.referenceMacro_GetReferent_25_0(createQueryContext());
+          return QueriesGenerated.referenceMacro_GetReferent_127_0(createQueryContext());
         }
       });
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_25_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_402ndg_b0a0c0d0c0g));
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_127_0(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_402ndg_b0a0c0d0c0g));
         tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_402ndg_b0a0c0d0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/1146249898890", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -64,7 +64,7 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_25_1(new SourceSubstituteMacroNodeContext(context1, callMacro_402ndg_b0a0a1a4a2a6));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_127_1(new SourceSubstituteMacroNodeContext(context1, callMacro_402ndg_b0a0a1a4a2a6));
         TemplateContext context2;
         context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
@@ -77,10 +77,10 @@ public class Template_reduce_SPropertyAccess_enum extends TemplateDeclarationBas
       }
       {
         Collection<SNode> tlist6 = null;
-        if (QueriesGenerated.ifMacro_Condition_25_0(new IfMacroContext(context1, ifMacroRef_402ndg_b0a0b0f0c0g))) {
+        if (QueriesGenerated.ifMacro_Condition_127_0(new IfMacroContext(context1, ifMacroRef_402ndg_b0a0b0f0c0g))) {
           final SNode tnode7 = environment.createOutputNode(myConcepts[1]);
           try {
-            SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_25_0(new PropertyMacroContext(context1, "_default_value_", propertyMacro_402ndg_c0a0c0a0b0b0f0c0g))));
+            SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_127_0(new PropertyMacroContext(context1, "_default_value_", propertyMacro_402ndg_c0a0c0a0b0b0f0c0g))));
           } finally {
           }
           tlist6 = TemplateUtil.singletonList(tnode7);

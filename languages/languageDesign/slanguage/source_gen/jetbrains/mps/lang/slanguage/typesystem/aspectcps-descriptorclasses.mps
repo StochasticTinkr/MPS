@@ -167,7 +167,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
@@ -213,7 +212,6 @@
             <property role="2$VJBR" value="6171083915388333171" />
             <node concept="2x4n5u" id="b" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="c" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -234,7 +232,6 @@
             <property role="2$VJBR" value="2030416617761258183" />
             <node concept="2x4n5u" id="g" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="h" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -255,7 +252,6 @@
             <property role="2$VJBR" value="5932042262275872849" />
             <node concept="2x4n5u" id="l" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="m" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -279,7 +275,6 @@
             <property role="2$VJBR" value="6171083915388333171" />
             <node concept="2x4n5u" id="t" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="u" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -300,7 +295,6 @@
             <property role="2$VJBR" value="2030416617761258183" />
             <node concept="2x4n5u" id="y" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="z" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -321,7 +315,6 @@
             <property role="2$VJBR" value="5932042262275872849" />
             <node concept="2x4n5u" id="B" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="C" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -345,7 +338,6 @@
             <property role="2$VJBR" value="6171083915388333171" />
             <node concept="2x4n5u" id="J" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="K" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -366,7 +358,6 @@
             <property role="2$VJBR" value="2030416617761258183" />
             <node concept="2x4n5u" id="O" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="P" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -387,7 +378,6 @@
             <property role="2$VJBR" value="5932042262275872849" />
             <node concept="2x4n5u" id="T" role="3iCydw">
               <property role="2x4mPI" value="InferenceRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="ezmg6cxm" />
               <node concept="2V$Bhx" id="U" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -911,9 +901,7 @@
                     <node concept="3clFbT" id="3U" role="1EOqxR">
                       <property role="3clFbU" value="true" />
                     </node>
-                    <node concept="3clFbT" id="3V" role="1EOqxR">
-                      <property role="3clFbU" value="false" />
-                    </node>
+                    <node concept="3clFbT" id="3V" role="1EOqxR" />
                     <node concept="37vLTw" id="3W" role="1EOqxR">
                       <ref role="3cqZAo" node="3H" resolve="_info_12389875345" />
                     </node>
@@ -1148,7 +1136,6 @@
       <node concept="3clFbS" id="5A" role="3clF47">
         <node concept="3cpWs6" id="5E" role="3cqZAp">
           <node concept="3clFbT" id="5G" role="3cqZAk">
-            <property role="3clFbU" value="false" />
             <node concept="cd27G" id="5I" role="lGtFl">
               <node concept="3u3nmq" id="5J" role="cd27D">
                 <property role="3u3nmv" value="6171083915388333171" />
@@ -1659,7 +1646,6 @@
       <node concept="3clFbS" id="8K" role="3clF47">
         <node concept="3cpWs6" id="8O" role="3cqZAp">
           <node concept="3clFbT" id="8Q" role="3cqZAk">
-            <property role="3clFbU" value="false" />
             <node concept="cd27G" id="8S" role="lGtFl">
               <node concept="3u3nmq" id="8T" role="cd27D">
                 <property role="3u3nmv" value="2030416617761258183" />
@@ -1960,9 +1946,7 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbT" id="an" role="1EOqxR">
-                  <property role="3clFbU" value="false" />
-                </node>
+                <node concept="3clFbT" id="an" role="1EOqxR" />
                 <node concept="3clFbT" id="ao" role="1EOqxR">
                   <property role="3clFbU" value="true" />
                 </node>
@@ -2349,7 +2333,6 @@
       <node concept="3clFbS" id="cZ" role="3clF47">
         <node concept="3cpWs6" id="d3" role="3cqZAp">
           <node concept="3clFbT" id="d5" role="3cqZAk">
-            <property role="3clFbU" value="false" />
             <node concept="cd27G" id="d7" role="lGtFl">
               <node concept="3u3nmq" id="d8" role="cd27D">
                 <property role="3u3nmv" value="5932042262275872849" />
