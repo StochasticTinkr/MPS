@@ -477,9 +477,9 @@
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.UiInfoUsageCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.ui.A11YUsagesCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.diff.statistics.DiffUsagesCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.openapi.diff.impl.DiffUsageTriggerCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.openapi.diff.impl.DiffUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.RegistryApplicationUsagesCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.ide.TipsOfTheDayUsagesCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.ide.TipsOfTheDayUsagesCollector"/>
 
   <statistics.projectUsagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsOptionsUsagesCollector"/>
   <statistics.projectUsagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsStatsUsagesCollector"/>
@@ -489,13 +489,13 @@
   <applicationInitializedListener implementation="com.intellij.openapi.vcs.statistics.VcsBackForwardUsageTriggerCollector$Trigger"/>
 
   <statistics.projectUsagesCollector implementation="com.intellij.internal.statistic.collectors.fus.RegistryProjectUsagesCollector"/>
-    <statistics.projectUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.ProjectLifecycleUsageTriggerCollector"/>
+  <statistics.projectUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.ProjectLifecycleUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.AppLifecycleUsageTriggerCollector"/>
   <statistics.applicationUsagesCollector implementation="com.intellij.featureStatistics.fusCollectors.EAPUsageCollector"/>
-    <statistics.applicationUsagesCollector implementation="com.intellij.openapi.updateSettings.impl.IdeUpdateUsageTriggerCollector"/>
+  <statistics.applicationUsagesCollector implementation="com.intellij.openapi.updateSettings.impl.IdeUpdateUsageTriggerCollector"/>
   <statistic.eventLog.fusEventLoggerProvider implementation="com.intellij.internal.statistic.eventLog.FeatureUsageFileEventLoggerProvider"/>
-    <statistic.eventLog.fusStateEventTracker implementation="com.intellij.internal.statistic.eventLog.SystemStateMonitor"/>
-    <statistic.eventLog.fusStateEventTracker implementation="com.intellij.configurationStore.statistic.eventLog.FeatureUsageSettingsEventScheduler"/>
+  <statistic.eventLog.fusStateEventTracker implementation="com.intellij.internal.statistic.eventLog.SystemStateMonitor"/>
+  <statistic.eventLog.fusStateEventTracker implementation="com.intellij.configurationStore.statistic.eventLog.FeatureUsageSettingsEventScheduler"/>
 
     <vfs.local.pluggableFileWatcher implementation="com.intellij.openapi.vfs.impl.local.NativeFileWatcherImpl" />
 
