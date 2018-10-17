@@ -38,6 +38,7 @@ import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -45,8 +46,6 @@ import java.util.Map;
 
 public final class CommonPaths {
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
-
-  private static final String REQUESTER_STRING = "Common paths";
 
   //--------paths-----------
 
@@ -57,7 +56,7 @@ public final class CommonPaths {
       return getJDK_ToolsPath();
     }
 
-    final CompositeClassPathItem result = new CompositeClassPathItem();
+    final List<String> result = new ArrayList<>();
     for (String path : new ClassPathReader(PathManager.getHomePath(), Collections.singletonList(type)).read()) {
       addIfExists(result, path);
     }
@@ -80,7 +79,7 @@ public final class CommonPaths {
     } else if (type == ClassType.TEST) {
       addTestJars(result);
     }
-    return itemToPath(result);
+    return result;
   }
 
   public static List<String> getJDKPath() {
@@ -175,15 +174,15 @@ public final class CommonPaths {
 
   //------classpaths : MPS--------
 
-  private static void addAnnotations(CompositeClassPathItem result) {
+  private static void addAnnotations(Collection<String> result) {
     addIfExists(result, "lib/annotations.jar");
   }
 
-  private static void addOpenAPIJars(CompositeClassPathItem result) {
+  private static void addOpenAPIJars(Collection<String> result) {
     addIfExists(result, "lib/mps-openapi.jar");
   }
 
-  private static void addCoreJars(CompositeClassPathItem result) {
+  private static void addCoreJars(Collection<String> result) {
     addIfExists(result, "lib/mps-annotations.jar");
     addIfExists(result, "lib/mps-logging.jar");
     addIfExists(result, "lib/mps-messaging.jar");
@@ -201,20 +200,20 @@ public final class CommonPaths {
     addIfExists(result, "lib/asm-all-6.2.1.jar");
   }
 
-  private static void addEditorJars(CompositeClassPathItem result) {
+  private static void addEditorJars(Collection<String> result) {
     addIfExists(result, "lib/mps-editor.jar");
     addIfExists(result, "lib/mps-editor-api.jar");
     addIfExists(result, "lib/mps-editor-runtime.jar");
   }
 
-  private static void addRepackedIdeaJars(CompositeClassPathItem result) {
+  private static void addRepackedIdeaJars(Collection<String> result) {
     addIfExists(result, "lib/openapi.jar");
     addIfExists(result, "lib/platform.jar");
     addIfExists(result, "lib/platform-api.jar");
     addIfExists(result, "lib/platform-impl.jar");
   }
 
-  private static void addIdeaJars(CompositeClassPathItem result) {
+  private static void addIdeaJars(Collection<String> result) {
     addRepackedIdeaJars(result);
     addIfExists(result, "lib/netty-buffer-4.1.30.Final.jar");
     addIfExists(result, "lib/netty-codec-4.1.30.Final.jar");
@@ -230,44 +229,27 @@ public final class CommonPaths {
     addIfExists(result, "lib/forms_rt.jar");
   }
 
-  private static void addPlatformJars(CompositeClassPathItem result) {
+  private static void addPlatformJars(Collection<String> result) {
     addIfExists(result, "lib/mps-platform.jar");
     addIfExists(result, "lib/mps-icons.jar");
   }
 
-  private static void addWorkbenchJars(CompositeClassPathItem result) {
+  private static void addWorkbenchJars(Collection<String> result) {
     addIfExists(result, "lib/mps-workbench.jar");
   }
 
-  private static void addTestJars(CompositeClassPathItem result) {
+  private static void addTestJars(Collection<String> result) {
     addIfExists(result, "lib/mps-test.jar");
     addIfExists(result, "lib/mps-environment.jar");
   }
 
-  private static void addIfExists(CompositeClassPathItem item, String path) {
+  private static void addIfExists(Collection<String> item, String path) {
     String dependentPath = UniPath.fromString(path).toSystemPath().toString(); // fixme waiting for Path#resolve method to resolve children in fs
     for (String basePath : PathManager.getHomePaths()) {
       UniPath fullPath = UniPath.fromString(basePath + File.separator + dependentPath).toSystemPath();
       if (new IoFile(fullPath).exists()) {
-        item.add(RealClassPathItem.create(fullPath.toString(), REQUESTER_STRING));
+        item.add(fullPath.toString());
       }
     }
-  }
-
-  //--------utils-----------
-
-  private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<>();
-    for (IClassPathItem item : cp.flatten()) {
-      if (item instanceof FileClassPathItem) {
-        result.add(((FileClassPathItem) item).getPath());
-      } else if (item instanceof JarFileClassPathItem) {
-        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
-      } else {
-        throw new IllegalArgumentException(item.getClass().getName());
-      }
-    }
-
-    return result;
   }
 }
