@@ -357,6 +357,16 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
+      <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
+        <child id="1226511765987" name="elementType" index="2hN53Y" />
+      </concept>
+      <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
+      <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
+        <child id="1226567214363" name="argument" index="2l6Ag6" />
+      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -372,8 +382,13 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
+      <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
   <node concept="312cEu" id="NTQuym1o0F">
@@ -4216,9 +4231,8 @@
         <property role="TrG5h" value="myFilteredTests" />
         <property role="3TUv4t" value="true" />
         <node concept="3Tm6S6" id="2xUsQ1Xa7Bd" role="1B3o_S" />
-        <node concept="3uibUv" id="2xUsQ1Xa82R" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="2xUsQ1Xa8eF" role="11_B2D">
+        <node concept="2hMVRd" id="59e5wazGra2" role="1tU5fm">
+          <node concept="3uibUv" id="59e5wazGra4" role="2hN53Y">
             <ref role="3uigEE" to="u132:~Test" resolve="Test" />
           </node>
         </node>
@@ -4236,9 +4250,8 @@
           <node concept="3clFbF" id="2xUsQ1Xa8GC" role="3cqZAp">
             <node concept="37vLTI" id="2xUsQ1Xaa$P" role="3clFbG">
               <node concept="2ShNRf" id="2xUsQ1XaaHM" role="37vLTx">
-                <node concept="1pGfFk" id="2xUsQ1Xagrq" role="2ShVmc">
-                  <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-                  <node concept="3uibUv" id="2xUsQ1XagRq" role="1pMfVU">
+                <node concept="2i4dXS" id="59e5wazGwQ2" role="2ShVmc">
+                  <node concept="3uibUv" id="59e5wazGxpj" role="HW$YZ">
                     <ref role="3uigEE" to="u132:~Test" resolve="Test" />
                   </node>
                 </node>
@@ -4286,9 +4299,8 @@
               <node concept="37vLTw" id="5UG38V_u6NB" role="2Oq$k0">
                 <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
               </node>
-              <node concept="liA8E" id="5UG38V_u7Vu" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
-                <node concept="37vLTw" id="5UG38V_u8ir" role="37wK5m">
+              <node concept="3JPx81" id="59e5wazG_w2" role="2OqNvi">
+                <node concept="37vLTw" id="59e5wazG_CI" role="25WWJ7">
                   <ref role="3cqZAo" node="3hj1t46aHrE" resolve="test" />
                 </node>
               </node>
@@ -4362,9 +4374,7 @@
                 <node concept="37vLTw" id="2xUsQ1Xam9M" role="2Oq$k0">
                   <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
                 </node>
-                <node concept="liA8E" id="2xUsQ1Xanjq" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                </node>
+                <node concept="34oBXx" id="59e5wazGA2S" role="2OqNvi" />
               </node>
               <node concept="3nyPlj" id="2xUsQ1XajOS" role="3uHU7B">
                 <ref role="37wK5l" to="u132:~TestSuite.testCount():int" resolve="testCount" />
@@ -4391,9 +4401,7 @@
                 <node concept="37vLTw" id="2xUsQ1XaoCm" role="2Oq$k0">
                   <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
                 </node>
-                <node concept="liA8E" id="2xUsQ1Xapzl" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                </node>
+                <node concept="34oBXx" id="59e5wazGB8R" role="2OqNvi" />
               </node>
               <node concept="3nyPlj" id="2xUsQ1XahDM" role="3uHU7B">
                 <ref role="37wK5l" to="u132:~TestSuite.countTestCases():int" resolve="countTestCases" />
@@ -4496,9 +4504,8 @@
                   <node concept="37vLTw" id="2xUsQ1Xav$M" role="2Oq$k0">
                     <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
                   </node>
-                  <node concept="liA8E" id="2xUsQ1XawAr" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                    <node concept="37vLTw" id="2xUsQ1XawYp" role="37wK5m">
+                  <node concept="2l5eF5" id="59e5wazGD6v" role="2OqNvi">
+                    <node concept="37vLTw" id="59e5wazGDdA" role="2l6Ag6">
                       <ref role="3cqZAo" node="2xUsQ1XaqTs" resolve="t" />
                     </node>
                   </node>
@@ -4544,9 +4551,7 @@
                 <node concept="37vLTw" id="2xUsQ1Xay1E" role="2Oq$k0">
                   <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
                 </node>
-                <node concept="liA8E" id="2xUsQ1Xaz06" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                </node>
+                <node concept="34oBXx" id="59e5wazGDB$" role="2OqNvi" />
               </node>
             </node>
           </node>
