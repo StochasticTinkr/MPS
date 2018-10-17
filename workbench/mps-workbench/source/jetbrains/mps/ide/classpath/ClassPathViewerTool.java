@@ -107,14 +107,10 @@ public class ClassPathViewerTool extends BaseProjectTool {
       }
 
       TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleName());
-      final Set<String> classPath = JavaModuleOperations.collectCompileClasspath(Collections.singleton(myInspectedModule), true);
-      CompositeClassPathItem cpItem = JavaModuleOperations.createClassPathItem(classPath, ClassPathViewerTool.class.getName());
-
-      List<IClassPathItem> items = new ArrayList<>(cpItem.optimize().getChildren());
-      Collections.sort(items, new ToStringComparator());
-
-      for (IClassPathItem item : items) {
-        root.add(new TextTreeNode(item.toString()));
+      ArrayList<String> cp = new ArrayList<>(JavaModuleOperations.collectCompileClasspath(Collections.singleton(myInspectedModule), true));
+      cp.sort(null);
+      for (String item : cp) {
+        root.add(new TextTreeNode(item));
       }
       return root;
     }
