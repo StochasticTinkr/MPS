@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.reloading;
+package jetbrains.mps.classloading.reloading;
 
 import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.regex.Pattern;
 
-public abstract class AbstractClassPathItem implements IClassPathItem {
+abstract class AbstractClassPathItem implements IClassPathItem {
   private static final Pattern DIGITS = Pattern.compile("\\d+");
 
   @Override

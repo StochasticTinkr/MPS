@@ -16,9 +16,9 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.reloading.IClassPathItemVisitor;
-import jetbrains.mps.reloading.RealClassPathItem;
+import jetbrains.mps.classloading.reloading.AbstractClassPathItem;
+import jetbrains.mps.classloading.reloading.IClassPathItemVisitor;
+import jetbrains.mps.classloading.reloading.RealClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import org.jetbrains.annotations.NotNull;

@@ -16,7 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
+import jetbrains.mps.classloading.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;

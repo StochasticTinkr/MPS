@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.reloading;
+package jetbrains.mps.classloading.reloading;
 
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.iterable.IterableEnumeration;
@@ -28,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class CompositeClassPathItem extends AbstractClassPathItem {
+class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<>();
 
   public void add(IClassPathItem item) {

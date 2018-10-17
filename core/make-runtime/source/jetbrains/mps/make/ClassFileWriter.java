@@ -21,8 +21,6 @@ import com.intellij.compiler.instrumentation.InstrumenterClassWriter;
 import com.intellij.compiler.notNullVerification.NotNullVerifyingInstrumenter;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.internal.compiler.ClassFile;

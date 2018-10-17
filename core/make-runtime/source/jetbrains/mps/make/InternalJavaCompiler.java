@@ -20,7 +20,6 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.make.ModuleAnalyzer.ModuleAnalyzerResult;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;

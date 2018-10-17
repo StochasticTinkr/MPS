@@ -15,7 +15,7 @@ import java.util.Collections;
 import org.jetbrains.org.objectweb.asm.ClassReader;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.classloading.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 

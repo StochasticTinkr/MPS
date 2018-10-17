@@ -16,7 +16,6 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;

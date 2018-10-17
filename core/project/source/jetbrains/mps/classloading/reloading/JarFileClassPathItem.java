@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.reloading;
+package jetbrains.mps.classloading.reloading;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class JarFileClassPathItem extends RealClassPathItem {
+class JarFileClassPathItem extends RealClassPathItem {
   private static final Logger LOG = LogManager.getLogger(JarFileClassPathItem.class);
 
   //computed during init

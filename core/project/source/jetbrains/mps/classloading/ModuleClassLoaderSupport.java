@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.reloading.CompositeClassPathItem;
+import jetbrains.mps.classloading.reloading.RealClassPathItem;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.classloading.reloading.ClassBytesProvider.ClassBytes;
+import jetbrains.mps.classloading.reloading.IClassPathItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
@@ -40,8 +41,13 @@ public class ModuleClassLoaderSupport {
 
   private static IClassPathItem calcClassPath(@NotNull ReloadableModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    //noinspection ConstantConditions
-    return JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+    assert facet != null;
+    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
+    for (String path : facet.getClassPath()) {
+      IClassPathItem pathItem = RealClassPathItem.create(path, ModuleClassLoaderSupport.class.getName());
+      classPathItem.add(pathItem);
+    }
+    return classPathItem;
   }
 
   ModuleClassLoaderSupport(@NotNull ReloadableModule module,
@@ -55,7 +61,7 @@ public class ModuleClassLoaderSupport {
   /**
    * @return true if MPS manages classes of this module (not IDEA plugin) and
    * it is possible to create ModuleClassLoader for this module.
-   *
+   * <p>
    * TODO: must be just MPS_FACET
    * ext point possible here
    */
