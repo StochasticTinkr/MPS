@@ -149,7 +149,7 @@ class InternalJavaCompiler {
   private MPSCompilationResult compileJava(EclipseJavaCompiler compiler, CompositeTracer tracer) {
     tracer.start(COMPILING_JAVA_MSG, 10);
     try {
-      IClassPathItem classPath = computeDependenciesClassPath(myModulesContainer.getModules(), tracer.subTracer(1));
+      Set<String> classPath = computeDependenciesClassPath(myModulesContainer.getModules(), tracer.subTracer(1));
       final CompilationErrorsHandler errorsHandler = new CompilationErrorsHandler(myModulesContainer, tracer.getSender(), classPath);
       CompilationHandler compilationHandler = new CompilationHandler(classPath, tracer.subTracer(3), errorsHandler);
       final CollectingResultsListener listener = new CollectingResultsListener(errorsHandler);
@@ -183,12 +183,12 @@ class InternalJavaCompiler {
   }
 
   // FIXME at least twice we count all the dependencies WHY
-  private static IClassPathItem computeDependenciesClassPath(Set<SModule> modules, CompositeTracer tracer) {
+  private static Set<String> computeDependenciesClassPath(Set<SModule> modules, CompositeTracer tracer) {
     tracer.start(CALCULATING_DEPS_MSG, 1);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
       tracer.getSender().debug("ClassPath: " + classpath);
-      return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
+      return classpath;
     } finally {
       tracer.done(1);
     }
@@ -224,12 +224,12 @@ class InternalJavaCompiler {
    * Process all the compilation results
    */
   private class CompilationHandler {
-    private final IClassPathItem myClassPath;
+    private final Collection<String> myClassPath;
     private final CompositeTracer myTracer;
     private final CompilationErrorsHandler myErrorsHandler;
     private final ClassFileWriter myWriter;
 
-    CompilationHandler(IClassPathItem classPath, CompositeTracer tracer, CompilationErrorsHandler errorsHandler) {
+    CompilationHandler(Collection<String> classPath, CompositeTracer tracer, CompilationErrorsHandler errorsHandler) {
       myClassPath = classPath;
       myTracer = tracer;
       myErrorsHandler = errorsHandler;

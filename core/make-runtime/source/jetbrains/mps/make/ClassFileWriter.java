@@ -39,6 +39,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -66,14 +67,14 @@ public class ClassFileWriter {
   private final Map<String, InputStream> myClassFile2Bytes = new LinkedHashMap<>();
 
   // fixme think about class path
-  public ClassFileWriter(ModulesContainer modulesContainer, CompositeTracer tracer, IClassPathItem classPath) {
+  public ClassFileWriter(ModulesContainer modulesContainer, CompositeTracer tracer, Collection<String> classPath) {
     myModulesContainer = modulesContainer;
     mySender = tracer.getSender();
     myFinder = createInstrumentationClassFinder(classPath);
   }
 
   @NotNull
-  private InstrumentationClassFinder createInstrumentationClassFinder(final IClassPathItem classPath) {
+  private InstrumentationClassFinder createInstrumentationClassFinder(final Collection<String> classPath) {
     final URL[] urlsArr = convertClassPathToUrls(classPath);
     return new InstrumentationClassFinder(urlsArr) { // fixme separate platform cp from usual cp
       @Override
@@ -84,11 +85,11 @@ public class ClassFileWriter {
   }
 
   @NotNull
-  private static URL[] convertClassPathToUrls(IClassPathItem classPath) {
+  private static URL[] convertClassPathToUrls(Collection<String> classPath) {
     final List<URL> urls = new ArrayList<>();
-    for (RealClassPathItem flatten : classPath.flatten()) {
+    for (String cp : classPath) {
       try {
-        urls.add(new File(flatten.getPath()).toURI().toURL());
+        urls.add(new URL(cp));
       } catch (MalformedURLException e) {
         e.printStackTrace();
       }
