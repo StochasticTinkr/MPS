@@ -16,6 +16,7 @@
 package jetbrains.mps.classloading.reloading;
 
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +31,7 @@ abstract class AbstractClassPathItem implements IClassPathItem {
   //todo can make it faster
   @Override
   public Iterable<String> getRootClasses(String namespace) {
-    return new ConditionalIterable<>(getAvailableClasses(namespace), className -> !(className.contains("$")));
+    return new ConditionalIterable<>(getAvailableClasses(namespace), className -> !JavaNameUtil.isInnerClass(className));
   }
 
   @Override

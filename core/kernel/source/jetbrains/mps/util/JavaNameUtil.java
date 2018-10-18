@@ -63,7 +63,7 @@ public final class JavaNameUtil {
   }
 
   public static boolean isAnonymous(String className) {
-    if (!className.contains("$")) return false;
+    if (!isInnerClass(className)) return false;
 
     for (String part : className.split("\\$")) {
       if (DIGITS.matcher(part).matches()) return true;
@@ -71,9 +71,8 @@ public final class JavaNameUtil {
     return false;
   }
 
-
-  public static String packageNameForModelUID(@NotNull SModelReference modelReference) {
-    return modelReference.getName().getLongName();
+  public static boolean isInnerClass(String className) {
+    return className.contains("$");
   }
 
   public static String packageName(@NotNull SModel model) {
