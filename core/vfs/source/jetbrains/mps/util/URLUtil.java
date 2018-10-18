@@ -15,21 +15,12 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.vfs.path.Path;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.FileNotFoundException;
-import java.io.FilterInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
 /**
  * Partially copied from IDEA
@@ -39,48 +30,11 @@ import java.util.zip.ZipFile;
 public class URLUtil {
   public static final String SCHEME_SEPARATOR = "://";
   public static final String FILE_PROTOCOL = "file";
-  public static final String FILE_PROTOCOL_PREFIX = FILE_PROTOCOL + ":";
   public static final String JAR_PROTOCOL = "jar";
   public static final String JAR_PROTOCOL_PREFIX = JAR_PROTOCOL + ":";
   public static final String JAR_SEPARATOR = "!/";
 
   private URLUtil() {
-  }
-
-  /**
-   * Opens a url stream. The semantics is the sames as {@link java.net.URL#openStream()}. The
-   * separate method is needed, since jar URLs open jars via JarFactory and thus keep them
-   * mapped into memory.
-   */
-  @NotNull
-  public static InputStream openStream(final URL url) throws IOException {
-    @NonNls final String protocol = url.getProtocol();
-    if (protocol.equals(JAR_PROTOCOL)) {
-      return openJarStream(url);
-    }
-
-    return url.openStream();
-  }
-
-  @NotNull
-  private static InputStream openJarStream(final URL url) throws IOException {
-    String file = url.getFile();
-    assert file.startsWith(FILE_PROTOCOL_PREFIX);
-    file = file.substring(FILE_PROTOCOL_PREFIX.length());
-    assert file.indexOf(JAR_SEPARATOR) > 0;
-
-    String resource = file.substring(file.indexOf(JAR_SEPARATOR) + 2);
-    file = file.substring(0, file.indexOf(Path.ARCHIVE_SEPARATOR));
-    final ZipFile zipFile = new ZipFile(FileUtil.unquote(file));
-    final ZipEntry zipEntry = zipFile.getEntry(resource);
-    if (zipEntry == null) throw new FileNotFoundException("Entry " + resource + " not found in " + file);
-    return new FilterInputStream(zipFile.getInputStream(zipEntry)) {
-      @Override
-      public void close() throws IOException {
-        super.close();
-        zipFile.close();
-      }
-    };
   }
 
   @NotNull

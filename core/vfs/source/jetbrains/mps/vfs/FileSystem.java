@@ -43,6 +43,11 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
     return getFile(path);
   }
 
+  /**
+   * use FileS
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   @NotNull IFile getFile(@NotNull String path);
 
   /**

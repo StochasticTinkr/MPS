@@ -46,7 +46,7 @@ public final class StockPriceDownloader {
         if (prices == null) {
           prices = ListSequence.fromList(new ArrayList<DailyStockPrice>());
           URL url = new URL("http://ichart.finance.yahoo.com/table.csv?s=" + symbol);
-          InputStream stream = URLUtil.openStream(url);
+          InputStream stream = url.openStream();
           BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
           String line;
           boolean header = true;
