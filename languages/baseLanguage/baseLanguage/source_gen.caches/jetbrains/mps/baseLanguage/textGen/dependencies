@@ -1436,6 +1436,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.VoidType_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.WhileStatement_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.WildCardType_TextGen" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.TextUnit" />
     <classNode dependClassName="jetbrains.mps.text.impl.BufferLayoutBuilder" />

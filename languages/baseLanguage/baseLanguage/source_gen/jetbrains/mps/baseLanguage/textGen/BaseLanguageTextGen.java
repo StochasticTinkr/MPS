@@ -109,7 +109,8 @@ public abstract class BaseLanguageTextGen {
       tgs.reportError("classifier is null");
       return;
     }
-    BaseLanguageTextGen.appendClassName(BaseLanguageTextGen.getPackageName(node, ctx), NameUtil.longNameFromNamespaceAndShortName(BaseLanguageTextGen.getPackageName(node, ctx), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))), contextNode, ctx);
+    String pkgName = BaseLanguageTextGen.getPackageName(node, ctx);
+    BaseLanguageTextGen.appendClassName(pkgName, NameUtil.longNameFromNamespaceAndShortName(pkgName, SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))), contextNode, ctx);
   }
   public static void internalClassName(String packageName, String className, SNode contextNode, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
@@ -214,9 +215,9 @@ public abstract class BaseLanguageTextGen {
       tgs.reportError("null reference");
       return null;
     }
+    String shortName = "";
+    String packageName = "";
     if (reference instanceof DynamicReference) {
-      String shortName = "";
-      String packageName = "";
       shortName = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       // hack, todo: remove! 
       if (shortName.startsWith("[")) {
@@ -247,12 +248,21 @@ public abstract class BaseLanguageTextGen {
         tgs.reportError("Target node is null for reference to classifier with role " + SLinkOperations.getRefLink(classifierRef).getName() + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
-      String targetModelName = SModelOperations.getModelName(SNodeOperations.getModel(targetNode));
-      return MultiTuple.<String,String>from((targetModelName == null ? "" : targetModelName), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
+      if (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+        packageName = BaseLanguageTextGen.getPackageName(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), ctx);
+        shortName = SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"));
+      } else {
+        packageName = SModelOperations.getModelName(SNodeOperations.getModel(targetNode));
+        shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
+      }
+      return MultiTuple.<String,String>from((packageName == null ? "" : packageName), shortName);
     }
   }
   protected static String getPackageName(SNode cls, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+    if (isNotEmptyString(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")))) {
+      return SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName"));
+    }
     return SModelOperations.getModelName(SNodeOperations.getModel(cls));
   }
   protected static String getClassName(String packageName, String fqName, SNode contextNode, final TextGenContext ctx) {
@@ -279,5 +289,8 @@ public abstract class BaseLanguageTextGen {
   }
   public static ClassifierUnitContext contextObjectInstance_ctx(SNode primaryInputNode) {
     return new ClassifierUnitContext(primaryInputNode);
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

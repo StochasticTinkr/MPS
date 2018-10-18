@@ -1191,6 +1191,11 @@
       <property role="IQ2nx" value="1211504562189" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyi" id="2qY3fqbSpPD" role="1TKVEl">
+      <property role="IQ2nx" value="2791683072064593257" />
+      <property role="TrG5h" value="packageName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyi" id="hNAfOGV" role="1TKVEl">
       <property role="TrG5h" value="isDeprecated" />
       <property role="IQ2nx" value="1223633619771" />

@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.text.impl.BufferLayoutBuilder;
 import jetbrains.mps.text.impl.RegularTextUnit;
@@ -364,6 +365,30 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   private static String getFileExtension_EnumClass(SNode node) {
     return "java";
   }
+  private static String getPath_Annotation(SNode node) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")))) {
+      return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")).replace('.', '/');
+    }
+    return null;
+  }
+  private static String getPath_ClassConcept(SNode node) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")))) {
+      return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")).replace('.', '/');
+    }
+    return null;
+  }
+  private static String getPath_Interface(SNode node) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")))) {
+      return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")).replace('.', '/');
+    }
+    return null;
+  }
+  private static String getPath_EnumClass(SNode node) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")))) {
+      return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x26be0cf68be19d69L, "packageName")).replace('.', '/');
+    }
+    return null;
+  }
   private static TextUnit createTextUnit0(String filename, SNode node) {
     BufferLayoutBuilder lb = new BufferLayoutBuilder();
     lb.add("HEADER");
@@ -371,7 +396,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, getPath_Annotation(node), null);
     rv.setBufferLayout(lb.create());
     rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
@@ -383,7 +408,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, getPath_ClassConcept(node), null);
     rv.setBufferLayout(lb.create());
     rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
@@ -395,7 +420,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, getPath_Interface(node), null);
     rv.setBufferLayout(lb.create());
     rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
@@ -407,9 +432,12 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, getPath_EnumClass(node), null);
     rv.setBufferLayout(lb.create());
     rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
