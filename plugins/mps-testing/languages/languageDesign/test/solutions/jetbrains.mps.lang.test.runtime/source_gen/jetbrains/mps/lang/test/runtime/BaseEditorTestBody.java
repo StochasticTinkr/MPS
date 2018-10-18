@@ -126,6 +126,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
         myFileNodeEditor = openEditor();
         myEditor = myFileNodeEditor.getNodeEditor();
+        myEditor.showNode(myBefore, false);
         myCurrentEditorComponent = myEditor.getCurrentEditorComponent();
         if (!(myCurrentEditorComponent instanceof NodeEditorComponent)) {
           throw new IllegalArgumentException("The component is not an instance of NodeEditorComponent: " + myCurrentEditorComponent);
