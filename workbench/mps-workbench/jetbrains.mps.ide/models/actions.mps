@@ -32021,10 +32021,10 @@
                                         </node>
                                         <node concept="2ShNRf" id="4lvnFqUUZD$" role="37wK5m">
                                           <node concept="1pGfFk" id="4lvnFqUUZD_" role="2ShVmc">
-                                            <ref role="37wK5l" to="g4jo:6hZLf2Yo3pm" resolve="SearchResults" />
+                                            <ref role="37wK5l" to="g4jo:J2bOg02Hcb" resolve="SearchResults" />
                                             <node concept="2OqwBi" id="4lvnFqUUZFl" role="37wK5m">
-                                              <node concept="liA8E" id="4lvnFqUUZFq" role="2OqNvi">
-                                                <ref role="37wK5l" to="g4jo:J2bOg02Hcu" resolve="getSearchedNodes" />
+                                              <node concept="liA8E" id="4mN_90IV9kL" role="2OqNvi">
+                                                <ref role="37wK5l" to="g4jo:6hZLf2Yo3qA" resolve="getSearchedObjects" />
                                               </node>
                                               <node concept="37vLTw" id="3GM_nagTBCg" role="2Oq$k0">
                                                 <ref role="3cqZAo" node="4lvnFqUUXRf" resolve="concepts" />
@@ -37275,11 +37275,11 @@
               <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
             <node concept="2OqwBi" id="CJPgsIW0nv" role="33vP2m">
-              <node concept="liA8E" id="CJPgsIW0nw" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-              </node>
               <node concept="37vLTw" id="5_KwrLBqB0K" role="2Oq$k0">
                 <ref role="3cqZAo" node="5_KwrLBqB0G" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="CJPgsIW0nw" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
             </node>
           </node>

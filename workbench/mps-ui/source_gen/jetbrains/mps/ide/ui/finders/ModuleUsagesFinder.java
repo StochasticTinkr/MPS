@@ -6,11 +6,13 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
+import java.util.Collections;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import java.util.HashSet;
@@ -26,8 +28,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelInternal;
 
 /**
@@ -61,8 +61,7 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
   }
 
   @Override
-  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    SearchResults searchResults = new SearchResults();
+  public void find(SearchQuery query, @NotNull IFinder.FindCallback callback, ProgressMonitor monitor) {
     Object value = query.getObjectHolder().getObject();
     SModule searchedModule = null;
     SModuleReference searchedModuleRef = null;
@@ -74,9 +73,9 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
       searchedModule = query.getScope().resolve(searchedModuleRef);
     }
     if (searchedModuleRef == null) {
-      return searchResults;
+      return;
     }
-    searchResults.getSearchedNodes().add(searchedModuleRef);
+    callback.onSearchedObjectsCalculated(new SearchedObjects(Collections.singleton(searchedModuleRef)));
     Collection<SModule> modules = IterableUtil.asCollection(query.getScope().getModules());
     myModels2Visit = new HashSet<SModel>(IterableUtil.asCollection(query.getScope().getModels()));
     monitor.start("", 2);
@@ -84,17 +83,17 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
     subTask.start("Looking up uses in modules", modules.size());
     for (SModule module : modules) {
       if (monitor.isCanceled()) {
-        return searchResults;
+        return;
       }
 
       if (module instanceof Solution) {
-        collectUsagesInSolution(searchedModuleRef, (Solution) module, searchResults);
+        collectUsagesInSolution(searchedModuleRef, (Solution) module, callback);
       } else if (module instanceof Language) {
-        collectUsagesInLanguage(searchedModuleRef, (Language) module, searchResults);
+        collectUsagesInLanguage(searchedModuleRef, (Language) module, callback);
       } else if (module instanceof DevKit) {
-        collectUsagesInDevKit(searchedModuleRef, (DevKit) module, searchResults);
+        collectUsagesInDevKit(searchedModuleRef, (DevKit) module, callback);
       } else if (module instanceof Generator) {
-        collectUsagesInGenerator(searchedModuleRef, (Generator) module, searchResults);
+        collectUsagesInGenerator(searchedModuleRef, (Generator) module, callback);
       }
       subTask.advance(1);
     }
@@ -112,45 +111,47 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
         steps += 3;
       }
       subTask.start("Looking up uses in models", steps);
-      ModuleUsagesFinder.ModuleUseInModel f = new ModuleUsagesFinder.ModuleUseInModel(searchedModule, searchResults);
+      ModuleUsagesFinder.ModuleUseInModel f = new ModuleUsagesFinder.ModuleUseInModel(searchedModule, callback);
       f.collectImports(myModels2Visit, subTask.subTask(1, SubProgressKind.IGNORED));
       if (myIncludeNodes) {
         f.collectNodes(myModels2Visit, subTask.subTask(3, SubProgressKind.IGNORED));
       }
       if (searchedDevkit != null) {
-        ModuleUsagesFinder.DevKitUseInModel f2 = new ModuleUsagesFinder.DevKitUseInModel(searchedDevkit, searchResults);
+        ModuleUsagesFinder.DevKitUseInModel f2 = new ModuleUsagesFinder.DevKitUseInModel(searchedDevkit, callback);
         f2.collect(myModels2Visit, subTask.subTask(1, SubProgressKind.IGNORED));
       }
     }
     monitor.done();
     myModels2Visit = null;
-    return searchResults;
   }
-  /*package*/ void collectUsagesInSolution(SModuleReference searchModuleRef, Solution solution, SearchResults searchResults) {
+
+  /*package*/ void collectUsagesInSolution(SModuleReference searchModuleRef, Solution solution, @NotNull IFinder.FindCallback callback) {
     if (getDeclaredDependenciesTargets(solution).contains(searchModuleRef)) {
-      searchResults.add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
+      callback.onUsageFound(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
       collectUsagesInModels(solution);
     }
   }
-  /*package*/ void collectUsagesInLanguage(SModuleReference searchModuleRef, Language language, SearchResults searchResults) {
+
+  /*package*/ void collectUsagesInLanguage(SModuleReference searchModuleRef, Language language, @NotNull IFinder.FindCallback callback) {
     boolean used = false;
     if (language.getExtendedLanguageRefs().contains(searchModuleRef)) {
       used = true;
-      searchResults.add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
+      callback.onUsageFound(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
     }
     if (getDeclaredDependenciesTargets(language).contains(searchModuleRef)) {
       used = true;
-      searchResults.add(new SearchResult<Language>(language, DEPENDENT_MODULES));
+      callback.onUsageFound(new SearchResult<Language>(language, DEPENDENT_MODULES));
     }
     if (language.getRuntimeModulesReferences().contains(searchModuleRef)) {
       used = true;
-      searchResults.add(new SearchResult<Language>(language, RUNTIME_MODULES));
+      callback.onUsageFound(new SearchResult<Language>(language, RUNTIME_MODULES));
     }
     if (used) {
       collectUsagesInModels(language);
     }
   }
-  /*package*/ void collectUsagesInGenerator(SModuleReference searchModuleRef, Generator generator, SearchResults searchResults) {
+
+  /*package*/ void collectUsagesInGenerator(SModuleReference searchModuleRef, Generator generator, @NotNull IFinder.FindCallback callback) {
     boolean depExtends = false;
     boolean depDesign = false;
     boolean depRegular = false;
@@ -164,23 +165,25 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
       }
     }
     if (depExtends) {
-      searchResults.add(new SearchResult<Generator>(generator, EXTENDING_GENERATORS));
+      callback.onUsageFound(new SearchResult<Generator>(generator, EXTENDING_GENERATORS));
     }
     if (depDesign) {
-      searchResults.add(new SearchResult<Generator>(generator, DEPENDENT_MODULES));
+      callback.onUsageFound(new SearchResult<Generator>(generator, DEPENDENT_MODULES));
     }
     if (depRegular) {
-      searchResults.add(new SearchResult<Generator>(generator, DEPENDENT_MODULES));
+      callback.onUsageFound(new SearchResult<Generator>(generator, DEPENDENT_MODULES));
     }
     if (depExtends || depRegular || depDesign) {
       collectUsagesInModels(generator);
     }
   }
-  /*package*/ void collectUsagesInDevKit(SModuleReference searchModuleRef, DevKit devKit, SearchResults searchResults) {
+
+  /*package*/ void collectUsagesInDevKit(SModuleReference searchModuleRef, DevKit devKit, @NotNull IFinder.FindCallback callback) {
     if (getDeclaredDependenciesTargets(devKit).contains(searchModuleRef)) {
-      searchResults.add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
+      callback.onUsageFound(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }
+
   /*package*/ static Set<SModuleReference> getDeclaredDependenciesTargets(SModule module) {
     Set<SModuleReference> result = new HashSet<SModuleReference>();
     for (SDependency dep : module.getDeclaredDependencies()) {
@@ -217,26 +220,27 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
    * telling their module reference.
    */
   private static class ModuleUseInModel {
-    private final SearchResults mySearchResults;
+    @NotNull
+    private IFinder.FindCallback myCallback;
     private final Set<SModelReference> myModelsToFind;
-    private ModelUsagesFinder myModelUsageFinder;
+    private final ModelUsagesFinder myModelUsageFinder;
 
-    public ModuleUseInModel(SModule toFind, SearchResults toPopulate) {
+    public ModuleUseInModel(SModule toFind, @NotNull IFinder.FindCallback callback) {
       myModelUsageFinder = new ModelUsagesFinder();
       myModelsToFind = new HashSet<SModelReference>();
       for (SModel m : toFind.getModels()) {
         myModelsToFind.add(m.getReference());
       }
-      mySearchResults = toPopulate;
+      myCallback = callback;
     }
 
     /*package*/ void collectImports(Collection<SModel> scope, ProgressMonitor progress) {
       progress.start("", scope.size());
       for (SModel model : scope) {
         // getImportedModelUIDs doesn't report implicit model imports 
-        for (SModelReference i : SModelOperations.getImportedModelUIDs(model)) {
-          if (myModelsToFind.contains(i)) {
-            mySearchResults.add(new SearchResult<SModel>(model, ModuleUsagesFinder.USED_BY));
+        for (SModelReference mRef : SModelOperations.getImportedModelUIDs(model)) {
+          if (myModelsToFind.contains(mRef)) {
+            myCallback.onUsageFound(new SearchResult<SModel>(model, USED_BY));
             break;
           }
         }
@@ -249,25 +253,21 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
       // unless we have a mechanism to get complete set of model imports (including implicit), 
       // we check models even if they don't import any model of interest explicitly 
       progress.start("", myModelsToFind.size());
-      List<SearchResult<Object>> res = mySearchResults.getSearchResults();
       for (SModelReference mr : myModelsToFind) {
-        List<SearchResult<SNode>> found = myModelUsageFinder.doFind(mr, scope, progress.subTask(1, SubProgressKind.AS_COMMENT));
-        //  i know it's odd, but did you try to work merge SearchResult<Object> and SearchResult<SNode>? 
-        for (SearchResult sr : found) {
-          res.add(sr);
-        }
+        myModelUsageFinder.doFind(mr, scope, myCallback, progress.subTask(1, SubProgressKind.AS_COMMENT));
       }
       progress.done();
     }
   }
 
   private static class DevKitUseInModel {
-    private final SearchResults mySearchResults;
+    @NotNull
+    private IFinder.FindCallback myCallback;
     private final SModuleReference myDevKitToFind;
 
-    public DevKitUseInModel(DevKit toFind, SearchResults toPopulate) {
+    public DevKitUseInModel(DevKit toFind, @NotNull IFinder.FindCallback callback) {
       myDevKitToFind = toFind.getModuleReference();
-      mySearchResults = toPopulate;
+      myCallback = callback;
     }
 
     public void collect(Collection<SModel> scope, ProgressMonitor progress) {
@@ -275,7 +275,7 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
       for (SModel model : scope) {
         if (model instanceof SModelInternal) {
           if (((SModelInternal) model).importedDevkits().contains(myDevKitToFind)) {
-            mySearchResults.add(new SearchResult<SModel>(model, USED_BY));
+            myCallback.onUsageFound(new SearchResult<SModel>(model, USED_BY));
           }
         }
         progress.advance(1);

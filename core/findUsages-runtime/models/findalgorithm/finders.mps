@@ -224,10 +224,14 @@
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -2223,90 +2227,6 @@
       </node>
       <node concept="3Tm1VV" id="6hZLf2YmXTF" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="6hZLf2Ynt2I" role="jymVt" />
-    <node concept="2YIFZL" id="6hZLf2YmXTG" role="jymVt">
-      <property role="TrG5h" value="union" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="16euLQ" id="6hZLf2YmXTH" role="16eVyc">
-        <property role="TrG5h" value="K" />
-      </node>
-      <node concept="37vLTG" id="6hZLf2YmXTI" role="3clF46">
-        <property role="TrG5h" value="one" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="6hZLf2YmXTJ" role="1tU5fm">
-          <ref role="3uigEE" node="6hZLf2YmXSq" resolve="SearchedObjects" />
-          <node concept="16syzq" id="6hZLf2YmXTK" role="11_B2D">
-            <ref role="16sUi3" node="6hZLf2YmXTH" resolve="K" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6hZLf2YmXTL" role="3clF46">
-        <property role="TrG5h" value="another" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="6hZLf2YmXTM" role="1tU5fm">
-          <ref role="3uigEE" node="6hZLf2YmXSq" resolve="SearchedObjects" />
-          <node concept="16syzq" id="6hZLf2YmXTN" role="11_B2D">
-            <ref role="16sUi3" node="6hZLf2YmXTH" resolve="K" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbS" id="6hZLf2YmXTO" role="3clF47">
-        <node concept="3cpWs6" id="6hZLf2YmXTP" role="3cqZAp">
-          <node concept="2ShNRf" id="6hZLf2YmZ6C" role="3cqZAk">
-            <node concept="1pGfFk" id="6hZLf2YmZ6X" role="2ShVmc">
-              <ref role="37wK5l" node="6hZLf2YmXTv" resolve="SearchedObjects" />
-              <node concept="2OqwBi" id="6hZLf2YnFFe" role="37wK5m">
-                <node concept="2YIFZM" id="6hZLf2YnxiO" role="2Oq$k0">
-                  <ref role="1Pybhc" to="1ctc:~Stream" resolve="Stream" />
-                  <ref role="37wK5l" to="1ctc:~Stream.concat(java.util.stream.Stream,java.util.stream.Stream):java.util.stream.Stream" resolve="concat" />
-                  <node concept="2OqwBi" id="6hZLf2Yn$Ra" role="37wK5m">
-                    <node concept="2OqwBi" id="6hZLf2Ynz11" role="2Oq$k0">
-                      <node concept="37vLTw" id="6hZLf2Ynybq" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6hZLf2YmXTI" resolve="one" />
-                      </node>
-                      <node concept="liA8E" id="6hZLf2YnzS5" role="2OqNvi">
-                        <ref role="37wK5l" node="6hZLf2YmXU4" resolve="getElements" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6hZLf2Yn_Nm" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="6hZLf2YnDBT" role="37wK5m">
-                    <node concept="2OqwBi" id="6hZLf2YnBKl" role="2Oq$k0">
-                      <node concept="37vLTw" id="6hZLf2YnAPf" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6hZLf2YmXTL" resolve="another" />
-                      </node>
-                      <node concept="liA8E" id="6hZLf2YnCFy" role="2OqNvi">
-                        <ref role="37wK5l" node="6hZLf2YmXU4" resolve="getElements" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6hZLf2YnEEN" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="6hZLf2YnH0H" role="2OqNvi">
-                  <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
-                  <node concept="2YIFZM" id="6hZLf2YnK3o" role="37wK5m">
-                    <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
-                    <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="6hZLf2YmXU1" role="1B3o_S" />
-      <node concept="3uibUv" id="6hZLf2YmXU2" role="3clF45">
-        <ref role="3uigEE" node="6hZLf2YmXSq" resolve="SearchedObjects" />
-        <node concept="16syzq" id="6hZLf2YmXU3" role="11_B2D">
-          <ref role="16sUi3" node="6hZLf2YmXTH" resolve="K" />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="6hZLf2Ynt2J" role="jymVt" />
     <node concept="3clFb_" id="6hZLf2YmXU4" role="jymVt">
       <property role="TrG5h" value="getElements" />
@@ -2331,6 +2251,47 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4mN_90ITLmR" role="jymVt" />
+    <node concept="3clFb_" id="4mN_90ITKDP" role="jymVt">
+      <property role="TrG5h" value="getElements0" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4mN_90ITKDQ" role="3clF47">
+        <node concept="3cpWs6" id="4mN_90ITKDR" role="3cqZAp">
+          <node concept="37vLTw" id="4mN_90ITPIt" role="3cqZAk">
+            <ref role="3cqZAo" node="6hZLf2YmXTq" resolve="mySearchedNodes" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4mN_90ITKDU" role="1B3o_S" />
+      <node concept="3uibUv" id="4mN_90ITKDV" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="16syzq" id="4mN_90ITKDW" role="11_B2D">
+          <ref role="16sUi3" node="6hZLf2Ynd9w" resolve="K" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4mN_90ITMII" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="4mN_90ITOLa" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3cmrfG" id="4mN_90ITOLO" role="2B70Vg">
+            <property role="3cmrfH" value="183" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="4mN_90ITO5l" role="lGtFl">
+        <node concept="TZ5HI" id="4mN_90ITO5m" role="3nqlJM">
+          <node concept="TZ5HA" id="4mN_90ITO5n" role="3HnX3l">
+            <node concept="1dT_AC" id="4mN_90ITOKM" role="1dT_Ay">
+              <property role="1dT_AB" value="mutates" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4mN_90ITO5o" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6hZLf2Ynt2K" role="jymVt" />
     <node concept="3clFb_" id="6hZLf2YmXUc" role="jymVt">
       <property role="TrG5h" value="contains" />
@@ -2346,8 +2307,8 @@
       <node concept="3clFbS" id="6hZLf2YmXUf" role="3clF47">
         <node concept="3cpWs6" id="6hZLf2YmXUg" role="3cqZAp">
           <node concept="2OqwBi" id="6hZLf2YmXUh" role="3cqZAk">
-            <node concept="1rXfSq" id="6hZLf2YmXUi" role="2Oq$k0">
-              <ref role="37wK5l" node="6hZLf2YmXU4" resolve="getElements" />
+            <node concept="37vLTw" id="4mN_90ITJ5o" role="2Oq$k0">
+              <ref role="3cqZAo" node="6hZLf2YmXTq" resolve="mySearchedNodes" />
             </node>
             <node concept="liA8E" id="6hZLf2YmXUj" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />

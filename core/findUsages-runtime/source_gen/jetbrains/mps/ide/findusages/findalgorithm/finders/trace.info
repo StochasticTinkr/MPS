@@ -31,46 +31,43 @@
   </root>
   <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/7241723264099933722">
     <file name="SearchedObjects.java">
-      <node id="7241723264099933786" at="16,0,17,0" concept="3" trace="mySearchedNodes" />
-      <node id="7241723264099933798" at="18,61,19,55" concept="2" />
-      <node id="7241723264099933813" at="22,98,23,135" concept="8" />
-      <node id="7241723264099933830" at="26,31,27,56" concept="8" />
-      <node id="7241723264099933840" at="30,32,31,37" concept="8" />
-      <node id="7241723264099933856" at="35,75,36,50" concept="7" />
-      <node id="7241723264099933863" at="37,46,38,52" concept="2" />
-      <node id="7241723264099933871" at="39,5,40,49" concept="8" />
-      <node id="7241723264099933791" at="18,0,21,0" concept="1" trace="SearchedObjects#(Ljava/util/Collection;)V" />
-      <node id="7241723264099933804" at="22,0,25,0" concept="11" trace="union#(Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;)Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;" />
-      <node id="7241723264099933828" at="26,0,29,0" concept="6" trace="getElements#()Ljava/util/Set;" />
-      <node id="7241723264099933836" at="30,0,33,0" concept="6" trace="contains#(null)Z" />
-      <node id="7241723264099933860" at="36,50,39,5" concept="4" />
-      <node id="7241723264099933847" at="34,0,42,0" concept="11" trace="union#(null)Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;" />
-      <scope id="7241723264099933797" at="18,61,19,55" />
-      <scope id="7241723264099933812" at="22,98,23,135" />
-      <scope id="7241723264099933829" at="26,31,27,56" />
-      <scope id="7241723264099933839" at="30,32,31,37" />
-      <scope id="7241723264099933862" at="37,46,38,52" />
-      <scope id="7241723264099933791" at="18,0,21,0">
+      <node id="7241723264099933786" at="15,0,16,0" concept="3" trace="mySearchedNodes" />
+      <node id="7241723264099933798" at="17,61,18,55" concept="2" />
+      <node id="7241723264099933830" at="21,31,22,56" concept="8" />
+      <node id="5022521356431329911" at="31,32,32,27" concept="8" />
+      <node id="7241723264099933840" at="35,32,36,39" concept="8" />
+      <node id="7241723264099933856" at="40,75,41,50" concept="7" />
+      <node id="7241723264099933863" at="42,46,43,52" concept="2" />
+      <node id="7241723264099933871" at="44,5,45,49" concept="8" />
+      <node id="7241723264099933791" at="17,0,20,0" concept="1" trace="SearchedObjects#(Ljava/util/Collection;)V" />
+      <node id="7241723264099933828" at="21,0,24,0" concept="6" trace="getElements#()Ljava/util/Set;" />
+      <node id="7241723264099933836" at="35,0,38,0" concept="6" trace="contains#(null)Z" />
+      <node id="7241723264099933860" at="41,50,44,5" concept="4" />
+      <node id="5022521356431329909" at="29,0,34,0" concept="6" trace="getElements0#()Ljava/util/Set;" />
+      <node id="7241723264099933847" at="39,0,47,0" concept="11" trace="union#(null)Ljetbrains/mps/ide/findusages/findalgorithm/finders/SearchedObjects;" />
+      <scope id="7241723264099933797" at="17,61,18,55" />
+      <scope id="7241723264099933829" at="21,31,22,56" />
+      <scope id="5022521356431329910" at="31,32,32,27" />
+      <scope id="7241723264099933839" at="35,32,36,39" />
+      <scope id="7241723264099933862" at="42,46,43,52" />
+      <scope id="7241723264099933791" at="17,0,20,0">
         <var name="collection" id="7241723264099933793" />
       </scope>
-      <scope id="7241723264099933804" at="22,0,25,0">
-        <var name="another" id="7241723264099933809" />
-        <var name="one" id="7241723264099933806" />
-      </scope>
-      <scope id="7241723264099933828" at="26,0,29,0" />
-      <scope id="7241723264099933836" at="30,0,33,0">
+      <scope id="7241723264099933828" at="21,0,24,0" />
+      <scope id="7241723264099933836" at="35,0,38,0">
         <var name="k" id="7241723264099933837" />
       </scope>
-      <scope id="7241723264099933860" at="36,50,39,5">
+      <scope id="7241723264099933860" at="41,50,44,5">
         <var name="element" id="7241723264099933866" />
       </scope>
-      <scope id="7241723264099933854" at="35,75,40,49">
+      <scope id="5022521356431329909" at="29,0,34,0" />
+      <scope id="7241723264099933854" at="40,75,45,49">
         <var name="searchedNodes" id="7241723264099933855" />
       </scope>
-      <scope id="7241723264099933847" at="34,0,42,0">
+      <scope id="7241723264099933847" at="39,0,47,0">
         <var name="array" id="7241723264099933850" />
       </scope>
-      <unit id="7241723264099933722" at="14,0,43,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects" />
+      <unit id="7241723264099933722" at="13,0,48,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects" />
     </file>
   </root>
   <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/7241723264100158065">

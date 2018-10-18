@@ -3267,6 +3267,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI1" role="jymVt" />
     <node concept="3clFb_" id="52KjdOfLP8s" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getRefactoringFacade" />
@@ -3307,6 +3308,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI2" role="jymVt" />
     <node concept="3clFb_" id="52KjdOfM$Zv" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createTargetChooser" />
@@ -3332,6 +3334,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI3" role="jymVt" />
     <node concept="3clFb_" id="52KjdOfMU$A" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="createTargetChooser" />
@@ -3357,6 +3360,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI4" role="jymVt" />
     <node concept="3clFb_" id="3g3N8kb3vlF" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="showRefactoringView" />
@@ -3393,6 +3397,7 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI5" role="jymVt" />
     <node concept="3clFb_" id="7DGCeT2L$54" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="showRefactoringView" />
@@ -3434,6 +3439,7 @@
       <node concept="3Tm1VV" id="7DGCeT2L$5g" role="1B3o_S" />
       <node concept="3clFbS" id="7DGCeT2L$5h" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI6" role="jymVt" />
     <node concept="3clFb_" id="6q$OdKd99CX" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="showRefactoringView" />
@@ -3470,6 +3476,7 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4f1p$bqrYI7" role="jymVt" />
     <node concept="3clFb_" id="7DGCeT2L_rt" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="showRefactoringView" />
