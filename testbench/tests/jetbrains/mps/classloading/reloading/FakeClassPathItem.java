@@ -13,12 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.classloading;
+package jetbrains.mps.classloading.reloading;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.classloading.reloading.AbstractClassPathItem;
-import jetbrains.mps.classloading.reloading.IClassPathItemVisitor;
-import jetbrains.mps.classloading.reloading.RealClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import org.jetbrains.annotations.NotNull;
@@ -40,14 +37,14 @@ import java.util.Map;
  * @author apyshkin
  * @since 31/12/16
  */
-final class FakeClassPathItem extends AbstractClassPathItem {
+public final class FakeClassPathItem extends AbstractClassPathItem {
   private final Map<String, ClassBytes> myFakeBytes = new HashMap<>();
 
-  FakeClassPathItem(Class<?> aClass) {
+  public FakeClassPathItem(Class<?> aClass) {
     this(Collections.singletonList(aClass));
   }
 
-  FakeClassPathItem(List<Class<?>> classes) {
+  public FakeClassPathItem(List<Class<?>> classes) {
     for (Class<?> aClass : classes) {
       myFakeBytes.put(aClass.getName(), new MyClassBytes(aClass));
     }

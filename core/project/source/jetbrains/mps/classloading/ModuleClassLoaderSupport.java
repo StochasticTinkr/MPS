@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.classloading.reloading.CompositeClassPathItem;
-import jetbrains.mps.classloading.reloading.RealClassPathItem;
-import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.classloading.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.classloading.reloading.IClassPathItem;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
@@ -42,12 +40,7 @@ public class ModuleClassLoaderSupport {
   private static IClassPathItem calcClassPath(@NotNull ReloadableModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     assert facet != null;
-    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
-    for (String path : facet.getClassPath()) {
-      IClassPathItem pathItem = RealClassPathItem.create(path, ModuleClassLoaderSupport.class.getName());
-      classPathItem.add(pathItem);
-    }
-    return classPathItem;
+    return IClassPathItem.createClassPathItem(facet.getClassPath());
   }
 
   ModuleClassLoaderSupport(@NotNull ReloadableModule module,

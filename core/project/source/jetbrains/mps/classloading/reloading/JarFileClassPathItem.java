@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
@@ -165,7 +166,7 @@ class JarFileClassPathItem extends RealClassPathItem {
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     ensureInitialized();
     Collection<String> start = myCache.getClassesSetFor(namespace);
-    Condition<String> cond = className -> !isAnonymous(className);
+    Condition<String> cond = className -> !JavaNameUtil.isAnonymous(className);
     return new ConditionalIterable<>(start, cond);
   }
 

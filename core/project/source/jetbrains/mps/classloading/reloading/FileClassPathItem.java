@@ -20,6 +20,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.containers.EmptyIterable;
@@ -124,7 +125,7 @@ class FileClassPathItem extends RealClassPathItem {
 
     Set<String> start = myAvailableClassesCache.get(namespace);
     if (start == null) return new EmptyIterable<>();
-    Condition<String> cond = className -> !isAnonymous(className);
+    Condition<String> cond = className -> !JavaNameUtil.isAnonymous(className);
     return new ConditionalIterable<>(start, cond);
   }
 

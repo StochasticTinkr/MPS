@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.reloading.FakeClassPathItem;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.SDependencyImpl;
 import org.apache.log4j.LogManager;
@@ -27,7 +28,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;

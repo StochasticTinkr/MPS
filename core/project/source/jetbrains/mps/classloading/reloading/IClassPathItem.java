@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.classloading.reloading;
 
+import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -79,4 +81,14 @@ public interface IClassPathItem extends ClassBytesProvider {
   IClassPathItem optimize();
 
   void accept(IClassPathItemVisitor visitor);
+
+  @NotNull
+  static IClassPathItem createClassPathItem(Collection<String> cp) {
+    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
+    for (String path : cp) {
+      IClassPathItem pathItem = RealClassPathItem.create(path, ModuleClassLoaderSupport.class.getName());
+      classPathItem.add(pathItem);
+    }
+    return classPathItem;
+  }
 }

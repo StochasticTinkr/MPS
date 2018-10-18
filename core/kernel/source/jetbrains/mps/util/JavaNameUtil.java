@@ -25,13 +25,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
 public final class JavaNameUtil {
-
+  private static final Pattern DIGITS = Pattern.compile("\\d+");
   private static Set<String> JAVA_KEYWORDS = new HashSet<>();
 
   static {
@@ -60,6 +61,16 @@ public final class JavaNameUtil {
   public static String fqClassName(@NotNull SNode node, @NotNull String shortClassName) {
     return fqClassName(node.getModel(), shortClassName);
   }
+
+  public static boolean isAnonymous(String className) {
+    if (!className.contains("$")) return false;
+
+    for (String part : className.split("\\$")) {
+      if (DIGITS.matcher(part).matches()) return true;
+    }
+    return false;
+  }
+
 
   public static String packageNameForModelUID(@NotNull SModelReference modelReference) {
     return modelReference.getName().getLongName();

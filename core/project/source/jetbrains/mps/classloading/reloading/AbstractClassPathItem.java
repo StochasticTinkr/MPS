@@ -22,8 +22,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.regex.Pattern;
 
 abstract class AbstractClassPathItem implements IClassPathItem {
-  private static final Pattern DIGITS = Pattern.compile("\\d+");
-
   @Override
   public IClassPathItem optimize() {
     return this;
@@ -33,15 +31,6 @@ abstract class AbstractClassPathItem implements IClassPathItem {
   @Override
   public Iterable<String> getRootClasses(String namespace) {
     return new ConditionalIterable<>(getAvailableClasses(namespace), className -> !(className.contains("$")));
-  }
-
-  public static boolean isAnonymous(String className) {
-    if (!className.contains("$")) return false;
-
-    for (String part : className.split("\\$")) {
-      if (DIGITS.matcher(part).matches()) return true;
-    }
-    return false;
   }
 
   @Override
