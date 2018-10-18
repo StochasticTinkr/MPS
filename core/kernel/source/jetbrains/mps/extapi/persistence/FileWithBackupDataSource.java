@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.vfs.FileSystemEvent;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -98,6 +98,7 @@ public class FileWithBackupDataSource extends FileDataSource {
 
   @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
+    // XXX irrespective to odd getListenerDependencies(), why do we treat listener of backup file of more importance?
     FileSystemListener backupFileListener = myBackupFileListener;
     FileSystemListener parent = getParentListener();
     if (backupFileListener != null && parent != null) {
@@ -120,11 +121,6 @@ public class FileWithBackupDataSource extends FileDataSource {
     @Override
     public IFile getFileToListen() {
       return path;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return null;
     }
 
     @Override

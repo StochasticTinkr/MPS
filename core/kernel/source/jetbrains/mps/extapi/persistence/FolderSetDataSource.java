@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
+import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
@@ -45,15 +46,19 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
- /**
+/**
  * Must be replaced with the FileDataSource everywhere.
  * Additional functionality (like #isIncluded) must be extracted or removed.
  * Remember: it is supposed to be just a simple notion of location with file system for {@link ModelFactory}
  * to load/save/create models there.
  *
+ * @deprecated Use {@link FileBasedModelRoot} instead, this class isn't capable of anything better.
+ *
  * @author apyshkin
  * evgeny, 11/3/12
  */
+@Deprecated
+@ToRemove(version = 2018.3)
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
   private final List<DataSourceListener> myListeners = new ArrayList<>(4);
@@ -77,8 +82,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       if (modelRoot instanceof FileSystemListener) {
         myListenerDependencies.add((FileSystemListener) modelRoot);
-      } else if (modelRoot != null && modelRoot.getModule() instanceof FileSystemListener) {
-        myListenerDependencies.add((FileSystemListener) modelRoot.getModule());
       }
 
       PathListener listener = new PathListener(path, this);
@@ -218,7 +221,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public Iterable<FileSystemListener> getListenerDependencies() {
     myLock.readLock().lock();
     try {
-      return new ArrayList<>(myListenerDependencies);
+      return myListenerDependencies.isEmpty() ? null : new ArrayList<>(myListenerDependencies);
     } finally {
       myLock.readLock().unlock();
     }

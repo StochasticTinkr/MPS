@@ -49,6 +49,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     super(modelReference, source instanceof FileDataSource
                           ? FileWithBackupDataSource.create((FileDataSource) source)
                           : source);
+    // FIXME It's not a model to be responsible to construct FileWithBackupDataSource! It's DataSourceFactory for specific DataSourceType that knows
+    //       its limitations and therefore constructs FilwWithBackupDataSource, not model implementation. Otherwise, it's too coupled
     myPersistence = persistence;
   }
 
