@@ -822,7 +822,7 @@
                                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                                 <node concept="Xl_RD" id="$QEGdhTNTu" role="37wK5m">
-                                  <property role="Xl_RC" value="Text buffer does not contain data, that can be parsed as %s" />
+                                  <property role="Xl_RC" value="Text buffer does not contain data that can be parsed as %s" />
                                 </node>
                                 <node concept="3K4zz7" id="6miBLfBEP5o" role="37wK5m">
                                   <node concept="Xl_RD" id="6miBLfBEPCi" role="3K4E3e">
