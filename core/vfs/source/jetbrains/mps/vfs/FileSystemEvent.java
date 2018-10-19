@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,5 +39,7 @@ public interface FileSystemEvent {
    */
   @ToRemove(version = 3.4)
 //  @Deprecated
+  // XXX seems that we can replace FSL with {@code FileListener} here and go on using this re-dispatch mechanism, handy for cases when there's single place
+  //     that handles changes in few otherwise individual files (e.g. model root and file data sources)
   void notify(FileSystemListener listener);
 }

@@ -22,9 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 /**
  * This data source allows to track a backup file along with the main file.
  * The name of the backup file is formed by adding a tilde (~) to the name of the original file.
@@ -94,13 +91,6 @@ public class FileWithBackupDataSource extends FileDataSource {
     getBackupFile().getFileSystem().removeListener(myBackupFileListener);
     myBackupFileListener = null;
     super.stopListening();
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    // XXX irrespective to odd getListenerDependencies(), why do we treat listener of backup file of more importance?
-    FileSystemListener backupFileListener = myBackupFileListener;
-    return backupFileListener != null ? Collections.singleton(backupFileListener) : null;
   }
 
   private class BackupFileListener implements FileSystemListener {
