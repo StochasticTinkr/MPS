@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.MPSExtentions;
@@ -115,10 +114,6 @@ final class IndexableRootCalculator {
           result.add(exposePath(contentRoot));
         }
         // todo: use excluded & source folders like IDEA
-      }
-
-      if (modelRoot instanceof FolderModelRootBase) {
-        result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
       }
     }
 

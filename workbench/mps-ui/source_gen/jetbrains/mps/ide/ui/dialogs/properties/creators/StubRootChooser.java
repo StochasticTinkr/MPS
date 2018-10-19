@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 
@@ -71,9 +70,7 @@ public class StubRootChooser implements Computable<List<String>> {
           public ModelRootDescriptor select(String it) {
             String type = ListSequence.fromList(modelRootTypes).getElement(res);
             ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(type).create();
-            if (root instanceof FolderModelRootBase) {
-              ((FolderModelRootBase) root).setPath(it);
-            }
+            // FIXME here used to be instanceof for FolderModelRootBased, deprecated and unused. Present code looks no-op as there's nothing saved in the memento of a blank new model root 
             Memento m = new MementoImpl();
             root.save(m);
             return new ModelRootDescriptor(type, m);
