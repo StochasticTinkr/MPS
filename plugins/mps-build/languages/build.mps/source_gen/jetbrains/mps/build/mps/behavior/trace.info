@@ -884,7 +884,7 @@
       <node id="4557542064801807993" at="84,5,85,17" concept="8" />
       <node id="4557542064801832698" at="89,37,90,575" concept="8" />
       <node id="4609382717255571506" at="94,138,95,97" concept="8" />
-      <node id="4557542064801881124" at="97,155,98,186" concept="7" />
+      <node id="4557542064801881124" at="97,155,98,209" concept="7" />
       <node id="4557542064801881146" at="100,164,101,23" concept="7" />
       <node id="4557542064801881149" at="101,23,102,221" concept="3" />
       <node id="4557542064801881189" at="103,31,104,32" concept="3" />
@@ -963,7 +963,7 @@
       <node id="2569834391839790363" at="128,0,135,0" concept="12" trace="fetchMPSDeps_id3WZD5LHqVGt#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/mps/util/MPSModulesClosure;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)Z" />
       <node id="4557542064801959669" at="136,31,143,5" concept="5" />
       <node id="4557542064801959718" at="147,328,155,9" concept="5" />
-      <node id="4557542064801881138" at="98,186,107,5" concept="4" />
+      <node id="4557542064801881138" at="98,209,107,5" concept="4" />
       <node id="4557542064801950545" at="115,12,124,7" concept="1" />
       <node id="2569834391839790363" at="57,0,67,0" concept="12" trace="fetchDependencies_id57YmpYyL8F1#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
       <node id="2569834391839790363" at="97,0,109,0" concept="12" trace="fetchGenerationDeps_id3WZD5LHqDLU#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
@@ -1075,7 +1075,7 @@
         <var name="needsFetch" id="1957532277556971092" />
       </scope>
       <scope id="4557542064801950546" at="115,14,123,0" />
-      <scope id="4557542064801881138" at="98,186,107,5">
+      <scope id="4557542064801881138" at="98,209,107,5">
         <var name="generationDep" id="4557542064801881139" />
       </scope>
       <scope id="4557542064801959706" at="146,193,155,9">

@@ -95,7 +95,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     return SNodeOperations.getContainingRoot(second) == SNodeOperations.getContainingRoot(first);
   }
   /*package*/ static void fetchGenerationDeps_id3WZD5LHqDLU(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    MPSModulesClosure genClosure = new MPSModulesClosure(__thisNode__, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).runtimeClosure().generationDependenciesClosure();
+    MPSModulesClosure genClosure = new MPSModulesClosure(__thisNode__, new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits().setIncludeInitial()).runtimeClosure().generationDependenciesClosure();
     for (SNode generationDep : Sequence.fromIterable(genClosure.getAllModules())) {
       if (!(((boolean) BuildMps_Module__BehaviorDescriptor.areLocatedInTheSameRoot_id3ZROizBPX9c.invoke(__thisNode__.getConcept(), __thisNode__, generationDep)))) {
         SNode artifact;

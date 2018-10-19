@@ -316,7 +316,7 @@
       <node concept="3clFbS" id="1xmIngrPriF" role="2VODD2">
         <node concept="3clFbF" id="1xmIngrPriI" role="3cqZAp">
           <node concept="Xl_RD" id="1xmIngrPriJ" role="3clFbG">
-            <property role="Xl_RC" value="Reload modules from disk" />
+            <property role="Xl_RC" value="Reload Modules From Disk" />
           </node>
         </node>
       </node>
