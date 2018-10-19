@@ -13,6 +13,8 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Generator extends TemplateModuleInterpreted2 {
 
@@ -31,6 +33,7 @@ public class Generator extends TemplateModuleInterpreted2 {
     models.templates("r:00000000-0000-4000-0000-011c895902cb", QueriesGenerated.class);
     models.templates("r:00000000-0000-4000-0000-011c895902cc", jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults.QueriesGenerated.class);
     models.templates("r:00000000-0000-4000-0000-011c895902cd", jetbrains.mps.baseLanguage.generator.java.main.QueriesGenerated.class);
+    models.templates("r:564046f4-0d85-4d4e-9463-a44226941947", jetbrains.mps.baseLanguage.generator.java.references.QueriesGenerated.class);
     models.templates("r:b4d7d620-6723-4aa2-856b-118497e84e9e", jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated.class);
   }
 
@@ -44,4 +47,8 @@ public class Generator extends TemplateModuleInterpreted2 {
     return Arrays.asList(rv);
   }
 
+  @Override
+  public Collection<TemplateMappingPriorityRule> getPriorities() {
+    return TemplateUtil.asCollection(TemplateUtil.createStrictlyAfterRule(TemplateUtil.createRefExternal("985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)", TemplateUtil.createRefNormal("r:564046f4-0d85-4d4e-9463-a44226941947(jetbrains.mps.baseLanguage.generator.java.references@generator)", "3825148134789453017", "main")), TemplateUtil.createRefExternal("985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)", TemplateUtil.createRefNormal("r:564046f4-0d85-4d4e-9463-a44226941947(jetbrains.mps.baseLanguage.generator.java.references@generator)", "2770522517496730317", "desugar"))), TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)", TemplateUtil.createRefNormal("r:564046f4-0d85-4d4e-9463-a44226941947(jetbrains.mps.baseLanguage.generator.java.references@generator)", "3825148134789453017", "main")), TemplateUtil.createRefExternal("985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)", TemplateUtil.createRefNormal("r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)", "*", "*"))));
+  }
 }
