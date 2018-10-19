@@ -37,7 +37,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,13 +63,11 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   private final List<DataSourceListener> myListeners = new ArrayList<>(4);
   private final Map<String, PathListener> myPaths = new LinkedHashMap<>(8);
 
-  private final Set<FileSystemListener> myListenerDependencies = new HashSet<>(8);
-
   public FolderSetDataSource() {
   }
 
   /**
-   * @param modelRoot (optional) containing model root, which should be notified before the source during the update
+   * @param modelRoot unused
    */
   public void addPath(@NotNull IFile path, ModelRoot modelRoot) {
     myLock.writeLock().lock();
@@ -78,10 +75,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       if (myPaths.containsKey(path.getPath())) {
         return;
-      }
-
-      if (modelRoot instanceof FileSystemListener) {
-        myListenerDependencies.add((FileSystemListener) modelRoot);
       }
 
       PathListener listener = new PathListener(path, this);
@@ -218,16 +211,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    myLock.readLock().lock();
-    try {
-      return myListenerDependencies.isEmpty() ? null : new ArrayList<>(myListenerDependencies);
-    } finally {
-      myLock.readLock().unlock();
-    }
-  }
-
-  @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     fireChanged(monitor);
   }
@@ -283,11 +266,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     @Override
     public IFile getFileToListen() {
       return myFile;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return myDelegate.getListenerDependencies();
     }
 
     @Override

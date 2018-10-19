@@ -50,7 +50,7 @@ public final class FilePerRootDataSource extends FolderDataSource {
   @ToRemove(version = 3.5) // will become package private
   @Deprecated
   public FilePerRootDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
-    super(folder, modelRoot);
+    super(folder);
   }
 
   @Override

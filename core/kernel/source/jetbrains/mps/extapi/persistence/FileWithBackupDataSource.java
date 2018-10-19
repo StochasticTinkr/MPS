@@ -100,13 +100,6 @@ public class FileWithBackupDataSource extends FileDataSource {
   public Iterable<FileSystemListener> getListenerDependencies() {
     // XXX irrespective to odd getListenerDependencies(), why do we treat listener of backup file of more importance?
     FileSystemListener backupFileListener = myBackupFileListener;
-    FileSystemListener parent = getParentListener();
-    if (backupFileListener != null && parent != null) {
-      return Arrays.asList(parent, backupFileListener);
-    }
-    if (parent != null) {
-      return Collections.singleton(parent);
-    }
     return backupFileListener != null ? Collections.singleton(backupFileListener) : null;
   }
 

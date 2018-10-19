@@ -170,22 +170,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    FileSystemListener parentListener = getParentListener();
-    if (parentListener != null) {
-      return Collections.singleton(parentListener);
-    }
-    return null;
-  }
-
-  FileSystemListener getParentListener() {
-    if (myModelRoot instanceof FileSystemListener) {
-      return (FileSystemListener) myModelRoot;
-    }
-    return null;
-  }
-
-  @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     for (IFile file : event.getChanged()) {
       if (file.equals(myFile)) {

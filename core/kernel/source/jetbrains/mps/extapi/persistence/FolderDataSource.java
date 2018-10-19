@@ -60,25 +60,23 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
 
   @NotNull
   private final IFile myFolder;
-  private final ModelRoot myModelRoot;
 
   private long myLastAddRemove = -1;
 
   public FolderDataSource(@NotNull IFile folder) {
-    this(folder, null);
-  }
-
-  /**
-   * @param modelRoot (optional) containing model root, which should be notified before the source during the update
-   */
-  @ToRemove(version = 3.5)
-  @Deprecated
-  protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
     if (folder.exists() && !folder.isDirectory()) {
       throw new IllegalArgumentException("Could not create FolderDataSource with regular file: " + folder);
     }
     this.myFolder = folder;
-    this.myModelRoot = modelRoot;
+  }
+
+  /**
+   * @param modelRoot unused
+   */
+  @ToRemove(version = 3.5)
+  @Deprecated
+  protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
+    this(folder);
   }
 
   /**
@@ -213,14 +211,6 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
       file.delete();
     }
     myLastAddRemove = -1;
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    if (myModelRoot instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) myModelRoot);
-    }
-    return null;
   }
 
   @Override
