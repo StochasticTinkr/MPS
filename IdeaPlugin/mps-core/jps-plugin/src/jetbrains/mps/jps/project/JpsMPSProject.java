@@ -1,6 +1,6 @@
 package jetbrains.mps.jps.project;
 
-import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +12,7 @@ import org.jetbrains.jps.model.JpsProject;
 public class JpsMPSProject extends ProjectBase {
   JpsProject myProject;
 
-  public JpsMPSProject(@NotNull JpsProject project, @NotNull Platform mpsPlatform) {
+  public JpsMPSProject(@NotNull JpsProject project, @NotNull ComponentHost mpsPlatform) {
     super(new ProjectDescriptor(project.getName()), mpsPlatform);
     myProject = project;
   }
