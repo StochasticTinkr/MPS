@@ -47,13 +47,10 @@ import java.util.Set;
  * Remember: it is supposed to be just a simple notion of location with file system for {@link ModelFactory}
  * to load/save/create models there.
  *
- * @deprecated use {@link FileDataSource} instead
- *
  * @author apyshkin
  * evgeny, 11/4/12
  */
-@ToRemove(version = 2018.3)
-@Deprecated
+@ToRemove(version = 4.0)
 public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<>();

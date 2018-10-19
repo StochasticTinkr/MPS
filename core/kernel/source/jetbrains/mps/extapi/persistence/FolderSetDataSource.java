@@ -51,13 +51,9 @@ import java.util.stream.Collectors;
  * Remember: it is supposed to be just a simple notion of location with file system for {@link ModelFactory}
  * to load/save/create models there.
  *
- * @deprecated Use {@link FileBasedModelRoot} instead, this class isn't capable of anything better.
- *
  * @author apyshkin
  * evgeny, 11/3/12
  */
-@Deprecated
-@ToRemove(version = 2018.3)
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
   private final List<DataSourceListener> myListeners = new ArrayList<>(4);
