@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.testRefs.outputData.TestData_BLReferences">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+

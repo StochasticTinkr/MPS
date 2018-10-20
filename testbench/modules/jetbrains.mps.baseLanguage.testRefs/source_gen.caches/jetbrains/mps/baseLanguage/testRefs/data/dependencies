@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.testRefs.data.TestData_BLReferences">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.references.LocalReference" />
+    <classNode dependClassName="jetbrains.mps.references.Reference" />
+  </dependency>
+</dependenciesRoot>
+

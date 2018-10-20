@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:83830430-11ab-43c1-b57b-a12f13d84af1(jetbrains.mps.baseLanguage.testRefs.data)/3140757037548111975">
+    <file name="TestData_BLReferences.java">
+      <node id="3140757037548386819" at="9,0,10,0" concept="6" trace="staticField" />
+      <node id="3140757037548342700" at="11,0,12,0" concept="2" trace="field" />
+      <node id="3140757037548292290" at="15,45,16,70" concept="4" />
+      <node id="3140757037548294432" at="16,70,17,23" concept="1" />
+      <node id="3140757037548337483" at="19,35,20,64" concept="4" />
+      <node id="3140757037548334197" at="20,64,21,23" concept="1" />
+      <node id="573680139103258183" at="23,60,24,58" concept="1" />
+      <node id="3140757037548338970" at="26,66,27,63" concept="1" />
+      <node id="573680139103258185" at="30,0,31,0" concept="2" trace="myContainer" />
+      <node id="573680139103258185" at="31,61,32,32" concept="1" />
+      <node id="573680139103258185" at="35,26,36,31" concept="5" />
+      <node id="573680139103258185" at="39,36,40,32" concept="1" />
+      <node id="3140757037548338972" at="45,26,46,25" concept="5" />
+      <node id="3140757037548338972" at="49,36,50,26" concept="1" />
+      <node id="3140757037548293830" at="13,0,15,0" concept="7" trace="refConsumer#(Ljetbrains/mps/references/Reference;)V" />
+      <node id="573680139103258181" at="23,0,26,0" concept="7" trace="fieldToRef#(Ljetbrains/mps/baseLanguage/testRefs/data/TestData_BLReferences/X;)V" />
+      <node id="3140757037548338965" at="26,0,29,0" concept="7" trace="staticFieldToRef#(Ljetbrains/mps/baseLanguage/testRefs/data/TestData_BLReferences/X;)V" />
+      <node id="573680139103258185" at="31,0,34,0" concept="0" trace="_ref_field0#(Ljetbrains/mps/baseLanguage/testRefs/data/TestData_BLReferences/X;)V" />
+      <node id="3140757037548291823" at="15,0,19,0" concept="7" trace="paramToRef#(I)V" />
+      <node id="3140757037548334195" at="19,0,23,0" concept="7" trace="localToRef#()V" />
+      <node id="573680139103258185" at="34,0,38,0" concept="3" trace="get#()Ljava/lang/Integer;" />
+      <node id="573680139103258185" at="38,0,42,0" concept="3" trace="set#(Ljava/lang/Integer;)V" />
+      <node id="3140757037548338972" at="44,0,48,0" concept="3" trace="get#()Ljava/lang/Integer;" />
+      <node id="3140757037548338972" at="48,0,52,0" concept="3" trace="set#(Ljava/lang/Integer;)V" />
+      <scope id="3140757037548293837" at="13,58,13,58" />
+      <scope id="573680139103258182" at="23,60,24,58" />
+      <scope id="3140757037548338966" at="26,66,27,63" />
+      <scope id="573680139103258185" at="31,61,32,32" />
+      <scope id="573680139103258185" at="35,26,36,31" />
+      <scope id="573680139103258185" at="39,36,40,32" />
+      <scope id="3140757037548338972" at="45,26,46,25" />
+      <scope id="3140757037548338972" at="49,36,50,26" />
+      <scope id="3140757037548293830" at="13,0,15,0">
+        <var name="ref" id="3140757037548293832" />
+      </scope>
+      <scope id="3140757037548291826" at="15,45,17,23">
+        <var name="param" id="3140757037548292290" />
+      </scope>
+      <scope id="3140757037548334196" at="19,35,21,23">
+        <var name="local" id="3140757037548337486" />
+      </scope>
+      <scope id="573680139103258181" at="23,0,26,0">
+        <var name="x" id="573680139103258188" />
+      </scope>
+      <scope id="3140757037548338965" at="26,0,29,0">
+        <var name="x" id="3140757037548382876" />
+      </scope>
+      <scope id="573680139103258185" at="31,0,34,0">
+        <var name="conmytainer" id="573680139103258185" />
+      </scope>
+      <scope id="3140757037548291823" at="15,0,19,0">
+        <var name="_param" id="3140757037548292290" />
+      </scope>
+      <scope id="3140757037548334195" at="19,0,23,0" />
+      <scope id="573680139103258185" at="34,0,38,0" />
+      <scope id="573680139103258185" at="38,0,42,0">
+        <var name="value" id="573680139103258185" />
+      </scope>
+      <scope id="3140757037548338972" at="44,0,48,0" />
+      <scope id="3140757037548338972" at="48,0,52,0">
+        <var name="value" id="3140757037548338972" />
+      </scope>
+      <unit id="3140757037548341194" at="10,0,13,0" name="jetbrains.mps.baseLanguage.testRefs.data.TestData_BLReferences$X" />
+      <unit id="3140757037548338972" at="43,0,53,0" name="jetbrains.mps.baseLanguage.testRefs.data.TestData_BLReferences$_ref_staticField0" />
+      <unit id="573680139103258185" at="29,0,43,0" name="jetbrains.mps.baseLanguage.testRefs.data.TestData_BLReferences$_ref_field0" />
+      <unit id="3140757037548111975" at="8,0,54,0" name="jetbrains.mps.baseLanguage.testRefs.data.TestData_BLReferences" />
+    </file>
+  </root>
+</debug-info>
+
