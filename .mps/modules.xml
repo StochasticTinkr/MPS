@@ -446,6 +446,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.test4/jetbrains.mps.build.mps.runner.test.test4.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/build.mps.runner.test/project/solutions/jetbrains.mps.build.mps.runner.test.solution/jetbrains.mps.build.mps.runner.test.solution.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/generator-tests/smodel/jetbrains.mps.test.smodel.msd" folder="tests.Generator Tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/jetbrains.mps.baseLanguage.testRefs.testLang/jetbrains.mps.baseLanguage.testRefs.testLang.mpl" folder="tests.BL references" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/jetbrains.mps.baseLanguage.testRefs/jetbrains.mps.baseLanguage.testRefs.msd" folder="tests.BL references" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/simpleProject.msd" folder="tests.diskMemoryConflict" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testActions/jetbrains.mps.testActions.msd" folder="tests" />
