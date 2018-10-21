@@ -81,6 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptUnaryRegexp = createDescriptorForUnaryRegexp();
   /*package*/ final ConceptDescriptor myConceptUnicodeCharacterRegexp = createDescriptorForUnicodeCharacterRegexp();
   /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeFourHex = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x118312777a4L, "FourHex", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1203415512996", "[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]");
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatype_CharacterSymbol = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL, "_CharacterSymbol", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/4723473146558379866", "[^\\\\]");
   /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatype_StringRegexp = new ConstrainedStringDatatypeDescriptorImpl(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x67b772b1484362a6L, "_StringRegexp", "r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/7473568212391781030", "[^\\+?.\\[\\]]+");
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -231,7 +232,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
-    return Arrays.asList(myCSDatatypeFourHex, myCSDatatype_StringRegexp);
+    return Arrays.asList(myCSDatatypeFourHex, myCSDatatype_CharacterSymbol, myCSDatatype_StringRegexp);
   }
 
 
@@ -265,7 +266,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174557878319");
     b.version(2);
-    b.property("character", 0x111791b0b58L).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d450137L)).origin("1174557887320").done();
+    b.property("character", 0x111791b0b58L).type(MetaIdFactory.constrainedStringDataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174557887320").done();
     b.alias("'");
     return b.create();
   }
@@ -358,8 +359,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", 0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L);
     b.origin("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1174558301835");
     b.version(2);
-    b.property("start", 0x1117921931aL).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d450137L)).origin("1174558315290").done();
-    b.property("end", 0x11179219cfeL).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d450137L)).origin("1174558317822").done();
+    b.property("start", 0x1117921931aL).type(MetaIdFactory.constrainedStringDataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174558315290").done();
+    b.property("end", 0x11179219cfeL).type(MetaIdFactory.constrainedStringDataTypeId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x418d25ccfeb5775aL)).origin("1174558317822").done();
     b.alias("-");
     return b.create();
   }

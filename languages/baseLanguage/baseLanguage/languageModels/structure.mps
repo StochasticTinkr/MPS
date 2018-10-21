@@ -2389,7 +2389,7 @@
   </node>
   <node concept="Az7Fb" id="htXhg4R">
     <property role="TrG5h" value="_CharConstant_String" />
-    <property role="FLfZY" value="[^\\\\'&quot;]|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
+    <property role="FLfZY" value="[^\\\\']|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
   </node>
   <node concept="PlHQZ" id="huG8N3O">
     <property role="TrG5h" value="TypeDerivable" />

@@ -10,6 +10,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
+        <property id="3415726998635871579" name="dataTypeId" index="2c0uj0" />
+      </concept>
       <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
         <property id="1083066089218" name="constraint" index="FLfZY" />
       </concept>
@@ -377,7 +380,7 @@
     <node concept="1TJgyi" id="h5T6KHo" role="1TKVEl">
       <property role="TrG5h" value="character" />
       <property role="IQ2nx" value="1174557887320" />
-      <ref role="AX2Wp" to="tpee:htXhg4R" resolve="_CharConstant_String" />
+      <ref role="AX2Wp" node="46d9sNYHntq" resolve="_CharacterSymbol" />
     </node>
   </node>
   <node concept="1TIwiD" id="h5T8lUb">
@@ -392,12 +395,12 @@
     <node concept="1TJgyi" id="h5T8pcq" role="1TKVEl">
       <property role="TrG5h" value="start" />
       <property role="IQ2nx" value="1174558315290" />
-      <ref role="AX2Wp" to="tpee:htXhg4R" resolve="_CharConstant_String" />
+      <ref role="AX2Wp" node="46d9sNYHntq" resolve="_CharacterSymbol" />
     </node>
     <node concept="1TJgyi" id="h5T8pNY" role="1TKVEl">
       <property role="TrG5h" value="end" />
       <property role="IQ2nx" value="1174558317822" />
-      <ref role="AX2Wp" to="tpee:htXhg4R" resolve="_CharConstant_String" />
+      <ref role="AX2Wp" node="46d9sNYHntq" resolve="_CharacterSymbol" />
     </node>
   </node>
   <node concept="1TIwiD" id="h5TadBM">
@@ -1003,6 +1006,12 @@
     <property role="3GE5qa" value="Replaces" />
     <property role="EcuMT" value="3796137614137538898" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="Az7Fb" id="46d9sNYHntq">
+    <property role="2c0uj0" value="4723473146558379866" />
+    <property role="3GE5qa" value="SymbolClassParts" />
+    <property role="TrG5h" value="_CharacterSymbol" />
+    <property role="FLfZY" value="[^\\\\]" />
   </node>
 </model>
 
