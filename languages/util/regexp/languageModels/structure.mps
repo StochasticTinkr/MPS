@@ -10,9 +10,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
-        <property id="3415726998635871579" name="dataTypeId" index="2c0uj0" />
-      </concept>
       <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
         <property id="1083066089218" name="constraint" index="FLfZY" />
       </concept>
@@ -1008,7 +1005,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="Az7Fb" id="46d9sNYHntq">
-    <property role="2c0uj0" value="4723473146558379866" />
     <property role="3GE5qa" value="SymbolClassParts" />
     <property role="TrG5h" value="_CharacterSymbol" />
     <property role="FLfZY" value="[^\\\\]" />

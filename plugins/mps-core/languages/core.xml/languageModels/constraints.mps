@@ -49,6 +49,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
@@ -146,6 +147,11 @@
         <child id="1144231408325" name="iteration" index="1Dwrff" />
       </concept>
       <concept id="1225892208569" name="jetbrains.mps.baseLanguage.structure.ShiftLeftExpression" flags="nn" index="1GRDU$" />
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -2962,7 +2968,16 @@
             <node concept="2YIFZM" id="YkdwFgihNW" role="3clFbG">
               <ref role="37wK5l" node="YkdwFgihKJ" resolve="isCharData" />
               <ref role="1Pybhc" node="5M4a$b5iKmT" resolve="XmlNameUtil" />
-              <node concept="1Wqviy" id="YkdwFgihNX" role="37wK5m" />
+              <node concept="3K4zz7" id="2Cc_hjaKdzl" role="37wK5m">
+                <node concept="Xl_RD" id="2Cc_hjaKdFH" role="3K4E3e">
+                  <property role="Xl_RC" value="" />
+                </node>
+                <node concept="1Wqviy" id="2Cc_hjaKdNW" role="3K4GZi" />
+                <node concept="3clFbC" id="2Cc_hjaKdnq" role="3K4Cdx">
+                  <node concept="10Nm6u" id="2Cc_hjaKdn$" role="3uHU7w" />
+                  <node concept="1Wqviy" id="YkdwFgihNX" role="3uHU7B" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

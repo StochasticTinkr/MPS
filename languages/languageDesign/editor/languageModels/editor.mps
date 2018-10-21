@@ -9015,7 +9015,7 @@
           <property role="Vbekb" value="PLAIN" />
         </node>
         <node concept="3$7jql" id="hPjiF12" role="3F10Kt">
-          <property role="2hoDZC" value="spaces" />
+          <property role="2hoDZC" value="SPACES" />
           <property role="3$6WeP" value="0.0" />
         </node>
       </node>
