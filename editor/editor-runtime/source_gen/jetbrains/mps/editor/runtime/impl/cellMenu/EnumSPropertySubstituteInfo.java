@@ -41,7 +41,7 @@ public class EnumSPropertySubstituteInfo extends AbstractNodeSubstituteInfo impl
         @Override
         public EditorMenuTraceInfo getEditorMenuTraceInfo() {
           EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
-          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + getMatchingText(""), literal.getSourceNode(), true));
+          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + literal.getPresentation(), literal.getSourceNode(), true));
           return info;
         }
       });

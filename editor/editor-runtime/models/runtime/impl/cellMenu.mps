@@ -152,7 +152,6 @@
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
-      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -418,10 +417,12 @@
                                     <node concept="1pGfFk" id="4EfPrVhhc5i" role="2ShVmc">
                                       <ref role="37wK5l" to="v95p:~EditorMenuDescriptorBase.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference,boolean)" resolve="EditorMenuDescriptorBase" />
                                       <node concept="3cpWs3" id="4EfPrVhhc5j" role="37wK5m">
-                                        <node concept="1rXfSq" id="4EfPrVhhc5k" role="3uHU7w">
-                                          <ref role="37wK5l" to="zce0:~SPropertySubstituteAction.getMatchingText(java.lang.String):java.lang.String" resolve="getMatchingText" />
-                                          <node concept="Xl_RD" id="4EfPrVhhc5l" role="37wK5m">
-                                            <property role="Xl_RC" value="" />
+                                        <node concept="2OqwBi" id="1pRvk$sb8rC" role="3uHU7w">
+                                          <node concept="37vLTw" id="1pRvk$sb8b3" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="6k4lHAwHQ50" resolve="literal" />
+                                          </node>
+                                          <node concept="liA8E" id="1pRvk$sb8RQ" role="2OqNvi">
+                                            <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getPresentation():java.lang.String" resolve="getPresentation" />
                                           </node>
                                         </node>
                                         <node concept="Xl_RD" id="4EfPrVhhc5m" role="3uHU7B">
