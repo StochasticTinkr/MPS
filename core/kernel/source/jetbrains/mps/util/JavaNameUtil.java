@@ -114,4 +114,20 @@ public final class JavaNameUtil {
 
     return !JAVA_KEYWORDS.contains(text);
   }
+
+  @Contract(value = "null -> null; !null -> !null")
+  public static String toJavaIdentifierSuffix(@Nullable String text) {
+    if (text == null) {
+      return null;
+    }
+    StringBuilder sb = new StringBuilder(text.length());
+
+    for (int i = 0; i < text.length(); i++) {
+      char ch = text.charAt(i);
+      if (Character.isJavaIdentifierPart(ch)) {
+        sb.append(ch);
+      }
+    }
+    return sb.toString();
+  }
 }
