@@ -66,7 +66,7 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
       public Iterable<SNode> translate(SNode it) {
         return (Iterable<SNode>) BuildMpsLayout_TestModules_Content__BehaviorDescriptor.getModules_id3X9rC2XzJij.invoke(it);
       }
-    }), new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).runtimeClosure());
+    }), new MPSModulesClosure.ModuleDependenciesOptions().setTrackDevkits()).runtimeClosure().getAllModules());
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency())) {
       SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {

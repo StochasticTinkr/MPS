@@ -192,11 +192,11 @@
       <node id="4560297596904469364" at="107,0,111,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
       <node id="4560297596904469364" at="136,5,140,5" concept="12" />
       <node id="4560297596904469369" at="50,103,55,15" concept="6" />
-      <node id="3944198881082726057" at="64,67,69,95" concept="1" />
+      <node id="3944198881082726057" at="64,67,69,111" concept="1" />
       <node id="2887318893670203401" at="77,21,82,7" concept="5" />
       <node id="4560297596904469364" at="143,0,148,0" concept="4" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="4560297596904469364" at="149,0,154,0" concept="4" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="4560297596904469424" at="69,95,75,5" concept="2" />
+      <node id="4560297596904469424" at="69,111,75,5" concept="2" />
       <node id="4005526075818971926" at="93,116,99,5" concept="3" />
       <node id="4560297596904469364" at="50,0,57,0" concept="10" trace="hasModule_id3X9rC2XzJdP#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2887318893670203453" at="83,243,91,5" concept="2" />
@@ -250,7 +250,7 @@
       <scope id="4560297596904469368" at="50,103,55,15" />
       <scope id="4560297596904469364" at="143,0,148,0" />
       <scope id="4560297596904469364" at="149,0,154,0" />
-      <scope id="4560297596904469424" at="69,95,75,5">
+      <scope id="4560297596904469424" at="69,111,75,5">
         <var name="plugin" id="4560297596904469428" />
       </scope>
       <scope id="2887318893670203473" at="84,52,90,7">

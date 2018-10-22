@@ -39,6 +39,10 @@ public class MPSModulesClosure {
     myOptions = options;
   }
 
+  public MPSModulesClosure(SNode initialModule) {
+    this(initialModule, MPSModulesClosure.ModuleDependenciesOptions.DEFAULT);
+  }
+
   public MPSModulesClosure(Iterable<SNode> initialModules, MPSModulesClosure.ModuleDependenciesOptions options) {
     myInitialModules = SNodeOperations.ofConcept(initialModules, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     myOptions = options;
@@ -476,6 +480,7 @@ public class MPSModulesClosure {
   }
 
   public static class ModuleDependenciesOptions {
+    public static final MPSModulesClosure.ModuleDependenciesOptions DEFAULT = new MPSModulesClosure.ModuleDependenciesOptions();
     private boolean myTrackDevkits = false;
     private boolean myIncludeInitial = false;
 
