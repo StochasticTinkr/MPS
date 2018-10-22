@@ -78,6 +78,7 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/logging/runtime/jetbrains.mps.baseLanguage.logging.runtime.msd" folder="core.baseLanguage.logging" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/jetbrains.mps.baseLanguage.overloadedOperators.mpl" folder="core.baseLanguage.overloadedOperators" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="core.baseLanguage.overloadedOperators" />
+      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/references/runtime/jetbrains.mps.baseLanguage.references.runtime.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/languages/tuples/jetbrains.mps.baseLanguage.tuples.mpl" folder="core.baseLanguage.tuples" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" folder="core.baseLanguage.tuples" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.sandbox/jetbrains.mps.baseLanguage.tuples.sandbox.msd" folder="core.baseLanguage.tuples" />

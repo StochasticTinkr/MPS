@@ -13,7 +13,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="63o7" ref="r:28a16e1b-c393-4b33-921e-657d49d4a142(jetbrains.mps.baseLanguage.generator.java.references.util)" />
-    <import index="vl5q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)" />
+    <import index="vl5q" ref="52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -831,22 +831,22 @@
                   <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
                 <node concept="10Nm6u" id="2Imduas3zA2" role="2kxYXX" />
-                <node concept="2YIFZM" id="2Imduas3zBN" role="sgxqj">
+                <node concept="2YIFZM" id="4ZvcRdf4HS8" role="sgxqj">
                   <ref role="37wK5l" to="vl5q:~BLOperations.assign(jetbrains.mps.references.Reference,java.lang.Object):java.lang.Object" resolve="assign" />
                   <ref role="1Pybhc" to="vl5q:~BLOperations" resolve="BLOperations" />
-                  <node concept="10Nm6u" id="2Imduas3zC7" role="37wK5m">
-                    <node concept="29HgVG" id="2Imduas3DB2" role="lGtFl">
-                      <node concept="3NFfHV" id="2Imduas3DUH" role="3NFExx">
-                        <node concept="3clFbS" id="2Imduas3DUI" role="2VODD2">
-                          <node concept="3clFbF" id="2Imduas3F12" role="3cqZAp">
-                            <node concept="2OqwBi" id="2Imduas3FLi" role="3clFbG">
-                              <node concept="2OqwBi" id="2Imduas3FaR" role="2Oq$k0">
-                                <node concept="1iwH7S" id="2Imduas3F11" role="2Oq$k0" />
-                                <node concept="1bhEwm" id="2Imduas3Fvi" role="2OqNvi">
+                  <node concept="10Nm6u" id="4ZvcRdf4HS9" role="37wK5m">
+                    <node concept="29HgVG" id="4ZvcRdf4HSa" role="lGtFl">
+                      <node concept="3NFfHV" id="4ZvcRdf4HSb" role="3NFExx">
+                        <node concept="3clFbS" id="4ZvcRdf4HSc" role="2VODD2">
+                          <node concept="3clFbF" id="4ZvcRdf4HSd" role="3cqZAp">
+                            <node concept="2OqwBi" id="4ZvcRdf4HSe" role="3clFbG">
+                              <node concept="2OqwBi" id="4ZvcRdf4HSf" role="2Oq$k0">
+                                <node concept="1iwH7S" id="4ZvcRdf4HSg" role="2Oq$k0" />
+                                <node concept="1bhEwm" id="4ZvcRdf4HSh" role="2OqNvi">
                                   <ref role="1bhEwk" node="7TdXYpyjOLP" resolve="lvalue" />
                                 </node>
                               </node>
-                              <node concept="3TrEf2" id="2Imduas3IC0" role="2OqNvi">
+                              <node concept="3TrEf2" id="4ZvcRdf4HSi" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpee:5Z1N4vbhycU" resolve="referenceExpression" />
                               </node>
                             </node>
@@ -855,8 +855,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2OlCPf" id="2Imduas3_$$" role="37wK5m" />
-                  <node concept="raruj" id="2Imduas3BDz" role="lGtFl" />
+                  <node concept="2OlCPf" id="4ZvcRdf4HSj" role="37wK5m" />
+                  <node concept="raruj" id="4ZvcRdf4HSk" role="lGtFl" />
                 </node>
               </node>
             </node>
@@ -1659,7 +1659,7 @@
       <node concept="gft3U" id="5Z1N4vbqVB8" role="1lVwrX">
         <node concept="2YIFZM" id="5Z1N4vbrdG8" role="gfFT$">
           <ref role="1Pybhc" to="vl5q:~ArrayElementReference" resolve="ArrayElementReference" />
-          <ref role="37wK5l" to="vl5q:~ArrayElementReference.create(byte[],int):jetbrains.mps.references.Reference" resolve="create" />
+          <ref role="37wK5l" to="vl5q:~ArrayElementReference.create(java.lang.Object[],int):jetbrains.mps.references.Reference" resolve="create" />
           <node concept="10Nm6u" id="5Z1N4vbrdHC" role="37wK5m">
             <node concept="29HgVG" id="5Z1N4vbroIY" role="lGtFl">
               <node concept="3NFfHV" id="5Z1N4vbroIZ" role="3NFExx">
@@ -2366,8 +2366,8 @@
       <ref role="30HIoZ" to="tpee:i2$rvm0" resolve="PrefixIncrementExpression" />
       <node concept="gft3U" id="5Z1N4vbnZ1G" role="1lVwrX">
         <node concept="2YIFZM" id="78UfAlSkUhN" role="gfFT$">
-          <ref role="37wK5l" to="vl5q:~BLOperations.incrementAndGet_int(jetbrains.mps.references.Reference):int" resolve="incrementAndGet_int" />
           <ref role="1Pybhc" to="vl5q:~BLOperations" resolve="BLOperations" />
+          <ref role="37wK5l" to="vl5q:~BLOperations.incrementAndGet_int(jetbrains.mps.references.Reference):int" resolve="incrementAndGet_int" />
           <node concept="2kxYUH" id="78UfAlSkUhO" role="37wK5m">
             <node concept="10Nm6u" id="78UfAlSkUhP" role="2kxYXK">
               <node concept="29HgVG" id="78UfAlSkUhQ" role="lGtFl">
@@ -2412,8 +2412,8 @@
       <ref role="30HIoZ" to="tpee:hFuNrjK" resolve="PostfixIncrementExpression" />
       <node concept="gft3U" id="5Z1N4vbqdWO" role="1lVwrX">
         <node concept="2YIFZM" id="78UfAlSkV9_" role="gfFT$">
-          <ref role="37wK5l" to="vl5q:~BLOperations.getAndIncrement_int(jetbrains.mps.references.Reference):int" resolve="getAndIncrement_int" />
           <ref role="1Pybhc" to="vl5q:~BLOperations" resolve="BLOperations" />
+          <ref role="37wK5l" to="vl5q:~BLOperations.getAndIncrement_int(jetbrains.mps.references.Reference):int" resolve="getAndIncrement_int" />
           <node concept="2kxYUH" id="78UfAlSkV9A" role="37wK5m">
             <node concept="10Nm6u" id="78UfAlSkV9B" role="2kxYXK">
               <node concept="29HgVG" id="78UfAlSkV9C" role="lGtFl">
@@ -2458,8 +2458,8 @@
       <ref role="30HIoZ" to="tpee:i2$sJ3C" resolve="PrefixDecrementExpression" />
       <node concept="gft3U" id="5Z1N4vbqefd" role="1lVwrX">
         <node concept="2YIFZM" id="78UfAlSkVoB" role="gfFT$">
-          <ref role="37wK5l" to="vl5q:~BLOperations.decrementAndGet_int(jetbrains.mps.references.Reference):int" resolve="decrementAndGet_int" />
           <ref role="1Pybhc" to="vl5q:~BLOperations" resolve="BLOperations" />
+          <ref role="37wK5l" to="vl5q:~BLOperations.decrementAndGet_int(jetbrains.mps.references.Reference):int" resolve="decrementAndGet_int" />
           <node concept="2kxYUH" id="78UfAlSkVoC" role="37wK5m">
             <node concept="10Nm6u" id="78UfAlSkVoD" role="2kxYXK">
               <node concept="29HgVG" id="78UfAlSkVoE" role="lGtFl">
@@ -2504,8 +2504,8 @@
       <ref role="30HIoZ" to="tpee:hFuO5ZA" resolve="PostfixDecrementExpression" />
       <node concept="gft3U" id="5Z1N4vbqefo" role="1lVwrX">
         <node concept="2YIFZM" id="78UfAlSkVh9" role="gfFT$">
-          <ref role="37wK5l" to="vl5q:~BLOperations.getAndDecrement_int(jetbrains.mps.references.Reference):int" resolve="getAndDecrement_int" />
           <ref role="1Pybhc" to="vl5q:~BLOperations" resolve="BLOperations" />
+          <ref role="37wK5l" to="vl5q:~BLOperations.getAndDecrement_int(jetbrains.mps.references.Reference):int" resolve="getAndDecrement_int" />
           <node concept="2kxYUH" id="78UfAlSkVha" role="37wK5m">
             <node concept="10Nm6u" id="78UfAlSkVhb" role="2kxYXK">
               <node concept="29HgVG" id="78UfAlSkVhc" role="lGtFl">

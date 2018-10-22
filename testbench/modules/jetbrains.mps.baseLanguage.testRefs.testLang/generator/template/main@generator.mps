@@ -6,7 +6,7 @@
   </languages>
   <imports>
     <import index="jqov" ref="r:454eeb39-2931-426e-8179-7f8a88d87002(jetbrains.mps.baseLanguage.testRefs.testLang.structure)" />
-    <import index="vl5q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)" />
+    <import index="vl5q" ref="52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>

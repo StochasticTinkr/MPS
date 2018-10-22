@@ -6,7 +6,7 @@
     <use id="b654d0ef-8981-4c92-8304-246f1dfe4618" name="jetbrains.mps.baseLanguage.testRefs.testLang" version="0" />
   </languages>
   <imports>
-    <import index="vl5q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)" />
+    <import index="vl5q" ref="52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -305,8 +305,8 @@
           <node concept="YeOm9" id="7ht2wdZmvxr" role="2ShVmc">
             <node concept="1Y3b0j" id="7ht2wdZmvxu" role="YeSDq">
               <property role="2bfB8j" value="true" />
-              <ref role="1Y3XeK" to="vl5q:~Reference" resolve="Reference" />
               <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+              <ref role="1Y3XeK" to="vl5q:~Reference" resolve="Reference" />
               <node concept="3Tm1VV" id="7ht2wdZmvxv" role="1B3o_S" />
               <node concept="3clFb_" id="7ht2wdZmvxw" role="jymVt">
                 <property role="1EzhhJ" value="false" />

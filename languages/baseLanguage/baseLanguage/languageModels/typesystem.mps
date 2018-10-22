@@ -46,7 +46,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="vl5q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)" />
+    <import index="vl5q" ref="52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -60722,7 +60722,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_6Z" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_70" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarUzSc" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYpAN" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_boolean" resolve="LocalReference._boolean" />
                             </node>
                           </node>
@@ -60740,7 +60740,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_76" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_77" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU$aT" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYpUi" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_byte" resolve="LocalReference._byte" />
                             </node>
                           </node>
@@ -60758,7 +60758,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7d" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7e" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU$tM" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYqdX" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_char" resolve="LocalReference._char" />
                             </node>
                           </node>
@@ -60776,7 +60776,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7k" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7l" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU$KF" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYqxC" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_double" resolve="LocalReference._double" />
                             </node>
                           </node>
@@ -60794,7 +60794,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7r" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7s" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU_3$" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYqPj" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_float" resolve="LocalReference._float" />
                             </node>
                           </node>
@@ -60812,7 +60812,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7y" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7z" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU_mt" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYr8Y" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_int" resolve="LocalReference._int" />
                             </node>
                           </node>
@@ -60830,7 +60830,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7D" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7E" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU_Dm" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYrsD" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_long" resolve="LocalReference._long" />
                             </node>
                           </node>
@@ -60848,7 +60848,7 @@
                         <node concept="2tJFMh" id="4j2u3ESw_7K" role="3cqZAk">
                           <node concept="ZC_QK" id="4j2u3ESw_7L" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                            <node concept="ZC_QK" id="2ImduarU_Wf" role="2aWVGa">
+                            <node concept="ZC_QK" id="3K3j30wYrKk" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_short" resolve="LocalReference._short" />
                             </node>
                           </node>
@@ -60938,7 +60938,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAw5" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_boolean" resolve="LocalReference._boolean" />
-                              <node concept="ZC_QK" id="2ImduarUC93" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYuOn" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_boolean.&lt;init&gt;(boolean)" resolve="LocalReference._boolean" />
                               </node>
                             </node>
@@ -60959,7 +60959,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwc" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_byte" resolve="LocalReference._byte" />
-                              <node concept="ZC_QK" id="1y5ThBEJa9h" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYw5D" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_byte.&lt;init&gt;(byte)" resolve="LocalReference._byte" />
                               </node>
                             </node>
@@ -60980,7 +60980,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwj" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_char" resolve="LocalReference._char" />
-                              <node concept="ZC_QK" id="1y5ThBEJaKz" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYwnv" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_char.&lt;init&gt;(char)" resolve="LocalReference._char" />
                               </node>
                             </node>
@@ -61001,7 +61001,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwq" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_double" resolve="LocalReference._double" />
-                              <node concept="ZC_QK" id="1y5ThBEJbFT" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYwDl" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_double.&lt;init&gt;(double)" resolve="LocalReference._double" />
                               </node>
                             </node>
@@ -61022,7 +61022,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwx" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_float" resolve="LocalReference._float" />
-                              <node concept="ZC_QK" id="1y5ThBEJchs" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYwVb" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_float.&lt;init&gt;(float)" resolve="LocalReference._float" />
                               </node>
                             </node>
@@ -61043,7 +61043,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwC" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_int" resolve="LocalReference._int" />
-                              <node concept="ZC_QK" id="1y5ThBEJcQZ" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYxd1" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_int.&lt;init&gt;(int)" resolve="LocalReference._int" />
                               </node>
                             </node>
@@ -61064,7 +61064,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwJ" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_long" resolve="LocalReference._long" />
-                              <node concept="ZC_QK" id="1y5ThBEJduh" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYxuR" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_long.&lt;init&gt;(long)" resolve="LocalReference._long" />
                               </node>
                             </node>
@@ -61085,7 +61085,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="2ImduarUAwQ" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_short" resolve="LocalReference._short" />
-                              <node concept="ZC_QK" id="1y5ThBEJe5z" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYxKH" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_short.&lt;init&gt;(short)" resolve="LocalReference._short" />
                               </node>
                             </node>
@@ -61117,7 +61117,7 @@
                   <node concept="2tJFMh" id="4j2u3ESwEO4" role="3cqZAk">
                     <node concept="ZC_QK" id="4j2u3ESwEO5" role="2tJFKM">
                       <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                      <node concept="ZC_QK" id="1y5ThBEJfmG" role="2aWVGa">
+                      <node concept="ZC_QK" id="3K3j30wYy2z" role="2aWVGa">
                         <ref role="2aWVGs" to="vl5q:~LocalReference.&lt;init&gt;(java.lang.Object)" resolve="LocalReference" />
                       </node>
                     </node>
@@ -61179,7 +61179,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4x3" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_boolean" resolve="LocalReference._boolean" />
-                              <node concept="ZC_QK" id="1y5ThBEJ8rL" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYB1_" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_boolean.&lt;init&gt;()" resolve="LocalReference._boolean" />
                               </node>
                             </node>
@@ -61200,7 +61200,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xb" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_byte" resolve="LocalReference._byte" />
-                              <node concept="ZC_QK" id="1y5ThBEJ8Fe" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYBjf" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_byte.&lt;init&gt;()" resolve="LocalReference._byte" />
                               </node>
                             </node>
@@ -61221,7 +61221,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xj" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_char" resolve="LocalReference._char" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4xk" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYB_5" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_char.&lt;init&gt;()" resolve="LocalReference._char" />
                               </node>
                             </node>
@@ -61242,7 +61242,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xr" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_double" resolve="LocalReference._double" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4xs" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYBQV" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_double.&lt;init&gt;()" resolve="LocalReference._double" />
                               </node>
                             </node>
@@ -61263,7 +61263,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xz" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_float" resolve="LocalReference._float" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4x$" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYC8L" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_float.&lt;init&gt;()" resolve="LocalReference._float" />
                               </node>
                             </node>
@@ -61284,7 +61284,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xF" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_int" resolve="LocalReference._int" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4xG" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYCqB" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_int.&lt;init&gt;()" resolve="LocalReference._int" />
                               </node>
                             </node>
@@ -61305,7 +61305,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xN" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_long" resolve="LocalReference._long" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4xO" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYCGt" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_long.&lt;init&gt;()" resolve="LocalReference._long" />
                               </node>
                             </node>
@@ -61326,7 +61326,7 @@
                             <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
                             <node concept="ZC_QK" id="1y5ThBEJ4xV" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~LocalReference$_short" resolve="LocalReference._short" />
-                              <node concept="ZC_QK" id="1y5ThBEJ4xW" role="2aWVGa">
+                              <node concept="ZC_QK" id="3K3j30wYCYj" role="2aWVGa">
                                 <ref role="2aWVGs" to="vl5q:~LocalReference$_short.&lt;init&gt;()" resolve="LocalReference._short" />
                               </node>
                             </node>
@@ -61358,7 +61358,7 @@
                   <node concept="2tJFMh" id="1y5ThBEJ4y6" role="3cqZAk">
                     <node concept="ZC_QK" id="1y5ThBEJ4y7" role="2tJFKM">
                       <ref role="2aWVGs" to="vl5q:~LocalReference" resolve="LocalReference" />
-                      <node concept="ZC_QK" id="1y5ThBEJ4y8" role="2aWVGa">
+                      <node concept="ZC_QK" id="3K3j30wYDg9" role="2aWVGa">
                         <ref role="2aWVGs" to="vl5q:~LocalReference.&lt;init&gt;()" resolve="LocalReference" />
                       </node>
                     </node>
@@ -61436,7 +61436,7 @@
                         <node concept="2tJFMh" id="6fOCSDQe1nK" role="3cqZAk">
                           <node concept="ZC_QK" id="6fOCSDQe1nL" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~Reference" resolve="Reference" />
-                            <node concept="ZC_QK" id="6fOCSDQe6KB" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5T" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~Reference.getByte():byte" resolve="getByte" />
                             </node>
                           </node>
@@ -61508,7 +61508,7 @@
                         <node concept="2tJFMh" id="6fOCSDQe1oc" role="3cqZAk">
                           <node concept="ZC_QK" id="6fOCSDQe1od" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~Reference" resolve="Reference" />
-                            <node concept="ZC_QK" id="6fOCSDQe5VJ" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6d" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~Reference.getInt():int" resolve="getInt" />
                             </node>
                           </node>
@@ -61526,7 +61526,7 @@
                         <node concept="2tJFMh" id="6fOCSDQe1oj" role="3cqZAk">
                           <node concept="ZC_QK" id="6fOCSDQe1ok" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~Reference" resolve="Reference" />
-                            <node concept="ZC_QK" id="6fOCSDQe5Ix" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6b" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~Reference.getLong():long" resolve="getLong" />
                             </node>
                           </node>
@@ -61544,7 +61544,7 @@
                         <node concept="2tJFMh" id="6fOCSDQe1oq" role="3cqZAk">
                           <node concept="ZC_QK" id="6fOCSDQe1or" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~Reference" resolve="Reference" />
-                            <node concept="ZC_QK" id="6fOCSDQe5xj" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6h" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~Reference.getShort():short" resolve="getShort" />
                             </node>
                           </node>
@@ -61635,7 +61635,7 @@
                         <node concept="2tJFMh" id="78UfAlSkZ9P" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSkZ9Q" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSl2qn" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5P" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.incrementAndGet_byte(jetbrains.mps.references.Reference):byte" resolve="incrementAndGet_byte" />
                             </node>
                           </node>
@@ -61653,7 +61653,7 @@
                         <node concept="2tJFMh" id="78UfAlSkZ9W" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSl2BV" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSl4Xd" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv63" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.incrementAndGet_char(jetbrains.mps.references.Reference):char" resolve="incrementAndGet_char" />
                             </node>
                           </node>
@@ -61671,7 +61671,7 @@
                         <node concept="2tJFMh" id="78UfAlSkZa3" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSl2Pw" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSl4JD" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5Z" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.incrementAndGet_double(jetbrains.mps.references.Reference):double" resolve="incrementAndGet_double" />
                             </node>
                           </node>
@@ -61863,7 +61863,7 @@
                         <node concept="2tJFMh" id="78UfAlSl8vL" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSl8vM" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlg2S" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv69" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndIncrement_double(jetbrains.mps.references.Reference):double" resolve="getAndIncrement_double" />
                             </node>
                           </node>
@@ -61899,7 +61899,7 @@
                         <node concept="2tJFMh" id="78UfAlSl8vZ" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSl8w0" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlgnt" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5X" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndIncrement_int(jetbrains.mps.references.Reference):int" resolve="getAndIncrement_int" />
                             </node>
                           </node>
@@ -61917,7 +61917,7 @@
                         <node concept="2tJFMh" id="78UfAlSl8w6" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSl8w7" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlgxF" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6f" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndIncrement_long(jetbrains.mps.references.Reference):long" resolve="getAndIncrement_long" />
                             </node>
                           </node>
@@ -62055,7 +62055,7 @@
                         <node concept="2tJFMh" id="78UfAlSlad9" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlada" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlbVx" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv65" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.decrementAndGet_double(jetbrains.mps.references.Reference):double" resolve="decrementAndGet_double" />
                             </node>
                           </node>
@@ -62073,7 +62073,7 @@
                         <node concept="2tJFMh" id="78UfAlSladg" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSladh" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlc5J" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5V" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.decrementAndGet_float(jetbrains.mps.references.Reference):float" resolve="decrementAndGet_float" />
                             </node>
                           </node>
@@ -62091,7 +62091,7 @@
                         <node concept="2tJFMh" id="78UfAlSladn" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlado" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlcfO" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6l" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.decrementAndGet_int(jetbrains.mps.references.Reference):int" resolve="decrementAndGet_int" />
                             </node>
                           </node>
@@ -62109,7 +62109,7 @@
                         <node concept="2tJFMh" id="78UfAlSladu" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSladv" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlcq2" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5J" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.decrementAndGet_long(jetbrains.mps.references.Reference):long" resolve="decrementAndGet_long" />
                             </node>
                           </node>
@@ -62127,7 +62127,7 @@
                         <node concept="2tJFMh" id="78UfAlSlad_" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSladA" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlc$7" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv67" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.decrementAndGet_short(jetbrains.mps.references.Reference):short" resolve="decrementAndGet_short" />
                             </node>
                           </node>
@@ -62211,7 +62211,7 @@
                         <node concept="2tJFMh" id="78UfAlSlhcE" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlhcF" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSljhd" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv61" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndDecrement_byte(jetbrains.mps.references.Reference):byte" resolve="getAndDecrement_byte" />
                             </node>
                           </node>
@@ -62229,7 +62229,7 @@
                         <node concept="2tJFMh" id="78UfAlSlhcL" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlhcM" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSljrr" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5L" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndDecrement_char(jetbrains.mps.references.Reference):char" resolve="getAndDecrement_char" />
                             </node>
                           </node>
@@ -62283,7 +62283,7 @@
                         <node concept="2tJFMh" id="78UfAlSlhd6" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlhd7" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSljU5" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5R" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndDecrement_int(jetbrains.mps.references.Reference):int" resolve="getAndDecrement_int" />
                             </node>
                           </node>
@@ -62301,7 +62301,7 @@
                         <node concept="2tJFMh" id="78UfAlSlhdd" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlhde" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlk4j" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv6j" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndDecrement_long(jetbrains.mps.references.Reference):long" resolve="getAndDecrement_long" />
                             </node>
                           </node>
@@ -62319,7 +62319,7 @@
                         <node concept="2tJFMh" id="78UfAlSlhdk" role="3cqZAk">
                           <node concept="ZC_QK" id="78UfAlSlhdl" role="2tJFKM">
                             <ref role="2aWVGs" to="vl5q:~BLOperations" resolve="BLOperations" />
-                            <node concept="ZC_QK" id="78UfAlSlkex" role="2aWVGa">
+                            <node concept="ZC_QK" id="1dsbP8qXv5N" role="2aWVGa">
                               <ref role="2aWVGs" to="vl5q:~BLOperations.getAndDecrement_short(jetbrains.mps.references.Reference):short" resolve="getAndDecrement_short" />
                             </node>
                           </node>

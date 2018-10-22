@@ -102,26 +102,26 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BOOL:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_boolean");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_boolean");
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_short");
       }
       return null;
     }
     public SNodeReference handleClassifier(SNode classifer) {
-      return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference");
+      return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference");
     }
   };
 
@@ -129,26 +129,26 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BOOL:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_boolean.<init>(boolean)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_boolean.<init>(boolean)");
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_byte.<init>(byte)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_byte.<init>(byte)");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_char.<init>(char)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_char.<init>(char)");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_double.<init>(double)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_double.<init>(double)");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_float.<init>(float)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_float.<init>(float)");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_int.<init>(int)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_int.<init>(int)");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_long.<init>(long)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_long.<init>(long)");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_short.<init>(short)");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_short.<init>(short)");
       }
       return null;
     }
     public SNodeReference handleClassifier(SNode classifer) {
-      return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference.<init>(java.lang.Object)");
+      return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference.<init>(java.lang.Object)");
     }
   };
 
@@ -156,26 +156,26 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BOOL:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_boolean.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_boolean.<init>()");
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_byte.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_byte.<init>()");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_char.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_char.<init>()");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_double.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_double.<init>()");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_float.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_float.<init>()");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_int.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_int.<init>()");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_long.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_long.<init>()");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference$_short.<init>()");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference$_short.<init>()");
       }
       return null;
     }
     public SNodeReference handleClassifier(SNode classifer) {
-      return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~LocalReference.<init>()");
+      return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~LocalReference.<init>()");
     }
   };
 
@@ -183,26 +183,26 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BOOL:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getBool():boolean");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getBool():boolean");
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getByte():byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getByte():byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getChar():char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getChar():char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getDouble():double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getDouble():double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getFloat():float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getFloat():float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getInt():int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getInt():int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getLong():long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getLong():long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.getShort():short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.getShort():short");
       }
       return null;
     }
     public SNodeReference handleClassifier(SNode classifer) {
-      return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~Reference.get():java.lang.Object");
+      return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~Reference.get():java.lang.Object");
     }
   };
 
@@ -210,19 +210,19 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_byte(jetbrains.mps.references.Reference):byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_byte(jetbrains.mps.references.Reference):byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_char(jetbrains.mps.references.Reference):char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_char(jetbrains.mps.references.Reference):char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_double(jetbrains.mps.references.Reference):double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_double(jetbrains.mps.references.Reference):double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_float(jetbrains.mps.references.Reference):float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_float(jetbrains.mps.references.Reference):float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_int(jetbrains.mps.references.Reference):int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_int(jetbrains.mps.references.Reference):int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_long(jetbrains.mps.references.Reference):long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_long(jetbrains.mps.references.Reference):long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.incrementAndGet_short(jetbrains.mps.references.Reference):short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.incrementAndGet_short(jetbrains.mps.references.Reference):short");
       }
       return null;
     }
@@ -235,19 +235,19 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_byte(jetbrains.mps.references.Reference):byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_byte(jetbrains.mps.references.Reference):byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_char(jetbrains.mps.references.Reference):char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_char(jetbrains.mps.references.Reference):char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_double(jetbrains.mps.references.Reference):double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_double(jetbrains.mps.references.Reference):double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_float(jetbrains.mps.references.Reference):float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_float(jetbrains.mps.references.Reference):float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_int(jetbrains.mps.references.Reference):int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_int(jetbrains.mps.references.Reference):int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_long(jetbrains.mps.references.Reference):long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_long(jetbrains.mps.references.Reference):long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndIncrement_short(jetbrains.mps.references.Reference):short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndIncrement_short(jetbrains.mps.references.Reference):short");
       }
       return null;
     }
@@ -260,19 +260,19 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_byte(jetbrains.mps.references.Reference):byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_byte(jetbrains.mps.references.Reference):byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_char(jetbrains.mps.references.Reference):char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_char(jetbrains.mps.references.Reference):char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_double(jetbrains.mps.references.Reference):double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_double(jetbrains.mps.references.Reference):double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_float(jetbrains.mps.references.Reference):float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_float(jetbrains.mps.references.Reference):float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_int(jetbrains.mps.references.Reference):int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_int(jetbrains.mps.references.Reference):int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_long(jetbrains.mps.references.Reference):long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_long(jetbrains.mps.references.Reference):long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.decrementAndGet_short(jetbrains.mps.references.Reference):short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.decrementAndGet_short(jetbrains.mps.references.Reference):short");
       }
       return null;
     }
@@ -285,19 +285,19 @@ public class VaraibleTypeUtil {
     public SNodeReference handlePrimitve(PrimitiveTypeDescriptor prim) {
       switch (prim) {
         case BYTE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_byte(jetbrains.mps.references.Reference):byte");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_byte(jetbrains.mps.references.Reference):byte");
         case CHAR:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_char(jetbrains.mps.references.Reference):char");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_char(jetbrains.mps.references.Reference):char");
         case DOUBLE:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_double(jetbrains.mps.references.Reference):double");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_double(jetbrains.mps.references.Reference):double");
         case FLOAT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_float(jetbrains.mps.references.Reference):float");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_float(jetbrains.mps.references.Reference):float");
         case INT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_int(jetbrains.mps.references.Reference):int");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_int(jetbrains.mps.references.Reference):int");
         case LONG:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_long(jetbrains.mps.references.Reference):long");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_long(jetbrains.mps.references.Reference):long");
         case SHORT:
-          return new SNodePointer("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.references(MPS.Core/)", "~BLOperations.getAndDecrement_short(jetbrains.mps.references.Reference):short");
+          return new SNodePointer("52b81ac7-93fd-4e9e-b972-4995882da6d4/java:jetbrains.mps.references(jetbrains.mps.baseLanguage.references.runtime/)", "~BLOperations.getAndDecrement_short(jetbrains.mps.references.Reference):short");
       }
       return null;
     }
