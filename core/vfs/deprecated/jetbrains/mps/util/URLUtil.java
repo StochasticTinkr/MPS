@@ -27,12 +27,6 @@ import java.util.List;
 @Deprecated
 //this should go away since we will operate only path-urls
 public class URLUtil {
-  public static final String SCHEME_SEPARATOR = "://";
-  public static final String FILE_PROTOCOL = "file";
-  public static final String JAR_PROTOCOL = "jar";
-  public static final String JAR_PROTOCOL_PREFIX = JAR_PROTOCOL + ":";
-  public static final String JAR_SEPARATOR = "!/";
-
   private URLUtil() {
   }
 
@@ -76,36 +70,6 @@ public class URLUtil {
       i++;
     }
     return decoded.toString();
-  }
-
-  /**
-   * Splits .jar URL along a separator and strips "jar" and "file" prefixes if any.
-   * Returns a pair of path to a .jar file and entry name inside a .jar, or null if the URL does not contain a separator.
-   * <p/>
-   * E.g. "jar:file:///path/to/jar.jar!/resource.xml" is converted into ["/path/to/jar.jar", "resource.xml"].
-   */
-  @Nullable
-  public static Pair<String, String> splitJarUrl(@NotNull String url) {
-    int pivot = url.indexOf(JAR_SEPARATOR);
-    if (pivot < 0) return null;
-
-    String resourcePath = url.substring(pivot + JAR_SEPARATOR.length());
-    String jarPath = url.substring(0, pivot);
-
-    if (jarPath.startsWith(JAR_PROTOCOL_PREFIX)) {
-      jarPath = jarPath.substring(JAR_PROTOCOL_PREFIX.length());
-    }
-
-    if (jarPath.startsWith(FILE_PROTOCOL)) {
-      jarPath = jarPath.substring(FILE_PROTOCOL.length());
-      if (jarPath.startsWith(SCHEME_SEPARATOR)) {
-        jarPath = jarPath.substring(SCHEME_SEPARATOR.length());
-      } else if (StringUtil.startsWithChar(jarPath, ':')) {
-        jarPath = jarPath.substring(1);
-      }
-    }
-
-    return new Pair<>(jarPath, resourcePath);
   }
 
   private static int decode(char c) {
