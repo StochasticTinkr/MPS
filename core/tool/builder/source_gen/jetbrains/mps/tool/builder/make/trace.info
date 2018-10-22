@@ -22,96 +22,87 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/1169333190355797179">
     <file name="ReducedMakeFacetConfiguration.java">
-      <node id="1169333190355830895" at="30,0,31,0" concept="5" trace="outputPathRedirects" />
-      <node id="1169333190355857957" at="31,0,32,0" concept="5" trace="fileHashes" />
-      <node id="1169333190355862270" at="32,0,33,0" concept="5" trace="writtenFiles" />
-      <node id="1169333190355863924" at="33,0,34,0" concept="5" trace="deletedFiles" />
-      <node id="2813163484575523933" at="34,0,35,0" concept="5" trace="keptFiles" />
-      <node id="2813163484576270402" at="35,0,36,0" concept="5" trace="sources" />
-      <node id="1169333190355830899" at="36,66,37,45" concept="4" />
-      <node id="1169333190355886891" at="39,46,40,51" concept="11" />
-      <node id="1169333190355893274" at="42,41,43,64" concept="11" />
-      <node id="2813163484575433169" at="45,38,46,61" concept="11" />
-      <node id="1169333190355912125" at="48,41,49,64" concept="11" />
-      <node id="2813163484576504379" at="51,44,52,54" concept="11" />
-      <node id="8092479555022511172" at="54,75,55,110" concept="10" />
-      <node id="8092479555022511188" at="55,110,56,97" concept="10" />
-      <node id="8092479555022511198" at="56,97,57,0" concept="13" />
-      <node id="6705512905416890174" at="60,111,61,85" concept="4" />
-      <node id="6599645957074927557" at="61,85,62,0" concept="13" />
-      <node id="8092479555022511273" at="62,0,63,174" concept="10" />
-      <node id="8092479555022511289" at="64,40,65,37" concept="4" />
-      <node id="8092479555022511298" at="66,9,67,0" concept="13" />
-      <node id="6705512905416489150" at="67,0,68,77" concept="4" />
-      <node id="8092479555022511326" at="68,77,69,0" concept="13" />
-      <node id="8092479555022511327" at="69,0,70,260" concept="10" />
-      <node id="8092479555022511347" at="70,260,71,32" concept="4" />
-      <node id="8092479555022511353" at="71,32,72,32" concept="4" />
-      <node id="2813163484575523172" at="72,32,73,29" concept="4" />
-      <node id="2813163484576280067" at="73,29,74,27" concept="4" />
-      <node id="8092479555022511359" at="74,27,75,0" concept="13" />
-      <node id="8092479555022511360" at="75,0,76,179" concept="10" />
-      <node id="8092479555022511378" at="76,179,77,30" concept="4" />
-      <node id="8092479555022511384" at="77,30,78,0" concept="13" />
-      <node id="6705512905416675976" at="78,0,79,72" concept="10" />
-      <node id="6705512905416713688" at="79,72,80,42" concept="4" />
-      <node id="8092479555022511406" at="80,42,81,43" concept="12" />
-      <node id="8092479555022511432" at="83,44,84,57" concept="11" />
-      <node id="6705512905416843578" at="86,11,87,35" concept="4" />
-      <node id="1169333190355797181" at="36,0,39,0" concept="2" trace="ReducedMakeFacetConfiguration#(Ljetbrains/mps/tool/builder/paths/IRedirects;)V" />
-      <node id="1169333190355865308" at="39,0,42,0" concept="9" trace="getFileHashes#()Ljava/util/Map;" />
-      <node id="1169333190355890062" at="42,0,45,0" concept="9" trace="getWrittenFiles#()Ljava/util/List;" />
-      <node id="2813163484575433166" at="45,0,48,0" concept="9" trace="getKeptFiles#()Ljava/util/List;" />
-      <node id="1169333190355909083" at="48,0,51,0" concept="9" trace="getDeletedFiles#()Ljava/util/List;" />
-      <node id="2813163484576502993" at="51,0,54,0" concept="9" trace="getSource#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="8092479555022511287" at="63,174,66,9" concept="8" />
-      <node id="8092479555022511428" at="83,0,86,0" concept="9" trace="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-      <node id="6705512905416530372" at="81,43,86,11" concept="4" />
-      <node id="8092479555022511204" at="59,0,89,0" concept="9" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
-      <node id="8092479555022511199" at="57,0,89,6" concept="11" />
-      <node id="8092479555022511159" at="54,0,91,0" concept="9" trace="configureFacets#(Ljetbrains/mps/make/MakeSession;)Ljetbrains/mps/make/script/IScriptController;" />
-      <scope id="1169333190355797184" at="36,66,37,45" />
-      <scope id="1169333190355865312" at="39,46,40,51" />
-      <scope id="1169333190355890066" at="42,41,43,64" />
-      <scope id="2813163484575433168" at="45,38,46,61" />
-      <scope id="1169333190355909087" at="48,41,49,64" />
-      <scope id="2813163484576502997" at="51,44,52,54" />
-      <scope id="8092479555022511288" at="64,40,65,37" />
-      <scope id="8092479555022511431" at="83,44,84,57" />
-      <scope id="1169333190355797181" at="36,0,39,0">
+      <node id="1169333190355830895" at="29,0,30,0" concept="5" trace="outputPathRedirects" />
+      <node id="1169333190355862270" at="30,0,31,0" concept="5" trace="writtenFiles" />
+      <node id="1169333190355863924" at="31,0,32,0" concept="5" trace="deletedFiles" />
+      <node id="2813163484575523933" at="32,0,33,0" concept="5" trace="keptFiles" />
+      <node id="2813163484576270402" at="33,0,34,0" concept="5" trace="sources" />
+      <node id="1169333190355830899" at="34,66,35,45" concept="4" />
+      <node id="1169333190355893274" at="37,41,38,64" concept="11" />
+      <node id="2813163484575433169" at="40,38,41,61" concept="11" />
+      <node id="1169333190355912125" at="43,41,44,64" concept="11" />
+      <node id="2813163484576504379" at="46,44,47,54" concept="11" />
+      <node id="8092479555022511172" at="49,75,50,141" concept="10" />
+      <node id="8092479555022511188" at="50,141,51,97" concept="10" />
+      <node id="8092479555022511198" at="51,97,52,0" concept="13" />
+      <node id="6705512905416890174" at="55,111,56,85" concept="4" />
+      <node id="6599645957074927557" at="56,85,57,0" concept="13" />
+      <node id="8092479555022511273" at="57,0,58,174" concept="10" />
+      <node id="8092479555022511289" at="59,40,60,37" concept="4" />
+      <node id="8092479555022511298" at="61,9,62,0" concept="13" />
+      <node id="6705512905416489150" at="62,0,63,77" concept="4" />
+      <node id="8092479555022511326" at="63,77,64,0" concept="13" />
+      <node id="8092479555022511327" at="64,0,65,260" concept="10" />
+      <node id="8092479555022511347" at="65,260,66,32" concept="4" />
+      <node id="8092479555022511353" at="66,32,67,32" concept="4" />
+      <node id="2813163484575523172" at="67,32,68,29" concept="4" />
+      <node id="2813163484576280067" at="68,29,69,27" concept="4" />
+      <node id="8092479555022511359" at="69,27,70,0" concept="13" />
+      <node id="6705512905416675976" at="70,0,71,72" concept="10" />
+      <node id="6705512905416713688" at="71,72,72,42" concept="4" />
+      <node id="8092479555022511406" at="72,42,73,43" concept="12" />
+      <node id="8092479555022511432" at="75,44,76,57" concept="11" />
+      <node id="6705512905416843578" at="78,11,79,35" concept="4" />
+      <node id="1169333190355797181" at="34,0,37,0" concept="2" trace="ReducedMakeFacetConfiguration#(Ljetbrains/mps/tool/builder/paths/IRedirects;)V" />
+      <node id="1169333190355890062" at="37,0,40,0" concept="9" trace="getWrittenFiles#()Ljava/util/List;" />
+      <node id="2813163484575433166" at="40,0,43,0" concept="9" trace="getKeptFiles#()Ljava/util/List;" />
+      <node id="1169333190355909083" at="43,0,46,0" concept="9" trace="getDeletedFiles#()Ljava/util/List;" />
+      <node id="2813163484576502993" at="46,0,49,0" concept="9" trace="getSource#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="8092479555022511287" at="58,174,61,9" concept="8" />
+      <node id="8092479555022511428" at="75,0,78,0" concept="9" trace="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+      <node id="6705512905416530372" at="73,43,78,11" concept="4" />
+      <node id="8092479555022511204" at="54,0,81,0" concept="9" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
+      <node id="8092479555022511199" at="52,0,81,6" concept="11" />
+      <node id="8092479555022511159" at="49,0,83,0" concept="9" trace="configureFacets#(Ljetbrains/mps/make/MakeSession;)Ljetbrains/mps/make/script/IScriptController;" />
+      <scope id="1169333190355797184" at="34,66,35,45" />
+      <scope id="1169333190355890066" at="37,41,38,64" />
+      <scope id="2813163484575433168" at="40,38,41,61" />
+      <scope id="1169333190355909087" at="43,41,44,64" />
+      <scope id="2813163484576502997" at="46,44,47,54" />
+      <scope id="8092479555022511288" at="59,40,60,37" />
+      <scope id="8092479555022511431" at="75,44,76,57" />
+      <scope id="1169333190355797181" at="34,0,37,0">
         <var name="pathRedirects" id="1169333190355829891" />
       </scope>
-      <scope id="1169333190355865308" at="39,0,42,0" />
-      <scope id="1169333190355890062" at="42,0,45,0" />
-      <scope id="2813163484575433166" at="45,0,48,0" />
-      <scope id="1169333190355909083" at="48,0,51,0" />
-      <scope id="2813163484576502993" at="51,0,54,0">
+      <scope id="1169333190355890062" at="37,0,40,0" />
+      <scope id="2813163484575433166" at="40,0,43,0" />
+      <scope id="1169333190355909083" at="43,0,46,0" />
+      <scope id="2813163484576502993" at="46,0,49,0">
         <var name="filePath" id="2813163484576504090" />
       </scope>
-      <scope id="8092479555022511428" at="83,0,86,0">
+      <scope id="8092479555022511428" at="75,0,78,0">
         <var name="path" id="8092479555022511428" />
       </scope>
-      <scope id="8092479555022511216" at="60,111,87,35">
-        <var name="hashes" id="8092479555022511361" />
+      <scope id="8092479555022511216" at="55,111,79,35">
         <var name="makeFacetInit" id="6705512905416675977" />
         <var name="report" id="8092479555022511328" />
         <var name="skipCopyTraceinfo" id="8092479555022511274" />
       </scope>
-      <scope id="8092479555022511204" at="59,0,89,0">
+      <scope id="8092479555022511204" at="54,0,81,0">
         <var name="input" id="8092479555022511212" />
         <var name="pp" id="8092479555022511207" />
         <var name="toExecute" id="8092479555022511209" />
       </scope>
-      <scope id="8092479555022511171" at="54,75,89,6">
+      <scope id="8092479555022511171" at="49,75,81,6">
         <var name="optBuilder" id="8092479555022511189" />
         <var name="settings" id="8092479555022511173" />
       </scope>
-      <scope id="8092479555022511159" at="54,0,91,0">
+      <scope id="8092479555022511159" at="49,0,83,0">
         <var name="makeSession" id="6705512905417041490" />
       </scope>
-      <unit id="8092479555022511428" at="82,40,86,9" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1$1" />
-      <unit id="8092479555022511202" at="58,15,89,5" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1" />
-      <unit id="1169333190355797179" at="29,0,93,0" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration" />
+      <unit id="8092479555022511428" at="74,40,78,9" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1$1" />
+      <unit id="8092479555022511202" at="53,15,81,5" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1" />
+      <unit id="1169333190355797179" at="28,0,85,0" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration" />
     </file>
   </root>
   <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/2546981710034407607">
