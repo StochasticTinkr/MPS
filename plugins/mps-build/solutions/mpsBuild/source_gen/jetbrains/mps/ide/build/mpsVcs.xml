@@ -162,6 +162,11 @@
       <zipfileset file="${mps_home}/plugins/vcs/languages/jetbrains.mps.devkit.aspect.vcs/jetbrains.mps.devkit.aspect.vcs.devkit" prefix="module" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.vcs.jar" />
     </jar>
+    <mkdir dir="${build.layout}/mps-vcs/languages" />
+    <copy todir="${build.layout}/mps-vcs/languages">
+      <fileset dir="${artifacts.mpsVcsPlatform}/languages" />
+    </copy>
+    <mkdir dir="${build.layout}/mps-vcs/lib" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.vcs.jar/META-INF/module.xml">
@@ -187,7 +192,7 @@
         <sources jar="jetbrains.mps.ide.vcs-src.jar" descriptor="jetbrains.mps.ide.vcs.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/mps-vcs/lib/jetbrains.mps.ide.vcs.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.jar" />
@@ -195,7 +200,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-solutions-jetbrains.mps.ide.vcs-models">
       <fileset dir="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/mps-vcs/lib/jetbrains.mps.ide.vcs-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -205,14 +210,12 @@
       <zipfileset file="${mps_home}/plugins/vcs/solutions/jetbrains.mps.ide.vcs/jetbrains.mps.ide.vcs.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-solutions-jetbrains.mps.ide.vcs-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/mps-vcs/languages" />
-    <copy todir="${build.layout}/mps-vcs/languages">
-      <fileset dir="${artifacts.mpsVcsPlatform}/languages" />
+    <copy todir="${build.layout}/mps-vcs/lib">
+      <fileset dir="${artifacts.mpsVcsStandaloneJar}/lib" />
     </copy>
-    <mkdir dir="${build.layout}/mps-vcs/lib" />
-    <copy file="${artifacts.mpsVcsStandaloneJar}/lib/vcs-ide.jar" todir="${build.layout}/mps-vcs/lib" />
-    <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-platform.jar" todir="${build.layout}/mps-vcs/lib" />
-    <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
+    <copy todir="${build.layout}/mps-vcs/lib">
+      <fileset dir="${artifacts.mpsVcsPlatform}/lib" />
+    </copy>
     <mkdir dir="${build.layout}/git4idea" />
     <copy todir="${build.layout}/git4idea">
       <fileset dir="${artifacts.mpsVcsPlatform}/git4idea" />
@@ -352,7 +355,7 @@
       <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.core.jar" />
       <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
       <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.platform.jar" />
-      <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.vcs.mergehints.runtime.jar" />
+      <library file="${artifacts.mpsVcsPlatform}/lib/jetbrains.mps.vcs.mergehints.runtime.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
