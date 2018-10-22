@@ -35,6 +35,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
@@ -154,7 +155,7 @@ class InternalJavaCompiler {
       final CollectingResultsListener listener = new CollectingResultsListener(errorsHandler);
 
       compiler.addCompilationResultListener(listener);
-      doCompileJava(compiler, classPath, myCompilerOptions, tracer.subTracer(6));
+      doCompileJava(compiler, JavaModuleOperations.collectCompileClasspath(myModulesContainer.getModules(), true), myCompilerOptions, tracer.subTracer(6));
       compiler.removeCompilationResultListener(listener);
 
       Collection<SModule> changedModules = compilationHandler.process(listener.getResults());
@@ -168,7 +169,7 @@ class InternalJavaCompiler {
     }
   }
 
-  private void doCompileJava(EclipseJavaCompiler compiler, IClassPathItem classPath, @Nullable JavaCompilerOptions compilerOptions, CompositeTracer tracer) {
+  private void doCompileJava(EclipseJavaCompiler compiler, Collection<String> classPath, @Nullable JavaCompilerOptions compilerOptions, CompositeTracer tracer) {
     try {
       tracer.start(ECLIPSE_COMPILER_MSG, 1);
       if (compilerOptions == null) {

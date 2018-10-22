@@ -56,7 +56,7 @@ public class TestClassFileCreator {
     compiler.addSource(myTestClassName, myTestSourceCode);
     MyCompilationResultListener listener = new MyCompilationResultListener();
     compiler.addCompilationResultListener(listener);
-    compiler.compile(JavaModuleOperations.createClassPathItem(CommonPaths.getJDKPath(), Object.class.getName()));
+    compiler.compile(CommonPaths.getJDKPath());
     compiler.removeCompilationResultListener(listener);
     Collection<? extends String> classPaths = listener.getClassPaths();
     assert classPaths.size() == 1;
