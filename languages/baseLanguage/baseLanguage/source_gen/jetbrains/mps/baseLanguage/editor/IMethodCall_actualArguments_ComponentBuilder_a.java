@@ -84,7 +84,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     if (nodeCondition_arlg9k_a1a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    AddDeleteMethodCallArgument.setCellActions(editorCell, myNode, getEditorContext());
+    AddFirstMethodCallArgument.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new MethodCallArguments_ListSeparator());
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;

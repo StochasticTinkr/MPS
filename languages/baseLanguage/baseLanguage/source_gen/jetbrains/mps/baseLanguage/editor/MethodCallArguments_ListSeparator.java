@@ -49,11 +49,13 @@ public class MethodCallArguments_ListSeparator extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
-        SNode newArgument = SNodeFactoryOperations.insertNewNextSiblingChild(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
-        MethodResolveUtil.replaceFromEditor(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")));
-        SelectionUtil.selectNode(editorContext, newArgument);
+      SNode argument = MethodArgumentsUtil.getMethodArgumentAncestor(node);
+      if (argument == null) {
+        throw new IllegalStateException(node + "");
       }
+      SNode newArgument = SNodeFactoryOperations.insertNewNextSiblingChild(argument, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+      MethodResolveUtil.replaceFromEditor(SNodeOperations.cast(SNodeOperations.getParent(argument), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")));
+      SelectionUtil.selectNode(editorContext, newArgument);
     }
     public String getKeyStroke() {
       return " ,";
