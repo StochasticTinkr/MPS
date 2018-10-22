@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,6 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
@@ -170,7 +169,7 @@ final class GenerationTracerView {
   }
 
   JPopupMenu createViewSettingsMenu() {
-    final GenTraceSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings();
+    final GenTraceSettings settings = myProject.getComponent(GenerationSettingsProvider.class).getGenerationSettings().getTraceSettings();
     ActionListener l = e -> {
       if (false == e.getSource() instanceof JCheckBoxMenuItem) {
         return;
