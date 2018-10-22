@@ -41,12 +41,6 @@ public class MPSModulesClosure {
 
   public MPSModulesClosure(Iterable<SNode> initialModules, MPSModulesClosure.ModuleDependenciesOptions options) {
     myInitialModules = SNodeOperations.ofConcept(initialModules, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
-    SNode containingRoot = SNodeOperations.getContainingRoot(Sequence.fromIterable(initialModules).first());
-    for (SNode m : Sequence.fromIterable(initialModules)) {
-      if (containingRoot != SNodeOperations.getContainingRoot(m)) {
-        throw new IllegalArgumentException("all modules should be from the same root");
-      }
-    }
     myOptions = options;
   }
 
@@ -294,7 +288,7 @@ public class MPSModulesClosure {
    * We use this to populate libraries of Environment for our tasks (MpsWorker) to start MPS with specific set of modules (hence we need a closure of modules for MPS to start properly).
    */
   public MPSModulesClosure designtimeClosure() {
-    // rt deps -- direct and indirect dependencies of the modules, languages used and their runtimes 
+    // rt deps -- direct and indirect dependencies of the modules, used languages and their runtimes 
     MPSModulesClosure rtClosure = new MPSModulesClosure(myInitialModules, new MPSModulesClosure.ModuleDependenciesOptions(myOptions).setIncludeInitial()).runtimeClosure();
     mergeIntoMe(rtClosure);
 
@@ -323,8 +317,11 @@ public class MPSModulesClosure {
   /**
    * The modules we need to generate the initial modules
    * To generate a module, we need its languages and all their dependencies.
+   * Since we assume that the generator might address any aspect of input language during the generation procedure
+   * we unclude all the runtime dependencies of used languages into the result as well.
    * Unlike {@link jetbrains.mps.build.mps.util.MPSModulesClosure#runtimeClosure() } or {@link jetbrains.mps.build.mps.util.MPSModulesClosure#designtimeClosure() }, dependencies of the module itself (aka classpath) doesn't look
-   * that imporant (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)
+   * that important (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)
+   * todo: Generator's dependencies obviously must be considered separately
    */
   public MPSModulesClosure generationDependenciesClosure() {
     // direct and indirect dependencies of used languages and their runtimes; source languages of generators involved 
@@ -336,6 +333,7 @@ public class MPSModulesClosure {
     }
     // need module of a used language AND anything this module would require to load 
     collectDependencies((Iterable<SNode>) usedLanguages, false);
+    collectAllUsedLanguageRuntimesAndTheirDeps((Iterable<SNode>) usedLanguages);
     // code, generated with a used language, might require runtime of the language, and anything this RT solution 
     // re-exports. However, without all dependencies (including non-reexported), solution won't load, hence include all. 
     collectDependencies((Iterable<SNode>) solutions, false);

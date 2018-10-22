@@ -4601,56 +4601,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2pk5iwY3nWy" role="3cqZAp">
-          <node concept="3cpWsn" id="2pk5iwY3nWz" role="3cpWs9">
-            <property role="TrG5h" value="containingRoot" />
-            <node concept="3Tqbb2" id="2pk5iwY3nW$" role="1tU5fm" />
-            <node concept="2OqwBi" id="2pk5iwY3nY1" role="33vP2m">
-              <node concept="2OqwBi" id="2pk5iwY3nUb" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgmuCz" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2pk5iwY3nSI" resolve="initialModules" />
-                </node>
-                <node concept="1uHKPH" id="2pk5iwY3nUg" role="2OqNvi" />
-              </node>
-              <node concept="2Rxl7S" id="2pk5iwY3nY7" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-        <node concept="2Gpval" id="2pk5iwY3nV2" role="3cqZAp">
-          <node concept="2GrKxI" id="2pk5iwY3nV3" role="2Gsz3X">
-            <property role="TrG5h" value="m" />
-          </node>
-          <node concept="37vLTw" id="2BHiRxgheGL" role="2GsD0m">
-            <ref role="3cqZAo" node="2pk5iwY3nSI" resolve="initialModules" />
-          </node>
-          <node concept="3clFbS" id="2pk5iwY3nV5" role="2LFqv$">
-            <node concept="3clFbJ" id="2pk5iwY3nV7" role="3cqZAp">
-              <node concept="3y3z36" id="2pk5iwY3nW2" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTzKI" role="3uHU7B">
-                  <ref role="3cqZAo" node="2pk5iwY3nWz" resolve="containingRoot" />
-                </node>
-                <node concept="2OqwBi" id="2pk5iwY3nWr" role="3uHU7w">
-                  <node concept="2GrUjf" id="2pk5iwY3nW6" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="2pk5iwY3nV3" resolve="m" />
-                  </node>
-                  <node concept="2Rxl7S" id="2pk5iwY3nWx" role="2OqNvi" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="2pk5iwY3nV9" role="3clFbx">
-                <node concept="YS8fn" id="2pk5iwY3nWF" role="3cqZAp">
-                  <node concept="2ShNRf" id="2pk5iwY3nWH" role="YScLw">
-                    <node concept="1pGfFk" id="2pk5iwY3nWJ" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                      <node concept="Xl_RD" id="2pk5iwY3nWK" role="37wK5m">
-                        <property role="Xl_RC" value="all modules should be from the same root" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7QNcMbquZYx" role="3cqZAp">
           <node concept="37vLTI" id="7QNcMbquZYy" role="3clFbG">
             <node concept="37vLTw" id="7QNcMbquZY$" role="37vLTx">
@@ -6618,7 +6568,7 @@
       <node concept="3clFbS" id="7LkEFTMzmuz" role="3clF47">
         <node concept="3SKdUt" id="4fCiNXEqatA" role="3cqZAp">
           <node concept="3SKdUq" id="4fCiNXEqb68" role="3SKWNk">
-            <property role="3SKdUp" value="rt deps -- direct and indirect dependencies of the modules, languages used and their runtimes" />
+            <property role="3SKdUp" value="rt deps -- direct and indirect dependencies of the modules, used languages and their runtimes" />
           </node>
         </node>
         <node concept="3cpWs8" id="1BCLQMpSvUa" role="3cqZAp">
@@ -6996,6 +6946,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3wV6xYBw9qE" role="3cqZAp">
+          <node concept="1rXfSq" id="3wV6xYBw9qF" role="3clFbG">
+            <ref role="37wK5l" node="4fCiNXEbDzJ" resolve="collectAllUsedLanguageRuntimesAndTheirDeps" />
+            <node concept="10QFUN" id="3wV6xYBw9qG" role="37wK5m">
+              <node concept="A3Dl8" id="3wV6xYBw9qH" role="10QFUM">
+                <node concept="3Tqbb2" id="3wV6xYBw9qI" role="A3Ik2">
+                  <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="3wV6xYBwbWM" role="10QFUP">
+                <ref role="3cqZAo" node="73Idof7yAHY" resolve="usedLanguages" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3SKdUt" id="73Idof7$b5I" role="3cqZAp">
           <node concept="3SKdUq" id="73Idof7$b5K" role="3SKWNk">
             <property role="3SKdUp" value="code, generated with a used language, might require runtime of the language, and anything this RT solution" />
@@ -7125,6 +7090,16 @@
             <property role="1dT_AB" value="To generate a module, we need its languages and all their dependencies." />
           </node>
         </node>
+        <node concept="TZ5HA" id="RwnpqZm$rd" role="TZ5H$">
+          <node concept="1dT_AC" id="RwnpqZm$re" role="1dT_Ay">
+            <property role="1dT_AB" value="Since we assume that the generator might address any aspect of input language during the generation procedure" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="RwnpqZm$tG" role="TZ5H$">
+          <node concept="1dT_AC" id="RwnpqZm$tH" role="1dT_Ay">
+            <property role="1dT_AB" value="we unclude all the runtime dependencies of used languages into the result as well." />
+          </node>
+        </node>
         <node concept="TZ5HA" id="5RIkdF7rwqK" role="TZ5H$">
           <node concept="1dT_AC" id="5RIkdF7rwqL" role="1dT_Ay">
             <property role="1dT_AB" value="Unlike " />
@@ -7154,7 +7129,12 @@
         </node>
         <node concept="TZ5HA" id="5RIkdF7rR65" role="TZ5H$">
           <node concept="1dT_AC" id="5RIkdF7rR66" role="1dT_Ay">
-            <property role="1dT_AB" value="that imporant (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)" />
+            <property role="1dT_AB" value="that important (although what if there's utility class in the generator, which depends on external module, and is queried during generation?)" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="RwnpqZm$CJ" role="TZ5H$">
+          <node concept="1dT_AC" id="RwnpqZm$CK" role="1dT_Ay">
+            <property role="1dT_AB" value="todo: Generator's dependencies obviously must be considered separately" />
           </node>
         </node>
       </node>

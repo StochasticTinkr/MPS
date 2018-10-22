@@ -2125,6 +2125,18 @@
           <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
         </node>
       </node>
+      <node concept="1SiIV0" id="3wV6xYBOPQ9" role="3bR37C">
+        <node concept="3bR9La" id="3wV6xYBOPQa" role="1SiIV1">
+          <property role="3bR36h" value="true" />
+          <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="3wV6xYBOPQb" role="3bR37C">
+        <node concept="3bR9La" id="3wV6xYBOPQc" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtA" id="7GotP_G7GY" role="3989C9">
       <property role="BnDLt" value="true" />

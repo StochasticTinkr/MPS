@@ -127,7 +127,7 @@
       <node id="3944198881067547299" at="111,104,116,7" concept="4" />
       <node id="2887318893681833888" at="118,104,123,38" concept="4" />
       <node id="7459197473276628480" at="125,104,130,7" concept="4" />
-      <node id="4608161086082582230" at="150,78,155,94" concept="4" />
+      <node id="4608161086082582230" at="150,78,155,97" concept="4" />
       <node id="3944198881067742398" at="327,0,333,0" concept="5" trace="createGeneratorInternal_String_x583g4_a0a0a0a0p#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7459197473276628491" at="333,0,339,0" concept="5" trace="createGeneratorInternal_String_x583g4_a0a0a0a0r#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3944198881066888502" at="111,0,118,0" concept="5" trace="sourceNodesQuery_0_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodesContext;)Ljava/lang/Iterable;" />
@@ -257,7 +257,7 @@
       <scope id="3944198881066888504" at="111,104,116,7" />
       <scope id="4608161086085543488" at="118,104,123,38" />
       <scope id="7459197473276626318" at="125,104,130,7" />
-      <scope id="4005526075833130410" at="150,78,155,94" />
+      <scope id="4005526075833130410" at="150,78,155,97" />
       <scope id="7206546315287713493" at="82,88,88,281">
         <var name="macroHelper" id="7206546315287638773" />
         <var name="project" id="7206546315287699105" />

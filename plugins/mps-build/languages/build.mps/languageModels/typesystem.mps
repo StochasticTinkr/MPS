@@ -82,6 +82,7 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
+      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -2242,6 +2243,25 @@
     <node concept="1YaCAy" id="14TUqehtZ2C" role="1YuTPh">
       <property role="TrG5h" value="jarLoc" />
       <ref role="1YaFvo" to="kdzh:3LQl9buGqe4" resolve="BuildMpsLayout_ModuleXml_CustomJarLocation" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3wV6xYBZv8m">
+    <property role="TrG5h" value="check_PackagingOfCompileOutOfMPSModulesInPlugin" />
+    <node concept="3clFbS" id="3wV6xYBZv8n" role="18ibNy">
+      <node concept="3cpWs8" id="3wV6xYBZv91" role="3cqZAp">
+        <node concept="3cpWsn" id="3wV6xYBZv94" role="3cpWs9">
+          <node concept="3Tqbb2" id="3wV6xYBZv8Z" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="2Gpval" id="3wV6xYBZv8F" role="3cqZAp">
+        <node concept="2GrKxI" id="3wV6xYBZv8G" role="2Gsz3X" />
+        <node concept="33vP2n" id="3wV6xYBZv8H" role="2GsD0m" />
+        <node concept="3clFbS" id="3wV6xYBZv8I" role="2LFqv$" />
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wV6xYBZv8p" role="1YuTPh">
+      <property role="TrG5h" value="plugin" />
+      <ref role="1YaFvo" to="kdzh:5HVSRHdUrHI" resolve="BuildMpsLayout_Plugin" />
     </node>
   </node>
 </model>
