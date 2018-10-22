@@ -45,9 +45,6 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-/**
- * @author Kostik
- */
 public class FileUtil {
   private static final Logger LOG = LogManager.getLogger(FileUtil.class);
 
@@ -95,7 +92,7 @@ public class FileUtil {
     try {
       result.createNewFile();
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     return result;
   }
