@@ -5939,8 +5939,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="3kcsfotJsrv" role="3clFbw">
-              <ref role="1Pybhc" to="zkib:~AbstractClassPathItem" resolve="AbstractClassPathItem" />
-              <ref role="37wK5l" to="zkib:~AbstractClassPathItem.isAnonymous(java.lang.String):boolean" resolve="isAnonymous" />
+              <ref role="1Pybhc" to="18ew:~JavaNameUtil" resolve="JavaNameUtil" />
+              <ref role="37wK5l" to="18ew:~JavaNameUtil.isAnonymous(java.lang.String):boolean" resolve="isAnonymous" />
               <node concept="2YIFZM" id="pKxlqbNCVi" role="37wK5m">
                 <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                 <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromLongName(java.lang.String):java.lang.String" resolve="namespaceFromLongName" />

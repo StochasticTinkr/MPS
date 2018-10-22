@@ -128,8 +128,8 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
-    <classNode dependClassName="jetbrains.mps.reloading.AbstractClassPathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
+    <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.findusages.ClassifierCacher" />
     <classNode dependClassName="jetbrains.mps.workbench.findusages.MPSPlatformFileTypeFactory" />

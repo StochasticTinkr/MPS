@@ -29,7 +29,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" implicit="true" />
     <import index="rs4p" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.eclipse.jdt.core.compiler(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -232,10 +231,6 @@
       <concept id="3344436107830227889" name="jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression" flags="nn" index="2bn25q" />
       <concept id="3344436107830227888" name="jetbrains.mps.make.facet.structure.ForeignParametersExpression" flags="nn" index="2bn25r">
         <reference id="3344436107830227902" name="target" index="2bn25l" />
-      </concept>
-      <concept id="1919086248986845077" name="jetbrains.mps.make.facet.structure.NamedFacetReference" flags="ng" index="2e$Q_j" />
-      <concept id="7178445679340358576" name="jetbrains.mps.make.facet.structure.FacetReferenceExpression" flags="nn" index="2n6ZRZ">
-        <child id="7178445679340358578" name="reference" index="2n6ZRX" />
       </concept>
       <concept id="6418371274763029565" name="jetbrains.mps.make.facet.structure.TargetDeclaration" flags="ng" index="15KeUm">
         <property id="1675547159918562088" name="resourcesPolicy" index="2w7fpF" />
@@ -1489,23 +1484,9 @@
                   <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                 </node>
                 <node concept="liA8E" id="2AYTeDfNiw0" role="2OqNvi">
-                  <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.compile(jetbrains.mps.reloading.IClassPathItem,jetbrains.mps.compiler.JavaCompilerOptions):void" resolve="compile" />
-                  <node concept="2YIFZM" id="2AYTeDfNm2N" role="37wK5m">
-                    <ref role="37wK5l" to="b0pz:~JavaModuleOperations.createClassPathItem(java.lang.Iterable,java.lang.String):jetbrains.mps.reloading.CompositeClassPathItem" resolve="createClassPathItem" />
-                    <ref role="1Pybhc" to="b0pz:~JavaModuleOperations" resolve="JavaModuleOperations" />
-                    <node concept="37vLTw" id="2AYTeDfNm6c" role="37wK5m">
-                      <ref role="3cqZAo" node="2AYTeDfNawp" resolve="cp" />
-                    </node>
-                    <node concept="2OqwBi" id="2AYTeDfNpMA" role="37wK5m">
-                      <node concept="2n6ZRZ" id="2AYTeDfNoDG" role="2Oq$k0">
-                        <node concept="2e$Q_j" id="2AYTeDfNoDH" role="2n6ZRX">
-                          <ref role="1Mm5Yu" node="6zsZmIBWRfg" resolve="JavaDebugEvaluate" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="2AYTeDfNq8W" role="2OqNvi">
-                        <ref role="37wK5l" to="rk9m:hxx6lM0OuF" resolve="getName" />
-                      </node>
-                    </node>
+                  <ref role="37wK5l" to="l46t:~EclipseJavaCompiler.compile(java.util.Collection,jetbrains.mps.compiler.JavaCompilerOptions):void" resolve="compile" />
+                  <node concept="37vLTw" id="5fPzS2nPVSy" role="37wK5m">
+                    <ref role="3cqZAo" node="2AYTeDfNawp" resolve="cp" />
                   </node>
                   <node concept="37vLTw" id="2AYTeDfNi$d" role="37wK5m">
                     <ref role="3cqZAo" node="2AYTeDfMtf2" resolve="options" />

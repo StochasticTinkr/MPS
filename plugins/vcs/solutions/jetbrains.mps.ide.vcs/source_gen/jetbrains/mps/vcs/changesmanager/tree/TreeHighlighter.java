@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.AbstractComputeRunnable;
@@ -31,8 +31,8 @@ import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.project.MPSProject;
@@ -129,7 +129,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   private void registerNodeRecursively(@NotNull MPSTreeNode node) {
     registerNode(node);
-    for (MPSTreeNode child : node.getChildren()) {
+    for (MPSTreeNode child : ListSequence.fromList(node.getChildren())) {
       registerNodeRecursively(child);
     }
   }
