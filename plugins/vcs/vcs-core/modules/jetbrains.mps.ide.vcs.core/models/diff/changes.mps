@@ -1909,6 +1909,11 @@
             <ref role="37wK5l" node="PhFjFi7uzM" resolve="prepare" />
           </node>
         </node>
+        <node concept="3SKdUt" id="3MvRjja9tNu" role="3cqZAp">
+          <node concept="3SKdUq" id="3MvRjja9tNw" role="3SKWNk">
+            <property role="3SKdUp" value="some nodes can be already deleted in editor (if editing is allowed)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="PhFjFi7uMR" role="3cqZAp">
           <node concept="2OqwBi" id="PhFjFi7uMS" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeufsx" role="2Oq$k0">
@@ -1918,7 +1923,7 @@
               <node concept="1bVj0M" id="PhFjFi7uMV" role="23t8la">
                 <node concept="3clFbS" id="PhFjFi7uMW" role="1bW5cS">
                   <node concept="3clFbF" id="PhFjFi7uMX" role="3cqZAp">
-                    <node concept="2OqwBi" id="PhFjFi7uMY" role="3clFbG">
+                    <node concept="2EnYce" id="3MvRjja4w$y" role="3clFbG">
                       <node concept="2OqwBi" id="2n9zn0CqME6" role="2Oq$k0">
                         <node concept="liA8E" id="2n9zn0CqME7" role="2OqNvi">
                           <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />

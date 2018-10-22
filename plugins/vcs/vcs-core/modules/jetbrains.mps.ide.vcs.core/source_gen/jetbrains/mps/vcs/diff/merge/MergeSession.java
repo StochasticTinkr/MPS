@@ -291,9 +291,11 @@ public final class MergeSession {
   }
   private void invalidateChanges(Iterable<? extends ModelChange> changes) {
     if (Sequence.fromIterable(changes).isNotEmpty()) {
-      SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
-      check_bow6nj_a1a0a54(myChangesInvalidateHandler);
+      check_bow6nj_a0a0a54(myChangesInvalidateHandler);
     }
+  }
+  private void resolveChanges(Iterable<? extends ModelChange> changes) {
+    SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
   }
   private static int getPersistenceVersion(SModel model) {
     if (model instanceof PersistenceVersionAware) {
@@ -310,15 +312,18 @@ public final class MergeSession {
     private void invalidateDeletedRoot(SModelEvent event) {
       assert event.getAffectedRoot() != null;
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getAffectedRoot().getNodeId());
-      invalidateChanges(ListSequence.fromList(nodeChanges).ofType(DeleteRootChange.class));
+      Iterable<DeleteRootChange> changes = ListSequence.fromList(nodeChanges).ofType(DeleteRootChange.class);
+      resolveChanges(changes);
+      invalidateChanges(changes);
     }
     private void beforeNodeRemovedRecursively(SNode node) {
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
         beforeNodeRemovedRecursively(child);
       }
-
-      // process child 
-      invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getNodeId()));
+      // invalidate and resolve changes connected to the node 
+      List<ModelChange> changes = MapSequence.fromMap(myNodeToChanges).get(node.getNodeId());
+      resolveChanges(changes);
+      invalidateChanges(changes);
     }
     private void referenceModified(final SModelReferenceEvent event) {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getNodeId());
@@ -426,7 +431,7 @@ public final class MergeSession {
       invalidateDeletedRoot(event);
     }
   }
-  private static void check_bow6nj_a1a0a54(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
+  private static void check_bow6nj_a0a0a54(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.someChangesInvalidated();
     }

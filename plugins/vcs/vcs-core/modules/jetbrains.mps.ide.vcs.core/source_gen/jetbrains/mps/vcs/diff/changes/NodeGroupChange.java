@@ -113,9 +113,10 @@ public class NodeGroupChange extends ModelChange {
   public void apply(@NotNull final SModel model, @NotNull final NodeCopier nodeCopier) {
     // delete old nodes 
     prepare();
+    // some nodes can be already deleted in editor (if editing is allowed) 
     ListSequence.fromList(myPreparedIdsToDelete).visitAll(new IVisitor<SNodeId>() {
       public void visit(SNodeId id) {
-        model.getNode(id).delete();
+        check_yjf6x2_a0a0a0d0z(model.getNode(id));
       }
     });
     myPreparedIdsToDelete = null;
@@ -226,5 +227,11 @@ public class NodeGroupChange extends ModelChange {
       return AttributeOperations.getChildNodesAndAttributes(checkedDotOperand, myRole);
     }
     return null;
+  }
+  private static void check_yjf6x2_a0a0a0d0z(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.delete();
+    }
+
   }
 }
