@@ -28,7 +28,7 @@ public class ConceptMatchingPattern implements IMatchingPattern {
 
   @Override
   public boolean match(SNode nodeToMatch) {
-    return nodeToMatch == null ? false : nodeToMatch.isInstanceOfConcept(myConcept);
+    return nodeToMatch != null && nodeToMatch.isInstanceOfConcept(myConcept);
   }
 
   @NotNull

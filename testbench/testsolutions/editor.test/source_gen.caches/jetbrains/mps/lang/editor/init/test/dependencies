@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test" file="ChildWithDirectCycle_card1_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -17,7 +17,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test" file="ChildWithDirectCycle_card1n_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test" file="ChildWithIndirectCycle_card1_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test" file="ChildWithIndirectCycle_card1n_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test" file="ChildWithTwoGrandChildrenInDifferentRoles_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

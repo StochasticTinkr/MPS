@@ -68,13 +68,11 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), true, false);
-              if ((contextProject != null)) {
-                return ScopeUtil.getVisibleArtifactsScope(contextProject, false);
-              }
-              return new EmptyScope();
+            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), true, false);
+            if ((contextProject != null)) {
+              return ScopeUtil.getVisibleArtifactsScope(contextProject, false);
             }
+            return new EmptyScope();
           }
         };
       }

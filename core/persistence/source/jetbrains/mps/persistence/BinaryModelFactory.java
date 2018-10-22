@@ -88,11 +88,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
     if (modelName == null) {
       throw new IOException("Model name is not provided");
     }
-    try {
-      return create(dataSource, new SModelName(modelName));
-    } catch (ModelCreationException e) {
-      throw new IOException(e);
-    }
+    return create(dataSource, new SModelName(modelName));
   }
 
   @Override
@@ -110,8 +106,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
   public SModel create(@NotNull DataSource dataSource,
                        @NotNull SModelName modelName,
                        @NotNull ModelLoadingOption... options) throws
-                                                               UnsupportedDataSourceException,
-                                                               ModelCreationException {
+                                                               UnsupportedDataSourceException {
     if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -156,12 +151,12 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
   }
 
   @Override
-  public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
+  public boolean needsUpgrade(@NotNull DataSource dataSource) {
     return false;
   }
 
   @Override
-  public void upgrade(@NotNull DataSource dataSource) throws IOException {
+  public void upgrade(@NotNull DataSource dataSource) {
     // no-op
   }
 
@@ -219,9 +214,7 @@ public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory 
       Map<String, String> result = BinaryPersistence.getDigestMap(loadedModel.getModel(), binaryModelHeader.getMetaInfoProvider());
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
-    } catch (ModelReadException ignored) {
-      /* ignore */
-    } catch (IOException ignored) {
+    } catch (ModelReadException | IOException ignored) {
       /* ignore */
     }
     return null;

@@ -64,7 +64,7 @@ public final class NodeMatcher {
   // XXX I could have introduced PropertyExtractor with single useful #capture(String) method (plus #done()), but it's just too much
   public NodeMatcher property(@NotNull SProperty p, @NotNull String patternVarName) {
     if (myPropertyToVariableName == null) {
-      myPropertyToVariableName = new HashMap<SProperty, String>(8);
+      myPropertyToVariableName = new HashMap<>(8);
     }
     myPropertyToVariableName.put(p, patternVarName);
     return this;
@@ -87,7 +87,7 @@ public final class NodeMatcher {
   // see #property(), could have added RefExtractor, if needed
   public NodeMatcher association(@NotNull SReferenceLink l, @NotNull String linkVarName) {
     if (myReferenceToVariableName == null) {
-      myReferenceToVariableName = new HashMap<SReferenceLink, String>(8);
+      myReferenceToVariableName = new HashMap<>(8);
     }
     myReferenceToVariableName.put(l, linkVarName);
     return this;
@@ -95,7 +95,7 @@ public final class NodeMatcher {
 
   public ChildMatcher child(@NotNull SContainmentLink role) {
     if (myChildExtractors == null) {
-      myChildExtractors = new HashMap<SContainmentLink, ChildMatcher>(8);
+      myChildExtractors = new HashMap<>(8);
     }
     ChildMatcher childExtractor = myChildExtractors.get(role);
     if (childExtractor == null) {
@@ -119,9 +119,9 @@ public final class NodeMatcher {
   public NodeMatcher disjunct(@NotNull SNode patternNode, @NotNull NodeMatcher disjunct) {
     assert patternNode.getModel() == null : "expect pattern nodes to hand in the air not to address model access";
     if (myDisjunction == null) {
-      myDisjunction = new ArrayList<Pair<SNode, NodeMatcher>>(4);
+      myDisjunction = new ArrayList<>(4);
     }
-    myDisjunction.add(new Pair<SNode, NodeMatcher>(patternNode, disjunct));
+    myDisjunction.add(new Pair<>(patternNode, disjunct));
     return this;
   }
 
@@ -176,8 +176,8 @@ public final class NodeMatcher {
       return false;
     }
     // properties
-    Map<SProperty, String> prop2var = myPropertyToVariableName == null ? Collections.<SProperty,String>emptyMap() : myPropertyToVariableName;
-    ArrayList<SProperty> propsToCheck = new ArrayList<SProperty>(prop2var.keySet());
+    Map<SProperty, String> prop2var = myPropertyToVariableName == null ? Collections.emptyMap() : myPropertyToVariableName;
+    ArrayList<SProperty> propsToCheck = new ArrayList<>(prop2var.keySet());
     propsToCheck.addAll(IterableUtil.asCollection(pattern.getProperties()));
     for (SProperty p : propsToCheck) {
       if (prop2var.containsKey(p)) {
@@ -190,8 +190,8 @@ public final class NodeMatcher {
     }
     //
     // references
-    final Map<SReferenceLink, String> ref2var = myReferenceToVariableName == null ? Collections.<SReferenceLink, String>emptyMap() : myReferenceToVariableName;
-    ArrayList<SReferenceLink> refsToCheck = new ArrayList<SReferenceLink>(ref2var.keySet());
+    final Map<SReferenceLink, String> ref2var = myReferenceToVariableName == null ? Collections.emptyMap() : myReferenceToVariableName;
+    ArrayList<SReferenceLink> refsToCheck = new ArrayList<>(ref2var.keySet());
     for (SReference r : pattern.getReferences()) {
       refsToCheck.add(r.getLink());
     }
@@ -211,7 +211,7 @@ public final class NodeMatcher {
     }
     //
     // children
-    ArrayList<SContainmentLink> knownChildRoles = new ArrayList<SContainmentLink>();
+    ArrayList<SContainmentLink> knownChildRoles = new ArrayList<>();
     // patterns are generally small and don't specify vast child hierarchies in different roles, list is sufficient to hold 1-2 roles
     for (SNode child = pattern.getFirstChild(); child != null; child = child.getNextSibling()) {
       final SContainmentLink cl = child.getContainmentLink();
@@ -219,7 +219,7 @@ public final class NodeMatcher {
         knownChildRoles.add(cl);
       }
     }
-    final Map<SContainmentLink, ChildMatcher> ce = myChildExtractors == null ? Collections.<SContainmentLink,ChildMatcher>emptyMap() : myChildExtractors;
+    final Map<SContainmentLink, ChildMatcher> ce = myChildExtractors == null ? Collections.emptyMap() : myChildExtractors;
     knownChildRoles.addAll(ce.keySet());
     final ChildMatcher defaultChildExtractor = new ChildMatcher(this);
     for (SContainmentLink l : knownChildRoles) {
@@ -229,7 +229,7 @@ public final class NodeMatcher {
       }
       if (!childExtractor.match(IterableUtil.asList(pattern.getChildren(l)), IterableUtil.asList(against.getChildren(l)))) {
         return false;
-      };
+      }
     }
     return true;
   }

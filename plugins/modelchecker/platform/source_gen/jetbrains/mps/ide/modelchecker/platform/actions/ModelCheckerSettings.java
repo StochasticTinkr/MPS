@@ -16,6 +16,8 @@ import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.validation.ValidationSettings;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
@@ -60,6 +62,25 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
   public List<IChecker<?, ?>> getSpecificCheckers(@NotNull Project mpsProject) {
+    List<IChecker<?, ?>> result = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
+    IssueKindReportItem.KindLevel checkingLevel = myState.myCheckingLevel.getKindLevel();
+    for (IChecker<?, ?> checker : ListSequence.fromList(ValidationSettings.getInstance().getCheckerRegistry().getCheckers())) {
+      IssueKindReportItem.KindLevel checkerLevel = checker.getCategory().getKindLevel();
+      switch (checkerLevel) {
+        case MANUAL:
+          if (isIncludeAdditionalChecks()) {
+            ListSequence.fromList(result).addElement(checker);
+          }
+        default:
+          if (checkerLevel.compareTo(checkingLevel) <= 0) {
+            ListSequence.fromList(result).addElement(checker);
+          }
+      }
+    }
+
+    return result;
+  }
+  public List<IChecker<?, ?>> getSpecificCheckers_(@NotNull Project mpsProject) {
     List<IChecker<?, ?>> checkers = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
@@ -70,7 +91,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         ListSequence.fromList(checkers).addElement(new TargetConceptChecker());
         ListSequence.fromList(checkers).addElement(new UsedLanguagesChecker());
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker());
+        ListSequence.fromList(checkers).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker().withoutBrokenReferences());
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));
@@ -117,17 +138,22 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
   }
   public enum CheckingLevel {
-    BASIC("Basic", "Project structure is correct", "Each reference has target"),
-    STRUCTURE("Structure", "Code conforms with languages' structure"),
-    CONSTRAINTS("Constraints", "Code satisfies languages' constraints"),
-    TYPESYSTEM("Typesystem", "Code passes typesystem checks");
+    BASIC(IssueKindReportItem.KindLevel.PROJECT, "Basic", "Project structure is correct"),
+    STRUCTURE(IssueKindReportItem.KindLevel.STRUCTURE, "Structure", "Code conforms with languages' structure", "Each reference has target"),
+    CONSTRAINTS(IssueKindReportItem.KindLevel.CONSTRAINTS, "Constraints", "Code satisfies languages' constraints"),
+    TYPESYSTEM(IssueKindReportItem.KindLevel.TYPESYSTEM, "Typesystem", "Code passes typesystem checks");
 
 
+    private IssueKindReportItem.KindLevel myKindLevel;
     private String myPresentation;
     private String[] myChecks;
-    CheckingLevel(String presentation, String... checks) {
+    CheckingLevel(IssueKindReportItem.KindLevel kindLevel, String presentation, String... checks) {
+      myKindLevel = kindLevel;
       myPresentation = presentation;
       myChecks = checks;
+    }
+    public IssueKindReportItem.KindLevel getKindLevel() {
+      return myKindLevel;
     }
     public String getPresentation() {
       return myPresentation;

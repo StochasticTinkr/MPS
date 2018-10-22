@@ -35,7 +35,7 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
 
     AbstractModule langModule = (AbstractModule) lang.getSourceModule();
 
-    HashSet<String> invalidDep = new HashSet<String>();
+    HashSet<String> invalidDep = new HashSet<>();
     for (SDependency dep : Sequence.fromIterable(langModule.getDeclaredDependencies())) {
       if (!(ClassLoaderManager.getInstance().isValidForClassloading(dep.getTargetModule()))) {
         invalidDep.add(dep.getTargetModule().getModuleName());
@@ -48,7 +48,7 @@ public class LanguageNotLoadedProblem extends LanguageMissingProblem {
     return err;
   }
 
-  public String getIssueKind() {
-    return "language not loaded (dependency problem)";
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.ENVIRONMENT_PROBLEM.deriveItemKind("language not loaded, dependency problem?");
   }
 }

@@ -38,10 +38,10 @@ import java.util.stream.Collectors;
 public class MappingsMemento {
 
   /* mapping,input -> output */
-  private final Map<String, Map<SNodeId, Object>> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<String, Map<SNodeId, Object>>();
+  private final Map<String, Map<SNodeId, Object>> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<>();
 
   /* input -> output */
-  private final Map<SNodeId, Object> myCopiedOutputNodeForInputNode = new HashMap<SNodeId, Object>();
+  private final Map<SNodeId, Object> myCopiedOutputNodeForInputNode = new HashMap<>();
 
   private final List<Pair<String, SNodeId>> myConditionalRoots = new ArrayList<>();
 
@@ -52,7 +52,7 @@ public class MappingsMemento {
     if (mappingName == null) return;
     Map<SNodeId, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
-      myMappingNameAndInputNodeToOutputNodeMap.put(mappingName, new HashMap<SNodeId, Object>());
+      myMappingNameAndInputNodeToOutputNodeMap.put(mappingName, new HashMap<>());
       currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     }
     if (value instanceof SNodeId) {
@@ -62,7 +62,7 @@ public class MappingsMemento {
     } else if (value instanceof Collection) {
       @SuppressWarnings("unchecked")
       Collection<SNode> n0 = (Collection<SNode>) value;
-      List<SNodeId> v = new ArrayList<SNodeId>(n0.size());
+      List<SNodeId> v = new ArrayList<>(n0.size());
       for (SNode n : n0) {
         v.add(n.getNodeId());
       }
@@ -142,14 +142,14 @@ public class MappingsMemento {
     for (int size = is.readInt(); size > 0; size--) {
       String label = is.readString();
       int mapSize = is.readInt();
-      Map<SNodeId, Object> innerMap = new HashMap<SNodeId, Object>(mapSize);
+      Map<SNodeId, Object> innerMap = new HashMap<>(mapSize);
       for (; mapSize > 0; mapSize--) {
         SNodeId key = is.readNodeId();
         int valSize = is.readInt();
         if (valSize == 1) {
           innerMap.put(key, is.readNodeId());
         } else {
-          List<SNodeId> list = new ArrayList<SNodeId>(valSize);
+          List<SNodeId> list = new ArrayList<>(valSize);
           for (; valSize > 0; valSize--) {
             list.add(is.readNodeId());
           }

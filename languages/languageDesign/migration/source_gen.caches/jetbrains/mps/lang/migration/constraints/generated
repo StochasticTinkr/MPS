@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8y5acah7ecmpa72qb2r11fsij33stdi" />
+<product version="3" modelHash="e1t9stvp6i3e0otowufboyhpbw5902y">
+  <files names="ConstraintsAspectDescriptor.java:DataDependencyReference_Constraints.java:GetDataExpression_Constraints.java:LinkPatternVariableReference_Constraints.java:ListPatternVariableReference_Constraints.java:NodePatternVariableReference_Constraints.java:PropertyPatternVariableReference_Constraints.java:PutDataExpression_Constraints.java" />
+</product>
 

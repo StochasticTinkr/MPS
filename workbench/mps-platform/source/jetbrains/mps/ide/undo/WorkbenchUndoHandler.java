@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,12 @@ import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
-  private boolean ourUndoBlocked = false;
   private UndoActionsCollector myActionsCollector = null;
 
   @Override
@@ -39,32 +37,19 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
     }
   }
 
-  @Override
-  public <T> T runNonUndoableAction(Computable<T> t) {
-    if (!ThreadUtils.isInEDT() || ourUndoBlocked) {
-      return t.compute();
-    }
-
-    boolean wasUndoBlocked = ourUndoBlocked;
-    try {
-      ourUndoBlocked = true;
-      return t.compute();
-    } finally {
-      ourUndoBlocked = wasUndoBlocked;
-    }
-  }
-
   private boolean needRegisterAction() {
-    return myActionsCollector != null && !ourUndoBlocked && ThreadUtils.isInEDT();
+    return myActionsCollector != null && ThreadUtils.isInEDT();
   }
 
-  @Override
+  // tells the command is over and UndoHandler shall use whatever platform mechanism available to
+  // register undoable action
+  // FIXME why it's not a command listener, so that gets notifications about command start and command end? Won't need
+  // neither isInsideUndoableCommand and ModelAccess.isInsideCommand, not this flushCommand.
   public void flushCommand() {
     myActionsCollector.flushAndDispose();
     myActionsCollector = null;
   }
 
-  @Override
   public void startCommand(UndoContext context) {
     assert myActionsCollector == null;
     myActionsCollector = new UndoActionsCollector(context);

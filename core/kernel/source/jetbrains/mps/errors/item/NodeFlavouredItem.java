@@ -24,6 +24,6 @@ public interface NodeFlavouredItem extends FlavouredItem {
   @NotNull
   SNodeReference getNode();
 
-  ReportItemFlavour<NodeFlavouredItem, SNodeReference> FLAVOUR_NODE = new SimpleReportItemFlavour<>(NodeFlavouredItem.class, NodeFlavouredItem::getNode);
+  ReportItemFlavour<NodeFlavouredItem, SNodeReference> FLAVOUR_NODE = new SimpleReportItemFlavour<>("FLAVOUR_NODE", NodeFlavouredItem.class, NodeFlavouredItem::getNode);
 
 }

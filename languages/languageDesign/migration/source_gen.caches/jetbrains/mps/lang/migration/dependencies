@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.migration.Language" file="Language.java">
+  <dependency className="jetbrains.mps.lang.migration.Language">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -12,6 +12,8 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.migration.MigrationDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" />

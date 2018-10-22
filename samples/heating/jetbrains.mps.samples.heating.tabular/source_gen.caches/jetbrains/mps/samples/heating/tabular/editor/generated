@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4d8caxh03cx53iklvlmso27852su579" />
+<product version="3" modelHash="2kcw3e3q2gktxvtq4jvrcgpwtfwl1u4">
+  <files names="ChangeEvent_tabular_Editor.java:ChangeEvent_tabular_EditorBuilder_a.java:DailyPlan_ApplySideTransforms.java:DailyPlan_tabular_Editor.java:DailyPlan_tabular_EditorBuilder_a.java:DeleteCustomizeInTabular.java:EditorAspectDescriptorImpl.java:HeatingPlan_tabular_Editor.java:HeatingPlan_tabular_EditorBuilder_a.java:Slot_tabular_Editor.java:Slot_tabular_EditorBuilder_a.java" />
+</product>
 

@@ -29,8 +29,8 @@ public class UnregisteredNodes {
   private static final Logger LOG = LogManager.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes ourInstance;
 
-  private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
-  private final Set<SNode> myNodesWithoutRefs = new THashSet<SNode>();
+  private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<>();
+  private final Set<SNode> myNodesWithoutRefs = new THashSet<>();
   private final Object myLock = new Object();
 
   private boolean myDisabled = true;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -28,6 +27,7 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
@@ -53,29 +53,27 @@ import java.util.Set;
 @ToRemove(version = 4.0)
 public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
-  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
+  private List<DataSourceListener> myListeners = new ArrayList<>();
 
   @NotNull
   private final IFile myFolder;
-  private final ModelRoot myModelRoot;
 
   private long myLastAddRemove = -1;
 
   public FolderDataSource(@NotNull IFile folder) {
-    this(folder, null);
-  }
-
-  /**
-   * @param modelRoot (optional) containing model root, which should be notified before the source during the update
-   */
-  @ToRemove(version = 3.5)
-  @Deprecated
-  protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
     if (folder.exists() && !folder.isDirectory()) {
       throw new IllegalArgumentException("Could not create FolderDataSource with regular file: " + folder);
     }
     this.myFolder = folder;
-    this.myModelRoot = modelRoot;
+  }
+
+  /**
+   * @param modelRoot unused
+   */
+  @ToRemove(version = 3.5)
+  @Deprecated
+  protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
+    this(folder);
   }
 
   /**
@@ -118,7 +116,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   @NotNull
   @Override
   public Iterable<String> getAvailableStreams() {
-    Set<String> names = new HashSet<String>();
+    Set<String> names = new HashSet<>();
     for (IFile file : getStreams()) {
       if (isIncluded(file)) {
         names.add(getStreamName(file));
@@ -200,7 +198,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     if (isReadOnly()) {
       return;
     }
-    ArrayList<IFile> toDelete = new ArrayList<IFile>();
+    ArrayList<IFile> toDelete = new ArrayList<>();
     for (IFile file : getStreams()) {
       if (isIncluded(file)) {
         toDelete.add(file);
@@ -213,19 +211,8 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    if (myModelRoot instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) myModelRoot);
-    }
-    if (myModelRoot != null && myModelRoot.getModule() instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) myModelRoot.getModule());
-    }
-    return null;
-  }
-
-  @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    Set<String> affectedStreams = new HashSet<String>();
+    Set<String> affectedStreams = new HashSet<>();
     for (IFile file : event.getChanged()) {
       if (isIncluded(file)) {
         affectedStreams.add(getStreamName(file));
@@ -252,7 +239,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   private void fireChanged(ProgressMonitor monitor, Iterable<String> streams) {
     List<DataSourceListener> listeners;
     synchronized (LOCK) {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     }
     monitor.start("Reloading", listeners.size());
     try {

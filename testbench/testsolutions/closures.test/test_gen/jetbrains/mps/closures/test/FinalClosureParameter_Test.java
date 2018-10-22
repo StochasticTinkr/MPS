@@ -32,8 +32,6 @@ public class FinalClosureParameter_Test extends TestCase {
     });
     Assert.assertSame(1, count.value);
   }
-  public FinalClosureParameter_Test() {
-  }
   public void acceptFunction(_FunctionTypes._void_P1_E0<? super String> fun) {
     fun.invoke("BAR");
   }

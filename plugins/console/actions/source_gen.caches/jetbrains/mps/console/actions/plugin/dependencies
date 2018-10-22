@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.actions.plugin.Actions_ApplicationPlugin" file="Actions_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.Actions_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action" />
@@ -12,11 +12,11 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup" file="FindByConditionGroup_ActionGroup.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.ModifyInstancesByCondition_Action" file="ModifyInstancesByCondition_Action.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.ModifyInstancesByCondition_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -66,7 +66,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.ShowGenerationPlan_Action" file="ShowGenerationPlan_Action.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.ShowGenerationPlan_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.event.InputEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.TextPreviewGroup_Console_ActionGroup" file="TextPreviewGroup_Console_ActionGroup.java">
+  <dependency className="jetbrains.mps.console.actions.plugin.TextPreviewGroup_Console_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

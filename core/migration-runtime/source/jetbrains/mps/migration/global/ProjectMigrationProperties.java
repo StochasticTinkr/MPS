@@ -34,7 +34,7 @@ public class ProjectMigrationProperties implements MigrationProperties, ProjectC
   private static final String NAME = "key";
   private static final String VALUE = "value";
   private static final String SINGLE_PROP = "entry";
-  protected Map<String, String> myProperties = new TreeMap<String, String>();
+  protected Map<String, String> myProperties = new TreeMap<>();
   public ProjectMigrationProperties() {
   }
   public void setProperty(@NotNull String key, String value) {
@@ -51,7 +51,7 @@ public class ProjectMigrationProperties implements MigrationProperties, ProjectC
   public interface MigrationPropertiesReloadListener {
     void onReload();
   }
-  private List<ProjectMigrationProperties.MigrationPropertiesReloadListener> myListeners = new ArrayList<ProjectMigrationProperties.MigrationPropertiesReloadListener>(1);
+  private List<ProjectMigrationProperties.MigrationPropertiesReloadListener> myListeners = new ArrayList<>(1);
   public void addListener(ProjectMigrationProperties.MigrationPropertiesReloadListener l) {
     myListeners.add(l);
   }
@@ -71,7 +71,7 @@ public class ProjectMigrationProperties implements MigrationProperties, ProjectC
     return res;
   }
   @Override
-  public void loadState(Element state) {
+  public void loadState(@NotNull Element state) {
     myProperties.clear();
     for (Element e : state.getChildren(SINGLE_PROP)) {
       myProperties.put(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));

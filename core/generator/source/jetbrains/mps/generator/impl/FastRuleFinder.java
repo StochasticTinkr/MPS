@@ -53,7 +53,7 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
 
       List<T> rules = specificRules.get(applicableConcept);
       if (rules == null) {
-        rules = new LinkedList<T>();
+        rules = new LinkedList<>();
         specificRules.put(applicableConcept, rules);
       }
       rules.add(rule);
@@ -65,7 +65,7 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
         for (SAbstractConcept descendant : allDescendantConcepts) {
           rules = inheritedRules.get(descendant);
           if (rules == null) {
-            rules = new LinkedList<T>();
+            rules = new LinkedList<>();
             inheritedRules.put(descendant, rules);
           }
           rules.add(rule);
@@ -78,9 +78,9 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
       List<T> inherited = inheritedRules.remove(entry.getKey());
       List<T> rules;
       if (inherited == null) {
-        rules = new ArrayList<T>(exact);
+        rules = new ArrayList<>(exact);
       } else {
-        ArrayList<T> l = new ArrayList<T>(exact.size() + inherited.size());
+        ArrayList<T> l = new ArrayList<>(exact.size() + inherited.size());
         l.addAll(exact);
         l.addAll(inherited);
         rules = l;
@@ -89,7 +89,7 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
     }
     for (Entry<SAbstractConcept, List<T>> entry : inheritedRules.entrySet()) {
       List<T> inherited = entry.getValue();
-      myApplicableRules.put(entry.getKey(), new ArrayList<T>(inherited));
+      myApplicableRules.put(entry.getKey(), new ArrayList<>(inherited));
     }
   }
 
@@ -100,14 +100,14 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
   public static class BlockedReductionsData {
     private static final Object KEY = new Object();
     // reduction data for this micro step is read-only
-    private final Map<SNode, Object> myCurrentReductionData = new HashMap<SNode, Object>();
+    private final Map<SNode, Object> myCurrentReductionData = new HashMap<>();
     // can be modified by several threads FIXME we can block rules on a per-root (i.e. per thread) basis, so no synchronization is really needed here
-    private final Map<SNode, Object> myNextReductionData = new ConcurrentHashMap<SNode, Object>();
+    private final Map<SNode, Object> myNextReductionData = new ConcurrentHashMap<>();
     // although not quite nice, keep weavings separate from reductions but do it the same way - reductionData needs refactoring anyway
     // and once changed, weaving rules would go through refactoring as well
-    private final Map<SNode, Collection<TemplateWeavingRule>> myCurrentWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+    private final Map<SNode, Collection<TemplateWeavingRule>> myCurrentWeaveData = new HashMap<>();
     // weavings are executed from the single thread
-    private final Map<SNode, Collection<TemplateWeavingRule>> myNextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>();
+    private final Map<SNode, Collection<TemplateWeavingRule>> myNextWeaveData = new HashMap<>();
 
     @NotNull
     public static BlockedReductionsData getStepData(GenerationSessionContext sessionContext) {
@@ -144,7 +144,7 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
     public void blockWeaving(@NotNull SNode inputNode, @NotNull TemplateWeavingRule rule) {
       Collection<TemplateWeavingRule> nxt = myNextWeaveData.get(inputNode);
       if (nxt == null) {
-        nxt = new ArrayList<TemplateWeavingRule>(5);
+        nxt = new ArrayList<>(5);
         Collection<TemplateWeavingRule> cur = myCurrentWeaveData.get(inputNode);
         if (cur != null) {
           nxt.addAll(cur);

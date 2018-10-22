@@ -1719,10 +1719,6 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static void mappingScript_CodeBlock_4(final MappingScriptContext _context) {
     for (SNode root : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
-      if (!(_context.isDirty(root))) {
-        continue;
-      }
-
       new FetchDependenciesProcessor(root, _context).process();
     }
   }

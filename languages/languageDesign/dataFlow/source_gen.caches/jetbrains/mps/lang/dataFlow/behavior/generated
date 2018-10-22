@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1wuym4y63gjili5qlsxrs2ar8cexgl" />
+<product version="3" modelHash="-ecduylp612egmbkmw7ya8u66ztvlrp0">
+  <files names="BehaviorAspectDescriptor.java:BuilderBlock__BehaviorDescriptor.java:DataFlowBuilderDeclaration__BehaviorDescriptor.java:EmitStatement__BehaviorDescriptor.java:InstructionType__BehaviorDescriptor.java:LabelPosition__BehaviorDescriptor.java:NodeParameter__BehaviorDescriptor.java" />
+</product>
 

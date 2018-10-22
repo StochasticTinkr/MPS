@@ -40,7 +40,7 @@ public abstract class AbstractCellMenuComponent {
   }
 
   public List<SubstituteAction> createSubstituteActions(CellContext cellContext, EditorContext editorContext) {
-    List<SubstituteAction> actions = new LinkedList<SubstituteAction>();
+    List<SubstituteAction> actions = new LinkedList<>();
     for (SubstituteInfoPartExt menuPart : myExtParts) {
       try {
         actions.addAll(menuPart.createActions(cellContext, editorContext));

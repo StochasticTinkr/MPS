@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.platform.actions.AnalyzeDependenciesViewTool" file="AnalyzeDependenciesViewTool.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.AnalyzeDependenciesViewTool">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode extendsClassName="jetbrains.mps.ide.tools.BaseProjectTool" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action" file="AnalyzeDependencies_Action.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.DependenciesUtil" file="DependenciesUtil.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.DependenciesUtil">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" file="GoToNodeById_Action.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter" file="MPSStackTraceFilter.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter">
     <classNode dependClassName="com.intellij.execution.filters.HyperlinkInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Integer" />

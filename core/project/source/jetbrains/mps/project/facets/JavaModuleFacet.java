@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,21 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
     return outputRoot == null ? null : FileGenerationUtil.getCachesDir(outputRoot);
   }
 
+  @Nullable
+  @Override
+  default IFile getOutputRoot(@NotNull SModel model) {
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
+    }
+    return getOutputRoot();
+  }
+
+  @Nullable
+  @Override
+  default IFile getOutputCacheRoot(@NotNull SModel model) {
+    return getOutputCacheRoot();
+  }
 
   /**
    * E.g. source_gen/qualified/model/name/
@@ -106,6 +121,10 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
   default IFile getOutputLocation(@NotNull SModel model) {
     final SModule associatedModule = getModule();
     assert model.getModule() == associatedModule;
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
+    }
     IFile outputRoot = getOutputRoot();
     return outputRoot == null ? null : FileGenerationUtil.getDefaultOutputDir(model.getReference(), outputRoot);
   }

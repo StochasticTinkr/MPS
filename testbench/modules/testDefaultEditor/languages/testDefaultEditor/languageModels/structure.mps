@@ -220,9 +220,6 @@
     <property role="TrG5h" value="NotSubstitutableDeveloper" />
     <property role="EcuMT" value="472942194665437297" />
     <ref role="1TJDcQ" node="qgeAIokIy8" resolve="AbstractDeveloper" />
-    <node concept="PrWs8" id="qgeAIokVxM" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5DTV$TRrbnq">
     <property role="TrG5h" value="Canvas" />

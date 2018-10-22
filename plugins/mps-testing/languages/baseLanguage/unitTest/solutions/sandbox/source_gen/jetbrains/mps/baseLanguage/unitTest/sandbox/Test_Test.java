@@ -24,6 +24,4 @@ public class Test_Test extends TestCase {
   public void tearDown() {
     System.err.println("teardown test!!");
   }
-  public Test_Test() {
-  }
 }

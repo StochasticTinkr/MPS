@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
-import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -273,28 +270,12 @@ public class ModelUndoTest {
       }
     }
 
-    @Override
-    public <T> T runNonUndoableAction(Computable<T> t) {
-      final boolean oldValue = myIsUndoBlocked;
-      try {
-        myIsUndoBlocked = true;
-        return t.compute();
-      } finally {
-        myIsUndoBlocked = oldValue;
-      }
-    }
-
-    @Override
     public void flushCommand() {
       if (myActions.isEmpty()) {
         return;
       }
       myUndoStack.push(new UndoUnit(new ArrayList<>(myActions), this));
       myActions.clear();
-    }
-
-    @Override
-    public void startCommand(UndoContext context) {
     }
 
     /**

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.facet.FacetRegistry" file="FacetRegistry.java">
+  <dependency className="jetbrains.mps.make.facet.FacetRegistry">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -23,11 +23,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.IFacet" file="IFacet.java">
+  <dependency className="jetbrains.mps.make.facet.IFacet">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -35,11 +36,11 @@
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.IFacetManifest" file="IFacetManifest.java">
+  <dependency className="jetbrains.mps.make.facet.IFacetManifest">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.ITarget" file="ITarget.java">
+  <dependency className="jetbrains.mps.make.facet.ITarget">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -50,10 +51,10 @@
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.ITargetEx" file="ITargetEx.java">
+  <dependency className="jetbrains.mps.make.facet.ITargetEx">
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.ITargetEx2" file="ITargetEx2.java">
+  <dependency className="jetbrains.mps.make.facet.ITargetEx2">
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
   </dependency>
 </dependenciesRoot>

@@ -89,32 +89,17 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     mainPanel.add(myIsCaseSensitive);
     myIsCaseSensitive.setMnemonic(KeyEvent.VK_M);
     myIsCaseSensitive.setFocusable(false);
-    myIsCaseSensitive.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        search();
-      }
-    });
+    myIsCaseSensitive.addActionListener(event -> search());
 
     mainPanel.add(myIsRegex);
     myIsRegex.setMnemonic(KeyEvent.VK_R);
     myIsRegex.setFocusable(false);
-    myIsRegex.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled());
-      }
-    });
+    myIsRegex.addActionListener(event -> myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled()));
 
     mainPanel.add(myIsWordsOnly);
     myIsWordsOnly.setMnemonic(KeyEvent.VK_O);
     myIsWordsOnly.setFocusable(false);
-    myIsWordsOnly.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        search();
-      }
-    });
+    myIsWordsOnly.addActionListener(event -> search());
 
     this.add(mainPanel, BorderLayout.WEST);
 
@@ -285,7 +270,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
 
   protected class HistoryCompletionTextField extends CompletionTextField {
     private final int myPossibleValuesLimit = 30;
-    private List<String> myPossibleValues = new ArrayList<String>();
+    private List<String> myPossibleValues = new ArrayList<>();
 
     public HistoryCompletionTextField() {
       super();
@@ -332,12 +317,12 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Search history");
       getTemplatePresentation().setText("Search History");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 
@@ -358,13 +343,13 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Previous Occurrence");
       getTemplatePresentation().setText("Previous Occurrence");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_PREVIOUS));
       shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_UP));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 
@@ -385,13 +370,13 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       getTemplatePresentation().setDescription("Next Occurrence");
       getTemplatePresentation().setText("Next Occurrence");
 
-      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      ArrayList<Shortcut> shortcuts = new ArrayList<>();
       shortcuts.addAll(getActionShortcuts(MPSActions.EDITOR_FIND_NEXT));
       shortcuts.addAll(getActionShortcuts(IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN));
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
 
       registerCustomShortcutSet(
-        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[0])),
         myText);
     }
 

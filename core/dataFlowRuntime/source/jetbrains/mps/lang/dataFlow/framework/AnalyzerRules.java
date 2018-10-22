@@ -41,7 +41,7 @@ import java.util.stream.Stream;
 public class AnalyzerRules {
   private static Logger LOG = Logger.wrap(LogManager.getLogger(AnalyzerRules.class));
 
-  private List<DataFlowConstructor> myRules = new LinkedList<DataFlowConstructor>();
+  private List<DataFlowConstructor> myRules = new LinkedList<>();
   private String myAnalyzerId;
   private final List<SNode> myNodesToApply;
   private final Program myProgram;
@@ -52,7 +52,7 @@ public class AnalyzerRules {
   }
 
   public AnalyzerRules(String analyzerId, Collection<SNode> nodesToApply, Program program, ProgramBuilderContext context) {
-    myNodesToApply = new ArrayList<SNode>();
+    myNodesToApply = new ArrayList<>();
     myNodesToApply.addAll(nodesToApply);
     myProgram = program;
     myAnalyzerId = analyzerId;
@@ -78,11 +78,9 @@ public class AnalyzerRules {
       if (aspect == null) {
         continue;
       }
-      for (DataFlowConstructor rule : aspect.getConstructors(myAnalyzerId)) {
-        myRules.add(rule);
-      }
+      myRules.addAll(aspect.getConstructors(myAnalyzerId));
     }
-    Set<SNode> descendants = new LinkedHashSet<SNode>();
+    Set<SNode> descendants = new LinkedHashSet<>();
     for (SNode myNodeToApply : myNodesToApply) {
       descendants.addAll(SNodeOperations.getNodeDescendants(myNodeToApply, null, false, new SAbstractConcept[]{}));
     }

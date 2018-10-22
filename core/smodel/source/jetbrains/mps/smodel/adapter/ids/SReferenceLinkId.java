@@ -37,9 +37,7 @@ public final class SReferenceLinkId  extends SConceptFeatureId{
     SReferenceLinkId that = (SReferenceLinkId) o;
 
     if (myRefLinkId != that.myRefLinkId) return false;
-    if (!getConceptId().equals(that.getConceptId())) return false;
-
-    return true;
+    return getConceptId().equals(that.getConceptId());
   }
 
   @Override

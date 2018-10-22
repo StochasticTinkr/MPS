@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -66,9 +66,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -3408,7 +3405,6 @@
     <node concept="2tJIrI" id="1NiMOxiwPHW" role="jymVt" />
     <node concept="2YIFZL" id="1NiMOxiwVQ1" role="jymVt">
       <property role="TrG5h" value="loadFromOldMPSPersistence" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1NiMOxiwUEM" role="3clF47">
@@ -3583,7 +3579,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="setPersistenceVersion" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="5m3_7gRtLU" role="1B3o_S" />
         <node concept="3cqZAl" id="5m3_7gRtLW" role="3clF45" />
         <node concept="37vLTG" id="5m3_7gRtLX" role="3clF46">
@@ -3610,7 +3605,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getPersistenceVersion" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="5m3_7gRtM3" role="1B3o_S" />
         <node concept="10Oyi0" id="5m3_7gRtM5" role="3clF45" />
         <node concept="3clFbS" id="5m3_7gRtM8" role="3clF47">
@@ -3630,7 +3624,6 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getModelFactory" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
         <node concept="3Tm1VV" id="5m3_7gRtMa" role="1B3o_S" />
         <node concept="3uibUv" id="5m3_7gRtMc" role="3clF45">
           <ref role="3uigEE" to="dush:~ModelFactory" resolve="ModelFactory" />

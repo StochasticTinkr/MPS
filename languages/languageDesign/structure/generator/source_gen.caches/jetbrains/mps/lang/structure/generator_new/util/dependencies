@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.structure.generator_new.util.IdGenerationUtil" file="IdGenerationUtil.java">
+  <dependency className="jetbrains.mps.lang.structure.generator_new.util.IdGenerationUtil">
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.String" />

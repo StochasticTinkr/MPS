@@ -28,7 +28,7 @@ public class ProjectScope extends FindUsagesScope {
     }
   }
 
-  public ProjectScope(Element element, Project project) throws CantLoadSomethingException {
+  public ProjectScope(Element element, Project project) {
     this(project);
   }
 

@@ -142,12 +142,12 @@ public class OptimizeImportsHelper {
   private Result optimizeSolutionImports_internal(Solution solution) {
     List<SModel> modelsToOptimize = solution.getModels();
     Result result = optimizeModelsImports_internal(modelsToOptimize, new EmptyProgressMonitor());
-    result.myReport = optimizeModuleImports(solution, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(solution, result, Collections.emptySet()) + "\n\n" + result.myReport;
     return result;
   }
 
   private Result optimizeLanguageImports_internal(Language language) {
-    List<SModel> modelsToOptimize = new ArrayList<SModel>();
+    List<SModel> modelsToOptimize = new ArrayList<>();
     for (SModel model : language.getModels()) {
       if (SModelStereotype.isDescriptorModelStereotype(SModelStereotype.getStereotype(model)) || SModelStereotype.isStubModel(model)) {
         // with @desciptor model hosting imports to activate generation of custom aspects, it's not wise to remove these.
@@ -166,7 +166,7 @@ public class OptimizeImportsHelper {
       gms.walkPriorityRules(g);
       result.myReport = optimizeModuleImports(g, result, gms.getReferencedGenerators()) + "\n\n" + result.myReport;
     }
-    result.myReport = optimizeModuleImports(language, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(language, result, Collections.emptySet()) + "\n\n" + result.myReport;
 
     return result;
   }
@@ -197,7 +197,7 @@ public class OptimizeImportsHelper {
   private Result optimizeModelImports_internal(SModel modelDescriptor) {
     Result result = collectModelDependencies(modelDescriptor);
 
-    Set<SModelReference> unusedModels = new HashSet<SModelReference>();
+    Set<SModelReference> unusedModels = new HashSet<>();
     for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor)) {
       if (result.myUsedModels.contains(model)) continue;
 
@@ -214,14 +214,14 @@ public class OptimizeImportsHelper {
       unusedModels.add(model);
     }
 
-    Set<SLanguage> unusedLanguages = new HashSet<SLanguage>();
+    Set<SLanguage> unusedLanguages = new HashSet<>();
     for (SLanguage languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguageIds()) {
       if (isUnusedLanguageRef(result, languageRef)) {
         unusedLanguages.add(languageRef);
       }
     }
 
-    Set<SModuleReference> unusedDevkits = new HashSet<SModuleReference>();
+    Set<SModuleReference> unusedDevkits = new HashSet<>();
     for (SModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
       if (ModelsAutoImportsManager.getDevKits(modelDescriptor.getModule(), modelDescriptor).contains(devkitRef)) {
         continue;
@@ -248,9 +248,7 @@ public class OptimizeImportsHelper {
     result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
 
     // add auto imports as dependencies
-    for (SLanguage l : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
-      result.myUsedLanguages.add(l);
-    }
+    result.myUsedLanguages.addAll(ModelsAutoImportsManager.getLanguages(model.getModule(), model));
     for (SModel m : ModelsAutoImportsManager.getAutoImportedModels(model.getModule(), model)) {
       result.addUsedModel(m.getReference());
     }
@@ -261,9 +259,9 @@ public class OptimizeImportsHelper {
   //----additional methods--------
 
   private String optimizeModuleImports(AbstractModule module, Result result, Collection<SModuleReference> toKeep) {
-    List<Dependency> unusedDeps = new ArrayList<Dependency>();
+    List<Dependency> unusedDeps = new ArrayList<>();
     final SModuleReference optimizedModuleReference = module.getModuleReference();
-    HashSet<SModuleReference> inUse = new HashSet<SModuleReference>(toKeep);
+    HashSet<SModuleReference> inUse = new HashSet<>(toKeep);
     SRepository repository = module.getRepository();
     // from used models, find out modules we need
     for (SModelReference mr : result.myUsedModels) {
@@ -366,8 +364,8 @@ public class OptimizeImportsHelper {
 
   private static class Result {
     public String myReport = "";
-    public final Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
-    public final Set<SModelReference> myUsedModels = new HashSet<SModelReference>();
+    public final Set<SLanguage> myUsedLanguages = new HashSet<>();
+    public final Set<SModelReference> myUsedModels = new HashSet<>();
 
     public void add(Result addition) {
       myReport = myReport + addition.myReport + "\n";

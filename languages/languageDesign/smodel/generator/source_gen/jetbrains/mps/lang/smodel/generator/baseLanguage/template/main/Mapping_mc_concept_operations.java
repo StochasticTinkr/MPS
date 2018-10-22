@@ -352,7 +352,7 @@ public class Mapping_mc_concept_operations extends MapConfigBase implements Temp
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_Concept_NewInstance().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_Concept_NewInstance().apply(environment, context);
       return tlist1;
     }
   }

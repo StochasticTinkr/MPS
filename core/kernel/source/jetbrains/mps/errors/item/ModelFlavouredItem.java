@@ -24,6 +24,6 @@ public interface ModelFlavouredItem extends FlavouredItem {
   @NotNull
   SModelReference getModel();
 
-  ReportItemFlavour<ModelFlavouredItem, SModelReference> FLAVOUR_MODEL = new SimpleReportItemFlavour<>(ModelFlavouredItem.class, ModelFlavouredItem::getModel);
+  ReportItemFlavour<ModelFlavouredItem, SModelReference> FLAVOUR_MODEL = new SimpleReportItemFlavour<>("FLAVOUR_MODEL", ModelFlavouredItem.class, ModelFlavouredItem::getModel);
 
 }

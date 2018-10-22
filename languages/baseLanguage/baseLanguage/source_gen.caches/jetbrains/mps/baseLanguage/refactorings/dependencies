@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" file="ChangeMethodSignature.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target" file="ChangeMethodSignature_Target.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" file="MakeFieldFinal.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -36,14 +36,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" file="MakeFieldFinal_Target.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" file="MakeFieldStatic.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic_Target" file="MakeFieldStatic_Target.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -75,48 +75,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.RefactoringAspectDescriptor" file="RefactoringAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.RefactoringAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.refactoring.runtime.RefactoringAspectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.RenameMethod" file="RenameMethod.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.refactorings.Rename" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" file="RenameMethod_Target.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod" file="SafeDeleteConceptMethod.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod_Target" />
@@ -132,14 +103,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod_Target" file="SafeDeleteConceptMethod_Target.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod_Target">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteMethod" file="SafeDeleteMethod.java">
+  <dependency className="jetbrains.mps.baseLanguage.refactorings.SafeDeleteMethod">
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -109,21 +109,18 @@ public final class MPSModelVirtualFile extends VirtualFile {
   @Override
   public VirtualFile getParent() {
     // hack
-    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        SModel model = myModelReference.resolve(myRepoFiles.getRepository());
-        if (model == null) {
-          return null;
-        }
-        DataSource ds = model.getSource();
-        if (ds instanceof FileDataSource) {
-          return VirtualFileUtils.getOrCreateVirtualFile(((FileDataSource) ds).getFile());
-        } else if (ds instanceof FolderDataSource) {
-          return VirtualFileUtils.getOrCreateVirtualFile(((FolderDataSource) ds).getFolder());
-        } else {
-          return null;
-        }
+    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(() -> {
+      SModel model = myModelReference.resolve(myRepoFiles.getRepository());
+      if (model == null) {
+        return null;
+      }
+      DataSource ds = model.getSource();
+      if (ds instanceof FileDataSource) {
+        return VirtualFileUtils.getOrCreateVirtualFile(((FileDataSource) ds).getFile());
+      } else if (ds instanceof FolderDataSource) {
+        return VirtualFileUtils.getOrCreateVirtualFile(((FolderDataSource) ds).getFolder());
+      } else {
+        return null;
       }
     });
   }
@@ -135,13 +132,13 @@ public final class MPSModelVirtualFile extends VirtualFile {
 
   @NotNull
   @Override
-  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
+  public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) {
     throw new UnsupportedOperationException();
   }
 
   @NotNull
   @Override
-  public byte[] contentsToByteArray() throws IOException {
+  public byte[] contentsToByteArray() {
     return ZERO_BYTES;
   }
 
@@ -160,7 +157,7 @@ public final class MPSModelVirtualFile extends VirtualFile {
   }
 
   @Override
-  public InputStream getInputStream() throws IOException {
+  public InputStream getInputStream() {
     throw new UnsupportedOperationException();
   }
 }

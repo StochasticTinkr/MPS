@@ -70,9 +70,6 @@ public final class ModuleReference implements SModuleReference {
     }
     SModuleReference p = (SModuleReference) obj;
 
-    if (myModuleId == null && p.getModuleId() == null) {
-      return myModuleName.equals(p.getModuleName());
-    }
     return Objects.equals(myModuleId, p.getModuleId());
   }
 

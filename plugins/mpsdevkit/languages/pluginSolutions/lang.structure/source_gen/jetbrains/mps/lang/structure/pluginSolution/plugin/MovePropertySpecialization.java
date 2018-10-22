@@ -23,6 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringRuntime;
@@ -56,10 +57,11 @@ public class MovePropertySpecialization extends StructureSpecializationBase<SPro
   }
   public Collection<SNode> findInstances(SProperty oldProperty, SearchScope searchScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_fubpxk_a0c = CommandUtil.createScope(searchScope);
+      final SearchScope scope_fubpxk_a0c_0 = new EditableFilteringScope(scope_fubpxk_a0c);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_fubpxk_a0c_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(oldProperty.getOwner()), false)).toListSequence();

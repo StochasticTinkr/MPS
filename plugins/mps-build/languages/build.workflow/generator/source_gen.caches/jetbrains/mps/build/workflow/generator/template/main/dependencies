@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0ud" file="Pattern_x583g4_a0a0ud.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0ud">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0vd" file="Pattern_x583g4_a0a0vd.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0vd">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0wd" file="Pattern_x583g4_a0a0wd.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0wd">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0xd" file="Pattern_x583g4_a0a0xd.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.template.main.Pattern_x583g4_a0a0xd">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.build.workflow.generator.template.main.QueriesGenerated">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

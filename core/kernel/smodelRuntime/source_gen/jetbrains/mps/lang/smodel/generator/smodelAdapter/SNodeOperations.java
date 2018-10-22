@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
 import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.Nullable;
@@ -689,15 +688,6 @@ public class SNodeOperations {
       return null;
     }
     return node.getReference(linkDeclaration);
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SReference getReference(SNode node, SNode linkDeclaration) {
-    if (node == null || linkDeclaration == null) {
-      return null;
-    }
-    linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
   }
   public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, SAbstractConcept concept) {
     if (concept == null || nodes == null) {

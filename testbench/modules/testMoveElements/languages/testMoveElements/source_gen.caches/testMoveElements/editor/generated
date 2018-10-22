@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ewgmj3qrcibbuni4zrqdwhg0snl3acl" />
+<product version="3" modelHash="-6q1ffbjura5bvgdoqelsavumm6c6zm4">
+  <files names="DummyBlock_Editor.java:DummyBlock_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:ManyStatementsContainer_Editor.java:ManyStatementsContainer_EditorBuilder_a.java:ManyStatements_Editor.java:ManyStatements_EditorBuilder_a.java" />
+</product>
 

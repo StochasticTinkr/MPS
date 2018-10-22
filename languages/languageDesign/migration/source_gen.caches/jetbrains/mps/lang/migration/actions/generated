@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ljivhxez2vaks38t1256d8uvmezg0e" />
+<product version="3" modelHash="-6ljivhxez2vaks38t1256d8uvmezg0e">
+  <files names="ActionAspectDescriptorImpl.java:NodeReference_factories.java:TransformStatement.java" />
+</product>
 

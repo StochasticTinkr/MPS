@@ -4,11 +4,13 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.project.Project;
 import java.io.File;
 import com.intellij.execution.process.ProcessHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -29,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.PathMacros;
-import org.apache.log4j.Level;
 import org.jdom.Element;
 import jetbrains.mps.tool.common.JDOMUtil;
 import org.jdom.Document;
@@ -38,7 +39,9 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import java.net.URISyntaxException;
@@ -51,11 +54,18 @@ import jetbrains.mps.debug.api.Debuggers;
 
 public class JUnit_Command {
   private static final Logger LOG = LogManager.getLogger(JUnit_Command.class);
+  private Project myProject_Project;
   private String myDebuggerSettings_String;
   private String myVirtualMachineParameter_String;
   private String myJrePath_String;
   private File myWorkingDirectory_File = new File(".");
   public JUnit_Command() {
+  }
+  public JUnit_Command setProject_Project(Project project) {
+    if (project != null) {
+      myProject_Project = project;
+    }
+    return this;
   }
   public JUnit_Command setDebuggerSettings_String(String debuggerSettings) {
     if (debuggerSettings != null) {
@@ -83,9 +93,22 @@ public class JUnit_Command {
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new JUnit_Command().setVirtualMachineParameter_String(check_txeh3_a1a0a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
+    if (myProject_Project == null) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("This is deprecated (since MPS 2018.3) way to execute JUnit tests, please refactor", new Throwable());
+      }
+    }
+    return new JUnit_Command().setProject_Project(myProject_Project).setVirtualMachineParameter_String(check_txeh3_a2a1a0a(javaRunParameters)).setJrePath_String((check_txeh3_a0d0b0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_txeh3_a0a4a1a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
+    if (myProject_Project == null) {
+      // XXX we tolerate null project for transition period, clients have to supply one always 
+      //     we shall fail with exception once legacy usages gone 
+      // FIXME and mark project parameter as 'required' 
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("This is deprecated (since MPS 2018.3) way to execute JUnit tests, please refactor", new Throwable());
+      }
+    }
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
@@ -97,8 +120,9 @@ public class JUnit_Command {
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    // FIXME use of global repository here is just provisional, we need an MPS project here (it's fine to demand an MPS project when we launch MPS tests from within an IDE, right?) 
-    SRepository repo = MPSModuleRepository.getInstance();
+    // XXX use of global repository here is provisional, until legacy calls are here. 
+    // It's fine to demand an MPS project when we launch MPS tests from ITestNodeWrapper 
+    SRepository repo = (myProject_Project == null ? MPSModuleRepository.getInstance() : myProject_Project.getRepository());
     return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun, repo)).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun, repo)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
@@ -205,7 +229,7 @@ public class JUnit_Command {
       }
     }
     Set<SModuleReference> uniqueModules = SetSequence.fromSet(new HashSet<SModuleReference>());
-    for (ITestNodeWrapper tt : tests) {
+    for (ITestNodeWrapper tt : testsToRun) {
       SetSequence.fromSet(uniqueModules).addElement(tt.getTestNodeModule());
     }
     return new TestsWithParameters(testsToRun, runParams, uniqueModules);
@@ -221,17 +245,50 @@ public class JUnit_Command {
     return maxParams;
   }
   private static List<String> getClasspath(final TestsWithParameters tests, final SRepository repo) {
+    // next module used to be in defaults of TestParameters, don't see a reason why can't do it here, though. 
+    // With classpath, we have to  
+    // ensure *TestExecutor classes get loaded (unitTest.execution.server package). The best approach in that case 
+    // would be for TestParameters to tell set of required modules (instead of/in addition to classpath list) 
+    // as it's TestParameters class that knows specific contributor class location, however, such a change would 
+    // require changes in TestParameters#comprises() logic, which needs a thorough refactoring to get rid of  
+    // Class<> in getExecutorClass() anyway. 
+    // The reason I put it here is that I lean towards no executorClass in TestParameters at all, so that 
+    // this command would pick executor class based on information whether need to start MPS or not, and therfore 
+    // would add relevant module into classpath here anyway. 
+    final SModuleReference moduleWithExecutors = PersistenceFacade.getInstance().createModuleReference("f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)");
+
     final List<String> classpath = ListSequence.fromList(new LinkedList<String>());
     if (tests.getParameters().needsMPS()) {
+      // WithPlatformTestExecutor starts IDEA, therefore needs it in CP 
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder()).distinct());
       ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder()).distinct());
       // Module classpath would get managed by IdeaEnvironment based on set of modules to load 
+      // 
+      // next is to ensure TestExecutor is loaded. Though it's part of execution plugin, it's a regular mps module 
+      // and is managed by MPS classloader once MPS starts, while we need it first, to start MPS. 
+      repo.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          SModule m = moduleWithExecutors.resolve(repo);
+          if (m != null) {
+            ListSequence.fromList(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(Sequence.<SModule>singleton(m))));
+          } else {
+            String msg = String.format("No test module %s is available, execution classpath may be invalid.", moduleWithExecutors.getModuleName());
+            // we likely to fail anyway, error is better than warn 
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error(msg);
+            }
+          }
+
+        }
+      });
     } else {
       // when no MPS is started, we just build a regular Java classpath with everything test classes may need. 
       repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
-          for (SModuleReference testModule : tests.getRequiredModules()) {
+          List<SModuleReference> requiredModules = new ArrayList<SModuleReference>(tests.getRequiredModules());
+          requiredModules.add(moduleWithExecutors);
+          for (SModuleReference testModule : requiredModules) {
             SModule module = testModule.resolve(repo);
             if (module != null) {
               SetSequence.fromSet(uniqueModules).addElement(module);
@@ -311,19 +368,19 @@ public class JUnit_Command {
       }
     };
   }
-  private static String check_txeh3_a1a0a0a(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a2a1a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-  private static boolean check_txeh3_a0c0a0a0(JavaRunParameters checkedDotOperand) {
+  private static boolean check_txeh3_a0d0b0a0(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (boolean) checkedDotOperand.useAlternativeJre();
     }
     return false;
   }
-  private static String check_txeh3_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
+  private static String check_txeh3_a0a4a1a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }

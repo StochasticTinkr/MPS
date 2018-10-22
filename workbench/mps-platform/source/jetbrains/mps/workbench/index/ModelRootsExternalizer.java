@@ -67,7 +67,7 @@ import java.util.Collection;
     ModelInputStream mis = new ModelInputStream(new ByteArrayInputStream(data));
     SModelReference modelRef = mis.readModelReference();
     int count = mis.readInt();
-    ArrayList<Entry> entries = new ArrayList<Entry>(count);
+    ArrayList<Entry> entries = new ArrayList<>(count);
     for (; count > 0; count--) {
       entries.add(new Entry(mis.readString(), mis.readNodeId(), mis.readConcept()));
     }

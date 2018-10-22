@@ -8,10 +8,6 @@ import java.util.Objects;
 public class ClassifierSignature implements Signature {
   private final String singature;
   public ClassifierSignature(@NotNull String signature) {
-    if (signature == null) {
-      // todo: ? 
-      throw new IllegalArgumentException();
-    }
     this.singature = signature;
   }
   @Override

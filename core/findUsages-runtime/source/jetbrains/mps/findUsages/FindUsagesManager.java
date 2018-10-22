@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.LinkedHashSet;
@@ -44,24 +45,49 @@ public class FindUsagesManager extends FindUsagesFacade implements CoreComponent
   }
 
   @Override
-  public Set<SReference> findUsages(@NotNull SearchScope scope, Set<SNode> nodes, ProgressMonitor monitor) {
-    return findUsages(nodes, new UsagesSearchType(), scope, monitor);
+  public Set<SReference> findUsages(@NotNull SearchScope scope, @NotNull Set<SNode> nodes, ProgressMonitor monitor) {
+    return findUsages0(nodes, new UsagesSearchType(), scope, monitor);
   }
 
   @Override
-  public Set<SNode> findInstances(@NotNull SearchScope scope, Set<? extends SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor) {
-    return findUsages(concepts, new InstancesSearchType(exact), scope, monitor);
+  public Set<SNode> findInstances(@NotNull SearchScope scope, @NotNull Set<? extends SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor) {
+    return findUsages0(concepts, new InstancesSearchType(exact), scope, monitor);
   }
 
   @Override
-  public Set<SModel> findModelUsages(@NotNull SearchScope scope, Set<SModelReference> modelReferences, ProgressMonitor monitor) {
-    return findUsages(modelReferences, new ModelUsagesSearchType(), scope, monitor);
+  public Set<SModel> findModelUsages(@NotNull SearchScope scope, @NotNull Set<SModelReference> modelReferences, ProgressMonitor monitor) {
+    return findUsages0(modelReferences, new ModelUsagesSearchType(), scope, monitor);
   }
 
-  private  <T, R> Set<T> findUsages(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
-    if (monitor == null) monitor = new EmptyProgressMonitor();
+  @Override
+  public void findUsages(@NotNull SearchScope scope, @NotNull Set<SNode> nodes, @NotNull Consumer<SReference> consumer, ProgressMonitor monitor) {
+    findUsages0(nodes, new UsagesSearchType(), scope, consumer, monitor);
+  }
 
-    return type.search(new LinkedHashSet<R>(elements), scope, monitor);
+  @Override
+  public void findInstances(@NotNull SearchScope scope, @NotNull Set<? extends SAbstractConcept> concepts, boolean exact, @NotNull Consumer<SNode> consumer, ProgressMonitor monitor) {
+    findUsages0(concepts, new InstancesSearchType(exact), scope, consumer, monitor);
+  }
+
+  @Override
+  public void findModelUsages(@NotNull SearchScope scope, @NotNull Set<SModelReference> modelReferences, @NotNull Consumer<SModel> consumer, ProgressMonitor monitor) {
+    findUsages0(modelReferences, new ModelUsagesSearchType(), scope, consumer, monitor);
+  }
+
+  private <T, R> Set<T> findUsages0(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
+
+    return type.search(new LinkedHashSet<>(elements), scope, monitor);
+  }
+
+  private <T, R> void findUsages0(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, Consumer<T> consumer, @Nullable ProgressMonitor monitor) {
+    if (monitor == null) {
+      monitor = new EmptyProgressMonitor();
+    }
+
+    type.search(new LinkedHashSet<>(elements), scope, consumer, monitor);
   }
 
   @Override

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-lh88jyh52ecjd6v90kqjse55sa3975" />
+<product version="3" modelHash="-816ohn53uupu3i73pg4ih2jh17dm8ma">
+  <files names="ConflictsUtil.java:MergeBackupUtil.java:PluginUtil.java" />
+</product>
 

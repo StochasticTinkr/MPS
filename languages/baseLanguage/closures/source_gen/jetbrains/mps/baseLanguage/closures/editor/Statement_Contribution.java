@@ -29,7 +29,6 @@ public class Statement_Contribution extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new Statement_Contribution.SMP_Include_zhpsb4_a());
-    result.add(new Statement_Contribution.SMP_Include_zhpsb4_b());
     return result;
   }
 
@@ -47,30 +46,6 @@ public class Statement_Contribution extends SubstituteMenuBase {
 
 
   public class SMP_Include_zhpsb4_a extends IncludeSubstituteMenuSubstituteMenuPart {
-
-    @NotNull
-    @Override
-    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "subsitute_ClosureControlStatement", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587051154")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-    }
-    @Nullable
-    @Override
-    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
-      final EditorContext editorContext = _context.getEditorContext();
-      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor, "jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement");
-    }
-    private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-  }
-  public class SMP_Include_zhpsb4_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @NotNull
     @Override

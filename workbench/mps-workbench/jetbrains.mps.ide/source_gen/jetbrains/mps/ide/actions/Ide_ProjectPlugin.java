@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
+import jetbrains.mps.plugins.part.ProjectPluginPart;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
   public Ide_ProjectPlugin() {
@@ -24,5 +25,8 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
 
     ListSequence.fromList(components).addElement(new BehaviorDialogsPersistentOptions_PreferencesComponent(project));
     return components;
+  }
+  public void fillCustomParts(List<ProjectPluginPart> parts) {
+    parts.add(new HighligterHook_ProjectPluginPart());
   }
 }

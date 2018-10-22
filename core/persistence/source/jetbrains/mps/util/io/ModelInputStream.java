@@ -72,14 +72,14 @@ import static jetbrains.mps.util.io.ModelOutputStream.PROPERTY_INDEX;
  */
 public class ModelInputStream extends DataInputStream {
 
-  private final List<String> myStrings = new ArrayList<String>(2048);
-  private final List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
-  private final List<SModuleReference> myModuleRefs = new ArrayList<SModuleReference>(128);
-  private final List<SLanguage> myLanguages = new ArrayList<SLanguage>(128);
-  private final List<SConcept> myConcepts = new ArrayList<SConcept>(128);
-  private final List<SProperty> myProperties = new ArrayList<SProperty>(128);
-  private final List<SReferenceLink> myAssociations = new ArrayList<SReferenceLink>(128);
-  private final List<SContainmentLink> myAggregations = new ArrayList<SContainmentLink>(128);
+  private final List<String> myStrings = new ArrayList<>(2048);
+  private final List<SModelReference> myModelRefs = new ArrayList<>(1024);
+  private final List<SModuleReference> myModuleRefs = new ArrayList<>(128);
+  private final List<SLanguage> myLanguages = new ArrayList<>(128);
+  private final List<SConcept> myConcepts = new ArrayList<>(128);
+  private final List<SProperty> myProperties = new ArrayList<>(128);
+  private final List<SReferenceLink> myAssociations = new ArrayList<>(128);
+  private final List<SContainmentLink> myAggregations = new ArrayList<>(128);
 
 
   public ModelInputStream(InputStream in) {
@@ -91,7 +91,7 @@ public class ModelInputStream extends DataInputStream {
     if (size == -1) {
       return null;
     }
-    List<String> result = new ArrayList<String>(size);
+    List<String> result = new ArrayList<>(size);
     for (; size > 0; size--) {
       result.add(readString());
     }

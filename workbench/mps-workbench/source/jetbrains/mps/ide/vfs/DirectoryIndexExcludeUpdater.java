@@ -81,18 +81,13 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
         excludePolicies.add(ep);
       }
     }
-    myExcludePolicies = excludePolicies.toArray(new DirectoryIndexExcludePolicy[excludePolicies.size()]);
+    myExcludePolicies = excludePolicies.toArray(new DirectoryIndexExcludePolicy[0]);
   }
 
   @Override
   public void initComponent() {
     final SRepository repository = getRepository();
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myRepositoryListener.subscribeTo(repository);
-      }
-    });
+    repository.getModelAccess().runReadAction(() -> myRepositoryListener.subscribeTo(repository));
     myConnection = myMessageBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myFSListener);
     ApplicationManager.getApplication().addApplicationListener(myListener);
@@ -103,12 +98,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     ApplicationManager.getApplication().removeApplicationListener(myListener);
     myConnection.disconnect();
     final SRepository repository = getRepository();
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myRepositoryListener.unsubscribeFrom(repository);
-      }
-    });
+    repository.getModelAccess().runReadAction(() -> myRepositoryListener.unsubscribeFrom(repository));
   }
 
   private SRepository getRepository() {

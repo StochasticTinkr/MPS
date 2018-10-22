@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu" file="AbstractArgument_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractArgument_SubstituteMenu">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -37,14 +37,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_Editor" file="AbstractDiagramCreation_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_EditorBuilder_a" file="AbstractDiagramCreation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -92,14 +92,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_Editor" file="ActionGroup_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_EditorBuilder_a" file="ActionGroup_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -125,14 +125,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_Editor" file="AttributedFigureReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a" file="AttributedFigureReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu" file="AttributedFigureReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -193,23 +193,25 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgumentSharpActions" file="BLQueryArgumentSharpActions.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgumentSharpActions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_Editor" file="BLQueryArgument_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_EditorBuilder_a" file="BLQueryArgument_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -245,7 +247,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor" file="CellModel_DiagramConnector_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -253,7 +255,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_EditorBuilder_a" file="CellModel_DiagramConnector_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -282,7 +284,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_InspectorBuilder_a" file="CellModel_DiagramConnector_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -295,7 +297,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" file="CellModel_DiagramNode_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -303,7 +305,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_EditorBuilder_a" file="CellModel_DiagramNode_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -337,7 +339,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_InspectorBuilder_a" file="CellModel_DiagramNode_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -350,7 +352,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_Editor" file="CellModel_DiagramPort_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -358,7 +360,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_EditorBuilder_a" file="CellModel_DiagramPort_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -395,7 +397,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_InspectorBuilder_a" file="CellModel_DiagramPort_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramPort_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -404,7 +406,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor" file="CellModel_Diagram_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -412,7 +414,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_EditorBuilder_a" file="CellModel_Diagram_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -447,7 +449,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_InspectorBuilder_a" file="CellModel_Diagram_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -474,14 +476,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_Editor" file="ConnectionEndBLQuery_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_EditorBuilder_a" file="ConnectionEndBLQuery_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -506,7 +508,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectorCreationHandlers_EditorComponent" file="ConnectorCreationHandlers_EditorComponent.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectorCreationHandlers_EditorComponent">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -517,7 +519,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectorCreationHandlers_EditorComponent_ComponentBuilder_a" file="ConnectorCreationHandlers_EditorComponent_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectorCreationHandlers_EditorComponent_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -541,7 +543,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_Editor" file="CreationActionReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -549,7 +551,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_EditorBuilder_a" file="CreationActionReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -585,7 +587,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_InspectorBuilder_a" file="CreationActionReference_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CreationActionReference_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -629,14 +631,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CustomElementReference_Editor" file="CustomElementReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CustomElementReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CustomElementReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CustomElementReference_EditorBuilder_a" file="CustomElementReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.CustomElementReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -672,14 +674,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_Editor" file="DiagramElementBLQuery_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_EditorBuilder_a" file="DiagramElementBLQuery_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -699,7 +701,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementCreationHandlers_EditoComponent" file="DiagramElementCreationHandlers_EditoComponent.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementCreationHandlers_EditoComponent">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -710,7 +712,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementCreationHandlers_EditoComponent_ComponentBuilder_a" file="DiagramElementCreationHandlers_EditoComponent_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementCreationHandlers_EditoComponent_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -734,7 +736,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters" file="DiagramNodeParameters.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -755,7 +757,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution" file="DiagramspecificEditorCells_Contribution.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -782,7 +784,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -826,14 +828,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_Editor" file="ExternalFigureReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_EditorBuilder_a" file="ExternalFigureReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -874,7 +876,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu" file="ExternalFigureReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -895,25 +897,27 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMappingName_Actions" file="FigureParameterMappingName_Actions.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMappingName_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_Editor" file="FigureParameterMapping_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_EditorBuilder_a" file="FigureParameterMapping_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -970,7 +974,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_SubstituteMenu" file="FigureParameterMapping_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -982,7 +986,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.HandlersComponent" file="HandlersComponent.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.HandlersComponent">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -993,7 +997,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.HandlersComponent_ComponentBuilder_a" file="HandlersComponent_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.HandlersComponent_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1003,14 +1007,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_Editor" file="LinkArgument_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_EditorBuilder_a" file="LinkArgument_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1059,7 +1063,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu" file="LinkArgument_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1080,14 +1084,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Palette_Editor" file="Palette_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Palette_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Palette_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Palette_EditorBuilder_a" file="Palette_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Palette_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1113,14 +1117,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_Editor" file="PropertyArgument_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_EditorBuilder_a" file="PropertyArgument_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1169,7 +1173,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu" file="PropertyArgument_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1190,14 +1194,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Separator_Editor" file="Separator_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Separator_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Separator_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Separator_EditorBuilder_a" file="Separator_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.Separator_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1208,14 +1212,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_Editor" file="ThisEditorNodeExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_EditorBuilder_a" file="ThisEditorNodeExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />

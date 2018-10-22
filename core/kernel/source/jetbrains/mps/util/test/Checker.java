@@ -21,7 +21,7 @@ package jetbrains.mps.util.test;
 public interface Checker {
   Result check();
 
-  public static class Result {
+  class Result {
     private final boolean mySuccess;
     private final String myConfigPath;
     private final String mySystemPath;

@@ -20,11 +20,13 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.impl.TemplateIdentity;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,6 +35,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
 import java.util.List;
@@ -56,8 +59,6 @@ import java.util.List;
  */
 public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
   // FIXME with #getGenerator() being instance of GQP.Source, perhaps TEE shall not implement it?
-
-  IOperationContext getOperationContext();
 
   SModel getOutputModel();
 
@@ -114,11 +115,31 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    *             However, it's fine as frontend for generated code and perhaps, shall stay as one, while interpreted code might
    *             get alternative facility to access cacheable TD instances. Nevertheless, existing API is bad, templateNode and context
    *             are just to report errors, which could be done by caller, if necessary.
-   *             Besides, mix of Collection and List in API is inconvenient
+   *             Besides, mix of Collection and List in API is inconvenient.
+   *             Has been replaced with {@link #findTemplate(TemplateDeclarationKey, SNodeReference)}.
    */
   @Deprecated
   @ToRemove(version = 2018.2)
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
+
+  /**
+   * Retrieve reusable runtime instance that represents TemplateDeclaration. Clients may keep an instance for subsequent reuse during the
+   * same transformation session.
+   * @param templateDeclaration identifies template to load
+   * @param callSite identifies location where invocation happens
+   * @return never {@code null}, non necessarily exact generated class, might be a decorator that traces uses or reports errors.
+   * @since 2018.3
+   */
+  @NotNull
+  TemplateDeclaration findTemplate(@NotNull TemplateDeclarationKey templateDeclaration, @NotNull SNodeReference callSite);
+
+  /**
+   * Intended for use from generated templates to obtain key for {@link #findTemplate(TemplateDeclarationKey, SNodeReference)}
+   * FIXME PROVISIONAL CODE, PLEASE CONSIDER ANOTHER APPROACH
+   *  see method impl for details
+   * @since 2018.3
+   */
+  TemplateDeclarationKey createTemplateKey(String modelRef, String nodeId, String templateName);
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
@@ -145,9 +166,32 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void postProcess(@NotNull NodePostProcessor postProcessor);
 
   /**
+   * @param context knows where to put weaved nodes (parent/context and anchor function)
+   * @param templateNode call site for the weave (for target template to apply, see {@link NodeWeaveFacility#weaveTemplate(SNodeReference, Object...)}
    * @return utility capable of node weaving with respect to the given context
    * @since 3.3
    */
   @NotNull
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
+
+  // I
+  //   env.weave(TemplateDeclaration, ApplySink, TemplateContext)
+  //   env.apply(TemplateDeclaration, ApplySink, TemplateContext)
+  //   where TD either new GeneratedTD, or env.findTemplate()
+  // II
+  //   env.prepare(aTD).apply(ApplySink, TemplateContext), with WeaveSinkImpl(parent, anchorFunction) in case of weaving
+  //   env.prepare(aTD):TD
+  //   where aTD is either new or findTemplate()
+  // WeaveSink needs call site information to report errors, and findTemplate() needs one, so it looks ugly in generated code
+  // III
+  //   env.prepareWeave(callSite): NWF
+  //   nwf.weave(TD, TemplateContext)
+  //   nwf.weave(TemplateDeclarationKey, TemplateContext)
+  //   env.prepareApply(callSite):NodeApplyFacility
+  //   naf.apply(TD, TemplateContext)
+  //   naf.apply(TemplateDeclarationKey, TemplateContext)
+  // NAF and NWF could be the same, TemplateCallSite. What I don't like is new object instantiation for each call
+  // Not clear how interpreted code invokes templates, directly through TD.apply or through TemplateCallSite facility. How/when do we wrap TD instances with tracing
+  //   or we support tracing in the facility object? If latter, what do we cache, TD ot TCS?
+  //   From this perspective, env.findTemplate(TDK, node-ptr) combines both call site and target and can be cached
 }

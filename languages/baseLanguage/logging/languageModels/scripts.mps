@@ -2,7 +2,7 @@
 <model ref="r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)">
   <persistence version="9" />
   <languages>
-    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
+    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -45,8 +45,6 @@
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
-        <property id="1206123256132" name="migrationFromBuild" index="3iz5xs" />
-        <property id="1206123296179" name="category" index="3izfiF" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
       <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="lg" index="_XfAh">
@@ -83,8 +81,6 @@
   </registry>
   <node concept="_UgoZ" id="1uAvHUVaHqX">
     <property role="_Wzho" value="Convert Legacy Log Statements to LogLowLevel statements" />
-    <property role="3izfiF" value="baseLanguage" />
-    <property role="3iz5xs" value="6252" />
     <property role="TrG5h" value="ConvertLegacyStatementsToLogLowLevel" />
     <node concept="_XfAh" id="1uAvHUVaHra" role="_YvDr">
       <property role="_XH9r" value="Convert To Low Level Log Statements" />
@@ -165,8 +161,6 @@
     </node>
   </node>
   <node concept="_UgoZ" id="4XBaoL6ckrP">
-    <property role="3izfiF" value="baseLanguage" />
-    <property role="3iz5xs" value="6252" />
     <property role="TrG5h" value="ConvertLegacyStatementsToMessageStatements" />
     <property role="_Wzho" value="Convert Legacy Log Statements to the Messages Statements" />
     <node concept="_XfAh" id="4XBaoL6ckrQ" role="_YvDr">

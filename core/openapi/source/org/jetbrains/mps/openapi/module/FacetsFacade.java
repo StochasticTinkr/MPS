@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -43,36 +44,15 @@ public abstract class FacetsFacade {
   public abstract Set<String> getFacetTypes();
 
   /**
-   * @deprecated use {@link #getApplicableFacetTypes(Collection)} instead
-   */
-  @Deprecated
-  // ToRemove(version = 3.4)
-  public abstract Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages);
-
-  /**
    * For the given set of languages, returns a set of recommended (see {@link #registerLanguageFacet(SLanguage, String)}) facet types.
    */
   public abstract Set<String> getApplicableFacetTypes(Collection<SLanguage> usedLanguages);
-
-  /**
-   * @deprecated use {@link #registerLanguageFacet(SLanguage, String)} instead
-   */
-  @Deprecated
-  // ToRemove(version = 3.4)
-  public abstract void registerLanguageFacet(String language, String facetType);
 
   /**
    *  Associates a facet with a language. Allows MPS to advise a user to turn on the facet for
    *  modules using this language.
    */
   public abstract void registerLanguageFacet(@NotNull SLanguage language, String facetType);
-
-  /**
-   * @deprecated use {@link #unregisterLanguageFacet(SLanguage, String)} instead
-   */
-  @Deprecated
-  // ToRemove(version = 3.4)
-  public abstract void unregisterLanguageFacet(String language, String facetType);
 
   public abstract void unregisterLanguageFacet(@NotNull SLanguage language, String facetType);
 
@@ -89,6 +69,28 @@ public abstract class FacetsFacade {
 
   public interface FacetFactory {
     // FIXME why cast to ModuleFacetBase.setModule when we can pass SModule right into #create() here?
-    SModuleFacet create();
+
+    /**
+     * @deprecated override {@link #create(SModule)} instead.
+     */
+    @Deprecated
+    @ToRemove(version = 2018.3)
+    default SModuleFacet create() {
+      return null;
+    }
+
+    /**
+     * @since 2018.3
+     */
+    default boolean isApplicable(@NotNull SModule module) {
+      return true;
+    }
+
+    /**
+     * @since 2018.3
+     */
+    default SModuleFacet create(@NotNull SModule module) {
+      return create();
+    }
   }
 }

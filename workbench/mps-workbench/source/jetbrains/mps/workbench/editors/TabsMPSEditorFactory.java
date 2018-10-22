@@ -72,7 +72,7 @@ public class TabsMPSEditorFactory extends NodeEditorFactoryBase {
   @Override
   public Editor create(@NotNull Context context) {
     final SNode node = context.getNode();
-    Set<RelationDescriptor> tabs = new HashSet<RelationDescriptor>();
+    Set<RelationDescriptor> tabs = new HashSet<>();
     for (RelationDescriptor d : getTabDescriptors()) {
       if (d.isApplicable(node)) {
         tabs.add(d);

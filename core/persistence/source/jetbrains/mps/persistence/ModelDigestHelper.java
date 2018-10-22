@@ -28,7 +28,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ModelDigestHelper {
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
-  private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();
+  private List<DigestProvider> myProviders = new CopyOnWriteArrayList<>();
 
   public static ModelDigestHelper getInstance() {
     return ourInstance;

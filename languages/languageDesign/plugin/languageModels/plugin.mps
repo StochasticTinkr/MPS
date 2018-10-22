@@ -12,7 +12,6 @@
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
@@ -72,9 +71,6 @@
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -101,10 +97,6 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -346,19 +338,14 @@
                                 <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                                 <node concept="2OqwBi" id="38mXUTXNh0x" role="37wK5m">
                                   <node concept="2YIFZM" id="6tm98vZh9Yz" role="2Oq$k0">
-                                    <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                                     <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                                    <node concept="10QFUN" id="6tm98vZhi4X" role="37wK5m">
-                                      <node concept="2OqwBi" id="6tm98vZhi4T" role="10QFUP">
-                                        <node concept="2GrUjf" id="6tm98vZhi4U" role="2Oq$k0">
-                                          <ref role="2Gs0qQ" node="4g8ToP4QYVm" resolve="tres" />
-                                        </node>
-                                        <node concept="2sxana" id="6tm98vZhi4V" role="2OqNvi">
-                                          <ref role="2sxfKC" to="fn29:1Xl3kQ1uadw" resolve="module" />
-                                        </node>
+                                    <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                                    <node concept="2OqwBi" id="6tm98vZhi4T" role="37wK5m">
+                                      <node concept="2GrUjf" id="6tm98vZhi4U" role="2Oq$k0">
+                                        <ref role="2Gs0qQ" node="4g8ToP4QYVm" resolve="tres" />
                                       </node>
-                                      <node concept="3uibUv" id="6tm98vZhi4S" role="10QFUM">
-                                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                                      <node concept="2sxana" id="6tm98vZhi4V" role="2OqNvi">
+                                        <ref role="2sxfKC" to="fn29:1Xl3kQ1uadw" resolve="module" />
                                       </node>
                                     </node>
                                   </node>
@@ -553,7 +540,6 @@
                                                 <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                                                 <node concept="3Tm1VV" id="1t1utOFs6TJ" role="1B3o_S" />
                                                 <node concept="3clFb_" id="1t1utOFs6TK" role="jymVt">
-                                                  <property role="IEkAT" value="false" />
                                                   <property role="1EzhhJ" value="false" />
                                                   <property role="TrG5h" value="run" />
                                                   <property role="DiZV1" value="false" />
@@ -773,7 +759,7 @@
     </node>
     <node concept="1sEMCm" id="46nPloex5Bx" role="1fTXyH">
       <property role="1sEMCp" value="/Plugin" />
-      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="MPSConfluenceDoc" />
+      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="ConfluenceDocUrl" />
     </node>
   </node>
 </model>

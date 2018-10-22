@@ -106,6 +106,6 @@ public class NullDaemonCodeAnalyzer extends DaemonCodeAnalyzerImpl {
   }
 
   @Override
-  public void loadState(Element state) {
+  public void loadState(@NotNull Element state) {
   }
 }

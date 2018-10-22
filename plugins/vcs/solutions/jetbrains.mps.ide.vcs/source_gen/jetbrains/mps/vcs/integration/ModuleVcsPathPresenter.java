@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.integration;
 import com.intellij.openapi.vcs.impl.VcsPathPresenter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
@@ -22,6 +23,7 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     myManager = manager;
   }
   @Override
+  @NotNull
   public String getPresentableRelativePathFor(final VirtualFile file) {
     if (file == null) {
       return "";
@@ -45,7 +47,9 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     });
   }
   @Override
+  @NotNull
   public String getPresentableRelativePath(final ContentRevision fromRevision, final ContentRevision toRevision) {
-    return FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());
+    String relativePath = FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());
+    return ((relativePath == null || relativePath.length() == 0) ? "" : relativePath);
   }
 }

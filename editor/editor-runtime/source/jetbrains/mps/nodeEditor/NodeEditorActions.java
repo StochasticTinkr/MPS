@@ -606,7 +606,8 @@ public class NodeEditorActions {
       }
       if (selection instanceof SingularSelection) {
         EditorCell editorCell = ((SingularSelection) selection).getEditorCell();
-        return editorCell.getSNode().getParent() != null;
+        // we cannot enlarge selection for root nodes or top-level nodes in editor
+        return editorCell.getSNode().getParent() != null && editorCell.getSNode() != context.getEditorComponent().getEditedNode();
       }
       return false;
     }
@@ -646,7 +647,7 @@ public class NodeEditorActions {
     }
 
     private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
-      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(new SNodeLegacy(childNode).getRoleLink())) {
+      while (childNode.getParent() != null && !childNode.getContainmentLink().isMultiple()) {
         childNode = childNode.getParent();
       }
       return childNode;
@@ -654,6 +655,11 @@ public class NodeEditorActions {
   }
 
   public static class Complete extends AbstractCellAction {
+
+    Complete(){
+      super(false);
+    }
+
     @Override
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getSelectedCell();

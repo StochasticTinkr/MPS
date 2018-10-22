@@ -59,7 +59,7 @@ public class MPSActions {
   public void unregisterGroups(List<BaseGroup> groups) {
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
 
-    List<BaseGroup> mpsGroups = new ArrayList<BaseGroup>();
+    List<BaseGroup> mpsGroups = new ArrayList<>();
     for (BaseGroup group : groups) {
       mpsGroups.add(group);
       manager.unregisterAction(group.getId());

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -22,6 +23,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -33,11 +36,11 @@ import static jetbrains.mps.errors.item.RuleIdFlavouredItem.FLAVOUR_RULE_ID;
 
 public class QuickFixAdapter extends OldBaseIntentionFactory {
   private EditorQuickFix myQuickFix;
-  private boolean myIsError;
+  private final MessageStatus myStatus;
 
-  public QuickFixAdapter(@NotNull EditorQuickFix quickFix, boolean isError) {
+  public QuickFixAdapter(@NotNull EditorQuickFix quickFix, @NotNull MessageStatus status) {
     myQuickFix = quickFix;
-    myIsError = isError;
+    myStatus = status;
   }
 
   @Override
@@ -60,7 +63,12 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public Kind getKind() {
-    return myIsError ? Kind.ERROR : Kind.NORMAL;
+    switch (myStatus) {
+      case OK: return Kind.QUICKFIX;
+      case WARNING: return Kind.QUICKFIX;
+      case ERROR: return Kind.ERROR;
+    }
+    return Kind.NORMAL;
   }
 
   @Override
@@ -96,24 +104,8 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
     @Override
     public void execute(SNode node, EditorContext editorContext) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      int caretX = -1;
-      int caretY = -1;
-      boolean restoreCaretPosition = false;
-      if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
-        caretX = selectedCell.getCaretX();
-        caretY = selectedCell.getBaseline();
-        restoreCaretPosition = true;
-      }
-      myQuickFix.execute(editorContext.getRepository());
-      if (restoreCaretPosition) {
-        editorContext.flushEvents();
-        EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-        EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-        if (leaf != null) {
-          editorContext.getEditorComponent().changeSelection(leaf);
-          leaf.setCaretX(caretX);
-        }
-      }
+      boolean restoreCaretPosition = selectedCell != null && SNodeOperations.isAncestor(node, selectedCell.getSNode());
+      QuickFixRuntimeEditorWrapper.getInstance(myQuickFix).execute(editorContext, restoreCaretPosition);
     }
 
     @Override

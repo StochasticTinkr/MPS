@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bpts1y8j4yrj1jicf8fvfy81mup5afz" />
+<product version="3" modelHash="bpts1y8j4yrj1jicf8fvfy81mup5afz">
+  <files names="TypesystemDescriptor.java" />
+</product>
 

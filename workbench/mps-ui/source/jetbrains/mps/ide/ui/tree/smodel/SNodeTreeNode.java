@@ -163,7 +163,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
       StreamSupport.stream(n.getChildren().spliterator(), false).filter(myCondition::met).forEach(o -> add(createChildTreeNode(o)));
     }
 
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }

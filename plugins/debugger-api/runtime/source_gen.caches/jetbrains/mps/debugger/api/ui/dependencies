@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.ui.DebugActionsUtil" file="DebugActionsUtil.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.DebugActionsUtil">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />

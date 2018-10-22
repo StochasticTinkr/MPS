@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d55umtg35wsry1gfdo0v6fub13aiu" />
+<product version="3" modelHash="8fubb1h2hfjkv3tfaumwozs272dkbuz">
+  <files names="BaseMpsBeforeTaskProvider.java:BaseMpsProducer.java:BaseMpsRunConfiguration.java:ConfigFactoryEnvoy.java:ConfigTypeEnvoy.java:ConsoleCreator.java:ConsoleProcessListener.java:DefaultExecutionConsole.java:DefaultExecutionResult.java:RunConfigurationProxy.java" />
+</product>
 

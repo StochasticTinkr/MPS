@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6mngpdnnilbtgg1j88k5o74m0jpceux" />
+<product version="3" modelHash="47n8h2r0tdmfaevoasuj6262e3fpzpv">
+  <files names="BuildModuleTestsPlugin_Editor.java:BuildModuleTestsPlugin_EditorBuilder_a.java:BuildMpsLayout_TestModuleGroup_Editor.java:BuildMpsLayout_TestModuleGroup_EditorBuilder_a.java:BuildMpsLayout_TestModuleGroup_SubstituteMenu.java:BuildMpsLayout_TestModule_Editor.java:BuildMpsLayout_TestModule_EditorBuilder_a.java:BuildMpsLayout_TestModule_SubstituteMenu.java:BuildMpsLayout_TestModules_Editor.java:BuildMpsLayout_TestModules_EditorBuilder_a.java:BuildMpsLayout_TestModules_InspectorBuilder_a.java:BuildMpsLayout_TestModules_Options_Editor.java:BuildMpsLayout_TestModules_Options_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:NoDeleteForOptionsChild.java:RequiredPlugin_Editor.java:RequiredPlugin_EditorBuilder_a.java:RequiredPlugin_SubstituteMenu.java" />
+</product>
 

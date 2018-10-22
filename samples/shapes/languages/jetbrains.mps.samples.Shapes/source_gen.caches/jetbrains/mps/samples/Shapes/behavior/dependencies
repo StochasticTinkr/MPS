@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor" file="Canvas__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Void" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle__BehaviorDescriptor" file="Circle__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle__BehaviorDescriptor">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor" file="ColorReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.PreviewFactory" file="PreviewFactory.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.PreviewFactory">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" file="Shape__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.Shapes.behavior.Square__BehaviorDescriptor" file="Square__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.Shapes.behavior.Square__BehaviorDescriptor">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />

@@ -165,13 +165,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     ensureInitialized();
     Collection<String> start = myCache.getClassesSetFor(namespace);
-    Condition<String> cond = new Condition<String>() {
-      @Override
-      public boolean met(String className) {
-        return !isAnonymous(className);
-      }
-    };
-    return new ConditionalIterable<String>(start, cond);
+    Condition<String> cond = className -> !isAnonymous(className);
+    return new ConditionalIterable<>(start, cond);
   }
 
   @Override
@@ -182,7 +177,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public List<RealClassPathItem> flatten() {
-    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<>();
     result.add(this);
     return result;
   }
@@ -279,7 +274,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
     public Collection<String> getClassesSetFor(String pack) {
       Entry e = getEntry(pack);
-      return e == null ? Collections.<String>emptyList() : e.getClasses();
+      return e == null ? Collections.emptyList() : e.getClasses();
     }
 
     public boolean hasClass(String pack, String className) {
@@ -293,7 +288,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public Collection<String> getSubpackagesSetFor(String pack) {
       Entry e = getEntry(pack);
-      return e == null ? Collections.<String>emptyList() : e.getImmediateSubPackages(pack);
+      return e == null ? Collections.emptyList() : e.getImmediateSubPackages(pack);
     }
 
     public void addClass(String pack, String className) {
@@ -359,14 +354,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public Entry createSubPackage(String packageNamePart) {
       if (mySubpackages == null) {
-        mySubpackages = new ArrayList<Entry>(4);
-        final Entry rv = new Entry(new String(packageNamePart));
+        mySubpackages = new ArrayList<>(4);
+        final Entry rv = new Entry(packageNamePart);
         mySubpackages.add(rv);
         return rv;
       }
       final int ix = indexOf(packageNamePart);
       if (ix < 0) {
-        final Entry rv = new Entry(new String(packageNamePart));
+        final Entry rv = new Entry(packageNamePart);
         mySubpackages.add(-ix - 1, rv);
         return rv;
       } else {
@@ -384,7 +379,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public void addClass(String className) {
       if (myClassNames == null) {
-        myClassNames = new THashSet<String>();
+        myClassNames = new THashSet<>();
       }
       myClassNames.add(className);
     }
@@ -397,7 +392,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
       if (mySubpackages == null) {
         return Collections.emptyList();
       }
-      ArrayList<String> rv = new ArrayList<String>(mySubpackages.size());
+      ArrayList<String> rv = new ArrayList<>(mySubpackages.size());
       for (Entry e : mySubpackages) {
         if (parent == null || parent.isEmpty()) {
           rv.add(e.myPackageName);
@@ -409,7 +404,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
 
     public Collection<String> getClasses() {
-      return myClassNames == null ? Collections.<String>emptyList() : myClassNames;
+      return myClassNames == null ? Collections.emptyList() : myClassNames;
     }
 
     @Override

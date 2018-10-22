@@ -39,8 +39,8 @@ import java.util.List;
 public class UsedLangsTableModel extends AbstractTableModel implements ItemRemovable {
   private final SRepository myRepository;
   private final String myColumnName;
-  private List<SLanguage> myLanguageItems = new ArrayList<SLanguage>();
-  private List<SModuleReference> myDevKitItems = new ArrayList<SModuleReference>();
+  private List<SLanguage> myLanguageItems = new ArrayList<>();
+  private List<SModuleReference> myDevKitItems = new ArrayList<>();
 
   public static final int ITEM_COLUMN = 0;
   private Collection<SLanguage> myInitialLanguages;
@@ -64,12 +64,7 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
   }
 
   public void addItem(final SModuleReference item) {
-    SModule m = new ModelAccessHelper(myRepository).runReadAction(new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return item.resolve(myRepository);
-      }
-    });
+    SModule m = new ModelAccessHelper(myRepository).runReadAction(() -> item.resolve(myRepository));
     if (m instanceof Language) {
       final SLanguage lang = MetaAdapterFactory.getLanguage(item);
       addItem(lang);

@@ -55,8 +55,8 @@ public class FontRegistry {
   }
 
   private Map<String, FontFamily> myAvailableFonts;
-  private Map<String, Font> myFontsCache = new HashMap<String, Font>();
-  private Map<Font, FontMetrics> myFontMetricsCache = new HashMap<Font, FontMetrics>();
+  private Map<String, Font> myFontsCache = new HashMap<>();
+  private Map<Font, FontMetrics> myFontMetricsCache = new HashMap<>();
   private Set<String> myAvailableFontFamilyNames;
   private Set<String> myReportedFontFamilyNames = new HashSet<>();
 
@@ -68,7 +68,7 @@ public class FontRegistry {
     if (!SystemInfo.isMac) {
       return;
     }
-    myAvailableFonts = new HashMap<String, FontFamily>();
+    myAvailableFonts = new HashMap<>();
     GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 
     for (Font font : graphicsEnvironment.getAllFonts()) {
@@ -80,7 +80,7 @@ public class FontRegistry {
       }
       fontFamily.addFont(font.getName());
     }
-    for (String fontFamilyName : myAvailableFonts.keySet().toArray(new String[myAvailableFonts.size()])) {
+    for (String fontFamilyName : myAvailableFonts.keySet().toArray(new String[0])) {
       FontFamily fontFamily = myAvailableFonts.get(fontFamilyName);
       if (!fontFamily.isValid()) {
         myAvailableFonts.remove(fontFamilyName);
@@ -144,17 +144,17 @@ public class FontRegistry {
       FontFamily fontEntry = myAvailableFonts.get(fontName);
       String styledFontName = fontEntry.getFontName(style);
       if (styledFontName != null) {
-        return new Pair<String, Integer>(styledFontName, 0);
+        return new Pair<>(styledFontName, 0);
       } else {
-        return new Pair<String, Integer>(fontEntry.getRegularFontName(), style);
+        return new Pair<>(fontEntry.getRegularFontName(), style);
       }
     }
-    return new Pair<String, Integer>(fontName, style);
+    return new Pair<>(fontName, style);
   }
 
   private class FontFamily {
     private String myFamilyName;
-    private List<String> myFontNames = new ArrayList<String>();
+    private List<String> myFontNames = new ArrayList<>();
 
     private String myRegularFontName;
     private String myBoldFontName;

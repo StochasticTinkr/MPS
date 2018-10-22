@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5yd9cryi3gtnznxkfcn78wkw2g2y144" />
+<product version="3" modelHash="8au57k03mcbot7llnld9xw6skkj194l">
+  <files names="AuthorBlockDocTag__BehaviorDescriptor.java:BaseDocComment__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:ClassifierDocComment__BehaviorDescriptor.java:CommentLinePart__BehaviorDescriptor.java:CommentLine__BehaviorDescriptor.java:EmptyBlockDocTag__BehaviorDescriptor.java:FieldDocComment__BehaviorDescriptor.java:HTMLElement__BehaviorDescriptor.java:InlineTagCommentLinePart__BehaviorDescriptor.java:MethodDocComment__BehaviorDescriptor.java" />
+</product>
 

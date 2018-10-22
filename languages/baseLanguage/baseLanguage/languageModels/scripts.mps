@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
+    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -118,8 +118,6 @@
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
         <property id="5299416737274925395" name="type" index="2BwPSy" />
-        <property id="1206123256132" name="migrationFromBuild" index="3iz5xs" />
-        <property id="1206123296179" name="category" index="3izfiF" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
       <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="lg" index="_XfAh">
@@ -241,7 +239,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -279,7 +277,6 @@
   </registry>
   <node concept="_UgoZ" id="i2TPZo7">
     <property role="_Wzho" value="Show java.util.* References" />
-    <property role="3izfiF" value="find java util reference" />
     <property role="TrG5h" value="ShowJavaUtilReferences" />
     <node concept="_XfAh" id="i2TQ6iK" role="_YvDr">
       <property role="_XH9r" value="find java util refrences" />
@@ -357,7 +354,6 @@
   </node>
   <node concept="_UgoZ" id="3Yl$WFM1ytb">
     <property role="_Wzho" value="BaseLanguage Enhancements" />
-    <property role="3iz5xs" value="5070" />
     <property role="TrG5h" value="BaseLanguageEnhancements" />
     <node concept="_XfAh" id="4g0lVqQzDbf" role="_YvDr">
       <property role="_XH9r" value="ConvertToIncrements" />
@@ -1167,8 +1163,6 @@
   </node>
   <node concept="_UgoZ" id="1uAvHUVaHqX">
     <property role="_Wzho" value="Remove &quot;this&quot; Where Appropriate" />
-    <property role="3izfiF" value="baseLanguage" />
-    <property role="3iz5xs" value="6252" />
     <property role="TrG5h" value="RemoveThisWhereAppropriate" />
     <node concept="_XfAh" id="1uAvHUVaHra" role="_YvDr">
       <property role="_XH9r" value="ConvertLocalFieldReference" />

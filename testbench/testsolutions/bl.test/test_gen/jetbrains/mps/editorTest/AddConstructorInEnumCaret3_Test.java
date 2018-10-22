@@ -33,7 +33,7 @@ public class AddConstructorInEnumCaret3_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3009615984009686288", "3009615984009951202");
-      typeString("public constructor ");
+      typeString("public constructor");
     }
   }
 }

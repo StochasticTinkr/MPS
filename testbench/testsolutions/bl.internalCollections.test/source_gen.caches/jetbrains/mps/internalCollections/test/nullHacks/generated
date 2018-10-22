@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7o0h87jje8k942r6k2d6ohy296d6z3j" />
+<product version="3" modelHash="beqqet5t8l3ius4x2k0kp23cfno1p97">
+  <files names="NullEmpty_Test.java:NullSequence_Test.java:NullValues_Test.java" />
+</product>
 

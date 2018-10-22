@@ -66,24 +66,9 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
   @NotNull
   @Override
   public TemplateFiller getTemplateFiller() {
-    return new TemplateFiller() {
-      @Override
-      public void fillProjectWithModules(final MPSProject project) {
-        StartupManager.getInstance(project.getProject()).registerPostStartupActivity(new Runnable() {
-          @Override
-          public void run() {
-            project.getModelAccess().executeCommand(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
-                  }
-                }
-            );
-          }
-        });
-      }
-    };
+    return project -> StartupManager.getInstance(project.getProject()).registerPostStartupActivity(() -> project.getModelAccess().executeCommand(
+        () -> NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project)
+    ));
   }
 
   @Override

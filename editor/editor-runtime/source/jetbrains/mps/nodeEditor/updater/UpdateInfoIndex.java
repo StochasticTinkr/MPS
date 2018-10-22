@@ -49,16 +49,16 @@ class UpdateInfoIndex {
 
   private void buildIndex(UpdateInfoNode node) {
     long start = System.currentTimeMillis();
-    myIndex = new HashMap<ReferencedNodeContext, List<UpdateInfoNode>>();
-    myVisualizedRoots = new THashSet<SNode>();
+    myIndex = new HashMap<>();
+    myVisualizedRoots = new THashSet<>();
 
-    Queue<UpdateInfoNode> nodesToProcess = new LinkedList<UpdateInfoNode>();
+    Queue<UpdateInfoNode> nodesToProcess = new LinkedList<>();
     nodesToProcess.add(node);
     while (!nodesToProcess.isEmpty()) {
       UpdateInfoNode nextNode = nodesToProcess.remove();
       List<UpdateInfoNode> nodesInContext = myIndex.get(nextNode.getContext());
       if (nodesInContext == null) {
-        nodesInContext = new ArrayList<UpdateInfoNode>(1);
+        nodesInContext = new ArrayList<>(1);
         myIndex.put(nextNode.getContext(), nodesInContext);
       }
       nodesInContext.add(nextNode);

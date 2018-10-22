@@ -35,7 +35,7 @@ public class FilePanePasteProvider implements PasteProvider {
   private final static Logger LOG = LogManager.getLogger(FilePanePasteProvider.class);
 
   @Override
-  public void performPaste(DataContext dataContext) {
+  public void performPaste(@NotNull DataContext dataContext) {
     CopyPasteFilesData data = getData(dataContext);
     if (data != null) {
       paste(data, getDir(dataContext));
@@ -96,12 +96,12 @@ public class FilePanePasteProvider implements PasteProvider {
   }
 
   @Override
-  public boolean isPastePossible(DataContext dataContext) {
+  public boolean isPastePossible(@NotNull DataContext dataContext) {
     return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }
 
   @Override
-  public boolean isPasteEnabled(DataContext dataContext) {
+  public boolean isPasteEnabled(@NotNull DataContext dataContext) {
     return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }
 }

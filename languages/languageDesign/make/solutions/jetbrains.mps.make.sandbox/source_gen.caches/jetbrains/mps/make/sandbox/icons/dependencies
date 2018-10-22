@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.sandbox.icons.DummyAction_Action" file="DummyAction_Action.java">
+  <dependency className="jetbrains.mps.make.sandbox.icons.DummyAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -10,6 +10,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.make.sandbox.icons.Foo" file="Foo.java" />
+  <dependency className="jetbrains.mps.make.sandbox.icons.Foo" />
 </dependenciesRoot>
 

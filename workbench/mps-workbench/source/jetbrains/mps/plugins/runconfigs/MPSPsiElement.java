@@ -51,7 +51,7 @@ public class MPSPsiElement extends FakePsiElement {
   }
 
   public MPSPsiElement(List<SNode> nodes, MPSProject project) {
-    this(project, nodes.stream().map(key -> key.getReference()).collect(Collectors.toList()), false);
+    this(project, nodes.stream().map(SNode::getReference).collect(Collectors.toList()), false);
   }
 
   public MPSPsiElement(SModel model, MPSProject project) {
@@ -115,12 +115,7 @@ public class MPSPsiElement extends FakePsiElement {
   @Override
   public boolean isValid() {
     if (myItem instanceof SNode) {
-      boolean exists = new ModelAccessHelper(myRepository).runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return ((SNodeReference) myItem).resolve(myRepository) != null;
-        }
-      });
+      boolean exists = new ModelAccessHelper(myRepository).runReadAction(() -> ((SNodeReference) myItem).resolve(myRepository) != null);
       return exists;
     }
     return true;
@@ -136,20 +131,17 @@ public class MPSPsiElement extends FakePsiElement {
     if (!((myItem instanceof SNodeReference))) {
       return null;
     }
-    return new ModelAccessHelper(myRepository).runReadAction(new Computable<PsiElement>() {
-      @Override
-      public PsiElement compute() {
-        SNodeReference pointer = (SNodeReference) myItem;
-        SNode node = pointer.resolve(myRepository);
-        if (node == null) {
-          return null;
-        }
-        SNode parent = node.getParent();
-        if (parent == null) {
-          return null;
-        }
-        return new MPSPsiElement(parent, myMPSProject);
+    return new ModelAccessHelper(myRepository).runReadAction((Computable<PsiElement>) () -> {
+      SNodeReference pointer = (SNodeReference) myItem;
+      SNode node = pointer.resolve(myRepository);
+      if (node == null) {
+        return null;
       }
+      SNode parent = node.getParent();
+      if (parent == null) {
+        return null;
+      }
+      return new MPSPsiElement(parent, myMPSProject);
     });
   }
 

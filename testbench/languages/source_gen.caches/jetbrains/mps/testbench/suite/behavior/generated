@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cvyhe8ef99vwchbdu0gbnrd7l2exmvs" />
+<product version="3" modelHash="dn4tz8crl4z514jkasclcc2t8yrpgzt">
+  <files names="BehaviorAspectDescriptor.java:IModuleRef__BehaviorDescriptor.java:ITestRef__BehaviorDescriptor.java:JUnit3TestCaseRef__BehaviorDescriptor.java:JUnit4TestCaseRef__BehaviorDescriptor.java:ModuleSuite__BehaviorDescriptor.java:SolutionRef__BehaviorDescriptor.java:TestCaseRef__BehaviorDescriptor.java" />
+</product>
 

@@ -4,12 +4,12 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
   <imports>
@@ -165,9 +165,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -534,8 +531,8 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Model Checker" />
-    <property role="9BnSO" value="182.1" />
-    <property role="9BnSK" value="2018.2.5" />
+    <property role="9BnSO" value="183.1" />
+    <property role="9BnSK" value="2018.3" />
   </node>
   <node concept="Zd50a" id="1gEYwydCqV1">
     <property role="TrG5h" value="Default" />
@@ -1957,7 +1954,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="run" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <property role="od$2w" value="false" />
                       <node concept="3Tm1VV" id="PIFYWx4KVk" role="1B3o_S" />
                       <node concept="3cqZAl" id="PIFYWx4KVm" role="3clF45" />
@@ -2117,6 +2113,26 @@
   <node concept="312cEu" id="2tRCcbzc1$X">
     <property role="TrG5h" value="AspectDependenciesChecker" />
     <property role="3GE5qa" value="Model Checker.Dependencies" />
+    <node concept="Wx3nA" id="dQllQpiwYX" role="jymVt">
+      <property role="TrG5h" value="WRONG_ASPECT_DEPENDENCIES" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="dQllQpi$WM" role="1tU5fm">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
+      <node concept="2ShNRf" id="dQllQpi_W1" role="33vP2m">
+        <node concept="1pGfFk" id="dQllQpi_We" role="2ShVmc">
+          <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.&lt;init&gt;(jetbrains.mps.errors.item.IssueKindReportItem$KindLevel,java.lang.String)" resolve="IssueKindReportItem.CheckerCategory" />
+          <node concept="Rm8GO" id="dQllQpiAT0" role="37wK5m">
+            <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+            <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.MANUAL" resolve="MANUAL" />
+          </node>
+          <node concept="Xl_RD" id="dQllQpi_Wg" role="37wK5m">
+            <property role="Xl_RC" value="wrong aspect dependencies" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dQllQpiwZ2" role="1B3o_S" />
+    </node>
     <node concept="Wx3nA" id="2tRCcbzc5Uv" role="jymVt">
       <property role="TrG5h" value="CORE" />
       <node concept="3cmrfG" id="2tRCcbzc5UE" role="33vP2m">
@@ -2288,11 +2304,13 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="3xfDcbRpjI4" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRpjI5" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpiBtP" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="3xfDcbRpjI9" role="3clF47">
         <node concept="3clFbF" id="3xfDcbRpl2r" role="3cqZAp">
-          <node concept="Xl_RD" id="sQz2V6nukn" role="3clFbG">
-            <property role="Xl_RC" value="wrong aspect dependencies" />
+          <node concept="37vLTw" id="dQllQpiDd6" role="3clFbG">
+            <ref role="3cqZAo" node="dQllQpiwYX" resolve="WRONG_ASPECT_DEPENDENCIES" />
           </node>
         </node>
       </node>
@@ -2553,25 +2571,23 @@
                                   <property role="DiZV1" value="false" />
                                   <property role="od$2w" value="false" />
                                   <node concept="3Tm1VV" id="6iohsvjUMJB" role="1B3o_S" />
-                                  <node concept="3uibUv" id="6iohsvjUMJD" role="3clF45">
-                                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                  <node concept="3uibUv" id="dQllQpicaC" role="3clF45">
+                                    <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                                   </node>
                                   <node concept="3clFbS" id="6iohsvjUMJE" role="3clF47">
                                     <node concept="3clFbF" id="6iohsvjUQ2H" role="3cqZAp">
-                                      <node concept="3cpWs3" id="7xOXVW7WZ1" role="3clFbG">
-                                        <node concept="3cpWs3" id="7xOXVW7WZ2" role="3uHU7B">
-                                          <node concept="Xl_RD" id="7xOXVW7WZ3" role="3uHU7B">
-                                            <property role="Xl_RC" value="wrong aspect dependency (" />
-                                          </node>
-                                          <node concept="1rXfSq" id="7xOXVW7WZ4" role="3uHU7w">
+                                      <node concept="2OqwBi" id="dQllQpiEtX" role="3clFbG">
+                                        <node concept="37vLTw" id="dQllQpiEdm" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="dQllQpiwYX" resolve="WRONG_ASPECT_DEPENDENCIES" />
+                                        </node>
+                                        <node concept="liA8E" id="dQllQpiEZA" role="2OqNvi">
+                                          <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                          <node concept="1rXfSq" id="7xOXVW7WZ4" role="37wK5m">
                                             <ref role="37wK5l" node="2tRCcbzc5VP" resolve="kindToString" />
                                             <node concept="37vLTw" id="7xOXVW7WZ5" role="37wK5m">
                                               <ref role="3cqZAo" node="2tRCcbzc5Um" resolve="modelKind" />
                                             </node>
                                           </node>
-                                        </node>
-                                        <node concept="Xl_RD" id="7xOXVW7WZ6" role="3uHU7w">
-                                          <property role="Xl_RC" value=")" />
                                         </node>
                                       </node>
                                     </node>
@@ -3803,16 +3819,38 @@
       <node concept="3Tm1VV" id="1_LT7K4oFQ7" role="1B3o_S" />
       <node concept="3clFbS" id="1_LT7K4oFQ9" role="3clF47" />
     </node>
+    <node concept="Wx3nA" id="dQllQpjoiL" role="jymVt">
+      <property role="TrG5h" value="ILLEGAL_REFERENCES" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="dQllQpjs9h" role="1tU5fm">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
+      <node concept="2ShNRf" id="dQllQpjt11" role="33vP2m">
+        <node concept="1pGfFk" id="dQllQpjt1e" role="2ShVmc">
+          <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.&lt;init&gt;(jetbrains.mps.errors.item.IssueKindReportItem$KindLevel,java.lang.String)" resolve="IssueKindReportItem.CheckerCategory" />
+          <node concept="Rm8GO" id="dQllQpjtzt" role="37wK5m">
+            <ref role="1Px2BO" to="d6hs:~IssueKindReportItem$KindLevel" resolve="IssueKindReportItem.KindLevel" />
+            <ref role="Rm8GQ" to="d6hs:~IssueKindReportItem$KindLevel.MANUAL" resolve="MANUAL" />
+          </node>
+          <node concept="Xl_RD" id="dQllQpjt1g" role="37wK5m">
+            <property role="Xl_RC" value="illegal references" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="dQllQpjoiQ" role="1B3o_S" />
+    </node>
     <node concept="3clFb_" id="3xfDcbRoSJB" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCategory" />
       <node concept="3Tm1VV" id="3xfDcbRoSJD" role="1B3o_S" />
-      <node concept="17QB3L" id="3xfDcbRoSJE" role="3clF45" />
+      <node concept="3uibUv" id="dQllQpjkEH" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$CheckerCategory" resolve="IssueKindReportItem.CheckerCategory" />
+      </node>
       <node concept="3clFbS" id="3xfDcbRoSJI" role="3clF47">
         <node concept="3clFbF" id="3xfDcbRoUh$" role="3cqZAp">
-          <node concept="Xl_RD" id="sQz2V6nzAZ" role="3clFbG">
-            <property role="Xl_RC" value="illegal references" />
+          <node concept="37vLTw" id="dQllQpjufW" role="3clFbG">
+            <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
           </node>
         </node>
       </node>
@@ -4074,13 +4112,21 @@
                                           <property role="DiZV1" value="false" />
                                           <property role="od$2w" value="false" />
                                           <node concept="3Tm1VV" id="7dLX2A2M5jc" role="1B3o_S" />
-                                          <node concept="3uibUv" id="7dLX2A2M5je" role="3clF45">
-                                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                          <node concept="3uibUv" id="dQllQpju_x" role="3clF45">
+                                            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                                           </node>
                                           <node concept="3clFbS" id="7dLX2A2M5jo" role="3clF47">
                                             <node concept="3clFbF" id="7dLX2A2M6yp" role="3cqZAp">
-                                              <node concept="Xl_RD" id="6d$5VVB5LUY" role="3clFbG">
-                                                <property role="Xl_RC" value="reference to a non-referenceable concept" />
+                                              <node concept="2OqwBi" id="dQllQpjB_a" role="3clFbG">
+                                                <node concept="37vLTw" id="dQllQpjBvF" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
+                                                </node>
+                                                <node concept="liA8E" id="dQllQpjBXO" role="2OqNvi">
+                                                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                                  <node concept="Xl_RD" id="6d$5VVB5LUY" role="37wK5m">
+                                                    <property role="Xl_RC" value="reference to a non-referenceable concept" />
+                                                  </node>
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
@@ -4168,13 +4214,21 @@
                                       <property role="DiZV1" value="false" />
                                       <property role="od$2w" value="false" />
                                       <node concept="3Tm1VV" id="7dLX2A2M7GQ" role="1B3o_S" />
-                                      <node concept="3uibUv" id="7dLX2A2M7GR" role="3clF45">
-                                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                      <node concept="3uibUv" id="dQllQpjvQ6" role="3clF45">
+                                        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                                       </node>
                                       <node concept="3clFbS" id="7dLX2A2M7GS" role="3clF47">
                                         <node concept="3clFbF" id="7dLX2A2M7GT" role="3cqZAp">
-                                          <node concept="Xl_RD" id="6d$5VVB5LS4" role="3clFbG">
-                                            <property role="Xl_RC" value="non-referenceable named concept" />
+                                          <node concept="2OqwBi" id="dQllQpjC9i" role="3clFbG">
+                                            <node concept="37vLTw" id="dQllQpjC3N" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
+                                            </node>
+                                            <node concept="liA8E" id="dQllQpjCDi" role="2OqNvi">
+                                              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                              <node concept="Xl_RD" id="6d$5VVB5LS4" role="37wK5m">
+                                                <property role="Xl_RC" value="non-referenceable named concept" />
+                                              </node>
+                                            </node>
                                           </node>
                                         </node>
                                       </node>
@@ -4561,13 +4615,22 @@
                           <property role="DiZV1" value="false" />
                           <property role="od$2w" value="false" />
                           <node concept="3Tm1VV" id="7dLX2A2MFyA" role="1B3o_S" />
-                          <node concept="3uibUv" id="7dLX2A2MFyB" role="3clF45">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                          <node concept="3uibUv" id="dQllQpjxfR" role="3clF45">
+                            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                           </node>
                           <node concept="3clFbS" id="7dLX2A2MFyC" role="3clF47">
                             <node concept="3clFbF" id="7dLX2A2MFyD" role="3cqZAp">
-                              <node concept="Xl_RD" id="6d$5VVB5LK4" role="3clFbG">
-                                <property role="Xl_RC" value="interface instance" />
+                              <node concept="2OqwBi" id="dQllQpjE64" role="3clFbG">
+                                <node concept="10M0yZ" id="dQllQpjDoI" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.STRUCTURE" resolve="STRUCTURE" />
+                                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                                </node>
+                                <node concept="liA8E" id="dQllQpjEPX" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                  <node concept="Xl_RD" id="6d$5VVB5LK4" role="37wK5m">
+                                    <property role="Xl_RC" value="interface instance" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -4638,13 +4701,22 @@
                           <property role="DiZV1" value="false" />
                           <property role="od$2w" value="false" />
                           <node concept="3Tm1VV" id="7dLX2A2MMi5" role="1B3o_S" />
-                          <node concept="3uibUv" id="7dLX2A2MMi6" role="3clF45">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                          <node concept="3uibUv" id="dQllQpjyuF" role="3clF45">
+                            <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                           </node>
                           <node concept="3clFbS" id="7dLX2A2MMi7" role="3clF47">
                             <node concept="3clFbF" id="7dLX2A2MMi8" role="3cqZAp">
-                              <node concept="Xl_RD" id="4yQF8hVWmGD" role="3clFbG">
-                                <property role="Xl_RC" value="abstract concept instance" />
+                              <node concept="2OqwBi" id="dQllQpjFux" role="3clFbG">
+                                <node concept="10M0yZ" id="dQllQpjFay" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.STRUCTURE" resolve="STRUCTURE" />
+                                  <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                                </node>
+                                <node concept="liA8E" id="dQllQpjFXK" role="2OqNvi">
+                                  <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                  <node concept="Xl_RD" id="4yQF8hVWmGD" role="37wK5m">
+                                    <property role="Xl_RC" value="abstract concept instance" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -4747,13 +4819,21 @@
                               <property role="DiZV1" value="false" />
                               <property role="od$2w" value="false" />
                               <node concept="3Tm1VV" id="7dLX2A2MQXd" role="1B3o_S" />
-                              <node concept="3uibUv" id="7dLX2A2MQXe" role="3clF45">
-                                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                              <node concept="3uibUv" id="dQllQpjzL1" role="3clF45">
+                                <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                               </node>
                               <node concept="3clFbS" id="7dLX2A2MQXf" role="3clF47">
                                 <node concept="3clFbF" id="7dLX2A2MQXg" role="3cqZAp">
-                                  <node concept="Xl_RD" id="6d$5VVB5LOc" role="3clFbG">
-                                    <property role="Xl_RC" value="reference to a non-referenceable node" />
+                                  <node concept="2OqwBi" id="dQllQpjGqi" role="3clFbG">
+                                    <node concept="37vLTw" id="dQllQpjGkN" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
+                                    </node>
+                                    <node concept="liA8E" id="dQllQpjGOa" role="2OqNvi">
+                                      <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                      <node concept="Xl_RD" id="6d$5VVB5LOc" role="37wK5m">
+                                        <property role="Xl_RC" value="reference to a non-referenceable node" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -4839,13 +4919,21 @@
                                 <property role="DiZV1" value="false" />
                                 <property role="od$2w" value="false" />
                                 <node concept="3Tm1VV" id="7dLX2A2MXBb" role="1B3o_S" />
-                                <node concept="3uibUv" id="7dLX2A2MXBc" role="3clF45">
-                                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                <node concept="3uibUv" id="dQllQpj$ZP" role="3clF45">
+                                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                                 </node>
                                 <node concept="3clFbS" id="7dLX2A2MXBd" role="3clF47">
                                   <node concept="3clFbF" id="7dLX2A2MXBe" role="3cqZAp">
-                                    <node concept="Xl_RD" id="7dLX2A2MXBf" role="3clFbG">
-                                      <property role="Xl_RC" value="reference to a non-referenceable node" />
+                                    <node concept="2OqwBi" id="dQllQpjH2V" role="3clFbG">
+                                      <node concept="37vLTw" id="dQllQpjGXs" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
+                                      </node>
+                                      <node concept="liA8E" id="dQllQpjHtn" role="2OqNvi">
+                                        <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                        <node concept="Xl_RD" id="7dLX2A2MXBf" role="37wK5m">
+                                          <property role="Xl_RC" value="reference to a non-referenceable node" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -4952,13 +5040,21 @@
                                   <property role="DiZV1" value="false" />
                                   <property role="od$2w" value="false" />
                                   <node concept="3Tm1VV" id="7dLX2A2N2Gr" role="1B3o_S" />
-                                  <node concept="3uibUv" id="7dLX2A2N2Gs" role="3clF45">
-                                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                  <node concept="3uibUv" id="dQllQpjAi$" role="3clF45">
+                                    <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
                                   </node>
                                   <node concept="3clFbS" id="7dLX2A2N2Gt" role="3clF47">
                                     <node concept="3clFbF" id="7dLX2A2N2Gu" role="3cqZAp">
-                                      <node concept="Xl_RD" id="6d$5VVB5LSh" role="3clFbG">
-                                        <property role="Xl_RC" value="reference to a locally referenceable node" />
+                                      <node concept="2OqwBi" id="dQllQpjHI9" role="3clFbG">
+                                        <node concept="37vLTw" id="dQllQpjHCE" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="dQllQpjoiL" resolve="ILLEGAL_REFERENCES" />
+                                        </node>
+                                        <node concept="liA8E" id="dQllQpjI9b" role="2OqNvi">
+                                          <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                                          <node concept="Xl_RD" id="6d$5VVB5LSh" role="37wK5m">
+                                            <property role="Xl_RC" value="reference to a locally referenceable node" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>

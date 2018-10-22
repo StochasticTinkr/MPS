@@ -28,10 +28,10 @@ import java.io.StringReader;
 public class Response {
   private static final Logger LOG = LogManager.getLogger(Response.class);
 
-  private boolean mySuccess = true;
-  private String myMessage = "";
-  private Throwable myThrowable = null;
-  private String myResponseString = null;
+  private boolean mySuccess;
+  private String myMessage;
+  private Throwable myThrowable;
+  private String myResponseString;
 
   public Response(String message, String response, boolean success, Throwable throwable) {
     myMessage = message;
@@ -62,22 +62,20 @@ public class Response {
     if (responseString == null || responseString.isEmpty()) {
       return null;
     }
-    SAXBuilder saxBuilder = new SAXBuilder();
-    Document document;
+
     try {
-      document = saxBuilder.build(new StringReader(responseString));
+      return new SAXBuilder().build(new StringReader(responseString)).getRootElement();
     } catch (Exception e) {
       LOG.error("Can't open created issue", e);
       return null;
     }
-    return document.getRootElement();
   }
 
   @Nullable
   public String getIssueId() {
-    final String ID = "id";
     Element responseXml = getResponseXml();
     if (responseXml != null) {
+      final String ID = "id";
       Attribute attribute = responseXml.getAttribute(ID);
       if (attribute != null) {
         return attribute.getValue();

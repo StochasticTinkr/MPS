@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -14,12 +13,6 @@ public class ReferenceFeature extends AbstractNodeFeature {
   public ReferenceFeature(@NotNull SNodeReference nodePointer, @NotNull SReferenceLink ref) {
     super(nodePointer);
     myReference = ref;
-  }
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public String getReferenceRole() {
-    return myReference.getRoleName();
   }
   @NotNull
   public SReferenceLink getReference() {

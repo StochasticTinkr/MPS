@@ -80,7 +80,7 @@ public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupp
       switch (state) {
         case NOT_LOADED: {
           // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
-          res = new ModelLoadResult<T>(null, ModelLoadingState.NOT_LOADED);
+          res = new ModelLoadResult<>(null, ModelLoadingState.NOT_LOADED);
           break;
         }
         case INTERFACE_LOADED: {
@@ -99,7 +99,7 @@ public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupp
             new PartialModelUpdateFacility(myModel, fullModel.getModelData(), myModelDescriptor).update();
             fullModel.getModelData().leaveUpdateMode();
             myModel.leaveUpdateMode();  //enable events
-            res = new ModelLoadResult<T>(myModel, fullModel.getState());
+            res = new ModelLoadResult<>(myModel, fullModel.getState());
           }
           break;
         }

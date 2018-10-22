@@ -47,13 +47,13 @@ public final class InstanceOfCondition implements Condition<SNode> {
   }
 
   public InstanceOfCondition(@NotNull SAbstractConcept[] concepts) {
-    ArrayList<SAbstractConcept> a = new ArrayList<SAbstractConcept>(concepts.length);
+    ArrayList<SAbstractConcept> a = new ArrayList<>(concepts.length);
     for (SAbstractConcept n : concepts) {
       if (n != null) {
         a.add(n);
       }
     }
-    myConcepts = a.toArray(new SAbstractConcept[a.size()]);
+    myConcepts = a.toArray(new SAbstractConcept[0]);
   }
 
   @Override

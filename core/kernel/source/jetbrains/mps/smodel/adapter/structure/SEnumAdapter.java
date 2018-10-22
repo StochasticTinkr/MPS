@@ -57,8 +57,13 @@ public class SEnumAdapter implements SEnumeration {
       String identifier = SEnumOperations.getEnumMemberName(enumMember);
       literals.add(new Literal(value, presentation, identifier));
     }
-    myLiterals = literals.toArray(new Literal[literals.size()]);
-    myDefaultLiteral = myLiterals[0];
+    myLiterals = literals.toArray(new Literal[0]);
+    int defaultMemberIndex = SEnumOperations.getDefaultEnumMemberIndex(enumDeclaration);
+    if (defaultMemberIndex == -1) {
+      myDefaultLiteral = null;
+    } else {
+      myDefaultLiteral = myLiterals[defaultMemberIndex];
+    }
   }
 
   @Override

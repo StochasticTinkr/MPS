@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3an9ktgbeqw4aav26ji9izp73omju62" />
+<product version="3" modelHash="e1d2dbo1w88vfknn83d45las7qcn76c">
+  <files names="Mapping_main.java:Pattern_x583g4_a0a0hb.java:Pattern_x583g4_a0a0ib.java:Pattern_x583g4_a0a0jb.java:Pattern_x583g4_a0a0kb.java:Pattern_x583g4_a0a0lb.java:Pattern_x583g4_a0a0mb.java:Pattern_x583g4_a0a0nb.java:Pattern_x583g4_a0a0ob.java:QueriesGenerated.java:Switch_customStatement.java:TemplateModelImpl.java:Template_RootCustom.java:Template_aaaaa.java:Template_convertMult.java:Template_gen_static_method.java:Template_process42.java:Template_processStatement.java:Template_weave_Statement.java:Template_weave_StmtToCons.java" />
+</product>
 

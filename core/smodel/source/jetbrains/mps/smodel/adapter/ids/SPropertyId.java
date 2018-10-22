@@ -37,9 +37,7 @@ public final class SPropertyId  extends SConceptFeatureId{
     SPropertyId that = (SPropertyId) o;
 
     if (myPropertyId != that.myPropertyId) return false;
-    if (!getConceptId().equals(that.getConceptId())) return false;
-
-    return true;
+    return getConceptId().equals(that.getConceptId());
   }
 
   @Override

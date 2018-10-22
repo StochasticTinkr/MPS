@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="qoan" ref="r:c7c06bcd-66fb-4c24-af8d-590354cf9a95(XML.a.b.c)" />

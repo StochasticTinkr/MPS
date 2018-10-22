@@ -43,7 +43,7 @@ public abstract class AbstractCollapseCellAction extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();
+    Queue<EditorCell_Collection> cellsToProcess = new LinkedList<>();
     cellsToProcess.offer(getAnchorCell(context.getSelectedCell(), context));
     while (!cellsToProcess.isEmpty()) {
       EditorCell_Collection nextCollection = cellsToProcess.poll();

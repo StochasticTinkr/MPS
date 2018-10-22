@@ -49,7 +49,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
       return Collections.emptyList();
     }
 
-    List<SubstituteAction> actions = new LinkedList<SubstituteAction>();
+    List<SubstituteAction> actions = new LinkedList<>();
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 

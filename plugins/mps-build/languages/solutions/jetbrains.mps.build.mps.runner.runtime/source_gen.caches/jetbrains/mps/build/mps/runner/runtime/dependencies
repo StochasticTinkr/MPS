@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" file="MpsRunnerWorker.java">
+  <dependency className="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />

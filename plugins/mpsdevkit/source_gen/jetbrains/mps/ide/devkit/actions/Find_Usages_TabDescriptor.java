@@ -70,6 +70,6 @@ public class Find_Usages_TabDescriptor extends RelationDescriptor {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.FIND_USAGES, node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(((SAbstractConcept) concept)), null));
+    return ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.FIND_USAGES, node, SNodeFactoryOperations.createNewNode(((SAbstractConcept) concept), null));
   }
 }

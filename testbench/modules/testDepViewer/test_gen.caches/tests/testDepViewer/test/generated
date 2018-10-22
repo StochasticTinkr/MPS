@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-doq6b23p5az6yiofjtfa8n5xwue6vow" />
+<product version="3" modelHash="64q2kgh44nw85xmqebc2ij9w4q5w583">
+  <files names="TestDepViewer_Test.java" />
+</product>
 

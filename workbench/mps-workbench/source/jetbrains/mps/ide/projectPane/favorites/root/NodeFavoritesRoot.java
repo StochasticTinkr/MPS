@@ -39,6 +39,6 @@ class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
   @Override
   public List<SNode> getAvailableNodes() {
     final SNode resolved = getValue().resolve(myProject.getRepository());
-    return resolved == null ? Collections.<SNode>emptyList() : Collections.singletonList(resolved);
+    return resolved == null ? Collections.emptyList() : Collections.singletonList(resolved);
   }
 }

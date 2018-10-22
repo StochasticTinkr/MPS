@@ -69,8 +69,8 @@ public class ModulesWatcher {
   private final Object myStatusMapLock = new Object();
 
   private final SRepository myRepository;
-  private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
-  private final ReferenceStorage<ReloadableModule> myRefStorage = new ReferenceStorage<ReloadableModule>();
+  private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<>();
+  private final ReferenceStorage<ReloadableModule> myRefStorage = new ReferenceStorage<>();
   private final ModuleUpdater myModuleUpdater;
 
   public ModulesWatcher(SRepository repository, final Condition<ReloadableModule> watchableCondition) {
@@ -278,7 +278,7 @@ public class ModulesWatcher {
   }
 
   Collection<ReloadableModule> getResolvedDependencies(Iterable<? extends ReloadableModule> modules) {
-    Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
+    Collection<SModuleReference> refs = new LinkedHashSet<>();
     for (ReloadableModule module : modules) {
       refs.add(module.getModuleReference());
     }
@@ -289,7 +289,7 @@ public class ModulesWatcher {
   }
 
   private Collection<ReloadableModule> resolveRefs(final Iterable<? extends SModuleReference> refs) {
-    final Collection<ReloadableModule> modules = new LinkedHashSet<ReloadableModule>();
+    final Collection<ReloadableModule> modules = new LinkedHashSet<>();
     for (SModuleReference mRef : refs) {
       ReloadableModule module = resolveRef(mRef);
       if (module != null)  modules.add(module);
@@ -298,7 +298,7 @@ public class ModulesWatcher {
   }
 
   Set<SModuleReference> getModuleRefs(Iterable<? extends ReloadableModule> modules) {
-    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+    Set<SModuleReference> result = new LinkedHashSet<>();
     for (ReloadableModule module : modules) {
       result.add(module.getModuleReference());
     }
@@ -313,7 +313,7 @@ public class ModulesWatcher {
   }
 
   public Collection<? extends ReloadableModule> getResolvedBackDependencies(Iterable<? extends ReloadableModule> modules) {
-    Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
+    Collection<SModuleReference> refs = new LinkedHashSet<>();
     for (ReloadableModule module : modules) refs.add(module.getModuleReference());
     return resolveRefs(getBackDependencies(refs));
   }

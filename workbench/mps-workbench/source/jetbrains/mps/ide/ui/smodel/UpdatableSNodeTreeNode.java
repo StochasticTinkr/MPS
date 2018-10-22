@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,13 @@ import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.HashSet;
@@ -33,28 +35,12 @@ import java.util.Set;
 // FIXME seems like favorites view is the only client for this tree node, shall reuse some other tree node instead?
 public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private final Project myProject;
-  private SNodeTreeUpdater myTreeUpdater;
-  private SModelEventsListener myEventsListener;
+  private MyEventsListener myEventsListener;
 
   public UpdatableSNodeTreeNode(Project mpsProject, SNode node) {
     super(node);
     myProject = mpsProject;
   }
-
-  private void addListeners() {
-    if (myEventsListener == null) return;
-    SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-  }
-
-  private void removeListeners() {
-    SModel md = getModelDescriptor();
-    if (md == null) return;
-    if (myEventsListener == null) return;
-    SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
-    myEventsListener = null;
-    myTreeUpdater = null;
-  }
-
 
   private SModel getModelDescriptor() {
     SNode node = getSNode();
@@ -64,47 +50,52 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   @Override
   protected void onRemove() {
     super.onRemove();
-    removeListeners();
+    if (myEventsListener == null) {
+      return;
+    }
+    final SModel md = getModelDescriptor();
+    if (md != null) {
+      myEventsListener.stopListeningToModel(md);
+    }
+    myEventsListener.dispose();
+    myEventsListener = null;
   }
 
   @Override
   protected void onAdd() {
     super.onAdd();
-    if (myEventsListener != null) return;
-    myEventsListener = new MyEventsListener(getModelDescriptor());
-    if (getModelDescriptor() instanceof EditableSModel) {
-      myTreeUpdater = new MySNodeTreeUpdater(myProject, this);
+    if (myEventsListener != null) {
+      // XXX how come onAdd() is invoked more than once?
+      return;
     }
-    addListeners();
+    if (getModelDescriptor() instanceof EditableSModel) {
+      myEventsListener = new MyEventsListener(myProject.getRepository(), new MySNodeTreeUpdater(myProject, this));
+      myEventsListener.stopListeningToModel(getModelDescriptor());
+    }
   }
 
-  private class MyEventsListener implements SModelEventsListener {
-    private SModel myModelDescriptor;
+  private static class MyEventsListener extends ModelsEventsCollector {
+    private final SNodeTreeUpdater myTreeUpdater;
 
-    private MyEventsListener(SModel modelDescriptor) {
-      myModelDescriptor = modelDescriptor;
+    private MyEventsListener(SRepository repo, SNodeTreeUpdater treeUpdater) {
+      super(repo.getModelAccess());
+      myTreeUpdater = treeUpdater;
     }
 
-    @NotNull
-    @Override
-    public SModel getModelDescriptor() {
-      return myModelDescriptor;
-    }
 
     @Override
     public void eventsHappened(List<SModelEvent> events) {
-      if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
     }
   }
 
-  private class MySNodeTreeUpdater extends SNodeTreeUpdater<UpdatableSNodeTreeNode> {
+  private static class MySNodeTreeUpdater extends SNodeTreeUpdater<UpdatableSNodeTreeNode> {
     public MySNodeTreeUpdater(Project project, UpdatableSNodeTreeNode treeNode) {
       super(project, treeNode);
     }
 
     private Set<SNode> getNodesInThisRoot(Set<SNode> candidates) {
-      Set<SNode> nodesInThisRoot = new HashSet<SNode>();
+      Set<SNode> nodesInThisRoot = new HashSet<>();
       for (SNode node : candidates) {
         SNode root = (node.getModel() != null && node.getParent() == null) ? node : node.getContainingRoot();
         if (myTreeNode.getSNode().equals(root)) {
@@ -127,7 +118,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       if (getTree() == null) return;
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      DefaultTreeModel treeModel = getTree().getModel();
       for (SNode removedRoot : removedRoots) {
         if (removedRoot.equals(myTreeNode.getSNode())) {
           treeModel.removeNodeFromParent(myTreeNode);

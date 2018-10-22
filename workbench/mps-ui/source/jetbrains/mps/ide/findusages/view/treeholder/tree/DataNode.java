@@ -36,6 +36,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -48,7 +49,7 @@ public class DataNode implements IExternalizeable {
   private static final String DATA_CLASS = "data_class";
 
   private BaseNodeData myData;
-  private ArrayList<DataNode> myChildren = new ArrayList<DataNode>();
+  private ArrayList<DataNode> myChildren = new ArrayList<>();
 
   public DataNode(BaseNodeData data) {
     myData = data;
@@ -74,7 +75,7 @@ public class DataNode implements IExternalizeable {
   }
 
   private static Set<SModel> resolve(Stream<SModelReference> models, SRepository repo) {
-    return new HashSet<>(Arrays.asList(models.map(modelReference -> modelReference.resolve(repo)).filter(m -> m != null).toArray(SModel[]::new)));
+    return new HashSet<>(Arrays.asList(models.map(modelReference -> modelReference.resolve(repo)).filter(Objects::nonNull).toArray(SModel[]::new)));
   }
 
   public Set<SModel> getIncludedModels(SRepository repo) {
@@ -119,19 +120,13 @@ public class DataNode implements IExternalizeable {
       } else {
         throwLoadException(e);
       }
-    } catch (ClassNotFoundException e) {
-      throwLoadException(e);
-    } catch (NoSuchMethodException e) {
-      throwLoadException(e);
-    } catch (IllegalAccessException e) {
-      throwLoadException(e);
-    } catch (InstantiationException e) {
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException e) {
       throwLoadException(e);
     }
 
     myChildren.clear();
     Element childrenXML = element.getChild(CHILDREN);
-    for (Element nodeXML : (List<Element>) childrenXML.getChildren(CHILD)) {
+    for (Element nodeXML : childrenXML.getChildren(CHILD)) {
       myChildren.add(new DataNode(nodeXML, project));
     }
   }

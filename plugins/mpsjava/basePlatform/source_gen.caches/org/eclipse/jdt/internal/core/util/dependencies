@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" file="CodeSnippetParsingUtil.java">
+  <dependency className="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Locale" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.core.util.CommentRecorderParser" />
     <classNode dependClassName="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
   </dependency>
-  <dependency className="org.eclipse.jdt.internal.core.util.CommentRecorderParser" file="CommentRecorderParser.java">
+  <dependency className="org.eclipse.jdt.internal.core.util.CommentRecorderParser">
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.util.Util" />
     <classNode extendsClassName="org.eclipse.jdt.internal.compiler.parser.Parser" />
   </dependency>
-  <dependency className="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" file="RecordedParsingInformation.java">
+  <dependency className="org.eclipse.jdt.internal.core.util.RecordedParsingInformation">
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
   </dependency>

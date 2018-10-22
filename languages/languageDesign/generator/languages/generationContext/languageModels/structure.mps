@@ -64,9 +64,6 @@
     <node concept="PrWs8" id="hHiwH3k" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
-    <node concept="PrWs8" id="1653mnvB6D9" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hHiwH3m">
     <property role="R5$K7" value="false" />
@@ -142,9 +139,6 @@
     <property role="34LRSv" value="genContext" />
     <property role="EcuMT" value="1216860049635" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB6jI" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hHr8y2F">
     <property role="R5$K7" value="false" />
@@ -175,20 +169,6 @@
     <property role="34LRSv" value="outputModel" />
     <property role="EcuMT" value="1217282130234" />
     <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-  </node>
-  <node concept="1TIwiD" id="hHKSx_M">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="template node under macro" />
-    <property role="TrG5h" value="GenerationContextOp_GetTemplateNode" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="templateNode" />
-    <property role="EcuMT" value="1217369610610" />
-    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-    <node concept="asaX9" id="7cQeykxEBt_" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="With generated templates, access to templateNode doesn't make sense - there's no template model at all. Perhaps, we could leave this as an optional operation (i.e. != null for interpreted templates only), though this approach is questionable." />
-    </node>
   </node>
   <node concept="1TIwiD" id="hIfr3z2">
     <property role="R5$K7" value="false" />
@@ -505,6 +485,10 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5403673535105109114" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="3xsoX6o__Sl" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+      <property role="YLQ7P" value="No-op, always true" />
     </node>
   </node>
   <node concept="1TIwiD" id="2bdIC8aAwm3">

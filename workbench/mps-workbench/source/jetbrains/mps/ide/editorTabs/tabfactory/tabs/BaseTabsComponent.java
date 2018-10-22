@@ -57,7 +57,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private final TabColorProvider myColorProvider;
   private final Project myProject;
 
-  private List<Document> myEditedDocuments = new ArrayList<Document>();
+  private List<Document> myEditedDocuments = new ArrayList<>();
   private SNodeReference myLastNode = null;
 
   private JComponent myComponent;
@@ -66,7 +66,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
                               CreateModeCallback createModeCallback, Project project) {
     myBaseNode = baseNode;
-    final ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
+    final ArrayList<RelationDescriptor> tabs = new ArrayList<>(possibleTabs);
     Collections.sort(tabs, new RelationComparator());
     myPossibleTabs = Collections.unmodifiableList(tabs);
     myEditor = editor;
@@ -127,7 +127,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected TabEditorLayout updateDocumentsAndNodes() {
-    List<Document> editedDocumentsNew = new ArrayList<Document>();
+    List<Document> editedDocumentsNew = new ArrayList<>();
 
     TabEditorLayout result = new TabEditorLayout();
 
@@ -141,7 +141,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     }
 
     for (RelationDescriptor d : myPossibleTabs) {
-      MultiMap<SNodeReference, SNodeReference> topToUses = new MultiMap<SNodeReference, SNodeReference>();
+      MultiMap<SNodeReference, SNodeReference> topToUses = new MultiMap<>();
       List<SNode> nodes;
       try {
         nodes = d.getNodes(baseNode);

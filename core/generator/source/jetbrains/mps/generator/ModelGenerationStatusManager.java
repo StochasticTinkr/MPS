@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -33,16 +31,13 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ModelGenerationStatusManager implements CoreComponent {
   private static ModelGenerationStatusManager INSTANCE;
@@ -176,7 +171,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     String generatedHash = getLastKnownHash(sm);
-    return generatedHash == null || !generatedHash.equals(currentHash);
+    return !currentHash.equals(generatedHash);
 
   }
 
@@ -203,7 +198,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
-      copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
+      copy = myListeners.toArray(new ModelGenerationStatusListener[0]);
     }
     toNotify = Collections.unmodifiableList(toNotify);
     for (ModelGenerationStatusListener l : copy) {
@@ -236,10 +231,6 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   }
 
-  public void invalidateCache() {
-    myModelHashCache.clean();
-  }
-
   /**
    * {@link #invalidateData(Iterable) invalidates generation status} and discards its persisted cached value, if any (deletes 'generated' file)
    * @param models
@@ -263,55 +254,9 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   @NotNull
   public Collection<SModel> getModifiedModels(@NotNull Collection<? extends SModel> models) {
-    Set<SModel> result = new LinkedHashSet<>();
-    for (SModel sm : models) {
-      if (generationRequired(sm)) {
-        result.add(sm);
-        continue;
-      }
-
-      // TODO regenerating all dependant models can be slow, option?
-      if (!(SModelStereotype.DESCRIPTOR.equals(SModelStereotype.getStereotype(sm)) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
-        // temporary solution: only descriptor/behavior/constraints models
-        continue;
-      }
-
-      final SRepository repository = sm.getRepository();
-      if (repository == null) {
-        // no idea how to treat a model which hands in the air; expect it to be editable and tell isChanged if desires re-generation
-        continue;
-      }
-      GenerationDependencies oldDependencies = myModelHashCache.get(sm);
-      // FIXME use SRepository to pick proper GenerationDependenciesCache instance
-      if (oldDependencies == null) {
-        // TODO turn on when generated file will be mandatory
-        //result.add(sm);
-        continue;
-      }
-
-
-
-      Map<String, String> externalHashes = oldDependencies.getExternalHashes();
-      for (Entry<String, String> entry : externalHashes.entrySet()) {
-        String modelReference = entry.getKey();
-        SModel rmd = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(repository);
-        if (rmd == null) {
-          result.add(sm);
-          break;
-        }
-        String oldHash = entry.getValue();
-        if (oldHash == null) {
-          continue;
-        }
-        String newHash = currentHash(rmd);
-        if (newHash == null || !oldHash.equals(newHash)) {
-          result.add(sm);
-          break;
-        }
-      }
-    }
-
-    return result;
-
+    return models.stream().filter(this::generationRequired).collect(Collectors.toCollection(LinkedHashSet::new));
+    // here used to be code that intended to look at hashes of dependant models, and report 'modified' for a model if hash value of
+    // a model it depends from is different compared to the one known at last generation time. Though the idea is nice, the code was no-op
+    // for a long time, shall re-consider alternatives to detect changes in dependant models.
   }
 }

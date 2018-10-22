@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -56,9 +56,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -225,7 +222,6 @@
       </concept>
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -2759,79 +2755,6 @@
         <ref role="3uigEE" to="guwi:~File" resolve="File" />
       </node>
       <node concept="3clFbS" id="KL8Aql8eCk" role="3clF47">
-        <node concept="3cpWs8" id="KL8Aql8eCl" role="3cqZAp">
-          <node concept="3cpWsn" id="KL8Aql8eCm" role="3cpWs9">
-            <property role="TrG5h" value="tmp" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="KL8Aql8eCn" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~File" resolve="File" />
-            </node>
-            <node concept="2ShNRf" id="KL8Aql8eCo" role="33vP2m">
-              <node concept="1pGfFk" id="KL8Aql8eCp" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="2YIFZM" id="KL8Aql8eCq" role="37wK5m">
-                  <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                  <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-                  <node concept="Xl_RD" id="KL8Aql8eCr" role="37wK5m">
-                    <property role="Xl_RC" value="java.io.tmpdir" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="KL8Aql8eCs" role="3cqZAp">
-          <node concept="3cpWsn" id="KL8Aql8eCt" role="3cpWs9">
-            <property role="TrG5h" value="i" />
-            <property role="3TUv4t" value="false" />
-            <node concept="10Oyi0" id="KL8Aql8eCu" role="1tU5fm" />
-            <node concept="3cmrfG" id="KL8Aql8eCv" role="33vP2m">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="KL8Aql8eCw" role="3cqZAp">
-          <node concept="3clFbT" id="KL8Aql8eCx" role="2$JKZa">
-            <property role="3clFbU" value="true" />
-          </node>
-          <node concept="3clFbS" id="KL8Aql8eCy" role="2LFqv$">
-            <node concept="3clFbJ" id="KL8Aql8eCz" role="3cqZAp">
-              <node concept="3fqX7Q" id="KL8Aql8eC$" role="3clFbw">
-                <node concept="2OqwBi" id="KL8Aql8eC_" role="3fr31v">
-                  <node concept="2ShNRf" id="KL8Aql8eCA" role="2Oq$k0">
-                    <node concept="1pGfFk" id="KL8Aql8eCB" role="2ShVmc">
-                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
-                      <node concept="37vLTw" id="3GM_nagTvZ7" role="37wK5m">
-                        <ref role="3cqZAo" node="KL8Aql8eCm" resolve="tmp" />
-                      </node>
-                      <node concept="3cpWs3" id="KL8Aql8eCD" role="37wK5m">
-                        <node concept="Xl_RD" id="KL8Aql8eCE" role="3uHU7B">
-                          <property role="Xl_RC" value="mpstemp" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTvS3" role="3uHU7w">
-                          <ref role="3cqZAo" node="KL8Aql8eCt" resolve="i" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="KL8Aql8eCG" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="KL8Aql8eCH" role="3clFbx">
-                <node concept="3zACq4" id="KL8Aql8eCI" role="3cqZAp" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="KL8Aql8eCJ" role="3cqZAp">
-              <node concept="3uNrnE" id="KL8Aql8eCK" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTsA3" role="2$L3a6">
-                  <ref role="3cqZAo" node="KL8Aql8eCt" resolve="i" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="KL8Aql8eCM" role="3cqZAp">
           <node concept="3cpWsn" id="KL8Aql8eCN" role="3cpWs9">
             <property role="TrG5h" value="result" />
@@ -2839,22 +2762,7 @@
             <node concept="3uibUv" id="KL8Aql8eCO" role="1tU5fm">
               <ref role="3uigEE" to="guwi:~File" resolve="File" />
             </node>
-            <node concept="2ShNRf" id="KL8Aql8eCP" role="33vP2m">
-              <node concept="1pGfFk" id="KL8Aql8eCQ" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
-                <node concept="37vLTw" id="3GM_nagTv7y" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aql8eCm" resolve="tmp" />
-                </node>
-                <node concept="3cpWs3" id="KL8Aql8eCS" role="37wK5m">
-                  <node concept="Xl_RD" id="KL8Aql8eCT" role="3uHU7B">
-                    <property role="Xl_RC" value="mpstemp" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagTBQG" role="3uHU7w">
-                    <ref role="3cqZAo" node="KL8Aql8eCt" resolve="i" />
-                  </node>
-                </node>
-              </node>
-            </node>
+            <node concept="10Nm6u" id="2ER7O$f2Nj4" role="33vP2m" />
           </node>
         </node>
         <node concept="SfApY" id="KL8Aql8eCV" role="3cqZAp">
@@ -2881,12 +2789,19 @@
           </node>
           <node concept="3clFbS" id="KL8Aql8eD4" role="SfCbr">
             <node concept="3clFbF" id="KL8Aql8eD5" role="3cqZAp">
-              <node concept="2OqwBi" id="KL8Aql8eD6" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTByw" role="2Oq$k0">
-                  <ref role="3cqZAo" node="KL8Aql8eCN" resolve="result" />
+              <node concept="37vLTI" id="2ER7O$f2RQz" role="3clFbG">
+                <node concept="2YIFZM" id="2ER7O$f2S5Z" role="37vLTx">
+                  <ref role="37wK5l" to="guwi:~File.createTempFile(java.lang.String,java.lang.String):java.io.File" resolve="createTempFile" />
+                  <ref role="1Pybhc" to="guwi:~File" resolve="File" />
+                  <node concept="Xl_RD" id="2ER7O$f2ShF" role="37wK5m">
+                    <property role="Xl_RC" value="mpstemp" />
+                  </node>
+                  <node concept="Xl_RD" id="2ER7O$f2Slf" role="37wK5m">
+                    <property role="Xl_RC" value="" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="KL8Aql8eD8" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~File.createNewFile():boolean" resolve="createNewFile" />
+                <node concept="37vLTw" id="3GM_nagTByw" role="37vLTJ">
+                  <ref role="3cqZAo" node="KL8Aql8eCN" resolve="result" />
                 </node>
               </node>
             </node>
@@ -4972,7 +4887,7 @@
     <property role="TrG5h" value="IMessageFormat" />
     <node concept="3Tm1VV" id="2doG_VG50$N" role="1B3o_S" />
     <node concept="3clFb_" id="2doG_VG50$O" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="escapeBuildMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50$P" role="1B3o_S" />
@@ -4992,7 +4907,7 @@
       <node concept="3clFbS" id="2doG_VG50$U" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50$V" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="escapeBuildMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50$W" role="1B3o_S" />
@@ -5008,7 +4923,7 @@
       <node concept="3clFbS" id="2doG_VG50_1" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_2" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getLinesSeparator" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_3" role="1B3o_S" />
@@ -5016,7 +4931,7 @@
       <node concept="3clFbS" id="2doG_VG50_5" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestStart" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_7" role="1B3o_S" />
@@ -5032,7 +4947,7 @@
       <node concept="3clFbS" id="2doG_VG50_c" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_d" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestFinish" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_e" role="1B3o_S" />
@@ -5048,7 +4963,7 @@
       <node concept="3clFbS" id="2doG_VG50_j" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_k" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="formatTestFailure" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_l" role="1B3o_S" />
@@ -5084,7 +4999,7 @@
       <node concept="3clFbS" id="2doG_VG50_w" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_x" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isBuildServerMessage" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_y" role="1B3o_S" />
@@ -5102,7 +5017,7 @@
       <node concept="3clFbS" id="2doG_VG50_B" role="3clF47" />
     </node>
     <node concept="3clFb_" id="2doG_VG50_C" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="hasContinuation" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2doG_VG50_D" role="1B3o_S" />
@@ -8051,7 +7966,6 @@
     <node concept="Wx3nA" id="2XB5puvkfx9" role="jymVt">
       <property role="TrG5h" value="STRICT_MODE" />
       <property role="3TUv4t" value="true" />
-      <property role="IEkAT" value="false" />
       <node concept="17QB3L" id="2XB5puvkfxb" role="1tU5fm" />
       <node concept="Xl_RD" id="2XB5puvkfxc" role="33vP2m">
         <property role="Xl_RC" value="STRICT_MODE" />

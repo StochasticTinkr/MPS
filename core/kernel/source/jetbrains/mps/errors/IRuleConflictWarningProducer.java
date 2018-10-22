@@ -23,9 +23,6 @@ public interface IRuleConflictWarningProducer {
 
   void produceWarning(String ruleModelId, String ruleNodeId);
 
-  IRuleConflictWarningProducer NULL = new IRuleConflictWarningProducer() {
-    @Override
-    public void produceWarning(String ruleModelId, String ruleNodeId) {
-    }
+  IRuleConflictWarningProducer NULL = (ruleModelId, ruleNodeId) -> {
   };
 }

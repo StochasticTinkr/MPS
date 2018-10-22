@@ -11,13 +11,11 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AbstractFunctionType;
   private ConceptPresentation props_ClosureArgReference;
-  private ConceptPresentation props_ClosureControlStatement;
   private ConceptPresentation props_ClosureLiteral;
   private ConceptPresentation props_ClosureLiteralType;
   private ConceptPresentation props_CompactInvokeFunctionExpression;
   private ConceptPresentation props_ControlAbstractionContainer;
   private ConceptPresentation props_ControlAbstractionDeclaration;
-  private ConceptPresentation props_ControlClosureLiteral;
   private ConceptPresentation props_FunctionMethodDeclaration;
   private ConceptPresentation props_FunctionType;
   private ConceptPresentation props_InvokeExpression;
@@ -26,8 +24,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PairOfInts;
   private ConceptPresentation props_StringPropertyHolder;
   private ConceptPresentation props_UnboundClosureParameterDeclaration;
-  private ConceptPresentation props_UnrestrictedClosureLiteral;
-  private ConceptPresentation props_UnrestrictedFunctionType;
   private ConceptPresentation props_YieldAllStatement;
   private ConceptPresentation props_YieldStatement;
 
@@ -52,13 +48,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ClosureArgReference = cpb.create();
         }
         return props_ClosureArgReference;
-      case LanguageConceptSwitch.ClosureControlStatement:
-        if (props_ClosureControlStatement == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba658c8L, "controlMethod", "", "");
-          props_ClosureControlStatement = cpb.create();
-        }
-        return props_ClosureControlStatement;
       case LanguageConceptSwitch.ClosureLiteral:
         if (props_ClosureLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -96,13 +85,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ControlAbstractionDeclaration = cpb.create();
         }
         return props_ControlAbstractionDeclaration;
-      case LanguageConceptSwitch.ControlClosureLiteral:
-        if (props_ControlClosureLiteral == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ControlClosureLiteral");
-          props_ControlClosureLiteral = cpb.create();
-        }
-        return props_ControlClosureLiteral;
       case LanguageConceptSwitch.FunctionMethodDeclaration:
         if (props_FunctionMethodDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -164,22 +146,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_UnboundClosureParameterDeclaration = cpb.create();
         }
         return props_UnboundClosureParameterDeclaration;
-      case LanguageConceptSwitch.UnrestrictedClosureLiteral:
-        if (props_UnrestrictedClosureLiteral == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("unrestricted closure literal");
-          cpb.rawPresentation("{ ==> <body> }");
-          props_UnrestrictedClosureLiteral = cpb.create();
-        }
-        return props_UnrestrictedClosureLiteral;
-      case LanguageConceptSwitch.UnrestrictedFunctionType:
-        if (props_UnrestrictedFunctionType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("unrestricted function type");
-          cpb.rawPresentation("{ ==> }");
-          props_UnrestrictedFunctionType = cpb.create();
-        }
-        return props_UnrestrictedFunctionType;
       case LanguageConceptSwitch.YieldAllStatement:
         if (props_YieldAllStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

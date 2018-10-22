@@ -61,7 +61,7 @@ public final class UnwrapUnnecessaryElse_Intention extends AbstractIntentionDesc
     return ListSequence.fromList(branches).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode branch) {
         SNode clonedStatements = branch;
-        SNode next = SNodeFactoryOperations.addNewChild(clonedStatements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+        SNode next = SNodeFactoryOperations.addNewChild(clonedStatements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
 
         Program program = DataFlow.buildProgram(clonedStatements);
         Set<SNode> unreachable = DataFlow.getUnreachableNodes(program);

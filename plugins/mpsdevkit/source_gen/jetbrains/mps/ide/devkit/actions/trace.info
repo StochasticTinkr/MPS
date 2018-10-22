@@ -20,7 +20,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1206195573853570544">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1206195573853570544" at="61,43,62,42" concept="5" />
+      <node id="1206195573853570544" at="60,43,61,42" concept="5" />
     </file>
     <file name="ShowStructure_Action.java">
       <node id="1206195573853570544" at="20,0,21,0" concept="14" trace="ICON" />
@@ -95,8 +95,8 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1206195573853570620">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1206195573853570620" at="83,43,84,51" concept="5" />
-      <node id="1206195573853570623" at="89,149,90,97" concept="5" />
+      <node id="1206195573853570620" at="81,43,82,51" concept="5" />
+      <node id="1206195573853570623" at="87,149,88,97" concept="5" />
     </file>
     <file name="StructureAdditions_ActionGroup.java">
       <node id="1206195573853570620" at="8,0,9,0" concept="14" trace="ID" />
@@ -112,7 +112,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1234869968490316273">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1234869968490316273" at="57,52,58,48" concept="5" />
+      <node id="1234869968490316273" at="56,52,57,48" concept="5" />
     </file>
     <file name="ShowGenerationTrace_Action.java">
       <node id="1234869968490316273" at="21,0,22,0" concept="14" trace="ICON" />
@@ -192,7 +192,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1234869968490316371">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1234869968490316371" at="58,48,59,52" concept="5" />
+      <node id="1234869968490316371" at="57,48,58,52" concept="5" />
     </file>
     <file name="ShowGenerationTraceback_Action.java">
       <node id="1234869968490316371" at="22,0,23,0" concept="14" trace="ICON" />
@@ -288,8 +288,8 @@
       <unit id="1234869968490316459" at="7,0,19,0" name="jetbrains.mps.ide.devkit.actions.GenerationTraceActions_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1234869968490316459" at="72,52,73,55" concept="5" />
-      <node id="1234869968490316463" at="90,97,91,140" concept="5" />
+      <node id="1234869968490316459" at="70,52,71,55" concept="5" />
+      <node id="1234869968490316463" at="88,97,89,140" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1366781238034273697">
@@ -305,8 +305,8 @@
       <unit id="1366781238034273697" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1366781238034273697" at="79,61,80,53" concept="5" />
-      <node id="1366781238034273701" at="91,140,92,153" concept="5" />
+      <node id="1366781238034273697" at="77,61,78,53" concept="5" />
+      <node id="1366781238034273701" at="89,140,90,153" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1366781238034273705">
@@ -322,111 +322,8 @@
       <unit id="1366781238034273705" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1366781238034273705" at="77,50,78,53" concept="5" />
-      <node id="1366781238034273709" at="92,153,93,149" concept="5" />
-    </file>
-  </root>
-  <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333709178">
-    <file name="BehaviourPopup_ActionGroup.java">
-      <node id="1596727503333709178" at="8,0,9,0" concept="14" trace="ID" />
-      <node id="1596727503333709178" at="9,39,10,32" concept="16" />
-      <node id="1596727503333709178" at="10,32,11,30" concept="5" />
-      <node id="1596727503333709178" at="11,30,12,25" concept="5" />
-      <node id="1596727503333709180" at="12,25,13,118" concept="5" />
-      <node id="1596727503333709178" at="9,0,15,0" concept="3" trace="BehaviourPopup_ActionGroup#()V" />
-      <scope id="1596727503333709178" at="9,39,13,118" />
-      <scope id="1596727503333709178" at="9,0,15,0" />
-      <unit id="1596727503333709178" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" />
-    </file>
-    <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1596727503333709178" at="66,71,67,47" concept="5" />
-      <node id="1596727503333709181" at="93,149,94,124" concept="5" />
-    </file>
-  </root>
-  <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333709182">
-    <file name="GoToOverridingBehaviorMethod_Action.java">
-      <node id="1596727503333709182" at="25,0,26,0" concept="14" trace="ICON" />
-      <node id="1596727503333709182" at="27,48,28,48" concept="16" />
-      <node id="1596727503333709182" at="28,48,29,35" concept="5" />
-      <node id="1596727503333709182" at="29,35,30,40" concept="5" />
-      <node id="1596727503333709182" at="33,32,34,16" concept="11" />
-      <node id="6818267381901085364" at="37,87,38,118" concept="10" />
-      <node id="6818267381901087405" at="38,118,39,88" concept="11" />
-      <node id="1596727503333709182" at="42,89,43,85" concept="5" />
-      <node id="1596727503333709182" at="47,53,48,19" concept="11" />
-      <node id="1596727503333709189" at="50,5,51,57" concept="10" />
-      <node id="1596727503333709189" at="52,216,53,20" concept="5" />
-      <node id="1596727503333709190" at="55,25,56,21" concept="11" />
-      <node id="1596727503333709193" at="59,5,60,66" concept="10" />
-      <node id="1596727503333709194" at="61,22,62,21" concept="11" />
-      <node id="3857025238371384064" at="65,5,66,66" concept="10" />
-      <node id="3857025238371384065" at="67,22,68,21" concept="11" />
-      <node id="1596727503333709182" at="70,5,71,16" concept="11" />
-      <node id="3986659821983689632" at="74,96,75,90" concept="5" />
-      <node id="1616056205645073017" at="75,90,76,75" concept="10" />
-      <node id="1616056205645073021" at="76,75,77,50" concept="10" />
-      <node id="1616056205645073028" at="77,50,78,267" concept="5" />
-      <node id="1596727503333709182" at="46,95,49,5" concept="8" />
-      <node id="1596727503333709189" at="51,57,54,7" concept="8" />
-      <node id="1596727503333709190" at="54,7,57,7" concept="8" />
-      <node id="1596727503333709194" at="60,66,63,7" concept="8" />
-      <node id="3857025238371384065" at="66,66,69,7" concept="8" />
-      <node id="1596727503333709182" at="32,0,36,0" concept="9" trace="isDumbAware#()Z" />
-      <node id="1596727503333709182" at="41,0,45,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="1596727503333709182" at="27,0,32,0" concept="3" trace="GoToOverridingBehaviorMethod_Action#()V" />
-      <node id="1596727503333709182" at="36,0,41,0" concept="9" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="1596727503333709193" at="58,5,64,5" concept="1" />
-      <node id="3857025238371384064" at="64,5,70,5" concept="1" />
-      <node id="1596727503333709182" at="73,0,80,0" concept="9" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="1596727503333709189" at="49,5,58,5" concept="1" />
-      <node id="1596727503333709182" at="45,0,73,0" concept="9" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="1596727503333709182" at="33,32,34,16" />
-      <scope id="1596727503333709182" at="42,89,43,85" />
-      <scope id="1596727503333709182" at="47,53,48,19" />
-      <scope id="1596727503333709189" at="52,216,53,20" />
-      <scope id="1596727503333709190" at="55,25,56,21" />
-      <scope id="1596727503333709194" at="61,22,62,21" />
-      <scope id="3857025238371384065" at="67,22,68,21" />
-      <scope id="1596727503333709214" at="37,87,39,88">
-        <var name="finder" id="6818267381901085365" />
-      </scope>
-      <scope id="1596727503333709182" at="27,48,30,40" />
-      <scope id="1596727503333709182" at="32,0,36,0" />
-      <scope id="1596727503333709182" at="41,0,45,0">
-        <var name="_params" id="1596727503333709182" />
-        <var name="event" id="1596727503333709182" />
-      </scope>
-      <scope id="1596727503333709193" at="59,5,63,7">
-        <var name="p" id="1596727503333709193" />
-      </scope>
-      <scope id="3857025238371384064" at="65,5,69,7">
-        <var name="p" id="3857025238371384064" />
-      </scope>
-      <scope id="1596727503333709182" at="74,96,78,267">
-        <var name="inputEvent" id="1616056205645073019" />
-        <var name="selectedCell" id="1616056205645073015" />
-      </scope>
-      <scope id="1596727503333709182" at="27,0,32,0" />
-      <scope id="1596727503333709182" at="36,0,41,0">
-        <var name="_params" id="1596727503333709182" />
-        <var name="event" id="1596727503333709182" />
-      </scope>
-      <scope id="1596727503333709189" at="50,5,57,7">
-        <var name="node" id="1596727503333709189" />
-      </scope>
-      <scope id="1596727503333709182" at="73,0,80,0">
-        <var name="_params" id="1596727503333709182" />
-        <var name="event" id="1596727503333709182" />
-      </scope>
-      <scope id="1596727503333709182" at="46,95,71,16" />
-      <scope id="1596727503333709182" at="45,0,73,0">
-        <var name="_params" id="1596727503333709182" />
-        <var name="event" id="1596727503333709182" />
-      </scope>
-      <unit id="1596727503333709182" at="24,0,81,0" name="jetbrains.mps.ide.devkit.actions.GoToOverridingBehaviorMethod_Action" />
-    </file>
-    <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1596727503333709182" at="41,50,42,57" concept="5" />
+      <node id="1366781238034273705" at="75,50,76,53" concept="5" />
+      <node id="1366781238034273709" at="90,153,91,149" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333822320">
@@ -443,8 +340,8 @@
       <unit id="1596727503333822320" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1596727503333822320" at="65,56,66,71" concept="5" />
-      <node id="1596727503333822321" at="94,124,95,125" concept="5" />
+      <node id="1596727503333822320" at="64,56,65,71" concept="5" />
+      <node id="1596727503333822321" at="91,149,92,125" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333822325">
@@ -520,12 +417,12 @@
       <unit id="1596727503333822325" at="20,0,72,0" name="jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1596727503333822325" at="45,54,46,52" concept="5" />
+      <node id="1596727503333822325" at="44,54,45,52" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333822377">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1596727503333822377" at="52,40,53,51" concept="5" />
+      <node id="1596727503333822377" at="51,40,52,51" concept="5" />
     </file>
     <file name="OverrideBehaviorMethod_Action.java">
       <node id="1596727503333822377" at="21,0,22,0" concept="14" trace="ICON" />
@@ -724,8 +621,8 @@
       <unit id="1683977858888863192" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1683977858888863192" at="73,55,74,56" concept="5" />
-      <node id="3621838294249336767" at="95,125,96,152" concept="5" />
+      <node id="1683977858888863192" at="71,55,72,56" concept="5" />
+      <node id="3621838294249336767" at="92,125,93,152" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1744445256079578595">
@@ -1000,7 +897,7 @@
       <unit id="1744445256079578802" at="29,0,97,0" name="jetbrains.mps.ide.devkit.actions.GoToRules_Action" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1744445256079578802" at="42,57,43,38" concept="5" />
+      <node id="1744445256079578802" at="41,50,42,38" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1744445256079579876">
@@ -1017,9 +914,9 @@
       <unit id="1744445256079579876" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1744445256079579876" at="74,56,75,50" concept="5" />
-      <node id="4753172061859551544" at="96,152,97,128" concept="5" />
-      <node id="4753172061859551546" at="97,128,98,111" concept="5" />
+      <node id="1744445256079579876" at="72,56,73,50" concept="5" />
+      <node id="4753172061859551544" at="93,152,94,128" concept="5" />
+      <node id="4753172061859551546" at="94,128,95,111" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1936689137035744512">
@@ -1095,7 +992,7 @@
       <unit id="1936689137035744512" at="20,0,69,0" name="jetbrains.mps.ide.devkit.actions.LanguageHierarchy_Action" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1936689137035744512" at="46,52,47,46" concept="5" />
+      <node id="1936689137035744512" at="45,52,46,46" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1936689137035777973">
@@ -1111,8 +1008,8 @@
       <unit id="1936689137035777973" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="1936689137035777973" at="76,48,77,50" concept="5" />
-      <node id="1936689137035777975" at="98,111,99,97" concept="5" />
+      <node id="1936689137035777973" at="74,48,75,50" concept="5" />
+      <node id="1936689137035777975" at="95,111,96,97" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2151742525039069961">
@@ -1139,7 +1036,7 @@
       <unit id="2151742525039069961" at="10,0,26,0" name="jetbrains.mps.ide.devkit.actions.DefaultForGNOME_KeymapChanges" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2151742525039069961" at="114,92,115,79" concept="5" />
+      <node id="2151742525039069961" at="111,92,112,79" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2151742525039104674">
@@ -1168,7 +1065,7 @@
       <unit id="2151742525039104674" at="10,0,28,0" name="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2151742525039104674" at="116,71,117,73" concept="5" />
+      <node id="2151742525039104674" at="113,71,114,73" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2165106376654272257">
@@ -1199,8 +1096,8 @@
       <node id="428466863025157124" at="86,22,87,21" concept="11" />
       <node id="2165106376654272257" at="89,5,90,16" concept="11" />
       <node id="2165106376654286524" at="93,96,94,259" concept="10" />
-      <node id="1723009172163864505" at="94,259,95,355" concept="10" />
-      <node id="8136592418783661322" at="95,355,96,286" concept="0" />
+      <node id="1723009172163864505" at="94,259,95,313" concept="10" />
+      <node id="8136592418783661322" at="95,313,96,286" concept="0" />
       <node id="8136592418783692083" at="96,286,97,314" concept="0" />
       <node id="2970389781192979519" at="97,314,98,430" concept="5" />
       <node id="4768318840672893271" at="99,110,100,128" concept="5" />
@@ -1294,8 +1191,8 @@
       <unit id="2165106376654390214" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.IntentionsGroup_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2165106376654390214" at="75,50,76,48" concept="5" />
-      <node id="2165106376654390218" at="99,97,100,133" concept="5" />
+      <node id="2165106376654390214" at="73,50,74,48" concept="5" />
+      <node id="2165106376654390218" at="96,97,97,133" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2191995028863072547">
@@ -1311,13 +1208,13 @@
       <unit id="2191995028863072547" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2191995028863072547" at="68,54,69,44" concept="5" />
-      <node id="2191995028863072554" at="100,133,101,117" concept="5" />
+      <node id="2191995028863072547" at="66,54,67,44" concept="5" />
+      <node id="2191995028863072554" at="97,133,98,117" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2191995028863072555">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2191995028863072555" at="54,40,55,38" concept="5" />
+      <node id="2191995028863072555" at="53,40,54,38" concept="5" />
     </file>
     <file name="ReloadAll_Action.java">
       <node id="2191995028863072555" at="22,0,23,0" concept="14" trace="ICON" />
@@ -1389,8 +1286,8 @@
       <unit id="2403997762364994115" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.GenerateEditorPopup_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2403997762364994115" at="71,51,72,52" concept="5" />
-      <node id="2403997762364994116" at="87,37,88,100" concept="5" />
+      <node id="2403997762364994115" at="69,51,70,52" concept="5" />
+      <node id="2403997762364994116" at="85,37,86,100" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2403997762364994119">
@@ -1481,7 +1378,7 @@
       <unit id="2403997762364994119" at="25,0,89,0" name="jetbrains.mps.ide.devkit.actions.GoToUsageInMappingConfig_Action" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2403997762364994119" at="43,38,44,53" concept="5" />
+      <node id="2403997762364994119" at="42,38,43,53" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2565896126719552231">
@@ -1514,7 +1411,7 @@
       <node id="8147861864219804799" at="74,5,75,0" concept="13" />
       <node id="8147861864219804800" at="75,0,76,480" concept="11" />
       <node id="2565896126719552273" at="78,65,79,214" concept="11" />
-      <node id="2565896126719552280" at="81,71,82,318" concept="11" />
+      <node id="2565896126719552280" at="81,71,82,276" concept="11" />
       <node id="2565896126719552231" at="30,0,32,0" concept="3" trace="Behavior_TabDescriptor#()V" />
       <node id="2565896126719552231" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719552231" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -1544,7 +1441,7 @@
       <scope id="8147861864219804769" at="67,42,68,18" />
       <scope id="8147861864219804791" at="72,30,73,18" />
       <scope id="7459370737648130554" at="78,65,79,214" />
-      <scope id="7459370737648131747" at="81,71,82,318" />
+      <scope id="7459370737648131747" at="81,71,82,276" />
       <scope id="2565896126719552231" at="30,0,32,0" />
       <scope id="2565896126719552231" at="41,0,43,0" />
       <scope id="2565896126719552231" at="32,0,35,0" />
@@ -1662,15 +1559,15 @@
       <node id="2565896126719599852" at="190,12,191,62" concept="5" />
       <node id="2565896126719599881" at="192,5,193,63" concept="10" />
       <node id="2565896126719599887" at="195,25,196,63" concept="10" />
-      <node id="8796678305523740649" at="197,245,198,198" concept="5" />
-      <node id="2565896126719599906" at="198,198,199,415" concept="5" />
-      <node id="924522964703796119" at="200,506,201,115" concept="10" />
-      <node id="2565896126719599922" at="201,115,202,362" concept="10" />
+      <node id="8796678305523740649" at="197,245,198,156" concept="5" />
+      <node id="2565896126719599906" at="198,156,199,415" concept="5" />
+      <node id="924522964703796119" at="200,506,201,73" concept="10" />
+      <node id="2565896126719599922" at="201,73,202,362" concept="10" />
       <node id="2565896126719599930" at="202,362,203,187" concept="5" />
       <node id="2565896126719599937" at="203,187,204,185" concept="5" />
       <node id="924522964703764253" at="204,185,205,28" concept="5" />
-      <node id="5708190207122525538" at="206,16,207,119" concept="5" />
-      <node id="2565896126719599947" at="207,119,208,283" concept="10" />
+      <node id="5708190207122525538" at="206,16,207,77" concept="5" />
+      <node id="2565896126719599947" at="207,77,208,283" concept="10" />
       <node id="2565896126719599953" at="208,283,209,192" concept="5" />
       <node id="2565896126719599960" at="209,192,210,269" concept="5" />
       <node id="2565896126719599968" at="210,269,211,482" concept="5" />
@@ -1888,7 +1785,7 @@
       <node id="2565896126719631194" at="66,507,67,974" concept="11" />
       <node id="2565896126719631163" at="69,29,70,17" concept="11" />
       <node id="7459370737648208050" at="72,65,73,87" concept="11" />
-      <node id="2565896126719631219" at="75,71,76,200" concept="11" />
+      <node id="2565896126719631219" at="75,71,76,158" concept="11" />
       <node id="2565896126719631163" at="31,0,33,0" concept="3" trace="Editor_TabDescriptor#()V" />
       <node id="2565896126719631163" at="42,0,44,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719631163" at="33,0,36,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -1915,7 +1812,7 @@
       <scope id="8147861864219967370" at="62,30,63,19" />
       <scope id="2565896126719631163" at="69,29,70,17" />
       <scope id="7459370737648200873" at="72,65,73,87" />
-      <scope id="7459370737648221575" at="75,71,76,200" />
+      <scope id="7459370737648221575" at="75,71,76,158" />
       <scope id="2565896126719631163" at="31,0,33,0" />
       <scope id="2565896126719631163" at="42,0,44,0" />
       <scope id="2565896126719631163" at="33,0,36,0" />
@@ -1982,7 +1879,7 @@
       <node id="8147861864219898636" at="74,5,75,0" concept="13" />
       <node id="8147861864219898637" at="75,0,76,480" concept="11" />
       <node id="2565896126719631558" at="78,65,79,220" concept="11" />
-      <node id="2565896126719631565" at="81,71,82,327" concept="11" />
+      <node id="2565896126719631565" at="81,71,82,285" concept="11" />
       <node id="2565896126719631517" at="30,0,32,0" concept="3" trace="Constraints_TabDescriptor#()V" />
       <node id="2565896126719631517" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719631517" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2012,7 +1909,7 @@
       <scope id="8147861864219898606" at="67,42,68,18" />
       <scope id="8147861864219898628" at="72,30,73,18" />
       <scope id="7459370737648156619" at="78,65,79,220" />
-      <scope id="7459370737648158233" at="81,71,82,327" />
+      <scope id="7459370737648158233" at="81,71,82,285" />
       <scope id="2565896126719631517" at="30,0,32,0" />
       <scope id="2565896126719631517" at="41,0,43,0" />
       <scope id="2565896126719631517" at="32,0,35,0" />
@@ -2081,7 +1978,7 @@
       <node id="8147861864219908301" at="64,507,65,17" concept="11" />
       <node id="2565896126719634090" at="67,29,68,17" concept="11" />
       <node id="2565896126719634138" at="70,65,71,225" concept="11" />
-      <node id="2565896126719634145" at="73,71,74,330" concept="11" />
+      <node id="2565896126719634145" at="73,71,74,288" concept="11" />
       <node id="2565896126719634090" at="30,0,32,0" concept="3" trace="Data_Flow_TabDescriptor#()V" />
       <node id="2565896126719634090" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719634090" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2108,7 +2005,7 @@
       <scope id="8147861864219908294" at="61,30,62,19" />
       <scope id="2565896126719634090" at="67,29,68,17" />
       <scope id="7459370737648177332" at="70,65,71,225" />
-      <scope id="7459370737648178952" at="73,71,74,330" />
+      <scope id="7459370737648178952" at="73,71,74,288" />
       <scope id="2565896126719634090" at="30,0,32,0" />
       <scope id="2565896126719634090" at="41,0,43,0" />
       <scope id="2565896126719634090" at="32,0,35,0" />
@@ -2170,7 +2067,7 @@
       <node id="8147861864219994589" at="63,0,64,489" concept="11" />
       <node id="2565896126719635409" at="66,29,67,17" concept="11" />
       <node id="7459370737648251708" at="69,65,70,92" concept="11" />
-      <node id="2565896126719635451" at="72,71,73,205" concept="11" />
+      <node id="2565896126719635451" at="72,71,73,163" concept="11" />
       <node id="2565896126719635409" at="30,0,32,0" concept="3" trace="Find_Usages_TabDescriptor#()V" />
       <node id="2565896126719635409" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719635409" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2197,7 +2094,7 @@
       <scope id="8147861864219994580" at="60,30,61,36" />
       <scope id="2565896126719635409" at="66,29,67,17" />
       <scope id="7459370737648249134" at="69,65,70,92" />
-      <scope id="7459370737648257114" at="72,71,73,205" />
+      <scope id="7459370737648257114" at="72,71,73,163" />
       <scope id="2565896126719635409" at="30,0,32,0" />
       <scope id="2565896126719635409" at="41,0,43,0" />
       <scope id="2565896126719635409" at="32,0,35,0" />
@@ -2258,7 +2155,7 @@
       <node id="8147861864220000975" at="63,0,64,489" concept="11" />
       <node id="2565896126719641327" at="66,29,67,17" concept="11" />
       <node id="7459370737648276391" at="69,65,70,91" concept="11" />
-      <node id="2565896126719641368" at="72,71,73,204" concept="11" />
+      <node id="2565896126719641368" at="72,71,73,162" concept="11" />
       <node id="2565896126719641327" at="30,0,32,0" concept="3" trace="Intentions_TabDescriptor#()V" />
       <node id="2565896126719641327" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719641327" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2285,7 +2182,7 @@
       <scope id="8147861864220000966" at="60,30,61,36" />
       <scope id="2565896126719641327" at="66,29,67,17" />
       <scope id="7459370737648273817" at="69,65,70,91" />
-      <scope id="7459370737648281797" at="72,71,73,204" />
+      <scope id="7459370737648281797" at="72,71,73,162" />
       <scope id="2565896126719641327" at="30,0,32,0" />
       <scope id="2565896126719641327" at="41,0,43,0" />
       <scope id="2565896126719641327" at="32,0,35,0" />
@@ -2338,8 +2235,8 @@
       <unit id="2662234144540708008" at="7,0,20,0" name="jetbrains.mps.ide.devkit.actions.EditorInternalEx_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2662234144540708008" at="69,44,70,49" concept="5" />
-      <node id="2662234144540708010" at="101,117,102,131" concept="5" />
+      <node id="2662234144540708008" at="67,44,68,49" concept="5" />
+      <node id="2662234144540708010" at="98,117,99,131" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2662234144540708083">
@@ -2481,12 +2378,12 @@
       <unit id="2662234144540708417" at="22,0,81,0" name="jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2662234144540708417" at="44,53,45,54" concept="5" />
+      <node id="2662234144540708417" at="43,53,44,54" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2662234144540708709">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2662234144540708709" at="53,51,54,40" concept="5" />
+      <node id="2662234144540708709" at="52,51,53,40" concept="5" />
     </file>
     <file name="PrintNodeID_Action.java">
       <node id="2662234144540708709" at="14,0,15,0" concept="14" trace="ICON" />
@@ -2530,7 +2427,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2662234144540708724">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="2662234144540708724" at="55,38,56,47" concept="5" />
+      <node id="2662234144540708724" at="54,38,55,47" concept="5" />
     </file>
     <file name="ShowCellInExplorer_Action.java">
       <node id="2662234144540708724" at="24,0,25,0" concept="14" trace="ICON" />
@@ -2758,7 +2655,7 @@
       <node id="5407088750806074453" at="63,0,64,489" concept="11" />
       <node id="2970389781193170240" at="66,29,67,17" concept="11" />
       <node id="2970389781193170273" at="69,65,70,88" concept="11" />
-      <node id="2970389781193170279" at="72,71,73,201" concept="11" />
+      <node id="2970389781193170279" at="72,71,73,159" concept="11" />
       <node id="2970389781193170240" at="30,0,32,0" concept="3" trace="Actions_TabDescriptor#()V" />
       <node id="2970389781193170240" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2970389781193170240" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2785,7 +2682,7 @@
       <scope id="5407088750806066642" at="60,30,61,36" />
       <scope id="2970389781193170240" at="66,29,67,17" />
       <scope id="7459370737648060013" at="69,65,70,88" />
-      <scope id="7459370737648082045" at="72,71,73,201" />
+      <scope id="7459370737648082045" at="72,71,73,159" />
       <scope id="2970389781193170240" at="30,0,32,0" />
       <scope id="2970389781193170240" at="41,0,43,0" />
       <scope id="2970389781193170240" at="32,0,35,0" />
@@ -2823,7 +2720,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/305616691112287268">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="305616691112287268" at="47,46,48,52" concept="5" />
+      <node id="305616691112287268" at="46,46,47,52" concept="5" />
     </file>
     <file name="NavigateToGeneratedCode_Action.java">
       <node id="305616691112287268" at="19,0,20,0" concept="14" trace="ICON" />
@@ -2920,7 +2817,7 @@
       <unit id="3465865320786305481" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="3465865320786305481" at="64,14,65,56" concept="5" />
+      <node id="3465865320786305481" at="63,14,64,56" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786305485">
@@ -3062,7 +2959,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786305631">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="3465865320786305631" at="48,52,49,46" concept="5" />
+      <node id="3465865320786305631" at="47,52,48,46" concept="5" />
     </file>
     <file name="NewAccessoryModel_Action.java">
       <node id="3465865320786305631" at="25,0,26,0" concept="14" trace="ICON" />
@@ -3161,7 +3058,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786327950">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="3465865320786327950" at="50,38,51,41" concept="5" />
+      <node id="3465865320786327950" at="49,38,50,41" concept="5" />
     </file>
     <file name="NewGenerator_Action.java">
       <node id="3465865320786327950" at="21,0,22,0" concept="14" trace="ICON" />
@@ -3286,14 +3183,14 @@
       <unit id="3465865320786328040" at="19,0,46,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="3465865320786328040" at="78,53,79,61" concept="5" />
-      <node id="3465865320786328051" at="102,131,103,158" concept="5" />
+      <node id="3465865320786328040" at="76,53,77,61" concept="5" />
+      <node id="3465865320786328051" at="99,131,100,158" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/4032646381570777493">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="4032646381570777493" at="80,53,81,54" concept="5" />
-      <node id="4032646381570777495" at="103,158,104,107" concept="5" />
+      <node id="4032646381570777493" at="78,53,79,54" concept="5" />
+      <node id="4032646381570777495" at="100,158,101,107" concept="5" />
     </file>
     <file name="NamespaceNewActionsEx_ActionGroup.java">
       <node id="4032646381570777493" at="8,0,9,0" concept="14" trace="ID" />
@@ -3395,12 +3292,12 @@
       <unit id="448482297237178280" at="10,0,25,0" name="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="448482297237178280" at="117,73,118,67" concept="5" />
+      <node id="448482297237178280" at="114,73,115,67" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5292943341474723864">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="5292943341474723864" at="56,47,57,52" concept="5" />
+      <node id="5292943341474723864" at="55,47,56,52" concept="5" />
     </file>
     <file name="ShowEditorMenuItemTrace_Action.java">
       <node id="5292943341474723864" at="19,0,20,0" concept="14" trace="ICON" />
@@ -3477,8 +3374,8 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657755836">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="5883033498657755836" at="81,54,82,52" concept="5" />
-      <node id="5883033498657755837" at="88,100,89,149" concept="5" />
+      <node id="5883033498657755836" at="79,54,80,52" concept="5" />
+      <node id="5883033498657755837" at="86,100,87,149" concept="5" />
     </file>
     <file name="ProjectNewActionsEx_ActionGroup.java">
       <node id="5883033498657755836" at="8,0,9,0" concept="14" trace="ID" />
@@ -3495,7 +3392,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657845915">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="5883033498657845915" at="49,46,50,38" concept="5" />
+      <node id="5883033498657845915" at="48,46,49,38" concept="5" />
     </file>
     <file name="NewDevKit_Action.java">
       <node id="5883033498657845915" at="21,0,22,0" concept="14" trace="ICON" />
@@ -3564,7 +3461,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657845969">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="5883033498657845969" at="51,41,52,40" concept="5" />
+      <node id="5883033498657845969" at="50,41,51,40" concept="5" />
     </file>
     <file name="NewLanguage_Action.java">
       <node id="5883033498657845969" at="19,0,20,0" concept="14" trace="ICON" />
@@ -3639,8 +3536,8 @@
       <unit id="6252705307027051861" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.FindLanguageUsages_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="6252705307027051861" at="70,49,71,51" concept="5" />
-      <node id="6252705307027051862" at="104,107,105,144" concept="5" />
+      <node id="6252705307027051861" at="68,49,69,51" concept="5" />
+      <node id="6252705307027051862" at="101,107,102,144" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/6252705307027051953">
@@ -3734,7 +3631,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/6830537871213907260">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="6830537871213907260" at="60,47,61,43" concept="5" />
+      <node id="6830537871213907260" at="59,47,60,43" concept="5" />
     </file>
     <file name="ShowOriginNode_Action.java">
       <node id="6830537871213907260" at="20,0,21,0" concept="14" trace="ICON" />
@@ -3808,27 +3705,27 @@
       <node id="7162597690968047817" at="26,0,27,0" concept="6" trace="myId" />
       <node id="7162597690968047817" at="29,27,30,16" concept="11" />
       <node id="7162597690968047817" at="32,30,33,30" concept="12" />
-      <node id="7162597690968047817" at="63,48,64,14" concept="12" />
-      <node id="7162597690968047817" at="113,48,114,92" concept="10" />
-      <node id="7162597690968047817" at="119,69,120,15" concept="11" />
+      <node id="7162597690968047817" at="62,48,63,14" concept="12" />
+      <node id="7162597690968047817" at="110,48,111,92" concept="10" />
+      <node id="7162597690968047817" at="116,69,117,15" concept="11" />
       <node id="7162597690968047817" at="27,0,29,0" concept="3" trace="Mpsdevkit_ApplicationPlugin#()V" />
       <node id="7162597690968047817" at="29,0,32,0" concept="9" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968047817" at="113,0,122,0" concept="9" trace="initKeymaps#()Ljava/util/List;" />
-      <node id="7162597690968047817" at="87,0,113,0" concept="9" trace="adjustRegularGroups#()V" />
-      <node id="7162597690968047817" at="32,0,87,0" concept="9" trace="createGroups#()V" />
+      <node id="7162597690968047817" at="110,0,119,0" concept="9" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968047817" at="85,0,110,0" concept="9" trace="adjustRegularGroups#()V" />
+      <node id="7162597690968047817" at="32,0,85,0" concept="9" trace="createGroups#()V" />
       <scope id="7162597690968047817" at="27,40,27,40" />
       <scope id="7162597690968047817" at="29,27,30,16" />
       <scope id="7162597690968047817" at="27,0,29,0" />
       <scope id="7162597690968047817" at="29,0,32,0" />
-      <scope id="7162597690968047817" at="113,48,120,15">
+      <scope id="7162597690968047817" at="110,48,117,15">
         <var name="res" id="7162597690968047817" />
       </scope>
-      <scope id="7162597690968047817" at="113,0,122,0" />
-      <scope id="7162597690968047817" at="87,37,111,93" />
-      <scope id="7162597690968047817" at="87,0,113,0" />
-      <scope id="7162597690968047817" at="32,30,85,45" />
-      <scope id="7162597690968047817" at="32,0,87,0" />
-      <unit id="7162597690968047817" at="25,0,123,0" name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+      <scope id="7162597690968047817" at="110,0,119,0" />
+      <scope id="7162597690968047817" at="85,37,108,93" />
+      <scope id="7162597690968047817" at="85,0,110,0" />
+      <scope id="7162597690968047817" at="32,30,83,45" />
+      <scope id="7162597690968047817" at="32,0,85,0" />
+      <unit id="7162597690968047817" at="25,0,120,0" name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
     </file>
     <file name="Mpsdevkit_ProjectPlugin.java">
       <node id="7162597690968047817" at="16,70,17,54" concept="10" />
@@ -3936,10 +3833,10 @@
       <unit id="7219111183925689707" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.ContributeModuleUsage_ActionGroup" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="7219111183925689707" at="67,47,68,54" concept="5" />
-      <node id="7219111183925689709" at="105,144,106,143" concept="5" />
-      <node id="8193307622548935746" at="106,143,107,149" concept="5" />
-      <node id="7219111183925689936" at="107,149,108,147" concept="5" />
+      <node id="7219111183925689707" at="65,71,66,54" concept="5" />
+      <node id="7219111183925689709" at="102,144,103,143" concept="5" />
+      <node id="8193307622548935746" at="103,143,104,149" concept="5" />
+      <node id="7219111183925689936" at="104,149,105,147" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8321617901826002785">
@@ -3961,8 +3858,8 @@
       <node id="8321617901826002962" at="68,7,69,59" concept="11" />
       <node id="8321617901826002982" at="73,39,74,200" concept="11" />
       <node id="8321617901826003000" at="78,103,79,47" concept="10" />
-      <node id="8321617901826003006" at="79,47,80,269" concept="10" />
-      <node id="8321617901826003012" at="80,269,81,191" concept="5" />
+      <node id="8321617901826003006" at="79,47,80,227" concept="10" />
+      <node id="8321617901826003012" at="80,227,81,191" concept="5" />
       <node id="8321617901826003018" at="81,191,82,54" concept="5" />
       <node id="8321617901826003023" at="82,54,83,18" concept="11" />
       <node id="8321617901826002787" at="22,0,24,0" concept="3" trace="GoToEditorDeclarationHelper#()V" />
@@ -4047,7 +3944,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8513716958726547010">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8513716958726547010" at="118,67,119,69" concept="5" />
+      <node id="8513716958726547010" at="115,67,116,69" concept="5" />
     </file>
     <file name="Trace_KeymapChanges.java">
       <node id="8513716958726547010" at="11,32,12,14" concept="12" />
@@ -4143,7 +4040,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8513716958726547154">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8513716958726547154" at="62,42,63,48" concept="5" />
+      <node id="8513716958726547154" at="61,42,62,48" concept="5" />
     </file>
     <file name="ShowTypeSystemTrace_Action.java">
       <node id="8513716958726547154" at="20,0,21,0" concept="14" trace="ICON" />
@@ -4223,8 +4120,8 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8513716958726604212">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8513716958726604212" at="84,51,85,45" concept="5" />
-      <node id="8513716958726604217" at="108,147,109,126" concept="5" />
+      <node id="8513716958726604212" at="82,51,83,45" concept="5" />
+      <node id="8513716958726604217" at="105,147,106,126" concept="5" />
     </file>
     <file name="TraceActions_ActionGroup.java">
       <node id="8513716958726604212" at="8,0,9,0" concept="14" trace="ID" />
@@ -4246,34 +4143,33 @@
       <node id="7219111183925631572" at="14,115,15,104" concept="5" />
       <node id="1744445256079578764" at="15,104,16,117" concept="5" />
       <node id="1744445256079578761" at="16,117,17,115" concept="5" />
-      <node id="2808756344206465773" at="17,115,18,121" concept="5" />
-      <node id="1744445256079578827" at="18,121,19,108" concept="5" />
-      <node id="2662234144540707627" at="19,108,20,124" concept="5" />
-      <node id="5487985028841895871" at="20,124,21,112" concept="5" />
-      <node id="305616691112287342" at="21,112,22,122" concept="5" />
-      <node id="5487985028841895873" at="22,122,23,111" concept="5" />
-      <node id="8955832049992678453" at="23,111,24,116" concept="5" />
-      <node id="8970236339104100114" at="24,116,25,106" concept="5" />
-      <node id="5307017976806475305" at="25,106,26,104" concept="5" />
-      <node id="8586967776370449212" at="26,104,27,28" concept="12" />
-      <node id="8586967776370449212" at="27,28,28,15" concept="12" />
-      <node id="8586967776370449212" at="30,29,31,22" concept="11" />
-      <node id="8586967776370449212" at="33,53,34,70" concept="11" />
-      <node id="8586967776370449212" at="30,0,33,0" concept="9" trace="getScheme#()Ljava/lang/String;" />
-      <node id="8586967776370449212" at="33,0,36,0" concept="15" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
-      <node id="8586967776370449212" at="11,0,30,0" concept="3" trace="Default_KeymapChanges#()V" />
-      <scope id="8586967776370449212" at="30,29,31,22" />
-      <scope id="8586967776370449212" at="33,53,34,70" />
-      <scope id="8586967776370449212" at="30,0,33,0" />
-      <scope id="8586967776370449212" at="33,0,36,0">
+      <node id="1744445256079578827" at="17,115,18,108" concept="5" />
+      <node id="2662234144540707627" at="18,108,19,124" concept="5" />
+      <node id="5487985028841895871" at="19,124,20,112" concept="5" />
+      <node id="305616691112287342" at="20,112,21,122" concept="5" />
+      <node id="5487985028841895873" at="21,122,22,111" concept="5" />
+      <node id="8955832049992678453" at="22,111,23,116" concept="5" />
+      <node id="8970236339104100114" at="23,116,24,106" concept="5" />
+      <node id="5307017976806475305" at="24,106,25,104" concept="5" />
+      <node id="8586967776370449212" at="25,104,26,28" concept="12" />
+      <node id="8586967776370449212" at="26,28,27,15" concept="12" />
+      <node id="8586967776370449212" at="29,29,30,22" concept="11" />
+      <node id="8586967776370449212" at="32,53,33,70" concept="11" />
+      <node id="8586967776370449212" at="29,0,32,0" concept="9" trace="getScheme#()Ljava/lang/String;" />
+      <node id="8586967776370449212" at="32,0,35,0" concept="15" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
+      <node id="8586967776370449212" at="11,0,29,0" concept="3" trace="Default_KeymapChanges#()V" />
+      <scope id="8586967776370449212" at="29,29,30,22" />
+      <scope id="8586967776370449212" at="32,53,33,70" />
+      <scope id="8586967776370449212" at="29,0,32,0" />
+      <scope id="8586967776370449212" at="32,0,35,0">
         <var name="stroke" id="8586967776370449212" />
       </scope>
-      <scope id="8586967776370449212" at="11,34,28,15" />
-      <scope id="8586967776370449212" at="11,0,30,0" />
-      <unit id="8586967776370449212" at="10,0,37,0" name="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
+      <scope id="8586967776370449212" at="11,34,27,15" />
+      <scope id="8586967776370449212" at="11,0,29,0" />
+      <unit id="8586967776370449212" at="10,0,36,0" name="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
     </file>
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8586967776370449212" at="115,79,116,71" concept="5" />
+      <node id="8586967776370449212" at="112,79,113,71" concept="5" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8586967776370586377">
@@ -4458,7 +4354,7 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8970236339104100116">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8970236339104100116" at="59,52,60,47" concept="5" />
+      <node id="8970236339104100116" at="58,52,59,47" concept="5" />
     </file>
     <file name="ShowNodeInExplorer_Action.java">
       <node id="8970236339104100116" at="17,0,18,0" concept="14" trace="ICON" />
@@ -4514,9 +4410,9 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8970236339104100147">
     <file name="Mpsdevkit_ApplicationPlugin.java">
-      <node id="8970236339104100147" at="82,52,83,43" concept="5" />
-      <node id="8970236339104100152" at="109,126,110,123" concept="5" />
-      <node id="8970236339104100150" at="110,123,111,93" concept="5" />
+      <node id="8970236339104100147" at="80,52,81,43" concept="5" />
+      <node id="8970236339104100152" at="106,126,107,123" concept="5" />
+      <node id="8970236339104100150" at="107,123,108,93" concept="5" />
     </file>
     <file name="ShowNodeIn_ActionGroup.java">
       <node id="8970236339104100147" at="8,0,9,0" concept="14" trace="ID" />
@@ -4558,7 +4454,7 @@
       <node id="8147861864220005649" at="63,0,64,489" concept="11" />
       <node id="9040118078822013541" at="66,29,67,17" concept="11" />
       <node id="7459370737648301073" at="69,65,70,93" concept="11" />
-      <node id="9040118078822013581" at="72,71,73,206" concept="11" />
+      <node id="9040118078822013581" at="72,71,73,164" concept="11" />
       <node id="9040118078822013541" at="30,0,32,0" concept="3" trace="Refactorings_TabDescriptor#()V" />
       <node id="9040118078822013541" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="9040118078822013541" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -4585,7 +4481,7 @@
       <scope id="8147861864220005640" at="60,30,61,36" />
       <scope id="9040118078822013541" at="66,29,67,17" />
       <scope id="7459370737648298499" at="69,65,70,93" />
-      <scope id="7459370737648306382" at="72,71,73,206" />
+      <scope id="7459370737648306382" at="72,71,73,164" />
       <scope id="9040118078822013541" at="30,0,32,0" />
       <scope id="9040118078822013541" at="41,0,43,0" />
       <scope id="9040118078822013541" at="32,0,35,0" />
@@ -4650,7 +4546,7 @@
       <node id="8147861864219953352" at="71,5,72,0" concept="13" />
       <node id="8147861864219953353" at="72,0,73,480" concept="11" />
       <node id="9040118078822014258" at="75,65,76,223" concept="11" />
-      <node id="9040118078822014265" at="78,71,79,327" concept="11" />
+      <node id="9040118078822014265" at="78,71,79,285" concept="11" />
       <node id="9040118078822014208" at="30,0,32,0" concept="3" trace="Textgen_TabDescriptor#()V" />
       <node id="9040118078822014208" at="38,0,40,0" concept="9" trace="startListening#()V" />
       <node id="9040118078822014208" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -4678,7 +4574,7 @@
       <scope id="8147861864219953326" at="64,42,65,18" />
       <scope id="8147861864219953346" at="69,30,70,18" />
       <scope id="7459370737648323263" at="75,65,76,223" />
-      <scope id="7459370737648327188" at="78,71,79,327" />
+      <scope id="7459370737648327188" at="78,71,79,285" />
       <scope id="9040118078822014208" at="30,0,32,0" />
       <scope id="9040118078822014208" at="38,0,40,0" />
       <scope id="9040118078822014208" at="32,0,35,0" />
@@ -4753,7 +4649,7 @@
       <node id="9040118078822014423" at="77,0,78,17" concept="11" />
       <node id="9040118078822014309" at="82,29,83,17" concept="11" />
       <node id="7459370737648345344" at="85,65,86,91" concept="11" />
-      <node id="9040118078822014447" at="88,71,89,204" concept="11" />
+      <node id="9040118078822014447" at="88,71,89,162" concept="11" />
       <node id="9040118078822014309" at="28,0,30,0" concept="3" trace="Typesystem_TabDescriptor#()V" />
       <node id="9040118078822014309" at="39,0,41,0" concept="9" trace="startListening#()V" />
       <node id="9040118078822014309" at="30,0,33,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -4787,7 +4683,7 @@
       <scope id="9040118078822014411" at="73,453,74,22" />
       <scope id="9040118078822014309" at="82,29,83,17" />
       <scope id="7459370737648344661" at="85,65,86,91" />
-      <scope id="7459370737648336452" at="88,71,89,204" />
+      <scope id="7459370737648336452" at="88,71,89,162" />
       <scope id="9040118078822014309" at="28,0,30,0" />
       <scope id="9040118078822014309" at="39,0,41,0" />
       <scope id="9040118078822014309" at="30,0,33,0" />

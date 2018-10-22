@@ -32,7 +32,7 @@ import java.util.Set;
  */
 public final class JavaNameUtil {
 
-  private static Set<String> JAVA_KEYWORDS = new HashSet<String>();
+  private static Set<String> JAVA_KEYWORDS = new HashSet<>();
 
   static {
     JAVA_KEYWORDS.addAll(Arrays.asList(

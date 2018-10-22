@@ -7,7 +7,11 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SReference;
 import java.util.Objects;
@@ -74,14 +78,22 @@ public class SLinkOperations {
     }
     return targetNode;
   }
-  public static SNode setNewChild(SNode node, SContainmentLink role, SConcept childConcept) {
-    if (node != null) {
-      SNode newChild = SModelOperations.createNewNode(node.getModel(), null, childConcept);
-      setTarget(node, role, newChild);
-      return newChild;
+
+  public static SNode setNewChild(SNode node, SContainmentLink role, @Nullable SAbstractConcept childConcept) {
+    if (node == null) {
+      return null;
     }
-    return null;
+    SConcept c;
+    if (childConcept == null) {
+      c = ModelConstraints.getDefaultConcreteConcept(role.getTargetConcept());
+    } else {
+      c = MetaAdapterByDeclaration.asInstanceConcept(childConcept);
+    }
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, c);
+    setTarget(node, role, newChild);
+    return newChild;
   }
+
   public static SNodeReference setPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
     if (node != null && targetPointer != null) {
       SNodeAccessUtil.setReference(node, role, SReference.create(role, node, targetPointer, null));
@@ -114,14 +126,22 @@ public class SLinkOperations {
     }
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
   }
-  public static SNode addNewChild(SNode node, SContainmentLink role, SConcept childConcept) {
-    if (node != null) {
-      SNode newChild = SModelOperations.createNewNode(node.getModel(), null, childConcept);
-      node.addChild(role, newChild);
-      return newChild;
+
+  public static SNode addNewChild(SNode node, SContainmentLink role, @Nullable SAbstractConcept childConcept) {
+    if (node == null) {
+      return null;
     }
-    return null;
+    SConcept c;
+    if (childConcept == null) {
+      c = ModelConstraints.getDefaultConcreteConcept(role.getTargetConcept());
+    } else {
+      c = MetaAdapterByDeclaration.asInstanceConcept(childConcept);
+    }
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, c);
+    node.addChild(role, newChild);
+    return newChild;
   }
+
   public static SNode addChild(SNode parent, SContainmentLink role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();

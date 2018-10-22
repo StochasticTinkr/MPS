@@ -41,12 +41,12 @@ public class StronglyConnectedModules<M extends SModule> {
   }
 
   public List<Set<M>> getStronglyConnectedComponents() {
-    return getStronglyConnectedComponents(myModules, new DefaultModuleDecoratorBuilder<M>());
+    return getStronglyConnectedComponents(myModules, new DefaultModuleDecoratorBuilder<>());
   }
 
   private <D extends SModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, SModuleDecoratorBuilder<M, D> decoratorBuilder) {
-    Graph<SModuleDecorator<M>> graph = new Graph<SModuleDecorator<M>>();
-    Map<SModule, SModuleDecorator<M>> moduleToDecorator = new LinkedHashMap<SModule, SModuleDecorator<M>>();
+    Graph<SModuleDecorator<M>> graph = new Graph<>();
+    Map<SModule, SModuleDecorator<M>> moduleToDecorator = new LinkedHashMap<>();
     for (M module : modules) {
       SModuleDecorator<M> decorator = decoratorBuilder.decorate(module);
       moduleToDecorator.put(module, decorator);
@@ -59,9 +59,9 @@ public class StronglyConnectedModules<M extends SModule> {
 
     List<List<SModuleDecorator<M>>> cycles = Graphs.findStronglyConnectedComponents(graph);
 
-    List<Set<M>> result = new LinkedList<Set<M>>();
+    List<Set<M>> result = new LinkedList<>();
     for (List<SModuleDecorator<M>> cycle : cycles) {
-      Set<M> mset = new LinkedHashSet<M>();
+      Set<M> mset = new LinkedHashSet<>();
       result.add(mset);
       for (SModuleDecorator<M> decorator : cycle) {
         mset.add(decorator.getModule());
@@ -85,13 +85,13 @@ public class StronglyConnectedModules<M extends SModule> {
   private static class DefaultModuleDecoratorBuilder<M extends SModule> implements SModuleDecoratorBuilder<M, DefaultModuleDecorator<M>> {
     @Override
     public DefaultModuleDecorator<M> decorate(M module) {
-      return new DefaultModuleDecorator<M>(module);
+      return new DefaultModuleDecorator<>(module);
     }
   }
 
   private static class DefaultModuleDecorator<M extends SModule> implements SModuleDecorator<M> {
     private final M myModule;
-    private final Set<SModuleDecorator<M>> myNext = new LinkedHashSet<SModuleDecorator<M>>();
+    private final Set<SModuleDecorator<M>> myNext = new LinkedHashSet<>();
 
     public DefaultModuleDecorator(M module) {
       myModule = module;
@@ -99,7 +99,7 @@ public class StronglyConnectedModules<M extends SModule> {
 
     @Override
     public void fill(Map<SModule, SModuleDecorator<M>> map) {
-      List<SModule> dependency = new ArrayList<SModule>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
+      List<SModule> dependency = new ArrayList<>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
       Collections.sort(dependency, ModuleMaker.MODULE_BY_NAME_COMPARATOR);
       for (SModule module : dependency) {
         SModuleDecorator<M> next = map.get(module);

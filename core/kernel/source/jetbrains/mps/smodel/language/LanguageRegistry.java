@@ -20,12 +20,14 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.ModuleRuntime;
+import jetbrains.mps.smodel.runtime.ModuleRuntime.ModuleRuntimeContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -98,6 +100,8 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   private final Map<SModuleReference, GeneratorRuntime> myGeneratorsWithCompiledRuntime = new HashMap<>();
 
+  private final Map<SModuleReference, ModuleRuntime> myModuleRuntime = new HashMap<>();
+
   /*
    * Don't want to expose this lock right now, although perhaps would need to do it later, to facilitate scenarios with
    * LanguageRegistry that are not satisfied with withAvailableLanguages (e.g. span longer lifecycle).
@@ -110,11 +114,9 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<>();
 
-  private final SRepository myRepository;
   private final ClassLoaderManager myClassLoaderManager;
 
-  public LanguageRegistry(SRepository repository, ClassLoaderManager loaderManager) {
-    myRepository = repository;
+  public LanguageRegistry(ClassLoaderManager loaderManager) {
     myClassLoaderManager = loaderManager;
   }
 
@@ -305,6 +307,11 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
     return null;
   }
 
+  @Nullable
+  private ModuleRuntime createRuntime(Solution solution) {
+    return new ModuleRuntime(solution.getModuleReference(), solution.getClassLoader());
+  }
+
   public String toString() {
     return "LanguageRegistry";
   }
@@ -315,32 +322,6 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   public void removeRegistryListener(LanguageRegistryListener listener) {
     myLanguageListeners.remove(listener);
-  }
-
-  /**
-   *   Collection is valid until the end of the current read action.
-   * @deprecated Use of the method demands read lock on a repository we load languages from, which is not something we'd like to expose, nor can
-   *             always afford to (e.g. old persistence formats need 'by name' concepts and access to LanguageRegistry (see MetaAdapterFactoryByName))
-   *             and it's odd to wrap code that merely parses model data stream with a model access on an odd repository.
-   *
-   *             Therefore, unless we have public, explicit access to LanguageRegistry lock mechanism, use {@link #withAvailableLanguages(Consumer)}
-   *             instead.
-   *
-   *             TODO when removing uses of the method, check if there's superficial model read around the code, and drop it as well, if possible.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public Collection<LanguageRuntime> getAvailableLanguages() {
-    // there are 2 uses in mbeddr
-    try {
-      myRuntimeInstanceAccess.readLock().lock();
-      // 1. We return a copy of our collection, but the contract ('valid until the end of read action') holds true.
-      // 2. Although it's guaranteed by MA.checkReadAccess that we never get here while LR is updated, it doesn't hurt to be explicit about
-      //    access type. Just in case we move LR update out of model write some day.
-      return new ArrayList<>(myLanguagesById.values());
-    } finally {
-      myRuntimeInstanceAccess.readLock().unlock();
-    }
   }
 
   /**
@@ -367,7 +348,7 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   public Collection<SLanguage> getAllLanguages() {
     ArrayList<SLanguage> rv = new ArrayList<>(100);
-    withAvailableLanguages(lr -> rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace())));
+    withAvailableLanguages(lr -> rv.add(lr.getIdentity()));
     return rv;
   }
 
@@ -411,19 +392,13 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    * Find respective runtime presentation of generator module
    * FIXME shall decide whether need standalone GeneratorRegistry to supply GeneratorRuntimes
    * FIXME or access to GeneratorRuntime through LanguageRegistry is enough.
+   * @deprecated use {@link #getGenerator(SModuleReference)} as it's {@link SModuleReference} that is generator identity.
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public GeneratorRuntime getGenerator(Generator generator) {
-    LanguageRuntime lr = getLanguage(generator.getSourceLanguage());
-    if (lr == null) {
-      return null;
-    }
-    for (GeneratorRuntime grt : lr.getGenerators()) {
-      if (grt.getModuleReference().equals(generator.getModuleReference())) {
-        return grt;
-      }
-    }
-    return null;
+    return getGenerator(generator.getModuleReference());
   }
 
   /**
@@ -432,24 +407,37 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   @Nullable
   public GeneratorRuntime getGenerator(@NotNull SModuleReference generatorIdentity) {
-    // XXX perhaps, shall take model read itself, but since this code has been copied from TemplateModuleBase, where no lock has been obtained, didn't put
-    //     one here either.
-    SModule resolved = generatorIdentity.resolve(myRepository);
-    if (resolved instanceof Generator) {
-      return getGenerator((Generator) resolved);
-    }
-    return null;
+    // XXX Likely, shall guard with myRuntimeInstanceAccess once onLoad/onUnload guards generator modules
+    return myGeneratorsWithCompiledRuntime.get(generatorIdentity);
   }
 
 
   // ClassLoaderManager/DeployListener part
   @Override
   public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
-    monitor.start("Generator Runtime", 4);
+    monitor.start("Solution Runtime", 5);
+    ArrayList<ModuleRuntime> modulesToUnload = new ArrayList<>();
+    for (Solution s : CollectionUtil.filter(Solution.class, unloadedModules)) {
+      // get, not remove as we notify all first, and only then remove them.
+      final ModuleRuntime moduleRuntime = myModuleRuntime.get(s.getModuleReference());
+      if (moduleRuntime == null) {
+        continue;
+      }
+      modulesToUnload.add(moduleRuntime);
+    }
+    ModuleRuntimeContext rtc = () -> null;
+    for (ModuleRuntime rt : modulesToUnload) {
+      rt.deactivate(rtc);
+    }
+    myModuleRuntime.values().removeAll(modulesToUnload);
+    monitor.advance(1);
+
+    monitor.step("Generator Runtime");
     for (Generator generator : collectGeneratorModules(unloadedModules)) {
       GeneratorRuntime generatorRuntime = myGeneratorsWithCompiledRuntime.remove(generator.getModuleReference());
       if (generatorRuntime == null) {
         // fine, we do not track GR other than generated
+        // XXX Perhaps, with generator module RT for each generator, shall issue a warning like a language does, below
         continue;
       }
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();
@@ -487,9 +475,10 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   @Override
   public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
-    monitor.start("Language Runtime", 3);
+    monitor.start("Language Runtime", 5);
     Set<LanguageRuntime> loadedRuntimes = new LinkedHashSet<>();
     try {
+      // FIXME why myRuntimeInstanceAccess doesn't guard instatiation of other module runtime classes?!
       myRuntimeInstanceAccess.writeLock().lock();
       for (Language language : collectLanguageModules(loadedModules)) {
         try {
@@ -528,6 +517,28 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
       }
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();
       srcLangRuntime.register(generatorRuntime);
+    }
+    monitor.advance(1);
+
+    monitor.step("Solution Runtime");
+    ArrayList<ModuleRuntime> loadedRuntime2 = new ArrayList<>();
+    for (Solution s : CollectionUtil.filter(Solution.class, loadedModules)) {
+      ModuleRuntime moduleRuntime = createRuntime(s);
+      if (moduleRuntime == null) {
+        continue;
+      }
+      ModuleRuntime old = myModuleRuntime.put(moduleRuntime.getSourceModule(), moduleRuntime);
+      if (old != null) {
+        LOG.warn(String.format("There's already runtime instance for module '%s'", old.getSourceModule()));
+      }
+      loadedRuntime2.add(moduleRuntime);
+    }
+    monitor.advance(1);
+
+    monitor.step("Activators...");
+    ModuleRuntimeContext rtc = () -> null;
+    for (ModuleRuntime rt : loadedRuntime2) {
+      rt.activate(rtc);
     }
     monitor.advance(1);
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5mvk9m80ntdbn6k4n49pjsrfo2r41bd" />
+<product version="3" modelHash="75aexu7zx2uy9ip53epyv55y8peijee">
+  <files names="ConceptBehavior_Constraints.java:ConceptMethodDeclaration_Constraints.java:ConstraintsAspectDescriptor.java:ConstraintsUtil.java:LocalBehaviorMethodCall_Constraints.java:SuperConceptExpression_Constraints.java:SuperNodeExpression_Constraints.java:ThisConceptExpression_Constraints.java:ThisNodeExpression_Constraints.java" />
+</product>
 

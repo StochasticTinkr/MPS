@@ -105,7 +105,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         return cell;
       }
     };
-    provider.setRole("node");
     provider.setNoTargetText("<no node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

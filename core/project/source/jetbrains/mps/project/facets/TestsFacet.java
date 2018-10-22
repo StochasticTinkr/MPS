@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  */
 public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
 
-  public static final String FACET_TYPE = "tests";
+  String FACET_TYPE = "tests";
 
   /**
    * @return test output folder, if there is one. Otherwise returns null.
@@ -47,22 +47,48 @@ public interface TestsFacet extends SModuleFacet, GenerationTargetFacet {
 
   @Nullable
   @Override
-  default IFile getOutputLocation(@NotNull SModel model) {
-    IFile root = getTestsOutputPath();
-    if (root == null || !SModelStereotype.isTestModel(model)) {
+  default IFile getOutputRoot(@NotNull SModel model) {
+    if (!SModelStereotype.isTestModel(model)) {
       return null;
     }
-    return FileGenerationUtil.getDefaultOutputDir(model, root);
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
+    }
+    return getTestsOutputPath();
+  }
+
+  @Nullable
+  @Override
+  default IFile getOutputCacheRoot(@NotNull SModel model) {
+    if (SModelStereotype.isTestModel(model)) {
+      return getOutputCacheRoot();
+    }
+    return null;
+  }
+
+  @Nullable
+  @Override
+  default IFile getOutputLocation(@NotNull SModel model) {
+    if (!SModelStereotype.isTestModel(model)) {
+      return null;
+    }
+    final IFile overriddenOutputDir = JavaModuleOperations.getOverriddenOutputDir(model);
+    if (overriddenOutputDir != null) {
+      return overriddenOutputDir;
+    }
+    IFile root = getTestsOutputPath();
+    return root == null ? null : FileGenerationUtil.getDefaultOutputDir(model, root);
 
   }
 
   @Nullable
   @Override
   default IFile getOutputCacheLocation(@NotNull SModel model) {
-    IFile root = getTestsOutputPath();
-    if (root == null || !SModelStereotype.isTestModel(model)) {
+    if (!SModelStereotype.isTestModel(model)) {
       return null;
     }
-    return FileGenerationUtil.getDefaultOutputDir(model, FileGenerationUtil.getCachesDir(root));
+    IFile root = getOutputCacheRoot();
+    return root == null ? null : FileGenerationUtil.getDefaultOutputDir(model, root);
   }
 }

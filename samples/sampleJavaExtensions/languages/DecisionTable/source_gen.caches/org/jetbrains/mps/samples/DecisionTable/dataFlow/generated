@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-damxsfbndvys79ydjd8dsxlhkk2ych0" />
+<product version="3" modelHash="-damxsfbndvys79ydjd8dsxlhkk2ych0">
+  <files names="DataFlowAspectDescriptorImpl.java:DecisionTable_DataFlow.java" />
+</product>
 

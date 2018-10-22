@@ -16,6 +16,9 @@
 package jetbrains.mps.icons;
 
 import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Actions;
+import com.intellij.icons.AllIcons.General;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
@@ -37,6 +40,8 @@ public class MPSIcons {
     public static final Icon GroupSearched = IconLoader.getIcon("/actions/groupSearched.png");
     public static final Icon ImportModulesFromFolder = IconLoader.getIcon("/actions/importModulesFromFolder.png");
     public static final Icon MigrationBulb = IconLoader.getIcon("/actions/migrationBulb.png");
+    // todo: create icon
+    public static final Icon SuppressedError = new LayeredIcon(AllIcons.Nodes.ErrorMark, AllIcons.Actions.CloseNew);
     public static final Icon SearchedNodes = IconLoader.getIcon("/actions/searchedNodes.png");
     public static final Icon ShowCellInExplorer = IconLoader.getIcon("/actions/showCellInExplorer.png");
     public static final Icon ShowOnlyStrongSubtypes = IconLoader.getIcon("/actions/showOnlyStrongSubtypes.png");

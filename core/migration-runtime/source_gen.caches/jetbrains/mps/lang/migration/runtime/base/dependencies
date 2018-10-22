@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseRefactoringScript" file="BaseRefactoringScript.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseRefactoringScript">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -19,24 +19,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseScript" file="BaseScript.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseScript">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" file="BaseScriptReference.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference">
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.BaseScript" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.DataCollector" file="DataCollector.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.DataCollector">
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem" file="DeprecatedConceptMemberNotMigratedProblem.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
@@ -45,12 +45,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem" file="DeprecatedConceptNotMigratedProblem.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.EmptyRefactoringUI" file="EmptyRefactoringUI.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.EmptyRefactoringUI">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrateManually" file="MigrateManually.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrateManually">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -76,12 +76,12 @@
     <classNode extendsClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" file="MigrationAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" file="MigrationModuleUtil.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashSet" />
@@ -103,7 +103,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScript" file="MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScript">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DataCollector" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.BaseScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" file="MigrationScriptBase.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -145,7 +145,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" file="MigrationScriptReference.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.MoveNodePart" file="MoveNodePart.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.MoveNodePart">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModulesScope" />
@@ -175,6 +175,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.project.EditableFilteringScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -183,7 +184,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" file="NotMigratedNode.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -192,7 +193,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.Problem" file="Problem.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.Problem">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -202,7 +203,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode extendsClassName="jetbrains.mps.errors.item.ReportItem" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringPartImpl" file="RefactoringPartImpl.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringPartImpl">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.HashMap" />
@@ -222,7 +223,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringRuntime" file="RefactoringRuntime.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringRuntime">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -250,7 +251,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringScript" file="RefactoringScript.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringScript">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Map" />
@@ -262,7 +263,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.BaseScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference" file="RefactoringScriptReference.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -297,7 +298,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.runtime.base.VersionFixer" file="VersionFixer.java">
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.VersionFixer">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />

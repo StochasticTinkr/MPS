@@ -47,7 +47,7 @@ public class MatchingUtil {
     if (!node1.getConcept().equals(node2.getConcept())) return false;
 
     //properties
-    final Set<SProperty> properties = new HashSet<SProperty>();
+    final Set<SProperty> properties = new HashSet<>();
     properties.addAll(IterableUtil.asSet(node1.getProperties()));
     properties.addAll(IterableUtil.asSet(node2.getProperties()));
 
@@ -75,7 +75,7 @@ public class MatchingUtil {
     }
 
     //-- matching references
-    Set<SReferenceLink> referenceRoles = new HashSet<SReferenceLink>();
+    Set<SReferenceLink> referenceRoles = new HashSet<>();
     for (SReference ref : node1.getReferences()) {
       referenceRoles.add(ref.getLink());
     }
@@ -103,7 +103,7 @@ public class MatchingUtil {
         continue;
       }
       Iterator<? extends SNode> childrenIterator = children1.iterator();
-      for (SNode child2 : children2.toArray(new SNode[children2.size()])) {
+      for (SNode child2 : children2.toArray(new SNode[0])) {
         SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
         if (matchModifier.accept(child1, child2)) {
           matchModifier.performAction(child1, child2);

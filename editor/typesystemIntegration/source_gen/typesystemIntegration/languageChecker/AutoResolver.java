@@ -17,17 +17,24 @@ import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
-import jetbrains.mps.typesystem.checking.HighlightUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.errors.item.TargetModuleNotImportedReportItem;
+import jetbrains.mps.checkers.ModuleImportQuickFix;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.checkers.ErrorReportUtil;
+import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.HashSet;
 import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -53,21 +60,32 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
 
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     // TODO: use same settings as in LanguageEditorChecker 
-    Set<SReference> badReferences = collectBadReferences(rootNode);
-    for (SReference ref : SetSequence.fromSet(badReferences)) {
+    AutoResolver.BadReferences badReferences = collectBadReferences(rootNode);
+    for (SReference ref : SetSequence.fromSet(badReferences.brokenReferences())) {
       NodeReportItem reportItem = new UnresolvedReferenceReportItem(ref, null);
-      EditorMessage message = HighlightUtil.createHighlighterMessage(reportItem, this, editorComponent.getEditorContext().getRepository());
-      SetSequence.fromSet(messages).addElement(message);
+      report(messages, reportItem, myProject.getRepository());
+    }
+    for (SReference ref : SetSequence.fromSet(badReferences.outOfModuleScope())) {
+      final SModel targetModel = ref.getTargetSModelReference().resolve(myProject.getRepository());
+      final SModuleReference targetModuleRef = targetModel.getModule().getModuleReference();
+      NodeReportItem reportItem = new TargetModuleNotImportedReportItem(ref, targetModuleRef, new ModuleImportQuickFix(ref));
+      report(messages, reportItem, myProject.getRepository());
     }
 
     Set<EditorCell> editorErrorCells = editorComponent.getCellTracker().getErrorCells();
-    boolean hasWork = SetSequence.fromSet(badReferences).isNotEmpty() || !(editorErrorCells.isEmpty());
+    boolean hasWork = SetSequence.fromSet(badReferences.brokenReferences()).isNotEmpty() || !(editorErrorCells.isEmpty());
     if (hasWork && isAutofix(SNodeOperations.getModel(rootNode), editorComponent.getEditorContext().getRepository())) {
-      runAutofix(badReferences, editorComponent.getEditorContext());
+      runAutofix(badReferences.brokenReferences(), editorComponent.getEditorContext());
     } else {
       myForceAutofix = false;
     }
     return new UpdateResult.Completed(true, messages);
+  }
+  private void report(Set<EditorMessage> messages, NodeReportItem reportItem, SRepository repository) {
+    if (ErrorReportUtil.shouldReportError(reportItem, repository)) {
+      EditorMessage message = HighlightUtil.createHighlighterMessage(reportItem, this, repository);
+      SetSequence.fromSet(messages).addElement(message);
+    }
   }
   private void runAutofix(final Set<SReference> badReferences, final EditorContext editorContext) {
     final EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
@@ -151,14 +169,49 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
       }
     });
   }
-  private Set<SReference> collectBadReferences(SNode cellNode) {
+  public static class BadReferences extends MultiTuple._2<Set<SReference>, Set<SReference>> {
+    public BadReferences() {
+      super();
+    }
+    public BadReferences(Set<SReference> brokenReferences, Set<SReference> outOfModuleScope) {
+      super(brokenReferences, outOfModuleScope);
+    }
+    public Set<SReference> brokenReferences(Set<SReference> value) {
+      return super._0(value);
+    }
+    public Set<SReference> outOfModuleScope(Set<SReference> value) {
+      return super._1(value);
+    }
+    public Set<SReference> brokenReferences() {
+      return super._0();
+    }
+    public Set<SReference> outOfModuleScope() {
+      return super._1();
+    }
+  }
+  private AutoResolver.BadReferences collectBadReferences(SNode cellNode) {
     boolean needToEnableLogging = jetbrains.mps.smodel.SReference.disableLogging();
     try {
-      Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
+      SModel model = SNodeOperations.getModel(cellNode);
+      VisibilityUtil visibilityHelper = VisibilityUtil.forModel(model);
+      AutoResolver.BadReferences result = new BadReferences(SetSequence.fromSet(new HashSet<SReference>()), SetSequence.fromSet(new HashSet<SReference>()));
       for (SNode node : SNodeUtil.getDescendants(cellNode)) {
         for (SReference ref : SNodeOperations.getReferences(node)) {
           if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
-            SetSequence.fromSet(result).addElement(ref);
+            SetSequence.fromSet(result.brokenReferences()).addElement(ref);
+          } else {
+            SModelReference mref = ref.getTargetSModelReference();
+            if (mref == null) {
+              continue;
+            }
+            SModel m = mref.resolve(myProject.getRepository());
+            if (m == null) {
+              continue;
+            }
+            if (visibilityHelper.isVisible(m)) {
+              continue;
+            }
+            SetSequence.fromSet(result.outOfModuleScope()).addElement(ref);
           }
         }
       }

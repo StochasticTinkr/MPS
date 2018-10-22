@@ -6,6 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -34,6 +35,7 @@ public class MappingConfigFinder extends BaseFinder implements IFinder {
     return "Mapping Configs";
   }
   @Override
+  @NotNull
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
     Iterable<SModel> ownTemplateModels = myGenerator.getOwnTemplateModels();

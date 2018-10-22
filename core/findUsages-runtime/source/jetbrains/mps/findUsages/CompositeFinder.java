@@ -17,8 +17,8 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.SearchedObjects;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -46,22 +46,23 @@ public class CompositeFinder extends BaseFinder {
   }
 
   @Override
-  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
+  public void find(@NotNull SearchQuery query, @NotNull FindCallback callback, @NotNull ProgressMonitor monitor) {
     final Object value = query.getObjectHolder().getObject();
     if (value instanceof Collection) {
-      Collection c = (Collection) value;
-      SearchResults rv = new SearchResults();
-      monitor.start("", c.size());
-      for (Object o : c) {
-        final ProgressMonitor subTask = monitor.subTask(1, SubProgressKind.REPLACING);
-        final SearchResults res = myDelegate.find(new SearchQuery(new GenericHolder<Object>(o), query.getScope()), subTask);
-        rv.addAll(res);
-        subTask.done();
+      try {
+        Collection collection = (Collection) value;
+        monitor.start("", collection.size());
+        for (Object o : collection) {
+          final ProgressMonitor subTask = monitor.subTask(1, SubProgressKind.REPLACING);
+          SearchQuery searchQuery = new SearchQuery(new GenericHolder<>(o), query.getScope());
+          myDelegate.find(searchQuery, callback, subTask);
+          subTask.done();
+        }
+      } finally {
+        monitor.done();
       }
-      monitor.done();
-      return rv;
     } else {
-      return myDelegate.find(query, monitor);
+      myDelegate.find(query, callback, monitor);
     }
   }
 }

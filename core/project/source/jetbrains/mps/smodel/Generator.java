@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ProjectPathUtil;
@@ -35,6 +34,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -48,10 +48,6 @@ import java.util.Set;
 
 public class Generator extends ReloadableModuleBase {
   public static final Logger LOG = LogManager.getLogger(Generator.class);
-
-  static {
-    ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
-  }
 
   @NotNull private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
@@ -232,19 +228,19 @@ public class Generator extends ReloadableModuleBase {
     setModuleReference(myGeneratorDescriptor.getModuleReference());
   }
 
-  private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
-    @NotNull
+  public static class GeneratorModelsAutoImports extends AutoImportsContributor {
+
     @Override
-    public Class<Generator> getApplicableSModuleClass() {
-      return Generator.class;
+    public boolean isApplicable(SModule module) {
+      return module instanceof Generator;
     }
 
     @Override
-    public Set<SModel> getAutoImportedModels(Generator contextGenerator, SModel model) {
+    public Set<SModel> getAutoImportedModels(SModule contextGenerator, SModel model) {
       // likely, one needs to reference concepts of the source language:
       if (SModelStereotype.isGeneratorModel(model)) {
         // FIXME MM, please tell me what to use instead! SModuleOperations.getAspect(SModule, "structure") isn't nice alternative for hand-written code.
-        SModel structureAspect = LanguageAspect.STRUCTURE.get(contextGenerator.getSourceLanguage());
+        SModel structureAspect = LanguageAspect.STRUCTURE.get(((Generator) contextGenerator).getSourceLanguage());
         if (structureAspect != null) {
           // XXX when source language used to be 'used language', we've imported all extended languages as well. Shall we
           // import structures of extended language modules here as well?
@@ -256,14 +252,14 @@ public class Generator extends ReloadableModuleBase {
 
     @NotNull
     @Override
-    public Collection<SLanguage> getLanguages(Generator contextGenerator, SModel model) {
+    public Collection<SLanguage> getLanguages(SModule contextGenerator, SModel model) {
       // languages we are going to write templates at are not known at this moment,
       // generator languages are imported with dedicated templates devkit
       return Collections.emptySet();
     }
 
     @Override
-    public Collection<SModuleReference> getDevKits(Generator contextModule, SModel forModel) {
+    public Collection<SModuleReference> getDevKits(SModule contextModule, SModel forModel) {
       return Collections.singleton(BootstrapLanguages.getGeneratorTemplatesDevKit());
     }
   }

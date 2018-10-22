@@ -6,6 +6,7 @@ import jetbrains.mps.migration.global.BaseProjectMigration;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,10 +24,11 @@ public class SetGenRequiredToEmptyAspects extends BaseProjectMigration {
   @Override
   public boolean doExecute(Project project) {
     {
-      final SearchScope scope = CommandUtil.createScope(project);
+      SearchScope scope_sw0agr_a0b = CommandUtil.createScope(project);
+      final SearchScope scope_sw0agr_a0b_0 = new EditableFilteringScope(scope_sw0agr_a0b);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_sw0agr_a0b_0;
         }
       };
       final Wrappers._T<Iterable<SModel>> modelsToClean = new Wrappers._T<Iterable<SModel>>();

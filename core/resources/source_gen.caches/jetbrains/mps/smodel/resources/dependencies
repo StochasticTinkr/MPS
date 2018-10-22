@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.resources.CResource" file="CResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.CResource">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.ICResouce" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.CleanupActivityResource" file="CleanupActivityResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.CleanupActivityResource">
     <classNode extendsClassName="java.lang.Runnable" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.DResource" file="DResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.DResource">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.FlatFilePropertiesIO" file="FlatFilePropertiesIO.java">
+  <dependency className="jetbrains.mps.smodel.resources.FlatFilePropertiesIO">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Object" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesIO" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.GResource" file="GResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.GResource">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
@@ -40,18 +40,18 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IGResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.ICResouce" file="ICResouce.java">
+  <dependency className="jetbrains.mps.smodel.resources.ICResouce">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.IDeltaResource" file="IDeltaResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.IDeltaResource">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.IGResource" file="IGResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.IGResource">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
@@ -59,21 +59,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.IMResource" file="IMResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.IMResource">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.ITResource" file="ITResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.ITResource">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.MResource" file="MResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.MResource">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesIO" />
@@ -86,7 +86,7 @@
     <classNode extendsClassName="jetbrains.mps.make.resources.IResourceWithProperties" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IMResource" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.ModelsToResources" file="ModelsToResources.java">
+  <dependency className="jetbrains.mps.smodel.resources.ModelsToResources">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -106,7 +106,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.resources.TResource" file="TResource.java">
+  <dependency className="jetbrains.mps.smodel.resources.TResource">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />

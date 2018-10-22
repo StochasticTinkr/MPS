@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Icon__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Icon__BehaviorDescriptor" file="QueryFunction_TransformationMenu_Icon__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Icon__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor" file="QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationLocation_ContextActionsTool__BehaviorDescriptor" file="TransformationLocation_ContextActionsTool__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationLocation_ContextActionsTool__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

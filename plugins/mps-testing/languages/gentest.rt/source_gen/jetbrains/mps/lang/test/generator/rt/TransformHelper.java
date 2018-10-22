@@ -21,6 +21,7 @@ public final class TransformHelper {
   private SModel myInputModel;
   private ModelGenerationPlan.Provider myPlanProvider;
   private GenerationStatus myGenOutcome;
+  private TransientModelsProvider myTransientsProvider;
 
   /*package*/ TransformHelper(SRepository repository, IMessageHandler messages) {
     myRepository = repository;
@@ -41,18 +42,18 @@ public final class TransformHelper {
 
   public TransformHelper transform() {
     // XXX Guess, I shall re-use TMP if TransformHelper is reused.  
-    // FIXME Need a mechanism to dispose transients! 
-    final TransientModelsProvider tmp = new TransientModelsProvider(myRepository, null);
-    tmp.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    myTransientsProvider = new TransientModelsProvider(myRepository, null);
+    myTransientsProvider.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
         ModelGenerationPlan plan = (myPlanProvider == null ? null : myPlanProvider.getPlan(myInputModel));
         if (plan != null) {
           optBuilder.customPlan(myInputModel, plan);
+          myTransientsProvider.initCheckpointModule();
         }
         GenerationFacade genFacade = new GenerationFacade(myRepository, optBuilder.create());
         final GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
-        genFacade.transients(tmp).messages(myMessages).taskHandler(taskHandler);
+        genFacade.transients(myTransientsProvider).messages(myMessages).taskHandler(taskHandler);
         genFacade.process(new EmptyProgressMonitor(), myInputModel);
         myGenOutcome = taskHandler.getAllRecorded().get(0);
       }
@@ -72,5 +73,13 @@ public final class TransformHelper {
 
   public Collection<SModel> getOutputModels() {
     return getResult().getOutputModels();
+  }
+
+  public void dispose() {
+    myTransientsProvider.removeAllTransients(true);
+    myTransientsProvider = null;
+    myInputModel = null;
+    myPlanProvider = null;
+    myGenOutcome = null;
   }
 }

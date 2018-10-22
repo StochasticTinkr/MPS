@@ -32,10 +32,6 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
   }
 
   @Override
-  public EditorCell getAnchorCell(EditorCell cell) {
-    return BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(cell);
-  }
-  @Override
   public AnAction getClickAction() {
     return null;
   }

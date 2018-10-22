@@ -100,12 +100,7 @@ public class ProjectHelper {
 
   @Nullable
   public static Frame toMainFrame(Project p) {
-    if (p instanceof MPSProject) {
-      com.intellij.openapi.project.Project project = ((MPSProject) p).getProject();
-      if (project == null) return null;
-      return WindowManager.getInstance().getFrame(project);
-    }
-    return null;
+    return p instanceof MPSProject ? WindowManager.getInstance().getFrame(((MPSProject) p).getProject()) : null;
   }
 
   @Nullable

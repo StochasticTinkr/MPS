@@ -29,40 +29,4 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public interface NodeFeatureReportItem extends NodeReportItem, NodeFeatureFlavouredItem {
-
-  ReportItemFlavour<NodeReportItem, MessageTarget> MESSAGE_TARGET_FEATURE = new MessageTargetSimpleReportItemFlavour();
-
-  class MessageTargetSimpleReportItemFlavour extends SimpleReportItemFlavour<NodeReportItem, MessageTarget> {
-    MessageTargetSimpleReportItemFlavour() {
-      super(NodeReportItem.class, MessageTargetSimpleReportItemFlavour::conceptFeatureToMessageTarget);
-    }
-
-    @NotNull
-    private static MessageTarget conceptFeatureToMessageTarget(@Nullable SConceptFeature conceptFeature) {
-      MessageTarget messageTarget = null;
-      if (conceptFeature instanceof SContainmentLink) {
-        //todo: we use ReferenceMessageTarget for containment links as well as for references
-        messageTarget = new ReferenceMessageTarget(((SContainmentLink) conceptFeature).getRoleName());
-      }
-      if (conceptFeature instanceof SReferenceLink) {
-        messageTarget = new ReferenceMessageTarget(((SReferenceLink) conceptFeature).getRoleName());
-      }
-      if (conceptFeature instanceof SProperty) {
-        messageTarget = new PropertyMessageTarget(conceptFeature.getName());
-      }
-      if (messageTarget == null) {
-        messageTarget = new NodeMessageTarget();
-      }
-      return messageTarget;
-    }
-
-    private static MessageTarget conceptFeatureToMessageTarget(NodeReportItem nodeReportItem) {
-      SConceptFeature nodeFeature = FLAVOUR_NODE_FEATURE.tryToGet(nodeReportItem);
-      IErrorReporter errorReporter = TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(nodeReportItem);
-      if (errorReporter != null) {
-        return errorReporter.getErrorTarget();
-      }
-      return conceptFeatureToMessageTarget(nodeFeature);
-    }
-  }
 }

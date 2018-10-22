@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="gola" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
@@ -4611,11 +4611,8 @@
           <node concept="Xl_RD" id="6IC6gZqCByZ" role="3g7hyw">
             <property role="Xl_RC" value="xstream-1.4.8.jar" />
           </node>
-          <node concept="Xl_RD" id="6IC6gZqDAc8" role="3g7hyw">
-            <property role="Xl_RC" value="asm4-all.jar" />
-          </node>
           <node concept="Xl_RD" id="4Xk_ETUhYpB" role="3g7hyw">
-            <property role="Xl_RC" value="asm-all.jar" />
+            <property role="Xl_RC" value="asm-all-6.2.1.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqCBz0" role="3g7hyw">
             <property role="Xl_RC" value="ext/diffutils-1.2.1.jar" />

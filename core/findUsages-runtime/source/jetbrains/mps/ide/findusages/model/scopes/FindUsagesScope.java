@@ -33,8 +33,8 @@ public abstract class FindUsagesScope extends BaseScope implements SearchScope, 
   private static final String SCOPE_CLASS_ATTR = "scope_class";
   private static final String SCOPE_TAG = "scope";
 
-  protected final Set<SModule> myModules = new LinkedHashSet<SModule>();
-  protected final Set<SModel> myModels = new LinkedHashSet<SModel>();
+  protected final Set<SModule> myModules = new LinkedHashSet<>();
+  protected final Set<SModel> myModels = new LinkedHashSet<>();
 
   @NotNull
   @Override

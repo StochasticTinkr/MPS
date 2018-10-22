@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.util.MergeConstants" file="MergeConstants.java" />
-  <dependency className="jetbrains.mps.vcs.util.MergeDriverBackupUtil" file="MergeDriverBackupUtil.java">
+  <dependency className="jetbrains.mps.vcs.util.MergeConstants" />
+  <dependency className="jetbrains.mps.vcs.util.MergeDriverBackupUtil">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
@@ -15,13 +15,13 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.util.MergeStrategy" file="MergeStrategy.java" />
-  <dependency className="jetbrains.mps.vcs.util.MergeVersion" file="MergeVersion.java">
+  <dependency className="jetbrains.mps.vcs.util.MergeStrategy" />
+  <dependency className="jetbrains.mps.vcs.util.MergeVersion">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.vcs.util.ModelVersion" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.util.ModelVersion" file="ModelVersion.java">
+  <dependency className="jetbrains.mps.vcs.util.ModelVersion">
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>

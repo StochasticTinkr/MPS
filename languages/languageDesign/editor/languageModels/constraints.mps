@@ -3602,5 +3602,15 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="6KlKhT34nb2">
+    <property role="3GE5qa" value="CellActionMap" />
+    <ref role="1M2myG" to="tpc2:7pqJbakA6Bn" resolve="CellActionMapImport" />
+    <node concept="1N5Pfh" id="6KlKhT34nb3" role="1Mr941">
+      <ref role="1N5Vy1" to="tpc2:7pqJbakA6Bo" resolve="cellActionMap" />
+      <node concept="1dDu$B" id="6KlKhT34ne2" role="1N6uqs">
+        <ref role="1dDu$A" to="tpc2:g_h_SNY" resolve="CellActionMapDeclaration" />
+      </node>
+    </node>
+  </node>
 </model>
 

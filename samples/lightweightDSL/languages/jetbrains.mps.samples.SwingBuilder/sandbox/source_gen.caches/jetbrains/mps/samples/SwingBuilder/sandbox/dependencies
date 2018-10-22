@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.BigValues" file="BigValues.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.BigValues">
     <classNode dependClassName="java.lang.Integer" />
     <classNode extendsClassName="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Demo" file="Demo.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Demo">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -18,16 +18,16 @@
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.sandbox.Duplicate" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.sandbox.Square" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Duplicate" file="Duplicate.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Duplicate">
     <classNode extendsClassName="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.MyConverter" file="MyConverter.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.MyConverter">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Square" file="Square.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.Square">
     <classNode extendsClassName="jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElement" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.SwingDSLDemo" file="SwingDSLDemo.java">
+  <dependency className="jetbrains.mps.samples.SwingBuilder.sandbox.SwingDSLDemo">
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />

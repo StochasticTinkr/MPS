@@ -602,7 +602,7 @@
       <node id="959738663751379607" at="31,0,32,0" concept="6" trace="myResultBegin" />
       <node id="959738663751379610" at="32,0,33,0" concept="6" trace="myResultEnd" />
       <node id="959738663751510251" at="33,0,34,0" concept="6" trace="myPreparedIdsToDelete" />
-      <node id="959738663751511036" at="34,0,35,0" concept="6" trace="myPreparedAnchorId" />
+      <node id="7777695626470107512" at="34,0,35,0" concept="6" trace="myBeforeAnchorId" />
       <node id="4972886494893364942" at="35,171,36,21" concept="15" />
       <node id="4972886494893364949" at="36,21,37,34" concept="5" />
       <node id="4972886494893364958" at="37,34,38,18" concept="5" />
@@ -629,7 +629,7 @@
       <node id="6975118071489424144" at="101,40,102,57" concept="10" />
       <node id="1887089739065764707" at="102,57,103,30" concept="0" />
       <node id="6975118071489393763" at="105,41,106,32" concept="11" />
-      <node id="959738663751511149" at="108,26,109,89" concept="5" />
+      <node id="7777695626470135704" at="108,26,109,117" concept="5" />
       <node id="959738663751511246" at="113,88,114,24" concept="12" />
       <node id="959738663751511221" at="114,24,115,14" concept="5" />
       <node id="959738663751511229" at="117,37,118,35" concept="5" />
@@ -639,12 +639,12 @@
       <node id="1887089739065796360" at="125,40,126,42" concept="11" />
       <node id="959738663751511244" at="128,7,129,0" concept="13" />
       <node id="959738663751511252" at="129,0,130,24" concept="12" />
-      <node id="3396946986144293802" at="130,24,131,91" concept="10" />
-      <node id="3396946986144293808" at="131,91,132,49" concept="10" />
-      <node id="78535434227608989" at="133,61,134,62" concept="5" />
-      <node id="78535434227645818" at="137,82,138,360" concept="10" />
-      <node id="78535434227608963" at="138,360,139,51" concept="5" />
-      <node id="1887089739065910548" at="139,51,140,19" concept="11" />
+      <node id="7777695626470245806" at="130,24,131,93" concept="10" />
+      <node id="3396946986144293808" at="131,93,132,49" concept="10" />
+      <node id="78535434227608989" at="133,61,134,60" concept="5" />
+      <node id="7777695626470196190" at="137,83,138,360" concept="10" />
+      <node id="7777695626470196200" at="138,360,139,52" concept="5" />
+      <node id="7777695626470196208" at="139,52,140,19" concept="11" />
       <node id="4453118635377437332" at="144,30,145,75" concept="11" />
       <node id="959738663751366469" at="150,27,151,28" concept="11" />
       <node id="959738663751366483" at="153,39,154,31" concept="11" />
@@ -707,7 +707,7 @@
       <node id="959738663751511123" at="103,30,108,26" concept="5" />
       <node id="959738663751511223" at="115,14,120,7" concept="5" />
       <node id="3396946986144293914" at="123,28,128,7" concept="10" />
-      <node id="78535434227608982" at="137,0,142,0" concept="9" trace="insertNodeAfterAnchor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7777695626470196180" at="137,0,142,0" concept="9" trace="insertNodeBeforeAnchor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4453118635377437320" at="142,0,147,0" concept="9" trace="getRootId#()Lorg/jetbrains/mps/openapi/model/SNodeId;" />
       <node id="5814105446971274242" at="176,47,181,16" concept="5" />
       <node id="5814105446971274170" at="187,84,192,5" concept="8" />
@@ -741,7 +741,7 @@
       <scope id="6975118071489391051" at="105,41,106,32" />
       <scope id="959738663751511228" at="117,37,118,35" />
       <scope id="1887089739065784606" at="125,40,126,42" />
-      <scope id="3396946986144294031" at="133,61,134,62" />
+      <scope id="3396946986144294031" at="133,61,134,60" />
       <scope id="4453118635377437324" at="144,30,145,75" />
       <scope id="959738663751366460" at="150,27,151,28" />
       <scope id="959738663751366475" at="153,39,154,31" />
@@ -787,8 +787,8 @@
       <scope id="3396946986144294028" at="132,49,135,5">
         <var name="newNode" id="3396946986144294029" />
       </scope>
-      <scope id="78535434227608962" at="137,82,140,19">
-        <var name="link" id="78535434227645819" />
+      <scope id="7777695626470196189" at="137,83,140,19">
+        <var name="link" id="7777695626470196191" />
       </scope>
       <scope id="5814105446971274127" at="178,0,181,0">
         <var name="n" id="5814105446971274127" />
@@ -806,10 +806,10 @@
       <scope id="3519985790943210172" at="218,126,222,16" />
       <scope id="3519985790943202137" at="224,145,228,16" />
       <scope id="4972886494893364971" at="56,0,61,0" />
-      <scope id="78535434227608982" at="137,0,142,0">
-        <var name="anchor" id="78535434227608975" />
-        <var name="newNode" id="78535434227608973" />
-        <var name="parent" id="78535434227608971" />
+      <scope id="7777695626470196180" at="137,0,142,0">
+        <var name="anchor" id="7777695626470196187" />
+        <var name="newNode" id="7777695626470196185" />
+        <var name="parent" id="7777695626470196183" />
       </scope>
       <scope id="4453118635377437320" at="142,0,147,0" />
       <scope id="959738663751379688" at="210,0,215,0" />
@@ -831,7 +831,7 @@
       </scope>
       <scope id="959738663751366451" at="149,31,156,29" />
       <scope id="959738663751379534" at="159,28,166,165" />
-      <scope id="959738663751511099" at="101,40,109,89">
+      <scope id="959738663751511099" at="101,40,109,117">
         <var name="children" id="6975118071489424145" />
       </scope>
       <scope id="4972886494893364937" at="35,0,44,0">
@@ -849,7 +849,7 @@
       <scope id="959738663751366448" at="147,0,158,0" />
       <scope id="959738663751510258" at="100,0,112,0" />
       <scope id="3396946986144293798" at="113,88,135,5">
-        <var name="anchor" id="3396946986144293803" />
+        <var name="beforeAnchor" id="7777695626470245809" />
         <var name="nodesToAdd" id="3396946986144293915" />
         <var name="parent" id="3396946986144293809" />
       </scope>

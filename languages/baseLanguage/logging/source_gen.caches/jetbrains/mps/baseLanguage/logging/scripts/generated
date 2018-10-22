@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3lj0u5a09xwc86gxrdfqrucmpipoavg" />
+<product version="3" modelHash="3c2nuua33r6gs2lnhf7hld2kcwainjo">
+  <files names="ConvertLegacyStatementsToLogLowLevel_MigrationScript.java:ConvertLegacyStatementsToMessageStatements_MigrationScript.java:ScriptsDescriptor.java" />
+</product>
 

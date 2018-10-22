@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4sjbinw9k6urq9sn6l1v5xs4w16es9b" />
+<product version="3" modelHash="hexkbvxsqo8tiqgq56rpzmknvd2niw">
+  <files names="ModelChooser.java:StubRootChooser.java" />
+</product>
 

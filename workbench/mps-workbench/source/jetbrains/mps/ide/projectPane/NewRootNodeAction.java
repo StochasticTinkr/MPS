@@ -61,7 +61,7 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     myModel = model;
     myVirtualPackage = virtualPackage;
     String name = nodeConcept.getConceptAlias();
-    if (name == null || name.isEmpty()) {
+    if (name.isEmpty()) {
       name = nodeConcept.getName();
     }
     getTemplatePresentation().setText(name);
@@ -81,33 +81,27 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final SRepository projectRepo = myProject.getRepository();
     final ModelAccess modelAccess = projectRepo.getModelAccess();
-    modelAccess.executeCommandInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SLanguage l = myNodeConcept.getLanguage();
-        if (!SModelOperations.getAllLanguageImports(myModel).contains(l)){
-          ((SModelInternal)myModel).addLanguage(l);
-        }
-        final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
-        SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
-        myModel.addRootNode(node);
-        for (CreateNodeExtension ext : CreateRootFilterEP.getInstance().getCreateNodeExtensions()) {
-          if (ext.isApplicable(myModel)) {
-            ext.setupRoot(node);
-          }
-        }
-
-        modelAccess.runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            if (!trySelectInCurrentPane(myProject, node)) {
-              NavigationSupport.getInstance().selectInTree(myProject, node, false);
-            }
-
-            NavigationSupport.getInstance().openNode(myProject, node, true, false);
-          }
-        });
+    modelAccess.executeCommandInEDT(() -> {
+      SLanguage l = myNodeConcept.getLanguage();
+      if (!SModelOperations.getAllLanguageImports(myModel).contains(l)){
+        ((SModelInternal)myModel).addLanguage(l);
       }
+      final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
+      SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
+      myModel.addRootNode(node);
+      for (CreateNodeExtension ext : CreateRootFilterEP.getInstance().getCreateNodeExtensions()) {
+        if (ext.isApplicable(myModel)) {
+          ext.setupRoot(node);
+        }
+      }
+
+      modelAccess.runWriteInEDT(() -> {
+        if (!trySelectInCurrentPane(myProject, node)) {
+          NavigationSupport.getInstance().selectInTree(myProject, node, false);
+        }
+
+        NavigationSupport.getInstance().openNode(myProject, node, true, false);
+      });
     });
   }
 

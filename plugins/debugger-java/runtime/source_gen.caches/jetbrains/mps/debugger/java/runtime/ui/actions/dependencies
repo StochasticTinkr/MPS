@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action" file="AddWatchAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action" file="CopyStackTraceToClipboard_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action" file="CopyValueAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Object" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" file="EditWatchAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -67,11 +67,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" file="JavaWatchableNodeActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action" file="RemoveWatchAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -87,7 +87,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" file="Runtime_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Action" file="ViewAs_Action.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup" file="ViewAs_Group_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
@@ -147,11 +147,11 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesToolbarActions_ActionGroup" file="WatchesToolbarActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesToolbarActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup" file="WatchesTreeActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

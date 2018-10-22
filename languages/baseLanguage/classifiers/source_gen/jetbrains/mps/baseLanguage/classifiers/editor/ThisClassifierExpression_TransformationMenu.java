@@ -169,7 +169,7 @@ public class ThisClassifierExpression_TransformationMenu extends TransformationM
 
           @Override
           public void execute(@NotNull String pattern) {
-            SNode expr = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression")), null);
+            SNode expr = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"), null);
             SLinkOperations.setTarget(expr, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier"), myParameterObject);
             SNodeOperations.replaceWithAnother(_context.getNode(), expr);
             SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), expr, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);

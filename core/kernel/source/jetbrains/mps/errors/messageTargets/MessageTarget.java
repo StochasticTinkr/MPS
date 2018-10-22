@@ -21,9 +21,9 @@ package jetbrains.mps.errors.messageTargets;
 public interface MessageTarget {
   // we can't just move IErrorTarget hereinto and rename it, 
   // because we need backward compatibility
-  public MessageTargetEnum getTarget();
+  MessageTargetEnum getTarget();
 
-  public String getRole();
+  String getRole();
 
-  public boolean sameAs(MessageTarget messageTarget);
+  boolean sameAs(MessageTarget messageTarget);
 }

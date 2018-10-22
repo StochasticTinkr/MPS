@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.pattern.editorTest.Pattern_sgpsgd_a0a0" file="Pattern_sgpsgd_a0a0.java">
+  <dependency className="jetbrains.mps.lang.pattern.editorTest.Pattern_sgpsgd_a0a0">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.editorTest.Pattern_sgpsgd_a0a0_0" file="Pattern_sgpsgd_a0a0_0.java">
+  <dependency className="jetbrains.mps.lang.pattern.editorTest.Pattern_sgpsgd_a0a0_0">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.editorTest.Test_CreatePropertyPatternIntention_Test" file="Test_CreatePropertyPatternIntention_Test.java">
+  <dependency className="jetbrains.mps.lang.pattern.editorTest.Test_CreatePropertyPatternIntention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

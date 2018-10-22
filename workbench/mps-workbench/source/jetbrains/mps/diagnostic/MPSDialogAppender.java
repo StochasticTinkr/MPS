@@ -32,7 +32,7 @@ import java.util.Queue;
  * [Idea platform has default {@link java.lang.Thread.UncaughtExceptionHandler} which logs most of errors]
  */
 public class MPSDialogAppender extends com.intellij.diagnostic.DialogAppender implements ApplicationComponent {
-  private static Queue<LoggingEvent> ourEvents = new LinkedList<LoggingEvent>();
+  private static Queue<LoggingEvent> ourEvents = new LinkedList<>();
 
   @Override
   protected synchronized void append(@NotNull final LoggingEvent event) {
@@ -47,12 +47,7 @@ public class MPSDialogAppender extends com.intellij.diagnostic.DialogAppender im
   @Override
   public void initComponent() {
     // this is the only way I know to flush all gathered log events after the application is loaded
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        flush();
-      }
-    });
+    ApplicationManager.getApplication().invokeLater(() -> flush());
   }
 
   public void flush() {

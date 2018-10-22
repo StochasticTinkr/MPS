@@ -49,6 +49,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     super(modelReference, source instanceof FileDataSource
                           ? FileWithBackupDataSource.create((FileDataSource) source)
                           : source);
+    // FIXME It's not a model to be responsible to construct FileWithBackupDataSource! It's DataSourceFactory for specific DataSourceType that knows
+    //       its limitations and therefore constructs FilwWithBackupDataSource, not model implementation. Otherwise, it's too coupled
     myPersistence = persistence;
   }
 
@@ -104,7 +106,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
         long l = ((FileDataSource) getSource()).getFile().lastModified();
         if (l > 0 && brokenFile.lastModified() > l) {
           SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(
-              new FileDataSource(brokenFile, null), Collections.<String, String>emptyMap());
+              new FileDataSource(brokenFile, null), Collections.emptyMap());
           brokenModel.load();
           // force save
           setChanged(true);
@@ -191,7 +193,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     @NotNull
     @Override
     public Iterable<Problem> getProblems() {
-      return Collections.<Problem>singleton(
+      return Collections.singleton(
           new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null,
               true));
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -29,6 +32,15 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
+ * This if front-end for legacy code that deals with a single instance of MA (available through MA.instance()).
+ * There are 2 implementations generally available, DefaultModelAccess and WorkbenchModelAccess. Neither is an openapi.ModelAccess available
+ * from SRepository#getModelAccess() call, opeanpi.MA instances from repository now merely delegate to the singleton available from #instance() method.
+ *
+ * For now, WMA provides implementation of methods that deal with Project (i.e. undo support), therefore we keep methods with Project as part of this class
+ * implementation API. Instead, we shall implement execute* methods in respective openapi.MA implementations bound to project repositories and remove
+ * Project-aware methods from this class altogether. We may want to keep this class for another release as DMA and WMA have different perspective on
+ * platform locking (latter adds IDEA platform locks), and with that, we may still delegate general read/write actions of repository's MA to this singleton.
+ *
  * The actual implementation of {@link org.jetbrains.mps.openapi.module.ModelAccess} interface methods
  * Probably it is better to merge it with
  * {@link jetbrains.mps.project.ProjectModelAccess} and
@@ -37,9 +49,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
-public abstract class ModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
-  protected final WriteActionDispatcher myWriteActionDispatcher = new WriteActionDispatcher();
-
+public abstract class ModelAccess extends AbstractModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
   protected static ModelAccess ourInstance = new DefaultModelAccess();
@@ -53,13 +63,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
       return Boolean.FALSE;
     }
   };
-
-  /**
-   * @deprecated
-   * @see #getRepositoryStateCache(String)
-   */
-  @Deprecated
-  protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
 
   protected ModelAccess() {
   }
@@ -88,6 +91,45 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     return myReadWriteLock.writeLock();
   }
 
+  @Override
+  public final <T> T runReadAction(final Computable<T> c) {
+    if (canRead()) {
+      return c.compute();
+    }
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
+    runReadAction(r);
+    return r.getResult();
+  }
+
+  @Override
+  public final <T> T runWriteAction(final Computable<T> c) {
+    if (canWrite()) {
+      return c.compute();
+    }
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
+    runWriteAction(r);
+    return r.getResult();
+  }
+
+  @Override
+  public final <T> T tryRead(final Computable<T> c) {
+    if (canRead()) {
+      return c.compute();
+    }
+
+    ComputeRunnable<T> r = new ComputeRunnable<>(c);
+    if (tryRead(r)) {
+      return r.getResult();
+    }
+    return null;
+  }
+
+  protected final void assertNotWriteFromRead() {
+    if (canRead()) {
+      throw new IllegalStateException("deadlock prevention: do not start write action from read");
+    }
+  }
+
   public boolean hasScheduledWrites() {
     return myReadWriteLock.hasScheduledWrites();
   }
@@ -103,32 +145,33 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   }
 
   @Override
-  public void checkReadAccess() {
-    if (!canRead()) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
+  public final boolean isInsideCommand() {
+    // to cease along with ModelCommandExecutor
+    return canWrite() && myCommandActionDispatcher.isInsideAction();
   }
 
   @Override
-  public void checkWriteAccess() {
-    if (!canWrite()) {
-      throw new IllegalModelAccessError("You can write model only inside write actions");
-    }
+  public final void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
+    // re-dispatch to proper MA implementation
+    // this is compatibility code for legacy templates generating code that uses ModelCommandProjectExecutor#runCommandInEDT
+    p.getModelAccess().executeCommandInEDT(r);
   }
 
+  // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)
+  // left abstract method (though could have deleted method) as there might be references from MPS code to the implementation that used to be here
   @Override
-  public void executeCommand(Runnable r) {
-    // ExecuteCommandStatement with repo == null generates into executeCommand(Runnable)
-    executeCommand(r, null);
-  }
+  public abstract void executeCommand(Runnable r);
 
   @Override
-  public void executeCommandInEDT(Runnable r) {
+  public final void executeCommandInEDT(Runnable r) {
+    // this method is not invoked from generated code (generated code uses MA.instance().runCommandInEDT(R, P)), and hand-written shall not
+    // use MA.instance() any longer. Therefore neither DefaultModelAccess nor WorkbenchModelAccess shall override this method.
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public void executeUndoTransparentCommand(Runnable r) {
+  public final void executeUndoTransparentCommand(Runnable r) {
+    // see executeCommandInEDT() above for reasons why it's final. Templates generate repo.getModelAccess().executeUndoTC(), never MA.instance().eUTC()
     throw new UnsupportedOperationException();
   }
 
@@ -178,13 +221,8 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 //    if (canWrite()) {
 //      return null;
 //    }
-    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(repositoryKey);
-    if (cache != null) {
-      return cache;
-    }
-    cache = new ConcurrentHashMap<K, V>();
-    ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(repositoryKey, (ConcurrentMap<Object, Object>) cache);
-    return existingCache != null ? existingCache : cache;
+    LOG.error(String.format("getRepositoryStateCache(%s) is no op, please don't use", repositoryKey));
+    return new ConcurrentHashMap<>();
   }
 
   /**
@@ -194,18 +232,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
    */
   @Deprecated
   public void clearRepositoryStateCaches() {
-    LOG.debug("Clearing repository state caches");
-    myRepositoryStateCaches.clear();
-  }
-
-  @Override
-  public void addWriteActionListener(@NotNull WriteActionListener listener) {
-    myWriteActionDispatcher.addWriteActionListener(listener);
-  }
-
-  @Override
-  public void removeWriteActionListener(@NotNull WriteActionListener listener) {
-    myWriteActionDispatcher.removeWriteActionListener(listener);
+    LOG.error("clearRepositoryStateCaches() is no op, please don't use");
   }
 
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {

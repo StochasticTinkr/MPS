@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="MultiTarget.Language" file="Language.java">
+  <dependency className="MultiTarget.Language">
     <classNode dependClassName="MultiTarget.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="MultiTarget.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="MultiTarget.editor.EditorAspectDescriptorImpl" />

@@ -51,6 +51,7 @@ public class CheckpointState {
   private final CheckpointIdentity myPrevCheckpoint;
   private final CheckpointIdentity myCheckpoint;
   private FastNodeFinder myCheckpointModelLookup;
+  private TransitionTrace myCheckpointModelTransitionTrace;
 
   public CheckpointState(@NotNull SModel checkpointModel, @Nullable CheckpointIdentity prevCheckpoint, @NotNull CheckpointIdentity cp) {
     // FIXME read and fill memento with MappingLabels
@@ -115,14 +116,14 @@ public class CheckpointState {
     }
     if (myCheckpointModelLookup == null) {
       myCheckpointModelLookup = new BaseFastNodeFinder(getCheckpointModel());
+      // FIXME Likely, shall not mix (ModelTransitions->TransitionTrace) into  (ModelCheckpoints->CheckpointState) as they are for different execution lines
+      //       (one is for checkpoints of active transformation, another to access saved checkpoints). OTOH, TransitionTrace is a nice abstraction, why
+      //       CheckpointState could not use it? See {@link TransitionTrace} javadoc.
+      myCheckpointModelTransitionTrace = new ModelTransitions().loadTransition(getCheckpoint(), getCheckpointModel());
     }
     // XXX this is dubious approach, implemented just for investigation purposes
     //     Likely, we shall keep information about copied nodes inside MM or its replacement, rather than walk nodes and match by id.
-    // FIXME Likely, shall not mix (ModelTransitions->TransitionTrace) into  (ModelCheckpoints->CheckpointState) as they are for different execution lines
-    //       (one is for checkpoints of active transformation, another to access saved checkpoints). OTOH, TranistionTrace is a nice abstraction, why
-    //       CheckpointState could not use it? See {@link TransitionTrace} javadoc.
-    final TransitionTrace tt = new ModelTransitions().loadTransition(getCheckpoint(), getCheckpointModel());
-    return myCheckpointModelLookup.getNodes(input.getConcept(), false).stream().filter(n -> inputNodeId.equals(tt.getOrigin(n))).findFirst().orElse(null);
+    return myCheckpointModelLookup.getNodes(input.getConcept(), false).stream().filter(n -> inputNodeId.equals(myCheckpointModelTransitionTrace.getOrigin(n))).findFirst().orElse(null);
   }
 
   @NotNull
@@ -159,7 +160,7 @@ public class CheckpointState {
   }
 
   private List<SNode> resolve(Collection<SNodeId> output) {
-    ArrayList<SNode> rv = new ArrayList<SNode>(output.size());
+    ArrayList<SNode> rv = new ArrayList<>(output.size());
     for (SNodeId id : output) {
       SNode node = myCheckpointModel.getNode(id);
       assert node != null : "provided SNodeId comes from getOutput() it's unreasonable to expect model misses the node";

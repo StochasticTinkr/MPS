@@ -3,11 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="digr" ref="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)" />
@@ -103,9 +103,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1068390468201" name="constructor" index="312cEh" />
-      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -297,7 +295,7 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
@@ -394,11 +392,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="i1RjNe$" role="1B3o_S" />
-    <node concept="3clFbW" id="i1RjNe_" role="312cEh">
-      <node concept="3cqZAl" id="i1RjNeA" role="3clF45" />
-      <node concept="3Tm1VV" id="i1RjNeB" role="1B3o_S" />
-      <node concept="3clFbS" id="i1RjNeC" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="i1RjNeD" role="3s_ewO">
       <node concept="3s$Bmu" id="i1RjOiB" role="3s_gse">
         <property role="3s$Bm0" value="empty" />
@@ -2265,11 +2258,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="i2$JxfI" role="1B3o_S" />
-    <node concept="3clFbW" id="i2$JxfJ" role="312cEh">
-      <node concept="3cqZAl" id="i2$JxfK" role="3clF45" />
-      <node concept="3Tm1VV" id="i2$JxfL" role="1B3o_S" />
-      <node concept="3clFbS" id="i2$JxfM" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="i2$JxfN" role="3s_ewO">
       <node concept="3s$Bmu" id="i2$YH5t" role="3s_gse">
         <property role="3s$Bm0" value="createAndAssign" />
@@ -4125,11 +4113,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="i2OoWA0" role="1B3o_S" />
-    <node concept="3clFbW" id="i2OoWA1" role="312cEh">
-      <node concept="3cqZAl" id="i2OoWA2" role="3clF45" />
-      <node concept="3Tm1VV" id="i2OoWA3" role="1B3o_S" />
-      <node concept="3clFbS" id="i2OoWA4" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="i2OoWA5" role="3s_ewO">
       <node concept="3s$Bmu" id="i2OoZGd" role="3s_gse">
         <property role="3s$Bm0" value="pair" />
@@ -4524,11 +4507,6 @@
   <node concept="3s_ewN" id="3SQT4$Ss_VC">
     <property role="3s_ewP" value="ExtendedNamedTuples" />
     <node concept="3Tm1VV" id="3SQT4$Ss_VD" role="1B3o_S" />
-    <node concept="3clFbW" id="3SQT4$Ss_VE" role="312cEh">
-      <node concept="3cqZAl" id="3SQT4$Ss_VF" role="3clF45" />
-      <node concept="3Tm1VV" id="3SQT4$Ss_VG" role="1B3o_S" />
-      <node concept="3clFbS" id="3SQT4$Ss_VH" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="3SQT4$Ss_VI" role="3s_ewO">
       <node concept="3s$Bmu" id="3SQT4$Ss_VJ" role="3s_gse">
         <property role="3s$Bm0" value="subtyping" />
@@ -5014,7 +4992,7 @@
     <property role="TrG5h" value="ISample" />
     <node concept="3Tm1VV" id="5GhXmmtIMNA" role="1B3o_S" />
     <node concept="3clFb_" id="5GhXmmtIMNB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSample" />
       <node concept="17QB3L" id="5GhXmmtIMP1" role="3clF45" />
       <node concept="3Tm1VV" id="5GhXmmtIMND" role="1B3o_S" />
@@ -5076,11 +5054,6 @@
   <node concept="3s_ewN" id="2kTEJfb8JzA">
     <property role="3s_ewP" value="MPS14511" />
     <node concept="3Tm1VV" id="2kTEJfb8JzB" role="1B3o_S" />
-    <node concept="3clFbW" id="2kTEJfb8JzC" role="312cEh">
-      <node concept="3cqZAl" id="2kTEJfb8JzD" role="3clF45" />
-      <node concept="3Tm1VV" id="2kTEJfb8JzE" role="1B3o_S" />
-      <node concept="3clFbS" id="2kTEJfb8JzF" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="2kTEJfb8JzG" role="3s_ewO">
       <node concept="3s$Bmu" id="2kTEJfb8JzH" role="3s_gse">
         <property role="3s$Bm0" value="accessNamedTupleInOtherPkg" />
@@ -5412,11 +5385,6 @@
   <node concept="3s_ewN" id="6K16W71AH69">
     <property role="3s_ewP" value="MPS15234" />
     <node concept="3Tm1VV" id="6K16W71AH6a" role="1B3o_S" />
-    <node concept="3clFbW" id="6K16W71AH6b" role="312cEh">
-      <node concept="3cqZAl" id="6K16W71AH6c" role="3clF45" />
-      <node concept="3Tm1VV" id="6K16W71AH6d" role="1B3o_S" />
-      <node concept="3clFbS" id="6K16W71AH6e" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="6K16W71AH6f" role="3s_ewO">
       <node concept="3s$Bmu" id="6K16W71AH6h" role="3s_gse">
         <property role="3s$Bm0" value="coerceInternalClassifier" />

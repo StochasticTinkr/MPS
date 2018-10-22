@@ -4,34 +4,30 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 
 public abstract class ReadableModelProperty<T> extends ValueProperty<T> {
   protected final EditorContext myEditorContext;
 
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty#ReadableModelProperty(EditorContext) } instead
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public ReadableModelProperty() {
-    super();
-    myEditorContext = null;
-    set(safeGetModelPropertyValue());
-  }
-
   public ReadableModelProperty(EditorContext editorContext) {
+    assert editorContext != null;
     myEditorContext = editorContext;
   }
 
+  /**
+   * This method should be called right after creation of this class in order to complete initialization process.
+   * 
+   * @return this
+   */
+  public ReadableModelProperty init() {
+    synchronizeViewWithModel();
+    return this;
+  }
+
   private T safeGetModelPropertyValue() {
-    ModelAccessHelper ma = (myEditorContext == null ? new ModelAccessHelper(ModelAccess.instance()) : new ModelAccessHelper(myEditorContext.getRepository()));
-    return ma.runReadAction(new Computable<T>() {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<T>() {
       public T compute() {
         return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<T>() {
           public T compute() {

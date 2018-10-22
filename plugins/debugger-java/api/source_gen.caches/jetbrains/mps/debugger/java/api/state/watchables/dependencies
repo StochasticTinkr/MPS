@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.CalculatedWatchable" file="CalculatedWatchable.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.CalculatedWatchable">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable" file="CustomJavaWatchable.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.AbstractWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaLocalVariable" file="JavaLocalVariable.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaLocalVariable">
     <classNode dependClassName="com.sun.jdi.LocalVariable" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -48,7 +48,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext" file="JavaStaticContext.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext">
     <classNode dependClassName="com.sun.jdi.Field" />
     <classNode dependClassName="com.sun.jdi.ReferenceType" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -65,7 +65,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticField" file="JavaStaticField.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticField">
     <classNode dependClassName="com.sun.jdi.Field" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />
@@ -78,7 +78,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject" file="JavaThisObject.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />
@@ -101,7 +101,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" file="JavaWatchable.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
@@ -110,7 +110,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.AbstractWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory" file="JavaWatchablesCategory.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

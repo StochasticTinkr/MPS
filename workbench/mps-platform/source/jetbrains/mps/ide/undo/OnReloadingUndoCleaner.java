@@ -96,10 +96,8 @@ class OnReloadingUndoCleaner implements ProjectComponent {
     Set<VirtualFile> additionalFiles = new LinkedHashSet<>(files);
     WeakList<VirtualFile> trackedFiles = myUndoForModel.computeIfAbsent(modelId, k -> new WeakList<>());
     for (VirtualFile file : trackedFiles) {
-      if (additionalFiles.contains(file)) {
-        // NOT using .removeAll() here because of WeakList supporting only limited collection API (not supporting .size() operation)
-        additionalFiles.remove(file);
-      }
+      // NOT using .removeAll() here because of WeakList supporting only limited collection API (not supporting .size() operation)
+      additionalFiles.remove(file);
     }
     if (additionalFiles.isEmpty()) {
       return;

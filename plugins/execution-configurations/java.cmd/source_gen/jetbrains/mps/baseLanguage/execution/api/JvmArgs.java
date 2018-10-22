@@ -10,6 +10,6 @@ import jetbrains.mps.InternalFlag;
 
 public final class JvmArgs {
   public static List<String> getDefaultJvmArgs() {
-    return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1500m", "-XX:MaxPermSize=150m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ? " -Dmps.internal=true" : "")))).getCommandList();
+    return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1500m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ? " -Dmps.internal=true" : "")))).getCommandList();
   }
 }

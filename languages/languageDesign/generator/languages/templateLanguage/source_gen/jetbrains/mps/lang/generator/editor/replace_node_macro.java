@@ -42,7 +42,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
       this.handleAction_impl((SConcept) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode macro = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
+      SNode macro = SNodeFactoryOperations.createNewNode(parameterObject, node);
       SNodeOperations.replaceWithAnother(node, macro);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, macro, SelectionManager.FIRST_CELL, 1);
       editorContext.openInspector();

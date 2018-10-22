@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,13 +37,6 @@ interface ModelCommandProjectExecutor extends ModelCommandExecutor {
   @ToRemove(version = 3.2)
   @Deprecated
     // used in templates, ExecuteCommandInEDTStatement with repo == null
+  // replaced with p.getMA().executeCommandInEDT(r) in 2018.3, can be removed once 2018.3 is out
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  void executeCommand(Runnable r, Project project);
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  void runUndoTransparentCommand(Runnable r, Project project);
 }

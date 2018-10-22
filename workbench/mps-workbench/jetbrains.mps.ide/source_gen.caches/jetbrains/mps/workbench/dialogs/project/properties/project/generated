@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9zpr8ngnpgyhjv9ylvx9qgimoptj8uw" />
+<product version="3" modelHash="dbq40gw8l7uiugxywxuthg1eiupeo8g">
+  <files names="ProjectPrefsExtraPanel.java:ProjectProperties.java:ProjectPropertiesComponent.java:ProjectPropertiesDialog.java:ProjectPropertiesPrefsPage.java" />
+</product>
 

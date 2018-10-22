@@ -53,7 +53,7 @@ class InequalitySystemFactory {
     if (myParentNode == null || myLink == null) {
       return null;
     }
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     final SNode copy = CopyUtil.copy(Collections.singletonList(myParentNode.getContainingRoot()), mapping).get(0);
     typeCheckingModel.addRootNode(copy);
 

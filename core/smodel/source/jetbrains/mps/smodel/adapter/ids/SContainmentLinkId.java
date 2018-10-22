@@ -43,9 +43,7 @@ public final class SContainmentLinkId extends SConceptFeatureId {
     SContainmentLinkId that = (SContainmentLinkId) o;
 
     if (myLinkId != that.myLinkId) return false;
-    if (!getConceptId().equals(that.getConceptId())) return false;
-
-    return true;
+    return getConceptId().equals(that.getConceptId());
   }
 
   @Override

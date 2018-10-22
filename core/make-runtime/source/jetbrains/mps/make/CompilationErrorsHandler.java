@@ -95,7 +95,7 @@ public class CompilationErrorsHandler {
    * a set of classes fqNames which contain errors and an error counter
    */
   public final static class ClassesErrorsTracker {
-    private final Set<String> myFqNamesWithErrors = new HashSet<String>();
+    private final Set<String> myFqNamesWithErrors = new HashSet<>();
     private int myErrorsCount = 0;
 
     public int getErrorsCount() {

@@ -19,7 +19,7 @@ public abstract class PropertyMapperCell<T> extends AbstractJetpadCell {
       protected void setModelPropertyValue(T value) {
         setModelPropertyValueImpl(value);
       }
-    };
+    }.init();
     addModelProperty(myModelProperty);
   }
   public void registerSynchronizers(Mapper.SynchronizersConfiguration configuration, Property viewProperty) {

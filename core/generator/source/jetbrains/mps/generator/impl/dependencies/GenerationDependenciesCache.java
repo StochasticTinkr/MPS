@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -23,7 +22,6 @@ import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -39,34 +37,7 @@ import java.io.InputStream;
 public class GenerationDependenciesCache extends BaseModelCache<GenerationDependencies> {
   public static final String CACHE_FILE_NAME = "generated";
 
-  private static GenerationDependenciesCache INSTANCE;
-
-  /**
-   * @deprecated To find out generation status of model, use {@link jetbrains.mps.generator.ModelGenerationStatusManager} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public static GenerationDependenciesCache getInstance() {
-    return INSTANCE;
-  }
-
   public GenerationDependenciesCache() {
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
-    super.init();
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    INSTANCE = null;
   }
 
   @Override
@@ -96,13 +67,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
       update(status.getInputModel(), cache);
 
       handler.saveStream(getCacheFileName(), cache.toXml());
-
-      if (InternalFlag.isInternalMode()) {
-        String trace = cache.extractDependenciesTraces();
-        if (trace != null) {
-          handler.saveStream(getCacheFileName() + ".trace", trace);
-        }
-      }
     }
   }
 

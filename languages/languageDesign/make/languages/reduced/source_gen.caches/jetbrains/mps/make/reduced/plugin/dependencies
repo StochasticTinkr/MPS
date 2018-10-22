@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet" file="CollectHashes_Facet.java">
+  <dependency className="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -34,13 +34,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.make.reduced.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+  <dependency className="jetbrains.mps.make.reduced.plugin.FacetAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
     <classNode dependClassName="jetbrains.mps.make.reduced.plugin.FacetManifest" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.reduced.plugin.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.make.reduced.plugin.FacetManifest">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet" file="ReportFiles_Facet.java">
+  <dependency className="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

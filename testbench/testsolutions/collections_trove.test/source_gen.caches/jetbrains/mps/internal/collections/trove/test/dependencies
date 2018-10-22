@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimList_Test" file="PrimList_Test.java">
+  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimList_Test">
     <classNode dependClassName="gnu.trove.TByteArrayList" />
     <classNode dependClassName="gnu.trove.TDoubleArrayList" />
     <classNode dependClassName="gnu.trove.TFloatArrayList" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimMap_Test" file="PrimMap_Test.java">
+  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimMap_Test">
     <classNode dependClassName="gnu.trove.TByteByteHashMap" />
     <classNode dependClassName="gnu.trove.TByteObjectHashMap" />
     <classNode dependClassName="gnu.trove.TDoubleDoubleHashMap" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimSet_Test" file="PrimSet_Test.java">
+  <dependency className="jetbrains.mps.internal.collections.trove.test.PrimSet_Test">
     <classNode dependClassName="gnu.trove.TByteHashSet" />
     <classNode dependClassName="gnu.trove.TDoubleHashSet" />
     <classNode dependClassName="gnu.trove.TFloatHashSet" />

@@ -51,7 +51,7 @@ public class TypeContextManager implements CoreComponent {
   private static boolean myReported = false;
 
   private final Object myLock = new Object();
-  private Map<ITypeContextOwner, TypecheckingContextHolder> myTypeCheckingContexts = Collections.synchronizedMap(new HashMap<ITypeContextOwner, TypecheckingContextHolder>());
+  private Map<ITypeContextOwner, TypecheckingContextHolder> myTypeCheckingContexts = Collections.synchronizedMap(new HashMap<>());
 
   private TypeChecker myTypeChecker;
   private final ClassLoaderManager myClassLoaderManager;
@@ -71,7 +71,7 @@ public class TypeContextManager implements CoreComponent {
       };
     }
   };
-  private ThreadLocal<SubtypingCache> mySubtypingCache = new ThreadLocal<SubtypingCache>();
+  private ThreadLocal<SubtypingCache> mySubtypingCache = new ThreadLocal<>();
 
   public static TypeContextManager getInstance() {
     return INSTANCE;
@@ -119,7 +119,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public <T> T runTypeCheckingComputation(@NotNull final ITypeContextOwner contextOwner, SNode node, Computation<T> r) {
-    return new Executor<T>(contextOwner, node, r).execute();
+    return new Executor<>(contextOwner, node, r).execute();
   }
 
   public void runResolveAction(Runnable r) {
@@ -135,7 +135,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public <T> T runTypecheckingAction(ITypeContextOwner contextOwner, Computable<T> computable) {
-    return new Executor<T>(contextOwner, computable).execute();
+    return new Executor<>(contextOwner, computable).execute();
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
@@ -344,12 +344,7 @@ public class TypeContextManager implements CoreComponent {
     //now we are not in generation mode
     final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
 
-    return new Executor<>(contextOwner, node, new Computation<SNode>() {
-      @Override
-      public SNode compute(TypeCheckingContext context) {
-        return context != null ? context.getTypeOf(node, myTypeChecker) : null;
-      }
-    }).execute();
+    return new Executor<>(contextOwner, node, context -> context != null ? context.getTypeOf(node, myTypeChecker) : null).execute();
   }
 
   private interface TypecheckingContextHolder {
@@ -369,7 +364,7 @@ public class TypeContextManager implements CoreComponent {
   private class CountingTypecheckingContextHolder implements TypecheckingContextHolder {
     private final ITypeContextOwner myOwner;
     private AtomicReference<TypeCheckingContext> myContext = new AtomicReference<>(null);
-    private Map<Thread, Integer> myCounters = Collections.synchronizedMap(new HashMap<Thread, Integer>());
+    private Map<Thread, Integer> myCounters = Collections.synchronizedMap(new HashMap<>());
 
     CountingTypecheckingContextHolder(ITypeContextOwner owner) {
       myOwner = owner;

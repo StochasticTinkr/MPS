@@ -98,7 +98,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   private DefaultTreeModel myTreeModel;
   protected JComponent[] myOptionControls;
 
-  private final ArrayList<MemberNode> mySelectedNodes = new ArrayList<MemberNode>();
+  private final ArrayList<MemberNode> mySelectedNodes = new ArrayList<>();
 
   private boolean mySorted = false;
   private boolean myShowContainers = true;
@@ -107,9 +107,9 @@ public class GroupedNodesChooser extends DialogWrapper {
   protected final Project myProject;
 
   private SNodeReference[] myElements;
-  private final HashMap<MemberNode, ParentNode> myNodeToParentMap = new HashMap<MemberNode, ParentNode>();
-  private final HashMap<SNodeReference, MemberNode> myElementToNodeMap = new HashMap<SNodeReference, MemberNode>();
-  private final ArrayList<ContainerNode> myContainerNodes = new ArrayList<ContainerNode>();
+  private final HashMap<MemberNode, ParentNode> myNodeToParentMap = new HashMap<>();
+  private final HashMap<SNodeReference, MemberNode> myElementToNodeMap = new HashMap<>();
+  private final ArrayList<ContainerNode> myContainerNodes = new ArrayList<>();
   private LinkedHashSet<SNodeReference> mySelectedElements;
 
   @NonNls
@@ -162,7 +162,7 @@ public class GroupedNodesChooser extends DialogWrapper {
    */
   private DefaultTreeModel buildModel() {
     final DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
-    final Ref<Integer> count = new Ref<Integer>(0);
+    final Ref<Integer> count = new Ref<>(0);
     final SRepository projectRepo = ProjectHelper.getProjectRepository(myProject);
     final Map<Object, ParentNode> map = FactoryMap.create(key -> {
       if (key instanceof SNodeReference) {
@@ -212,17 +212,18 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   public void selectElements(SNodeReference[] elements) {
-    ArrayList<TreePath> selectionPaths = new ArrayList<TreePath>();
+    ArrayList<TreePath> selectionPaths = new ArrayList<>();
     for (SNodeReference element : elements) {
       MemberNode treeNode = myElementToNodeMap.get(element);
       if (treeNode != null) {
         selectionPaths.add(new TreePath(treeNode.getPath()));
       }
     }
-    myTree.setSelectionPaths(selectionPaths.toArray(new TreePath[selectionPaths.size()]));
+    myTree.setSelectionPaths(selectionPaths.toArray(new TreePath[0]));
   }
 
 
+  @NotNull
   @Override
   protected Action[] createActions() {
     if (myAllowEmptySelection) {
@@ -299,7 +300,7 @@ public class GroupedNodesChooser extends DialogWrapper {
 
     myTree.setCellRenderer(new ColoredTreeCellRenderer() {
       @Override
-      public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded,
+      public void customizeCellRenderer(@NotNull JTree tree, Object value, boolean selected, boolean expanded,
                                         boolean leaf, int row, boolean hasFocus) {
         if (value instanceof ElementNode) {
           ((ElementNode) value).renderTreeNode(this, tree);
@@ -322,22 +323,15 @@ public class GroupedNodesChooser extends DialogWrapper {
       myTree.setSelectionRow(1);
     }
     TreeUtil.expandAll(myTree);
-    final TreeSpeedSearch treeSpeedSearch = new TreeSpeedSearch(myTree, new Convertor<TreePath, String>() {
-      @Override
-      @Nullable
-      public String convert(TreePath path) {
-        final ElementNode lastPathComponent = (ElementNode) path.getLastPathComponent();
-        if (lastPathComponent == null) return null;
-        return lastPathComponent.getText();
-      }
+    final TreeSpeedSearch treeSpeedSearch = new TreeSpeedSearch(myTree, path -> {
+      final ElementNode lastPathComponent = (ElementNode) path.getLastPathComponent();
+      if (lastPathComponent == null) return null;
+      return lastPathComponent.getText();
     });
     treeSpeedSearch.setComparator(new SpeedSearchComparator(false));
 
-    treeSpeedSearch.addChangeListener(new PropertyChangeListener() {
-      @Override
-      public void propertyChange(PropertyChangeEvent evt) {
-        myTree.repaint(); // to update match highlighting
-      }
+    treeSpeedSearch.addChangeListener(evt -> {
+      myTree.repaint(); // to update match highlighting
     });
 
     myTree.addMouseListener(
@@ -394,7 +388,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   @Nullable
   public List<SNodeReference> getSelectedElements() {
     final LinkedHashSet<SNodeReference> list = getSelectedElementsList();
-    return list == null ? null : new ArrayList<SNodeReference>(list);
+    return list == null ? null : new ArrayList<>(list);
   }
 
   protected final boolean areElementsSelected() {
@@ -425,7 +419,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private static void sortNode(ParentNode node, boolean sorted) {
-    ArrayList<MemberNode> arrayList = new ArrayList<MemberNode>();
+    ArrayList<MemberNode> arrayList = new ArrayList<>();
     Enumeration<MemberNode> children = node.children();
     while (children.hasMoreElements()) {
       arrayList.add(children.nextElement());
@@ -450,15 +444,15 @@ public class GroupedNodesChooser extends DialogWrapper {
 
     DefaultMutableTreeNode root = getRootNode();
     if (!myShowContainers || myContainerNodes.isEmpty()) {
-      List<ParentNode> otherObjects = new ArrayList<ParentNode>();
+      List<ParentNode> otherObjects = new ArrayList<>();
       Enumeration<ParentNode> children = getRootNodeChildren();
-      ParentNode newRoot = new ParentNode(null, null, getAllContainersNodeName(), null, new Ref<Integer>(0));
+      ParentNode newRoot = new ParentNode(null, null, getAllContainersNodeName(), null, new Ref<>(0));
       while (children.hasMoreElements()) {
         final ParentNode nextElement = children.nextElement();
         if (nextElement instanceof ContainerNode) {
           final ContainerNode containerNode = (ContainerNode) nextElement;
           Enumeration<MemberNode> memberNodes = containerNode.children();
-          List<MemberNode> memberNodesList = new ArrayList<MemberNode>();
+          List<MemberNode> memberNodesList = new ArrayList<>();
           while (memberNodes.hasMoreElements()) {
             memberNodesList.add(memberNodes.nextElement());
           }
@@ -477,7 +471,7 @@ public class GroupedNodesChooser extends DialogWrapper {
       if (children.hasMoreElements()) {
         ParentNode allClassesNode = children.nextElement();
         Enumeration<MemberNode> memberNodes = allClassesNode.children();
-        ArrayList<MemberNode> arrayList = new ArrayList<MemberNode>();
+        ArrayList<MemberNode> arrayList = new ArrayList<>();
         while (memberNodes.hasMoreElements()) {
           arrayList.add(memberNodes.nextElement());
         }
@@ -507,7 +501,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private Pair<ElementNode, List<ElementNode>> storeSelection() {
-    List<ElementNode> selectedNodes = new ArrayList<ElementNode>();
+    List<ElementNode> selectedNodes = new ArrayList<>();
     TreePath[] paths = myTree.getSelectionPaths();
     if (paths != null) {
       for (TreePath path : paths) {
@@ -524,7 +518,7 @@ public class GroupedNodesChooser extends DialogWrapper {
 
     DefaultMutableTreeNode root = getRootNode();
 
-    ArrayList<TreePath> toSelect = new ArrayList<TreePath>();
+    ArrayList<TreePath> toSelect = new ArrayList<>();
     for (ElementNode node : selectedNodes) {
       if (root.isNodeDescendant(node)) {
         toSelect.add(new TreePath(node.getPath()));
@@ -532,7 +526,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
 
     if (!toSelect.isEmpty()) {
-      myTree.setSelectionPaths(toSelect.toArray(new TreePath[toSelect.size()]));
+      myTree.setSelectionPaths(toSelect.toArray(new TreePath[0]));
     }
 
     ElementNode leadNode = pair.first;
@@ -574,7 +568,7 @@ public class GroupedNodesChooser extends DialogWrapper {
           }
         }
       }
-      mySelectedElements = new LinkedHashSet<SNodeReference>();
+      mySelectedElements = new LinkedHashSet<>();
       for (MemberNode selectedNode : mySelectedNodes) {
         mySelectedElements.add(selectedNode.getElement());
       }
@@ -717,7 +711,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
 
     @Override
-    public void update(AnActionEvent e) {
+    public void update(@NotNull AnActionEvent e) {
       super.update(e);
       Presentation presentation = e.getPresentation();
       presentation.setEnabled(myContainerNodes.size() > 1);

@@ -25,8 +25,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public interface TemplateMappingScript {
 
-  public static final int PREPROCESS = 1;
-  public static final int POSTPROCESS = 2;
+  int PREPROCESS = 1;
+  int POSTPROCESS = 2;
 
   SNodeReference getScriptNode();
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.tool.environment.util.CanonicalPath" file="CanonicalPath.java">
+  <dependency className="jetbrains.mps.core.tool.environment.util.CanonicalPath">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.FileMPSProject" file="FileMPSProject.java">
+  <dependency className="jetbrains.mps.core.tool.environment.util.FileMPSProject">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
@@ -28,7 +28,7 @@
     <classNode extendsClassName="jetbrains.mps.project.FileBasedProject" />
     <classNode extendsClassName="jetbrains.mps.project.ProjectBase" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider" file="MapPathMacrosProvider.java">
+  <dependency className="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.PathManager" file="PathManager.java">
+  <dependency className="jetbrains.mps.core.tool.environment.util.PathManager">
     <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.SetLibraryContributor" file="SetLibraryContributor.java">
+  <dependency className="jetbrains.mps.core.tool.environment.util.SetLibraryContributor">
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

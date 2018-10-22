@@ -148,9 +148,6 @@
     <property role="34LRSv" value="pastedNodeRef" />
     <property role="EcuMT" value="5842059399443118718" />
     <ref role="1TJDcQ" to="tp25:36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
-    <node concept="PrWs8" id="54jax8WyvE0" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="PrWs8" id="igjXyutuCC" role="PzmwI">
       <ref role="PrY4T" node="3qGrMAIz1YP" resolve="INodeWithReference" />
     </node>
@@ -274,9 +271,6 @@
     </node>
     <node concept="PrWs8" id="4SV0P5LDv2T" role="PzmwI">
       <ref role="PrY4T" node="5WpmwkrP7RJ" resolve="HistoryItem" />
-    </node>
-    <node concept="PrWs8" id="4SV0P5LGNXE" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="PlHQZ" id="4SV0P5LGPwW">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" file="CommandUtil.java">
+  <dependency className="jetbrains.mps.lang.smodel.query.runtime.CommandUtil">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" file="QueryExecutionContext.java">
+  <dependency className="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext">
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
 </dependenciesRoot>

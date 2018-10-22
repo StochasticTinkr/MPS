@@ -56,22 +56,18 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
     try {
       MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
       assert mpsProject != null;
-      files = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Collection<VirtualFile>>() {
-        @Override
-        public Collection<VirtualFile> compute() {
-           return FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
-        }
-      });
+      files = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(
+          () -> FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope));
     } catch (ProcessCanceledException ce){
       files = Collections.emptyList();
     }
 
-    List<NavigationItem> result = new ArrayList<NavigationItem>();
+    List<NavigationItem> result = new ArrayList<>();
     for (final VirtualFile file : files) {
       result.add(new FileNavigationItem(file, project));
     }
 
-    return result.toArray(new NavigationItem[result.size()]);
+    return result.toArray(new NavigationItem[0]);
   }
 
   public static class FileNavigationItem implements NavigationItem {
@@ -137,12 +133,12 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
 
   private static class AllScope extends GlobalSearchScope {
     @Override
-    public boolean contains(VirtualFile file) {
+    public boolean contains(@NotNull VirtualFile file) {
       return true;
     }
 
     @Override
-    public int compare(VirtualFile file1, VirtualFile file2) {
+    public int compare(@NotNull VirtualFile file1, @NotNull VirtualFile file2) {
       return 0;
     }
 

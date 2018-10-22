@@ -39,23 +39,23 @@ public class MultipleWhenConcreteBlock extends WhenConcreteBlock {
 
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    Set<Pair<SNode, ConditionKind>> result = new HashSet<Pair<SNode, ConditionKind>>();
+    Set<Pair<SNode, ConditionKind>> result = new HashSet<>();
     for (SNode arg : myArguments) {
-      result.add(new Pair<SNode, ConditionKind>(arg, myConditionKind));
+      result.add(new Pair<>(arg, myConditionKind));
     }
     return result;
   }
 
   @Override
   public Set<SNode> getInputs() {
-    HashSet<SNode> result = new HashSet<SNode>();
+    HashSet<SNode> result = new HashSet<>();
     result.addAll(myArguments);
     return result;
   }
 
   @Override
   public List<SNode> getVariables(State state) {
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = new ArrayList<>();
     for (SNode arg : myArguments) {
       result.addAll(TypesUtil.getVariables(arg, state));
     }

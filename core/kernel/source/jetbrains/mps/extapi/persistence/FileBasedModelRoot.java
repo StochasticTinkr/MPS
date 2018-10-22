@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.FileUtil;
@@ -23,7 +22,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
@@ -35,8 +33,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -350,14 +346,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    if (getModule() instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) getModule());
-    }
-    return null;
-  }
-
-  @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     if (!event.getCreated().isEmpty() || !event.getRemoved().isEmpty()) {
       update();
@@ -417,11 +405,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     @Override
     public IFile getFileToListen() {
       return myPath;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return FileBasedModelRoot.this.getListenerDependencies();
     }
 
     @Override

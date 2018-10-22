@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -69,6 +70,13 @@ public interface ModelCommandExecutor {
   @ToRemove(version = 3.4)
   boolean setReadEnabledFlag(boolean flag);
 
+  // there's 1 use in mbeddr
+
+  /**
+   * @deprecated Use {@link ModelAccess#isCommandAction()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   boolean isInsideCommand(); // openapi.ModelAccess#isCommandAction
 
   /**
@@ -78,18 +86,26 @@ public interface ModelCommandExecutor {
    * value if not calculated, and don't want to stop UI thread to wait for write command to complete. Asynchronous runReadInEDT() might
    * come handy replacement if we can update/push UI element (uiComponent.setTooltipText()), but is useless when UI element is queried (e.g. getTooltipText())
    *
+   * @deprecated  There are no uses in MPS itself, switch to {@code CancellableReadAction} if utterly needed
+   *
    * @param r
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   boolean tryRead(Runnable r); // extends openapi.ModelAccess with optional read lock
 
   /**
    * Returns the result of the computation, null if locking was unsuccessful.
+
+   * @deprecated  There are no uses in MPS itself
    *
    * @param c
    * @param <T>
    * @return
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   <T> T tryRead(Computable<T> c); // extends openapi.ModelAccess with optional read lock and Computable
 
   /**
@@ -104,5 +120,6 @@ public interface ModelCommandExecutor {
    */
   @Deprecated
   @Nullable
+  @ToRemove(version = 2018.3)
   <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);
 }

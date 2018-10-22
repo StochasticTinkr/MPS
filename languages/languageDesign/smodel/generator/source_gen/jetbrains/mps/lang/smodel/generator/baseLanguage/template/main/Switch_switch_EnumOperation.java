@@ -63,9 +63,10 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         {
           Collection<SNode> tlist2 = null;
           SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_124_0(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1h));
-          TemplateContext context2 = context1.subContext(null, callInputNode2);
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
-            tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(context2);
+            tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -122,9 +123,10 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         {
           Collection<SNode> tlist2 = null;
           SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_124_1(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a3a2a1i));
-          TemplateContext context2 = context1.subContext(null, callInputNode2);
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
-            tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(context2);
+            tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -160,9 +162,10 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         {
           Collection<SNode> tlist4 = null;
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_124_3(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1j));
-          TemplateContext context2 = context1.subContext(null, callInputNode4);
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(context2);
+            tlist4 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -227,9 +230,10 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
         {
           Collection<SNode> tlist9 = null;
           SNode callInputNode9 = QueriesGenerated.sourceNodeQuery_124_6(new SourceSubstituteMacroNodeContext(context1, callMacro_r03umb_b0a0a1a4a2a1k));
-          TemplateContext context3 = context1.subContext(null, callInputNode9);
+          TemplateContext context3;
+          context3 = context1.subContext(null, callInputNode9);
           if (callInputNode9 != null) {
-            tlist9 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(context3);
+            tlist9 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context3);
           }
           for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child10);

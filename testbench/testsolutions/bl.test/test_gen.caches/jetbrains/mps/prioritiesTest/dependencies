@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.prioritiesTest.TestBlPriorities_Test" file="TestBlPriorities_Test.java">
+  <dependency className="jetbrains.mps.prioritiesTest.TestBlPriorities_Test">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />

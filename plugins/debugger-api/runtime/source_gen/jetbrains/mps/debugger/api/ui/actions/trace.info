@@ -53,6 +53,40 @@
       <unit id="2392684134639444998" at="12,0,36,0" name="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" />
     </file>
   </root>
+  <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/3201523885428155573">
+    <file name="Runtime_ApplicationPlugin.java">
+      <node id="3201523885428155573" at="39,46,40,52" concept="2" />
+      <node id="3201523885428155575" at="46,37,47,131" concept="2" />
+    </file>
+    <file name="TouchBarDefault_cmd_ActionGroup.java">
+      <node id="3201523885428155573" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="3201523885428155573" at="9,44,10,37" concept="13" />
+      <node id="3201523885428155573" at="10,37,11,30" concept="2" />
+      <node id="3201523885428155573" at="11,30,12,25" concept="2" />
+      <node id="3201523885428155584" at="12,25,13,116" concept="2" />
+      <node id="3201523885428155573" at="9,0,15,0" concept="1" trace="TouchBarDefault_cmd_ActionGroup#()V" />
+      <scope id="3201523885428155573" at="9,44,13,116" />
+      <scope id="3201523885428155573" at="9,0,15,0" />
+      <unit id="3201523885428155573" at="7,0,16,0" name="jetbrains.mps.debugger.api.ui.actions.TouchBarDefault_cmd_ActionGroup" />
+    </file>
+  </root>
+  <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/3201523885428191713">
+    <file name="Runtime_ApplicationPlugin.java">
+      <node id="3201523885428191713" at="38,42,39,46" concept="2" />
+      <node id="3201523885428191718" at="47,131,48,119" concept="2" />
+    </file>
+    <file name="TouchBarDebug_ActionGroup.java">
+      <node id="3201523885428191713" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="3201523885428191713" at="9,38,10,31" concept="13" />
+      <node id="3201523885428191713" at="10,31,11,30" concept="2" />
+      <node id="3201523885428191713" at="11,30,12,25" concept="2" />
+      <node id="3201523885428195195" at="12,25,13,62" concept="2" />
+      <node id="3201523885428191713" at="9,0,15,0" concept="1" trace="TouchBarDebug_ActionGroup#()V" />
+      <scope id="3201523885428191713" at="9,38,13,62" />
+      <scope id="3201523885428191713" at="9,0,15,0" />
+      <unit id="3201523885428191713" at="7,0,16,0" name="jetbrains.mps.debugger.api.ui.actions.TouchBarDebug_ActionGroup" />
+    </file>
+  </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/4073774232572770202">
     <file name="Debugger_KeymapChanges.java">
       <node id="4073774232572770202" at="11,35,12,14" concept="9" />
@@ -81,7 +115,7 @@
       <unit id="4073774232572770202" at="10,0,30,0" name="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" />
     </file>
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="4073774232572770202" at="49,92,50,72" concept="2" />
+      <node id="4073774232572770202" at="54,92,55,72" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/418270182880363898">
@@ -183,7 +217,7 @@
       <unit id="5738289212619994244" at="10,0,25,0" name="jetbrains.mps.debugger.api.ui.actions.DefaultForGNOME_KeymapChanges" />
     </file>
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="5738289212619994244" at="50,72,51,79" concept="2" />
+      <node id="5738289212619994244" at="55,72,56,79" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/6515087165749899624">
@@ -736,75 +770,79 @@
       <node id="7064627997011532788" at="30,37,31,45" concept="2" />
     </file>
     <file name="ToggleBreakpoint_Action.java">
-      <node id="7064627997011532788" at="19,0,20,0" concept="11" trace="ICON" />
-      <node id="7064627997011532788" at="21,36,22,41" concept="13" />
-      <node id="7064627997011532788" at="22,41,23,35" concept="2" />
-      <node id="7064627997011532788" at="23,35,24,41" concept="2" />
-      <node id="7064627997011532788" at="27,32,28,16" concept="8" />
-      <node id="7064714451792151223" at="31,89,32,139" concept="7" />
-      <node id="7064627997011532808" at="32,139,33,165" concept="2" />
-      <node id="7064627997011532788" at="37,53,38,19" concept="8" />
-      <node id="7064627997011532803" at="40,5,41,66" concept="7" />
-      <node id="7064627997011532803" at="41,66,42,58" concept="2" />
-      <node id="8898893144448210298" at="43,22,44,21" concept="8" />
-      <node id="7064627997011532804" at="47,5,48,90" concept="7" />
-      <node id="7064627997011532804" at="49,67,50,31" concept="2" />
-      <node id="7064627997011532804" at="51,7,52,75" concept="2" />
-      <node id="8898893144448210510" at="53,36,54,21" concept="8" />
-      <node id="7064627997011532805" at="57,5,58,56" concept="7" />
-      <node id="7064627997011532805" at="58,56,59,53" concept="2" />
-      <node id="8898893144448210277" at="60,22,61,21" concept="8" />
-      <node id="7064627997011532788" at="63,5,64,16" concept="8" />
-      <node id="7064627997011532791" at="67,96,68,178" concept="2" />
-      <node id="7064627997011532788" at="36,95,39,5" concept="5" />
-      <node id="8898893144448210298" at="42,58,45,7" concept="5" />
-      <node id="7064627997011532804" at="48,90,51,7" concept="5" />
-      <node id="8898893144448210510" at="52,75,55,7" concept="5" />
-      <node id="8898893144448210277" at="59,53,62,7" concept="5" />
-      <node id="7064627997011532788" at="26,0,30,0" concept="6" trace="isDumbAware#()Z" />
-      <node id="7064627997011532788" at="66,0,70,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7064627997011532788" at="21,0,26,0" concept="1" trace="ToggleBreakpoint_Action#()V" />
-      <node id="7064627997011532788" at="30,0,35,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7064627997011532803" at="39,5,46,5" concept="0" />
-      <node id="7064627997011532805" at="56,5,63,5" concept="0" />
-      <node id="7064627997011532804" at="46,5,56,5" concept="0" />
-      <node id="7064627997011532788" at="35,0,66,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="7064627997011532788" at="27,32,28,16" />
-      <scope id="7064627997011532788" at="37,53,38,19" />
-      <scope id="8898893144448210298" at="43,22,44,21" />
-      <scope id="7064627997011532804" at="49,67,50,31" />
-      <scope id="8898893144448210510" at="53,36,54,21" />
-      <scope id="8898893144448210277" at="60,22,61,21" />
-      <scope id="7064627997011532788" at="67,96,68,178" />
-      <scope id="7064627997011532807" at="31,89,33,165">
-        <var name="breakpointManager" id="7064714451792151224" />
-      </scope>
-      <scope id="7064627997011532788" at="21,36,24,41" />
-      <scope id="7064627997011532788" at="26,0,30,0" />
-      <scope id="7064627997011532788" at="66,0,70,0">
+      <node id="7064627997011532788" at="21,0,22,0" concept="11" trace="ICON" />
+      <node id="7064627997011532788" at="23,36,24,41" concept="13" />
+      <node id="7064627997011532788" at="24,41,25,35" concept="2" />
+      <node id="7064627997011532788" at="25,35,26,41" concept="2" />
+      <node id="7064627997011532788" at="29,32,30,16" concept="8" />
+      <node id="7064714451792151223" at="33,89,34,139" concept="7" />
+      <node id="7064627997011532808" at="34,139,35,165" concept="2" />
+      <node id="1942333868381098616" at="36,65,37,75" concept="2" />
+      <node id="1942333868381112724" at="38,5,39,0" concept="10" />
+      <node id="7064627997011532788" at="43,53,44,19" concept="8" />
+      <node id="7064627997011532803" at="46,5,47,66" concept="7" />
+      <node id="7064627997011532803" at="47,66,48,58" concept="2" />
+      <node id="8898893144448210298" at="49,22,50,21" concept="8" />
+      <node id="7064627997011532804" at="53,5,54,90" concept="7" />
+      <node id="7064627997011532804" at="55,67,56,31" concept="2" />
+      <node id="7064627997011532804" at="57,7,58,75" concept="2" />
+      <node id="8898893144448210510" at="59,36,60,21" concept="8" />
+      <node id="7064627997011532805" at="63,5,64,56" concept="7" />
+      <node id="7064627997011532805" at="64,56,65,53" concept="2" />
+      <node id="8898893144448210277" at="66,22,67,21" concept="8" />
+      <node id="7064627997011532788" at="69,5,70,16" concept="8" />
+      <node id="7064627997011532791" at="73,96,74,178" concept="2" />
+      <node id="1942333868381098611" at="35,165,38,5" concept="5" />
+      <node id="7064627997011532788" at="42,95,45,5" concept="5" />
+      <node id="8898893144448210298" at="48,58,51,7" concept="5" />
+      <node id="7064627997011532804" at="54,90,57,7" concept="5" />
+      <node id="8898893144448210510" at="58,75,61,7" concept="5" />
+      <node id="8898893144448210277" at="65,53,68,7" concept="5" />
+      <node id="7064627997011532788" at="28,0,32,0" concept="6" trace="isDumbAware#()Z" />
+      <node id="7064627997011532788" at="72,0,76,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7064627997011532788" at="23,0,28,0" concept="1" trace="ToggleBreakpoint_Action#()V" />
+      <node id="7064627997011532803" at="45,5,52,5" concept="0" />
+      <node id="7064627997011532805" at="62,5,69,5" concept="0" />
+      <node id="7064627997011532788" at="32,0,41,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7064627997011532804" at="52,5,62,5" concept="0" />
+      <node id="7064627997011532788" at="41,0,72,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="7064627997011532788" at="29,32,30,16" />
+      <scope id="1942333868381098615" at="36,65,37,75" />
+      <scope id="7064627997011532788" at="43,53,44,19" />
+      <scope id="8898893144448210298" at="49,22,50,21" />
+      <scope id="7064627997011532804" at="55,67,56,31" />
+      <scope id="8898893144448210510" at="59,36,60,21" />
+      <scope id="8898893144448210277" at="66,22,67,21" />
+      <scope id="7064627997011532788" at="73,96,74,178" />
+      <scope id="7064627997011532788" at="23,36,26,41" />
+      <scope id="7064627997011532788" at="28,0,32,0" />
+      <scope id="7064627997011532788" at="72,0,76,0">
         <var name="_params" id="7064627997011532788" />
         <var name="event" id="7064627997011532788" />
       </scope>
-      <scope id="7064627997011532788" at="21,0,26,0" />
-      <scope id="7064627997011532788" at="30,0,35,0">
-        <var name="_params" id="7064627997011532788" />
-        <var name="event" id="7064627997011532788" />
-      </scope>
-      <scope id="7064627997011532803" at="40,5,45,7">
+      <scope id="7064627997011532788" at="23,0,28,0" />
+      <scope id="7064627997011532803" at="46,5,51,7">
         <var name="p" id="7064627997011532803" />
       </scope>
-      <scope id="7064627997011532805" at="57,5,62,7">
+      <scope id="7064627997011532805" at="63,5,68,7">
         <var name="p" id="7064627997011532805" />
       </scope>
-      <scope id="7064627997011532804" at="47,5,55,7">
+      <scope id="7064627997011532807" at="33,89,39,0">
+        <var name="breakpointManager" id="7064714451792151224" />
+      </scope>
+      <scope id="7064627997011532804" at="53,5,61,7">
         <var name="editorComponent" id="7064627997011532804" />
       </scope>
-      <scope id="7064627997011532788" at="36,95,64,16" />
-      <scope id="7064627997011532788" at="35,0,66,0">
+      <scope id="7064627997011532788" at="32,0,41,0">
         <var name="_params" id="7064627997011532788" />
         <var name="event" id="7064627997011532788" />
       </scope>
-      <unit id="7064627997011532788" at="18,0,71,0" name="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
+      <scope id="7064627997011532788" at="42,95,70,16" />
+      <scope id="7064627997011532788" at="41,0,72,0">
+        <var name="_params" id="7064627997011532788" />
+        <var name="event" id="7064627997011532788" />
+      </scope>
+      <unit id="7064627997011532788" at="20,0,77,0" name="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532825">
@@ -891,7 +929,8 @@
     </file>
     <file name="Runtime_ApplicationPlugin.java">
       <node id="7064627997011532858" at="35,61,36,45" concept="2" />
-      <node id="7064627997011532871" at="44,37,45,73" concept="2" />
+      <node id="7064627997011532871" at="48,119,49,73" concept="2" />
+      <node id="3201523885428189777" at="49,73,50,180" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532872">
@@ -939,12 +978,12 @@
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011656237">
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="7064627997011656240" at="40,39,41,124" concept="2" />
+      <node id="7064627997011656240" at="42,39,43,124" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011656241">
     <file name="Runtime_ApplicationPlugin.java">
-      <node id="7064627997011656244" at="41,124,42,124" concept="2" />
+      <node id="7064627997011656244" at="43,124,44,124" concept="2" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7162597690968011921">
@@ -953,29 +992,29 @@
       <node id="7162597690968011921" at="16,27,17,16" concept="8" />
       <node id="7162597690968011921" at="19,30,20,30" concept="9" />
       <node id="7162597690968011921" at="33,44,34,14" concept="9" />
-      <node id="7162597690968011921" at="48,48,49,92" concept="7" />
-      <node id="7162597690968011921" at="51,79,52,15" concept="8" />
+      <node id="7162597690968011921" at="53,48,54,92" concept="7" />
+      <node id="7162597690968011921" at="56,79,57,15" concept="8" />
       <node id="7162597690968011921" at="14,0,16,0" concept="1" trace="Runtime_ApplicationPlugin#()V" />
       <node id="7162597690968011921" at="16,0,19,0" concept="6" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968011921" at="40,0,44,0" concept="6" trace="adjustInterfaceGroups#()V" />
-      <node id="7162597690968011921" at="44,0,48,0" concept="6" trace="adjustRegularGroups#()V" />
-      <node id="7162597690968011921" at="48,0,54,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
-      <node id="7162597690968011921" at="19,0,40,0" concept="6" trace="createGroups#()V" />
+      <node id="7162597690968011921" at="42,0,46,0" concept="6" trace="adjustInterfaceGroups#()V" />
+      <node id="7162597690968011921" at="53,0,59,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968011921" at="46,0,53,0" concept="6" trace="adjustRegularGroups#()V" />
+      <node id="7162597690968011921" at="19,0,42,0" concept="6" trace="createGroups#()V" />
       <scope id="7162597690968011921" at="14,38,14,38" />
       <scope id="7162597690968011921" at="16,27,17,16" />
       <scope id="7162597690968011921" at="14,0,16,0" />
-      <scope id="7162597690968011921" at="40,39,42,124" />
-      <scope id="7162597690968011921" at="44,37,46,128" />
+      <scope id="7162597690968011921" at="42,39,44,124" />
       <scope id="7162597690968011921" at="16,0,19,0" />
-      <scope id="7162597690968011921" at="40,0,44,0" />
-      <scope id="7162597690968011921" at="44,0,48,0" />
-      <scope id="7162597690968011921" at="48,48,52,15">
+      <scope id="7162597690968011921" at="42,0,46,0" />
+      <scope id="7162597690968011921" at="53,48,57,15">
         <var name="res" id="7162597690968011921" />
       </scope>
-      <scope id="7162597690968011921" at="48,0,54,0" />
-      <scope id="7162597690968011921" at="19,30,38,42" />
-      <scope id="7162597690968011921" at="19,0,40,0" />
-      <unit id="7162597690968011921" at="12,0,55,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
+      <scope id="7162597690968011921" at="46,37,51,128" />
+      <scope id="7162597690968011921" at="53,0,59,0" />
+      <scope id="7162597690968011921" at="46,0,53,0" />
+      <scope id="7162597690968011921" at="19,30,40,52" />
+      <scope id="7162597690968011921" at="19,0,42,0" />
+      <unit id="7162597690968011921" at="12,0,60,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/8643693251546855502">
@@ -1072,7 +1111,7 @@
     </file>
     <file name="Runtime_ApplicationPlugin.java">
       <node id="9154600507441896288" at="36,45,37,47" concept="2" />
-      <node id="9154600507441896296" at="45,73,46,128" concept="2" />
+      <node id="9154600507441896296" at="50,180,51,128" concept="2" />
     </file>
   </root>
 </debug-info>

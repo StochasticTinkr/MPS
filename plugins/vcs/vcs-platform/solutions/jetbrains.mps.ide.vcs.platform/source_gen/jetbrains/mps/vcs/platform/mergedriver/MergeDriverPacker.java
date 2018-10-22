@@ -21,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import org.apache.log4j.Level;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
-import org.apache.log4j.Level;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
@@ -38,7 +38,7 @@ public abstract class MergeDriverPacker {
   private static MergeDriverPacker ourInstance;
   private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar", "mps-behavior-api.jar", "mps-behavior-runtime.jar", "mps-logging.jar", "mps-annotations.jar", "mps-boot-util.jar");
   protected static Iterable<String> mpsAddJars = Arrays.asList("ext" + File.separator + "diffutils-1.2.1.jar");
-  private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all.jar", "xstream-1.4.8.jar", "guava-17.0.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
+  private static final Iterable<String> ideaLibJars = Arrays.asList("asm-all-6.2.1.jar", "xstream-1.4.8.jar", "guava-17.0.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar");
   private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
@@ -91,6 +91,12 @@ public abstract class MergeDriverPacker {
     Map<String, File> files = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
     for (String basePath : classpathDirs) {
       File baseDir = new File(basePath);
+      if (!(baseDir.exists())) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(String.format("Bad classpath location %s, file doesn't exist", basePath));
+        }
+        continue;
+      }
       Queue<String> pathQueue = QueueSequence.fromQueueAndArray(new LinkedList<String>(), baseDir.list());
       while (QueueSequence.fromQueue(pathQueue).isNotEmpty()) {
         String path = QueueSequence.fromQueue(pathQueue).removeFirstElement();

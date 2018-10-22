@@ -17,6 +17,7 @@ package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.CachingMethodResolutionOrder;
 import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
 import jetbrains.mps.smodel.language.ConceptInLoadingStorage;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -38,7 +39,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BehaviorRegistryImpl implements BehaviorRegistry {
   private static final Logger LOG = LogManager.getLogger(BehaviorRegistryImpl.class);
 
-  private final CachingMethodResolutionOrder myMRO = new C3StarMethodResolutionOrder();
+  private final CachingMethodResolutionOrder<_SAbstractConcept> myMRO = new SConceptC3StarMRO();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<>();
   private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
@@ -49,7 +50,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
 
   @Override
   @NotNull
-  public MethodResolutionOrder getMRO() {
+  public MethodResolutionOrder<_SAbstractConcept> getMRO() {
     return myMRO;
   }
 

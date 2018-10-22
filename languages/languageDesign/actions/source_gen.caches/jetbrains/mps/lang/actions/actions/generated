@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-brk8tg1sb6ewzwff6t1t0zr57nxl38e" />
+<product version="3" modelHash="-1l8egeb1trpcsh5n5gxofhrw6krg7gp">
+  <files names="ActionAspectDescriptorImpl.java:fill_prototype_node.java" />
+</product>
 

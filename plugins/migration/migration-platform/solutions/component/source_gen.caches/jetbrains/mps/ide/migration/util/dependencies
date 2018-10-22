@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.migration.util.DeprecatedNodeProperties" file="DeprecatedNodeProperties.java">
+  <dependency className="jetbrains.mps.ide.migration.util.DeprecatedNodeProperties">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.util.DeprecatedUtil" file="DeprecatedUtil.java">
+  <dependency className="jetbrains.mps.ide.migration.util.DeprecatedUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.util.MigrationDataUtil" file="MigrationDataUtil.java">
+  <dependency className="jetbrains.mps.ide.migration.util.MigrationDataUtil">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.RuntimeException" />

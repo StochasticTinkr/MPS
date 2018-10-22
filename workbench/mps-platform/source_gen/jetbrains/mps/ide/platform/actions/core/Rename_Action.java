@@ -22,13 +22,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import jetbrains.mps.refactoring.participant.RefactoringParticipant;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.refactoring.participant.RefactoringSession;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -108,35 +101,7 @@ public class Rename_Action extends BaseAction {
       return;
     }
 
-    RefactoringProcessor.RefactoringBody refactoringBody = new RefactoringProcessor.RefactoringBody<SNode, String>() {
-      public String getRefactoringName() {
-        return "Rename node";
-      }
-      public Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> getAllAvailableParticipants() {
-        return new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.RenameNodeParticipantEP").getObjects();
-      }
-      public List<SNode> findInitialStates() {
-        return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("target")));
-      }
-      public void doRefactor(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> participantStates, RefactoringSession refactoringSession) {
-        ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            SPropertyOperations.assign(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
-          }
-        });
-      }
-      @Override
-      public String getFinalStateFor(SNode initialState) {
-        if (initialState == ((SNode) MapSequence.fromMap(_params).get("target"))) {
-          return newName;
-        } else {
-          throw new IllegalStateException("asked for: " + initialState.getReference() + ", known: " + ((SNode) MapSequence.fromMap(_params).get("target")).getReference());
-        }
-      }
-      public void doCleanup() {
-        // do nothing 
-      }
-    };
+    RefactoringProcessor.RefactoringBody refactoringBody = new RenameRefactoringBody("Rename node", ((SNode) MapSequence.fromMap(_params).get("target")), newName, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     RefactoringProcessor.performRefactoringInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), new DefaultRefactoringUI(((MPSProject) MapSequence.fromMap(_params).get("project"))), refactoringBody);
   }
   private boolean canBeRenamed(final Map<String, Object> _params) {

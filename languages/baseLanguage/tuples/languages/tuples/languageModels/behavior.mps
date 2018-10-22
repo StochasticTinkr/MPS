@@ -2,7 +2,7 @@
 <model ref="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -30,7 +30,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -275,7 +274,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -714,7 +713,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgpU" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getLeftBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgpV" role="1B3o_S" />
@@ -729,7 +727,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgqW" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRightBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgqX" role="1B3o_S" />
@@ -798,7 +795,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgn6" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getLeftBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgn7" role="1B3o_S" />
@@ -813,7 +809,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgtJ" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRightBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgtK" role="1B3o_S" />
@@ -1685,7 +1680,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgnc" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getLeftBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgnd" role="1B3o_S" />
@@ -1700,7 +1694,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgs3" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRightBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgs4" role="1B3o_S" />
@@ -2572,7 +2565,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgn0" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getLeftBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgn1" role="1B3o_S" />
@@ -2587,7 +2579,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgq6" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRightBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgq7" role="1B3o_S" />
@@ -2688,7 +2679,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgsr" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getRightBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgss" role="1B3o_S" />
@@ -2703,7 +2693,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvAgvE" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getLeftBracket" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="1653mnvAgvF" role="1B3o_S" />

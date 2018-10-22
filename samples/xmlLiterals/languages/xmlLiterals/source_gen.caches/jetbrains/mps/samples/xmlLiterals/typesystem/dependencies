@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule" file="typeof_ElementMacro_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_ElementMacro_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -21,7 +21,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule" file="typeof_TextMacro_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_TextMacro_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -35,7 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule" file="typeof_XmlLiteral_InferenceRule.java">
+  <dependency className="jetbrains.mps.samples.xmlLiterals.typesystem.typeof_XmlLiteral_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

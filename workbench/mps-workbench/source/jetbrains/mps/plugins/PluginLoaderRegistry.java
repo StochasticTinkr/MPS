@@ -27,9 +27,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -74,6 +75,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLoaderRegistry.class);
 
   private final ClassLoaderManager myClassLoaderManager;
+  private final MakeServiceComponent myMakeComponent;
   private final ModelAccess myModelAccess;
 
   private final DeployListener myClassesListener = new SchedulingUpdateListener();
@@ -84,10 +86,12 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private final AtomicBoolean myDirtyFlag = new AtomicBoolean(false);
 
   public PluginLoaderRegistry(MPSCoreComponents coreComponents) {
-    myClassLoaderManager = coreComponents.getClassLoaderManager();
-    SRepository repo = coreComponents.getPlatform().findComponent(MPSModuleRepository.class);
+    Platform mpsPlatform = coreComponents.getPlatform();
+    myClassLoaderManager = mpsPlatform.findComponent(ClassLoaderManager.class);
+    SRepository repo = mpsPlatform.findComponent(MPSModuleRepository.class);
     assert repo != null;
     myModelAccess = repo.getModelAccess();
+    myMakeComponent = mpsPlatform.findComponent(MakeServiceComponent.class);
   }
 
   private static Set<PluginContributor> createPluginContributors(Collection<ReloadableModule> modules) {
@@ -356,7 +360,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   private boolean isMakeActive() {
-    return IMakeService.INSTANCE.isSessionActive();
+    return myMakeComponent.isSessionActive();
   }
 
   /**

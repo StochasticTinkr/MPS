@@ -39,7 +39,7 @@ public interface Condition<T> {
   }
 
   static <T> Condition<T> asCondition(Predicate<T> predicate) {
-    return t -> predicate.test(t);
+    return predicate::test;
   }
 
   default Predicate<T> asPredicate() {

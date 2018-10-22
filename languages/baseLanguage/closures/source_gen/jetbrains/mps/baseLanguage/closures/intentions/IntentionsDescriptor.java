@@ -34,17 +34,15 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
       case 0:
         if (true) {
           // Concept: ClosureLiteral 
-          intentions = new IntentionFactory[2];
-          intentions[0] = new convert_to_from_unrestricted_Intention();
-          intentions[1] = new ToggleMultiLine_Intention();
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ToggleMultiLine_Intention();
         }
         break;
       case 1:
         if (true) {
           // Concept: FunctionType 
-          intentions = new IntentionFactory[2];
+          intentions = new IntentionFactory[1];
           intentions[0] = new add_throws_to_FunctionType_Intention();
-          intentions[1] = new convert_to_unrestricted_Intention();
         }
         break;
       case 2:
@@ -52,13 +50,6 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           // Concept: InvokeFunctionOperation 
           intentions = new IntentionFactory[1];
           intentions[0] = new replace_invokeOperation_with_compactInvoke_Intention();
-        }
-        break;
-      case 3:
-        if (true) {
-          // Concept: UnrestrictedFunctionType 
-          intentions = new IntentionFactory[1];
-          intentions[0] = new convert_to_restricted_Intention();
         }
         break;
       default:
@@ -70,14 +61,11 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[6];
+    IntentionFactory[] rv = new IntentionFactory[3];
     rv[0] = new add_throws_to_FunctionType_Intention();
-    rv[1] = new convert_to_unrestricted_Intention();
-    rv[2] = new convert_to_restricted_Intention();
-    rv[3] = new convert_to_from_unrestricted_Intention();
-    rv[4] = new replace_invokeOperation_with_compactInvoke_Intention();
-    rv[5] = new ToggleMultiLine_Intention();
+    rv[1] = new replace_invokeOperation_with_compactInvoke_Intention();
+    rv[2] = new ToggleMultiLine_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L)).seal();
 }

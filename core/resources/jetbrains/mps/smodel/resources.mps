@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
@@ -1049,7 +1049,7 @@
       <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
     </node>
     <node concept="3clFb_" id="6yNkHkuBs_L" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="classes" />
       <node concept="3uibUv" id="6yNkHkuBs_P" role="3clF45">
         <ref role="3uigEE" to="l46t:~IClassesData" resolve="IClassesData" />
@@ -1071,7 +1071,7 @@
       <ref role="3uigEE" node="1dd_UO1hXZ8" resolve="IDeltaResource" />
     </node>
     <node concept="3clFb_" id="6yNkHkuC_KS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="module" />
       <node concept="3uibUv" id="6yNkHkuC_KW" role="3clF45">
         <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
@@ -1080,7 +1080,7 @@
       <node concept="3clFbS" id="6yNkHkuC_KV" role="3clF47" />
     </node>
     <node concept="3clFb_" id="44ybjD5JJZI" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="modelDescriptor" />
       <node concept="3uibUv" id="44ybjD5JWZj" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
@@ -1099,7 +1099,7 @@
       <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
     </node>
     <node concept="3clFb_" id="6yNkHkuCBPm" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="module" />
       <node concept="3Tm1VV" id="6yNkHkuCBPo" role="1B3o_S" />
       <node concept="3clFbS" id="6yNkHkuCBPp" role="3clF47" />
@@ -1108,7 +1108,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="6yNkHkuCBPu" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="model" />
       <node concept="3uibUv" id="6yNkHkuCBPy" role="3clF45">
         <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
@@ -1117,7 +1117,7 @@
       <node concept="3clFbS" id="6yNkHkuCBPx" role="3clF47" />
     </node>
     <node concept="3clFb_" id="6yNkHkuCBPz" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="retainedModels" />
       <node concept="A3Dl8" id="6yNkHkuCBPB" role="3clF45">
         <node concept="3uibUv" id="6yNkHkuCBPD" role="A3Ik2">
@@ -1128,7 +1128,7 @@
       <node concept="3clFbS" id="6yNkHkuCBPA" role="3clF47" />
     </node>
     <node concept="3clFb_" id="6yNkHkuCBPG" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="status" />
       <node concept="3uibUv" id="6yNkHkuCBPK" role="3clF45">
         <ref role="3uigEE" to="ap4t:~GenerationStatus" resolve="GenerationStatus" />
@@ -1147,7 +1147,7 @@
       <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
     </node>
     <node concept="3clFb_" id="53cwQkIeuLV" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="module" />
       <node concept="3uibUv" id="53cwQkIeuLZ" role="3clF45">
         <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
@@ -1156,7 +1156,7 @@
       <node concept="3clFbS" id="53cwQkIeuLY" role="3clF47" />
     </node>
     <node concept="3clFb_" id="53cwQkIeuM2" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="models" />
       <node concept="A3Dl8" id="53cwQkIeuM6" role="3clF45">
         <node concept="3uibUv" id="53cwQkIeuM8" role="A3Ik2">
@@ -1177,7 +1177,7 @@
       <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
     </node>
     <node concept="3clFb_" id="1dd_UO1hXZe" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="delta" />
       <node concept="3Tm1VV" id="1dd_UO1hXZg" role="1B3o_S" />
       <node concept="3clFbS" id="1dd_UO1hXZh" role="3clF47" />

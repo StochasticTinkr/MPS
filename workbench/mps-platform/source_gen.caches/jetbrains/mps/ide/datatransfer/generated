@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-19ssmvd9ktcf4ktjj0faw9of125otb3" />
+<product version="3" modelHash="-4myqfq8vpq6krcu6xk3s3mdh29qll1a">
+  <files names="CopyPasteUtil.java:SModelDataFlavor.java:SNodeTransferable.java:TextPasteUtil.java" />
+</product>
 

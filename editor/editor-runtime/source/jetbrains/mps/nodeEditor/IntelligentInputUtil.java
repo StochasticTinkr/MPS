@@ -37,8 +37,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,8 +48,15 @@ public class IntelligentInputUtil {
 
   public static boolean processCell(final EditorCell_Label cell, final EditorContext editorContext, final String pattern,
                                     final CellSide side) {
+    IntelligentCellProcessor intelligentCellProcessor = new IntelligentCellProcessor(cell, editorContext, side);
+    intelligentCellProcessor.cacheSubstituteInfo();
+    return intelligentCellProcessor.processCell(pattern);
+  }
 
-    return new CellProcessor(cell, editorContext, pattern, side).processCell();
+  public static IntelligentCellProcessor getIntelligentCellProcessor(final EditorCell_Label cell, final EditorContext editorContext, final CellSide side) {
+    IntelligentCellProcessor intelligentCellProcessor = new IntelligentCellProcessor(cell, editorContext, side);
+    intelligentCellProcessor.cacheSubstituteInfo();
+    return intelligentCellProcessor;
   }
 
   public static String trimLeft(String text) {
@@ -64,19 +69,24 @@ public class IntelligentInputUtil {
   }
 
 
-  private static class CellProcessor {
+  public static class IntelligentCellProcessor {
     private final EditorCell_Label myCell;
     private final EditorContext myEditorContext;
-    private final String myPattern;
     private final CellSide mySide;
     private final SubstituteInfo mySubstituteInfo;
 
-    public CellProcessor(EditorCell_Label cell, EditorContext editorContext, String pattern, CellSide side) {
-      this.myCell = cell;
-      this.myEditorContext = editorContext;
-      this.myPattern = pattern;
-      this.mySide = side;
-      this.mySubstituteInfo = createSubstituteInfo(cell.getSubstituteInfo());
+    private IntelligentCellProcessor(EditorCell_Label cell, EditorContext editorContext, CellSide side) {
+      myCell = cell;
+      myEditorContext = editorContext;
+      mySide = side;
+      mySubstituteInfo = createSubstituteInfo(cell.getSubstituteInfo());
+
+    }
+
+    private void cacheSubstituteInfo() {
+      // Todo this is the hack for the caching The actions are calculated in the read action and not in the command, so the RepositoryStateCacheUtils is used
+      // Todo when redesigning SubstituteInfo and IntelligentInputUtil cache will be separated from getting the actions
+      myEditorContext.getRepository().getModelAccess().runReadAction(() -> mySubstituteInfo.getMatchingActions("", false));
     }
 
     private SubstituteInfo createSubstituteInfo(final SubstituteInfo substituteInfo) {
@@ -89,62 +99,56 @@ public class IntelligentInputUtil {
       return result;
     }
 
-    public boolean processCell() {
-      if (myPattern == null || myPattern.equals("")) {
-        return false;
-      }
 
-      EditorComputable<Boolean> sideTransformCommand = new EditorComputable<Boolean>(myEditorContext) {
+    public boolean processCell(String pattern) {
+      EditorComputable<Boolean> command = new EditorComputable<Boolean>(myEditorContext) {
         @Override
         protected Boolean doCompute() {
           return TypeContextManager.getInstance().runTypeCheckingComputation(
               ((EditorComponent) myEditorContext.getEditorComponent()).getTypecheckingContextOwner(),
               myEditorContext.getEditorComponent().getEditedNode(),
-              new Computation<Boolean>() {
-                @Override
-                public Boolean compute(TypeCheckingContext context) {
-                  if (myCell instanceof EditorCell_STHint) {
-                    return processSTHintCell();
-                  }
+              context -> {
+                if (myCell instanceof EditorCell_STHint) {
+                  return processSTHintCell(pattern);
+                }
 
-                  if (mySide == CellSide.LEFT) {
-                    String head = "" + myPattern.charAt(0);
-                    String smallPattern = myPattern.substring(1);
-                    return processCellAtStart(head, smallPattern);
-                  } else {
-                    String smallPattern = myPattern.substring(0, myPattern.length() - 1);
-                    String tail = myPattern.substring(myPattern.length() - 1, myPattern.length());
-                    return processCellAtEnd(smallPattern, tail);
-                  }
+                if (mySide == CellSide.LEFT) {
+                  String head = "" + pattern.charAt(0);
+                  String smallPattern = pattern.substring(1);
+                  return processCellAtStart(head, smallPattern);
+                } else {
+                  String smallPattern = pattern.substring(0, pattern.length() - 1);
+                  String tail = pattern.substring(pattern.length() - 1);
+                  return processCellAtEnd(smallPattern, tail);
                 }
               });
         }
       };
-      myEditorContext.getRepository().getModelAccess().executeCommand(sideTransformCommand);
-      return sideTransformCommand.getResult();
+      myEditorContext.getRepository().getModelAccess().executeCommand(command);
+      return command.getResult();
     }
 
-    private boolean processSTHintCell() {
+    private boolean processSTHintCell(String pattern) {
       EditorCell_STHint stHintCell = ((EditorCell_STHint) myCell);
-      String smallPattern = myPattern.substring(0, myPattern.length() - 1);
-      String tail = "" + myPattern.charAt(myPattern.length() - 1);
+      String smallPattern = pattern.substring(0, pattern.length() - 1);
+      String tail = "" + pattern.charAt(pattern.length() - 1);
       EditorCell nextCell = CellTraversalUtil.getNextLeaf(stHintCell);
       while (nextCell != null && !nextCell.isSelectable()) {
         nextCell = CellTraversalUtil.getNextLeaf(nextCell);
       }
 
-      if (canCompleteSmallPatternImmediately(mySubstituteInfo, myPattern, "") ||
-          canCompleteSmallPatternImmediately(mySubstituteInfo, trimLeft(myPattern), "")) {
+      if (canCompleteSmallPatternImmediately(mySubstituteInfo, pattern, "") ||
+          canCompleteSmallPatternImmediately(mySubstituteInfo, trimLeft(pattern), "")) {
 
 
-        String trimmedPattern = myPattern;
-        if (!canCompleteSmallPatternImmediately(mySubstituteInfo, myPattern, "")) {
-          trimmedPattern = trimLeft(myPattern);
+        String trimmedPattern = pattern;
+        if (!canCompleteSmallPatternImmediately(mySubstituteInfo, pattern, "")) {
+          trimmedPattern = trimLeft(pattern);
         }
 
-        mySubstituteInfo.getMatchingActions(trimmedPattern, true).get(0).substitute(myEditorContext, myPattern);
+        mySubstituteInfo.getMatchingActions(trimmedPattern, true).get(0).substitute(myEditorContext, pattern);
         return true;
-      } else if (myPattern.length() > 0 && (canCompleteSmallPatternImmediately(mySubstituteInfo, smallPattern, tail) ||
+      } else if (pattern.length() > 0 && (canCompleteSmallPatternImmediately(mySubstituteInfo, smallPattern, tail) ||
                                             canCompleteSmallPatternImmediately(mySubstituteInfo, trimLeft(smallPattern), tail))) {
 
         if (!canCompleteSmallPatternImmediately(mySubstituteInfo, smallPattern, tail)) {
@@ -185,14 +189,14 @@ public class IntelligentInputUtil {
           }
         }
         return true;
-      } else if (mySubstituteInfo.getMatchingActions(myPattern, false).isEmpty() &&
-                 mySubstituteInfo.getMatchingActions(trimLeft(myPattern), false).isEmpty() &&
+      } else if (mySubstituteInfo.getMatchingActions(pattern, false).isEmpty() &&
+                 mySubstituteInfo.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
                  nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
         SideTransformInfoUtil.removeTransformInfo(stHintCell.getSNode());
 
         EditorCell_Label label = (EditorCell_Label) nextCell;
-        label.changeText(myPattern);
+        label.changeText(pattern);
         label.end();
         myEditorContext.getEditorComponent().changeSelection(label);
         return true;
@@ -205,7 +209,7 @@ public class IntelligentInputUtil {
     private boolean processCellAtEnd(String smallPattern, final String tail) {
       EditorCell cellForNewNode;
       final SNode newNode;
-      if (myCell.isValidText(smallPattern) && !"".equals(smallPattern)
+      if (myCell.isValidText(smallPattern) && smallPattern != null && !smallPattern.isEmpty()
           && mySubstituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
         newNode = myCell.getSNode();
         cellForNewNode = myCell;
@@ -363,7 +367,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode;
       SNode newNode;
 
-      if (myCell.isValidText(smallPattern) && (!"".equals(smallPattern) || myCell instanceof EditorCell_Constant)
+      if (myCell.isValidText(smallPattern) && (smallPattern != null && !smallPattern.isEmpty() || myCell instanceof EditorCell_Constant)
           && mySubstituteInfo.hasExactlyNActions(head + smallPattern, false, 0)) {
         newNode = myCell.getSNode();
         cellForNewNode = myCell;
@@ -428,7 +432,7 @@ public class IntelligentInputUtil {
     }
 
     private boolean canCompleteSmallPatternImmediately(SubstituteInfo info, String smallPattern, String tail) {
-      if ("".equals(tail)) {
+      if (tail != null && tail.isEmpty()) {
         return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
       }
 

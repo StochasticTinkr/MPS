@@ -49,45 +49,42 @@ public class ChildrenCollectionFinder {
 
   public EditorCell find() {
     SRepository repo = myCurrent.getContext().getRepository();
-    return new ModelAccessHelper(repo).runReadAction(new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
-          return myCurrent;
-        }
-        SNode anchorNode = getLCA(myAnchor.getSNode(), myCurrent.getSNode());
-        if (anchorNode == null) {
-          return null;
-        }
-        // Note: traverser doesn't visit parent nodes of the current node,
-        // if our anchor is from another subtree, search parents (up to LCA) first
-        // TODO remove
-        if (anchorNode != myCurrent.getSNode()) {
-          EditorCell curr = myCurrent;
-          while (curr != null && curr.getSNode() != anchorNode) {
-            if (isMultipleCollectionCell(curr)) {
-              return curr;
-            }
-            curr = curr.getParent();
-          }
-          if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
-            return curr;
-          }
-        }
-
-        for (EditorCell current : CellTraversalUtil.iterateTree(null, myCurrent, myForward).skipStart()) {
-          SNode currentNode = current.getSNode();
-
-          if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {
-            return null;
-          }
-
-          if (isMultipleCollectionCell(current)) {
-            return current;
-          }
-        }
+    return new ModelAccessHelper(repo).runReadAction(() -> {
+      if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
+        return myCurrent;
+      }
+      SNode anchorNode = getLCA(myAnchor.getSNode(), myCurrent.getSNode());
+      if (anchorNode == null) {
         return null;
       }
+      // Note: traverser doesn't visit parent nodes of the current node,
+      // if our anchor is from another subtree, search parents (up to LCA) first
+      // TODO remove
+      if (anchorNode != myCurrent.getSNode()) {
+        EditorCell curr = myCurrent;
+        while (curr != null && curr.getSNode() != anchorNode) {
+          if (isMultipleCollectionCell(curr)) {
+            return curr;
+          }
+          curr = curr.getParent();
+        }
+        if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
+          return curr;
+        }
+      }
+
+      for (EditorCell current : CellTraversalUtil.iterateTree(null, myCurrent, myForward).skipStart()) {
+        SNode currentNode = current.getSNode();
+
+        if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {
+          return null;
+        }
+
+        if (isMultipleCollectionCell(current)) {
+          return current;
+        }
+      }
+      return null;
     });
   }
 
@@ -104,7 +101,7 @@ public class ChildrenCollectionFinder {
     if (left == right || right == null || left == null) {
       return left == null ? right : left;
     }
-    Set<SNode> parents = new HashSet<SNode>();
+    Set<SNode> parents = new HashSet<>();
     while (left != null) {
       parents.add(left);
       left = left.getParent();

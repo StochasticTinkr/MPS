@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-73f82x9pb3rxrqmyen0mvotc4hzgjq5" />
+<product version="3" modelHash="epienglewefy9ri2t33tj6363y6jfrq">
+  <files names="EditorAspectDescriptorImpl.java:ErrorType_Editor.java:ErrorType_EditorBuilder_a.java:OverrideAnnotation_Editor.java:OverrideAnnotation_EditorBuilder_a.java:OverridingPrimNumConstant_Editor.java:OverridingPrimNumConstant_EditorBuilder_a.java:UnconditionalOverrideAnnotation_Editor.java:UnconditionalOverrideAnnotation_EditorBuilder_a.java" />
+</product>
 

@@ -67,7 +67,7 @@ public enum LanguageAspect {
   PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
     @Override
     public Collection<SLanguage> getMainLanguages() {
-      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
+      ArrayList<SLanguage> result = new ArrayList<>();
       result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
       result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
       return result;
@@ -87,7 +87,7 @@ public enum LanguageAspect {
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
   //TODO must be changed for each major/minor version release
-  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD20182/";
+  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD20183/";
 
   private String myName;
   private final SModuleReference myMainLang;
@@ -104,13 +104,7 @@ public enum LanguageAspect {
    * Builds a class name of an aspect class according to hardcoded MPS convention.
    */
   public String getAspectQualifiedClassName(@NotNull SAbstractConcept concept) {
-    StringBuilder builder = new StringBuilder();
-    builder.append(concept.getLanguage().getQualifiedName());
-    builder.append('.');
-    builder.append(getName());
-    builder.append('.');
-    builder.append(concept.getName());
-    return builder.toString();
+    return concept.getLanguage().getQualifiedName() + '.' + getName() + '.' + concept.getName();
   }
 
   public boolean is(@NotNull SModel sm) {
@@ -172,7 +166,7 @@ public enum LanguageAspect {
   }
 
   public Collection<SLanguage> getMainLanguages() {
-    ArrayList<SLanguage> res = new ArrayList<SLanguage>();
+    ArrayList<SLanguage> res = new ArrayList<>();
     res.add(MetaAdapterFactory.getLanguage(getMainLanguage()));
     return res;
   }
@@ -182,7 +176,7 @@ public enum LanguageAspect {
   //not used in MPS
   //use jetbrains.mps.smodel.language.LanguageAspectSupport.getAspectModels()
   public static Collection<SModel> getAspectModels(Language l) {
-    Set<SModel> result = new HashSet<SModel>();
+    Set<SModel> result = new HashSet<>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
       SModel asp = aspect.get(l);
       if (asp != null) {

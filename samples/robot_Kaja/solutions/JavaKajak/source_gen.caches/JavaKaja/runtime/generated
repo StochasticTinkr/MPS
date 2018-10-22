@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bck8zilesfmn266392njb45dp3698o5" />
+<product version="3" modelHash="47n5jsfk16fwzuztsy2bcsz8hh6xoup">
+  <files names="Cell.java:Direction.java:KajaFrame.java:VisualCell.java" />
+</product>
 

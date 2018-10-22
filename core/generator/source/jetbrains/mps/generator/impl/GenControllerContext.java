@@ -19,8 +19,10 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -29,6 +31,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * Holds parameters global for particular generation activity/task. Similar to {@link jetbrains.mps.generator.GenerationSessionContext} which
  * is a context for per-model generation session, while this class tracks parameters that span generation of a single model. 'Context' is not
  * the best pick, however, resemblance to GenerationSessionContext dictates its use.
+ * <p>
+ *   NOTE, this class is not a public API, it's 'public' in Java sense just to cross package boundaries
+ * </p>
  * @author Artem Tikhomirov
  */
 @Immutable
@@ -37,13 +42,20 @@ public final class GenControllerContext {
   private final GenerationOptions myOptions;
   private final TransientModelsProvider myTransientModelProvider;
   private final ModelStreamManager.Provider myStreamProvider;
+  @Nullable
+  private final TraceFacility myTraceSession;
   private final CrossModelEnvironment myCrossModelEnvironment;
 
-  public GenControllerContext(@NotNull SRepository repository, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
+  public GenControllerContext(@NotNull SRepository repository,
+                              @NotNull GenerationOptions options,
+                              @NotNull TransientModelsProvider transientModelsProvider,
+                              @NotNull ModelStreamManager.Provider streamProvider,
+                              @Nullable TraceFacility traceSession) {
     myRepository = repository;
     myOptions = options;
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
+    myTraceSession = traceSession;
     myCrossModelEnvironment = new CrossModelEnvironment(transientModelsProvider, streamProvider);
 //    myCrossModelEnvironment = transientModelsProvider.getCrossModelEnvironment();
   }
@@ -87,5 +99,12 @@ public final class GenControllerContext {
   public PersistenceFacade getPersistenceFacade() {
     // FIXME same as getLanguageRegistry
     return PersistenceFacade.getInstance();
+  }
+
+  public TraceFacility getTraceSession() {
+    // XXX if there would be ComponentHost, could retrieve TraceRegistry there and instantiate session myself
+    //     here, and make it non-null. OTOH, do I want *every* transformation to be traced? Perhaps, GF.process
+    //     could ask TraceRegistry.isInterested(GenerationTask/SModel) so that clients could decide?
+    return myTraceSession;
   }
 }

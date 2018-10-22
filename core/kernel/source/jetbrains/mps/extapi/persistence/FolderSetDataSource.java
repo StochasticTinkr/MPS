@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
+import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
@@ -31,12 +31,12 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +45,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
- /**
+/**
  * Must be replaced with the FileDataSource everywhere.
  * Additional functionality (like #isIncluded) must be extracted or removed.
  * Remember: it is supposed to be just a simple notion of location with file system for {@link ModelFactory}
@@ -56,16 +56,14 @@ import java.util.stream.Collectors;
  */
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
-  private final List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>(4);
-  private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>(8);
-
-  private final Set<FileSystemListener> myListenerDependencies = new HashSet<FileSystemListener>(8);
+  private final List<DataSourceListener> myListeners = new ArrayList<>(4);
+  private final Map<String, PathListener> myPaths = new LinkedHashMap<>(8);
 
   public FolderSetDataSource() {
   }
 
   /**
-   * @param modelRoot (optional) containing model root, which should be notified before the source during the update
+   * @param modelRoot unused
    */
   public void addPath(@NotNull IFile path, ModelRoot modelRoot) {
     myLock.writeLock().lock();
@@ -73,12 +71,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       if (myPaths.containsKey(path.getPath())) {
         return;
-      }
-
-      if (modelRoot instanceof FileSystemListener) {
-        myListenerDependencies.add((FileSystemListener) modelRoot);
-      } else if (modelRoot != null && modelRoot.getModule() instanceof FileSystemListener) {
-        myListenerDependencies.add((FileSystemListener) modelRoot.getModule());
       }
 
       PathListener listener = new PathListener(path, this);
@@ -104,7 +96,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   private Collection<IFile> getFiles() {
     myLock.readLock().lock();
     try {
-      Collection<IFile> rv = new ArrayList<IFile>(myPaths.size());
+      Collection<IFile> rv = new ArrayList<>(myPaths.size());
       for (PathListener l : myPaths.values()) {
         rv.add(l.myFile);
       }
@@ -202,7 +194,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     List<DataSourceListener> listeners;
     myLock.readLock().lock();
     try {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     } finally {
       myLock.readLock().unlock();
     }
@@ -212,16 +204,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @Override
   public IFile getFileToListen() {
     throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    myLock.readLock().lock();
-    try {
-      return new ArrayList<FileSystemListener>(myListenerDependencies);
-    } finally {
-      myLock.readLock().unlock();
-    }
   }
 
   @Override
@@ -280,11 +262,6 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     @Override
     public IFile getFileToListen() {
       return myFile;
-    }
-
-    @Override
-    public Iterable<FileSystemListener> getListenerDependencies() {
-      return myDelegate.getListenerDependencies();
     }
 
     @Override

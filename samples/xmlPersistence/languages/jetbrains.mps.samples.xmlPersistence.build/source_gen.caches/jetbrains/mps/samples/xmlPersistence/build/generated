@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="75yly6h96x49ait8mhjzlus0k6h9uk8" />
+<product version="3" modelHash="egro8vr72bxw9ifhnrgydmri4ed3sh0">
+  <files names="xmlPersistencePlugin.xml" />
+</product>
 

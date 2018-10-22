@@ -41,7 +41,7 @@ public final class FileSystemModelHelper {
 
   @NotNull
   public Collection<IFile> getFiles() {
-    List<IFile> result = new ArrayList<IFile>();
+    List<IFile> result = new ArrayList<>();
     DataSource source = myModel.getSource();
     if ((source instanceof FileSystemBasedDataSource)) {
       FileSystemBasedDataSource fsDataSource = (FileSystemBasedDataSource) source;
@@ -52,7 +52,7 @@ public final class FileSystemModelHelper {
 
   @NotNull
   public Collection<VirtualFile> getVirtualFiles() {
-    List<VirtualFile> vFiles = new ArrayList<VirtualFile>();
+    List<VirtualFile> vFiles = new ArrayList<>();
 
     Collection<IFile> modelPaths = getFiles();
     for (IFile path : modelPaths) {

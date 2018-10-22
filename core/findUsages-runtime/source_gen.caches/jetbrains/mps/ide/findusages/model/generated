@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ad8p9ss0rnnc73312zi9zwk7el9jvwd" />
+<product version="3" modelHash="8bsqwqudrhp16c57rz1es82fvjzyrky">
+  <files names="CategoryKind.java:IResultProvider.java:SearchQuery.java:SearchResult.java:SearchResults.java:SearchTask.java" />
+</product>
 

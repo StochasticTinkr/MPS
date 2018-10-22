@@ -30,21 +30,11 @@ public class SubtypingManager_Tracer extends SubTypingManagerNew {
 
   @Override
   public boolean isSubtype(final SNode subType, final SNode superType) {
-    return myTypeChecker.computeWithTrace(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SubtypingManager_Tracer.super.isSubtype(subType, superType);
-      }
-    }, "is subtype");
+    return myTypeChecker.computeWithTrace(() -> SubtypingManager_Tracer.super.isSubtype(subType, superType), "is subtype");
   }
 
   @Override
   public boolean isSubtype(final SNode subType, final SNode superType, final boolean isWeak) {
-    return myTypeChecker.computeWithTrace(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SubtypingManager_Tracer.super.isSubtype(subType, superType, isWeak);
-      }
-    }, "is subtype");
+    return myTypeChecker.computeWithTrace(() -> SubtypingManager_Tracer.super.isSubtype(subType, superType, isWeak), "is subtype");
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" file="AbstractTestWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -9,6 +9,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.function.Function" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestParameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -26,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper" file="GeneratorTestWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.GeneratorTestWrapper">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -44,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" file="ITestNodeWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -57,7 +58,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3MethodWrapper" file="JUnit3MethodWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3MethodWrapper">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
@@ -71,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3TestWrapper" file="JUnit3TestWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3TestWrapper">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -93,7 +94,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4MethodWrapper" file="JUnit4MethodWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4MethodWrapper">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
@@ -109,7 +110,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4TestWrapper" file="JUnit4TestWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4TestWrapper">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -132,7 +133,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command" file="JUnit_Command.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
@@ -140,6 +141,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.net.URISyntaxException" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -165,9 +167,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.NotNullWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.tool.common.JDOMUtil" />
@@ -184,8 +188,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper" file="LanguageTestWrapper.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -199,19 +204,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager" file="RunCachesManager.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
@@ -219,7 +218,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.String2NodeTestKeyConverter" file="String2NodeTestKeyConverter.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.String2NodeTestKeyConverter">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -238,7 +237,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.annotations.Singleton" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" file="TestEventsDispatcher.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher">
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.String" />
@@ -248,7 +247,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" file="TestNodeWrapperFactory.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -280,26 +279,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestParameters" file="TestParameters.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestParameters">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" file="TestRunData.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData">
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -310,7 +301,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" file="TestRunState.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState">
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -348,12 +339,12 @@
     <classNode dependClassName="org.jetbrains.mps.annotations.Internal" />
     <classNode dependClassName="org.jetbrains.mps.annotations.Mutable" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener" file="TestRunStateUpdateListener.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunStateUpdateListener">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunData" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter" file="TestStateAdapter.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent" />
@@ -361,13 +352,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" file="TestStateListener.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener">
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TerminationTestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestNodeEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TextTestEvent" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestsWithParameters" file="TestsWithParameters.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestsWithParameters">
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
@@ -377,7 +368,7 @@
     <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener" file="UnitTestProcessListener.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener">
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />

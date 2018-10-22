@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root nodeRef="r:12897c41-1d23-444a-8c3d-8a254e74f9b6(jetbrains.mps.ide.build.tests.generatedTests)/5107638175665101111">
     <file name="mpsTestModules.xml">
-      <unit id="5107638175665101111" at="1,0,1612,10" name="jetbrains.mps.ide.build.tests.generatedTests.mpsTestModules" />
+      <unit id="5107638175665101111" at="1,0,1620,10" name="jetbrains.mps.ide.build.tests.generatedTests.mpsTestModules" />
     </file>
   </root>
 </debug-info>

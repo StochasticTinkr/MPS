@@ -175,9 +175,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   }
 
   public void addPathComponent(PathItemRole role) {
-    if (!myPathProvider.contains(role)) {
-      myPathProvider.add(role);
-    }
+    myPathProvider.add(role);
     myTree.setResultPathProvider(myPathProvider);
   }
 
@@ -559,7 +557,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     }
 
     class MyBasePathToggleAction extends MyBaseToggleAction {
-      private PathItemRole myPathItemRole = null;
+      private PathItemRole myPathItemRole;
 
       public MyBasePathToggleAction(PathItemRole itemRole, String name, Icon icon) {
         super(name, "", icon);

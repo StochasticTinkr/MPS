@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.Context" file="Context.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.Context">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager" file="ContextManager.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager">
     <classNode dependClassName="com.sun.jdi.InternalException" />
     <classNode dependClassName="com.sun.jdi.ObjectCollectedException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" file="EventContext.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.EventContext">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.event.Event" />
     <classNode dependClassName="com.sun.jdi.event.EventSet" />
@@ -38,12 +38,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" file="EventsProcessor.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressIndicatorListener" />
     <classNode dependClassName="com.intellij.openapi.progress.util.ProgressIndicatorListenerAdapter" />
-    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindowWithNotification" />
+    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -89,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.UserContext" file="UserContext.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.UserContext">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.request.EventRequest" />
     <classNode dependClassName="java.lang.Override" />

@@ -7,9 +7,10 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.lang.core.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,33,0" name="jetbrains.mps.lang.core.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)/1213104856219">
@@ -64,6 +65,54 @@
       <scope id="1213104856824" at="20,0,45,0" />
       <unit id="1213104856825" at="23,144,42,5" name="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints$1" />
       <unit id="1213104856824" at="15,0,46,0" name="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)/8703179436979151869">
+    <file name="MigrationAnnotation_Constraints.java">
+      <node id="8703179436979151869" at="19,44,20,170" concept="6" />
+      <node id="8703179436979151869" at="24,84,25,119" concept="3" />
+      <node id="8703179436979151870" at="28,40,29,20" concept="4" />
+      <node id="8703179436979151870" at="32,70,33,48" concept="3" />
+      <node id="8703179436979210643" at="34,13,35,91" concept="3" />
+      <node id="1973338949476628133" at="35,91,36,120" concept="3" />
+      <node id="3202268334340946291" at="36,120,37,57" concept="3" />
+      <node id="1973338949476637252" at="37,57,38,217" concept="3" />
+      <node id="8703179436979176825" at="38,217,39,22" concept="4" />
+      <node id="8703179436979183212" at="40,46,41,23" concept="4" />
+      <node id="8703179436979151869" at="44,7,45,22" concept="4" />
+      <node id="8703179436979151869" at="19,0,22,0" concept="0" trace="MigrationAnnotation_Constraints#()V" />
+      <node id="8703179436979151870" at="27,0,31,0" concept="2" trace="hasOwnValidator#()Z" />
+      <node id="8703179436979172135" at="33,48,42,9" concept="7" />
+      <node id="8703179436979151870" at="31,0,44,0" concept="2" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="8703179436979151870" at="25,119,44,7" concept="1" />
+      <node id="8703179436979151869" at="23,0,47,0" concept="2" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="8703179436979151869" at="19,44,20,170" />
+      <scope id="8703179436979151870" at="28,40,29,20" />
+      <scope id="8703179436979172138" at="40,0,41,23">
+        <var name="_" id="8703179436979172140" />
+      </scope>
+      <scope id="8703179436979172144" at="40,46,41,23" />
+      <scope id="8703179436979151869" at="19,0,22,0" />
+      <scope id="8703179436979151870" at="27,0,31,0" />
+      <scope id="8703179436979172137" at="34,13,39,22">
+        <var name="ix" id="3202268334340946292" />
+        <var name="language" id="1973338949476637253" />
+        <var name="migrationScriptReference" id="8703179436979210646" />
+        <var name="version" id="1973338949476628136" />
+      </scope>
+      <scope id="8703179436979151870" at="32,70,42,9">
+        <var name="propertyName" id="8703179436979151870" />
+      </scope>
+      <scope id="8703179436979151870" at="31,0,44,0">
+        <var name="node" id="8703179436979151870" />
+        <var name="propertyValue" id="8703179436979151870" />
+      </scope>
+      <scope id="8703179436979151869" at="24,84,45,22">
+        <var name="properties" id="8703179436979151869" />
+      </scope>
+      <scope id="8703179436979151869" at="23,0,47,0" />
+      <unit id="8703179436979151870" at="26,158,44,5" name="jetbrains.mps.lang.core.constraints.MigrationAnnotation_Constraints$1" />
+      <unit id="8703179436979151869" at="18,0,48,0" name="jetbrains.mps.lang.core.constraints.MigrationAnnotation_Constraints" />
     </file>
   </root>
 </debug-info>

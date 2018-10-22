@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet" file="CopyPluginXml_Facet.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
@@ -40,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -48,13 +47,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.plugin.FacetManifest" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.FacetManifest">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -64,10 +63,10 @@
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.IconContainer" file="IconContainer.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.IconContainer">
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension" file="LanguageAspectsEP_extension.java">
+  <dependency className="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

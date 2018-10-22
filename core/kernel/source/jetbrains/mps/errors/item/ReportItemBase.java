@@ -49,9 +49,11 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
   }
 
   public static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
+    private String myId;
     private Class<C> myApplicableClass;
     private Function<C, T> myGetter;
-    public SimpleReportItemFlavour(Class<C> applicableClass, Function<C, T> getter) {
+    public SimpleReportItemFlavour(String id, Class<C> applicableClass, Function<C, T> getter) {
+      myId = id;
       myApplicableClass = applicableClass;
       myGetter = getter;
     }
@@ -66,11 +68,16 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
     public Class<C> getApplicableClass() {
       return myApplicableClass;
     }
+    @NotNull
+    @Override
+    public String getId() {
+      return myId;
+    }
   }
 
   public static class MultipleReportItemFlavour<I extends FlavouredItem, T> extends SimpleReportItemFlavour<I, Collection<T>> {
-    public MultipleReportItemFlavour(Class<I> applicableClass, Function<I, Collection<T>> getter) {
-      super(applicableClass, getter);
+    public MultipleReportItemFlavour(String id, Class<I> applicableClass, Function<I, Collection<T>> getter) {
+      super(id, applicableClass, getter);
     }
     @NotNull
     public Collection<T> getCollection(FlavouredItem reportItem) {

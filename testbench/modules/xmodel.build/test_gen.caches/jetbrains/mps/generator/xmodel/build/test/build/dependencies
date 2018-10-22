@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.generator.xmodel.build.test.build.TwoModulesWithXRefsBuiltIndependently_Test" file="TwoModulesWithXRefsBuiltIndependently_Test.java">
+  <dependency className="jetbrains.mps.generator.xmodel.build.test.build.TwoModulesWithXRefsBuiltIndependently_Test">
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />

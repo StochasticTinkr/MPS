@@ -44,7 +44,7 @@ public class BuiltInLibrariesIO {
   public static final String LIBRARY_PATH_TAG = "path";
 
   public static Map<String, Library> readBuiltInLibraries() {
-    Map<String, Library> result = new HashMap<String, Library>();
+    Map<String, Library> result = new HashMap<>();
 
     URL resource = BuiltInLibrariesIO.class.getResource(CONFIG_FILE_WHOLE_NAME);
     if (resource == null) return result;
@@ -61,18 +61,10 @@ public class BuiltInLibrariesIO {
         String path = child.getAttribute(LIBRARY_PATH_TAG).getValue();
         final String realPath = MacrosFactory.getGlobal().expandPath(path);
 
-        Library predefinedLibrary = new Library(name) {
-          @NotNull
-          @Override
-          public String getPath() {
-            return realPath;
-          }
-        };
+        Library predefinedLibrary = new Library(name, realPath);
         result.put(name, predefinedLibrary);
       }
-    } catch (JDOMException e) {
-      LOG.error(null, e);
-    } catch (IOException e) {
+    } catch (JDOMException | IOException e) {
       LOG.error(null, e);
     } finally {
       if (in != null) {
@@ -94,14 +86,12 @@ public class BuiltInLibrariesIO {
         configFile.createNewFile();
         write(configFile, name, path);
       }
-    } catch (JDOMException e) {
-      LOG.error(null, e);
     } catch (IOException e) {
       LOG.error(null, e);
     }
   }
 
-  private static void write(File configFile, String name, String path) throws JDOMException, IOException {
+  private static void write(File configFile, String name, String path) throws IOException {
     Document document;
     try {
       document = JDOMUtil.loadDocument(configFile);

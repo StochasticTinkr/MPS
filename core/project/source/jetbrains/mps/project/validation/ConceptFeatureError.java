@@ -15,19 +15,33 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
+import jetbrains.mps.errors.item.NodeReportItemBase;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * An error associated with a concept feature
  */
-public class ConceptFeatureError extends NodeValidationProblem implements NodeFeatureReportItem {
+public abstract class ConceptFeatureError extends NodeReportItemBase implements NodeFeatureReportItem {
   private final SConceptFeature myFeature;
 
-  public ConceptFeatureError(SNode node, SConceptFeature feature, String message) {
-    super(node, message);
+  public ConceptFeatureError(SNodeReference node, SConceptFeature feature, String message) {
+    super(MessageStatus.ERROR, node, message);
     myFeature = feature;
+  }
+
+  @Override
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new LinkedHashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE));
   }
 
   public SConceptFeature getConceptFeature() {

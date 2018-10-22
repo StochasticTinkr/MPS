@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" file="AbstractModuleCreationDialog.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog">
     <classNode dependClassName="com.intellij.project.ProjectKt" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" file="CloneModuleDialog.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.Balloon" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper" file="CopyModuleHelper.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" file="DescriptorCopyOrganizer.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer">
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog" file="NewLanguageDialog.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -119,7 +119,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog" file="NewSolutionDialog.java">
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />

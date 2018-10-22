@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.structure.util.ConceptIdHelper" file="ConceptIdHelper.java">
+  <dependency className="jetbrains.mps.lang.structure.util.ConceptIdHelper">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Math" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.util.ConceptIdSetter" file="ConceptIdSetter.java">
+  <dependency className="jetbrains.mps.lang.structure.util.ConceptIdSetter">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.util.SmartRefAttributeUtil" file="SmartRefAttributeUtil.java">
+  <dependency className="jetbrains.mps.lang.structure.util.SmartRefAttributeUtil">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

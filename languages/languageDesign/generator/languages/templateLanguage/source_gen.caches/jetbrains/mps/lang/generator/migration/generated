@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-6fhmvtxh8rgs2oek7198jiq7sozu08z">
+  <files names="MigrationDescriptor.java:ReplaceIncludeWithCall.java:WeaveEachConsequence.java" />
+</product>
+

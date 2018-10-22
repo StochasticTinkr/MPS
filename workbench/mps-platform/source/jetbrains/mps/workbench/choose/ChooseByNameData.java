@@ -138,7 +138,7 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
     // XXX no idea whether getNames() is expected to return unique values only. Provided getElementByName() takes single name and expects multiple values,
     // likely, unique names are expected here. It's ok with MultiMap, however needs attention if we switch to another container.
     Set<String> keys = elementMap.keySet();
-    return keys.toArray(new String[keys.size()]);
+    return keys.toArray(new String[0]);
   }
 
   private MultiMap<String, T> buildMap(Iterable<T> elements) {

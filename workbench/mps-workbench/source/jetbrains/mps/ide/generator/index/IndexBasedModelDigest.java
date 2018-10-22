@@ -77,13 +77,10 @@ public class IndexBasedModelDigest implements ApplicationComponent {
 
         final Map<String, String>[] valueArray = new Map[]{null};
         FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,
-            new ValueProcessor<Map<String, String>>() {
-              @Override
-              public boolean process(VirtualFile file, Map<String, String> values) {
-                valueArray[0] = values;
-                return true;
-              }
-            }, new EverythingGlobalScope());
+                                                   (file1, values) -> {
+                                                     valueArray[0] = values;
+                                                     return true;
+                                                   }, new EverythingGlobalScope());
         return valueArray[0];
       } catch (IndexNotReadyException e) {
         // generally, it's bad to get here (we'd rather check for dumb mode prior accessing the index

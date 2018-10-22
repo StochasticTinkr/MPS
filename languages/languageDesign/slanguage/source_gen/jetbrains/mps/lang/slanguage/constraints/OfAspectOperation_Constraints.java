@@ -49,14 +49,12 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              Iterable<SModule> modules = SNodeOperations.getModel(_context.getContextNode()).getModule().getRepository().getModules();
-              return new ModelsScope(Sequence.fromIterable(modules).select(new ISelector<SModule, SModel>() {
-                public SModel select(SModule it) {
-                  return SModuleOperations.getAspect(it, "plugin");
-                }
-              }), true, MetaAdapterFactory.getReferenceLink(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect").getTargetConcept());
-            }
+            Iterable<SModule> modules = SNodeOperations.getModel(_context.getContextNode()).getModule().getRepository().getModules();
+            return new ModelsScope(Sequence.fromIterable(modules).select(new ISelector<SModule, SModel>() {
+              public SModel select(SModule it) {
+                return SModuleOperations.getAspect(it, "plugin");
+              }
+            }), true, MetaAdapterFactory.getReferenceLink(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect").getTargetConcept());
           }
         };
       }

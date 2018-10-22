@@ -92,8 +92,8 @@ public class SModelsSubtree {
   }
 
   private List<SModelTreeNode> getRootModelTreeNodes(Collection<SModel> models) {
-    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
-    ArrayList<SModel> sortedModels = new ArrayList<SModel>(models);
+    List<SModelTreeNode> result = new ArrayList<>();
+    ArrayList<SModel> sortedModels = new ArrayList<>(models);
     Collections.sort(sortedModels, new SModelComparator());
     if (!sortedModels.isEmpty()) {
       int rootIndex = 0;

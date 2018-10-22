@@ -49,8 +49,8 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public final class ModelScanner {
-  private final Set<SLanguage> myTargetLanguages = new HashSet<SLanguage>();
-  private final Set<SLanguage> myQueryLanguages = new HashSet<SLanguage>();
+  private final Set<SLanguage> myTargetLanguages = new HashSet<>();
+  private final Set<SLanguage> myQueryLanguages = new HashSet<>();
 
   public ModelScanner() {
   }
@@ -89,18 +89,8 @@ public final class ModelScanner {
   public ModelScanner scan(SModel model) {
 //    assert SModelStereotype.isGeneratorModel(model);
     FastNodeFinder fnf = FastNodeFinderManager.get(model);
-    Translate<SNode, SNode> parentExtractor = new Translate<SNode, SNode>() {
-      @Override
-      public SNode translate(SNode t) {
-        return t.getParent();
-      }
-    };
-    Translate<SNode, SNode> inlineTemplateExtractor = new Translate<SNode, SNode>() {
-      @Override
-      public SNode translate(SNode rc) {
-        return RuleUtil.getInlineTemplate_templateNode(rc);
-      }
-    };
+    Translate<SNode, SNode> parentExtractor = t -> t.getParent();
+    Translate<SNode, SNode> inlineTemplateExtractor = rc -> RuleUtil.getInlineTemplate_templateNode(rc);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_TemplateFragment, false), parentExtractor);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false), parentExtractor);
     processTemplateNode(fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false), inlineTemplateExtractor);
@@ -170,7 +160,7 @@ public final class ModelScanner {
    */
   private static final class NodeScanner {
     private final Condition<SNode> myCondition;
-    private final Set<SAbstractConcept> myConceptsInUse = new HashSet<SAbstractConcept>();
+    private final Set<SAbstractConcept> myConceptsInUse = new HashSet<>();
     private Set<SLanguage> myLanguagesInUse;
 
     public NodeScanner() {
@@ -228,12 +218,12 @@ public final class ModelScanner {
 
 
     private Iterator<SNode> getNodeIterator(SNode node) {
-      return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
+      return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<>(new DescendantsTreeIterator(node), myCondition);
     }
 
     public Set<SLanguage> getUsedLanguages() {
       if(myLanguagesInUse == null) {
-        final HashSet<SLanguage> usedLanguages = new HashSet<SLanguage>(myConceptsInUse.size());
+        final HashSet<SLanguage> usedLanguages = new HashSet<>(myConceptsInUse.size());
         for (SAbstractConcept conceptInUse : myConceptsInUse) {
           final SLanguage language = conceptInUse.getLanguage();
           usedLanguages.add(language);

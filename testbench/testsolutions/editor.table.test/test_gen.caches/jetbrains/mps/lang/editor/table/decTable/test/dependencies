@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.CompleteColumnInDecisionTable_Test" file="CompleteColumnInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.CompleteColumnInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.CompleteRowInDecisionTable_Test" file="CompleteRowInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.CompleteRowInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.Complete_Statement_CellInDecisionTable_Test" file="Complete_Statement_CellInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.Complete_Statement_CellInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.Complete_WrapLVD_CellInDecisionTable_Test" file="Complete_WrapLVD_CellInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.Complete_WrapLVD_CellInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test" file="TableColumnsDefaultWrapping_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeCellInDecisionTable_Test" file="TypeCellInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeCellInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeColumnInDecisionTable_Test" file="TypeColumnInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeColumnInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -93,7 +93,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeRowInDecisionTable_Test" file="TypeRowInDecisionTable_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.decTable.test.TypeRowInDecisionTable_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

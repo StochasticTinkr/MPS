@@ -269,8 +269,9 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
           Actions.NewFolder);
     }
 
+    @NotNull
     @Override
-    public JComponent createCustomComponent(Presentation presentation) {
+    public JComponent createCustomComponent(@NotNull Presentation presentation) {
       return IconWithTextAction.createCustomComponentImpl(this, presentation);
     }
   }

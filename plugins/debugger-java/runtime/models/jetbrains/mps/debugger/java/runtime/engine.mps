@@ -4,9 +4,9 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="ieao" ref="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)" />
@@ -4226,7 +4226,7 @@
     <property role="TrG5h" value="DebugProcessListener" />
     <node concept="3Tm1VV" id="7Lv9a5UcArO" role="1B3o_S" />
     <node concept="3clFb_" id="7Lv9a5UcArP" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="connectorIsReady" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="7Lv9a5UcArQ" role="1B3o_S" />
@@ -4234,7 +4234,7 @@
       <node concept="3clFbS" id="7Lv9a5UcArS" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7Lv9a5UcArT" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="paused" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="7Lv9a5UcArU" role="1B3o_S" />
@@ -4252,7 +4252,7 @@
       <node concept="3clFbS" id="7Lv9a5UcArZ" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7Lv9a5UcAs0" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="resumed" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="7Lv9a5UcAs1" role="1B3o_S" />
@@ -4270,7 +4270,7 @@
       <node concept="3clFbS" id="7Lv9a5UcAs6" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7Lv9a5UcAs7" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="processDetached" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="7Lv9a5UcAs8" role="1B3o_S" />
@@ -4293,7 +4293,7 @@
       <node concept="3clFbS" id="7Lv9a5UcAsf" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7Lv9a5UcAsg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="processAttached" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="7Lv9a5UcAsh" role="1B3o_S" />

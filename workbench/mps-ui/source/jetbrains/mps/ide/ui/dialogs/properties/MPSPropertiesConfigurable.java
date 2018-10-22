@@ -113,12 +113,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     if (myParentForCallBack == null) {
       return;
     }
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        myParentForCallBack.doCancelAction();
-      }
-    });
+    ThreadUtils.runInUIThreadNoWait(() -> myParentForCallBack.doCancelAction());
   }
 
   @Override
@@ -239,18 +234,15 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     ThreadUtils.assertEDT();
     //see MPS-18743
     new SaveRepositoryCommand(myProject.getRepository()).execute();
-    myProject.getModelAccess().executeCommand(new Runnable() {
-      @Override
-      public void run() {
-        for (Tab tab : myTabs) {
-          tab.apply();
-        }
-        save();
+    myProject.getModelAccess().executeCommand(() -> {
+      for (Tab tab : myTabs) {
+        tab.apply();
       }
+      save();
     });
   }
 
@@ -288,12 +280,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     // wrap into Iterable to ensure lazy construction of module sequence.
     // getModules operation requires read access, but I don't see a reason to
     // move creation of conditional sequence into a read runnable.
-    return new Iterable<SModule>() {
-      @Override
-      public Iterator<SModule> iterator() {
-        return myProject.getRepository().getModules().iterator();
-      }
-    };
+    return () -> myProject.getRepository().getModules().iterator();
   }
 
   // keep usage view options common to properties page in a single place
@@ -545,20 +532,17 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     protected final List<SLanguage> getSelectedLanguages() {
       final List<SLanguage> languages = new LinkedList<>();
-      myProject.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (int i : myUsedLangsTable.getSelectedRows()) {
-            Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
-            if (value instanceof UsedLangsTableModel.Import) {
-              final Import entry = (Import) value;
-              if (entry.myLanguage != null) {
-                languages.add(entry.myLanguage);
-              } else {
-                final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
-                if (devkit instanceof DevKit) {
-                  languages.addAll(IterableUtil.asCollection(((DevKit) devkit).getAllExportedLanguageIds()));
-                }
+      myProject.getModelAccess().runReadAction(() -> {
+        for (int i : myUsedLangsTable.getSelectedRows()) {
+          Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
+          if (value instanceof Import) {
+            final Import entry = (Import) value;
+            if (entry.myLanguage != null) {
+              languages.add(entry.myLanguage);
+            } else {
+              final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
+              if (devkit instanceof DevKit) {
+                languages.addAll(IterableUtil.asCollection(((DevKit) devkit).getAllExportedLanguageIds()));
               }
             }
           }
@@ -615,6 +599,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       return myComponent.convertRowIndexToModel(viewIndex);
     }
 
+    @NotNull
     @Override
     public Object[] getAllElements() {
       final TableModel tableModel = myComponent.getModel();

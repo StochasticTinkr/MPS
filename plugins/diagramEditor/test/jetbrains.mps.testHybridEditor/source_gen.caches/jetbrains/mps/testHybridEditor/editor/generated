@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eh9geevkjmpy93h8083fixnw66uqpf2" />
+<product version="3" modelHash="ea39qnqdozey0mwsiswx32vyg63ev62">
+  <files names="BlockExt_SubstituteMenu.java:BlockInstance_SubstituteMenu.java:EditorAspectDescriptorImpl.java:MetaBlock_Editor.java:MetaBlock_EditorBuilder_a.java:MetaBlock_InspectorBuilder_a.java" />
+</product>
 

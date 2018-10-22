@@ -144,6 +144,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     return (MPSTree) myTree;
   }
 
+  @NotNull
   @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     getTree().rebuildLater();

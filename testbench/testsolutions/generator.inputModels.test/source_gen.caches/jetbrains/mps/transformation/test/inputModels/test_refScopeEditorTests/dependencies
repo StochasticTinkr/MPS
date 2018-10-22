@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test" file="refScopeInInputLang_paramConflict_Test.java">
+  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test" file="refScopeInInputLang_superMeth_Test.java">
+  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test" file="refScopesInInputLang_Test.java">
+  <dependency className="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

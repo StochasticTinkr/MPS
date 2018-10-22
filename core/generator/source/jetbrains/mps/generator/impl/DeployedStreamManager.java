@@ -75,7 +75,7 @@ public class DeployedStreamManager implements ModelStreamManager {
         return Collections.emptyList();
       }
       String[] knownStreams = new String[] {"exports"};
-      ArrayList<String> rv = new ArrayList<String>(knownStreams.length);
+      ArrayList<String> rv = new ArrayList<>(knownStreams.length);
       for (String name : knownStreams) {
         if (exists(name)) {
           rv.add(name);
@@ -100,7 +100,7 @@ public class DeployedStreamManager implements ModelStreamManager {
 
     @NotNull
     @Override
-    public OutputStream openOutputStream(String name) throws IOException {
+    public OutputStream openOutputStream(String name) {
       throw new UnsupportedOperationException();
     }
 

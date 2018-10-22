@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dtnsk8ty5b9utj138u4ugajjqbn0n4i" />
+<product version="3" modelHash="5cjgshb5x1hn1n4g8cttxhb6s7y5u6g">
+  <files names="ModelTreeBuilder.java:ModelTreeCellRenderer.java:ModelTreeNode.java" />
+</product>
 

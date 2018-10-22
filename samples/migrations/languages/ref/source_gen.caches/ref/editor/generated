@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7shdjw9rqth5h3h4e1vhmy40wxxexdl" />
+<product version="3" modelHash="-6k9yhufwrl8fdjq9d9wkxt8tam8y6qo">
+  <files names="EditorAspectDescriptorImpl.java:NewComponentRef_Editor.java:NewComponentRef_EditorBuilder_a.java:NewComponentRef_SubstituteMenu.java:OldComponentRef_Editor.java:OldComponentRef_EditorBuilder_a.java:OldComponentRef_SubstituteMenu.java" />
+</product>
 

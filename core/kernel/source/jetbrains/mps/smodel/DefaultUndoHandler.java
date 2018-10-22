@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.undo.UndoContext;
-import jetbrains.mps.util.Computable;
-
 public class DefaultUndoHandler implements UndoHandler {
   @Override
   public void addUndoableAction(SNodeUndoableAction action) {
-  }
-
-  @Override
-  public <T> T runNonUndoableAction(Computable<T> t) {
-    return t.compute();
-  }
-
-  @Override
-  public void flushCommand() {
-  }
-
-  @Override
-  public void startCommand(UndoContext context) {
   }
 }

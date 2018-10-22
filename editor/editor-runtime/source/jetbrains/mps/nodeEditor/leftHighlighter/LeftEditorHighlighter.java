@@ -81,24 +81,21 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private static final int MIN_LEFT_FOLDING_AREA_WIDTH = 7;
   private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
   private static final int FOLDING_LINE_WIDTH = 1;
-  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
-    @Override
-    public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
-      if (afap1.getWeight() == afap2.getWeight() && !afap1.equals(afap2)) {
-        return System.identityHashCode(afap1) - System.identityHashCode(afap2);
-      }
-      return afap1.getWeight() - afap2.getWeight();
+  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = (afap1, afap2) -> {
+    if (afap1.getWeight() == afap2.getWeight() && !afap1.equals(afap2)) {
+      return System.identityHashCode(afap1) - System.identityHashCode(afap2);
     }
+    return afap1.getWeight() - afap2.getWeight();
   };
 
   private EditorComponent myEditorComponent;
-  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
+  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
   private FoldingButtonsPainter myFoldingButtonsPainter;
 
-  private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
+  private List<AbstractLeftColumn> myLeftColumns = new ArrayList<>();
 
-  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<EditorMessageIconRenderer>();
+  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<>();
   private THashMap<EditorMessageIconRenderer, IntLocation> myRendererToCoord;
   private EditorMessageIconRenderer myRendererUnderMouse;
   private int myMaxIconHeight = 0;

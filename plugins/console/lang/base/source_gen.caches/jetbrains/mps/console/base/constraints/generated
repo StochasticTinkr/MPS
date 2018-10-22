@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="17nbk45qxemb3sy5q5g31m72eln149a" />
+<product version="3" modelHash="-o87i30vkkkxy2voht96hvv7r7am6om">
+  <files names="AbstractPrintExpression_Constraints.java:CommandHolder_Constraints.java:ConstraintsAspectDescriptor.java:HelpConceptReference_Constraints.java" />
+</product>
 

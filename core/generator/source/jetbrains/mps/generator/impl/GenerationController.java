@@ -106,8 +106,6 @@ public class GenerationController implements ITaskPoolProvider {
       return false;
     }
 
-    boolean currentGenerationOK = false;
-
     IPerformanceTracer ttrace = myOptions.getTracingMode() != GenerationOptions.TRACE_OFF
       ? new PerformanceTracer("model " + inputModel.getName().getSimpleName())
       : new NullPerformanceTracer();
@@ -133,7 +131,7 @@ public class GenerationController implements ITaskPoolProvider {
       myGenerationHandler.start(task);
       GenerationStatus status = generationSession.generateModel(monitor.subTask(9));
       monitor.advance(0);
-      currentGenerationOK = status.isOk();
+      boolean currentGenerationOK = status.isOk();
 
       checkMonitorCanceled(monitor);
 
@@ -143,6 +141,12 @@ public class GenerationController implements ITaskPoolProvider {
 
       myGenerationHandler.done(task, status);
       monitor.advance(1);
+
+      String report = ttrace.report();
+      if (report != null) {
+        myLogger.trace(report);
+      }
+      return currentGenerationOK;
     } finally {
       generationSession.getLoggingHandler().unregister();
       generationSession.discardTransients();
@@ -154,12 +158,6 @@ public class GenerationController implements ITaskPoolProvider {
       //with -Xmx1200 before this change
       TypeChecker.getInstance().generationFinished();
     }
-
-    String report = ttrace.report();
-    if (report != null) {
-      myLogger.trace(report);
-    }
-    return currentGenerationOK;
   }
 
   @Override

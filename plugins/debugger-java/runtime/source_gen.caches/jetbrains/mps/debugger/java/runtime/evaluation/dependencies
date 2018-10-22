@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" file="EvaluationProvider.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.event.WindowAdapter" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl" file="EvaluationUtilsImpl.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ArrayReference" />

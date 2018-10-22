@@ -44,7 +44,7 @@ public class TemplateUtil {
   private static final Logger LOG = LogManager.getLogger(TemplateUtil.class);
 
   public static Collection<SNode> singletonList(SNode node) {
-    return node != null ? Collections.singletonList(node) : Collections.<SNode>emptyList();
+    return node != null ? Collections.singletonList(node) : Collections.emptyList();
   }
 
   public static Collection<SNode> asList(SNode... nodes) {
@@ -52,7 +52,7 @@ public class TemplateUtil {
       return Collections.emptyList();
     }
 
-    List<SNode> result = new ArrayList<SNode>(nodes.length);
+    List<SNode> result = new ArrayList<>(nodes.length);
     for (SNode node : nodes) {
       if (node != null) {
         result.add(node);
@@ -83,7 +83,7 @@ public class TemplateUtil {
       }
     }
 
-    List<SNode> result = new ArrayList<SNode>(size);
+    List<SNode> result = new ArrayList<>(size);
     for (Object o : nodesOrCollectionOfNodes) {
       if (o instanceof SNode) {
         result.add((SNode) o);
@@ -99,7 +99,7 @@ public class TemplateUtil {
   }
 
   public static <T> Iterable<T> asNotNull(final Iterable<T> objects) {
-    return objects == null ? Collections.<T>emptyList() : objects;
+    return objects == null ? Collections.emptyList() : objects;
   }
 
   public static <T> Collection<T> asCollection(final T... objects) {
@@ -109,11 +109,15 @@ public class TemplateUtil {
   /**
    * @throws IllegalArgumentException if actual number of arguments doesn't match expected
    */
+  @ToRemove(version = 2018.3)
   public static void assertTemplateParametersCount(SNodeReference template, int expected, int actual) throws IllegalArgumentException {
-    if (expected != actual) {
-      final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
-      throw new IllegalArgumentException(msg);
-    }
+    // We no longer assert params count as we pass fixed Object[10] array to legacy generated code when loading templates through old API
+    // (TemplateModel.loadTemplates) to be invoked with new API that doesn't tell us exact number of arguments it would push into TC later.
+    // Remove this method altogether once TM.loadTemplate gone.
+//    if (expected != actual) {
+//      final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
+//      throw new IllegalArgumentException(msg);
+//    }
   }
 
   public static TemplateMappingPriorityRule createStrictlyBeforeRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {

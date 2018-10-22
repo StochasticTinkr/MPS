@@ -85,9 +85,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   @Override
   public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
     if (myMappingConfig != null) {
-      if (myMappingConfig.removeModelReference(ref, mappingsChanged)) {
-        return true;
-      }
+      return myMappingConfig.removeModelReference(ref, mappingsChanged);
     }
     return false;
   }

@@ -80,6 +80,6 @@ public abstract class SNodeUndoableAction {
   public enum VFSChange {
     NOT_CHANGED,
     FILE_CREATED,
-    FILE_DELETED;
+    FILE_DELETED
   }
 }

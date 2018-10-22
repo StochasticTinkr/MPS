@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
@@ -165,10 +166,11 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
     }
 
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_bb55mu_e0d = CommandUtil.createScope(m);
+      final SearchScope scope_bb55mu_e0d_0 = new EditableFilteringScope(scope_bb55mu_e0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_bb55mu_e0d_0;
         }
       };
       Sequence.fromIterable(getApplicableNodes(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"), false))).visitAll(new IVisitor<SNode>() {
@@ -187,10 +189,11 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
   public Iterable<Problem> check(SModule m) {
     List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_bb55mu_b0e = CommandUtil.createScope(m);
+      final SearchScope scope_bb55mu_b0e_0 = new EditableFilteringScope(scope_bb55mu_b0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_bb55mu_b0e_0;
         }
       };
       ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"), false)).where(new IWhereFilter<SNode>() {

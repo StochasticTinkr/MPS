@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dr6nit7il9jdothhz5ixir3xlbbphmg" />
+<product version="3" modelHash="6ibmy7dla3lknp4rsvogmsagb4usgdg">
+  <files names="CodeSnippetParsingUtil.java:CommentRecorderParser.java:RecordedParsingInformation.java" />
+</product>
 

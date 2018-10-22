@@ -14,11 +14,17 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
   public WritableModelProperty(String commandId, EditorContext context) {
     super(context);
     myCommandId = commandId;
+  }
+
+  @Override
+  public WritableModelProperty init() {
+    super.init();
     addHandler(new EventHandler<PropertyChangeEvent<T>>() {
       public void onEvent(PropertyChangeEvent<T> event) {
         safeSetModelPropertyValue(event.getNewValue());
       }
     });
+    return this;
   }
 
   protected void safeSetModelPropertyValue(final T t) {

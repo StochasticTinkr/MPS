@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ck1v8x5eaecyw15j3wou0vg8sgg6fs5" />
+<product version="3" modelHash="8hfts05zn58rjegd5jvsrpw2sqmpnt7">
+  <files names="ConvertInferenceRuleToCheckingRule_Action.java:Default_KeymapChanges.java:PluginSolution_ApplicationPlugin.java:ShowAsIntentions_TypeSystem_ActionGroup.java:ShowNodeType_Action.java:TypesystemActions_Plugin_ActionGroup.java" />
+</product>
 

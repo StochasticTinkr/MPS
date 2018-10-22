@@ -101,9 +101,6 @@
     <property role="3GE5qa" value="old" />
     <property role="EcuMT" value="1192796902958" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB6gD" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i38Bcsp">
     <property role="TrG5h" value="QueryBlock" />
@@ -127,9 +124,6 @@
     <property role="34LRSv" value="parameter" />
     <property role="EcuMT" value="1240322627579" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB5X4" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i3dkpKH">
     <property role="19KtqR" value="true" />
@@ -183,9 +177,6 @@
     <property role="3GE5qa" value="old" />
     <property role="EcuMT" value="3618415754251192144" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAOP3" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2c3oNEsfcpP">
     <property role="TrG5h" value="BaseIntentionDeclaration" />

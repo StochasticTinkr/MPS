@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 
 /**
  * MPS Project abstraction. Project may rely on the idea Project or it may not.
@@ -39,14 +40,32 @@ import java.util.List;
 public abstract class Project implements MPSModuleOwner, IProject {
   private final String myName;
   private final ProjectScope myScope = new ProjectScope();
-  private final ProjectRepository myRepository;
+  private ProjectRepository myRepository;
 
   private boolean myDisposed;
 
-  protected Project(String name, Platform mpsPlatform) {
+  // IMPORTANT. Subclasses shall invoke either #initRepositoryDefault() or #initRepository(ProjectRepository) right after construction.
+  //            I know it's ugly, just can't make final fields in two classes that demand each other, and got other important tasks at hand
+  //            than to refactor this.
+  protected Project(String name) {
     myName = name;
+  }
+
+  protected Project(String name, @NotNull ComponentHost mpsPlatform, @NotNull BiFunction<Project, ComponentHost, ProjectRepository> repoFactory) {
+    myName = name;
+    myRepository = repoFactory.apply(this, mpsPlatform);
+  }
+
+  //
+  protected final void initRepositoryDefault(@NotNull ComponentHost mpsPlatform) {
     myRepository = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     myRepository.init();
+  }
+
+  // not sure I need exactly ProjectRepository, not e.g SRepositoryExt or plain SRepository
+  // just don't want to deal with exact type of myRepository field right now
+  protected final void initRepository(@NotNull ProjectRepository repository) {
+    myRepository = repository;
   }
 
   @NotNull
@@ -140,7 +159,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
   // AP todo transfer from Project to ProjectBase; helping method -- no need to be here
   @NotNull
   public final <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (SModule module : getProjectModules()) {
       if (moduleClass.isInstance(module)) {
         result.add(moduleClass.cast(module));
@@ -151,7 +170,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   // AP todo transfer from Project to ProjectBase
   public final Iterable<SModel> getProjectModels() {
-    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> result = new ArrayList<>();
 
     for (SModule module : getProjectModules()) {
       for (SModel model : module.getModels()) {

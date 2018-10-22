@@ -18,7 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
@@ -33,8 +34,7 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
 public class JavaPaster {
   private static Logger LOG = LogManager.getLogger(JavaPaster.class);
-  public JavaPaster() {
-  }
+
   public void pasteJava(SNode anchor, FeatureKind featureKind, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
@@ -42,6 +42,7 @@ public class JavaPaster {
     }
     pasteJavaAsNode(anchor, anchor.getModel(), javaCode, featureKind, project);
   }
+
   public void pasteJavaAsClass(SModel model, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
@@ -49,6 +50,7 @@ public class JavaPaster {
     }
     pasteJavaAsNode(null, model, javaCode, FeatureKind.CLASS, project);
   }
+
   public String getStringFromClipboard() {
     Transferable contents = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -74,7 +76,8 @@ public class JavaPaster {
     }
     return null;
   }
-  public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, FeatureKind featureKind, Project project) {
+
+  public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, final FeatureKind featureKind, Project project) {
     JavaParser parser = new JavaParser();
 
     try {
@@ -86,7 +89,12 @@ public class JavaPaster {
       List<SNode> nodes = parser.parse(javaCode, featureKind, context, true).getNodes();
 
       if (ListSequence.fromList(nodes).isEmpty()) {
-        JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
+        // Avoid AWT event inside write action (action calls this code from command) 
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            Messages.showInfoMessage(String.format("Text buffer does not contain data, that can be parsed as %s", (featureKind == FeatureKind.CLASS_CONTENT ? "Class content" : "Java")), "Buffer Data Is Unsuitable");
+          }
+        });
         return;
       }
       switch (featureKind) {
@@ -128,10 +136,16 @@ public class JavaPaster {
       JavaToMpsConverter mfParser = new JavaToMpsConverter(model, project.getRepository(), project.getComponent(MessagesViewTool.class).newHandler());
       mfParser.tryResolveRefs(nodes, featureKind, new EmptyProgressMonitor());
 
-    } catch (JavaParseException ex) {
-      JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+    } catch (final JavaParseException ex) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          Messages.showErrorDialog(String.format("Error message: %s", ex.getMessage()), "Java Parsing Error");
+        }
+      });
     }
   }
+
+
   private static boolean pasteAtAnchorInRole(SNode node, SNode anchor, SAbstractConcept parentConcept, SContainmentLink role) {
     SNode parent = SNodeOperations.getNodeAncestor(anchor, SNodeOperations.asSConcept(parentConcept), true, false);
     if ((parent == null)) {
@@ -145,6 +159,7 @@ public class JavaPaster {
     }
     return true;
   }
+
   private static boolean pasteMember(SNode member, SNode anchor, SConcept parentConcept) {
     SNode parent = SNodeOperations.getNodeAncestor(anchor, SNodeOperations.asSConcept(parentConcept), true, false);
     if ((parent == null)) {
@@ -164,6 +179,7 @@ public class JavaPaster {
     }
     return true;
   }
+
   public static boolean areDataAvailableInClipboard() {
     Transferable trf = CopyPasteManagerEx.getInstanceEx().getContents();
     if (trf == null || trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {

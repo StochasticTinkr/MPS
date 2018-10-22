@@ -162,7 +162,7 @@ public final class PathManager {
 
   @NotNull
   private static Collection<String> getBootstrapPathsFromLibFolder() {
-    List<String> paths = new ArrayList<String>();
+    List<String> paths = new ArrayList<>();
     File libDir = new File(getLibPath());
     if (libDir.exists() && libDir.isDirectory()) {
       for (File jar : libDir.listFiles(JAR_FILE_FILTER)) {

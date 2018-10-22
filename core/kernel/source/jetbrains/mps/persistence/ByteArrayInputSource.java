@@ -40,7 +40,7 @@ public class ByteArrayInputSource extends StreamDataSourceBase {
   }
 
   @Override
-  public InputStream openInputStream() throws IOException {
+  public InputStream openInputStream() {
     return new ByteArrayInputStream(myInput);
   }
 

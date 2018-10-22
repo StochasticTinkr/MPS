@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettings" file="CodeStyleSettings.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettings">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry" file="CodeStyleSettingsRegistry.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry">
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil" file="IdentifierConstraintsUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" file="OverridingMethodsFinder.java">
+  <dependency className="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

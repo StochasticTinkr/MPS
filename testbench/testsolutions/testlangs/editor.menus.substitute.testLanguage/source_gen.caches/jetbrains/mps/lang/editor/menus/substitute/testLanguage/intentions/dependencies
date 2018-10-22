@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveReferenceAttribute_Intention" file="AddOrRemoveReferenceAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveReferenceAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveRegularAttribute_Intention" file="AddOrRemoveRegularAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveRegularAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -38,7 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveTransientAttribute_Intention" file="AddOrRemoveTransientAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.AddOrRemoveTransientAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -57,7 +57,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

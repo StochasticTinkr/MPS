@@ -75,11 +75,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
 
-  private final Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
-  private final Map<String, SModelIdFactory> myModelIdFactory = new HashMap<String, SModelIdFactory>();
-  private final Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<String, SNodeIdFactory>();
-  private final Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
-  private final Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
+  private final Map<String, ModelRootFactory> myRootFactories = new HashMap<>();
+  private final Map<String, SModelIdFactory> myModelIdFactory = new HashMap<>();
+  private final Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<>();
+  private final Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<>();
+  private final Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<>();
 
   private boolean isDisabled = false;
 
@@ -294,7 +294,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public Set<FindUsagesParticipant> getFindUsagesParticipants() {
-    return isDisabled ? Collections.<FindUsagesParticipant>emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
+    return isDisabled ? Collections.emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
   }
 
   public boolean isFastSearch() {

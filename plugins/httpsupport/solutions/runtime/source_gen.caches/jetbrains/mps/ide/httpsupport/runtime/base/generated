@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6mqmwqe67t4ydh3dlec09xflbq50y0" />
+<product version="3" modelHash="1yhn5hhy0hzhu1uh1q0lxvdv7g83j20">
+  <files names="HttpRequestHandlerBase.java:HttpSupportUtil.java" />
+</product>
 

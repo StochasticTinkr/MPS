@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry" file="JavaSourceStubsModelRootEntry.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry">
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -13,7 +14,7 @@
     <classNode extendsClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntryFactory" file="JavaSourceStubsModelRootEntryFactory.java">
+  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntryFactory">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry" />

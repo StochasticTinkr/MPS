@@ -149,6 +149,7 @@ public class SNodeUtil {
       myIncludeFirst = includeFirst;
     }
 
+    @NotNull
     @Override
     public Iterator<SNode> iterator() {
       Iterator<SNode> it = new DescendantsTreeIterator(myNode);
@@ -156,7 +157,7 @@ public class SNodeUtil {
         it.next();
       }
       if (myCondition != null) {
-        it = new FilterIterator<SNode>(it, myCondition);
+        it = new FilterIterator<>(it, myCondition);
       }
       return it;
     }
@@ -169,6 +170,7 @@ public class SNodeUtil {
       mySModel = sModel;
     }
 
+    @NotNull
     @Override
     public Iterator<SNode> iterator() {
       return new NodesIterator(mySModel.getRootNodes().iterator());
@@ -182,6 +184,7 @@ public class SNodeUtil {
       myRoots = roots;
     }
 
+    @NotNull
     @Override
     public Iterator<SNode> iterator() {
       return new NodesIterator(myRoots.iterator());

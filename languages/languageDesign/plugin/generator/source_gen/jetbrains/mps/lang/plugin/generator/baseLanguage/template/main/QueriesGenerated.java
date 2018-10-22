@@ -37,7 +37,6 @@ import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor__BehaviorDes
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.plugin.behavior.NumberToolShortcut__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.behavior.AbstractToolKeystroke__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -459,7 +458,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object propertyMacro_GetValue_62_1(final PropertyMacroContext _context) {
     SModule module = _context.getOriginalInputModel().getModule();
-    MacroHelper macroHelper = MacrosFactory.forModule((AbstractModule) module);
+    MacroHelper macroHelper = MacrosFactory.forModule(module);
     String outputPath = macroHelper.expandPath(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, 0xdef716b2a58ad65L, "outputPath")));
     return outputPath + '/' + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml";
   }
@@ -921,7 +920,7 @@ public class QueriesGenerated extends QueryProviderBase {
       return false;
     }
     SModule module = _context.getOriginalInputModel().getModule();
-    return module instanceof AbstractModule;
+    return module != null;
   }
   public static boolean ifMacro_Condition_63_0(final IfMacroContext _context) {
     return (boolean) KeyMapKeystroke__BehaviorDescriptor.hasRemove_id4qYinf8$eal.invoke(_context.getNode());

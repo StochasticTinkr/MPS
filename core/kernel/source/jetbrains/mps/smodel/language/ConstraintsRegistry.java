@@ -29,8 +29,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ConstraintsRegistry implements CoreAspectRegistry {
   private static final Logger LOG = LogManager.getLogger(ConstraintsRegistry.class);
-  private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
-  private final Map<SAbstractConcept, ConstraintsDescriptor> myConstraintsDescriptors = new ConcurrentHashMap<SAbstractConcept, ConstraintsDescriptor>();
+  private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<>();
+  private final Map<SAbstractConcept, ConstraintsDescriptor> myConstraintsDescriptors = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
 
   public ConstraintsRegistry(LanguageRegistry languageRegistry) {

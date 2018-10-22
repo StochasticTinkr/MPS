@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c8btuj7b4xkh7h81fr0nlv33qscp34b" />
+<product version="3" modelHash="7wt0em1f5djqa6zxtq37gvywk43vw9z">
+  <files names="ChildSubConcept_Editor.java:ChildSubConcept_EditorBuilder_a.java:Child_Editor.java:Child_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:GrandChild_Editor.java:GrandChild_EditorBuilder_a.java:NPTypesystem_RefToIntA_SubstituteMenu.java:ReferenceContainerSubConcept_Editor.java:ReferenceContainerSubConcept_EditorBuilder_a.java:ReferenceContainer_Editor.java:ReferenceContainer_EditorBuilder_a.java:Root_Editor.java:Root_EditorBuilder_a.java" />
+</product>
 

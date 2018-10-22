@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.EmptyJavaSourcetubsFindUsages" file="EmptyJavaSourcetubsFindUsages.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.EmptyJavaSourcetubsFindUsages">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Set" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" file="JavaSourceStubModelDescriptor.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.RegularModelDescriptor" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" file="JavaSourceStubModelRoot.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -92,14 +92,14 @@
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" file="JavaSourceStubModelRootFactory.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" file="MPSJavaSrcDataSource.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

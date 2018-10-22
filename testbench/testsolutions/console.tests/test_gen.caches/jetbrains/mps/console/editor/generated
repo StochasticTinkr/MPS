@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b72b5dawee4tpg5jpa9mt8f7jgloeej" />
+<product version="3" modelHash="7nq89lzgyl80sq5dajxeevm4ilijxo9">
+  <files names="CommandSelectAllTest_Test.java:EmptyConsoleCommentTest_Test.java:EmptyConsoleSelectAllTest_Test.java" />
+</product>
 

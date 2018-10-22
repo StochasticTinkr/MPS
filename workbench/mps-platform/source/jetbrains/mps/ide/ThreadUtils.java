@@ -43,10 +43,7 @@ public class ThreadUtils {
       } else {
         try {
           SwingUtilities.invokeAndWait(wrap);
-        } catch (InterruptedException e) {
-          LogManager.getLogger(ThreadUtils.class).error(e.getMessage(), e);
-          return e;
-        } catch (InvocationTargetException e) {
+        } catch (InterruptedException | InvocationTargetException e) {
           LogManager.getLogger(ThreadUtils.class).error(e.getMessage(), e);
           return e;
         }

@@ -16,6 +16,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -34,14 +35,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   public AbstractTestWrapper(@NotNull N node, boolean runsInProcess, boolean needsMPS) {
     myNodePointer = new SNodePointer(node);
+    // FIXME there's no need to keep myRepo once last use of getNode() or withNode() gone 
     myRepo = SNodeOperations.getModel(node).getRepository();
     myRunsInProcess = runsInProcess;
     myNeedsMPS = needsMPS;
     myTestModule = SNodeOperations.getModel(node).getModule().getModuleReference();
-  }
-
-  /*package*/ SRepository getRepo() {
-    return myRepo;
   }
 
   @NotNull
@@ -109,11 +107,10 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @NotNull
   @Override
   public TestParameters getTestRunParameters() {
-    TestParameters rp = TestParameters.calcDefault(myRepo);
     if (myNeedsMPS) {
-      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), null);
+      return new TestParameters(WithPlatformTestExecutor.class, true, null, null);
     } else {
-      return rp;
+      return new TestParameters(DefaultTestExecutor.class, null);
     }
   }
 

@@ -35,7 +35,7 @@ public abstract class RelationDescriptor implements Comparable<RelationDescripto
 
   //is is assumed that if returns 0, this means "I don't know"
   @Override
-  public int compareTo(RelationDescriptor o) {
+  public int compareTo(@NotNull RelationDescriptor o) {
     return 0;
   }
 
@@ -56,7 +56,7 @@ public abstract class RelationDescriptor implements Comparable<RelationDescripto
 
   @NotNull
   public List<SNode> getNodes(SNode baseNode) {
-    ArrayList<SNode> result = new ArrayList<SNode>();
+    ArrayList<SNode> result = new ArrayList<>();
     result.add(baseNode);
     return result;
   }

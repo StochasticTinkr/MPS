@@ -27,8 +27,6 @@ public class GenericNamedTuples_Test extends TestCase {
     Assert.assertSame(1, x);
     Assert.assertEquals("abc", y);
   }
-  public GenericNamedTuples_Test() {
-  }
   public Pair<String, String> pairOfStrings() {
     return new Pair<String, String>("X", "Y");
   }

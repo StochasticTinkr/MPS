@@ -31,16 +31,16 @@ import java.util.concurrent.ConcurrentMap;
 
 public class ConcurrentSubtypingCache implements SubtypingCache {
 
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>>();
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCache = new ConcurrentHashMap<>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> myCacheWeak = new ConcurrentHashMap<>();
 
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCache = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>>();
-  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCacheWeak = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCache = new ConcurrentHashMap<>();
+  private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<String, SNode>> myCoerceToConceptsCacheWeak = new ConcurrentHashMap<>();
 
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCache
-    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+    = new ConcurrentHashMap<>();
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
-    = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+    = new ConcurrentHashMap<>();
 
   private static final jetbrains.mps.smodel.SNode NULL = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
 
@@ -76,7 +76,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
 
     ConcurrentMap<CacheNodeHandler, MyBoolean> supertypes = cache.get(subtypeHandler);
     if (supertypes == null) {
-      supertypes = new ConcurrentHashMap<CacheNodeHandler, MyBoolean>();
+      supertypes = new ConcurrentHashMap<>();
       if (cache.putIfAbsent(subtypeHandler, supertypes) != null) {
         supertypes = cache.get(subtypeHandler);
       }
@@ -125,7 +125,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
         if (result != null && !isAccessible(result, subtype)) {
           map.remove(conceptFQName);
         } else {
-          return new Pair<Boolean, SNode>(true, result);
+          return new Pair<>(true, result);
         }
       }
     }
@@ -137,9 +137,9 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       if (value != null) {
         SNode result = postprocessGetNode(value);
         if (isWeak) {
-          if (result != null /* isStrong */) return new Pair<Boolean, SNode>(true, result); // isWeak
+          if (result != null /* isStrong */) return new Pair<>(true, result); // isWeak
         } else {
-          if (result == null /* !isWeak */) return new Pair<Boolean, SNode>(true, null); // !isStrong
+          if (result == null /* !isWeak */) return new Pair<>(true, null); // !isStrong
         }
       }
     }
@@ -159,7 +159,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
       } else {
         // XXX what's the difference between null return value, and Pair(true, null)?
         pattern.fillFieldValuesFrom(patternPair.o2);
-        return new Pair<Boolean, SNode>(true, resultNode);
+        return new Pair<>(true, resultNode);
       }
     }
     return null;
@@ -192,7 +192,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     ConcurrentMap<String, SNode> map = cache.get(subtypeHandler);
 
     if (map == null) {
-      map = new ConcurrentHashMap<String, SNode>();
+      map = new ConcurrentHashMap<>();
       if (cache.putIfAbsent(subtypeHandler, map) != null) {
         map = cache.get(subtypeHandler);
       }
@@ -210,14 +210,14 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(subtypeHandler);
 
     if (map == null) {
-      map = new ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
+      map = new ConcurrentHashMap<>();
       if (cache.putIfAbsent(subtypeHandler, map) != null) {
         map = cache.get(subtypeHandler);
       }
     }
 
     if (map != null) {
-      map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+      map.put(c, new Pair<>(result, pattern));
     }
   }
 
@@ -248,7 +248,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     return null;
   }
 
-  private static enum MyBoolean {
+  private enum MyBoolean {
     NULL, FALSE, TRUE
   }
 }

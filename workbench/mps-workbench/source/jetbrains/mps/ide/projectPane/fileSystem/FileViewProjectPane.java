@@ -218,12 +218,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
     ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener = new ChangeListUpdateListener());
     myMessageBusConnection = myBus.connect(this);
-    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, new VcsListener() {
-      @Override
-      public void directoryMappingChanged() {
-        rebuildTreeLater();
-      }
-    });
+    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, () -> rebuildTreeLater());
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       @Override
       public void fileOpened(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
@@ -271,7 +266,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   @Override
   public Object getData(String dataId) {
     if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName().equals(dataId)) {
-      List<VirtualFile> files = new LinkedList<VirtualFile>();
+      List<VirtualFile> files = new LinkedList<>();
       TreePath[] treePaths = getSelectionPaths();
       if (treePaths != null) {
         for (TreePath tp : treePaths) {
@@ -285,7 +280,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
           }
         }
       }
-      return files.toArray(new VirtualFile[files.size()]);
+      return files.toArray(new VirtualFile[0]);
     } else if (PlatformDataKeys.VIRTUAL_FILE.getName().equals(dataId)) {
       TreePath tp = getSelectedPath();
       if (tp == null) {
@@ -331,12 +326,9 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   private void openEditor(FileTreeNode fileTreeNode) {
     // assertion was added for http://youtrack.jetbrains.net/issue/MPS-7762
     assert fileTreeNode.getFile().isValid() : "Underlying file is not valid";
-    com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
-      @Override
-      public void run() {
-        myIdeDocumentHistory.includeCurrentCommandAsNavigation();
-        myEditorManager.openFile(fileTreeNode.getFile(), true, true);
-      }
+    com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, () -> {
+      myIdeDocumentHistory.includeCurrentCommandAsNavigation();
+      myEditorManager.openFile(fileTreeNode.getFile(), true, true);
     }, "navigate", "");
   }
 
@@ -365,7 +357,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
   @Nullable
   protected MPSTreeNode getNode(VirtualFile file) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
     return getNode(rootTreeNode, file);
   }
@@ -409,8 +401,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         VirtualFile virtualFile = context.getVirtualFile();
         if (!(virtualFile instanceof MPSNodeVirtualFile)) {
           myFile = virtualFile;
-          if (isInitialized() && getNode(virtualFile) == null) return false;
-          return true;
+          return !isInitialized() || getNode(virtualFile) != null;
         }
 
         final MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) virtualFile;
@@ -435,11 +426,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         }
 
         myFile = realFile;
-        if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) {
-          return false;
-        }
-
-        return true;
+        return (realFile != null) && (!isInitialized() || getNode(realFile) != null);
       }
 
       @Override
@@ -481,22 +468,22 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
   private class FileChangesListener extends VirtualFileAdapter {
     @Override
-    public void fileCreated(VirtualFileEvent event) {
+    public void fileCreated(@NotNull VirtualFileEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileDeleted(VirtualFileEvent event) {
+    public void fileDeleted(@NotNull VirtualFileEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileMoved(VirtualFileMoveEvent event) {
+    public void fileMoved(@NotNull VirtualFileMoveEvent event) {
       rebuildTreeLater();
     }
 
     @Override
-    public void fileCopied(VirtualFileCopyEvent event) {
+    public void fileCopied(@NotNull VirtualFileCopyEvent event) {
       rebuildTreeLater();
     }
   }

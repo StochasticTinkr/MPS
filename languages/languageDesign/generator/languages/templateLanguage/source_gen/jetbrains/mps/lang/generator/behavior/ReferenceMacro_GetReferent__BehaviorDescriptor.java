@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,7 +63,8 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
   }
   /*package*/ static SNode fromMacro_id2I_OWQO_cV$(@NotNull SNode __thisNode__, SNode refMacro) {
     SNode attributedNode = SNodeOperations.getParent(refMacro);
-    String linkRole = AttributeOperations.getLink(refMacro).getName();
+    // todo rewrite using S-entities 
+    String linkRole = LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(refMacro).getName();
     // here we are still looking at language sources because there is no information about specialized links in compiled language 
     return SNodeOperations.cast(ConceptAndSuperConceptsCache.getInstance(SNodeOperations.getConceptDeclaration(attributedNode)).getMostSpecificLinkDeclarationByRole(linkRole), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }

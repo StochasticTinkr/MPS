@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.traceInfo.test.TestClass" file="TestClass.java">
+  <dependency className="jetbrains.mps.traceInfo.test.TestClass">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.Collections" />
   </dependency>
-  <dependency className="jetbrains.mps.traceInfo.test.TraceInfoTest" file="TraceInfoTest.java">
+  <dependency className="jetbrains.mps.traceInfo.test.TraceInfoTest">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

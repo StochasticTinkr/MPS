@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7ec8ctws4g07i8z0lnqyp1hstikuczh" />
+<product version="3" modelHash="-1sshj42n4ybtak6x5wxmxm2ydy4759u">
+  <files names="Library.java:Singleton.java:User.java" />
+</product>
 

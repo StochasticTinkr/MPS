@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-axqre5zo8q20pomvswzl1d8iv9goz5q" />
+<product version="3" modelHash="-28vxnnulmusggvcaai9sbkqlqmed6vz">
+  <files names="AbstractStateMachineElement__BehaviorDescriptor.java:BehaviorAspectDescriptor.java" />
+</product>
 

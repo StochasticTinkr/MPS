@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.platform.util.ConflictsUtil" file="ConflictsUtil.java">
+  <dependency className="jetbrains.mps.vcs.platform.util.ConflictsUtil">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.util.MergeBackupUtil" file="MergeBackupUtil.java">
+  <dependency className="jetbrains.mps.vcs.platform.util.MergeBackupUtil">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.util.PluginUtil" file="PluginUtil.java">
+  <dependency className="jetbrains.mps.vcs.platform.util.PluginUtil">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptorImpl" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />

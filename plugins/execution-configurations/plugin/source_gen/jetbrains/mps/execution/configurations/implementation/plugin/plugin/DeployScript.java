@@ -27,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -72,8 +73,9 @@ public class DeployScript {
   @Nullable
   public String make() {
     MakeSession session = new MakeSession(myProject, new DefaultMakeMessageHandler(myProject), false);
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+    IMakeService makeService = myProject.getComponent(MakeServiceComponent.class).get();
+    if (makeService.openNewSession(session)) {
+      Future<IResult> future = makeService.make(session, new ModelsToResources(myModelsToMake).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
         public Boolean invoke(SModel m) {
           return true;
         }

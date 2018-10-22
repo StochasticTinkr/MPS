@@ -28,7 +28,7 @@ public class Graphs {
     int[] temparray = new int[count];
     int[][] result = new int[count][];
 
-    Map<IVertex, Integer> rootIndex = new LinkedHashMap<IVertex, Integer>(vertices.length);
+    Map<IVertex, Integer> rootIndex = new LinkedHashMap<>(vertices.length);
     for (int i = 0; i < vertices.length; i++) {
       rootIndex.put(vertices[i], i);
     }
@@ -62,9 +62,9 @@ public class Graphs {
     int[][] graph = graphToIntInt(vertices, false, false);
     int[][] partitions = GraphUtil.tarjan(graph);
 
-    List<List<V>> result = new ArrayList<List<V>>(partitions.length + 1);
+    List<List<V>> result = new ArrayList<>(partitions.length + 1);
     for (int i = partitions.length - 1; i >= 0; i--) {
-      List<V> proots = new ArrayList<V>(partitions[i].length);
+      List<V> proots = new ArrayList<>(partitions[i].length);
       for (int e = 0; e < partitions[i].length; e++) {
         proots.add((V) vertices[partitions[i][e]]);
       }

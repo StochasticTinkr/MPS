@@ -5,15 +5,14 @@ package jetbrains.mps.vcs.core.mergedriver;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelName;
+import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Level;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -37,8 +36,11 @@ import jetbrains.mps.extapi.model.SModelData;
   private static final Logger LOG = LogManager.getLogger(ModelMerger.class);
   private SModelName myModelName;
   private String myExtension;
-  public ModelMerger(String extension) {
+  private final Platform myPlatform;
+
+  public ModelMerger(Platform mpsPlatform, String extension) {
     myExtension = extension;
+    myPlatform = mpsPlatform;
   }
   @Override
   @Nullable
@@ -59,9 +61,9 @@ import jetbrains.mps.extapi.model.SModelData;
     if (LOG.isInfoEnabled()) {
       LOG.info("Reading models...");
     }
-    final SModel baseModel = loadModel(baseContent, ext);
-    final SModel localModel = loadModel(localContent, ext);
-    final SModel latestModel = loadModel(latestContent, ext);
+    SModel baseModel = loadModel(baseContent, ext);
+    SModel localModel = loadModel(localContent, ext);
+    SModel latestModel = loadModel(latestContent, ext);
     if (baseModel == null || localModel == null || latestModel == null) {
       return backup(baseContent, localContent, latestContent);
     }
@@ -83,39 +85,30 @@ import jetbrains.mps.extapi.model.SModelData;
       if (LOG.isInfoEnabled()) {
         LOG.info("Merging " + baseModel.getReference() + "...");
       }
-      final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          mergeSession.value = MergeSession.createMergeSession(baseModel, localModel, latestModel);
-        }
-      });
-      int conflictingChangesCount = Sequence.fromIterable(mergeSession.value.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, localModel, latestModel);
+      int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
-          return Sequence.fromIterable(mergeSession.value.getConflictedWith(c)).isNotEmpty();
+          return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
         }
       }).count();
       if (conflictingChangesCount == 0) {
         if (LOG.isInfoEnabled()) {
-          LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), ListSequence.fromList(mergeSession.value.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.value.getRepositoryChangeSet().getModelChanges()).count()));
+          LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
         }
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            mergeSession.value.applyChanges(mergeSession.value.getAllChanges());
-          }
-        });
+        mergeSession.applyChanges(mergeSession.getAllChanges());
       } else {
         if (LOG.isInfoEnabled()) {
-          LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), conflictingChangesCount));
+          LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
         }
         return backup(baseContent, localContent, latestContent);
       }
-      if (mergeSession.value.hasIdsToRestore()) {
+      if (mergeSession.hasIdsToRestore()) {
         if (LOG.isInfoEnabled()) {
           LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
         }
       } else {
         String resultString;
-        SModel resultModel = mergeSession.value.getResultModel();
+        SModel resultModel = mergeSession.getResultModel();
         if (LOG.isInfoEnabled()) {
           LOG.info(String.format("%s: Saving merged model...", myModelName));
         }

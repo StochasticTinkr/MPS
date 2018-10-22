@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4s5hd8l0hmq2ppytbkce3lgo8rgw8sg" />
+<product version="3" modelHash="2x4lk67jgixyndp0k1l1hmpfvaa7yfk">
+  <files names="ArgumentReference_Editor.java:ArgumentReference_EditorBuilder_a.java:ArgumentReference_SubstituteMenu.java:EditorAspectDescriptorImpl.java:GeneratorTest_Editor.java:GeneratorTest_EditorBuilder_a.java:ModelArgument_Editor.java:ModelArgument_EditorBuilder_a.java:TransformationMatchAssertion_Editor.java:TransformationMatchAssertion_EditorBuilder_a.java:TransformationMatchManyAssertion_Editor.java:TransformationMatchManyAssertion_EditorBuilder_a.java" />
+</product>
 

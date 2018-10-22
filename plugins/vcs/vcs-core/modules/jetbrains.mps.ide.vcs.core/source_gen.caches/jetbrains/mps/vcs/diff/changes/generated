@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ele78ejsenq5d71f4dopvpn8orayuri" />
+<product version="3" modelHash="-cn8y23jjj7h0a7wengeyzmsdmtdbp9a">
+  <files names="AddRootChange.java:ChangeType.java:DeleteRootChange.java:DependencyChange.java:DoNotGenerateOptionChange.java:EngagedLanguageChange.java:ImportedModelChange.java:MetadataChange.java:ModelChange.java:ModuleDependencyChange.java:NodeChange.java:NodeCopier.java:NodeGroupChange.java:NodeGroupStructChange.java:SetPropertyChange.java:SetPropertyStructChange.java:SetReferenceChange.java:SetReferenceStructChange.java:UsedLanguageChange.java" />
+</product>
 

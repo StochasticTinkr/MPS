@@ -2,8 +2,8 @@
 <model ref="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
   </languages>
   <imports>
@@ -108,7 +108,7 @@
   <node concept="3HP615" id="16TciwZII5d">
     <property role="TrG5h" value="VCSAspectDescriptor" />
     <node concept="3clFb_" id="4WGKd_KBOxw" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getVCSDescriptor" />
       <node concept="3uibUv" id="4WGKd_KBOBJ" role="3clF45">
         <ref role="3uigEE" node="4WGKd_KBOsX" resolve="VCSConceptAspect" />
@@ -366,7 +366,7 @@
     <property role="2bfB8j" value="true" />
     <property role="TrG5h" value="VCSConceptAspect" />
     <node concept="3clFb_" id="4WGKd_KBOwj" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KBOwk" role="3clF45">
         <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
@@ -378,7 +378,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4WGKd_KBOCK" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KBOCL" role="3clF45">
         <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
@@ -396,7 +396,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4WGKd_KFMfc" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KFMfd" role="3clF45">
         <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
@@ -414,7 +414,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4WGKd_KFMfE" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KFMfF" role="3clF45">
         <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />

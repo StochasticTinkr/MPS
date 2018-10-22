@@ -137,7 +137,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
-  public boolean isApplicable(ITemplateGenerator generator) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull ITemplateGenerator generator) throws GenerationFailureException {
     try {
       if (myCondition == null) {
         SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(myMappingConfiguration);

@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -60,7 +60,6 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -194,11 +193,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3bGuHn8PMbC" role="1B3o_S" />
-    <node concept="3clFbW" id="3bGuHn8PMbD" role="312cEh">
-      <node concept="3cqZAl" id="3bGuHn8PMbE" role="3clF45" />
-      <node concept="3Tm1VV" id="3bGuHn8PMbF" role="1B3o_S" />
-      <node concept="3clFbS" id="3bGuHn8PMbG" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="3bGuHn8PMbH" role="3s_ewO">
       <node concept="3s$Bmu" id="3bGuHn8PMbI" role="3s_gse">
         <property role="3s$Bm0" value="test1" />

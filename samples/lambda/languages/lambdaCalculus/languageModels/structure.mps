@@ -384,5 +384,11 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1xcOpEbT8r1">
+    <property role="EcuMT" value="1751004816842458817" />
+    <property role="3GE5qa" value="types" />
+    <property role="TrG5h" value="AnyType" />
+    <ref role="1TJDcQ" node="3VwSXPW6JFo" resolve="LambdaType" />
+  </node>
 </model>
 

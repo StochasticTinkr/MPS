@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" file="ModelTreeBuilder.java">
+  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="javax.swing.event.TreeExpansionListener" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer" file="ModelTreeCellRenderer.java">
+  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JTree" />
@@ -32,7 +32,7 @@
     <classNode extendsClassName="com.intellij.ui.ColoredTreeCellRenderer" />
     <classNode extendsClassName="javax.swing.tree.TreeCellRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeNode" file="ModelTreeNode.java">
+  <dependency className="jetbrains.mps.ide.platform.modeltree.ModelTreeNode">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

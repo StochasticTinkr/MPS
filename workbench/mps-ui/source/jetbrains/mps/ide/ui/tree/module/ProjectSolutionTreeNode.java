@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,12 +77,19 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    List<SModel> regularModels = new ArrayList<SModel>();
-    List<SModel> tests = new ArrayList<SModel>();
-    List<SModel> stubs = new ArrayList<SModel>();
+    List<SModel> regularModels = new ArrayList<>();
+    List<SModel> tests = new ArrayList<>();
+    List<SModel> stubs = new ArrayList<>();
 
     for (SModel modelDescriptor : getModule().getModels()) {
-      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
+      if (TemporaryModels.isTemporary(modelDescriptor)) {
+        continue;
+      }
+      if (SModelStereotype.isDescriptorModel(modelDescriptor)) {
+        // for now, don't expose solution@descriptor.
+        // Reveal once there's an option to hide/expose these and there's runtime class generated from them.
+        continue;
+      }
 
       if (SModelStereotype.isStubModel(modelDescriptor)) {
         stubs.add(modelDescriptor);

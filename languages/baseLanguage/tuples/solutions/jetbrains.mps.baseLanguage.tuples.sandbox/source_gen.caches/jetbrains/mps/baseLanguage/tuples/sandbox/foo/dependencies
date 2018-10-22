@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.sandbox.foo.Fubar" file="Fubar.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.sandbox.foo.Fubar">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />

@@ -44,7 +44,7 @@ public final class ChildMatcher {
   public NodeMatcher at(int zeroBasedIndex) {
     assert zeroBasedIndex >= 0;
     if (myIndexToExtractor == null) {
-      myIndexToExtractor = new HashMap<Integer, NodeMatcher>(8);
+      myIndexToExtractor = new HashMap<>(8);
     }
     NodeMatcher rv = myIndexToExtractor.get(zeroBasedIndex);
     if (rv == null) {
@@ -84,7 +84,7 @@ public final class ChildMatcher {
     } else {
       noPatternChildrenExtractorsOnly = false;
     }
-    final Set<Integer> index = new HashSet<Integer>(myIndexToExtractor == null ? Collections.<Integer>emptySet() : myIndexToExtractor.keySet());
+    final Set<Integer> index = new HashSet<>(myIndexToExtractor == null ? Collections.emptySet() : myIndexToExtractor.keySet());
     final NodeMatcher defaultHandler = new NodeMatcher(this);
     for (int i = 0, x = actual.size(); i < x; i++) {
       NodeMatcher childExtractor = defaultHandler;
@@ -95,11 +95,7 @@ public final class ChildMatcher {
         return false;
       }
     }
-    if (!index.isEmpty()) {
-      // values left indicate index of a child we were going to extract and process
-      // provided there's no flaw in the way we build #at(int) calls, we can't possibly go out of pattern.size()
-      assert false : String.format("Children with index %s were expected", index.toArray());
-    }
+    assert index.isEmpty() : String.format("Children with index %s were expected", index.toArray());
     return true;
   }
 }

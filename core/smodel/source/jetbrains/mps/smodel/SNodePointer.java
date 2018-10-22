@@ -91,7 +91,7 @@ public class SNodePointer implements SNodeReference {
 
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || !(o instanceof SNodePointer)) return false;
+    if (!(o instanceof SNodePointer)) return false;
 
     SNodePointer np = (SNodePointer) o;
     return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);
@@ -114,7 +114,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   public static SNodeReference deserialize(@NotNull String from) {
-    int delimiterIndex = from.lastIndexOf("/");
+    int delimiterIndex = from.lastIndexOf('/');
     if (delimiterIndex < 0) {
       throw new IncorrectNodeIdFormatException("No delimiter discovered in the passed argument " + from);
     }

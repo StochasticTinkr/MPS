@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog" file="NewDevKitDialog.java">
+  <dependency className="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog">
     <classNode dependClassName="com.intellij.ide.util.BrowseFilesListener" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />

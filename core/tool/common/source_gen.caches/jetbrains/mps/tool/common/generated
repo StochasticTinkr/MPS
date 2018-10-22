@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="603am98jxzv939x4z0ceg4vxemqtg97" />
+<product version="3" modelHash="-4awwaspkxlnwn6zqen3cn3cgf419bh3">
+  <files names="GeneratorProperties.java:IMessageFormat.java:JDOMUtil.java:JavaCompilerProperties.java:MpsRunnerProperties.java:RepositoryDescriptor.java:Script.java:ScriptData.java:ScriptProperties.java:TeamCityMessageFormat.java" />
+</product>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test" file="FileSwapOwnerTests_Test.java">
+  <dependency className="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Long" />

@@ -24,6 +24,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.modelchecker.platform.actions.SpecificCheckersComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

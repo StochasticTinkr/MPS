@@ -19,6 +19,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_TestModuleGroup = createDescriptorForBuildMpsLayout_TestModuleGroup();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_TestModules = createDescriptorForBuildMpsLayout_TestModules();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_TestModules_Content = createDescriptorForBuildMpsLayout_TestModules_Content();
+  /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_TestModules_Options = createDescriptorForBuildMpsLayout_TestModules_Options();
+  /*package*/ final ConceptDescriptor myConceptRequiredPlugin = createDescriptorForRequiredPlugin();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -27,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBuildModuleTestsPlugin, myConceptBuildMpsLayout_TestModule, myConceptBuildMpsLayout_TestModuleGroup, myConceptBuildMpsLayout_TestModules, myConceptBuildMpsLayout_TestModules_Content);
+    return Arrays.asList(myConceptBuildModuleTestsPlugin, myConceptBuildMpsLayout_TestModule, myConceptBuildMpsLayout_TestModuleGroup, myConceptBuildMpsLayout_TestModules, myConceptBuildMpsLayout_TestModules_Content, myConceptBuildMpsLayout_TestModules_Options, myConceptRequiredPlugin);
   }
 
   @Override
@@ -44,6 +46,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBuildMpsLayout_TestModules;
       case LanguageConceptSwitch.BuildMpsLayout_TestModules_Content:
         return myConceptBuildMpsLayout_TestModules_Content;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModules_Options:
+        return myConceptBuildMpsLayout_TestModules_Options;
+      case LanguageConceptSwitch.RequiredPlugin:
+        return myConceptRequiredPlugin;
       default:
         return null;
     }
@@ -91,6 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)/4560297596904469357");
     b.version(2);
+    b.aggregate("options", 0x5b81705cdfb31570L).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L).optional(true).ordered(true).multiple(false).origin("6593674873639474544").done();
     b.aggregate("haltonfailure", 0x6402cbb11c1307aeL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("7206546315286874030").done();
     b.aggregate("modules", 0x3f496e80bd8ef370L).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L).optional(true).ordered(true).multiple(true).origin("4560297596904469360").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
@@ -103,6 +110,23 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)/4560297596904469361");
     b.version(2);
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBuildMpsLayout_TestModules_Options() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps.tests", "BuildMpsLayout_TestModules_Options", 0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdfb314e0L);
+    b.class_(false, false, false);
+    b.origin("r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)/6593674873639474400");
+    b.version(2);
+    b.aggregate("haltonfailure", 0x5b81705cdfb323cdL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("6593674873639478221").done();
+    b.aggregate("requiredPlugins", 0x5b81705cdf7bc31bL).target(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdf7bc318L).optional(true).ordered(true).multiple(true).origin("6593674873635848987").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRequiredPlugin() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps.tests", "RequiredPlugin", 0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x5b81705cdf7bc318L);
+    b.class_(false, false, false);
+    b.origin("r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)/6593674873635848984");
+    b.version(2);
+    b.associate("plugin", 0x5b81705cdf7bc319L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L).optional(false).origin("6593674873635848985").done();
     return b.create();
   }
 }

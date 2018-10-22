@@ -36,10 +36,10 @@ import java.util.Map;
 import java.util.Set;
 
 class Dependencies {
-  private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
-  private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
-  private final Map<String, SModule> myFqName2Modules = new HashMap<String, SModule>();
-  private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<String>();
+  private final Map<String, Set<String>> myDependencies = new HashMap<>();
+  private final Map<String, Set<String>> myExtendsDependencies = new HashMap<>();
+  private final Map<String, SModule> myFqName2Modules = new HashMap<>();
+  private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<>();
   private final BLDependenciesCache myBLDependenciesCache = new BLDependenciesCache();
 
   public Dependencies(Collection<? extends SModule> ms) {
@@ -52,7 +52,7 @@ class Dependencies {
    *  returns collection with duplicates
    */
   public Iterable<String> getAllDependencies(String fqName) {
-    FlattenIterable<String> result = new FlattenIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<>();
     Set<String> deps = myDependencies.get(fqName);
     if (deps != null) {
       result.add(deps);

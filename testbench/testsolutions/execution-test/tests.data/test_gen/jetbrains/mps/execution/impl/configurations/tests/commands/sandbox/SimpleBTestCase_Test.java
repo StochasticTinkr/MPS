@@ -9,6 +9,4 @@ public class SimpleBTestCase_Test extends TestCase {
   public void test_test1() throws Exception {
     Assert.assertFalse(false);
   }
-  public SimpleBTestCase_Test() {
-  }
 }

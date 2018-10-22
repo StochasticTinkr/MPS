@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testPackagedLanguage.test.TestPackagedLanguage_Test" file="TestPackagedLanguage_Test.java">
+  <dependency className="testPackagedLanguage.test.TestPackagedLanguage_Test">
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Runnable" />

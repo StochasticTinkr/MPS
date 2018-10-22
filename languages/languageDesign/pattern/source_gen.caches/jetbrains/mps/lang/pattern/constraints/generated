@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="f6wfzyyy187jrl17x2zxiuj0j3sxhk" />
+<product version="3" modelHash="f6wfzyyy187jrl17x2zxiuj0j3sxhk">
+  <files names="ActionAsPattern_Constraints.java:ActionStatement_Constraints.java:ConstraintsAspectDescriptor.java:LinkPatternVariableDeclaration_Constraints.java:OrPatternVariableReference_Constraints.java:PatternVariableDeclaration_Constraints.java:PatternVariableReference_Constraints.java:PropertyPatternVariableDeclaration_Constraints.java" />
+</product>
 

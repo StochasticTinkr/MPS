@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.intentions.IntentionFactory;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -48,7 +49,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   private IntentionsManager myIntentionsManager;
 
   private CheckboxTree myTree;
-  private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<String, LanguageTreeNode>();
+  private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<>();
 
   public IntentionSettingsConfigurable(IntentionsManager intentionsManager) {
     myIntentionsManager = intentionsManager;
@@ -115,7 +116,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
@@ -139,6 +140,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
     myTree = null;
   }
 
+  @NotNull
   @Override
   public Configurable[] getConfigurables() {
     return new Configurable[0];

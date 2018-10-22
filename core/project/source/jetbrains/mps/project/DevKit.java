@@ -72,7 +72,7 @@ public class DevKit extends AbstractModule {
     if (repo == null) {
       return Collections.emptyList();
     }
-    List<Language> langs = new ArrayList<Language>();
+    List<Language> langs = new ArrayList<>();
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     // FIXME in fact, shall produce SLanguage, not Language module here
     // there are two uses in mbeddr that need to get fixed first
@@ -95,7 +95,7 @@ public class DevKit extends AbstractModule {
   @Deprecated
   @ToRemove(version = 3.4)
   public List<Language> getAllExportedLanguages() {
-    List<Language> result = new ArrayList<Language>();
+    List<Language> result = new ArrayList<>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (Language l : dk.getExportedLanguages()) {
         if (!result.contains(l)) {
@@ -107,13 +107,11 @@ public class DevKit extends AbstractModule {
   }
 
   public Iterable<SLanguage> getAllExportedLanguageIds() {
-    Set<SLanguage> result = new HashSet<SLanguage>();
+    Set<SLanguage> result = new HashSet<>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
         SLanguage lang = MetaAdapterFactory.getLanguage(l);
-        if (!result.contains(lang)) {
-          result.add(lang);
-        }
+        result.add(lang);
       }
     }
     return result;
@@ -125,7 +123,7 @@ public class DevKit extends AbstractModule {
       return Collections.emptyList();
     }
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
-    List<DevKit> result = new ArrayList<DevKit>();
+    List<DevKit> result = new ArrayList<>();
     for (SModuleReference ref : myDescriptor.getExtendedDevkits()) {
       DevKit devKit = repoFacade.getModule(ref, DevKit.class);
       if (devKit != null) {
@@ -136,7 +134,7 @@ public class DevKit extends AbstractModule {
   }
 
   public List<DevKit> getAllExtendedDevkits() {
-    List<DevKit> result = new ArrayList<DevKit>();
+    List<DevKit> result = new ArrayList<>();
     collectDevKits(result);
     return result;
   }
@@ -157,7 +155,7 @@ public class DevKit extends AbstractModule {
       return Collections.emptyList();
     }
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
-    List<Solution> result = new ArrayList<Solution>();
+    List<Solution> result = new ArrayList<>();
     for (SModuleReference ref : myDescriptor.getExportedSolutions()) {
       Solution solution = repoFacade.getModule(ref, Solution.class);
       if (solution != null) {
@@ -168,7 +166,7 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Solution> getAllExportedSolutions() {
-    List<Solution> result = new ArrayList<Solution>();
+    List<Solution> result = new ArrayList<>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (Solution s : dk.getExportedSolutions()) {
         if (result.contains(s)) continue;

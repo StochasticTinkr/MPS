@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolver" file="EditorResolver.java">
+  <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolver">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.HeadlessEditorComponent" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils" />
     <classNode extendsClassName="jetbrains.mps.resolve.IResolver" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" file="EditorResolverComponent.java">
+  <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolverComponent">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />

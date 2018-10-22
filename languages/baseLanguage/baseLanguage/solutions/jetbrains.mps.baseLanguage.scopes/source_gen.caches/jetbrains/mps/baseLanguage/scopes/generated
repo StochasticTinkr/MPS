@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-37899ancn9seq77atcfqs3i9nksva2c" />
+<product version="3" modelHash="-3tecz6glfuklqfen5setejz3w6gt0pm">
+  <files names="BaseLanguageUtil.java:ClassifierResolveUtils.java:ClassifierScopeUtils.java:ClassifierScopes.java:ClassifierSignature.java:ClassifiersScope.java:DefaultConstructorUtils.java:FieldSignature.java:GenericTypesUtil.java:MemberScopes.java:Members.java:MembersPopulatingContext.java:MethodResolveUtil.java:MethodSignature.java:MethodsScope.java:MigrationScopes.java:RepositoryStateCacheUtils.java:Scopes.java:Signature.java:VisibilityUtil.java:VisibleClassConstructorsScope.java" />
+</product>
 

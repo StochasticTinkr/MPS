@@ -19,6 +19,10 @@ import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModelPathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.ModulePathObject;
 import jetbrains.mps.errors.item.IssueKindReportItem.PathObject.NodePathObject;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,22 +31,134 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static jetbrains.mps.errors.item.NodeFlavouredItem.FLAVOUR_NODE;
+
 /**
  * implementors of this interface should extend one of the following interfaces: {@link NodeReportItem}, {@link ModelReportItem}, {@link ModuleReportItem}
  */
 public interface IssueKindReportItem extends ReportItem {
 
-  String getIssueKind();
+  ItemKind getIssueKind();
 
-  SimpleReportItemFlavour<IssueKindReportItem, String> FLAVOUR_ISSUE_KIND =
-      new SimpleReportItemFlavour<>(IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
+  SimpleReportItemFlavour<IssueKindReportItem, ItemKind> FLAVOUR_ISSUE_KIND =
+      new SimpleReportItemFlavour<>("FLAVOUR_ISSUE_KIND", IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
 
-  String STRUCTURE = "structure";
-  String CONSTRAINTS = "constraints";
-  String TYPESYSTEM = "typesystem";
-  String MODEL_PROPERTIES = "model properties";
-  String MODULE_PROPERTIES = "module properties";
-  String UNRESOLVED_REFERENCE = "unresolved reference";
+  final class CheckerCategory {
+    private final KindLevel myKindLevel;
+    private final String myName;
+    private final ItemKind defaultItemKind;
+    public CheckerCategory(@NotNull KindLevel kindLevel, @NotNull String categoryName) {
+      this.myKindLevel = kindLevel;
+      this.myName = categoryName;
+      this.defaultItemKind = new ItemKind(this, myName);
+    }
+    public KindLevel getKindLevel() {
+      return myKindLevel;
+    }
+    public String getName() {
+      return myName;
+    }
+    @Override
+    public boolean equals(Object o) {
+      if (!(o instanceof CheckerCategory)) {
+        return false;
+      }
+      return myKindLevel == ((CheckerCategory) o).myKindLevel && myName.equals(((CheckerCategory) o).myName);
+    }
+    @Override
+    public int hashCode() {
+      return myName.hashCode();
+    }
+    @Override
+    public String toString() {
+      return myName;
+    }
+    public ItemKind deriveItemKind() {
+      return defaultItemKind;
+    }
+    public ItemKind deriveItemKind(@Nullable String specialization) {
+      return new ItemKind(this, specialization);
+    }
+  }
+
+  final class ItemKind {
+    private final CheckerCategory myChecker;
+    private final String mySpecialization;
+    private ItemKind(@NotNull CheckerCategory checker, @Nullable String specialization) {
+      this.myChecker =  checker;
+      this.mySpecialization = specialization;
+    }
+    public CheckerCategory getChecker() {
+      return myChecker;
+    }
+    public String getSpecialization() {
+      return mySpecialization;
+    }
+    @Override
+    public boolean equals(Object o) {
+      if (!(o instanceof ItemKind)) {
+        return false;
+      }
+      if (myChecker != ((ItemKind) o).myChecker) {
+        return false;
+      }
+      if (mySpecialization == null) {
+        return ((ItemKind) o).mySpecialization == null;
+      }
+      return mySpecialization.equals(((ItemKind) o).mySpecialization);
+    }
+    @Override
+    public int hashCode() {
+      return myChecker.hashCode() + (mySpecialization == null ? 0 : mySpecialization.hashCode());
+    }
+    @Override
+    public String toString() {
+      return myChecker + (mySpecialization == null ? "" : " (" + mySpecialization + ")");
+    }
+  }
+
+  enum KindLevel {
+    PROJECT("project"),
+    STRUCTURE("structure"),
+    CONSTRAINTS("constraints"),
+    TYPESYSTEM("typesystem"),
+    MANUAL("manual");
+
+    public final String levelName;
+    KindLevel(String name) {
+      this.levelName = name;
+    }
+  }
+
+  CheckerCategory STRUCTURE = new CheckerCategory(KindLevel.STRUCTURE, "structure");
+  CheckerCategory CONSTRAINTS = new CheckerCategory(KindLevel.CONSTRAINTS, "constraints");
+  CheckerCategory TARGET_CONCEPTS = new CheckerCategory(KindLevel.CONSTRAINTS, "target concepts");
+  CheckerCategory REFERENCE_SCOPES = new CheckerCategory(KindLevel.CONSTRAINTS, "reference scopes");
+  CheckerCategory TYPESYSTEM = new CheckerCategory(KindLevel.CONSTRAINTS, "typesystem");
+  CheckerCategory MODEL_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"model properties");
+  CheckerCategory LANGUAGE_IMPORTS = new CheckerCategory(KindLevel.STRUCTURE,"language imports");
+  CheckerCategory MODULE_PROPERTIES = new CheckerCategory(KindLevel.PROJECT,"module properties");
+  CheckerCategory ENVIRONMENT_PROBLEM = new CheckerCategory(KindLevel.STRUCTURE,"environment problem");
+
+  ItemKind TARGET_CONCEPT = TARGET_CONCEPTS.deriveItemKind();
+
+  CheckerCategory UNRESOLVED_REFERENCE = new CheckerCategory(KindLevel.STRUCTURE,"unresolved reference");
+  ItemKind UNKNOWN_LANGUAGE_FEATURE = STRUCTURE.deriveItemKind("unknown language feature");
+  // todo: if required at least one but nothing found, it is not cardinality error but incompleteness error
+  ItemKind CARDINALITY_ERROR = STRUCTURE.deriveItemKind("cardinality error");
+  ItemKind MODULE_NOT_IMPORTED = STRUCTURE.deriveItemKind("target module not imported");
+  ItemKind LANGUAGE_NOT_IMPORTED = LANGUAGE_IMPORTS.deriveItemKind("language not imported");
+  ItemKind LANGUAGE_PROBLEM = STRUCTURE.deriveItemKind("language problem (exception thrown)");
 
   abstract class PathObject {
     public abstract Object resolve(SRepository repository);
@@ -78,9 +194,9 @@ public interface IssueKindReportItem extends ReportItem {
     }
   }
 
-  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>(IssueKindReportItem.class, reportItem -> {
-    if (NodeFlavouredItem.FLAVOUR_NODE.canGet(reportItem)) {
-      return new NodePathObject(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(reportItem));
+  SimpleReportItemFlavour<IssueKindReportItem, PathObject> PATH_OBJECT = new SimpleReportItemFlavour<>("FLAVOUR_PATH_OBJECT", IssueKindReportItem.class, reportItem -> {
+    if (FLAVOUR_NODE.canGet(reportItem)) {
+      return new NodePathObject(FLAVOUR_NODE.tryToGet(reportItem));
     }
     if (ModelFlavouredItem.FLAVOUR_MODEL.canGet(reportItem)) {
       return new ModelPathObject(ModelFlavouredItem.FLAVOUR_MODEL.tryToGet(reportItem));

@@ -84,7 +84,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList().apply(environment, context);
       return tlist1;
     }
   }
@@ -99,7 +99,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList_SameML().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_noConceptList_SameML().apply(environment, context);
       return tlist1;
     }
   }
@@ -114,7 +114,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList().apply(environment, context);
       return tlist1;
     }
   }
@@ -129,7 +129,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList_SameML().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestor_whereConceptInList_SameML().apply(environment, context);
       return tlist1;
     }
   }
@@ -144,7 +144,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_noConceptsList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_noConceptsList().apply(environment, context);
       return tlist1;
     }
   }
@@ -159,7 +159,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_whereConceptInList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAncestors_whereConceptInList().apply(environment, context);
       return tlist1;
     }
   }
@@ -174,7 +174,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_noConceptsList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_noConceptsList().apply(environment, context);
       return tlist1;
     }
   }
@@ -189,7 +189,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_whereConceptInList().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetDescendants_whereConceptInList().apply(environment, context);
       return tlist1;
     }
   }
@@ -200,7 +200,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetContainingRootOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetContainingRootOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -215,7 +215,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_noLinkQualifier().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_noLinkQualifier().apply(environment, context);
       return tlist1;
     }
   }
@@ -230,7 +230,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_whereLinkQualifier().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenOperation_whereLinkQualifier().apply(environment, context);
       return tlist1;
     }
   }
@@ -245,7 +245,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetChildrenAndChildAttributesOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetChildrenAndChildAttributesOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -271,7 +271,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetModelOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetModelOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -282,7 +282,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetIndexInParentOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetIndexInParentOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -345,7 +345,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -356,7 +356,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -367,7 +367,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingsOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetNextSiblingsOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -378,7 +378,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingsOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetPrevSiblingsOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -389,7 +389,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetAllSiblingsOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetAllSiblingsOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -400,7 +400,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNewNextSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNewNextSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -411,7 +411,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNewPrevSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNewPrevSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -422,7 +422,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertNextSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertNextSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -433,7 +433,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_InsertPrevSiblingOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_InsertPrevSiblingOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -444,7 +444,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithNewOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithNewOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -455,7 +455,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithAnotherOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_ReplaceWithAnotherOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -518,7 +518,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_CopyOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_CopyOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -529,7 +529,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsNotNullOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_IsNotNullOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -540,7 +540,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsNullOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_IsNullOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -551,7 +551,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_IsRoleOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_IsRoleOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -562,7 +562,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetConceptOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetConceptOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -573,7 +573,7 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_GetSConceptOperation().apply(context);
+      Collection<SNode> tlist1 = new Template_reduce_GetSConceptOperation().apply(environment, context);
       return tlist1;
     }
   }
@@ -817,9 +817,10 @@ public class Switch_switch_SNodeOperation_node extends TemplateSwitchBase implem
         {
           Collection<SNode> tlist4 = null;
           SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_128_14(new SourceSubstituteMacroNodeContext(context1, callMacro_yds1mf_b0a0a1a4a2a2yb));
-          TemplateContext context2 = context1.subContext(null, callInputNode4);
+          TemplateContext context2;
+          context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
-            tlist4 = new Template_reduce_NodeIdentity_SNodeReference().apply(context2);
+            tlist4 = new Template_reduce_NodeIdentity_SNodeReference().apply(environment, context2);
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);

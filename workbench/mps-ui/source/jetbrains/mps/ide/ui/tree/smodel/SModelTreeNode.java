@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,6 @@ import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -52,17 +50,17 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
   private final SModel myModelDescriptor;
   private final TreeNodeTextSource<SModelTreeNode> myTextSource;
-  private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();
+  private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<>();
 
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
+  private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<>();
 
   private final Condition<SNode> myNodesCondition;
 
-  private final DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<SNodeTreeNode>();
+  private final DependencyRecorder<SNodeTreeNode> myDependencyRecorder = new DependencyRecorder<>();
 
-  private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
+  private Map<String, PackageNode> myPackageNodes = new HashMap<>();
   private Icon myBaseIcon;
 
     public SModelTreeNode(@NotNull SModel model) {
@@ -132,7 +130,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
     String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
 
-    if (nodePackage != null && !"".equals(nodePackage)) {
+    if (nodePackage != null && !nodePackage.isEmpty()) {
       String[] packages = nodePackage.split("\\.");
 
       String pack = "";
@@ -287,9 +285,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
         //       Sorting ensures we didn't create SModelTreeNode for a child before the one for the parent.
         //       Can't refactor right away as mbeddr subclasses our tree nodes and heavily relies on implementation.
         final Stream<SModel> modelsInMyModule = StreamSupport.stream(myModelDescriptor.getModule().getModels().spliterator(), false);
-        if (modelsInMyModule.anyMatch(m -> maxPackage.equals(m.getName().getLongName()))) {
-          return false;
-        }
+        return !modelsInMyModule.anyMatch(m -> maxPackage.equals(m.getName().getLongName()));
       }
       return true;
     }
@@ -305,7 +301,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   }
 
   public List<SModelTreeNode> getAllSubfolderSModelTreeNodes() {
-    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    List<SModelTreeNode> result = new ArrayList<>();
     if (myChildModelTreeNodes.isEmpty()) {
       result.add(this);
     } else {
@@ -343,8 +339,8 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
       }
       org.jetbrains.mps.openapi.model.SModel model = getModel();
 
-      List<SNode> filteredRoots = new ArrayList<SNode>();
-      for (SNode node : new ConditionalIterable<SNode>(model.getRootNodes(), myNodesCondition)) {
+      List<SNode> filteredRoots = new ArrayList<>();
+      for (SNode node : new ConditionalIterable<>(model.getRootNodes(), myNodesCondition)) {
         filteredRoots.add(node);
       }
       Comparator<Object> childrenComparator = getTree().getChildrenComparator();
@@ -381,18 +377,18 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
     DefaultTreeModel treeModel = getTree().getModel();
 
-    final ArrayList<SNode> allRoots = new ArrayList<SNode>();
+    final ArrayList<SNode> allRoots = new ArrayList<>();
     for (SNode root1 : getModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));
 
-    List<SNode> added = new ArrayList<SNode>(addedRoots);
+    List<SNode> added = new ArrayList<>(addedRoots);
     Collections.sort(added, Comparator.comparingInt(allRoots::indexOf));
 
     //Assuming that "added" as well as targetNode.children for all targetNodes are sorted already,
     //so we merge the two by always remembering the last insertion point
-    final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<MPSTreeNode, Integer>();
+    final HashMap<MPSTreeNode, Integer> lastPositions = new HashMap<>();
     for (SNode root : added) {
       SNodeTreeNode nodeToInsert = new SNodeTreeNode(root);
       MPSTreeNode targetNode = getNodeGroupFor(root);
@@ -434,7 +430,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     @Override
     public String calculateText(SModelTreeNode treeNode) {
       SModel model = treeNode.getModel();
-      return model == null ? "<null>" : InternUtil.intern(model.getModelName());
+      return model == null ? "<null>" : model.getName().getValue();
     }
   }
 
@@ -442,9 +438,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     @Override
     public String calculateText(SModelTreeNode treeNode) {
       SModel model = treeNode.getModel();
-      // model long name is likely to be encountered more than once. Does it make sense to intern short name?
-      // It's indeed saves some space for aspect models (all are named the same, but are short) at expense of occupied slot in InternUtil.
-      return model == null ? "<null>" : NameUtil.shortNameFromLongName(InternUtil.intern(model.getModelName()));
+      return model == null ? "<null>" : model.getName().getSimpleName();
     }
   }
 }

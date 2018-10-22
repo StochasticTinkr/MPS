@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_Editor" file="AtLeastNTimesRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_EditorBuilder_a" file="AtLeastNTimesRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.AtLeastNTimesRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -57,14 +57,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Editor" file="BinaryRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_EditorBuilder_a" file="BinaryRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions" />
@@ -89,36 +89,40 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions" file="BinaryRegexp_Left_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Right_Actions" file="BinaryRegexp_Right_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Right_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_Editor" file="CharacterSymbolClassPart_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_EditorBuilder_a" file="CharacterSymbolClassPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -153,7 +157,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_TransformationMenu" file="CharacterSymbolClassPart_TransformationMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.CharacterSymbolClassPart_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -189,14 +193,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.DotRegexp_Editor" file="DotRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.DotRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.DotRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.DotRegexp_EditorBuilder_a" file="DotRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.DotRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -213,7 +217,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -294,14 +298,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_Editor" file="FindMatchExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_EditorBuilder_a" file="FindMatchExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -325,7 +329,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_SubstituteMenu" file="FindMatchExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -337,14 +341,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_Editor" file="FindMatchStatement_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_EditorBuilder_a" file="FindMatchStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FindMatchStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -373,14 +377,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ForEachMatchStatement_Editor" file="ForEachMatchStatement_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ForEachMatchStatement_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ForEachMatchStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ForEachMatchStatement_EditorBuilder_a" file="ForEachMatchStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ForEachMatchStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -409,14 +413,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FromNToMTimesRegexp_Editor" file="FromNToMTimesRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FromNToMTimesRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.FromNToMTimesRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FromNToMTimesRegexp_EditorBuilder_a" file="FromNToMTimesRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.FromNToMTimesRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -466,7 +470,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_Editor" file="InlineRegexpExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -474,7 +478,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_EditorBuilder_a" file="InlineRegexpExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI" />
@@ -504,7 +508,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_InspectorBuilder_a" file="InlineRegexpExpression_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -544,7 +548,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_TransformationMenu" file="InlineRegexpExpression_TransformationMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -577,10 +581,12 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI" file="InlineRegexpExpression_removeI.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -588,10 +594,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM" file="InlineRegexpExpression_removeM.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -599,10 +607,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS" file="InlineRegexpExpression_removeS.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -610,14 +620,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Editor" file="IntersectionSymbolClassPart_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_EditorBuilder_a" file="IntersectionSymbolClassPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Left_Actions" />
@@ -642,36 +652,40 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Left_Actions" file="IntersectionSymbolClassPart_Left_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Left_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Right_Actions" file="IntersectionSymbolClassPart_Right_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntersectionSymbolClassPart_Right_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_Editor" file="IntervalSymbolClassPart_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_EditorBuilder_a" file="IntervalSymbolClassPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -709,34 +723,38 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_removeLeft" file="IntervalSymbolClassPart_removeLeft.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_removeLeft">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_removeRight" file="IntervalSymbolClassPart_removeRight.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_removeRight">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineEndRegexp_Editor" file="LineEndRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineEndRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.LineEndRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineEndRegexp_EditorBuilder_a" file="LineEndRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineEndRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -753,14 +771,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineStartRegexp_Editor" file="LineStartRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineStartRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.LineStartRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineStartRegexp_EditorBuilder_a" file="LineStartRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LineStartRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -777,14 +795,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_Editor" file="LiteralReplacement_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_EditorBuilder_a" file="LiteralReplacement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -819,7 +837,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_SubstituteMenu" file="LiteralReplacement_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LiteralReplacement_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -831,25 +849,27 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Actions" file="LookRegexp_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Editor" file="LookRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_EditorBuilder_a" file="LookRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.LookRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -895,14 +915,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_Editor" file="MatchParensRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_EditorBuilder_a" file="MatchParensRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -968,7 +988,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_SubstituteMenu" file="MatchParensRegexp_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -980,25 +1000,27 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_removeName" file="MatchParensRegexp_removeName.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchParensRegexp_removeName">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_Editor" file="MatchRegexpExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_EditorBuilder_a" file="MatchRegexpExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -1022,7 +1044,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_SubstituteMenu" file="MatchRegexpExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -1034,14 +1056,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_Editor" file="MatchRegexpOperation_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_EditorBuilder_a" file="MatchRegexpOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -1065,14 +1087,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpStatement_Editor" file="MatchRegexpStatement_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpStatement_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpStatement_EditorBuilder_a" file="MatchRegexpStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchRegexpStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -1101,14 +1123,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_Editor" file="MatchVariableReferenceRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_EditorBuilder_a" file="MatchVariableReferenceRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1155,7 +1177,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu" file="MatchVariableReferenceRegexp_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1183,14 +1205,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_Editor" file="MatchVariableReferenceReplacement_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_EditorBuilder_a" file="MatchVariableReferenceReplacement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1236,7 +1258,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu" file="MatchVariableReferenceReplacement_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1264,14 +1286,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_Editor" file="MatchVariableReference_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_EditorBuilder_a" file="MatchVariableReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1317,7 +1339,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu" file="MatchVariableReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1338,14 +1360,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_Editor" file="NTimesRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_EditorBuilder_a" file="NTimesRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NTimesRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1395,14 +1417,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor" file="NegativeSymbolClassRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_EditorBuilder_a" file="NegativeSymbolClassRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_toPositive" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
@@ -1443,24 +1465,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_toPositive" file="NegativeSymbolClassRegexp_toPositive.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.NegativeSymbolClassRegexp_toPositive">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_Editor" file="OrRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_EditorBuilder_a" file="OrRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp__BehaviorDescriptor" />
@@ -1487,26 +1511,28 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Actions" file="ParensRegexp_Actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Editor" file="ParensRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_EditorBuilder_a" file="ParensRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ParensRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1551,14 +1577,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor" file="PositiveSymbolClassRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_EditorBuilder_a" file="PositiveSymbolClassRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PositiveSymbolClassRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.LeftRegexpBraceStyleClass" />
@@ -1595,14 +1621,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_Editor" file="PredefinedSymbolClassDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_EditorBuilder_a" file="PredefinedSymbolClassDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -1638,7 +1664,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_Editor" file="PredefinedSymbolClassRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -1646,7 +1672,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_EditorBuilder_a" file="PredefinedSymbolClassRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1691,7 +1717,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_InspectorBuilder_a" file="PredefinedSymbolClassRegexp_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1734,7 +1760,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu" file="PredefinedSymbolClassRegexp_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1755,7 +1781,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_Editor" file="PredefinedSymbolClassSymbolClassPart_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -1763,7 +1789,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_EditorBuilder_a" file="PredefinedSymbolClassSymbolClassPart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1807,7 +1833,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_InspectorBuilder_a" file="PredefinedSymbolClassSymbolClassPart_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1850,7 +1876,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu" file="PredefinedSymbolClassSymbolClassPart_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1871,14 +1897,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor" file="PredefinedSymbolClasses_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_EditorBuilder_a" file="PredefinedSymbolClasses_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClasses_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MatchingStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -1907,14 +1933,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_Editor" file="RegexpDeclarationReferenceRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_EditorBuilder_a" file="RegexpDeclarationReferenceRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1959,7 +1985,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu" file="RegexpDeclarationReferenceRegexp_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -1980,7 +2006,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_Editor" file="RegexpDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -1988,7 +2014,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_EditorBuilder_a" file="RegexpDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -2035,7 +2061,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_InspectorBuilder_a" file="RegexpDeclaration_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" />
@@ -2059,13 +2085,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" file="RegexpSequenceByEnter.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
@@ -2073,7 +2101,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" file="RegexpStylesheet_StyleSheet.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.RegexpBraceStyleClass" />
@@ -2086,14 +2114,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_Editor" file="Regexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.Regexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_EditorBuilder_a" file="Regexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2102,7 +2130,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_SubstituteMenu" file="Regexp_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -2133,7 +2161,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_TransformationMenu" file="Regexp_TransformationMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexp_TransformationMenu">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -2190,14 +2218,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor" file="Regexps_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexps_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.Regexps_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexps_EditorBuilder_a" file="Regexps_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Regexps_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -2245,14 +2273,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_Editor" file="ReplaceBlock_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_EditorBuilder_a" file="ReplaceBlock_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceBlock_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -2277,7 +2305,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor" file="ReplaceRegexpOperation_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2285,7 +2313,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_EditorBuilder_a" file="ReplaceRegexpOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG" />
@@ -2321,7 +2349,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_InspectorBuilder_a" file="ReplaceRegexpOperation_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -2362,7 +2390,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_TransformationMenu" file="ReplaceRegexpOperation_TransformationMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -2398,10 +2426,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG" file="ReplaceRegexpOperation_removeG.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -2409,10 +2439,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI" file="ReplaceRegexpOperation_removeI.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -2420,10 +2452,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM" file="ReplaceRegexpOperation_removeM.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -2431,10 +2465,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS" file="ReplaceRegexpOperation_removeS.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
@@ -2442,14 +2478,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_Editor" file="ReplaceWithRegexpExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_EditorBuilder_a" file="ReplaceWithRegexpExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -2475,7 +2511,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_SubstituteMenu" file="ReplaceWithRegexpExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -2487,14 +2523,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_Editor" file="ReplaceWithRegexpOperation_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_EditorBuilder_a" file="ReplaceWithRegexpOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceWithRegexpOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
@@ -2520,7 +2556,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Replacement_SubstituteMenu" file="Replacement_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.Replacement_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -2551,14 +2587,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_Editor" file="SeqRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_EditorBuilder_a" file="SeqRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SeqRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions" />
@@ -2580,14 +2616,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_Editor" file="SplitExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_EditorBuilder_a" file="SplitExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -2611,7 +2647,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_SubstituteMenu" file="SplitExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -2623,14 +2659,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_Editor" file="SplitOperation_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_EditorBuilder_a" file="SplitOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -2654,7 +2690,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_SubstituteMenu" file="SplitOperation_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SplitOperation_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -2666,14 +2702,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_Editor" file="StringLiteralRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_EditorBuilder_a" file="StringLiteralRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -2709,7 +2745,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SymbolClassPart_SubstituteMenu" file="SymbolClassPart_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SymbolClassPart_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -2740,7 +2776,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SymbolClassPart_TransformationMenu" file="SymbolClassPart_TransformationMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.SymbolClassPart_TransformationMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2776,14 +2812,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Editor" file="UnaryRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_EditorBuilder_a" file="UnaryRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorStyleClass" />
@@ -2824,26 +2860,28 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions" file="UnaryRegexp_Regexp_actions.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_Editor" file="UnicodeCharacterRegexp_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_EditorBuilder_a" file="UnicodeCharacterRegexp_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -2877,7 +2915,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.stringOperations_Contribution" file="stringOperations_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.editor.stringOperations_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

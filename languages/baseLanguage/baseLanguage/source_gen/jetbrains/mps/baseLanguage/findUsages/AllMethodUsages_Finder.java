@@ -7,9 +7,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import java.util.List;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +46,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       monitor.start("All method usages", 10);
       List<SNode> methodDeclarations;
@@ -67,7 +69,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
             if (!(SNodeOperations.isInstanceOf(nodeUsage, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
               continue;
             }
-            ListSequence.fromList(_results).addElement(nodeUsage);
+            callback.onUsageFound(createSingleResult(nodeUsage));
           }
         }
       } finally {
@@ -77,6 +79,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     List<SNode> methodDeclarations = new ArrayList<SNode>();

@@ -192,14 +192,14 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)/7985135009829579182">
     <file name="IExtensibleMenuPart_factory.java">
       <node id="7985135009829710970" at="24,55,25,128" concept="4" />
-      <node id="7985135009829714672" at="29,40,30,306" concept="0" />
+      <node id="7985135009829714672" at="29,40,30,264" concept="0" />
       <node id="7985135009829710968" at="24,0,27,0" concept="2" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="7985135009829714477" at="29,0,32,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/language/SConcept;)V" />
       <node id="7985135009829710957" at="22,97,27,9" concept="3" />
       <node id="7985135009829713179" at="27,9,32,9" concept="0" />
       <node id="7985135009829579183" at="22,0,34,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="7985135009829710969" at="24,55,25,128" />
-      <scope id="7985135009829714478" at="29,40,30,306" />
+      <scope id="7985135009829714478" at="29,40,30,264" />
       <scope id="7985135009829710968" at="24,0,27,0">
         <var name="it" id="7985135009829710968" />
       </scope>

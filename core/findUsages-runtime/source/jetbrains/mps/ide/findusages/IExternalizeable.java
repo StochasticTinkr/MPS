@@ -19,7 +19,7 @@ import jetbrains.mps.project.Project;
 import org.jdom.Element;
 
 public interface IExternalizeable {
-  public void read(Element element, Project project) throws CantLoadSomethingException;
+  void read(Element element, Project project) throws CantLoadSomethingException;
 
-  public void write(Element element, Project project) throws CantSaveSomethingException;
+  void write(Element element, Project project) throws CantSaveSomethingException;
 }

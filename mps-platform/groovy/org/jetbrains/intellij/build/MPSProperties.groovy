@@ -39,16 +39,42 @@ class MPSProperties extends ProductProperties {
         productLayout.additionalPlatformJars.
                 putAll("javac2.jar", ["intellij.java.compiler.antTasks", "intellij.java.guiForms.compiler", "intellij.java.guiForms.rt", "intellij.java.compiler.instrumentationUtil", "intellij.java.compiler.instrumentationUtil.java8"])
 
+        // Copied from BaseIdeaProperties
+        def JAVA_API_JAR = "java-api.jar"
+        def JAVA_IMPL_JAR = "java-impl.jar"
+        productLayout.additionalPlatformJars.putAll(JAVA_API_JAR, [])
+        productLayout.additionalPlatformJars.putAll(JAVA_IMPL_JAR, [])
+
         productLayout.platformLayoutCustomizer = { PlatformLayout layout ->
             layout.customize {
-                withModule("java-runtime", "idea_rt.jar", null)
+
+                // Copied from BaseIdeaProperties
+                def JAVA_RESOURCES_JAR = "java_resources_en.jar"
+                withModule("intellij.java.analysis", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.jvm.analysis", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.indexing", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.psi", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.jsp.base", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.jsp", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.platform.uast", JAVA_API_JAR, JAVA_RESOURCES_JAR)
+
+                withModule("intellij.java.analysis.impl", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.jvm.analysis.impl", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.indexing.impl", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.psi.impl", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.impl", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.jsp.spi", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                withModule("intellij.java.uast", JAVA_IMPL_JAR, JAVA_RESOURCES_JAR)
+                // end of copy from BaseIdeaProperties
+
+                withModule("intellij.java.rt", "idea_rt.jar", null)
                 withProjectLibrary("Eclipse")
 //                withProjectLibrary("jgoodies-common")
 //                withProjectLibrary("commons-net")
                 withProjectLibrary("JUnit4")
                 withProjectLibrary("http-client-3.1")
                 withProjectLibrary("pty4j") // for terminal plugin
-                withProjectLibrary("purejavacomm") // for terminal plugin
                 withoutProjectLibrary("Ant")
                 withoutProjectLibrary("Gradle")
                 excludeFromModule("intellij.java.resources", "META-INF/IdeaPlugin.xml")
@@ -82,11 +108,6 @@ class MPSProperties extends ProductProperties {
         super.copyAdditionalFiles(context, targetDirectory)
         context.ant.copy(todir: "$targetDirectory/lib/ant") {
             fileset(dir: "$context.paths.communityHome/lib/ant")
-        }
-
-        // for terminal plugin
-        context.ant.copy(todir: "$targetDirectory/lib/libpty/") {
-            fileset(dir: "$context.paths.communityHome/lib/libpty/")
         }
 
         // copy binaries

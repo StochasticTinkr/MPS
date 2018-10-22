@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="SourceLanguage.constraints.ClassToMove_UpdateRefs" file="ClassToMove_UpdateRefs.java" />
-  <dependency className="SourceLanguage.constraints.ClassWithUsage" file="ClassWithUsage.java">
+  <dependency className="SourceLanguage.constraints.ClassToMove_UpdateRefs" />
+  <dependency className="SourceLanguage.constraints.ClassWithUsage">
     <classNode dependClassName="SourceLanguage.constraints.ClassToMove_UpdateRefs" />
   </dependency>
-  <dependency className="SourceLanguage.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="SourceLanguage.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />

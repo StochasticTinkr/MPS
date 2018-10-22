@@ -80,8 +80,8 @@ public class MPSTestFixture extends BaseFixture {
   public void tearDown() throws Exception {
     try {
       if (!ApplicationManager.getApplication().isDispatchThread()) {
-        // fixme needed at all? another way? maybe flushEDT()
-        jetbrains.mps.smodel.ModelAccess.instance().flushEventQueue();
+        // fixme needed at all? another way?
+        flushEDT();
       }
 
       myCodeInsightTestFixture.tearDown();

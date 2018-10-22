@@ -15,17 +15,16 @@
  */
 package org.jetbrains.mps.openapi.util;
 
+import org.jetbrains.annotations.NotNull;
+
+@FunctionalInterface
 public interface Consumer<T> {
-  Consumer EMPTY_CONSUMER = new Consumer() {
-    @Override
-    public void consume(final Object t) {
-    }
+  Consumer EMPTY_CONSUMER = t -> {
   };
 
   /**
    * @param t consequently takes value of each element of the set this processor is passed to for processing.
    *          t is supposed to be a not-null value.
    */
-  void consume(T t);
-
+  void consume(@NotNull T t);
 }

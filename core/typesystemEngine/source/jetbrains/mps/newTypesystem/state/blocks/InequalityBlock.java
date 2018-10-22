@@ -64,8 +64,8 @@ public class InequalityBlock extends RelationBlock {
 
   @Override
   public List<Pair<SNode, SNode>> getInputsAndOutputs() {
-    List<Pair<SNode, SNode>> result = new LinkedList<Pair<SNode, SNode>>();
-    result.add(new Pair<SNode, SNode>(getInput(), getOutput()));
+    List<Pair<SNode, SNode>> result = new LinkedList<>();
+    result.add(new Pair<>(getInput(), getOutput()));
     return result;
   }
 
@@ -87,23 +87,14 @@ public class InequalityBlock extends RelationBlock {
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> replacementRules =
       LanguageScopeExecutor.execWithMultiLanguageScope(
           SubTypingManagerNew.collectLanguagesRecursively(subType, superType),
-          new Computable<List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>>() {
-            @Override
-            public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> compute() {
-              return typeChecker.getRulesManager().getReplacementRules(subType, superType);
-            }
-          });
+          () -> typeChecker.getRulesManager().getReplacementRules(subType, superType));
 
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : replacementRules) {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
 
       final IsApplicable2Status status = inequalityReplacementRule.o2;
-      getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
-        @Override
-        public void run() {
-          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
-        }
-      }));
+      getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType,
+                                                                      () -> ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan)));
       return true;
     }
     return false;
@@ -125,18 +116,15 @@ public class InequalityBlock extends RelationBlock {
       return;
     }
     final SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
-    getState().executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
-      @Override
-      public void run() {
-        if (!calcIsSubtype(subTyping, subType, superType)) {
-          getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
-        }
+    getState().executeOperation(new CheckSubTypeOperation(subType, superType, () -> {
+      if (!calcIsSubtype(subTyping, subType, superType)) {
+        getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
       }
     }));
   }
 
   private boolean calcIsSubtype(SubTypingManagerNew subTyping, SNode subType, SNode superType) {
-    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<>();
     SubtypingResolver subtypingResolver = new SubtypingResolver(myRelationKind.isWeak(), getState().getTypeCheckingContext(), matchingPairs);
     boolean result = subtypingResolver.calcIsSubType(subType, superType);
     if (result) {
@@ -151,8 +139,8 @@ public class InequalityBlock extends RelationBlock {
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
     if (isCheckOnly()) {
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+      return CollectionUtil.set(new Pair<>(myLeftNode, ConditionKind.CONCRETE),
+                                new Pair<>(myRightNode, ConditionKind.CONCRETE));
     } else {
       //hack
       ConditionKind left = ConditionKind.SHALLOW;
@@ -163,8 +151,8 @@ public class InequalityBlock extends RelationBlock {
       if (LatticeUtil.isPolymorphic(myRightNode)) {
         right = ConditionKind.CONCRETE;
       }
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, left),
-        new Pair<SNode, ConditionKind>(myRightNode, right));
+      return CollectionUtil.set(new Pair<>(myLeftNode, left),
+                                new Pair<>(myRightNode, right));
     }
   }
 

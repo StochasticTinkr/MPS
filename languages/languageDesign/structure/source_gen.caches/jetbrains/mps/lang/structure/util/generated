@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7xd72058wgfadi6mzt5be0m7dt9hmt8" />
+<product version="3" modelHash="-l0nynrk9640lu93zk4gaopvi1cggzx">
+  <files names="ConceptIdHelper.java:ConceptIdSetter.java:SmartRefAttributeUtil.java" />
+</product>
 

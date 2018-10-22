@@ -32,7 +32,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   //todo can make it faster
   @Override
   public Iterable<String> getRootClasses(String namespace) {
-    return new ConditionalIterable<String>(getAvailableClasses(namespace), className -> !(className.contains("$")));
+    return new ConditionalIterable<>(getAvailableClasses(namespace), className -> !(className.contains("$")));
   }
 
   public static boolean isAnonymous(String className) {

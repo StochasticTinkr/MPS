@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure" file="AbstractVerticalLayoutFigure.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.RectView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.library.BoxFigure" file="BoxFigure.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.library.BoxFigure">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure" file="NamedBoxFigure.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

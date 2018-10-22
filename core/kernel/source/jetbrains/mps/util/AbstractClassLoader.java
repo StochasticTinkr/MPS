@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractClassLoader extends ClassLoader {
-  private Map<String, Class> myCache = new HashMap<String, Class>();
+  private Map<String, Class> myCache = new HashMap<>();
 
   public AbstractClassLoader(ClassLoader classLoader) {
     super(classLoader);

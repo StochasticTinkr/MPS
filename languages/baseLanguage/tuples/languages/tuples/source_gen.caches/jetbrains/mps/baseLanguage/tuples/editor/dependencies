@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -33,14 +33,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_Editor" file="IndexedTupleLiteral_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_EditorBuilder_a" file="IndexedTupleLiteral_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBracketStyleClass" />
@@ -77,14 +77,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_Editor" file="IndexedTupleMemberAccessExpression_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_EditorBuilder_a" file="IndexedTupleMemberAccessExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_SubstituteMenu" file="IndexedTupleMemberAccessExpression_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -121,14 +121,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_Editor" file="IndexedTupleType_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_EditorBuilder_a" file="IndexedTupleType_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBracketStyleClass" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution" file="NTCD_add_final_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -202,24 +202,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final" file="NTCD_delete_final.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final">
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_Editor" file="NamedTupleComponentAccessOperation_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_EditorBuilder_a" file="NamedTupleComponentAccessOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -261,7 +263,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_SubstituteMenu" file="NamedTupleComponentAccessOperation_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -282,14 +284,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_Editor" file="NamedTupleComponentDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_EditorBuilder_a" file="NamedTupleComponentDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -352,14 +354,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_Editor" file="NamedTupleComponentReference_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_EditorBuilder_a" file="NamedTupleComponentReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -408,7 +410,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_SubstituteMenu" file="NamedTupleComponentReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -429,7 +431,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_Editor" file="NamedTupleDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -437,7 +439,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_EditorBuilder_a" file="NamedTupleDeclaration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -488,7 +490,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_InspectorBuilder_a" file="NamedTupleDeclaration_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -514,7 +516,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution" file="NamedTupleLiteral_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -555,7 +557,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Editor" file="NamedTupleLiteral_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -563,7 +565,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_EditorBuilder_a" file="NamedTupleLiteral_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBracketStyleClass" />
@@ -599,7 +601,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_InspectorBuilder_a" file="NamedTupleLiteral_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -650,7 +652,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_SubstituteMenu" file="NamedTupleLiteral_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -678,7 +680,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution" file="NamedTupleType_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -714,7 +716,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor" file="NamedTupleType_Editor.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_InspectorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -722,7 +724,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_EditorBuilder_a" file="NamedTupleType_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -793,7 +795,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_InspectorBuilder_a" file="NamedTupleType_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -847,7 +849,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_SubstituteMenu" file="NamedTupleType_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -859,7 +861,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.TupleIntefaceUtils" file="TupleIntefaceUtils.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.TupleIntefaceUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -875,7 +877,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution" file="namedTupleDeclaration_extends_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -914,7 +916,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution" file="tuple_member_access_Contribution.java">
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

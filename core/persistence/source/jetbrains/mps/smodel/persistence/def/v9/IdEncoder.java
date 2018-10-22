@@ -181,7 +181,7 @@ public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
     assert separatorIndex >= 0;
     final SModelReference modelRef = separatorIndex == 0 ? null : imports.getModelReference(referenceTarget.substring(0, separatorIndex));
     SNodeId nodeId = parseLocalNodeReference(referenceTarget.substring(separatorIndex + 1, referenceTarget.length()));
-    return new Pair<SModelReference, SNodeId>(modelRef, nodeId);
+    return new Pair<>(modelRef, nodeId);
   }
 
   /**

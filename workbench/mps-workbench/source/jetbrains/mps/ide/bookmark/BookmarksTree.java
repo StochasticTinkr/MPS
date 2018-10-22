@@ -164,9 +164,9 @@ public class BookmarksTree extends MPSTree {
   }
 
   private interface BookmarkNode {
-    public void navigateToBookmark();
+    void navigateToBookmark();
 
-    public void removeBookmark();
+    void removeBookmark();
   }
 
   private class MyTextTreeNodeNumbered extends TextTreeNode implements BookmarkNode {

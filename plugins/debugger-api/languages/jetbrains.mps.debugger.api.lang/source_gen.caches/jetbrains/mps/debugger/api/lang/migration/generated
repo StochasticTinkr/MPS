@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2fr4onm9v1qcapaxszlhbkc2hj03h6r" />
+<product version="3" modelHash="-38o9ojjm6irmzrc3a29tl8sk23vhs0x">
+  <files names="MigrateConceptNodeParameter.java:MigrationDescriptor.java" />
+</product>
 

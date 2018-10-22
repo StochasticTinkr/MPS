@@ -31,7 +31,6 @@ public class IOperation_Contribution extends SubstituteMenuBase {
     result.add(new IOperation_Contribution.SMP_Include_kt4yqg_a());
     result.add(new IOperation_Contribution.SMP_Include_kt4yqg_b());
     result.add(new IOperation_Contribution.SMP_Include_kt4yqg_c());
-    result.add(new IOperation_Contribution.SMP_Include_kt4yqg_d());
     return result;
   }
 
@@ -49,30 +48,6 @@ public class IOperation_Contribution extends SubstituteMenuBase {
 
 
   public class SMP_Include_kt4yqg_a extends IncludeSubstituteMenuSubstituteMenuPart {
-
-    @NotNull
-    @Override
-    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-      context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "substitute_IOperation_SequenceType", new SNodePointer("r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)", "1741258697586932794")));
-      try {
-        return super.createItems(context);
-      } finally {
-        context.getEditorMenuTrace().popTraceInfo();
-      }
-    }
-    @Nullable
-    @Override
-    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
-      final EditorContext editorContext = _context.getEditorContext();
-      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor, "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType");
-    }
-    private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
-      return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-  }
-  public class SMP_Include_kt4yqg_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @NotNull
     @Override
@@ -96,7 +71,7 @@ public class IOperation_Contribution extends SubstituteMenuBase {
       return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation");
     }
   }
-  public class SMP_Include_kt4yqg_c extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @NotNull
     @Override
@@ -120,7 +95,7 @@ public class IOperation_Contribution extends SubstituteMenuBase {
       return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation");
     }
   }
-  public class SMP_Include_kt4yqg_d extends IncludeSubstituteMenuSubstituteMenuPart {
+  public class SMP_Include_kt4yqg_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @NotNull
     @Override

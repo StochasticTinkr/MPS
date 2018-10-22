@@ -5,12 +5,14 @@ package jetbrains.mps.lang.test.generator.rt;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.List;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.project.Project;
 import jetbrains.mps.messages.LogHandler;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.List;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -26,27 +28,40 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.junit.Assume;
+import org.junit.After;
 
 public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
   private SRepository myRepository;
-
+  private final List<TransformHelper> myTransformHelpers = new ArrayList<TransformHelper>(2);
 
   @Override
   public void setEnvironment(@NotNull Environment env) {
     myEnv = env;
     // FIXME AntModuleTestSuite opens a project and I don't see a reason for the test to open another one. 
     //       Project shall be external configuration setting. 
+    //       As long as I don't have access to the project created inside MpsTestsSuite, I decided to resort to a CL repository for now, 
+    //       though there's a chance to override this with setProject() 
     myRepository = myEnv.getPlatform().findComponent(MPSModuleRepository.class);
+  }
+
+  protected final Environment getEnvironment() {
+    return myEnv;
+  }
+
+  protected final void setProject(Project mpsProject) {
+    myRepository = mpsProject.getRepository();
   }
 
   protected final TransformHelper newTransformer() {
     // Perhaps, we shall use a handler that pipes everything to stdout (warn -> stdout, error -> stderr?), but for now it's just 
     // a logger with a category matching name of a test class 
-    return new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
+    TransformHelper rv = new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
+    myTransformHelpers.add(rv);
+    return rv;
   }
 
   protected final void assertMatch(final SModel m1, final SModel m2) {
@@ -95,11 +110,22 @@ public class BaseGeneratorTest implements EnvironmentAware {
 
   protected final SModel findModel(String modelRef) {
     // FIXME lacking proper model access, works as mr.resolve just complains with WARN if there's no model read 
-    Platform plaf = myEnv.getPlatform();
+    //       Need to decide how to grab model locks effectively, don't want to grab it here, either shall wrap whole prepareArguments() or test method 
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
-    // FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project 
-    //       and I'd rather resolve them trough project of MpsTestsSuite. However, as long as I don't have access to the project created inside MpsTestsSuite, I decided to go  
-    //       through a CL repository for now. 
-    return mr.resolve(plaf.findComponent(MPSModuleRepository.class));
+    return mr.resolve(myRepository);
+  }
+
+  protected final SModel findModel(String parameterName, String modelRef) {
+    SModel m = findModel(modelRef);
+    Assume.assumeTrue(String.format("Could not find model for parameter '%s' (%s)", parameterName, modelRef), m != null);
+    return m;
+  }
+
+  @After
+  public void cleanup() {
+    for (TransformHelper th : myTransformHelpers) {
+      th.dispose();
+    }
+    myTransformHelpers.clear();
   }
 }

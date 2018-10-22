@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ import java.util.Map;
 public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   private final SNode myStartNode;
   private final String myFilename;
+  private final String myPath;
   private final Charset myEncoding;
   private Status myState = Status.Undefined;
   private String myOutcome;
@@ -53,12 +54,17 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   private List<Pair<String,Object>> myContextObjects;
 
   public RegularTextUnit(@NotNull SNode root, @NotNull String filename) {
-    this(root, filename, null);
+    this(root, filename, null, null);
   }
 
   public RegularTextUnit(@NotNull SNode root, @NotNull String filename, @Nullable Charset encoding) {
+    this(root, filename, null, encoding);
+  }
+
+  public RegularTextUnit(@NotNull SNode root, @NotNull String filename, @Nullable String unitPath, @Nullable Charset encoding) {
     myStartNode = root;
     myFilename = filename;
+    myPath = unitPath;
     myEncoding = encoding;
     myLayoutBuilder = new BufferLayoutConfiguration();
   }
@@ -130,6 +136,12 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   @Override
   public String getFileName() {
     return myFilename;
+  }
+
+  @Nullable
+  @Override
+  public String getFilePath() {
+    return myPath;
   }
 
   @Override

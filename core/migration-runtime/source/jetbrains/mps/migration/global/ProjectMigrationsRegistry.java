@@ -29,7 +29,7 @@ public class ProjectMigrationsRegistry {
   private ProjectMigrationsRegistry() {
   }
 
-  private final List<ProjectMigration> myMigrations = new ArrayList<ProjectMigration>();
+  private final List<ProjectMigration> myMigrations = new ArrayList<>();
 
   public void addProjectMigration(ProjectMigration migration){
     myMigrations.add(migration);

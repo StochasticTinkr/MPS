@@ -205,11 +205,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public String getPresentation() {
     if (!getConcept().isValid()) {
       String persistentName = findProperty(SNodeUtil.property_INamedConcept_name);
-      if (persistentName == null) {
-        String conceptName = myConcept.getName();
-        persistentName = (conceptName == null ? myConcept.toString() : conceptName);
-      }
-      return "?" + persistentName + "?";
+      return String.format("%s (concept is not found)", persistentName != null ? persistentName : myConcept.getName());
     }
 
     return String.valueOf(SNodeUtil.getPresentation(this));
@@ -382,28 +378,23 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     final Object[] userObjects = myUserObjects;
     if (userObjects == null || userObjects.length == 0) return EmptyIterable.getInstance();
-    return new Iterable<Object>() {
+    return () -> new Iterator<Object>() {
+      private int myIndex = 0;
+
       @Override
-      public Iterator<Object> iterator() {
-        return new Iterator<Object>() {
-          private int myIndex = 0;
+      public boolean hasNext() {
+        return myIndex < userObjects.length;
+      }
 
-          @Override
-          public boolean hasNext() {
-            return myIndex < userObjects.length;
-          }
+      @Override
+      public Object next() {
+        myIndex += 2;
+        return userObjects[myIndex - 2];
+      }
 
-          @Override
-          public Object next() {
-            myIndex += 2;
-            return userObjects[myIndex - 2];
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException();
       }
     };
   }
@@ -652,8 +643,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     myOwner.fireNodeRead(this, true);
 
-    if (myProperties == null) return new EmptyIterable<SProperty>();
-    List<SProperty> result = new ArrayList<SProperty>(myProperties.length / 2);
+    if (myProperties == null) return new EmptyIterable<>();
+    List<SProperty> result = new ArrayList<>(myProperties.length / 2);
     for (int i = 0; i < myProperties.length; i += 2) {
       result.add((SProperty) myProperties[i]);
     }
@@ -854,7 +845,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   @Override
   public Collection<String> getPropertyNames() {
-    List<String> res = new ArrayList<String>(myProperties == null ? 0 : myProperties.length / 2);
+    List<String> res = new ArrayList<>(myProperties == null ? 0 : myProperties.length / 2);
     for (SProperty p : getProperties()) {
       res.add(p.getName());
     }

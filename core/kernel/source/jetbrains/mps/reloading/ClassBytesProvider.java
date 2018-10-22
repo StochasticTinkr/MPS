@@ -31,7 +31,7 @@ public interface ClassBytesProvider {
   @Nullable
   ClassBytes getClassBytes(String name);
 
-  public static interface ClassBytes {
+  interface ClassBytes {
     @NotNull
     byte[] getBytes();
 
@@ -39,7 +39,7 @@ public interface ClassBytesProvider {
     URL getPath();
   }
 
-  public static class DefaultClassBytes implements ClassBytes {
+  class DefaultClassBytes implements ClassBytes {
     private final byte[] myBytes;
     private final URL myPath;
 

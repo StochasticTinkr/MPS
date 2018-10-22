@@ -258,13 +258,10 @@ public abstract class SimpleTypecheckingContext<
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      LanguageScopeExecutor.execWithModelScope(myNode.getModel(), new Computable<Object>() {
-        @Override
-        public Object compute() {
-          getTypechecking().computeTypes(refreshTypes);
-          getTypechecking().setCheckedTypesystem();
-          return null;
-        }
+      LanguageScopeExecutor.execWithModelScope(myNode.getModel(), () -> {
+        getTypechecking().computeTypes(refreshTypes);
+        getTypechecking().setCheckedTypesystem();
+        return null;
       });
     }
   }
@@ -282,7 +279,7 @@ public abstract class SimpleTypecheckingContext<
         //non-typesystem checks
         applyNonTypesystemRules();
         final Set<Pair<SNode, List<IErrorReporter>>> nodesWithErrors = getTypechecking().getNodesWithErrors(true);
-        final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(nodesWithErrors);
+        final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<>(nodesWithErrors);
         result.addAll(getTypechecking().getNodesWithErrors(false));
         return result;
 
@@ -314,24 +311,15 @@ public abstract class SimpleTypecheckingContext<
     if (messages.isEmpty()) {
       return null;
     }
-    Collections.sort(messages, new Comparator<IErrorReporter>() {
-      @Override
-      public int compare(IErrorReporter o1, IErrorReporter o2) {
-        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-      }
-    });
+    Collections.sort(messages, (o1, o2) -> o2.getMessageStatus().compareTo(o1.getMessageStatus()));
     return messages.get(0);
   }
 
 
   @Override
   public TypeSubstitution getSubstitution(final SNode origNode) {
-    return LanguageScopeExecutor.execWithGlobalScope(new Computable<TypeSubstitution>() {
-      @Override
-      public TypeSubstitution compute() {
-        return getTypechecking().getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this);
-      }
-    });
+    return LanguageScopeExecutor.execWithGlobalScope(
+        () -> getTypechecking().getTypecheckingComponent().lookupSubstitution(origNode, SimpleTypecheckingContext.this));
   }
 
   protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {

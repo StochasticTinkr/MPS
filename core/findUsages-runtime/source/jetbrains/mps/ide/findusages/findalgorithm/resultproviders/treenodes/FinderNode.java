@@ -18,8 +18,8 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder.FindCallback;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -30,7 +30,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class FinderNode extends BaseLeaf {
   private static final Logger LOG = LogManager.getLogger(FinderNode.class);
@@ -40,9 +39,6 @@ public class FinderNode extends BaseLeaf {
   private static final String CLASS_NAME = "class_name";
 
   private IFinder myFinder;
-
-  public FinderNode() {
-  }
 
   public FinderNode(IFinder finder) {
     myFinder = finder;
@@ -58,21 +54,13 @@ public class FinderNode extends BaseLeaf {
   }
 
   @Override
-  public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
-    monitor.start(getTaskName(), 10);
+  public void doFindResults(@NotNull final SearchQuery query, @NotNull FindCallback callback, @NotNull final ProgressMonitor monitor) {
     try {
-      SearchResults results = myFinder.find(query, monitor.subTask(9, SubProgressKind.REPLACING));
-      //todo [MM] move sorting from here to code building the actual tree. Otherwise, at least results produced by different finders may remain unsorted
-      if (FinderUtils.isAllResultsIsNodes(results)) {
-        FinderUtils.sortNodeResultsByEditorPosition(results);
-        monitor.advance(1);
-      }
-      return results;
+      myFinder.find(query, callback, monitor);
+    } catch (VirtualMachineError error) {
+      throw error;
     } catch (Throwable t) {
       Logger.getLogger(getClass()).error(t.getMessage(), t);
-      return new SearchResults();
-    } finally {
-      monitor.done();
     }
   }
 

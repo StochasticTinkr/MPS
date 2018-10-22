@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.actions.nodes.GoToRulesHelper" file="GoToRulesHelper.java">
+  <dependency className="jetbrains.mps.ide.actions.nodes.GoToRulesHelper">
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />

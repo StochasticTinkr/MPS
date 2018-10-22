@@ -18,7 +18,7 @@
       <unit at="16,0,37,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,53,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl" />
+      <unit at="20,0,54,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)/7980748436587788164">

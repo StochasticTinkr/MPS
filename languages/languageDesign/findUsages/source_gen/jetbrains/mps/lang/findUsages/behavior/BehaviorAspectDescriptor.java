@@ -17,12 +17,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myIsApplicableBlock__BehaviorDescriptor = new IsApplicableBlock__BehaviorDescriptor();
   private final BHDescriptor myResultStatement__BehaviorDescriptor = new ResultStatement__BehaviorDescriptor();
   private final BHDescriptor myNodeStatement__BehaviorDescriptor = new NodeStatement__BehaviorDescriptor();
-  private final BHDescriptor myExecuteFinderExpression__BehaviorDescriptor = new ExecuteFinderExpression__BehaviorDescriptor();
   private final BHDescriptor myCategorizeBlock__BehaviorDescriptor = new CategorizeBlock__BehaviorDescriptor();
   private final BHDescriptor mySearchedNodesBlock__BehaviorDescriptor = new SearchedNodesBlock__BehaviorDescriptor();
   private final BHDescriptor myCheckCancelledStatusStatement__BehaviorDescriptor = new CheckCancelledStatusStatement__BehaviorDescriptor();
   private final BHDescriptor myIsVisibleBlock__BehaviorDescriptor = new IsVisibleBlock__BehaviorDescriptor();
   private final BHDescriptor myIsUsedByDefault__BehaviorDescriptor = new IsUsedByDefault__BehaviorDescriptor();
+  private final BHDescriptor myOnEachFoundNodeCallback__BehaviorDescriptor = new OnEachFoundNodeCallback__BehaviorDescriptor();
+  private final BHDescriptor myForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor = new ForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myOnEachNodeFoundByExpression__BehaviorDescriptor = new OnEachNodeFoundByExpression__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -36,11 +38,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 1:
         return myCheckCancelledStatusStatement__BehaviorDescriptor;
       case 2:
-        return myExecuteFinderExpression__BehaviorDescriptor;
-      case 3:
         return myFindBlock__BehaviorDescriptor;
-      case 4:
+      case 3:
         return myFinderDeclaration__BehaviorDescriptor;
+      case 4:
+        return myForEachNodeFoundClosureParameterDeclaration__BehaviorDescriptor;
       case 5:
         return myIsApplicableBlock__BehaviorDescriptor;
       case 6:
@@ -50,12 +52,16 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 8:
         return myNodeStatement__BehaviorDescriptor;
       case 9:
-        return myResultStatement__BehaviorDescriptor;
+        return myOnEachFoundNodeCallback__BehaviorDescriptor;
       case 10:
+        return myOnEachNodeFoundByExpression__BehaviorDescriptor;
+      case 11:
+        return myResultStatement__BehaviorDescriptor;
+      case 12:
         return mySearchedNodesBlock__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b14c36L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a88L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a94L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1660f4e85a04a8fL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11b36e60151L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b5cc19L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b14c36L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a88L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16d39f72L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a94L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1660f4e85a04a8fL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11b36e60151L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x112b337a16caa96eL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x5f5488291166ada7L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b5cc19L)).seal();
 }

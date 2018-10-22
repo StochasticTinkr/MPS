@@ -83,7 +83,7 @@ public final class ModelRootDescriptor implements Copyable<ModelRootDescriptor> 
 
   @Override
   public boolean equals(Object obj) {
-    if(obj == null || !(obj instanceof ModelRootDescriptor))
+    if(!(obj instanceof ModelRootDescriptor))
       return false;
 
     ModelRootDescriptor modelRootDescriptor = (ModelRootDescriptor) obj;

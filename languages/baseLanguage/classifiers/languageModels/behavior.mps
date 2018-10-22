@@ -2,11 +2,11 @@
 <model ref="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -31,7 +31,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -249,7 +248,6 @@
     <ref role="13h7C2" to="tp4f:hyWrxye" resolve="IClassifierPart" />
     <node concept="13i0hz" id="hEwIfO4" role="13h7CS">
       <property role="13i0iv" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMainClassifier" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hEwIfO5" role="3clF45">
@@ -259,7 +257,6 @@
       <node concept="3Tm1VV" id="hJrm0Dq" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIfO7" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <node concept="2I9FWS" id="hEwIfO8" role="3clF45">
         <ref role="2I9WkF" to="tp4f:hyWqYN0" resolve="IMember" />
@@ -339,7 +336,6 @@
     <property role="3GE5qa" value="Types" />
     <ref role="13h7C2" to="tp4f:hyWukbY" resolve="DefaultClassifierType" />
     <node concept="13i0hz" id="hEwIk_S" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <ref role="13i0hy" node="hEwINC$" resolve="getMembers" />
       <node concept="3clFbS" id="hEwIk_T" role="3clF47">
@@ -376,7 +372,6 @@
   <node concept="13h7C7" id="hEwIBC4">
     <ref role="13h7C2" to="tp4f:hyWqYN0" resolve="IMember" />
     <node concept="13i0hz" id="hEwIBC5" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getVisiblity" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hEwIBC6" role="3clF45">
@@ -396,7 +391,6 @@
       <node concept="3Tm1VV" id="hJrm0yN" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="6ALWH9g2jU8" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getOperationSConcept" />
       <property role="13i0it" value="true" />
       <node concept="3bZ5Sz" id="6ALWH9g2lME" role="3clF45">
@@ -468,7 +462,6 @@
       <node concept="3Tm1VV" id="6ALWH9g2jUD" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIBCC" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="createOperation" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hEwIBCD" role="3clF45">
@@ -516,7 +509,6 @@
       <node concept="3Tm1VV" id="hJrm0y7" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwIBCW" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getContainer" />
       <node concept="3Tqbb2" id="hEwIBCX" role="3clF45">
         <ref role="ehGHo" to="tp4f:hyWqMFP" resolve="IClassifier" />
@@ -558,7 +550,6 @@
     </node>
     <node concept="13i0hz" id="6ALWH9g2mqE" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getOperationSConcept" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="6ALWH9g2mqF" role="1B3o_S" />
@@ -581,7 +572,6 @@
     <ref role="13h7C2" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="13i0hz" id="hEwINC$" role="13h7CS">
       <property role="13i0iv" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <property role="13i0it" value="true" />
       <node concept="2I9FWS" id="hEwINC_" role="3clF45">
@@ -608,7 +598,6 @@
     <property role="3GE5qa" value="Methods" />
     <ref role="13h7C2" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
     <node concept="13i0hz" id="hEwJ6LG" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getVisiblity" />
       <ref role="13i0hy" node="hEwIBC5" resolve="getVisiblity" />
       <node concept="3clFbS" id="hEwJ6LH" role="3clF47">
@@ -662,7 +651,6 @@
     </node>
     <node concept="13i0hz" id="2D1PBM_b$1Y" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getOperationSConcept" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="6ALWH9g2mqE" resolve="getOperationSConcept" />
@@ -687,7 +675,6 @@
   <node concept="13h7C7" id="hEwJeDM">
     <ref role="13h7C2" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
     <node concept="13i0hz" id="hEwJeDN" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getClassifier" />
       <node concept="3Tqbb2" id="hEwJeDO" role="3clF45">
         <ref role="ehGHo" to="tp4f:hyWqMFP" resolve="IClassifier" />
@@ -729,7 +716,6 @@
       <node concept="3Tm1VV" id="hJrm0pW" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hJm8WEN" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getPossibleClassifiers" />
       <node concept="2I9FWS" id="hJm8WEO" role="3clF45">
         <ref role="2I9WkF" to="tp4f:hyWqMFP" resolve="IClassifier" />
@@ -794,7 +780,6 @@
   <node concept="13h7C7" id="hEwJim3">
     <ref role="13h7C2" to="tp4f:hyWqMFP" resolve="IClassifier" />
     <node concept="13i0hz" id="hEwJimy" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="createType" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hEwJimz" role="3clF45">
@@ -840,7 +825,6 @@
       <node concept="3Tm1VV" id="hJrm0$8" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hHOGPWW" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="createSuperType" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hHOGUjX" role="3clF45">
@@ -854,7 +838,6 @@
       <node concept="3Tm1VV" id="hJrm0D0" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwJimO" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getParts" />
       <property role="13i0it" value="true" />
       <node concept="2I9FWS" id="hEwJimP" role="3clF45">
@@ -931,7 +914,6 @@
       <node concept="3Tm1VV" id="hJrm0As" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwJink" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <property role="13i0it" value="true" />
       <node concept="2I9FWS" id="hEwJinl" role="3clF45">
@@ -1188,7 +1170,6 @@
       <node concept="3Tm1VV" id="hJrm0_K" role="1B3o_S" />
     </node>
     <node concept="13i0hz" id="hEwJioW" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <property role="13i0it" value="true" />
       <node concept="2I9FWS" id="hEwJioX" role="3clF45">
@@ -1478,7 +1459,6 @@
     </node>
     <node concept="13i0hz" id="hEwJim4" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getContextClassifier" />
       <node concept="3clFbS" id="hEwJim6" role="3clF47">
@@ -1553,7 +1533,6 @@
     <property role="3GE5qa" value="Fields" />
     <ref role="13h7C2" to="tp4f:hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     <node concept="13i0hz" id="hEERLbs" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getVisiblity" />
       <ref role="13i0hy" node="hEwIBC5" resolve="getVisiblity" />
       <node concept="3clFbS" id="hEERLbt" role="3clF47">
@@ -1576,7 +1555,6 @@
     </node>
     <node concept="13i0hz" id="2D1PBM_bzEG" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getOperationSConcept" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="6ALWH9g2mqE" resolve="getOperationSConcept" />
@@ -1601,7 +1579,6 @@
   <node concept="13h7C7" id="hHOIk4x">
     <ref role="13h7C2" to="tp4f:hHOG3lW" resolve="SuperClassifierExpresson" />
     <node concept="13i0hz" id="hHOIkvz" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getClassifier" />
       <node concept="3Tqbb2" id="hHOIkv$" role="3clF45">
         <ref role="ehGHo" to="tp4f:hyWqMFP" resolve="IClassifier" />
@@ -1632,7 +1609,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvANN0" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="lvalue" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpek:1653mnvAgvW" resolve="lvalue" />

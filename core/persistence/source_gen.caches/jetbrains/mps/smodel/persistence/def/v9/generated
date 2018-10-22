@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e7l9qoor4lzoderxjjm48j7flkx8f5v" />
+<product version="3" modelHash="bdjl5qck1lj2m2k8fne7io6z64gzukp">
+  <files names="AnnotationInfoReader9Handler.java:ModelReader9Handler.java" />
+</product>
 

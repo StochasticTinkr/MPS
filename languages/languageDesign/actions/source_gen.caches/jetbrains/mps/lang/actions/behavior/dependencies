@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor" file="ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor" file="ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -83,7 +83,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor" file="ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor" file="ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -130,7 +130,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers__BehaviorDescriptor" file="CopyPasteHandlers__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -162,7 +162,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPreProcessFunction__BehaviorDescriptor" file="CopyPreProcessFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPreProcessFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPreProcessor__BehaviorDescriptor" file="CopyPreProcessor__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.CopyPreProcessor__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -211,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance__BehaviorDescriptor" file="NF_Concept_NewInstance__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -233,7 +233,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation__BehaviorDescriptor" file="NF_LinkList_AddNewChildOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -255,7 +255,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Link_SetNewChildOperation__BehaviorDescriptor" file="NF_Link_SetNewChildOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Link_SetNewChildOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -277,7 +277,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewNodeOperation__BehaviorDescriptor" file="NF_Model_CreateNewNodeOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewNodeOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -299,7 +299,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewRootNodeOperation__BehaviorDescriptor" file="NF_Model_CreateNewRootNodeOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Model_CreateNewRootNodeOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -321,7 +321,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor" file="NF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -343,7 +343,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor" file="NF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -365,7 +365,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation__BehaviorDescriptor" file="NF_Node_ReplaceWithNewOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -387,7 +387,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NodeFactories__BehaviorDescriptor" file="NodeFactories__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeFactories__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -414,7 +414,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NodeFactory__BehaviorDescriptor" file="NodeFactory__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeFactory__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -438,7 +438,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_EnclosingNode__BehaviorDescriptor" file="NodeSetupFunction_EnclosingNode__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_EnclosingNode__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -462,7 +462,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_SampleNode__BehaviorDescriptor" file="NodeSetupFunction_SampleNode__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction_SampleNode__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -486,7 +486,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction__BehaviorDescriptor" file="NodeSetupFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSetupFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -512,7 +512,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.PastePostProcessFunction__BehaviorDescriptor" file="PastePostProcessFunction__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.PastePostProcessFunction__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -537,7 +537,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.PastePostProcessor__BehaviorDescriptor" file="PastePostProcessor__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.PastePostProcessor__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -561,7 +561,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.PasteWrapper__BehaviorDescriptor" file="PasteWrapper__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.PasteWrapper__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -585,7 +585,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.PasteWrappers__BehaviorDescriptor" file="PasteWrappers__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.PasteWrappers__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -612,7 +612,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_PasteWrapper__BehaviorDescriptor" file="QueryFunction_PasteWrapper__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_PasteWrapper__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

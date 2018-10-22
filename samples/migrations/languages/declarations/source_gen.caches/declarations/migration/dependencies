@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="declarations.migration.MigrateDeclarations" file="MigrateDeclarations.java">
+  <dependency className="declarations.migration.MigrateDeclarations">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="declarations.migration.MigrationDescriptor" file="MigrationDescriptor.java">
+  <dependency className="declarations.migration.MigrationDescriptor">
     <classNode dependClassName="declarations.migration.MigrateDeclarations" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />

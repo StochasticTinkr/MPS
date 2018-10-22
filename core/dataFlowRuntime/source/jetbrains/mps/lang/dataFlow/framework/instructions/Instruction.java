@@ -27,8 +27,8 @@ public abstract class Instruction {
   protected Object mySource;
 
   protected String myRuleReference;
-  protected final Set<Instruction> myJumps = new HashSet<Instruction>();
-  protected final Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  protected final Set<Instruction> myJumps = new HashSet<>();
+  protected final Map<Object, Object> myUserObjects = new HashMap<>();
   protected TryFinallyInfo myBlockInfo;
   protected int myIndex;
 
@@ -86,7 +86,7 @@ public abstract class Instruction {
   }
 
   public Set<Instruction> succ() {
-    Set<Instruction> result = new HashSet<Instruction>();
+    Set<Instruction> result = new HashSet<>();
     for (ProgramState ps : new ProgramState(this, false).succ()) {
       result.add(ps.getInstruction());
     }
@@ -97,7 +97,7 @@ public abstract class Instruction {
   }
 
   public Set<Instruction> pred() {
-    Set<Instruction> result = new HashSet<Instruction>();
+    Set<Instruction> result = new HashSet<>();
     for (ProgramState ps : new ProgramState(this, false).pred()) {
       result.add(ps.getInstruction());
     }
@@ -108,13 +108,13 @@ public abstract class Instruction {
   }
 
   public List<ProgramState> succ(ProgramState s) {
-    List<ProgramState> result = new ArrayList<ProgramState>();
+    List<ProgramState> result = new ArrayList<>();
     result.add(new ProgramState(getProgram().get(getIndex() + 1), s.isReturnMode()));
     return result;
   }
 
   public List<ProgramState> pred(ProgramState s) {
-    List<ProgramState> result = new ArrayList<ProgramState>();
+    List<ProgramState> result = new ArrayList<>();
     if (this != getProgram().getStart()) {
       Instruction prev = getProgram().get(getIndex() - 1);
       if (!(prev instanceof RetInstruction) &&

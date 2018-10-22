@@ -48,7 +48,7 @@ public class TemporaryModels {
 
   //singleton part end
 
-  private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
+  private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<>();
 
   //todo convert possible parameter sets to "sensivity" enum: read-only (no read-events), read-only (with events), editable, editable with events, editable with undo tracked
   public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {

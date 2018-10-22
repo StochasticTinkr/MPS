@@ -20,13 +20,14 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.fileEditor.impl.EditorEmptyTextPainter;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.util.ui.UIUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 
 public class MPSEditorEmptyTextPainter extends EditorEmptyTextPainter {
 
   @Override
-  protected void advertiseActions(JComponent splitters, UIUtil.TextPainter painter) {
+  protected void advertiseActions(@NotNull JComponent splitters, @NotNull UIUtil.TextPainter painter) {
     // Change list of actions
     appendToolWindow(painter, "Project View", ToolWindowId.PROJECT_VIEW, splitters);
     // TODO: fix actions with parameters generator - action parameter must not silently affect ID!

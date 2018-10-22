@@ -253,9 +253,7 @@ public class JarEntryFile implements IFileEx {
     JarEntryFile that = (JarEntryFile) o;
 
     if (myEntryPath != null ? !myEntryPath.equals(that.myEntryPath) : that.myEntryPath != null) return false;
-    if (myJarFile != null ? !myJarFile.equals(that.myJarFile) : that.myJarFile != null) return false;
-
-    return true;
+    return myJarFile != null ? myJarFile.equals(that.myJarFile) : that.myJarFile == null;
   }
 
   @Override

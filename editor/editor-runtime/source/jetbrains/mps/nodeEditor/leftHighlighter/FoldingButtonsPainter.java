@@ -32,7 +32,7 @@ import java.util.Map.Entry;
  * Date: 02.03.2010
  */
 public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
-  private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
+  private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<>();
   private FoldingButton myButtonUnderMouse;
   private boolean myNeedsRelayout = false;
 

@@ -110,9 +110,6 @@
     <property role="34LRSv" value="node" />
     <property role="EcuMT" value="1206442747519" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvAMSU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hz_D2po">
     <property role="R5$K7" value="true" />

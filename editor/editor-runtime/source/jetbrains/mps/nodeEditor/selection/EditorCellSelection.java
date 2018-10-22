@@ -143,10 +143,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
     if (mySideSelectDirection != that.mySideSelectDirection) {
       return false;
     }
-    if (getCaretX() != that.getCaretX()) {
-      return false;
-    }
-    return true;
+    return getCaretX() == that.getCaretX();
   }
 
   @Override

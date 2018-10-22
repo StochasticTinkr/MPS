@@ -223,10 +223,6 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="2WSWNq1TGrt">
-    <property role="3GE5qa" value="member.modifier" />
-    <ref role="1M2myG" to="oubp:2WSWNq1TGom" resolve="RequiredModifier" />
-  </node>
   <node concept="1M2fIO" id="4auf8pY9$1T">
     <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="oubp:3geGFOI0X5w" resolve="DSLDescriptor" />
@@ -486,6 +482,24 @@
                 </node>
               </node>
               <node concept="34oBXx" id="147CB3QsUnh" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7DN9hucr1dH">
+    <property role="3GE5qa" value="member.modifier" />
+    <ref role="1M2myG" to="oubp:7DN9hucqeID" resolve="DefaultModifier" />
+    <node concept="9S07l" id="7DN9hucr1dI" role="9Vyp8">
+      <node concept="3clFbS" id="7DN9hucr1dJ" role="2VODD2">
+        <node concept="3clFbF" id="7DN9hucr1WV" role="3cqZAp">
+          <node concept="2OqwBi" id="7DN9hucr2cj" role="3clFbG">
+            <node concept="nLn13" id="7DN9hucr1WU" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="7DN9hucr2oX" role="2OqNvi">
+              <node concept="chp4Y" id="7DN9hucr2_E" role="cj9EA">
+                <ref role="cht4Q" to="oubp:7aMlq14vVGL" resolve="PropertyDescriptor" />
+              </node>
             </node>
           </node>
         </node>

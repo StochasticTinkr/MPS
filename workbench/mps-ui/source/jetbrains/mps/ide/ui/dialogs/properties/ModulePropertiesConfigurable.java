@@ -43,6 +43,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBUI;
+import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
@@ -56,7 +57,6 @@ import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.generator.GenPlanPickPanel;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
@@ -121,7 +121,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -473,11 +472,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           //just continue omitting this field
         }
       }
-      if (myGeneratorAlias != null && !myGeneratorAlias.getText().equals(((GeneratorDescriptor) myModuleDescriptor).getAlias())) {
-        return true;
-      }
+      return myGeneratorAlias != null && !myGeneratorAlias.getText().equals(((GeneratorDescriptor) myModuleDescriptor).getAlias());
 
-      return false;
     }
 
     @Override
@@ -1168,7 +1164,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         @Override
         public boolean isCellEditable(EventObject e) {
-          return e != null && e instanceof MouseEvent && ((MouseEvent) e).getClickCount() >= 2;
+          return e instanceof MouseEvent && ((MouseEvent) e).getClickCount() >= 2;
         }
 
         @Override
@@ -1425,23 +1421,30 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         existingFacetTypes.put(moduleFacet.getFacetType(), moduleFacet);
       }
 
-      Set<String> applicableFacetTypes = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(
-          () -> FacetsFacade.getInstance().getApplicableFacetTypes(myModule.getUsedLanguages()));
+      final FacetsRegistry facetsRegistry = myProject.getComponent(FacetsRegistry.class);
 
-      for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        SModuleFacet sModuleFacet = existingFacetTypes.get(facet);
-        if (sModuleFacet == null) {
-          // i.e. !existingFacetTypes.contains(facet)
-          sModuleFacet = FacetsFacade.getInstance().getFacetFactory(facet).create();
+      Set<String> applicableFacetTypes = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(
+          () -> facetsRegistry.getApplicableFacetTypes(myModule.getUsedLanguages()));
+
+      for (String facetType : facetsRegistry.getFacetTypes()) {
+        SModuleFacet existingFacetInstance = existingFacetTypes.get(facetType);
+        String facetPresentation;
+        if (existingFacetInstance == null) {
+          // first, consult if the new one is for this sort of modules.
+          // For existing, we might want to denote those not applicable as 'useless' in UI.
+          if (!facetsRegistry.getFacetFactory(facetType).isApplicable(myModule)) {
+            continue;
+          }
+          facetPresentation = facetType;
+        } else {
+          facetPresentation = existingFacetInstance instanceof ModuleFacetBase ? ((ModuleFacetBase) existingFacetInstance).getFacetPresentation() : facetType;
         }
-        String facetPresentation =
-            sModuleFacet instanceof ModuleFacetBase ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() : sModuleFacet.getFacetType();
         String fmt = PropertiesBundle.message("module.facets.checkbox.title");
-        facetPresentation = applicableFacetTypes.contains(facet)
+        facetPresentation = applicableFacetTypes.contains(facetType)
                             ? String.format(fmt, facetPresentation) : facetPresentation;
-        FacetCheckBox checkBox = existingFacetTypes.containsKey(facet)
-                                 ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(sModuleFacet), facetPresentation)
-                                 : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
+        FacetCheckBox checkBox = existingFacetTypes.containsKey(facetType)
+                                 ? new FacetCheckBox(AddFacetsTab.this, existingFacetInstance, myFacetTabsPersistence.getFacetTab(existingFacetInstance), facetPresentation)
+                                 : new FacetCheckBox(AddFacetsTab.this, facetType, facetPresentation);
 
         myCheckBoxes.add(checkBox);
       }
@@ -1531,17 +1534,20 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       if (myCheckBox.isSelected()) {
         if (myFacet == null) {
-          myFacet = FacetsFacade.getInstance().getFacetFactory(myFacetType).create();
-          if (myFacet instanceof ModuleFacetBase)
-          // XXX why do we need to set module here, and why do we ignore return value?
-          {
+          final FacetsRegistry facetRegistry = myProject.getComponent(FacetsRegistry.class);
+          myFacet = facetRegistry.getFacetFactory(myFacetType).create();
+          if (myFacet instanceof ModuleFacetBase) {
+            // XXX why do we need to set module here, and why do we ignore return value?
+            // FIXME this is compatibility branch, delete once 2018.3 is out, new code shall implement FF.create(SModule)
             ((ModuleFacetBase) myFacet).setModule(myModule);
+          } else if (myFacet == null) {
+            myFacet = facetRegistry.getFacetFactory(myFacetType).create(myModule);
           }
         }
         if (myFacetTab == null) {
           myFacetTab = myFacetTabsPersistence.getFacetTab(myFacet);
           if (myFacetTab != null) {
-            // perhaps, would be better if MPSPropertiesConfigurable is responsible for tab intialization,
+            // perhaps, would be better if MPSPropertiesConfigurable is responsible for tab initialization,
             // and keeps track of which one is already initialized to avoid multiple initializations.
             myFacetTab.init();
           }

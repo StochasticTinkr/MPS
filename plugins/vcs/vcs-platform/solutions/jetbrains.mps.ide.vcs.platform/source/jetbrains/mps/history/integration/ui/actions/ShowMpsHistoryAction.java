@@ -16,11 +16,12 @@
 package jetbrains.mps.history.integration.ui.actions;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class ShowMpsHistoryAction extends com.intellij.history.integration.ui.actions.ShowHistoryAction {
 
   @Override
-  public void update(AnActionEvent e) {
+  public void update(@NotNull AnActionEvent e) {
     e.getPresentation().setText("Show _History", true);
     super.update(e);
   }

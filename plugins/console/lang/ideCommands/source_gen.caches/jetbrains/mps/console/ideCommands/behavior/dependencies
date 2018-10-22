@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.AbsractMake__BehaviorDescriptor" file="AbsractMake__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.AbsractMake__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter__BehaviorDescriptor" file="ActionCallDeclaredParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter__BehaviorDescriptor" file="ActionCallGlobalParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor" file="ActionCallParameter__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.AbsractMake__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter__BehaviorDescriptor" />
@@ -128,7 +128,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.CallActionExpression__BehaviorDescriptor" file="CallActionExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.CallActionExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.Clean__BehaviorDescriptor" file="Clean__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.Clean__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -167,7 +167,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor" file="ClickableGenerator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor">
     <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -206,7 +206,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.ui.persistence.Tab" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget__BehaviorDescriptor" file="GlobalStatisticTarget__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -244,7 +244,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.INodeSetReference__BehaviorDescriptor" file="INodeSetReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.INodeSetReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -268,7 +268,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget__BehaviorDescriptor" file="IStatisticsTarget__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -295,7 +295,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.Make__BehaviorDescriptor" file="Make__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.Make__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -321,7 +321,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelProperties__BehaviorDescriptor" file="ModelProperties__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelProperties__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -343,7 +343,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference__BehaviorDescriptor" file="ModelReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -369,7 +369,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget__BehaviorDescriptor" file="ModelStatisticsTarget__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -406,7 +406,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModuleProperties__BehaviorDescriptor" file="ModuleProperties__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModuleProperties__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -428,7 +428,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_old__BehaviorDescriptor" file="OfAspectOperation_old__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_old__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -445,7 +445,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget__BehaviorDescriptor" file="ProjectStatisticsTarget__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -481,7 +481,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor" file="RemoveGenSources__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -503,7 +503,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences__BehaviorDescriptor" file="ShowBrokenReferences__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -538,7 +538,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowExpression__BehaviorDescriptor" file="ShowExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -561,7 +561,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan__BehaviorDescriptor" file="ShowGenPlan__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -601,7 +601,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.StatCommand__BehaviorDescriptor" file="StatCommand__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.StatCommand__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Void" />
@@ -628,7 +628,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget__BehaviorDescriptor" file="SubtreeStatisticsTarget__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

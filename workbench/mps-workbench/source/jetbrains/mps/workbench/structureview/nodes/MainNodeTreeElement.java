@@ -25,6 +25,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -49,30 +50,29 @@ public class MainNodeTreeElement implements StructureViewTreeElement {
     return new jetbrains.mps.smodel.SNodePointer(null);
   }
 
+  @NotNull
   @Override
   public TreeElement[] getChildren() {
-    final List<TreeElement> result = new ArrayList<TreeElement>();
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = myNode.resolve(myProject.getRepository());
-        for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
-          try {
-            for (SNode aspectNode : tab.getNodes(node)) {
-              SNode baseNode = tab.getBaseNode(aspectNode);
-              boolean bijection = (baseNode == node || baseNode == null);
-              result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
-            }
-          } catch (Throwable t) {
-            LOG.error("Exception in extension: ", t);
+    final List<TreeElement> result = new ArrayList<>();
+    myProject.getModelAccess().runReadAction(() -> {
+      SNode node = myNode.resolve(myProject.getRepository());
+      for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject.getProject(), node)) {
+        try {
+          for (SNode aspectNode : tab.getNodes(node)) {
+            SNode baseNode = tab.getBaseNode(aspectNode);
+            boolean bijection = (baseNode == node || baseNode == null);
+            result.add(new AspectTreeElement(MainNodeTreeElement.this, aspectNode, tab, bijection));
           }
+        } catch (Throwable t) {
+          LOG.error("Exception in extension: ", t);
         }
       }
     });
 
-    return result.toArray(new TreeElement[result.size()]);
+    return result.toArray(new TreeElement[0]);
   }
 
+  @NotNull
   @Override
   public ItemPresentation getPresentation() {
     final SRepository repo = myProject.getRepository();

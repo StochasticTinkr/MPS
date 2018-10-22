@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4mvpqyzbhz0dsgdqj5g872ap4cxu408" />
+<product version="3" modelHash="4mvpqyzbhz0dsgdqj5g872ap4cxu408">
+  <files names="ConstraintsAspectDescriptor.java:EditorExpression_Constraints.java:EditorOperationCall_Constraints.java:EditorOperationDeclaration_Constraints.java:EditorPropertyReference_Constraints.java:GetEditorOperation_Constraints.java:PersistentPropertyReferenceOperation_Constraints.java:ProjectAccessExpression_Constraints.java:SettingsEditor_Constraints.java:TemplateParameterReference_Constraints.java" />
+</product>
 

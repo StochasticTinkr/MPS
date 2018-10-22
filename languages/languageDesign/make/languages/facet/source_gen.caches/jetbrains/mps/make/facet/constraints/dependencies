@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.facet.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints" file="ExtendsFacetReference_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.FacetDeclaration_Constraints" file="FacetDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.FacetDeclaration_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.facet.constraints.FacetsScope" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
@@ -66,11 +66,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.FacetReference_Constraints" file="FacetReference_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.FacetReference_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.FacetsScope" file="FacetsScope.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.FacetsScope">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -95,7 +95,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints" file="ForeignParametersExpression_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -122,7 +122,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints" file="NamedFacetReference_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -144,7 +144,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints" file="RelatedFacetReference_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -170,7 +170,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints" file="ResourceClassifierType_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -209,11 +209,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.ResourceTypeDeclaration_Constraints" file="ResourceTypeDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.ResourceTypeDeclaration_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints" file="TargetDeclaration_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -240,7 +240,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints" file="TargetDependency_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
@@ -267,7 +267,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.constraints.TargetReferenceExpression_Constraints" file="TargetReferenceExpression_Constraints.java">
+  <dependency className="jetbrains.mps.make.facet.constraints.TargetReferenceExpression_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>

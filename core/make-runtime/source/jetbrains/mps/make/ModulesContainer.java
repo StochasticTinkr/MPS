@@ -53,8 +53,7 @@ final class ModulesContainer {
 
   public boolean isDirty(@NotNull SModule m) {
     if (isExcluded(m)) return false;
-    if (areClassesUpToDate(m)) return false;
-    return true;
+    return !areClassesUpToDate(m);
   }
 
   public boolean areClassesUpToDate(@NotNull SModule m) {

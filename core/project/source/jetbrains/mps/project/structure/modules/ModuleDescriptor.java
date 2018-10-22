@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,8 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
     return PersistenceFacade.getInstance().createModuleReference(getId(), getNamespace());
   }
 
+  // FIXME document what's that and what format it is in
+  //       ANY REASON TO BE STRING?
   public final String getTimestamp() {
     return myTimestamp;
   }
@@ -142,7 +144,10 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
    */
   public final void addFacetDescriptor(@NotNull SModuleFacet facet) {
     removeFacetDescriptor(facet);
-    myFacets.add(new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl()));
+    final ModuleFacetDescriptor fd = new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl());
+    // write defaults or actual values, if any
+    facet.save(fd.getMemento());
+    myFacets.add(fd);
   }
 
   /**

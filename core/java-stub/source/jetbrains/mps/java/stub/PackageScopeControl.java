@@ -70,7 +70,7 @@ public final class PackageScopeControl {
    */
   public void includeWithPrefix(@NotNull String packageNamePrefix) {
     if (myIncludePrefix == null) {
-      myIncludePrefix = new ArrayList<String>(4);
+      myIncludePrefix = new ArrayList<>(4);
     }
     if (packageNamePrefix.length() == 0) {
       throw new IllegalArgumentException();
@@ -80,7 +80,7 @@ public final class PackageScopeControl {
 
   public void excludeWithPrefix(@NotNull String packageNamePrefix) {
     if (myExcludePrefix == null) {
-      myExcludePrefix = new ArrayList<String>(4);
+      myExcludePrefix = new ArrayList<>(4);
     }
     if (packageNamePrefix.length() == 0) {
       throw new IllegalArgumentException();

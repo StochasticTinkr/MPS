@@ -148,24 +148,19 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
     final SearchTaskImpl searchTask = new SearchTaskImpl(ProjectHelper.fromIdeaProject(getProject()), provider, query);
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(() -> new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
+      private SearchResults searchResults;
+
       @Override
-      public void run() {
-        new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
-          private SearchResults searchResults;
-
-          @Override
-          public void run(@NotNull final ProgressIndicator indicator) {
-            searchResults = searchTask.execute(new ProgressMonitorAdapter(indicator));
-          }
-
-          @Override
-          public void onSuccess() {
-            showResults(searchTask, searchResults, options);
-          }
-        }.queue();
+      public void run(@NotNull final ProgressIndicator indicator) {
+        searchResults = searchTask.execute(new ProgressMonitorAdapter(indicator));
       }
-    });
+
+      @Override
+      public void onSuccess() {
+        showResults(searchTask, searchResults, options);
+      }
+    }.queue());
   }
 
   public void show(SearchResults results, String notFoundMsg) {
@@ -264,8 +259,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       if (usageViewData.isTransientView()) {
         continue;
       }
-      Element tabXML = new Element(TAB);
       try {
+        Element tabXML = new Element(TAB);
         usageViewData.write(tabXML, project);
         tabsXML.addContent(tabXML);
       } catch (CantSaveSomethingException e) {
@@ -288,7 +283,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   @Override
-  public void loadState(final Element state) {
+  public void loadState(@NotNull final Element state) {
     //startup manager is needed cause the contract is that you can't use read and write locks
     //on component load - it can cause a deadlock (MPS-2811) 
     StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(() -> {

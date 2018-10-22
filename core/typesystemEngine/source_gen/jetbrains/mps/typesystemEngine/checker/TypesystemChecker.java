@@ -49,7 +49,7 @@ public class TypesystemChecker extends IChecker.AbstractRootChecker<NodeReportIt
     });
   }
   @Override
-  public String getCategory() {
+  public IssueKindReportItem.CheckerCategory getCategory() {
     return IssueKindReportItem.TYPESYSTEM;
   }
 }

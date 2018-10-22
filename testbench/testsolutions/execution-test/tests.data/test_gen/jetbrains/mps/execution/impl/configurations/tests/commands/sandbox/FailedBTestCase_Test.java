@@ -9,6 +9,4 @@ public class FailedBTestCase_Test extends TestCase {
   public void test_fail() throws Exception {
     Assert.fail("fail!");
   }
-  public FailedBTestCase_Test() {
-  }
 }

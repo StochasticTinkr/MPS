@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4l417ongtjbdy723r7e7tl2m95f40qe" />
+<product version="3" modelHash="-7q6vkrjzilsdon3vcq492b262lm06mv">
+  <files names="BehaviorAspectDescriptor.java:Outlook__BehaviorDescriptor.java" />
+</product>
 

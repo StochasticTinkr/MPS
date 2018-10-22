@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ailfkvpdbk0mkbsqzx566xm8sm1o5hd" />
+<product version="3" modelHash="5041w8ijjspwf10lephma3c7gxq49bx">
+  <files names="ActionIDs_extension.java:EditorInternalAddition_ActionGroup.java:ExtensionDescriptor.java:PluginSolution_ApplicationPlugin.java" />
+</product>
 

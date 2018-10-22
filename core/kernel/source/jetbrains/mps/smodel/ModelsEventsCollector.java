@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -56,12 +57,18 @@ public abstract class ModelsEventsCollector {
 
   private List<SModelEvent> myEvents = new ArrayList<>();
   private SModelListener myModelListener = new SModelDelegateListener();
-  private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
+  private Set<SModel> myModelsToListen = new LinkedHashSet<>();
   private CommandListener myCommandListener = new MyCommandAdapter();
   private volatile boolean myDisposed;
 
   private boolean myIsInCommand;
 
+  /**
+   * @deprecated relies on global model access. it's our utility class, shall not be in use from outside, therefore may want to drop as soon as there are no
+   *             uses in MPS itself
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public ModelsEventsCollector() {
     this(ModelAccess.instance());
   }

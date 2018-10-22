@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
+import jetbrains.mps.smodel.action.SPropertySubstituteAction;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,14 +39,11 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = cellContext.get(PropertyCellContext.EDITED_NODE);
     SProperty property = cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
-    if (property == null) {
-      return Collections.emptyList();
-    }
     IOperationContext context = editorContext.getOperationContext();
     List<String> values = getPropertyValues(node, context, editorContext);
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(values.size());
+    List<SubstituteAction> actions = new ArrayList<>(values.size());
     for (String value : values) {
-      actions.add(new PropertySubstituteAction(node, property.getName(), value));
+      actions.add(new SPropertySubstituteAction(node, property, value));
     }
     return actions;
   }

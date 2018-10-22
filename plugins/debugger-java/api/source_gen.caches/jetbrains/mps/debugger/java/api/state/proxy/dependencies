@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaLocation" file="JavaLocation.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaLocation">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.Location" />
     <classNode dependClassName="java.lang.Object" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.ILocation" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame" file="JavaStackFrame.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
     <classNode dependClassName="com.sun.jdi.LocalVariable" />
@@ -39,7 +39,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaThread" file="JavaThread.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaThread">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -61,7 +61,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IThread" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" file="JavaValue.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaValue">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -71,11 +71,11 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" file="ProxyForJava.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" file="ValueWrapper.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.VirtualMachine" />
     <classNode dependClassName="java.lang.Override" />
@@ -93,7 +93,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" file="ValueWrapperFactory.java">
+  <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />

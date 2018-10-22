@@ -94,6 +94,4 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(5, DequeSequence.fromDequeNew(d).removeLastElement());
     Assert.assertTrue(DequeSequence.fromDequeNew(d).isEmpty());
   }
-  public QueueDequeStack_Test() {
-  }
 }

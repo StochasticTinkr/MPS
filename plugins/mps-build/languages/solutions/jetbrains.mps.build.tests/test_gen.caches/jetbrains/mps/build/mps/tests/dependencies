@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.tests.ModuleClosure_Test" file="ModuleClosure_Test.java">
+  <dependency className="jetbrains.mps.build.mps.tests.ModuleClosure_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.HashSet" />

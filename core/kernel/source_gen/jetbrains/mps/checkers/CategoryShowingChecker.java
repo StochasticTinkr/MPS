@@ -9,33 +9,14 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class CategoryShowingChecker<O, I extends IssueKindReportItem> implements IAbstractChecker<O, I> {
-  private IAbstractChecker<O, ? extends I> myOrigin;
-  private String myCategory;
+  private IChecker<O, ? extends I> myOrigin;
   public CategoryShowingChecker(IChecker<O, ? extends I> origin) {
     myOrigin = origin;
-    myCategory = origin.getCategory();
-  }
-
-  public static class CategoryWrapper<O, I extends IssueKindReportItem> implements IChecker<O, I> {
-    private IAbstractChecker<O, I> myOrigin;
-    private String myCategory;
-    public CategoryWrapper(IAbstractChecker<O, I> origin, String category) {
-      myOrigin = origin;
-      myCategory = category;
-    }
-    @Override
-    public String getCategory() {
-      return myCategory;
-    }
-    @Override
-    public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-      myOrigin.check(toCheck, repository, errorCollector, monitor);
-    }
   }
 
   @Override
   public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-    monitor.start(myCategory, 1);
+    monitor.start(myOrigin.getCategory().toString(), 1);
     myOrigin.check(toCheck, repository, errorCollector, monitor.subTask(1, SubProgressKind.IGNORED));
     monitor.done();
   }

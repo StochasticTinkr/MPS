@@ -3,11 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="vmu8" ref="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)" />
@@ -87,9 +87,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -887,6 +884,9 @@
             </node>
             <node concept="1rXfSq" id="4hiugqysgtm" role="33vP2m">
               <ref role="37wK5l" node="2TzypFyLI8v" resolve="selectMerger" />
+              <node concept="37vLTw" id="6ZJWS$QOiHp" role="37wK5m">
+                <ref role="3cqZAo" node="Y1BBlv$vrg" resolve="platform" />
+              </node>
               <node concept="37vLTw" id="7zbsrrw6rnz" role="37wK5m">
                 <ref role="3cqZAo" node="7zbsrrw64Jb" resolve="filetype" />
               </node>
@@ -1330,6 +1330,9 @@
                     <node concept="2ShNRf" id="7zbsrrwlmev" role="37wK5m">
                       <node concept="1pGfFk" id="7zbsrrwlmew" role="2ShVmc">
                         <ref role="37wK5l" node="7zbsrrwd9ry" resolve="ModelMerger" />
+                        <node concept="37vLTw" id="6ZJWS$QOifi" role="37wK5m">
+                          <ref role="3cqZAo" node="6ZJWS$QOgrU" resolve="mpsPlatform" />
+                        </node>
                         <node concept="3K4zz7" id="2QO5PxJ6GBx" role="37wK5m">
                           <node concept="37vLTw" id="2QO5PxJ6KW_" role="3K4E3e">
                             <ref role="3cqZAo" node="7zbsrrw6uaL" resolve="filetype" />
@@ -1456,6 +1459,12 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6ZJWS$QOgrU" role="3clF46">
+        <property role="TrG5h" value="mpsPlatform" />
+        <node concept="3uibUv" id="6ZJWS$QOgQy" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
         </node>
       </node>
       <node concept="37vLTG" id="7zbsrrw6uaL" role="3clF46">
@@ -2449,7 +2458,7 @@
                         <ref role="2Gs0qQ" node="2TzypFyLJ6K" resolve="fromRootDep" />
                       </node>
                       <node concept="liA8E" id="2TzypFyLJ6X" role="2OqNvi">
-                        <ref role="37wK5l" to="vmu8:E2BH9lAYna" resolve="getFileName" />
+                        <ref role="37wK5l" to="vmu8:E2BH9lAYn4" resolve="getClassName" />
                       </node>
                     </node>
                   </node>
@@ -2642,21 +2651,13 @@
         <node concept="3cpWs6" id="2TzypFyLJ89" role="3cqZAp">
           <node concept="2ShNRf" id="2TzypFyLJ8a" role="3cqZAk">
             <node concept="1pGfFk" id="2TzypFyLJ8b" role="2ShVmc">
-              <ref role="37wK5l" to="vmu8:E2BH9lAYof" resolve="RootDependencies" />
+              <ref role="37wK5l" to="vmu8:79YVnsaOePO" resolve="RootDependencies" />
               <node concept="2OqwBi" id="2TzypFyLJ8c" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxghfe9" role="2Oq$k0">
                   <ref role="3cqZAo" node="2TzypFyLJ8p" resolve="rd1" />
                 </node>
                 <node concept="liA8E" id="2TzypFyLJ8e" role="2OqNvi">
                   <ref role="37wK5l" to="vmu8:E2BH9lAYn4" resolve="getClassName" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2TzypFyLJ8f" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgmj0$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2TzypFyLJ8p" resolve="rd1" />
-                </node>
-                <node concept="liA8E" id="2TzypFyLJ8h" role="2OqNvi">
-                  <ref role="37wK5l" to="vmu8:E2BH9lAYna" resolve="getFileName" />
                 </node>
               </node>
               <node concept="2OqwBi" id="2TzypFyLJ8i" role="37wK5m">
@@ -2738,7 +2739,22 @@
       <node concept="3Tm6S6" id="7zbsrrwdKiM" role="1B3o_S" />
       <node concept="17QB3L" id="7zbsrrwe8ss" role="1tU5fm" />
     </node>
+    <node concept="312cEg" id="6ZJWS$QOc4j" role="jymVt">
+      <property role="TrG5h" value="myPlatform" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6ZJWS$QOc4k" role="1B3o_S" />
+      <node concept="3uibUv" id="6ZJWS$QOc4m" role="1tU5fm">
+        <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6ZJWS$QOdRN" role="jymVt" />
     <node concept="3clFbW" id="7zbsrrwd9ry" role="jymVt">
+      <node concept="37vLTG" id="6ZJWS$QObWC" role="3clF46">
+        <property role="TrG5h" value="mpsPlatform" />
+        <node concept="3uibUv" id="6ZJWS$QOc2R" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+        </node>
+      </node>
       <node concept="37vLTG" id="7zbsrrwdmqL" role="3clF46">
         <property role="TrG5h" value="extension" />
         <node concept="17QB3L" id="7zbsrrwdziG" role="1tU5fm" />
@@ -2752,6 +2768,16 @@
             </node>
             <node concept="37vLTw" id="7zbsrrweyiS" role="37vLTJ">
               <ref role="3cqZAo" node="7zbsrrwelkx" resolve="myExtension" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6ZJWS$QOc4n" role="3cqZAp">
+          <node concept="37vLTI" id="6ZJWS$QOc4p" role="3clFbG">
+            <node concept="37vLTw" id="6ZJWS$QOc4s" role="37vLTJ">
+              <ref role="3cqZAo" node="6ZJWS$QOc4j" resolve="myPlatform" />
+            </node>
+            <node concept="37vLTw" id="6ZJWS$QOc4t" role="37vLTx">
+              <ref role="3cqZAo" node="6ZJWS$QObWC" resolve="mpsPlatform" />
             </node>
           </node>
         </node>
@@ -3165,40 +3191,17 @@
                 <node concept="3uibUv" id="2TzypFyLJgK" role="1tU5fm">
                   <ref role="3uigEE" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
                 </node>
-                <node concept="10Nm6u" id="6Bj_f7BHrPV" role="33vP2m" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="2TzypFyLJhK" role="3cqZAp">
-              <node concept="2OqwBi" id="2TzypFyLJhL" role="3clFbG">
-                <node concept="2YIFZM" id="2TzypFyLJhM" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                </node>
-                <node concept="liA8E" id="2TzypFyLJhN" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-                  <node concept="1bVj0M" id="13cOvvwEysu" role="37wK5m">
-                    <node concept="3clFbS" id="13cOvvwEysv" role="1bW5cS">
-                      <node concept="3clFbF" id="6Bj_f7BHsOc" role="3cqZAp">
-                        <node concept="37vLTI" id="6Bj_f7BHtP7" role="3clFbG">
-                          <node concept="37vLTw" id="6Bj_f7BIdWz" role="37vLTJ">
-                            <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                          </node>
-                          <node concept="2YIFZM" id="4p8hmpPbxzN" role="37vLTx">
-                            <ref role="37wK5l" to="bmv6:62HG2toA5Tc" resolve="createMergeSession" />
-                            <ref role="1Pybhc" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
-                            <node concept="37vLTw" id="3GM_nagTu6z" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJey" resolve="baseModel" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTt2G" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJe_" resolve="localModel" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTrLy" role="37wK5m">
-                              <ref role="3cqZAo" node="2TzypFyLJeC" resolve="latestModel" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+                <node concept="2YIFZM" id="4p8hmpPbxzN" role="33vP2m">
+                  <ref role="37wK5l" to="bmv6:62HG2toA5Tc" resolve="createMergeSession" />
+                  <ref role="1Pybhc" to="bmv6:3$YpntjF4lA" resolve="MergeSession" />
+                  <node concept="37vLTw" id="3GM_nagTu6z" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJey" resolve="baseModel" />
+                  </node>
+                  <node concept="37vLTw" id="3GM_nagTt2G" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJe_" resolve="localModel" />
+                  </node>
+                  <node concept="37vLTw" id="3GM_nagTrLy" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJeC" resolve="latestModel" />
                   </node>
                 </node>
               </node>
@@ -3306,34 +3309,19 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="578xxC4yaI0" role="3cqZAp">
-                  <node concept="2OqwBi" id="578xxC4yd15" role="3clFbG">
-                    <node concept="2YIFZM" id="578xxC4yb$t" role="2Oq$k0">
-                      <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                      <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                <node concept="3clFbF" id="578xxC4yejq" role="3cqZAp">
+                  <node concept="2OqwBi" id="578xxC4yejr" role="3clFbG">
+                    <node concept="37vLTw" id="578xxC4yejs" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
                     </node>
-                    <node concept="liA8E" id="578xxC4ydx_" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-                      <node concept="1bVj0M" id="578xxC4ydOL" role="37wK5m">
-                        <node concept="3clFbS" id="578xxC4ydOM" role="1bW5cS">
-                          <node concept="3clFbF" id="578xxC4yejq" role="3cqZAp">
-                            <node concept="2OqwBi" id="578xxC4yejr" role="3clFbG">
-                              <node concept="37vLTw" id="578xxC4yejs" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                              </node>
-                              <node concept="liA8E" id="578xxC4yejt" role="2OqNvi">
-                                <ref role="37wK5l" to="bmv6:3$YpntjF4oh" resolve="applyChanges" />
-                                <node concept="2OqwBi" id="578xxC4yeju" role="37wK5m">
-                                  <node concept="37vLTw" id="578xxC4yejv" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
-                                  </node>
-                                  <node concept="liA8E" id="578xxC4yejw" role="2OqNvi">
-                                    <ref role="37wK5l" to="bmv6:3$YpntjF4n8" resolve="getAllChanges" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
+                    <node concept="liA8E" id="578xxC4yejt" role="2OqNvi">
+                      <ref role="37wK5l" to="bmv6:3$YpntjF4oh" resolve="applyChanges" />
+                      <node concept="2OqwBi" id="578xxC4yeju" role="37wK5m">
+                        <node concept="37vLTw" id="578xxC4yejv" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2TzypFyLJgJ" resolve="mergeSession" />
+                        </node>
+                        <node concept="liA8E" id="578xxC4yejw" role="2OqNvi">
+                          <ref role="37wK5l" to="bmv6:3$YpntjF4n8" resolve="getAllChanges" />
                         </node>
                       </node>
                     </node>
@@ -3807,7 +3795,6 @@
     </node>
     <node concept="2YIFZL" id="13cOvvwCnyL" role="jymVt">
       <property role="TrG5h" value="getPersistenceVersion" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="13cOvvw_GOV" role="3clF47">
@@ -5671,7 +5658,6 @@
     </node>
     <node concept="2YIFZL" id="5YKGT2oU8EX" role="jymVt">
       <property role="TrG5h" value="getTypeByXmlRoot" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5YKGT2oU5EY" role="3clF47">
@@ -6197,7 +6183,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="openOutputStream" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="7vnu9rGN5Lp" role="1B3o_S" />
       <node concept="3uibUv" id="7vnu9rGN5Lr" role="3clF45">
         <ref role="3uigEE" to="guwi:~OutputStream" resolve="OutputStream" />
@@ -6226,7 +6211,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isReadOnly" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="7vnu9rGO57G" role="1B3o_S" />
       <node concept="10P_77" id="7vnu9rGO57I" role="3clF45" />
       <node concept="3clFbS" id="7vnu9rGO57J" role="3clF47">
@@ -6245,7 +6229,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getLocation" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="7vnu9rGO6kN" role="1B3o_S" />
       <node concept="3uibUv" id="7vnu9rGO6kP" role="3clF45">
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />

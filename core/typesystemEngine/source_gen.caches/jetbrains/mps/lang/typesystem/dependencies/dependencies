@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" file="CheckingMethod.java" />
-  <dependency className="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" file="DependenciesCollector.java">
+  <dependency className="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" />
+  <dependency className="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
@@ -24,6 +24,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" file="InferenceMethod.java" />
+  <dependency className="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />
 </dependenciesRoot>
 

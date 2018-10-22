@@ -61,8 +61,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
     myMaxAscent = 0;
     myFirstLineHeight = -1;
     myBossLayout = null;
-    myCurrentLineLayouts = new HashSet<CellLayout_Flow>();
-    myCurrentLine = new ArrayList<EditorCell>();
+    myCurrentLineLayouts = new HashSet<>();
+    myCurrentLine = new ArrayList<>();
   }
 
   private int myWStart = 0;
@@ -74,8 +74,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
   private CellLayout_Flow myBossLayout = null;
 
-  private Set<CellLayout_Flow> myCurrentLineLayouts = new HashSet<CellLayout_Flow>();
-  private java.util.List<EditorCell> myCurrentLine = new ArrayList<EditorCell>();
+  private Set<CellLayout_Flow> myCurrentLineLayouts = new HashSet<>();
+  private java.util.List<EditorCell> myCurrentLine = new ArrayList<>();
 
 
   private void setWStart(int WStart) {
@@ -300,7 +300,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
   @Override
   public List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells) {
     LOG.assertLog(getFlowLayout(editorCells) == this, "Assertion failed.");
-    List<EditorCell> result = new ArrayList<EditorCell>();
+    List<EditorCell> result = new ArrayList<>();
     for (EditorCell cell : editorCells) {
       result.add(cell);
     }
@@ -310,7 +310,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
   @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     LOG.assertLog(getFlowLayout(editorCells) == this, "Assertion failed.");
-    List<Rectangle> result = new ArrayList<Rectangle>();
+    List<Rectangle> result = new ArrayList<>();
     for (EditorCell cell : editorCells) {
       result.add(GeometryUtil.getBounds(cell));
     }

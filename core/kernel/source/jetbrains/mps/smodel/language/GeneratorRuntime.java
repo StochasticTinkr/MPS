@@ -31,7 +31,7 @@ public interface GeneratorRuntime {
    * Identifies this generator runtime module
    */
   @NotNull
-  public SModuleReference getModuleReference();
+  SModuleReference getModuleReference();
 
   /**
    * IMPLEMENTATION NOTE: Now GeneratorRuntime is instantiated with appropriate runtime instance of its language, which is

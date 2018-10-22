@@ -2,11 +2,11 @@
 <model ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
@@ -39,9 +39,6 @@
       <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
         <reference id="1188214555875" name="key" index="2B6OnR" />
         <child id="1188214607812" name="value" index="2B70Vg" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -155,6 +152,9 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -188,6 +188,9 @@
         <child id="2546654756694997556" name="reference" index="92FcQ" />
         <child id="3106559687488913694" name="line" index="2XjZqd" />
       </concept>
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -210,6 +213,9 @@
       <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
         <property id="6612597108003615642" name="name" index="2U$1Ai" />
         <child id="6612597108003615643" name="line" index="2U$1Aj" />
+      </concept>
+      <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
+        <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
       <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
         <reference id="2217234381367530213" name="classifier" index="VXe09" />
@@ -243,7 +249,7 @@
     <property role="TrG5h" value="IMakeService" />
     <node concept="3Tm1VV" id="1NAY6bPd4nN" role="1B3o_S" />
     <node concept="3clFb_" id="7yGn3z4N63W" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="openNewSession" />
       <node concept="10P_77" id="7yGn3z4N64g" role="3clF45" />
       <node concept="3Tm1VV" id="7yGn3z4N63Y" role="1B3o_S" />
@@ -256,7 +262,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="2KylPa8jLiz" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="closeSession" />
       <node concept="37vLTG" id="2KylPa8jLiG" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -269,14 +275,14 @@
       <node concept="3clFbS" id="2KylPa8jLiA" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7yGn3z4N64o" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isSessionActive" />
       <node concept="10P_77" id="7yGn3z4N64t" role="3clF45" />
       <node concept="3Tm1VV" id="7yGn3z4N64q" role="1B3o_S" />
       <node concept="3clFbS" id="7yGn3z4N64r" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7yGn3z4N64K" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="make" />
       <node concept="37vLTG" id="7yGn3z4N65m" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -304,7 +310,7 @@
       <node concept="3clFbS" id="7yGn3z4N64S" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7yGn3z4N64T" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="make" />
       <node concept="37vLTG" id="7yGn3z4N65q" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -338,7 +344,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="7yGn3z4N654" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="make" />
       <node concept="37vLTG" id="7yGn3z4N65t" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -378,7 +384,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="43l$qHE8U5K" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="make" />
       <node concept="37vLTG" id="43l$qHE8U5L" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -427,7 +433,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="7lTD6YZtjhM" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addListener" />
       <node concept="37vLTG" id="7lTD6YZtjhQ" role="3clF46">
         <property role="TrG5h" value="listener" />
@@ -440,7 +446,7 @@
       <node concept="3clFbS" id="7lTD6YZtjhP" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7lTD6YZtjhT" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="removeListener" />
       <node concept="3cqZAl" id="7lTD6YZtjhU" role="3clF45" />
       <node concept="3Tm1VV" id="7lTD6YZtjhV" role="1B3o_S" />
@@ -500,6 +506,27 @@
               <ref role="3cqZAo" node="5aPnf4q_xb4" resolve="Component" />
             </node>
           </node>
+        </node>
+        <node concept="2AHcQZ" id="IIVxgkLZmB" role="2AJF6D">
+          <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+          <node concept="2B6LJw" id="IIVxgkLZpj" role="2B76xF">
+            <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+            <node concept="3b6qkQ" id="IIVxgkLZBf" role="2B70Vg">
+              <property role="$nhwW" value="2018.1" />
+            </node>
+          </node>
+        </node>
+        <node concept="P$JXv" id="IIVxgkLZB$" role="lGtFl">
+          <node concept="TZ5HI" id="IIVxgkLZC2" role="3nqlJM">
+            <node concept="TZ5HA" id="IIVxgkLZC3" role="3HnX3l">
+              <node concept="1dT_AC" id="IIVxgkLZCX" role="1dT_Ay">
+                <property role="1dT_AB" value="the method will be removed after 2018.3 is out" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="IIVxgkLZC4" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         </node>
       </node>
       <node concept="2YIFZL" id="7q76xKYjgBM" role="jymVt">
@@ -870,7 +897,6 @@
     <node concept="2tJIrI" id="3RANN3aP9FN" role="jymVt" />
     <node concept="3clFb_" id="1AfPmE4tJU7" role="jymVt">
       <property role="TrG5h" value="isSticky" />
-      <property role="IEkAT" value="false" />
       <node concept="10P_77" id="1AfPmE4tJUc" role="3clF45" />
       <node concept="3Tm1VV" id="1AfPmE4tJU9" role="1B3o_S" />
       <node concept="3clFbS" id="1AfPmE4tJUa" role="3clF47">
@@ -1004,7 +1030,6 @@
       </node>
     </node>
     <node concept="3clFb_" id="7lTD6YZthQH" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getSource" />
       <property role="DiZV1" value="false" />
@@ -1072,7 +1097,7 @@
     <property role="TrG5h" value="IMakeNotificationListener" />
     <node concept="3Tm1VV" id="7lTD6YZtjg3" role="1B3o_S" />
     <node concept="3clFb_" id="7lTD6YZtjg4" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="handleNotification" />
       <node concept="37vLTG" id="7lTD6YZtjg8" role="3clF46">
         <property role="TrG5h" value="notification" />
@@ -1085,7 +1110,7 @@
       <node concept="3clFbS" id="7lTD6YZtjg7" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7lTD6YZtjhb" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="scriptAboutToStart" />
       <node concept="37vLTG" id="7lTD6YZtjhf" role="3clF46">
         <property role="TrG5h" value="notification" />
@@ -1098,7 +1123,7 @@
       <node concept="3clFbS" id="7lTD6YZtjhe" role="3clF47" />
     </node>
     <node concept="3clFb_" id="7lTD6YZtjhi" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="scriptFinished" />
       <node concept="37vLTG" id="7lTD6YZtjhm" role="3clF46">
         <property role="TrG5h" value="notification" />
@@ -1111,7 +1136,7 @@
       <node concept="3clFbS" id="7lTD6YZtjhl" role="3clF47" />
     </node>
     <node concept="3clFb_" id="5O50Cn9WpYB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="sessionOpened" />
       <node concept="3cqZAl" id="5O50Cn9WpYC" role="3clF45" />
       <node concept="3Tm1VV" id="5O50Cn9WpYD" role="1B3o_S" />
@@ -1124,7 +1149,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5O50Cn9WpYH" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="sessionClosed" />
       <node concept="3cqZAl" id="5O50Cn9WpYI" role="3clF45" />
       <node concept="3Tm1VV" id="5O50Cn9WpYJ" role="1B3o_S" />
@@ -1317,7 +1342,7 @@
       <property role="TrG5h" value="T" />
     </node>
     <node concept="3clFb_" id="2$fvvfbk68u" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="parentName" />
       <node concept="16syzq" id="2$fvvfbk68$" role="3clF45">
         <ref role="16sUi3" node="2$fvvfbk68t" resolve="T" />
@@ -1326,14 +1351,14 @@
       <node concept="3clFbS" id="2$fvvfbk68x" role="3clF47" />
     </node>
     <node concept="3clFb_" id="NcJEcVvFJL" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="name" />
       <node concept="3Tm1VV" id="NcJEcVvFJN" role="1B3o_S" />
       <node concept="3clFbS" id="NcJEcVvFJO" role="3clF47" />
       <node concept="17QB3L" id="NcJEcVvFJR" role="3clF45" />
     </node>
     <node concept="3clFb_" id="NcJEcVvEw_" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="fqName" />
       <node concept="17QB3L" id="NcJEcVvEwF" role="3clF45" />
       <node concept="3Tm1VV" id="NcJEcVvEwB" role="1B3o_S" />
@@ -1431,6 +1456,58 @@
         </node>
         <node concept="2AHcQZ" id="4QUA3SqtBgE" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="IIVxgkMG2F" role="jymVt" />
+    <node concept="3clFb_" id="IIVxgkMGh8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isSessionActive" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="IIVxgkMGhb" role="3clF47">
+        <node concept="3cpWs6" id="IIVxgkMGuP" role="3cqZAp">
+          <node concept="1Wc70l" id="IIVxgkMGN7" role="3cqZAk">
+            <node concept="2OqwBi" id="IIVxgkMH1D" role="3uHU7w">
+              <node concept="37vLTw" id="IIVxgkMGSv" role="2Oq$k0">
+                <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+              </node>
+              <node concept="liA8E" id="IIVxgkMHdH" role="2OqNvi">
+                <ref role="37wK5l" node="7yGn3z4N64o" resolve="isSessionActive" />
+              </node>
+            </node>
+            <node concept="3y3z36" id="IIVxgkMGCo" role="3uHU7B">
+              <node concept="37vLTw" id="IIVxgkMGvz" role="3uHU7B">
+                <ref role="3cqZAo" node="4QUA3SqtBpB" resolve="myActiveMakeService" />
+              </node>
+              <node concept="10Nm6u" id="IIVxgkMGHf" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="IIVxgkMG9D" role="1B3o_S" />
+      <node concept="10P_77" id="IIVxgkMGfg" role="3clF45" />
+      <node concept="P$JXv" id="IIVxgkMGn4" role="lGtFl">
+        <node concept="TZ5HA" id="IIVxgkMGn5" role="TZ5H$">
+          <node concept="1dT_AC" id="IIVxgkMGn6" role="1dT_Ay">
+            <property role="1dT_AB" value="null-safe shorthand for " />
+          </node>
+          <node concept="1dT_AA" id="IIVxgkMGry" role="1dT_Ay">
+            <node concept="VVOAv" id="IIVxgkMGrK" role="qph3F">
+              <node concept="TZ5HA" id="IIVxgkMGrM" role="2Xj1qM">
+                <node concept="1dT_AC" id="IIVxgkMGs6" role="1dT_Ay">
+                  <property role="1dT_AB" value="get().isSessionActive()" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="IIVxgkMGrx" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="x79VA" id="IIVxgkMGn7" role="3nqlJM">
+          <property role="x79VB" value="true iff there's registered IMakeService and it got an active session" />
         </node>
       </node>
     </node>
@@ -1536,6 +1613,21 @@
         </node>
         <node concept="1dT_AC" id="4QUA3SqtLCZ" role="1dT_Ay">
           <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3Tc" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3Td" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3TB" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3TC" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX might be fruitful to have add/remove listeners code here, which would re-register" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="IIVxgkM3U4" role="TZ5H$">
+        <node concept="1dT_AC" id="IIVxgkM3U5" role="1dT_Ay">
+          <property role="1dT_AB" value="    listeners the moment active make service changes. No, there's no such scenario at the moment." />
         </node>
       </node>
       <node concept="TZ5HA" id="4QUA3SqtLlo" role="TZ5H$">

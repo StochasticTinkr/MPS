@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" file="FigureUtils.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute__BehaviorDescriptor" />

@@ -72,18 +72,18 @@ public class MetaObjectGenerationHelper {
   }
 
   public SConcept[] getConcepts() {
-    return myConcepts.toArray(new SConcept[myConcepts.size()]);
+    return myConcepts.toArray(new SConcept[0]);
   }
 
   public SProperty[] getProperties() {
-    return myProperties.toArray(new SProperty[myProperties.size()]);
+    return myProperties.toArray(new SProperty[0]);
   }
 
   public SReferenceLink[] getAssociationLinks() {
-    return myAssociations.toArray(new SReferenceLink[myAssociations.size()]);
+    return myAssociations.toArray(new SReferenceLink[0]);
   }
 
   public SContainmentLink[] getAggregationLinks() {
-    return myAggregations.toArray(new SContainmentLink[myAggregations.size()]);
+    return myAggregations.toArray(new SContainmentLink[0]);
   }
 }

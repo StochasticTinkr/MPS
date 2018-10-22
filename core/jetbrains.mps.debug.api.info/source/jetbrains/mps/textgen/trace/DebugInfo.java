@@ -32,7 +32,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class DebugInfo {
-  private final Map<SNodeReference, DebugInfoRoot> myRoots = new HashMap<SNodeReference, DebugInfoRoot>();
+  private final Map<SNodeReference, DebugInfoRoot> myRoots = new HashMap<>();
 
   public DebugInfo() {
   }
@@ -140,11 +140,11 @@ public class DebugInfo {
     //     and all are worth refactoring (though not the way it used to be in TraceInfoUtil)
     //     Perhaps, can throw in some Java 8?
     PersistenceFacade persFacade = PersistenceFacade.getInstance();
-    ArrayList<SNodeReference> traceNode = new ArrayList<SNodeReference>();
+    ArrayList<SNodeReference> traceNode = new ArrayList<>();
     for (DebugInfoRoot dr : getRootsForFile(fileName)) {
-      ArrayList<TraceablePositionInfo> positionInfos = new ArrayList<TraceablePositionInfo>(dr.getPositions());
+      ArrayList<TraceablePositionInfo> positionInfos = new ArrayList<>(dr.getPositions());
       Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
-      ArrayList<TraceablePositionInfo> infosForLine = new ArrayList<TraceablePositionInfo>(positionInfos.size());
+      ArrayList<TraceablePositionInfo> infosForLine = new ArrayList<>(positionInfos.size());
       for (TraceablePositionInfo tpi : positionInfos) {
         if (tpi.contains(fileName, line)) {
           infosForLine.add(tpi);
@@ -172,7 +172,7 @@ public class DebugInfo {
   @NotNull
   public List<SNodeReference> getVariableNodesForPosition(@NotNull String fileName, int line, @NotNull String varName) {
     PersistenceFacade persFacade = PersistenceFacade.getInstance();
-    ArrayList<SNodeReference> rv = new ArrayList<SNodeReference>();
+    ArrayList<SNodeReference> rv = new ArrayList<>();
     for (DebugInfoRoot dr : getRootsForFile(fileName)) {
       ArrayList<ScopePositionInfo> positionInfos = new ArrayList<>(dr.getScopePositions());
       Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
@@ -194,9 +194,9 @@ public class DebugInfo {
   @NotNull
   public List<SNodeReference> getUnitNodesForPosition(String fileName, int line) {
     PersistenceFacade persFacade = PersistenceFacade.getInstance();
-    ArrayList<SNodeReference> unitNodes = new ArrayList<SNodeReference>();
+    ArrayList<SNodeReference> unitNodes = new ArrayList<>();
     for (DebugInfoRoot dr : getRootsForFile(fileName)) {
-      ArrayList<UnitPositionInfo> positionInfos = new ArrayList<UnitPositionInfo>(dr.getUnitPositions());
+      ArrayList<UnitPositionInfo> positionInfos = new ArrayList<>(dr.getUnitPositions());
       Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
       for (UnitPositionInfo upi : positionInfos) {
         if (upi.contains(fileName, line)) {
@@ -212,7 +212,7 @@ public class DebugInfo {
   }
 
   private List<DebugInfoRoot> getRootsForFile(String filename) {
-    ArrayList<DebugInfoRoot> rv = new ArrayList<DebugInfoRoot>(myRoots.size());
+    ArrayList<DebugInfoRoot> rv = new ArrayList<>(myRoots.size());
     for (DebugInfoRoot dr : myRoots.values()) {
       if (dr.getFileNames().contains(filename)) {
         rv.add(dr);

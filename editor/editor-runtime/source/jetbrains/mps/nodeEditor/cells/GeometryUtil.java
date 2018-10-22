@@ -30,8 +30,8 @@ public class GeometryUtil {
   public static Rectangle getBounds(EditorCell... cells) {
     assert cells.length > 0;
     Rectangle result = null;
-    for (int i = 0; i < cells.length; i++) {
-      Rectangle nextRectangle = new Rectangle(cells[i].getX(), cells[i].getY(), cells[i].getWidth(), cells[i].getHeight());
+    for (EditorCell cell : cells) {
+      Rectangle nextRectangle = new Rectangle(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
       result = result == null ? nextRectangle : result.union(nextRectangle);
     }
     return result;

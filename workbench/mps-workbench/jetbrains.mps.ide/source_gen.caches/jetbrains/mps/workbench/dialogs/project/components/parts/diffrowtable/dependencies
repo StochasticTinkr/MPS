@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.BasicDiffRowTableUI" file="BasicDiffRowTableUI.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.BasicDiffRowTableUI">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable" />
     <classNode extendsClassName="javax.swing.plaf.basic.BasicTableUI" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable" file="DiffRowTable.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Point" />

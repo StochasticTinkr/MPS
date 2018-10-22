@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.actions.testLanguage.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.typesystem.typeof_ActionTestContainer_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.testLanguage.typesystem.typeof_ActionTestContainer_InferenceRule" file="typeof_ActionTestContainer_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.typesystem.typeof_ActionTestContainer_InferenceRule">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

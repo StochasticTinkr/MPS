@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class FileEditorDataProviderManager {
 
-  private List<FileEditorDataProvider> myDataProviders = new ArrayList<FileEditorDataProvider>();
+  private List<FileEditorDataProvider> myDataProviders = new ArrayList<>();
 
   public static FileEditorDataProviderManager getInstance(Project project) {
     return project.getComponent(FileEditorDataProviderManager.class);
@@ -38,12 +38,7 @@ public class FileEditorDataProviderManager {
   public void registerDataProvider(final FileEditorDataProvider dataProvider, Disposable parentDisposable) {
     myDataProviders.add(dataProvider);
     if (parentDisposable != null) {
-      Disposer.register(parentDisposable, new Disposable() {
-        @Override
-        public void dispose() {
-          myDataProviders.remove(dataProvider);
-        }
-      });
+      Disposer.register(parentDisposable, () -> myDataProviders.remove(dataProvider));
     }
   }
 

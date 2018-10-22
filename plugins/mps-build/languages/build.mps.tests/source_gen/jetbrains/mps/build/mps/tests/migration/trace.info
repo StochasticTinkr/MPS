@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="MigrationDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.tests.migration.MigrationDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:814dd373-1dd8-47c3-8bf7-f61eb041d515(jetbrains.mps.build.mps.tests.migration)/6593674873641213864">
+    <file name="TestModulesOptionsMigration.java">
+      <node id="6593674873641213864" at="19,30,20,107" concept="6" />
+      <node id="6593674873641213864" at="23,33,24,16" concept="6" />
+      <node id="6593674873641213864" at="26,41,27,17" concept="1" />
+      <node id="6593674873641213864" at="27,17,28,16" concept="6" />
+      <node id="3570488090022677862" at="31,5,32,64" concept="5" />
+      <node id="3570488090022677862" at="32,64,33,90" concept="5" />
+      <node id="3570488090022677862" at="35,52,36,36" concept="6" />
+      <node id="6593674873641511101" at="40,195,41,389" concept="1" />
+      <node id="6593674873641666228" at="41,389,42,530" concept="1" />
+      <node id="6593674873641213864" at="47,51,48,150" concept="6" />
+      <node id="6593674873641213864" at="19,0,22,0" concept="4" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3570488090022677862" at="35,0,38,0" concept="4" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="6593674873641213864" at="47,0,50,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="6593674873641213864" at="22,0,26,0" concept="4" trace="isRerunnable#()Z" />
+      <node id="6593674873641213864" at="26,0,30,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6593674873641330019" at="39,301,43,9" concept="3" />
+      <node id="3570488090022677862" at="33,90,38,8" concept="5" />
+      <node id="6593674873641326324" at="38,8,44,7" concept="2" />
+      <node id="3570488090022677862" at="30,42,45,5" concept="0" />
+      <node id="6593674873641213864" at="30,0,47,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="6593674873641213864" at="19,30,20,107" />
+      <scope id="6593674873641213864" at="23,33,24,16" />
+      <scope id="3570488090022677862" at="35,52,36,36" />
+      <scope id="6593674873641213864" at="47,51,48,150" />
+      <scope id="6593674873641213864" at="26,41,28,16" />
+      <scope id="6593674873641330021" at="40,195,42,530" />
+      <scope id="6593674873641213864" at="19,0,22,0" />
+      <scope id="3570488090022677862" at="35,0,38,0" />
+      <scope id="6593674873641213864" at="47,0,50,0" />
+      <scope id="6593674873641213864" at="22,0,26,0" />
+      <scope id="6593674873641213864" at="26,0,30,0">
+        <var name="m" id="6593674873641213864" />
+      </scope>
+      <scope id="6593674873641326330" at="39,301,43,9" />
+      <scope id="6593674873641326324" at="38,8,44,7">
+        <var name="testModules" id="6593674873641326326" />
+      </scope>
+      <scope id="3570488090022677862" at="31,5,44,7">
+        <var name="context" id="3570488090022677862" />
+        <var name="scope_hxqppu_a0d" id="3570488090022677862" />
+        <var name="scope_hxqppu_a0d_0" id="3570488090022677862" />
+      </scope>
+      <scope id="6593674873641213864" at="30,42,45,5" />
+      <scope id="6593674873641213864" at="30,0,47,0">
+        <var name="m" id="6593674873641213864" />
+      </scope>
+      <unit id="3570488090022677862" at="34,42,38,7" name="jetbrains.mps.build.mps.tests.migration.TestModulesOptionsMigration$1" />
+      <unit id="6593674873641213864" at="18,0,52,0" name="jetbrains.mps.build.mps.tests.migration.TestModulesOptionsMigration" />
+    </file>
+  </root>
+</debug-info>
+

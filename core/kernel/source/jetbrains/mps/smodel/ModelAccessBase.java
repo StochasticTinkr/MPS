@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.ReadActionListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -87,8 +88,19 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
     getDelegate().removeWriteActionListener(listener);
   }
 
-  @NotNull
-  private ModelAccess getDelegate() {
+  @Override
+  public void addReadActionListener(@NotNull ReadActionListener listener) {
+    getDelegate().addReadActionListener(listener);
+  }
+
+  @Override
+  public void removeReadActionListener(@NotNull ReadActionListener listener) {
+    getDelegate().removeReadActionListener(listener);
+  }
+
+  // not null
+  protected final ModelAccess getDelegate() {
+    // Can't be cons argument as subclasses might get instantiated BEFORE WorkbenchModelAccess had a chance to register itself as a global MA.
     return ModelAccess.instance();
   }
 }

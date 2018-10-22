@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a2htc5ygwi7caa2p5nwyybmoyhahafk" />
+<product version="3" modelHash="-a2htc5ygwi7caa2p5nwyybmoyhahafk">
+  <files names="AddOrRemoveReferenceAttribute_Intention.java:AddOrRemoveRegularAttribute_Intention.java:AddOrRemoveTransientAttribute_Intention.java:IntentionsDescriptor.java" />
+</product>
 

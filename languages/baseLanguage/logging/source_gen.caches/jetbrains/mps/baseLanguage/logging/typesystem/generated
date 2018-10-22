@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2efrw7m9yk7ntg8lc7bwp4v687uprbj" />
+<product version="3" modelHash="-2efrw7m9yk7ntg8lc7bwp4v687uprbj">
+  <files names="TypesystemDescriptor.java:typeof_LogLowLevelStatement_InferenceRule.java:typeof_LogStatement_InferenceRule.java:typeof_MsgStatement_InferenceRule.java" />
+</product>
 

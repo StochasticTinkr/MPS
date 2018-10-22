@@ -2,10 +2,10 @@
 <model ref="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -25,7 +25,6 @@
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -321,7 +320,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="vGg_2alxxw" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getFqName" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
@@ -396,7 +394,6 @@
   <node concept="13h7C7" id="1v5QYNcviJX">
     <ref role="13h7C2" to="uigu:1HybphbKaZR" resolve="ExtensionStaticFieldDeclaration" />
     <node concept="13i0hz" id="1v5QYNcviK0" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="isInitializable" />
       <ref role="13i0hy" to="tpek:hEwJfMK" resolve="isInitializable" />
       <node concept="3clFbS" id="1v5QYNcviK1" role="3clF47">
@@ -420,7 +417,6 @@
       <node concept="3clFbS" id="7sbnZIAQ9Yk" role="2VODD2" />
     </node>
     <node concept="13i0hz" id="7sbnZIAQ9Yl" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getMembers" />
       <property role="13i0it" value="true" />
       <ref role="13i0hy" to="tpek:hEwJjl2" resolve="getMembers" />
@@ -466,7 +462,6 @@
     </node>
     <node concept="13i0hz" id="1653mnvB5UF" role="13h7CS">
       <property role="2Ki8OM" value="true" />
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="lvalue" />
       <property role="13i0it" value="false" />
       <ref role="13i0hy" to="tpek:1653mnvAgpj" resolve="lvalue" />

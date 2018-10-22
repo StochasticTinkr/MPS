@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" file="CheckTestStateListener.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test" file="JUnitCommand_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.lang.Exception" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test" file="JavaCommand_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test">
     <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" file="SplitCommandInParts_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />

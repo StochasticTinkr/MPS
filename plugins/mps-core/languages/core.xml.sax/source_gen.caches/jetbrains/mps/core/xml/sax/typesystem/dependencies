@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXAttributeReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXBreakStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildHandler_childObject_InferenceRule" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXAttributeReference_InferenceRule" file="typeof_XMLSAXAttributeReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXAttributeReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -24,7 +24,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXBreakStatement_InferenceRule" file="typeof_XMLSAXBreakStatement_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXBreakStatement_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildHandler_childObject_InferenceRule" file="typeof_XMLSAXChildHandler_childObject_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildHandler_childObject_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -51,7 +51,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildRule_InferenceRule" file="typeof_XMLSAXChildRule_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildRule_InferenceRule">
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -69,7 +69,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXFieldReference_InferenceRule" file="typeof_XMLSAXFieldReference_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXFieldReference_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -80,7 +80,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXHandler_resultObject_InferenceRule" file="typeof_XMLSAXHandler_resultObject_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXHandler_resultObject_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -92,7 +92,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXLocatorExpression_InferenceRule" file="typeof_XMLSAXLocatorExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXLocatorExpression_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -105,7 +105,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXNodeRuleParamRef_InferenceRule" file="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java">
+  <dependency className="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXNodeRuleParamRef_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

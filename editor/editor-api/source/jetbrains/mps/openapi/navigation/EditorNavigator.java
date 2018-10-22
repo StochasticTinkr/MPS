@@ -73,24 +73,16 @@ public final class EditorNavigator {
   }
 
   public EditorNavigator selectIfChild() {
-    mySelectCondition = new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return node.getParent() != null;
-      }
-    };
+    mySelectCondition = node -> node.getParent() != null;
     return this;
   }
 
 
   public void open(@NotNull final SNodeReference node) {
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode target = node.resolve(myProject.getRepository());
-        if (target != null) {
-          NavigationSupport.getInstance().openNode(myProject, target, needFocus(target), needSelection(target));
-        }
+    myProject.getModelAccess().runWriteInEDT(() -> {
+      SNode target = node.resolve(myProject.getRepository());
+      if (target != null) {
+        NavigationSupport.getInstance().openNode(myProject, target, needFocus(target), needSelection(target));
       }
     });
   }

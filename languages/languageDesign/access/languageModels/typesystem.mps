@@ -68,9 +68,6 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
-        <child id="1207055552304" name="warningText" index="a7wSD" />
-      </concept>
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
@@ -273,11 +270,11 @@
     <node concept="3clFbS" id="1eZSuKdVoFs" role="18ibNy">
       <node concept="3clFbJ" id="1eZSuKdVoFy" role="3cqZAp">
         <node concept="3clFbS" id="1eZSuKdVoFz" role="3clFbx">
-          <node concept="a7r0C" id="1eZSuKdVpmz" role="3cqZAp">
-            <node concept="Xl_RD" id="1eZSuKdVpo$" role="a7wSD">
+          <node concept="2MkqsV" id="1uGzTZfSll0" role="3cqZAp">
+            <node concept="Xl_RD" id="1uGzTZfSll2" role="2MkJ7o">
               <property role="Xl_RC" value="Shall specify a repository to lock" />
             </node>
-            <node concept="1YBJjd" id="1eZSuKdVpm_" role="2OEOjV">
+            <node concept="1YBJjd" id="1uGzTZfSll3" role="2OEOjV">
               <ref role="1YBMHb" node="1eZSuKdVoFu" resolve="baseExecuteCommandStatement" />
             </node>
           </node>

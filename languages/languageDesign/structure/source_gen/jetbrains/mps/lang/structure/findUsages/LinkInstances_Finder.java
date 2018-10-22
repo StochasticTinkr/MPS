@@ -5,9 +5,10 @@ package jetbrains.mps.lang.structure.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -39,7 +40,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       // collect roles 
       Set<String> roles = SetSequence.fromSet(new HashSet<String>());
@@ -59,12 +60,12 @@ public class LinkInstances_Finder extends GeneratedFinder {
         for (String role : roles) {
           if (isChild) {
             for (SNode child : Sequence.fromIterable(instance.getChildren(role))) {
-              ListSequence.fromList(_results).addElement(child);
+              callback.onUsageFound(createSingleResult(child));
             }
           } else {
             SReference reference = instance.getReference(role);
             if (reference != null) {
-              ListSequence.fromList(_results).addElement(reference.getSourceNode());
+              callback.onUsageFound(createSingleResult(reference.getSourceNode()));
             }
           }
         }
@@ -73,6 +74,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
+
   @Override
   public String getNodeCategory(SNode node) {
     return "Link Instances";

@@ -38,7 +38,9 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public final class CommonPaths {
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
@@ -83,7 +85,20 @@ public final class CommonPaths {
   }
 
   public static List<String> getJDKPath() {
-    List<String> result = itemToPath(getJDKClassPath());
+    ArrayList<String> result = new ArrayList<>();
+    Map<String, File> bootstrapJars = mapBootstrapJarByName();
+    for (String s : getJDKJars()) {
+      File rtJar = bootstrapJars.get(s);
+      try {
+        if (rtJar != null) {
+          result.add(rtJar.getCanonicalPath());
+        } else {
+          LOG.error(String.format("Can't find %s of JDK jars", s));
+        }
+      } catch (IOException e) {
+        LOG.error(String.format("Bad bootstrap jar '%s'", rtJar), e);
+      }
+    }
     if (SystemInfo.isJavaVersionAtLeast("1.7")) {
       result.addAll(getJDK_JavaFXPath());
     }
@@ -140,7 +155,7 @@ public final class CommonPaths {
   //------classpaths : JDK--------
 
   private static List<String> getJDKJars() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
 
     if (SystemInfo.isMac && !SystemInfo.isJavaVersionAtLeast("1.7")) {
       // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
@@ -155,44 +170,20 @@ public final class CommonPaths {
     return result;
   }
 
-  /**
-   * @deprecated Since MPS 3.3 used only inside this class, so should become private.
-   */
-  @Deprecated
-  public static IClassPathItem getJDKClassPath() {
-    CompositeClassPathItem composite = new CompositeClassPathItem();
-    for (String s : getJDKJars()) {
-      addJarForName(composite, s);
-    }
-    return composite;
-  }
-
-  private static void addJarForName(CompositeClassPathItem composite, String name) {
-    RealClassPathItem rtJar = findBootstrapJarByName(name);
-    if (rtJar != null) {
-      composite.add(rtJar);
-    } else {
-      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
-    }
-  }
-
-  private static RealClassPathItem findBootstrapJarByName(String name) {
+  private static Map<String, File> mapBootstrapJarByName() {
+    HashMap<String, File> rv = new HashMap<>();
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
         if (!file.exists()) {
           continue;
         }
-
-        if (file.getName().equals(name)) {
-          String canonicalPath = file.getCanonicalPath();
-          return ourClassPathCachingFacility.createFromPath(canonicalPath, REQUESTER_STRING);
-        }
-      } catch (URISyntaxException | IOException e) {
+        rv.put(file.getName(), file);
+      } catch (URISyntaxException e) {
         LOG.error(String.format("Bad bootstrap jar '%s'", url), e);
       }
     }
-    return null;
+    return rv;
   }
 
   //------classpaths : MPS--------
@@ -229,9 +220,9 @@ public final class CommonPaths {
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
     addIfExists(result, "lib/ecj-4.7.2.jar");
-    addIfExists(result, "lib/guava-23.6-jre.jar");
+    addIfExists(result, "lib/guava-25.1-jre.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
-    addIfExists(result, "lib/asm-all.jar");
+    addIfExists(result, "lib/asm-all-6.2.1.jar");
   }
 
   private static void addEditorJars(CompositeClassPathItem result) {
@@ -249,13 +240,13 @@ public final class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "lib/netty-buffer-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-codec-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-codec-http-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-common-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-handler-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-resolver-4.1.25.Final.jar");
-    addIfExists(result, "lib/netty-transport-4.1.25.Final.jar");
+    addIfExists(result, "lib/netty-buffer-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-codec-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-codec-http-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-common-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-handler-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-resolver-4.1.30.Final.jar");
+    addIfExists(result, "lib/netty-transport-4.1.30.Final.jar");
     addIfExists(result, "lib/commons-imaging-1.0-RC.jar");
     addIfExists(result, "lib/util.jar");
     addIfExists(result, "lib/extensions.jar");
@@ -301,7 +292,7 @@ public final class CommonPaths {
   //--------utils-----------
 
   private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     for (IClassPathItem item : cp.flatten()) {
       if (item instanceof FileClassPathItem) {
         result.add(((FileClassPathItem) item).getPath());

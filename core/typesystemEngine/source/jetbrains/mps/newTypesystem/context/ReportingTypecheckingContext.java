@@ -16,8 +16,10 @@
 package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.context.typechecking.ReportingTypechecking;
@@ -25,9 +27,11 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -50,17 +54,23 @@ public abstract class ReportingTypecheckingContext<
   }
   private static void reportEquationError(TypeCheckingContext context, @NotNull EquationInfo equationInfo, Function<SNode, EquationErrorReporterNew> defaultReporterForNode) {
      if (equationInfo.getNodeWithError() == null) {
-       String message = "Typing equation did not provide node to report.";
+       StringBuilder message = new StringBuilder("Typing equation did not provide node to report.");
        if (equationInfo.getRuleNode() != null) {
-         message += " Equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+         message.append(" Equation ")
+                .append(equationInfo.getRuleNode().getNodeId())
+                .append(" from model ")
+                .append(equationInfo.getRuleNode().getModelReference());
        }
        for (SNodeReference rule : equationInfo.getAdditionalRulesIds()) {
-         message += " Additional equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+         message.append(" Additional equation ")
+                .append(equationInfo.getRuleNode().getNodeId())
+                .append(" from model ")
+                .append(equationInfo.getRuleNode().getModelReference());
        }
        if (equationInfo.getErrorString() != null) {
-         message += " Error message: " + equationInfo.getErrorString();
+         message.append(" Error message: ").append(equationInfo.getErrorString());
        }
-       LOG.error(message);
+       LOG.error(message.toString());
        return;
     }
     final IErrorReporter errorReporter;
@@ -94,5 +104,19 @@ public abstract class ReportingTypecheckingContext<
     // this further complicates incremental types calculation and produces unwanted results MPS-21481
     // TODO: rethink the way errors affect the typechecking
 //    getTypechecking().addDependencyOnCurrent(nodeWithError, false);
+  }
+
+  @Nullable
+  public SimpleErrorReporter createErrorReporter(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget, MessageStatus severity) {
+    if (nodeWithError == null) {
+      LOG.error("Node used to report an error is null. Error was not added. Reported from model " + ruleModel + " by rule " + ruleId + ".", new Throwable());
+      return null;
+    } else if (nodeWithError.getModel() == null) {
+      LOG.error("Node used to report an error is not in a model. Error was not added. Node=" + SNodeOperations.getDebugText(nodeWithError) + ". Reported from model " + ruleModel + " by rule " + ruleId + ".", new Throwable());
+      return null;
+    }
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, severity, errorTarget);
+    reporter.addIntentionProvider(intentionProvider);
+    return reporter;
   }
 }

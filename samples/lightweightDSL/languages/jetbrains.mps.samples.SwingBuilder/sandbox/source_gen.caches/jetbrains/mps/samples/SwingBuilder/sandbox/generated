@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8u4iord068p46drzu5kdxdplbvuz2rx" />
+<product version="3" modelHash="-bfkuaygh8zqp64h88h3wb4xw45lpk4e">
+  <files names="BigValues.java:Demo.java:Duplicate.java:MyConverter.java:Square.java:SwingDSLDemo.java" />
+</product>
 

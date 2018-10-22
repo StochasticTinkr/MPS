@@ -106,7 +106,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   };
 
-  private MultiMap<MPSFileNodeEditor, WarningPanel> myWarnings = new MultiMap<MPSFileNodeEditor, WarningPanel>();
+  private MultiMap<MPSFileNodeEditor, WarningPanel> myWarnings = new MultiMap<>();
 
   public MPSEditorWarningsManager(MPSProject project, FileEditorManager fileEditorManager, FileStatusManager fileStatusManager, MPSCoreComponents coreComponents) {
     myProject = project;
@@ -152,7 +152,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void doUpdateWarnings(final MPSFileNodeEditor editor) {
-    List<WarningPanel> newWarnings = new ArrayList<WarningPanel>();
+    List<WarningPanel> newWarnings = new ArrayList<>();
 
     Editor nodeEditor = editor.getNodeEditor();
     if (nodeEditor == null) return;
@@ -203,15 +203,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       return;
     }
     myScheduledUpdateAllWarnings.set(true);
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        myScheduledUpdateAllWarnings.set(false);
-        if (myProject.isDisposed()) {
-          return;
-        }
-        updateAllWarnings();
+    ThreadUtils.runInUIThreadNoWait(() -> {
+      myScheduledUpdateAllWarnings.set(false);
+      if (myProject.isDisposed()) {
+        return;
       }
+      updateAllWarnings();
     });
 
   }
@@ -222,9 +219,9 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private void replaceWarningPanels(MPSFileNodeEditor editor, List<WarningPanel> newPanels) {
     Collection<WarningPanel> oldPanels = myWarnings.get(editor);
-    List<WarningPanel> toRemove = new ArrayList<WarningPanel>(oldPanels);
+    List<WarningPanel> toRemove = new ArrayList<>(oldPanels);
     toRemove.removeAll(newPanels);
-    List<WarningPanel> toAdd = new ArrayList<WarningPanel>(newPanels);
+    List<WarningPanel> toAdd = new ArrayList<>(newPanels);
     toAdd.removeAll(oldPanels);
 
     for (WarningPanel panel : toRemove) {
@@ -240,7 +237,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
     @Override
-    public void fileOpened(FileEditorManager source, VirtualFile file) {
+    public void fileOpened(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
       if (file instanceof MPSNodeVirtualFile) {
         for (FileEditor fe : myFileEditorManager.getEditors(file)) {
           if (fe instanceof MPSFileNodeEditor) {
@@ -251,12 +248,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
 
     @Override
-    public void fileClosed(FileEditorManager source, VirtualFile file) {
+    public void fileClosed(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
       myWarnings.keySet().retainAll(Arrays.asList(source.getAllEditors()));
     }
 
     @Override
-    public void selectionChanged(FileEditorManagerEvent event) {
+    public void selectionChanged(@NotNull FileEditorManagerEvent event) {
       updateAllWarnings();
     }
   }

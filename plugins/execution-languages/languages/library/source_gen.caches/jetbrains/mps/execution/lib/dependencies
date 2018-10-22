@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.lib.ClonableList" file="ClonableList.java">
+  <dependency className="jetbrains.mps.execution.lib.ClonableList">
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,13 +11,13 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="java.util.AbstractList" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ExecutionTool" file="ExecutionTool.java">
+  <dependency className="jetbrains.mps.execution.lib.ExecutionTool">
     <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration" file="NodeByConcept_Configuration.java">
+  <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor" file="NodeByConcept_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration" file="NodeBySeveralConcepts_Configuration.java">
+  <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" file="NodeBySeveralConcepts_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode dependClassName="java.util.List" />
@@ -107,14 +107,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.NodesDescriptor" file="NodesDescriptor.java">
+  <dependency className="jetbrains.mps.execution.lib.NodesDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.PointerUtils" file="PointerUtils.java">
+  <dependency className="jetbrains.mps.execution.lib.PointerUtils">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

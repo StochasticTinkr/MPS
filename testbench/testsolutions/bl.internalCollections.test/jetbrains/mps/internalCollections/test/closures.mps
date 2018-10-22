@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
@@ -91,7 +91,6 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -2844,11 +2843,6 @@
   <node concept="3s_ewN" id="hxrGC2h">
     <property role="1sVAO0" value="false" />
     <property role="3s_ewP" value="Util" />
-    <node concept="3clFbW" id="QFQEd327g_" role="312cEh">
-      <node concept="3cqZAl" id="QFQEd327gA" role="3clF45" />
-      <node concept="3clFbS" id="QFQEd327gB" role="3clF47" />
-      <node concept="3Tm1VV" id="QFQEd327gC" role="1B3o_S" />
-    </node>
     <node concept="3Tm1VV" id="hxrGC2i" role="1B3o_S" />
     <node concept="3s_gsd" id="hxrGC2j" role="3s_ewO">
       <node concept="3s$Bmu" id="hxrGJtm" role="3s_gse">
@@ -7629,11 +7623,6 @@
   <node concept="3s_ewN" id="hPz7Qt4">
     <property role="3s_ewP" value="Find" />
     <node concept="3Tm1VV" id="hPz7Qt5" role="1B3o_S" />
-    <node concept="3clFbW" id="hPz7Qt6" role="312cEh">
-      <node concept="3cqZAl" id="hPz7Qt7" role="3clF45" />
-      <node concept="3Tm1VV" id="hPz7Qt8" role="1B3o_S" />
-      <node concept="3clFbS" id="hPz7Qt9" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="hPz7Qta" role="3s_ewO">
       <node concept="3s$Bmu" id="hPz7UrU" role="3s_gse">
         <property role="3s$Bm0" value="findFirstLast" />
@@ -8389,11 +8378,6 @@
   <node concept="3s_ewN" id="4wepYevvifJ">
     <property role="3s_ewP" value="Advanced" />
     <node concept="3Tm1VV" id="4wepYevvifK" role="1B3o_S" />
-    <node concept="3clFbW" id="4wepYevvifL" role="312cEh">
-      <node concept="3cqZAl" id="4wepYevvifM" role="3clF45" />
-      <node concept="3Tm1VV" id="4wepYevvifN" role="1B3o_S" />
-      <node concept="3clFbS" id="4wepYevvifO" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="4wepYevvifP" role="3s_ewO">
       <node concept="3s$Bmu" id="4wepYevvifQ" role="3s_gse">
         <property role="3s$Bm0" value="nestedYield" />
@@ -8533,11 +8517,6 @@
   <node concept="3s_ewN" id="2DD5Qpwx8$K">
     <property role="3s_ewP" value="RemoveWhereTest" />
     <node concept="3Tm1VV" id="2DD5Qpwx8$L" role="1B3o_S" />
-    <node concept="3clFbW" id="2DD5Qpwx8$M" role="312cEh">
-      <node concept="3cqZAl" id="2DD5Qpwx8$N" role="3clF45" />
-      <node concept="3Tm1VV" id="2DD5Qpwx8$O" role="1B3o_S" />
-      <node concept="3clFbS" id="2DD5Qpwx8$P" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="2DD5Qpwx8$Q" role="3s_ewO">
       <node concept="3s$Bmu" id="2DD5Qpwx8_S" role="3s_gse">
         <property role="3s$Bm0" value="listRemoveWhere" />
@@ -8737,11 +8716,6 @@
   <node concept="3s_ewN" id="1kw0gpBy2$0">
     <property role="3s_ewP" value="ReduceFold" />
     <node concept="3Tm1VV" id="1kw0gpBy2$1" role="1B3o_S" />
-    <node concept="3clFbW" id="1kw0gpBy2$2" role="312cEh">
-      <node concept="3cqZAl" id="1kw0gpBy2$3" role="3clF45" />
-      <node concept="3Tm1VV" id="1kw0gpBy2$4" role="1B3o_S" />
-      <node concept="3clFbS" id="1kw0gpBy2$5" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="1kw0gpBy2$6" role="3s_ewO">
       <node concept="3s$Bmu" id="1kw0gpBy2BU" role="3s_gse">
         <property role="3s$Bm0" value="reduceLeft" />
@@ -10501,7 +10475,7 @@
     <property role="TrG5h" value="IFoo" />
     <node concept="3Tm1VV" id="GdfjW4Rnh5" role="1B3o_S" />
     <node concept="3clFb_" id="GdfjW4RnqS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
       <node concept="3Tm1VV" id="GdfjW4RnqU" role="1B3o_S" />
       <node concept="3clFbS" id="GdfjW4RnqV" role="3clF47" />

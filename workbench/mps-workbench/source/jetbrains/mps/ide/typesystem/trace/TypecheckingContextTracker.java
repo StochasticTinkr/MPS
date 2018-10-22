@@ -58,12 +58,7 @@ public class TypecheckingContextTracker implements ITypeContextOwner {
 
   private TypeCheckingContext initContext() {
     final TypeCheckingContext context = TypeContextManager.getInstance().acquireTypecheckingContext(myRootNode, this);
-    TypeContextManager.getInstance().runTypeCheckingAction(this, myRootNode, new ITypechecking.Action() {
-      @Override
-      public void run(TypeCheckingContext context) {
-        context.checkRootInTraceMode(true);
-      }
-    });
+    TypeContextManager.getInstance().runTypeCheckingAction(this, myRootNode, context1 -> context1.checkRootInTraceMode(true));
     return context;
   }
 

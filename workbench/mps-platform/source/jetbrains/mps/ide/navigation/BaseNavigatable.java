@@ -26,18 +26,13 @@ public abstract class BaseNavigatable implements Navigatable {
 
   protected final Project myProject;
 
-  BaseNavigatable(@NotNull Project project) {
+  public BaseNavigatable(@NotNull Project project) {
     myProject = project;
   }
 
   @Override
   public void navigate(final boolean requestFocus) {
-    final Runnable navigateRunnable = new Runnable() {
-      @Override
-      public void run() {
-        doNavigate(requestFocus);
-      }
-    };
+    final Runnable navigateRunnable = () -> doNavigate(requestFocus);
     myProject.getModelAccess().runWriteInEDT(navigateRunnable);
   }
 

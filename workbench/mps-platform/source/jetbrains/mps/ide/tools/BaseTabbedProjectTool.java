@@ -37,7 +37,7 @@ import java.util.Map;
  */
 public abstract class BaseTabbedProjectTool extends BaseProjectTool {
 
-  private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
+  private List<IDisposableTab> myTabList = new ArrayList<>();
   private boolean myContentRemovedListenerAdded = false;
 
   protected BaseTabbedProjectTool(Project project, String id, Map<String, KeyStroke> shortcutsByKeymap, Icon icon,

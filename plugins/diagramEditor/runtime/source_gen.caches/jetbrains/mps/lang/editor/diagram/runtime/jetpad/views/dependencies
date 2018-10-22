@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" file="AbstractDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractExternalFrameView" file="AbstractExternalFrameView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractExternalFrameView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" file="ConnectorDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" file="CrossView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -65,34 +65,34 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusableLineView" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" file="DiagramDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView">
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" file="DragHandler.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler">
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" file="MovableContentView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertySpec" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" file="NodeDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView">
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusableLineView" file="NonFocusableLineView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusableLineView">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.LineView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView" file="NonFocusablePolyLineView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NonFocusablePolyLineView">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView" file="PortDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView">
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" file="RectDecoratorView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
@@ -112,13 +112,13 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" file="ResizableContentView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView">
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertyKind" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertySpec" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableSelectionFrameView" file="ResizableSelectionFrameView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableSelectionFrameView">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractExternalFrameView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView" file="ResizeHandleView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizeHandleView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -161,7 +161,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" />
     <classNode extendsClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" file="SelectionFrameView.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

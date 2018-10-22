@@ -43,16 +43,11 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   @Override
   public boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType) {
     if (myTypeIsExact) {
-      if (!(MatchingUtil.matchNodes(leftOperandType, myOperandType) || MatchingUtil.matchNodes(rightOperandType, myOperandType))) {
-        return false;
-      }
+      return MatchingUtil.matchNodes(leftOperandType, myOperandType) || MatchingUtil.matchNodes(rightOperandType, myOperandType);
     } else {
-      if (!(subtypingManager.isSubtype(leftOperandType, myOperandType, !myIsStrong)
-        || subtypingManager.isSubtype(rightOperandType, myOperandType, !myIsStrong))) {
-        return false;
-      }
+      return subtypingManager.isSubtype(leftOperandType, myOperandType, !myIsStrong)
+             || subtypingManager.isSubtype(rightOperandType, myOperandType, !myIsStrong);
     }
-    return true;
   }
 
   @Override
@@ -61,7 +56,7 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   }
 
   @Override
-  public int compareTo(IOverloadedOpsTypesProvider o) {
+  public int compareTo(@NotNull IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
       OverloadedOpsProvider_OneTypeSpecified o2 = (OverloadedOpsProvider_OneTypeSpecified) o;
       int i1 = (this.myTypeIsExact ? 1 : 0);

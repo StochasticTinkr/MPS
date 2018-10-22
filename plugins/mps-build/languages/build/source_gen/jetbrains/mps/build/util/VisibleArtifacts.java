@@ -14,9 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.concurrent.ConcurrentMap;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class VisibleArtifacts {
   protected final SNode project;
@@ -139,25 +136,10 @@ public class VisibleArtifacts {
     return getLookup().getResource(path);
   }
 
-  public static VisibleArtifacts createFor(final SNode project) {
+  public static VisibleArtifacts createFor(SNode project) {
     assert !(SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule);
-    return getFromCache(VisibleArtifacts.class, project, new _FunctionTypes._return_P0_E0<VisibleArtifacts>() {
-      public VisibleArtifacts invoke() {
-        VisibleArtifacts artifacts = new VisibleArtifacts(project);
-        artifacts.collect(false);
-        return artifacts;
-      }
-    });
-  }
-
-  private static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
-    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz.getName());
-
-    V v = cache.get(key);
-    if (v != null) {
-      return v;
-    }
-    cache.putIfAbsent(key, creator.invoke());
-    return cache.get(key);
+    VisibleArtifacts artifacts = new VisibleArtifacts(project);
+    artifacts.collect(false);
+    return artifacts;
   }
 }

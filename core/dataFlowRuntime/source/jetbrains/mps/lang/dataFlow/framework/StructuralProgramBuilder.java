@@ -31,8 +31,8 @@ public abstract class StructuralProgramBuilder<N> {
   private final ProgramBuilderContext myBuilderContext;
 
   public StructuralProgramBuilder(InstructionBuilder instructionBuilder, ProgramBuilderContext context) {
-    this.myLabels = new HashMap<N, Map<String, Integer>>();
-    this.myInvokeLater = new ArrayList<Runnable>();
+    this.myLabels = new HashMap<>();
+    this.myInvokeLater = new ArrayList<>();
     this.instructionBuilder = instructionBuilder;
     myBuilderContext = context;
   }
@@ -76,21 +76,11 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public Position before(final N node) {
-    return new Position() {
-      @Override
-      public int getPosition() {
-        return getProgram().getStart(node);
-      }
-    };
+    return () -> getProgram().getStart(node);
   }
 
   public Position after(final N node) {
-    return new Position() {
-      @Override
-      public int getPosition() {
-        return getProgram().getEnd(node);
-      }
-    };
+    return () -> getProgram().getEnd(node);
   }
 
   public int insertAfter(Instruction i) {
@@ -102,20 +92,17 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public Position label(final N node, final String label) {
-    return new Position() {
-      @Override
-      public int getPosition() {
-        if (!myLabels.containsKey(node) || !myLabels.get(node).containsKey(label)) {
-          throw new RuntimeException("Can't find a label " + label + " for node " + node);
-        }
-        return myLabels.get(node).get(label);
+    return () -> {
+      if (!myLabels.containsKey(node) || !myLabels.get(node).containsKey(label)) {
+        throw new RuntimeException("Can't find a label " + label + " for node " + node);
       }
+      return myLabels.get(node).get(label);
     };
   }
 
   public void emitLabel(String label) {
     if (!myLabels.containsKey(getProgram().getCurrent())) {
-      myLabels.put((N) getProgram().getCurrent(), new HashMap<String, Integer>());
+      myLabels.put((N) getProgram().getCurrent(), new HashMap<>());
     }
     myLabels.get(getProgram().getCurrent()).put(label, getProgram().size());
   }
@@ -203,15 +190,12 @@ public abstract class StructuralProgramBuilder<N> {
     final JumpInstruction instruction = instructionBuilder.createJumpInstruction(ruleNodeReference);
     onInstructionEmitted(instruction);
     getProgram().add(instruction);
-    invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          instruction.setJumpTo(position);
-        } catch (DataflowBuilderException e) {
-          LOG.warning("JumpTo instruction reference to outer node");
-          instruction.getProgram().setHasOuterJumps(true);
-        }
+    invokeLater(() -> {
+      try {
+        instruction.setJumpTo(position);
+      } catch (DataflowBuilderException e) {
+        LOG.warning("JumpTo instruction reference to outer node");
+        instruction.getProgram().setHasOuterJumps(true);
       }
     });
   }
@@ -224,15 +208,12 @@ public abstract class StructuralProgramBuilder<N> {
   protected IfJumpInstruction emitIfJumpCommon(final Position position, String ruleNodeReference) {
     final IfJumpInstruction instruction = instructionBuilder.createIfJumpInstruction(ruleNodeReference);
     onInstructionEmitted(instruction);
-    invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          instruction.setJumpTo(position);
-        } catch (DataflowBuilderException e) {
-          LOG.warning("IfJumpTo instruction reference to outer node");
-          instruction.getProgram().setHasOuterJumps(true);
-        }
+    invokeLater(() -> {
+      try {
+        instruction.setJumpTo(position);
+      } catch (DataflowBuilderException e) {
+        LOG.warning("IfJumpTo instruction reference to outer node");
+        instruction.getProgram().setHasOuterJumps(true);
       }
     });
     return instruction;

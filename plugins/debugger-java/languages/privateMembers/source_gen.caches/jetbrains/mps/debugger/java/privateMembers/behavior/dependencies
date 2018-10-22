@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation__BehaviorDescriptor" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation__BehaviorDescriptor" file="PrivateFieldReferenceOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation__BehaviorDescriptor" file="PrivateInstanceMethodCallOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference__BehaviorDescriptor" file="PrivateStaticFieldReference__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

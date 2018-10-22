@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Set;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.scopes.GenericTypesUtil;
@@ -25,7 +25,6 @@ import jetbrains.mps.baseLanguage.scopes.GenericTypesUtil;
 public final class MethodOverrideHelper {
   private Map<String, List<SNode>> myMethodsByName;
   private Map<SNode, List<SNode>> myOverriddenMethods;
-  private Set<SNode> myDependsOnNodes;
 
   public MethodOverrideHelper(SNode classifier) {
     init(classifier);
@@ -39,6 +38,7 @@ public final class MethodOverrideHelper {
     }
     return result;
   }
+
   public List<SNode> getOverriddenMethods(SNode method) {
     List<SNode> list = MapSequence.fromMap(this.myOverriddenMethods).get(method);
     if (list != null) {
@@ -63,15 +63,16 @@ public final class MethodOverrideHelper {
       ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(currentClassifier)));
     }
 
-    this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
-    this.myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+    myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+
 forEachInAllMethods:
     for (SNode currMethod : allMethods) {
       String name = SPropertyOperations.getString(currMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       if (name == null) {
         name = "";
       }
-      if (!(MapSequence.fromMap(this.myMethodsByName).containsKey(name))) {
+      if (!(MapSequence.fromMap(myMethodsByName).containsKey(name))) {
         List<SNode> methods = new ArrayList<SNode>();
         methods.add(currMethod);
         MapSequence.fromMap(myMethodsByName).put(name, methods);
@@ -93,11 +94,11 @@ forEachInAllMethods:
 
           Map<SNode, SNode> typeByTypeVar = ClassifierScopeUtils.resolveClassifierTypeVars(classifier);
 
-          String currentParms = this.createMethodParameterTypesString(currMethod, typeByTypeVar);
+          String currentParms = createMethodParameterTypesString(currMethod, typeByTypeVar);
           for (SNode otherMethod : equalParmCountMethods) {
-            String otherParms = this.createMethodParameterTypesString(otherMethod, typeByTypeVar);
+            String otherParms = createMethodParameterTypesString(otherMethod, typeByTypeVar);
             if (otherParms.equals(currentParms)) {
-              MapSequence.fromMap(this.myOverriddenMethods).get(otherMethod).add(currMethod);
+              MapSequence.fromMap(myOverriddenMethods).get(otherMethod).add(currMethod);
               continue forEachInAllMethods;
             }
           }
@@ -106,20 +107,19 @@ forEachInAllMethods:
         MapSequence.fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
       }
     }
-
-    this.myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> dependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode currentClassifier : classifiers) {
-      SetSequence.fromSet(this.myDependsOnNodes).addElement(currentClassifier);
+      SetSequence.fromSet(dependsOnNodes).addElement(currentClassifier);
     }
     for (SNode method : allMethods) {
-      SetSequence.fromSet(this.myDependsOnNodes).addElement(method);
+      SetSequence.fromSet(dependsOnNodes).addElement(method);
       for (SNode parm : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))) {
         SNode type = SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
         if (type == null) {
           continue;
         }
-        SetSequence.fromSet(myDependsOnNodes).addElement(type);
-        SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SAbstractConcept[]{})));
+        SetSequence.fromSet(dependsOnNodes).addElement(type);
+        SetSequence.fromSet(dependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SAbstractConcept[]{})));
       }
     }
   }
@@ -140,6 +140,4 @@ forEachInAllMethods:
     }
     return result.toString();
   }
-
-
 }

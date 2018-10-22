@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" file="EditorCell_VerticalLine.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" file="HLineCellProvider.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider" file="VLineCellProvider.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

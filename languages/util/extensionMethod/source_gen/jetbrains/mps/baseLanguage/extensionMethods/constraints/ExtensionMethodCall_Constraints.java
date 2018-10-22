@@ -56,34 +56,32 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
-              List<SNode> result = new ArrayList<SNode>();
-              SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
-              for (SNode extension : ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension")))) {
-                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(SLinkOperations.getTarget(extension, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, 0x1a4abaca2a959cfeL, "type")), SetSequence.fromSet(new HashSet<SNode>())))) {
-                  for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(extension, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x6f5433076549f51bL, "methods")))) {
-                    if (VisibilityUtil.isVisible(enclosingNode, method)) {
-                      ListSequence.fromList(result).addElement(method);
-                    }
+            final SNode enclosingNode = (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode())));
+            List<SNode> result = new ArrayList<SNode>();
+            SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
+            for (SNode extension : ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension")))) {
+              if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(SLinkOperations.getTarget(extension, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, 0x1a4abaca2a959cfeL, "type")), SetSequence.fromSet(new HashSet<SNode>())))) {
+                for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(extension, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x6f5433076549f51bL, "methods")))) {
+                  if (VisibilityUtil.isVisible(enclosingNode, method)) {
+                    ListSequence.fromList(result).addElement(method);
                   }
                 }
               }
-              for (SNode container : ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer")))) {
-                for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x6f5433076549f51bL, "methods")))) {
-                  if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, 0x6f54330765374812L, "extendedType")), SetSequence.fromSet(new HashSet<SNode>())))) {
-                    if (VisibilityUtil.isVisible(enclosingNode, method)) {
-                      ListSequence.fromList(result).addElement(method);
-                    }
-                  }
-                }
-              }
-              return new ListScope(result) {
-                public String getName(SNode child) {
-                  return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(child);
-                }
-              };
             }
+            for (SNode container : ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getContextNode()), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer")))) {
+              for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, 0x6f5433076549f51bL, "methods")))) {
+                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type__BehaviorDescriptor.getLooseType_id4YTQtEKnnzf.invoke(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, 0x6f54330765374812L, "extendedType")), SetSequence.fromSet(new HashSet<SNode>())))) {
+                  if (VisibilityUtil.isVisible(enclosingNode, method)) {
+                    ListSequence.fromList(result).addElement(method);
+                  }
+                }
+              }
+            }
+            return new ListScope(result) {
+              public String getName(SNode child) {
+                return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(child);
+              }
+            };
           }
         };
       }

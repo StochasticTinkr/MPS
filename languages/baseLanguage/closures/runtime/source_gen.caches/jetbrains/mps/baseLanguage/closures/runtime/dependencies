@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" file="AdapterClass.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.DelayedException" file="DelayedException.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.DelayedException">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Nothing" file="Nothing.java" />
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Outcome" file="Outcome.java" />
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Result" file="Result.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Nothing" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Outcome" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Result">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Byte" />
     <classNode dependClassName="java.lang.Character" />
@@ -25,8 +25,8 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Outcome" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" file="Wrappers.java" />
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" file="YieldingIterator.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -34,21 +34,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.DelayedException" />
     <classNode extendsClassName="java.util.Iterator" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" file="_FunctionTypes.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes">
     <classNode dependClassName="java.lang.Throwable" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedClosures" file="_UnrestrictedClosures.java">
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Result" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes" file="_UnrestrictedFunctionTypes.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Result" />
   </dependency>
 </dependenciesRoot>
 

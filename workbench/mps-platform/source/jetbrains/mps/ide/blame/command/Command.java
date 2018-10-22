@@ -152,7 +152,7 @@ public class Command {
       for (File file : files) {
         parts.add(new FilePart(file.getName(), file));
       }
-      postMethod.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[parts.size()]), postMethod.getParams()));
+      postMethod.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[0]), postMethod.getParams()));
     }
     myHttpClient.executeMethod(postMethod);
 

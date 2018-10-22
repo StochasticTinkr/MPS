@@ -46,7 +46,7 @@ public class CellProperties {
     myCellEffectiveWidth = cell.getEffectiveWidth() + "";
     myRootCell = (cell.getEditorComponent().getRootCell() == cell) ? "Yes" : "No";
     myCellID = cell.getCellId();
-    myCellRole = "" + (cell.getRole());
+    myCellRole = "" + cell.getSRole().getName();
 
     mySNode = cell.getSNode();
     String name = mySNode.getName();

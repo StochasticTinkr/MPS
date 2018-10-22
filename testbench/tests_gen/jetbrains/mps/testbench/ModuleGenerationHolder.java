@@ -131,7 +131,7 @@ public class ModuleGenerationHolder {
       if (orig.exists() && revd.exists() && orig.isDirectory() && revd.isDirectory()) {
         diffDirs(orig, revd, diffs);
       } else if (!(orig.exists()) && !(revd.exists())) {
-        ListSequence.fromList(diffs).addElement("None exists: " + orig + " or " + revd);
+        // Don't assume there shall be anything just based on the fact make asked for a path 
       } else if (!(orig.exists())) {
         ListSequence.fromList(diffs).addElement("Created: " + revd);
       } else if (!(revd.exists())) {

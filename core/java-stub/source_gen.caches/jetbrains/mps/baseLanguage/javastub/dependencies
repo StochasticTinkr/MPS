@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" file="ASMModelLoader.java">
+  <dependency className="jetbrains.mps.baseLanguage.javastub.ASMModelLoader">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javastub.ASMNodeId" file="ASMNodeId.java">
+  <dependency className="jetbrains.mps.baseLanguage.javastub.ASMNodeId">
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierLoader" file="ClassifierLoader.java">
+  <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierLoader">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.ArrayIndexOutOfBoundsException" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.org.objectweb.asm.Opcodes" />
     <classNode dependClassName="org.jetbrains.org.objectweb.asm.tree.InnerClassNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" file="ClassifierUpdater.java">
+  <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Byte" />
     <classNode dependClassName="java.lang.Character" />

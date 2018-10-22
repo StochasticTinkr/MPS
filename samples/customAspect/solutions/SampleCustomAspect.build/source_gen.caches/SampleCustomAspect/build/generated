@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9bokez5mrnk762yceq3s0roqidzqct0" />
+<product version="3" modelHash="-c5u6iq980mafe1o8cc4x0zl3ibfy9oc">
+  <files names="SampleCustomAspect.xml" />
+</product>
 

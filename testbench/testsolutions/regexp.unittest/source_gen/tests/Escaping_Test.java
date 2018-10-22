@@ -68,8 +68,6 @@ public class Escaping_Test extends TestCase {
     Assert.assertTrue(p.matcher("bwbb").matches());
     Assert.assertFalse(p.matcher("bb").matches());
   }
-  public Escaping_Test() {
-  }
   private static Pattern REGEXP_s9n2xl_a0a0a0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
   private static Pattern REGEXP_s9n2xl_a0a0b0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
   private static Pattern REGEXP_s9n2xl_a0a0c0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);

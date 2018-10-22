@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoChangesOfTransactionalPropertyCell_Test" file="RedoChangesOfTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoChangesOfTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoCommitedInvalidTypingInTransactionalPropertyCell_Test" file="RedoCommitedInvalidTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoCommitedInvalidTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoInvalidTypingInTransactionalPropertyCell_Test" file="RedoInvalidTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoInvalidTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoTypingInTransactionalPropertyCell_Test" file="RedoTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.RedoTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -48,7 +48,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoChangesOfTransactionalPropertyCell_Test" file="UndoChangesOfTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoChangesOfTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoCommitedInvalidTypingInTransactionalPropertyCell_Test" file="UndoCommitedInvalidTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoCommitedInvalidTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoInvalidTypingInTransactionalPropertyCell_Test" file="UndoInvalidTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoInvalidTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoTypingInTransactionalPropertyCell_Test" file="UndoTypingInTransactionalPropertyCell_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.cells.transactional.test.UndoTypingInTransactionalPropertyCell_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

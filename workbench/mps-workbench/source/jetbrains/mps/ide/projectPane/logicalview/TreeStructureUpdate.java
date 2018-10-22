@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,14 +37,15 @@ import java.util.Map;
 class TreeStructureUpdate implements MPSTreeNodeListener {
 
   private final ProjectTree myProjectTree;
-  private final SModelEventsDispatcher myEventsListener = new SModelEventsDispatcher();
-  private final Map<SModelTreeNode, ModelChangeListener> myListeners = new HashMap<SModelTreeNode, ModelChangeListener>();
+  private SModelEventsDispatcher myEventsListener;
+  private final Map<SModelTreeNode, ModelChangeListener> myListeners = new HashMap<>();
 
   public TreeStructureUpdate(ProjectTree projectTree) {
     myProjectTree = projectTree;
   }
 
   public void init() {
+    myEventsListener = new SModelEventsDispatcher(myProjectTree.getProject().getRepository());
     myProjectTree.addTreeNodeListener(this);
   }
 

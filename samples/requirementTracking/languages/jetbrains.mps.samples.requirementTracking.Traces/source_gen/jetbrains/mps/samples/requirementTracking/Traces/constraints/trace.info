@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="13,0,29,0" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:2d13f11c-07d9-408e-b577-4d3dc210ccba(jetbrains.mps.samples.requirementTracking.Traces.constraints)/4174052498196667456">
+    <file name="RequirementEntryReference_Constraints.java">
+      <node id="4174052498196667456" at="32,50,33,192" concept="7" />
+      <node id="4174052498196667456" at="37,90,38,131" concept="3" />
+      <node id="4174052498196667457" at="41,44,42,20" concept="4" />
+      <node id="4174052498196667457" at="49,63,50,58" concept="4" />
+      <node id="4174052498196673331" at="53,122,54,284" concept="3" />
+      <node id="4174052498197153076" at="54,284,55,0" concept="5" />
+      <node id="4174052498196752670" at="55,0,56,306" concept="3" />
+      <node id="4174052498196920117" at="56,306,57,0" concept="5" />
+      <node id="4174052498196946828" at="61,51,62,449" concept="4" />
+      <node id="4174052498197151984" at="66,15,67,0" concept="5" />
+      <node id="4174052498196949638" at="67,0,68,63" concept="4" />
+      <node id="4174052498196667456" at="72,7,73,22" concept="4" />
+      <node id="4174052498196667456" at="75,0,76,0" concept="6" trace="breakingNode_w8rfop_a0a0a0a0a1a0b0a1a2" />
+      <node id="4174052498196667456" at="32,0,35,0" concept="0" trace="RequirementEntryReference_Constraints#()V" />
+      <node id="4174052498196946826" at="61,0,64,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4174052498196667457" at="40,0,44,0" concept="2" trace="hasOwnScopeProvider#()Z" />
+      <node id="4174052498196667457" at="48,0,52,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4174052498196946820" at="59,56,64,19" concept="4" />
+      <node id="4174052498196946818" at="59,0,66,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4174052498196946813" at="57,0,66,15" concept="3" />
+      <node id="4174052498196667457" at="52,0,70,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="4174052498196667457" at="46,56,70,10" concept="4" />
+      <node id="4174052498196667457" at="44,0,72,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="4174052498196667457" at="38,131,72,7" concept="1" />
+      <node id="4174052498196667456" at="36,0,75,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <scope id="4174052498196667456" at="32,50,33,192" />
+      <scope id="4174052498196667457" at="41,44,42,20" />
+      <scope id="4174052498196667457" at="49,63,50,58" />
+      <scope id="4174052498196946827" at="61,51,62,449" />
+      <scope id="4174052498196667456" at="32,0,35,0" />
+      <scope id="4174052498196946826" at="61,0,64,0">
+        <var name="it" id="4174052498196946826" />
+      </scope>
+      <scope id="4174052498196667457" at="40,0,44,0" />
+      <scope id="4174052498196667457" at="48,0,52,0" />
+      <scope id="4174052498196946819" at="59,56,64,19" />
+      <scope id="4174052498196946818" at="59,0,66,0">
+        <var name="entry" id="4174052498196946818" />
+      </scope>
+      <scope id="4174052498196667457" at="53,122,68,63">
+        <var name="allEntries" id="4174052498196752671" />
+        <var name="currentTrace" id="4174052498196673332" />
+        <var name="possibleTargets" id="4174052498196946814" />
+      </scope>
+      <scope id="4174052498196667457" at="52,0,70,0">
+        <var name="_context" id="4174052498196667457" />
+        <var name="operationContext" id="4174052498196667457" />
+      </scope>
+      <scope id="4174052498196667457" at="46,56,70,10" />
+      <scope id="4174052498196667457" at="44,0,72,0" />
+      <scope id="4174052498196667456" at="37,90,73,22">
+        <var name="references" id="4174052498196667456" />
+      </scope>
+      <scope id="4174052498196667456" at="36,0,75,0" />
+      <unit id="4174052498196946826" at="60,231,64,17" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.RequirementEntryReference_Constraints$1$1$1$1" />
+      <unit id="4174052498196946818" at="58,90,66,13" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.RequirementEntryReference_Constraints$1$1$1" />
+      <unit id="4174052498196667457" at="47,19,70,9" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.RequirementEntryReference_Constraints$1$1" />
+      <unit id="4174052498196667457" at="39,159,72,5" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.RequirementEntryReference_Constraints$1" />
+      <unit id="4174052498196667456" at="31,0,77,0" name="jetbrains.mps.samples.requirementTracking.Traces.constraints.RequirementEntryReference_Constraints" />
+    </file>
+  </root>
+</debug-info>
+

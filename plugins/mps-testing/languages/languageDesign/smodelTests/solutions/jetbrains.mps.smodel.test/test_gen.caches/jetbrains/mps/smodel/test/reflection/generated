@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1uiruxqjz4bf4hl3ltyln5x01s85oij" />
+<product version="3" modelHash="bc86efzq4029expmyy86ixlimayxfi3">
+  <files names="SNodeGetChildrenOperation_Test.java:SNodeGetReferenceOperation_Test.java:SNodeGetReferencesOperation_Test.java:TestUtilities.java" />
+</product>
 

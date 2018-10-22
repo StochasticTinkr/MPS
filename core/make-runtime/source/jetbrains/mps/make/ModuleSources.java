@@ -35,18 +35,18 @@ public class ModuleSources {
   private final Map<SModule, ModuleSources> myAvailableSources;
   private Dependencies myDependencies;
   private SModule myModule;
-  private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
-  private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
+  private Map<String, JavaFile> myJavaFiles = new HashMap<>();
+  private Map<String, ResourceFile> myResourceFiles = new HashMap<>();
 
-  private List<File> myFilesToDelete = new ArrayList<File>();
-  private List<JavaFile> myFilesToCompile = new LinkedList<JavaFile>();
-  private List<ResourceFile> myResourcesToCopy = new LinkedList<ResourceFile>();
+  private List<File> myFilesToDelete = new ArrayList<>();
+  private List<JavaFile> myFilesToCompile = new LinkedList<>();
+  private List<ResourceFile> myResourcesToCopy = new LinkedList<>();
 
   /**
    * @param module Module with JavaModuleFacet
    */
   ModuleSources(SModule module, Dependencies deps) {
-    this(module, Collections.<SModule, ModuleSources>emptyMap(), deps);
+    this(module, Collections.emptyMap(), deps);
   }
 
   /**

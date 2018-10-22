@@ -9,7 +9,7 @@ import com.intellij.openapi.util.Ref;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.util.ui.tree.TreeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ui.ColoredTreeCellRenderer;
@@ -25,8 +25,10 @@ import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import java.util.Objects;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import javax.swing.tree.DefaultTreeModel;
+import com.intellij.util.ui.tree.TreeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -46,9 +48,14 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
   private List<DiffModelTree.RootTreeNode> myRootNodes;
   private Iterable<BaseAction> myActions;
-  public DiffModelTree() {
+  private final SRepository myRepo;
+
+  public DiffModelTree(SRepository repo) {
+    // FIXME This code deserves a refactoring much like MergeModelsPanel, as there's unlikely need for repository lock when we diff detached models. 
+    // Besides, it's ugly to build a tree during construction time! 
+    myRepo = repo;
     rebuildNow();
-    TreeUtil.expandAll(this);
+    // FIXME oh, no, abstract method called from a constructor! 
     myActions = getRootActions();
     Sequence.fromIterable(myActions).visitAll(new IVisitor<BaseAction>() {
       public void visit(BaseAction a) {
@@ -57,8 +64,14 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     });
     setCellRenderer(new ColoredTreeCellRenderer() {
       @Override
-      public void customizeCellRenderer(JTree p0, Object value, boolean p2, boolean p3, boolean p4, int p5, boolean p6) {
+      public void customizeCellRenderer(JTree p0, final Object value, boolean p2, boolean p3, boolean p4, int p5, boolean p6) {
         if (value instanceof DiffModelTree.TreeNode) {
+          // FIXME this code is poor, need to check TreeNode subclasses if they really care to have model access 
+          myRepo.getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              ((DiffModelTree.TreeNode) value).doUpdatePresentation();
+            }
+          });
           ((DiffModelTree.TreeNode) value).renderTreeNode(this);
         }
       }
@@ -76,6 +89,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
   }
+
   protected DiffModelTree.TreeNode rebuild() {
     DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
     myRootNodes = Sequence.fromIterable(getAffectedRoots()).where(new IWhereFilter<SNodeId>() {
@@ -121,11 +135,12 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }
     return modelNode;
   }
+
   public void setSelected(@Nullable SNodeId rootId) {
     // todo: find path by rootId 
     TreePath path = null;
     for (int i = 0; i < getRowCount(); ++i) {
-      DiffModelTree.RootTreeNode node = as_5x0uld_a0a0a2a5(getPathForRow(i).getLastPathComponent(), DiffModelTree.RootTreeNode.class);
+      DiffModelTree.RootTreeNode node = as_5x0uld_a0a0a2a9(getPathForRow(i).getLastPathComponent(), DiffModelTree.RootTreeNode.class);
       if (node != null && Objects.equals(node.getRootId(), rootId)) {
         path = getPathForRow(i);
         break;
@@ -138,19 +153,23 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       scrollPathToVisible(path);
     }
   }
+
   public void rebuildLater() {
     rebuildNow();
   }
+
   public void rebuildNow() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        setModel(new DefaultTreeModel(rebuild()));
-        setRootVisible(true);
-        TreeUtil.expandAll(DiffModelTree.this);
-        setSelectionRow(0);
+    DiffModelTree.TreeNode root = new ModelAccessHelper(myRepo).runReadAction(new Computable<DiffModelTree.TreeNode>() {
+      public DiffModelTree.TreeNode compute() {
+        return rebuild();
       }
     });
+    setModel(new DefaultTreeModel(root));
+    setRootVisible(true);
+    TreeUtil.expandAll(this);
+    setSelectionRow(0);
   }
+
   protected abstract Iterable<SNodeId> getAffectedRoots();
   protected abstract Iterable<SModel> getModels();
   protected abstract void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode);
@@ -183,7 +202,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
   }
   public String getNameForRoot(@Nullable SNodeId nodeId) {
-    return check_5x0uld_a0a91(findRootNode(nodeId), this);
+    return check_5x0uld_a0a62(findRootNode(nodeId), this);
   }
   @Nullable
   @Override
@@ -291,11 +310,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       myText = text;
     }
     public void renderTreeNode(ColoredTreeCellRenderer coloredRenderer) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          doUpdatePresentation();
-        }
-      });
       coloredRenderer.append(getText(), new SimpleTextAttributes(myTextStyle, getColor()));
       if ((myAdditionalText != null && myAdditionalText.length() > 0)) {
         coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
@@ -340,7 +354,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       myTextStyle = textStyle;
     }
   }
-  private static String check_5x0uld_a0a91(DiffModelTree.RootTreeNode checkedDotOperand, DiffModelTree checkedDotThisExpression) {
+  private static String check_5x0uld_a0a62(DiffModelTree.RootTreeNode checkedDotOperand, DiffModelTree checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPresentation();
     }
@@ -349,7 +363,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static <T> T as_5x0uld_a0a0a2a5(Object o, Class<T> type) {
+  private static <T> T as_5x0uld_a0a0a2a9(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5vn0pukosjt74s2jdmziifw59jnw5tb" />
+<product version="3" modelHash="799bl26bv2ok9kmnu0wcdalo76jadpa">
+  <files names="GeneratedFileConflictResolving.java:GeneratedFilesExcludePolicy.java:ModuleVcsPathPresenter.java:ProjectCheckoutListener.java:ProjectDirCheckoutListener.java" />
+</product>
 

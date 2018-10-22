@@ -24,11 +24,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
   @Override
-  public String getEditorTabTitle(final Project project, final VirtualFile file) {
+  public String getEditorTabTitle(@NotNull final Project project, @NotNull final VirtualFile file) {
     if (!(file instanceof MPSNodeVirtualFile)) {
       return null;
     }
@@ -39,12 +40,9 @@ public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
     if (!ThreadUtils.isInEDT()) {
       return null;
     }
-    return new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
-        return node == null ? null : node.getPresentation();
-      }
+    return new ModelAccessHelper(modelAccess).runReadAction(() -> {
+      SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
+      return node == null ? null : node.getPresentation();
     });
   }
 }

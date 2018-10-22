@@ -69,15 +69,6 @@ class RepoChangeListener extends SRepositoryContentAdapter implements ProjectCom
     myTabsComponents.clear();
   }
 
-  /**
-   * @deprecated use {@link RepoChangeListener#addTabComponent(jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent)} instead
-   * */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  /*package*/ void setTabController(@Nullable TabsComponent tabController) {
-    myTabsComponents.add(tabController);
-  }
-
   /*package*/ boolean addTabComponent(@NotNull TabsComponent tabsComponent) {
     return myTabsComponents.add(tabsComponent);
   }

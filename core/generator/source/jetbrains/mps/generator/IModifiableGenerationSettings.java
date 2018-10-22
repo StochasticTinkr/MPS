@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 package jetbrains.mps.generator;
-
-import jetbrains.mps.util.annotation.ToRemove;
 
 /**
  * Settings #isCheckModelsBeforeGeneration and #isGenerateDebugInfo are not generator-specific, but
@@ -47,27 +45,6 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setKeepModelsWithWarnings(boolean keepModelsWithWarnings);
 
-  /**
-   * @deprecated no more support for incremental generation
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  void setIncremental(boolean isIncremental);
-
-  /**
-   * @deprecated no more support for incremental generation
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  void setIncrementalUseCache(boolean incrementalUseCache);
-
-  /**
-   * @deprecated no more support for incremental generation
-   */
-  @ToRemove(version = 2017.3)
-  @Deprecated
-  void setDebugIncrementalDependencies(boolean value);
-
   void setGenerateDebugInfo(boolean generateDebugInfo);
 
   void setShowBadChildWarning(boolean showBadChildWarning);
@@ -75,4 +52,17 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
   void enableInplaceTransformations(boolean enabled);
 
   void setCreateStaticReferences(boolean createStaticRefs);
+
+  void addListener(Listener l);
+
+  void removeListener(Listener l);
+
+  interface Listener {
+    /**
+     * Event is dispatched after a change.
+     * Dispatching code does it best to ensure there's was an actual change in the settings, however
+     * it doesn't guarantee there's a change, treat this like 'most probably something has changed'.
+     */
+    void settingsChanged();
+  }
 }

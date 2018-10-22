@@ -13,12 +13,6 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescrip
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
@@ -89,22 +83,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     LanguageTestWrapper that = (LanguageTestWrapper) o;
     // I need this for the EditorTestCase for which two LTW were equal 
     return myNodePointer.equals(that.myNodePointer) && isTestCase() == that.isTestCase();
-  }
-
-  /**
-   * FIXME Dead code. Left as a reminder to check if there's need to do anything about classpath of runtime modules of lang.test; I don't see a reason to import them explicitly as
-   * they have to get there as a dependency of a test module anyway (after all, it's written using test languages)
-   */
-  private void getIdeaClasspath() {
-    final List<String> result = ListSequence.fromList(new ArrayList<String>());
-    Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test").getLanguageRuntimes();
-    for (SModuleReference dep : Sequence.fromIterable(languageRuntimes)) {
-      SModule module = dep.resolve(getRepo());
-      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-      if (facet != null) {
-        ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
-      }
-    }
   }
 
   @NonNls

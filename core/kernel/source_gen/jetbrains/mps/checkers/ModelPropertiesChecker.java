@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 
 public class ModelPropertiesChecker extends IChecker.AbstractModelChecker<ModelReportItem> {
 
@@ -23,7 +24,7 @@ public class ModelPropertiesChecker extends IChecker.AbstractModelChecker<ModelR
   }
 
   @Override
-  public String getCategory() {
-    return "model properties";
+  public IssueKindReportItem.CheckerCategory getCategory() {
+    return IssueKindReportItem.MODEL_PROPERTIES;
   }
 }

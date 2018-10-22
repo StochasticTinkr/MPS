@@ -46,7 +46,7 @@ import java.util.List;
 public class MPSErrorDialog extends JDialog {
   private static final int MIN_SIDE_PADDING = 30;
 
-  private List<JButton> myButtons = new ArrayList<JButton>();
+  private List<JButton> myButtons = new ArrayList<>();
   private boolean myIsInitialized = false;
   private JTextField myField;
   private final Window myOwner;

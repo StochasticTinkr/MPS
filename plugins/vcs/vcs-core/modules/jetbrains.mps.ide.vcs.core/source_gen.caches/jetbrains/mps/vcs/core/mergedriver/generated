@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4ke7s7gcrcn2ycvjm075vsrz4xmi6qy" />
+<product version="3" modelHash="5dgdd19j73firi3sgzxse61itlaevov">
+  <files names="AbstractContentMerger.java:CompositeMerger.java:EmptyMerger.java:FileContent.java:FileMerger.java:FileType.java:JavaDependenciesMerger.java:MergeDriverMain.java:ModelMerger.java:SimpleMerger.java:TextMerger.java" />
+</product>
 

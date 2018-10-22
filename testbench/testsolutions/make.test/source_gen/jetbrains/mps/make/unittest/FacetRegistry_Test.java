@@ -21,6 +21,4 @@ public class FacetRegistry_Test extends MockTestCase {
     Assert.assertNull(MapSequence.fromMap(reg.allFacets()).get(new IFacet.Name("foobar")));
     Assert.assertNull(reg.lookup(new IFacet.Name("foobar")));
   }
-  public FacetRegistry_Test() {
-  }
 }

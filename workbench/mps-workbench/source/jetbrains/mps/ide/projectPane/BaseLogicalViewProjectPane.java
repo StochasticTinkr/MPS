@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,12 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
-import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
@@ -50,8 +49,8 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -277,13 +276,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void removeListeners() {
-    ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager().removeListener(myClassesListener);
     jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    mpsProject.getComponent(ClassLoaderManager.class).removeListener(myClassesListener);
     mpsProject.getModelAccess().removeCommandListener(myRepositoryListener);
     new RepoListenerRegistrar(mpsProject.getRepository(), myRepositoryListener).detach();
-    if (IMakeService.INSTANCE.hasMakeService()) {
-      IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
-    }
+    mpsProject.getComponent(MakeServiceComponent.class).get().removeListener(myMakeNotificationListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
   }
 
@@ -292,10 +289,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
     new RepoListenerRegistrar(mpsProject.getRepository(), myRepositoryListener).attach();
     mpsProject.getModelAccess().addCommandListener(myRepositoryListener);
-    if (IMakeService.INSTANCE.hasMakeService()) {
-      IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
-    }
-    ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager().addListener(myClassesListener);
+    // XXX here used to be a hasMakeService() check, which I found superfluous,
+    //     as we always have make service in UI (at least, we never check for it in other locations)
+    //     However, the idea to keep listeners inside MakeServiceComponent and install them into active
+    //     IMakeService once it's updated looks nice
+    mpsProject.getComponent(MakeServiceComponent.class).get().addListener(myMakeNotificationListener);
+    mpsProject.getComponent(ClassLoaderManager.class).addListener(myClassesListener);
   }
 
   public SNode getSelectedSNode() {
@@ -492,7 +491,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return null;
     }
 
-    return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
+    return selectedFilesList.toArray(new VirtualFile[0]);
   }
 
   /*package*/

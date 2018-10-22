@@ -65,6 +65,7 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
   public void disposeComponent() {
   }
 
+  @NotNull
   @Override
   @NonNls
   public String getProtocol() {
@@ -83,37 +84,40 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
 
   @Override
   @Nullable
-  public VirtualFile refreshAndFindFileByPath(String path) {
+  public VirtualFile refreshAndFindFileByPath(@NotNull String path) {
     return null;
   }
 
   @Override
-  protected void deleteFile(Object requestor, VirtualFile vFile) throws IOException {
+  protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected void moveFile(Object requestor, VirtualFile vFile, VirtualFile newParent) throws IOException {
+  protected void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected void renameFile(Object requestor, VirtualFile vFile, String newName) throws IOException {
+  protected void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
-  public VirtualFile createChildFile(Object requestor, VirtualFile vDir, String fileName) throws IOException {
+  public VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
-  public VirtualFile createChildDirectory(Object requestor, VirtualFile vDir, String dirName) throws IOException {
+  public VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
-  public VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
+  public VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) {
     throw new UnsupportedOperationException();
   }
 }

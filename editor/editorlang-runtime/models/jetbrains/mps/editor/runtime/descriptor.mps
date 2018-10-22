@@ -331,7 +331,7 @@
   <node concept="3HP615" id="6OQfiPCHBbE">
     <property role="TrG5h" value="EditorBuilderEnvironment" />
     <node concept="3clFb_" id="6OQfiPCHBdf" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getEditorContext" />
       <node concept="3uibUv" id="6OQfiPCHBeT" role="3clF45">
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
@@ -340,7 +340,7 @@
       <node concept="3clFbS" id="6OQfiPCHBdj" role="3clF47" />
     </node>
     <node concept="3clFb_" id="6OQfiPCHBgy" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getNode" />
       <node concept="3clFbS" id="6OQfiPCHBg_" role="3clF47" />
@@ -348,7 +348,7 @@
       <node concept="3Tqbb2" id="6OQfiPCHBge" role="3clF45" />
     </node>
     <node concept="3clFb_" id="6OQfiPCHBjx" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getCellFactory" />
       <node concept="3clFbS" id="6OQfiPCHBj$" role="3clF47" />
@@ -358,7 +358,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="7fcz_bZtWO$" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="getUpdateSession" />
       <node concept="3clFbS" id="7fcz_bZtWOB" role="3clF47" />

@@ -73,8 +73,8 @@ public final class ModulesMiner {
   private static final String SOURCES_MODULE_DIR = "module"; // source descriptor (if packaged) resides at the abc-lang-src.jar!/module/abc-lang.msd
 
   // excludes is going to be updated from #processExcludes, ensure it can be changed.
-  private final Set<IFile> myExcludes = new HashSet<IFile>();
-  private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
+  private final Set<IFile> myExcludes = new HashSet<>();
+  private final List<ModuleHandle> myOutcome = new ArrayList<>();
   private final DescriptorIOFacade myDescriptorIOFacade;
 
   /**
@@ -186,7 +186,7 @@ public final class ModulesMiner {
       } else {
         files.add(f);
       }
-    };
+    }
 
     boolean sourceModuleFound = false;
     for (IFile f : files) {

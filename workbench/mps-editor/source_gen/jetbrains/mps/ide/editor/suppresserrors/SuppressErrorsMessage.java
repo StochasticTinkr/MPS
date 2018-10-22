@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.Icon;
-import com.intellij.icons.AllIcons;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -19,7 +19,7 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
   }
   @Override
   public Icon getIcon() {
-    return AllIcons.Actions.CloseNew;
+    return MPSIcons.Actions.SuppressedError;
   }
   @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
@@ -28,6 +28,6 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
 
   @Override
   public AnAction getClickAction() {
-    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action"));
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action"));
   }
 }

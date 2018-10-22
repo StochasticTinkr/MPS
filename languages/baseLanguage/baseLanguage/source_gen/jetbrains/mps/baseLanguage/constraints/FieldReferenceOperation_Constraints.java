@@ -52,20 +52,18 @@ public class FieldReferenceOperation_Constraints extends BaseConstraintsDescript
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              // fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type 
-              final SNode instance = SLinkOperations.getTarget(SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
-              SNode instanceType = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
-                public SNode compute() {
-                  return TypeChecker.getInstance().getTypeOf(instance);
-                }
-              });
-              SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false);
-              if ((SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == null)) {
-                return new EmptyScope();
+            // fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type 
+            final SNode instance = SLinkOperations.getTarget(SNodeOperations.cast((((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
+            SNode instanceType = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
+              public SNode compute() {
+                return TypeChecker.getInstance().getTypeOf(instance);
               }
-              return new NamedElementsScope(Members.visibleInstanceFields(classifierType, _context.getContextNode()));
+            });
+            SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), false);
+            if ((SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == null)) {
+              return new EmptyScope();
             }
+            return new NamedElementsScope(Members.visibleInstanceFields(classifierType, _context.getContextNode()));
           }
         };
       }

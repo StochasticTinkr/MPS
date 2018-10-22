@@ -22,10 +22,5 @@ package jetbrains.mps.util;
 public interface Cancellable {
   boolean isCancelled();
 
-  Cancellable NEVER = new Cancellable() {
-    @Override
-    public boolean isCancelled() {
-      return false;
-    }
-  };
+  Cancellable NEVER = () -> false;
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" file="RuleTypeRenderer.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.GridBagConstraints" />

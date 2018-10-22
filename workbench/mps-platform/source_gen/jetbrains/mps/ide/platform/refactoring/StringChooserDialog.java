@@ -164,7 +164,15 @@ public class StringChooserDialog extends RefactoringDialog {
   }
 
   public static String getString(Project project, String title, String labelText, String initialValue) {
-    StringChooserDialog dialog = new StringChooserDialog(project, title, labelText, initialValue);
+    return getString(project, title, labelText, initialValue, false);
+  }
+  public static String getString(Project project, String title, String labelText, String initialValue, final boolean allowUnchanged) {
+    StringChooserDialog dialog = new StringChooserDialog(project, title, labelText, initialValue) {
+      @Override
+      protected boolean allowUnchangedValue() {
+        return allowUnchanged;
+      }
+    };
     dialog.show();
     return dialog.getResultValue();
   }

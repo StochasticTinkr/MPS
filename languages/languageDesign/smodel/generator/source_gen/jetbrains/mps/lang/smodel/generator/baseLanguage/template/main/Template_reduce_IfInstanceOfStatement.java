@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.FragmentResult;
@@ -28,8 +29,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBase {
-
+public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_reduce_IfInstanceOfStatement() {
   }
@@ -37,6 +37,8 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721107150");
   }
+
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -55,7 +57,7 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
                 try {
                   environment.nodeCopied(context3, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110285");
                   SNodeAccessUtil.setProperty(tnode4, myProperties[0], "true");
-                  SNodeAccessUtil.setProperty(tnode4, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_62_0(new PropertyMacroContext(context3, "n", propertyMacro_bb7ynt_c0a0c0c0b0b0b0b0b0b0c0f))));
+                  SNodeAccessUtil.setProperty(tnode4, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetValue_62_0(new PropertyMacroContext(context3, "n", propertyMacro_bb7ynt_c0a0c0c0b0b0b0b0b0b0c0g))));
                   TemplateContext context4 = context3.subContext();
                   {
                     final SNode tnode5 = environment.createOutputNode(myConcepts[4]);
@@ -68,8 +70,8 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
                   }
                   {
                     Collection<SNode> tlist6 = null;
-                    final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_62_0(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0f));
-                    tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110288", context4);
+                    final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_62_0(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0g));
+                    tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110288", context4);
                     for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                       tnode4.addChild(myAggregationLinks[1], child7);
                     }
@@ -98,7 +100,7 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
                   {
                     final SNode tnode10 = environment.createOutputNode(myConcepts[7]);
                     try {
-                      environment.resolveInTemplateLater(tnode10, myAssociationLinks[3], templateNode_bb7ynt_c0a0a1a3a1a1a1a2a1a1a2a5, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110285", "n", context6);
+                      environment.resolveInTemplateLater(tnode10, myAssociationLinks[3], templateNode_bb7ynt_c0a0a1a3a1a1a1a2a1a1a2a6, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110285", "n", context6);
                     } finally {
                     }
                     tnode9.addChild(myAggregationLinks[4], tnode10);
@@ -106,10 +108,11 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
                   }
                   {
                     Collection<SNode> tlist11 = null;
-                    SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_62_1(new SourceSubstituteMacroNodeContext(context6, includeMacro_bb7ynt_b0a0a1a4a1a1a1a2a1a1a2a5));
-                    TemplateContext context7 = context6.subContext(null, callInputNode11);
+                    SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_62_1(new SourceSubstituteMacroNodeContext(context6, callMacro_bb7ynt_b0a0a1a4a1a1a1a2a1a1a2a6));
+                    TemplateContext context7;
+                    context7 = context6.subContext(null, callInputNode11);
                     if (callInputNode11 != null) {
-                      tlist11 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(context7);
+                      tlist11 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context7);
                     }
                     for (SNode child12 : TemplateUtil.asNotNull(tlist11)) {
                       tnode9.addChild(myAggregationLinks[4], child12);
@@ -123,8 +126,8 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
               }
               {
                 Collection<SNode> tlist13 = null;
-                final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_62_2(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0f));
-                tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110280", context5);
+                final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_62_2(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0g));
+                tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0g, "tpl/r:00000000-0000-4000-0000-011c89590303/1883223317721110280", context5);
                 for (SNode child14 : TemplateUtil.asNotNull(tlist13)) {
                   tnode8.addChild(myAggregationLinks[6], child14);
                 }
@@ -152,15 +155,10 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -206,9 +204,9 @@ public class Template_reduce_IfInstanceOfStatement extends TemplateDeclarationBa
     rv[8] = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode");
     return rv;
   }
-  private static SNodePointer propertyMacro_bb7ynt_c0a0c0c0b0b0b0b0b0b0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721110290");
-  private static SNodePointer copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721110306");
-  private static SNodePointer templateNode_bb7ynt_c0a0a1a3a1a1a1a2a1a1a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654236638");
-  private static SNodePointer includeMacro_bb7ynt_b0a0a1a4a1a1a1a2a1a1a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654236640");
-  private static SNodePointer copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721112253");
+  private static SNodePointer propertyMacro_bb7ynt_c0a0c0c0b0b0b0b0b0b0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721110290");
+  private static SNodePointer copySrcMacro_bb7ynt_b0a0c0f0b0b0b0b0b0b0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721110306");
+  private static SNodePointer templateNode_bb7ynt_c0a0a1a3a1a1a1a2a1a1a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654236638");
+  private static SNodePointer callMacro_bb7ynt_b0a0a1a4a1a1a1a2a1a1a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "633481135935145316");
+  private static SNodePointer copySrcMacro_bb7ynt_b0a0c0c0b0c0b0b0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1883223317721112253");
 }

@@ -48,7 +48,7 @@ import java.util.List;
  */
 public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
   private static final Logger LOG = LogManager.getLogger(AWTKeymapHandler.class);
-  private static TIntObjectHashMap<String> ourJavaKeyCodesMap = new TIntObjectHashMap<String>();
+  private static TIntObjectHashMap<String> ourJavaKeyCodesMap = new TIntObjectHashMap<>();
 
   static {
     for (Field field : KeyEvent.class.getDeclaredFields()) {
@@ -70,25 +70,22 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
   } // static init
 
   public static List<String> getValidKeyCodes() {
-    final List<String> result = new ArrayList<String>(ourJavaKeyCodesMap.size() + 5);
+    final List<String> result = new ArrayList<>(ourJavaKeyCodesMap.size() + 5);
     result.add(KeyMap.KEY_CODE_DIGIT);
     result.add(KeyMap.KEY_CODE_LETTER);
     result.add(KeyMap.KEY_CODE_LETTER_OR_DIGIT);
     result.add(KeyMap.KEY_CODE_SPACE);
     result.add(KeyMap.KEY_CODE_CHAR);
-    ourJavaKeyCodesMap.forEachValue(new TObjectProcedure<String>() {
-      @Override
-      public boolean execute(String value) {
-        result.add(value);
-        return true;
-      }
+    ourJavaKeyCodesMap.forEachValue(value -> {
+      result.add(value);
+      return true;
     });
     Collections.sort(result);
     return result;
   }
 
   public static List<String> getValidModifiers() {
-    final List<String> result = new ArrayList<String>(8);
+    final List<String> result = new ArrayList<>(8);
     result.add(KeyMap.KEY_MODIFIERS_NONE);
     result.add(KeyMap.KEY_MODIFIERS_ANY);
     result.add(KeyMap.KEY_MODIFIERS_CTRL);
@@ -103,7 +100,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
   }
 
   private static List<String> modifiersForEvent(KeyEvent event) {
-    List<String> modifiers = new LinkedList<String>();
+    List<String> modifiers = new LinkedList<>();
     if (event.getModifiers() == 0) {
       modifiers.add(KeyMap.KEY_MODIFIERS_NONE);
     } else if (event.isControlDown() && !event.isAltDown() && !event.isShiftDown()) {
@@ -127,7 +124,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
   }
 
   private static List<String> keyCodesForEvent(KeyEvent event) {
-    List<String> keyCodes = new LinkedList<String>();
+    List<String> keyCodes = new LinkedList<>();
     keyCodes.add("");
 
     int keyCode = event.getKeyCode();
@@ -178,7 +175,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
 
   @Override
   public Collection<ActionKey> getActionKeys(KeyEvent event) {
-    List<ActionKey> keys = new LinkedList<ActionKey>();
+    List<ActionKey> keys = new LinkedList<>();
     List<String> modifiers = modifiersForEvent(event);
     List<String> keyCodes = keyCodesForEvent(event);
     if (modifiers.size() > 0 && keyCodes.size() > 0) {
@@ -211,12 +208,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
       if (acc != 0) {
         menuItem.setAccelerator(KeyStroke.getKeyStroke(acc));
       }
-      ActionListener actionListener = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          executeAction(action, contextCell, editorContext);
-        }
-      };
+      ActionListener actionListener = e -> executeAction(action, contextCell, editorContext);
       menuItem.addActionListener(actionListener);
       menu.add(menuItem);
       index++;

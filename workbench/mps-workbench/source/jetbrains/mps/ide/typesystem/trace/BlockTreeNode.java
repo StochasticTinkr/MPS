@@ -57,7 +57,7 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
   }
 
   private static Map<RelationKind, Color> initColors() {
-    Map<RelationKind, Color> result = new HashMap<RelationKind, Color>();
+    Map<RelationKind, Color> result = new HashMap<>();
     result.put(RelationKind.WEAK, JBColor.CYAN);
     result.put(RelationKind.STRONG, JBColor.BLUE);
     return result;

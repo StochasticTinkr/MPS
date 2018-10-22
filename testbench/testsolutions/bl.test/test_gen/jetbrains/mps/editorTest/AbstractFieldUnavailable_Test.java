@@ -34,7 +34,6 @@ public class AbstractFieldUnavailable_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("284804022097044180", "284804022097044185");
       typeString("abstract int bar");
-      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

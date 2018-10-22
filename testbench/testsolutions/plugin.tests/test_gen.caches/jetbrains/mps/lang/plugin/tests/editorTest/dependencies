@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionConstructorParameterDeclaration_Test" file="Test_CompleteActionConstructorParameterDeclaration_Test.java">
+  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionConstructorParameterDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionDataParameterDeclaration_Test" file="Test_CompleteActionDataParameterDeclaration_Test.java">
+  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionDataParameterDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionParameterDeclaration_Test" file="Test_CompleteActionParameterDeclaration_Test.java">
+  <dependency className="jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionParameterDeclaration_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

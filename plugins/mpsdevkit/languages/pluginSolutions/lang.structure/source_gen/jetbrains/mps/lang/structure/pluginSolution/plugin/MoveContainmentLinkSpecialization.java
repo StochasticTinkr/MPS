@@ -25,6 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringRuntime;
@@ -63,10 +64,11 @@ public class MoveContainmentLinkSpecialization extends StructureSpecializationBa
   }
   public Collection<SNode> findInstances(SContainmentLink oldLink, SearchScope searchScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(searchScope);
+      SearchScope scope_mzlq6b_a0c = CommandUtil.createScope(searchScope);
+      final SearchScope scope_mzlq6b_a0c_0 = new EditableFilteringScope(scope_mzlq6b_a0c);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_mzlq6b_a0c_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(oldLink.getOwner()), false)).toListSequence();

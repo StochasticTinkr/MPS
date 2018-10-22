@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
  * @since 11/23/11
  */
 public abstract class TreeHighlighterExtension {
-  protected static ExtensionPointName<TreeHighlighterExtension> EP_NAME = new ExtensionPointName<TreeHighlighterExtension>("com.intellij.mps.treeCreationHandler");
+  protected static ExtensionPointName<TreeHighlighterExtension> EP_NAME = new ExtensionPointName<>("com.intellij.mps.treeCreationHandler");
 
   public static void attachHighlighters(MPSTree tree, @NotNull Project project) {
     if (project.isDefault()) return;

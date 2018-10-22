@@ -139,7 +139,7 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode abstractOperation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameterObject), null);
+          SNode abstractOperation = SNodeFactoryOperations.createNewNode(myParameterObject, null);
           return abstractOperation;
         }
 

@@ -57,14 +57,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   private String myErrorText = null;
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
   //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public AbstractReferentCellProvider(@NotNull SNode node, EditorContext context) {
-    super(node, context);
-  }
-  //it is important for descendants to have a unique constructor and with the same parameters as this one
-
   public AbstractReferentCellProvider(@NotNull SNode node, SAbstractLink link, SAbstractConcept targetConcept, String roleName, EditorContext context) {
     super(node, context);
     myLink = link;
@@ -73,7 +66,10 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
+  //use setProperty/setLink instead
+  //todo: this should be removed from generators in 2018.2, then we could remove it in 2018.3.
+  //todo: Non-generated occurences are already removed. The generator needed to generate it for compatibility reasons
   @Override
   public void setRole(final Object role) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {

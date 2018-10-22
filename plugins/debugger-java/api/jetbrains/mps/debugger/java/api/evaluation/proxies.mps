@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="qgwr" ref="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)" />
@@ -221,7 +221,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfnwJ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getJDIValue" />
       <property role="DiZV1" value="false" />
       <node concept="3uibUv" id="2klhnAmr84a" role="3clF45">
@@ -234,7 +234,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfnwO" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getJavaValue" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfnwP" role="1B3o_S" />
@@ -247,7 +247,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfnwT" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="javaEquals" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfnwU" role="1B3o_S" />
@@ -262,7 +262,7 @@
       <node concept="3clFbS" id="46sxDGTfnwY" role="3clF47" />
     </node>
     <node concept="3clFb_" id="6OGoYT55y5B" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <node concept="17QB3L" id="6OGoYT55y61" role="3clF45" />
       <node concept="3Tm1VV" id="6OGoYT55y5E" role="1B3o_S" />
@@ -857,7 +857,7 @@
       <ref role="3uigEE" node="46sxDGTfnwG" resolve="IValueProxy" />
     </node>
     <node concept="3clFb_" id="46sxDGTfo17" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getElementAt" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfo18" role="1B3o_S" />
@@ -875,7 +875,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfo1e" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setElement" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfo1f" role="1B3o_S" />
@@ -898,7 +898,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfo1n" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getLength" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfo1o" role="1B3o_S" />
@@ -1016,7 +1016,7 @@
       <ref role="3uigEE" node="46sxDGTfnwG" resolve="IValueProxy" />
     </node>
     <node concept="3clFb_" id="46sxDGTfobP" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getFieldValue" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfobQ" role="1B3o_S" />
@@ -1037,7 +1037,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfobX" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="invokeMethod" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfobY" role="1B3o_S" />
@@ -1075,7 +1075,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfoc9" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="invokeSuperMethod" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfoca" role="1B3o_S" />
@@ -1113,7 +1113,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="46sxDGTfocl" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isInstanceOf" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="46sxDGTfocm" role="1B3o_S" />

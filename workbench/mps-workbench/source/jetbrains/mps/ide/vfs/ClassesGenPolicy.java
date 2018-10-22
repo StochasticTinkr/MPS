@@ -44,36 +44,33 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
       return Collections.emptySet();
     }
 
-    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Set<VirtualFile>>() {
-      @Override
-      public Set<VirtualFile> compute() {
-        final Set<VirtualFile> roots = new HashSet<VirtualFile>();
-        for (SModule module : mpsProject.getProjectModulesWithGenerators()) {
-          JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-          if (facet == null) {
-            continue;
-          }
+    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(() -> {
+      final Set<VirtualFile> roots = new HashSet<>();
+      for (SModule module : mpsProject.getProjectModulesWithGenerators()) {
+        JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+        if (facet == null) {
+          continue;
+        }
 
-          IFile classesGen = facet.getClassesGen();
-          if (classesGen == null) {
-            continue;
-          }
+        IFile classesGen = facet.getClassesGen();
+        if (classesGen == null) {
+          continue;
+        }
 
-          VirtualFile classesGenVF = VirtualFileUtils.getProjectVirtualFile(classesGen);
-          if (classesGenVF != null) {
-            roots.add(classesGenVF);
-          }
+        VirtualFile classesGenVF = VirtualFileUtils.getProjectVirtualFile(classesGen);
+        if (classesGenVF != null) {
+          roots.add(classesGenVF);
+        }
 
-          if (classesGen.getParent() != null) {
-            IFile classesDir = classesGen.getParent().getDescendant(AbstractModule.CLASSES);
-            VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
-            if (classesVF != null) {
-              roots.add(classesVF);
-            }
+        if (classesGen.getParent() != null) {
+          IFile classesDir = classesGen.getParent().getDescendant(AbstractModule.CLASSES);
+          VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
+          if (classesVF != null) {
+            roots.add(classesVF);
           }
         }
-        return roots;
       }
+      return roots;
     });
   }
 }

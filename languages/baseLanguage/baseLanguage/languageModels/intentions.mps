@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -9298,7 +9298,7 @@
   </node>
   <node concept="2S6QgY" id="hZiwP5N">
     <property role="2ZfUl0" value="true" />
-    <property role="TrG5h" value="MakeMethodAbstract" />
+    <property role="TrG5h" value="MakeBLMethodAbstract" />
     <property role="3GE5qa" value="classifiers.members" />
     <ref role="2ZfgGC" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="2S6ZIM" id="hZiwP5O" role="2ZfVej">
@@ -9355,6 +9355,19 @@
               </node>
             </node>
             <node concept="2Kehj3" id="7Q6WtM6aWbl" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6WSEafdo1D7" role="3cqZAp">
+          <node concept="37vLTI" id="6WSEafdo82p" role="3clFbG">
+            <node concept="3clFbT" id="6WSEafdo82Y" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="2OqwBi" id="6WSEafdo58x" role="37vLTJ">
+              <node concept="2Sf5sV" id="6WSEafdo1D5" role="2Oq$k0" />
+              <node concept="3TrcHB" id="6WSEafdo6T5" role="2OqNvi">
+                <ref role="3TsBF5" to="tpee:hcDiZZi" resolve="isFinal" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -9704,6 +9717,18 @@
     <ref role="2ZfgGC" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="2S6ZIM" id="i34zMA4" role="2ZfVej">
       <node concept="3clFbS" id="i34zMA5" role="2VODD2">
+        <node concept="3cpWs8" id="6WSEafdyabP" role="3cqZAp">
+          <node concept="3cpWsn" id="6WSEafdyabS" role="3cpWs9">
+            <property role="TrG5h" value="methodName" />
+            <node concept="17QB3L" id="6WSEafdyabN" role="1tU5fm" />
+            <node concept="2OqwBi" id="6WSEafdyc8P" role="33vP2m">
+              <node concept="2Sf5sV" id="6WSEafdybDq" role="2Oq$k0" />
+              <node concept="3TrcHB" id="6WSEafdydBG" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="i34$4D6" role="3cqZAp">
           <node concept="3K4zz7" id="i34$5pn" role="3clFbG">
             <node concept="2OqwBi" id="i34$4D7" role="3K4Cdx">
@@ -9712,11 +9737,31 @@
                 <ref role="3TsBF5" to="tpee:hcDiZZi" resolve="isFinal" />
               </node>
             </node>
-            <node concept="Xl_RD" id="i34$6lm" role="3K4GZi">
-              <property role="Xl_RC" value="Make Method Final" />
+            <node concept="3cpWs3" id="6WSEafdyfYF" role="3K4GZi">
+              <node concept="Xl_RD" id="6WSEafdy8o0" role="3uHU7w">
+                <property role="Xl_RC" value="' final" />
+              </node>
+              <node concept="3cpWs3" id="6WSEafdy8nS" role="3uHU7B">
+                <node concept="Xl_RD" id="6WSEafdy8nY" role="3uHU7B">
+                  <property role="Xl_RC" value="Make '" />
+                </node>
+                <node concept="37vLTw" id="6WSEafdyghU" role="3uHU7w">
+                  <ref role="3cqZAo" node="6WSEafdyabS" resolve="methodName" />
+                </node>
+              </node>
             </node>
-            <node concept="Xl_RD" id="i34$7fu" role="3K4E3e">
-              <property role="Xl_RC" value="Make Method Not Final" />
+            <node concept="3cpWs3" id="6WSEafdyew3" role="3K4E3e">
+              <node concept="Xl_RD" id="6WSEafdy9A0" role="3uHU7w">
+                <property role="Xl_RC" value="' not final" />
+              </node>
+              <node concept="3cpWs3" id="6WSEafdy9_S" role="3uHU7B">
+                <node concept="Xl_RD" id="6WSEafdy9_Y" role="3uHU7B">
+                  <property role="Xl_RC" value="Make '" />
+                </node>
+                <node concept="37vLTw" id="6WSEafdyeN9" role="3uHU7w">
+                  <ref role="3cqZAo" node="6WSEafdyabS" resolve="methodName" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -9774,6 +9819,21 @@
                 <property role="3clFbU" value="false" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6WSEafdiCWB" role="3cqZAp">
+          <node concept="3clFbS" id="6WSEafdiCWD" role="3clFbx">
+            <node concept="3cpWs6" id="6WSEafdiZXZ" role="3cqZAp">
+              <node concept="3clFbT" id="6WSEafdj0CD" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6WSEafdiDZV" role="3clFbw">
+            <node concept="2qgKlT" id="4SpJmwPMdAO" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
+            </node>
+            <node concept="2Sf5sV" id="6WSEafdiDpw" role="2Oq$k0" />
           </node>
         </node>
         <node concept="3cpWs8" id="4kb4CLbNH2L" role="3cqZAp">
@@ -14266,10 +14326,10 @@
         </node>
         <node concept="3clFbJ" id="3HnrdCzojjb" role="3cqZAp">
           <node concept="2OqwBi" id="3HnrdCzojjf" role="3clFbw">
-            <node concept="2Sf5sV" id="3HnrdCzojje" role="2Oq$k0" />
-            <node concept="2qgKlT" id="3HnrdCzojjj" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+            <node concept="2qgKlT" id="4SpJmwPMfYk" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:28P2dHxCoRl" resolve="isAnAbstractMethod" />
             </node>
+            <node concept="2Sf5sV" id="3HnrdCzojje" role="2Oq$k0" />
           </node>
           <node concept="3clFbS" id="3HnrdCzojjd" role="3clFbx">
             <node concept="3cpWs6" id="3HnrdCzojjk" role="3cqZAp">

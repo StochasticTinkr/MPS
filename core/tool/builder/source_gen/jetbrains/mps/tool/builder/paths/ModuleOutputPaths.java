@@ -12,7 +12,6 @@ import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
@@ -99,20 +98,11 @@ public class ModuleOutputPaths {
       public Iterable<ModelRoot> translate(SModule mod) {
         return mod.getModelRoots();
       }
-    }).ofType(FolderModelRootBase.class).select(new ISelector<FolderModelRootBase, String>() {
-      public String select(FolderModelRootBase smr) {
-        return smr.getPath();
-      }
-    });
-    modelRootPaths = Sequence.fromIterable(modelRootPaths).concat(Sequence.fromIterable(_modules).translate(new ITranslator2<SModule, ModelRoot>() {
-      public Iterable<ModelRoot> translate(SModule mod) {
-        return mod.getModelRoots();
-      }
     }).ofType(FileBasedModelRoot.class).select(new ISelector<FileBasedModelRoot, String>() {
       public String select(FileBasedModelRoot smr) {
         return smr.getContentRoot();
       }
-    }));
+    });
 
     this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modelRootPaths).select(new ISelector<String, IFile>() {
       public IFile select(String path) {

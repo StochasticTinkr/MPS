@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.behavior.generator.template.util.Constants" file="Constants.java">
+  <dependency className="jetbrains.mps.lang.behavior.generator.template.util.Constants">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper" file="MethodNameHelper.java">
+  <dependency className="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />

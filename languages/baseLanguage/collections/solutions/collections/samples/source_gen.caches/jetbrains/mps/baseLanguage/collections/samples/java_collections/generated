@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cd1pjrex2dv264x9p4ghq8q0w688aor" />
+<product version="3" modelHash="cb7mctf4oyo3b3qbh40fja5jv0ci8gn">
+  <files names="Main_javaIterable_as_sequence.java:Main_javaList_as_sequence.java:Main_sequence_as_javaList.java" />
+</product>
 

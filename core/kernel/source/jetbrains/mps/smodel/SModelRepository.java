@@ -48,8 +48,8 @@ public class SModelRepository implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(SModelRepository.class);
 
   private final Object myModelsLock = new Object();
-  private final List<SModel> myAllModels = new ArrayList<SModel>();
-  private final Map<SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModel>();
+  private final List<SModel> myAllModels = new ArrayList<>();
+  private final Map<SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<>();
 
   /*
    * SModelRepository used to be global repo listener. With ProjectRepository exposing all modules visible from a project?
@@ -97,7 +97,7 @@ public class SModelRepository implements CoreComponent {
 
   public List<SModel> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModel>(myAllModels);
+      return new ArrayList<>(myAllModels);
     }
   }
 
@@ -142,7 +142,7 @@ public class SModelRepository implements CoreComponent {
 
 
   private List<EditableSModel> getModelsToSave() {
-    List<EditableSModel> modelsToSave = new ArrayList<EditableSModel>();
+    List<EditableSModel> modelsToSave = new ArrayList<>();
     for (SModel md : getModelDescriptors()) {
       if (!(md instanceof EditableSModel)) continue;
 

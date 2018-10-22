@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7itr5o6fnd9nubhas40jgws44z9255g" />
+<product version="3" modelHash="kyfn9j7n1aze60x4jne39r6wd82q12">
+  <files names="EditorAspectDescriptorImpl.java:Field_Editor.java:Field_EditorBuilder_a.java:Mapping_Editor.java:Mapping_EditorBuilder_a.java:ReaderConfiguration_Editor.java:ReaderConfiguration_EditorBuilder_a.java" />
+</product>
 

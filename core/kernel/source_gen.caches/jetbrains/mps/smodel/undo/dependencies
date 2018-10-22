@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.undo.DefaultCommand" file="DefaultCommand.java">
+  <dependency className="jetbrains.mps.smodel.undo.DefaultCommand">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="java.lang.Runnable" />
     <classNode extendsClassName="jetbrains.mps.smodel.undo.DefaultUndoContext" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.undo.DefaultUndoContext" file="DefaultUndoContext.java">
+  <dependency className="jetbrains.mps.smodel.undo.DefaultUndoContext">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.smodel.undo.UndoContext" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.undo.NodeBasedCommand" file="NodeBasedCommand.java">
+  <dependency className="jetbrains.mps.smodel.undo.NodeBasedCommand">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.smodel.undo.DefaultCommand" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.undo.UndoContext" file="UndoContext.java">
+  <dependency className="jetbrains.mps.smodel.undo.UndoContext">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddPlaceholderChildAttribute_Intention" file="AddPlaceholderChildAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddPlaceholderChildAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -19,7 +19,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention" file="AddSimplePropertyAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -38,7 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddTestReferenceAnnotation_Intention" file="AddTestReferenceAnnotation_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddTestReferenceAnnotation_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -62,7 +62,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.TwoStepDeleteDefaultChild_AddAttribute_Intention" file="TwoStepDeleteDefaultChild_AddAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.TwoStepDeleteDefaultChild_AddAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

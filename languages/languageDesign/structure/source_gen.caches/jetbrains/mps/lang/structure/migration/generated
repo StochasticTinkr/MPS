@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-iqj9uflb7xcnqsi2gc6ecuu7l89lkg" />
+<product version="3" modelHash="-3c6r81di1bxdha3khz2zjkrlnk9yk1m">
+  <files names="CopyIconsToResources.java:IntroduceSmartRefAttribute.java:MigrateHelpURL.java:MigrationDescriptor.java:Removing_IDontSubstituteByDefault.java:SetOldConceptIds_Empty.java:SetSIds.java:UseDevkit.java" />
+</product>
 

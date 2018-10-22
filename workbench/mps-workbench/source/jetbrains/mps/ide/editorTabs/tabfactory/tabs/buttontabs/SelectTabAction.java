@@ -74,38 +74,35 @@ class SelectTabAction extends ToggleAction {
 
   @Override
   public void setSelected(AnActionEvent e, boolean state) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        List<SNodeReference> nodeRefs = myTab.getEditorNodes();
-        ArrayList<SNode> nodes = new ArrayList<>();
-        for (SNodeReference r : nodeRefs) {
-          SNode n = r.resolve(myProject.getRepository());
-          if (n != null) {
-            nodes.add(n);
-          }
+    myProject.getModelAccess().runReadAction(() -> {
+      List<SNodeReference> nodeRefs = myTab.getEditorNodes();
+      ArrayList<SNode> nodes = new ArrayList<>();
+      for (SNodeReference r : nodeRefs) {
+        SNode n = r.resolve(myProject.getRepository());
+        if (n != null) {
+          nodes.add(n);
         }
-        if (nodes.size() == 1) {
-          myCallback.changeNode(nodes.get(0).getReference());
-          return;
-        }
+      }
+      if (nodes.size() == 1) {
+        myCallback.changeNode(nodes.get(0).getReference());
+        return;
+      }
 
-        Component component = myTab.getComponentForPopup();
+      Component component = myTab.getComponentForPopup();
 
-        DefaultActionGroup group = getGotoGroup(nodes);
-        ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-        JPopupMenu popupMenu = popup.getComponent();
-        popupMenu.show(component, 0, 0);
+      DefaultActionGroup group = getGotoGroup(nodes);
+      ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
+      JPopupMenu popupMenu = popup.getComponent();
+      popupMenu.show(component, 0, 0);
 
-        TabColorProvider tabColorProvider = myTab.getColorProvider();
-        if (tabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
-          for (int i = 0; i < nodes.size(); i++) {
-            SNode node = nodes.get(i);
-            Component menuItem = popupMenu.getComponents()[i];
-            Color color = tabColorProvider.getNodeColor(node);// WTF - TCP.getAspectColor takes SNodeReference, while TCP.getNodeColor - SNode
-            if (color != null) {
-              menuItem.setForeground(color);
-            }
+      TabColorProvider tabColorProvider = myTab.getColorProvider();
+      if (tabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
+        for (int i = 0; i < nodes.size(); i++) {
+          SNode node = nodes.get(i);
+          Component menuItem = popupMenu.getComponents()[i];
+          Color color = tabColorProvider.getNodeColor(node);// WTF - TCP.getAspectColor takes SNodeReference, while TCP.getNodeColor - SNode
+          if (color != null) {
+            menuItem.setForeground(color);
           }
         }
       }

@@ -22,24 +22,10 @@ import org.jetbrains.mps.util.Condition;
  * 03 13, 2013
  */
 public class CellConditions {
-  public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {
-    @Override
-    public boolean met(EditorCell cell) {
-      return cell.isSelectable();
-    }
-  };
+  public static final Condition<EditorCell> SELECTABLE = cell -> cell.isSelectable();
 
-  public static final Condition<EditorCell> SELECTABLE_lEAF = new Condition<EditorCell>() {
-    @Override
-    public boolean met(EditorCell cell) {
-      return !(cell instanceof EditorCell_Collection) && cell.isSelectable();
-    }
-  };
+  public static final Condition<EditorCell> SELECTABLE_lEAF = cell -> !(cell instanceof EditorCell_Collection) && cell.isSelectable();
 
-  public static final Condition<EditorCell> EDITABLE = new Condition<EditorCell>() {
-    @Override
-    public boolean met(EditorCell cell) {
-      return cell.isSelectable() && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
-    }
-  };
+  public static final Condition<EditorCell> EDITABLE =
+      cell -> cell.isSelectable() && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
 }

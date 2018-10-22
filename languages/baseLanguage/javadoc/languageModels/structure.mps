@@ -10,7 +10,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -27,13 +29,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
-        <reference id="1169127628841" name="intfc" index="PrY4T" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
-        <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
         <property id="241647608299431129" name="propertyId" index="IQ2nx" />
@@ -84,7 +82,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="5349172909345532722" />
       <ref role="20lvS9" node="4CW56HZFI4Y" resolve="AuthorBlockDocTag" />
-      <node concept="asaX9" id="4EPKw6tR9C3" role="lGtFl" />
+      <node concept="asaX9" id="4EPKw6tR9C3" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="7lVCwDcxZ_y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -92,7 +92,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="8465538089690331490" />
       <ref role="20lvS9" node="7lVCwDcxXQH" resolve="SinceBlockDocTag" />
-      <node concept="asaX9" id="4EPKw6tR9C1" role="lGtFl" />
+      <node concept="asaX9" id="4EPKw6tR9C1" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="7lVCwDcxZ_z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -100,14 +102,18 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="8465538089690331491" />
       <ref role="20lvS9" node="7lVCwDcxXQw" resolve="VersionBlockDocTag" />
-      <node concept="asaX9" id="4EPKw6tR9BZ" role="lGtFl" />
+      <node concept="asaX9" id="4EPKw6tR9BZ" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="7lVCwDcxZ_F" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="deprecated" />
       <property role="IQ2ns" value="8465538089690331499" />
       <ref role="20lvS9" node="7lVCwDcxZ_$" resolve="DeprecatedBlockDocTag" />
-      <node concept="asaX9" id="4EPKw6tR9BX" role="lGtFl" />
+      <node concept="asaX9" id="4EPKw6tR9BX" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="1TJgyj" id="1V5cIK_bvvt" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -115,7 +121,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="2217234381367277533" />
       <ref role="20lvS9" node="1V5cIK_baeF" resolve="SeeBlockDocTag" />
-      <node concept="asaX9" id="4EPKw6tR9BV" role="lGtFl" />
+      <node concept="asaX9" id="4EPKw6tR9BV" role="lGtFl">
+        <property role="YLPcu" value="2018.3" />
+      </node>
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeSa" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -585,9 +593,6 @@
     <property role="TrG5h" value="EmptyBlockDocTag" />
     <property role="EcuMT" value="4948473272651335344" />
     <ref role="1TJDcQ" node="4CW56HZFI4X" resolve="BaseBlockDocTag" />
-    <node concept="PrWs8" id="4iGwz$GTsqL" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
 </model>
 

@@ -24,15 +24,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
@@ -57,7 +56,8 @@ public class NodeSubstituteChooserHandler {
   @NotNull
   private final NodeSubstitutePatternEditor myPatternEditor;
 
-  public NodeSubstituteChooserHandler(@NotNull EditorCell editorCell, @NotNull EditorComponent editorComponent, @NotNull SubstituteInfo substituteInfo, @NotNull NodeSubstitutePatternEditor patternEditor, boolean isSmart) {
+  public NodeSubstituteChooserHandler(@NotNull EditorCell editorCell, @NotNull EditorComponent editorComponent, @NotNull SubstituteInfo substituteInfo,
+                                      @NotNull NodeSubstitutePatternEditor patternEditor, boolean isSmart) {
     myEditorCell = editorCell;
     myEditorComponent = editorComponent;
     mySubstituteInfo = createSubstituteInfoPatternMatchingDecorator(substituteInfo);
@@ -73,44 +73,52 @@ public class NodeSubstituteChooserHandler {
 
     final String pattern = myPatternEditor.getPattern();
 
+    SubstituteAction action = getOnlyActionToExecute(pattern);
+    if (action != null) {
+      getRepository().getModelAccess().executeCommand(new EditorCommand(getEditorContext()) {
+        @Override
+        protected void doExecute() {
+          action.substitute(getEditorContext(), pattern);
+        }
+      });
+      return true;
+    } else {
+      return false;
+    }
 
-    // user changed text within this cell before pressing Ctrl+Space
-    // or cell has no text at this moment
-    boolean originalTextChanged = !myPatternEditor.getText().equals(mySubstituteInfo.getOriginalText());
-    // caret is at the end of line
-    boolean atTheEndOfLine = pattern.equals(myPatternEditor.getText());
-    // 1st - try to do substitution with current pattern (if cursor at the end of text)
+  }
 
-    if (originalTextChanged || atTheEndOfLine) {
-      List<SubstituteAction> matchingActions = getMatchingActions(myEditorCell, mySubstituteInfo, myIsSmart, pattern);
-      if (matchingActions.size() == 1 && pattern.length() > 0) {
-        // Just one applicable action in the completion menu
-        final SubstituteAction theAction = matchingActions.get(0);
-        boolean matchesMoreSpecificPattern = CASE_INSENSITIVE_MATCHER_FACTORY.createMatcher(pattern).isStartMatch(theAction.getMatchingText(pattern));
-        if (matchesMoreSpecificPattern) {
+  @Nullable
+  private SubstituteAction getOnlyActionToExecute(String pattern) {
+    return runRead(() -> {
+      // user changed text within this cell before pressing Ctrl+Space
+      // or cell has no text at this moment
+      boolean originalTextChanged = !myPatternEditor.getText().equals(mySubstituteInfo.getOriginalText());
+      // caret is at the end of line
+      boolean atTheEndOfLine = pattern.equals(myPatternEditor.getText());
+      // 1st - try to do substitution with current pattern (if cursor at the end of text)
 
-          Pair<Boolean, Boolean> canSubstitute =
-              new ModelAccessHelper(getRepository()).runReadAction(() -> new Pair<>(theAction.canSubstitute(pattern), theAction.canSubstituteStrictly(pattern)));
-
-          // Invoking this action immediately if originalText was changed or
-          // the cursor is at the end of line and !theAction.canSubstituteStrictly(pattern)
-          // [means, action will change underlying code]
-          if (canSubstitute.o1 && (originalTextChanged || myEditorCell.isErrorState() || !canSubstitute.o2)) {
-            getRepository().getModelAccess().executeCommand(new EditorCommand(getEditorContext()) {
-              @Override
-              protected void doExecute() {
-                theAction.substitute(getEditorContext(), pattern);
-              }
-            });
-            return true;
+      if (originalTextChanged || atTheEndOfLine) {
+        List<SubstituteAction> matchingActions = getMatchingActions(myEditorCell, mySubstituteInfo, myIsSmart, pattern);
+        if (matchingActions.size() == 1 && pattern.length() > 0) {
+          // Just one applicable action in the completion menu
+          final SubstituteAction theAction = matchingActions.get(0);
+          boolean matchesMoreSpecificPattern = CASE_INSENSITIVE_MATCHER_FACTORY.createMatcher(pattern).isStartMatch(theAction.getMatchingText(pattern));
+          if (matchesMoreSpecificPattern) {
+            // Invoking this action immediately if originalText was changed or
+            // the cursor is at the end of line and !theAction.canSubstituteStrictly(pattern)
+            // [means, action will change underlying code]
+            if (theAction.canSubstitute(pattern) && (originalTextChanged || myEditorCell.isErrorState() || !theAction.canSubstituteStrictly(pattern))) {
+              return theAction;
+            }
           }
         }
       }
-    }
-    return false;
+      return null;
+    });
   }
 
-  public void showNodeSubstituteChooser(NodeSubstituteChooser substituteChooser){
+  public void showNodeSubstituteChooser(NodeSubstituteChooser substituteChooser) {
     substituteChooser.setNodeSubstituteInfo(mySubstituteInfo);
     substituteChooser.setPatternEditor(myPatternEditor);
     substituteChooser.setIsSmart(myIsSmart);
@@ -147,14 +155,12 @@ public class NodeSubstituteChooserHandler {
 
   private List<SubstituteAction> getMatchingActions(final jetbrains.mps.openapi.editor.cells.EditorCell editorCell, final SubstituteInfo substituteInfo,
                                                     final boolean isSmart, final String pattern) {
-    return runRead(() -> {
-      final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner() : myEditorComponent;
-      return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
-                                                                         context -> isSmart ?
-                                                                                    substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-                                                                                    substituteInfo.getMatchingActions(pattern, false)
-      );
-    });
+    final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner() : myEditorComponent;
+    return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
+                                                                       context -> isSmart ?
+                                                                                  substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
+                                                                                  substituteInfo.getMatchingActions(pattern, false)
+    );
   }
 
   private <T> T runRead(final Computable<T> c) {

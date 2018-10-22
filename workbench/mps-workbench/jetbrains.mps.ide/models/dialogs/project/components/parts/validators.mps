@@ -2,7 +2,7 @@
 <model ref="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -45,7 +45,7 @@
     <property role="TrG5h" value="Validator" />
     <node concept="3Tm1VV" id="1mBiRF0LBR7" role="1B3o_S" />
     <node concept="3clFb_" id="1mBiRF0LBR8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isBrokenValue" />
       <node concept="3Tm1VV" id="1mBiRF0LBR9" role="1B3o_S" />
       <node concept="10P_77" id="1mBiRF0LBRa" role="3clF45" />

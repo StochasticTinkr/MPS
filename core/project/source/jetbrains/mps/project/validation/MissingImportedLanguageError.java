@@ -43,8 +43,8 @@ public final class MissingImportedLanguageError extends ModelReportItemBase impl
   }
 
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.MODEL_PROPERTIES;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.MODEL_PROPERTIES.deriveItemKind();
   }
 
   @Override

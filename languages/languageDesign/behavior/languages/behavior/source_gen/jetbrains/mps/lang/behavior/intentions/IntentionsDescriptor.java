@@ -33,12 +33,19 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
+          // Concept: ConceptBehavior 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ToggleConceptAbstract_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
           // Concept: ConceptMethodDeclaration 
           intentions = new IntentionFactory[4];
-          intentions[0] = new MakeAbstract_Intention();
-          intentions[1] = new MakeVirtual_Intention();
+          intentions[0] = new ToggleConceptMethodAbstract_Intention();
+          intentions[1] = new ToggleConceptMethodVirtual_Intention();
           intentions[2] = new RemoveTVD_Intention();
-          intentions[3] = new MakeStatic_Intention();
+          intentions[3] = new ToggleMethodStatic_Intention();
         }
         break;
       default:
@@ -50,12 +57,13 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[4];
-    rv[0] = new MakeAbstract_Intention();
-    rv[1] = new MakeVirtual_Intention();
+    IntentionFactory[] rv = new IntentionFactory[5];
+    rv[0] = new ToggleConceptMethodAbstract_Intention();
+    rv[1] = new ToggleConceptMethodVirtual_Intention();
     rv[2] = new RemoveTVD_Intention();
-    rv[3] = new MakeStatic_Intention();
+    rv[3] = new ToggleMethodStatic_Intention();
+    rv[4] = new ToggleConceptAbstract_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL)).seal();
 }

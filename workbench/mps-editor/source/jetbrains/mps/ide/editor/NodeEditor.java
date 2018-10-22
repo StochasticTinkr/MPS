@@ -49,7 +49,7 @@ public class NodeEditor extends BaseNodeEditor {
   @Override
   public List<Document> getAllEditedDocuments() {
     final MPSNodeVirtualFile virtualFile = getCurrentEditorComponent().getVirtualFile();
-    return virtualFile != null ? Collections.singletonList(MPSUndoUtil.getDoc(virtualFile)) : Collections.<Document>emptyList();
+    return virtualFile != null ? Collections.singletonList(MPSUndoUtil.getDoc(virtualFile)) : Collections.emptyList();
   }
 
   @Override

@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup" file="AbstractWatchableNodeActions_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" file="DebugRunMenu_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup" file="DebugStepsMenu_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" file="DebugTool_ActionGroup.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" file="Debugger_KeymapChanges.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.DefaultForGNOME_KeymapChanges" file="DefaultForGNOME_KeymapChanges.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DefaultForGNOME_KeymapChanges">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action" file="DeleteBreakpointAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" file="EvaluateExpression_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.ExportThreadsDialog" file="ExportThreadsDialog.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.ExportThreadsDialog">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.ExportThreads_Action" file="ExportThreads_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.ExportThreads_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
@@ -130,7 +130,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action" file="GoToBreakpointSourceAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -149,7 +149,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.GoToSource_Action" file="GoToSource_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.GoToSource_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" file="MuteBreakpoints.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Override" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.Pause_Action" file="Pause_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.Pause_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -185,7 +185,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.Resume_Action" file="Resume_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.Resume_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -198,7 +198,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" file="Runtime_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -219,13 +219,17 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.StepOut_Action" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.StepOver_Action" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.TouchBarDebug_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.TouchBarDefault_cmd_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.ViewBreakpoints_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDebug_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.TouchBarDefault_cmd_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepInto_Action" file="StepInto_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepInto_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -238,7 +242,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOut_Action" file="StepOut_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOut_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -251,7 +255,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOver_Action" file="StepOver_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOver_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -264,7 +268,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" file="ToggleBreakpoint_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -281,7 +287,16 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action" file="ViewBreakpointSourceAction_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.TouchBarDebug_ActionGroup">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.TouchBarDefault_cmd_ActionGroup">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -299,7 +314,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.actions.ViewBreakpoints_Action" file="ViewBreakpoints_Action.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.ViewBreakpoints_Action">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

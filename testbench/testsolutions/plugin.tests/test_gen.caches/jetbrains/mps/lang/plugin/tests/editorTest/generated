@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cn3mnmfd92f8mx6d24d9um1negtebzr" />
+<product version="3" modelHash="a527hku5tzruhfe7thfqovioz3nskjh">
+  <files names="Test_CompleteActionConstructorParameterDeclaration_Test.java:Test_CompleteActionDataParameterDeclaration_Test.java:Test_CompleteActionParameterDeclaration_Test.java" />
+</product>
 

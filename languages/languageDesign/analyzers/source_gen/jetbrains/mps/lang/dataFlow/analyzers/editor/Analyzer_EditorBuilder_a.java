@@ -433,7 +433,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("initialFunction");
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -553,7 +552,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("mergeFunction");
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -673,7 +671,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("funFunction");
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

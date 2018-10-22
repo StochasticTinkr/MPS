@@ -70,7 +70,7 @@ public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectVi
   }
 
   @Override
-  public void loadState(Element parentNode) {
+  public void loadState(@NotNull Element parentNode) {
     // simply forward to the superclass's implementation
     // we mimic the IDEA's mechanism to store/load tree state
     super.loadState(parentNode);
@@ -79,7 +79,7 @@ public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectVi
   private void viewSelectionChangedOverride() {
     // the current view ID is set in the super.showPane(), which must be called before
     final AbstractProjectViewPane newPane = getProjectViewPaneById(getCurrentViewId());
-    if (newPane == null || !(newPane instanceof ProjectViewPaneOverride)) {
+    if (!(newPane instanceof ProjectViewPaneOverride)) {
       return;
     }
 

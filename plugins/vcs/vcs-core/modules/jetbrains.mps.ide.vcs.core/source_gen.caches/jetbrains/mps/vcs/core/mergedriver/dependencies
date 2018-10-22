@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" file="AbstractContentMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.CompositeMerger" file="CompositeMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.CompositeMerger">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.EmptyMerger" file="EmptyMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.EmptyMerger">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
@@ -23,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileContent" file="FileContent.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileContent">
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -39,7 +39,7 @@
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.DataSourceBase" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileMerger" file="FileMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileMerger">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileType" file="FileType.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileType">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.InputStream" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" file="JavaDependenciesMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" file="MergeDriverMain.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain">
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
@@ -126,20 +126,19 @@
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.ModelMerger" file="ModelMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.ModelMerger">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelData" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -150,7 +149,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
@@ -166,7 +164,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" file="SimpleMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.SimpleMerger">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -177,7 +175,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.TextMerger" file="TextMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.TextMerger">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />

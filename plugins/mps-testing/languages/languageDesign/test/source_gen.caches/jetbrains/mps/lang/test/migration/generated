@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7ndwkuligph486pvfbbnma32esr25bh" />
+<product version="3" modelHash="-33n0vyzqcy7492zvieky7txg2jjve2e">
+  <files names="MigrationDescriptor.java:MigrationTestCase_migration.java:Pattern_vbjplg_a0a5.java:RemoveUITestPropertyFromTestInfo.java" />
+</product>
 

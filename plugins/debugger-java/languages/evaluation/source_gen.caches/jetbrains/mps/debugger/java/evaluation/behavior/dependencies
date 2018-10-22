@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation__BehaviorDescriptor" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType__BehaviorDescriptor" file="DebuggedType__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation__BehaviorDescriptor" file="DoNotTransformAnnotation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept__BehaviorDescriptor" file="EvaluatorConcept__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -86,7 +86,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator__BehaviorDescriptor" file="Evaluator__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall__BehaviorDescriptor" file="EvaluatorsSuperMethodCall__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -136,7 +136,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept__BehaviorDescriptor" file="IEvaluatorConcept__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable__BehaviorDescriptor" file="LowLevelVariable__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation__BehaviorDescriptor" file="UnprocessedAnnotation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

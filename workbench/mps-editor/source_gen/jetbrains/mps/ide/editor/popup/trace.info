@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:579b6612-4f9e-4479-8e4c-5ef2ee0f9722(jetbrains.mps.ide.editor.popup)/8432634623182578751">
+    <file name="AbstractOverrideEditorMessage.java">
+      <node id="8432634623182578752" at="16,0,17,0" concept="2" trace="myReturnTypeCellCondition" />
+      <node id="8432634623182578767" at="18,94,19,32" concept="8" />
+      <node id="8432634623182578771" at="19,32,20,190" concept="4" />
+      <node id="8432634623182578794" at="23,43,24,49" concept="5" />
+      <node id="2786528417096604188" at="30,68,31,54" concept="4" />
+      <node id="6226950206220127603" at="31,54,32,137" concept="4" />
+      <node id="8432634623182578817" at="32,137,33,63" concept="5" />
+      <node id="8432634623182578788" at="22,0,26,0" concept="3" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="8432634623182578777" at="20,190,26,6" concept="1" />
+      <node id="8432634623182578802" at="29,0,35,0" concept="3" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8432634623182578757" at="18,0,28,0" concept="0" trace="AbstractOverrideEditorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
+      <scope id="8432634623182578793" at="23,43,24,49" />
+      <scope id="8432634623182578807" at="30,68,33,63">
+        <var name="bigCell" id="2786528417096604191" />
+        <var name="returnTypeCell" id="6226950206220127604" />
+      </scope>
+      <scope id="8432634623182578788" at="22,0,26,0">
+        <var name="cell" id="8432634623182578791" />
+      </scope>
+      <scope id="8432634623182578802" at="29,0,35,0">
+        <var name="editorComponent" id="2786528417096610160" />
+      </scope>
+      <scope id="8432634623182578766" at="18,94,26,6">
+        <var name="returnTypeNode" id="8432634623182578772" />
+      </scope>
+      <scope id="8432634623182578757" at="18,0,28,0">
+        <var name="node" id="8432634623182578758" />
+        <var name="owner" id="8432634623182578760" />
+        <var name="tooltip" id="8432634623182578762" />
+      </scope>
+      <unit id="8432634623182578785" at="21,41,26,5" name="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage$1" />
+      <unit id="8432634623182578751" at="15,0,36,0" name="jetbrains.mps.ide.editor.popup.AbstractOverrideEditorMessage" />
+    </file>
+  </root>
+  <root nodeRef="r:579b6612-4f9e-4479-8e4c-5ef2ee0f9722(jetbrains.mps.ide.editor.popup)/8432634623182690059">
+    <file name="IconResourceBundle_OverrideImplements.java">
+      <node id="8432634623182690059" at="12,0,13,0" concept="6" trace="INSTANCE" />
+      <node id="8432634623182690060" at="14,5,15,60" concept="1" />
+      <node id="8432634623182690065" at="15,60,16,62" concept="1" />
+      <node id="8432634623182690071" at="16,62,17,57" concept="1" />
+      <node id="8432634623182690074" at="17,57,18,58" concept="1" />
+      <node id="8432634623182690059" at="23,37,24,26" concept="5" />
+      <node id="8432634623182690059" at="26,39,27,26" concept="5" />
+      <node id="8432634623182690059" at="29,69,30,58" concept="5" />
+      <node id="8432634623182690059" at="21,0,23,0" concept="0" trace="IconResourceBundle_OverrideImplements#()V" />
+      <node id="8432634623182690059" at="23,0,26,0" concept="3" trace="getKeys#()Ljava/lang/Iterable;" />
+      <node id="8432634623182690059" at="26,0,29,0" concept="3" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="8432634623182690059" at="29,0,32,0" concept="7" trace="getInstance#()Ljetbrains/mps/ide/editor/popup/IconResourceBundle_OverrideImplements;" />
+      <node id="8432634623182690059" at="13,0,21,0" concept="2" trace="icons" />
+      <scope id="8432634623182690059" at="21,50,21,50" />
+      <scope id="8432634623182690059" at="23,37,24,26" />
+      <scope id="8432634623182690059" at="26,39,27,26" />
+      <scope id="8432634623182690059" at="29,69,30,58" />
+      <scope id="8432634623182690059" at="21,0,23,0" />
+      <scope id="8432634623182690059" at="23,0,26,0" />
+      <scope id="8432634623182690059" at="26,0,29,0">
+        <var name="key" id="8432634623182690059" />
+      </scope>
+      <scope id="8432634623182690059" at="29,0,32,0" />
+      <scope id="8432634623182690059" at="14,5,18,58" />
+      <unit id="8432634623182690059" at="13,40,20,3" name="jetbrains.mps.ide.editor.popup.IconResourceBundle_OverrideImplements$1" />
+      <unit id="8432634623182690059" at="11,0,33,0" name="jetbrains.mps.ide.editor.popup.IconResourceBundle_OverrideImplements" />
+    </file>
+  </root>
+</debug-info>
+

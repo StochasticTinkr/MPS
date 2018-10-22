@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" file="Commands.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" file="IManagerCommand.java" />
-  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread" file="ManagerThread.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Thread" />

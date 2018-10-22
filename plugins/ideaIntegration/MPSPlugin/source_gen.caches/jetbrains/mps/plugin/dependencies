@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.plugin.DefaultGoToDeclarationHandler" file="DefaultGoToDeclarationHandler.java">
+  <dependency className="jetbrains.mps.plugin.DefaultGoToDeclarationHandler">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.IdeaCodeNavigationProvider" file="IdeaCodeNavigationProvider.java">
+  <dependency className="jetbrains.mps.plugin.IdeaCodeNavigationProvider">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
     <classNode extendsClassName="jetbrains.mps.ide.navigation.CodeNavigationProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.IdeaGoToDeclarationInitializer" file="IdeaGoToDeclarationInitializer.java">
+  <dependency className="jetbrains.mps.plugin.IdeaGoToDeclarationInitializer">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.GoToDeclarationHandlerRegistry" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.IdeaJavaCompilerImpl" file="IdeaJavaCompilerImpl.java">
+  <dependency className="jetbrains.mps.plugin.IdeaJavaCompilerImpl">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -68,7 +68,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.InstallIDEAPlugin_Action" file="InstallIDEAPlugin_Action.java">
+  <dependency className="jetbrains.mps.plugin.InstallIDEAPlugin_Action">
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.MPSPlugin" file="MPSPlugin.java">
+  <dependency className="jetbrains.mps.plugin.MPSPlugin">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.rmi.Naming" />
@@ -110,7 +110,7 @@
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.MPSProjectIDEHandler" file="MPSProjectIDEHandler.java">
+  <dependency className="jetbrains.mps.plugin.MPSProjectIDEHandler">
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.MessageType" />
@@ -154,6 +154,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
+    <classNode dependClassName="jetbrains.mps.project.EditableFilteringScope" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
@@ -178,7 +179,7 @@
     <classNode extendsClassName="java.rmi.server.UnicastRemoteObject" />
     <classNode extendsClassName="jetbrains.mps.plugin.IMPSIDEHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.PluginStateMonitor" file="PluginStateMonitor.java">
+  <dependency className="jetbrains.mps.plugin.PluginStateMonitor">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
@@ -191,7 +192,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.plugin.PluginStateWidget" file="PluginStateWidget.java">
+  <dependency className="jetbrains.mps.plugin.PluginStateWidget">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />

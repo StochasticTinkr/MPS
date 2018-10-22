@@ -45,13 +45,10 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
   public DefaultSChildSubstituteInfo(final SNode parentNode, final SContainmentLink link, final EditorContext editorContext) {
     super(editorContext);
     myLink = link;
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        myParentNode = parentNode;
-        Iterable<? extends SNode> ch = parentNode.getChildren(myLink);
-        myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
-      }
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      myParentNode = parentNode;
+      Iterable<? extends SNode> ch = parentNode.getChildren(myLink);
+      myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
     });
     myTargetConcept = link.getTargetConcept();
   }

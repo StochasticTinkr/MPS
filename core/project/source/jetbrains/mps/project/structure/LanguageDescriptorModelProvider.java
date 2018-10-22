@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -65,12 +64,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   private final static SModelId ourDescriptorModelId = new IntegerSModelId(0x0f010101);
 
-  private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
+  private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<>();
   private final LanguageRegistry myLanguageRegistry;
   private final RootChangeListener myListener = new RootChangeListener();
 
   private class RootChangeListener extends SNodeChangeListenerAdapter {
-    private final Set<SModelReference> myListenedModels = new HashSet<SModelReference>();
+    private final Set<SModelReference> myListenedModels = new HashSet<>();
 
     public void attach(SModule module) {
       for (SModel model : module.getModels()) {
@@ -123,7 +122,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
       HashSet<SLanguage> loadedLanguages = new HashSet<>(100);
       for (LanguageRuntime lr : languages) {
-        loadedLanguages.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace()));
+        loadedLanguages.add(lr.getIdentity());
       }
       // check if any language module we track needs any of the reloaded languages. I don't care about language modules I don't track yet.
       // Here, I assume that aspect model lists main/auxiliary languages of its aspect as 'used languages' and they are propagated up
@@ -192,7 +191,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   }
 
   private void removeAll() {
-    List<LanguageModelDescriptor> models = new ArrayList<LanguageModelDescriptor>(myModels.values());
+    List<LanguageModelDescriptor> models = new ArrayList<>(myModels.values());
     for (LanguageModelDescriptor model : models) {
       removeModel(model);
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.Language" file="Language.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.Language">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -11,11 +11,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />

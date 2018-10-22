@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.api.settings.ActionWrapper" file="ActionWrapper.java">
+  <dependency className="jetbrains.mps.execution.api.settings.ActionWrapper">
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.beans.PropertyChangeEvent" />
     <classNode dependClassName="java.beans.PropertyChangeListener" />
@@ -11,22 +11,22 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="javax.swing.AbstractAction" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.settings.IPersistentConfiguration" file="IPersistentConfiguration.java">
+  <dependency className="jetbrains.mps.execution.api.settings.IPersistentConfiguration">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode extendsClassName="com.intellij.openapi.util.JDOMExternalizable" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration" file="ITemplatePersistentConfiguration.java">
+  <dependency className="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" file="PersistentConfigurationContext.java">
+  <dependency className="jetbrains.mps.execution.api.settings.PersistentConfigurationContext">
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.settings.SettingsEditorEx" file="SettingsEditorEx.java">
+  <dependency className="jetbrains.mps.execution.api.settings.SettingsEditorEx">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />

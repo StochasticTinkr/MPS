@@ -74,7 +74,7 @@ public final class SModelLegacy {
 
   public List<SModuleReference> importedLanguages() {
     final Collection<SLanguage> usedLanguages = myModel.usedLanguages();
-    ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>(usedLanguages.size());
+    ArrayList<SModuleReference> rv = new ArrayList<>(usedLanguages.size());
     for (SLanguage l : usedLanguages) {
       final SModule sourceModule = l.getSourceModule();
       if (sourceModule != null) {

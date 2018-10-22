@@ -39,7 +39,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModuleBase implements SModule {
   private static final Logger LOG = LogManager.getLogger(SModuleBase.class);
-  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = (m1, m2) -> m1.getName().getValue().compareTo(m2.getName().getValue());
+  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = Comparator.comparing(m -> m.getName().getValue());
 
   private volatile SRepository myRepository = null;
 

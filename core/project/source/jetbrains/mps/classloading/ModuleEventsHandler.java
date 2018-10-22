@@ -51,12 +51,7 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   private final ModuleEventsDispatcher myDispatcher;
 
   // order for modules loading in order to reproduce any error
-  private static final Comparator<Object> MODULE_COMPARATOR = new Comparator<Object>() {
-    @Override
-    public int compare(Object m1, Object m2) {
-      return m1.toString().compareTo(m2.toString());
-    }
-  };
+  private static final Comparator<Object> MODULE_COMPARATOR = (m1, m2) -> m1.toString().compareTo(m2.toString());
 
   public ModuleEventsHandler(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
     myModulesWatcher = modulesWatcher;
@@ -89,8 +84,8 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   }
 
   private void updateModules(List<? extends ReloadableModuleBase> modules) {
-    List<SModule> modulesToReload = new ArrayList<SModule>();
-    for (ReloadableModuleBase module : modules) modulesToReload.add(module);
+    List<SModule> modulesToReload = new ArrayList<>();
+    modulesToReload.addAll(modules);
     Collections.sort(modulesToReload, MODULE_COMPARATOR);
     myManager.doReloadModules(modulesToReload, new EmptyProgressMonitor());
   }
@@ -126,9 +121,9 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
-    private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<ReloadableModuleBase>();
-    private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<ReloadableModuleBase>();
-    private final Set<SModuleReference> myModulesToUnload = new LinkedHashSet<SModuleReference>();
+    private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<>();
+    private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<>();
+    private final Set<SModuleReference> myModulesToUnload = new LinkedHashSet<>();
 
     @Override
     public void visit(SModuleAddedEvent event) {
@@ -174,15 +169,15 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
     }
 
     public List<SModuleReference> getModulesToUnload() {
-      return new ArrayList<SModuleReference>(myModulesToUnload);
+      return new ArrayList<>(myModulesToUnload);
     }
 
     public List<ReloadableModuleBase> getModulesToLoad() {
-      return new ArrayList<ReloadableModuleBase>(myModulesToLoad);
+      return new ArrayList<>(myModulesToLoad);
     }
 
     public List<ReloadableModuleBase> getModulesToUpdate() {
-      return new ArrayList<ReloadableModuleBase>(myModulesToUpdate);
+      return new ArrayList<>(myModulesToUpdate);
     }
   }
 }

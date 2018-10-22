@@ -17,6 +17,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -41,8 +42,9 @@ public class ConsoleUtil {
     final MessagesViewTool mvt = project.getComponent(MessagesViewTool.class);
     IMessageHandler messageHandler = mvt.newHandler("Console Make", true).restrict(MessageKind.ERROR);
     MakeSession session = new MakeSession(project, messageHandler, true);
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+    IMakeService makeService = project.getComponent(MakeServiceComponent.class).get();
+    if (makeService.openNewSession(session)) {
+      Future<IResult> future = makeService.make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
         public Boolean invoke(SModel m) {
           return true;
         }

@@ -276,7 +276,7 @@ public final class PersistenceUtil {
     private ByteArrayOutputStream myStream;
 
     @Override
-    public OutputStream openOutputStream() throws IOException {
+    public OutputStream openOutputStream() {
       myStream = new ByteArrayOutputStream();
       return myStream;
     }
@@ -350,7 +350,7 @@ public final class PersistenceUtil {
   }
 
   public static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
-    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
+    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<>();
 
     @NotNull
     @Override
@@ -359,7 +359,7 @@ public final class PersistenceUtil {
     }
     @NotNull
     @Override
-    public OutputStream openOutputStream(String name) throws IOException {
+    public OutputStream openOutputStream(String name) {
       ByteArrayOutputStream stream = new ByteArrayOutputStream();
       myStreams.put(name, stream);
       return stream;

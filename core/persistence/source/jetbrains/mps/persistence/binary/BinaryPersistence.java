@@ -127,7 +127,7 @@ public final class BinaryPersistence {
   }
 
   public static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model, @Nullable MetaModelInfoProvider mmiProvider) {
-    Map<String, String> result = new LinkedHashMap<String, String>();
+    Map<String, String> result = new LinkedHashMap<>();
     IdInfoRegistry meta = null;
     DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
     try {
@@ -229,7 +229,7 @@ public final class BinaryPersistence {
 
       NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, rh);
       reader.readNodesInto(model);
-      return new ModelLoadResult((SModel) model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
     } finally {
       FileUtil.closeFileSafe(mis);
     }
@@ -284,7 +284,7 @@ public final class BinaryPersistence {
       os.writeByte(HEADER_ATTRIBUTES);
       SModelHeader mh = ((DefaultSModel) myModelData).getSModelHeader();
       os.writeBoolean(mh.isDoNotGenerate());
-      Map<String, String> props = new HashMap<String, String>(mh.getOptionalProperties());
+      Map<String, String> props = new HashMap<>(mh.getOptionalProperties());
       os.writeShort(props.size());
       for (Entry<String, String> e : props.entrySet()) {
         os.writeString(e.getKey());
@@ -446,7 +446,7 @@ public final class BinaryPersistence {
 
   private static Collection<SModuleReference> loadModuleRefList(ModelInputStream is) throws IOException {
     int size = is.readShort();
-    List<SModuleReference> result = new ArrayList<SModuleReference>(size);
+    List<SModuleReference> result = new ArrayList<>(size);
     for (int i = 0; i < size; i++) {
       result.add(is.readModuleReference());
     }
@@ -463,7 +463,7 @@ public final class BinaryPersistence {
 
   private static List<ImportElement> loadImports(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<ImportElement> result = new ArrayList<ImportElement>();
+    List<ImportElement> result = new ArrayList<>();
     for (int i = 0; i < size; i++) {
       SModelReference ref = is.readModelReference();
       result.add(new ImportElement(ref, -1, is.readInt()));
@@ -487,8 +487,8 @@ public final class BinaryPersistence {
       }
       readHelper.requestInterfaceOnly(false);
       final NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, readHelper);
-      HashSet<SNodeId> externalNodes = new HashSet<SNodeId>();
-      HashSet<SNodeId> localNodes = new HashSet<SNodeId>();
+      HashSet<SNodeId> externalNodes = new HashSet<>();
+      HashSet<SNodeId> localNodes = new HashSet<>();
       reader.collectExternalTargets(externalNodes);
       reader.collectLocalTargets(localNodes);
       reader.readChildren(null);

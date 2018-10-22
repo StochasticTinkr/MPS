@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test" file="Test_CreateAntiquotation_Intention_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Intention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test" file="Test_CreateAntiquotation_Key_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateAntiquotation_Key_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test" file="Test_CreateListAntiquotation_Intention_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Intention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test" file="Test_CreateListAntiquotation_Key_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateListAntiquotation_Key_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test" file="Test_CreatePropertyAntiquotation_Intention_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Intention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -63,7 +63,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test" file="Test_CreatePropertyAntiquotation_Key_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreatePropertyAntiquotation_Key_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test" file="Test_CreateReferenceAntiquotation_Intention_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Intention_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -88,7 +88,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test" file="Test_CreateReferenceAntiquotation_Key_Test.java">
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_CreateReferenceAntiquotation_Key_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -99,6 +99,23 @@
     <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.test.editorTest.Test_QuotationDetachNodes_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.IllegalModelAccessException" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
 </dependenciesRoot>
 

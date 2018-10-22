@@ -35,7 +35,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
   private final static Logger LOG = LogManager.getLogger(ReloadableModuleBase.class);
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
-  private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<SModuleDependenciesListener>();
+  private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<>();
 
   protected ReloadableModuleBase() {
     super();
@@ -51,18 +51,18 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
 
   @NotNull
   @Override
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, false);
   }
 
   @NotNull
   @Override
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, true);
   }
 
   @NotNull
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
     ClassLoader classLoader = getClassLoader();
     if (classLoader == null) {
       throw new ModuleClassLoaderIsNullException(this);
@@ -82,12 +82,6 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Override
   public ClassLoader getClassLoader() {
     return myManager.getClassLoader(this);
-  }
-
-  @Override
-  @Deprecated
-  public ClassLoader getRootClassLoader() {
-    return new RootClassloaderLookup(this).get();
   }
 
   @Override

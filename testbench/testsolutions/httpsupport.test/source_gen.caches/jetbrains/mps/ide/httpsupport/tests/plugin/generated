@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8gh6dxhlyf5jdh3ro04dqhjbvwg2gk9" />
+<product version="3" modelHash="98icfblr44ks3vpujd3nndpe1mq0fss">
+  <files names="ExtensionDescriptor.java:PingStorage.java:RH_conditional_Extension.java:RH_conditional_RequestHandler.java:RH_conflicting1_Extension.java:RH_conflicting1_RequestHandler.java:RH_conflicting2_Extension.java:RH_conflicting2_RequestHandler.java:RH_exception_Extension.java:RH_exception_RequestHandler.java:RH_requiredParams_Extension.java:RH_requiredParams_RequestHandler.java:RH_simple_Extension.java:RH_simple_RequestHandler.java:RH_turnBack1_Extension.java:RH_turnBack1_RequestHandler.java:RH_turnBack2_Extension.java:RH_turnBack2_RequestHandler.java:testConverter_Converter.java" />
+</product>
 

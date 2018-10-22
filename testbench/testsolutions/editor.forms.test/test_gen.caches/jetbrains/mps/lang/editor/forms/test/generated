@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="923a21d036gll1xgwbbb0cypdx4i1oh" />
+<product version="3" modelHash="-3usoy7sj1uc8l3augv9hyepe5icbyfv">
+  <files names="PlatformCheckbox_CLICK_Toggles_Test.java:PlatformCheckbox_SPACE_InImage_Toggles_Test.java:PlatformCheckbox_SPACE_InLabel_Toggles_Test.java:TextCheckbox_CLICK_Toggles_Test.java:TextCheckbox_SPACE_KeepsSelection_Test.java:TextCheckbox_SPACE_Toggles_Test.java" />
+</product>
 

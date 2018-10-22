@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="499aa9a30b6f632jvqj2ok2uuzgmuo1" />
+<product version="3" modelHash="a7u5byexm810vp3eypj774y8i9vt11n">
+  <files names="BuildSolutionRunnerAspect_Editor.java:BuildSolutionRunnerAspect_EditorBuilder_a.java:BuildSolutionRunnerAspect_InspectorBuilder_a.java:BuildSolutionRunnerPlugin_Editor.java:BuildSolutionRunnerPlugin_EditorBuilder_a.java:EditorAspectDescriptorImpl.java" />
+</product>
 

@@ -116,7 +116,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     return myState;
   }
 
-  public void loadState(MyState state) {
+  public void loadState(@NotNull MyState state) {
     myState = state;
   }
 

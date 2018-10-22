@@ -21,8 +21,8 @@ import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 import java.util.*;
 
 public class EndInstruction extends Instruction {
-  protected final Set<RetInstruction> myReturns = new HashSet<RetInstruction>();
-  protected final Set<TryFinallyInfo> myRootTryFinallies = new HashSet<TryFinallyInfo>();
+  protected final Set<RetInstruction> myReturns = new HashSet<>();
+  private final Set<TryFinallyInfo> myRootTryFinallies = new HashSet<>();
 
   public EndInstruction() {
     super();
@@ -54,7 +54,7 @@ public class EndInstruction extends Instruction {
 
   @Override
   public List<ProgramState> pred(ProgramState s) {
-    List<ProgramState> result = new ArrayList<ProgramState>();
+    List<ProgramState> result = new ArrayList<>();
     if (s.isReturnMode()) {
       for (RetInstruction ret : myReturns) {
         if (ret.getEnclosingBlock() == null) {
@@ -72,6 +72,6 @@ public class EndInstruction extends Instruction {
 
   @Override
   public List<ProgramState> succ(ProgramState s) {
-    return new ArrayList<ProgramState>();
+    return new ArrayList<>();
   }
 }

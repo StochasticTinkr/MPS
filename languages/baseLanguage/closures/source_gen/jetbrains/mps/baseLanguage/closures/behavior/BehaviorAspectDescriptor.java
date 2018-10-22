@@ -20,11 +20,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myUnboundClosureParameterDeclaration__BehaviorDescriptor = new UnboundClosureParameterDeclaration__BehaviorDescriptor();
   private final BHDescriptor myInvokeFunctionOperation__BehaviorDescriptor = new InvokeFunctionOperation__BehaviorDescriptor();
   private final BHDescriptor myYieldAllStatement__BehaviorDescriptor = new YieldAllStatement__BehaviorDescriptor();
-  private final BHDescriptor myUnrestrictedClosureLiteral__BehaviorDescriptor = new UnrestrictedClosureLiteral__BehaviorDescriptor();
-  private final BHDescriptor myClosureControlStatement__BehaviorDescriptor = new ClosureControlStatement__BehaviorDescriptor();
   private final BHDescriptor myControlAbstractionContainer__BehaviorDescriptor = new ControlAbstractionContainer__BehaviorDescriptor();
   private final BHDescriptor myControlAbstractionDeclaration__BehaviorDescriptor = new ControlAbstractionDeclaration__BehaviorDescriptor();
-  private final BHDescriptor myUnrestrictedFunctionType__BehaviorDescriptor = new UnrestrictedFunctionType__BehaviorDescriptor();
   private final BHDescriptor myCompactInvokeFunctionExpression__BehaviorDescriptor = new CompactInvokeFunctionExpression__BehaviorDescriptor();
   private final BHDescriptor myClosureLiteralType__BehaviorDescriptor = new ClosureLiteralType__BehaviorDescriptor();
   private final BHDescriptor myFunctionMethodDeclaration__BehaviorDescriptor = new FunctionMethodDeclaration__BehaviorDescriptor();
@@ -40,40 +37,34 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myAbstractFunctionType__BehaviorDescriptor;
       case 1:
-        return myClosureControlStatement__BehaviorDescriptor;
-      case 2:
         return myClosureLiteral__BehaviorDescriptor;
-      case 3:
+      case 2:
         return myClosureLiteralType__BehaviorDescriptor;
-      case 4:
+      case 3:
         return myCompactInvokeFunctionExpression__BehaviorDescriptor;
-      case 5:
+      case 4:
         return myControlAbstractionContainer__BehaviorDescriptor;
-      case 6:
+      case 5:
         return myControlAbstractionDeclaration__BehaviorDescriptor;
-      case 7:
+      case 6:
         return myFunctionMethodDeclaration__BehaviorDescriptor;
-      case 8:
+      case 7:
         return myFunctionType__BehaviorDescriptor;
-      case 9:
+      case 8:
         return myInvokeExpression__BehaviorDescriptor;
-      case 10:
+      case 9:
         return myInvokeFunctionExpression__BehaviorDescriptor;
-      case 11:
+      case 10:
         return myInvokeFunctionOperation__BehaviorDescriptor;
-      case 12:
+      case 11:
         return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
-      case 13:
-        return myUnrestrictedClosureLiteral__BehaviorDescriptor;
-      case 14:
-        return myUnrestrictedFunctionType__BehaviorDescriptor;
-      case 15:
+      case 12:
         return myYieldAllStatement__BehaviorDescriptor;
-      case 16:
+      case 13:
         return myYieldStatement__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L), MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L)).seal();
 }

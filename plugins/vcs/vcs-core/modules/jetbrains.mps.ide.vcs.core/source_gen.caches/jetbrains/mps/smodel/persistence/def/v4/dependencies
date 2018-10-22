@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.DOMVisibleModelElements" file="DOMVisibleModelElements.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.DOMVisibleModelElements">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
@@ -15,15 +15,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.VisibleModelElements" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.IModelReader" file="IModelReader.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.IModelReader">
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="org.jdom.Document" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.IPersistenceWithReader" file="IPersistenceWithReader.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.IPersistenceWithReader">
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.IModelReader" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4" file="ModelPersistence4.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
@@ -39,7 +39,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IModelPersistence" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.IPersistenceWithReader" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelReader4" file="ModelReader4.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ModelReader4">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v4.IModelReader" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" file="ReferencePersister4.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Override" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IReferencePersister" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" file="VersionUtil.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v4.VersionUtil">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelVersionsInfo" />

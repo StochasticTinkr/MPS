@@ -3,13 +3,13 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
   </languages>
   <imports>
@@ -67,7 +67,6 @@
       </concept>
       <concept id="3743831881070657672" name="jetbrains.mps.lang.plugin.structure.BaseNodeBlock" flags="in" index="2E2Kfa" />
       <concept id="3743831881070611759" name="jetbrains.mps.lang.plugin.structure.EditorTab" flags="ng" index="2E2WTH">
-        <property id="8204570419206313935" name="commandOnCreate" index="3ED2Es" />
         <reference id="3743831881070611760" name="baseNodeConcept" index="2E2WTM" />
         <child id="3743831881070657666" name="isApplicableBlock" index="2E2Kf0" />
         <child id="3743831881070611762" name="baseNodeBlock" index="2E2WTK" />
@@ -331,7 +330,6 @@
     </node>
   </node>
   <node concept="2E2WTH" id="4KDfkUwMkUi">
-    <property role="3ED2Es" value="true" />
     <property role="TrG5h" value="Executor" />
     <ref role="2E2WTM" to="uhxm:25jQf71X6T9" resolve="RunConfiguration" />
     <node concept="1baRJj" id="4KDfkUwMkUj" role="2E2Xay">
@@ -771,6 +769,30 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="IIVxgkKBFs" role="3cqZAp">
+          <node concept="3cpWsn" id="IIVxgkKBFt" role="3cpWs9">
+            <property role="TrG5h" value="makeService" />
+            <node concept="3uibUv" id="IIVxgkKBFr" role="1tU5fm">
+              <ref role="3uigEE" to="hfuk:1NAY6bPd4nM" resolve="IMakeService" />
+            </node>
+            <node concept="2OqwBi" id="IIVxgkKNxx" role="33vP2m">
+              <node concept="2OqwBi" id="IIVxgkKJl7" role="2Oq$k0">
+                <node concept="37vLTw" id="IIVxgkKIxC" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7JDtVAB8xQS" resolve="mpsProject" />
+                </node>
+                <node concept="liA8E" id="IIVxgkKKNd" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="IIVxgkKMve" role="37wK5m">
+                    <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkKP2X" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:4QUA3SqtLoe" resolve="get" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="7nsdmC8vnpi" role="3cqZAp">
           <node concept="3clFbS" id="7nsdmC8vnpj" role="3clFbx">
             <node concept="3cpWs8" id="7nsdmC8vzqw" role="3cqZAp">
@@ -783,9 +805,8 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="7nsdmC8vzq$" role="33vP2m">
-                  <node concept="2YIFZM" id="3gaTARFf5VD" role="2Oq$k0">
-                    <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-                    <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+                  <node concept="37vLTw" id="IIVxgkKBFw" role="2Oq$k0">
+                    <ref role="3cqZAo" node="IIVxgkKBFt" resolve="makeService" />
                   </node>
                   <node concept="liA8E" id="7nsdmC8vzqA" role="2OqNvi">
                     <ref role="37wK5l" to="hfuk:7yGn3z4N64K" resolve="make" />
@@ -874,9 +895,8 @@
             </node>
           </node>
           <node concept="2OqwBi" id="7nsdmC8vnpr" role="3clFbw">
-            <node concept="2YIFZM" id="3gaTARFfado" role="2Oq$k0">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="37vLTw" id="IIVxgkKBFv" role="2Oq$k0">
+              <ref role="3cqZAo" node="IIVxgkKBFt" resolve="makeService" />
             </node>
             <node concept="liA8E" id="7nsdmC8vnpv" role="2OqNvi">
               <ref role="37wK5l" to="hfuk:7yGn3z4N63W" resolve="openNewSession" />

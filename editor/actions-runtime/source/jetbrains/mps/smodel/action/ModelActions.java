@@ -80,24 +80,6 @@ public class ModelActions {
   // referent substitute
   //-------------------
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-                                                                       IOperationContext context) {
-    IReferentPresentationProvider matchingTextProvider = IReferentPresentationProvider.getDefaultMatchingText(linkDeclaration);
-    IReferentPresentationProvider visibleMatchingTextProvider = IReferentPresentationProvider.getDefaultVisibleMatchingText(linkDeclaration);
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-                                                                       @NotNull IReferentPresentationProvider matchingTextProvider,
-                                                                       @NotNull IReferentPresentationProvider visibleMatchingTextProvider,
-                                                                       IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
-  }
-
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SReferenceLink link,
                                                                        @NotNull IReferentPresentationProvider matchingTextProvider,
                                                                        @NotNull IReferentPresentationProvider visibleMatchingTextProvider,

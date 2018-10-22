@@ -96,7 +96,7 @@ public class FilePerRootFormatUtil {
     header = result.getSModelHeader();
 
     // load roots
-    List<String> streams = new ArrayList<String>();
+    List<String> streams = new ArrayList<>();
     for (String s : dataSource.getAvailableStreams()) streams.add(s);
     Collections.sort(streams);
     for (String stream : streams) {
@@ -172,7 +172,7 @@ public class FilePerRootFormatUtil {
     Map<String, Document> result = ModelPersistence.getPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
 
     // write to storage
-    Set<String> toRemove = new HashSet<String>();
+    Set<String> toRemove = new HashSet<>();
     for (String s : source.getAvailableStreams()) {
       if (!result.containsKey(s)) toRemove.add(s);
     }
@@ -180,7 +180,7 @@ public class FilePerRootFormatUtil {
       //if we have a file having a name, which differs in case only, we want to remove this file before writing to the new one
       //to sync cases in root- and filenames
       String fnameLower = entry.getKey().toLowerCase();
-      Set<String> removed = new HashSet<String>();
+      Set<String> removed = new HashSet<>();
       for (String s : toRemove) {
         if (s.toLowerCase().equals(fnameLower)){
           source.delete(s);
@@ -202,18 +202,9 @@ public class FilePerRootFormatUtil {
     return false;
   }
 
-  /**
-   * @deprecated exposes internal SModelData implementation, while all it needs is a bunch of nodes
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static Map<SNodeId, String> getStreamNames(SModel model) {
-    return getStreamNames(model.getRootNodes());
-  }
-
   public static Map<SNodeId, String> getStreamNames(Iterable<SNode> roots) {
-    Map<SNodeId, String> result = new HashMap<SNodeId, String>();
-    Set<String> usedNames = new HashSet<String>();
+    Map<SNodeId, String> result = new HashMap<>();
+    Set<String> usedNames = new HashSet<>();
     for (SNode root : roots) {
       SNodeId key = root.getNodeId();
       String value = asFileName(root.getName());

@@ -53,7 +53,7 @@ public abstract class AbstractOperation {
   }
 
   public List<AbstractOperation> getConsequences() {
-    return myConsequences == null ? Collections.<AbstractOperation>emptyList() : Collections.unmodifiableList(myConsequences);
+    return myConsequences == null ? Collections.emptyList() : Collections.unmodifiableList(myConsequences);
   }
 
   protected abstract void doUndo(State state);
@@ -61,21 +61,11 @@ public abstract class AbstractOperation {
   protected abstract void doRedo(State state);
 
   public void undo(final State state) {
-    state.executeStateChangeAction(new Runnable() {
-      @Override
-      public void run() {
-        doUndo(state);
-      }
-    });
+    state.executeStateChangeAction(() -> doUndo(state));
   }
 
   public void redo(final State state) {
-    state.executeStateChangeAction(new Runnable() {
-      @Override
-      public void run() {
-        doRedo(state);
-      }
-    });
+    state.executeStateChangeAction(() -> doRedo(state));
   }
 
   // default implementation

@@ -242,7 +242,7 @@
       <node id="7658393498702987473" at="78,78,79,56" concept="6" />
       <node id="7658393498703022822" at="79,56,80,71" concept="6" />
       <node id="2189048181904951386" at="80,71,81,59" concept="6" />
-      <node id="7658393498703024682" at="81,59,82,491" concept="6" />
+      <node id="7658393498703024682" at="81,59,82,449" concept="6" />
       <node id="7658393498702987309" at="85,48,86,55" concept="7" />
       <node id="7658393498702987309" at="71,0,73,0" concept="1" trace="IntentionImplementation#()V" />
       <node id="7658393498702987309" at="28,0,31,0" concept="1" trace="AddTestReferenceAnnotation_Intention#()V" />
@@ -280,7 +280,7 @@
         <var name="editorContext" id="7658393498702987309" />
         <var name="node" id="7658393498702987309" />
       </scope>
-      <scope id="7658393498702987313" at="78,78,82,491">
+      <scope id="7658393498702987313" at="78,78,82,449">
         <var name="cell" id="7658393498702987474" />
         <var name="ref" id="2189048181904951387" />
         <var name="referentNode" id="7658393498703022823" />

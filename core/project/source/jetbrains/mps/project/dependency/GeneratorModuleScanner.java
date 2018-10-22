@@ -41,7 +41,7 @@ public class GeneratorModuleScanner {
 
   public void walkPriorityRules(Generator g) {
     // ArrayDeque doesn't tolerate null, unfortunately
-    LinkedList<MappingConfig_AbstractRef> mcRefs = new LinkedList<MappingConfig_AbstractRef>();
+    LinkedList<MappingConfig_AbstractRef> mcRefs = new LinkedList<>();
     for (MappingPriorityRule rule : g.getModuleDescriptor().getPriorityRules()) {
       mcRefs.add(rule.getLeft());
       mcRefs.add(rule.getRight());

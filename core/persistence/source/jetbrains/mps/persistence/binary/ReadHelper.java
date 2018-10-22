@@ -48,10 +48,10 @@ class ReadHelper {
   private boolean myInterfaceOnly;
   private ConceptInfo myActualConcept;
   // TODO with indices being just a persistence position, shall use arrays instead
-  private final TIntObjectHashMap<SConcept> myConcepts = new TIntObjectHashMap<SConcept>();
-  private final TIntObjectHashMap<SProperty> myProperties = new TIntObjectHashMap<SProperty>();
-  private final TIntObjectHashMap<SReferenceLink> myAssociations = new TIntObjectHashMap<SReferenceLink>();
-  private final TIntObjectHashMap<SContainmentLink> myAggregations = new TIntObjectHashMap<SContainmentLink>();
+  private final TIntObjectHashMap<SConcept> myConcepts = new TIntObjectHashMap<>();
+  private final TIntObjectHashMap<SProperty> myProperties = new TIntObjectHashMap<>();
+  private final TIntObjectHashMap<SReferenceLink> myAssociations = new TIntObjectHashMap<>();
+  private final TIntObjectHashMap<SContainmentLink> myAggregations = new TIntObjectHashMap<>();
 
   public ReadHelper(@NotNull MetaModelInfoProvider mmiProvider) {
     myMetaInfo = new IdInfoRegistry();
@@ -122,7 +122,7 @@ class ReadHelper {
 
 
   /*package*/ List<SConceptId> getParticipatingConcepts() {
-    ArrayList<SConceptId> rv = new ArrayList<SConceptId>(100);
+    ArrayList<SConceptId> rv = new ArrayList<>(100);
     for (LangInfo li : myMetaInfo.getLanguagesInUse()) {
       for (ConceptInfo ci : li.getConceptsInUse()) {
         // FIXME could I use myMetaInfo.registry.keySet() instead?

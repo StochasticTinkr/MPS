@@ -75,7 +75,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(queue).addLastElement(classifier);
     ClassifierSuccessorsFinder.ValueProcessor valueProcessor = new ClassifierSuccessorsFinder.ValueProcessor(result, queue, SNodeOperations.getModel(classifier).getRepository());
-    ClassifierSuccessorsFinder.ModifiedsuccessorFinder modifiedSuccessorFinder = new ClassifierSuccessorsFinder.ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, queue);
+    ClassifierSuccessorsFinder.ModifiedSuccessorFinder modifiedSuccessorFinder = new ClassifierSuccessorsFinder.ModifiedSuccessorFinder(modifiedClasses, modifiedInterfaces, result, queue);
     ClassifierSuccessorsFinder.SearchScope unModifiedFilesSearchScope = new ClassifierSuccessorsFinder.SearchScope(unModifiedModelFiles);
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode nextClassifier = QueueSequence.fromQueue(queue).removeFirstElement();
@@ -99,9 +99,10 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
   @NotNull
   @Override
   public String getComponentName() {
-    return "Classifiers successors finder";
+    return "Classifiers Successors Finder";
   }
-  private static class ModifiedsuccessorFinder {
+
+  private static class ModifiedSuccessorFinder {
     private List<SNode> myModifiedClasses;
     private List<SNode> myModifiedInterfaces;
     private Queue<SNode> myClassifiersQueue;
@@ -110,12 +111,14 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     private Map<SNode, List<SNode>> mySuccessorsMap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     private boolean myInterfacesMapped;
     private boolean myClassesMapped;
-    /*package*/ ModifiedsuccessorFinder(List<SNode> modifiedClasses, List<SNode> modifiedInterfaces, List<SNode> result, Queue<SNode> classifiersQueue) {
+
+    /*package*/ ModifiedSuccessorFinder(List<SNode> modifiedClasses, List<SNode> modifiedInterfaces, List<SNode> result, Queue<SNode> classifiersQueue) {
       myModifiedClasses = modifiedClasses;
       myModifiedInterfaces = modifiedInterfaces;
       myClassifiersQueue = classifiersQueue;
       myResult = result;
     }
+
     public void process(SNode superClassifier) {
       if (SetSequence.fromSet(myProcessedNodes).contains(superClassifier)) {
         return;
@@ -137,6 +140,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
+
     private void mapClasses() {
       if (myClassesMapped) {
         return;
@@ -155,6 +159,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
+
     private void mapInterfaces() {
       if (myInterfacesMapped) {
         return;
@@ -166,6 +171,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
+
     private void safeMap(SNode predecessor, SNode successor) {
       if (predecessor == null) {
         return;
@@ -178,17 +184,19 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       ListSequence.fromList(successors).addElement(successor);
     }
   }
+
   private static class ValueProcessor implements FileBasedIndex.ValueProcessor<List<SNodeEntry>> {
     private List<SNode> myResult;
     private Queue<SNode> myQueue;
     private final SRepository myRepo;
-
     private Set<SNodeEntry> myProcessedNodes = SetSequence.fromSet(new HashSet<SNodeEntry>());
+
     /*package*/ ValueProcessor(List<SNode> result, Queue<SNode> queue, SRepository repository) {
       myResult = result;
       myQueue = queue;
       myRepo = repository;
     }
+
     @Override
     public boolean process(VirtualFile file, List<SNodeEntry> successors) {
       for (SNodeEntry sNodeId : successors) {
@@ -206,24 +214,30 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       return true;
     }
   }
+
   private static class SearchScope extends GlobalSearchScope {
     private Set<VirtualFile> myFilesInScope;
+
     /*package*/ SearchScope(Set<VirtualFile> notModifiedModelFiles) {
       super(null);
       myFilesInScope = notModifiedModelFiles;
     }
+
     @Override
     public boolean contains(VirtualFile file) {
       return SetSequence.fromSet(myFilesInScope).contains(file);
     }
+
     @Override
     public int compare(VirtualFile file1, VirtualFile file2) {
       return file1.getPath().compareTo(file2.getPath());
     }
+
     @Override
     public boolean isSearchInModuleContent(@NotNull Module aModule) {
       return true;
     }
+
     @Override
     public boolean isSearchInLibraries() {
       return false;

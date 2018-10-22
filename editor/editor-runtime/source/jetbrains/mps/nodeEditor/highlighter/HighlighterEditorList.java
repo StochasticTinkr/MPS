@@ -30,8 +30,8 @@ public class HighlighterEditorList {
    * Synchronizes access to the editor and editor components lists.
    */
   private final Object myLock = new Object();
-  private final List<Editor> myAdditionalEditors = new ArrayList<Editor>();
-  private final List<EditorComponent> myAdditionalEditorComponents = new ArrayList<EditorComponent>();
+  private final List<Editor> myAdditionalEditors = new ArrayList<>();
+  private final List<EditorComponent> myAdditionalEditorComponents = new ArrayList<>();
 
   private final FileEditorManager myFileEditorManager;
 
@@ -46,10 +46,10 @@ public class HighlighterEditorList {
     ThreadUtils.assertEDT();
 
     final List<Editor> activeAndAdditionalEditors;
-    final List<EditorComponent> editorComponents = new ArrayList<EditorComponent>();
+    final List<EditorComponent> editorComponents = new ArrayList<>();
 
     synchronized (myLock) {
-      activeAndAdditionalEditors = new ArrayList<Editor>(myAdditionalEditors);
+      activeAndAdditionalEditors = new ArrayList<>(myAdditionalEditors);
       activeAndAdditionalEditors.addAll(EditorsHelper.getSelectedEditors(myFileEditorManager));
 
       for (EditorComponent component : myAdditionalEditorComponents) {
@@ -76,8 +76,8 @@ public class HighlighterEditorList {
     final List<EditorComponent> editorComponents;
 
     synchronized (myLock) {
-      editors = new ArrayList<Editor>(myAdditionalEditors);
-      editorComponents = new ArrayList<EditorComponent>(myAdditionalEditorComponents);
+      editors = new ArrayList<>(myAdditionalEditors);
+      editorComponents = new ArrayList<>(myAdditionalEditorComponents);
     }
 
     editorComponents.addAll(EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true));

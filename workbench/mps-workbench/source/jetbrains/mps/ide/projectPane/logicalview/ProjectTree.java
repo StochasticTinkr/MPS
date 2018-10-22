@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -49,7 +50,7 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
   private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
-  private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
+  private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<>();
   private Computable<Boolean> myShowStructureCondition;
 
   public ProjectTree(Project project) {
@@ -78,7 +79,7 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
     ProjectTreeNode projectRoot = new ProjectTreeNode(myProject);
 
     setRootVisible(false);
-    List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
+    List<MPSTreeNode> moduleNodes = new ArrayList<>();
 
     for (Class<? extends SModule> cl : new Class[]{Solution.class, Language.class, DevKit.class}) {
       for (SModule module : myProject.getProjectModules(cl)) {
@@ -95,7 +96,8 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(myProject);
     root.add(projectRoot);
     root.add(myModulesPoolTreeNode);
-    if (!IMakeService.INSTANCE.isSessionActive()) {
+    final IMakeService makeService = myProject.getComponent(MakeServiceComponent.class).get();
+    if (!makeService.isSessionActive()) {
       final TransientModelsProvider tmc = myProject.getComponent(TransientModelsProvider.class);
       if (tmc != null) {
         for (TransientModelsModule module : tmc.getModules()) {
@@ -108,11 +110,11 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
         @Override
         public void sessionClosed(MakeNotification notification) {
           rebuildLater();
-          IMakeService.INSTANCE.get().removeListener(this);
+          makeService.removeListener(this);
           myMakeNotificationListener.set(null);
         }
       })) {
-        IMakeService.INSTANCE.get().addListener(myMakeNotificationListener.get());
+        makeService.addListener(myMakeNotificationListener.get());
       }
     }
     myProjectTreeNode = projectRoot;

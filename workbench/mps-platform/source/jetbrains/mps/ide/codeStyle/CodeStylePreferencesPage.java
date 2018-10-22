@@ -32,7 +32,7 @@ public class CodeStylePreferencesPage {
     private String mySetting;
     private String myName;
 
-    private LineSeparatorOption(String setting, String name) {
+    LineSeparatorOption(String setting, String name) {
       mySetting = setting;
       myName = name;
     }

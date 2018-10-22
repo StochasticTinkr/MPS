@@ -28,6 +28,7 @@ public interface TemplateDeclaration extends TemplateDeclarationWeavingAware2 {
 
   SNodeReference getTemplateNode();
 
+  // XXX seems to be non-null return value, need to double-check
   Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
                           @NotNull TemplateContext context) throws GenerationException;
 }

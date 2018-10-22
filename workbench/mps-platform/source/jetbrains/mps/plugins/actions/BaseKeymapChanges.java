@@ -164,10 +164,8 @@ public abstract class BaseKeymapChanges {
     }
 
     if (!isClear) {
-      if (oldShortcuts.length != 0) {
-        myRemovedShortcuts.put(longId, new THashSet<>(Arrays.asList(oldShortcuts)));
-        keymap.removeAllActionShortcuts(longId);
-      }
+      myRemovedShortcuts.put(longId, new THashSet<>(Arrays.asList(oldShortcuts)));
+      keymap.removeAllActionShortcuts(longId);
     }
 
     Set<String> actions = ourClearedActions.get(keymap);

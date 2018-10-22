@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ant.execution.AntSettings_Configuration" file="AntSettings_Configuration.java">
+  <dependency className="jetbrains.mps.ant.execution.AntSettings_Configuration">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor" file="AntSettings_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode dependClassName="java.awt.GridBagLayout" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.ant.execution.Ant_Command" file="Ant_Command.java">
+  <dependency className="jetbrains.mps.ant.execution.Ant_Command">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" file="AbstractNodeFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" file="DeletedChildFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.Feature" file="Feature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.Feature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,7 +32,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" file="ModelFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" file="NodeAggregationFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" file="NodeFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -66,14 +66,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature" file="PropertiesFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" file="PropertyFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -87,12 +87,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature" file="ReferenceFeature.java">
-    <classNode dependClassName="java.lang.Deprecated" />
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -102,14 +100,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature" file="ReferencesFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" file="VirtualPackageFeature.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

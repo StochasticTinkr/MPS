@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaIterable_as_sequence" file="Main_javaIterable_as_sequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaIterable_as_sequence">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -9,7 +9,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaList_as_sequence" file="Main_javaList_as_sequence.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaList_as_sequence">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList" file="Main_sequence_as_javaList.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

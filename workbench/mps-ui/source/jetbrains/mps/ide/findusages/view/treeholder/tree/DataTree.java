@@ -62,7 +62,7 @@ import java.util.Set;
 
 public class DataTree implements IExternalizeable, IChangeListener {
   private DataNode myTreeRoot = createTreeRoot();
-  private final List<IChangeListener> myListeners = new ArrayList<IChangeListener>(2);
+  private final List<IChangeListener> myListeners = new ArrayList<>(2);
   private final DataTreeChangesNotifier myChangesNotifier;
 
   //this is only used in 3.2 to make rebuild faster in case of many nodes.
@@ -152,9 +152,9 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   private void startListening() {
-    HashSet<SNodeReference> nodes = new HashSet<SNodeReference>();
-    HashSet<SModelReference> models = new HashSet<SModelReference>();
-    HashSet<SModuleReference> modules = new HashSet<SModuleReference>();
+    HashSet<SNodeReference> nodes = new HashSet<>();
+    HashSet<SModelReference> models = new HashSet<>();
+    HashSet<SModuleReference> modules = new HashSet<>();
 
     nodes.addAll(Arrays.asList(myTreeRoot.getNodeDataStream().filter(nd -> nd instanceof NodeNodeData).map(
         nd -> ((NodeNodeData) nd).getNodePointer()).toArray(SNodeReference[]::new)));
@@ -185,18 +185,20 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   private DataNode build(final SearchResults<?> results, final INodeRepresentator nodeRepresentator) {
-      myRebuildCache = new HashMap<Pair<DataNode, Object>, DataNode>();
+      myRebuildCache = new HashMap<>();
 
       DataNode root = createTreeRoot();
 
       DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
-      for (Object node : results.getAliveNodes()) {
-        addSearchedNode(nodesRoot, node);
+      for (Object node : results.getSearchedObjects().getElements()) {
+        if (node != null) {
+          addSearchedNode(nodesRoot, node);
+        }
       }
       root.add(nodesRoot);
 
       DataNode resultsRoot = new DataNode(new ResultsNodeData(PathItemRole.ROLE_MAIN_RESULTS, nodeRepresentator));
-      for (SearchResult<?> result : results.getAliveResults()) {
+      for (SearchResult<?> result : results.getNotNullResults()) {
         addResultWithPresentation(resultsRoot, result, nodeRepresentator);
       }
       root.add(resultsRoot);
@@ -206,7 +208,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   private void addSearchedNode(DataNode root, Object node) {
-    List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult<Object>(node, SearchedNodesNodeData.CATEGORY_NAME));
+    List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult<>(node, SearchedNodesNodeData.CATEGORY_NAME));
     createPath(path, root, null, false, null);
   }
 
@@ -233,7 +235,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
       Object currentIdObject = currentPathItem.getIdObject();
       final boolean isPathTail = currentPathItem == pathTail;
 
-      DataNode next = myRebuildCache.get(new Pair<DataNode, Object>(parent, currentIdObject));
+      DataNode next = myRebuildCache.get(new Pair<>(parent, currentIdObject));
 
       if (next == null) {
         PathItemRole creator = currentPathItem.getRole();
@@ -276,7 +278,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
         next = new DataNode(data);
         parent.add(next);
-        myRebuildCache.put(new Pair<DataNode, Object>(parent, data.getIdObject()), next);
+        myRebuildCache.put(new Pair<>(parent, data.getIdObject()), next);
       } else {
         if (isPathTail) {
           next.getData().setIsPathTail_internal(true);

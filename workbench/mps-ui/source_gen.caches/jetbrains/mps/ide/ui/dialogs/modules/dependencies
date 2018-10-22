@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" file="AbstractModuleCreationSettings.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings">
     <classNode dependClassName="com.intellij.ide.util.BrowseFilesListener" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="javax.swing.event.DocumentEvent" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings" file="CloneModuleSettings.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
@@ -30,14 +30,14 @@
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" file="NewLanguageSettings.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings" file="NewSolutionSettings.java">
+  <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

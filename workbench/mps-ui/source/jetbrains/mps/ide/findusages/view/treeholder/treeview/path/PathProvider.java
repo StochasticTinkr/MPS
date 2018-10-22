@@ -38,7 +38,7 @@ public class PathProvider {
   // FIXME              symmetric code in DataTree.createPath() which needs to be fixed to get the stuff working. Great, yo!
   // FIXME This code cries for refactoring. Why on earth does it resolve model references?
   public static List<PathItem> getPathForSearchResult(SearchResult<?> result) {
-    List<PathItem> res = new ArrayList<PathItem>();
+    List<PathItem> res = new ArrayList<>();
     Object o = result.getPathObject();
 
     if (o instanceof SNode) {
@@ -81,7 +81,7 @@ public class PathProvider {
       res.add(new PathItem(PathItemRole.ROLE_LANGUAGE, o));
     }
 
-    List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<Pair<CategoryKind, String>>(result.getCategories());
+    List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<>(result.getCategories());
     Collections.reverse(reversedCategories);
     for (Pair<CategoryKind, String> category : reversedCategories) {
       res.add(new PathItem(PathItemRole.getCategoryRole(category.o1), category));

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4gy922cz9rlxovp7gglshpl2d4zj445" />
+<product version="3" modelHash="-bdos7socqrqvd8kckqxjdkyfgmtpdtq">
+  <files names="ConceptAncestorsProvider.java:ModelElementTargetChooser.java:ModelOrNodeChooserDialog.java:MoveNodeDialog.java:MoveNodesDialog.java:NodeLocation.java:RefactoringAccessEx.java:RefactoringDialog.java:RefactoringFacadeImpl.java:RefactoringViewAction.java:RefactoringViewItem.java:RenameDialog.java:RenameMethodDialog.java:StringChooserDialog.java:UsagesModelTracker.java" />
+</product>
 

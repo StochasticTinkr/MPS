@@ -34,7 +34,7 @@ public class StructuralNodeSetView {
       for (SNode superNode : superNodes) {
 //        System.err.print(" | " + superNode + "[[" + superNodes.getTag(superNode) + "]]");
       }
-      System.err.println("");
+      System.err.println();
     }
   }
 

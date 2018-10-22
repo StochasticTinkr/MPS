@@ -59,7 +59,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   public void showProblems(Collection<IssueKindReportItem> problems) {
     Iterable<SearchResult<IssueKindReportItem>> items = CollectionSequence.fromCollection(problems).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
       public SearchResult<IssueKindReportItem> select(IssueKindReportItem p) {
-        return new SearchResult<IssueKindReportItem>(p, IssueKindReportItem.PATH_OBJECT.get(p).resolve(myMpsProject.getRepository()), IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(p));
+        return new SearchResult<IssueKindReportItem>(p, IssueKindReportItem.PATH_OBJECT.get(p).resolve(myMpsProject.getRepository()), IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(p).getSpecialization());
       }
     }).where(new IWhereFilter<SearchResult<IssueKindReportItem>>() {
       public boolean accept(SearchResult<IssueKindReportItem> it) {

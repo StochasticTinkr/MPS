@@ -15817,13 +15817,13 @@
     <file name="ConvertToSimpleForeach_QuickFix.java">
       <node id="8656797459615262362" at="12,44,13,144" concept="13" />
       <node id="8656797459614141539" at="15,44,16,49" concept="9" />
-      <node id="8656797459614182883" at="18,35,19,253" concept="3" />
+      <node id="8656797459614182883" at="18,35,19,211" concept="3" />
       <node id="8656797459615262362" at="12,0,15,0" concept="1" trace="ConvertToSimpleForeach_QuickFix#()V" />
       <node id="8656797459615262362" at="15,0,18,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8656797459615262362" at="18,0,21,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8656797459615262362" at="12,44,13,144" />
       <scope id="8656797459615263696" at="15,44,16,49" />
-      <scope id="8656797459615262364" at="18,35,19,253" />
+      <scope id="8656797459615262364" at="18,35,19,211" />
       <scope id="8656797459615262362" at="12,0,15,0" />
       <scope id="8656797459615262362" at="15,0,18,0">
         <var name="node" id="8656797459615262362" />

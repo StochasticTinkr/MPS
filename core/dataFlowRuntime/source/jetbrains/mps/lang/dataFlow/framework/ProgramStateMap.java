@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.AbstractMap;
 import java.util.Set;
 import java.util.HashSet;
@@ -57,9 +59,10 @@ public class ProgramStateMap<V> extends AbstractMap<ProgramState, V> {
     return myValues.length;
   }
 
+  @NotNull
   @Override
   public Set<Entry<ProgramState, V>> entrySet() {
-    Set<Entry<ProgramState, V>> result = new HashSet<Entry<ProgramState, V>>();
+    Set<Entry<ProgramState, V>> result = new HashSet<>();
     for (int i = 0; i < myValues.length; i++) {
       result.add(new MyEntry(i));
     }

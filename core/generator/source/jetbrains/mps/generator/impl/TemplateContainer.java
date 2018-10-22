@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateProcessor;
@@ -58,9 +59,9 @@ public class TemplateContainer extends RuleConsequenceProcessor {
       return;
     }
     List<SNode> fragments = checkAdjacentFragments();
-    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
+    List<Pair<SNode, String>> result = new ArrayList<>(fragments.size());
     for (SNode fragment : fragments) {
-      result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
+      result.add(new Pair<>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
     }
     myNodeAndMappingNamePairs = result;
   }
@@ -70,7 +71,7 @@ public class TemplateContainer extends RuleConsequenceProcessor {
   public List<SNode> processRuleConsequence(@NotNull TemplateContext ctx)
       throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
     initialize();
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+    ArrayList<SNode> outputNodes = new ArrayList<>();
     final TemplateExecutionEnvironment environment = ctx.getEnvironment();
     final GenerationTrace tracer = environment.getTrace();
     ITemplateProcessor templateProcessor = environment.getTemplateProcessor();
@@ -83,6 +84,22 @@ public class TemplateContainer extends RuleConsequenceProcessor {
       outputNodes.addAll(_outputNodes);
     }
     return outputNodes;
+  }
+
+  public void apply(ApplySink sink, TemplateContext ctx)
+      throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
+    initialize();
+    final TemplateExecutionEnvironment environment = ctx.getEnvironment();
+    final GenerationTrace tracer = environment.getTrace();
+    ITemplateProcessor templateProcessor = environment.getTemplateProcessor();
+    for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
+      SNode templateNode = nodeAndMappingNamePair.o1;
+      String innerMappingName = nodeAndMappingNamePair.o2;
+      List<SNode> _outputNodes = templateProcessor.apply(templateNode, ctx.subContext(innerMappingName));
+      SNode input = ctx.getInput();
+      tracer.trace(input == null ? null : input.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), templateNode.getReference());
+      sink.add(templateNode.getContainmentLink(), _outputNodes);
+    }
   }
 
   @NotNull

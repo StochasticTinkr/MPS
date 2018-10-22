@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_Editor" file="CategoryReference_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_EditorBuilder_a" file="CategoryReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_EditorBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_SubstituteMenu" file="CategoryReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.CategoryReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -74,14 +74,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Category_Editor" file="Category_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Category_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.Category_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Category_EditorBuilder_a" file="Category_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Category_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -110,16 +110,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Checkbox_ActionMap_gjf57x_b0" file="Checkbox_ActionMap_gjf57x_b0.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Checkbox_ActionMap_gjf57x_b0">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.ToggleCheckboxAction_gjf57x_b0" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Checkbox_KeyMap_gjf57x_b0" file="Checkbox_KeyMap_gjf57x_b0.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Checkbox_KeyMap_gjf57x_b0">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
@@ -131,7 +133,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -163,7 +165,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.MetaInfo" file="MetaInfo.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.MetaInfo">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -174,7 +176,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.MetaInfo_ComponentBuilder_a" file="MetaInfo_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.MetaInfo_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -209,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation" file="NoteMetaInformation.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -220,7 +222,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation_ComponentBuilder_a" file="NoteMetaInformation_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation_ComponentBuilder_a">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -275,14 +277,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_Editor" file="Note_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.Note_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_EditorBuilder_a" file="Note_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -309,7 +311,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_compact_Editor" file="Note_compact_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_compact_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -321,7 +323,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_compact_EditorBuilder_a" file="Note_compact_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_compact_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -375,7 +377,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_Editor" file="Note_inspected_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_Editor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -388,7 +390,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_EditorBuilder_a" file="Note_inspected_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -415,7 +417,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_InspectorBuilder_a" file="Note_inspected_InspectorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Note_inspected_InspectorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -462,14 +464,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NotesConfiguration_Editor" file="NotesConfiguration_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NotesConfiguration_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.NotesConfiguration_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NotesConfiguration_EditorBuilder_a" file="NotesConfiguration_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.NotesConfiguration_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -512,14 +514,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor" file="Notes_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.Notes_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Notes_EditorBuilder_a" file="Notes_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Notes_EditorBuilder_a">
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -583,14 +585,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Priority_Editor" file="Priority_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Priority_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.Priority_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Priority_EditorBuilder_a" file="Priority_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Priority_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -619,14 +621,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Status_Editor" file="Status_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Status_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.Status_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Status_EditorBuilder_a" file="Status_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.Status_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -659,14 +661,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.TextNotePart_Editor" file="TextNotePart_Editor.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.TextNotePart_Editor">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.notesOrganizer.editor.TextNotePart_EditorBuilder_a" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.TextNotePart_EditorBuilder_a" file="TextNotePart_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.TextNotePart_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -693,7 +695,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.ToggleCheckboxAction_gjf57x_b0" file="ToggleCheckboxAction_gjf57x_b0.java">
+  <dependency className="jetbrains.mps.samples.notesOrganizer.editor.ToggleCheckboxAction_gjf57x_b0">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector" />

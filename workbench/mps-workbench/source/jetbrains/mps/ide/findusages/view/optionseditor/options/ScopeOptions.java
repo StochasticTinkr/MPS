@@ -122,6 +122,6 @@ public class ScopeOptions extends BaseOptions {
   }
 
   public enum ScopeType {
-    GLOBAL, PROJECT, MODULE, MODEL;
+    GLOBAL, PROJECT, MODULE, MODEL
   }
 }

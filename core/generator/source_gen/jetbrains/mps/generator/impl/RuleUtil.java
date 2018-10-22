@@ -324,6 +324,11 @@ public final class RuleUtil {
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment")));
   }
+  /**
+   * 
+   * @deprecated use getTemplateCall_Template instead
+   */
+  @Deprecated
   public static SNode getTemplateDeclarationReference_Template(SNode ref) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
   }
@@ -345,9 +350,21 @@ public final class RuleUtil {
   public static SNode getInlineSwitch_defaultConsequence(SNode ruleConsequence) {
     return SLinkOperations.getTarget(ruleConsequence, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, 0x11644fb7f64L, "defaultConsequence"));
   }
+
+  /**
+   * 
+   * @deprecated 
+   */
+  @Deprecated
   public static SNode getWeaveEach_Template(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, 0x1104fcbaec2L, "template"));
   }
+
+  public static SNode getWeaveEach_TemplateCall(SNode weaveEach) {
+    return SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, 0x6bd8eb18e44da5e3L, "templateCall"));
+  }
+
+
   public static SNode getWeaveEach_SourceNodesQuery(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, 0x1104fccff43L, "sourceNodesQuery"));
   }
@@ -394,12 +411,12 @@ public final class RuleUtil {
     }
     return null;
   }
-  public static List<SNode> getTemplateCall_Arguments(SNode macro) {
-    return SLinkOperations.getChildren(macro, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"));
+  public static List<SNode> getTemplateCall_Arguments(SNode templateCall) {
+    return SLinkOperations.getChildren(templateCall, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"));
 
   }
-  public static SNode getTemplateCall_Template(SNode macro) {
-    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"));
+  public static SNode getTemplateCall_Template(SNode templateCall) {
+    return SLinkOperations.getTarget(templateCall, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"));
   }
   public static SNode getTemplateArgumentQueryExpression_Query(SNode expr) {
     return SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, 0x380132d742e94e82L, "query"));

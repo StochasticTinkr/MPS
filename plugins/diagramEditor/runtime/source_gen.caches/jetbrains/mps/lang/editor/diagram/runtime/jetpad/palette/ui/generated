@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="caqficyk6yyvr9ait50ts5gnxa14909" />
+<product version="3" modelHash="-av64dwpat0trmb77pulrnw6oay5p68w">
+  <files names="DiagramPalette.java:DiagramPaletteActionToolbar.java:DiagramPaletteToggleAction.java:PaletteActionGroupAdapter.java:PaletteElementFactory.java:PaletteSimpleActionAdapter.java:PaletteToggleActionAdapter.java:PopupPaletteActionGroupAdapter.java" />
+</product>
 

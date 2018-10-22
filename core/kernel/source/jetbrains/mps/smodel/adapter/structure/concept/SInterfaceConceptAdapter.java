@@ -38,7 +38,7 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
-    List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
+    List<SInterfaceConcept> res = new ArrayList<>();
     for (SConceptId id : d.getParentsIds()) {
       res.add(MetaAdapterFactory.getInterfaceConcept(id, ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName()));
     }

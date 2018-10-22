@@ -124,7 +124,7 @@ public class CustomConstructorUsage_Substitute_Contribution extends SubstituteMe
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode usage = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage")), null);
+          SNode usage = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"), null);
           SLinkOperations.setTarget(usage, MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor"), myParameterObject);
           return usage;
         }

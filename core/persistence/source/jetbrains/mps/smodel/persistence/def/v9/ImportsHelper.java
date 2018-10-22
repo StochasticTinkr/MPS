@@ -33,8 +33,8 @@ import java.util.Set;
  */
 class ImportsHelper {
   private final SModelReference myModelRef;
-  private final HashMap<SModelReference, String> myModel2Index = new HashMap<SModelReference, String>();
-  private final HashMap<String, SModelReference> myIndex2Model = new HashMap<String, SModelReference>();
+  private final HashMap<SModelReference, String> myModel2Index = new HashMap<>();
+  private final HashMap<String, SModelReference> myIndex2Model = new HashMap<>();
 
   private static final int HASH_BASE = 10 + 26;
   private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;

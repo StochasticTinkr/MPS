@@ -72,7 +72,7 @@ public class ConceptEditorHintPreferencesPage {
     myPreferencesPanel.removeAll();
     syncSettings(registrySettings, currentSettings);
     myPreferencesPanel.setLayout(new BoxLayout(myPreferencesPanel, BoxLayout.Y_AXIS));
-    ArrayList<String> names = new ArrayList<String>(currentSettings.getLanguagesNames());
+    ArrayList<String> names = new ArrayList<>(currentSettings.getLanguagesNames());
     Collections.sort(names);
     for (String langName : names) {
       if (langName != null) {

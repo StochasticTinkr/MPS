@@ -46,7 +46,7 @@ import java.util.List;
 
   /*package*/ ModelRootsData(@NotNull SModelData model) {
     myModelReference = model.getReference();
-    myEntries = new ArrayList<Entry>();
+    myEntries = new ArrayList<>();
     for (SNode root : model.getRootNodes()) {
       myEntries.add(new Entry(root));
     }
@@ -54,7 +54,7 @@ import java.util.List;
 
   /*package*/ ModelRootsData(@NotNull SModelReference modelRef, Collection<Entry> entries) {
     myModelReference = modelRef;
-    myEntries = new ArrayList<Entry>(entries);
+    myEntries = new ArrayList<>(entries);
   }
 
   public boolean isEmpty() {

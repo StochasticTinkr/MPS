@@ -30,12 +30,12 @@ import java.util.List;
 public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstruction>> {
   @Override
   public Set<ReadInstruction> initial(Program p) {
-    return new HashSet<ReadInstruction>();
+    return new HashSet<>();
   }
 
   @Override
   public Set<ReadInstruction> merge(Program p, List<Set<ReadInstruction>> input) {
-    Set<ReadInstruction> result = new HashSet<ReadInstruction>();
+    Set<ReadInstruction> result = new HashSet<>();
     for (Set<ReadInstruction> i : input) {
       result.addAll(i);
     }
@@ -49,7 +49,7 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
 
-      for (ReadInstruction item : new HashSet<ReadInstruction>(result)) {
+      for (ReadInstruction item : new HashSet<>(result)) {
         Object variable = write.getVariable();
         if (variable != null && variable.equals(item.getVariable())) {
           result.remove(item);

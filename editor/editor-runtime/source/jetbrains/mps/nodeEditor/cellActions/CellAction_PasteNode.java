@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndLink;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -104,10 +104,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
       return canPasteViaNodePaster(selectedCell, pasteNodes);
 
-    } else if ((selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove) {
-      return true;
-    }
-    return false;
+    } else return (selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove;
   }
 
   private boolean isCompletelySelected(EditorCellLabelSelection labelSelection) {
@@ -270,8 +267,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       return false;
     }
 
-    final String role = anchor.getContainmentLink() != null ? anchor.getContainmentLink().getName() : null;
-    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, role, false);
+    NodeAndLink nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getContainmentLink(), false);
     if (nodeAndRole == null) {
       return false;
     }

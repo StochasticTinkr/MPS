@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -55,10 +56,11 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
   }
   public void doExecute(final SModule m) {
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_lpnriw_a0d = CommandUtil.createScope(m);
+      final SearchScope scope_lpnriw_a0d_0 = new EditableFilteringScope(scope_lpnriw_a0d);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_lpnriw_a0d_0;
         }
       };
       Collection<SNode> conceptConstraints = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), false);
@@ -97,10 +99,11 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
   public Iterable<Problem> check(SModule m) {
     List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_lpnriw_b0e = CommandUtil.createScope(m);
+      final SearchScope scope_lpnriw_b0e_0 = new EditableFilteringScope(scope_lpnriw_b0e);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_lpnriw_b0e_0;
         }
       };
       ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), false)).where(new IWhereFilter<SNode>() {

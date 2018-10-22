@@ -43,21 +43,21 @@ import java.util.Set;
 
 public class RulesManager {
 
-  private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
-  private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
-  private RuleSet<SubstituteType_Runtime> mySubstituteTypeRules = new RuleSet<SubstituteType_Runtime>();
-  private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
-  private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
-  private RuleSet<NonTypesystemRule_Runtime> myNonTypeSystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
+  private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<>();
+  private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<>();
+  private RuleSet<SubstituteType_Runtime> mySubstituteTypeRules = new RuleSet<>();
+  private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<>();
+  private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<>();
+  private RuleSet<NonTypesystemRule_Runtime> myNonTypeSystemRules = new CheckingRuleSet<>();
 
-  private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
+  private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<>();
 
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
   private static final Logger LOG = LogManager.getLogger(RulesManager.class);
   private volatile boolean myNeedsLoading = false;
-  private Set<LanguageRuntime> myLoadedLanguages = new HashSet<LanguageRuntime>();
-  private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<LanguageRuntime>();
+  private Set<LanguageRuntime> myLoadedLanguages = new HashSet<>();
+  private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<>();
 
   public RulesManager(TypeChecker typeChecker) {
     myOverloadedOperationsManager = new OverloadedOperationsManager(typeChecker);
@@ -109,7 +109,7 @@ public class RulesManager {
         }
       }
 
-      myLanguagesToLoad = new HashSet<LanguageRuntime>();
+      myLanguagesToLoad = new HashSet<>();
       myNeedsLoading = false;
     }
   }
@@ -127,7 +127,7 @@ public class RulesManager {
   private void unloadLoadedAllLoaded() {
 
     myLanguagesToLoad.addAll(myLoadedLanguages);
-    myLoadedLanguages = new HashSet<LanguageRuntime>();
+    myLoadedLanguages = new HashSet<>();
 
     // TODO: cleanup
     myInferenceRules.clear();
@@ -150,13 +150,13 @@ public class RulesManager {
 
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
     ensureAllRulesLoaded();
-    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<>();
     Set<InferenceRule_Runtime> ruleSet;
     ruleSet = myInferenceRules.getRules(node);
     for (InferenceRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
-        result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
+        result.add(new Pair<>(rule, status));
       }
       if (rule.overrides(node, status)) {
         break;
@@ -167,13 +167,13 @@ public class RulesManager {
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(SNode node) {
     ensureAllRulesLoaded();
-    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
+    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result = new LinkedList<>();
     Set<NonTypesystemRule_Runtime> ruleSet;
     ruleSet = myNonTypeSystemRules.getRules(node);
     for (NonTypesystemRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
-        result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
+        result.add(new Pair<>(rule, status));
       }
     }
     return result;
@@ -181,12 +181,12 @@ public class RulesManager {
 
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
     ensureAllRulesLoaded();
-    List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
+    List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<>();
     for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
       if ((isWeak || !rule.isWeak())) {
         IsApplicableStatus status = rule.isApplicableAndPattern(node);
         if (status.isApplicable()) {
-          result.add(new Pair<SubtypingRule_Runtime, IsApplicableStatus>(rule, status));
+          result.add(new Pair<>(rule, status));
         }
       }
     }
@@ -195,11 +195,11 @@ public class RulesManager {
 
   public List<Pair<SubstituteType_Runtime, IsApplicableStatus>> getSubstituteTypeRules(final SNode node) {
     ensureAllRulesLoaded();
-    List<Pair<SubstituteType_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubstituteType_Runtime, IsApplicableStatus>>();
+    List<Pair<SubstituteType_Runtime, IsApplicableStatus>> result = new LinkedList<>();
     for (SubstituteType_Runtime rule : mySubstituteTypeRules.getRules(node)) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
-        result.add(new Pair<SubstituteType_Runtime, IsApplicableStatus>(rule, status));
+        result.add(new Pair<>(rule, status));
       }
     }
     return result;
@@ -207,13 +207,13 @@ public class RulesManager {
 
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     ensureAllRulesLoaded();
-    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
+    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<>();
     Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
     for (ComparisonRule_Runtime rule : ruleSet) {
       if (isWeak || !rule.isWeak()) {
         IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
         if (status.isApplicable()) {
-          result.add(new Pair<ComparisonRule_Runtime, IsApplicable2Status>(rule, status));
+          result.add(new Pair<>(rule, status));
         }
       }
     }
@@ -223,12 +223,12 @@ public class RulesManager {
 
   public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
     ensureAllRulesLoaded();
-    List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
+    List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<>();
     Set<InequationReplacementRule_Runtime> ruleSet = myReplacementRules.getRules(node1, node2);
     for (InequationReplacementRule_Runtime rule : ruleSet) {
       IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
       if (status.isApplicable()) {
-        result.add(new Pair<InequationReplacementRule_Runtime, IsApplicable2Status>(rule, status));
+        result.add(new Pair<>(rule, status));
       }
     }
     return result;

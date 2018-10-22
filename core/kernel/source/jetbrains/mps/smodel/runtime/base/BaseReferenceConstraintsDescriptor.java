@@ -92,7 +92,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
       if (parentReferenceDescriptor instanceof BaseReferenceConstraintsDescriptor) {
         parentCalculated = parameters.getParentCalculatedDescriptor((BaseReferenceConstraintsDescriptor) parentReferenceDescriptor);
-      } else if (parentReferenceDescriptor instanceof PropertyConstraintsDispatchable) {
+      } else if (parentReferenceDescriptor instanceof ReferenceConstraintsDispatchable) {
         if (parameters.hasOwn((ReferenceConstraintsDispatchable) parentReferenceDescriptor)) {
           parentCalculated = parentReferenceDescriptor;
         } else {
@@ -160,7 +160,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
     return false;
   }
 
-  private static interface InheritanceCalculateParameters {
+  private interface InheritanceCalculateParameters {
     ReferenceConstraintsDescriptor getParentCalculatedDescriptor(BaseReferenceConstraintsDescriptor parentDescriptor);
 
     boolean hasOwn(ReferenceConstraintsDispatchable parentDescriptor);

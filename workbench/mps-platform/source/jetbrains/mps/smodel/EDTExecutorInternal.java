@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.intellij.openapi.application.TransactionGuardImpl;
 import com.intellij.testFramework.ThreadTracker;
 import com.intellij.util.ReflectionUtil;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.TaskScheduler.Task;
-import jetbrains.mps.smodel.TaskScheduler.TaskIsOutdated;
+import jetbrains.mps.smodel.EDTExecutor.Task;
+import jetbrains.mps.smodel.EDTExecutor.TaskIsOutdated;
 import jetbrains.mps.util.NamedThreadFactory;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
@@ -73,7 +73,7 @@ final class EDTExecutorInternal implements Disposable {
   }
 
   /**
-   * elements are added only in the {@link TaskScheduler#scheduleTask(Task)} under the {@link #myQueueLock}.
+   * elements are added only in the {@link EDTExecutor#scheduleTask(Task)} under the {@link #myQueueLock}.
    * elements are removed in the EDT only in the {@link EDTExecutorInternal#tryToRunTopTask()}
    */
   private final Queue<Task> myTaskQueue = new ConcurrentLinkedQueue<>();
@@ -232,8 +232,8 @@ final class EDTExecutorInternal implements Disposable {
       if (!taskPassed) {
         LOG.debug("refused in the task execution: " + task);
       }
-    } catch (TaskIsOutdated ignored) {
-      LOG.warn("The scheduled task has expired", ignored);
+    } catch (TaskIsOutdated ex) {
+      LOG.warn(ex.getMessage());
     } catch (Exception e) {
       LOG.error("run in EDT failure", e);
     } finally {

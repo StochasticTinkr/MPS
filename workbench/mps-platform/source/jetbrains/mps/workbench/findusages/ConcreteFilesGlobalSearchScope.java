@@ -31,12 +31,12 @@ public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
   }
 
   @Override
-  public boolean contains(VirtualFile file) {
+  public boolean contains(@NotNull VirtualFile file) {
     return myScopeFiles.contains(file);
   }
 
   @Override
-  public int compare(VirtualFile file1, VirtualFile file2) {
+  public int compare(@NotNull VirtualFile file1, @NotNull VirtualFile file2) {
     return file1.getPath().compareTo(file2.getPath());
   }
 

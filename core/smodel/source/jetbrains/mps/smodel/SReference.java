@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import java.util.Set;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
-  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<>();
   private final static ThreadLocal<Boolean> ourLoggingOff = new ThreadLocal<Boolean>() {
     @Override
     protected Boolean initialValue() {
@@ -67,16 +67,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       return new StaticReference(id, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
     }
     return new StaticReference(id, sourceNode, targetNode);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
-      // 'mature' reference
-      return new StaticReference(role, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
-    }
-    return new StaticReference(role, sourceNode, targetNode);
   }
 
   public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
@@ -128,12 +118,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return myRoleId.getRoleName();
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setRole(String newRole) {
-    myRoleId = ((ConceptMetaInfoConverter) mySourceNode.getConcept()).convertAssociation(newRole);
-  }
-
   @Override
   public SReferenceLink getLink() {
     return myRoleId;
@@ -162,13 +146,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Nullable
   public abstract SModelReference getTargetSModelReference();
 
-  @Deprecated
-  /**
-   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
-   * @Deprecated in 3.0
-   */
-  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
   @Override
   @Nullable
   public SNodeId getTargetNodeId() {
@@ -177,7 +154,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void makeDirect() {
-
+    // no-op by default
   }
 
   public boolean makeIndirect() {

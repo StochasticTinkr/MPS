@@ -494,5 +494,41 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="5I1s5NvvaSy">
+    <property role="3GE5qa" value="Project.Testing" />
+    <ref role="1M2myG" to="5tjl:5I1s5NvuWco" resolve="RequiredPlugin" />
+    <node concept="9S07l" id="5I1s5NvvaSz" role="9Vyp8">
+      <node concept="3clFbS" id="5I1s5NvvaS$" role="2VODD2">
+        <node concept="3clFbF" id="5I1s5NvvaZR" role="3cqZAp">
+          <node concept="2OqwBi" id="5I1s5Nvvbbz" role="3clFbG">
+            <node concept="nLn13" id="5I1s5NvvaZQ" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="5I1s5Nvvbw8" role="2OqNvi">
+              <node concept="chp4Y" id="5I1s5NvHst5" role="cj9EA">
+                <ref role="cht4Q" to="5tjl:5I1s5NvGLjw" resolve="BuildMpsLayout_TestModules_Options" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5I1s5NvLqv4">
+    <property role="3GE5qa" value="Project.Testing" />
+    <ref role="1M2myG" to="5tjl:5I1s5NvGLjw" resolve="BuildMpsLayout_TestModules_Options" />
+    <node concept="9S07l" id="5I1s5NvLqv5" role="9Vyp8">
+      <node concept="3clFbS" id="5I1s5NvLqv6" role="2VODD2">
+        <node concept="3clFbF" id="5I1s5NvLqAp" role="3cqZAp">
+          <node concept="2OqwBi" id="5I1s5NvLqM5" role="3clFbG">
+            <node concept="nLn13" id="5I1s5NvLqAo" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="5I1s5NvLrfv" role="2OqNvi">
+              <node concept="chp4Y" id="5I1s5NvLrmZ" role="cj9EA">
+                <ref role="cht4Q" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -39,7 +39,7 @@ public class QueryMethods {
   public QueryMethods(@NotNull Class<?> queriesClass) {
     myQueriesClass = queriesClass;
     // to avoid extra synchronization, populate at construction time
-    HashMap<String, Method> methods = new HashMap<String, Method>();
+    HashMap<String, Method> methods = new HashMap<>();
     for (Method declaredMethod : myQueriesClass.getDeclaredMethods()) {
       if (!Modifier.isPublic(declaredMethod.getModifiers())) {
         continue;
@@ -64,17 +64,13 @@ public class QueryMethods {
   }
 
   public <T> QueryMethod<T> getMethod(final String methodName) {
-    return new QueryMethod<T>() {
-      @Override
-      @SuppressWarnings("unchecked")
-      public T invoke(Object contextObject) throws IllegalQueryMethodException, InvocationTargetException {
-        try {
-          final Method method = getMethodPrim(methodName);
-          return (T) method.invoke(null, contextObject);
-        } catch (IllegalArgumentException | IllegalAccessException | NoSuchMethodException e ) {
-          String s = String.format("method invocation error: '%s' in '%s'", methodName, myQueriesClass.getName());
-          throw new IllegalQueryMethodException(s, e);
-        }
+    return contextObject -> {
+      try {
+        final Method method = getMethodPrim(methodName);
+        return (T) method.invoke(null, contextObject);
+      } catch (IllegalArgumentException | IllegalAccessException | NoSuchMethodException e ) {
+        String s = String.format("method invocation error: '%s' in '%s'", methodName, myQueriesClass.getName());
+        throw new IllegalQueryMethodException(s, e);
       }
     };
   }

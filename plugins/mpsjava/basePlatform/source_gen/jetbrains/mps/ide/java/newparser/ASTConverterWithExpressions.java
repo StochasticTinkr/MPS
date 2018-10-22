@@ -65,6 +65,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
   public ASTConverterWithExpressions(boolean onlyStubs) {
     super(onlyStubs);
   }
+
   protected ASTConverterWithExpressions(ASTConverterWithExpressions base) {
     super(base);
   }
@@ -700,7 +701,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
         return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
       } else {
         // import token as string constant even if it was an error in literal 
-        return _quotation_createNode_do26wr_a1a0c0pb(NameUtil.escapeString(new String(((Literal) x).source())));
+        return _quotation_createNode_do26wr_a1a0c0qb(NameUtil.escapeString(new String(((Literal) x).source())));
       }
     }
 
@@ -754,7 +755,7 @@ public class ASTConverterWithExpressions extends ASTConverter {
     }
   }
 
-  private static SNode _quotation_createNode_do26wr_a1a0c0pb(Object parameter_1) {
+  private static SNode _quotation_createNode_do26wr_a1a0c0qb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"), null, null, false);

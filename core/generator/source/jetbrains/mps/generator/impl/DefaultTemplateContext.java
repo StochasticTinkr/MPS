@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,18 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 
 @Immutable
 public class DefaultTemplateContext implements TemplateContext {
@@ -132,49 +136,44 @@ public class DefaultTemplateContext implements TemplateContext {
 
   @Override
   public Iterable<SNode> getInputHistory() {
-    return new Iterable<SNode>() {
+    return () -> new Iterator<SNode>() {
+      SNode previous;
+      DefaultTemplateContext current;
+
+      {
+        current = DefaultTemplateContext.this;
+        while (current != null && current.myInputNode == null) {
+          current = current.myParent;
+        }
+        previous = current != null ? current.myInputNode : null;
+      }
+
       @Override
-      public Iterator<SNode> iterator() {
-        return new Iterator<SNode>() {
-          SNode previous;
-          DefaultTemplateContext current;
+      public boolean hasNext() {
+        skipOdd();
+        return current != null;
+      }
 
-          {
-            current = DefaultTemplateContext.this;
-            while (current != null && current.myInputNode == null) {
-              current = current.myParent;
-            }
-            previous = current != null ? current.myInputNode : null;
-          }
+      @Override
+      public SNode next() {
+        skipOdd();
+        if (current != null) {
+          previous = current.myInputNode;
+          current = current.myParent;
+          return previous;
+        }
+        return null;
+      }
 
-          @Override
-          public boolean hasNext() {
-            skipOdd();
-            return current != null;
-          }
+      private void skipOdd() {
+        while (current != null && (current.myInputNode == null || current.myInputNode == previous)) {
+          current = current.myParent;
+        }
+      }
 
-          @Override
-          public SNode next() {
-            skipOdd();
-            if (current != null) {
-              previous = current.myInputNode;
-              current = current.myParent;
-              return previous;
-            }
-            return null;
-          }
-
-          private void skipOdd() {
-            while (current != null && (current.myInputNode == null || current.myInputNode == previous)) {
-              current = current.myParent;
-            }
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException();
       }
     };
   }
@@ -198,9 +197,29 @@ public class DefaultTemplateContext implements TemplateContext {
     return new DefaultTemplateContext(this, inputName, getInput());
   }
 
+  /**
+   * This is a hack to maintain compatibility with code generated in 2018.2
+   * The first thing legacy generated templates with parameters do in their apply is prepare a TC
+   * with arguments supplied at construction time. However, with new template invocation api
+   * {@link TemplateExecutionEnvironment#findTemplate(jetbrains.mps.generator.runtime.TemplateDeclarationKey, SNodeReference)},
+   * arguments are always null at construction time and instead TC is populated with proper values from a calling site,
+   * so we need to avoid overwriting their proper values
+   */
+  @ToRemove(version = 2018.3)
+  @Hack
+  /*package*/ void engageIgnoreNullVariablesHack() {
+    myIgnoreNullVariablesMap = true;
+  }
+
+  // the value of this field shall not get propagated into sub-context instances! It's for the very first subContext(Map) call after hack had been engaged.
+  private boolean myIgnoreNullVariablesMap = false;
+
   @Override
   public TemplateContext subContext(Map<String, Object> variables) {
     if (variables == null || variables.isEmpty()) {
+      return this;
+    }
+    if (myIgnoreNullVariablesMap && variables.values().stream().allMatch(Objects::isNull)) {
       return this;
     }
     return new DefaultTemplateContext(this, variables);

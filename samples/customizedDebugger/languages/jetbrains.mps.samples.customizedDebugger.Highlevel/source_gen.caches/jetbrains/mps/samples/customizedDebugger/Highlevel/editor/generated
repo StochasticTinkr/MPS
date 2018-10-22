@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1z8wc24ngbv2xe19bh4vgn1256kiuns" />
+<product version="3" modelHash="-6osgtzy33u0ukf5q6fcsacp8ya1o337">
+  <files names="Conversation_Editor.java:Conversation_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:Message_Editor.java:Message_EditorBuilder_a.java:Message_SubstituteMenu.java:Participant_Editor.java:Participant_EditorBuilder_a.java" />
+</product>
 

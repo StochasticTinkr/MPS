@@ -36,7 +36,7 @@ public class DifflibFacade {
       return NO_DIFF;
     }
     List<String> udiff = DiffUtils.generateUnifiedDiff("old text", "generated text", Arrays.asList(old), diff, 3);
-    return udiff.toArray(new String[udiff.size()]);
+    return udiff.toArray(new String[0]);
   }
 
   public static String[] getSimpleDiff(String[] old, String[] new_) {

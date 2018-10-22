@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590608(test)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -210,7 +210,7 @@
       <property role="TrG5h" value="ITest" />
       <node concept="3Tm1VV" id="39TdnqQiTGx" role="1B3o_S" />
       <node concept="3clFb_" id="39TdnqQiTGy" role="jymVt">
-        <property role="1EzhhJ" value="true" />
+        <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="abc" />
         <node concept="3cqZAl" id="39TdnqQiTGz" role="3clF45" />
         <node concept="3Tm1VV" id="39TdnqQiTG$" role="1B3o_S" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" file="BaseMpsBeforeTaskProvider.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider">
     <classNode dependClassName="com.intellij.execution.BeforeRunTask" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
@@ -29,42 +29,33 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.BeforeRunTaskProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsProducer" file="BaseMpsProducer.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsProducer">
     <classNode dependClassName="com.intellij.execution.Location" />
     <classNode dependClassName="com.intellij.execution.RunnerAndConfigurationSettings" />
     <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />
     <classNode dependClassName="com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.plugins.runconfigs.MPSLocation" />
     <classNode dependClassName="jetbrains.mps.plugins.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" file="BaseMpsRunConfiguration.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -74,7 +65,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.LocatableConfiguration" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.ConfigFactoryEnvoy" file="ConfigFactoryEnvoy.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.ConfigFactoryEnvoy">
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.configurations.UnknownRunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -88,12 +79,10 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.ConfigTypeEnvoy" file="ConfigTypeEnvoy.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.ConfigTypeEnvoy">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -107,11 +96,11 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.ConsoleCreator" file="ConsoleCreator.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.ConsoleCreator">
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" file="ConsoleProcessListener.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.ConsoleProcessListener">
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
@@ -120,14 +109,14 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" file="DefaultExecutionConsole.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" file="DefaultExecutionResult.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionResult">
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
@@ -135,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.api.configurations.RunConfigurationProxy" file="RunConfigurationProxy.java">
+  <dependency className="jetbrains.mps.execution.api.configurations.RunConfigurationProxy">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />

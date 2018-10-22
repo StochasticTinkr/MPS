@@ -40,6 +40,12 @@ public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
     } else {
       tgs.indent();
     }
+    if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, 0x203eeb62af522fb1L, "modifiers"))).isNotEmpty()) {
+      for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, 0x203eeb62af522fb1L, "modifiers"))) {
+        tgs.appendNode(item);
+      }
+      tgs.append(" ");
+    }
     GenericDeclarationTextGen2.typeDeclarations(ctx.getPrimaryInput(), ctx);
     if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isNotEmpty()) {
       tgs.append(" ");
@@ -72,7 +78,7 @@ public class InstanceMethodDeclaration_TextGen extends TextGenDescriptorBase {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) || (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(ctx.getPrimaryInput())) {
+    if (!((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasBody_id10BRnhak8m8.invoke(ctx.getPrimaryInput()))) {
       tgs.append(";");
       tgs.newLine();
     } else {

@@ -15,29 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ModuleClassLoaderSupport;
-import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
-import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -64,6 +55,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
@@ -81,13 +73,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @ToRemove(version = 3.3)
   public static final String LEGACY_LANGUAGE_MODELS = "languageModels";
 
-  static {
-    ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
-  }
-
   @NotNull private LanguageDescriptor myLanguageDescriptor;
-
-  private ClassLoader myStubsLoader = new StubsClassLoader();
 
   protected Language(@NotNull LanguageDescriptor descriptor, @Nullable IFile file) {
     super(file);
@@ -376,16 +362,19 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public boolean isAccessoryModel(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    return myLanguageDescriptor.getAccessoryModels().stream().anyMatch(m -> Objects.equals(m, modelReference));
+    return myLanguageDescriptor.getAccessoryModels().stream().anyMatch(Predicate.isEqual(modelReference));
   }
 
   public void removeAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
     // XXX why removal of accessory model is not done through ModuleDescriptor as other editing activities?
+    //     i.e. module properties add accessory models through MD, but remove them through Language, which is odd.
     final SModelReference accessoryModelRef = sm.getReference();
     boolean changed = myLanguageDescriptor.getAccessoryModels().removeIf(accessoryModelRef::equals);
     if (changed) {
+      // XXX Perhaps, setModuleDescriptor is too much, as it fires changed + dependenciesChange and eventually reloads classes,
+      //     while change in accessory models unlikely to affect any compiled class.
+      //     I'd stick to setChanged(true) + fireChanged() here, instead.
       setModuleDescriptor(myLanguageDescriptor);
-      reload();
     }
   }
 
@@ -429,9 +418,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     SModule modelOwner = sm.getModule();
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
-      if (l.isAccessoryModel(sm.getReference())) {
-        return true;
-      }
+      return l.isAccessoryModel(sm.getReference());
     }
     return false;
   }
@@ -481,61 +468,21 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return false;
   }
 
-  @NotNull
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
-    // first check if class comes from stubs
-    if (classFqName.startsWith(getModuleName() + ".stubs.")) {
-      try {
-        return myStubsLoader.loadClass(classFqName);
-      } catch (ClassNotFoundException e) {
-        LOG.error("Exception during stubs' class loading", e);
-        throw e;
-      }
-    }
 
-    // if not then call standard #getClass
-    return super.getClass(classFqName, ownClassOnly);
-  }
-
-  private class StubsClassLoader extends ClassLoader {
-    public StubsClassLoader() {
-      super(Language.class.getClassLoader());
-    }
-
+  public static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor {
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
-      JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
-      assert facet != null;
-      IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-      ClassBytes classBytes = classPathItem.getClassBytes(name);
-      if (classBytes == null) return null;
-      byte[] bytes = classBytes.getBytes();
-      definePackageIfNecessary(name);
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
-    }
-
-    private void definePackageIfNecessary(String name) {
-      String pack = NameUtil.namespaceFromLongName(name);
-      if (getPackage(pack) != null) return;
-      definePackage(pack, null, null, null, null, null, null, null);
-    }
-  }
-
-  private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
-    @NotNull
-    @Override
-    public Class<Language> getApplicableSModuleClass() {
-      return Language.class;
+    public boolean isApplicable(SModule module) {
+      return module instanceof Language;
     }
 
     @NotNull
     @Override
-    public Collection<SLanguage> getLanguages(Language contextModule, SModel model) {
+    public Collection<SLanguage> getLanguages(SModule contextModule, SModel model) {
       return LanguageAspectSupport.getMainLanguages(model);
     }
 
     @Override
-    public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
+    public Collection<SModuleReference> getDevKits(SModule contextModule, SModel forModel) {
       Collection<SModuleReference> initialDevKits = new ArrayList<>(LanguageAspectSupport.getInitialDevKits(forModel));
       SModuleReference defaultDevkit = LanguageAspectSupport.getDefaultDevkit(forModel);
       if(defaultDevkit != null) {

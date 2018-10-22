@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.resourceBundles.IconResourceBundle" file="IconResourceBundle.java">
+  <dependency className="jetbrains.mps.resourceBundles.IconResourceBundle">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode extendsClassName="jetbrains.mps.resourceBundles.PluginResourceBundle" />
   </dependency>
-  <dependency className="jetbrains.mps.resourceBundles.PluginResourceBundle" file="PluginResourceBundle.java">
+  <dependency className="jetbrains.mps.resourceBundles.PluginResourceBundle">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

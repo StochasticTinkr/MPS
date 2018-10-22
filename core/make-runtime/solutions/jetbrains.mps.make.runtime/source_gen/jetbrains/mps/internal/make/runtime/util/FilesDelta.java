@@ -10,7 +10,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.make.delta.IDeltaVisitor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Set;
@@ -20,14 +19,24 @@ import java.util.HashSet;
 public class FilesDelta implements IDelta {
   private static Logger LOG = LogManager.getLogger(FilesDelta.class);
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
-  private final String key;
+  private final DeltaKey key;
+
+  /**
+   * 
+   * @deprecated use cons that takes DeltaKey, as use of IFile here is confusing, it's merely a hierarchical indicator to merge deltas, and is unrelated to IFiles recorded.
+   */
+  @Deprecated
   public FilesDelta(IFile dir) {
-    this.key = DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getPath())));
+    this(new DeltaKey(DirUtil.normalizeAsDir(dir.getPath()).split("/", 0)));
+  }
+  public FilesDelta(DeltaKey dk) {
+    this.key = dk;
   }
   private FilesDelta(FilesDelta copyFrom) {
     this.key = copyFrom.key;
     MapSequence.fromMap(this.files).putAll(copyFrom.files);
   }
+
   public void written(IFile file) {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.WRITTEN);
   }
@@ -78,9 +87,10 @@ public class FilesDelta implements IDelta {
     } else if (toMerge.contains(this)) {
       return new FilesDelta(that).copy(this);
     }
-    String commonPrefix = DirUtil.commonDirPrefix(this.key, that.key);
+
+    DeltaKey commonPrefix = key.commonPrefix(that.key);
     if (!(commonPrefix.isEmpty())) {
-      return new FilesDelta(FileSystem.getInstance().getFileByPath(commonPrefix)).copy(this).copy(that);
+      return new FilesDelta(commonPrefix).copy(this).copy(that);
     }
     throw new IllegalArgumentException();
   }
@@ -103,7 +113,7 @@ public class FilesDelta implements IDelta {
   private FilesDelta copy(FilesDelta that) {
     // provided there's this.contains(that) call before copy() 
     // DirUtil.startsWith(that, this) == true 
-    if (!(DirUtil.startsWith(that.key, this.key))) {
+    if (!(key.contains(that.key))) {
       throw new IllegalArgumentException();
     }
 
@@ -139,10 +149,7 @@ public class FilesDelta implements IDelta {
       return false;
     }
     FilesDelta that = (FilesDelta) other;
-    if (that.key.equals(this.key)) {
-      return true;
-    }
-    return DirUtil.startsWith(that.key, this.key);
+    return key.contains(that.key);
   }
   public static class Visitor implements IDeltaVisitor {
     public Visitor() {

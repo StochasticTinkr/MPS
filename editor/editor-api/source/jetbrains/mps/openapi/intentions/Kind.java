@@ -23,5 +23,5 @@ public enum Kind {
   ERROR,
   QUICKFIX,
   MIGRATION,
-  NORMAL;
+  NORMAL
 }

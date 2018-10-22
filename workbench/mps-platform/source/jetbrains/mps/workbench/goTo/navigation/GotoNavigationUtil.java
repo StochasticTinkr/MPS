@@ -35,15 +35,15 @@ import java.util.Set;
 public class GotoNavigationUtil {
 
   public static Collection<NavigationTarget> getNavigationTargets(TargetKind kind, SearchScope scope, ProgressMonitor monitor) {
-    CollectConsumer<NavigationTarget> consumer = new CollectConsumer<NavigationTarget>(new HashSet<NavigationTarget>());
+    CollectConsumer<NavigationTarget> consumer = new CollectConsumer<>(new HashSet<>());
     Collection<NavigationParticipant> participants = PersistenceFacade.getInstance().getNavigationParticipants();
 
     monitor.start("Finding targets...", participants.size() + 5);
     try {
       Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
       for (NavigationParticipant participant : participants) {
-        final Set<SModel> next = new HashSet<SModel>(current);
-        CollectConsumer<SModel> processedModels = new CollectConsumer<SModel>(new HashSet<SModel>());
+        final Set<SModel> next = new HashSet<>(current);
+        CollectConsumer<SModel> processedModels = new CollectConsumer<>(new HashSet<>());
         participant.findTargets(kind, current, consumer, processedModels);
         next.removeAll(processedModels.getResult());
         current = next;

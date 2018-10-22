@@ -31,6 +31,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -38,6 +40,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -70,7 +73,7 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
-  private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
+  private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<>();
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
@@ -96,7 +99,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
   @Override
   public void registerDependencies(EditorCell cell, Iterable<SNode> nodes, Iterable<SNodeReference> refTargets) {
-    Set<SNode> registeredRelatedNodes = new HashSet<SNode>();
+    Set<SNode> registeredRelatedNodes = new HashSet<>();
     myRelatedNodes.put(cell, registeredRelatedNodes);
 
     for (SNode nextNode : nodes) {
@@ -104,7 +107,7 @@ public class UpdateSessionImpl implements UpdateSession {
       registeredRelatedNodes.add(nextNode);
     }
 
-    Set<SNodeReference> registeredRefTargets = new HashSet<SNodeReference>();
+    Set<SNodeReference> registeredRefTargets = new HashSet<>();
     myRelatedRefTargets.put(cell, registeredRefTargets);
 
     for (SNodeReference nextRefTarget : refTargets) {
@@ -116,7 +119,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerCleanDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myCleanDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myCleanDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -126,7 +129,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerDirtyDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myDirtyDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myDirtyDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -136,7 +139,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerExistenceDependency(EditorCell cell, Pair<SNodeReference, String> pair) {
     WeakSet<EditorCell> dependentCells = myExistenceDependentCells.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<>();
       myExistenceDependentCells.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -147,7 +150,7 @@ public class UpdateSessionImpl implements UpdateSession {
     EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
 
-    Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
+    Pair<EditorCell, UpdateInfoIndex> result = new Pair<>(null, null);
     try {
       getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
@@ -188,7 +191,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return null;
     }
     Collection<String> hints = myHintsForNodeMap.get(node.getReference());
-    return hints.toArray(new String[hints.size()]);
+    return hints.toArray(new String[0]);
   }
 
   void setEditorHintsForNodeMap(Map<SNodeReference, Collection<String>> hintsForNodeMap) {
@@ -208,12 +211,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
-      return runWithExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
-        @Override
-        public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), getCurrentContext());
-        }
-      });
+      return runWithExplicitEditorHints(editorContext, node, () -> EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), getCurrentContext()));
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
       getCellFactory().popCellContext();
@@ -271,9 +269,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return EditorManager.getInstanceFromContext(getUpdater().getEditorContext()).createEditorCell(getModelModifications(), refContext);
     } finally {
       assert myAttributeKind2Cell.get(attributeKind).removeFirst() == cellWithRole;
-      if (attributeKind != AttributeKind.NODE) {
-        assert myAttributeKind2Cell.get(AttributeKind.NODE).removeFirst() == cellWithRole;
-      }
+      assert attributeKind == AttributeKind.NODE || myAttributeKind2Cell.get(AttributeKind.NODE).removeFirst() == cellWithRole;
     }
   }
 
@@ -288,10 +284,15 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
-    ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), role);
+    return updateReferencedNodeCell(update, node, MetaAdapterByDeclaration.getReferenceLink(new SNodeLegacy(node).getLinkDeclaration(role)));
+  }
+
+  @Override
+  public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, SReferenceLink refLink) {
+    ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), refLink);
     myCurrentUpdateInfo = new UpdateInfoNode(newContext, myCurrentUpdateInfo);
     try {
       return update.compute();
@@ -314,7 +315,7 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   public void registerAsBigCell(EditorCell cell) {
-    myBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
+    myBigCellsMap.put(cell.getSNode(), new WeakReference<>(cell));
   }
 
   @Nullable

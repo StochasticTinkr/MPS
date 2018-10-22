@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_AppPluginPart" file="DebugInfoProvider_AppPluginPart.java">
+  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.DebugInfoProvider_AppPluginPart">
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.Debug_ApplicationPlugin" file="Debug_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.debug.plugin.Debug_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />

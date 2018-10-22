@@ -261,13 +261,11 @@ class Memento implements EditorComponentState {
     }
     if (object instanceof Memento) {
       Memento m = (Memento) object;
-      if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-          EqualUtil.equals(myFoldableStates, m.myFoldableStates) && EqualUtil.equals(myInitiallyCollapsedStates, m.myInitiallyCollapsedStates) &&
-          EqualUtil.equals(myRestoreAlwaysStates, m.myRestoreAlwaysStates) && EqualUtil.equals(myErrors, m.myErrors) &&
-          EqualUtil.equals(myTransactionalProperties, m.myTransactionalProperties) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
-          Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
-        return true;
-      }
+      return EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+             EqualUtil.equals(myFoldableStates, m.myFoldableStates) && EqualUtil.equals(myInitiallyCollapsedStates, m.myInitiallyCollapsedStates) &&
+             EqualUtil.equals(myRestoreAlwaysStates, m.myRestoreAlwaysStates) && EqualUtil.equals(myErrors, m.myErrors) &&
+             EqualUtil.equals(myTransactionalProperties, m.myTransactionalProperties) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
+             Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference);
     }
     return false;
   }
@@ -409,7 +407,7 @@ class Memento implements EditorComponentState {
       for (Object o : children) {
         enabledHints.add(((Element) o).getAttributeValue(ENABLED_HINTS_ATTRIBUTE));
       }
-      memento.myEnabledHints = enabledHints.toArray(new String[enabledHints.size()]);
+      memento.myEnabledHints = enabledHints.toArray(new String[0]);
     }
 
     return memento;

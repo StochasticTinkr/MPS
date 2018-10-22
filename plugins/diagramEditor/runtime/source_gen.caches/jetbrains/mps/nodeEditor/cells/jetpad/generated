@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8uuspp34h0qwryggk3y2e0f8p3w66ez" />
+<product version="3" modelHash="93qmmd9k60miloh7awhumira9ldq6c7">
+  <files names="AbstractJetpadCell.java:BlockCell.java:ConnectorCell.java:DiagramCell.java:EmptyCellLayout.java:JetpadUtils.java:PortCell.java:PropertyMapperCell.java:ReadableModelProperty.java:WritableModelProperty.java" />
+</product>
 

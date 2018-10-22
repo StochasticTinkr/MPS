@@ -39,8 +39,8 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 final class RepositoryVirtualFiles {
   private final NodeVirtualFileSystem myFileSystem;
   private final SRepository myRepository;
-  private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
-  private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
+  private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<>();
+  private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<>();
   private final NiceReferenceSerializer myPathFacility;
 
   /*package*/ RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
@@ -117,7 +117,7 @@ final class RepositoryVirtualFiles {
 
   // XXX likely, RVF shall be responsible to collect deleted/renamed files, rather than give access to known vf
   /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
-    ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
+    ArrayList<MPSNodeVirtualFile> rv = new ArrayList<>();
     for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
       if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
         rv.add(vf);

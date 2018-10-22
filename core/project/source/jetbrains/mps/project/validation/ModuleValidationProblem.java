@@ -18,11 +18,16 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ModuleReportItem;
+import jetbrains.mps.errors.item.ReportItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class ModuleValidationProblem extends ValidationProblem implements IssueKindReportItem, ModuleReportItem {
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class ModuleValidationProblem extends ReportItemBase implements IssueKindReportItem, ModuleReportItem {
 
   private SModuleReference myModule;
 
@@ -32,13 +37,18 @@ public class ModuleValidationProblem extends ValidationProblem implements IssueK
   }
 
   @Override
-  public String getIssueKind() {
-    return MODULE_PROPERTIES;
+  public ItemKind getIssueKind() {
+    return MODULE_PROPERTIES.deriveItemKind();
   }
 
   @NotNull
   @Override
   public SModuleReference getModule() {
     return myModule;
+  }
+
+  @Override
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new LinkedHashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_MODULE, FLAVOUR_MESSAGE));
   }
 }

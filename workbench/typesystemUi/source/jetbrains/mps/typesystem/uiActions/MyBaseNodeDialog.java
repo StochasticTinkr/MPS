@@ -70,11 +70,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   @Override
   protected Action[] createActions() {
     if(myError != null) {
-      String s = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String>() {
-        public String compute() {
-          return myError.reportError();
-        }
-      });
+      String s = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(() -> myError.reportError());
       setErrorText(s);
       if (myError.getRuleNode() != null) {
         return new Action[]{getOKAction(), new AbstractAction("Go To Rule") {
@@ -97,14 +93,12 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     if (mySupertypesViewComponent != null && mySupertypesViewComponent.getParent() != null) {
       mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
     }
-    getProject().getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        if (!myWasRegistered) {
-          myModel.removeRootNode(myType.getContainingRoot());
-          myWasRegistered = true;
-        }
-        MyBaseNodeDialog.super.dispose();
+    getProject().getModelAccess().runWriteAction(() -> {
+      if (!myWasRegistered) {
+        myModel.removeRootNode(myType.getContainingRoot());
+        myWasRegistered = true;
       }
+      MyBaseNodeDialog.super.dispose();
     });
   }
 }

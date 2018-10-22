@@ -16,8 +16,6 @@ public class AsTest_Test extends TestCase {
     Assert.assertSame(str, as_q3h6h2_a1a6a0(str, String.class));
     Assert.assertSame(str, as_q3h6h2_a1a7a0(str, Object.class));
   }
-  public AsTest_Test() {
-  }
   private static <T> T as_q3h6h2_a0a3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

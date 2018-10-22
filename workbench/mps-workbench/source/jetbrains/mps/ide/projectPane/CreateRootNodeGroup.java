@@ -132,7 +132,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     modelLanguages.removeAll(additionalLanguages);
     Collections.sort(modelLanguages, new ToStringComparator());
 
-    ArrayList<DefaultActionGroup> byLanguage = new ArrayList<DefaultActionGroup>();
+    ArrayList<DefaultActionGroup> byLanguage = new ArrayList<>();
     for (SLanguage language : modelLanguages) {
       String name = language.getQualifiedName();
       DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);

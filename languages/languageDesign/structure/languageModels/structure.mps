@@ -138,9 +138,6 @@
     <node concept="PrWs8" id="hRkpyE_" role="PzmwI">
       <ref role="PrY4T" node="hOIDzy1" resolve="IStructureDeprecatable" />
     </node>
-    <node concept="PrWs8" id="1oksCg99EhD" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="PrWs8" id="3pPFrMaA2Yn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -562,9 +559,6 @@
       <property role="TrG5h" value="value" />
       <property role="IQ2nx" value="6054523464626875854" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="PrWs8" id="166$sc$H4fp" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="5g5Zgd9qGH9">

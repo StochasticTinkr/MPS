@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -58,10 +59,11 @@ public class MigrateConceptNodeParameter extends MigrationScriptBase {
   private Iterable<SNode> getNodesToMigrate(SModule m) {
     Iterable<SNode> nodes;
     {
-      final SearchScope scope = CommandUtil.createScope(m);
+      SearchScope scope_q4h85_b0i = CommandUtil.createScope(m);
+      final SearchScope scope_q4h85_b0i_0 = new EditableFilteringScope(scope_q4h85_b0i);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_q4h85_b0i_0;
         }
       };
       nodes = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x79747203892d4ccdL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept"), false)).where(new IWhereFilter<SNode>() {

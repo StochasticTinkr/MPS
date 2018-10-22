@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.textGenTest.test1.package2.Clazz" file="Clazz.java" />
+  <dependency className="jetbrains.mps.textGenTest.test1.package2.Clazz" />
 </dependenciesRoot>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" file="HStateMachineFactory.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.State" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachine" />
     <classNode extendsClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachineFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" file="Test.java">
+  <dependency className="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test">
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachineFactory" />
     <classNode dependClassName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />
     <classNode dependClassName="org.junit.Assert" />

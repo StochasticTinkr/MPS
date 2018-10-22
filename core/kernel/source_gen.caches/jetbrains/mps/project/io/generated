@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-99e8q3chp1h0n64yradvbdvednfnsq0" />
+<product version="3" modelHash="99gqn3ukvsmc20vr7ocvlmy58p57s5k">
+  <files names="DescriptorIO.java:DescriptorIOException.java:DescriptorIOFacade.java:DescriptorIOProvider.java:IdeaDescriptorIOProvider.java:StandardDescriptorIOProvider.java" />
+</product>
 

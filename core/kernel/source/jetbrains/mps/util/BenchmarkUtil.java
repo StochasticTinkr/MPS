@@ -32,48 +32,39 @@ public class BenchmarkUtil {
   }
 
   public static void main(String[] args) {
-    final List<String> items = new ArrayList<String>();
+    final List<String> items = new ArrayList<>();
     for (int i = 0; i < 10; i++) {
       items.add("abc" + Math.random());
     }
 
     int ntimes = 100000;
 
-    printMeasure("simple iteration", ntimes, new Runnable() {
-      @Override
-      public void run() {
-        for (String item : items) {
-          item.toUpperCase();
-        }
+    printMeasure("simple iteration", ntimes, () -> {
+      for (String item : items) {
+        item.toUpperCase();
       }
     });
 
-    printMeasure("to array iteration", ntimes, new Runnable() {
-      @Override
-      public void run() {
-        for (String item : items.toArray(new String[items.size()])) {
-          item.toUpperCase();
-        }
+    printMeasure("to array iteration", ntimes, () -> {
+      for (String item : items.toArray(new String[0])) {
+        item.toUpperCase();
       }
     });
 
-    printMeasure("to array with runnable", ntimes, new Runnable() {
-      @Override
-      public void run() {
-        abstract class Visitor {
-          abstract void visit(String s);
-        }
+    printMeasure("to array with runnable", ntimes, () -> {
+      abstract class Visitor {
+        abstract void visit(String s);
+      }
 
-        Visitor v = new Visitor() {
-          @Override
-          void visit(String s) {
-            s.toUpperCase();
-          }
-        };
-
-        for (String item : items.toArray(new String[items.size()])) {
-          v.visit(item);
+      Visitor v = new Visitor() {
+        @Override
+        void visit(String s) {
+          s.toUpperCase();
         }
+      };
+
+      for (String item : items.toArray(new String[0])) {
+        v.visit(item);
       }
     });
 

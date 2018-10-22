@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class SModelName {
   public SModelName(@NotNull CharSequence qualifiedName, @Nullable CharSequence stereotype) {
     if (stereotype != null && stereotype.length() > 0) {
       assert stereotype.toString().indexOf('@') == -1;
-      myValue = checkIllegalChars(new StringBuilder(qualifiedName).append('@').append(stereotype).toString());
+      myValue = checkIllegalChars(String.valueOf(qualifiedName) + '@' + stereotype);
     } else {
       myValue = checkIllegalChars(qualifiedName.toString());
     }
@@ -98,6 +98,8 @@ public final class SModelName {
     return atIndex != -1 ? myValue.substring(0, atIndex) : myValue;
   }
 
+  // XXX perhaps, worth to add getCompactLongName/getCompactValue() that acts like NameUtil.compactNamespace
+
   /**
    * @return name of the model without namespace nor stereotype, empty string iff model name is blank.
    */
@@ -120,6 +122,18 @@ public final class SModelName {
    */
   public boolean hasStereotype() {
     return myValue.lastIndexOf('@') > 0;
+  }
+
+  /**
+   * @return <code>true</code> iff {@link #getStereotype() stereotype} matches the argument. Name without stereotype matches both {@code null} and
+   * {@code ""} argument values.
+   * @since 2018.3
+   */
+  public boolean hasStereotype(@Nullable CharSequence stereotype) {
+    if (stereotype == null || stereotype.length() == 0) {
+      return !hasStereotype();
+    }
+    return getStereotype().contentEquals(stereotype);
   }
 
   @NotNull
@@ -175,7 +189,7 @@ public final class SModelName {
       return qualifiedCompleteName;
     }
     int atIndex = qualifiedCompleteName.lastIndexOf('@');
-    if (atIndex == 0 || (!qualifiedCompleteName.isEmpty() && atIndex == qualifiedCompleteName.length() - 1)) {
+    if (atIndex == 0 || atIndex == qualifiedCompleteName.length() - 1) {
       throw new IllegalArgumentException(String.format("Stereotype separator '@' shall not appear at the position %d in '%s'", atIndex, qualifiedCompleteName));
     }
     int nameLastChar = atIndex > 0 ? atIndex - 1 : qualifiedCompleteName.length() - 1;

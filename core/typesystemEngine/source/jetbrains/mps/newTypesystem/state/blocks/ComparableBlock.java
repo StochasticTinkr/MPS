@@ -54,16 +54,16 @@ public class ComparableBlock extends RelationBlock {
 
   @Override
   public List<Pair<SNode, SNode>> getInputsAndOutputs() {
-    List<Pair<SNode, SNode>> result = new LinkedList<Pair<SNode, SNode>>();
-    result.add(new Pair<SNode, SNode>(myLeftNode, myRightNode));
-    result.add(new Pair<SNode, SNode>(myRightNode, myLeftNode));
+    List<Pair<SNode, SNode>> result = new LinkedList<>();
+    result.add(new Pair<>(myLeftNode, myRightNode));
+    result.add(new Pair<>(myRightNode, myLeftNode));
     return result;
   }
 
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-      new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+    return CollectionUtil.set(new Pair<>(myLeftNode, ConditionKind.CONCRETE),
+                              new Pair<>(myRightNode, ConditionKind.CONCRETE));
   }
 
   @Override

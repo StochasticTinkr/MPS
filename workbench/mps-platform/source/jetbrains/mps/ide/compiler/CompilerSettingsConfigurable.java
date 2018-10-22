@@ -70,7 +70,7 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     getPreferencePage().commit();
     CompilerState compilerState = new CompilerState();
     JavaVersion selectedTargetJavaVersion = getPreferencePage().getSelectedTargetJavaVersion();

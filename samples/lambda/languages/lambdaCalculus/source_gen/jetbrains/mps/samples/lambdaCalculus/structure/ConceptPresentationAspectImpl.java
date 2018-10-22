@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AbstractionVarRef;
   private ConceptPresentation props_AbstractionVariable;
   private ConceptPresentation props_AddOperation;
+  private ConceptPresentation props_AnyType;
   private ConceptPresentation props_BinaryNumericOperation;
   private ConceptPresentation props_BinaryOperation;
   private ConceptPresentation props_BinaryStringOperation;
@@ -64,6 +65,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AddOperation = cpb.create();
         }
         return props_AddOperation;
+      case LanguageConceptSwitch.AnyType:
+        if (props_AnyType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AnyType");
+          props_AnyType = cpb.create();
+        }
+        return props_AnyType;
       case LanguageConceptSwitch.BinaryNumericOperation:
         if (props_BinaryNumericOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

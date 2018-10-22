@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GeneratorPathsComponent implements CoreComponent {
   private static GeneratorPathsComponent INSTANCE;
-  private final List<ForeignPathsProvider> myForeignPathsProviders = Collections.synchronizedList(new ArrayList<ForeignPathsProvider>());
+  private final List<ForeignPathsProvider> myForeignPathsProviders = Collections.synchronizedList(new ArrayList<>());
 
   public GeneratorPathsComponent() {
   }

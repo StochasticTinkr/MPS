@@ -106,8 +106,6 @@ public class Generator_Test extends MockTestCase {
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
-  public Generator_Test() {
-  }
   @Before
   public void setUp() throws Exception {
     Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");

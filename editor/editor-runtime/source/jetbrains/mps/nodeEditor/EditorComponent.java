@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
@@ -75,8 +76,8 @@ import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
 import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooserHandler;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
@@ -117,13 +118,12 @@ import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.CancellableReadAction;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -133,6 +133,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -264,17 +265,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private final List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<>(0);
 
-  private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
-    @Override
-    public void settingsChanged() {
-      getModelAccess().runReadInEDT(() -> {
-        if (isDisposed()) {
-          return;
-        }
-        rebuildEditorContent();
-      });
+  private EditorSettingsListener mySettingsListener = () -> getModelAccess().runReadInEDT(() -> {
+    if (isDisposed()) {
+      return;
     }
-  };
+    rebuildEditorContent();
+  });
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
@@ -639,27 +635,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       MPSToolTipManager.getInstance().registerComponent(this);
     }
 
-    getSelectionManager().addSelectionListener(new SelectionListener() {
-      @Override
-      public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-        if (oldSelection == newSelection) {
-          return;
-        }
-        deactivateSubstituteChooser();
-        updateStatusBarMessage();
-
-        if (oldSelection != null) {
-          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : oldSelection.getSelectedCells()) {
-            repaint(editorCell);
-          }
-        }
-        if (newSelection != null) {
-          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : newSelection.getSelectedCells()) {
-            repaint(editorCell);
-          }
-        }
-        myLeftHighlighter.repaint();
+    getSelectionManager().addSelectionListener((editorComponent, oldSelection, newSelection) -> {
+      if (oldSelection == newSelection) {
+        return;
       }
+      deactivateSubstituteChooser();
+      updateStatusBarMessage();
+
+      if (oldSelection != null) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : oldSelection.getSelectedCells()) {
+          repaint(editorCell);
+        }
+      }
+      if (newSelection != null) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : newSelection.getSelectedCells()) {
+          repaint(editorCell);
+        }
+      }
+      myLeftHighlighter.repaint();
     });
   }
 
@@ -773,7 +766,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return null;
       }
       final Collection<String> nodeContextHints = cellContext.getHints();
-      return nodeContextHints.toArray(new String[nodeContextHints.size()]);
+      return nodeContextHints.toArray(new String[0]);
     }
     return null;
   }
@@ -840,74 +833,81 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public String getMPSTooltipText(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(new Computable<String>() {
+    final Reference<String> rv = new Reference<>(null);
+    getModelAccess().runReadAction(new CancellableReadAction() {
       @Override
-      public String compute() {
+      protected void execute() {
         if (isDisposed()) {
-          return null;
+          return;
         }
 
         jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
         if (cell == null) {
-          return null;
+          return;
         }
-        return getMessagesTextFor(cell);
+        if (isCancelRequested()) {
+          confirmCancel();
+          return;
+        }
+        rv.set(getMessagesTextFor(cell));
       }
     });
+    return rv.get();
   }
 
   @Override
   public Point getToolTipLocation(final MouseEvent event) {
-    return ModelAccess.instance().tryRead(new Computable<Point>() {
+    final Reference<Point> rv = new Reference<>(null);
+    getModelAccess().runReadAction(new CancellableReadAction() {
       @Override
-      public Point compute() {
+      protected void execute() {
         if (isDisposed()) {
-          return null;
+          return;
         }
 
         jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
         if (cell == null) {
-          return null;
+          return;
+        }
+        if (isCancelRequested()) {
+          confirmCancel();
+          return;
         }
         if (getMessagesTextFor(cell) != null) {
-          return new Point(event.getX(), event.getY());
-        } else {
-          return null;
+          rv.set(new Point(event.getX(), event.getY()));
         }
       }
     });
+    return rv.get();
   }
 
   public void updateStatusBarMessage() {
     if (!isFocusOwner()) {
       return;
     }
-    getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (!isFocusOwner() || getCurrentProject() == null || isProjectDisposed()) {
-          return;
+    getModelAccess().runReadInEDT(() -> {
+      if (!isFocusOwner() || getCurrentProject() == null || isProjectDisposed()) {
+        return;
+      }
+
+      jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
+      String info = "";
+      if (selection != null) {
+        HighlighterMessage message = getHighlighterMessageFor(selection);
+        if (message != null) {
+          info = message.getMessage();
         }
+      }
 
-        jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
-        String info = "";
-        if (selection != null) {
-          HighlighterMessage message = getHighlighterMessageFor(selection);
-          if (message != null) {
-            info = message.getMessage();
-          }
-        }
+      jetbrains.mps.project.Project project = getCurrentProject();
+      IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
+      StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
-        jetbrains.mps.project.Project project = getCurrentProject();
-        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(project));
-        StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
-
-        //current info is significant or the editor removes its own message
-        if (!info.equals("") || myLastWrittenStatus.equals(statusBar.getInfo())) {
-          statusBar.setInfo(info);
-          if (!info.equals("")) {
-            myLastWrittenStatus = info;
-          }
+      //current info is significant or the editor removes its own message
+      if (!info.isEmpty() || myLastWrittenStatus.equals(statusBar.getInfo())) {
+        statusBar.setInfo(info);
+        if (!info.isEmpty()) {
+          myLastWrittenStatus = info;
         }
       }
     });
@@ -970,7 +970,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /*
     sorted by severity, from lower to high
    */
-  public Collection<ReportItem> getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public Collection<IssueKindReportItem> getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     return messages.stream().map(HighlighterMessage::getReportItem).collect(Collectors.toList());
   }
@@ -1003,47 +1003,44 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     clearModelDisposedTrace();
 
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (node != null) {
-          assert node.getModel() != null : "Can't edit a node that is not registered in a model";
-          assert SNodeUtil.isAccessible(node, myRepository) :
-              "editNode() accepts nodes from its own repository only (model = " + node.getModel() + ", repository = " + node.getModel().getRepository() + ")";
-        }
+    getModelAccess().runReadAction(() -> {
+      if (node != null) {
+        assert node.getModel() != null : "Can't edit a node that is not registered in a model";
+        assert SNodeUtil.isAccessible(node, myRepository) :
+            "editNode() accepts nodes from its own repository only (model = " + node.getModel() + ", repository = " + node.getModel().getRepository() + ")";
+      }
 
-        if (myNode != null && notifiesCreation()) {
-          notifyDisposal();
-        }
+      if (myNode != null && notifiesCreation()) {
+        notifyDisposal();
+      }
 
-        final boolean needNewTypecheckingContext = updateContainingRoot(node);
-        if (needNewTypecheckingContext) {
-          releaseTypeCheckingContext();
-        }
+      final boolean needNewTypecheckingContext = updateContainingRoot(node);
+      if (needNewTypecheckingContext) {
+        releaseTypeCheckingContext();
+      }
 
-        myNode = node;
-        if (myNode != null) {
-          myNodePointer = myNode.getReference();
-          SModel model = node.getModel();
-          assert model != null : "Can't edit a node that is not registered in a model";
-          setEditorContext(model, myRepository);
-          myReadOnly = model.isReadOnly();
-        } else {
-          myNodePointer = null;
-          setEditorContext(null, myRepository);
-          myReadOnly = true;
-        }
-        myCommandContext.updateContextNode();
+      myNode = node;
+      if (myNode != null) {
+        myNodePointer = myNode.getReference();
+        SModel model = node.getModel();
+        assert model != null : "Can't edit a node that is not registered in a model";
+        setEditorContext(model, myRepository);
+        myReadOnly = model.isReadOnly();
+      } else {
+        myNodePointer = null;
+        setEditorContext(null, myRepository);
+        myReadOnly = true;
+      }
+      myCommandContext.updateContextNode();
 
-        if (needNewTypecheckingContext) {
-          acquireTypeCheckingContext();
-        }
+      if (needNewTypecheckingContext) {
+        acquireTypeCheckingContext();
+      }
 
-        rebuildEditorContent();
+      rebuildEditorContent();
 
-        if (myNode != null && notifiesCreation()) {
-          notifyCreation();
-        }
+      if (myNode != null && notifiesCreation()) {
+        notifyCreation();
       }
     });
   }
@@ -1404,20 +1401,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void assertModelNotDisposed() {
-    boolean old = ModelAccess.instance().setReadEnabledFlag(true);
-    try {
-      assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-      if (myNode == null) {
-        return;
-      }
-      SModel model = myNode.getModel();
-      if (model == null) {
-        return;
-      }
-      assert model.getRepository() != null : getNodeDisposedMessage(model);
-    } finally {
-      ModelAccess.instance().setReadEnabledFlag(old);
+    // if by any chance you need model access here, use myRepository
+    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+    if (myNode == null) {
+      return;
     }
+    SModel model = myNode.getModel();
+    if (model == null) {
+      return;
+    }
+    assert model.getRepository() != null : getNodeDisposedMessage(model);
   }
 
   private String getNodeDisposedMessage(SModel model) {

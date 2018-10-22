@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AddRootTemplateAnnotation" file="AddRootTemplateAnnotation.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AddRootTemplateAnnotation">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.projectPane.CreateNodeExtension" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog" file="AttachMappingLabelDialog.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog">
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" file="AttachMappingLabel_Action.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanDialog" file="DeriveGenPlanDialog.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanDialog">
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.ui.ValidationInfo" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanModel_Action" file="DeriveGenPlanModel_Action.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.DeriveGenPlanModel_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="java.lang.Object" />
@@ -142,7 +142,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GenPlanFunnel" file="GenPlanFunnel.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GenPlanFunnel">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.HashSet" />
@@ -161,14 +161,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_AppPluginPart" file="GeneratorIDE_AppPluginPart.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_AppPluginPart">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.CreateNodeExtension" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.CreateRootFilterEP" />
     <classNode dependClassName="jetbrains.mps.lang.generator.pluginSolution.plugin.AddRootTemplateAnnotation" />
     <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" file="MappingLabelUtil.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -181,7 +181,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action" file="NewCreateRootRule_Action.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -209,7 +209,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action" file="NewRootMappingRule_Action.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -237,7 +237,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -250,7 +250,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_Generator_ActionGroup" file="ShowAsIntentions_Generator_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_Generator_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

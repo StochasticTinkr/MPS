@@ -152,10 +152,6 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
         result.setClassName(value);
         return;
       }
-      if ("file".equals(name)) {
-        result.setFileName(value);
-        return;
-      }
       super.handleAttribute(resultObject, name, value);
     }
     @Override

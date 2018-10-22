@@ -44,7 +44,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
 
   @Override
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FlavouredItem.FLAVOUR_CLASS, NodeReportItem.FLAVOUR_NODE, FLAVOUR_RULE_ID));
+    return new HashSet<>(Arrays.asList(FLAVOUR_ISSUE_KIND, FLAVOUR_RULE_ID, FLAVOUR_NODE));
   }
 
   public static String getMessage(IErrorReporter errorReporter) {
@@ -57,7 +57,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   }
 
   public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
-      new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
+      new SimpleReportItemFlavour<>("FLAVOUR_ERROR_REPORTER", TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {
@@ -77,14 +77,14 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   public Collection<EditorQuickFix> getQuickFix() {
     List<EditorQuickFix> list = new ArrayList<>();
     for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
-      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode(), quickFixProvider);
+      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode().getReference(), quickFixProvider);
       list.add(quickFixAdapter);
     }
     return list;
   }
 
   @Override
-  public String getIssueKind() {
-    return IssueKindReportItem.TYPESYSTEM;
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.TYPESYSTEM.deriveItemKind();
   }
 }

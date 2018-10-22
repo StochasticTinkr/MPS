@@ -118,7 +118,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
       return;
     }
     myIsPropertyModification = Boolean.TRUE;
-    myModifiedProperty = new Pair<SNodeReference, String>(new SNodePointer(event.getNode()), event.getPropertyName());
+    myModifiedProperty = new Pair<>(new SNodePointer(event.getNode()), event.getPropertyName());
     myIsPropertyAddedRemoved =
         SModelUtil_new.isEmptyPropertyValue(event.getOldPropertyValue()) != SModelUtil_new.isEmptyPropertyValue(event.getNewPropertyValue());
   }

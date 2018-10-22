@@ -16,6 +16,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -56,10 +57,11 @@ public class OldCommentContainerMigration {
   }
   public Iterable<Problem> check() {
     {
-      final SearchScope scope = CommandUtil.createScope(module);
+      SearchScope scope_7l65wi_a0f = CommandUtil.createScope(module);
+      final SearchScope scope_7l65wi_a0f_0 = new EditableFilteringScope(scope_7l65wi_a0f);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_7l65wi_a0f_0;
         }
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), SNodeOperations.asSConcept(concept), false)).select(new ISelector<SNode, Problem>() {

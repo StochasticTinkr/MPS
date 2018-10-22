@@ -143,40 +143,37 @@ public abstract class PropertySupport {
 
   @NotNull
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
-      @Override
-      public PropertySupport compute() {
-        SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
-        if (dataType != null) {
-          PropertySupport propertySupport = ourPropertySupportCache.get(dataType);
-          if (propertySupport != null) {
-            return propertySupport;
-          }
-
-          if (SNodeUtil.isInstanceOfPrimitiveDataTypeDeclaration(dataType)) {
-            String dataTypeName = dataType.getName();
-            if (Primitives.STRING_TYPE.equals(dataTypeName)) {
-              propertySupport = new DefaultPropertySupport();
-            } else if (Primitives.INTEGER_TYPE.equals(dataTypeName)) {
-              propertySupport = new IntegerPropertySupport();
-            } else if (Primitives.BOOLEAN_TYPE.equals(dataTypeName)) {
-              propertySupport = new BooleanPropertySupport();
-            } else {
-              throw new RuntimeException("Unknown primitive type: " + dataTypeName);
-            }
-          } else {
-            propertySupport = loadPropertySupport(propertyDeclaration);
-          }
-
-          if (propertySupport == null) {
-            propertySupport = new DefaultPropertySupport();
-          }
-          ourPropertySupportCache.put(dataType, propertySupport);
-
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
+      if (dataType != null) {
+        PropertySupport propertySupport = ourPropertySupportCache.get(dataType);
+        if (propertySupport != null) {
           return propertySupport;
         }
-        return new DefaultPropertySupport();
+
+        if (SNodeUtil.isInstanceOfPrimitiveDataTypeDeclaration(dataType)) {
+          String dataTypeName = dataType.getName();
+          if (Primitives.STRING_TYPE.equals(dataTypeName)) {
+            propertySupport = new DefaultPropertySupport();
+          } else if (Primitives.INTEGER_TYPE.equals(dataTypeName)) {
+            propertySupport = new IntegerPropertySupport();
+          } else if (Primitives.BOOLEAN_TYPE.equals(dataTypeName)) {
+            propertySupport = new BooleanPropertySupport();
+          } else {
+            throw new RuntimeException("Unknown primitive type: " + dataTypeName);
+          }
+        } else {
+          propertySupport = loadPropertySupport(propertyDeclaration);
+        }
+
+        if (propertySupport == null) {
+          propertySupport = new DefaultPropertySupport();
+        }
+        ourPropertySupportCache.put(dataType, propertySupport);
+
+        return propertySupport;
       }
+      return new DefaultPropertySupport();
     });
   }
 
@@ -198,13 +195,7 @@ public abstract class PropertySupport {
       } else {
         LOG.error("Can't find a class " + propertySupportClassName + " using classloader of " + l.getModuleName() + " module");
       }
-    } catch (NoSuchMethodException e) {
-      LOG.error(null, e);
-    } catch (InstantiationException e) {
-      LOG.error(null, e);
-    } catch (IllegalAccessException e) {
-      LOG.error(null, e);
-    } catch (InvocationTargetException e) {
+    } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | InstantiationException e) {
       LOG.error(null, e);
     }
     return propertySupport;
@@ -270,7 +261,7 @@ public abstract class PropertySupport {
    */
   @Deprecated
   public static class PropertySupportCache implements CoreComponent, ModuleReloadListener {
-    private final Map<SNode, PropertySupport> myMap = new ConcurrentHashMap<SNode, PropertySupport>();
+    private final Map<SNode, PropertySupport> myMap = new ConcurrentHashMap<>();
     private final ClassLoaderManager myCLM;
 
     public PropertySupportCache(ClassLoaderManager clm) {

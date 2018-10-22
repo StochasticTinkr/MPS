@@ -31,10 +31,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  * This class dispatches repository events to SRepositoryListener clients
  */
 public class SRepositoryEventsDispatcher {
-  private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+  private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<>();
 
   // AtomicInteger is not to guard against registration from parallel threads, rather a convenient way to have modifiable Integer
-  private final ConcurrentHashMap<SRepositoryListener, AtomicInteger> myListenerCount = new ConcurrentHashMap<SRepositoryListener, AtomicInteger>();
+  private final ConcurrentHashMap<SRepositoryListener, AtomicInteger> myListenerCount = new ConcurrentHashMap<>();
 
   private final SRepository myRepository;
 

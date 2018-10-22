@@ -33,7 +33,7 @@ public class CounterMap<K> {
     void counterNonZero(@NotNull K key);
   }
 
-  private Map<K, Integer> myMap = new HashMap<K, Integer>();
+  private Map<K, Integer> myMap = new HashMap<>();
   private CounterMapHandler<K> myHandler;
 
   public CounterMap(@NotNull CounterMapHandler<K> handler) {
@@ -88,9 +88,7 @@ public class CounterMap<K> {
   }
 
   public void removeKey(K key) {
-    if (myMap.containsKey(key)) {
-      myMap.remove(key);
-    }
+    myMap.remove(key);
   }
 
   public boolean isZero(K key) {

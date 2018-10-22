@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d1zaedzqweopx5pplwwmt7z4zl97r2g" />
+<product version="3" modelHash="-4mvobrw88kl7mlntwfhccs1xlv9yjss">
+  <files names="Arg1.java:Arg2.java:Arg3.java:Arg4.java:Arg5.java:Descendant.java:Further.java:TestClass.java" />
+</product>
 

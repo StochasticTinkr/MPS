@@ -18,7 +18,7 @@ package jetbrains.mps.ide.vfs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.containers.HashMap;
+import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemEvent;
@@ -29,7 +29,12 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,10 +54,11 @@ import java.util.Map;
  */
 public final class ProjectRootListenerComponent implements ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(ProjectRootListenerComponent.class);
+  private static final List<String> EXCLUDED_FOLDERS = Arrays.asList(".mps", ".git");
 
   private final IdeaFileSystem myFileSystem;
   private final Project myProject;
-  private final Map<Project, FileListener> myProject2ListenerMap = new HashMap<>();
+  private final Map<Project, List<EmptyFSListener>> myProject2ListenersMap = new HashMap<>();
   private IFile myFile;
 
   public ProjectRootListenerComponent(@NotNull IdeaFileSystem fileSystem, Project project) {
@@ -65,18 +71,35 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
     String basePath = myProject.getBasePath();
     if (basePath!= null) {
       myFile = myFileSystem.getFile(basePath);
-      EmptyFSListener listener = new EmptyFSListener();
-      ApplicationManager.getApplication().runReadAction(() -> {myFile.addListener(listener);});
-      myProject2ListenerMap.put(myProject, listener);
+      List<EmptyFSListener> newListeners = new ArrayList<>();
+      ApplicationManager.getApplication().runReadAction(() -> {
+        for (IFile child : myFile.getChildren()) {
+          if (listenTo(child)) {
+            EmptyFSListener listener = new EmptyFSListener(child);
+            child.addListener(listener);
+            newListeners.add(listener);
+          }
+        }
+      });
+      myProject2ListenersMap.put(myProject, newListeners);
     } else {
       LOG.warn("Could not find base path of the project " + myProject);
     }
   }
 
+  private boolean listenTo(@NotNull IFile childOfProjectDir) {
+    return !EXCLUDED_FOLDERS.contains(childOfProjectDir.getName());
+  }
+
   @Override
   public void disposeComponent() {
-    FileListener listener = myProject2ListenerMap.remove(myProject);
-    ApplicationManager.getApplication().runReadAction(() -> {myFile.removeListener(listener);});
+    Collection<EmptyFSListener> listeners = myProject2ListenersMap.remove(myProject);
+    ApplicationManager.getApplication().runReadAction(() -> {
+      for (EmptyFSListener listener : listeners) {
+        IFile file = listener.getFile();
+        file.removeListener(listener);
+      }
+    });
   }
 
   @NotNull
@@ -94,6 +117,17 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
   }
 
   private static class EmptyFSListener implements FileListener {
+    private final IFile myFileIListenTo;
+
+    public EmptyFSListener(@NotNull IFile fileIListenTo) {
+      myFileIListenTo = fileIListenTo;
+    }
+
+    @NotNull
+    public IFile getFile() {
+      return myFileIListenTo;
+    }
+
     @Override
     public String toString() {
       return "EMPTY LISTENER";

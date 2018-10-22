@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler" file="RemoteProcessHandler.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Override" />

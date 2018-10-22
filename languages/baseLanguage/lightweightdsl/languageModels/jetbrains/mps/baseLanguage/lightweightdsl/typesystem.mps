@@ -332,7 +332,7 @@
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
-        <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1757699476691236116" name="role_DebugInfo" index="2qtEX8" />
         <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1408,7 +1408,7 @@
     <property role="3GE5qa" value="instances.methodFixer" />
     <property role="TrG5h" value="ClassLikeMethodProblemVisitor" />
     <node concept="3clFb_" id="5CNG5xvkAeg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitName" />
       <node concept="3cqZAl" id="5CNG5xvkAei" role="3clF45" />
       <node concept="3Tm1VV" id="5CNG5xvkAej" role="1B3o_S" />
@@ -1430,7 +1430,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5CNG5xvkBip" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitReturnType" />
       <node concept="37vLTG" id="5CNG5xvkBuY" role="3clF46">
         <property role="TrG5h" value="method" />
@@ -1454,7 +1454,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5CNG5xvkBiB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitMissingParam" />
       <node concept="37vLTG" id="5CNG5xvkBxO" role="3clF46">
         <property role="TrG5h" value="method" />
@@ -1482,7 +1482,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4upLbA2VG_1" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitOddParam" />
       <node concept="37vLTG" id="4upLbA2WhgN" role="3clF46">
         <property role="TrG5h" value="param" />
@@ -1498,7 +1498,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4upLbA2VQDr" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitUnknownParam" />
       <node concept="37vLTG" id="4upLbA2VQDs" role="3clF46">
         <property role="TrG5h" value="method" />
@@ -1518,7 +1518,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4upLbA2W7xa" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitParamName" />
       <node concept="37vLTG" id="4upLbA2W7xd" role="3clF46">
         <property role="TrG5h" value="param" />
@@ -1540,7 +1540,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4upLbA2Wl3G" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="visitParamType" />
       <node concept="37vLTG" id="4upLbA2Wl3H" role="3clF46">
         <property role="TrG5h" value="param" />

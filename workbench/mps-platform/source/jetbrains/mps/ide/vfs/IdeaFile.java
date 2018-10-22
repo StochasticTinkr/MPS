@@ -221,7 +221,7 @@ public class IdeaFile implements IFileEx, CachingFile {
 
   //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
   @Nullable
-  private VirtualFile createDirectories(final String directoryPath) throws IOException {
+  private VirtualFile createDirectories(final String directoryPath) {
     return new WriteAction<VirtualFile>() {
       @Override
       protected void run(@NotNull Result<VirtualFile> result) throws Throwable {
@@ -256,12 +256,8 @@ public class IdeaFile implements IFileEx, CachingFile {
       assert myVirtualFilePtr != null;
       return myVirtualFilePtr.isDirectory();
     } else {
-      try {
-        myVirtualFilePtr = createDirectories(myPath);
-        return true;
-      } catch (IOException e) {
-        return false;
-      }
+      myVirtualFilePtr = createDirectories(myPath);
+      return true;
     }
   }
 

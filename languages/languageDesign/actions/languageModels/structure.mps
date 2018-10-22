@@ -211,9 +211,6 @@
     <property role="34LRSv" value="sourceNode" />
     <property role="EcuMT" value="1221137268788" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB5Wx" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hLht608">
     <property role="TrG5h" value="QueryFunction_PasteWrapper" />

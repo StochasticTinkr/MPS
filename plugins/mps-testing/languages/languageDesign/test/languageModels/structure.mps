@@ -21,10 +21,7 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -482,20 +479,6 @@
     <property role="EcuMT" value="1225978065297" />
     <ref role="1TJDcQ" node="hHlHkQ8" resolve="NodesTestMethod" />
   </node>
-  <node concept="1TIwiD" id="hPMiqvr">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="EditorExpression" />
-    <property role="3GE5qa" value="expression" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="editor" />
-    <property role="EcuMT" value="1225983109083" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="asaX9" id="ORe5oE9_um" role="lGtFl">
-      <property role="YLPcu" value="version 3.3" />
-      <property role="YLQ7P" value="use EditorComponent construction instead" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hPMFPyi">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -623,6 +606,9 @@
     </node>
     <node concept="PrWs8" id="5_pDliflca0" role="PzmwI">
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
+    </node>
+    <node concept="PrWs8" id="dxGXeX_YMA" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX2" resolve="ICanSuppressErrors" />
     </node>
     <node concept="PrWs8" id="2deFRo6cC4H" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
@@ -1000,9 +986,6 @@
       <property role="IQ2ns" value="8333855927540028958" />
       <ref role="20lvS9" node="6EW1JnOFKPB" resolve="UnknownRuleReference" />
     </node>
-    <node concept="PrWs8" id="7eBNsYVORzI" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="6MWlVHU6lEq">
     <property role="3GE5qa" value="nodeOperation" />
@@ -1038,9 +1021,6 @@
       <property role="IQ2ns" value="8333855927548182241" />
       <ref role="20lvS9" node="6EW1JnOFKPB" resolve="UnknownRuleReference" />
     </node>
-    <node concept="PrWs8" id="7eBNsYVVJdm" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7eBNsYVJLV9">
     <property role="3GE5qa" value="nodeOperation" />
@@ -1063,9 +1043,6 @@
       <property role="IQ2ns" value="8333855927564209217" />
       <ref role="20lvS9" node="6EW1JnOFKPB" resolve="UnknownRuleReference" />
     </node>
-    <node concept="PrWs8" id="7eBNsYVVJjU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7eBNsYVKb$0">
     <property role="3GE5qa" value="nodeOperation" />
@@ -1079,9 +1056,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8333855927564310179" />
       <ref role="20lvS9" node="6EW1JnOFKPB" resolve="UnknownRuleReference" />
-    </node>
-    <node concept="PrWs8" id="7eBNsYVRxx2" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="bG3Ez5d8XT">

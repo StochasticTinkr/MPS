@@ -52,7 +52,7 @@ public class SelectionInfoImpl implements SelectionInfo {
 
   private String mySelectionClassName;
   private String myModuleID;
-  private Map<String, String> myProperties = new HashMap<String, String>();
+  private Map<String, String> myProperties = new HashMap<>();
   private DefaultCellInfo myCellInfo = null;
 
   public SelectionInfoImpl(Element element) {
@@ -133,7 +133,7 @@ public class SelectionInfoImpl implements SelectionInfo {
       }
       Constructor<Selection> constructor = ((Class<Selection>) selectionClass).getConstructor(EditorComponent.class, Map.class, CellInfo.class);
       return constructor.newInstance(editorComponent, myProperties, myCellInfo);
-    } catch (ClassNotFoundException | NoSuchMethodException e) {
+    } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException e) {
       LOG.error(null, e);
       return null;
     } catch (InvocationTargetException e) {
@@ -146,12 +146,6 @@ public class SelectionInfoImpl implements SelectionInfo {
          */
         return null;
       }
-      LOG.error(null, e);
-      return null;
-    } catch (InstantiationException e) {
-      LOG.error(null, e);
-      return null;
-    } catch (IllegalAccessException e) {
       LOG.error(null, e);
       return null;
     }
@@ -192,11 +186,7 @@ public class SelectionInfoImpl implements SelectionInfo {
     if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) {
       return false;
     }
-    if (!myProperties.equals(that.myProperties)) {
-      return false;
-    }
-
-    return true;
+    return myProperties.equals(that.myProperties);
   }
 
   @Override

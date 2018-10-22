@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 
 public class ModelPlusImportedScope extends ModelsScope {
@@ -18,8 +18,10 @@ public class ModelPlusImportedScope extends ModelsScope {
     if (model == null) {
       return Collections.emptyList();
     }
-    List<SModel> models = SModelOperations.allImportedModels(model);
-    models.add(0, model);
+    ArrayList<SModel> models = new ArrayList<SModel>();
+    models.add(model);
+    // left deprecated call as there's some compatibility code (use of global repository) 
+    models.addAll(SModelOperations.allImportedModels(model));
     return models;
   }
 }

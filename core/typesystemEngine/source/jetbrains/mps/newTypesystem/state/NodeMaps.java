@@ -37,11 +37,11 @@ import java.util.Set;
 public class NodeMaps {
 
   @StateObject
-  private final Map<SNode, SNode> myNodesToTypes = new THashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myNodesToTypes = new THashMap<>();
   @StateObject
-  private final Map<SNode, SNode> myTypesToNodes = new THashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myTypesToNodes = new THashMap<>();
   @StateObject
-  private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new THashMap<SNode, List<IErrorReporter>>();
+  private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new THashMap<>();
   private final State myState;
 
   public NodeMaps(State state) {
@@ -96,7 +96,7 @@ public class NodeMaps {
     myState.assertIsInStateChangeAction();
     List<IErrorReporter> errors = myNodesToErrors.get(errorReporter.getSNode());
     if (errors == null) {
-      errors = new LinkedList<IErrorReporter>();
+      errors = new LinkedList<>();
       myNodesToErrors.put(errorReporter.getSNode(), errors);
     }
     errors.add(errorReporter);
@@ -128,7 +128,7 @@ public class NodeMaps {
   public List<IErrorReporter> getNodeErrors(SNode node) {
     List<IErrorReporter> result = myNodesToErrors.get(node);
     if (result == null) {
-      result = new LinkedList<IErrorReporter>();
+      result = new LinkedList<>();
     }
     return result;
   }
@@ -150,7 +150,7 @@ public class NodeMaps {
   }
 
   public List<String> getErrorListPresentation() {
-    List<String> result = new LinkedList<String>();
+    List<String> result = new LinkedList<>();
     for (Map.Entry<SNode, List<IErrorReporter>> entry : myNodesToErrors.entrySet()) {
       for (IErrorReporter error : entry.getValue()) {
         result.add(entry.getKey() + " " + error.reportError());

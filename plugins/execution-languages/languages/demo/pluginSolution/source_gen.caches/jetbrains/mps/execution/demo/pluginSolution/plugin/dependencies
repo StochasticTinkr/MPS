@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration" file="DemoApplication_Configuration.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
@@ -41,7 +41,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Editor" file="DemoApplication_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Editor">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState" file="DemoApplication_Configuration_RunProfileState.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="com.intellij.execution.Executor" />
@@ -84,7 +84,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Producer" file="DemoApplication_Producer.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Producer">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_AppPluginPart" file="RunConfigurationsInitializer_AppPluginPart.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_AppPluginPart">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="com.intellij.icons.AllIcons" />

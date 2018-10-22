@@ -32,41 +32,21 @@ public class RuntimeSupport_Tracer extends RuntimeSupportNew {
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak);
-      }
-    }, "coerce");
+    return myTypeChecker.computeWithTrace(() -> RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak), "coerce");
   }
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return RuntimeSupport_Tracer.super.coerce_(subtype, pattern);
-      }
-    }, "coerce");
+    return myTypeChecker.computeWithTrace(() -> RuntimeSupport_Tracer.super.coerce_(subtype, pattern), "coerce");
   }
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext typeCheckingContext) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak, typeCheckingContext);
-      }
-    }, "coerce");
+    return myTypeChecker.computeWithTrace(() -> RuntimeSupport_Tracer.super.coerce_(subtype, pattern, isWeak, typeCheckingContext), "coerce");
   }
 
   @Override
   public SNode coerce_(final SNode subtype, final IMatchingPattern pattern, final TypeCheckingContext typeCheckingContext) {
-    return myTypeChecker.computeWithTrace(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return RuntimeSupport_Tracer.super.coerce_(subtype, pattern, typeCheckingContext);
-      }
-    }, "coerce");
+    return myTypeChecker.computeWithTrace(() -> RuntimeSupport_Tracer.super.coerce_(subtype, pattern, typeCheckingContext), "coerce");
   }
 }

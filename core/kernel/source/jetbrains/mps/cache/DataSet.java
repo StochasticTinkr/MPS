@@ -26,7 +26,7 @@ import java.util.Set;
  * Sep 6, 2007
  */
 public abstract class DataSet extends SModelAdapter {
-  public static enum DefaultNodeChangedProcessing {
+  public enum DefaultNodeChangedProcessing {
     DROP_DATA_SET, DROP_OWNER_CACHE
   }
 

@@ -328,15 +328,6 @@ public class IntentionsSupport {
     if (groupItems.isEmpty() && actions.isEmpty()) {
       return null;
     }
-    // TODO sort actions & intentions together
-    groupItems.sort((o1, o2) -> {
-      IntentionExecutable intention1 = o1.o1;
-      IntentionExecutable intention2 = o2.o1;
-      SNode node1 = o1.o2;
-      SNode node2 = o2.o2;
-      EditorContext context = myEditor.getEditorContext();
-      return intention1.getDescription(node1, context).compareTo(intention2.getDescription(node2, context));
-    });
     BaseGroup group = new BaseGroup("");
     for (final Pair<IntentionExecutable, SNode> pair : groupItems) {
       group.add(getIntentionGroup(pair.o1, pair.o2));
@@ -406,16 +397,6 @@ public class IntentionsSupport {
       result.addAll(availableIntentions);
     }
     return result;
-  }
-
-
-  /**
-   * @deprecated is not used any more
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public boolean isLightBulbVisible() {
-    return myLightBulb.isVisible();
   }
 
   private ModelAccess getModelAccess() {

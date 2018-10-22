@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
   private AtomicBoolean myCacheWasRebuilt = new AtomicBoolean(false);
   private AtomicBoolean myInvalidationResult = new AtomicBoolean(false);
 
-  private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+  private Set<SNode> myCurrentNodesToInvalidate = new THashSet<>();
 
   protected IncrementalTypecheckingComponent(TypeChecker typeChecker, STATE state, BaseTypechecking component) {
     super(state, component);
@@ -75,15 +75,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
   }
 
   protected Set<SNode> getCurrentNodesToInvalidate() {
-    return new THashSet<SNode>(myCurrentNodesToInvalidate);
+    return new THashSet<>(myCurrentNodesToInvalidate);
   }
 
   /*
    *  Single-threaded
    */
   protected class MyEventsReadListener extends AbstractNodesReadListener {
-    private Set<SNode> myAccessedNodes = new THashSet<SNode>(1);
-    private Set<Pair<SNode, String>> myAccessedProperties = new THashSet<Pair<SNode, String>>(1);
+    private Set<SNode> myAccessedNodes = new THashSet<>(1);
+    private Set<Pair<SNode, String>> myAccessedProperties = new THashSet<>(1);
     private boolean myIsSetAccessReport = false;
 
     public MyEventsReadListener() {
@@ -111,7 +111,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
     @Override
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       reportAccess();
-      myAccessedProperties.add(new Pair<SNode, String>(node, propertyName));
+      myAccessedProperties.add(new Pair<>(node, propertyName));
     }
 
     @Override
@@ -135,8 +135,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
     public void clear() {
       reportAccess();
-      myAccessedNodes = new THashSet<SNode>();
-      myAccessedProperties = new THashSet<Pair<SNode, String>>();
+      myAccessedNodes = new THashSet<>();
+      myAccessedProperties = new THashSet<>();
     }
 
     public Set<Pair<SNode, String>> getAccessedProperties() {

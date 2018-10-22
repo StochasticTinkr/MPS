@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention" file="AddDefaultNodeAttribute_Intention.java">
+  <dependency className="testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -21,7 +21,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention" file="AddDefaultPropertyAttribute_Intention.java">
+  <dependency className="testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -42,7 +42,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention" file="AddDefaultReferenceAttribute_Intention.java">
+  <dependency className="testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -63,7 +63,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="testDefaultEditor.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="testDefaultEditor.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

@@ -116,12 +116,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     super(project);
     myModelDescriptor = modelDescriptor;
     // readAction here is a hack, rather action shall do read. Alas, there are few places to get fixed, can't do it right now.
-    myModelProperties = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<ModelProperties>() {
-      @Override
-      public ModelProperties compute() {
-        return new ModelProperties(modelDescriptor);
-      }
-    });
+    myModelProperties = new ModelAccessHelper(project.getModelAccess()).runReadAction(() -> new ModelProperties(modelDescriptor));
     myInPlugin = inPlugin;
 
     registerTabs(/*new ModelCommonTab(),*/ new ModelDependenciesComponent(), new ModelUsedLanguagesTab(), new InfoTab());
@@ -199,13 +194,10 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   /*package*/ Set<SModelReference> getActualCrossModelReferences() {
-    return new ModelAccessHelper(myProject.getRepository()).runReadAction(new Computable<Set<SModelReference>>() {
-      @Override
-      public Set<SModelReference> compute() {
-        final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
-        modelScanner.crossModelReferences(true).usedLanguages(false).usedConcepts(false).walk(myModelDescriptor);
-        return modelScanner.getCrossModelReferences();
-      }
+    return new ModelAccessHelper(myProject.getRepository()).runReadAction(() -> {
+      final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
+      modelScanner.crossModelReferences(true).usedLanguages(false).usedConcepts(false).walk(myModelDescriptor);
+      return modelScanner.getCrossModelReferences();
     });
   }
 
@@ -260,41 +252,23 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setModel(myImportedModels);
 
       ModelTableCellRender cellRender = new ModelTableCellRender(myProject.getRepository());
-      cellRender.addCellState(new Condition<SModel>() {
-        @Override
-        public boolean met(SModel m) {
-          return m == null;
-        }
-      }, DependencyCellState.NOT_AVAILABLE);
-      cellRender.addCellState(new Condition<SModel>() {
-        @Override
-        public boolean met(SModel m) {
-          return !VisibilityUtil.isVisible(myModelDescriptor.getModule(), m);
-        }
-      }, DependencyCellState.NOT_IN_SCOPE);
+      cellRender.addCellState(m -> m == null, DependencyCellState.NOT_AVAILABLE);
+      cellRender.addCellState(m -> !VisibilityUtil.isVisible(myModelDescriptor.getModule(), m), DependencyCellState.NOT_IN_SCOPE);
       final Set<SModelReference> actualCrossModelRefs = getActualCrossModelReferences();
-      cellRender.addCellState(new Condition<SModel>() {
-        @Override
-        public boolean met(SModel m) {
-          return !actualCrossModelRefs.contains(m.getReference());
-        }
-      }, DependencyCellState.UNUSED);
+      cellRender.addCellState(m -> !actualCrossModelRefs.contains(m.getReference()), DependencyCellState.UNUSED);
       importedModelsTable.setDefaultRenderer(SModelReference.class, cellRender);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(importedModelsTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          // XXX much like ModelImportHelper#addImport (scope-wise), might be worth a refactoring
-          ArrayList<SModelReference> models = new ArrayList<>(200);
-          Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
-          SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
-          new ModelScopeIterable(globalScope, myProject.getRepository()).forEach(models::add);
-          List<SModelReference> list = CommonChoosers.showDialogModelCollectionChooser(ProjectHelper.toIdeaProject(myProject), models, null);
-          for (SModelReference reference : list) {
-            if (!myModelDescriptor.getReference().equals(reference)) {
-              myImportedModels.addItem(reference);
-            }
+      decorator.setAddAction(anActionButton -> {
+        // XXX much like ModelImportHelper#addImport (scope-wise), might be worth a refactoring
+        ArrayList<SModelReference> models = new ArrayList<>(200);
+        Condition<SModel> notTransient = m -> !(m instanceof TransientSModel);
+        SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, notTransient);
+        new ModelScopeIterable(globalScope, myProject.getRepository()).forEach(models::add);
+        List<SModelReference> list = CommonChoosers.showDialogModelCollectionChooser(ProjectHelper.toIdeaProject(myProject), models, null);
+        for (SModelReference reference : list) {
+          if (!myModelDescriptor.getReference().equals(reference)) {
+            myImportedModels.addItem(reference);
           }
         }
       }).setRemoveAction(new RemoveEntryAction(importedModelsTable) {
@@ -306,7 +280,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
-          final List<SModelReference> modelReferences = new ArrayList<SModelReference>();
+          final List<SModelReference> modelReferences = new ArrayList<>();
           for (int i : myTable.getSelectedRows()) {
             modelReferences.add(myImportedModels.getValueAt(i));
           }
@@ -410,29 +384,21 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
       ToolbarDecorator decorator =  super.createToolbar(usedLangsTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
-          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
-          myProject.getModelAccess().runReadAction(c);
-          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
-          for (SModuleReference reference : list) {
-            myUsedLangsTableModel.addItem(reference);
-          }
-          myUsedLangsTableModel.fireTableDataChanged();
+      decorator.setAddAction(anActionButton -> {
+        Iterable<SModule> modules = new ConditionalIterable<>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
+        modules = new ConditionalIterable<>(modules, new VisibleModuleCondition());
+        ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<>(new ModuleCollector(modules));
+        myProject.getModelAccess().runReadAction(c);
+        List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
+        for (SModuleReference reference : list) {
+          myUsedLangsTableModel.addItem(reference);
         }
+        myUsedLangsTableModel.fireTableDataChanged();
       }).setRemoveAction(new RemoveEntryAction(usedLangsTable) {
         @Override
         protected boolean confirmRemove(int row) {
           final UsedLangsTableModel.Import entry = myUsedLangsTableModel.getValueAt(row);
-          boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-              return myInUseCondition.met(entry);
-            }
-          });
+          boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> myInUseCondition.met(entry));
           if (inActualUse) {
             ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
                 ProjectHelper.toIdeaProject(myProject), "Delete used language",
@@ -468,20 +434,17 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         }
         @Override
         public void actionPerformed(AnActionEvent e) {
-          myProject.getModelAccess().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              boolean anyRemoved = false;
-              for (int row = myUsedLangsTable.getRowCount() - 1; row >= 0; row--) {
-                if (!myInUseCondition.met(myUsedLangsTableModel.getValueAt(row))) {
-                  myUsedLangsTableModel.removeRow(row);
-                  anyRemoved = true;
-                }
+          myProject.getModelAccess().runReadAction(() -> {
+            boolean anyRemoved = false;
+            for (int row = myUsedLangsTable.getRowCount() - 1; row >= 0; row--) {
+              if (!myInUseCondition.met(myUsedLangsTableModel.getValueAt(row))) {
+                myUsedLangsTableModel.removeRow(row);
+                anyRemoved = true;
               }
-              if (anyRemoved) {
-                myUsedLangsTableModel.fireTableDataChanged();
-                myUsedLangsTable.clearSelection();
-              }
+            }
+            if (anyRemoved) {
+              myUsedLangsTableModel.fireTableDataChanged();
+              myUsedLangsTable.clearSelection();
             }
           });
         }
@@ -551,29 +514,26 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       languagesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), PropertiesBundle.message("model.info.engaged.title"));
-      ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
+      ArrayList<SLanguage> engagedLanguages = new ArrayList<>();
       engagedLanguages.addAll(myModelProperties.getLanguagesEngagedOnGeneration());
-      myEngagedLanguagesModel.init(engagedLanguages, Collections.<SModuleReference>emptyList());
+      myEngagedLanguagesModel.init(engagedLanguages, Collections.emptyList());
       languagesTable.setModel(myEngagedLanguagesModel);
 
       LanguageTableCellRenderer cellRenderer = new LanguageTableCellRenderer(myProject.getRepository());
       Set<SLanguage> languagesInUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new ComputeUsedLanguages(myModelDescriptor));
-      IsLanguageInUse inUseCondition = new IsLanguageInUse(languagesInUse, Collections.<SLanguage>emptySet());
+      IsLanguageInUse inUseCondition = new IsLanguageInUse(languagesInUse, Collections.emptySet());
       cellRenderer.addCellState(inUseCondition, DependencyCellState.SUPERFLUOUS_ENGAGED);
       cellRenderer.registerIn(languagesTable);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(languagesTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          // XXX use of LanguageRegistry here effectively prevents us from specifying languages that are not yet deployed, is it what we want?
-          Collection<SLanguage> languages = myProject.getComponent(LanguageRegistry.class).getAllLanguages();
-          List<SLanguage> list = CommonChoosers.showLanguageSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), languages);
-          for (SLanguage l : list) {
-            myEngagedLanguagesModel.addItem(l);
-          }
-          myEngagedLanguagesModel.fireTableDataChanged();
+      decorator.setAddAction(anActionButton -> {
+        // XXX use of LanguageRegistry here effectively prevents us from specifying languages that are not yet deployed, is it what we want?
+        Collection<SLanguage> languages = myProject.getComponent(LanguageRegistry.class).getAllLanguages();
+        List<SLanguage> list = CommonChoosers.showLanguageSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), languages);
+        for (SLanguage l : list) {
+          myEngagedLanguagesModel.addItem(l);
         }
+        myEngagedLanguagesModel.fireTableDataChanged();
       }).setRemoveAction(new RemoveEntryAction(languagesTable));
       decorator.setPreferredSize(new Dimension(500, 150));
 
@@ -591,7 +551,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return myDoNotGenerateCheckBox.isSelected() != myModelProperties.isDoNotGenerate()
-          || (myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false)
+          || (myIsDefSModelDescr && (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()))
           || myEngagedLanguagesModel.isModified();
     }
 
@@ -601,8 +561,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myIsDefSModelDescr) {
         myModelProperties.setGenerateIntoModelFolder(myGenerateIntoModelFolderCheckBox.isSelected());
       }
-      ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
-      myEngagedLanguagesModel.fillResult(engagedLanguages, new ArrayList<SModuleReference>()/*ignored, shall be empty*/);
+      ArrayList<SLanguage> engagedLanguages = new ArrayList<>();
+      myEngagedLanguagesModel.fillResult(engagedLanguages, new ArrayList<>()/*ignored, shall be empty*/);
       myModelProperties.getLanguagesEngagedOnGeneration().clear();
       myModelProperties.getLanguagesEngagedOnGeneration().addAll(engagedLanguages);
     }
@@ -638,7 +598,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         if (!(module instanceof DevKit)) {
           return false;
         }
-        HashSet<SLanguage> burstDeps = new HashSet<SLanguage>();
+        HashSet<SLanguage> burstDeps = new HashSet<>();
         final DevKit devKit = (DevKit) module;
         burstDeps.addAll(IterableUtil.asCollection(devKit.getAllExportedLanguageIds()));
         // if module is already there (e.g. explicitly imported), do not consider devkit with it as used/necessary

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bjne07cx81l0jt26vxhyeyqf5a81195" />
+<product version="3" modelHash="-awboe6son1i21kcavdhosbv5dvt3lpw">
+  <files names="EnvironmentAwareTestCase.java:PerformanceMessenger.java:ProjectCloneSupport.java" />
+</product>
 

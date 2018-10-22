@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,32 +17,35 @@ package jetbrains.mps.ide.project.facets;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
+import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.repository.IdeaPluginFacetComponent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-/**
- * FIXME refactor FacetFactory and make an ApplicationComponent from <code>FacetFactory<IdeaPluginModuleFacet></code>
- */
 public final class IdeaPluginModuleFacetImplComponent implements IdeaPluginFacetComponent, ApplicationComponent {
-  private final static FacetFactory IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
+  private final MPSCoreComponents myCoreComponents;
+  private final FacetFactory IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
     @Override
-    public SModuleFacet create() {
-      return new IdeaPluginModuleFacetImpl();
+    public SModuleFacet create(@NotNull SModule module) {
+      final IdeaPluginModuleFacetImpl rv = new IdeaPluginModuleFacetImpl();
+      rv.setModule(module);
+      return rv;
     }
   };
 
   public IdeaPluginModuleFacetImplComponent(MPSCoreComponents coreComponents) {
+    myCoreComponents = coreComponents;
   }
 
   private void setUpIdeaFacet() {
-    FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(IdeaPluginModuleFacet.FACET_TYPE);
+    final FacetsRegistry facetsRegistry = myCoreComponents.getPlatform().findComponent(FacetsRegistry.class);
+    FacetFactory dumbFactory = facetsRegistry.getFacetFactory(IdeaPluginModuleFacet.FACET_TYPE);
     assert dumbFactory != null;
-    FacetsFacade.getInstance().removeFactory(dumbFactory);
-    FacetsFacade.getInstance().addFactory(IdeaPluginModuleFacet.FACET_TYPE, IDEA_PLUGIN_FACET_FACTORY);
+    facetsRegistry.removeFactory(dumbFactory);
+    facetsRegistry.addFactory(IdeaPluginModuleFacet.FACET_TYPE, IDEA_PLUGIN_FACET_FACTORY);
   }
 
   @Override
@@ -52,12 +55,7 @@ public final class IdeaPluginModuleFacetImplComponent implements IdeaPluginFacet
 
   @Override
   public void disposeComponent() {
-    FacetsFacade.getInstance().removeFactory(IDEA_PLUGIN_FACET_FACTORY);
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return getClass().getSimpleName();
+    final FacetsRegistry facetsRegistry = myCoreComponents.getPlatform().findComponent(FacetsRegistry.class);
+    facetsRegistry.removeFactory(IDEA_PLUGIN_FACET_FACTORY);
   }
 }

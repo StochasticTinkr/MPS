@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
  * Its {@link jetbrains.mps.make.MakeServiceComponent#install(IMakeService) } and {@link jetbrains.mps.make.MakeServiceComponent#uninstall(IMakeService) } methods are intended for other MPS components that contribute 
  * particular facility implementation. Clients access active service using {@link jetbrains.mps.make.MakeServiceComponent#get() }
  * 
+ * XXX might be fruitful to have add/remove listeners code here, which would re-register
+ *     listeners the moment active make service changes. No, there's no such scenario at the moment.
+ * 
  */
 public class MakeServiceComponent implements CoreComponent {
   private IMakeService myActiveMakeService;
@@ -26,6 +29,15 @@ public class MakeServiceComponent implements CoreComponent {
   public void uninstall(@NotNull IMakeService makeService) {
     IMakeService.INSTANCE.set(null);
     myActiveMakeService = null;
+  }
+
+  /**
+   * null-safe shorthand for {@code get().isSessionActive()}
+   * 
+   * @return true iff there's registered IMakeService and it got an active session
+   */
+  public boolean isSessionActive() {
+    return myActiveMakeService != null && myActiveMakeService.isSessionActive();
   }
 
   public IMakeService get() {

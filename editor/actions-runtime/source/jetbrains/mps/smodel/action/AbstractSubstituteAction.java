@@ -100,10 +100,7 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
     } catch (Exception e) {
       LOG.error(null, e);
     }
-    if (matchingText == null || matchingText.length() == 0) {
-      return false;
-    }
-    return true;
+    return matchingText != null && matchingText.length() != 0;
   }
 
   @Override
@@ -146,9 +143,5 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
         ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).changeSelectionWRTFocusPolicy(cell);
       }
     }
-  }
-
-  public String toString() {
-    return getMatchingText("");
   }
 }

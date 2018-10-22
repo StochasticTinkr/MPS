@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" file="EvaluationContext.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer" file="EvaluationWithContextContainer.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptorImpl" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext" file="StackFrameContext.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext">
     <classNode dependClassName="com.sun.jdi.ArrayType" />
     <classNode dependClassName="com.sun.jdi.BooleanType" />
     <classNode dependClassName="com.sun.jdi.ByteType" />
@@ -151,7 +151,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" file="VariableDescription.java">
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

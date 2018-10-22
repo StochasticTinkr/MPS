@@ -32,12 +32,12 @@ public class RefScopeChecker extends AbstractNodeCheckerInEditor implements IChe
   public RefScopeChecker() {
   }
   @Override
-  public String getCategory() {
+  public IssueKindReportItem.CheckerCategory getCategory() {
     return IssueKindReportItem.CONSTRAINTS;
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+    return AbstractNodeCheckerInEditor.SKIP_CONSTRAINTS_CONDITION;
   }
   @Override
   public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {

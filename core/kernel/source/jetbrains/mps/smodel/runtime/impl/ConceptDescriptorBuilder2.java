@@ -196,10 +196,10 @@ public class ConceptDescriptorBuilder2 {
 
   public ConceptDescriptor create() {
     String conceptFQName = NameUtil.conceptFQNameFromNamespaceAndShortName(myLanguageName, myConceptShortName);
-    PropertyDescriptor[] pd = myProperties == null ? new PropertyDescriptor[0] : myProperties.toArray(new PropertyDescriptor[myProperties.size()]);
-    ReferenceDescriptor[] assoc = myAssociations == null ? new ReferenceDescriptor[0] : myAssociations.toArray(new ReferenceDescriptor[myAssociations.size()]);
-    LinkDescriptor[] aggr = myAggregations == null ? new LinkDescriptor[0] : myAggregations.toArray(new LinkDescriptor[myAggregations.size()]);
-    SConceptId[] parents = myParents.toArray(new SConceptId[myParents.size()]);
+    PropertyDescriptor[] pd = myProperties == null ? new PropertyDescriptor[0] : myProperties.toArray(new PropertyDescriptor[0]);
+    ReferenceDescriptor[] assoc = myAssociations == null ? new ReferenceDescriptor[0] : myAssociations.toArray(new ReferenceDescriptor[0]);
+    LinkDescriptor[] aggr = myAggregations == null ? new LinkDescriptor[0] : myAggregations.toArray(new LinkDescriptor[0]);
+    SConceptId[] parents = myParents.toArray(new SConceptId[0]);
     return new CompiledConceptDescriptor(myVersion, myConceptId, conceptFQName, mySuperConceptId, myIsInterface, parents, pd, assoc, aggr, myIsAbstract, myIsFinal, myIsRoot, myAlias, myScope, myStubConceptId, /* FIXME myConceptKind, */myOrigin);
   }
 

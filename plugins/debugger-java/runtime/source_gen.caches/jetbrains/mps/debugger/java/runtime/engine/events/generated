@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bhj2gh8uvmiu1bungts1yxbrz81vhuc" />
+<product version="3" modelHash="-bnznpt80g4k8todk7nbdumce3fm4zoo">
+  <files names="Context.java:ContextManager.java:EventContext.java:EventsProcessor.java:UserContext.java" />
+</product>
 

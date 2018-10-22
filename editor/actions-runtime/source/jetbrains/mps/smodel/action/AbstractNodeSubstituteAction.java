@@ -134,10 +134,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     } catch (Exception e) {
       LOG.error(null, e);
     }
-    if (matchingText == null || matchingText.length() == 0) {
-      return false;
-    }
-    return true;
+    return matchingText != null && matchingText.length() != 0;
   }
 
 
@@ -168,23 +165,17 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     // similar to: IntellijentInputUtil.applyRigthTransform() logic
     if (context != null && nodeToSelect != null) {
       jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
-      if (editorComponent != null) {
-        editorComponent.getUpdater().flushModelEvents();
-        EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
-        if (cell != null) {
-          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-          if (errorCell != null) {
-            editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-          } else {
-            editorComponent.changeSelectionWRTFocusPolicy(cell);
-          }
+      editorComponent.getUpdater().flushModelEvents();
+      EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
+      if (cell != null) {
+        EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+        if (errorCell != null) {
+          editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+        } else {
+          editorComponent.changeSelectionWRTFocusPolicy(cell);
         }
       }
     }
     return nodeToSelect;
-  }
-
-  public String toString() {
-    return getMatchingText("");
   }
 }

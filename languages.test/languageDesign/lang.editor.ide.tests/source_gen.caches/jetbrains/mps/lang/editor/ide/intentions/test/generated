@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ddwj0jrtk7skjrfv8t93c5n29rpdvuq" />
+<product version="3" modelHash="3c7rbp879583q4582ba60qqijnsuw53">
+  <files names="MigrateToIndent_FlowLayout_Test.java:MigrateToIndent_HorizontalLayout_Test.java:MigrateToIndent_IndentLayout_Test.java:MigrateToIndent_NoLayout_Test.java:MigrateToIndent_SuperscriptLayout_Test.java:MigrateToIndent_TableLayout_Test.java:MigrateToIndent_VerticalGrtidLayout_Test.java:MigrateToIndent_VerticalLayout_Test.java" />
+</product>
 

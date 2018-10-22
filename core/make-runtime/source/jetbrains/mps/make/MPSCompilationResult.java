@@ -36,7 +36,7 @@ public final class MPSCompilationResult implements Serializable, CompilationResu
 
   private final static String COMPILATION_FINISHED = "Compilation finished: %d errors, %d warnings.";
   private final static String COMPILATION_ABORTED = "Compilation aborted.";
-  public final static MPSCompilationResult ZERO_COMPILATION_RESULT = new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet());
+  public final static MPSCompilationResult ZERO_COMPILATION_RESULT = new MPSCompilationResult(0, 0, false, Collections.emptySet());
 
   private int myErrorsCount;
   private int myWarningsCount;
@@ -48,7 +48,7 @@ public final class MPSCompilationResult implements Serializable, CompilationResu
     myErrorsCount = errorsCount;
     myWarningsCount = warningsCount;
     myAborted = aborted;
-    myChangedModules = new HashSet<SModule>(changedModules);
+    myChangedModules = new HashSet<>(changedModules);
   }
 
   @NotNull

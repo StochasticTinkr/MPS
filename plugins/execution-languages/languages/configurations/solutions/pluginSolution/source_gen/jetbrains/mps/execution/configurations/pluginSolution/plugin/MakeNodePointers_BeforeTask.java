@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.CancellationException;
@@ -78,8 +79,9 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       }
 
       MakeSession session = new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), true);
-      if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        Future<IResult> future = IMakeService.INSTANCE.get().make(session, resources);
+      IMakeService makeService = mpsProject.getComponent(MakeServiceComponent.class).get();
+      if (makeService.openNewSession(session)) {
+        Future<IResult> future = makeService.make(session, resources);
         IResult result = null;
         try {
           result = future.get();

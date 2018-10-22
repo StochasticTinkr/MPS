@@ -70,7 +70,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     if (struc == null) {
       return Collections.emptyList();
     }
-    ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
+    ArrayList<SAbstractConcept> result = new ArrayList<>();
     for (ConceptDescriptor cd : struc.getDescriptors()) {
       if (cd.isInterfaceConcept()) {
         result.add(new SInterfaceConceptAdapterById(cd.getId(), cd.getConceptFqName()));
@@ -83,7 +83,7 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
-    Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
+    Set<SModuleReference> runtimes = new HashSet<>();
     Language sourceModule = getSourceModule();
     if (sourceModule == null) {
       return Collections.emptyList();

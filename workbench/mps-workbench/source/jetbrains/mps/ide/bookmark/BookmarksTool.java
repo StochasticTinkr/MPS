@@ -27,6 +27,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTree.TreeState;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -51,12 +52,9 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     myTree = new BookmarksTree(ProjectHelper.toMPSProject(getProject()), myBookmarkManager);
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          myTree.rebuildNow();
-          myTree.loadState(myTreeState);
-        }
+      ApplicationManager.getApplication().invokeLater(() -> {
+        myTree.rebuildNow();
+        myTree.loadState(myTreeState);
       });
     }
   }
@@ -75,7 +73,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   }
 
   @Override
-  public void loadState(final MyState state) {
+  public void loadState(@NotNull final MyState state) {
     myTreeState = state.myTreeState;
   }
 

@@ -306,7 +306,7 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private List<SearchPanelEditorMessage> getMessages() {
-    final List<SearchPanelEditorMessage> searchMessages = new ArrayList<SearchPanelEditorMessage>();
+    final List<SearchPanelEditorMessage> searchMessages = new ArrayList<>();
     if (myEditor == null) {
       return searchMessages;
     }
@@ -415,7 +415,7 @@ public class SearchPanel extends AbstractSearchPanel {
 
     @Override
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-      if (cell == null || !(cell instanceof EditorCell_Label)) {
+      if (!(cell instanceof EditorCell_Label)) {
         return;
       }
       EditorCell_Label editorCell = (EditorCell_Label) cell;
@@ -469,11 +469,7 @@ public class SearchPanel extends AbstractSearchPanel {
       if (!myCell.equals(that.myCell)) {
         return false;
       }
-      if (!myPositions.equals(that.myPositions)) {
-        return false;
-      }
-
-      return true;
+      return myPositions.equals(that.myPositions);
     }
 
     @Override

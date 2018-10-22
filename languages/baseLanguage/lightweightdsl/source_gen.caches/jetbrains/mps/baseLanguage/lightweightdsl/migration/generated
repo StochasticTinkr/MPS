@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bjn1ojxytivytuf3bn9j4632sht3rm5" />
+<product version="3" modelHash="-2b7hpl97o2gsjalv8z9g7bu2kox3z73">
+  <files names="MigrationDescriptor.java:RemoveOddAnnotations.java" />
+</product>
 

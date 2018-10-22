@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="65d1qvuhs8kcm7vkaw18bk5yhqf898f" />
+<product version="3" modelHash="65d1qvuhs8kcm7vkaw18bk5yhqf898f">
+  <files names="MoneyUtil.java" />
+</product>
 

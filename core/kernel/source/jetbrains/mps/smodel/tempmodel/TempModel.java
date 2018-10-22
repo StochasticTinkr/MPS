@@ -58,7 +58,7 @@ class TempModel extends EditableModelDescriptor implements EditableSModel {
         }
       }
     };
-    return new ModelLoadResult<jetbrains.mps.smodel.SModel>(smodel, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult<>(smodel, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override

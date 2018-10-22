@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.Objects;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -30,6 +31,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   public OverrideImplementMethodsDialog(SNodeReference[] methods, Project project) {
     super(methods, false, true, project);
   }
+
   @Override
   protected void initOptions() {
     try {
@@ -46,6 +48,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     myOptionControls = new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride};
     myInsertOverride.setMnemonic('O');
   }
+
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -53,21 +56,26 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }
     return super.getText(node);
   }
+
   @Override
   protected void customizeOptionsPanel() {
     myAddReturn.setSelected((myOptions != null ? myOptions.addReturnsOnImplement : false));
     myRemoveAttributes.setSelected((myOptions != null ? myOptions.removeAttributes : true));
     myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
   }
+
   public boolean isInsertOverrideAnnotation() {
     return myInsertOverride.isSelected();
   }
+
   public boolean isAddReturn() {
     return myAddReturn.isSelected();
   }
+
   public boolean isRemoveAttributes() {
     return myRemoveAttributes.isSelected();
   }
+
   @Override
   public void dispose() {
     if (myOptions != null) {
@@ -77,6 +85,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }
     super.dispose();
   }
+
   public static Iterable<SNode> sortMethods(List<SNode> allSuperClassifiers, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
@@ -88,11 +97,11 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         SNode parentA = SNodeOperations.getParent(a);
         SNode parentB = SNodeOperations.getParent(b);
         if (parentA == parentB) {
-          String aRole = SNodeOperations.getContainingLink(a).getName();
-          String bRole = SNodeOperations.getContainingLink(b).getName();
+          SContainmentLink aRole = SNodeOperations.getContainingLink(a);
+          SContainmentLink bRole = SNodeOperations.getContainingLink(b);
 
           if (!(Objects.equals(aRole, bRole))) {
-            return aRole.compareTo(bRole);
+            return aRole.getName().compareTo(bRole.getName());
           }
 
           return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
@@ -104,8 +113,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }, true);
   }
 
-  public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
-    return sortMethods(((List<SNode>) BHReflection.invoke0(baseClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4fAeKISQjDi"))), methods);
+  public static Iterable<SNode> sortMethods(SNode baseClassifier, Iterable<SNode> methods) {
+    return sortMethods(((List<SNode>) BHReflection.invoke0(baseClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "59G_UM6ah0X"))), methods);
   }
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {

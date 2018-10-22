@@ -13,9 +13,9 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
-import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
-import java.io.FileNotFoundException;
+import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
+import java.io.IOException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -38,21 +38,19 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import java.util.Objects;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.reloading.CommonPaths;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.util.SystemProperties;
 import java.util.LinkedList;
+import java.io.FileNotFoundException;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -125,31 +123,29 @@ public class Java_Command {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter_String))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter_String)), className, classPath);
   }
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
-    CommandPart classPathPart = new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator));
     if ((className == null || className.length() == 0)) {
       throw new ExecutionException("Classname is empty");
     }
     File java = Java_Command.getJavaCommand(myJrePath_String);
-    if (check_yvpt_a0a0d0a2(programParameter) + check_yvpt_a0a0d0a2_0(myVirtualMachineParameter_ProcessBuilderCommandPart) + classPathPart.getLength() >= Java_Command.getMaxCommandLine()) {
+    // FIXME need better logic to decide when to use java -jar, and when directly java -classpath 
+    // Now I just throw in some magic number I consider too big to get tired of looking at long CP 
+    // XXX Besides, I'd like to test this, therefore would like to see this branch to trigger often (MPS JUnit  
+    // tests shall get into it, I believe). Earlier approach relied on dedicated ClassRunner, capable of reading 
+    // classpath and arguments from serialized form in temp files, I don't think we can ever get to the limit 
+    // with program arguments (and even if we do, e.g. enumerating all test methods from JUnit command, we can still 
+    // address huge argument list with -f or piping input from file (i.e. runner would need to support arguments other than 
+    // String[] args in main())) 
+    if (ListSequence.fromList(classPath).count() > 20) {
+      // next is to deal with very long cp 
       try {
-        File parametersFile = Java_Command.writeToTmpFile(programParameter.getCommandList());
-        File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPath).select(new ISelector<File, String>() {
-          public String select(File it) {
-            return it.getAbsolutePath();
-          }
-        }));
-        // afaiu, next is an approach to deal with very long cp. Need to refactor to get rid of global registry use in getClassRunnerClassPath() 
-        List<File> classRunnerClassPath = ListSequence.fromList(Java_Command.getClassRunnerClassPath()).select(new ISelector<String, File>() {
-          public File select(String it) {
-            return new File(it);
-          }
-        }).distinct().toListSequence();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
-      } catch (FileNotFoundException e) {
+        JarManifestBuilder jmb = new JarManifestBuilder();
+        File jar = jmb.withMainClass(className).withFilesClassPath(classPath).toTempFile();
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "jar", jar.getAbsolutePath())).append(programParameter).build(myWorkingDirectory_File);
+      } catch (IOException e) {
         throw new ExecutionException("Could not create temporary file for program parameters and class path.", e);
       }
-
     } else {
+      CommandPart classPathPart = new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator));
       return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(classPathPart).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
@@ -232,6 +228,7 @@ public class Java_Command {
     }
   }
   private static int getMaxCommandLine() {
+    // FIXME KEPT THIS METHOD FOR FUTURE CONSIDERATION, see classPath comment above regarding cmdline length 
     // the command line limit on win is 32767 characters 
     // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
     // we set the limit to 16384 (half as many) just in case 
@@ -239,15 +236,13 @@ public class Java_Command {
   }
   public static List<String> getClasspath(Iterable<SModule> modules) {
     Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(Sequence.fromIterable(modules).toListSequence().toGenericArray(SModule.class));
-    classpath.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+    // Here used to be module/JDK/.getAdditionalJavaStubPaths, introduced in 6f53b9c0 with no explanation, 
+    // which replaced CommonPaths.getJDKPath() introduced with no explanation either in b4a00256. 
+    // As long as getAdditionalJavaStubPaths() are populated from CommonPaths.getJDKPath (see Solution) 
+    // I see no reason to go though global module to retrieve these. To be honest, I don't quite get the need 
+    // to remove java paths at all. 
+    classpath.removeAll(CommonPaths.getJDKPath());
     return new ArrayList<String>(classpath);
-  }
-  private static List<String> getClassRunnerClassPath() {
-    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return Java_Command.getClasspath(Sequence.<SModule>singleton(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)"))));
-      }
-    });
   }
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
     if ((javaHome == null || javaHome.length() == 0) || !(new File(javaHome).exists())) {
@@ -321,18 +316,6 @@ public class Java_Command {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
-  }
-  private static int check_yvpt_a0a0d0a2(CommandPart checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getLength();
-    }
-    return 0;
-  }
-  private static int check_yvpt_a0a0d0a2_0(CommandPart checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getLength();
-    }
-    return 0;
   }
   private static SNode check_yvpt_a0a0a4a0d(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {

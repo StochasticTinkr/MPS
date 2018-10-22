@@ -25,15 +25,15 @@ import java.util.List;
 
 public interface INodeRepresentator<N> extends IExternalizeable {
   @NotNull
-  public String getPresentation(N node);
+  String getPresentation(N node);
 
-  public String getResultsText(TextOptions options);
+  String getResultsText(TextOptions options);
 
-  public Icon getResultsIcon();
+  Icon getResultsIcon();
 
-  public String getCategoryText(TextOptions options, String category, boolean isResultsSection);
+  String getCategoryText(TextOptions options, String category, boolean isResultsSection);
 
-  public Icon getCategoryIcon(String category);
+  Icon getCategoryIcon(String category);
 
-  public List<CategoryKind> getCategoryKinds();
+  List<CategoryKind> getCategoryKinds();
 }

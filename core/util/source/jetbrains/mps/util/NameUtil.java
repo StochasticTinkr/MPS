@@ -54,8 +54,8 @@ public class NameUtil {
     };
   }
 
-  private static final Map<Character, String> ESCAPE_INVISIBLE_CHARS_MAP = new HashMap<Character, String>();
-  private static final Map<Character, String> ESCAPE_MAP = new HashMap<Character, String>();
+  private static final Map<Character, String> ESCAPE_INVISIBLE_CHARS_MAP = new HashMap<>();
+  private static final Map<Character, String> ESCAPE_MAP = new HashMap<>();
 
   static {
     ESCAPE_INVISIBLE_CHARS_MAP.put('\000', "\\000");
@@ -81,13 +81,13 @@ public class NameUtil {
         "into", "like", "near", "of", "off", "on", "onto", "on top of",
         "out of", "outside", "over", "past", "since", "through", "to", "toward",
         "under", "underneath", "until", "up", "upon", "with", "within", "without"};
-    PREPOSITIONS = new HashSet<String>(Arrays.asList(preps));
+    PREPOSITIONS = new HashSet<>(Arrays.asList(preps));
 
     String[] articles = {"a", "an", "the"};
-    ARTICLES = new HashSet<String>(Arrays.asList(articles));
+    ARTICLES = new HashSet<>(Arrays.asList(articles));
 
     String[] particles = {"and", "or", "not", "as"};
-    PARTICLES = new HashSet<String>(Arrays.asList(particles));
+    PARTICLES = new HashSet<>(Arrays.asList(particles));
   }
 
   // ------ Naming policy methods --------
@@ -301,7 +301,7 @@ public class NameUtil {
 
   public static List<String> splitByCamels(String source) {
     if (source == null) return null;
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     StringBuilder current = new StringBuilder();
     for (int i = source.length() - 1; i >= 0; i--) {
       char c = source.charAt(i);

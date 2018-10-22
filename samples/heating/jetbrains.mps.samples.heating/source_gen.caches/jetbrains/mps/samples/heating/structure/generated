@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c1koa8nk3lnmntg4dhh8twp32wk5val" />
+<product version="3" modelHash="-c1koa8nk3lnmntg4dhh8twp32wk5val">
+  <files names="ConceptPresentationAspectImpl.java:DayDataType.java:DayDataType_PropertySupport.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
+</product>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.AbstractMoveExpression_Editor" file="AbstractMoveExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.AbstractMoveExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.AbstractMoveExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.AbstractMoveExpression_EditorBuilder_a" file="AbstractMoveExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.AbstractMoveExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -31,14 +31,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextMemberOperation_Editor" file="ContextMemberOperation_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextMemberOperation_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ContextMemberOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextMemberOperation_EditorBuilder_a" file="ContextMemberOperation_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextMemberOperation_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FieldStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -50,14 +50,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextType_Editor" file="ContextType_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextType_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ContextType_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextType_EditorBuilder_a" file="ContextType_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ContextType_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -69,14 +69,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefactoringContext_Editor" file="CreateRefactoringContext_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefactoringContext_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.CreateRefactoringContext_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefactoringContext_EditorBuilder_a" file="CreateRefactoringContext_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefactoringContext_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -135,7 +135,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefcontextHint" file="CreateRefcontextHint.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.CreateRefcontextHint">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -180,7 +180,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringHint" file="ExecuteRefactoringHint.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringHint">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -191,14 +191,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringStatement_Editor" file="ExecuteRefactoringStatement_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringStatement_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringStatement_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringStatement_EditorBuilder_a" file="ExecuteRefactoringStatement_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringStatement_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -256,7 +256,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicableHint" file="IsRefactoringApplicableHint.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicableHint">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -267,14 +267,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_Editor" file="IsRefactoringApplicable_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_EditorBuilder_a" file="IsRefactoringApplicable_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -327,14 +327,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelTarget_Editor" file="ModelTarget_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelTarget_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ModelTarget_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelTarget_EditorBuilder_a" file="ModelTarget_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelTarget_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -348,14 +348,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelsToGenerateByDefault_Editor" file="ModelsToGenerateByDefault_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelsToGenerateByDefault_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ModelsToGenerateByDefault_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelsToGenerateByDefault_EditorBuilder_a" file="ModelsToGenerateByDefault_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModelsToGenerateByDefault_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -366,14 +366,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModuleTarget_Editor" file="ModuleTarget_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModuleTarget_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.ModuleTarget_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.ModuleTarget_EditorBuilder_a" file="ModuleTarget_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.ModuleTarget_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet.LeftAngleBracketStyleClass" />
@@ -401,14 +401,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_Editor" file="MoveNodeToNodeExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_EditorBuilder_a" file="MoveNodeToNodeExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -432,14 +432,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_Editor" file="MoveNodesToNodeExpression_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_EditorBuilder_a" file="MoveNodesToNodeExpression_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
@@ -463,14 +463,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.NodeTarget_Editor" file="NodeTarget_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.NodeTarget_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.NodeTarget_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.NodeTarget_EditorBuilder_a" file="NodeTarget_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.NodeTarget_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -513,7 +513,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefExpressionParamUtil" file="RefExpressionParamUtil.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefExpressionParamUtil">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -525,7 +525,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringFieldReference_SubstituteMenu" file="RefactoringFieldReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringFieldReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -546,14 +546,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" file="RefactoringParameterReference_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_EditorBuilder_a" file="RefactoringParameterReference_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -594,7 +594,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_SubstituteMenu" file="RefactoringParameterReference_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_SubstituteMenu">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -615,14 +615,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_Editor" file="RefactoringParameter_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_EditorBuilder_a" file="RefactoringParameter_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -665,7 +665,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringTarget" file="RefactoringTarget.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringTarget">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -676,7 +676,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringTarget_ComponentBuilder_a" file="RefactoringTarget_ComponentBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringTarget_ComponentBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -718,14 +718,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.Refactoring_Editor" file="Refactoring_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.Refactoring_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.Refactoring_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.Refactoring_EditorBuilder_a" file="Refactoring_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.Refactoring_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -783,14 +783,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_Editor" file="UpdateModelProcedure_Editor.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_Editor">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_EditorBuilder_a" file="UpdateModelProcedure_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />

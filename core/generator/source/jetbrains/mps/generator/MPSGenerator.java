@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import jetbrains.mps.generator.trace.TraceRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 /**
  * Pack of generator-related {@linkplain CoreComponent components}.
@@ -33,7 +35,14 @@ import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  */
 public final class MPSGenerator extends ComponentPlugin implements ComponentHost {
   private final MPSCore myKernelComponents;
-  private FacetFactory myGeneratorFacetFactory = CustomGenerationModuleFacet::new;
+  private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
+    @Override
+    public SModuleFacet create(@NotNull SModule module) {
+      final CustomGenerationModuleFacet rv = new CustomGenerationModuleFacet();
+      rv.setModule(module);
+      return rv;
+    }
+  };
   private ModelGenerationStatusManager myGenerationStatusManager;
   private GenerationSettingsProvider mySettingsProvider;
   private TraceRegistry myTraceRegistry;
@@ -48,12 +57,10 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   @Override
   public void init() {
     super.init();
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache());
+    final GenerationDependenciesCache depsCache = new GenerationDependenciesCache();
     myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
     mySettingsProvider = init(new GenerationSettingsProvider());
-    // FIXME odd registration/un-registration mechanism. Factory shall know its facet type
-    // and #create there shall take SModule
     myKernelComponents.getModuleFacetRegistry().addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
     myTraceRegistry = init(new TraceRegistry());
   }

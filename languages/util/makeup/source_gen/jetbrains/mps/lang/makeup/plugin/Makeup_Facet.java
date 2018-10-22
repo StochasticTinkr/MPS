@@ -20,12 +20,14 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.core.plugin.TextGenOutcomeResource;
 import java.util.stream.IntStream;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
-import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.DeltaKey;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -33,8 +35,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
@@ -81,7 +81,7 @@ public class Makeup_Facet extends IFacet.Stub {
               subProgress_a0a0a.start("Markup textgen outcome", Sequence.fromIterable(input).count() + 2);
 
               final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
-              final List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
+              List<IDelta> deltas = ListSequence.fromList(new ArrayList<IDelta>());
 
               // XXX can I ask e.g. project for its FS? 
               final FileSystem localFileSystem = FileSystem.getInstance();
@@ -103,6 +103,7 @@ public class Makeup_Facet extends IFacet.Stub {
                 if (outputModelRepo == null) {
                   outputModelRepo = monitor.getSession().getProject().getRepository();
                 }
+                final FilesDelta d = new FilesDelta(new DeltaKey(res.getModule(), res.getModel()));
                 outputModelRepo.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
                     for (TextUnit tu : generatedTextUnits) {
@@ -124,27 +125,21 @@ public class Makeup_Facet extends IFacet.Stub {
                       // next code could be outside of model read 
                       IFile destFile = localFileSystem.getFile(destination);
                       boolean changed = fp.saveContent(destFile, tu.getBytes());
-                      FilesDelta d = new FilesDelta(destFile.getParent());
                       if (changed) {
                         d.written(destFile);
                       } else {
                         d.kept(destFile);
                       }
-                      ListSequence.fromList(deltas).addElement(d);
                     }
                   }
                 });
+                ListSequence.fromList(deltas).addElement(d);
                 subProgress_a0a0a.advance(1);
                 subProgress_a0a0a.step(res.getModel().getName().getLongName());
               }
 
               if (ListSequence.fromList(deltas).isNotEmpty()) {
-                IDelta folded = ListSequence.fromList(deltas).ofType(IDelta.class).reduceLeft(new ILeftCombinator<IDelta, IDelta>() {
-                  public IDelta combine(IDelta a, IDelta b) {
-                    return a.merge(b);
-                  }
-                });
-                _output_izvpn8_a0a = Sequence.fromIterable(_output_izvpn8_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(folded)))));
+                _output_izvpn8_a0a = Sequence.fromIterable(_output_izvpn8_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltas))));
               }
 
               subProgress_a0a0a.advance(1);

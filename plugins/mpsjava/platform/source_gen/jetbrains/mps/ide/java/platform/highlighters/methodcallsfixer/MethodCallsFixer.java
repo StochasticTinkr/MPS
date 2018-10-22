@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MethodCallsFixer extends BaseEditorChecker {
-  private static boolean DISABLED = false;
+  private static boolean DISABLED = true;
   private final SRepository myRepository;
   private MethodCallsUpdateSession myCurrentSession;
 

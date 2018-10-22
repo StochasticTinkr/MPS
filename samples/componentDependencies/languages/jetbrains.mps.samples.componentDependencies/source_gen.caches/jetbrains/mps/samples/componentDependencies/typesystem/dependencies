@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.typesystem.check_Component_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.typesystem.check_Dependency_NonTypesystemRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.check_Component_NonTypesystemRule" file="check_Component_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.check_Component_NonTypesystemRule">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.Queue" />
@@ -27,7 +27,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.check_Dependency_NonTypesystemRule" file="check_Dependency_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.samples.componentDependencies.typesystem.check_Dependency_NonTypesystemRule">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.Queue" />

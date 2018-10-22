@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatementRef_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatement_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatementRef_InferenceRule" file="typeof_CustomStatementRef_InferenceRule.java">
+  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatementRef_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatement_InferenceRule" file="typeof_CustomStatement_InferenceRule.java">
+  <dependency className="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatement_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

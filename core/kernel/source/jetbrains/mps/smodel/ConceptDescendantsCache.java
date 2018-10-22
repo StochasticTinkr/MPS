@@ -50,8 +50,8 @@ public class ConceptDescendantsCache implements CoreComponent {
   private final MPSModuleRepository myModuleRepository;
   private final LanguageRegistry myLanguageRegistry;
 
-  private final Map<LanguageRuntime, Set<ConceptDescriptor>> myLoadedLanguageToConceptsMap = new HashMap<LanguageRuntime, Set<ConceptDescriptor>>();
-  private final Set<LanguageRuntime> myNotProcessedRuntimes = new LinkedHashSet<LanguageRuntime>();
+  private final Map<LanguageRuntime, Set<ConceptDescriptor>> myLoadedLanguageToConceptsMap = new HashMap<>();
+  private final Set<LanguageRuntime> myNotProcessedRuntimes = new LinkedHashSet<>();
   private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
     @Override
     public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
@@ -62,9 +62,9 @@ public class ConceptDescendantsCache implements CoreComponent {
 
     @Override
     public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
-      HashSet<LanguageRuntime> c = new HashSet<LanguageRuntime>(IterableUtil.asCollection(languages));
+      HashSet<LanguageRuntime> c = new HashSet<>(IterableUtil.asCollection(languages));
       synchronized (myNotProcessedRuntimes) {
-        LinkedList<LanguageRuntime> notYetLoaded = new LinkedList<LanguageRuntime>(myNotProcessedRuntimes);
+        LinkedList<LanguageRuntime> notYetLoaded = new LinkedList<>(myNotProcessedRuntimes);
         notYetLoaded.retainAll(c);
         myNotProcessedRuntimes.removeAll(notYetLoaded);
         c.removeAll(notYetLoaded);
@@ -182,7 +182,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   public Set<SAbstractConcept> getDescendants(SAbstractConcept concept) {
     loadConceptsFromNotProcessedRuntimes();
     //note that linked here guarantees the iteration order
-    Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
+    Set<SAbstractConcept> result = new LinkedHashSet<>();
     collectDescendants(concept, result);
     return result;
   }
@@ -214,7 +214,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   private Set<SAbstractConcept> getDirectDescendantsInternal(SAbstractConcept concept) {
     myModuleRepository.getModelAccess().checkReadAccess();
     Set<SAbstractConcept> result = myDescendantsCache.get(concept);
-    return result != null ? result : Collections.<SAbstractConcept>emptySet();
+    return result != null ? result : Collections.emptySet();
   }
 
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
@@ -222,6 +222,6 @@ public class ConceptDescendantsCache implements CoreComponent {
     if (structureDescriptor == null) {
       return Collections.emptySet();
     }
-    return new LinkedHashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
+    return new LinkedHashSet<>(structureDescriptor.getDescriptors());
   }
 }

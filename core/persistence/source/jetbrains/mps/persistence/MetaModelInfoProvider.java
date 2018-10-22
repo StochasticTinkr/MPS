@@ -16,17 +16,12 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.registry.ConceptInfo;
 import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -40,7 +35,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 
@@ -149,7 +143,7 @@ public interface MetaModelInfoProvider {
    * Base implementation, clients shall extend this class rather than implement {@link jetbrains.mps.persistence.MetaModelInfoProvider} directly.
    * Always answers <code>null</code>, and a no-op for updates.
    */
-  public static class BaseMetaModelInfo implements MetaModelInfoProvider {
+  class BaseMetaModelInfo implements MetaModelInfoProvider {
 
     @Override
     public String getLanguageName(SLanguageId lang) {
@@ -250,7 +244,7 @@ public interface MetaModelInfoProvider {
    * Uses {@link jetbrains.mps.smodel.DebugRegistry} to retrieve names, if available.
    * Setter methods update {@link jetbrains.mps.smodel.DebugRegistry}.
    */
-  public static class RegularMetaModelInfo extends BaseMetaModelInfo {
+  class RegularMetaModelInfo extends BaseMetaModelInfo {
     private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
     private SModelReference myModelRef;
 
@@ -350,31 +344,15 @@ public interface MetaModelInfoProvider {
     @Override
     public SConceptId getStubConcept(SConceptId origin) {
       ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(origin);
-      if (cd != null && cd.getVersion() >= 2) {
-        return cd.getStubConceptId();
-      }
-      // fall through for legacy implementation. Remove once 2018.2 is out
-      String originFQName = getConceptName(origin);
-      if (originFQName == null) {
+      if (cd == null) {
+        LOG.info(String.format("No descriptor for concept %s", origin));
         return null;
       }
-      // FIXME move stub concept id to ConceptDescriptor
-      final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
-
-      if (!ModelAccess.instance().canRead()) {
-        String modelName = myModelRef == null ? "<unknown>" : myModelRef.getModelName();
-        LOG.error("Read action is needed to collect some non-AST properties of model " + modelName + ".\n" +
-            "Otherwise, StuffedMetaModelInfoProvider should be used, and this code should not be called.\n" +
-            "This error most possibly means that the model has stub concept attributes missing.\n" +
-            "This happens after merging models sometimes [MPS-23869].\n" +
-            "Possible fix is to open model " + modelName + " in MPS and re-save it\n", new Throwable());
-        return MetaIdFactory.INVALID_CONCEPT_ID;
-      }
-      final SConcept concept = MetaAdapterFactoryByName.getConcept(stubFQName);
-      if (!(concept.isValid())) {
+      if (cd.getVersion() < 2) {
+        LOG.error(String.format("Outdated descriptor for concept %s (%s), please re-generate respective language", cd.getConceptFqName(), origin));
         return null;
       }
-      return MetaIdHelper.getConcept(concept);
+      return cd.getStubConceptId();
     }
 
     @Override
@@ -408,16 +386,16 @@ public interface MetaModelInfoProvider {
    * Queries, if could not be resolved with the information filled in, are directed to delegate.
    * Depending on actual delegate used, may answer <code>null</code>.
    */
-  public static class StuffedMetaModelInfo extends BaseMetaModelInfo {
-    private final Map<SLanguageId, String> myLanguageNames = new HashMap<SLanguageId, String>();
-    private final Map<SConceptId, String> myConceptNames = new HashMap<SConceptId, String>();
-    private final Map<SPropertyId, String> myPropertyNames = new HashMap<SPropertyId, String>();
-    private final Map<SReferenceLinkId, String> myAssociationNames = new HashMap<SReferenceLinkId, String>();
-    private final Map<SContainmentLinkId, String> myAggregationNames = new HashMap<SContainmentLinkId, String>();
-    private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<SContainmentLinkId, Boolean>();
-    private final Map<SConceptId, StaticScope> myScope = new HashMap<SConceptId, StaticScope>();
-    private final Map<SConceptId, ConceptKind> myKind = new HashMap<SConceptId, ConceptKind>();
-    private final Map<SConceptId, SConceptId> myStubs = new HashMap<SConceptId, SConceptId>();
+  class StuffedMetaModelInfo extends BaseMetaModelInfo {
+    private final Map<SLanguageId, String> myLanguageNames = new HashMap<>();
+    private final Map<SConceptId, String> myConceptNames = new HashMap<>();
+    private final Map<SPropertyId, String> myPropertyNames = new HashMap<>();
+    private final Map<SReferenceLinkId, String> myAssociationNames = new HashMap<>();
+    private final Map<SContainmentLinkId, String> myAggregationNames = new HashMap<>();
+    private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<>();
+    private final Map<SConceptId, StaticScope> myScope = new HashMap<>();
+    private final Map<SConceptId, ConceptKind> myKind = new HashMap<>();
+    private final Map<SConceptId, SConceptId> myStubs = new HashMap<>();
     private final MetaModelInfoProvider myDelegate;
 
     public StuffedMetaModelInfo(@NotNull MetaModelInfoProvider delegate) {

@@ -90,10 +90,7 @@ public class JDOMUtil {
     FileInputStream in = new FileInputStream(file);
     try {
       return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-    } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
-      throw e;
-    } catch (IOException e) {
+    } catch (JDOMException | IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } finally {
@@ -133,14 +130,7 @@ public class JDOMUtil {
 
   public static SAXBuilder createBuilder() {
     final SAXBuilder saxBuilder = new SAXBuilder();
-    saxBuilder.setEntityResolver(new EntityResolver() {
-      @Override
-      public InputSource resolveEntity(String publicId,
-                       String systemId)
-        throws SAXException, IOException {
-        return new InputSource(new CharArrayReader(new char[0]));
-      }
-    });
+    saxBuilder.setEntityResolver((publicId, systemId) -> new InputSource(new CharArrayReader(new char[0])));
     return saxBuilder;
   }
 
@@ -252,7 +242,7 @@ public class JDOMUtil {
           buffer = new StringBuilder(text.length() + 20);
           // Copy previous skipped characters and fall through
           // to pickup current character
-          buffer.append(text.substring(0, i));
+          buffer.append(text, 0, i);
           buffer.append(quotation);
         }
       } else {
@@ -347,7 +337,7 @@ public class JDOMUtil {
           buffer = new StringBuilder(text.length());
           // Copy previous skipped characters and fall through
           // to pickup current character
-          buffer.append(text.substring(0, start));
+          buffer.append(text, 0, start);
           buffer.append(quotation);
         }
       } else {

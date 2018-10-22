@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4nwpcrxa66cjiohqlsivzq3mmpj5sng" />
+<product version="3" modelHash="51emq4kb7b3zettv29tovc4u6zjg602">
+  <files names="AspectMethodDescriptor_Editor.java:AspectMethodDescriptor_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:GenerationDescriptor_ByInterface_Editor.java:GenerationDescriptor_ByInterface_EditorBuilder_a.java:GenerationDescriptor_Class_Editor.java:GenerationDescriptor_Class_EditorBuilder_a.java:LanguageAspectDescriptor_Editor.java:LanguageAspectDescriptor_EditorBuilder_a.java:LanguageReference_Editor.java:LanguageReference_EditorBuilder_a.java:OldHelpURL_Editor.java:OldHelpURL_EditorBuilder_a.java:SimpleAspectOrderRef_Editor.java:SimpleAspectOrderRef_EditorBuilder_a.java:SimpleAspectOrderRef_SubstituteMenu.java:SimpleLanguageAspectDescriptor_Editor.java:SimpleLanguageAspectDescriptor_EditorBuilder_a.java" />
+</product>
 

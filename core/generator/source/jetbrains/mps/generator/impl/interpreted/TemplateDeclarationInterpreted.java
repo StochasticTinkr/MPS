@@ -15,37 +15,52 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.GeneratorUtil;
+import jetbrains.mps.generator.impl.CollectorSink;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.WeaveTemplateContainer;
+import jetbrains.mps.generator.runtime.ApplySink;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Evgeny Gryaznov, 12/13/10
  */
-public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
+public final class TemplateDeclarationInterpreted extends TemplateDeclarationBase implements TemplateDeclaration2 {
   private final SNode myTemplateNode;
-  private final TemplateCall myCallSite;
   private final SNodePointer myNodeRef;
-  private final boolean myIsTemplateDeclNode;
+  private final String[] myParameterNames;
   private volatile TemplateContainer myTemplates;
 
-  private TemplateDeclarationInterpreted(@NotNull SNode templateNode, @Nullable Object[] arguments) {
+  /*package*/ TemplateDeclarationInterpreted(@NotNull SNode templateNode) {
+    // there used to be some odd legacy code that allowed for !node<TD>, hence assert
+    assert templateNode.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration);
     myTemplateNode = templateNode;
-    myCallSite = new TemplateCall(RuleUtil.getTemplateDeclarationParameterNames(templateNode), arguments);
+    myParameterNames = RuleUtil.getTemplateDeclarationParameterNames(templateNode);
     myNodeRef = new SNodePointer(templateNode);
-    myIsTemplateDeclNode = templateNode.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration);
+  }
+
+  @Nullable
+  @Override
+  public String[] getParameterNames() {
+    return myParameterNames;
   }
 
   @Override
@@ -68,26 +83,41 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
 
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    if (myCallSite.argumentsMismatch()) {
-      environment.getLogger().error(myNodeRef, "number of arguments doesn't match template",
-                                    GeneratorUtil.describeInput(context),
-                                    GeneratorUtil.describe(myTemplateNode, "template declaration"));
-      // fall-though
-    }
-
-    // context may keep a mapping label (e.g. from outer $INCLUDE$ label template)
-    TemplateContext applyContext = myCallSite.prepareCallContext(context);
-
-    if (myIsTemplateDeclNode) {
-      final TemplateContainer tc = getTemplates();
-      return tc.processRuleConsequence(applyContext);
-    } else {
-      return environment.getTemplateProcessor().apply(myTemplateNode, applyContext);
-    }
+    final TemplateContainer tc = getTemplates();
+    CollectorSink s = new CollectorSink(new ArrayList<>());
+    tc.apply(s, context);
+    return s.getCollected();
   }
 
-  // return non-null value
-  public static TemplateDeclaration create(SNode templateNode, Object[] arguments) {
-    return new TemplateDeclarationInterpreted(templateNode, arguments);
+  @Override
+  public Collection<SNode> weave(@NotNull WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+    // Calling code is responsible to configure arguments
+    WeaveTemplateContainer tc = new WeaveTemplateContainer(myTemplateNode);
+    ArrayList<SNode> allWeavedNodes = new ArrayList<>();
+    ApplySink s = new ApplySink() {
+
+      @Override
+      public void add(SNode node) throws GenerationFailureException {
+        throw new TemplateProcessingFailureException(myTemplateNode, "Templates with fragments (TF) at the top are not supported for weaving");
+      }
+
+      @Override
+      public void add(SContainmentLink aggregation, SNode outputNodeToWeave) throws GenerationFailureException {
+        allWeavedNodes.add(outputNodeToWeave);
+        weaveFacility.weaveNode(aggregation, outputNodeToWeave);
+      }
+
+      @Override
+      public void add(SContainmentLink aggregation, Collection<SNode> outputNodesToWeave) throws GenerationFailureException {
+        allWeavedNodes.addAll(outputNodesToWeave);
+        for (SNode outputNodeToWeave : outputNodesToWeave) {
+          weaveFacility.weaveNode(aggregation, outputNodeToWeave);
+        }
+      }
+    };
+    TemplateContext context = weaveFacility.getTemplateContext();
+    tc.apply(s, context);
+
+    return Collections.emptyList();
   }
 }

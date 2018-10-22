@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-72z16rs7agkcqzoeb2qjg0q8vztcnf8" />
+<product version="3" modelHash="-ej8z4k7nnzuano5u4y735w74ynenkgt">
+  <files names="BehaviorAspectDescriptor.java:XmlAttribute__BehaviorDescriptor.java:XmlBaseAttribute__BehaviorDescriptor.java:XmlBaseElement__BehaviorDescriptor.java:XmlBasePrologElement__BehaviorDescriptor.java:XmlCDATA__BehaviorDescriptor.java:XmlCharRef__BehaviorDescriptor.java:XmlComment__BehaviorDescriptor.java:XmlContent__BehaviorDescriptor.java:XmlDeclaration__BehaviorDescriptor.java:XmlDoctypeDeclaration__BehaviorDescriptor.java:XmlElement__BehaviorDescriptor.java:XmlEntityRef__BehaviorDescriptor.java:XmlFile__BehaviorDescriptor.java:XmlPart__BehaviorDescriptor.java:XmlProcessingInstruction__BehaviorDescriptor.java:XmlPrologElement__BehaviorDescriptor.java:XmlProlog__BehaviorDescriptor.java:XmlTextValue__BehaviorDescriptor.java:XmlText__BehaviorDescriptor.java:XmlValuePart__BehaviorDescriptor.java:XmlWhitespace__BehaviorDescriptor.java" />
+</product>
 

@@ -61,7 +61,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
-    int lastCellWidth;
     int braceIndent = 0;
     int width = 0;
     int height = 0;
@@ -74,7 +73,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       height += cellHeight /*+ editorCell.getTopInset() + editorCell.getBottomInset()*/;
     }
     for (EditorCell editorCell : cells) {
-      lastCellWidth = editorCell.getWidth();
+      int lastCellWidth = editorCell.getWidth();
       int indent = getBracesIndent(editorCell);
       int delta = braceIndent - indent;
       width = Math.max(width, lastCellWidth + delta);
@@ -167,7 +166,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   private void setX(EditorCell cell, int newX) {
     int deltaX = newX - cell.getX();
-    Deque<EditorCell> cellsToMove = new LinkedList<EditorCell>();
+    Deque<EditorCell> cellsToMove = new LinkedList<>();
     cellsToMove.add(cell);
     while (!cellsToMove.isEmpty()) {
       EditorCell nextCell = cellsToMove.removeFirst();

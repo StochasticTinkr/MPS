@@ -67,7 +67,7 @@ public class EditorSettingsConfigurable implements SearchableConfigurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     mySettingsPreferencesPage.commit();
   }
 

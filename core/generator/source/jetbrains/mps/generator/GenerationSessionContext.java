@@ -19,15 +19,17 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.trace.TraceFacility;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
-import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,7 +50,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Igor Alshannikov
  * Sep 19, 2005
  */
-public class GenerationSessionContext extends StandaloneMPSContext {
+public class GenerationSessionContext {
 
   private final Object COPIED_ROOTS = new Object();
 
@@ -78,7 +80,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
-  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
+  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<>();
 
   public GenerationSessionContext(GenControllerContext environment, TransientModelsModule transientModule,
                                   GenerationSessionLogger logger,
@@ -119,15 +121,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myOriginalInputModel;
   }
 
-  @Override
   @NotNull
   public TransientModelsModule getModule() {
     return myTransientModule;
   }
 
-  @Override
   @ToRemove(version = 3.3)
   public Project getProject() {
+    Logger.getLogger(getClass()).error("Please stop using GenerationSessionContext.getProject aka IOperationContext.getProject from within a generator");
     // XXX still in use in mbeddr (through IOperationContext)
     SRepository repository = myOriginalInputModel.getModule().getRepository();
     if (!(repository instanceof ProjectRepository)) {
@@ -290,7 +291,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   private Set<String> getUsedNames(SNode contextNode) {
     SNodeReference key = contextNode == null ? myFakeNameTopContextNode : contextNode.getReference();
-    Set<String> rv = myUsedNames.putIfAbsent(key, new ConcurrentHashSet<String>());
+    Set<String> rv = myUsedNames.putIfAbsent(key, new ConcurrentHashSet<>());
     return rv == null ? myUsedNames.get(key) : rv;
   }
 
@@ -315,7 +316,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     @SuppressWarnings("unchecked")
     Set<SNode> set = (Set<SNode>) getStepObject(COPIED_ROOTS);
     if (set == null && create) {
-      putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
+      putStepObject(COPIED_ROOTS, set = new HashSet<>());
     }
     return set;
   }
@@ -345,5 +346,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public CrossModelEnvironment getCrossModelEnvironment() {
     // same considerations applies as for #getRoleValidationFacility() above, need a distinct implementation context for TG (could use StepArguments, perhaps).
     return myEnvironment.getCrossModelEnvironment();
+  }
+
+  @Nullable
+  public TraceFacility getTraceSession() {
+    return myEnvironment.getTraceSession();
   }
 }

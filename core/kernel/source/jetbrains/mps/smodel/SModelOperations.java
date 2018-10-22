@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -117,59 +115,6 @@ public class SModelOperations {
   }
 
   /**
-   * @deprecated Use {@link ModelDependencyUpdate} instead. Although it's a bit different (imports languages first, than
-   *   updates model imports; and uses module's scope instead of GMDM to figure out visible models), I don't think any
-   *   client relies on this particular behaviour.
-   * Populate given model with proper imports/languages according to actual model content (i.e. nodes)
-   * @param model model to populate with language/import dependencies
-   * @param updateModuleImports <code>true</code> to update imports of model's module (if any)
-   * @param firstVersion whether to use unspecified or actual model version, doesn't make sense for present MPS state (we don't keep these versions in v9), value is ignored
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
-    ModelDependencyUpdate mdu = new ModelDependencyUpdate(model);
-    mdu.updateUsedLanguages();
-    mdu.updateImportedModels(null); // throw-away method, don't care to get proper imports
-    if (updateModuleImports && model.getModule() != null && model.getRepository() != null) {
-      mdu.updateModuleDependencies(model.getRepository());
-    }
-  }
-
-  /**
-   * All languages visible for the model, including imported and languages they extend
-   * @deprecated 'visible' is vague, whether it's module dependencies or used languages; use SLanguage instead of Language; replace with <code>new SLanguageHierarchy(SModelOperations.getAllLanguageImports()).getExtended()</code>
-   * MPS 3.4 note: despite being deprecated for 1.5 years to date, there are uses of the method. Those in actions are likely to fade away with
-   * new generated code (RT aspects), others deserve attention of the change architect (i.e. accessory models vs language runtime).
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<Language> getLanguages(SModel model) {
-    // in use in mbeddr
-    ArrayList<Language> languages = new ArrayList<>();
-    SRepository repository = model.getRepository();
-    if (repository == null) {
-      // FIXME generator does #validateLanguagesAndImports for detached models, that's why I have to resort to global instance for now.
-      repository = MPSModuleRepository.getInstance();
-//      throw new IllegalArgumentException("Can't figure out modules for languages of a detached model. Context repository missing");
-    }
-    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
-
-    for (SLanguage lang : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(model)).getExtended()) {
-      final SModuleReference sourceModuleRef = lang.getSourceModuleReference();
-      if (sourceModuleRef == null) {
-        continue;
-      }
-      final SModule sourceModule = sourceModuleRef.resolve(repository);
-      if (sourceModule instanceof Language) {
-        languages.add((Language) sourceModule);
-      }
-    }
-    return languages;
-  }
-
-  /**
    * Tell used languages of a model the way user specified them in model dependencies.
    * Doesn't look at actual model content (i.e. what concept instances are there).
    * <p>
@@ -179,9 +124,12 @@ public class SModelOperations {
    * IMPORTANT: For a {@code model} that is not attached to a repository, set of used languages may be incomplete (MPS needs to resolve
    * used DevKit modules to tell languages they expose).
    * </p>
+   * @deprecated use {@link ModelDependencyResolver} instead
    * @return set of languages imported by the model, either directly or through devkit
    * @since 3.3
    */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   @NotNull
   public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
     if (model instanceof SModelDescriptorStub) {
@@ -193,38 +141,34 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
+  // FIXME needs LanguageRegistry or ComponentHost
+  // TODO document contract what constitutes imported models (i.e. accessory models of extended languages)
+  /**
+   * @deprecated use {@link ModelDependencyResolver} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static List<SModel> allImportedModels(SModel model) {
     // no uses in mbeddr
-    Set<SModel> result = new LinkedHashSet<SModel>();
-    result.addAll(importedModels(model));
-
-    for (Language language : getLanguages(model)) {
-      List<SModel> accessoryModels = language.getAccessoryModels();
-      result.addAll(accessoryModels);
+    SRepository repo = model.getRepository();
+    if (repo == null) {
+      // Compatibility mechanism as long as there's code that uses allImportedModels() for detached models
+      // like transients during M2M. Once Generator gets its own repository for transients, we don't need to care
+      // about detached models any longer
+      repo = MPSModuleRepository.getInstance();
     }
-
-    result.remove(model);
-
-    return new ArrayList<SModel>(result);
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repo);
+    ModelDependencyResolver mdr = new ModelDependencyResolver(languageRegistry, repo);
+    Set<SModel> result = new LinkedHashSet<>();
+    result.addAll(mdr.directImports(model));
+    result.addAll(mdr.implicitImports(model));
+    return new ArrayList<>(result);
   }
 
   //todo rewrite using iterators
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     return new ArrayList<>(new ModelImports(sModel).getImportedModels());
-  }
-
-  @NotNull
-  private static List<SModel> importedModels(final SModel model) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    for (SModelReference modelReference : new ModelImports(model).getImportedModels()) {
-      SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
-
-      if (modelDescriptor != null) {
-        modelsList.add(modelDescriptor);
-      }
-    }
-    return modelsList;
   }
 
   //-----------------------------------------------------

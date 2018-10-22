@@ -110,7 +110,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
       newOptions.add(ContentLoadingExtentOptions.INTERFACE_ONLY);
     }
     try {
-      return load(dataSource, newOptions.toArray(new ModelLoadingOption[newOptions.size()]));
+      return load(dataSource, newOptions.toArray(new ModelLoadingOption[0]));
     } catch (ModelLoadException e) {
       throw new IOException(e);
     }
@@ -123,11 +123,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    try {
-      return create(dataSource, new SModelName(modelName));
-    } catch (ModelCreationException e) {
-      throw new IOException(e);
-    }
+    return create(dataSource, new SModelName(modelName));
   }
 
   @Override
@@ -144,8 +140,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
   @Override
   public SModel create(@NotNull DataSource dataSource,
                        @NotNull SModelName modelName,
-                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
-                                                                      ModelCreationException {
+                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException {
     if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -395,7 +390,7 @@ public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFac
 
     @NotNull
     @Override
-    public ModelLoadResult readModel(@NotNull SModelHeader header, ModelLoadingState state) throws ModelReadException {
+    public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
       return ModelPersistence.readModel(header, getSource(), state);
     }
 

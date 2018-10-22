@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" file="AbstractJetpadCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell">
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
@@ -37,7 +37,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" file="BlockCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -73,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" file="ConnectorCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" file="DiagramCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell">
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
@@ -163,7 +163,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" file="EmptyCellLayout.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.TextBuilderImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" file="JetpadUtils.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -188,7 +188,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" file="PortCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PortCell">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView" />
@@ -196,7 +196,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" file="PropertyMapperCell.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell">
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
@@ -205,17 +205,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" file="ReadableModelProperty.java">
-    <classNode dependClassName="java.lang.Deprecated" />
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.ValueProperty" />
   </dependency>
-  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" file="WritableModelProperty.java">
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />

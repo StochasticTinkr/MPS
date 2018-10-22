@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference.util;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
@@ -25,9 +26,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class StructuralNodeMap<T> implements Map<SNode, T> {
-  private Map<SNode, SNode> myRepresentatorsMap = new THashMap<SNode, SNode>();
-  private Map<SNode, T> myMap = new THashMap<SNode, T>();
-  private Set<SNode> myAbsentNodes = new THashSet<SNode>();
+  private Map<SNode, SNode> myRepresentatorsMap = new THashMap<>();
+  private Map<SNode, T> myMap = new THashMap<>();
+  private Set<SNode> myAbsentNodes = new THashSet<>();
 
   public SNode getKeyRepresentator(SNode node) {
     return myRepresentatorsMap.get(node);
@@ -49,10 +50,11 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
   }
 
   @Override
-  public void putAll(Map<? extends SNode, ? extends T> t) {
+  public void putAll(@NotNull Map<? extends SNode, ? extends T> t) {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
   public Set<SNode> keySet() {
     return myMap.keySet();
@@ -65,11 +67,13 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
     myAbsentNodes.clear();
   }
 
+  @NotNull
   @Override
   public Collection<T> values() {
     return myMap.values();
   }
 
+  @NotNull
   @Override
   public Set<Entry<SNode, T>> entrySet() {
     return myMap.entrySet();

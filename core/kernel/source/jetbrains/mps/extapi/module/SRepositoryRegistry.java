@@ -30,8 +30,8 @@ public class SRepositoryRegistry implements CoreComponent {
   private static SRepositoryRegistry INSTANCE;
 
   private final Object LOCK = new Object();
-  private Set<SRepository> myRepositories = new LinkedHashSet<SRepository>();
-  private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<SRepositoryListener>();
+  private Set<SRepository> myRepositories = new LinkedHashSet<>();
+  private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<>();
 
   /**
    * @deprecated Instead, access instance through respective kernel {@link jetbrains.mps.components.ComponentPlugin} (i.e. {@code MPSCore}).
@@ -63,21 +63,11 @@ public class SRepositoryRegistry implements CoreComponent {
   public void addRepository(final SRepository repository) {
     // listeners may access content of a newly added repository, hence the read lock
     // Perhaps, caller shall be responsible for this (need to update method API/documentation then).
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        doRepositoryAdd(repository);
-      }
-    });
+    repository.getModelAccess().runReadAction(() -> doRepositoryAdd(repository));
   }
 
   public void removeRepository(final SRepository repository) {
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        doRepositoryRemove(repository);
-      }
-    });
+    repository.getModelAccess().runReadAction(() -> doRepositoryRemove(repository));
   }
 
   void doRepositoryAdd(SRepository repository) {
@@ -102,12 +92,7 @@ public class SRepositoryRegistry implements CoreComponent {
     synchronized (LOCK) {
       myGlobalListeners.add(listener);
       for (final SRepository r : myRepositories) {
-        r.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            r.addRepositoryListener(listener);
-          }
-        });
+        r.getModelAccess().runReadAction(() -> r.addRepositoryListener(listener));
       }
     }
   }
@@ -115,12 +100,7 @@ public class SRepositoryRegistry implements CoreComponent {
   public void removeGlobalListener(final SRepositoryListener listener) {
     synchronized (LOCK) {
       for (final SRepository r : myRepositories) {
-        r.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            r.removeRepositoryListener(listener);
-          }
-        });
+        r.getModelAccess().runReadAction(() -> r.removeRepositoryListener(listener));
       }
       myGlobalListeners.remove(listener);
     }

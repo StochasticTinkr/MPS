@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="168cdm686i747xhv7at34a2symi37u3" />
+<product version="3" modelHash="a7l7mmdfope25ywz9k165liapg5mkfo">
+  <files names="EditorAspectDescriptorImpl.java:NamedContribution.java:SubstituteMenu_Group_CanExecute.java" />
+</product>
 

@@ -2,7 +2,7 @@
 <model ref="r:92729f14-904d-49b9-944a-e9e4aeec5f56(jetbrains.mps.baseLanguage.regexp.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
@@ -100,7 +100,7 @@
     <property role="TrG5h" value="Replacer" />
     <node concept="3Tm1VV" id="799lhKuovmm" role="1B3o_S" />
     <node concept="3clFb_" id="799lhKuovmn" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="replace" />
       <node concept="3Tm1VV" id="799lhKuovmo" role="1B3o_S" />
       <node concept="3uibUv" id="799lhKuovmp" role="3clF45">

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
@@ -121,6 +121,12 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
@@ -678,6 +684,92 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="7WyXo5rCC5x" role="3cqZAp" />
+        <node concept="3SKdUt" id="7WyXo5rCEuy" role="3cqZAp">
+          <node concept="3SKdUq" id="7WyXo5rCEu$" role="3SKWNk">
+            <property role="3SKdUp" value="Special group of actions from PlatformActions.xml" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCBss" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCBst" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCBsu" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCBsv" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCBsw" role="37wK5m">
+                <property role="Xl_RC" value="Diff.ComparePartial.Base.Left" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCCkc" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCCkd" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCCke" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCCkf" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCCkg" role="37wK5m">
+                <property role="Xl_RC" value="Diff.ComparePartial.Base.Right" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCCEw" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCCEx" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCCEy" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCCEz" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCCE$" role="37wK5m">
+                <property role="Xl_RC" value="Diff.ComparePartial.Left.Right" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCD1k" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCD1l" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCD1m" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCD1n" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCD1o" role="37wK5m">
+                <property role="Xl_RC" value="Diff.CompareWithBase.Left" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCD2p" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCD2q" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCD2r" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCD2s" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCD2t" role="37wK5m">
+                <property role="Xl_RC" value="Diff.CompareWithBase.Result" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WyXo5rCDxa" role="3cqZAp">
+          <node concept="2OqwBi" id="7WyXo5rCDxb" role="3clFbG">
+            <node concept="37vLTw" id="7WyXo5rCDxc" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="7WyXo5rCDxd" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="7WyXo5rCDxe" role="37wK5m">
+                <property role="Xl_RC" value="Diff.CompareWithBase.Right" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="7WyXo5rCBej" role="3cqZAp" />
+        <node concept="3clFbH" id="7WyXo5rCBPI" role="3cqZAp" />
         <node concept="3clFbH" id="1YKWOow4nWD" role="3cqZAp" />
         <node concept="3cpWs6" id="1YKWOow4nW_" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTuRz" role="3cqZAk">

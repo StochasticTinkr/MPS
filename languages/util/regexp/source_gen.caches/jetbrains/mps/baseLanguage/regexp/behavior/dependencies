@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp__BehaviorDescriptor" file="AtLeastNTimesRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp__BehaviorDescriptor" />
@@ -64,7 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart__BehaviorDescriptor" file="CharacterSymbolClassPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -88,7 +88,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp__BehaviorDescriptor" file="FromNToMTimesRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart__BehaviorDescriptor" file="IntersectionSymbolClassPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -139,7 +139,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart__BehaviorDescriptor" file="IntervalSymbolClassPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -163,7 +163,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement__BehaviorDescriptor" file="LiteralReplacement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Class" />
@@ -193,7 +193,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp__BehaviorDescriptor" file="LookRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -220,7 +220,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp__BehaviorDescriptor" file="MatchParensRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -249,7 +249,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp__BehaviorDescriptor" file="MatchVariableReferenceRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -274,7 +274,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement__BehaviorDescriptor" file="MatchVariableReferenceReplacement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -301,7 +301,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp__BehaviorDescriptor" file="NTimesRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -328,7 +328,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp__BehaviorDescriptor" file="OrRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -355,7 +355,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp__BehaviorDescriptor" file="ParensRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -380,7 +380,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp__BehaviorDescriptor" file="PredefinedSymbolClassRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -405,7 +405,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor" file="PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -429,7 +429,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp__BehaviorDescriptor" file="RegexpDeclarationReferenceRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -454,7 +454,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" file="Regexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Class" />
@@ -485,7 +485,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock__BehaviorDescriptor" file="ReplaceBlock__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -509,7 +509,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__BehaviorDescriptor" file="ReplaceRegexpOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -534,7 +534,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.Replacement__BehaviorDescriptor" file="Replacement__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.Replacement__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -557,7 +557,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp__BehaviorDescriptor" file="SeqRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -583,7 +583,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp__BehaviorDescriptor" file="StringLiteralRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Class" />
@@ -612,7 +612,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart__BehaviorDescriptor" file="SymbolClassPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -639,7 +639,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart__BehaviorDescriptor" file="SymbolClassRegexpAndPart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -661,7 +661,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp__BehaviorDescriptor" file="SymbolClassRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -689,7 +689,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" file="UnaryRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -717,7 +717,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp__BehaviorDescriptor" file="UnicodeCharacterRegexp__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

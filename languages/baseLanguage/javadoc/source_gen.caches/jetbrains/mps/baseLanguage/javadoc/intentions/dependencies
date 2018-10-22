@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention" file="AddAuthorBlockDocTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -20,7 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" file="AddClassifierDocComment_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -47,7 +47,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention" file="AddDeprecatedBlockDocTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -69,7 +69,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" file="AddFieldDocComment_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -91,7 +91,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" file="AddMethodDocComment_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -118,7 +118,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" file="AddParameterBlockDocTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -136,7 +136,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" file="AddReturnBlockTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -157,7 +157,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" file="AddSeeBlockTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -175,7 +175,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" file="AddSinceBlockDocTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -195,7 +195,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" file="AddStaticFieldDocComment_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -217,7 +217,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" file="AddThrowBlockDocTag_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -235,7 +235,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention" file="AddVersionBlockTagDoc_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -255,7 +255,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" file="BlockDocTagHelper.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -263,7 +263,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" file="DocCommentHelper.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -272,7 +272,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention" file="FoldHTMLElement_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -293,7 +293,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -322,7 +322,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.OrganizeTags_Intention" file="OrganizeTags_Intention.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.OrganizeTags_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

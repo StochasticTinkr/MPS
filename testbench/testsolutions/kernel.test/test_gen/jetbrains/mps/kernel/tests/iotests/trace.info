@@ -38,39 +38,36 @@
       <node id="5164231775618799909" at="67,71,68,56" concept="4" />
       <node id="5164231775618799916" at="68,56,69,26" concept="1" />
       <node id="8840653798638743766" at="71,23,72,93" concept="1" />
-      <node id="5164231775618799925" at="76,80,77,62" concept="5" />
-      <node id="5164231775618799940" at="79,59,80,77" concept="1" />
-      <node id="5164231775618799945" at="80,77,81,79" concept="1" />
-      <node id="5164231775618799950" at="81,79,82,61" concept="1" />
-      <node id="5164231775618799955" at="82,61,83,56" concept="1" />
-      <node id="5164231775618799962" at="83,56,84,106" concept="1" />
-      <node id="5164231775618799969" at="84,106,85,54" concept="1" />
-      <node id="5164231775618799976" at="85,54,86,179" concept="1" />
-      <node id="5164231775618799995" at="88,82,89,92" concept="1" />
-      <node id="5164231775618800000" at="89,92,90,106" concept="1" />
-      <node id="5164231775618800012" at="90,106,91,62" concept="1" />
-      <node id="5164231775618800019" at="91,62,92,209" concept="1" />
-      <node id="5164231775618800039" at="92,209,93,55" concept="1" />
-      <node id="5164231775618800046" at="93,55,94,184" concept="1" />
-      <node id="5164231775618799745" at="74,0,76,0" concept="0" trace="FacetDescriptorsIO_Test#()V" />
+      <node id="5164231775618799925" at="74,80,75,62" concept="5" />
+      <node id="5164231775618799940" at="77,59,78,77" concept="1" />
+      <node id="5164231775618799945" at="78,77,79,79" concept="1" />
+      <node id="5164231775618799950" at="79,79,80,61" concept="1" />
+      <node id="5164231775618799955" at="80,61,81,56" concept="1" />
+      <node id="5164231775618799962" at="81,56,82,106" concept="1" />
+      <node id="5164231775618799969" at="82,106,83,54" concept="1" />
+      <node id="5164231775618799976" at="83,54,84,179" concept="1" />
+      <node id="5164231775618799995" at="86,82,87,92" concept="1" />
+      <node id="5164231775618800000" at="87,92,88,106" concept="1" />
+      <node id="5164231775618800012" at="88,106,89,62" concept="1" />
+      <node id="5164231775618800019" at="89,62,90,209" concept="1" />
+      <node id="5164231775618800039" at="90,209,91,55" concept="1" />
+      <node id="5164231775618800046" at="91,55,92,184" concept="1" />
       <node id="1537909269538584057" at="35,0,38,0" concept="3" trace="accept#(Lorg/jdom/Element;)Z" />
       <node id="7113564998979582931" at="41,0,44,0" concept="3" trace="accept#(Lorg/jdom/Element;)Z" />
       <node id="5164231775618799743" at="71,0,74,0" concept="3" trace="setUp#()V" />
-      <node id="5164231775618799919" at="76,0,79,0" concept="3" trace="readRoot#(Ljetbrains/mps/vfs/IFile;)Lorg/jdom/Element;" />
+      <node id="5164231775618799919" at="74,0,77,0" concept="3" trace="readRoot#(Ljetbrains/mps/vfs/IFile;)Lorg/jdom/Element;" />
       <node id="842994667883032814" at="33,73,38,7" concept="4" />
       <node id="7113564998979582898" at="39,39,44,7" concept="4" />
       <node id="5164231775618799825" at="51,0,57,0" concept="3" trace="test_ideaModule#()V" />
       <node id="5164231775618799849" at="57,0,64,0" concept="3" trace="test_solutionDescriptorIO#()V" />
       <node id="5164231775618799885" at="64,0,71,0" concept="3" trace="test_nofacetDescriptorIO#()V" />
-      <node id="5164231775618799987" at="88,0,96,0" concept="3" trace="assertSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
-      <node id="5164231775618799934" at="79,0,88,0" concept="3" trace="assertMpsCfg#(Ljetbrains/mps/project/foreign/MPSFacetConfiguration;)V" />
+      <node id="5164231775618799987" at="86,0,94,0" concept="3" trace="assertSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
+      <node id="5164231775618799934" at="77,0,86,0" concept="3" trace="assertMpsCfg#(Ljetbrains/mps/project/foreign/MPSFacetConfiguration;)V" />
       <node id="5164231775618799750" at="29,0,51,0" concept="3" trace="test_mpsFacet#()V" />
-      <scope id="5164231775618799748" at="74,36,74,36" />
       <scope id="1537909269538584058" at="35,41,36,67" />
       <scope id="7113564998979582932" at="41,42,42,59" />
       <scope id="8840653798638742143" at="71,23,72,93" />
-      <scope id="5164231775618799924" at="76,80,77,62" />
-      <scope id="5164231775618799745" at="74,0,76,0" />
+      <scope id="5164231775618799924" at="74,80,75,62" />
       <scope id="1537909269538584057" at="35,0,38,0">
         <var name="it" id="1537909269538584057" />
       </scope>
@@ -78,7 +75,7 @@
         <var name="fct" id="7113564998979582931" />
       </scope>
       <scope id="5164231775618799743" at="71,0,74,0" />
-      <scope id="5164231775618799919" at="76,0,79,0">
+      <scope id="5164231775618799919" at="74,0,77,0">
         <var name="moduleFile" id="5164231775618799922" />
       </scope>
       <scope id="5164231775618799828" at="51,50,55,25">
@@ -97,15 +94,15 @@
         <var name="sd" id="5164231775618799910" />
       </scope>
       <scope id="5164231775618799825" at="51,0,57,0" />
-      <scope id="5164231775618799994" at="88,82,94,184" />
+      <scope id="5164231775618799994" at="86,82,92,184" />
       <scope id="5164231775618799849" at="57,0,64,0" />
       <scope id="5164231775618799885" at="64,0,71,0" />
-      <scope id="5164231775618799939" at="79,59,86,179" />
-      <scope id="5164231775618799987" at="88,0,96,0">
+      <scope id="5164231775618799939" at="77,59,84,179" />
+      <scope id="5164231775618799987" at="86,0,94,0">
         <var name="moduleFile" id="5164231775618799990" />
         <var name="sd" id="5164231775618799992" />
       </scope>
-      <scope id="5164231775618799934" at="79,0,88,0">
+      <scope id="5164231775618799934" at="77,0,86,0">
         <var name="mpsCfg" id="5164231775618799937" />
       </scope>
       <scope id="5164231775618799753" at="29,48,49,30">
@@ -120,7 +117,7 @@
       <scope id="5164231775618799750" at="29,0,51,0" />
       <unit id="1537909269538584057" at="34,75,38,5" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$1" />
       <unit id="7113564998979582931" at="40,100,44,5" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$2" />
-      <unit id="5164231775618799743" at="26,0,97,0" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test" />
+      <unit id="5164231775618799743" at="26,0,95,0" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test" />
     </file>
   </root>
   <root nodeRef="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)/5164231775618800060">

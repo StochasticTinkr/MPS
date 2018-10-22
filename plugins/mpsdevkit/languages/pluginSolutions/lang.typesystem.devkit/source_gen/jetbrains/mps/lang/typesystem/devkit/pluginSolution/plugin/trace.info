@@ -15,37 +15,37 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)/3273650261466121722">
     <file name="GoToTypeErrorHelper.java">
-      <node id="3273650261466284400" at="13,0,14,0" concept="3" trace="myEditorComponent" />
-      <node id="3273650261466285462" at="14,63,15,40" concept="2" />
-      <node id="3273650261466289818" at="17,61,18,121" concept="7" />
-      <node id="3273650261466289830" at="19,64,20,18" concept="8" />
-      <node id="3273650261466289845" at="23,44,24,100" concept="8" />
-      <node id="3273650261466289858" at="26,24,27,28" concept="8" />
-      <node id="3273650261466292197" at="29,49,30,82" concept="8" />
-      <node id="3273650261466285454" at="14,0,17,0" concept="1" trace="GoToTypeErrorHelper#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-      <node id="3273650261466289828" at="18,121,21,5" concept="5" />
-      <node id="3273650261466289843" at="23,0,26,0" concept="6" trace="accept#(Ljetbrains/mps/errors/item/ReportItem;)Z" />
-      <node id="3273650261466292192" at="29,0,32,0" concept="6" trace="getMostRelevantReportItem#()Ljetbrains/mps/errors/item/ReportItem;" />
-      <node id="3273650261466289835" at="21,5,26,24" concept="7" />
-      <node id="3273650261466289812" at="17,0,29,0" concept="6" trace="getMaxSeverityReportItems#()Ljava/util/Collection;" />
-      <scope id="3273650261466285458" at="14,63,15,40" />
-      <scope id="3273650261466289829" at="19,64,20,18" />
-      <scope id="3273650261466289844" at="23,44,24,100" />
-      <scope id="3273650261466292196" at="29,49,30,82" />
-      <scope id="3273650261466285454" at="14,0,17,0">
+      <node id="3273650261466284400" at="14,0,15,0" concept="3" trace="myEditorComponent" />
+      <node id="3273650261466285462" at="15,63,16,40" concept="2" />
+      <node id="3273650261466289818" at="18,71,19,130" concept="7" />
+      <node id="3273650261466289830" at="20,64,21,18" concept="8" />
+      <node id="3273650261466289845" at="24,53,25,100" concept="8" />
+      <node id="3273650261466289858" at="27,24,28,28" concept="8" />
+      <node id="3273650261466292197" at="30,49,31,82" concept="8" />
+      <node id="3273650261466285454" at="15,0,18,0" concept="1" trace="GoToTypeErrorHelper#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+      <node id="3273650261466289828" at="19,130,22,5" concept="5" />
+      <node id="3273650261466289843" at="24,0,27,0" concept="6" trace="accept#(Ljetbrains/mps/errors/item/IssueKindReportItem;)Z" />
+      <node id="3273650261466292192" at="30,0,33,0" concept="6" trace="getMostRelevantReportItem#()Ljetbrains/mps/errors/item/ReportItem;" />
+      <node id="3273650261466289835" at="22,5,27,24" concept="7" />
+      <node id="3273650261466289812" at="18,0,30,0" concept="6" trace="getMaxSeverityReportItems#()Ljava/util/Collection;" />
+      <scope id="3273650261466285458" at="15,63,16,40" />
+      <scope id="3273650261466289829" at="20,64,21,18" />
+      <scope id="3273650261466289844" at="24,53,25,100" />
+      <scope id="3273650261466292196" at="30,49,31,82" />
+      <scope id="3273650261466285454" at="15,0,18,0">
         <var name="editorComponent" id="3273650261466285461" />
       </scope>
-      <scope id="3273650261466289843" at="23,0,26,0">
+      <scope id="3273650261466289843" at="24,0,27,0">
         <var name="it" id="3273650261466289843" />
       </scope>
-      <scope id="3273650261466292192" at="29,0,32,0" />
-      <scope id="3273650261466289817" at="17,61,27,28">
+      <scope id="3273650261466292192" at="30,0,33,0" />
+      <scope id="3273650261466289817" at="18,71,28,28">
         <var name="allItems" id="3273650261466289819" />
         <var name="maxSeverityItems" id="3273650261466289836" />
       </scope>
-      <scope id="3273650261466289812" at="17,0,29,0" />
-      <unit id="3273650261466289843" at="22,94,26,5" name="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorHelper$1" />
-      <unit id="3273650261466121722" at="12,0,33,0" name="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorHelper" />
+      <scope id="3273650261466289812" at="18,0,30,0" />
+      <unit id="3273650261466289843" at="23,104,27,5" name="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorHelper$1" />
+      <unit id="3273650261466121722" at="13,0,34,0" name="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorHelper" />
     </file>
   </root>
   <root nodeRef="r:bf6ff1bc-5ee9-482f-981b-49fe4400ac01(jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin)/5181507218630412169">

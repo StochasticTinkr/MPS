@@ -243,6 +243,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -259,9 +262,11 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt" />
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
@@ -271,6 +276,9 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -2589,6 +2597,83 @@
     <node concept="1YaCAy" id="6mx7ef$AIYR" role="1YuTPh">
       <property role="TrG5h" value="mpsTips" />
       <ref role="1YaFvo" to="kdzh:75N6Lqy0tuW" resolve="BuildMps_Tips" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="36cV00CbxrN">
+    <property role="TrG5h" value="IdeaPluginIsInLayout" />
+    <node concept="3clFbS" id="36cV00CbxrO" role="18ibNy">
+      <node concept="3cpWs8" id="36cV00CbCQd" role="3cqZAp">
+        <node concept="3cpWsn" id="36cV00CbCQe" role="3cpWs9">
+          <property role="TrG5h" value="buildProject" />
+          <node concept="3Tqbb2" id="36cV00CbCQ9" role="1tU5fm">
+            <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+          </node>
+          <node concept="2OqwBi" id="36cV00CbCQf" role="33vP2m">
+            <node concept="1YBJjd" id="36cV00CbCQg" role="2Oq$k0">
+              <ref role="1YBMHb" node="36cV00CbxrQ" resolve="ideaPlugin" />
+            </node>
+            <node concept="2Xjw5R" id="36cV00CbCQh" role="2OqNvi">
+              <node concept="1xMEDy" id="36cV00CbCQi" role="1xVPHs">
+                <node concept="chp4Y" id="36cV00CbCQj" role="ri$Ld">
+                  <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="36cV00CbBZI" role="3cqZAp">
+        <node concept="2GrKxI" id="36cV00CbBZJ" role="2Gsz3X">
+          <property role="TrG5h" value="layoutNode" />
+        </node>
+        <node concept="2OqwBi" id="36cV00CbD9I" role="2GsD0m">
+          <node concept="2OqwBi" id="36cV00CbDBy" role="2Oq$k0">
+            <node concept="37vLTw" id="36cV00CbCQk" role="2Oq$k0">
+              <ref role="3cqZAo" node="36cV00CbCQe" resolve="buildProject" />
+            </node>
+            <node concept="3TrEf2" id="36cV00CbDWv" role="2OqNvi">
+              <ref role="3Tt5mk" to="3ior:4RPz6WoY4Cs" resolve="layout" />
+            </node>
+          </node>
+          <node concept="2Rf3mk" id="36cV00CbDum" role="2OqNvi">
+            <node concept="1xMEDy" id="36cV00CbDuo" role="1xVPHs">
+              <node concept="chp4Y" id="36cV00CbE3z" role="ri$Ld">
+                <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="36cV00CbBZL" role="2LFqv$">
+          <node concept="3clFbJ" id="36cV00CbE7d" role="3cqZAp">
+            <node concept="2OqwBi" id="36cV00CbEgU" role="3clFbw">
+              <node concept="2GrUjf" id="36cV00CbE7p" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="36cV00CbBZJ" resolve="layoutNode" />
+              </node>
+              <node concept="2qgKlT" id="36cV00CbHGI" role="2OqNvi">
+                <ref role="37wK5l" to="vbkb:5FtnUVJQES1" resolve="exports" />
+                <node concept="1YBJjd" id="36cV00CbHP0" role="37wK5m">
+                  <ref role="1YBMHb" node="36cV00CbxrQ" resolve="ideaPlugin" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="36cV00CbE7f" role="3clFbx">
+              <node concept="3cpWs6" id="36cV00CbHVc" role="3cqZAp" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="a7r0C" id="36cV00CbIlg" role="3cqZAp">
+        <node concept="Xl_RD" id="36cV00CbIuG" role="a7wSD">
+          <property role="Xl_RC" value="The plugin is not found in the layout. It might cause problems for the dependencies of this plugin" />
+        </node>
+        <node concept="1YBJjd" id="36cV00CbIB4" role="2OEOjV">
+          <ref role="1YBMHb" node="36cV00CbxrQ" resolve="ideaPlugin" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="36cV00CbxrQ" role="1YuTPh">
+      <property role="TrG5h" value="ideaPlugin" />
+      <ref role="1YaFvo" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
     </node>
   </node>
 </model>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention" file="AddRemoveFigureAttribute_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -22,7 +22,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention" file="AddRemoveFigureParameterAttributeField_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -46,7 +46,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention" file="AddRemoveFigureParameterAttributeMethod_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -70,7 +70,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention" file="AddRemoveFigureParameterAttributePropertySpecification_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -94,7 +94,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

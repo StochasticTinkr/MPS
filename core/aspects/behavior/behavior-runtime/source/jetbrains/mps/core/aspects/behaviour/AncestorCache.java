@@ -16,6 +16,7 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -23,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * The cache of all concept hierarchy (including the concept itself)
@@ -33,12 +35,20 @@ final class AncestorCache {
   private final List<SAbstractConcept> myConstructorAncestors;
 
   AncestorCache(@NotNull SAbstractConcept concept, BehaviorRegistry behaviorRegistry) {
-    myLinearization = behaviorRegistry.getMRO().linearize(concept);
+    myLinearization = calcLinearization(concept, behaviorRegistry);
     myConstructorAncestors = calcConstructorAncestors();
   }
 
+  @NotNull
+  private List<SAbstractConcept> calcLinearization(@NotNull SAbstractConcept concept, BehaviorRegistry behaviorRegistry) {
+    @SuppressWarnings("unchecked") // due to the packaging api vs impl and visibility issues AP
+    MethodResolutionOrder<_SAbstractConcept> mro = (MethodResolutionOrder<_SAbstractConcept>) behaviorRegistry.getMRO();
+    List<_SAbstractConcept> linearization = mro.calcLinearization(_SAbstractConcept.wrap(concept));
+    return linearization.stream().map(_SAbstractConcept::unwrap).collect(Collectors.toList());
+  }
+
   private List<SAbstractConcept> calcConstructorAncestors() {
-    List<SAbstractConcept> constructorAncestors = new ArrayList<SAbstractConcept>(myLinearization);
+    List<SAbstractConcept> constructorAncestors = new ArrayList<>(myLinearization);
     Collections.reverse(constructorAncestors);
     return Collections.unmodifiableList(constructorAncestors);
   }

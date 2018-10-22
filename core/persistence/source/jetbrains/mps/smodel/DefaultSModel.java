@@ -75,7 +75,7 @@ public class DefaultSModel extends SModel {
     @NotNull
     @Override
     public Iterable<Problem> getProblems() {
-      return Collections.<Problem>singleton(
+      return Collections.singleton(
         new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }

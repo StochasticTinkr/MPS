@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8pmzkzzu1vrlf8cu7d4dq80o1v84p27" />
+<product version="3" modelHash="4z27gs5dpobtbxe678rxuwjb9ed0w19">
+  <files names="ModelProperties.java:StateUtil.java" />
+</product>
 

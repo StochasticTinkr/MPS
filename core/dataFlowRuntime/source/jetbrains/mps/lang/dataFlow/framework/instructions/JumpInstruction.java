@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JumpInstruction extends Instruction {
-  protected int myJumpTo;
+  private int myJumpTo;
 
   public JumpInstruction() {
   }
@@ -56,7 +56,7 @@ public class JumpInstruction extends Instruction {
 
   @Override
   public List<ProgramState> succ(ProgramState s) {
-    List<ProgramState> result = new ArrayList<ProgramState>();
+    List<ProgramState> result = new ArrayList<>();
     result.add(new ProgramState(getProgram().get(myJumpTo), s.isReturnMode()));
     return result;
   }

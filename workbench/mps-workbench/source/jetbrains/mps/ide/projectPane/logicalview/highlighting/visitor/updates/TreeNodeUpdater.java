@@ -31,13 +31,13 @@ public final class TreeNodeUpdater {
   private final Timer myTimer;
   private final Project myProject;
   private final Semaphore myGuard = new Semaphore(1);
-  private Queue<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new ConcurrentLinkedQueue<Pair<MPSTreeNode, NodeUpdate>>();
+  private Queue<Pair<MPSTreeNode, NodeUpdate>> myUpdates = new ConcurrentLinkedQueue<>();
 
   public TreeNodeUpdater(Project mpsProject) {
     myProject = mpsProject;
     myTimer = new Timer("ProjectPane Tree Update Thread", 500) {
       @Override
-      protected void onTimer() throws InterruptedException {
+      protected void onTimer() {
         process();
       }
     };
@@ -51,7 +51,7 @@ public final class TreeNodeUpdater {
     try {
       do {
         int batchProcessMax = 20; // do not process more than X at once, not to block any write actions nor UI thread for too long
-        final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<Pair<MPSTreeNode, NodeUpdate>>(batchProcessMax);
+        final ArrayList<Pair<MPSTreeNode, NodeUpdate>> updates = new ArrayList<>(batchProcessMax);
         Pair<MPSTreeNode, NodeUpdate> u;
         while ((u = myUpdates.poll()) != null && batchProcessMax > 0) {
           if (u.o1.getTree() == null) {
@@ -64,22 +64,19 @@ public final class TreeNodeUpdater {
         if (updates.isEmpty()) {
           break;
         }
-        myProject.getModelAccess().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            final HashSet<MPSTreeNode> toRefresh = new HashSet<MPSTreeNode>();
-            for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
-              MPSTreeNode node = next.o1;
-              if (node.getTree() == null) {
-                // once again, no reason to update element which is not in the tree
-                continue;
-              }
-              next.o2.update(node);
-              toRefresh.add(node);
+        myProject.getModelAccess().runReadInEDT(() -> {
+          final HashSet<MPSTreeNode> toRefresh = new HashSet<>();
+          for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
+            MPSTreeNode node = next.o1;
+            if (node.getTree() == null) {
+              // once again, no reason to update element which is not in the tree
+              continue;
             }
-            for (MPSTreeNode node : toRefresh) {
-              node.updateNodePresentationInTree();
-            }
+            next.o2.update(node);
+            toRefresh.add(node);
+          }
+          for (MPSTreeNode node : toRefresh) {
+            node.updateNodePresentationInTree();
           }
         });
       } while (!myUpdates.isEmpty());
@@ -91,7 +88,7 @@ public final class TreeNodeUpdater {
 
   public void addUpdate(MPSTreeNode node, NodeUpdate r) {
     if (!r.needed(node)) return;
-    myUpdates.add(new Pair<MPSTreeNode, NodeUpdate>(node, r));
+    myUpdates.add(new Pair<>(node, r));
     myTimer.start(); // sic(!), resume() or restart() force timer into 'running' state, effectively skipping initial delay
   }
 }

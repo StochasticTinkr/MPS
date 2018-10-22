@@ -77,6 +77,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     super(userObject);
   }
 
+  @NotNull
   @Override
   @SuppressWarnings("unchecked")
   public Iterator<MPSTreeNode> iterator() {

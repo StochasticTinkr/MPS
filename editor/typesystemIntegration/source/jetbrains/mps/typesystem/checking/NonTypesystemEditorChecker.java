@@ -46,7 +46,7 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
   @Override
   protected UpdateResult doCreateMessages(final TypeCheckingContext context, final boolean incremental,
       final EditorContext editorContext, SNode rootNode, final Cancellable cancellable, final boolean applyQuickFixes) {
-    if (context == null || !(context instanceof IncrementalTypecheckingContext)) {
+    if (!(context instanceof IncrementalTypecheckingContext)) {
       return UpdateResult.CANCELLED;
     }
 

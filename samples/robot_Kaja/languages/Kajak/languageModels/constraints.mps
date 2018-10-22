@@ -102,13 +102,13 @@
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
-      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
-        <reference id="1171315804605" name="concept" index="2RRcyH" />
-      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
+      <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
+        <reference id="1176109685394" name="concept" index="3lApI3" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -392,8 +392,8 @@
                     <node concept="2rP1CM" id="5Vvmn_Ql3Pe" role="2Oq$k0" />
                     <node concept="I4A8Y" id="5Vvmn_Ql3Pf" role="2OqNvi" />
                   </node>
-                  <node concept="2RRcyG" id="5Vvmn_Ql3Oq" role="2OqNvi">
-                    <ref role="2RRcyH" to="c2kz:3NWQyev6tcm" resolve="Library" />
+                  <node concept="3lApI0" id="5xUc3k5AmDe" role="2OqNvi">
+                    <ref role="3lApI3" to="c2kz:3NWQyev6tcm" resolve="Library" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="5Vvmn_Ql3Or" role="2OqNvi">

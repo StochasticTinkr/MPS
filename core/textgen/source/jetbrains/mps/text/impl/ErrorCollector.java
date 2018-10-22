@@ -31,7 +31,7 @@ import java.util.List;
  * @since 2017.2
  */
 /*package*/ class ErrorCollector {
-  private List<IMessage> myErrors = new ArrayList<IMessage>();
+  private List<IMessage> myErrors = new ArrayList<>();
 
   /*package*/ boolean hasErrors() {
     return !myErrors.isEmpty();

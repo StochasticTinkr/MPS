@@ -665,9 +665,6 @@
     <property role="3GE5qa" value="Names" />
     <property role="EcuMT" value="4903714810883702017" />
     <ref role="1TJDcQ" node="4gdvEeQyRNZ" resolve="BuildStringPart" />
-    <node concept="PrWs8" id="1653mnvANJ_" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="4gdvEeQyRO2" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="macro" />
@@ -681,9 +678,6 @@
     <property role="3GE5qa" value="Names" />
     <property role="EcuMT" value="4903714810883702019" />
     <ref role="1TJDcQ" node="4gdvEeQyRNZ" resolve="BuildStringPart" />
-    <node concept="PrWs8" id="1653mnvB2UG" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyi" id="4gdvEeQz4Pm" role="1TKVEl">
       <property role="TrG5h" value="text" />
       <property role="IQ2nx" value="4903714810883755350" />
@@ -802,9 +796,6 @@
     <property role="3GE5qa" value="Names" />
     <property role="EcuMT" value="4380385936562003279" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1653mnvB6eM" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="4gdvEeQzbDb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parts" />
@@ -939,9 +930,6 @@
     <property role="34LRSv" value="java files" />
     <property role="EcuMT" value="1500819558096177282" />
     <ref role="1TJDcQ" node="4zlO3QTanjW" resolve="BuildSource_JavaSources" />
-    <node concept="PrWs8" id="1653mnvAOTV" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="1jjYQYSi0y3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="resset" />
@@ -955,9 +943,6 @@
     <property role="3GE5qa" value="Project.Java.Dependencies" />
     <property role="EcuMT" value="3717132724152589376" />
     <ref role="1TJDcQ" node="2oUTXgLA9pR" resolve="BuildSource_JavaDependency" />
-    <node concept="PrWs8" id="1653mnvB2PC" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyi" id="75uV$1rZNtH" role="1TKVEl">
       <property role="TrG5h" value="reexport" />
       <property role="IQ2nx" value="8169228734285428589" />
@@ -983,9 +968,6 @@
     <property role="3GE5qa" value="Project.Java.Library" />
     <property role="EcuMT" value="3717132724152913083" />
     <ref role="1TJDcQ" node="5gfUUDxhecw" resolve="BuildSource_JavaLibraryElement" />
-    <node concept="PrWs8" id="1653mnvB2Pf" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="3elU8iQ7kMX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="classpath" />
@@ -1758,9 +1740,6 @@
     <property role="34LRSv" value="string" />
     <property role="EcuMT" value="2755237150521975431" />
     <ref role="1TJDcQ" node="2oW$psGOu6E" resolve="BuildVariableMacroInitValue" />
-    <node concept="PrWs8" id="1653mnvAOQc" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="1TJgyj" id="2oW$psGOAad" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />

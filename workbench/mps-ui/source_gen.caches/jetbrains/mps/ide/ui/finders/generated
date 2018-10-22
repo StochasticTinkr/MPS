@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5nq0uec3pa5lhku92oeozqrkoseitz6" />
+<product version="3" modelHash="29u7hr2lduojqeraqlj7mh02crigvzh">
+  <files names="LanguageImportFinder.java:LanguageModelImportFinder.java:LanguageUsagesFinder.java:ModelImportsUsagesFinder.java:ModelUsagesFinder.java:ModuleUsagesFinder.java" />
+</product>
 

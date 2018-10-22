@@ -10,8 +10,10 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <reference id="1083241965437" name="defaultMember" index="Qgau1" />
         <child id="1083172003582" name="member" index="M5hS2" />
       </concept>
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
@@ -171,7 +173,7 @@
     </node>
   </node>
   <node concept="AxPO7" id="19rKoRTP0VL">
-    <property role="TrG5h" value="Enum_DeriveFromPresentation" />
+    <property role="TrG5h" value="TestEnum_DeriveFromPresentation" />
     <property role="3GE5qa" value="enum_datatypes" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="19rKoRTP0VM" role="M5hS2">
@@ -184,7 +186,7 @@
     </node>
   </node>
   <node concept="AxPO7" id="19rKoRTP0VQ">
-    <property role="TrG5h" value="Enum_DeriveFromInternalValue" />
+    <property role="TrG5h" value="TestEnum_DeriveFromInternalValue" />
     <property role="3lZH7k" value="derive_from_internal_value" />
     <property role="3GE5qa" value="enum_datatypes" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
@@ -198,7 +200,7 @@
     </node>
   </node>
   <node concept="AxPO7" id="19rKoRTP0VT">
-    <property role="TrG5h" value="Enum_CustomIdentifier" />
+    <property role="TrG5h" value="TestEnum_CustomIdentifier" />
     <property role="3lZH7k" value="custom" />
     <property role="3GE5qa" value="enum_datatypes" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
@@ -252,6 +254,62 @@
       <property role="20kJfa" value="ref" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="tJEuhpRqpI" resolve="NPTypesystem_IntA" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="1ecMxSk0pd2">
+    <property role="3GE5qa" value="enum_datatypes" />
+    <property role="TrG5h" value="TestEnum_NoDefaultValue" />
+    <property role="PDuV0" value="true" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="1ecMxSk0pd3" role="M5hS2">
+      <property role="1uS6qo" value="NotDefault_A" />
+      <property role="1uS6qv" value="a" />
+    </node>
+    <node concept="M4N5e" id="1ecMxSk0pd4" role="M5hS2">
+      <property role="1uS6qv" value="b" />
+      <property role="1uS6qo" value="NotDefault_B" />
+    </node>
+    <node concept="M4N5e" id="1ecMxSk0pd7" role="M5hS2">
+      <property role="1uS6qv" value="c" />
+      <property role="1uS6qo" value="NotDefault_C" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="1ecMxSk0pdb">
+    <property role="3GE5qa" value="enum_datatypes" />
+    <property role="TrG5h" value="TestEnum_CustomDefaultValue" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <ref role="Qgau1" node="1ecMxSk0pdd" />
+    <node concept="M4N5e" id="1ecMxSk0pdc" role="M5hS2">
+      <property role="1uS6qo" value="NotDefualt_A" />
+      <property role="1uS6qv" value="a" />
+    </node>
+    <node concept="M4N5e" id="1ecMxSk0pdd" role="M5hS2">
+      <property role="1uS6qo" value="Default_B" />
+      <property role="1uS6qv" value="b" />
+    </node>
+    <node concept="M4N5e" id="1ecMxSk0pdg" role="M5hS2">
+      <property role="1uS6qo" value="NotDefualt_C" />
+      <property role="1uS6qv" value="c" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="ldKUue6a17">
+    <property role="3GE5qa" value="enum_datatypes" />
+    <property role="TrG5h" value="TestEnum_FirstMemberDefaultValue" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="ldKUue6a18" role="M5hS2">
+      <property role="1uS6qv" value="a" />
+      <property role="1uS6qo" value="Default_A" />
+    </node>
+    <node concept="M4N5e" id="ldKUue6a19" role="M5hS2">
+      <property role="1uS6qv" value="b" />
+      <property role="1uS6qo" value="NotDefault_B" />
+    </node>
+    <node concept="M4N5e" id="ldKUue6a1c" role="M5hS2">
+      <property role="1uS6qv" value="c" />
+      <property role="1uS6qo" value="NotDefault_C" />
     </node>
   </node>
 </model>

@@ -70,26 +70,21 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
       final JBCheckBox finderCheckBox = new JBCheckBox(finder.getDescription(), isEnabled);
       finderCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
 
-      finderCheckBox.addChangeListener(new ChangeListener() {
-        @Override
-        public void stateChanged(ChangeEvent e) {
-          String finderClassName = finder.getClass().getName();
-          if (((JCheckBox) e.getSource()).isSelected()) {
-            if (!myOptions.getFindersClassNames().contains(finderClassName)) {
-              myOptions.getFindersClassNames().add(finderClassName);
-              findersListChangedByUser();
-            }
-          } else {
-            myOptions.getFindersClassNames().remove(finderClassName);
+      finderCheckBox.addChangeListener(e -> {
+        String finderClassName = finder.getClass().getName();
+        if (((JCheckBox) e.getSource()).isSelected()) {
+          if (!myOptions.getFindersClassNames().contains(finderClassName)) {
+            myOptions.getFindersClassNames().add(finderClassName);
             findersListChangedByUser();
           }
+        } else {
+          myOptions.getFindersClassNames().remove(finderClassName);
+          findersListChangedByUser();
         }
       });
 
-      if (!finder.getLongDescription().equals("")) {
-        StringBuilder htmlTooltipText = new StringBuilder();
-        htmlTooltipText.append("<html>").append(finder.getLongDescription().replaceAll("\n", "<br>")).append(")</html>");
-        finderCheckBox.setToolTipText(htmlTooltipText.toString());
+      if (!finder.getLongDescription().isEmpty()) {
+        finderCheckBox.setToolTipText("<html>" + finder.getLongDescription().replaceAll("\n", "<br>") + ")</html>");
       }
 
       JToolBar finderHolder = new JToolBar(JToolBar.HORIZONTAL);

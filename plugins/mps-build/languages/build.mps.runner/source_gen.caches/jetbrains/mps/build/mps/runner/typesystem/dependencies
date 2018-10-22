@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.runner.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="jetbrains.mps.build.mps.runner.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.build.mps.runner.typesystem.check_BuildSolutionRunnerAspect_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.runner.typesystem.check_BuildSolutionRunnerAspect_NonTypesystemRule" file="check_BuildSolutionRunnerAspect_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.build.mps.runner.typesystem.check_BuildSolutionRunnerAspect_NonTypesystemRule">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor" />

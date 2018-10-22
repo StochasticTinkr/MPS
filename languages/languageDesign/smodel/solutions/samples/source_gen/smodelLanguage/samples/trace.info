@@ -60,8 +60,8 @@
       <node id="1145577814145" at="25,75,26,359" concept="1" />
       <node id="1145577814152" at="26,359,27,186" concept="5" />
       <node id="1145577814158" at="27,186,28,241" concept="1" />
-      <node id="1145578426519" at="30,54,31,330" concept="5" />
-      <node id="1145578074915" at="31,330,32,336" concept="5" />
+      <node id="1145578426519" at="30,54,31,197" concept="5" />
+      <node id="1145578074915" at="31,197,32,336" concept="5" />
       <node id="1145579167456" at="32,336,33,219" concept="5" />
       <node id="1206556986910" at="35,54,36,340" concept="1" />
       <node id="1228342379959" at="36,340,37,222" concept="5" />
@@ -631,19 +631,19 @@
     <file name="NewNode.java">
       <node id="1166649349905" at="15,38,16,204" concept="5" />
       <node id="1166649175865" at="16,204,17,321" concept="1" />
-      <node id="1166649357812" at="17,321,18,623" concept="1" />
+      <node id="1166649357812" at="17,321,18,480" concept="1" />
       <node id="1166649120556" at="20,36,21,236" concept="5" />
-      <node id="1166649120564" at="21,236,22,332" concept="5" />
-      <node id="1166649120572" at="22,332,23,218" concept="5" />
+      <node id="1166649120564" at="21,236,22,199" concept="5" />
+      <node id="1166649120572" at="22,199,23,218" concept="5" />
       <node id="1166649120578" at="23,218,24,485" concept="5" />
       <node id="1180648478076" at="26,38,27,197" concept="5" />
-      <node id="1181945517587" at="27,197,28,252" concept="5" />
-      <node id="1181950351648" at="28,252,29,233" concept="5" />
-      <node id="1181950717271" at="29,233,30,252" concept="5" />
+      <node id="1181945517587" at="27,197,28,210" concept="5" />
+      <node id="1181950351648" at="28,210,29,233" concept="5" />
+      <node id="1181950717271" at="29,233,30,210" concept="5" />
       <node id="1146260830963" at="15,0,20,0" concept="4" trace="newNode1#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1166649120551" at="20,0,26,0" concept="4" trace="newNode2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1180648407741" at="26,0,32,0" concept="4" trace="newNode3#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1146260830967" at="15,38,18,623">
+      <scope id="1146260830967" at="15,38,18,480">
         <var name="newClass" id="1166649349906" />
       </scope>
       <scope id="1166649120555" at="20,36,24,485">
@@ -652,7 +652,7 @@
         <var name="newIfStatement" id="1166649120557" />
         <var name="newStatement" id="1166649120579" />
       </scope>
-      <scope id="1180648407744" at="26,38,30,252">
+      <scope id="1180648407744" at="26,38,30,210">
         <var name="ifStatement" id="1180648478077" />
         <var name="ifStatement1" id="1181945517588" />
         <var name="ifStatement2" id="1181950351649" />

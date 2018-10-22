@@ -42,7 +42,7 @@ public abstract class TempModuleOptions {
   }
 
   public static TempModuleOptions forDefaultModule() {
-    return forNewModule(Collections.<ModelRootDescriptor>emptySet());
+    return forNewModule(Collections.emptySet());
   }
 
   /**
@@ -57,7 +57,7 @@ public abstract class TempModuleOptions {
 
     public static TempModuleOptions forDefaultModuleWithSourceAndClassesGen() {
     // todo: builder here
-    return new NewModuleOptions(Collections.<ModelRootDescriptor>emptySet(), true, true);
+    return new NewModuleOptions(Collections.emptySet(), true, true);
   }
 
   private static class NewModuleOptions extends TempModuleOptions {

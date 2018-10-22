@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.Language" file="Language.java">
+  <dependency className="jetbrains.mps.lang.script.Language">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.script.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.script.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.typesystem.TypesystemDescriptor" />

@@ -71,8 +71,6 @@ public class FacetDescriptorsIO_Test extends EnvironmentAwareTestCase {
   public void setUp() {
     descriptorIOFacade = myEnvironment.getPlatform().findComponent(DescriptorIOFacade.class);
   }
-  public FacetDescriptorsIO_Test() {
-  }
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
     return JDOMUtil.loadDocument(moduleFile).getRootElement();
   }

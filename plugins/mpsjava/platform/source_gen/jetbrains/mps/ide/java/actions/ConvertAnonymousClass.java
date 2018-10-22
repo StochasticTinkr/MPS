@@ -49,7 +49,7 @@ public class ConvertAnonymousClass implements MoveNodesAction {
       }
     });
 
-    final String newName = StringChooserDialog.getString(project.getProject(), "Convert Anonymous Class", "Class Name", "My" + classifierName.value);
+    final String newName = StringChooserDialog.getString(project.getProject(), "Convert Anonymous Class", "Class Name", "My" + classifierName.value, true);
 
     if (newName == null) {
       return;

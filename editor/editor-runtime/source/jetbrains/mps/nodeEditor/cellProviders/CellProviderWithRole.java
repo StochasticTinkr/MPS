@@ -52,7 +52,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   //sets a role object for this provider
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   //use setProperty/setLink instead
   public abstract void setRole(Object role);
 

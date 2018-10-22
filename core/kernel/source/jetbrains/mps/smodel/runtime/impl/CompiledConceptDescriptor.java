@@ -112,7 +112,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       if (!parentsContainSuper) {
         pp.addFirst(superConceptId);
       }
-      myParents = Arrays.asList(pp.toArray(new SConceptId[pp.size()]));
+      myParents = Arrays.asList(pp.toArray(new SConceptId[0]));
     } else {
       assert superConceptId == null;
       myParents = parents == null || parents.length == 0 ? Collections.emptyList() : Arrays.asList(parents);
@@ -139,7 +139,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       return;
     }
 
-    List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.size());
+    List<ConceptDescriptor> parentDescriptors = new ArrayList<>(myParents.size());
     for (SConceptId parent : myParents) {
       //it's important to keep this code out of myLock since it may acquire a read lock (see MPS-26559)
       ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
@@ -169,7 +169,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
   private void initAncestors(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
-    ancestorsIds = new LinkedHashSet<SConceptId>();
+    ancestorsIds = new LinkedHashSet<>();
     ancestorsIds.addAll(myParents);
     ancestorsIds.add(myId);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
@@ -180,7 +180,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initPropertyNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    Map<SPropertyId, PropertyDescriptor> propsMap = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
+    Map<SPropertyId, PropertyDescriptor> propsMap = new LinkedHashMap<>();
     for (PropertyDescriptor p : myOwnProperties) {
       propsMap.put(p.getId(), p);
     }
@@ -195,7 +195,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
+    Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new LinkedHashMap<>();
     for (ReferenceDescriptor r : myOwnReferences) {
       refsMap.put(r.getId(), r);
     }
@@ -211,7 +211,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     assert !myInitialized;
 
     //ids
-    Map<SContainmentLinkId, LinkDescriptor> linksMap = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
+    Map<SContainmentLinkId, LinkDescriptor> linksMap = new LinkedHashMap<>();
     for (LinkDescriptor r : myOwnLinks) {
       linksMap.put(r.getId(), r);
     }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9iaph4iwq0l80zmb8p8xsl48lmo1gq9" />
+<product version="3" modelHash="-4pdbt9eyq4z2y5fuwlbzasy1gn88pou">
+  <files names="BaseExecuteCommandStatement_Editor.java:BaseExecuteCommandStatement_EditorBuilder_a.java:CommandClosureLiteral_Editor.java:CommandClosureLiteral_EditorBuilder_a.java:EditorAspectDescriptorImpl.java" />
+</product>
 

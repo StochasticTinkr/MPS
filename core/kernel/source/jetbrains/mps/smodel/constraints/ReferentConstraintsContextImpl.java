@@ -62,6 +62,7 @@ public class ReferentConstraintsContextImpl implements ReferenceConstraintsConte
     return myExists;
   }
 
+  @NotNull
   @Override
   public SNode getContextNode() {
     return myContextNode;

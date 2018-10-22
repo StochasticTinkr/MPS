@@ -56,30 +56,28 @@ public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescript
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-              ListSequence.fromList(models).addElement(SNodeOperations.getModel(_context.getContextNode()));
-              ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.allImportedModels(SNodeOperations.getModel(_context.getContextNode()))));
-              SRepository contextRepo = SNodeOperations.getModel(_context.getContextNode()).getRepository();
-              if (contextRepo != null) {
-                for (SLanguage l : new SLanguageHierarchy(LanguageRegistry.getInstance(contextRepo), SModelOperations.getAllLanguageImports(SNodeOperations.getModel(_context.getContextNode()))).getExtended()) {
-                  SModuleReference sourceModuleRef = l.getSourceModuleReference();
-                  if (sourceModuleRef == null) {
-                    continue;
-                  }
-                  SModule sourceLang = sourceModuleRef.resolve(contextRepo);
-                  if (sourceLang == null) {
-                    continue;
-                  }
-                  SModel editorAspectModel = SModuleOperations.getAspect(sourceLang, "editor");
-                  if (editorAspectModel == null) {
-                    continue;
-                  }
-                  ListSequence.fromList(models).addElement(editorAspectModel);
+            List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+            ListSequence.fromList(models).addElement(SNodeOperations.getModel(_context.getContextNode()));
+            ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.allImportedModels(SNodeOperations.getModel(_context.getContextNode()))));
+            SRepository contextRepo = SNodeOperations.getModel(_context.getContextNode()).getRepository();
+            if (contextRepo != null) {
+              for (SLanguage l : new SLanguageHierarchy(LanguageRegistry.getInstance(contextRepo), SModelOperations.getAllLanguageImports(SNodeOperations.getModel(_context.getContextNode()))).getExtended()) {
+                SModuleReference sourceModuleRef = l.getSourceModuleReference();
+                if (sourceModuleRef == null) {
+                  continue;
                 }
+                SModule sourceLang = sourceModuleRef.resolve(contextRepo);
+                if (sourceLang == null) {
+                  continue;
+                }
+                SModel editorAspectModel = SModuleOperations.getAspect(sourceLang, "editor");
+                if (editorAspectModel == null) {
+                  continue;
+                }
+                ListSequence.fromList(models).addElement(editorAspectModel);
               }
-              return new ModelsScope(models, false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"));
             }
+            return new ModelsScope(models, false, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"));
           }
         };
       }

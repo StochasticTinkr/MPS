@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk8.Language" file="Language.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk8.Language">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

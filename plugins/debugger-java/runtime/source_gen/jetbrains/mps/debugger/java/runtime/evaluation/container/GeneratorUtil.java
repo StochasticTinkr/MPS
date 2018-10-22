@@ -7,6 +7,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.script.IScript;
@@ -35,7 +36,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 public class GeneratorUtil {
   @Nullable
   public static Class generateAndLoadEvaluatorClass(Project project, final SModel model, String className, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
-    IMakeService makeService = IMakeService.INSTANCE.get();
+    IMakeService makeService = project.getComponent(MakeServiceComponent.class).get();
     MakeSession makeSession = new MakeSession(project, new DefaultMakeMessageHandler(project), false);
     if (makeService.openNewSession(makeSession)) {
       try {

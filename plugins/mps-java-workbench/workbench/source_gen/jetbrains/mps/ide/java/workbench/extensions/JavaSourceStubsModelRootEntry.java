@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
+import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -58,7 +59,7 @@ public final class JavaSourceStubsModelRootEntry implements ModelRootEntry<JavaS
 
   @Override
   public void dispose() {
-    myModelRootData.dispose();
+    Disposer.dispose(myModelRootData);
   }
 
   @Nullable

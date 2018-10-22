@@ -6,6 +6,7 @@ import jetbrains.mps.migration.global.BaseProjectMigration;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,10 +28,11 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
   public boolean doExecute(Project project) {
     // remove all *.history files under DefaultModelRoots 
     {
-      final SearchScope scope = CommandUtil.createScope(project);
+      SearchScope scope_kkza83_b0b = CommandUtil.createScope(project);
+      final SearchScope scope_kkza83_b0b_0 = new EditableFilteringScope(scope_kkza83_b0b);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
-          return scope;
+          return scope_kkza83_b0b_0;
         }
       };
       Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ModelRoot>() {

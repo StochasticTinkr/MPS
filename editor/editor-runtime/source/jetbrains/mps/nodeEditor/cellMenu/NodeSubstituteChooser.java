@@ -187,7 +187,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void initList() {
-    myList = new JBList<>(new CollectionListModel<SubstituteAction>());
+    myList = new JBList<>(new CollectionListModel<>());
     myList.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
@@ -227,9 +227,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         location = new Point(10, 10);
       }
       getPatternEditor().activate(getEditorWindow(), location, calcPatternEditorDimension(), realUi);
-      setSelectionIndex(0);
       myUi = createNodeSubstituteChooserUi(realUi);
       myUi.show();
+      setSelectionIndex(0);
       if (realUi) {
         getEditorWindow().addComponentListener(myComponentListener);
       }

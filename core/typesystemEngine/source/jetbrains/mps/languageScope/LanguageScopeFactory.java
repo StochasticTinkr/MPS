@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.SimpleLRUCache;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.AbstractList;
@@ -248,7 +249,7 @@ public class LanguageScopeFactory implements CoreComponent, LanguageRegistryList
     }
 
     @Override
-    public int compareTo(IdentityWrapper<K> that) {
+    public int compareTo(@NotNull IdentityWrapper<K> that) {
       return this.myHash - that.myHash;
     }
 

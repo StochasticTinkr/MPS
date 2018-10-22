@@ -65,7 +65,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private final NavigationManager myNavigationManager;
   private final ToolWindowManager myToolWindowManager;
   private final MyMessageList myDefaultList;
-  private final Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
+  private final Map<Object, List<MessageList>> myMessageLists = new HashMap<>();
   private final MessageViewLoggingHandler myMessageViewLoggingHandler;
 
   public MessagesViewTool(Project project, NavigationManager navigationManager, ToolWindowManager toolWindowManager) {
@@ -157,7 +157,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   @Override
-  public void loadState(MessageViewToolState state) {
+  public void loadState(@NotNull MessageViewToolState state) {
     getDefaultList().loadState(state.defaultListState);
   }
 
@@ -212,7 +212,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   private synchronized void addList(String name, MessageList list) {
-    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
+    List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<>();
     if (!myMessageLists.containsKey(name)) {
       myMessageLists.put(name, lists);
     }
@@ -313,24 +313,21 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         return;
       }
 
-      final Runnable initRunnable = new Runnable() {
-        @Override
-        public void run() {
-          initUI();
-          final MessageView service = getMessagesService();
-          Content content = service.getContentManager().getFactory().createContent(getComponent(), myTitle, true);
+      final Runnable initRunnable = () -> {
+        initUI();
+        final MessageView service = getMessagesService();
+        Content content = service.getContentManager().getFactory().createContent(getComponent(), myTitle, true);
 
-          content.setCloseable(canClose);
-          content.setPinnable(isMultiple);
-          if (canClose) {
-            content.setShouldDisposeContent(true);
-            content.setDisposer(MyMessageList.this);
-          }
-          content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
-          service.getContentManager().addContent(content);
-          activateUpdate();
-          myContentReady = true;
+        content.setCloseable(canClose);
+        content.setPinnable(isMultiple);
+        if (canClose) {
+          content.setShouldDisposeContent(true);
+          content.setDisposer(MyMessageList.this);
         }
+        content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+        service.getContentManager().addContent(content);
+        activateUpdate();
+        myContentReady = true;
       };
       getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));
     }

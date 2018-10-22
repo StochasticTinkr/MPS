@@ -79,7 +79,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
       return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(d.getId(), d.getConceptFqName()));
     }
 
-    List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
+    List<SInterfaceConcept> res = new ArrayList<>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId()) || SNodeUtil.conceptId_BaseConcept.equals(id)) {
         continue;

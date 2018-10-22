@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6z0gayfcha7x6zuznc2ft5e4e472jv3" />
+<product version="3" modelHash="-ai0x9n1rihhttncy8iw80xdguhgdibt">
+  <files names="BehaviorAspectDescriptor.java:CellModel_HierarchycalTable__BehaviorDescriptor.java:QueryFunction_TableModel__BehaviorDescriptor.java" />
+</product>
 

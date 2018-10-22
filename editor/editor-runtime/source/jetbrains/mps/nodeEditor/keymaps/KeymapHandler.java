@@ -51,7 +51,7 @@ public abstract class KeymapHandler<E> {
   private static final Logger LOG = LogManager.getLogger(KeymapHandler.class);
 
   public Collection<KeyMapAction> getAllRegisteredActions(EditorCell selectedCell, EditorContext context) {
-    Set<KeyMapAction> result = new HashSet<KeyMapAction>();
+    Set<KeyMapAction> result = new HashSet<>();
     for (Pair<KeyMap, EditorCell> pair : getRegisteredKeymaps(selectedCell, context)) {
       result.addAll(pair.o1.getAllActions());
     }
@@ -65,12 +65,12 @@ public abstract class KeymapHandler<E> {
       @Override
       public List<Pair<KeyMapAction, EditorCell>> compute() {
         // collect all keymaps available
-        List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
+        List<Pair<KeyMap, EditorCell>> keymapsAndCells = KeymapHandler.this.getRegisteredKeymaps(selectedCell, context);
         if (keymapsAndCells.isEmpty()) {
           return Collections.emptyList();
         }
 
-        return selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
+        return KeymapHandler.this.selectActionsFromKeymaps(selectedCell, actionKeys, context, keymapsAndCells);
       }
     });
   }
@@ -78,17 +78,12 @@ public abstract class KeymapHandler<E> {
   public abstract Collection<ActionKey> getActionKeys(E event);
 
   public void executeAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
-    editorContext.runWithContextCell(contextCell, new Runnable() {
+    editorContext.runWithContextCell(contextCell, () -> editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
       @Override
-      public void run() {
-        editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
-          @Override
-          public void doExecute() {
-            action.execute(editorContext);
-          }
-        });
+      public void doExecute() {
+        action.execute(editorContext);
       }
-    });
+    }));
   }
 
   public abstract void showActionsMenu(Collection<Pair<KeyMapAction, EditorCell>> actionsInfo, EditorContext editorContext, EditorCell selectedCell);
@@ -97,14 +92,14 @@ public abstract class KeymapHandler<E> {
    * @return List of pairs keymap/ownerCell
    */
   private List<Pair<KeyMap, EditorCell>> getRegisteredKeymaps(EditorCell selectedCell, EditorContext editorContext) {
-    Set<Class> addedKeymaps = new HashSet<Class>(); // don't duplicate keymaps
-    List<Pair<KeyMap, EditorCell>> keyMapsAndCells = new ArrayList<Pair<KeyMap, EditorCell>>();
+    Set<Class> addedKeymaps = new HashSet<>(); // don't duplicate keymaps
+    List<Pair<KeyMap, EditorCell>> keyMapsAndCells = new ArrayList<>();
 
     EditorCell keymapOwnerCell = selectedCell;
     while (keymapOwnerCell != null) {
       KeyMap keymap = keymapOwnerCell.getKeyMap();
       if (keymap != null && !addedKeymaps.contains(keymap.getClass())) {
-        keyMapsAndCells.add(new Pair<KeyMap, EditorCell>(keymap, keymapOwnerCell));
+        keyMapsAndCells.add(new Pair<>(keymap, keymapOwnerCell));
         addedKeymaps.add(keymap.getClass());
       }
       keymapOwnerCell = keymapOwnerCell.getParent();
@@ -121,7 +116,7 @@ public abstract class KeymapHandler<E> {
         if (keyMapsForNamespace != null) {
           for (KeyMap keymap : keyMapsForNamespace) {
             if (!addedKeymaps.contains(keymap.getClass())) {
-              keyMapsAndCells.add(new Pair<KeyMap, EditorCell>(keymap, selectedCell));
+              keyMapsAndCells.add(new Pair<>(keymap, selectedCell));
               addedKeymaps.add(keymap.getClass());
             }
           }
@@ -139,7 +134,7 @@ public abstract class KeymapHandler<E> {
   private List<Pair<KeyMapAction, EditorCell>> selectActionsFromKeymaps(EditorCell selectedCell, Collection<ActionKey> actionKeys, EditorContext editorContext,
       List<Pair<KeyMap, EditorCell>> keymapsAndCells) {
     // choose appropriate actions from keymaps
-    List<Pair<KeyMapAction, EditorCell>> actionsAndCells = new LinkedList<Pair<KeyMapAction, EditorCell>>();
+    List<Pair<KeyMapAction, EditorCell>> actionsAndCells = new LinkedList<>();
     for (Pair<KeyMap, EditorCell> keymapAndCell : keymapsAndCells) {
       KeyMap keymap = keymapAndCell.o1;
       EditorCell keymapOwnerCell = keymapAndCell.o2;
@@ -150,7 +145,7 @@ public abstract class KeymapHandler<E> {
       for (KeyMapAction action : actions) {
         EditorCell actionCell = selectActionCell(action, keymapOwnerCell, selectedCell, caretPosition, editorContext);
         if (actionCell != null) {
-          actionsAndCells.add(new Pair<KeyMapAction, EditorCell>(action, actionCell));
+          actionsAndCells.add(new Pair<>(action, actionCell));
         }
       }
     }
@@ -207,11 +202,6 @@ public abstract class KeymapHandler<E> {
   }
 
   private boolean canExecuteKeyMapAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
-    return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return action.canExecute(editorContext);
-      }
-    });
+    return editorContext.runWithContextCell(contextCell, () -> action.canExecute(editorContext));
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -13,9 +14,11 @@ public class ConstantFinder extends BaseFinder {
   public ConstantFinder() {
   }
   @Override
+  @NotNull
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     return myResults;
   }
+
   public String getDescription() {
     return "Specific Usages";
   }

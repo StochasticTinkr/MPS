@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.runner.MPSDebugRunner" file="MPSDebugRunner.java">
+  <dependency className="jetbrains.mps.debugger.api.runner.MPSDebugRunner">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="com.intellij.execution.Executor" />

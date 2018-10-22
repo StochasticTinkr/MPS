@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-jbt4ljmp1z7miclx53btz6g6t8p0lk" />
+<product version="3" modelHash="b9bpkqytk3144gmb8nc2tj9kxdewcjr">
+  <files names="CollectTestsGroup_ActionGroup.java:CollectTests_Action.java:PluginSolution_ApplicationPlugin.java:TestCollector.java" />
+</product>
 

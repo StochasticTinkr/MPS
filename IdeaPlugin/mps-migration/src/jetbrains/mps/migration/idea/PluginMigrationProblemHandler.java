@@ -27,16 +27,11 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.util.ui.MessageCategory;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
-import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.idea.core.usages.NodeNavigatable;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
 
 public class PluginMigrationProblemHandler extends AbstractProjectComponent implements MigrationProblemHandler, com.intellij.openapi.components.ApplicationComponent {
   public PluginMigrationProblemHandler(Project p) {
@@ -65,7 +60,7 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
           }
         };
       }
-      treeView.addMessage(MessageCategory.ERROR, new String[]{p.getMessage()}, p.getIssueKind(), nav, null, null, null);
+      treeView.addMessage(MessageCategory.ERROR, new String[]{p.getMessage()}, p.getIssueKind().getSpecialization(), nav, null, null, null);
     }
 
     ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW).activate(null);

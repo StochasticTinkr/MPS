@@ -217,6 +217,7 @@
       <keyboard-shortcut first-keystroke="ctrl CLOSE_BRACKET" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl shift CLOSE_BRACKET" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action" class="jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action"></action>
     <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
       <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default" />
     </action>
@@ -359,6 +360,7 @@
     </group>
     <group id="jetbrains.mps.ide.editor.actions.SuppressErrorsGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowSuppressedErrors_Action" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" popup="true"></group>
     <group id="jetbrains.mps.ide.editor.actions.SpecificIntentions_ActionGroup">

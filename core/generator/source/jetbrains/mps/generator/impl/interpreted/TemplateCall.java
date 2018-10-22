@@ -83,16 +83,6 @@ public class TemplateCall {
     return myArguments.length != myParameters.length;
   }
 
-
-  @NotNull
-  public Object[] evaluateArguments(@NotNull TemplateContext outerContext) throws GenerationFailureException {
-    Object[] rv = new Object[myArguments.length];
-    for (int i = 0; i < myArguments.length; i++) {
-      rv[i] = myArguments[i].evaluate(outerContext);
-    }
-    return rv;
-  }
-
   @NotNull
   public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) throws GenerationFailureException {
     if (myNoArgs) {
@@ -108,7 +98,7 @@ public class TemplateCall {
   }
 
   private static ArgumentExpression[] toExpressionRuntime(List<SNode> args) {
-    final ArrayList<ArgumentExpression> ae = new ArrayList<ArgumentExpression>(args.size());
+    final ArrayList<ArgumentExpression> ae = new ArrayList<>(args.size());
     int i = 1;
     for (SNode argExpr : args) {
       final SConcept argConcept = argExpr.getConcept();
@@ -127,11 +117,11 @@ public class TemplateCall {
       }
       i++;
     }
-    return ae.toArray(new ArgumentExpression[ae.size()]);
+    return ae.toArray(new ArgumentExpression[0]);
   }
 
   interface ArgumentExpression {
-    public Object evaluate(TemplateContext context) throws GenerationFailureException;
+    Object evaluate(TemplateContext context) throws GenerationFailureException;
   }
 
   // TemplateArgumentParameterExpression

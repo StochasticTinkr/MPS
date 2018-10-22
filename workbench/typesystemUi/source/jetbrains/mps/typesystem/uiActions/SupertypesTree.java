@@ -80,12 +80,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
       //     Alternatively, one could resort to hierarchyTreeNode.getUserObject which at the moment is original SNode,
       //     however, earlier code here did node.model != null check, and the model is null for these nodes anyway.
       // As I don't understand the idea of the dialog, I leave it as it is until anybody complains.
-      if (new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return hierarchyTreeNode.getNodeReference().resolve(myProject.getRepository()) != null;
-        }
-      })) {
+      if (new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> hierarchyTreeNode.getNodeReference().resolve(myProject.getRepository()) != null)) {
         new MyBaseNodeDialog(myProject, hierarchyTreeNode.getNodeReference()).show();
       }
     }
@@ -115,6 +110,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
       return super.getMainComponent();
     }
 
+    @NotNull
     @Override
     protected Action[] createActions() {
       return new Action[]{getOKAction()};

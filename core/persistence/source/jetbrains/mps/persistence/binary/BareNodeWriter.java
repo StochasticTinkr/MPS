@@ -116,7 +116,7 @@ public class BareNodeWriter {
     } else {
       throw new IOException("cannot store reference: " + reference.toString());
     }
-    if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
+    if (myModelReference.equals(targetModelReference)) {
       myOut.writeByte(REF_THIS_MODEL);
     } else {
       myOut.writeByte(REF_OTHER_MODEL);
@@ -137,7 +137,7 @@ public class BareNodeWriter {
 
 
   protected void writeUserObjects(SNode node) throws IOException {
-    final ArrayList<Object> knownUserObject = new ArrayList<Object>();
+    final ArrayList<Object> knownUserObject = new ArrayList<>();
     for (Object key : node.getUserObjectKeys()) {
       Object value = node.getUserObject(key);
       if (isKnownUserObject(key) && isKnownUserObject(value)) {

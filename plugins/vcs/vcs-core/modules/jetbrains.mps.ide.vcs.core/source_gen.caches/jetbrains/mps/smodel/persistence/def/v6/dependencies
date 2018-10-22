@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" file="LineToContentMapReader6Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6" file="ModelPersistence6.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler" file="ModelReader6Handler.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" file="VersionUtil.java">
+  <dependency className="jetbrains.mps.smodel.persistence.def.v6.VersionUtil">
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />

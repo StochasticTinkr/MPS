@@ -154,7 +154,7 @@ public class MergeModelsPanel extends JPanel {
 
   protected void init() {
     myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
-    myMergeTree = new MergeModelsPanel.MergeModelsTree();
+    myMergeTree = new MergeModelsPanel.MergeModelsTree(myProjectRepository);
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
     myPanel.setSecondComponent(myNoRootPanel);
 
@@ -453,7 +453,8 @@ public class MergeModelsPanel extends JPanel {
   }
 
   private class MergeModelsTree extends DiffModelTree {
-    private MergeModelsTree() {
+    private MergeModelsTree(SRepository repo) {
+      super(repo);
       addTreeSelectionListener(new TreeSelectionListener() {
         @Override
         public void valueChanged(TreeSelectionEvent event) {

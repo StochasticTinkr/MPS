@@ -24,12 +24,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vfs.FileSystem;
 import java.io.InputStream;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.ReadUtil;
@@ -37,6 +35,7 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.vfs.FileSystem;
 import javax.swing.ImageIcon;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -66,7 +65,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
 
     SModel model = SNodeOperations.getModel(__thisNode__);
 
-    String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
+    String source = MacrosFactory.forModule(model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
     final String name = FileUtil.getNameWithoutExtension(source);
     final String ext = FileUtil.getExtension(source);
 
@@ -87,7 +86,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     if (source == null) {
       return null;
     }
-    IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
+    IFile sourceFile = outputDir.getFileSystem().getFile(source);
     IFile toFile = outputDir.getDescendant(sourceFile.getName());
 
     if (!(sourceFile.exists())) {
@@ -110,10 +109,10 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean isValid_id7Mb2akaestJ(@NotNull SNode __thisNode__) {
     SModule module = SNodeOperations.getModel(__thisNode__).getModule();
-    if (!(module instanceof AbstractModule)) {
+    if (module == null) {
       return false;
     }
-    MacroHelper macroHelper = MacrosFactory.forModule((AbstractModule) module);
+    MacroHelper macroHelper = MacrosFactory.forModule(module);
     if (macroHelper == null) {
       return false;
     }

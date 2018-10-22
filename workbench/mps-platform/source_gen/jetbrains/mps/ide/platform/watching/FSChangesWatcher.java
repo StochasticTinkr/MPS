@@ -10,6 +10,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
@@ -19,8 +20,8 @@ import com.intellij.openapi.application.Application;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.function.Supplier;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.apache.log4j.Level;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
@@ -43,18 +44,21 @@ public class FSChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new FSChangesWatcher.BulkFileChangesListener();
-  private ReloadManagerComponent myReloadManager;
-  public FSChangesWatcher(MessageBus bus, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
+  private final ReloadManagerComponent myReloadManager;
+  private final IdeaFileSystem myIdeaFileSystem;
+
+  public FSChangesWatcher(MessageBus bus, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager, IdeaFileSystem ideaFileSystem) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myReloadManager = reloadManager;
+    myIdeaFileSystem = ideaFileSystem;
   }
 
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
-    return "Model Changes Watcher";
+    return "FS Changes Watcher";
   }
 
   @Override
@@ -92,20 +96,21 @@ public class FSChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
-      if (ListSequence.fromList(events).all(new IWhereFilter<VFileEvent>() {
+      final List<VFileEvent> eventsOfInterest = ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
         public boolean accept(VFileEvent it) {
-          return VirtualFileUtils.isFileEventFromMPS(it);
+          return !(VirtualFileUtils.isFileEventFromMPS(it));
         }
-      })) {
+      }).ofType(VFileEvent.class).toListSequence();
+      if (ListSequence.fromList(eventsOfInterest).isEmpty()) {
         return;
       }
-      myReloadManager.runReload(FileProcessor.class, new ReloadAction<FileProcessor>() {
+      myReloadManager.runReload(getClass().getName(), new Supplier<FileProcessor>() {
+        public FileProcessor get() {
+          return new FileProcessor(myIdeaFileSystem);
+        }
+      }, new ReloadAction<FileProcessor>() {
         public void runAction(final FileProcessor participant) {
-          ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
-            public boolean accept(VFileEvent it) {
-              return !(VirtualFileUtils.isFileEventFromMPS(it));
-            }
-          }).visitAll(new IVisitor<VFileEvent>() {
+          ListSequence.fromList(eventsOfInterest).visitAll(new IVisitor<VFileEvent>() {
             public void visit(VFileEvent it) {
               if (LOG.isDebugEnabled()) {
                 LOG.debug("Got event " + it);
@@ -118,33 +123,28 @@ public class FSChangesWatcher implements ApplicationComponent {
     }
 
     private void processAfterEvent(VFileEvent event, FileProcessor processor) {
+      String path = event.getPath();
       if (LOG.isDebugEnabled()) {
-        LOG.debug("Process after event for " + event.getPath());
-      }
-      if (event.getFile() == null) {
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
-        }
-        return;
+        LOG.debug("Process after event for " + path);
       }
 
-      if (!(processor.accepts(event.getFile()))) {
+      if (!(processor.accepts(path))) {
         return;
       }
 
       if (event instanceof VFileContentChangeEvent) {
-        processor.processContentChanged(event.getFile());
+        processor.processContentChanged(path);
       } else if (event instanceof VFileCreateEvent) {
-        processor.processCreate(event.getFile());
+        processor.processCreate(path);
       } else if (event instanceof VFileDeleteEvent) {
-        processor.processDelete(event.getFile());
+        processor.processDelete(path);
       } else if (event instanceof VFileCopyEvent) {
-        processor.processCreate(event.getFile());
+        processor.processCreate(path);
       } else if (event instanceof VFileMoveEvent) {
         VFileMoveEvent re = (VFileMoveEvent) event;
         String name = re.getFile().getName();
-        processor.processDelete(event.getFile());
-        processor.processCreate(re.getNewParent().findChild(name));
+        processor.processDelete(event.getFile().getPath());
+        processor.processCreate(re.getNewParent().findChild(name).getPath());
       }
     }
   }

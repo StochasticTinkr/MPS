@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import jetbrains.mps.editor.runtime.LanguageEditorChecker;
 import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -27,7 +28,6 @@ import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import typesystemIntegration.languageChecker.AutoResolver;
-import typesystemIntegration.languageChecker.LanguageEditorChecker;
 
 import java.util.Stack;
 
@@ -38,7 +38,7 @@ public class MPSValidationComponent implements ProjectComponent {
 
   private final MPSProject myProject;
   private final Highlighter myHighlighter;
-  private Stack<EditorChecker> myCheckers = new Stack<EditorChecker>();
+  private Stack<EditorChecker> myCheckers = new Stack<>();
 
   public MPSValidationComponent(MPSProject mpsProject, Highlighter highlighter) {
     myProject = mpsProject;
@@ -66,31 +66,25 @@ public class MPSValidationComponent implements ProjectComponent {
   @Override
   public void projectOpened() {
     // TODO: create editor-specific "core" component in editor-runtime module and register all common checkers from there
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        addChecker(new TypesEditorChecker());
-        addChecker(new NonTypesystemEditorChecker());
-        addChecker(new AutoResolver(myProject));
-        final SRepository repositoryToTrack4Changes = myProject.getRepository();
-        addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
-        addChecker(new SuppressErrorsChecker());
-        addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));
-      }
+    myProject.getModelAccess().runReadAction(() -> {
+      addChecker(new TypesEditorChecker());
+      addChecker(new NonTypesystemEditorChecker());
+      addChecker(new AutoResolver(myProject));
+      final SRepository repositoryToTrack4Changes = myProject.getRepository();
+      addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
+      addChecker(new SuppressErrorsChecker());
+      addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));
     });
   }
 
   @Override
   public void projectClosed() {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        while (!myCheckers.isEmpty()) {
-          EditorChecker checker = myCheckers.pop();
-          myHighlighter.removeChecker(checker);
-          if (checker instanceof DisposableEditorChecker) {
-            ((DisposableEditorChecker) checker).dispose();
-          }
+    myProject.getModelAccess().runReadAction(() -> {
+      while (!myCheckers.isEmpty()) {
+        EditorChecker checker = myCheckers.pop();
+        myHighlighter.removeChecker(checker);
+        if (checker instanceof DisposableEditorChecker) {
+          ((DisposableEditorChecker) checker).dispose();
         }
       }
     });

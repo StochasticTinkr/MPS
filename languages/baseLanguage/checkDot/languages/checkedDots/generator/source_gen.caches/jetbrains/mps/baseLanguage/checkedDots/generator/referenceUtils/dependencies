@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper" file="ReferenceConversionHelper.java">
+  <dependency className="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

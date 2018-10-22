@@ -6,7 +6,7 @@
   <languages />
   <imports>
     <import index="8djd" ref="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)" />
-    <import index="qv9x" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.custom(MPS.Workbench/)" />
+    <import index="bwpj" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.part(MPS.Workbench/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="qurh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)" />
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" />
@@ -543,7 +543,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1x">
-    <property role="3GE5qa" value="Custom" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="Typeof_ApplicationPluginType_SubtypingRule" />
     <node concept="3clFbW" id="1y" role="jymVt">
       <node concept="3clFbS" id="1F" role="3clF47">
@@ -634,10 +634,10 @@
         <node concept="3cpWs6" id="2e" role="3cqZAp">
           <node concept="2c44tf" id="2g" role="3cqZAk">
             <node concept="3uibUv" id="2i" role="2c44tc">
-              <ref role="3uigEE" to="qv9x:~BaseCustomApplicationPlugin" resolve="BaseCustomApplicationPlugin" />
+              <ref role="3uigEE" to="bwpj:~ApplicationPluginPart" resolve="ApplicationPluginPart" />
               <node concept="cd27G" id="2k" role="lGtFl">
                 <node concept="3u3nmq" id="2l" role="cd27D">
-                  <property role="3u3nmv" value="4543772620559925688" />
+                  <property role="3u3nmv" value="3839308812913047067" />
                 </node>
               </node>
             </node>
@@ -931,7 +931,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3X">
-    <property role="3GE5qa" value="Custom" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="Typeof_ProjectPluginType_SubtypingRule" />
     <node concept="3clFbW" id="3Y" role="jymVt">
       <node concept="3clFbS" id="47" role="3clF47">
@@ -1022,10 +1022,10 @@
         <node concept="3cpWs6" id="4E" role="3cqZAp">
           <node concept="2c44tf" id="4G" role="3cqZAk">
             <node concept="3uibUv" id="4I" role="2c44tc">
-              <ref role="3uigEE" to="qv9x:~BaseCustomProjectPlugin" resolve="BaseCustomProjectPlugin" />
+              <ref role="3uigEE" to="bwpj:~ProjectPluginPart" resolve="ProjectPluginPart" />
               <node concept="cd27G" id="4K" role="lGtFl">
                 <node concept="3u3nmq" id="4L" role="cd27D">
-                  <property role="3u3nmv" value="481983775135178863" />
+                  <property role="3u3nmv" value="3839308812913046901" />
                 </node>
               </node>
             </node>
@@ -2567,7 +2567,7 @@
     </node>
   </node>
   <node concept="312cEu" id="ec">
-    <property role="3GE5qa" value="Custom" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="typeof_PlatformAccessExpression_InferenceRule" />
     <node concept="3clFbW" id="ed" role="jymVt">
       <node concept="3clFbS" id="em" role="3clF47">

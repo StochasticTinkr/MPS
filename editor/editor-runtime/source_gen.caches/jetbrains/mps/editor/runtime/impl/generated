@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dbu4dnstvgfg7xujwcvftpfhq2ry4sn" />
+<product version="3" modelHash="cuaraiv2d3ivw05zs21b7dztg7kh66q">
+  <files names="CellUtil.java:LanguagesKeymapManager.java:LayoutConstraints.java" />
+</product>
 

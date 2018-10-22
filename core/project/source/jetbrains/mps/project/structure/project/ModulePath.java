@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.project;
 
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.Objects;
@@ -28,10 +29,12 @@ import java.util.Objects;
  */
 @Immutable
 public final class ModulePath {
+  @NotNull
   private final String myPath; // always canonical path to the module descriptor file, never null
+  @NotNull
   private final String myVirtualFolder; // virtual folder, optional, never null
 
-  public ModulePath(String path, String virtualFolder) {
+  public ModulePath(@NotNull String path, @Nullable String virtualFolder) {
     myPath = path;
     myVirtualFolder = StringUtil.emptyIfNull(virtualFolder);
   }

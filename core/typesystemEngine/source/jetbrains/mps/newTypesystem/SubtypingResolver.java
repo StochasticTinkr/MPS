@@ -56,12 +56,9 @@ public class SubtypingResolver {
   public boolean calcIsSubType(final SNode subType, final SNode superType) {
     long start = System.nanoTime();
 
-    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        boolean result = isSubType(subType, superType);
-        return result;
-      }
+    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      boolean result = isSubType(subType, superType);
+      return result;
     });
     TypeSystemReporter.getInstance().reportIsSubType(subType, superType, (System.nanoTime() - start));
     return aBoolean;
@@ -121,23 +118,14 @@ public class SubtypingResolver {
           result = false;
         }
       }
-      if (result) {
-        return true;
-      }     /*
-    if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
-      for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
-        if (isSubType(subType, argument, info, state, isWeak)) {
-          return true;
-        }
-      }
-    }       */
+      return result;
     }
     return false;
   }
 
   private boolean searchInSuperTypes(SNode subType, SupertypeMatcher superType, boolean isWeak, boolean canAskCache) {
-    Queue<SNode> queue = new LinkedList<SNode>();
-    StructuralNodeSet<SNode> visited = new StructuralNodeSet<SNode>();
+    Queue<SNode> queue = new LinkedList<>();
+    StructuralNodeSet<SNode> visited = new StructuralNodeSet<>();
     queue.add(subType);
     visited.add(subType);
     while (!queue.isEmpty()) {

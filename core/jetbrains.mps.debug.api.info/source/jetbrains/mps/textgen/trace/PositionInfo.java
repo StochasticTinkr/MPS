@@ -17,6 +17,7 @@ package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -103,7 +104,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   @Override
-  public int compareTo(PositionInfo p) {
+  public int compareTo(@NotNull PositionInfo p) {
     if (myFileName == null) {
       if (p.myFileName != null) {
         return 1;
@@ -166,9 +167,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
       }
     }
     if (myEndLine == position.getEndLine()) {
-      if (myEndPosition > position.getEndPosition()) {
-        return false;
-      }
+      return myEndPosition <= position.getEndPosition();
     }
     return true;
   }

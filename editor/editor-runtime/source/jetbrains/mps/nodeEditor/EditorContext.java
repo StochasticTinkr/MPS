@@ -64,7 +64,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private EditorCell myContextCell;
   private IPerformanceTracer myPerformanceTracer = null;
 
-  private Map<String, Icon> myIconCache = new HashMap<String, Icon>();
+  private Map<String, Icon> myIconCache = new HashMap<>();
 
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;

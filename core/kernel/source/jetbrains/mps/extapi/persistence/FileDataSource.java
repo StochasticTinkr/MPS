@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,8 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
-import jetbrains.mps.util.FileUtil;
-import org.jetbrains.mps.openapi.persistence.NullDataSource.NullDataSourceType;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -29,7 +26,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.NullDataSource.NullDataSourceType;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
@@ -53,7 +53,7 @@ import java.util.List;
  */
 public class FileDataSource extends DataSourceBase implements StreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
-  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
+  private List<DataSourceListener> myListeners = new ArrayList<>();
 
   @NotNull private IFile myFile;
   final ModelRoot myModelRoot; // fixme is needed only for the file system dependencies, to be removed
@@ -167,25 +167,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   @Override
   public IFile getFileToListen() {
     return myFile;
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    FileSystemListener parentListener = getParentListener();
-    if (parentListener != null) {
-      return Collections.singleton(parentListener);
-    }
-    return null;
-  }
-
-  FileSystemListener getParentListener() {
-    if (myModelRoot instanceof FileSystemListener) {
-      return (FileSystemListener) myModelRoot;
-    }
-    if (myModelRoot != null && myModelRoot.getModule() instanceof FileSystemListener) {
-      return (FileSystemListener) myModelRoot.getModule();
-    }
-    return null;
   }
 
   @Override

@@ -89,7 +89,7 @@ public class ReferenceTransformationMenuItem extends ActionItemBase implements B
   @Nullable
   @Override
   public SNode getActionType(@NotNull String pattern) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     CopyUtil.copy(Arrays.asList(myNode.getContainingRoot()), mapping);
     SNode sourceNodeCopy = mapping.get(myNode);
     SNode nodeToEquate = myNode;

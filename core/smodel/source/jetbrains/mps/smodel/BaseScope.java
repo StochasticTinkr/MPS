@@ -32,7 +32,7 @@ public abstract class BaseScope implements SearchScope {
   @NotNull
   @Override
   public Iterable<SModel> getModels() {
-    List<SModel> models = new ArrayList<SModel>();
+    List<SModel> models = new ArrayList<>();
     for (SModule module : getModules()) {
       for (SModel model : module.getModels()) {
         models.add(model);

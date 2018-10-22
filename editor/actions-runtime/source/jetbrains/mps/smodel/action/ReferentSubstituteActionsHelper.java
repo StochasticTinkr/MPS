@@ -36,24 +36,6 @@ import java.util.List;
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-                                                     IReferentPresentationProvider matchingTextProvider,
-                                                     IReferentPresentationProvider visibleMatchingTextProvider) {
-    // search scope
-    // ModelConstraints works with valid links that should be taken from genuine link declaration
-    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
-    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, association);
-    Scope searchScope = refDescriptor.getScope();
-    if (searchScope instanceof ErrorScope) {
-      LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
-      return Collections.emptyList();
-    }
-    return createActions(referenceNode, currentReferent, association, refDescriptor, matchingTextProvider, visibleMatchingTextProvider);
-  }
-
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SReferenceLink link,
                                                      IReferentPresentationProvider matchingTextProvider,
                                                      IReferentPresentationProvider visibleMatchingTextProvider) {
@@ -75,7 +57,7 @@ import java.util.List;
 
     final SAbstractConcept targetConcept = association.getTargetConcept();
     Iterable<SNode> nodes = descriptor.getScope().getAvailableElements(null);
-    List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
+    List<SubstituteAction> actions = new ArrayList<>();
     for (SNode node : nodes) {
       if (node == null || !node.getConcept().isSubConceptOf(targetConcept)) {
         continue;

@@ -25,7 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ReferenceStorage<M extends SModule> {
-  private final Map<SModuleReference, M> myRefToModuleMap = new LinkedHashMap<SModuleReference, M>();
+  private final Map<SModuleReference, M> myRefToModuleMap = new LinkedHashMap<>();
 
   public M moduleAdded(@NotNull M module) {
     SModuleReference mRef = module.getModuleReference();

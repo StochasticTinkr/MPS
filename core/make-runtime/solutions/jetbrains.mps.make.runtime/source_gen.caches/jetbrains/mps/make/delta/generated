@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d1sa3m11fljwu0t5458zy4chhl89bgw" />
+<product version="3" modelHash="-854filx1h0qsj937wk6b5sdu6dlmr0u">
+  <files names="IDelta.java:IDeltaVisitor.java:IInternalDelta.java" />
+</product>
 

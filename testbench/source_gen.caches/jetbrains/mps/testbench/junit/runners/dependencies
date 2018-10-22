@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" file="BaseMpsRunner.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.BaseMpsRunner">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
@@ -10,7 +10,7 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy" file="FromDirWithModulesProjectStrategy.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategyBase" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" file="FromModulesListProjectStrategy.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -43,7 +43,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategyBase" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" file="FromProjectPathProjectStrategy.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
@@ -56,14 +56,14 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.ProjectStrategyBase" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy" file="MPSCompositeProjectStrategy.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.CompositeProjectStrategy" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" file="ModuleSymbolicSuite.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -96,7 +96,7 @@
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" file="PushEnvironmentRunnerBuilder.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="org.junit.runners.model.RunnerBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" file="TeamCityParameterizedRunner.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassCastException" />
     <classNode dependClassName="java.lang.Exception" />
@@ -150,7 +150,7 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.TestRootAccessInsight" file="TestRootAccessInsight.java">
+  <dependency className="jetbrains.mps.testbench.junit.runners.TestRootAccessInsight">
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

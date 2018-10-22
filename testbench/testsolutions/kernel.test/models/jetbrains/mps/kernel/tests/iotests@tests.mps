@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
@@ -75,7 +75,6 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
-        <child id="1068390468201" name="constructor" index="312cEh" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -204,11 +203,6 @@
   <node concept="3s_ewN" id="4uF2n1byLxZ">
     <property role="3s_ewP" value="FacetDescriptorsIO" />
     <node concept="3Tm1VV" id="4uF2n1byLy0" role="1B3o_S" />
-    <node concept="3clFbW" id="4uF2n1byLy1" role="312cEh">
-      <node concept="3cqZAl" id="4uF2n1byLy2" role="3clF45" />
-      <node concept="3Tm1VV" id="4uF2n1byLy3" role="1B3o_S" />
-      <node concept="3clFbS" id="4uF2n1byLy4" role="3clF47" />
-    </node>
     <node concept="3s_gsd" id="4uF2n1byLy5" role="3s_ewO">
       <node concept="3s$Bmu" id="4uF2n1byLy6" role="3s_gse">
         <property role="3s$Bm0" value="mpsFacet" />

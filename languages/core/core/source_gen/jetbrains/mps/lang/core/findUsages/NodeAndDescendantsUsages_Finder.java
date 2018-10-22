@@ -5,9 +5,10 @@ package jetbrains.mps.lang.core.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -16,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -36,7 +38,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind0(@NotNull SNode node, SearchScope scope, IFinder.FindCallback callback, ProgressMonitor monitor) {
     try {
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(node);
@@ -48,13 +50,14 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
       for (SReference reference : resRefs) {
         SNode snode = ((SNode) reference.getSourceNode());
         if (!(SetSequence.fromSet(nodes).contains(snode))) {
-          ListSequence.fromList(_results).addElement(snode);
+          callback.onUsageFound(createSingleResult(snode));
         }
       }
     } finally {
       monitor.done();
     }
   }
+
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);

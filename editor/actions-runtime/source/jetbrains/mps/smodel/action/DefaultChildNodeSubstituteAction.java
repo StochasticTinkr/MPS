@@ -19,6 +19,7 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -98,7 +99,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     if (conceptDeclaration == null) {
       throw new RuntimeException("Couldn't create child node. Concept declaration was not specified. Parameter object: " + getParameterObject());
     }
-    return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model);
+    return NodeFactoryManager.createNode(MetaAdapterByDeclaration.getConcept(conceptDeclaration), myOldChild, getSourceNode(), model);
   }
 
   @Override

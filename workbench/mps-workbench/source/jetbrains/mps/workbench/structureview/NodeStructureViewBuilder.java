@@ -54,22 +54,22 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
       }
 
       @Override
-      public void addEditorPositionListener(FileEditorPositionListener p0) {
+      public void addEditorPositionListener(@NotNull FileEditorPositionListener p0) {
 
       }
 
       @Override
-      public void removeEditorPositionListener(FileEditorPositionListener p0) {
+      public void removeEditorPositionListener(@NotNull FileEditorPositionListener p0) {
 
       }
 
       @Override
-      public void addModelListener(ModelListener p0) {
+      public void addModelListener(@NotNull ModelListener p0) {
 
       }
 
       @Override
-      public void removeModelListener(ModelListener p0) {
+      public void removeModelListener(@NotNull ModelListener p0) {
 
       }
 

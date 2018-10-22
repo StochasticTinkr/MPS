@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.util.CachingAppender" file="CachingAppender.java">
+  <dependency className="jetbrains.mps.testbench.util.CachingAppender">
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
@@ -15,7 +15,7 @@
     <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
     <classNode extendsClassName="org.apache.log4j.AppenderSkeleton" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.util.CachingPrintStream" file="CachingPrintStream.java">
+  <dependency className="jetbrains.mps.testbench.util.CachingPrintStream">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -29,10 +29,10 @@
     <classNode extendsClassName="java.io.PrintStream" />
     <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.util.Output" file="Output.java">
+  <dependency className="jetbrains.mps.testbench.util.Output">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.util.ThreadWatcher" file="ThreadWatcher.java">
+  <dependency className="jetbrains.mps.testbench.util.ThreadWatcher">
     <classNode dependClassName="gnu.trove.TLongObjectHashMap" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.InterruptedException" />

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3n4nomqw6glnvuahla3bndpqf0prp7v" />
+<product version="3" modelHash="c7bchk9r4fh28ky2kas4cbtnnuphwpu">
+  <files names="Test_CreateAntiquotation_Intention_Test.java:Test_CreateAntiquotation_Key_Test.java:Test_CreateListAntiquotation_Intention_Test.java:Test_CreateListAntiquotation_Key_Test.java:Test_CreatePropertyAntiquotation_Intention_Test.java:Test_CreatePropertyAntiquotation_Key_Test.java:Test_CreateReferenceAntiquotation_Intention_Test.java:Test_CreateReferenceAntiquotation_Key_Test.java:Test_QuotationDetachNodes_Test.java" />
+</product>
 

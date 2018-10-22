@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bpk45b1lj1pzo1csl1odrmknab9zbzp" />
+<product version="3" modelHash="bbuupnml2posaekv5w6c2gd4trzlr6t">
+  <files names="FindMatch.java:MatchIteration.java:Options.java:PredefinedRegexps.java:SimpleMatch.java:SimpleReplace.java:Split.java:_Replacer_90k4hu_a0a0b0c.java:_Replacer_x5qji9_a0a0b0b.java:_Replacer_x5qji9_a0a0b0c.java" />
+</product>
 

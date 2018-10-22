@@ -35,7 +35,7 @@ public interface GenerationCacheContainer {
 
   ModelCacheContainer getCache(@NotNull SModel descriptor, String hash, boolean create);
 
-  public interface ModelCacheContainer {
+  interface ModelCacheContainer {
 
     @NotNull
     InputStream openStream(String name) throws IOException;
@@ -48,7 +48,7 @@ public interface GenerationCacheContainer {
     void revert();
   }
 
-  public static class FileBasedGenerationCacheContainer implements GenerationCacheContainer {
+  class FileBasedGenerationCacheContainer implements GenerationCacheContainer {
 
     private static final Logger LOG = LogManager.getLogger(FileBasedGenerationCacheContainer.class);
 
@@ -98,7 +98,7 @@ public interface GenerationCacheContainer {
     }
   }
 
-  public static class FileBasedModelCacheContainer implements ModelCacheContainer {
+  class FileBasedModelCacheContainer implements ModelCacheContainer {
 
     private static final Logger LOG = LogManager.getLogger(FileBasedModelCacheContainer.class);
 

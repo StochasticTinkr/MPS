@@ -37,13 +37,13 @@ public class ImportUtil {
     final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
     ModelDependencyScanner scan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
     scan.walk(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}));
-    HashSet<SLanguage> languagesToImport = new HashSet<SLanguage>(scan.getUsedLanguages());
+    HashSet<SLanguage> languagesToImport = new HashSet<>(scan.getUsedLanguages());
     languagesToImport.removeAll(importedLanguages);
     for (SLanguage usedLanguage : languagesToImport) {
       modelInternal.addLanguage(usedLanguage);
     }
 
-    HashSet<SModelReference> modelsToImport = new HashSet<SModelReference>(scan.getCrossModelReferences());
+    HashSet<SModelReference> modelsToImport = new HashSet<>(scan.getCrossModelReferences());
     modelsToImport.removeAll(SModelOperations.getImportedModelUIDs(model));
     for (SModelReference ref : modelsToImport) {
       modelInternal.addModelImport(ref);

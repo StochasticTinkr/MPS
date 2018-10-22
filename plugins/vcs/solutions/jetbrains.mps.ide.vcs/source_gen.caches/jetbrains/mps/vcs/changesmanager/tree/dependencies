@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler" file="ChangesTreeCreationHandler.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" file="FeatureForestMap.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -31,11 +31,11 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" file="FeatureForestMapListener.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener">
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode extendsClassName="java.util.EventListener" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport" file="FeatureForestMapSupport.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -70,7 +70,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" file="HierarchyFeatureExtractor.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" file="ProjectTreeFeatureExtractor.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ConceptTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertiesTreeNode" />
@@ -108,7 +108,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" file="TreeHighlighter.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusListener" />
@@ -139,8 +139,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeServiceComponent" />
     <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="jetbrains.mps.util.AbstractComputeRunnable" />
@@ -172,7 +173,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TreeMessageOwner" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" file="TreeHighlighterFactory.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -190,13 +191,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" file="TreeNodeFeatureExtractor.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor">
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.tree.UsagesTreeFeatureExtractor" file="UsagesTreeFeatureExtractor.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.tree.UsagesTreeFeatureExtractor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData" />

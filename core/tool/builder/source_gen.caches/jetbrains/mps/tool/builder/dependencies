@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.tool.builder.AntBootstrap" file="AntBootstrap.java">
+  <dependency className="jetbrains.mps.tool.builder.AntBootstrap">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.MpsWorker" file="MpsWorker.java">
+  <dependency className="jetbrains.mps.tool.builder.MpsWorker">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />
@@ -67,7 +67,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.MpsWorkerTest" file="MpsWorkerTest.java">
+  <dependency className="jetbrains.mps.tool.builder.MpsWorkerTest">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />

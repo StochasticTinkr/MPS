@@ -19,6 +19,7 @@ import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.checkers.LanguageErrorsCollector;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem.CheckerCategory;
 import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
 import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
 import jetbrains.mps.errors.item.NodeReportItem;
@@ -38,9 +39,9 @@ import java.util.List;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
 
-  private final boolean myCheckMissingRuntimeLanguage;
-  private final boolean myCheckCardinalities;
-  private final boolean myCheckBrokenReferences;
+  private boolean myCheckMissingRuntimeLanguage = true;
+  private boolean myCheckCardinalities = true;
+  private boolean myCheckBrokenReferences = true;
 
   public StructureChecker(boolean suppressErrors, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
                           boolean checkBrokenReferences) {
@@ -50,7 +51,16 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
   }
 
   public StructureChecker() {
-    this(true, true, true, true);
+  }
+
+  public StructureChecker withoutBrokenReferences() {
+    myCheckBrokenReferences = false;
+    return this;
+  }
+
+  public StructureChecker withoutCardinalities() {
+    myCheckCardinalities = false;
+    return this;
   }
 
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
@@ -78,17 +88,17 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
     for (SContainmentLink link : concept.getContainmentLinks()) {
       Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
       if (!link.isOptional() && children.isEmpty()) {
-        errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())));
+        errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), link, String.format("No child in obligatory role %s", link.getName())));
       }
       if (!link.isMultiple() && children.size() > 1) {
-        errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())));
+        errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), link, String.format("Only one child is allowed in role %s", link.getName())));
       }
     }
     for (SReferenceLink refLink : concept.getReferenceLinks()) {
       SReference reference = node.getReference(refLink);
       if (!refLink.isOptional()) {
         if (reference == null) {
-          errorsCollector.addError(new ConceptFeatureCardinalityError(node, refLink, String.format("No reference in obligatory role %s", refLink.getName())));
+          errorsCollector.addError(new ConceptFeatureCardinalityError(node.getReference(), refLink, String.format("No reference in obligatory role %s", refLink.getName())));
         }
       }
     }
@@ -117,7 +127,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       if (props.contains(p)) {
         continue;
       }
-      errorsCollector.addError(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())));
+      errorsCollector.addError(new ConceptFeatureMissingError(node.getReference(), p, String.format("Missing property: %s", p.getName())));
     }
 
     List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
@@ -126,7 +136,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       if (links.contains(l)) {
         continue;
       }
-      errorsCollector.addError(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())));
+      errorsCollector.addError(new ConceptFeatureMissingError(node.getReference(), l, String.format("Missing link: %s", l.getName())));
     }
 
     List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
@@ -135,13 +145,13 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       if (refs.contains(l)) {
         continue;
       }
-      errorsCollector.addError(new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName())));
+      errorsCollector.addError(new ConceptFeatureMissingError(node.getReference(), l, String.format("Missing reference: %s", l.getName())));
     }
     return true;
   }
 
   @Override
-  public String getCategory() {
+  public CheckerCategory getCategory() {
     return IssueKindReportItem.STRUCTURE;
   }
 

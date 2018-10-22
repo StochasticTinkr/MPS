@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
@@ -536,114 +536,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="10tOJLdhPIx" role="jymVt" />
-    <node concept="2YIFZL" id="4a0HOMfn6Xq" role="jymVt">
-      <property role="TrG5h" value="getAllRefactorings" />
-      <node concept="3Tm1VV" id="4a0HOMfn6Xr" role="1B3o_S" />
-      <node concept="3uibUv" id="4a0HOMfn6Xs" role="3clF45">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="4a0HOMfn6Xt" role="11_B2D">
-          <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4a0HOMfn6Xu" role="3clF47">
-        <node concept="3cpWs6" id="4a0HOMfn6XS" role="3cqZAp">
-          <node concept="2ShNRf" id="4a0HOMfn6Xz" role="3cqZAk">
-            <node concept="1pGfFk" id="4a0HOMfn6X$" role="2ShVmc">
-              <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
-              <node concept="3uibUv" id="4a0HOMfn6X_" role="1pMfVU">
-                <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
-              </node>
-              <node concept="2OqwBi" id="5pnQe_fuKqF" role="37wK5m">
-                <node concept="2YIFZM" id="5pnQe_fuJDL" role="2Oq$k0">
-                  <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
-                  <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
-                </node>
-                <node concept="liA8E" id="5pnQe_fuLit" role="2OqNvi">
-                  <ref role="37wK5l" to="y38:10tOJLdhnSC" resolve="getAllRefactorings" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="10tOJLdhQn6" role="lGtFl">
-        <node concept="TZ5HI" id="10tOJLdhQn7" role="3nqlJM">
-          <node concept="TZ5HA" id="10tOJLdhQn8" role="3HnX3l">
-            <node concept="1dT_AC" id="10tOJLdhSG0" role="1dT_Ay">
-              <property role="1dT_AB" value="hasn't been in use from external code, MPS implementation detail. If needed, please request an API method in RefactoringAccess. Note, at the moment there's such method, but it's not intdended for use by external clients unless explicitly requested!" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdhQn9" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdhR4c" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="10tOJLdhSuJ" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="10tOJLdhSFL" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="4a0HOMfn6XU" role="jymVt">
-      <property role="TrG5h" value="getRefactorings" />
-      <node concept="3Tm1VV" id="4a0HOMfn6XV" role="1B3o_S" />
-      <node concept="37vLTG" id="4a0HOMfn6XY" role="3clF46">
-        <property role="TrG5h" value="language" />
-        <node concept="3uibUv" id="4a0HOMfn6XZ" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="4a0HOMfn6XW" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-        <node concept="3uibUv" id="4a0HOMfn6XX" role="11_B2D">
-          <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4a0HOMfn6Y0" role="3clF47">
-        <node concept="RRSsy" id="5pnQe_fuXXa" role="3cqZAp">
-          <property role="RRSoG" value="error" />
-          <node concept="Xl_RD" id="5pnQe_fuXXc" role="RRSoy">
-            <property role="Xl_RC" value="Method RefactoringUtil#getRefactorings(Language) does nothing, please update your code" />
-          </node>
-          <node concept="2ShNRf" id="5pnQe_fuXYF" role="RRSow">
-            <node concept="1pGfFk" id="5pnQe_fuYim" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;()" resolve="Throwable" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5pnQe_fuW6l" role="3cqZAp">
-          <node concept="2YIFZM" id="5pnQe_fuXk5" role="3cqZAk">
-            <ref role="37wK5l" to="33ny:~Collections.emptySet():java.util.Set" resolve="emptySet" />
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="10tOJLdhU8_" role="lGtFl">
-        <node concept="TZ5HI" id="10tOJLdhU8A" role="3nqlJM">
-          <node concept="TZ5HA" id="10tOJLdhU8B" role="3HnX3l">
-            <node concept="1dT_AC" id="10tOJLdhUNP" role="1dT_Ay">
-              <property role="1dT_AB" value="hasn't been in use from external code, MPS implementation detail. If needed, please request an API method in RefactoringAccess" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdhU8C" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdhUNR" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="10tOJLdhWai" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="10tOJLdhWKw" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2YIFZL" id="4a0HOMfn71b" role="jymVt">
       <property role="TrG5h" value="getApplicability" />
       <node concept="37vLTG" id="4a0HOMfn71e" role="3clF46">
@@ -1217,64 +1109,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="10tOJLdi6V_" role="jymVt" />
-    <node concept="2YIFZL" id="4YlI$qnBQUc" role="jymVt">
-      <property role="TrG5h" value="isApplicable" />
-      <node concept="37vLTG" id="4YlI$qnBQUg" role="3clF46">
-        <property role="TrG5h" value="refactoring" />
-        <node concept="3uibUv" id="5Ij6cQ6Zp6c" role="1tU5fm">
-          <ref role="3uigEE" node="4a0HOMfn9$I" resolve="IRefactoring" />
-        </node>
-      </node>
-      <node concept="10P_77" id="4YlI$qnBQUn" role="3clF45" />
-      <node concept="3clFbS" id="4YlI$qnBQUf" role="3clF47">
-        <node concept="3cpWs6" id="10tOJLdi3mM" role="3cqZAp">
-          <node concept="2OqwBi" id="10tOJLdi4jo" role="3cqZAk">
-            <node concept="2YIFZM" id="10tOJLdi484" role="2Oq$k0">
-              <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
-              <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
-            </node>
-            <node concept="liA8E" id="10tOJLdi4w8" role="2OqNvi">
-              <ref role="37wK5l" to="y38:10tOJLdi0g7" resolve="isApplicable" />
-              <node concept="37vLTw" id="10tOJLdi4BP" role="37wK5m">
-                <ref role="3cqZAo" node="4YlI$qnBQUg" resolve="refactoring" />
-              </node>
-              <node concept="37vLTw" id="10tOJLdi4QN" role="37wK5m">
-                <ref role="3cqZAo" node="4YlI$qnBQUj" resolve="target" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4YlI$qnBQUe" role="1B3o_S" />
-      <node concept="37vLTG" id="4YlI$qnBQUj" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3uibUv" id="4YlI$qnBQUl" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdi7MK" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="10tOJLdi7uj" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="10tOJLdi7Fx" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="10tOJLdi7Mx" role="2B70Vg">
-            <property role="$nhwW" value="2018.2" />
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="10tOJLdi8aY" role="lGtFl">
-        <node concept="TZ5HI" id="10tOJLdi8d7" role="3nqlJM">
-          <node concept="TZ5HA" id="10tOJLdi8d8" role="3HnX3l">
-            <node concept="1dT_AC" id="10tOJLdi8dv" role="1dT_Ay">
-              <property role="1dT_AB" value="Use RefactoringAccess.isApplicable instead" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3Z93mP$zT51" role="jymVt" />
     <node concept="Qs71p" id="4a0HOMfn6W4" role="jymVt">
       <property role="TrG5h" value="Applicability" />
       <node concept="3Tm1VV" id="4a0HOMfn6W6" role="1B3o_S" />
@@ -1404,7 +1238,7 @@
   <node concept="3HP615" id="4a0HOMfn8ye">
     <property role="TrG5h" value="IDescendantsProvider" />
     <node concept="3clFb_" id="4a0HOMfn8yg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDescendants" />
       <node concept="37vLTG" id="4a0HOMfn8yk" role="3clF46">
         <property role="TrG5h" value="nodeAdapter" />
@@ -3653,7 +3487,7 @@
   <node concept="3HP615" id="4a0HOMfn9yJ">
     <property role="TrG5h" value="IRefactoringTarget" />
     <node concept="3clFb_" id="4a0HOMfn9yS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTarget" />
       <node concept="3clFbS" id="4a0HOMfn9yV" role="3clF47" />
       <node concept="3uibUv" id="4a0HOMfn9yU" role="3clF45">
@@ -3662,14 +3496,14 @@
       <node concept="3Tm1VV" id="4a0HOMfn9yT" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9yW" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="allowMultipleTargets" />
       <node concept="3clFbS" id="4a0HOMfn9yZ" role="3clF47" />
       <node concept="10P_77" id="4a0HOMfn9yY" role="3clF45" />
       <node concept="3Tm1VV" id="4a0HOMfn9yX" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9z0" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isApplicable" />
       <node concept="3Tm1VV" id="4a0HOMfn9z1" role="1B3o_S" />
       <node concept="10P_77" id="4a0HOMfn9z2" role="3clF45" />
@@ -3707,7 +3541,7 @@
   <node concept="3HP615" id="4a0HOMfn9$I">
     <property role="TrG5h" value="IRefactoring" />
     <node concept="3clFb_" id="4a0HOMfn9$K" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getUserFriendlyName" />
       <node concept="3Tm1VV" id="4a0HOMfn9$L" role="1B3o_S" />
       <node concept="3uibUv" id="4a0HOMfn9$M" role="3clF45">
@@ -3716,7 +3550,7 @@
       <node concept="3clFbS" id="4a0HOMfn9$N" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9$S" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getOverridenRefactoringClass" />
       <node concept="3Tm1VV" id="4a0HOMfn9$T" role="1B3o_S" />
       <node concept="3uibUv" id="4a0HOMfn9$U" role="3clF45">
@@ -3725,7 +3559,7 @@
       <node concept="3clFbS" id="4a0HOMfn9$V" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9$W" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getRefactoringTarget" />
       <node concept="3Tm1VV" id="4a0HOMfn9$X" role="1B3o_S" />
       <node concept="3uibUv" id="4a0HOMfn9$Y" role="3clF45">
@@ -3734,7 +3568,7 @@
       <node concept="3clFbS" id="4a0HOMfn9$Z" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9_0" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="init" />
       <node concept="37vLTG" id="4a0HOMfn9_3" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
@@ -3747,7 +3581,7 @@
       <node concept="3clFbS" id="4a0HOMfn9_5" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9_6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="refactor" />
       <node concept="3Tm1VV" id="4a0HOMfn9_7" role="1B3o_S" />
       <node concept="3clFbS" id="4a0HOMfn9_b" role="3clF47" />
@@ -3760,7 +3594,7 @@
       <node concept="3cqZAl" id="4a0HOMfn9_8" role="3clF45" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9_c" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModelsToGenerate" />
       <node concept="3uibUv" id="4a0HOMfn9_e" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
@@ -3778,7 +3612,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="4a0HOMfn9_j" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doWhenDone" />
       <node concept="37vLTG" id="4a0HOMfn9_m" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
@@ -3791,7 +3625,7 @@
       <node concept="3clFbS" id="4a0HOMfn9_o" role="3clF47" />
     </node>
     <node concept="3clFb_" id="4a0HOMfn9_p" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getAffectedNodes" />
       <node concept="3uibUv" id="7QDeCk4UWgd" role="3clF45">
         <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />

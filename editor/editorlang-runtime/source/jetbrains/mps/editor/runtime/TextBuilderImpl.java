@@ -27,7 +27,7 @@ import java.util.List;
  * Date: 03/03/16
  */
 public class TextBuilderImpl implements TextBuilder {
-  private List<StringBuilder> myLines = new ArrayList<StringBuilder>();
+  private List<StringBuilder> myLines = new ArrayList<>();
   private int myWidth;
 
   public TextBuilderImpl() {
@@ -53,7 +53,7 @@ public class TextBuilderImpl implements TextBuilder {
 
   @Override
   public Iterable<CharSequence> getLines() {
-    return Collections.<CharSequence>unmodifiableCollection(myLines);
+    return Collections.unmodifiableCollection(myLines);
   }
 
   @Override

@@ -48,13 +48,13 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public void initComponent() {
-    final List<LibraryContributor> contributorsToLoad = Collections.<LibraryContributor>singletonList(this);
+    final List<LibraryContributor> contributorsToLoad = Collections.singletonList(this);
     myLibraryInitializer.load(contributorsToLoad);
   }
 
   @Override
   public void disposeComponent() {
-    myLibraryInitializer.unload(Collections.<LibraryContributor>singletonList(this));
+    myLibraryInitializer.unload(Collections.singletonList(this));
   }
 
   /**
@@ -69,16 +69,15 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public final Set<LibDescriptor> getPaths() {
-    Set<LibDescriptor> result = new HashSet<LibDescriptor>();
+    Set<LibDescriptor> result = new HashSet<>();
     for (Library lib : getUILibraries()) {
       result.add(new LibDescriptor(FileSystem.getInstance().getFile(lib.getPath())));
     }
     return result;
   }
 
-  public Library addLibrary(String name) {
-    Library library = new Library();
-    library.setName(name);
+  public Library addLibrary(@NotNull String name) {
+    Library library = new Library(name);
     myLibraries.getLibraries().put(library.getName(), library);
     return library;
   }
@@ -88,9 +87,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   public Set<Library> getUILibraries() {
-    Set<Library> result = new HashSet<Library>();
-    result.addAll(myLibraries.getLibraries().values());
-    return result;
+    return new HashSet<>(myLibraries.getLibraries().values());
   }
 
   //-------macro stuff
@@ -104,13 +101,13 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   private Library addMacros(Library l) {
-    Library result = l.clone();
+    Library result = l.copy();
     result.setPath(addMacros(result.getPath()));
     return result;
   }
 
   private Library removeMacros(Library l) {
-    Library result = l.clone();
+    Library result = l.copy();
     result.setPath(removeMacros(result.getPath()));
     return result;
   }
@@ -144,7 +141,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   @Override
-  public void loadState(LibraryState state) {
+  public void loadState(@NotNull LibraryState state) {
     myLibraries = removeMacros(state);
   }
 
@@ -154,7 +151,7 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   }
 
   static class LibraryState {
-    private Map<String, Library> myLibraries = new HashMap<String, Library>();
+    private Map<String, Library> myLibraries = new HashMap<>();
 
     public Map<String, Library> getLibraries() {
       return myLibraries;

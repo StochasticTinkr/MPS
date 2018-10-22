@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.tooltips.MPSToolTipManager" file="MPSToolTipManager.java">
+  <dependency className="jetbrains.mps.ide.tooltips.MPSToolTipManager">
     <classNode dependClassName="com.intellij.ide.IdeTooltip" />
     <classNode dependClassName="com.intellij.ide.IdeTooltipManager" />
     <classNode dependClassName="com.intellij.ide.TooltipEvent" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.tooltips.ToolTip" file="ToolTip.java">
+  <dependency className="jetbrains.mps.ide.tooltips.ToolTip">
     <classNode dependClassName="com.intellij.codeInsight.hint.HintUtil" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.Color" />
@@ -50,7 +50,7 @@
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />
     <classNode dependClassName="jetbrains.mps.util.WindowsUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.tooltips.ToolTipData" file="ToolTipData.java">
+  <dependency className="jetbrains.mps.ide.tooltips.ToolTipData">
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.String" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.tooltips.TooltipComponent" file="TooltipComponent.java">
+  <dependency className="jetbrains.mps.ide.tooltips.TooltipComponent">
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

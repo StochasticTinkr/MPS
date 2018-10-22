@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import java.util.List;
  * @since 2017.3
  */
 public class TraceRegistry implements CoreComponent {
+  // we hold instances of objects we have full control of
+  // as TraceClient instance could come and go (e.g. reloaded).
   private final List<ClientToken> myActiveClients;
   private final List<ClientToken> myInactiveClients;
 
@@ -40,14 +42,20 @@ public class TraceRegistry implements CoreComponent {
 
   public ClientToken subscribe(@NotNull TraceClient client) {
     ClientToken rv = new ClientToken();
+    // perform handshake with the client to ensure its capabilities
     myActiveClients.add(rv);
     return rv;
   }
 
   public void unsubscribe(@NotNull ClientToken token) {
     if (myActiveClients.remove(token)) {
+      token.deactivate();
       myInactiveClients.add(token);
     }
+  }
+
+  public TraceFacility createSession() {
+    return new TraceFacility(new ArrayList<>(myActiveClients));
   }
 
   @Override

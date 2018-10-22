@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ex5eh1z2okhpli40jn3d5osupzyhg8" />
+<product version="3" modelHash="bjrfqwp0d00vjicyai9vu3yfinsg1l8">
+  <files names="RedoChangesOfTransactionalPropertyCell_Test.java:RedoCommitedInvalidTypingInTransactionalPropertyCell_Test.java:RedoInvalidTypingInTransactionalPropertyCell_Test.java:RedoTypingInTransactionalPropertyCell_Test.java:UndoChangesOfTransactionalPropertyCell_Test.java:UndoCommitedInvalidTypingInTransactionalPropertyCell_Test.java:UndoInvalidTypingInTransactionalPropertyCell_Test.java:UndoTypingInTransactionalPropertyCell_Test.java" />
+</product>
 

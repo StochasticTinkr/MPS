@@ -46,8 +46,8 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
   private final static int colorIterationDelta = 50;
 
   private EditorColorsManager myColorsManager;
-  protected final Map<String, String> myIDEAStylesMapping = new HashMap<String, String>();
-  protected final Map<Pair<Color, Color>, Color> myColorsMapping = new HashMap<Pair<Color, Color>, Color>();
+  protected final Map<String, String> myIDEAStylesMapping = new HashMap<>();
+  protected final Map<Pair<Color, Color>, Color> myColorsMapping = new HashMap<>();
 
   public StyleRegistryIdeaImpl(EditorColorsManager colorsManager) {
     myColorsManager = colorsManager;
@@ -90,7 +90,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       return color;
 
     final Color original = color;
-    Pair<Color, Color> colorPair = new Pair<Color, Color>(original, bg);
+    Pair<Color, Color> colorPair = new Pair<>(original, bg);
     if (myColorsMapping.containsKey(colorPair))
       return myColorsMapping.get(colorPair);
 
@@ -209,23 +209,23 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   private void fillColorMappings() {
     final Color bg = getEditorBackground();
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_BLUE, bg), new Color(104, 151, 186));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_BLUE, bg), new Color(204, 120, 50));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GREEN, bg), new Color(98, 151, 85));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_MAGENTA, bg), new Color(152, 118, 170));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.RED, bg), new Color(255, 107, 104));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.PINK, bg), new Color(90, 100, 126));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.ORANGE, bg), new Color(255, 198, 109));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.YELLOW, bg), new Color(0, 99, 0));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.GREEN, bg), new Color(0, 128, 0));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.MAGENTA, bg), new Color(174, 138, 190));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.CYAN, bg), new Color(32, 153, 157));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.BLUE, bg), new Color(40, 123, 222));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_GRAY, bg), new Color(96, 96, 96));
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.GRAY, bg), MPSColors.GRAY);
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GRAY, bg), MPSColors.LIGHT_GRAY);
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.WHITE, bg), getEditorBackground());
-    myColorsMapping.put(new Pair<Color, Color>(MPSColors.BLACK, bg), getEditorForeground());
+    myColorsMapping.put(new Pair<>(MPSColors.LIGHT_BLUE, bg), new Color(104, 151, 186));
+    myColorsMapping.put(new Pair<>(MPSColors.DARK_BLUE, bg), new Color(204, 120, 50));
+    myColorsMapping.put(new Pair<>(MPSColors.DARK_GREEN, bg), new Color(98, 151, 85));
+    myColorsMapping.put(new Pair<>(MPSColors.DARK_MAGENTA, bg), new Color(152, 118, 170));
+    myColorsMapping.put(new Pair<>(MPSColors.RED, bg), new Color(255, 107, 104));
+    myColorsMapping.put(new Pair<>(MPSColors.PINK, bg), new Color(90, 100, 126));
+    myColorsMapping.put(new Pair<>(MPSColors.ORANGE, bg), new Color(255, 198, 109));
+    myColorsMapping.put(new Pair<>(MPSColors.YELLOW, bg), new Color(0, 99, 0));
+    myColorsMapping.put(new Pair<>(MPSColors.GREEN, bg), new Color(0, 128, 0));
+    myColorsMapping.put(new Pair<>(MPSColors.MAGENTA, bg), new Color(174, 138, 190));
+    myColorsMapping.put(new Pair<>(MPSColors.CYAN, bg), new Color(32, 153, 157));
+    myColorsMapping.put(new Pair<>(MPSColors.BLUE, bg), new Color(40, 123, 222));
+    myColorsMapping.put(new Pair<>(MPSColors.LIGHT_GRAY, bg), new Color(96, 96, 96));
+    myColorsMapping.put(new Pair<>(MPSColors.GRAY, bg), MPSColors.GRAY);
+    myColorsMapping.put(new Pair<>(MPSColors.DARK_GRAY, bg), MPSColors.LIGHT_GRAY);
+    myColorsMapping.put(new Pair<>(MPSColors.WHITE, bg), getEditorBackground());
+    myColorsMapping.put(new Pair<>(MPSColors.BLACK, bg), getEditorForeground());
   }
 
   private void addIdeaMappingsExt(String mpsKey, String ideaKey) throws StyleRegistryMappingKeyException {

@@ -35,6 +35,15 @@ public class SEnumOperations {
   public static String getEnumMemberPresentation(SNode member) {
     return SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
   }
+  public static int getDefaultEnumMemberIndex(SNode enumm) {
+    if (SPropertyOperations.getBoolean(enumm, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"))) {
+      return -1;
+    }
+    if ((SLinkOperations.getTarget(enumm, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL, "defaultMember")) == null)) {
+      return 0;
+    }
+    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(enumm, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL, "defaultMember")));
+  }
   public static SNode enumMemberForName(SNode enumm, final String name) {
     return ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -91,6 +100,9 @@ public class SEnumOperations {
   public static SEnumerationLiteral getMemberForValue(String value, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
     SEnumerationLiteral literal = e.getLiteral(value);
+
+    // RS Why there is special case `value == null`? It looks strange that `memberFromValue(null)` returns a default member but 
+    // RS `memberFromValue("not-a-value")` returns null, and `memberForName(null)` also returns null. See `EnumerationDatatypes` nullsafety tests 
     return (literal == null && value == null ? e.getDefault() : literal);
   }
   public static String getMemberName(SEnumerationLiteral enumMember) {

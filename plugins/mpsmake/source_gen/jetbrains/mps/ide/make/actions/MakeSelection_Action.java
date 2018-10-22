@@ -6,8 +6,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.make.MakeServiceComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
@@ -33,7 +33,7 @@ public class MakeSelection_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (IMakeService.INSTANCE.get().isSessionActive()) {
+    if (event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(MakeServiceComponent.class).isSessionActive()) {
       return false;
     }
     String text = new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(MakeSelection_Action.this.getModules(event)).models(MakeSelection_Action.this.getModels(event)).cleanMake(MakeSelection_Action.this.cleanMake).actionText();

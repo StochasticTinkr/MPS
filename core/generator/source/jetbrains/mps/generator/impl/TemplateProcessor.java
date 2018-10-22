@@ -36,7 +36,10 @@ import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
@@ -309,7 +312,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     static <T> List<T> wrapAsList(T node) {
-      return node == null ? Collections.<T>emptyList() : Collections.singletonList(node);
+      return node == null ? Collections.emptyList() : Collections.singletonList(node);
     }
 
     private void checkInputNodesForNulls(TemplateContext context, Iterable<SNode> result) throws GenerationFailureException {
@@ -328,13 +331,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(new QueryKeyImpl(getMacroNodeRef(), query.getNodeId()));
       } else {
         // <default> : propagate  current input node
-        return new SourceNodeQuery() {
-          @Nullable
-          @Override
-          public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
-            return context.getInputNode();
-          }
-        };
+        return context -> context.getInputNode();
       }
     }
 
@@ -348,13 +345,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return null;
       }
       // <default> : propagate  current input node
-      return new SourceNodesQuery() {
-        @NotNull
-        @Override
-        public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
-          return wrapAsList(context.getInputNode());
-        }
-      };
+      return context -> wrapAsList(context.getInputNode());
     }
   }
 
@@ -374,7 +365,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       final GenerationTrace trace = templateContext.getEnvironment().getTrace();
       String counterVarName = RuleUtil.getLoopMacroCounterVarName(macro);
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      ArrayList<SNode> outputNodes = new ArrayList<>();
       int i = 0;
       for (SNode newInputNode : newInputNodes) {
         TemplateContext ctx = templateContext;
@@ -403,8 +394,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-        GenerationCanceledException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationFailureException,
+                                                                              GenerationCanceledException {
       final Collection<SNode> newInputNodes;
       if (myIsSoleInput) {
         newInputNodes = wrapAsList(getNewInputNode(templateContext));
@@ -433,8 +424,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @NotNull
     @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-        GenerationCanceledException {
+    public List<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationFailureException,
+                                                                              GenerationCanceledException {
       SNode child = getNodeToInsert(templateContext);
       if (child != null) {
         child = templateContext.getEnvironment().insertNode(child, getMacroNodeRef(), templateContext);
@@ -450,10 +441,11 @@ public final class TemplateProcessor implements ITemplateProcessor {
   // $WEAVE$
   private static class WeaveMacro extends MacroWithInput implements WeavingWithAnchor {
     private WeaveAnchorQuery myAnchorQuery;
+    private volatile TemplateCall myCallProcessor;
+    private volatile TemplateDeclaration myTemplateRT;
 
     protected WeaveMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
-
     }
 
     @NotNull
@@ -465,30 +457,63 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return Collections.emptyList();
       }
       if (_outputNodes.size() > 1) {
-        getLogger().error(macro.getReference(), "cannot apply $WEAVE$ to a list of nodes",
-            GeneratorUtil.describe(templateContext.getInput(), "input"));
-        return _outputNodes;
-      }
-      SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
-      if (consequence == null) {
-        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no consequence",
-            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
+        // XXX why not?
+        getLogger().error(getMacroNodeRef(), "cannot apply $WEAVE$ to a list of nodes", GeneratorUtil.describeInput(templateContext));
         return _outputNodes;
       }
 
-      SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
+      final TemplateExecutionEnvironment env = templateContext.getEnvironment();
+
+      if (myTemplateRT == null) {
+        // FIXME why WEAVE macro has ruleConsequence:TemplateDeclarationReference, while CALL is ITemplateCall itself and got template:IParameterizedTemplate?
+        //       not sure whicj one is better, but definitely has to be the same!
+        SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
+        if (consequence == null) {
+          throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no consequence", GeneratorUtil.describeInput(templateContext));
+        }
+
+        SNode template = RuleUtil.getTemplateCall_Template(consequence);
+        if (template == null) {
+          throw new TemplateProcessingFailureException(macro, "couldn't evaluate weave macro: no template", GeneratorUtil.describeInput(templateContext));
+        }
+
+        // I don't mind double initialization of the field from parallel threads, hence no guard, see $CALL$ for more details
+        myTemplateRT = env.findTemplate(TemplateIdentity.fromSourceNode(template), getMacroNodeRef());
+        // consequence is node<TemplateDeclarationReference> and may pass arguments
+        myCallProcessor = new TemplateCall(consequence);
+        if (myCallProcessor.argumentsMismatch()) {
+          // XXX why not TemplateProcessingFailureException?
+          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
+          // fall-through
+        }
+      }
       ////
-      if (template == null) {
-        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no template",
-            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
-        return _outputNodes;
-      }
-      WeaveTemplateContainer wtc = new WeaveTemplateContainer(template, this);
-      wtc.initialize(getLogger());
 
-      SNode contextNode = _outputNodes.get(0);
+      final SNode contextNode = _outputNodes.get(0);
+      final TemplateContext tcWithArgs = myCallProcessor.prepareCallContext(templateContext);
+
       for (SNode node : getNewInputNodes(templateContext)) {
-        wtc.apply(contextNode, templateContext.subContext(node));
+        WeaveContext wc = new WeaveContextImpl(contextNode, tcWithArgs.subContext(node), this);
+        NodeWeaveFacility nwf = templateContext.getEnvironment().prepareWeave(wc, getMacroNodeRef());
+        try {
+          // XXX would be great to have something like next code, instead
+          // td.apply(new WeaveSink(), templateContext);
+          myTemplateRT.weave(wc, nwf);
+          // XXX exception handling shall match that of WeavingProcessor.ArmedWeavingRule
+        } catch (GenerationFailureException | GenerationCanceledException ex) {
+          throw ex;
+        } catch (DismissTopMappingRuleException | AbandonRuleInputException ex) {
+          String msg = ex instanceof DismissTopMappingRuleException ? "bad template: dismiss in a weaving rule is not supported"
+                                                                    : "bad template: abandon statement in a weaving rule is not supported";
+          getLogger().error(getMacroNodeRef(), msg,
+                                GeneratorUtil.describe(macro, "template node"),
+                                GeneratorUtil.describe(templateContext.getInput(), "input node"),
+                                GeneratorUtil.describe(contextNode, "output context node"));
+
+        } catch (GenerationException ex) {
+          // unexpected, we've handled reasonable cases above
+          getLogger().handleException(ex);
+        }
       }
       return _outputNodes;
     }
@@ -620,7 +645,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       MapPostProcessor postProcessor = ppf == null ? null : queryProvider.getMapPostProcessor(new QueryKeyImpl(getMacroNodeRef(), ppf.getNodeId()));
       // it's perfectly legal to have neither mapNodeQuery nor postProcessor
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
+      ArrayList<SNode> outputNodes = new ArrayList<>(newInputNodes.size());
       final DelayedChanges delayedChanges = myTemplateProcessor.getGenerator().getDelayedChanges();
       for (SNode newInputNode : newInputNodes) {
         TemplateContext newcontext = templateContext.subContext(newInputNode);
@@ -711,15 +736,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
   private static abstract class InvokeTemplateMacro extends MacroWithInput {
     private final String myName;
     protected SNode myInvokedTemplate;
-    private volatile TemplateContainer myTemplates;
+    private volatile TemplateDeclaration myTemplateRT;
 
     protected InvokeTemplateMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor, String macroName) {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
 
-    // shall not return null. templateContext != null.
-    protected abstract Object[] arguments(TemplateContext templateContext) throws GenerationFailureException;
+    // shall return argument if does nothing. templateContext != null.
+    protected abstract TemplateContext prepareArguments(TemplateContext templateContext) throws GenerationFailureException;
 
     /*
     FIXME introduce a mechanism to access template declaration instance without need to evaluate actual arguments first
@@ -739,22 +764,29 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNode == null) {
         return Collections.emptyList(); // skip template
       }
-
-      SNode invokedTemplate = myInvokedTemplate;
-      if (invokedTemplate == null) {
-        throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
-      }
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      TemplateContext tcInput = templateContext.subContext(newInputNode);
+
+      if (myTemplateRT == null) {
+        // I don't mind double initialization of the field from parallel threads, hence no guard. Perhaps, would need to change this
+        // once TemplateDeclaration runtime classes are decorated (e.g. with a trace) and have a state to care about.
+        // There's pretty much identical code in WEAVE, btw.
+        SNode invokedTemplate = myInvokedTemplate;
+        if (invokedTemplate == null) {
+          throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
+        }
+        // myInvokedTemplate may come from a template model that has generated source code, have to access proper TemplateModel
+        // implementation and proper TemplateDeclaration instance. Use of TemplateContainer here would imply we interpret any CALL/INCLUDE template.
+        myTemplateRT = env.findTemplate(TemplateIdentity.fromSourceNode(myInvokedTemplate), getMacroNodeRef());
+        // Though we may be calling generated template, we still have node<TemplateDeclaration> as it's the only way for interpreted call site to point to
+        // a template declaration. Technically, we don't need node<TemplateDeclaration> here, just its identity.
+      }
+      // XXX here, arguments are evaluated with 'outer' context, with no respect to input node coming from 'mapped node' query method
+      //     while in reduction rule, context for arguments would include input node. I don't know if we have to deal with this small discrepancy,
+      //     just a note we are aware of it.
+      TemplateContext tcInput = prepareArguments(templateContext).subContext(newInputNode);
 
       try {
-        // myInvokedTemplate may come from a template model that has generated source code, have to access proper TemplateModel
-        // implementation and proper TemplateDeclaration instance. In fact, likely need more complex reference to template than
-        // mere SNodeReference (in case we would like to avoid deploy of models with generated templates), e.g. an additional
-        // node to hold template identity key (OTOH, why not SNodeReference itself as identity key, if we could access
-        // reference target w/o need to get it resolved to a node?).
-        // Note, use of TemplateContainer here would imply we interpret any CALL/INCLUDE template.
-        Collection<SNode> rv = env.applyTemplate(myInvokedTemplate.getReference(), getMacroNodeRef(), tcInput, arguments(templateContext));
+        Collection<SNode> rv = myTemplateRT.apply(env, tcInput);
         env.getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
         // FIXME stick to same API, e.g. List<SNode>, do not mix the two.
         return new ArrayList<>(rv);
@@ -775,7 +807,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected Object[] arguments(TemplateContext templateContext) {
+    protected TemplateContext prepareArguments(TemplateContext templateContext) {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(myInvokedTemplate);
       if (parameterNames == null) {
         getLogger().error(getMacroNodeRef(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describeInput(templateContext));
@@ -789,7 +821,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
       }
       // $INCLUDE$ doesn't pass arguments per se (the macro has no mechanism to specify them), merely uses values of outer context
-      return new Object[0];
+      return templateContext;
     }
   }
 
@@ -803,7 +835,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected Object[] arguments(TemplateContext templateContext) throws GenerationFailureException {
+    protected TemplateContext prepareArguments(TemplateContext templateContext) throws GenerationFailureException {
       TemplateCall tc = myCallProcessor;
       if (tc == null) {
         tc = new TemplateCall(macro);
@@ -813,7 +845,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         myCallProcessor = tc;
       }
-      return tc.evaluateArguments(templateContext);
+      return tc.prepareCallContext(templateContext);
     }
   }
 
@@ -855,7 +887,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      ArrayList<SNode> outputNodes = new ArrayList<>();
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
         outputNodes.addAll(_outputNodes);

@@ -151,7 +151,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
-    Set<EditorCell> editorCellsSet = new HashSet<EditorCell>();
+    Set<EditorCell> editorCellsSet = new HashSet<>();
     for (EditorCell editorCell : editorCells) {
       editorCellsSet.add(editorCell);
     }
@@ -193,7 +193,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
-    List<Rectangle> result = new ArrayList<Rectangle>();
+    List<Rectangle> result = new ArrayList<>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
     for (EditorCell leaf : indentLeafs) {
       result.add(GeometryUtil.getBounds(leaf));
@@ -207,7 +207,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private static List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
-    List<EditorCell> result = new ArrayList<EditorCell>();
+    List<EditorCell> result = new ArrayList<>();
     collectCells(current, result, null);
     return result;
   }
@@ -254,12 +254,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myBottomInset;
     private boolean myOverflow;
     private int myLineIndent = 0;
-    private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
-    private List<Integer> myLineWrapIndent = new ArrayList<Integer>();
+    private List<EditorCell> myLineContent = new ArrayList<>();
+    private List<Integer> myLineWrapIndent = new ArrayList<>();
     private int myIndentSize;
 
-    private Stack<Integer> myIndentStack = new Stack<Integer>();
-    private Stack<Integer> myWrapStack = new Stack<Integer>();
+    private Stack<Integer> myIndentStack = new Stack<>();
+    private Stack<Integer> myWrapStack = new Stack<>();
     private int myCurrentIndent;
     private int myCurrentIndentAfterWrap;
 
@@ -296,12 +296,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
 
       if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
-        withIndent(myCurrentIndent + myIndentSize, myCurrentIndent + 3 * myIndentSize, new Runnable() {
-          @Override
-          public void run() {
-            appendCell(cell, false);
-          }
-        });
+        withIndent(myCurrentIndent + myIndentSize, myCurrentIndent + 3 * myIndentSize, () -> appendCell(cell, false));
       } else {
         appendCell(cell, false);
       }
@@ -341,15 +336,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
           (hasAnchor || hasIndent) ? indent + 2 * myIndentSize
               : myCurrentIndentAfterWrap;
 
-      withIndent(indent, wrapIndent, new Runnable() {
-        @Override
-        public void run() {
-          for (EditorCell child : collection) {
-            if (child instanceof EditorCell_Collection && isIndentCollection((EditorCell_Collection) child)) {
-              layoutCollection((EditorCell_Collection) child);
-            } else {
-              layout(child);
-            }
+      withIndent(indent, wrapIndent, () -> {
+        for (EditorCell child : collection) {
+          if (child instanceof EditorCell_Collection && isIndentCollection((EditorCell_Collection) child)) {
+            layoutCollection((EditorCell_Collection) child);
+          } else {
+            layout(child);
           }
         }
       });
@@ -365,10 +357,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private int getFirstChildLeftGap(EditorCell_Collection collection) {
       EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(collection);
-      if (firstLeaf != null) {
-        return PunctuationUtil.getLeftGap(firstLeaf);
-      }
-      return 0;
+      return PunctuationUtil.getLeftGap(firstLeaf);
     }
 
     private void updatePositions(EditorCell_Collection collection) {
@@ -560,25 +549,22 @@ public class CellLayout_Indent extends AbstractCellLayout {
         throw new IllegalStateException();
       }
 
-      final List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
-      final List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
+      final List<EditorCell> oldLine = new ArrayList<>(myLineContent.subList(0, index));
+      final List<EditorCell> newLine = new ArrayList<>(myLineContent.subList(index, myLineContent.size()));
 
-      withIndent(myLineIndent, myLineWrapIndent.get(index), new Runnable() {
-        @Override
-        public void run() {
-          resetLine();
+      withIndent(myLineIndent, myLineWrapIndent.get(index), () -> {
+        resetLine();
 
-          for (EditorCell cell : oldLine) {
-            appendCell(cell, cell == oldLine.get(oldLine.size() - 1));
-          }
+        for (EditorCell cell : oldLine) {
+          appendCell(cell, cell == oldLine.get(oldLine.size() - 1));
+        }
 
-          if (!oldLine.isEmpty()) {
-            newLine(true);
-          }
+        if (!oldLine.isEmpty()) {
+          newLine(true);
+        }
 
-          for (EditorCell cell : newLine) {
-            appendCell(cell, false);
-          }
+        for (EditorCell cell : newLine) {
+          appendCell(cell, false);
         }
       });
     }

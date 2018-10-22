@@ -57,7 +57,7 @@ public class TreeNodeValueExtractor {
    * @return empty list if there are no elements to create favorites entries from
    */
   public List<Object> getObjects(Collection<TreeNode> treeNodes) {
-    List<Object> result = new ArrayList<Object>();
+    List<Object> result = new ArrayList<>();
     for (TreeNode treeNode : treeNodes) {
       if (treeNode instanceof SNodeTreeNode) {
         final SNode node = ((SNodeTreeNode) treeNode).getSNode();

@@ -29,14 +29,18 @@ import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.DescriptorModelComponent;
 import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
+import jetbrains.mps.project.structure.GenericDescriptorModelProvider;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.Generator.GeneratorModelsAutoImports;
+import jetbrains.mps.smodel.Language.LanguageModelsAutoImports;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -72,6 +76,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private PathMacros myPathMacros;
   private ExtensionRegistry myExtensionRegistry;
   private DataSourceFactoryRuleService myDataSourceService;
+  private ModelsAutoImportsManager myAutoImportsManager;
 
   /**
    * made package-private
@@ -90,6 +95,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   @Override
   public void dispose() {
     super.dispose();
+    myAutoImportsManager = null;
     myClassLoaderManager = null;
     myLibraryInitializer = null;
     myPersistenceFacade = null;
@@ -130,19 +136,23 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     //      so that ER could make extensions available to subsequent listeners of LR notifications.
     //      Note, as long as CLM supports both legacy and new DeployListener, both ER and LR have to use same mechanism to keep the notification order.
     myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
-    myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
+    myLanguageRegistry = init(new LanguageRegistry(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,
                                       new LanguageDescriptorModelProvider(myLanguageRegistry),
-                                      new GeneratorDescriptorModelProvider()));
+                                      new GeneratorDescriptorModelProvider(),
+                                      new GenericDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
 
     init(new ResolverComponent());
     init(new ValidationSettings());
 
     init(new PropertySupportCache(myClassLoaderManager));
+    myAutoImportsManager = init(new ModelsAutoImportsManager());
+    myAutoImportsManager.register(new LanguageModelsAutoImports());
+    myAutoImportsManager.register(new GeneratorModelsAutoImports());
   }
 
   private void checkInitialized() {
@@ -235,6 +245,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myDataSourceService);
+    }
+    if (ModelsAutoImportsManager.class.equals(componentClass)) {
+      return componentClass.cast(myAutoImportsManager);
     }
     return null;
   }

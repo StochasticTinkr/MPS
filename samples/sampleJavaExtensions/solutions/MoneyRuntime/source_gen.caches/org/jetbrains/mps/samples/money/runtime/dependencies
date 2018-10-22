@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" file="DailyStockPrice.java">
+  <dependency className="org.jetbrains.mps.samples.money.runtime.DailyStockPrice">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.math.BigDecimal" />
     <classNode dependClassName="java.util.Date" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.money.runtime.Money" file="Money.java">
+  <dependency className="org.jetbrains.mps.samples.money.runtime.Money">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.math.BigDecimal" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.money.runtime.MoneyConversion" file="MoneyConversion.java">
+  <dependency className="org.jetbrains.mps.samples.money.runtime.MoneyConversion">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.math.BigDecimal" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator" file="StockPriceCalculator.java">
+  <dependency className="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.math.BigDecimal" />
     <classNode dependClassName="java.util.List" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.money.runtime.StockPriceDownloader" file="StockPriceDownloader.java">
+  <dependency className="org.jetbrains.mps.samples.money.runtime.StockPriceDownloader">
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />

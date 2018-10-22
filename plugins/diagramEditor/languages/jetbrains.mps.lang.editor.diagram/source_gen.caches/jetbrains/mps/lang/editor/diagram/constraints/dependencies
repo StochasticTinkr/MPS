@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints" file="CellModel_DiagramConnector_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints" file="CellModel_Diagram_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints" file="CreationActionReference_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.FigureParameterMapping_Constraints" file="FigureParameterMapping_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.FigureParameterMapping_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -69,7 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints" file="LinkArgument_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints" file="PropertyArgument_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -109,7 +109,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.ThisEditorNodeExpression_Constraints" file="ThisEditorNodeExpression_Constraints.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.ThisEditorNodeExpression_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -125,6 +125,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.VisibleReferencesScope" file="VisibleReferencesScope.java" />
+  <dependency className="jetbrains.mps.lang.editor.diagram.constraints.VisibleReferencesScope" />
 </dependenciesRoot>
 

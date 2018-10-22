@@ -69,7 +69,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   @NonNls
   private static final ID<Integer, ModelRootsData> NAME = ID.create("mps.RootNodeName");
   private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
-  private static final Key<SModelData> PARSED_MODEL = new Key<SModelData>("parsed-model");
+  private static final Key<SModelData> PARSED_MODEL = new Key<>("parsed-model");
   private final MPSCoreComponents myCoreComponents;
 
   public static SModelData doModelParsing(Platform mpsPlatform, FileContent inputData) {
@@ -103,7 +103,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           return null;
         }
         inputData.putUserData(PARSED_MODEL, modelData);
-      } catch (URLNotSupportedException | URISyntaxException | IOException e) {
+      } catch (URLNotSupportedException | IOException e) {
         LOG.error(String.format("Failed to index %s", inputData.getFileName()), e);
         return null;
       }
@@ -122,7 +122,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   }
 
   @Nullable
-  private static URL constructURLFromData(FileContent inputData) throws MalformedURLException, URISyntaxException {
+  private static URL constructURLFromData(FileContent inputData) {
     return VfsUtilCore.convertToURL(inputData.getFile().getUrl());
   }
 
@@ -154,7 +154,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     }
     ModelRootsData modelEntry = descriptors.get(0); // key is unique for the model
     Collection<Entry> entries = modelEntry.getEntries();
-    ArrayList<NavigationTarget> rv = new ArrayList<NavigationTarget>(entries.size());
+    ArrayList<NavigationTarget> rv = new ArrayList<>(entries.size());
     for (Entry e : entries) {
       rv.add(new SNodeDescriptor(e.myName, e.myConcept, new SNodePointer(modelEntry.getModelReference(), e.myNode)));
     }

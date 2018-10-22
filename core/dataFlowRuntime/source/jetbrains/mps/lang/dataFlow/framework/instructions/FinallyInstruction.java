@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class FinallyInstruction extends Instruction {
-  protected TryFinallyInfo myInfo;
-  protected final List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
-  protected final List<TryFinallyInfo> myChildTryFinallies = new ArrayList<TryFinallyInfo>();
+  private TryFinallyInfo myInfo;
+  private final List<RetInstruction> myReturns = new ArrayList<>();
+  private final List<TryFinallyInfo> myChildTryFinallies = new ArrayList<>();
 
   public FinallyInstruction() {
   }
@@ -68,7 +68,7 @@ public class FinallyInstruction extends Instruction {
   @Override
   public List<ProgramState> pred(ProgramState s) {
     if (s.isReturnMode()) {
-      List<ProgramState> result = new ArrayList<ProgramState>();
+      List<ProgramState> result = new ArrayList<>();
       for (RetInstruction ret : myReturns) {
         result.add(new ProgramState(ret, false));
         result.add(new ProgramState(ret, true));

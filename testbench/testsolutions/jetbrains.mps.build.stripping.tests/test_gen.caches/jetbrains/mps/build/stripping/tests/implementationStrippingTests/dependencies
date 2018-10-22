@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.AddNotTest_Test" file="AddNotTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.AddNotTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.CommentLineTest_Test" file="CommentLineTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.CommentLineTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -24,7 +24,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test" file="DuplicitRoutineNameTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test" file="ElseTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test" file="EnterIfTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.LeftTransformTest_Test" file="LeftTransformTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.LeftTransformTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test" file="RemoveNotTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test" file="RepetitionTest_Test.java">
+  <dependency className="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

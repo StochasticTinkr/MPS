@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="805zzfqk746iri8tbnrlt30p9i5lz8v" />
+<product version="3" modelHash="-b9wqma5x5oaf48n6v0rmbstbu61dcl1">
+  <files names="DataTransferManager.java" />
+</product>
 

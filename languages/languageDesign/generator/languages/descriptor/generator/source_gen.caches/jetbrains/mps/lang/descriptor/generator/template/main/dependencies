@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_GeneratorModule" file="Mapping_GeneratorModule.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_GeneratorModule">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -38,7 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.MapConfigBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_LanguageModule" file="Mapping_LanguageModule.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_LanguageModule">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultTemplateContext" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.MapConfigBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Switch_InstantiateAspectDescriptor" file="Switch_InstantiateAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Switch_InstantiateAspectDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -123,21 +123,19 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
-    <classNode dependClassName="java.lang.Object" />
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.GeneratorQueryProvider" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclarationKey" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_GeneratorModule" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Mapping_LanguageModule" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Switch_InstantiateAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Template_GDClass" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Template_GeneratorRuntime" />
@@ -146,13 +144,14 @@
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Template_generator_descriptor" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Template_language_descriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_GDClass" file="Template_GDClass.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_GDClass">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
@@ -168,7 +167,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_GeneratorRuntime" file="Template_GeneratorRuntime.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_GeneratorRuntime">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -200,9 +199,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration2" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_InterpretedGeneratorRuntimeDescriptor" file="Template_InterpretedGeneratorRuntimeDescriptor.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_InterpretedGeneratorRuntimeDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -236,7 +236,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_Language" file="Template_Language.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_Language">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -271,7 +271,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_generator_descriptor" file="Template_generator_descriptor.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_generator_descriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -294,7 +294,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_language_descriptor" file="Template_language_descriptor.java">
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Template_language_descriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />

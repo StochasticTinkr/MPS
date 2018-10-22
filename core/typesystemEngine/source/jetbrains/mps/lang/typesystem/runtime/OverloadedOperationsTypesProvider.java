@@ -55,15 +55,10 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
       }
     }
     if (myRightTypeIsExact) {
-      if (!MatchingUtil.matchNodes(rightOperandType, myRightOperandType)) {
-        return false;
-      }
+      return MatchingUtil.matchNodes(rightOperandType, myRightOperandType);
     } else {
-      if (!subtypingManager.isSubtype(rightOperandType, myRightOperandType, !myRightIsStrong)) {
-        return false;
-      }
+      return subtypingManager.isSubtype(rightOperandType, myRightOperandType, !myRightIsStrong);
     }
-    return true;
   }
 
   @Override
@@ -72,7 +67,7 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
   }
 
   @Override
-  public int compareTo(IOverloadedOpsTypesProvider o) {
+  public int compareTo(@NotNull IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOperationsTypesProvider) {
       OverloadedOperationsTypesProvider o2 = (OverloadedOperationsTypesProvider) o;
       int i1 = (this.myLeftTypeIsExact ? 1 : 0) + (this.myRightTypeIsExact ? 1 : 0);

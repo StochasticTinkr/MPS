@@ -48,7 +48,7 @@ public class SModelHeader {
   private SModelReference myModelRef = null;
   private int myPersistenceVersion = -1;
   private boolean doNotGenerate = false;
-  private Map<String, String> myOptionalProperties = new HashMap<String, String>();
+  private Map<String, String> myOptionalProperties = new HashMap<>();
   private MetaModelInfoProvider myMetaInfoProvider;
 
   public SModelHeader() {

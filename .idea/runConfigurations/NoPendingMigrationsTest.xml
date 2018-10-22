@@ -13,7 +13,7 @@
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.migration.NoPendingMigrationsTest" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-ea -Dprojects_dir=. -Xss1024k -Xmx2048m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -client -Duse.loaded.state.as.existing=false" />
+    <option name="VM_PARAMETERS" value="-ea -Dprojects_dir=. -Xmx2048m -XX:+HeapDumpOnOutOfMemoryError -client -Duse.loaded.state.as.existing=false" />
     <option name="PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ENV_VARIABLES" />

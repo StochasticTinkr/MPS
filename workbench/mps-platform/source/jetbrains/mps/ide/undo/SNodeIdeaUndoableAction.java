@@ -32,12 +32,12 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   SNodeIdeaUndoableAction(List<UndoItem> items, SRepository repository, boolean isGlobal, Collection<DocumentReference> affectedDocuments) {
     myIsGlobal = isGlobal;
     myRepository = repository;
-    myItems = items.toArray(new UndoItem[items.size()]);
-    myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[affectedDocuments.size()]);
+    myItems = items.toArray(new UndoItem[0]);
+    myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[0]);
   }
 
   @Override
-  public final void undo() throws UnexpectedUndoException {
+  public final void undo() {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
       for (int i = myItems.length - 1; i >= 0; i--) {
         myItems[i].undo();
@@ -46,10 +46,10 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   @Override
-  public final void redo() throws UnexpectedUndoException {
+  public final void redo() {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
-      for (int i = 0; i < myItems.length; i++) {
-        myItems[i].redo();
+      for (UndoItem myItem : myItems) {
+        myItem.redo();
       }
     });
   }

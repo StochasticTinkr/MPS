@@ -58,21 +58,19 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> result = new ArrayList<SNode>();
+            List<SNode> result = new ArrayList<SNode>();
 
-              SModule sourceModule = SNodeOperations.getModel(_context.getContextNode()).getModule();
-              Collection<Language> langs = new GlobalModuleDependenciesManager(sourceModule).getUsedLanguages();
-              for (Language language : langs) {
-                SModel sm = SModuleOperations.getAspect(language, "structure");
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(sm, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1081773326031")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
-                  }
-                }));
-              }
-              return ListScope.forResolvableElements(result);
+            SModule sourceModule = SNodeOperations.getModel(_context.getContextNode()).getModule();
+            Collection<Language> langs = new GlobalModuleDependenciesManager(sourceModule).getUsedLanguages();
+            for (Language language : langs) {
+              SModel sm = SModuleOperations.getAspect(language, "structure");
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(sm, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1081773326031")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+                }
+              }));
             }
+            return ListScope.forResolvableElements(result);
           }
         };
       }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" file="GenUtil.java">
+  <dependency className="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Object" />

@@ -59,7 +59,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
         return cell;
       }
     };
-    provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

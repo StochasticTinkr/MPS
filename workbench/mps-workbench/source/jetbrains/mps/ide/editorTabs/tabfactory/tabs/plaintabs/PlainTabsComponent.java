@@ -54,11 +54,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private RelationDescriptor myLastEmptyTab = null;
   private volatile boolean myRebuilding = false;
 
-  private final Disposable myJbTabsDisposable = new Disposable() {
-    @Override
-    public void dispose() {
-    }
-  };
+  private final Disposable myJbTabsDisposable = Disposer.newDisposable(PlainTabsComponent.class.getName());
 
   public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
       CreateModeCallback createModeCallback, Project project) {
@@ -194,12 +190,10 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
 
     SNodeReference selectedNode = null;
-    RelationDescriptor selectedAspect = null;
 
     int selected = myTabs.getTabCount() > 0 ? myTabs.getIndexOf(myTabs.getSelectedInfo()) : -1;
     if (selected != -1) {
       selectedNode = myRealTabs.get(selected).getNode();
-      selectedAspect = myRealTabs.get(selected).getTab();
     }
 
     boolean oldRebuilding = myRebuilding;

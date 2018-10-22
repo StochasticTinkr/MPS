@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="13io8acgv4ushu6z0kqmq4tpshc7tt7" />
+<product version="3" modelHash="-45lrvobrlu4drf4ft6id8cu9ktjz9md">
+  <files names="AfterTest__BehaviorDescriptor.java:BTestCase__BehaviorDescriptor.java:BeforeTest__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:ITestCase__BehaviorDescriptor.java:ITestMethod__BehaviorDescriptor.java:ITestable__BehaviorDescriptor.java:TestMethod__BehaviorDescriptor.java" />
+</product>
 

@@ -83,7 +83,7 @@ public class Utils {
   }
 
   public static List<File> files(File root) {
-    List<File> result = new ArrayList<File>();
+    List<File> result = new ArrayList<>();
     collectFiles(root, result);
     return result;
   }
@@ -99,7 +99,7 @@ public class Utils {
   }
 
   public static List<File> withExtension(String ext, List<File> files) {
-    List<File> result = new ArrayList<File>();
+    List<File> result = new ArrayList<>();
     for (File file : files) {
       if (file.getName().endsWith(ext)) {
         result.add(file);

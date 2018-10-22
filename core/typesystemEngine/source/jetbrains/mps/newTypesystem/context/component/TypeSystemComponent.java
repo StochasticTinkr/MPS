@@ -47,10 +47,10 @@ import java.util.*;
   public TypeSystemComponent(TypeChecker typeChecker, State state, IncrementalTypechecking component) {
     super(typeChecker, state, component);
 
-    myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
-    myNodesDependentOnCaches = new THashSet<SNode>();
-    myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
-    myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
+    myNodesToRules = new THashMap<>();
+    myNodesDependentOnCaches = new THashSet<>();
+    myNodesToDependentNodes_A = new THashMap<>();
+    myNodesToDependentNodes_B = new THashMap<>();
   }
 
   //returns true if something was invalidated
@@ -60,11 +60,11 @@ import java.util.*;
       return isInvalidationResult();
     }
     boolean result;
-    Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
-    Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
+    Set<SNode> invalidatedNodes_A = new THashSet<>();
+    Set<SNode> invalidatedNodes_B = new THashSet<>();
+    Set<SNode> newNodesToInvalidate_A = new THashSet<>();
     Set<SNode> currentNodesToInvalidate_A = getCurrentNodesToInvalidate();
-    Set<SNode> nodesToInvalidate_B = new THashSet<SNode>();
+    Set<SNode> nodesToInvalidate_B = new THashSet<>();
 
     if (isCacheWasRebuilt()) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
@@ -89,7 +89,7 @@ import java.util.*;
         }
       }
       currentNodesToInvalidate_A = newNodesToInvalidate_A;
-      newNodesToInvalidate_A = new THashSet<SNode>();
+      newNodesToInvalidate_A = new THashSet<>();
     }
 
     for (SNode nodeToInvalidate : nodesToInvalidate_B) {
@@ -161,16 +161,16 @@ import java.util.*;
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {
-      rulesWhichAffectNodesType = new THashSet<Pair<String, String>>(1);
+      rulesWhichAffectNodesType = new THashSet<>(1);
       myNodesToRules.put(node, rulesWhichAffectNodesType);
     }
-    rulesWhichAffectNodesType.add(new Pair<String, String>(ruleModel, ruleId));
+    rulesWhichAffectNodesType.add(new Pair<>(ruleModel, ruleId));
   }
 
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
     Set<Pair<String, String>> set = myNodesToRules.get(node);
     if (set == null) return null;
-    return new THashSet<Pair<String, String>>(set);
+    return new THashSet<>(set);
   }
 
   @Override
@@ -192,7 +192,7 @@ import java.util.*;
       if (sNode == nodeToDependOn) continue;
       Set<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new THashSet<SNode>(1);
+        dependentNodes = new THashSet<>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
         getTypechecking().track(nodeToDependOn);
       }
@@ -213,16 +213,13 @@ import java.util.*;
 
   @Override
   protected boolean applyRulesToNode(final SNode node) {
-    final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
+    final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<>();
 
     if (!collectNodesAndRules(node, nodesAndRules)) return false;
 
-    return getTypechecking().runApplyRulesTo(node, new Runnable() {
-      @Override
-      public void run() {
-        for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
-          applyRulesToNode(pair.o1, pair.o2);
-        }
+    return getTypechecking().runApplyRulesTo(node, () -> {
+      for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
+        applyRulesToNode(pair.o1, pair.o2);
       }
     });
   }

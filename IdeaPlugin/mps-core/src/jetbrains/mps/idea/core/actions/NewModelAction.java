@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -114,7 +115,10 @@ public class NewModelAction extends NewModelActionBase {
               }
             });
 
-            ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+            final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+            if (mpsProject != null) {
+              mpsProject.getComponent(ModelsAutoImportsManager.class).performImports(myModelRoot.getModule(), model);
+            }
             new MissingDependenciesFixer(model).fixModuleDependencies();
 
             return model;

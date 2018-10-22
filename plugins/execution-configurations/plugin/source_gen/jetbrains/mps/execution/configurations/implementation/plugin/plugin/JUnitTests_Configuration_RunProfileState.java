@@ -69,7 +69,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
       JUnitTests_Configuration configuration = myRunConfiguration;
       processExecutor = new JUnitInProcessExecutor(mpsProject, ((BaseMpsRunConfiguration) configuration).getName(), testNodes);
     } else {
-      processExecutor = new JUnitExecutor(project, executor, settings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
+      processExecutor = new JUnitExecutor(mpsProject, executor, settings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);

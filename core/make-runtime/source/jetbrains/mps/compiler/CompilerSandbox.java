@@ -19,6 +19,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public class CompilerSandbox {
 
-  public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+  public static void main(String[] args) {
   }
 }

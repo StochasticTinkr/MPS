@@ -123,16 +123,11 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public SModule getModule(@NotNull final SModuleReference ref) {
-    Computable<SModule> c = new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return REPO.getModule(ref.getModuleId());
-      }
-    };
+    Computable<SModule> c = () -> REPO.getModule(ref.getModuleId());
     if (REPO.getModelAccess().canRead()) {
       return c.compute();
     }
-    ComputeRunnable<SModule> r = new ComputeRunnable<SModule>(c);
+    ComputeRunnable<SModule> r = new ComputeRunnable<>(c);
     REPO.getModelAccess().runReadAction(r);
     return r.getResult();
   }
@@ -144,7 +139,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
-    List<T> result = new ArrayList<T>();
+    List<T> result = new ArrayList<>();
     for (SModule module : REPO.getModules()) {
       if (cls.isInstance(module)) result.add((T) module);
     }
@@ -253,7 +248,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @ToRemove(version = 3.4)
   public Collection<Language> getAllExtendingLanguages(Language l) {
     final SModuleReference lRef = l.getModuleReference();
-    List<Language> result = new LinkedList<Language>();
+    List<Language> result = new LinkedList<>();
     for (Language lang : getAllModules(Language.class)) {
       if (lang.getExtendedLanguageRefs().contains(lRef)) {
         result.add(lang);
@@ -263,7 +258,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public void unregisterModules(MPSModuleOwner owner) {
-    REPO.unregisterModules(new HashSet<SModule>(REPO.getModules(owner)), owner);
+    REPO.unregisterModules(new HashSet<>(REPO.getModules(owner)), owner);
   }
 
   //intended to use only when module is removed physically
@@ -272,14 +267,14 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    * unregisters module from all its owners
    */
   public void unregisterModule(@NotNull SModule module) {
-    Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(REPO.getOwners(module));
+    Set<MPSModuleOwner> owners = new HashSet<>(REPO.getOwners(module));
     for (MPSModuleOwner owner : owners) {
       REPO.unregisterModule(module, owner);
     }
   }
 
   public Set<MPSModuleOwner> getModuleOwners(SModule module) {
-    return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
+    return new HashSet<>(REPO.getOwners(module));
   }
 
   /**

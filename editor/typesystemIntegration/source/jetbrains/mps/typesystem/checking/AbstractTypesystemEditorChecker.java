@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.checkers.ErrorReportUtil;
-import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
@@ -28,10 +27,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.QuickFixRuntimeEditorWrapper;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -45,7 +43,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -72,10 +69,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   @Override
   public boolean needsUpdate(EditorComponent editorComponent) {
-    // TODO: instead of checking that the editor is instance of InspectorEditorComponent here, we should modify API & pass some context object
-    // TODO: instead of editorComponent here. We should understand that the checker was executed on top of the inspector from the context
-    // TODO: and access different information like: mainEditorMessagesChanged / wereInspectorMessagesCreated here
-    return myHasEvents || editorComponent instanceof InspectorEditorComponent;
+    return myHasEvents;
   }
 
   @Override
@@ -103,22 +97,16 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   protected Collection<EditorMessage> collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext,
                                                                         boolean typesystemErrors, boolean applyQuickFixes) {
-    Set<EditorMessage> messages = new HashSet<EditorMessage>();
+    Set<EditorMessage> messages = new HashSet<>();
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
-      if (!ErrorReportUtil.shouldReportError(errorNode.o1)) {
-        // although we might need to check IErrorReporter.getSNode(), I assume pair's first element always match that of IErrorReporter
-        continue;
-      }
-      List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
-      Collections.sort(errors, new Comparator<IErrorReporter>() {
-        @Override
-        public int compare(IErrorReporter o1, IErrorReporter o2) {
-          return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-        }
-      });
+      List<IErrorReporter> errors = new ArrayList<>(errorNode.o2);
+      Collections.sort(errors, (o1, o2) -> o2.getMessageStatus().compareTo(o1.getMessageStatus()));
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
+        if (!ErrorReportUtil.shouldReportError(reportItem,editorContext.getRepository())) {
+          break;
+        }
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this, editorContext.getRepository());
 
         EditorQuickFix quickfix = TypesystemReportItemAdapter.FLAVOUR_EDITOR_QUICKFIX.getAutoApplicable(message.getReportItem());
@@ -146,33 +134,10 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
     if (!myOnceExecutedQuickFixes.contains(flavours)) {
       myOnceExecutedQuickFixes.add(flavours);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          EditorCell selectedCell = editorContext.getSelectedCell();
-          if (selectedCell == null) {
-            return;
-          }
-          int caretX = selectedCell.getCaretX();
-          int caretY = selectedCell.getBaseline();
-
-          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new EditorCommand(editorContext) {
-            @Override
-            public void doExecute() {
-              intention.execute(editorContext.getRepository());
-            }
-          });
-
-          editorContext.flushEvents();
-          if (editorContext.getSelectionManager().getSelection() == null) {
-            EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-            if (leaf != null) {
-              editorContext.getEditorComponent().changeSelection(leaf);
-              leaf.setCaretX(caretX);
-            }
-          }
-        }
+      ApplicationManager.getApplication().invokeLater(() -> {
+        editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(() -> {
+            QuickFixRuntimeEditorWrapper.getInstance(intention).execute(editorContext, true);
+        });
       }, ModalityState.NON_MODAL);
     }
     return true;

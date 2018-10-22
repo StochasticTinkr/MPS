@@ -52,7 +52,7 @@ public final class SurroundWithExecuteLightweightCommandStatement_Intention exte
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode readActionStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea215L, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement")), null);
+      SNode readActionStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea215L, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement"), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, readActionStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

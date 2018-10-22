@@ -55,7 +55,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -175,7 +174,7 @@ public class UsagesView implements IExternalizeable {
   }
 
   public void setActions(Collection<? extends AnAction> actions) {
-    setActions(actions.toArray(new AnAction[actions.size()]));
+    setActions(actions.toArray(new AnAction[0]));
   }
 
   public void close() {
@@ -334,8 +333,7 @@ public class UsagesView implements IExternalizeable {
         @Override
         public void onSuccess() {
           if (mySearchResults != null) {
-            mySearchResults.removeDuplicates();
-            myView.setContents(mySearchResults);
+            myView.setContents(mySearchResults.removeDuplicates());
           }
         }
       });
@@ -345,7 +343,7 @@ public class UsagesView implements IExternalizeable {
   /**
    * This SearchTask executes SearchQuery with a read lock for a project repository.
    */
-  public static final class SearchTaskImpl implements SearchTask, Runnable {
+  public static final class SearchTaskImpl implements SearchTask {
     private final Project myProject;
     private final IResultProvider myResultProvider;
     private final SearchQuery mySearchQuery;
@@ -376,13 +374,12 @@ public class UsagesView implements IExternalizeable {
 
     public SearchResults execute(ProgressMonitor progressMonitor) {
       myProgress = progressMonitor;
-      myProject.getModelAccess().runReadAction(this);
+      myProject.getModelAccess().runReadAction(() -> {
+        SearchResults results = myResultProvider.getResults(mySearchQuery, myProgress);
+        SearchResultsSorter sorter = new SearchResultsSorter(results);
+        myLastResults = sorter.sortNodeResultsByLocationInTheEditor();
+      });
       return getSearchResults();
-    }
-
-    @Override
-    public void run() {
-      myLastResults = myResultProvider.getResults(mySearchQuery, myProgress);
     }
 
     public SearchResults getSearchResults() {
@@ -420,8 +417,9 @@ public class UsagesView implements IExternalizeable {
   }
 
   public static class RebuildAction extends AnAction {
-    private final AtomicReference<MakeSession> myMakeSession = new AtomicReference<MakeSession>();
+    private final AtomicReference<MakeSession> myMakeSession = new AtomicReference<>();
     private final UsagesView myView;
+    private final MakeServiceComponent myMakeComponent;
 
     public RebuildAction(UsagesView view) {
       this(view, "Rebuild models", "", Actions.Compile);
@@ -430,27 +428,26 @@ public class UsagesView implements IExternalizeable {
     public RebuildAction(UsagesView view, String text, String description, Icon icon) {
       super(text, description, icon);
       myView = view;
+      final Project mpsProject = view.myProject;
+      myMakeComponent = mpsProject.getComponent(MakeServiceComponent.class);
     }
 
     @Override
     public void update(@NotNull AnActionEvent e) {
-      e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.isSessionActive());
+      e.getPresentation().setEnabled(myMakeSession.get() == null && !myMakeComponent.isSessionActive());
     }
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
       final Project mpsProject = myView.myProject;
-      Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
-        @Override
-        public Iterable<IResource> compute() {
-          List<SModel> models = new ArrayList<SModel>();
-          for (SModel modelDescriptor : myView.getIncludedModels()) {
-            if (GenerationFacade.canGenerate(modelDescriptor)) {
-              models.add(modelDescriptor);
-            }
+      Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(() -> {
+        List<SModel> models = new ArrayList<>();
+        for (SModel modelDescriptor : myView.getIncludedModels()) {
+          if (GenerationFacade.canGenerate(modelDescriptor)) {
+            models.add(modelDescriptor);
           }
-          return new ModelsToResources(models).resources();
         }
+        return new ModelsToResources(models).resources();
       });
 
       if (myMakeSession.compareAndSet(null, new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), false))) {
@@ -465,4 +462,5 @@ public class UsagesView implements IExternalizeable {
       }
     }
   }
+
 }

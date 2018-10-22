@@ -23,10 +23,8 @@ import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
-import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.plugins.part.ApplicationPluginPart;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.IActionsRegistry;
@@ -46,12 +44,12 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
 
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
 
-  private List<BaseCustomApplicationPlugin> myCustomPlugins;
-  private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
-  private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
-  private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
+  private List<ApplicationPluginPart> myCustomParts;
+  private List<BaseGroup> myGroups = new ArrayList<>();
+  private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<>();
+  private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<>();
 
-  private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<DefaultActionGroup, DefaultActionGroup>();
+  private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<>();
   private Platform myPlatform;
 
   //----------plugin id------------
@@ -89,7 +87,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
       return;
     }
     if (!(gTo instanceof BaseGroup) && !(gWhat instanceof BaseGroup)) {
-      myXmlGroups.add(new Pair<DefaultActionGroup, DefaultActionGroup>(gTo, gWhat));
+      myXmlGroups.add(new Pair<>(gTo, gWhat));
     }
 
     myAdjustedGroups.put(gTo, gWhat);
@@ -138,12 +136,6 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   //----------custom parts----------
 
   public final void createCustomParts() {
-    myCustomPlugins = initCustomParts();
-  }
-
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  protected List<BaseCustomApplicationPlugin> initCustomParts() {
     List<ApplicationPluginPart> rv = new ArrayList<>();
     fillCustomParts(rv);
     for (ApplicationPluginPart part : rv) {
@@ -154,7 +146,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
         LOG.error(String.format("Failed to initialize part %s of plugin %s", part.getClass(), getId()), th);
       }
     }
-    return new ArrayList<>(rv);
+    myCustomParts = rv;
   }
 
   protected void fillCustomParts(List<ApplicationPluginPart> parts) {
@@ -171,7 +163,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   }
 
   protected List<BaseKeymapChanges> initKeymaps() {
-    return new ArrayList<BaseKeymapChanges>();
+    return new ArrayList<>();
   }
 
   //-------------common-------------
@@ -187,17 +179,15 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   public final void dispose() {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
-    for (BaseCustomApplicationPlugin part : myCustomPlugins) {
-      // in fact, with 2018.1, part is instance of ApplicationPluginPart and guarded BaseCustomApplicationPlugin.dispose is not employed.
+    for (ApplicationPluginPart part : myCustomParts) {
       try {
         part.dispose();
-        if (part instanceof ApplicationPluginPart) {
-          ((ApplicationPluginPart) part).setPlatform(null);
-        }
+        part.setPlatform(null);
       } catch (Throwable th) {
         LOG.error(String.format("Failed to dispose part %s of plugin %s", part.getClass(), getId()), th);
       }
     }
+    myCustomParts.clear();
 
     for (BaseKeymapChanges change : myKeymapChanges) {
       change.dispose();

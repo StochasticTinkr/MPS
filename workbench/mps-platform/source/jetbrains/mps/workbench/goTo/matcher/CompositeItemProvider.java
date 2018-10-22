@@ -31,9 +31,10 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
     myProviders = providers;
   }
 
+  @NotNull
   @Override
-  public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
-    List<String> res = new ArrayList<String>();
+  public List<String> filterNames(@NotNull ChooseByNameBase base, @NotNull String[] names, @NotNull String pattern) {
+    List<String> res = new ArrayList<>();
     for (ChooseByNameItemProvider matcher : myProviders) {
       res.addAll(matcher.filterNames(base, names, pattern));
     }

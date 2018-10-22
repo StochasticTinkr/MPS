@@ -146,17 +146,6 @@ public class ColorAndGraphicsUtil {
     g2d.setStroke(oldStroke);
   }
 
-  /**
-   * Looks like not used anymore.
-   * Let's remove this method after MPS 2018.2
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static Point getCentralPosition(Component parent, Component component) {
-    return new Point(parent.getX() + (parent.getWidth() - component.getWidth()) / 2,
-                     parent.getY() + (parent.getHeight() - component.getHeight()) / 2);
-  }
-
   private static TexturePaint createPaintForStripe(Color c) {
     BufferedImage image = new BufferedImage(STRIPE_SIZE, STRIPE_SIZE, BufferedImage.TYPE_INT_ARGB);
     Graphics g = image.getGraphics();

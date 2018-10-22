@@ -29,6 +29,6 @@ import java.util.List;
  */
 public interface ITemplateProcessor {
   @NotNull
-  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
+  List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException;
 }

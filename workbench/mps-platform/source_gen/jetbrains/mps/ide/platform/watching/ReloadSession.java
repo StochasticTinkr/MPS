@@ -16,12 +16,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import org.jetbrains.annotations.Nullable;
+import java.util.function.Supplier;
 
 public class ReloadSession {
   private static final Logger LOG = LogManager.getLogger(ReloadSession.class);
   private List<ReloadListener> myListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
   private boolean myReloaded = false;
-  private Map<Class, ReloadParticipant> myParticipants = MapSequence.fromMap(new HashMap<Class, ReloadParticipant>());
+  private Map<Object, ReloadParticipant> myParticipants = MapSequence.fromMap(new HashMap<Object, ReloadParticipant>());
   private boolean myEmpty = true;
   private AtomicInteger myEmployCount = new AtomicInteger(0);
 
@@ -97,14 +99,13 @@ public class ReloadSession {
     MapSequence.fromMap(myParticipants).clear();
   }
 
-  /*package*/ <T extends ReloadParticipant> T getParticipant(Class<T> participantClass) {
-    ReloadParticipant p = MapSequence.fromMap(myParticipants).get(participantClass);
+  @Nullable
+  /*package*/ <T extends ReloadParticipant> T getParticipant(Object participantKey, Supplier<T> participantInstance) {
+    ReloadParticipant p = MapSequence.fromMap(myParticipants).get(participantKey);
     if (p == null) {
-      try {
-        p = participantClass.newInstance();
-        MapSequence.fromMap(myParticipants).put(participantClass, p);
-      } catch (IllegalAccessException ignored) {
-      } catch (InstantiationException ignored) {
+      p = participantInstance.get();
+      if (p != null) {
+        MapSequence.fromMap(myParticipants).put(participantKey, p);
       }
     }
     return (T) p;

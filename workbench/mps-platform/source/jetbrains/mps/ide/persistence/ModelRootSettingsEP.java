@@ -19,6 +19,7 @@ import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.util.LazyInstance;
 import com.intellij.util.KeyedLazyInstance;
 import com.intellij.util.xmlb.annotations.Attribute;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 10/24/12
@@ -42,6 +43,7 @@ public class ModelRootSettingsEP extends AbstractExtensionPointBean implements K
     }
   };
 
+  @NotNull
   @Override
   public ModelRootSettingsEditorProvider getInstance() {
     return myProvider.getValue();

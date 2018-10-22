@@ -15,6 +15,19 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/3201523885428184061">
+    <file name="TouchBarDefault_shift_ActionGroup.java">
+      <node id="3201523885428184061" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="3201523885428184061" at="9,46,10,39" concept="12" />
+      <node id="3201523885428184061" at="10,39,11,30" concept="2" />
+      <node id="3201523885428184061" at="11,30,12,25" concept="2" />
+      <node id="3201523885428184068" at="12,25,13,126" concept="2" />
+      <node id="3201523885428184061" at="9,0,15,0" concept="1" trace="TouchBarDefault_shift_ActionGroup#()V" />
+      <scope id="3201523885428184061" at="9,46,13,126" />
+      <scope id="3201523885428184061" at="9,0,15,0" />
+      <unit id="3201523885428184061" at="7,0,16,0" name="jetbrains.mps.ide.java.workbench.actions.TouchBarDefault_shift_ActionGroup" />
+    </file>
+  </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/4326588611400156604">
     <file name="MigrateSourcesToMPS_Action.java">
       <node id="4326588611400156604" at="37,0,38,0" concept="11" trace="ICON" />

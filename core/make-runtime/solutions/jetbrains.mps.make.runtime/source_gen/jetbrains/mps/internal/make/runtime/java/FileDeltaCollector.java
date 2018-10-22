@@ -12,14 +12,31 @@ public class FileDeltaCollector implements StreamHandler {
   private final IFile myOutputDir;
   private final FileProcessor myProcessor;
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.internal.make.runtime.java.FileDeltaCollector#FileDeltaCollector(FilesDelta, IFile, FileProcessor) } instead
+   */
+  @Deprecated
   public FileDeltaCollector(IFile outputDir, FileProcessor fileProcessor) {
-    myDelta = new FilesDelta(outputDir);
+    this(new FilesDelta(outputDir), outputDir, fileProcessor);
+  }
+
+  /**
+   * 
+   * @param delta added streams are reported to this delta
+   * @param outputDir file created by simple names are relative to this directory
+   * @param fileProcessor holds file contents
+   */
+  public FileDeltaCollector(FilesDelta delta, IFile outputDir, FileProcessor fileProcessor) {
+    myDelta = delta;
     myOutputDir = outputDir;
     myProcessor = fileProcessor;
   }
+
   public FilesDelta getDelta() {
     return myDelta;
   }
+
   @Override
   public void saveStream(String name, String content) {
     IFile file = getFile(name);
@@ -40,15 +57,22 @@ public class FileDeltaCollector implements StreamHandler {
   }
   @Override
   public void saveStream(String name, byte[] content) {
-    IFile file = getFile(name);
+    saveStream(getFile(name), content);
+  }
+
+  public void saveStream(IFile file, byte[] content) {
+    // FIXME this is in fact part of future proper API for StreamHandler, once we allow arbitrary path for TextGen units 
     if (myProcessor.saveContent(file, content)) {
       myDelta.written(file);
     } else {
       myDelta.kept(file);
     }
   }
+
   @Override
   public boolean touch(String name) {
+    // TODO seems that we no longer need this method, remove along with StreamHandler rewrite to use InputStream/ISProvider instead of present 
+    //      approach that keeps copies of all TextUnits 
     IFile file = getFile(name);
     myDelta.kept(file);
     return file.exists();

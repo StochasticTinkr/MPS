@@ -2,8 +2,8 @@
 <model ref="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -21,6 +21,7 @@
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -43,9 +44,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -367,7 +365,6 @@
     </node>
     <node concept="2tJIrI" id="5m8mBG1kiIh" role="jymVt" />
     <node concept="3clFb_" id="3_o1C0wGpF2" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="find" />
       <property role="DiZV1" value="false" />
@@ -1900,7 +1897,6 @@
     <node concept="2tJIrI" id="271DUEnPQOx" role="jymVt" />
     <node concept="2YIFZL" id="OXD5jBQDqv" role="jymVt">
       <property role="TrG5h" value="findDependencies" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="OXD5jBQvoT" role="3clF47">
@@ -3494,7 +3490,6 @@
     <node concept="2tJIrI" id="ZVS8OJndqi" role="jymVt" />
     <node concept="2YIFZL" id="ZVS8OJnoKt" role="jymVt">
       <property role="TrG5h" value="getLanguageToLookUp" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="ZVS8OJnd$T" role="3clF47">
@@ -3768,6 +3763,7 @@
       <node concept="3cqZAl" id="5wOcmpULBDn" role="3clF45" />
       <node concept="3clFbS" id="5wOcmpULBDo" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="1D0QuRYmrjn" role="jymVt" />
     <node concept="3clFb_" id="1Fz6CCofn_D" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDescription" />
@@ -3787,6 +3783,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1D0QuRYmraI" role="jymVt" />
     <node concept="3clFb_" id="5wOcmpULBDp" role="jymVt">
       <property role="TrG5h" value="find" />
       <node concept="3Tm1VV" id="5wOcmpULBDq" role="1B3o_S" />
@@ -4000,6 +3997,9 @@
       </node>
       <node concept="2AHcQZ" id="5wOcmpULBG4" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="1D0QuRYmq_9" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3UR2Jj" id="5wOcmpULCxr" role="lGtFl">
@@ -4888,7 +4888,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="find" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="pogCqdRFSw" role="1B3o_S" />
       <node concept="3uibUv" id="pogCqdRFSy" role="3clF45">

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a9emkcxezkgy3f84ui84acq67f5m5ai" />
+<product version="3" modelHash="459qejy4ql8vjhgfzunoxy7ilyrt6ud">
+  <files names="BaseStep.java:IconContainer.java:Icons.java:InitialStep.java:MigrationError.java:MigrationExceptionError.java:MigrationSession.java:MigrationStep.java:MigrationTask.java:MigrationWizard.java:MigrationsMissingError.java:NotMigratedLibsError.java:PostCheckError.java:PreCheckError.java" />
+</product>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.ChangeSet" file="ChangeSet.java">
+  <dependency className="jetbrains.mps.vcs.diff.ChangeSet">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
@@ -8,7 +8,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ChangeSetBuilder" file="ChangeSetBuilder.java">
+  <dependency className="jetbrains.mps.vcs.diff.ChangeSetBuilder">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
@@ -72,7 +72,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ChangeSetImpl" file="ChangeSetImpl.java">
+  <dependency className="jetbrains.mps.vcs.diff.ChangeSetImpl">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -97,20 +97,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ModelChangeSet" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ModelChangeSet" file="ModelChangeSet.java">
+  <dependency className="jetbrains.mps.vcs.diff.ModelChangeSet">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ChangeSet" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.StructChangeSet" file="StructChangeSet.java">
+  <dependency className="jetbrains.mps.vcs.diff.StructChangeSet">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ChangeSet" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.StructChangeSetBuilder" file="StructChangeSetBuilder.java">
+  <dependency className="jetbrains.mps.vcs.diff.StructChangeSetBuilder">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -153,7 +153,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.StructChangeSetImpl" file="StructChangeSetImpl.java">
+  <dependency className="jetbrains.mps.vcs.diff.StructChangeSetImpl">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />

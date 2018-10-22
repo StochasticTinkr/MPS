@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAllAsTabular_Intention" file="ViewAllAsTabular_Intention.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAllAsTabular_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -33,7 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAsTabularThroughTheEnumBox_Intention" file="ViewAsTabularThroughTheEnumBox_Intention.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAsTabularThroughTheEnumBox_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -50,7 +50,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAsTabular_Intention" file="ViewAsTabular_Intention.java">
+  <dependency className="jetbrains.mps.samples.multipleProjections.requestTracking.intentions.ViewAsTabular_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

@@ -24,6 +24,6 @@ public interface ModuleFlavouredItem extends FlavouredItem {
   @NotNull
   SModuleReference getModule();
 
-  ReportItemFlavour<ModuleFlavouredItem, SModuleReference> FLAVOUR_MODULE = new SimpleReportItemFlavour<>(ModuleFlavouredItem.class, ModuleFlavouredItem::getModule);
+  ReportItemFlavour<ModuleFlavouredItem, SModuleReference> FLAVOUR_MODULE = new SimpleReportItemFlavour<>("FLAVOUR_MODULE", ModuleFlavouredItem.class, ModuleFlavouredItem::getModule);
 
 }

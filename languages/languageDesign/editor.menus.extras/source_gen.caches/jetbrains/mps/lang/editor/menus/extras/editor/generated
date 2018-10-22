@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9tapbgz4zp5declmsoioi0y3e8bfml7" />
+<product version="3" modelHash="-4rkgqlwppfq97txfmjf1msskfohgqz3">
+  <files names="EditorAspectDescriptorImpl.java:TransformationMenuPart_Intention_Editor.java:TransformationMenuPart_Intention_EditorBuilder_a.java:TransformationMenuPart_PluginAction_Editor.java:TransformationMenuPart_PluginAction_EditorBuilder_a.java:TransformationMenuPart_Refactoring_Editor.java:TransformationMenuPart_Refactoring_EditorBuilder_a.java" />
+</product>
 

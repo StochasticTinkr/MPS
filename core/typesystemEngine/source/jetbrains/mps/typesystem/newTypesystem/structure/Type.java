@@ -30,15 +30,15 @@ public class Type<Meta, Target> {
 
   protected String myRole;
   protected IReference<Meta> myMeta;
-  protected List<Type<Meta, Target>> myChildren = new ArrayList<Type<Meta, Target>>(2);
-  protected Map<String, IReference<Target>> myReferences = new THashMap<String, IReference<Target>>(0);
+  protected List<Type<Meta, Target>> myChildren = new ArrayList<>(2);
+  protected Map<String, IReference<Target>> myReferences = new THashMap<>(0);
 
   public List<Type<Meta, Target>> getChildren() {
-    return new ArrayList<Type<Meta, Target>>(myChildren);
+    return new ArrayList<>(myChildren);
   }
 
   public List<Type<Meta, Target>> getChildren(String role) {
-    List<Type<Meta, Target>> result = new ArrayList<Type<Meta, Target>>();
+    List<Type<Meta, Target>> result = new ArrayList<>();
     if (role == null) return result;
     for (Type<Meta, Target> t : myChildren) {
       if (role.equals(t.myRole)) {
@@ -68,7 +68,7 @@ public class Type<Meta, Target> {
   }
 
   public Set<String> getReferenceRoles() {
-    return new THashSet<String>(myReferences.keySet());
+    return new THashSet<>(myReferences.keySet());
   }
 
   public void addChild(Type<Meta, Target> child, String role) {
@@ -89,7 +89,7 @@ public class Type<Meta, Target> {
   }
 
   public Set<String> getChildRoles() {
-    Set<String> result = new THashSet<String>();
+    Set<String> result = new THashSet<>();
     for (Type t : myChildren) {
       result.add(t.myRole);
     }

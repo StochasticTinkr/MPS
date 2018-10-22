@@ -18,19 +18,9 @@ package jetbrains.mps.nodeEditor.cells;
 import org.jetbrains.mps.util.Condition;
 
 public class CellConditions {
-  public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {
-    @Override
-    public boolean met(EditorCell cell) {
-      return cell.isSelectable();
-    }
-  };
+  public static final Condition<EditorCell> SELECTABLE = cell -> cell.isSelectable();
 
   public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> ERROR_CONDITION =
-      new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-        @Override
-        public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-          return cell instanceof EditorCell_Error || cell.isErrorState();
-        }
-      };
+      cell -> cell instanceof EditorCell_Error || cell.isErrorState();
 
 }

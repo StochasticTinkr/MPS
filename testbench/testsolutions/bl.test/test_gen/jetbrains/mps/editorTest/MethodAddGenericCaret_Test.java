@@ -33,7 +33,7 @@ public class MethodAddGenericCaret_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6181413376134300553", "6181413376134300559");
-      typeString("<T");
+      typeString(">T");
     }
   }
 }

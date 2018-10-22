@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptDefaultModifier = createDescriptorForDefaultModifier();
   /*package*/ final ConceptDescriptor myConceptSuperInterfaceMethodCall = createDescriptorForSuperInterfaceMethodCall();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -21,13 +22,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptSuperInterfaceMethodCall);
+    return Arrays.asList(myConceptDefaultModifier, myConceptSuperInterfaceMethodCall);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.DefaultModifier:
+        return myConceptDefaultModifier;
       case LanguageConceptSwitch.SuperInterfaceMethodCall:
         return myConceptSuperInterfaceMethodCall;
       default:
@@ -39,6 +42,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForDefaultModifier() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.jdk8", "DefaultModifier", 0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x40ed0df0ef40a332L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.JavaModifier", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1027dd744a287198L);
+    b.origin("r:c97f7798-14e8-47eb-b3f8-b032ba7575c4(jetbrains.mps.baseLanguage.jdk8.structure)/4678410916365116210");
+    b.version(2);
+    b.alias("default");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSuperInterfaceMethodCall() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.jdk8", "SuperInterfaceMethodCall", 0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L);
     b.class_(false, false, false);

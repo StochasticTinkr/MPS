@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,22 +37,29 @@ final class EDTExecutor implements Disposable {
   static final int QUEUE_MAX_EXPECTED_VALUE = 1000;
 
   private final EDTExecutorInternal myExecutor = new EDTExecutorInternal();
-  private final TaskScheduler myTaskScheduler = new TaskScheduler(myExecutor);
 
   EDTExecutor() {
     Disposer.register(this, myExecutor);
   }
 
   void scheduleRead(@NotNull Computable<Boolean> tryRead) {
-    myTaskScheduler.scheduleRead(tryRead);
+    scheduleTask(tryRead::compute);
   }
 
   void scheduleWrite(@NotNull Computable<Boolean> tryWrite) {
-    myTaskScheduler.scheduleWrite(tryWrite);
+    scheduleTask(tryWrite::compute);
   }
 
   void scheduleCommand(@NotNull Computable<Boolean> tryCommand, @NotNull Project project) {
-    myTaskScheduler.scheduleCommand(tryCommand, project);
+    scheduleTask(new Task() {
+      @Override
+      public boolean tryRun() throws TaskIsOutdated {
+        if (project.isDisposed()) {
+          throw new TaskIsOutdated(this, "The project " + project + " is disposed");
+        }
+        return tryCommand.compute();
+      }
+    });
   }
 
   /**
@@ -62,7 +69,21 @@ final class EDTExecutor implements Disposable {
     myExecutor.flushTasks();
   }
 
+  private void scheduleTask(@NotNull Task task) {
+    myExecutor.scheduleTask(task);
+  }
+
   @Override
   public void dispose() {
+  }
+
+  interface Task {
+    boolean tryRun() throws TaskIsOutdated;
+  }
+
+  static final class TaskIsOutdated extends Exception {
+    TaskIsOutdated(@NotNull Task task, @NotNull String reason) {
+      super("Task " + task + " is outdated; the reason is " + reason);
+    }
   }
 }

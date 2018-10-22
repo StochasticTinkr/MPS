@@ -6,10 +6,10 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
@@ -213,6 +213,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
@@ -1583,8 +1586,8 @@
           <node concept="3cpWsn" id="2PIlT5T$1qr" role="3cpWs9">
             <property role="TrG5h" value="allItems" />
             <node concept="3vKaQO" id="2PIlT5T$1qs" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$1qt" role="3O5elw">
-                <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+              <node concept="3uibUv" id="1knX_y6lxwR" role="3O5elw">
+                <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
               </node>
             </node>
             <node concept="2OqwBi" id="2PIlT5T$1qu" role="33vP2m">
@@ -1622,8 +1625,10 @@
           <node concept="3cpWsn" id="2PIlT5T$1qG" role="3cpWs9">
             <property role="TrG5h" value="maxSeverityItems" />
             <node concept="_YKpA" id="2PIlT5T$1qH" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$1qI" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+              <node concept="3qUE_q" id="1knX_y6lrMV" role="_ZDj9">
+                <node concept="3uibUv" id="1knX_y6lrMW" role="3qUE_r">
+                  <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="2PIlT5T$1qJ" role="33vP2m">
@@ -1676,8 +1681,10 @@
         </node>
       </node>
       <node concept="3vKaQO" id="2PIlT5T$1qm" role="3clF45">
-        <node concept="3uibUv" id="2PIlT5T$1qn" role="3O5elw">
-          <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+        <node concept="3qUE_q" id="1knX_y6lsnR" role="3O5elw">
+          <node concept="3uibUv" id="1knX_y6lsnS" role="3qUE_r">
+            <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+          </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="2PIlT5T$1qo" role="1B3o_S" />

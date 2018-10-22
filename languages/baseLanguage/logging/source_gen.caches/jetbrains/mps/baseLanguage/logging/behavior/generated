@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3k3b88gj5a6au6xucold0eh6w3ghqol" />
+<product version="3" modelHash="czrs09dm3ebzncqmphmkg4x0d8zuulg">
+  <files names="BehaviorAspectDescriptor.java:IMessage__BehaviorDescriptor.java:LogLowLevelStatement__BehaviorDescriptor.java:LogStatement__BehaviorDescriptor.java:MsgStatement__BehaviorDescriptor.java" />
+</product>
 

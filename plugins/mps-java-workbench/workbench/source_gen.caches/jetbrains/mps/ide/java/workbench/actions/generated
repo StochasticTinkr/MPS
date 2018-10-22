@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6bskgcs6a02unm75aecmtjgaacnyg26" />
+<product version="3" modelHash="crg6dxiyzj00tc5erpsz13eoiy0mc1l">
+  <files names="AnalyzeClasspath_Action.java:ChangeMethodSignatureDialog.java:ChangeMethodSignature_Action.java:MigrateSourcesToMPS_Action.java:NewModelFromSource_Action.java:TouchBarDefault_shift_ActionGroup.java" />
+</product>
 

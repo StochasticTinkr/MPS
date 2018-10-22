@@ -53,7 +53,7 @@ public class WhenConcreteBlock extends Block {
 
   @Override
   public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    Pair<SNode, ConditionKind> input = new Pair<SNode, ConditionKind>(myArgument, myConditionKind);
+    Pair<SNode, ConditionKind> input = new Pair<>(myArgument, myConditionKind);
     return CollectionUtil.set(input);
   }
 

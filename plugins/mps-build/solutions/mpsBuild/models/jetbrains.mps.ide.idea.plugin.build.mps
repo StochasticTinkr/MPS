@@ -2,7 +2,7 @@
 <model ref="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)">
   <persistence version="9" />
   <languages>
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="6" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
   </languages>
   <imports>
@@ -200,6 +200,7 @@
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+        <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
       <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
         <reference id="6592112598314499037" name="target" index="m$_yA" />
@@ -207,6 +208,7 @@
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="3570488090019868065" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_AutoPluginLayoutType" flags="ng" index="pUk6x" />
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
     </language>
   </registry>
@@ -380,6 +382,7 @@
             </node>
           </node>
         </node>
+        <node concept="pUk6x" id="5peYeZGo8Wk" role="pUk7w" />
       </node>
     </node>
     <node concept="10PD9b" id="2pZ8abj52Ag" role="10PD9s" />
@@ -1864,6 +1867,7 @@
             </node>
           </node>
         </node>
+        <node concept="pUk6x" id="5peYeZGo8X0" role="pUk7w" />
       </node>
     </node>
     <node concept="10PD9b" id="73fHb9hpumj" role="10PD9s" />
@@ -2164,6 +2168,7 @@
             <ref role="3ygNvj" to="mo18:53PdBITf0gq" resolve="tests" />
           </node>
         </node>
+        <node concept="pUk6x" id="5peYeZGo8Wy" role="pUk7w" />
       </node>
     </node>
     <node concept="m$_wf" id="6NEiZqQxZ2K" role="3989C9">

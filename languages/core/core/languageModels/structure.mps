@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)">
   <persistence version="9" />
   <languages>
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports />
@@ -16,6 +16,9 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
@@ -51,6 +54,7 @@
       </concept>
       <concept id="1083243159079" name="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" flags="ng" index="QkHVr" />
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="6327362524875300597" name="icon" index="rwd14" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -178,11 +182,11 @@
     <property role="EcuMT" value="3364660638048049745" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkk" role="1TKVEl">
-      <property role="TrG5h" value="linkRole" />
+      <property role="TrG5h" value="role_DebugInfo" />
       <property role="IQ2nx" value="1757699476691236116" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="7R2Gq48DAB9" role="lGtFl">
-        <property role="YLQ7P" value="linkRole and linkId should not be used directly. Use getLink() behaviour method or AttributeOperations.getLink(node&lt;LinkAttribute&gt;)" />
+      <node concept="t5JxF" id="5gACAVBuLyh" role="lGtFl">
+        <property role="t5JxN" value="This property should not be used directly, use behavior method. The value is only used for reporting purposes when no role name can be extracted by id." />
       </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4B$JLs" role="1TKVEl">
@@ -213,11 +217,11 @@
     <property role="EcuMT" value="3364660638048049750" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
-      <property role="TrG5h" value="propertyName" />
+      <property role="TrG5h" value="name_DebugInfo" />
       <property role="IQ2nx" value="1757699476691236117" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="7R2Gq48DzZK" role="lGtFl">
-        <property role="YLQ7P" value="propertyName and propertyId should not be used directly. Use getProperty() behaviour method or AttributeOperations.getProperty(node&lt;PropertyAttribute&gt;)" />
+      <node concept="t5JxF" id="5gACAVBzNZt" role="lGtFl">
+        <property role="t5JxN" value="This property should not be used directly, use behavior method. The value is only used for reporting purposes when no role name can be extracted by id." />
       </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4BzllH" role="1TKVEl">
@@ -237,6 +241,10 @@
     <property role="TrG5h" value="IAntisuppressErrors" />
     <property role="3GE5qa" value="types" />
     <property role="EcuMT" value="1047408822409601647" />
+    <node concept="asaX9" id="4gQZRkTUCtW" role="lGtFl">
+      <property role="YLPcu" value="2018.3" />
+      <property role="YLQ7P" value="use ISuppressErrors.suppress() to stop suppressing descendants" />
+    </node>
   </node>
   <node concept="PlHQZ" id="2WmWrdnSpX2">
     <property role="TrG5h" value="ICanSuppressErrors" />
@@ -253,6 +261,11 @@
     <property role="3GE5qa" value="types" />
     <property role="EcuMT" value="4222318806802425298" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="26xHjLJaBbH" role="1TKVEl">
+      <property role="IQ2nx" value="2423417345669755629" />
+      <property role="TrG5h" value="whichError" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
     <node concept="PrWs8" id="2zn6YdLtwWg" role="PzmwI">
       <ref role="PrY4T" node="2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
@@ -261,6 +274,9 @@
       <node concept="trNpa" id="166$sc$ZIAD" role="EQaZv">
         <ref role="trN6q" node="2WmWrdnSpX2" resolve="ICanSuppressErrors" />
       </node>
+      <node concept="tn0Fv" id="4oS1ku9jZH3" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
     </node>
   </node>
   <node concept="PlHQZ" id="1_TrU5E6oyb">
@@ -268,6 +284,7 @@
     <property role="EcuMT" value="1835621062190663819" />
     <node concept="asaX9" id="7pLHo_31Wuo" role="lGtFl">
       <property role="YLQ7P" value="Create empty default substitute menu for the concept instead of implementing this interface concept" />
+      <property role="YLPcu" value="2018.3" />
     </node>
   </node>
   <node concept="PlHQZ" id="2UAn0GTuXmY">
@@ -384,11 +401,11 @@
     <property role="EcuMT" value="709746936026466394" />
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="BpxLfMirm5" role="1TKVEl">
-      <property role="TrG5h" value="linkRole" />
+      <property role="TrG5h" value="role_DebugInfo" />
       <property role="IQ2nx" value="709746936026609029" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="BpxLfMirm6" role="lGtFl">
-        <property role="YLQ7P" value="linkRole and linkId should not be used directly. Use getLink() behaviour method" />
+      <node concept="t5JxF" id="5gACAVByXnk" role="lGtFl">
+        <property role="t5JxN" value="This property should not be used directly, use behavior method. The value is only used for reporting purposes when no role name can be extracted by id." />
       </node>
     </node>
     <node concept="1TJgyi" id="BpxLfMirm7" role="1TKVEl">
@@ -416,7 +433,7 @@
     <property role="TrG5h" value="ISmartReferent" />
   </node>
   <node concept="1TIwiD" id="29O0pTxSzj9">
-    <property role="TrG5h" value="ReviewMigration" />
+    <property role="TrG5h" value="ReviewMigration_old" />
     <property role="3GE5qa" value="attributes.migration" />
     <property role="EcuMT" value="2482611074346661065" />
     <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
@@ -436,7 +453,7 @@
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="29O0pTxSzje" role="lGtFl">
-      <property role="Hh88m" value="review" />
+      <property role="Hh88m" value="review_old" />
       <node concept="trNpa" id="29O0pTxSzjf" role="EQaZv">
         <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
@@ -444,14 +461,15 @@
         <property role="tnX3d" value="false" />
       </node>
     </node>
+    <node concept="asaX9" id="7z7TTo_CSSe" role="lGtFl" />
     <node concept="PrWs8" id="29O0pTxWcb9" role="PzmwI">
-      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation" />
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation_old" />
     </node>
   </node>
   <node concept="PlHQZ" id="29O0pTxWcb8">
     <property role="EcuMT" value="2482611074347614920" />
     <property role="3GE5qa" value="attributes.migration" />
-    <property role="TrG5h" value="MigrationAnnotation" />
+    <property role="TrG5h" value="MigrationAnnotation_old" />
   </node>
   <node concept="1TIwiD" id="3emwrjqjJ6B">
     <property role="EcuMT" value="3717301156197626279" />
@@ -473,17 +491,88 @@
         <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
-    <node concept="PrWs8" id="3emwrjqjJ6I" role="PzmwI">
-      <ref role="PrY4T" node="53J1IcJV913" resolve="ISkipConstraintsChecking" />
-    </node>
-    <node concept="PrWs8" id="3emwrjqjJ6N" role="PzmwI">
-      <ref role="PrY4T" node="1V3wYmOJsDm" resolve="IDontApplyTypesystemRules" />
-    </node>
   </node>
   <node concept="PlHQZ" id="3xhyJYa45Zm">
     <property role="EcuMT" value="4058177569375150038" />
     <property role="3GE5qa" value="attributes.editing.comment" />
     <property role="TrG5h" value="IPlaceholderContent" />
+  </node>
+  <node concept="1TIwiD" id="7z7TTo_Agmh">
+    <property role="EcuMT" value="8703179436978668945" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="TrG5h" value="MigrationDataAnnotation" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="5TUCQr2$JNe" role="1TKVEi">
+      <property role="IQ2ns" value="6807933448470330574" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dataNode" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="M6xJ_" id="7z7TTo_AgKw" role="lGtFl">
+      <property role="Hh88m" value="migrationData" />
+      <node concept="tn0Fv" id="7z7TTo_AgVO" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+      <node concept="trNpa" id="7z7TTo_AgVM" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_CTz2" role="PzmwI">
+      <ref role="PrY4T" node="7z7TTo_CSSj" resolve="MigrationAnnotation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7z7TTo_CSSj">
+    <property role="EcuMT" value="8703179436979359251" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="TrG5h" value="MigrationAnnotation" />
+    <node concept="1TJgyi" id="7z7TTo_CSSk" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359252" />
+      <property role="TrG5h" value="createdByScript" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="7z7TTo_CSSl" role="lGtFl">
+        <property role="t5JxN" value="output of MigrationScriptReference.serialize()" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_CTom" role="PrDN$">
+      <ref role="PrY4T" node="29O0pTxWcb8" resolve="MigrationAnnotation_old" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7z7TTo_CSS6">
+    <property role="TrG5h" value="ReviewMigration" />
+    <property role="3GE5qa" value="attributes.migration" />
+    <property role="EcuMT" value="8703179436979359238" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="7z7TTo_CSS7" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359239" />
+      <property role="TrG5h" value="reasonShort" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7z7TTo_CSS8" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359240" />
+      <property role="TrG5h" value="todo" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7z7TTo_CSS9" role="1TKVEl">
+      <property role="IQ2nx" value="8703179436979359241" />
+      <property role="TrG5h" value="readableId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="7z7TTo_CSSa" role="lGtFl">
+      <property role="Hh88m" value="review" />
+      <node concept="trNpa" id="7z7TTo_CSSb" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="tn0Fv" id="7z7TTo_CSSc" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7z7TTo_CTCf" role="PzmwI">
+      <ref role="PrY4T" node="7z7TTo_CSSj" resolve="MigrationAnnotation" />
+    </node>
   </node>
 </model>
 

@@ -89,7 +89,7 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private org.jetbrains.mps.openapi.model.SModel myModelDescriptor;
-  private Set<SNode> myRoots = new LinkedHashSet<SNode>();
+  private Set<SNode> myRoots = new LinkedHashSet<>();
   private SModelReference myReference;
   private boolean myDisposed;
   private List<SLanguage> myLanguagesEngagedOnGeneration = new ArrayList<>();
@@ -153,33 +153,28 @@ public class SModel implements SModelData, UpdateModeSupport {
   @Override
   public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
     fireModelNodesReadAccess();
-    return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
+    return () -> new Iterator<org.jetbrains.mps.openapi.model.SNode>() {
+      private final Iterator<SNode> myIterator = myRoots.iterator();
+
       @Override
-      public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
-        return new Iterator<org.jetbrains.mps.openapi.model.SNode>() {
-          private final Iterator<SNode> myIterator = myRoots.iterator();
+      public boolean hasNext() {
+        return myIterator.hasNext();
+      }
 
-          @Override
-          public boolean hasNext() {
-            return myIterator.hasNext();
-          }
+      @Override
+      public org.jetbrains.mps.openapi.model.SNode next() {
+        SNode res = myIterator.next();
+        if (res != null) {
+          res.assertCanRead();
+          res.getNodeOwner().fireNodeRead(res, true);
+        }
 
-          @Override
-          public org.jetbrains.mps.openapi.model.SNode next() {
-            SNode res = myIterator.next();
-            if (res != null) {
-              res.assertCanRead();
-              res.getNodeOwner().fireNodeRead(res, true);
-            }
+        return res;
+      }
 
-            return res;
-          }
-
-          @Override
-          public void remove() {
-            throw new UnsupportedOperationException("can't change model roots through roots iterator");
-          }
-        };
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException("can't change model roots through roots iterator");
       }
     };
   }
@@ -289,21 +284,6 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public final org.jetbrains.mps.openapi.model.SModel getModelDescriptor() {
     return myModelDescriptor;
-  }
-
-  /**
-   * @deprecated assumes use of SModelBase implementation, prefer general {@link #setModelDescriptor(org.jetbrains.mps.openapi.model.SModel, ModelEventDispatch)}.
-   * @param modelDescriptor if {@link SModelBase}, node event notification dispatch (see {@link SModelBase#getNodeEventDispatch()} is initialized as well.
-   */
-  // FIXME (1) synchronized, really? (2) do we really care to have SModelBase here? (3) if yes, why it's not argument type?
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    if (myModelDescriptor == modelDescriptor) {
-      // just to guard against accidental second assignment
-      return;
-    }
-    setModelDescriptor(modelDescriptor, modelDescriptor instanceof SModelBase ? ((SModelBase) modelDescriptor).getNodeEventDispatch() : null);
   }
 
   /**
@@ -883,6 +863,7 @@ public class SModel implements SModelData, UpdateModeSupport {
         }
         // there's RefUpdateUtil.updateModelRef() that could have been used here, it it was in [smodel].
         // But it's in [project] now, and needs refactoring to relocate.
+        // Besides, there's also similar code in vcs.DiffModelUtil
         final org.jetbrains.mps.openapi.model.SModel resolved = oldReference.resolve(repository);
         if (resolved != null && jetbrains.mps.smodel.SModelReference.differs(resolved.getReference(), oldReference)) {
           changed = true;
@@ -914,12 +895,12 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   public void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
-    SModelReference oldReference = myReference;
+    final SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (org.jetbrains.mps.openapi.model.SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetSModelReference())) {
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
+        if (reference instanceof SReferenceBase && oldReference.equals(reference.getTargetSModelReference())) {
+          ((SReferenceBase) reference).setTargetSModelReference(newModelReference);
         }
       }
     }
@@ -1021,11 +1002,7 @@ public class SModel implements SModelData, UpdateModeSupport {
       if (myUsedVersion != that.myUsedVersion) {
         return false;
       }
-      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null) {
-        return false;
-      }
-
-      return true;
+      return myModelReference != null ? myModelReference.equals(that.myModelReference) : that.myModelReference == null;
     }
 
     @Override

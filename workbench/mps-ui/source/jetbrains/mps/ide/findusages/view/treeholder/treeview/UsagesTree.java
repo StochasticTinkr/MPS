@@ -69,7 +69,7 @@ public class UsagesTree extends MPSTree {
   private static final String COMMAND_EXCLUDE = "exclude";
 
   private DataTree myContents;
-  private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
+  private HashSet<PathItemRole> myResultPathProvider = new HashSet<>();
 
   private boolean myAdditionalInfoNeeded;
   private boolean myShowSearchedNodes;
@@ -144,12 +144,9 @@ public class UsagesTree extends MPSTree {
       }
     });
 
-    addTreeSelectionListener(new TreeSelectionListener() {
-      @Override
-      public void valueChanged(TreeSelectionEvent e) {
-        if (myAutoscroll) {
-          openNewlySelectedNodeLink(e, false, false);
-        }
+    addTreeSelectionListener(e -> {
+      if (myAutoscroll) {
+        openNewlySelectedNodeLink(e, false, false);
       }
     });
   }
@@ -181,8 +178,7 @@ public class UsagesTree extends MPSTree {
   @Override
   public void rebuildNow() {
     UsagesTree.super.rebuildNow();
-    int i;
-    for (i = 0; i < getRootNode().getChildCount(); i++) {
+    for (int i = 0; i < getRootNode().getChildCount(); i++) {
       Object[] path = {getRootNode(), getRootNode().getChildAt(i)};
       TreePath treePath = new TreePath(path);
       expandPath(treePath);
@@ -264,40 +260,37 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<UsagesTreeNode>(new Computable<UsagesTreeNode>() {
-      @Override
-      public UsagesTreeNode compute() {
-        UsagesTreeNode root = new UsagesTreeNode();
-        if (myContents == null || myContents.getTreeRoot().getChildren().isEmpty()) {
-          // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
-          // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
-          return root;
-        }
-        if (myShowSearchedNodes) {
-          HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<PathItemRole>();
-          searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
-
-          DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
-          if (searchedNodesRoot.containsNodes(NodeNodeData.class)) {
-            if (myGroupSearchedNodes) {
-              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
-              searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-            }
-            searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
-          } else if (searchedNodesRoot.containsNodes(ModelNodeData.class)) {
-            if (myGroupSearchedNodes) {
-              searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
-            }
-            searchedNodesPathProvider.add(PathItemRole.ROLE_MODEL);
-          } else {
-            searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
-          }
-          root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
-        }
-        root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
-
+    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<>(() -> {
+      UsagesTreeNode root = new UsagesTreeNode();
+      if (myContents == null || myContents.getTreeRoot().getChildren().isEmpty()) {
+        // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
+        // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
         return root;
       }
+      if (myShowSearchedNodes) {
+        HashSet<PathItemRole> searchedNodesPathProvider = new HashSet<>();
+        searchedNodesPathProvider.add(PathItemRole.ROLE_MAIN_SEARCHED_NODES);
+
+        DataNode searchedNodesRoot = myContents.getTreeRoot().getChildren().get(0);
+        if (searchedNodesRoot.containsNodes(NodeNodeData.class)) {
+          if (myGroupSearchedNodes) {
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT);
+            searchedNodesPathProvider.add(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
+          }
+          searchedNodesPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
+        } else if (searchedNodesRoot.containsNodes(ModelNodeData.class)) {
+          if (myGroupSearchedNodes) {
+            searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+          }
+          searchedNodesPathProvider.add(PathItemRole.ROLE_MODEL);
+        } else {
+          searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
+        }
+        root.add(buildTree(searchedNodesRoot, searchedNodesPathProvider));
+      }
+      root.add(buildTree(myContents.getTreeRoot().getChildren().get(1), myResultPathProvider));
+
+      return root;
     });
     myProject.getModelAccess().runReadAction(cr);
     return cr.getResult();
@@ -344,7 +337,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories) {
-    List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
+    List<UsagesTreeNode> children = new ArrayList<>();
     for (DataNode child : root.getChildren()) {
       children.addAll(buildSubtreeStructure(child, nodeCategories));
     }
@@ -378,9 +371,9 @@ public class UsagesTree extends MPSTree {
   }
 
   private void mergeChildren(List<UsagesTreeNode> children) {
-    List<UsagesTreeNode> mergedChildren = new ArrayList<UsagesTreeNode>();
+    List<UsagesTreeNode> mergedChildren = new ArrayList<>();
 
-    Map<Object, UsagesTreeNode> childMap = new LinkedHashMap<Object, UsagesTreeNode>();
+    Map<Object, UsagesTreeNode> childMap = new LinkedHashMap<>();
     for (UsagesTreeNode child : children) {
       Object additionID = child.getUserObject().getData().getIdObject();
       if (additionID == null) {
@@ -391,7 +384,7 @@ public class UsagesTree extends MPSTree {
         if (addToNode == null) {
           childMap.put(additionID, child);
         } else {
-          List<UsagesTreeNode> addition = new ArrayList<UsagesTreeNode>(child.internalGetChildren());
+          List<UsagesTreeNode> addition = new ArrayList<>(child.internalGetChildren());
           for (UsagesTreeNode additionChild : addition) {
             addToNode.add(additionChild);
           }
@@ -430,16 +423,14 @@ public class UsagesTree extends MPSTree {
       root.setText(invalid + caption);
     }
 
-    int i;
-    for (i = 0; i < root.getChildCount(); i++) {
+    for (int i = 0; i < root.getChildCount(); i++) {
       setUIProperties((UsagesTreeNode) root.getChildAt(i));
     }
   }
 
   private void makeNodesHTML(UsagesTreeNode root) {
     root.setText("<html>" + root.getText() + "</html>");
-    int i;
-    for (i = 0; i < root.getChildCount(); i++) {
+    for (int i = 0; i < root.getChildCount(); i++) {
       UsagesTreeNode child = (UsagesTreeNode) root.getChildAt(i);
       makeNodesHTML(child);
     }
@@ -469,7 +460,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void setCurrentNodesOnlyExclusion() {
-    myContents.setExcluded(new HashSet<DataNode>(Arrays.asList(myContents.getTreeRoot())), true);
+    myContents.setExcluded(new HashSet<>(Arrays.asList(myContents.getTreeRoot())), true);
     setCurrentNodesExclusion(false);
   }
 
@@ -558,7 +549,7 @@ public class UsagesTree extends MPSTree {
   private UsagesTreeNode findLastResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
+    List<MPSTreeNode> children = new ArrayList<>();
     for (MPSTreeNode node : root) {
       children.add(node);
     }

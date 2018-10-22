@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6fx6je0dh949vqjygfgtcoyxsd6i5h1" />
+<product version="3" modelHash="6fx6je0dh949vqjygfgtcoyxsd6i5h1">
+  <files names="ClassifierDocReference_Constraints.java:ConstraintsAspectDescriptor.java:DeprecatedBlockDocTag_Constraints.java:DocMethodParameterReference_Constraints.java:DocTypeParameterReference_Constraints.java:FieldDocReference_Constraints.java:MethodDocReference_Constraints.java:ParameterBlockDocTag_Constraints.java:ReturnBlockDocTag_Constraints.java:StaticFieldDocReference_Constraints.java:ThrowsBlockDocTag_Constraints.java:ValueInlineDocTag_Constraints.java" />
+</product>
 

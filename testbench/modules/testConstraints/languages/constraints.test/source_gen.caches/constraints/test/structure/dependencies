@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="constraints.test.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
+  <dependency className="constraints.test.structure.ConceptPresentationAspectImpl">
     <classNode dependClassName="constraints.test.structure.LanguageConceptSwitch" />
     <classNode dependClassName="constraints.test.structure.StructureAspectDescriptor" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,13 +11,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="constraints.test.structure.LanguageConceptSwitch" file="LanguageConceptSwitch.java">
+  <dependency className="constraints.test.structure.LanguageConceptSwitch">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
-  <dependency className="constraints.test.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
+  <dependency className="constraints.test.structure.StructureAspectDescriptor">
     <classNode dependClassName="constraints.test.structure.LanguageConceptSwitch" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

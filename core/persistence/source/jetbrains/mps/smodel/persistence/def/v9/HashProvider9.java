@@ -36,7 +36,7 @@ public class HashProvider9 extends IHashProvider {
 
   @Override
   public Map<String, String> getRootHashes(String content) {
-    Map<String, String> result = new HashMap<String, String>();
+    Map<String, String> result = new HashMap<>();
     extractRootHashes(content, result);
     return result;
   }
@@ -82,7 +82,7 @@ public class HashProvider9 extends IHashProvider {
       if (rootId != null && nodeStart != -1 && nodeEnd != -1) {
         assert nodeStart <= nodeEnd;
         String s = scanner.getText(nodeStart, nodeEnd);
-        SNodeId nodeId = null;
+        SNodeId nodeId;
         try {
           nodeId = idEncoder.parseNodeId(rootId);
         } catch (EncodingException e) {

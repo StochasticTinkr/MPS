@@ -54,7 +54,7 @@ class ButtonEditorTab {
 
 
   public List<SNodeReference> getEditorNodes() {
-    ArrayList<SNodeReference> rv = new ArrayList<SNodeReference>(5);
+    ArrayList<SNodeReference> rv = new ArrayList<>(5);
     for (TabEditorLayout.Entry e : myEntries) {
       rv.add(e.getEditNode());
     }

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7dmm0uhenkgjht3unytq6lt6a5nusez" />
+<product version="3" modelHash="6lgxxaicys770764ka23ub8ubjxh542">
+  <files names="JavaToMps_Test.java:RoundTrip_Test.java" />
+</product>
 

@@ -37,7 +37,7 @@ public class ValidEditorDescriptorsCache {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ValidEditorDescriptorsCache.class));
   private static ValidEditorDescriptorsCache ourInstance;
 
-  private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<EditorAspectDescriptor>();
+  private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<>();
 
 
   private LanguageRegistryListener myListener;
@@ -59,7 +59,7 @@ public class ValidEditorDescriptorsCache {
   }
 
   private void cleanCaches(Iterable<LanguageRuntime> languages) {
-    Set<EditorAspectDescriptor> descriptorsToRemove = new HashSet<EditorAspectDescriptor>();
+    Set<EditorAspectDescriptor> descriptorsToRemove = new HashSet<>();
     for (LanguageRuntime language : languages) {
       loadEditorDescriptor(language, descriptorsToRemove);
       for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {

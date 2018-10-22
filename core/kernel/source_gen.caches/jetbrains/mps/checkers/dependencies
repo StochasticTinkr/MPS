@@ -1,35 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter" file="AbstractConstraintsCheckerRootCheckerAdapter.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" />
-    <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
-    <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
-    <classNode dependClassName="jetbrains.mps.checkers.IteratingChecker" />
-    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
-  </dependency>
-  <dependency className="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" file="AbstractNodeCheckerInEditor.java">
+  <dependency className="jetbrains.mps.checkers.AbstractNodeCheckerInEditor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.AggregatingChecker" file="AggregatingChecker.java">
+  <dependency className="jetbrains.mps.checkers.AggregatingChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -42,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.CatchingChecker" file="CatchingChecker.java">
+  <dependency className="jetbrains.mps.checkers.CatchingChecker">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -56,9 +39,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.CategoryShowingChecker" file="CategoryShowingChecker.java">
+  <dependency className="jetbrains.mps.checkers.CategoryShowingChecker">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
@@ -67,14 +49,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ConstraintsChecker" file="ConstraintsChecker.java">
+  <dependency className="jetbrains.mps.checkers.ConstraintsChecker">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.ConstraintsReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
@@ -101,11 +82,13 @@
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ErrorReportUtil" file="ErrorReportUtil.java">
+  <dependency className="jetbrains.mps.checkers.ErrorReportUtil">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -115,13 +98,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.FilteringChecker" file="FilteringChecker.java">
+  <dependency className="jetbrains.mps.checkers.FilteringChecker">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -131,14 +116,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.IAbstractChecker" file="IAbstractChecker.java">
+  <dependency className="jetbrains.mps.checkers.IAbstractChecker">
     <classNode dependClassName="jetbrains.mps.errors.item.ReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.IChecker" file="IChecker.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
+  <dependency className="jetbrains.mps.checkers.IChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -158,29 +142,29 @@
     <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.IteratingChecker" file="IteratingChecker.java">
+  <dependency className="jetbrains.mps.checkers.IteratingChecker">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-    <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
+    <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.LanguageErrorsCollector" file="LanguageErrorsCollector.java">
+  <dependency className="jetbrains.mps.checkers.LanguageErrorsCollector">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.LanguageErrorsComponent" file="LanguageErrorsComponent.java">
+  <dependency className="jetbrains.mps.checkers.LanguageErrorsComponent">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -215,7 +199,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode extendsClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ModelCheckerBuilder" file="ModelCheckerBuilder.java">
+  <dependency className="jetbrains.mps.checkers.ModelCheckerBuilder">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -247,17 +231,15 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ModelPropertiesChecker" file="ModelPropertiesChecker.java">
+  <dependency className="jetbrains.mps.checkers.ModelPropertiesChecker">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ModelReportItem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -267,9 +249,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.ModuleChecker" file="ModuleChecker.java">
+  <dependency className="jetbrains.mps.checkers.ModuleChecker">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
@@ -280,12 +262,31 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.RefScopeChecker" file="RefScopeChecker.java">
+  <dependency className="jetbrains.mps.checkers.ModuleImportQuickFix">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeFeatureFlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.dependency.VisibilityUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="jetbrains.mps.errors.item.EditorQuickFix" />
+  </dependency>
+  <dependency className="jetbrains.mps.checkers.RefScopeChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />
     <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
@@ -313,7 +314,7 @@
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.SkippingChecker" file="SkippingChecker.java">
+  <dependency className="jetbrains.mps.checkers.SkippingChecker">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -323,10 +324,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
+  <dependency className="jetbrains.mps.checkers.TargetConceptChecker">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.IncompatibleTargetReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
@@ -344,7 +343,7 @@
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.checkers.UsedLanguagesChecker" file="UsedLanguagesChecker.java">
+  <dependency className="jetbrains.mps.checkers.UsedLanguagesChecker">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -354,6 +353,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.item.EditorQuickFix" />
     <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageNotImportedReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />

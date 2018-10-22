@@ -15,11 +15,19 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConceptFeatureCardinalityError extends ConceptFeatureError {
-  public ConceptFeatureCardinalityError(SNode node, SConceptFeature feature, String message) {
+  public ConceptFeatureCardinalityError(SNodeReference node, SConceptFeature feature, String message) {
     super(node, feature, message);
+  }
+
+  @Override
+  public ItemKind getIssueKind() {
+    return IssueKindReportItem.CARDINALITY_ERROR;
   }
 }

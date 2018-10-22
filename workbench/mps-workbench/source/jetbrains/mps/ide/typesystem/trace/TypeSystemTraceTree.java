@@ -79,7 +79,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private Set<SNode> myNodes;
   private TypeSystemTracePanel myParent;
   private EditorComponent myEditorComponent;
-  private List<TypeSystemTraceTreeNode> myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
+  private List<TypeSystemTraceTreeNode> myErrorNodes = new LinkedList<>();
   private TypeSystemTraceTree.DetailsTree myDetailsTree;
   private final NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
@@ -110,7 +110,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void initNodes(SNode node) {
-    myNodes = new HashSet<SNode>();
+    myNodes = new HashSet<>();
     myNodes.addAll(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{}));
     myNodes.add(node);
   }
@@ -158,7 +158,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return null;
     }
     final boolean showNode = showNodeRecursively(operation);
-    List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
+    List<TypeSystemTraceTreeNode> children = new ArrayList<>();
     if (withChildren) {
       for (AbstractOperation consequence : operation.getConsequences()) {
         TypeSystemTraceTreeNode node = create(consequence, false);
@@ -257,10 +257,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (!(TraceSettings.isShowApplyRuleOperations()) && operation instanceof ApplyRuleOperation) {
       return false;
     }
-    if (!(TraceSettings.isShowBlockDependencies()) && (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation)) {
-      return false;
-    }
-    return true;
+    return TraceSettings.isShowBlockDependencies() || (!(operation instanceof AddDependencyOperation) && !(operation instanceof RemoveDependencyOperation));
   }
 
   public void goToNextError() {
@@ -277,11 +274,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private MPSTreeNode getNextErrorNode(int row) {
-    TreePath errorPath;
-    int errorRow;
     for (TypeSystemTraceTreeNode errorNode : myErrorNodes) {
-      errorPath = new TreePath(errorNode.getPath());
-      errorRow = this.getRowForPath(errorPath);
+      TreePath errorPath = new TreePath(errorNode.getPath());
+      int errorRow = this.getRowForPath(errorPath);
       if (errorRow > row) {
         return errorNode;
       }
@@ -323,12 +318,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   public Object getData(@NonNls final String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
     if (currentNode instanceof TypeSystemTraceTreeNode) {
-      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
-        @Override
-        public Object compute() {
-          return _getData(id);
-        }
-      });
+      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> _getData(id));
     }
     return null;
   }
@@ -355,30 +345,24 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        Object difference = newNode.getUserObject();
-        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
+    myProject.getModelAccess().runReadAction(() -> {
+      Object difference = newNode.getUserObject();
+      myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
 
-        final State newState = myContextTracker.updateCurrentState((AbstractOperation) difference);
-        if (newState != null) {
-          myParent.updateState(newState);
-        }
+      final State newState = myContextTracker.updateCurrentState((AbstractOperation) difference);
+      if (newState != null) {
+        myParent.updateState(newState);
       }
     });
   }
 
   private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        Object fromDiff = fromNode.getUserObject();
-        Object toDiff = toNode.getUserObject();
+    myProject.getModelAccess().runReadAction(() -> {
+      Object fromDiff = fromNode.getUserObject();
+      Object toDiff = toNode.getUserObject();
 
-        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) fromDiff));
-        myParent.updateState(myContextTracker.updateCurrentState((AbstractOperation) fromDiff, (AbstractOperation) toDiff));
-      }
+      myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) fromDiff));
+      myParent.updateState(myContextTracker.updateCurrentState((AbstractOperation) fromDiff, (AbstractOperation) toDiff));
     });
   }
 
@@ -388,7 +372,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
-    List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
+    List<AbstractOperation> operations = new ArrayList<>();
     for (MPSTreeNode treeNode : treeNodes) {
       operations.add(getAssociatedOperation(treeNode));
     }
@@ -415,7 +399,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
           TreePath fromPath = selectionPaths[0];
           TreePath toPath = selectionPaths[selectionPaths.length - 1];
           showState((MPSTreeNode) fromPath.getLastPathComponent(), (MPSTreeNode) toPath.getLastPathComponent());
-          List<MPSTreeNode> selectedNodes = new ArrayList<MPSTreeNode>();
+          List<MPSTreeNode> selectedNodes = new ArrayList<>();
           for (TreePath tp : selectionPaths) {
             selectedNodes.add((MPSTreeNode) tp.getLastPathComponent());
           }
@@ -507,7 +491,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     public void setOperations(Collection<? extends AbstractOperation> operation) {
-      this.myOperations = new ArrayList<AbstractOperation>(operation);
+      this.myOperations = new ArrayList<>(operation);
       rebuildNow();
       expandAll();
     }
@@ -516,10 +500,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       if (operations == null || operations.size() == 0 || operations.iterator().next() == null) {
         return null;
       }
-      List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
+      List<MPSTreeNode> result = new ArrayList<>();
       for (AbstractOperation operation : operations) {
         final boolean showNode = showNode(operation);
-        List<MPSTreeNode> children = new ArrayList<MPSTreeNode>();
+        List<MPSTreeNode> children = new ArrayList<>();
         for (AbstractOperation consequence : operation.getConsequences()) {
           Collection<MPSTreeNode> nodes = create(Collections.singletonList(consequence), true);
           if (nodes != null) {
@@ -556,12 +540,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     public Object getData(@NonNls final String id) {
       MPSTreeNode currentNode = this.getCurrentNode();
       if (currentNode instanceof TypeSystemTraceTreeNode) {
-        return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
-          @Override
-          public Object compute() {
-            return _getData(id);
-          }
-        });
+        return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> _getData(id));
       }
       return null;
     }

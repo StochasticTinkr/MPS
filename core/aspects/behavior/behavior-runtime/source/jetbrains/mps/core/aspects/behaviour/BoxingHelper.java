@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public final class BoxingHelper {
-  private static final BidirectionalMap<Class, Class> PRIMITIVE_TO_BOXED_TYPE = new BidirectionalMap<Class, Class>();
+  private static final BidirectionalMap<Class, Class> PRIMITIVE_TO_BOXED_TYPE = new BidirectionalMap<>();
 
   static {
     PRIMITIVE_TO_BOXED_TYPE.put(Character.TYPE, Character.class);

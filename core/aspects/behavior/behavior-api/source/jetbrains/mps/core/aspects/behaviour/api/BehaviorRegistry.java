@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  */
 public interface BehaviorRegistry extends CoreAspectRegistry {
   @NotNull
-  MethodResolutionOrder getMRO();
+  MethodResolutionOrder<? extends AbstractConceptLike> getMRO();
 
   @NotNull
   BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept);

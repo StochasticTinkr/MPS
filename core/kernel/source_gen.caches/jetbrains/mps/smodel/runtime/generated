@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="67qolaw92chnbnxx4m1zi0frsnlvafk" />
+<product version="3" modelHash="-7ojwjcttjnfi27gc645wl06nbbs80bh">
+  <files names="LanguageAspectGenerator_Class.java:LanguageAspectGenerator_PerConcept.java" />
+</product>
 

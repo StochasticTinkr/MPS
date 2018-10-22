@@ -50,10 +50,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixModuleImportsInProject_Action());
     addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
+    addAction(new GoToConceptDescendants_Action());
+    addAction(new GoToImplementationBehaviorMethod_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRule_Action());
+    addAction(new GoToSuperBehaviorMethod_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());
@@ -109,6 +112,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AddToFavoritesGroup_ActionGroup());
     addGroup(new AnalyzeModule_ActionGroup());
     addGroup(new Analyze_ActionGroup());
+    addGroup(new BehaviourPopup_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Build_ActionGroup());
     addGroup(new CommonModuleActions_ActionGroup());
@@ -161,8 +165,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
+    addGroup(new StructurePopup_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new Tools_ActionGroup());
+    addGroup(new TouchBarDebug_ActionGroup());
+    addGroup(new TouchBarDefault_alt_ActionGroup());
+    addGroup(new TouchBarDefault_cmd_ActionGroup());
+    addGroup(new TouchBarDefault_cmd_alt_ActionGroup());
+    addGroup(new TouchBarDefault_shift_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
     addGroup(new View_ActionGroup());
   }
@@ -238,12 +248,18 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, FlyingActions_ActionGroup.ID, null);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, "EditorPopup_ActionGroupfind", null);
+    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
+    insertGroupIntoAnother(TouchBarDefault_alt_ActionGroup.ID, "TouchBarDefault_alt", null);
+    insertGroupIntoAnother(TouchBarDefault_cmd_ActionGroup.ID, "TouchBarDefault_cmd", null);
+    insertGroupIntoAnother(TouchBarDefault_cmd_alt_ActionGroup.ID, "TouchBarDefault_cmd.alt", null);
+    insertGroupIntoAnother(TouchBarDefault_shift_ActionGroup.ID, "TouchBarDefault_shift", null);
+    insertGroupIntoAnother(TouchBarDebug_ActionGroup.ID, "TouchBarDebug", null);
     insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzePlatform_ActionGroupother", null);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
@@ -258,6 +274,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
+    insertGroupIntoAnother(StructurePopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
   public List<BaseKeymapChanges> initKeymaps() {

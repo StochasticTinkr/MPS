@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2b7vhi4c9imv06hgoti5hikfp83pqql" />
+<product version="3" modelHash="5gnv03yj11wxd5rpwkoq0842w55vmq6">
+  <files names="MigrationsCheckUtil.java:NodeReferenceUtil.java" />
+</product>
 

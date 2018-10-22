@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test" file="FailedBTestCase_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" file="Main.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test" file="SimpleBTestCase_Test.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />

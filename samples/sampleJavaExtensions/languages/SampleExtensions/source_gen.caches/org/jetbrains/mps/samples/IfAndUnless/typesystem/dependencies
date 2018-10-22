@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.Remove_empty_unless_block_QuickFix" file="Remove_empty_unless_block_QuickFix.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.Remove_empty_unless_block_QuickFix">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.typesystem.check_UnlessStatement_NonTypesystemRule" />
@@ -15,7 +15,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.check_UnlessStatement_NonTypesystemRule" file="check_UnlessStatement_NonTypesystemRule.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.check_UnlessStatement_NonTypesystemRule">
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -30,7 +30,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_MyIfStatement_InferenceRule" file="typeof_MyIfStatement_InferenceRule.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_MyIfStatement_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -43,7 +43,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule" file="typeof_UnlessStatement_InferenceRule.java">
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

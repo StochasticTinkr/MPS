@@ -59,17 +59,12 @@ public class NodesPresentation implements ElementPresentation<SNodeReference> {
 
   @Override
   public void names(@NotNull Iterable<SNodeReference> elements, @NotNull BiConsumer<SNodeReference, String> nameConsumer) {
-    myRepo.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        elements.forEach(np -> {
-          SNode node = np.resolve(myRepo);
-          if (node != null) {
-            nameConsumer.accept(np, renderName(node));
-          }
-        });
+    myRepo.getModelAccess().runReadAction(() -> elements.forEach(np -> {
+      SNode node = np.resolve(myRepo);
+      if (node != null) {
+        nameConsumer.accept(np, renderName(node));
       }
-    });
+    }));
   }
 
   @Override
@@ -79,22 +74,19 @@ public class NodesPresentation implements ElementPresentation<SNodeReference> {
 
   @Override
   public void render(@NotNull final SNodeReference element, @NotNull final ElementDescriptor presentation) {
-    myRepo.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = element.resolve(myRepo);
-        if (node == null) {
-          presentation.name = "failed to resolve a node";
-          presentation.location = element.getModelReference().getModelName();
-          presentation.icon = IdeIcons.UNKNOWN_ICON;
-        } else {
-          presentation.name = renderName(node);
-          SModel model = node.getModel();
-          if (model != null) {
-            presentation.location = model.getName().getValue();
-          }
-          presentation.icon = GlobalIconManager.getInstance().getIconFor(node);
+    myRepo.getModelAccess().runReadAction(() -> {
+      SNode node = element.resolve(myRepo);
+      if (node == null) {
+        presentation.name = "failed to resolve a node";
+        presentation.location = element.getModelReference().getModelName();
+        presentation.icon = IdeIcons.UNKNOWN_ICON;
+      } else {
+        presentation.name = renderName(node);
+        SModel model = node.getModel();
+        if (model != null) {
+          presentation.location = model.getName().getValue();
         }
+        presentation.icon = GlobalIconManager.getInstance().getIconFor(node);
       }
     });
   }

@@ -4,14 +4,15 @@ package jetbrains.mps.lang.editor.editorTest.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Container_Constraints extends BaseConstraintsDescriptor {
   public Container_Constraints() {
     super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c1b61fd2cd1eefeL, "jetbrains.mps.lang.editor.editorTest.structure.Container"));
   }
 
-  public SAbstractConcept getDefaultConcreteConcept() {
+  @Override
+  public SConcept getDefaultConcreteConcept() {
     return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c1b61fd2cd1eefdL, "jetbrains.mps.lang.editor.editorTest.structure.SelectableContainer");
   }
 }

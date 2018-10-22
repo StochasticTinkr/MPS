@@ -35,7 +35,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.util.ui.update.Update;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
@@ -276,7 +277,8 @@ public class TreeHighlighter implements TreeMessageOwner {
         return;
       }
 
-      if (IMakeService.INSTANCE.isSessionActive()) {
+      MPSProject mpsProject = ProjectHelper.fromIdeaProject(myRegistry.getProject());
+      if (mpsProject.getComponent(MakeServiceComponent.class).isSessionActive()) {
         // re-queue, it will be executed in next batch after delay 
         rehighlightAllFeaturesLater();
       } else {

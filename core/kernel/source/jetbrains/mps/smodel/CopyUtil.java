@@ -44,9 +44,9 @@ public final class CopyUtil {
   public static void copyModelContentAndUpdateCrossRootReferences(SModel from, SModel to) {
     // copy content and update references for targets in the same model to point to copied counterparts
     // we gonna record each cloned node, map would be huge
-    HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>(1 << 10);
-    ArrayList<SNode> newRoots = new ArrayList<SNode>();
-    ArrayDeque<SNode> queue = new ArrayDeque<SNode>();
+    HashMap<SNode, SNode> nodeMap = new HashMap<>(1 << 10);
+    ArrayList<SNode> newRoots = new ArrayList<>();
+    ArrayDeque<SNode> queue = new ArrayDeque<>();
     for (SNode r : from.getRootNodes()) {
       queue.addLast(r);
       while (!(queue.isEmpty())) {
@@ -117,7 +117,7 @@ public final class CopyUtil {
   }
 
   public static List<SNode> copy(List<SNode> nodes) {
-    return copy(nodes, new HashMap<SNode, SNode>());
+    return copy(nodes, new HashMap<>());
   }
 
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
@@ -129,7 +129,7 @@ public final class CopyUtil {
   }
 
   public static SNode copy(SNode node) {
-    return copy(node, new HashMap<SNode, SNode>(), true);
+    return copy(node, new HashMap<>(), true);
   }
 
   public static SNode copyAndPreserveId(SNode node) {
@@ -137,7 +137,7 @@ public final class CopyUtil {
   }
 
   public static SNode copyAndPreserveId(SNode node, boolean cloneRefs) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    HashMap<SNode, SNode> mapping = new HashMap<>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
       ((jetbrains.mps.smodel.SNode) mapping.get(sourceNode)).setId(sourceNode.getNodeId());
@@ -147,7 +147,7 @@ public final class CopyUtil {
   }
 
   public static SNode copy(SNode node, boolean copyAttributes) {
-    return copy(node, new HashMap<SNode, SNode>(), copyAttributes);
+    return copy(node, new HashMap<>(), copyAttributes);
   }
 
   public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
@@ -185,7 +185,7 @@ public final class CopyUtil {
   }
 
   private static List<SNode> clone(List<? extends SNode> nodes, Map<SNode, SNode> mapping) {
-    List<SNode> results = new ArrayList<SNode>();
+    List<SNode> results = new ArrayList<>();
     for (SNode node : nodes) {
       results.add(clone(node, mapping, true));
     }

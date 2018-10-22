@@ -118,29 +118,26 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     int result = JOptionPane.showConfirmDialog(frame, text, "Move Nodes", JOptionPane.YES_NO_OPTION);
     if (result != JOptionPane.YES_OPTION) return;
 
-    project.getModelAccess().executeCommand(new Runnable() {
-      @Override
-      public void run() {
-        SModel targetModel = getTargetModel(target);
-        if (targetModel == null) return;
+    project.getModelAccess().executeCommand(() -> {
+      SModel targetModel = getTargetModel(target);
+      if (targetModel == null) return;
 
-        for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
-          String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
-          if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
-            SNode baseNode = sourceNode.o1;
-            List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project.getProject(), baseNode);
-            for (RelationDescriptor tab : tabs) {
-              try {
-                if (!tab.isApplicable(baseNode)) continue;
+      for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
+        String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
+        SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+        if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
+          SNode baseNode = sourceNode.o1;
+          List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project.getProject(), baseNode);
+          for (RelationDescriptor tab : tabs) {
+            try {
+              if (!tab.isApplicable(baseNode)) continue;
 
-                for (SNode aspect : tab.getNodes(baseNode)) {
-                  if (tab.getBaseNode(aspect) != baseNode) continue;
-                  SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
-                }
-              } catch (Throwable t) {
-                LOG.error("Exception in extension code: ", t);
+              for (SNode aspect : tab.getNodes(baseNode)) {
+                if (tab.getBaseNode(aspect) != baseNode) continue;
+                SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
               }
+            } catch (Throwable t) {
+              LOG.error("Exception in extension code: ", t);
             }
           }
         }
@@ -209,7 +206,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
   private List<Pair<SNode, String>> getNodesToMove(@NotNull SModel targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
     final SRepository repo = targetModel.getRepository();
-    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+    List<Pair<SNode, String>> result = new ArrayList<>();
     for (final Pair<SNodeReference, String> node : sourceNodes) {
       SNode snode = node.o1.resolve(repo);
 
@@ -217,7 +214,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
       if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
       SModel sourceModel = snode.getModel();
       if (EqualUtil.equals(sourceModel, targetModel)) {
-        result.add(new Pair<SNode, String>(snode, node.o2));
+        result.add(new Pair<>(snode, node.o2));
       }
     }
     return result;

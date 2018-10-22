@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification__BehaviorDescriptor" file="AbstractClassifierSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification__BehaviorDescriptor" file="AbstractMethodSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -46,7 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification__BehaviorDescriptor" />
@@ -65,7 +65,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification__BehaviorDescriptor" file="DirectClassifierSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.DirectMethodSpecification__BehaviorDescriptor" file="DirectMethodSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.DirectMethodSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification__BehaviorDescriptor" file="FQNameClassifierSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -137,7 +137,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification__BehaviorDescriptor" file="FQNameMethodSpecification__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -160,7 +160,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate__BehaviorDescriptor" file="MigrationScriptPart_Instance_Predicate__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -187,7 +187,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater__BehaviorDescriptor" file="MigrationScriptPart_Instance_Updater__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -212,7 +212,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.script.behavior.PullUpMethod__BehaviorDescriptor" file="PullUpMethod__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.script.behavior.PullUpMethod__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

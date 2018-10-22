@@ -86,7 +86,7 @@ public class ModelCheckerIssueFinder implements SearchTask {
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
   private SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item) {
-    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
+    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item).getSpecialization();
     return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(myRepository), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
 }

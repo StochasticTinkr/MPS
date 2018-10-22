@@ -166,11 +166,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
           Class<?> javaType = ((SJavaCompoundType) lastPrm.getType()).getJavaType();
           if (javaType.isArray()) {
             Class<?> componentType = javaType.getComponentType();
-            for (int i = 0; i < parameters.length; ++i) {
-              if (parameters[i] == null) {
+            for (Object parameter : parameters) {
+              if (parameter == null) {
                 continue;
               }
-              if (!componentType.isAssignableFrom(parameters[i].getClass())) {
+              if (!componentType.isAssignableFrom(parameter.getClass())) {
                 return parameters;
               }
             }
@@ -201,7 +201,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       throw new IllegalArgumentException("Concept of the passed constructor and the concept of the descriptor must coincide");
     }
     SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, model, null, false);
-    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor, getParametersArray(Collections.<SParameter>emptyList(), parameters));
+    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor, getParametersArray(Collections.emptyList(), parameters));
     return node;
   }
 
@@ -215,7 +215,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
     Object[] emptyParameters = new Object[0];
     new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor,
-        getParametersArray(Collections.<SParameter>emptyList(), emptyParameters));
+        getParametersArray(Collections.emptyList(), emptyParameters));
   }
 
   @Override

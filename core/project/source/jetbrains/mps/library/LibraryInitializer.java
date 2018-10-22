@@ -48,8 +48,8 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
 
   private final SRepositoryExt myRepository;
   private final ModelAccess myModelAccess;
-  private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
-  private final Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
+  private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<>();
+  private final Set<SLibrary> myLibraries = new LinkedHashSet<>();
 
   @Override
   public void init() {
@@ -119,23 +119,20 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    */
   @Deprecated
   public void update(final boolean refreshFiles) {
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        final Set<SLibrary> currentLibs = new HashSet<SLibrary>();
-        List<LibraryContributor> contributors = myContributors;
-        for (LibraryContributor contributor : contributors) {
-          boolean hidden = contributor.hiddenLanguages();
-          for (LibDescriptor pathDescriptor : contributor.getPaths()) {
-            SLibrary lib = new SLibrary(myRepository, pathDescriptor, hidden);
-            currentLibs.add(lib);
-          }
+    myModelAccess.runWriteAction(() -> {
+      final Set<SLibrary> currentLibs = new HashSet<>();
+      List<LibraryContributor> contributors = myContributors;
+      for (LibraryContributor contributor : contributors) {
+        boolean hidden = contributor.hiddenLanguages();
+        for (LibDescriptor pathDescriptor : contributor.getPaths()) {
+          SLibrary lib = new SLibrary(myRepository, pathDescriptor, hidden);
+          currentLibs.add(lib);
         }
-        final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
-        if (libraryDelta.isEmpty()) return;
-        updateState(refreshFiles, libraryDelta);
-        libraryDelta.apply(myLibraries);
       }
+      final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
+      if (libraryDelta.isEmpty()) return;
+      updateState(refreshFiles, libraryDelta);
+      libraryDelta.apply(myLibraries);
     });
   }
 
@@ -185,7 +182,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   public List<ModulesMiner.ModuleHandle> getModuleHandles() {
     myModelAccess.checkReadAccess();
 
-    List<ModulesMiner.ModuleHandle> result = new ArrayList<ModulesMiner.ModuleHandle>();
+    List<ModulesMiner.ModuleHandle> result = new ArrayList<>();
     for (SLibrary lib : myLibraries) {
       result.addAll(lib.getHandles());
     }
@@ -217,18 +214,18 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     public static <T extends Comparable<T>> Delta<T> construct(Collection<T> initial, Collection<T> updated) {
       Set<T> added = subtractSets(updated, initial);
       Set<T> removed = subtractSets(initial, updated);
-      return new Delta<T>(added, removed);
+      return new Delta<>(added, removed);
     }
 
     private static <T> Set<T> subtractSets(Collection<T> s1, Collection<T> s2) {
-      Set<T> set1 = new HashSet<T>(s1);
+      Set<T> set1 = new HashSet<>(s1);
       set1.removeAll(s2);
       return set1;
     }
 
     private Delta(Collection<T> added, Collection<T> removed) {
-      myAdded = new HashSet<T>(added);
-      myRemoved = new HashSet<T>(removed);
+      myAdded = new HashSet<>(added);
+      myRemoved = new HashSet<>(removed);
     }
 
     public List<T> getAdded() {
@@ -240,7 +237,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     }
 
     private static <T extends Comparable<T>> List<T> createSortedList(Set<T> added) {
-      List<T> list = new ArrayList<T>(added);
+      List<T> list = new ArrayList<>(added);
       Collections.sort(list);
       return list;
     }

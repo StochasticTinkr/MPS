@@ -64,4 +64,9 @@ public class ModelOrNodeChooser implements ModelElementTargetChooser {
   public JComponent getPreferredFocusedComponent() {
     return myTree;
   }
+
+  @Override
+  public void dispose() {
+    myTree.dispose();
+  }
 }

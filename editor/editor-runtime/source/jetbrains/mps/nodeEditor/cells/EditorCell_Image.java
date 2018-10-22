@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.ide.icons.IconLoadHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.MacrosFactory;
@@ -33,6 +34,9 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map;
 
 public class EditorCell_Image extends EditorCell_Basic {
@@ -185,7 +189,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   public enum ImageAlignment {
-    justify, center, title;
+    justify, center, title
   }
 
   /**
@@ -231,8 +235,19 @@ public class EditorCell_Image extends EditorCell_Basic {
       }
       jetbrains.mps.nodeEditor.EditorContext ec = (jetbrains.mps.nodeEditor.EditorContext) context;
       Map<String, Icon> iconCache = ec.getIconCache();
-      if (!iconCache.containsKey(fullPath)){
-        iconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
+      if (!iconCache.containsKey(fullPath)) {
+        File iconFile = new File(fullPath);
+        if (!iconFile.exists()) {
+          LOG.error("image file not found: " + fullPath);
+          return null;
+        }
+
+        try {
+          URL iconUrl = iconFile.toURI().toURL();
+          iconCache.put(fullPath, IconLoader.findIcon(iconUrl, false));
+        } catch (MalformedURLException e) {
+          LOG.error("can't convert icon path to url: " + fullPath, e);
+        }
       }
       return iconCache.get(fullPath);
     }

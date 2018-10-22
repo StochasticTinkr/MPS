@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 public class SmartActionContext {
   private IOperationContext myOperationContext;
-  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
+  private Map<String, Object[]> myMap = new HashMap<>();
 
   public SmartActionContext(IOperationContext operationContext) {
     myOperationContext = operationContext;

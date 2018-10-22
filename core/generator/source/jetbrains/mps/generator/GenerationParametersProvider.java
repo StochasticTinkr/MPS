@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public interface GenerationParametersProvider {
 
-  public static final String HASH = "__parametersHash";
+  String HASH = "__parametersHash";
 
   Map<String, Object> getParameters(SModel descriptor);
 
@@ -45,7 +45,7 @@ public interface GenerationParametersProvider {
     }
 
     StringBuilder sb = new StringBuilder();
-    String[] keys = parameters.keySet().toArray(new String[parameters.size()]);
+    String[] keys = parameters.keySet().toArray(new String[0]);
     Arrays.sort(keys);
     for (String k : keys) {
       sb.append(k);

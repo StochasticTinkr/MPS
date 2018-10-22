@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import java.util.Objects;
@@ -77,7 +76,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                   String dest = vars(pa.forResource(tres)).pluginRoot();
 
                   if (dest != null) {
-                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
+                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule(tres.module()).expandPath(dest));
                     if (destDir.exists() && destDir.isDirectory()) {
                       final IFile metaInf = destDir.getDescendant("META-INF");
                       if (!(metaInf.exists()) || metaInf.isDirectory()) {

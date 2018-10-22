@@ -118,17 +118,17 @@ public class ModelDigestUtil {
     }
 
     @Override
-    public void write(int b) throws IOException {
+    public void write(int b) {
       digest.update((byte) (b & 0xff));
     }
 
     @Override
-    public void write(byte[] b) throws IOException {
+    public void write(@NotNull byte[] b) {
       digest.update(b);
     }
 
     @Override
-    public void write(byte[] b, int off, int len) throws IOException {
+    public void write(@NotNull byte[] b, int off, int len) {
       if (off < 0 || off > b.length || len < 0 || off + len > b.length) {
         throw new IndexOutOfBoundsException();
       }

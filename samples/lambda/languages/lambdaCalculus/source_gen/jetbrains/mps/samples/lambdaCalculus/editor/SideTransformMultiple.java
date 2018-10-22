@@ -100,7 +100,7 @@ public class SideTransformMultiple extends TransformationMenuBase {
 
       @Override
       public void execute(@NotNull String pattern) {
-        SNode multiple = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")), null);
+        SNode multiple = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), null);
         SNodeOperations.replaceWithAnother(_context.getNode(), multiple);
         ListSequence.fromList(SLinkOperations.getChildren(multiple, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, 0x15b75b54f176d1a4L, "expressions"))).insertElement(0, _context.getNode());
         SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), multiple, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);

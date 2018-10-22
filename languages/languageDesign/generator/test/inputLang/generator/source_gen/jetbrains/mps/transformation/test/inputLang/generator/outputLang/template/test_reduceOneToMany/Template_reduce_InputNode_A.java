@@ -4,6 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
+import jetbrains.mps.generator.runtime.TemplateDeclaration2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.FragmentResult;
@@ -25,8 +26,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
-
+public class Template_reduce_InputNode_A extends TemplateDeclarationBase implements TemplateDeclaration2 {
 
   public Template_reduce_InputNode_A() {
   }
@@ -34,10 +34,12 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100167");
   }
+
+
   protected FragmentResult applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final List<SNode> tlist1 = new ArrayList<SNode>();
-    final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_2_0(new SourceSubstituteMacroNodesContext(context, loopMacroRef_vff4zh_b0a0a2a5));
+    final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_2_0(new SourceSubstituteMacroNodesContext(context, loopMacroRef_vff4zh_b0a0a2a6));
     for (SNode itnode1 : loopList1) {
       if (itnode1 == null) {
         continue;
@@ -68,7 +70,7 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
   protected FragmentResult applyPart2(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    tlist1 = new Template_reduce_InputNode_A_included().apply(context);
+    tlist1 = new Template_reduce_InputNode_A_included().apply(environment, context);
     FragmentResult rv = listFragment(0, tlist1);
     return rv;
   }
@@ -78,7 +80,7 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
     try {
       TemplateContext switchContext1;
       switchContext1 = context;
-      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_vff4zh_a0a0c0c0i, switchContext1);
+      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_vff4zh_a0a0c0c0j, switchContext1);
       if (tlist1 == null) {
         final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
         try {
@@ -103,18 +105,13 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
     return rv;
   }
 
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    return apply(context.getEnvironment(), context);
-  }
-
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     ArrayList<SNode> rv = new ArrayList<SNode>();
-    applyPart0(templateContext).weaveWith(weaveSupport).reportTo(rv);
-    applyPart1(templateContext).weaveWith(weaveSupport).reportTo(rv);
-    applyPart2(templateContext).weaveWith(weaveSupport).reportTo(rv);
-    applyPart3(templateContext).weaveWith(weaveSupport).reportTo(rv);
+    applyPart0(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
+    applyPart1(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
+    applyPart2(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
+    applyPart3(weaveSupport.getTemplateContext()).weaveWith(weaveSupport).reportTo(rv);
     return rv;
   }
   @Override
@@ -135,6 +132,6 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild");
     return rv;
   }
-  private static SNodePointer loopMacroRef_vff4zh_b0a0a2a5 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
-  private static SNodePointer templateSwitchNodeNoInput_vff4zh_a0a0c0c0i = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
+  private static SNodePointer loopMacroRef_vff4zh_b0a0a2a6 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
+  private static SNodePointer templateSwitchNodeNoInput_vff4zh_a0a0c0c0j = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
 }

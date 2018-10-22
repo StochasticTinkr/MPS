@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5zvbk67h0d84gn1pappt4j68q5guuof" />
+<product version="3" modelHash="-49yrcbk0vx1fmm7fh8q3yi2lnd8wbfm">
+  <files names="DummyPipelineElement.java:PipelineElement.java" />
+</product>
 

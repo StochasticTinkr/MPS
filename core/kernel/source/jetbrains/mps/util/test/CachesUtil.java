@@ -29,7 +29,7 @@ public final class CachesUtil {
   public static final String REUSE_CACHES_DIR = "mps.test.reuse_caches_dir";
   public static final String SAVE_CACHES_DIR = "mps.test.save_caches_dir";
 
-  private static final List<File> TO_REMOVE = new ArrayList<File>();
+  private static final List<File> TO_REMOVE = new ArrayList<>();
 
   // we need to check that caches dirs are writable
   // idea does not have the necessary api, @see our PathManager class

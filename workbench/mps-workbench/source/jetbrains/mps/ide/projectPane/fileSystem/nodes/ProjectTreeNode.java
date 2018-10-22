@@ -37,7 +37,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     super(project, project.getProject().getBaseDir());
     setText(project.getName());
 
-    List<ModuleTreeNode> moduleNodes = new LinkedList<ModuleTreeNode>();
+    List<ModuleTreeNode> moduleNodes = new LinkedList<>();
     for (SModule m : project.getProjectModules()) {
       if (!(m instanceof AbstractModule)) {
         continue;

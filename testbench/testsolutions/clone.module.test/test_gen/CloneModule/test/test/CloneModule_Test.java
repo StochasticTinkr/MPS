@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
-import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.ModuleValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -113,7 +113,7 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
 
 
   public static void checkModule(AbstractModule module) {
-    MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>();
+    MessageCollectProcessor<ModuleValidationProblem> processor = new MessageCollectProcessor<ModuleValidationProblem>();
     ValidationUtil.validateModule(module, processor);
     List<String> errors = processor.getErrors();
     ListSequence.fromList(errors).addSequence(ListSequence.fromList(processor.getWarnings()));

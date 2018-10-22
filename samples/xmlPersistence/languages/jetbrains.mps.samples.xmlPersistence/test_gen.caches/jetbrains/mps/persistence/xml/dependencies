@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.persistence.xml.XmlConverterTest" file="XmlConverterTest.java">
+  <dependency className="jetbrains.mps.persistence.xml.XmlConverterTest">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />

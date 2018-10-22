@@ -33,13 +33,14 @@ public final class DSLClassMember__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> isMultiple_id1QReUKIGS9B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMultiple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QReUKIGS9B").registry(REGISTRY).build();
   public static final SMethod<Boolean> isRequired_id2WSWNq1VhVM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isRequired").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WSWNq1VhVM").registry(REGISTRY).build();
   public static final SMethod<SNode> getPlaceholder_id7T23sO8tlHe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getPlaceholder").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7T23sO8tlHe").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDefault_id7DN9hucqR$0 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDefault").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7DN9hucqR$0").registry(REGISTRY).build();
   public static final SMethod<SNode> createForClass_id5BD$AU437jJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createForClass").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5BD$AU437jJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
   public static final SMethod<Iterable<SNode>> find_id2gzehMfi1$l = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("find").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2gzehMfi1$l").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Iterable<SNode>> findPlaceholders_id5ZzANK5B6wZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("findPlaceholders").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5ZzANK5B6wZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<SNode> create_id7ay_HjIOVVe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("create").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ay_HjIOVVe").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
   public static final SMethod<String> getMatchingText_id2nUiI4k7qhh = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getMatchingText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2nUiI4k7qhh").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isMultiple_id1QReUKIGS9B, isRequired_id2WSWNq1VhVM, getPlaceholder_id7T23sO8tlHe, createForClass_id5BD$AU437jJ, find_id2gzehMfi1$l, findPlaceholders_id5ZzANK5B6wZ, create_id7ay_HjIOVVe, getMatchingText_id2nUiI4k7qhh);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isMultiple_id1QReUKIGS9B, isRequired_id2WSWNq1VhVM, getPlaceholder_id7T23sO8tlHe, getDefault_id7DN9hucqR$0, createForClass_id5BD$AU437jJ, find_id2gzehMfi1$l, findPlaceholders_id5ZzANK5B6wZ, create_id7ay_HjIOVVe, getMatchingText_id2nUiI4k7qhh);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -53,11 +54,23 @@ public final class DSLClassMember__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getPlaceholder_id7T23sO8tlHe(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044804f29L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier"))).first();
   }
+  /*package*/ static SNode getDefault_id7DN9hucqR$0(@NotNull SNode __thisNode__) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7a7325178c68eba9L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DefaultModifier"))).first();
+  }
   /*package*/ static SNode createForClass_id5BD$AU437jJ(@NotNull SNode __thisNode__, SNode cls, SModel futureModel) {
     if (Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(__thisNode__, cls)).isNotEmpty()) {
       return null;
     }
-    return (((boolean) DSLClassMember__BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(__thisNode__)) ? DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__, futureModel) : ((DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__) != null) ? PlaceholderModifier__BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__)) : null));
+    if ((DSLClassMember__BehaviorDescriptor.getDefault_id7DN9hucqR$0.invoke(__thisNode__) != null)) {
+      return SNodeOperations.copyNode(SLinkOperations.getTarget(DSLClassMember__BehaviorDescriptor.getDefault_id7DN9hucqR$0.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7a7325178c68eba9L, 0x7a7325178c68f138L, "value")));
+    }
+    if (((boolean) DSLClassMember__BehaviorDescriptor.isRequired_id2WSWNq1VhVM.invoke(__thisNode__))) {
+      return DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(__thisNode__, futureModel);
+    } else if ((DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__) != null)) {
+      return PlaceholderModifier__BehaviorDescriptor.create_id7T23sO8tTvX.invoke(DSLClassMember__BehaviorDescriptor.getPlaceholder_id7T23sO8tlHe.invoke(__thisNode__));
+    } else {
+      return null;
+    }
   }
   /*package*/ static Iterable<SNode> findPlaceholders_id5ZzANK5B6wZ(@NotNull final SNode __thisNode__, SNode cls) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder"))).where(new IWhereFilter<SNode>() {
@@ -96,10 +109,12 @@ public final class DSLClassMember__BehaviorDescriptor extends BaseBHDescriptor {
       case 2:
         return (T) ((SNode) getPlaceholder_id7T23sO8tlHe(node));
       case 3:
+        return (T) ((SNode) getDefault_id7DN9hucqR$0(node));
+      case 4:
         return (T) ((SNode) createForClass_id5BD$AU437jJ(node, (SNode) parameters[0], (SModel) parameters[1]));
-      case 5:
+      case 6:
         return (T) ((Iterable<SNode>) findPlaceholders_id5ZzANK5B6wZ(node, (SNode) parameters[0]));
-      case 7:
+      case 8:
         return (T) ((String) getMatchingText_id2nUiI4k7qhh(node));
       default:
         throw new BHMethodNotFoundException(this, method);

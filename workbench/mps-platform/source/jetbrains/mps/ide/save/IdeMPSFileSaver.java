@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.ide.save;
 
 import com.intellij.AppTopics;
@@ -24,7 +23,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -37,9 +36,11 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public class IdeMPSFileSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
   private final SRepository myRepository;
+  private final MakeServiceComponent myMakeComponent;
 
   public IdeMPSFileSaver(MPSCoreComponents coreComponents) {
     myRepository = coreComponents.getModuleRepository();
+    myMakeComponent = coreComponents.getPlatform().findComponent(MakeServiceComponent.class);
   }
 
   @Override
@@ -65,10 +66,10 @@ public class IdeMPSFileSaver implements ApplicationComponent {
         // be interested as well.
 
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          if (IMakeService.INSTANCE.isSessionActive()) {
-            ApplicationManager.getApplication().invokeLater(saveCommand::runSavingTask);
+          if (myMakeComponent.isSessionActive()) {
+            ApplicationManager.getApplication().invokeLater(saveCommand::execute);
           } else {
-            saveCommand.runSavingTask();
+            saveCommand.execute();
           }
         }
       }

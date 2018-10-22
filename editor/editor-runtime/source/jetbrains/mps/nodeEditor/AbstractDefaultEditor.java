@@ -63,13 +63,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
   private SConcept myConcept;
   private EditorContext myEditorContext;
 
-  private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
+  private Deque<EditorCell_Collection> collectionStack = new LinkedList<>();
   private int currentCollectionIdNumber = 0;
   private int currentConstantIdNumber = 0;
 
-  private Collection<SProperty> myProperties = new LinkedHashSet<SProperty>();
-  private Collection<SReferenceLink> myReferenceLinks = new LinkedHashSet<SReferenceLink>();
-  private Collection<SContainmentLink> myContainmentLinks = new LinkedHashSet<SContainmentLink>();
+  private Collection<SProperty> myProperties = new LinkedHashSet<>();
+  private Collection<SReferenceLink> myReferenceLinks = new LinkedHashSet<>();
+  private Collection<SContainmentLink> myContainmentLinks = new LinkedHashSet<>();
 
 
   public AbstractDefaultEditor(@NotNull SConcept concept) {

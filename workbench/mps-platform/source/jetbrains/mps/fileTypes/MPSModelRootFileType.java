@@ -65,7 +65,7 @@ public class MPSModelRootFileType extends LanguageFileType {
 
   @Nullable
   @Override
-  public String getCharset(@NotNull VirtualFile file, byte[] content) {
+  public String getCharset(@NotNull VirtualFile file, @NotNull byte[] content) {
     return "utf8";
   }
 }

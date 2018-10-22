@@ -89,7 +89,7 @@ public class GenerationRootDependencies {
   }
 
   public List<String> getFiles() {
-    return myGeneratedFiles == null ? Collections.<String>emptyList() : Collections.unmodifiableList(myGeneratedFiles);
+    return myGeneratedFiles == null ? Collections.emptyList() : Collections.unmodifiableList(myGeneratedFiles);
   }
 
   public void addGeneratedFile(String name) {
@@ -97,7 +97,7 @@ public class GenerationRootDependencies {
       throw new IllegalArgumentException("name is null");
     }
     if (myGeneratedFiles == null) {
-      myGeneratedFiles = new ArrayList<String>(2);
+      myGeneratedFiles = new ArrayList<>(2);
     }
     if (!myGeneratedFiles.contains(name)) {
       myGeneratedFiles.add(name);
@@ -151,9 +151,9 @@ public class GenerationRootDependencies {
     String rootHash = getValue(element, ATTR_HASH);
     boolean dependsOnConditionals = "true".equals(getValue(element, ATTR_DEPENDS_ON_CONDITIONALS));
     boolean dependsOnNodes = "true".equals(getValue(element, ATTR_DEPENDS_ON_NODES));
-    ArrayList<String> local = new ArrayList<String>();
-    ArrayList<String> external = new ArrayList<String>();
-    ArrayList<String> files = new ArrayList<String>();
+    ArrayList<String> local = new ArrayList<>();
+    ArrayList<String> external = new ArrayList<>();
+    ArrayList<String> files = new ArrayList<>();
     for (Element e : element.getChildren(NODE_DEPENDS_ON)) {
       Attribute attr = e.getAttribute(ATTR_ROOT_ID);
       if (attr != null) {

@@ -4,8 +4,8 @@
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -68,9 +68,6 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -438,7 +435,6 @@
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="run" />
                       <property role="DiZV1" value="false" />
-                      <property role="IEkAT" value="false" />
                       <node concept="3Tm1VV" id="1BJjlnrGYVu" role="1B3o_S" />
                       <node concept="3cqZAl" id="1BJjlnrGYVw" role="3clF45" />
                       <node concept="3clFbS" id="1BJjlnrGYVx" role="3clF47">
@@ -1674,11 +1670,14 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="2YIFZM" id="72nsGSZbucq" role="3uHU7w">
-                                    <ref role="37wK5l" to="w1kc:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isDefaultSubstitutable" />
-                                    <ref role="1Pybhc" to="w1kc:~SNodeUtil" resolve="SNodeUtil" />
-                                    <node concept="37vLTw" id="72nsGSZbuEh" role="37wK5m">
-                                      <ref role="3cqZAo" node="60B$8338uAR" resolve="it" />
+                                  <node concept="3fqX7Q" id="23pxZJWT3le" role="3uHU7w">
+                                    <node concept="2OqwBi" id="23pxZJWT52n" role="3fr31v">
+                                      <node concept="37vLTw" id="23pxZJWT4$0" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="60B$8338uAR" resolve="it" />
+                                      </node>
+                                      <node concept="liA8E" id="23pxZJWT5QA" role="2OqNvi">
+                                        <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

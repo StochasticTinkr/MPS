@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="551cuo53hife2c38evtkeo09tw7tj8t" />
+<product version="3" modelHash="-18xclhgfa480l9kyampa7ylirxgz4q7">
+  <files names="AbstractModuleCreationSettings.java:CloneModuleSettings.java:NewLanguageSettings.java:NewSolutionSettings.java" />
+</product>
 

@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,10 +41,10 @@ public class WeavingProcessor {
 
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
-    myReadyRules = new ArrayList<ArmedWeavingRule>();
+    myReadyRules = new ArrayList<>();
   }
 
-  public void prepareWeavingRules(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  public void prepareWeavingRules(SModel inputModel) throws GenerationFailureException {
     Iterable<TemplateWeavingRule> rules = myGenerator.getRuleManager().getWeaving_MappingRules();
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
@@ -104,13 +105,16 @@ public class WeavingProcessor {
         try {
           queryExecutor.applyRule(myRule, context, outputContextNode);
         } catch (DismissTopMappingRuleException e) {
-          myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeInput(context));
+          myEnv.getLogger().error(myRule.getRuleNode(), "bad template: dismiss in a weaving rule is not supported", GeneratorUtil.describeInput(context));
+        } catch (AbandonRuleInputException ex) {
+          // XXX There was no explicit handling for AbandonRuleInputException, is there a reason it wasn't handled the same as DismissTopMappingRuleException?
+          myEnv.getLogger().error(myRule.getRuleNode(), "bad template: abandon statement in a weaving rule is not supported", GeneratorUtil.describeInput(context));
         } catch (TemplateProcessingFailureException e) {
-          myEnv.getLogger().error(myRule.getRuleNode(), "weaving rule: error processing template fragment", GeneratorUtil.describeInput(context));
+          SNodeReference tml = e.getTemplateModelLocation();
+          myEnv.getLogger().error(tml == null ? myRule.getRuleNode() : tml, e.getMessage(), e.asProblemDescription());
         }
-      } catch (GenerationCanceledException ex) {
-        throw ex;
-      } catch (GenerationFailureException ex) {
+        // XXX exception handling shall match to that of $WEAVE$ macro
+      } catch (GenerationCanceledException | GenerationFailureException ex) {
         throw ex;
       } catch (GenerationException e) {
         myEnv.getLogger().error(myRule.getRuleNode(), "internal error: " + e.toString());

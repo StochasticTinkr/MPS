@@ -3,14 +3,14 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -39,7 +39,6 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
-    <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -92,9 +91,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -1165,7 +1161,6 @@
                     <node concept="3Tm1VV" id="7XaAmAsUAWT" role="1B3o_S" />
                     <node concept="17QB3L" id="7XaAmAsUAWZ" role="2Ghqu4" />
                     <node concept="3clFb_" id="7XaAmAsUAWU" role="jymVt">
-                      <property role="IEkAT" value="false" />
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="compute" />
                       <property role="DiZV1" value="false" />
@@ -1572,7 +1567,6 @@
       </node>
     </node>
     <node concept="Wx3nA" id="4kSix$ymNst" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="TrG5h" value="LOG" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="4kSix$yn5nU" role="1tU5fm">
@@ -1725,7 +1719,6 @@
     </node>
     <node concept="2tJIrI" id="4AqxpFyU5M" role="jymVt" />
     <node concept="3clFb_" id="29Pb3oJpRIW" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getModuleDescriptor" />
       <property role="DiZV1" value="false" />
@@ -1746,7 +1739,6 @@
     </node>
     <node concept="2tJIrI" id="5$fHs$AvxAx" role="jymVt" />
     <node concept="3clFb_" id="15fzu3GFzl0" role="jymVt">
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="loadRoots" />
       <property role="DiZV1" value="false" />
@@ -2010,7 +2002,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDeclaredDependencies" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="2LPTy715dkf" role="1B3o_S" />
       <node concept="3uibUv" id="2LPTy715dkh" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
@@ -2120,7 +2111,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="1tJ4mqhttG2" role="1B3o_S" />
       <node concept="3uibUv" id="1tJ4mqhttG4" role="3clF45">
         <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
@@ -2256,9 +2246,21 @@
             <node concept="3uibUv" id="6zsZmIBZ0kH" role="1tU5fm">
               <ref role="3uigEE" to="hfuk:1NAY6bPd4nM" resolve="IMakeService" />
             </node>
-            <node concept="2YIFZM" id="6zsZmIBZ0kK" role="33vP2m">
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+            <node concept="2OqwBi" id="IIVxgkIZ2l" role="33vP2m">
+              <node concept="2OqwBi" id="IIVxgkIVMf" role="2Oq$k0">
+                <node concept="37vLTw" id="IIVxgkIUSY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                </node>
+                <node concept="liA8E" id="IIVxgkIWHM" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="IIVxgkIYbs" role="37wK5m">
+                    <ref role="3VsUkX" to="hfuk:4QUA3Sqts3M" resolve="MakeServiceComponent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="IIVxgkJ03J" role="2OqNvi">
+                <ref role="37wK5l" to="hfuk:4QUA3SqtLoe" resolve="get" />
+              </node>
             </node>
           </node>
         </node>
@@ -2969,7 +2971,6 @@
         <node concept="3clFbS" id="IYmOvntYjo" role="3clF47" />
       </node>
       <node concept="3clFb_" id="IYmOvntYjp" role="jymVt">
-        <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="onCompilationResult" />
         <property role="DiZV1" value="false" />
@@ -3091,7 +3092,7 @@
     <property role="TrG5h" value="IEvaluationContainer" />
     <node concept="3Tm1VV" id="IYmOvnu1Zn" role="1B3o_S" />
     <node concept="3clFb_" id="IYmOvnu1ZE" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="copy" />
       <node concept="37vLTG" id="IYmOvnwl8q" role="3clF46">
         <property role="TrG5h" value="isWatch" />
@@ -3113,7 +3114,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="IYmOvn$0UJ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="generateClass" />
       <node concept="3uibUv" id="IYmOvn$3UR" role="Sfmx6">
         <ref role="3uigEE" to="qgwr:46sxDGTfogQ" resolve="EvaluationException" />
@@ -3125,7 +3126,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="IYmOvn$H8I" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createEvaluatorInstance" />
       <node concept="3uibUv" id="IYmOvnEvm7" role="Sfmx6">
         <ref role="3uigEE" to="qgwr:46sxDGTfogQ" resolve="EvaluationException" />
@@ -3143,21 +3144,21 @@
       </node>
     </node>
     <node concept="3clFb_" id="IYmOvn_6ln" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPresentation" />
       <node concept="3Tm1VV" id="IYmOvn_6lq" role="1B3o_S" />
       <node concept="3clFbS" id="IYmOvn_6lr" role="3clF47" />
       <node concept="17QB3L" id="IYmOvn_6mr" role="3clF45" />
     </node>
     <node concept="3clFb_" id="IYmOvnANfZ" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getNode" />
       <node concept="3Tm1VV" id="IYmOvnANg2" role="1B3o_S" />
       <node concept="3clFbS" id="IYmOvnANg3" role="3clF47" />
       <node concept="3Tqbb2" id="IYmOvnANhv" role="3clF45" />
     </node>
     <node concept="3clFb_" id="IYmOvnCJGj" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="updateState" />
       <node concept="3cqZAl" id="IYmOvnCJGl" role="3clF45" />
       <node concept="3Tm1VV" id="IYmOvnCJGm" role="1B3o_S" />

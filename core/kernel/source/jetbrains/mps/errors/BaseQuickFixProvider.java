@@ -30,7 +30,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private QuickFix_Runtime myQuickFix;
   private final String myClassFQName;
   private boolean myExecuteImmediately = false;
-  private Map<String, Object> myMap = new HashMap<String, Object>();
+  private Map<String, Object> myMap = new HashMap<>();
 
   public BaseQuickFixProvider(String classFQName) {
     myClassFQName = classFQName;

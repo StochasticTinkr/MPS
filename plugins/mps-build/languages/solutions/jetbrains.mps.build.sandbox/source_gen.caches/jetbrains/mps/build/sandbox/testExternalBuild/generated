@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7v6spxav0a3pujjtj90qq9z6bsw92db" />
+<product version="3" modelHash="ahfyyrw0uts5oucsmces8bveooxlmdc">
+  <files names="buildTest.xml:buildTest2.xml" />
+</product>
 

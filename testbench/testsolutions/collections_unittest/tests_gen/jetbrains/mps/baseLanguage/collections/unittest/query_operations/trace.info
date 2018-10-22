@@ -318,7 +318,6 @@
       <node id="1571838961922998581" at="257,28,258,37" concept="2" />
       <node id="1571838961922998581" at="260,31,261,29" concept="11" />
       <node id="1571838961922998591" at="267,7,268,62" concept="5" />
-      <node id="1571838961922998406" at="270,0,272,0" concept="3" trace="Mapping_Test1_Test#()V" />
       <node id="1571838961922998503" at="150,45,153,7" concept="8" />
       <node id="1571838961922998427" at="34,27,38,23" concept="8" />
       <node id="1571838961922998455" at="88,27,92,23" concept="8" />
@@ -370,7 +369,6 @@
       <node id="1571838961923394382" at="159,50,232,5" concept="8" />
       <node id="1571838961922998533" at="159,0,234,0" concept="9" trace="test__yieldNull#()V" />
       <node id="1571838961922998411" at="19,0,159,0" concept="9" trace="test__1#()V" />
-      <scope id="1571838961922998409" at="270,31,270,31" />
       <scope id="1571838961922998421" at="56,28,57,37" />
       <scope id="1571838961922998459" at="131,27,132,57" />
       <scope id="1571838961922998451" at="136,28,137,37" />
@@ -394,7 +392,6 @@
       <scope id="1571838961923394410" at="215,29,217,30" />
       <scope id="1571838961922998581" at="247,28,249,35" />
       <scope id="1571838961922998584" at="254,27,256,28" />
-      <scope id="1571838961922998406" at="270,0,272,0" />
       <scope id="1571838961922998430" at="41,27,44,34" />
       <scope id="1571838961922998422" at="45,27,48,28" />
       <scope id="1571838961922998429" at="52,27,55,28" />
@@ -495,7 +492,7 @@
       <unit id="1571838961922998451" at="78,23,142,13" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test$2$1$1" />
       <unit id="1571838961922998451" at="76,19,144,9" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test$2$1" />
       <unit id="1571838961922998451" at="74,73,146,5" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test$2" />
-      <unit id="1571838961922998404" at="18,0,273,0" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test" />
+      <unit id="1571838961922998404" at="18,0,271,0" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)/1571838961923334327">
@@ -546,7 +543,6 @@
       <node id="1571838961923391159" at="119,41,120,31" concept="11" />
       <node id="1571838961923391176" at="122,9,123,65" concept="5" />
       <node id="1571838961923391204" at="125,42,126,28" concept="11" />
-      <node id="1571838961923334329" at="131,0,133,0" concept="3" trace="Where_Select_Test1_Test#()V" />
       <node id="1571838961923334372" at="73,0,76,0" concept="9" trace="accept#(Ljava/lang/Integer;)Z" />
       <node id="1571838961923334441" at="95,0,98,0" concept="9" trace="accept#(Ljava/lang/Integer;)Z" />
       <node id="1571838961923334458" at="100,0,103,0" concept="9" trace="select#(Ljava/lang/Integer;)Ljava/lang/String;" />
@@ -575,7 +571,6 @@
       <node id="1571838961923334344" at="21,0,68,0" concept="9" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1571838961923334337" at="19,42,68,7" concept="10" />
       <node id="1571838961923334334" at="19,0,91,0" concept="9" trace="test__1#()V" />
-      <scope id="1571838961923334332" at="131,36,131,36" />
       <scope id="1571838961923334346" at="34,27,35,36" />
       <scope id="1571838961923334344" at="57,28,58,37" />
       <scope id="1571838961923334375" at="73,40,74,26" />
@@ -589,7 +584,6 @@
       <scope id="1571838961923334345" at="51,27,53,28" />
       <scope id="1571838961923334350" at="54,27,56,28" />
       <scope id="1571838961923334386" at="77,39,79,26" />
-      <scope id="1571838961923334329" at="131,0,133,0" />
       <scope id="1571838961923334346" at="43,27,46,28" />
       <scope id="1571838961923334351" at="47,27,50,34" />
       <scope id="1571838961923334372" at="73,0,76,0">
@@ -660,7 +654,7 @@
       <unit id="1571838961923334344" at="24,23,64,13" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Test1_Test$1$1$1" />
       <unit id="1571838961923334344" at="22,19,66,9" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Test1_Test$1$1" />
       <unit id="1571838961923334344" at="20,54,68,5" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Test1_Test$1" />
-      <unit id="1571838961923334327" at="18,0,134,0" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Test1_Test" />
+      <unit id="1571838961923334327" at="18,0,132,0" name="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Test1_Test" />
     </file>
   </root>
 </debug-info>

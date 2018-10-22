@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.impl.configurations.DummyRunConfigurationsStateManager" file="DummyRunConfigurationsStateManager.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.DummyRunConfigurationsStateManager">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" file="RunConfigurationsStateManager.java">
+  <dependency className="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
     <classNode dependClassName="com.intellij.execution.RunManagerEx" />
     <classNode dependClassName="com.intellij.execution.RunnerAndConfigurationSettings" />

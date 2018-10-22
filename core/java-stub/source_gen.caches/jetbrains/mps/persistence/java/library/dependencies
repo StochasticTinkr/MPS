@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubConstants" file="JavaClassStubConstants.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubConstants">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
   </dependency>
-  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" file="JavaClassStubModelDescriptor.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -31,14 +31,14 @@
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelSourceChangeTracker" />
     <classNode extendsClassName="jetbrains.mps.smodel.RegularModelDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

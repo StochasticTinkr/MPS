@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.AspectDependenciesChecker" file="AspectDependenciesChecker.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.AspectDependenciesChecker">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_Action" file="CheckModel_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -62,11 +62,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" file="CheckModel_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_Action" file="CheckModule_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -85,11 +85,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup" file="CheckModule_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_Action" file="CheckNamespace_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -111,11 +111,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup" file="CheckNamespace_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action" file="CheckProject_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -130,18 +130,18 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" file="CheckProject_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindCrossTemplateReferences_Action" file="FindCrossTemplateReferences_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindCrossTemplateReferences_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -166,7 +166,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action" file="FindReferencesToNonReferenceable_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -207,7 +207,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action" file="FindWrongAspectDependencies_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -235,7 +235,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" file="Modelchecker_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -264,14 +264,14 @@
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.ReferenceableConceptsChecker" file="ReferenceableConceptsChecker.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.ReferenceableConceptsChecker">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
+    <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItemBase" />
     <classNode dependClassName="jetbrains.mps.errors.item.UnresolvedReferenceReportItem" />
@@ -300,11 +300,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" file="ShowModelCheckerTool_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelChecker_Action" file="ShowModelChecker_Action.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelChecker_Action">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -317,7 +317,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" file="ToolsInternalEx_ActionGroup.java">
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

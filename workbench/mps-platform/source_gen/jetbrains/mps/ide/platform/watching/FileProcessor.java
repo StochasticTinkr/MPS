@@ -11,7 +11,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
-import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,7 +18,6 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.IdeaFile;
@@ -37,15 +35,16 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
-public class FileProcessor extends ReloadParticipant {
+/*package*/ class FileProcessor extends ReloadParticipant {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
   private final FileSystemListenersContainer myListenersContainer;
   private final Map<FileSystemListener, FileProcessor.ListenerData> myListener2Data = new HashMap<FileSystemListener, FileProcessor.ListenerData>();
   private final Queue<FileSystemListener> myPostNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
-  private static final IdeaFileSystem FS = ((IdeaFileSystem) FileSystemExtPoint.getFS());
+  private final IdeaFileSystem FS;
 
-  public FileProcessor() {
-    myListenersContainer = FS.getListenersContainer();
+  /*package*/ FileProcessor(IdeaFileSystem fs) {
+    FS = fs;
+    myListenersContainer = fs.getListenersContainer();
   }
 
   @Override
@@ -128,12 +127,12 @@ public class FileProcessor extends ReloadParticipant {
     }
   }
 
-  protected boolean accepts(VirtualFile file) {
-    return !(MPSFileTypesManager.isFileIgnored(file.getPath()));
+  /*package*/ boolean accepts(String path) {
+    return !(MPSFileTypesManager.isFileIgnored(path));
   }
 
-  protected void processDelete(VirtualFile vFile) {
-    final IFile file = new IdeaFile(FS, vFile);
+  /*package*/ void processDelete(String path) {
+    final IFile file = new IdeaFile(FS, path);
     ListSequence.fromList(getData(file.getPath(), FileProcessor.EventKind.REMOVED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(file);
@@ -141,8 +140,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
-  protected void processCreate(VirtualFile vFile) {
-    String path = vFile.getPath();
+  /*package*/ void processCreate(String path) {
     final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(path, FileProcessor.EventKind.CREATED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
@@ -151,8 +149,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
-  protected void processContentChanged(VirtualFile vFile) {
-    String path = vFile.getPath();
+  /*package*/ void processContentChanged(String path) {
     final IFile file = FS.getFile(path);
     ListSequence.fromList(getData(path, FileProcessor.EventKind.CONTENT_CHANGED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {

@@ -127,18 +127,16 @@ public class UpdaterImpl implements Updater {
 
     assert myUpdateSession == null;
     myUpdateSession = createUpdateSession(node, events);
-    EditorCell rootCell = null;
     try {
-
       Pair<EditorCell, UpdateInfoIndex> result =
           TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, () -> myUpdateSession.performUpdate());
-      rootCell = result.o1;
+      EditorCell rootCell = result.o1;
       myUpdateInfoIndex = result.o2;
+      myModelListenersController.attachListeners(node, getRelatedNodes(rootCell), getRelatedRefTargets(rootCell));
+      return rootCell;
     } finally {
       myUpdateSession = null;
     }
-    myModelListenersController.attachListeners(node, getRelatedNodes(rootCell), getRelatedRefTargets(rootCell));
-    return rootCell;
   }
 
   @Override
@@ -218,7 +216,7 @@ public class UpdaterImpl implements Updater {
   @Override
   public String[] getExplicitEditorHintsForNode(SNodeReference nodeReference) {
     Collection<String> hints = myEditorHintsForNodeMap.get(nodeReference);
-    return hints == null ? null : hints.toArray(new String[hints.size()]);
+    return hints == null ? null : hints.toArray(new String[0]);
   }
 
   @Override

@@ -47,12 +47,10 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode ms = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
-              List<SNode> msi = MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g.invoke(ms);
-              MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), msi);
-              return ListScope.forResolvableElements(msi);
-            }
+            SNode ms = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
+            List<SNode> msi = MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g.invoke(ms);
+            MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, (((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()))), msi);
+            return ListScope.forResolvableElements(msi);
           }
         };
       }

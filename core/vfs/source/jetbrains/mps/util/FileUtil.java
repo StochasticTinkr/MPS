@@ -117,7 +117,7 @@ public class FileUtil {
   public static void zip(File dir, File to) {
     new Packer() {
       @Override
-      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
+      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) {
         return new ZipOutputStream(fos);
       }
     }.pack(dir, to);
@@ -126,7 +126,7 @@ public class FileUtil {
   public static void zip(Map<String, File> entries, File to) {
     new Packer() {
       @Override
-      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
+      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) {
         return new ZipOutputStream(fos);
       }
     }.pack(entries, to);
@@ -412,7 +412,7 @@ public class FileUtil {
     try {
       r = new BufferedReader(reader);
 
-      String line = null;
+      String line;
       int currentLine = 0;
       while ((line = r.readLine()) != null) {
         if (currentLine == lineNo) {
@@ -640,10 +640,7 @@ public class FileUtil {
 
     char lastBaseChar = base.charAt(baseLen - 1);
     char nextChar = sub.charAt(baseLen);
-    if (lastBaseChar == '/' || lastBaseChar == '\\' || nextChar == '/' || nextChar == '\\') {
-      return true;
-    }
-    return false;
+    return lastBaseChar == '/' || lastBaseChar == '\\' || nextChar == '/' || nextChar == '\\';
   }
 
   private abstract static class Packer {

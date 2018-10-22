@@ -93,7 +93,7 @@ public class ClassFileWriter {
         e.printStackTrace();
       }
     }
-    return urls.toArray(new URL[urls.size()]);
+    return urls.toArray(new URL[0]);
   }
 
   private void updateClassFile2BytesMap(List<CompilationResult> results) {
@@ -192,7 +192,7 @@ public class ClassFileWriter {
 
   // FIXME
   @NotNull
-  private byte[] instrumentNotNull(@NotNull byte[] classContent) throws MalformedURLException {
+  private byte[] instrumentNotNull(@NotNull byte[] classContent) {
     FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
     ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
     // To understand why last parameter was added - see commits 250331a & 490d4e6 in IDEA Community
@@ -223,7 +223,7 @@ public class ClassFileWriter {
   }
 
   private static class ChangedModulesTracker {
-    private final Set<SModule> myModules = new HashSet<SModule>();
+    private final Set<SModule> myModules = new HashSet<>();
 
     public void addChanged(@NotNull SModule module) {
       myModules.add(module);

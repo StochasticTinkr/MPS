@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test3.DemoApp" file="DemoApp.java">
+  <dependency className="jetbrains.mps.samples.generator_demo.test_models.test3.DemoApp">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Container" />

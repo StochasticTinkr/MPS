@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5i1pvxrjz61vid00lttb2nnok6a9qkb" />
+<product version="3" modelHash="cm6zww8261ymcf65rve1i9ny7xyumlg">
+  <files names="ComeFromExpression_Editor.java:ComeFromExpression_EditorBuilder_a.java:CompositeWithParentScopeExpression_Editor.java:CompositeWithParentScopeExpression_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:ParentScope_Editor.java:ParentScope_EditorBuilder_a.java" />
+</product>
 

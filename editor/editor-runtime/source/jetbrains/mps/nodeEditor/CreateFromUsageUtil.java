@@ -90,7 +90,7 @@ public final class CreateFromUsageUtil {
 
     BaseGroup group = new BaseGroup("");
     Set<SLanguage> modelLanguages = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended();
-    SLanguage[] languages = modelLanguages.toArray(new SLanguage[modelLanguages.size()]);
+    SLanguage[] languages = modelLanguages.toArray(new SLanguage[0]);
     Arrays.sort(languages, new ToStringComparator());
     for (SLanguage language : languages) {
       boolean hasChildren = false;

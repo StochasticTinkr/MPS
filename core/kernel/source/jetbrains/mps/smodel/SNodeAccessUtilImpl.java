@@ -37,10 +37,10 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private static Logger LOG = Logger.wrap(LogManager.getLogger(SNodeAccessUtil.class));
 
   //SNodeAccessUtilImpl has only one instance, so we can omit remove() here though the field is not static
-  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertySettersInProgress = new InProgressThreadLocal<SProperty>();
-  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertyGettersInProgress = new InProgressThreadLocal<SProperty>();
+  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertySettersInProgress = new InProgressThreadLocal<>();
+  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertyGettersInProgress = new InProgressThreadLocal<>();
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SReferenceLink>>> ourSetReferentEventHandlersInProgress =
-      new InProgressThreadLocal<SReferenceLink>();
+      new InProgressThreadLocal<>();
 
   @Override
   protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
@@ -59,7 +59,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     if (RuntimeFlags.isMergeDriverMode()) return node.getProperty(property);
 
     Set<Pair<SNode, SProperty>> getters = ourPropertyGettersInProgress.get();
-    Pair<SNode, SProperty> current = new Pair<SNode, SProperty>(node, property);
+    Pair<SNode, SProperty> current = new Pair<>(node, property);
     if (getters.contains(current)) return node.getProperty(property);
 
     getters.add(current);
@@ -90,7 +90,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   @Override
   public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, String propertyValue) {
     Set<Pair<SNode, SProperty>> threadSet = ourPropertySettersInProgress.get();
-    Pair<SNode, SProperty> pair = new Pair<SNode, SProperty>(node, property);
+    Pair<SNode, SProperty> pair = new Pair<>(node, property);
 
     //todo try to remove
     if (threadSet.contains(pair)) {
@@ -126,7 +126,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     // invoke custom referent set event handler
     Set<Pair<SNode, SReferenceLink>> threadSet = ourSetReferentEventHandlersInProgress.get();
-    Pair<SNode, SReferenceLink> pair = new Pair<SNode, SReferenceLink>(node, referenceLink);
+    Pair<SNode, SReferenceLink> pair = new Pair<>(node, referenceLink);
     if (threadSet.contains(pair)) {
       node.setReferenceTarget(referenceLink, target);
       return;
@@ -175,7 +175,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private class InProgressThreadLocal<T> extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>>> {
     @Override
     protected Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>> initialValue() {
-      return new HashSet<Pair<SNode, T>>();
+      return new HashSet<>();
     }
   }
 }

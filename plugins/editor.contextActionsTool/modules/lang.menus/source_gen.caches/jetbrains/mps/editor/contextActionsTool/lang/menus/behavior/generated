@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bu5oph6yhbigaf5l4ipnq903by2r6wh" />
+<product version="3" modelHash="-5l49npbtnwcym8z7fnpyxxxu7hxirfb">
+  <files names="BehaviorAspectDescriptor.java:QueryFunction_TransformationMenu_Icon__BehaviorDescriptor.java:QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor.java:TransformationLocation_ContextActionsTool__BehaviorDescriptor.java" />
+</product>
 

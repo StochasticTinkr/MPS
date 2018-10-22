@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8zkpb9x5l9wty7tk9k3cg25rx4ajg0a" />
+<product version="3" modelHash="-bcc2s8fa97ioy4hurrxje8hsbwx060g">
+  <files names="AbstractPrintExpression__BehaviorDescriptor.java:BLCommand__BehaviorDescriptor.java:BLExpression__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:CommandHolder__BehaviorDescriptor.java:Command__BehaviorDescriptor.java:ExceptionHolder__BehaviorDescriptor.java:GeneratedCommand__BehaviorDescriptor.java:HelpCommand__BehaviorDescriptor.java:IActionHolder__BehaviorDescriptor.java:INodeWithReference__BehaviorDescriptor.java:InterpretedCommand__BehaviorDescriptor.java:ModifiedCommandHistoryItem__BehaviorDescriptor.java:NodeReferencePresentation__BehaviorDescriptor.java:NodeReferenceString__BehaviorDescriptor.java:NodeWithClosure__BehaviorDescriptor.java:PastedNodeReference__BehaviorDescriptor.java:PrintExpression__BehaviorDescriptor.java:ProjectExpression__BehaviorDescriptor.java" />
+</product>
 

@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 public class BaseExtensionRegistry {
-  private Map<String, Collection<Extension>> myActiveExtensions = new HashMap<String, Collection<Extension>>();
-  private Map<String, Collection<Extension>> myInactiveExtensions = new HashMap<String, Collection<Extension>>();
-  private Map<String, ExtensionPoint> myExtensionPoints = new HashMap<String, ExtensionPoint>();
+  private Map<String, Collection<Extension>> myActiveExtensions = new HashMap<>();
+  private Map<String, Collection<Extension>> myInactiveExtensions = new HashMap<>();
+  private Map<String, ExtensionPoint> myExtensionPoints = new HashMap<>();
 
   @SuppressWarnings("unchecked")
   public <T> ExtensionPoint<T> getExtensionPoint(String id) {
@@ -42,13 +42,13 @@ public class BaseExtensionRegistry {
   }
 
   public <T> Iterable<Extension<T>> getExtensions(ExtensionPoint<T> extensionPoint) {
-    return optExtensionsBucket(extensionPoint.getId(), this.<T>activeExtensions());
+    return optExtensionsBucket(extensionPoint.getId(), this.activeExtensions());
   }
 
   public <T> Iterable<T> getObjects(ExtensionPoint<T> extensionPoint) {
-    Collection<Extension<T>> extensions = optExtensionsBucket(extensionPoint.getId(), this.<T>activeExtensions());
+    Collection<Extension<T>> extensions = optExtensionsBucket(extensionPoint.getId(), this.activeExtensions());
     if (extensions.isEmpty()) return Collections.emptyList();
-    List<T> res = new ArrayList<T>(extensions.size());
+    List<T> res = new ArrayList<>(extensions.size());
     for (Extension<T> extension : extensions) {
       res.add(extension.get());
     }
@@ -168,7 +168,7 @@ public class BaseExtensionRegistry {
 
   private <E> Collection<E> optExtensionsBucket(String id, Map<String, Collection<E>> store) {
     Collection<E> extensions = store.get(id);
-    return extensions != null ? extensions : Collections.<E>emptyList();
+    return extensions != null ? extensions : Collections.emptyList();
   }
 
   private <E> void clearExtensionsBucket(String id, Map<String, Collection<E>> store) {

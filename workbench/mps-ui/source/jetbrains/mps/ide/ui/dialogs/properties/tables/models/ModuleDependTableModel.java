@@ -45,20 +45,17 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   @Override
   public void init() {
     if(!(myItem instanceof DevkitDescriptor)) {
-      myRepository.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for(Dependency dependency : myItem.getDependencies()) {
-            SModuleReference moduleReference = dependency.getModuleRef();
-            final SModule module = moduleReference.resolve(myRepository);
-            if(module instanceof Language) {
-              addLanguageItem(dependency);
-            } else if(module instanceof Generator) {
-              addGeneratorItem(dependency);
-            } else {
-              // XXX why not checked for Solution?
-              addUnspecifiedItem(dependency);
-            }
+      myRepository.getModelAccess().runReadAction(() -> {
+        for(Dependency dependency : myItem.getDependencies()) {
+          SModuleReference moduleReference = dependency.getModuleRef();
+          final SModule module = moduleReference.resolve(myRepository);
+          if(module instanceof Language) {
+            addLanguageItem(dependency);
+          } else if(module instanceof Generator) {
+            addGeneratorItem(dependency);
+          } else {
+            // XXX why not checked for Solution?
+            addUnspecifiedItem(dependency);
           }
         }
       });
@@ -165,7 +162,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   private Set<Dependency> getDependencies() {
-    Set<Dependency> dependencies = new LinkedHashSet<Dependency>();
+    Set<Dependency> dependencies = new LinkedHashSet<>();
     for(DependenciesTableItem tableItem : myTableItems) {
       // FIXME here's comes a hack. We used to save only 'DEFAULT' SDependency with Dependency,
       // FIXME        and 'EXTENDS' as SModuleReference (@see getExtendedModules, below).
@@ -185,7 +182,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
    * @return
    */
   public Set<SModuleReference> getExtendedModules() {
-    Set<SModuleReference> set = new LinkedHashSet<SModuleReference>();
+    Set<SModuleReference> set = new LinkedHashSet<>();
     for(DependenciesTableItem tableItem : myTableItems)
       if(tableItem.getItem().getScope() == SDependencyScope.EXTENDS) // XXX see getDependencies() above
         set.add(tableItem.getItem().getModuleRef());
@@ -194,7 +191,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   private Set<SModuleReference> getModulesByType(ModuleType type) {
-    Set<SModuleReference> set = new LinkedHashSet<SModuleReference>();
+    Set<SModuleReference> set = new LinkedHashSet<>();
     for(DependenciesTableItem tableItem : myTableItems)
       if(tableItem.getModuleType().equals(type))
         set.add(tableItem.getItem().getModuleRef());

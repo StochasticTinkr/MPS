@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5ysj6b8ln0yuwqg2se41a5ft6czktbe" />
+<product version="3" modelHash="ana42fvnt28dnc16ru0epcsq8e37eet">
+  <files names="Helper.java:Keys.java:Values.java" />
+</product>
 

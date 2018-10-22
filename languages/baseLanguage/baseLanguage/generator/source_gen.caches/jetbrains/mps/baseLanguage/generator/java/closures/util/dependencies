@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" file="ClosuresUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -22,7 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" file="QueriesUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil" file="_QueriesUtil.java">
+  <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />

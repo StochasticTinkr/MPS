@@ -27,7 +27,7 @@ public class IExtensibleMenuPart_factory {
       });
       Sequence.fromIterable(requiredFeatures).visitAll(new IVisitor<SConcept>() {
         public void visit(SConcept it) {
-          ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(it), null));
+          ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).addElement(SNodeFactoryOperations.createNewNode(it, null));
         }
       });
     }

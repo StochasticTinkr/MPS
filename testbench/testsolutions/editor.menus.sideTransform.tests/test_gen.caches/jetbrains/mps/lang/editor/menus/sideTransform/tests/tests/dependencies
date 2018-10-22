@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionCanExecute_Test" file="TestSideTransformExceptionActionCanExecute_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionCanExecute_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionDescriptionText_Test" file="TestSideTransformExceptionActionDescriptionText_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionDescriptionText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -30,37 +30,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionGroup_Test" file="TestSideTransformExceptionActionGroup_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
-    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionIcon_Test" file="TestSideTransformExceptionActionIcon_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
-    <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.junit.ClassRule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionParameterized_Test" file="TestSideTransformExceptionActionParameterized_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionGroup_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -76,7 +46,21 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionText_Test" file="TestSideTransformExceptionActionText_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionIcon_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionParameterized_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -92,7 +76,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionIncludeMenu_Test" file="TestSideTransformExceptionIncludeMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionText_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -108,7 +92,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionSubmenu_Test" file="TestSideTransformExceptionSubmenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionIncludeMenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -124,7 +108,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionWrapSubstituteMenu_Test" file="TestSideTransformExceptionWrapSubstituteMenu_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionSubmenu_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -140,7 +124,23 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithComplexReference_CustomLeftAction_Test" file="TestSideTransform_NodeWithComplexReference_CustomLeftAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionWrapSubstituteMenu_Test">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithComplexReference_CustomLeftAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -152,7 +152,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithComplexReference_CustomRightAction_Test" file="TestSideTransform_NodeWithComplexReference_CustomRightAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithComplexReference_CustomRightAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithSimpleReference_CustomLeftAction_Test" file="TestSideTransform_NodeWithSimpleReference_CustomLeftAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithSimpleReference_CustomLeftAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -176,7 +176,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithSimpleReference_CustomRightAction_Test" file="TestSideTransform_NodeWithSimpleReference_CustomRightAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithSimpleReference_CustomRightAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -188,7 +188,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_CustomLeftAction_Test" file="TestSideTransform_SimpleNode_CustomLeftAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_CustomLeftAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -200,7 +200,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_CustomRightAction_Test" file="TestSideTransform_SimpleNode_CustomRightAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_CustomRightAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -212,7 +212,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_DefaultLeftAction_Test" file="TestSideTransform_SimpleNode_DefaultLeftAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_DefaultLeftAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -224,7 +224,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_DefaultRightAction_Test" file="TestSideTransform_SimpleNode_DefaultRightAction_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_DefaultRightAction_Test">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

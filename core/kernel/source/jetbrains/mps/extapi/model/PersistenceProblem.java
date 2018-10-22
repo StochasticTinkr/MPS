@@ -115,18 +115,4 @@ public class PersistenceProblem implements SModel.Problem {
     }
     return new PersistenceProblem(kind, message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
   }
-
-  /**
-   * @deprecated not in use, is it worth to keep?
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public static Iterable<Problem> fromIMessages(@Nullable SModelData model, Kind kind, Iterable<IMessage> seq) {
-    List<Problem> result = new ArrayList<Problem>();
-    for (IMessage m : seq) {
-      result.add(fromIMessage(model, kind, m));
-    }
-    return result;
-  }
-
 }

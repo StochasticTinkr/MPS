@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContent" file="DebuggerToolContent.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContent">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" file="DebuggerToolContentBuilder.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder">
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfile" />
@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" file="DebuggerToolPanel.java">
+  <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel">
     <classNode dependClassName="com.intellij.execution.ui.RunnerLayoutUi" />
     <classNode dependClassName="com.intellij.execution.ui.layout.PlaceInGrid" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataProvider" />

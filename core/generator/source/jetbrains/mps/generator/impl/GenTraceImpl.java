@@ -60,14 +60,14 @@ public class GenTraceImpl implements GenerationTrace {
     if (ph == null) {
       return;
     }
-    ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
+    ArrayList<SNodeId> nodes = new ArrayList<>();
     final SNodeId startNodeId = inputNode.getNodeId();
     nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.next) {
       Collection<Element> changes = ph.getChangesWithInput(nodes, myTransientModule);
       dispatch(v, ph, changes);
       if (!changes.isEmpty()) {
-        LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
+        LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<>();
         for (Element e : changes) {
           nextInputs.add(e.output);
         }
@@ -86,14 +86,14 @@ public class GenTraceImpl implements GenerationTrace {
       return;
     }
 
-    ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
+    ArrayList<SNodeId> nodes = new ArrayList<>();
     final SNodeId startNodeId = node.getNodeId();
     nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.prev) {
       Collection<Element> changes = ph.getChangesWithOutput(nodes, myTransientModule);
       dispatch(v, ph, changes);
       if (!changes.isEmpty()) {
-        LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<SNodeId>();
+        LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<>();
         for (Element e : changes) {
           prevOutputs.add(e.input);
         }
@@ -180,12 +180,12 @@ public class GenTraceImpl implements GenerationTrace {
   }
 
   /*package*/ static class Phase {
-    private final ArrayList<Element> myTrace = new ArrayList<Element>();
+    private final ArrayList<Element> myTrace = new ArrayList<>();
     public Phase next;
     public final Phase prev;
     public final SModelReference input, output;
     private Map<SNodeId, Collection<Element>> inputIndex, outputIndex;
-    private ConcurrentLinkedQueue<Element> myAdditionQueue = new ConcurrentLinkedQueue<Element>();
+    private ConcurrentLinkedQueue<Element> myAdditionQueue = new ConcurrentLinkedQueue<>();
     private final Semaphore myTraceLock = new Semaphore(1);
 
     public Phase(@NotNull SModelReference inputModel, @NotNull SModelReference outputModel, @Nullable Phase previous) {
@@ -230,7 +230,7 @@ public class GenTraceImpl implements GenerationTrace {
       // FIXME In fact, shall not look outside of TransientModelsModule, however even if we move to separate repository for transient models,
       // it's ok to use SRepository here
       final SRepository modelRepository = tm.getRepository();
-      final ArrayList<Element> rv = new ArrayList<Element>();
+      final ArrayList<Element> rv = new ArrayList<>();
       for (SNodeId nid : nodes) {
         Collection<Element> changes = index.get(nid);
         if (changes == null || changes.isEmpty()) {
@@ -243,7 +243,7 @@ public class GenTraceImpl implements GenerationTrace {
         rv.addAll(changes);
       }
       if (rv.isEmpty()) {
-        return Collections.<Element>emptyList();
+        return Collections.emptyList();
       }
       // tracer records output nodes, which means trace for outer rule/macro usually comes *after* trace for inner elements
       // with reverse here, we try to restore 'natural' order (as deemed by few our colleagues), starting from most distant
@@ -258,7 +258,7 @@ public class GenTraceImpl implements GenerationTrace {
         rv = index.get(node.getNodeId());
         node = node.getParent();
       } while (node != null && rv == null);
-      return rv == null ? Collections.<Element>emptyList() : rv;
+      return rv == null ? Collections.emptyList() : rv;
     }
 
     private void drainAdditionQueue() {
@@ -273,8 +273,8 @@ public class GenTraceImpl implements GenerationTrace {
       }
       // just in case there were trace elements after the queue was drained but the lock wasn't yet released.
       drainAdditionQueue();
-      HashMap<SNodeId, Collection<Element>> index1 = new HashMap<SNodeId, Collection<Element>>();
-      HashMap<SNodeId, Collection<Element>> index2 = new HashMap<SNodeId, Collection<Element>>();
+      HashMap<SNodeId, Collection<Element>> index1 = new HashMap<>();
+      HashMap<SNodeId, Collection<Element>> index2 = new HashMap<>();
       for (Element e : myTrace) {
         updateMap(e.input, e, index1);
         updateMap(e.output, e, index2);
@@ -285,7 +285,7 @@ public class GenTraceImpl implements GenerationTrace {
     private static void updateMap(SNodeId nid, Element e, Map<SNodeId, Collection<Element>> map) {
       Collection<Element> c = map.get(nid);
       if (c == null) {
-        map.put(nid, c = new ArrayList<Element>(5));
+        map.put(nid, c = new ArrayList<>(5));
       }
       c.add(e);
     }

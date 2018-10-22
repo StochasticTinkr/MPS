@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,7 +385,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   @Override
-  public void readExternal(Element element) throws InvalidDataException {
+  public void readExternal(@NotNull Element element) throws InvalidDataException {
     // emulate the superclass's readExternal using the same binary format
     List<Element> subPanes = element.getChildren("subPane");
     for (Element subPane : subPanes) {
@@ -515,6 +515,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   public boolean isDescriptorModelInGeneratorVisible() {
     return myShowDescriptorModelsAction.isSelected();
+  }
+
+  public boolean isDescriptorModelInSolutionVisible() {
+    return Boolean.getBoolean("mps.module.rt");
   }
 
   @NotNull

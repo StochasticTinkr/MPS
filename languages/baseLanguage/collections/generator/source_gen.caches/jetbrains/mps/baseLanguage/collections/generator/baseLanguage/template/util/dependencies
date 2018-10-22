@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper" file="Helper.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys" file="Keys.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" file="Values.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

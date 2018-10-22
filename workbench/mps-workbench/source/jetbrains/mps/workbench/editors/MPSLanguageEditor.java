@@ -64,12 +64,7 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
   @Override
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    return new FileEditorState() {
-      @Override
-      public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
-        return false;
-      }
-    };
+    return (otherState, level1) -> false;
   }
 
   @Override

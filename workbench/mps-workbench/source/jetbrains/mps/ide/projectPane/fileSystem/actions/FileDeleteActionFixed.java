@@ -24,6 +24,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -42,13 +43,13 @@ public class FileDeleteActionFixed extends DeleteAction {
     private final static Logger LOG = Logger.wrap(LogManager.getLogger(MyDeleteProvider.class));
 
     @Override
-    public boolean canDeleteElement(DataContext dataContext) {
+    public boolean canDeleteElement(@NotNull DataContext dataContext) {
       final VirtualFile[] files = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
       return files != null && files.length > 0;
     }
 
     @Override
-    public void deleteElement(DataContext dataContext) {
+    public void deleteElement(@NotNull DataContext dataContext) {
       final VirtualFile[] files = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
       if (files == null || files.length == 0) {
         return;
@@ -70,13 +71,8 @@ public class FileDeleteActionFixed extends DeleteAction {
               file.delete(this);
             } catch (IOException e) {
               // XXX WHY invokeLater, if we are in EDT already (showYesNoDialog() call, above)?
-              ApplicationManager.getApplication().invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                  Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
-                    "Error", Messages.getErrorIcon());
-                }
-              });
+              ApplicationManager.getApplication().invokeLater(() -> Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
+                                                                                           "Error", Messages.getErrorIcon()));
             }
           }
         }

@@ -38,12 +38,7 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
   @NotNull
   @Override
   public FileBasedIndex.InputFilter getInputFilter() {
-    return new FileBasedIndex.InputFilter() {
-      @Override
-      public boolean acceptInput(VirtualFile file) {
-        return file.getFileType().equals(MPSFileTypeFactory.MPS_BINARY_FILE_TYPE);
-      }
-    };
+    return file -> file.getFileType().equals(MPSFileTypeFactory.MPS_BINARY_FILE_TYPE);
   }
 
   @Override

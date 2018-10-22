@@ -56,7 +56,7 @@ import java.util.Map;
 public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
   private final SModelId myDescriptorModelId = new IntegerSModelId(0x0f020202);
 
-  private final Map<SModelReference, GeneratorDescriptorModel> myModels = Collections.synchronizedMap(new HashMap<SModelReference, GeneratorDescriptorModel>());
+  private final Map<SModelReference, GeneratorDescriptorModel> myModels = Collections.synchronizedMap(new HashMap<>());
 
 
   @Override
@@ -96,11 +96,11 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
 
   @Override
   public void dispose() {
-    ArrayList<GeneratorDescriptorModel> models = new ArrayList<GeneratorDescriptorModel>(myModels.values());
+    ArrayList<GeneratorDescriptorModel> models = new ArrayList<>(myModels.values());
     myModels.clear();
     for (GeneratorDescriptorModel m : models) {
       SModule module = m.getModule();
-      if (module != null && module instanceof Generator) {
+      if (module instanceof Generator) {
         ((Generator) module).unregisterModel(m);
       }
     }

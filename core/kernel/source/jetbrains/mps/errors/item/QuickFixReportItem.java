@@ -27,8 +27,8 @@ import java.util.function.Function;
 public interface QuickFixReportItem extends ReportItem {
 
   class QuickFixFlavour<Q extends QuickFixBase, RI extends QuickFixReportItem> extends MultipleReportItemFlavour<RI, Q> {
-    public QuickFixFlavour(Class<RI> applicableClass, Function<RI, Collection<Q>> getter) {
-      super(applicableClass, getter);
+    public QuickFixFlavour(String id, Class<RI> applicableClass, Function<RI, Collection<Q>> getter) {
+      super(id, applicableClass, getter);
     }
     @Nullable
     public Q getAutoApplicable(ReportItem reportItem) {
@@ -48,12 +48,13 @@ public interface QuickFixReportItem extends ReportItem {
   Collection<? extends QuickFixBase> getQuickFix();
 
   QuickFixFlavour<QuickFixBase, QuickFixReportItem> FLAVOUR_QUICKFIX =
-      new QuickFixFlavour<QuickFixBase, QuickFixReportItem>(QuickFixReportItem.class, quickFixReportItem -> new ArrayList<QuickFixBase>(quickFixReportItem.getQuickFix()));
+      new QuickFixFlavour<>("FLAVOUR_QUICKFIX", QuickFixReportItem.class, quickFixReportItem -> new ArrayList<>(quickFixReportItem.getQuickFix()));
 
   Logger LOG = Logger.getLogger(QuickFixReportItem.class);
 
   QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem> FLAVOUR_EDITOR_QUICKFIX =
-      new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>(EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<EditorQuickFix>(quickFixReportItem.getQuickFix())) {
+      new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>("FLAVOUR_EDITOR_QUICKFIX", EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<>(
+          quickFixReportItem.getQuickFix())) {
         @NotNull
         @Override
         public Collection<EditorQuickFix> getCollection(FlavouredItem reportItem) {

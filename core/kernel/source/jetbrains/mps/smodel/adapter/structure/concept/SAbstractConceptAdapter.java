@@ -114,7 +114,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return Collections.emptyList();
     }
 
-    ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
+    ArrayList<SReferenceLink> result = new ArrayList<>();
     for (ReferenceDescriptor rd : d.getReferenceDescriptors()) {
       result.add(MetaAdapterFactory.getReferenceLink(rd.getId(), rd.getName()));
     }
@@ -137,7 +137,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return Collections.emptyList();
     }
 
-    ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
+    ArrayList<SContainmentLink> result = new ArrayList<>();
     for (LinkDescriptor ld : d.getLinkDescriptors()) {
       result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
     }
@@ -172,7 +172,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return Collections.emptyList();
     }
 
-    ArrayList<SProperty> result = new ArrayList<SProperty>();
+    ArrayList<SProperty> result = new ArrayList<>();
     for (PropertyDescriptor pd : descriptor.getPropertyDescriptors()) {
       result.add(MetaAdapterFactory.getProperty(pd.getId(), pd.getName()));
     }

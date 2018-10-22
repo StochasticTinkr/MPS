@@ -125,7 +125,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
           public EditorCell compute() {
             return new EvaluatorsSuperMethodCall_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "baseMethodDeclaration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1feL, 0x53c5060c6b1ae83bL, "instanceMethodDeclaration"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);

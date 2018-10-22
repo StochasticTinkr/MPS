@@ -74,7 +74,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
           public EditorCell compute() {
             return new LowLevelVariableReference_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "baseVariableDeclaration");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, 0x7d9a547f857a3b23L, "variableDeclaration"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull_smartReference(cell);

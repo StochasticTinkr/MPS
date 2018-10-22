@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ygz15hwjmegwhlqvkvfhq5hx52m08i" />
+<product version="3" modelHash="5ckd890y7yeuui0k3upm23i9rvp1ol1">
+  <files names="BehaviorAspectDescriptor.java:BwfAntTaskBundleDeclaration__BehaviorDescriptor.java:BwfAntTaskDeclaration__BehaviorDescriptor.java:BwfCustomMacro__BehaviorDescriptor.java:BwfJavaDependency__BehaviorDescriptor.java:BwfJavaModuleReference__BehaviorDescriptor.java:BwfJavaModule__BehaviorDescriptor.java:BwfMacroListImport__BehaviorDescriptor.java:BwfMacro__BehaviorDescriptor.java:BwfPathDeclaration__BehaviorDescriptor.java:BwfProjectPart__BehaviorDescriptor.java:BwfProject__BehaviorDescriptor.java:BwfSubTask__BehaviorDescriptor.java:BwfTaskLibrary__BehaviorDescriptor.java:BwfTaskPart__BehaviorDescriptor.java:BwfTask__BehaviorDescriptor.java" />
+</product>
 

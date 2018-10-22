@@ -26,6 +26,4 @@ public class ThisExpression_Test extends TestCase {
     ThisProvider tp = new ThisProvider();
     tp.testThisExpression();
   }
-  public ThisExpression_Test() {
-  }
 }

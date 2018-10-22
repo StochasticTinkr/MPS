@@ -142,7 +142,6 @@ public class TabbedEditor extends BaseNodeEditor {
     if (myTabsComponent != null) {
       myTabsComponent.dispose();
     }
-    final NodeChangeCallback nodeChangeCallback = newNode -> showNodeInternal(newNode);
     final CreateModeCallback createAspectCallback = relationDescriptor -> {
       // FIXME what if we create two+ aspects in a row, who's responsible to dispose inactive CreatePanel instances?
       final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new SetTabsComponentNode(), relationDescriptor);
@@ -150,8 +149,8 @@ public class TabbedEditor extends BaseNodeEditor {
       final IdeFocusManager fm = IdeFocusManager.getInstance(((MPSProject)myProject).getProject());
       fm.doWhenFocusSettlesDown(() -> fm.requestFocus(cp, false));
     };
-    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback,
-        ((MPSProject)myProject).getProject());
+    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), this::showNodeInternal, createAspectCallback,
+                                                              ((MPSProject)myProject).getProject());
 
     if (myRepoChangeListener != null) {
       myRepoChangeListener.addTabComponent(myTabsComponent);

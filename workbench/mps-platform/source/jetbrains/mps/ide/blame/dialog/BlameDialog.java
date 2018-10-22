@@ -279,7 +279,6 @@ public class BlameDialog extends DialogWrapper {
   private void updateCredentialsPane() {
     Credentials credentials = ErrorReportConfigurable.getCredentials();
     if (CredentialAttributesKt.isFulfilled(credentials)) {
-      assert credentials != null;
       myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.report.as", credentials.getUserName()));
     } else {
       myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.error.anonymously"));
@@ -414,7 +413,7 @@ public class BlameDialog extends DialogWrapper {
     Query query = createQuery();
     query.setIssueTitle(myTitleField.getText());
     query.setDescription(description.toString());
-    query.setFiles(myFilesToAttach.toArray(new File[myFilesToAttach.size()]));
+    query.setFiles(myFilesToAttach.toArray(new File[0]));
     query.setHidden(myHiddenCheckBox.isSelected());
     query.setSubsystem(mySubsystem);
     myResult = poster.send(query);
@@ -422,7 +421,7 @@ public class BlameDialog extends DialogWrapper {
     if (!myResult.isSuccess()) {
       String message = myResult.getMessage();
       String response = myResult.getResponseString();
-      if (response != null && !response.equals("")) {
+      if (response != null && !response.isEmpty()) {
         Element responseXml = myResult.getResponseXml();
         if (responseXml != null && "error".equalsIgnoreCase(responseXml.getName())) {
           message += ". " + responseXml.getText();

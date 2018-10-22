@@ -49,7 +49,7 @@ public interface ReloadableModule extends SModule {
    * warning: this method is lazy implemented!
    */
   @NotNull
-  Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
@@ -63,7 +63,7 @@ public interface ReloadableModule extends SModule {
    * warning: this method is lazy implemented!
    */
   @NotNull
-  Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getOwnClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return the class loader associated with the module.
@@ -75,17 +75,6 @@ public interface ReloadableModule extends SModule {
    */
   @Nullable
   ClassLoader getClassLoader();
-
-  /**
-   * @deprecated This method is an implementation aspect and therefore scheduled for removal from this API.
-   *
-   * @return so-called parent (or root) class loader. Simply returns the Idea plugin classloader in the case the module is
-   * bundled into an idea plugin. Will return an application classloader in the case there is no idea plugin.
-   * Contract: the class loader returned from #getClassLoader always depends on the root class loader.
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  ClassLoader getRootClassLoader();
 
   /**
    * Call it to replace the old class loader of this module with a new one.

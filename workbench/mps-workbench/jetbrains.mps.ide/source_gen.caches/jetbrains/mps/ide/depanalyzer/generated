@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9zhp4f59asa9s1zn2dsfof6alnddnno" />
+<product version="3" modelHash="d0lcoxzov5hujb8m0xbysakde93qeh5">
+  <files names="CycleBuilder.java:DepLink.java:DepPath.java:DependencyPathTree.java:DependencyTree.java:DependencyTreeNode.java:DependencyUtil.java:ModuleDependenciesView.java:ModuleDependencyNode.java" />
+</product>
 

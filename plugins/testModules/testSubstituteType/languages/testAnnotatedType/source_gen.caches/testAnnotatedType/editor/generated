@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-72x7d47ugf33mt9q4y9ix7xpoj1hfk8" />
+<product version="3" modelHash="-9jir9qqpldcp9unebd81dr76e8m0zov">
+  <files names="EditorAspectDescriptorImpl.java:PresenceCondition_Editor.java:PresenceCondition_EditorBuilder_a.java:PrimNumConstant_Editor.java:PrimNumConstant_EditorBuilder_a.java:PrimType_Editor.java:PrimType_EditorBuilder_a.java:SubstituteAnnotation_Editor.java:SubstituteAnnotation_EditorBuilder_a.java" />
+</product>
 

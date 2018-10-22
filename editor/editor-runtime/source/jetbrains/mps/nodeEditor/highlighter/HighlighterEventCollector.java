@@ -35,7 +35,7 @@ import java.util.List;
 public class HighlighterEventCollector {
   private final Object myEventsLock = new Object();
 
-  private final List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
+  private final List<SModelEvent> myLastEvents = new ArrayList<>();
 
   private ModelsEventsCollector myEventsCollector;
 
@@ -75,7 +75,7 @@ public class HighlighterEventCollector {
    * Returns a copy of the internal list of collected events and clears the internal list.
    */
   public List<SModelEvent> drainEvents() {
-    final List<SModelEvent> events = new ArrayList<SModelEvent>();
+    final List<SModelEvent> events = new ArrayList<>();
     synchronized (myEventsLock) {
       events.addAll(myLastEvents);
       myLastEvents.clear();

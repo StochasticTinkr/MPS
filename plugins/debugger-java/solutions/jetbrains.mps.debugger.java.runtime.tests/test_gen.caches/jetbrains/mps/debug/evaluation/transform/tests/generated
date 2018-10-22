@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8ucqh28kbvbbzitvx7b2qrzbnjn9i4h" />
+<product version="3" modelHash="-4mpcy7kdn06a7y8eyv17xasb8zfm5lt">
+  <files names="DebuggerInitializer.java:TransformationUtil_Complex_Test.java:TransformationUtil_Expressions_Test.java" />
+</product>
 

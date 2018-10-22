@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6964sg8yby48vkf2en5srfg1jgrktcf" />
+<product version="3" modelHash="6964sg8yby48vkf2en5srfg1jgrktcf">
+  <files names="LibraryNameUniqueness_NonTypesystemRule.java:RemoveRepetition_QuickFix.java:RepetitionCheck_NonTypesystemRule.java:RoutineUniqueness_NonTypesystemRule.java:ScriptNameUniqueness_NonTypesystemRule.java:TypesystemDescriptor.java:check_KajaDataflow_NonTypesystemRule.java" />
+</product>
 

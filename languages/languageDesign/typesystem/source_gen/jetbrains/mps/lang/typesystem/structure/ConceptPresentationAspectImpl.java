@@ -416,6 +416,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.InfoStatement:
         if (props_InfoStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("report typesystem info");
           cpb.rawPresentation("info");
           props_InfoStatement = cpb.create();
         }
@@ -739,6 +740,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ReportErrorStatement:
         if (props_ReportErrorStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("report typesystem error");
           cpb.rawPresentation("error");
           props_ReportErrorStatement = cpb.create();
         }
@@ -904,6 +906,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.WarningStatement:
         if (props_WarningStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("report typesystem warning");
           cpb.rawPresentation("warning");
           props_WarningStatement = cpb.create();
         }

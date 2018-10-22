@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorSReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSReference;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
@@ -217,12 +218,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         errorCell.setCellId("error_" + referenceLink.getName());
         addCell(errorCell);
       } else {
-        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
-          @Override
-          public EditorCell compute() {
-            return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
-          }
-        }, referentNode, referenceLink.getName());
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> createReferentEditorCell(getEditorContext(), referenceLink, referentNode), referentNode, referenceLink);
         //todo what is that?
         CellUtil.setupIDeprecatableStyles(referentNode, cell);
         setSemanticNodeToCells(cell, getNode());
@@ -253,8 +249,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
     }
 
     //todo rewrite cell actions
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(getNode(), link.getName()));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(getNode(), link.getName()));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorSReference(getNode(), link));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorSReference(getNode(), link));
     return errorCell;
   }
 

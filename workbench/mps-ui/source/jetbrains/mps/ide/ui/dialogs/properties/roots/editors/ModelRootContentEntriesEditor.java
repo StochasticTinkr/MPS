@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
-import com.intellij.icons.AllIcons.Modules;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -58,6 +58,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.BorderFactory;
@@ -66,7 +67,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -74,6 +74,7 @@ import java.awt.Point;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -86,7 +87,6 @@ import static com.intellij.openapi.vfs.VfsUtilCore.isAncestor;
  * It is located in the module properties dialog.
  */
 public class ModelRootContentEntriesEditor implements Disposable {
-  private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
   private final SRepository myRepository;
@@ -103,7 +103,9 @@ public class ModelRootContentEntriesEditor implements Disposable {
   public ModelRootContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
     myModuleDescriptor = moduleDescriptor;
     myRepository = repository;
-    myRootEntryPersistence = new ModelRootEntryPersistence().initFromEP();
+    // XXX I'm puzzled with mix of ModelRoot and ModelRootDescriptor in ModelRootEntryPersistence, shall stick to one
+    //     i.e. basically have to decide whether we edit SModule or ModuleDescriptor.
+    myRootEntryPersistence = new ModelRootEntryPersistence(PersistenceFacade.getInstance());
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(descriptor);
       Disposer.register(this, entry);
@@ -116,18 +118,19 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
   private AnAction getContentEntryActions() {
     final List<AddContentEntryAction> list = new ArrayList<>();
-    for (String type : myRootEntryPersistence.getModelRootTypes()) {
-      list.add(new AddContentEntryAction(type));
-    }
+    // make sure that if title for an entry editor has not been specified, we don't treat underscores of a root type as mnemonics
+    myRootEntryPersistence.foreachTypeAndName((type, name) -> list.add(new AddContentEntryAction(type, type.equals(name) ? name.replace('_', ' '): name)) );
+    // may need to introduce weight into extpoint if by name sorting is not good enough
+    list.sort(Comparator.comparing(a -> a.getTemplatePresentation().getText()));
 
     return new IconWithTextAction(
         PropertiesBundle.message("module.common.roots.add.title"),
         PropertiesBundle.message("module.common.roots.add.tip"),
-        Modules.AddContentEntry) {
+        AllIcons.General.Add) {
       @Override
-      public void actionPerformed(final AnActionEvent e) {
+      public void actionPerformed(@NotNull final AnActionEvent e) {
         if (list.size() == 1) {
-          myRepository.getModelAccess().runReadAction(() -> list.get(0).actionPerformed(e));
+          list.get(0).actionPerformed(e);
           return;
         }
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
@@ -144,6 +147,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
               @Override
               public boolean isMnemonicsNavigationEnabled() {
+                // just in case title of a root entry editor has mnemonics specified
                 return true;
               }
 
@@ -153,9 +157,18 @@ public class ModelRootContentEntriesEditor implements Disposable {
               }
 
               @Override
+              public int getMnemonicPos(AddContentEntryAction value) {
+                // as long as isMnemonicsNavigationEnabled() == true, expect there could be a mnemonic in editor's title.
+                // Presentation uses '_' to indicate mnemonics, while super.getMnemonicPos expects '&' or 0x1b (I adore your approach to mnemonics, IDEA guys!)
+                // Therefore, here we delegate to presentation to tell position of a mnemonic identifier character (would get stripped off later in
+                // PopupListElementRenderer, I believe). Note, for unknown reason mnemonic letter is not highlighted although works!
+                return value.getTemplatePresentation().getDisplayedMnemonicIndex();
+              }
+
+              @Override
               @NotNull
               public String getTextFor(AddContentEntryAction value) {
-                return value.getTemplatePresentation().getText();
+                return value.getTemplatePresentation().getTextWithMnemonic();
               }
             });
         popup.show(new RelativePoint(myEditorsListPanel, new Point(0, 0)));
@@ -163,7 +176,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
     };
   }
 
-  public void initUI() {
+  public final void initUI() {
     myMainPanel = new JBPanel(new BorderLayout());
     myMainPanel.setPreferredSize(new Dimension(300, 300));
 
@@ -173,7 +186,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
     group.add(getContentEntryActions());
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
-    myEditorsListPanel.setBackground(BACKGROUND_COLOR);
+    myEditorsListPanel.setBackground(UIUtil.getListBackground());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorsListPanel);
     scrollPane.setPreferredSize(new Dimension(250, 300));
     entriesPanel.add(new ToolbarPanel(scrollPane, group), BorderLayout.CENTER);
@@ -287,15 +300,16 @@ public class ModelRootContentEntriesEditor implements Disposable {
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
-    private String myType;
+    private final String myType;
 
-    AddContentEntryAction(@NotNull String type) {
-      super(type);
+    // type is identity, while name is to get presented to end user and may contain IDEA's mnemonics
+    AddContentEntryAction(@NotNull String type, String name) {
+      super(name);
       myType = type;
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(modelRoot);
       Disposer.register(ModelRootContentEntriesEditor.this, entry);
@@ -338,7 +352,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
         VirtualFile[] files = FileChooser.chooseFiles(fileChooserDescriptor, null, null, contentRootVFile);
         if (files.length == 0) {
           return false;
-        } else if (files.length > 0) {
+        } else {
           assert files.length == 1; // internal contract of the <code>FileChooser</code>
           chosen = files[0];
           for (VirtualFile candidate : candidatesForIntersection) {

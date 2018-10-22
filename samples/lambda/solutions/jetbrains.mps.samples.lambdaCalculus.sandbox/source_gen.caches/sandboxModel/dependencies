@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="sandboxModel.letlet" file="letlet.java">
+  <dependency className="sandboxModel.biggerTypeTest1">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
+  </dependency>
+  <dependency className="sandboxModel.biggerTypeTest2">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
+  </dependency>
+  <dependency className="sandboxModel.fixpoint">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
+  </dependency>
+  <dependency className="sandboxModel.letlet">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="sandboxModel.sim" file="sim.java">
+  <dependency className="sandboxModel.minimalTypeTest">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
+  </dependency>
+  <dependency className="sandboxModel.sim">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -15,13 +47,13 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.runtime.Function" />
   </dependency>
-  <dependency className="sandboxModel.sumsq" file="sumsq.java">
+  <dependency className="sandboxModel.sumsq">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
   </dependency>
-  <dependency className="sandboxModel.test2" file="test2.java">
+  <dependency className="sandboxModel.test2">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

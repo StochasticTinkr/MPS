@@ -22,16 +22,15 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-/**
- * Author: Sergey Dmitriev.
- * Time: Nov 5, 2003 1:03:02 PM
- */
+@Deprecated
+@ToRemove(version = 2018.3)
+//use CellAction_DeleteSReference instead
 public class CellAction_DeleteReference extends AbstractCellAction {
   private SNode mySource;
   private String myRole;
 
   @Deprecated
-  @ToRemove(version = 2018.2)
+  @ToRemove(version = 2018.3)
   public CellAction_DeleteReference(SNode source, String role) {
     mySource = source;
     myRole = role;

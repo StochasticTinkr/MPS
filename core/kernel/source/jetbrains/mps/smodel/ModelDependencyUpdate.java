@@ -82,7 +82,7 @@ public final class ModelDependencyUpdate {
    *                           will be explicit.
    */
   public ModelDependencyUpdate updateImportedModels(@Nullable SRepository languageModuleRepo) {
-    Set<org.jetbrains.mps.openapi.model.SModelReference> importedModels = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
+    Set<org.jetbrains.mps.openapi.model.SModelReference> importedModels = new HashSet<>();
     // XXX why allImportedModels? it gives models from used language accessories, is it what we really need here?
     ModelImports modelImports = new ModelImports(myModel);
     importedModels.addAll(modelImports.getImportedModels());

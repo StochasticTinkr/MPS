@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -11,13 +11,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.GeneratorCache_extension" file="GeneratorCache_extension.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.GeneratorCache_extension">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.RenameReferencesParticipant" file="RenameReferencesParticipant.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.RenameReferencesParticipant">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.project.EditableFilteringScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
@@ -53,7 +54,7 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports" file="UpdateModelImports.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -80,7 +81,7 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase" file="UpdateReferencesParticipantBase.java">
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -115,6 +116,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
+    <classNode dependClassName="jetbrains.mps.project.EditableFilteringScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.NodeCopyTracker" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

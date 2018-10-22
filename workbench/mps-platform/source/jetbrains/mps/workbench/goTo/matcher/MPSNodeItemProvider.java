@@ -55,7 +55,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   private WeakReference<PsiElement> myContext;
 
   public MPSNodeItemProvider(PsiElement context) {
-    myContext = new WeakReference<PsiElement>(context);
+    myContext = new WeakReference<>(context);
   }
 
   @Override
@@ -74,7 +74,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
         namePattern.equals("@") && model instanceof GotoClassModel2;    // TODO[yole]: remove implicit dependency
     if (empty && !base.canShowListForEmptyPattern()) return true;
 
-    Set<String> names = new THashSet<String>(Arrays.asList(base.getNames(everywhere)));
+    Set<String> names = new THashSet<>(Arrays.asList(base.getNames(everywhere)));
 
     if (base.isSearchInAnyPlace() && !namePattern.trim().isEmpty()) {
       String middleMatchPattern = "*" + namePattern + (namePattern.endsWith(" ") ? "" : "*");
@@ -116,14 +116,14 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
       Set<String> allNames,
       NameUtil.MatchingCaseSensitivity sensitivity) {
     ChooseByNameModel model = base.getModel();
-    List<String> namesList = new ArrayList<String>();
-    getNamesByPattern(base, new ArrayList<String>(allNames), indicator, namesList, namePattern, sensitivity);
+    List<String> namesList = new ArrayList<>();
+    getNamesByPattern(base, new ArrayList<>(allNames), indicator, namesList, namePattern, sensitivity);
     allNames.removeAll(namesList);
     sortNamesList(namePattern, namesList);
 
     indicator.checkCanceled();
 
-    List<Object> sameNameElements = new SmartList<Object>();
+    List<Object> sameNameElements = new SmartList<>();
     List<Pair<String, MinusculeMatcher>> patternsAndMatchers = getPatternsAndMatchers(qualifierPattern, base);
     int elementsConsumed = 0;
 
@@ -199,7 +199,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
   @NotNull
   private static List<String> split(@NotNull String s, @NotNull ChooseByNameBase base) {
-    List<String> answer = new ArrayList<String>();
+    List<String> answer = new ArrayList<>();
     for (String token : StringUtil.tokenize(s, StringUtil.join(base.getModel().getSeparators(), ""))) {
       if (!token.isEmpty()) {
         answer.add(token);
@@ -246,19 +246,13 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
   @NotNull
   private static List<Pair<String, MinusculeMatcher>> getPatternsAndMatchers(String qualifierPattern, final ChooseByNameBase base) {
-    return ContainerUtil.map2List(split(qualifierPattern, base), new Function<String, Pair<String, MinusculeMatcher>>() {
-      @NotNull
-      @Override
-      public Pair<String, MinusculeMatcher> fun(String s) {
-        return Pair.create(getNamePattern(base, s), buildPatternMatcher(getNamePattern(base, s), NameUtil.MatchingCaseSensitivity.NONE));
-      }
-    });
+    return ContainerUtil.map2List(split(qualifierPattern, base), s -> Pair.create(getNamePattern(base, s), buildPatternMatcher(getNamePattern(base, s), NameUtil.MatchingCaseSensitivity.NONE)));
   }
 
   @NotNull
   @Override
   public List<String> filterNames(@NotNull ChooseByNameBase base, @NotNull String[] names, @NotNull String pattern) {
-    List<String> res = new ArrayList<String>();
+    List<String> res = new ArrayList<>();
     getNamesByPattern(base, Arrays.asList(names), null, res, pattern, NameUtil.MatchingCaseSensitivity.NONE);
     return res;
   }
@@ -280,16 +274,13 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
     final MinusculeMatcher matcher = buildPatternMatcher(pattern, caseSensitivity);
 
     final String finalPattern = pattern;
-    JobLauncher.getInstance().invokeConcurrentlyUnderProgress(names, indicator, false, new Processor<String>() {
-      @Override
-      public boolean process(String name) {
-        if (matches(base, finalPattern, matcher, name)) {
-          synchronized (list) {
-            list.add(name);
-          }
+    JobLauncher.getInstance().invokeConcurrentlyUnderProgress(names, indicator, false, name -> {
+      if (matches(base, finalPattern, matcher, name)) {
+        synchronized (list) {
+          list.add(name);
         }
-        return true;
       }
+      return true;
     });
   }
 
@@ -328,8 +319,8 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
       boolean aStarts = a.startsWith(myOriginalPattern);
       boolean bStarts = b.startsWith(myOriginalPattern);
       if (aStarts && bStarts) return a.compareToIgnoreCase(b);
-      if (aStarts && !bStarts) return -1;
-      if (bStarts && !aStarts) return 1;
+      if (aStarts) return -1;
+      if (bStarts) return 1;
       return a.compareToIgnoreCase(b);
     }
   }

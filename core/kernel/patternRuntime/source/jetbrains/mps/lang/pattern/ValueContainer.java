@@ -36,7 +36,7 @@ import java.util.Map;
  * @since 3.4
  */
 public final class ValueContainer {
-  private final Map<String,Object> myValues = new HashMap<String, Object>();
+  private final Map<String,Object> myValues = new HashMap<>();
 
   public void put(String variableName, SNode value) {
     myValues.put(variableName, value);

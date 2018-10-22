@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1by2k5s32vymja5oed5p79ao8jq20hr" />
+<product version="3" modelHash="5kki8a2s5r69n8hx8tm6sgrmahvabs1">
+  <files names="ActionAspectDescriptorImpl.java:NF_Container.java" />
+</product>
 

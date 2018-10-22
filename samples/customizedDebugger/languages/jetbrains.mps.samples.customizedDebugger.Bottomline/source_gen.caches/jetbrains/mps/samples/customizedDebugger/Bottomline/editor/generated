@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b4z0rc3uf9hrodw35d8c6kh0cs5y2up" parametersHash="a7y06d854is3tqvgak3b8mgxsuvqmq7" />
+<product version="3" modelHash="-5jb0j6lwaf04ng7tpv6pci3r60ibd07" parametersHash="a7y06d854is3tqvgak3b8mgxsuvqmq7">
+  <files names="EditorAspectDescriptorImpl.java:MessageSequence_Editor.java:MessageSequence_EditorBuilder_a.java:OutputMessage_Editor.java:OutputMessage_EditorBuilder_a.java" />
+</product>
 

@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2x4nduefm76t7o1thu84wjdu22gzytj" />
+<product version="3" modelHash="-d69z12qchc1sc4rgk2bikj3p0qo61w">
+  <files names="DefaultRefactoringUI.java:ExtensionDescriptor.java:MoveNodesAction.java:MoveNodesActionBase.java:MoveNodesActionHelper.java:MoveNodesUtil.java:MoveNodes_Action.java:RefactoringProcessor.java:RenameRefactoringBody.java:Rename_Action.java:SelectOptionsDialog.java:TouchBarDefault_shift_move_ActionGroup.java:TouchBarDefault_shift_rename_ActionGroup.java" />
+</product>
 

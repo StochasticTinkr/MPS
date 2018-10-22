@@ -6,9 +6,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IInterfacedFinder extends Finder {
   /**
@@ -26,5 +23,4 @@ public interface IInterfacedFinder extends Finder {
   boolean canNavigate();
   @Nullable
   SNodeReference getDeclarationNode();
-  SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor);
 }

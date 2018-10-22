@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.Ad
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -42,11 +42,13 @@ import javax.swing.tree.TreeNode;
  */
 public class GenStatusUpdater extends TreeUpdateVisitor {
   private final ModelGenerationStatusManager myGenerationStatusManager;
+  private final MakeServiceComponent myMakeComponent;
   private final Project myProject;
 
   public GenStatusUpdater(Project mpsProject) {
     myGenerationStatusManager = mpsProject.getComponent(ModelGenerationStatusManager.class);
     myProject = mpsProject;
+    myMakeComponent = mpsProject.getComponent(MakeServiceComponent.class);
   }
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
@@ -58,7 +60,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   private boolean isTimeToRelax() {
-    if (IMakeService.INSTANCE.isSessionActive()) {
+    if (myMakeComponent.isSessionActive()) {
       return true;
     }
 

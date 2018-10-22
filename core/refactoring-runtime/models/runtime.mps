@@ -2,7 +2,7 @@
 <model ref="r:896b61c7-1bb0-433c-9386-4bed38ff63bd(jetbrains.mps.refactoring.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
@@ -93,7 +93,7 @@
     <property role="TrG5h" value="RefactoringAspect" />
     <node concept="2tJIrI" id="7T2CYsOvSCe" role="jymVt" />
     <node concept="3clFb_" id="7T2CYsOvSA9" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getRefactorings" />
       <node concept="3uibUv" id="7T2CYsOvSAz" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />

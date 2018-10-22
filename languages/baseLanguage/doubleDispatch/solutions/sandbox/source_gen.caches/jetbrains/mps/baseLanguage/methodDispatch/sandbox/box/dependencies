@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg1" file="Arg1.java" />
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg2" file="Arg2.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg1" />
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg2">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg1" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg3" file="Arg3.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg3">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg1" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg4" file="Arg4.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg4">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg2" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg5" file="Arg5.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg5">
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg4" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Descendant" file="Descendant.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Descendant">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.Integer" />
@@ -26,7 +26,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg5" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.TestClass" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Further" file="Further.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Further">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Number" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Descendant" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.TestClass" file="TestClass.java">
+  <dependency className="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.TestClass">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Number" />

@@ -44,15 +44,35 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  * @since 3.5
  */
 public interface GenerationTargetFacet extends SModuleFacet {
+
+  /**
+   * XXX See javadoc for JavaModuleFacet#getOutputRoot(). Perhaps, with the rise of textgen-controlled location, GTF shall tell root only
+   *     and cease answering getOuputLocation()?
+   *
+   * @param model model of a module this facet is associated with
+   * @return FS location where generated files for the model go, same or ancestor of {@link #getOutputLocation(SModel)} value,
+   *         or {@code null} if this facet doesn't manage output of the model
+   */
+  @Nullable
+  IFile getOutputRoot(@NotNull SModel model);
+
   /**
    * Location for output files.
    * Generally, shall not be nullable, but would like to give implementors freedom to imply own restrictions (and it's safer to override with
    * NotNull than vice versa).
    * @param model model of a module this facet is associated with
-   * @return FS location where generated files for the model go (not necessarily identical for the model, models may share one, unless otherwise node by implementation)
+   * @return FS location where generated files for the model go (not necessarily unique for the model, models may share one, unless otherwise noted by implementation)
    */
   @Nullable
   IFile getOutputLocation(@NotNull SModel model);
+
+  /**
+   * @param model model of a module this facet is associated with
+   * @return FS location where auxiliary generated model files go, same or ancestor of {@link #getOutputCacheLocation(SModel)} value,
+   *         or {@code null} if this facet doesn't manage output of the model
+   */
+  @Nullable
+  IFile getOutputCacheRoot(@NotNull SModel model);
 
   /**
    * Facilitates keeping related generated artifacts, e.g. descriptor, index, debug-related information, which is auxiliary to primary generation

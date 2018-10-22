@@ -2,9 +2,9 @@
 <model ref="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
   </languages>
   <imports>
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
@@ -152,7 +152,7 @@
     <property role="TrG5h" value="StyledTextPrinter" />
     <node concept="3Tm1VV" id="5UI0oFUbheP" role="1B3o_S" />
     <node concept="3clFb_" id="5UI0oFUbhkv" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setBold" />
       <node concept="3uibUv" id="4yQ1FQy84xc" role="3clF45">
         <ref role="3uigEE" node="5UI0oFUbheO" resolve="StyledTextPrinter" />
@@ -165,7 +165,7 @@
       <node concept="3clFbS" id="5UI0oFUbhky" role="3clF47" />
     </node>
     <node concept="3clFb_" id="5UI0oFUbhvW" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="append" />
       <node concept="3uibUv" id="4yQ1FQy84xl" role="3clF45">
         <ref role="3uigEE" node="5UI0oFUbheO" resolve="StyledTextPrinter" />
@@ -201,7 +201,7 @@
       <property role="TrG5h" value="T" />
     </node>
     <node concept="3clFb_" id="1ObOLrjiFDG" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getMethods" />
       <node concept="37vLTG" id="1ObOLrjiGr7" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -222,7 +222,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="1ObOLrjiNpp" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getStyledMethodPresentation" />
       <node concept="37vLTG" id="1ObOLrjiNuV" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -251,7 +251,7 @@
       <node concept="3clFbS" id="1ObOLrjiNpt" role="3clF47" />
     </node>
     <node concept="3clFb_" id="1ObOLrjiNxp" role="jymVt">
-      <property role="1EzhhJ" value="true" />
+      <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isMethodCurrent" />
       <node concept="37vLTG" id="1ObOLrjiNAk" role="3clF46">
         <property role="TrG5h" value="node" />

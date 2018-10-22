@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.math.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.constraints.ConstraintsAspectDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" file="MathSymbolIndexReference_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -38,11 +38,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints" file="MatrixElementAccessExpression_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" file="MatrixIndexWildcard_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -60,7 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints" file="MatrixInitializerIndexReference_Constraints.java">
+  <dependency className="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />

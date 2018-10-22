@@ -65,7 +65,7 @@ public class CreateGroupsBuilder {
       }
 
       for (final RelationDescriptor d : tabs) {
-        List<SNode> nodes = null;
+        List<SNode> nodes;
         try {
           nodes = d.getNodes(myBaseNode.resolve(myProject.getRepository()));
         } catch (Throwable t){

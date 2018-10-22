@@ -16,10 +16,9 @@ import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReferenceBase;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class DiffModelUtil {
@@ -60,13 +59,15 @@ public class DiffModelUtil {
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
     final SModelReference oldModelRef = getOriginalSModelRef(modelRef);
     for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
-      ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
+      // XXX FWIW, there's similar code in smodel.SModel.updateExternalReferences() 
+      //     Would be great to keep it in a single place 
+      ListSequence.fromList(SNodeOperations.getReferences(node)).ofType(SReferenceBase.class).where(new IWhereFilter<SReferenceBase>() {
+        public boolean accept(SReferenceBase it) {
           return modelRef.equals(it.getTargetSModelReference());
         }
-      }).visitAll(new IVisitor<SReference>() {
-        public void visit(SReference it) {
-          as_5x16vn_a0a0a0a0a0a0a3a6(it, SReferenceBase.class).setTargetSModelReference(oldModelRef);
+      }).visitAll(new IVisitor<SReferenceBase>() {
+        public void visit(SReferenceBase it) {
+          it.setTargetSModelReference(oldModelRef);
         }
       });
     }
@@ -88,9 +89,6 @@ public class DiffModelUtil {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_5x16vn_a0a2a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_5x16vn_a0a0a0a0a0a0a3a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_5x16vn_a0a0a0j(Object o, Class<T> type) {

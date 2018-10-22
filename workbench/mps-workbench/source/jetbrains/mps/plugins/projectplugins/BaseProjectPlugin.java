@@ -21,14 +21,11 @@ import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
-import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.part.ProjectPluginPart;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -45,9 +42,9 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private Project myProject;
   private MPSProject myMPSProject;
 
-  private List<BaseTool> myTools = new ArrayList<BaseTool>();
+  private List<BaseTool> myTools = new ArrayList<>();
   private EDTAccessor<List<BaseTool>> myInitializedTools = new EDTAccessor<>(new ArrayList<>());
-  private List<BaseCustomProjectPlugin> myCustomPlugins = new ArrayList<>();
+  private List<ProjectPluginPart> myCustomParts = new ArrayList<>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<>();
   private List<RelationDescriptor> myTabDescriptors = new ArrayList<>();
 
@@ -69,9 +66,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return new ArrayList<>();
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.1)
-  protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
+  private void initCustomParts() {
     List<ProjectPluginPart> rv = new ArrayList<>();
     fillCustomParts(rv);
     for (ProjectPluginPart part : rv) {
@@ -81,7 +76,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         LOG.error(String.format("Failed to initialize part %s of project plugin %s", part.getClass(), getClass()), th);
       }
     }
-    return new ArrayList<>(rv);
+    myCustomParts = rv;
   }
 
   protected void fillCustomParts(List<ProjectPluginPart> parts) {
@@ -93,7 +88,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     myMPSProject = ProjectHelper.fromIdeaProject(myProject);
 
     initTabbedEditors1(project);
-    initCustomParts1(project);
+    initCustomParts();
     initTools1();
     createPrefComponents1();
     registerPrefsAndTools();
@@ -120,15 +115,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
       myTabDescriptors = initTabbedEditors(project);
     } catch (Throwable t) {
       LOG.error("Exception on tabbed editors init:", t);
-    }
-  }
-
-  @ToRemove(version = 2018.1)
-  protected void initCustomParts1(Project project) {
-    try {
-      myCustomPlugins = initCustomParts(project);
-    } catch (Throwable t) {
-      LOG.error("Exception on custom project plugins init:", t);
     }
   }
 
@@ -166,24 +152,20 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private void disposePrefsToolsAndCustomParts() {
     disposePrefComponents(myPrefsComponents);
     disposeTools(myTools);
-    disposeCustomPluginParts(myCustomPlugins);
+    disposeCustomPluginParts();
     myPrefsComponents.clear();
     myTools.clear();
-    myCustomPlugins.clear();
   }
 
-  private void disposeCustomPluginParts(final List<BaseCustomProjectPlugin> customPluginsToDispose) {
-    for (BaseCustomProjectPlugin part : customPluginsToDispose) {
+  private void disposeCustomPluginParts() {
+    for (ProjectPluginPart part : myCustomParts) {
       try {
-        if (part instanceof ProjectPluginPart) {
-          ((ProjectPluginPart) part).dispose(myMPSProject);
-        } else {
-          part.dispose();
-        }
+        part.dispose(myMPSProject);
       } catch (Throwable t) {
-        LOG.error(String.format("Failed to dispose part %s of project plugin %s",part.getClass(), getClass()), t);
+        LOG.error(String.format("Failed to dispose part %s of project plugin %s", part.getClass(), getClass()), t);
       }
     }
+    myCustomParts.clear();
   }
 
   private void disposeTools(List<BaseTool> toolsToDispose) {
