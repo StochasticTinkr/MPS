@@ -449,18 +449,6 @@ public class FileUtil {
     return false;
   }
 
-  public static File getMaxContainingFile(List<File> files) {
-    if (files.size() == 0) return null;
-    Iterator<File> fileIterator = files.iterator();
-    File max = fileIterator.next();
-    while (fileIterator.hasNext()) {
-      if (max == null) return null;
-      max = getMaxContainingFile(max, fileIterator.next());
-    }
-
-    return max;
-  }
-
   public static File getMaxContainingFile(File file1, File file2) {
     if (isParentUp(file1, file2)) return file1;
     if (isParentUp(file2, file1)) return file2;
