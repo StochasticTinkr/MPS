@@ -139,18 +139,6 @@ public final class CommonPaths {
     }
   }
 
-  public static String getBaseMPSPath() {
-    String classesPath = PathManager.getHomePath() + File.separator + "classes";
-    if (new File(classesPath).exists()) {
-      return classesPath;
-    }
-    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps-boot.jar";
-    if (new File(mpsJarPath).exists()) {
-      return mpsJarPath;
-    }
-    return null;
-  }
-
   //------classpaths : JDK--------
 
   private static List<String> getJDKJars() {
@@ -186,17 +174,6 @@ public final class CommonPaths {
   }
 
   //------classpaths : MPS--------
-
-  public static IClassPathItem getMPSClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    addCoreJars(result);
-    addEditorJars(result);
-    addPlatformJars(result);
-    addIdeaJars(result);
-    addWorkbenchJars(result);
-    addClasses(result);
-    return result;
-  }
 
   private static void addAnnotations(CompositeClassPathItem result) {
     addIfExists(result, "lib/annotations.jar");
@@ -265,17 +242,6 @@ public final class CommonPaths {
   private static void addTestJars(CompositeClassPathItem result) {
     addIfExists(result, "lib/mps-test.jar");
     addIfExists(result, "lib/mps-environment.jar");
-  }
-
-  private static void addClasses(final CompositeClassPathItem result) {
-    String homePath = PathManager.getHomePath();
-    ClassPathReader classPathReader = new ClassPathReader(PathManager.getHomePath(), Arrays.asList(ClassType.values()));
-    classPathReader.read().stream().forEach(param -> {
-      File dir = new File(homePath, param);
-      if (dir.exists()) {
-        result.add(RealClassPathItem.create(dir.getAbsolutePath(), REQUESTER_STRING));
-      }
-    });
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {
