@@ -48,7 +48,7 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 /**
  * Write compiled java classes to disk, also instruments the notnull annotations
- *
+ * <p>
  * fixme use bundle for this package
  * Created by apyshkin on 5/26/16.
  */
@@ -86,8 +86,13 @@ public class ClassFileWriter {
   private static URL[] convertClassPathToUrls(Collection<String> classPath) {
     final List<URL> urls = new ArrayList<>();
     for (String cp : classPath) {
+      assert !(cp.startsWith("file://") || cp.startsWith("jar://") || cp.startsWith("jrt://")) : "change the following code after migrating to URLPaths";
       try {
-        urls.add(new URL(cp));
+        if (!cp.endsWith(".jar") && !cp.endsWith("/") && !cp.endsWith("\\")) {
+          cp = cp + "/";
+        }
+        urls.add(new URL("file://" + cp));
+        //urls.add(new URL(cp)); - enable this after migrating to URLs
       } catch (MalformedURLException e) {
         e.printStackTrace();
       }
@@ -195,7 +200,11 @@ public class ClassFileWriter {
     FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
     ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
     // To understand why last parameter was added - see commits 250331a & 490d4e6 in IDEA Community
-    NotNullVerifyingInstrumenter.processClassFile(reader, writer, new String[]{NotNull.class.getName()});
+    try {
+      NotNullVerifyingInstrumenter.processClassFile(reader, writer, new String[]{NotNull.class.getName()});
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }
     return writer.toByteArray();
 //    return classContent;
   }
