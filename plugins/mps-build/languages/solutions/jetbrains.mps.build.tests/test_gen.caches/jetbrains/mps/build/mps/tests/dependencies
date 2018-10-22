@@ -12,7 +12,6 @@
   <dependency className="jetbrains.mps.build.mps.tests.MPSModuleClosureTest_Test" file="MPSModuleClosureTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.BuildProjectBTestCaseHelper" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
