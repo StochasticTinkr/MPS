@@ -16,7 +16,7 @@ public abstract class SpecificChecker extends IChecker.AbstractModelChecker<Issu
     throw new UnsupportedOperationException();
   }
   public List<? extends IssueKindReportItem> checkModel(SModel model, SRepository repository, ProgressMonitor progressContext) {
-    throw new UnsupportedOperationException();
+    return checkModel(model, progressContext);
   }
   @Override
   public void check(SModel toCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
