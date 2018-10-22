@@ -6957,6 +6957,12 @@
               <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
             </node>
           </node>
+          <node concept="1SiIV0" id="1o9T9X2deTt" role="3bR37C">
+            <node concept="3bR9La" id="1o9T9X2deTu" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="2a9bszgrv2m" role="1E1XAP">
           <ref role="1E0d5P" node="mXGwHwhVPj" resolve="JDK" />
@@ -7147,6 +7153,9 @@
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
           </node>
+        </node>
+        <node concept="1E0d5M" id="1o9T9X2deTs" role="1E1XAP">
+          <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
         </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6KZG" role="2G$12L">
