@@ -26,6 +26,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SType;
@@ -71,7 +74,17 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     getters.add(current);
     try {
       PropertyConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept()).getProperty(property);
-      return descriptor != null ? descriptor.getValue(node) : getPropertyDirectly(node, property);
+      if (descriptor != null) {
+        Object value = descriptor.getValue(node);
+        final SDataType type = property.getType();
+        // FIXME `node.enumProp` how has pure raw value type while here we have to return SEnumerationLiteral instance
+        // FIXME remove this when typeof(`node.enumProp`) become SEnumLiteral
+        if (type instanceof SEnumeration) {
+          value = ((SEnumeration) type).getLiteral(value == null ? null : String.valueOf(value));
+        }
+        return value;
+      }
+      return getPropertyDirectly(node, property);
     } catch (Throwable t) {
       LOG.error(t);
       return SType.NOT_A_VALUE;

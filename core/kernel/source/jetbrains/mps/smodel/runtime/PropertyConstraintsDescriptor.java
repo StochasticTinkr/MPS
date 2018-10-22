@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 

@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -172,7 +173,13 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (!isGetterDefault()) {
       return getterDescriptor.getValue(node);
     } else {
-      return myProperty.getType().fromString(node.getProperty(myProperty));
+      Object value = myProperty.getType().fromString(node.getProperty(myProperty));
+      if (value instanceof SEnumerationLiteral) {
+        // FIXME `node.enumProp` has pure raw value type so here we have to convert SEnumerationLiteral instance to raw value
+        // FIXME remove this when typeof(`node.enumProp`) become SEnumLiteral
+        value = ((SEnumerationLiteral) value).getName();
+      }
+      return value;
     }
   }
 
