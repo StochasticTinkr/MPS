@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.tips.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+  <dependency className="jetbrains.mps.build.tips.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Editor" />
@@ -15,14 +15,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Editor" file="MPSTipsAndTricks_Editor.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Editor">
     <classNode dependClassName="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_EditorBuilder_a" file="MPSTipsAndTricks_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -67,14 +67,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Image_Editor" file="MPSTipsAndTricks_Image_Editor.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Image_Editor">
     <classNode dependClassName="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Image_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Image_EditorBuilder_a" file="MPSTipsAndTricks_Image_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Image_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -118,17 +118,16 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Text_Editor" file="MPSTipsAndTricks_Text_Editor.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Text_Editor">
     <classNode dependClassName="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Text_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Text_EditorBuilder_a" file="MPSTipsAndTricks_Text_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Text_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -173,14 +172,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Tip_Editor" file="MPSTipsAndTricks_Tip_Editor.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Tip_Editor">
     <classNode dependClassName="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Tip_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Tip_EditorBuilder_a" file="MPSTipsAndTricks_Tip_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.build.tips.editor.MPSTipsAndTricks_Tip_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

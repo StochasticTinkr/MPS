@@ -95,7 +95,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
           public EditorCell compute() {
             return new BuildMps_TipsSolution_EditorBuilder_a.Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, "solution");
+        }, targetNode, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a233b3c4L, 0x5bc8182317c9f320L, "solution"));
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_nullable_reference(cell);

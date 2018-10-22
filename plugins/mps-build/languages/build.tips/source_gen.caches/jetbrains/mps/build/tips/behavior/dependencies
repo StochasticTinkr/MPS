@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.tips.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.tips.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Image__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Text__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Tip__BehaviorDescriptor" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Image__BehaviorDescriptor" file="MPSTipsAndTricks_Image__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Image__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Text__BehaviorDescriptor" file="MPSTipsAndTricks_Text__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Text__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Tip__BehaviorDescriptor" file="MPSTipsAndTricks_Tip__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks_Tip__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks__BehaviorDescriptor" file="MPSTipsAndTricks__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.build.tips.behavior.MPSTipsAndTricks__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

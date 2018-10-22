@@ -48,14 +48,12 @@ public class BuildMps_TipsPackage_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              List<SNode> descendants = SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL, "jetbrains.mps.build.mps.structure.BuildMps_Tips"), false, new SAbstractConcept[]{});
-              return new ListScope(descendants) {
-                public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL, "jetbrains.mps.build.mps.structure.BuildMps_Tips")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                }
-              };
-            }
+            List<SNode> descendants = SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL, "jetbrains.mps.build.mps.structure.BuildMps_Tips"), false, new SAbstractConcept[]{});
+            return new ListScope(descendants) {
+              public String getName(SNode child) {
+                return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x71731b16a201d7bcL, "jetbrains.mps.build.mps.structure.BuildMps_Tips")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+              }
+            };
           }
         };
       }
