@@ -797,7 +797,7 @@
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199795290578">
     <file name="SpecificChecker.java">
       <node id="842888854126415913" at="15,104,16,46" concept="20" />
-      <node id="611563321809336271" at="18,128,19,46" concept="20" />
+      <node id="8394881300620025024" at="18,128,19,46" concept="12" />
       <node id="5633148658972000521" at="22,140,23,90" concept="11" />
       <node id="5633148658972000533" at="24,46,25,36" concept="5" />
       <node id="7780545028898651134" at="15,0,18,0" concept="10" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />

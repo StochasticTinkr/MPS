@@ -190,7 +190,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
@@ -728,7 +727,6 @@
             <property role="2$VJBR" value="2161719505004106887" />
             <node concept="2x4n5u" id="35" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="36" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -749,7 +747,6 @@
             <property role="2$VJBR" value="5063359128233238129" />
             <node concept="2x4n5u" id="3a" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="3b" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -773,7 +770,6 @@
             <property role="2$VJBR" value="2161719505004106887" />
             <node concept="2x4n5u" id="3h" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="3i" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -794,7 +790,6 @@
             <property role="2$VJBR" value="5063359128233238129" />
             <node concept="2x4n5u" id="3m" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="3n" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -818,7 +813,6 @@
             <property role="2$VJBR" value="2161719505004106887" />
             <node concept="2x4n5u" id="3t" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="3u" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -839,7 +833,6 @@
             <property role="2$VJBR" value="5063359128233238129" />
             <node concept="2x4n5u" id="3y" role="3iCydw">
               <property role="2x4mPI" value="NonTypesystemRule" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="f92nru9m" />
               <node concept="2V$Bhx" id="3z" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -863,7 +856,6 @@
             <property role="2$VJBR" value="2978080762093972440" />
             <node concept="2x4n5u" id="3E" role="3iCydw">
               <property role="2x4mPI" value="TypesystemQuickFix" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fisr4tb9" />
               <node concept="2V$Bhx" id="3F" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -884,7 +876,6 @@
             <property role="2$VJBR" value="5224141982809132419" />
             <node concept="2x4n5u" id="3J" role="3iCydw">
               <property role="2x4mPI" value="TypesystemQuickFix" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fisr4tb9" />
               <node concept="2V$Bhx" id="3K" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -905,7 +896,6 @@
             <property role="2$VJBR" value="4664795093170882986" />
             <node concept="2x4n5u" id="3O" role="3iCydw">
               <property role="2x4mPI" value="TypesystemQuickFix" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fisr4tb9" />
               <node concept="2V$Bhx" id="3P" role="2x4n5j">
                 <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
@@ -2518,7 +2508,6 @@
       <node concept="3clFbS" id="dW" role="3clF47">
         <node concept="3cpWs6" id="e0" role="3cqZAp">
           <node concept="3clFbT" id="e2" role="3cqZAk">
-            <property role="3clFbU" value="false" />
             <node concept="cd27G" id="e4" role="lGtFl">
               <node concept="3u3nmq" id="e5" role="cd27D">
                 <property role="3u3nmv" value="2161719505004106887" />
@@ -3141,9 +3130,7 @@
                                 <node concept="Xl_RD" id="i8" role="37wK5m">
                                   <property role="Xl_RC" value="jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix" />
                                 </node>
-                                <node concept="3clFbT" id="i9" role="37wK5m">
-                                  <property role="3clFbU" value="false" />
-                                </node>
+                                <node concept="3clFbT" id="i9" role="37wK5m" />
                               </node>
                             </node>
                           </node>
@@ -3425,9 +3412,7 @@
                             <node concept="Xl_RD" id="jM" role="37wK5m">
                               <property role="Xl_RC" value="jetbrains.mps.samples.heating.typesystem.RemoveSlot_QuickFix" />
                             </node>
-                            <node concept="3clFbT" id="jN" role="37wK5m">
-                              <property role="3clFbU" value="false" />
-                            </node>
+                            <node concept="3clFbT" id="jN" role="37wK5m" />
                           </node>
                         </node>
                       </node>
@@ -3791,7 +3776,6 @@
       <node concept="3clFbS" id="lO" role="3clF47">
         <node concept="3cpWs6" id="lS" role="3cqZAp">
           <node concept="3clFbT" id="lU" role="3cqZAk">
-            <property role="3clFbU" value="false" />
             <node concept="cd27G" id="lW" role="lGtFl">
               <node concept="3u3nmq" id="lX" role="cd27D">
                 <property role="3u3nmv" value="5063359128233238129" />

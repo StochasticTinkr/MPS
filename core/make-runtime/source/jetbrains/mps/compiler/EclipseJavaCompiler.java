@@ -16,7 +16,6 @@
 package jetbrains.mps.compiler;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -26,7 +25,6 @@ import org.eclipse.jdt.internal.compiler.Compiler;
 import org.eclipse.jdt.internal.compiler.ICompilerRequestor;
 import org.eclipse.jdt.internal.compiler.IErrorHandlingPolicy;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
-import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 import org.jetbrains.annotations.NotNull;
@@ -67,15 +65,15 @@ public class EclipseJavaCompiler {
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
-  public void compile(IClassPathItem classPath) {
+  public void compile(Collection<String> classPath) {
     compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
   }
 
-  public void compile(IClassPathItem classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
+  public void compile(Collection<String> classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
     Map<String, String> compilerOptions = addPresetCompilerOptions(customCompilerOptions);
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
-    Compiler compiler = new Compiler(new MyNameEnvironment(classPath), new ProceedingOnErrorsPolicy(), options, new RelayingRequestor(), new DefaultProblemFactory());
+    Compiler compiler = new Compiler(new JDKFileSystem(classPath, new String[0]), new ProceedingOnErrorsPolicy(), options, new RelayingRequestor(), new DefaultProblemFactory());
 //    compiler.options.verbose = true;
 
     try {
@@ -112,28 +110,6 @@ public class EclipseJavaCompiler {
     @Override
     protected boolean isExcluded(String name) {
       return false;
-    }
-  }
-
-  private class MyNameEnvironment extends MPSNameEnvironment {
-    private IClassPathItem myClassPath;
-
-    public MyNameEnvironment(IClassPathItem classPath) {
-      myClassPath = classPath;
-    }
-
-    @Override
-    protected IClassPathItem getClassPathItem() {
-      return myClassPath;
-    }
-
-    @Override
-    protected NameEnvironmentAnswer findType(String fqName) {
-      if (myCompilationUnits.containsKey(fqName)) {
-        return new NameEnvironmentAnswer(myCompilationUnits.get(fqName), null);
-      }
-
-      return super.findType(fqName);
     }
   }
 

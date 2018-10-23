@@ -419,14 +419,8 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private static void sortNode(ParentNode node, boolean sorted) {
-    ArrayList<MemberNode> arrayList = new ArrayList<>();
-    Enumeration<MemberNode> children = node.children();
-    while (children.hasMoreElements()) {
-      arrayList.add(children.nextElement());
-    }
-
-    Collections.sort(arrayList, sorted ? new AlphaComparator() : new OrderComparator());
-
+    ArrayList<ElementNode> arrayList = new ArrayList<>(node.getChildren());
+    arrayList.sort(sorted ? new AlphaComparator() : new OrderComparator());
     replaceChildren(node, arrayList);
   }
 
@@ -450,13 +444,8 @@ public class GroupedNodesChooser extends DialogWrapper {
       while (children.hasMoreElements()) {
         final ParentNode nextElement = children.nextElement();
         if (nextElement instanceof ContainerNode) {
-          final ContainerNode containerNode = (ContainerNode) nextElement;
-          Enumeration<MemberNode> memberNodes = containerNode.children();
-          List<MemberNode> memberNodesList = new ArrayList<>();
-          while (memberNodes.hasMoreElements()) {
-            memberNodesList.add(memberNodes.nextElement());
-          }
-          for (MemberNode memberNode : memberNodesList) {
+          List<ElementNode> memberNodesList = new ArrayList<>(nextElement.getChildren());
+          for (ElementNode memberNode : memberNodesList) {
             newRoot.add(memberNode);
           }
         } else {
@@ -469,13 +458,8 @@ public class GroupedNodesChooser extends DialogWrapper {
     } else {
       Enumeration<ParentNode> children = getRootNodeChildren();
       if (children.hasMoreElements()) {
-        ParentNode allClassesNode = children.nextElement();
-        Enumeration<MemberNode> memberNodes = allClassesNode.children();
-        ArrayList<MemberNode> arrayList = new ArrayList<>();
-        while (memberNodes.hasMoreElements()) {
-          arrayList.add(memberNodes.nextElement());
-        }
-        for (MemberNode memberNode : arrayList) {
+        ArrayList<ElementNode> arrayList = new ArrayList<>(children.nextElement().getChildren());
+        for (ElementNode memberNode : arrayList) {
           myNodeToParentMap.get(memberNode).add(memberNode);
         }
       }
@@ -493,7 +477,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private Enumeration<ParentNode> getRootNodeChildren() {
-    return getRootNode().children();
+    return ((Enumeration) getRootNode().children());
   }
 
   private DefaultMutableTreeNode getRootNode() {
@@ -590,6 +574,10 @@ public class GroupedNodesChooser extends DialogWrapper {
       if (parent != null) {
         parent.add(this);
       }
+    }
+
+    public List<ElementNode> getChildren() {
+      return children == null ? Collections.emptyList() : ((List) children);
     }
 
     public SNodeReference getElement() {

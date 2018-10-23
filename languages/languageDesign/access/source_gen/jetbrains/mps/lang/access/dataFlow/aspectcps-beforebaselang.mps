@@ -47,10 +47,7 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
-        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
-        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
-      </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -196,7 +193,6 @@
       <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
         <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
         <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
-        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
         <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -1492,8 +1488,6 @@
       </node>
     </node>
     <node concept="Wx3nA" id="5f" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="conceptIndex" />
       <node concept="3Tm6S6" id="7D" role="1B3o_S" />
@@ -1571,7 +1565,6 @@
             <property role="2$VJBR" value="227" />
             <node concept="2x4n5u" id="85" role="3iCydw">
               <property role="2x4mPI" value="ConceptSwitchStatement" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="195uihc0nrdil" />
               <node concept="2V$Bhx" id="86" role="2x4n5j">
                 <property role="2V$B1T" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1" />
@@ -1594,7 +1587,6 @@
             <property role="2$VJBR" value="227" />
             <node concept="2x4n5u" id="8b" role="3iCydw">
               <property role="2x4mPI" value="ConceptSwitchStatement" />
-              <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="195uihc0nrdil" />
               <node concept="2V$Bhx" id="8c" role="2x4n5j">
                 <property role="2V$B1T" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1" />

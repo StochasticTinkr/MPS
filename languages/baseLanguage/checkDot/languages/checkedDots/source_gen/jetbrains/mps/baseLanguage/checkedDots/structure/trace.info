@@ -15,7 +15,7 @@
       <unit at="10,0,28,0" name="jetbrains.mps.baseLanguage.checkedDots.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,54,0" name="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor" />
+      <unit at="17,0,60,0" name="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)/4079382982702596667">
@@ -36,21 +36,21 @@
       <node id="4079382982702596667" at="15,116,16,59" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="4079382982702596667" at="17,0,18,0" concept="1" trace="myConceptCheckedDotExpression" />
-      <node id="4079382982702596667" at="33,54,34,45" concept="4" />
-      <node id="4079382982702596667" at="44,78,45,193" concept="3" />
-      <node id="4079382982702596667" at="45,193,46,34" concept="0" />
-      <node id="4079382982702596667" at="46,34,47,125" concept="0" />
-      <node id="4079382982702596667" at="47,125,48,125" concept="0" />
-      <node id="4079382982702596667" at="48,125,49,17" concept="0" />
-      <node id="4079382982702596667" at="49,17,50,49" concept="0" />
-      <node id="4079382982702596667" at="50,49,51,22" concept="4" />
-      <node id="4079382982702596667" at="44,0,53,0" concept="6" trace="createDescriptorForCheckedDotExpression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="4079382982702596667" at="33,54,34,45" />
-      <scope id="4079382982702596667" at="44,78,51,22">
+      <node id="4079382982702596667" at="18,0,19,0" concept="1" trace="myConceptCheckedDotExpression" />
+      <node id="4079382982702596667" at="34,54,35,45" concept="4" />
+      <node id="4079382982702596667" at="50,78,51,193" concept="3" />
+      <node id="4079382982702596667" at="51,193,52,34" concept="0" />
+      <node id="4079382982702596667" at="52,34,53,125" concept="0" />
+      <node id="4079382982702596667" at="53,125,54,125" concept="0" />
+      <node id="4079382982702596667" at="54,125,55,17" concept="0" />
+      <node id="4079382982702596667" at="55,17,56,49" concept="0" />
+      <node id="4079382982702596667" at="56,49,57,22" concept="4" />
+      <node id="4079382982702596667" at="50,0,59,0" concept="6" trace="createDescriptorForCheckedDotExpression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="4079382982702596667" at="34,54,35,45" />
+      <scope id="4079382982702596667" at="50,78,57,22">
         <var name="b" id="4079382982702596667" />
       </scope>
-      <scope id="4079382982702596667" at="44,0,53,0" />
+      <scope id="4079382982702596667" at="50,0,59,0" />
     </file>
   </root>
 </debug-info>

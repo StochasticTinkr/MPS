@@ -168,34 +168,34 @@
   </root>
   <root nodeRef="r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)/7036359038356141331">
     <file name="ExtensionFieldDeclaration_Constraints.java">
-      <node id="7036359038356141331" at="18,50,19,172" concept="10" />
-      <node id="7036359038356141331" at="23,84,24,119" concept="5" />
-      <node id="7036359038356141332" at="27,40,28,20" concept="6" />
-      <node id="7036359038356141332" at="31,70,32,37" concept="5" />
-      <node id="7036359038356141349" at="32,37,33,145" concept="6" />
-      <node id="7036359038356141331" at="35,7,36,22" concept="6" />
-      <node id="7036359038356141331" at="18,0,21,0" concept="1" trace="ExtensionFieldDeclaration_Constraints#()V" />
-      <node id="7036359038356141332" at="26,0,30,0" concept="4" trace="hasOwnValidator#()Z" />
-      <node id="7036359038356141332" at="30,0,35,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="7036359038356141332" at="24,119,35,7" concept="2" />
-      <node id="7036359038356141331" at="22,0,38,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
-      <scope id="7036359038356141331" at="18,50,19,172" />
-      <scope id="7036359038356141332" at="27,40,28,20" />
-      <scope id="7036359038356141332" at="31,70,33,145">
+      <node id="7036359038356141331" at="19,50,20,172" concept="10" />
+      <node id="7036359038356141331" at="24,84,25,119" concept="5" />
+      <node id="7036359038356141332" at="28,40,29,20" concept="6" />
+      <node id="7036359038356141332" at="32,70,33,37" concept="5" />
+      <node id="7036359038356141349" at="33,37,34,154" concept="6" />
+      <node id="7036359038356141331" at="36,7,37,22" concept="6" />
+      <node id="7036359038356141331" at="19,0,22,0" concept="1" trace="ExtensionFieldDeclaration_Constraints#()V" />
+      <node id="7036359038356141332" at="27,0,31,0" concept="4" trace="hasOwnValidator#()Z" />
+      <node id="7036359038356141332" at="31,0,36,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="7036359038356141332" at="25,119,36,7" concept="2" />
+      <node id="7036359038356141331" at="23,0,39,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="7036359038356141331" at="19,50,20,172" />
+      <scope id="7036359038356141332" at="28,40,29,20" />
+      <scope id="7036359038356141332" at="32,70,34,154">
         <var name="propertyName" id="7036359038356141332" />
       </scope>
-      <scope id="7036359038356141331" at="18,0,21,0" />
-      <scope id="7036359038356141332" at="26,0,30,0" />
-      <scope id="7036359038356141332" at="30,0,35,0">
+      <scope id="7036359038356141331" at="19,0,22,0" />
+      <scope id="7036359038356141332" at="27,0,31,0" />
+      <scope id="7036359038356141332" at="31,0,36,0">
         <var name="node" id="7036359038356141332" />
         <var name="propertyValue" id="7036359038356141332" />
       </scope>
-      <scope id="7036359038356141331" at="23,84,36,22">
+      <scope id="7036359038356141331" at="24,84,37,22">
         <var name="properties" id="7036359038356141331" />
       </scope>
-      <scope id="7036359038356141331" at="22,0,38,0" />
-      <unit id="7036359038356141332" at="25,137,35,5" name="jetbrains.mps.lang.extension.constraints.ExtensionFieldDeclaration_Constraints$1" />
-      <unit id="7036359038356141331" at="17,0,39,0" name="jetbrains.mps.lang.extension.constraints.ExtensionFieldDeclaration_Constraints" />
+      <scope id="7036359038356141331" at="23,0,39,0" />
+      <unit id="7036359038356141332" at="26,137,36,5" name="jetbrains.mps.lang.extension.constraints.ExtensionFieldDeclaration_Constraints$1" />
+      <unit id="7036359038356141331" at="18,0,40,0" name="jetbrains.mps.lang.extension.constraints.ExtensionFieldDeclaration_Constraints" />
     </file>
   </root>
 </debug-info>

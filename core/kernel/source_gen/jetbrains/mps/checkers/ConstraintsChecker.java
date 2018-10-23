@@ -23,9 +23,7 @@ import jetbrains.mps.project.validation.ConceptMissingError;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.PropertySupport;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 
 public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   public ConstraintsChecker() {
@@ -120,14 +118,12 @@ public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements I
     // Properties validation 
     Iterable<SProperty> props = nodeConcept.getProperties();
     for (final SProperty property : Sequence.fromIterable(props)) {
-      final PropertySupport ps = PropertySupport.getPropertySupport(property);
-      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, property));
-      final PropertyConstraintsDescriptor propertyDescriptor = constraintsDescriptor.getProperty(property);
-      boolean canSetValue = (propertyDescriptor == null ? false : errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      final Object value = SNodeAccessUtil.getPropertyValue(node, property);
+      boolean canSetValue = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ps.canSetValue(propertyDescriptor, node, property, value);
+          return ModelConstraints.validatePropertyValue(node, property, value);
         }
-      }));
+      });
       if (!(canSetValue)) {
         // todo find a rule 
         errorsCollector.addError(new ConstraintsReportItem.PropertyConstraintReportItem(node, property));

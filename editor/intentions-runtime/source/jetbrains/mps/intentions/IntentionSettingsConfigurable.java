@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.intentions;
 
+import com.intellij.facet.ModifiableFacetModel.Listener;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.Configurable.Composite;
 import com.intellij.openapi.options.ConfigurationException;
@@ -40,10 +41,13 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class IntentionSettingsConfigurable implements Configurable, Composite {
   private IntentionsManager myIntentionsManager;
@@ -105,7 +109,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   @Override
   public boolean isModified() {
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
-      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      Enumeration<IntentionTreeNode> intentionTreeNode = ((Enumeration) languageTreeNode.children());
       while (intentionTreeNode.hasMoreElements()) {
         if (intentionTreeNode.nextElement().isModified()) {
           return true;
@@ -118,7 +122,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   @Override
   public void apply() {
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
-      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      Enumeration<IntentionTreeNode> intentionTreeNode = (Enumeration) languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
         intentionTreeNode.nextElement().apply();
       }
@@ -128,7 +132,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
   @Override
   public void reset() {
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
-      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      Enumeration<IntentionTreeNode> intentionTreeNode = (Enumeration) languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
         intentionTreeNode.nextElement().reset();
       }

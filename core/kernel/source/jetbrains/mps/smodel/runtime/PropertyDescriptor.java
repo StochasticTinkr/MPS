@@ -16,10 +16,13 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.STypeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface PropertyDescriptor {
   SPropertyId getId();
+
+  STypeId getDataTypeId();
 
   String getName();
 

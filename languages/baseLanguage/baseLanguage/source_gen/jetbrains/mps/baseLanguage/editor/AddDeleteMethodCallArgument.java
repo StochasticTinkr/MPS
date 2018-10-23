@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -26,21 +24,20 @@ public class AddDeleteMethodCallArgument {
         this.execute_internal(editorContext, node);
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
-        if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
-          SNode methodCall = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
-          SNode prevSibling = SNodeOperations.getPrevSibling(node);
-          SNode nextSibling = SNodeOperations.getNextSibling(node);
-          SNodeOperations.deleteNode(node);
-          MethodResolveUtil.replaceFromEditor(methodCall);
-          if ((nextSibling != null)) {
-            SelectionUtil.selectLabelCellAnSetCaret(editorContext, nextSibling, SelectionManager.FIRST_CELL, 0);
-          } else if ((prevSibling != null)) {
-            SelectionUtil.selectNode(editorContext, prevSibling);
-          } else {
-            SelectionUtil.selectCell(editorContext, methodCall, "EMPTY_PARAMETER_LIST");
-          }
+        if (!(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")))) {
+          throw new IllegalStateException("Expression in link " + SNodeOperations.getContainingLink(node).toString());
+        }
+        SNode methodCall = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+        SNode prevSibling = SNodeOperations.getPrevSibling(node);
+        SNode nextSibling = SNodeOperations.getNextSibling(node);
+        SNodeOperations.deleteNode(node);
+        MethodResolveUtil.replaceFromEditor(methodCall);
+        if ((nextSibling != null)) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, nextSibling, SelectionManager.FIRST_CELL, 0);
+        } else if ((prevSibling != null)) {
+          SelectionUtil.selectNode(editorContext, prevSibling);
         } else {
-          SNodeOperations.deleteNode(node);
+          SelectionUtil.selectCell(editorContext, methodCall, "EMPTY_PARAMETER_LIST");
         }
       }
 
@@ -52,21 +49,20 @@ public class AddDeleteMethodCallArgument {
         this.execute_internal(editorContext, node);
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
-        if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
-          SNode methodCall = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
-          SNode prevSibling = SNodeOperations.getPrevSibling(node);
-          SNode nextSibling = SNodeOperations.getNextSibling(node);
-          SNodeOperations.deleteNode(node);
-          MethodResolveUtil.replaceFromEditor(methodCall);
-          if ((prevSibling != null)) {
-            SelectionUtil.selectLabelCellAnSetCaret(editorContext, prevSibling, SelectionManager.LAST_CELL, -1);
-          } else if ((nextSibling != null)) {
-            SelectionUtil.selectNode(editorContext, nextSibling);
-          } else {
-            SelectionUtil.selectCell(editorContext, methodCall, "EMPTY_PARAMETER_LIST");
-          }
+        if (!(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")))) {
+          throw new IllegalStateException("Expression in link " + SNodeOperations.getContainingLink(node).toString());
+        }
+        SNode methodCall = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+        SNode prevSibling = SNodeOperations.getPrevSibling(node);
+        SNode nextSibling = SNodeOperations.getNextSibling(node);
+        SNodeOperations.deleteNode(node);
+        MethodResolveUtil.replaceFromEditor(methodCall);
+        if ((prevSibling != null)) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, prevSibling, SelectionManager.LAST_CELL, -1);
+        } else if ((nextSibling != null)) {
+          SelectionUtil.selectNode(editorContext, nextSibling);
         } else {
-          SNodeOperations.deleteNode(node);
+          SelectionUtil.selectCell(editorContext, methodCall, "EMPTY_PARAMETER_LIST");
         }
       }
 
@@ -78,18 +74,10 @@ public class AddDeleteMethodCallArgument {
         this.execute_internal(editorContext, node);
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
-        SNode contextNode = editorContext.getSelectedNode();
-        List<SNode> ancestors = SNodeOperations.getNodeAncestors(contextNode, null, true);
-        SNode methodCallNode = ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), true)).first();
-        if (!(ListSequence.fromList(ancestors).contains(methodCallNode))) {
-          throw new IllegalStateException("ancestors: " + ancestors.toString());
-        }
-        SNode lastArgument = ListSequence.fromList(ancestors).getElement(ListSequence.fromList(ancestors).indexOf(methodCallNode) - 1);
-        if (SNodeOperations.hasRole(lastArgument, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))) {
-          SNode newArgument = SNodeOperations.insertNextSiblingChild(lastArgument, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null));
-          MethodResolveUtil.replaceFromEditor(methodCallNode);
-          SelectionUtil.selectNode(editorContext, newArgument);
-        }
+        SNode argument = MethodArgumentsUtil.getMethodArgumentAncestor(node);
+        SNode newArgument = SNodeOperations.insertNextSiblingChild(argument, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), null));
+        MethodResolveUtil.replaceFromEditor(SNodeOperations.cast(SNodeOperations.getParent(argument), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")));
+        SelectionUtil.selectNode(editorContext, newArgument);
       }
 
     };

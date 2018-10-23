@@ -16,7 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
+import jetbrains.mps.classloading.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
@@ -25,7 +25,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import sun.misc.CompoundEnumeration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -326,6 +326,37 @@ public final class ModuleClassLoader extends ClassLoader {
 
     public ReloadableModule getModule() {
       return myModule;
+    }
+  }
+
+  // copied from JDK 8
+  final class CompoundEnumeration<E> implements Enumeration<E> {
+    private final Enumeration<E>[] enums;
+    private int index;
+
+    public CompoundEnumeration(Enumeration<E>[] enums) {
+      this.enums = enums;
+    }
+
+    private boolean next() {
+      while (index < enums.length) {
+        if (enums[index] != null && enums[index].hasMoreElements()) {
+          return true;
+        }
+        index++;
+      }
+      return false;
+    }
+
+    public boolean hasMoreElements() {
+      return next();
+    }
+
+    public E nextElement() {
+      if (!next()) {
+        throw new NoSuchElementException();
+      }
+      return enums[index].nextElement();
     }
   }
 }

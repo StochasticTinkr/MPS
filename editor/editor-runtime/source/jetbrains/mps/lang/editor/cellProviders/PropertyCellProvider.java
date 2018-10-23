@@ -35,11 +35,14 @@ import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -100,16 +103,18 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   @Override
   public SubstituteInfo createDefaultSubstituteInfo() {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction((Computable<SubstituteInfo>) () -> {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
       if (myProperty == null) {
         return null;
       }
-      SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(myProperty.getDeclarationNode());
+      SDataType dataType = myProperty.getType();
 
-      if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
+      //TODO make extensible
+
+      if (dataType == SPrimitiveTypes.BOOLEAN) {
         return new BooleanSPropertySubstituteInfo(getSNode(), myProperty, myEditorContext);
       }
-      if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataType)) {
+      if (dataType instanceof SEnumeration) {
         return new EnumSPropertySubstituteInfo(getSNode(), myProperty, myEditorContext);
       }
       return null;

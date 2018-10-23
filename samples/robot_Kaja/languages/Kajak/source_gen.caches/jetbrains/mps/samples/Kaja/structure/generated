@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <product version="3" modelHash="-82ynn6mb2ymqb87fgg4zbdniazvl8tb">
-  <files names="ConceptPresentationAspectImpl.java:IconContainer.java:LanguageConceptSwitch.java:LookingDirection.java:LookingDirection_PropertySupport.java:StructureAspectDescriptor.java" />
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_LookingDirection.java:IconContainer.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

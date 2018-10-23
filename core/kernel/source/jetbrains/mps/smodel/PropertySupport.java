@@ -20,19 +20,22 @@ import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SType;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -40,6 +43,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @deprecated Use datatype API
+ *
+ * @see SDataType
+ * @see SType
+ * @see SNodeAccessUtil#getPropertyValue(SNode, SProperty)
+ * @see SNodeAccessUtil#setPropertyValue(SNode, SProperty, Object)
+ * @see ModelConstraints#validatePropertyValue(SNode, SProperty, Object)
+ */
+@Deprecated
+@ToRemove(version = 2018.3)
 public abstract class PropertySupport {
   private static final Logger LOG = LogManager.getLogger(PropertySupport.class);
   private static PropertySupportCache ourPropertySupportCache;
@@ -118,6 +132,8 @@ public abstract class PropertySupport {
   }
 
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static PropertySupport getPropertySupport(@NotNull final SProperty property) {
     SDataType dataType = property.getType();
     if (dataType != null) {
@@ -142,6 +158,8 @@ public abstract class PropertySupport {
   }
 
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
       SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);

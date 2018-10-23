@@ -18,6 +18,6 @@ public class Mapping_mc_node_operations extends MapConfigBase implements Templat
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mc_Condition_6(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mc_Condition_3(new TemplateQueryContext(getMappingNode(), generator));
   }
 }

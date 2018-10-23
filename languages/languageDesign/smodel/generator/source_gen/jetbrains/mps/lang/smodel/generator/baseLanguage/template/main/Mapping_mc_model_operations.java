@@ -18,6 +18,6 @@ public class Mapping_mc_model_operations extends MapConfigBase implements Templa
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mc_Condition_13(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mc_Condition_10(new TemplateQueryContext(getMappingNode(), generator));
   }
 }

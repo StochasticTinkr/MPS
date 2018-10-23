@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -64,6 +66,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -74,7 +81,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/1790427706118381722");
     b.version(2);
-    b.prop("targetCurrency", 0x18d8e0833b34345fL, "1790427706118386783");
+    b.property("targetCurrency", 0x18d8e0833b34345fL).type(PrimitiveTypeId.STRING).origin("1790427706118386783").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("convert to");
     return b.create();
@@ -131,7 +138,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/5447719361346490674");
     b.version(2);
-    b.prop("amount", 0x4b9a2fe559135183L, "5447719361346490755");
+    b.property("amount", 0x4b9a2fe559135183L).type(PrimitiveTypeId.INTEGER).origin("5447719361346490755").done();
     b.associate("unit", 0x3210b276d14435a8L).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443597L).optional(false).origin("3607579524910560680").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("money");
@@ -153,7 +160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235922842");
     b.version(2);
-    b.prop("period", 0x3786e3f480b1c19bL, "4001135958235922843");
+    b.property("period", 0x3786e3f480b1c19bL).type(PrimitiveTypeId.INTEGER).origin("4001135958235922843").done();
     b.aggregate("symbol", 0x3786e3f480b1c6d0L).target(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL).optional(false).ordered(true).multiple(false).origin("4001135958235924176").done();
     b.alias("moving average");
     return b.create();
@@ -163,7 +170,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)/4001135958235394442");
     b.version(2);
-    b.prop("symbol", 0x3786e3f480afac5bL, "4001135958235786331");
+    b.property("symbol", 0x3786e3f480afac5bL).type(PrimitiveTypeId.STRING).origin("4001135958235786331").done();
     b.alias("symbol");
     return b.create();
   }

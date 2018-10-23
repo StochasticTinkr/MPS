@@ -8,10 +8,12 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptActionAsPattern = createDescriptorForActionAsPattern();
@@ -94,6 +96,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -140,7 +147,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)/9117569544655310702");
     b.version(2);
-    b.prop("value", 0x7e881d31a4198f77L, "9117569544655310711");
+    b.property("value", 0x7e881d31a4198f77L).type(PrimitiveTypeId.STRING).origin("9117569544655310711").done();
     b.associate("property", 0x746e600f0bda9e9bL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL).optional(false).origin("8389748773577465499").done();
     b.associate("mainNode", 0x7e881d31a4198f6fL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).origin("9117569544655310703").done();
     return b.create();
@@ -150,8 +157,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)/9117569544655309654");
     b.version(2);
-    b.prop("id", 0x7e881d31a419916dL, "9117569544655311213");
-    b.prop("model", 0x7e881d31a419916eL, "9117569544655311214");
+    b.property("id", 0x7e881d31a419916dL).type(PrimitiveTypeId.STRING).origin("9117569544655311213").done();
+    b.property("model", 0x7e881d31a419916eL).type(PrimitiveTypeId.STRING).origin("9117569544655311214").done();
     b.associate("referenceLinkDeclaration", 0x79ac26fe422b8688L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("8767425448057210504").done();
     b.associate("mainNode", 0x7e881d31a4198b58L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).origin("9117569544655309656").done();
     return b.create();
@@ -188,7 +195,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)/1137418540378");
     b.version(2);
-    b.prop("varName", 0x108d36e0ea4L, "1137418571428");
+    b.property("varName", 0x108d36e0ea4L).type(PrimitiveTypeId.STRING).origin("1137418571428").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForListPattern() {
@@ -259,7 +266,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)/1136720037779");
     b.version(2);
-    b.prop("varName", 0x108a9cb4794L, "1136720037780");
+    b.property("varName", 0x108a9cb4794L).type(PrimitiveTypeId.STRING).origin("1136720037780").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPatternVariableReference() {
@@ -279,7 +286,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)/1136720037781");
     b.version(2);
-    b.prop("varName", 0x108a9cb4796L, "1136720037782");
+    b.property("varName", 0x108a9cb4796L).type(PrimitiveTypeId.STRING).origin("1136720037782").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWildcardPattern() {

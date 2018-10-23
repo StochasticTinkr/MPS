@@ -48,6 +48,7 @@ import jetbrains.mps.smodel.PropertySupport.PropertySupportCache;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeAccessUtilImpl;
+import jetbrains.mps.smodel.adapter.structure.types.TypeRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -71,6 +72,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private PersistenceRegistry myPersistenceFacade;
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
+  private TypeRegistry myTypeRegistry;
   private SRepositoryRegistry myRepositoryRegistry;
   private FacetsRegistry myModuleFacetsRegistry;
   private PathMacros myPathMacros;
@@ -144,6 +146,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
                                       new LanguageDescriptorModelProvider(myLanguageRegistry),
                                       new GeneratorDescriptorModelProvider(),
                                       new GenericDescriptorModelProvider()));
+    init(new TypeRegistry());
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
 
     init(new ResolverComponent());

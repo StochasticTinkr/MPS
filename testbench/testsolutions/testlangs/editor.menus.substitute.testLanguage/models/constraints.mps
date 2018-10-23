@@ -17,7 +17,6 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -97,12 +96,6 @@
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
-      </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -495,20 +488,13 @@
       <ref role="EomxK" to="wdez:1o9RazLpuEJ" resolve="enumPropertyWithIsValidConstraints" />
       <node concept="QB0g5" id="1o9RazLpvfd" role="QCWH9">
         <node concept="3clFbS" id="1o9RazLpvfe" role="2VODD2">
-          <node concept="3SKdUt" id="3_NiThI2Y31" role="3cqZAp">
-            <node concept="3SKdUq" id="3_NiThI2Y33" role="3SKWNk">
-              <property role="3SKdUp" value="todo this is the hack for the constraints since the enum name is passed here instead of the value" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="3_NiThI2WNv" role="3cqZAp">
-            <node concept="2OqwBi" id="3_NiThI2XcB" role="3clFbG">
-              <node concept="1Wqviy" id="3_NiThI2WNu" role="2Oq$k0" />
-              <node concept="liA8E" id="3_NiThI2Xv0" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
-                <node concept="Xl_RD" id="3_NiThI2XAS" role="37wK5m">
-                  <property role="Xl_RC" value="first" />
-                </node>
+          <node concept="3clFbF" id="2Cc_hjaDoHW" role="3cqZAp">
+            <node concept="17R0WA" id="2Cc_hjaDpsb" role="3clFbG">
+              <node concept="3f7Wdw" id="2Cc_hjaDpEx" role="3uHU7w">
+                <ref role="3f7vo2" to="wdez:qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+                <ref role="3f7u_j" to="wdez:qrtnJnJhw8" />
               </node>
+              <node concept="1Wqviy" id="2Cc_hjaDoHU" role="3uHU7B" />
             </node>
           </node>
         </node>

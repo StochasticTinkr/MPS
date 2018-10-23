@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
@@ -37,6 +39,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList();
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
@@ -47,9 +54,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
     b.origin("r:f452be5e-b693-4373-bee9-3f7a3df5e603(testPrimitiveType.structure)/706089536801033580");
     b.version(2);
-    b.prop("str", 0x9cc88b154a556a2L, "706089536801035938");
-    b.prop("num", 0x9cc88b154a556a8L, "706089536801035944");
-    b.prop("bool", 0x9cc88b154a556abL, "706089536801035947");
+    b.property("str", 0x9cc88b154a556a2L).type(PrimitiveTypeId.STRING).origin("706089536801035938").done();
+    b.property("num", 0x9cc88b154a556a8L).type(PrimitiveTypeId.INTEGER).origin("706089536801035944").done();
+    b.property("bool", 0x9cc88b154a556abL).type(PrimitiveTypeId.BOOLEAN).origin("706089536801035947").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("type_with_properties");
     return b.create();
