@@ -28,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-class CompositeClassPathItem extends AbstractClassPathItem {
+public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<>();
 
   public void add(IClassPathItem item) {

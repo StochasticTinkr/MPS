@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-class JarFileClassPathItem extends RealClassPathItem {
+public class JarFileClassPathItem extends RealClassPathItem {
   private static final Logger LOG = LogManager.getLogger(JarFileClassPathItem.class);
 
   //computed during init
