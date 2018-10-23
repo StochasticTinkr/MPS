@@ -80,7 +80,12 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
         // FIXME `node.enumProp` how has pure raw value type while here we have to return SEnumerationLiteral instance
         // FIXME remove this when typeof(`node.enumProp`) become SEnumLiteral
         if (type instanceof SEnumeration) {
-          value = ((SEnumeration) type).getLiteral(value == null ? null : String.valueOf(value));
+          return ((SEnumeration) type).getLiteral(value == null ? null : String.valueOf(value));
+        }
+        // FIXME mbeddr ext `propertydefault` might also return serialized value from `descriptor.getValue()` so here we have to deserialize it
+        // FIXME remove it after 2018.3 so instances of `propertydefault` will be regenerated
+        if (value instanceof String) {
+          return type.fromString((String) value);
         }
         return value;
       }
