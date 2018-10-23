@@ -179,13 +179,13 @@ public class AddModelImportByRoot_Action extends BaseAction {
     }
     return null;
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
   private static boolean check_a68f4j_a1a0(EditorCell_Label checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isErrorState();
     }
     return false;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }

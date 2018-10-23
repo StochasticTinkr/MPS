@@ -164,14 +164,14 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static String trim_9sggks_a0a0q(String str) {
-    return (str == null ? null : str.trim());
-  }
   private static SNode _quotation_createNode_p7akvg_a0a0a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, "jetbrains.mps.build.startup"), 0x180805c7b1d668a2L, "TextLine"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, 0x180805c7b1df77d9L, "text"), (String) parameter_1);
     return quotedNode_2;
+  }
+  public static String trim_9sggks_a0a0q(String str) {
+    return (str == null ? null : str.trim());
   }
 }

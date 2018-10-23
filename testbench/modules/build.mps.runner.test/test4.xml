@@ -34,6 +34,7 @@
       <module namespace="jetbrains.mps.build.mps.runner.test.test1" type="solution" uuid="f4221d3d-7652-4403-b74b-cf2957188acb">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" />
         </dependencies>
         <classpath>
           <entry path="." />
@@ -70,6 +71,7 @@
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
@@ -181,6 +183,7 @@
       <library file="${artifacts.mps}/lib/mps-environment.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" />
@@ -201,7 +204,7 @@
   
   <target name="run-mps-code" depends="assemble, run.jetbrains.mps.build.mps.runner.test.test4" />
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
+  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -209,7 +212,9 @@
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
+      </classpath>
     </javac>
   </target>
   
@@ -222,6 +227,7 @@
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
@@ -308,6 +314,7 @@
       <library file="${artifacts.mps}/lib/mps-environment.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${build.layout}/jetbrains.mps.build.mps.runner.test.test1.jar" />
       <macro name="mps_home" path="${mps_home}" />

@@ -34,6 +34,7 @@
       <module namespace="jetbrains.mps.build.mps.runner.test.test1" type="solution" uuid="f4221d3d-7652-4403-b74b-cf2957188acb">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" />
         </dependencies>
         <classpath>
           <entry path="." />
@@ -139,6 +140,7 @@
       <library file="${artifacts.mps}/lib/mps-editor.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" />
@@ -158,7 +160,7 @@
   
   <target name="run-mps-code" depends="assemble, run.jetbrains.mps.build.mps.runner.test.test1" />
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
+  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1" depends="fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -166,7 +168,9 @@
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
+      </classpath>
     </javac>
   </target>
   
@@ -223,6 +227,7 @@
       <library file="${artifacts.mps}/lib/mps-editor.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <macro name="mps_home" path="${mps_home}" />
       

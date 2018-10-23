@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="awd1j5mewfor2r60nozubtyetz8i3ll">
+<product version="3" modelHash="-4d4nugha9z56lmym47tkptmufj0a4wz">
   <files names="mpsActions.xml:mpsBaseLanguage.xml:mpsBehavior.xml:mpsBuild.xml:mpsConsole.xml:mpsConstraints.xml:mpsDataFlow.xml:mpsEditor.xml:mpsEditorDiagram.xml:mpsEditorImageGen.xml:mpsEditorTransformationMenu.xml:mpsExecution.xml:mpsGenerator.xml:mpsHttpSupport.xml:mpsImplementationStripping.xml:mpsJava.xml:mpsPackaged.xml:mpsSModel.xml:mpsSmartRefAttrMigration.xml:mpsText.xml:mpsTypesystem.xml" />
 </product>
 
