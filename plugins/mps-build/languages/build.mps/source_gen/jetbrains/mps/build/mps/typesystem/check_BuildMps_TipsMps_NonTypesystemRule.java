@@ -27,7 +27,7 @@ public class check_BuildMps_TipsMps_NonTypesystemRule extends AbstractNonTypesys
     })) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(buildMps_TipsMps, "Duplicate imports", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "153860590141661666", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(buildMps_TipsMps, "Duplicated imports from MPS generic distribution", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "153860590141661666", null, errorTarget);
       }
     }
   }

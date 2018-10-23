@@ -5954,7 +5954,7 @@
       </node>
       <node concept="l2Vlx" id="7cgc9gF36YS" role="2iSdaV" />
       <node concept="3F1sOY" id="7uJAFPqNf3k" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;file.xml&gt;" />
+        <property role="1$x2rV" value="&lt;generated Tips&amp;Tricks file.xml&gt;" />
         <ref role="1NtTu8" to="kdzh:7uJAFPqNf3a" resolve="path" />
         <node concept="VechU" id="2v3n_quRAI0" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
@@ -6016,21 +6016,9 @@
     <node concept="3EZMnI" id="5Ux$AZuOzjU" role="2wV5jI">
       <node concept="3F0ifn" id="5Ux$AZuOzk1" role="3EZMnx">
         <property role="3F0ifm" value="tips of" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        <ref role="1k5W1q" to="o2va:hwW5CRV" resolve="outputLayout" />
       </node>
       <node concept="l2Vlx" id="5Ux$AZuOzjX" role="2iSdaV" />
-      <node concept="3F0ifn" id="5Ux$AZuY4Vr" role="3EZMnx">
-        <property role="3F0ifm" value="|" />
-        <node concept="Vb9p2" id="5Ux$AZuY4VU" role="3F10Kt">
-          <property role="Vbekb" value="BOLD" />
-        </node>
-        <node concept="VechU" id="4Y6KxqRCieF" role="3F10Kt">
-          <property role="Vb096" value="orange" />
-        </node>
-        <node concept="VPM3Z" id="4Y6KxqRCieG" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-      </node>
       <node concept="1iCGBv" id="4Y6KxqRFz_J" role="3EZMnx">
         <ref role="1NtTu8" to="kdzh:6mx7ef$41ej" resolve="tips" />
         <node concept="1sVBvm" id="4Y6KxqRFz_K" role="1sWHZn">
@@ -6046,18 +6034,6 @@
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="6mx7ef$41e8" role="3EZMnx">
-        <property role="3F0ifm" value="|" />
-        <node concept="Vb9p2" id="4Y6KxqRCieK" role="3F10Kt">
-          <property role="Vbekb" value="BOLD" />
-        </node>
-        <node concept="VechU" id="4Y6KxqRCieL" role="3F10Kt">
-          <property role="Vb096" value="orange" />
-        </node>
-        <node concept="VPM3Z" id="4Y6KxqRCieM" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-      </node>
       <node concept="3F0ifn" id="5Ux$AZuY4VJ" role="3EZMnx">
         <property role="3F0ifm" value="-&gt;" />
         <node concept="Vb9p2" id="5Ux$AZuY4W7" role="3F10Kt">
@@ -6068,6 +6044,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="6mx7ef$3$pw" role="3EZMnx">
+        <property role="1$x2rV" value="enter tips.jar name" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="VechU" id="6mx7ef$BuGV" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />

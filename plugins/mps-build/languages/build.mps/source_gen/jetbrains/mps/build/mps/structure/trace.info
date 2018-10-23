@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="11,0,539,0" name="jetbrains.mps.build.mps.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,542,0" name="jetbrains.mps.build.mps.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,10,0" name="jetbrains.mps.build.mps.structure.IconContainer" />
@@ -1298,15 +1298,15 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/4964617264469340623">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="4964617264469340623" at="73,0,74,0" concept="3" trace="props_GeneratorInternal_BuildMps_Module" />
-      <node id="4964617264469340623" at="515,62,516,76" concept="6" />
-      <node id="4964617264469340623" at="516,76,517,145" concept="2" />
-      <node id="4964617264469340623" at="517,145,518,65" concept="2" />
-      <node id="4964617264469340623" at="519,9,520,55" concept="7" />
-      <node id="4964617264469340623" at="514,67,519,9" concept="4" />
-      <scope id="4964617264469340623" at="515,62,518,65">
+      <node id="4964617264469340623" at="518,62,519,76" concept="6" />
+      <node id="4964617264469340623" at="519,76,520,145" concept="2" />
+      <node id="4964617264469340623" at="520,145,521,65" concept="2" />
+      <node id="4964617264469340623" at="522,9,523,55" concept="7" />
+      <node id="4964617264469340623" at="517,67,522,9" concept="4" />
+      <scope id="4964617264469340623" at="518,62,521,65">
         <var name="cpb" id="4964617264469340623" />
       </scope>
-      <scope id="4964617264469340623" at="514,67,520,55" />
+      <scope id="4964617264469340623" at="517,67,523,55" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="4964617264469340623" at="73,0,74,0" concept="8" trace="GeneratorInternal_BuildMps_Module" />
@@ -1332,15 +1332,15 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/4964617264469340766">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="4964617264469340766" at="74,0,75,0" concept="3" trace="props_GeneratorInternal_BuildSourcePath" />
-      <node id="4964617264469340766" at="522,62,523,76" concept="6" />
-      <node id="4964617264469340766" at="523,76,524,143" concept="2" />
-      <node id="4964617264469340766" at="524,143,525,65" concept="2" />
-      <node id="4964617264469340766" at="526,9,527,55" concept="7" />
-      <node id="4964617264469340766" at="521,67,526,9" concept="4" />
-      <scope id="4964617264469340766" at="522,62,525,65">
+      <node id="4964617264469340766" at="525,62,526,76" concept="6" />
+      <node id="4964617264469340766" at="526,76,527,143" concept="2" />
+      <node id="4964617264469340766" at="527,143,528,65" concept="2" />
+      <node id="4964617264469340766" at="529,9,530,55" concept="7" />
+      <node id="4964617264469340766" at="524,67,529,9" concept="4" />
+      <scope id="4964617264469340766" at="525,62,528,65">
         <var name="cpb" id="4964617264469340766" />
       </scope>
-      <scope id="4964617264469340766" at="521,67,527,55" />
+      <scope id="4964617264469340766" at="524,67,530,55" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="4964617264469340766" at="74,0,75,0" concept="8" trace="GeneratorInternal_BuildSourcePath" />
@@ -1939,16 +1939,16 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/6818892319992984815">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6818892319992984815" at="71,0,72,0" concept="3" trace="props_BuildMps_TipsPackage" />
-      <node id="6818892319992984815" at="500,49,501,76" concept="6" />
-      <node id="6818892319992984815" at="501,76,502,55" concept="2" />
-      <node id="6818892319992984815" at="502,55,503,35" concept="2" />
-      <node id="6818892319992984815" at="503,35,504,52" concept="2" />
-      <node id="6818892319992984815" at="505,9,506,42" concept="7" />
-      <node id="6818892319992984815" at="499,54,505,9" concept="4" />
-      <scope id="6818892319992984815" at="500,49,504,52">
+      <node id="6818892319992984815" at="502,49,503,76" concept="6" />
+      <node id="6818892319992984815" at="503,76,504,57" concept="2" />
+      <node id="6818892319992984815" at="504,57,505,35" concept="2" />
+      <node id="6818892319992984815" at="505,35,506,52" concept="2" />
+      <node id="6818892319992984815" at="507,9,508,42" concept="7" />
+      <node id="6818892319992984815" at="501,54,507,9" concept="4" />
+      <scope id="6818892319992984815" at="502,49,506,52">
         <var name="cpb" id="6818892319992984815" />
       </scope>
-      <scope id="6818892319992984815" at="499,54,506,42" />
+      <scope id="6818892319992984815" at="501,54,508,42" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6818892319992984815" at="71,0,72,0" concept="8" trace="BuildMps_TipsPackage" />
@@ -1964,8 +1964,8 @@
       <node id="6818892319992984815" at="886,71,887,110" concept="2" />
       <node id="6818892319992984815" at="887,110,888,17" concept="2" />
       <node id="7323166234190549907" at="888,17,889,166" concept="2" />
-      <node id="6818892319992984815" at="889,166,890,28" concept="2" />
-      <node id="6818892319992984815" at="890,28,891,22" concept="7" />
+      <node id="6818892319992984815" at="889,166,890,37" concept="2" />
+      <node id="6818892319992984815" at="890,37,891,22" concept="7" />
       <node id="6818892319992984815" at="882,0,893,0" concept="9" trace="createDescriptorForBuildMps_TipsPackage#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6818892319992984815" at="214,54,215,45" />
       <scope id="6818892319992984815" at="882,78,891,22">
@@ -2424,14 +2424,14 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8174907532631382422">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="8174907532631382422" at="69,0,70,0" concept="3" trace="props_BuildMps_TipsImport" />
-      <node id="8174907532631382422" at="487,48,488,76" concept="6" />
-      <node id="8174907532631382422" at="488,76,489,51" concept="2" />
-      <node id="8174907532631382422" at="490,9,491,41" concept="7" />
-      <node id="8174907532631382422" at="486,53,490,9" concept="4" />
-      <scope id="8174907532631382422" at="487,48,489,51">
+      <node id="8174907532631382422" at="488,48,489,76" concept="6" />
+      <node id="8174907532631382422" at="489,76,490,51" concept="2" />
+      <node id="8174907532631382422" at="491,9,492,41" concept="7" />
+      <node id="8174907532631382422" at="487,53,491,9" concept="4" />
+      <scope id="8174907532631382422" at="488,48,490,51">
         <var name="cpb" id="8174907532631382422" />
       </scope>
-      <scope id="8174907532631382422" at="486,53,491,41" />
+      <scope id="8174907532631382422" at="487,53,492,41" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="8174907532631382422" at="69,0,70,0" concept="8" trace="BuildMps_TipsImport" />
@@ -2456,15 +2456,16 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8174907532631382425">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="8174907532631382425" at="70,0,71,0" concept="3" trace="props_BuildMps_TipsMps" />
-      <node id="8174907532631382425" at="493,45,494,76" concept="6" />
-      <node id="8174907532631382425" at="494,76,495,42" concept="2" />
-      <node id="8174907532631382425" at="495,42,496,48" concept="2" />
-      <node id="8174907532631382425" at="497,9,498,38" concept="7" />
-      <node id="8174907532631382425" at="492,50,497,9" concept="4" />
-      <scope id="8174907532631382425" at="493,45,496,48">
+      <node id="8174907532631382425" at="494,45,495,76" concept="6" />
+      <node id="8174907532631382425" at="495,76,496,48" concept="2" />
+      <node id="8174907532631382425" at="496,48,497,42" concept="2" />
+      <node id="8174907532631382425" at="497,42,498,48" concept="2" />
+      <node id="8174907532631382425" at="499,9,500,38" concept="7" />
+      <node id="8174907532631382425" at="493,50,499,9" concept="4" />
+      <scope id="8174907532631382425" at="494,45,498,48">
         <var name="cpb" id="8174907532631382425" />
       </scope>
-      <scope id="8174907532631382425" at="492,50,498,38" />
+      <scope id="8174907532631382425" at="493,50,500,38" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="8174907532631382425" at="70,0,71,0" concept="8" trace="BuildMps_TipsMps" />
@@ -2492,14 +2493,15 @@
     <file name="ConceptPresentationAspectImpl.java">
       <node id="8174907532631605600" at="68,0,69,0" concept="3" trace="props_BuildMps_TipsDir" />
       <node id="8174907532631605600" at="480,45,481,76" concept="6" />
-      <node id="8174907532631605600" at="481,76,482,48" concept="2" />
-      <node id="8174907532631605600" at="482,48,483,48" concept="2" />
-      <node id="8174907532631605600" at="484,9,485,38" concept="7" />
-      <node id="8174907532631605600" at="479,50,484,9" concept="4" />
-      <scope id="8174907532631605600" at="480,45,483,48">
+      <node id="8174907532631605600" at="481,76,482,53" concept="2" />
+      <node id="8174907532631605600" at="482,53,483,48" concept="2" />
+      <node id="8174907532631605600" at="483,48,484,48" concept="2" />
+      <node id="8174907532631605600" at="485,9,486,38" concept="7" />
+      <node id="8174907532631605600" at="479,50,485,9" concept="4" />
+      <scope id="8174907532631605600" at="480,45,484,48">
         <var name="cpb" id="8174907532631605600" />
       </scope>
-      <scope id="8174907532631605600" at="479,50,485,38" />
+      <scope id="8174907532631605600" at="479,50,486,38" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="8174907532631605600" at="68,0,69,0" concept="8" trace="BuildMps_TipsDir" />
@@ -2528,15 +2530,16 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/8174907532632110020">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="8174907532632110020" at="72,0,73,0" concept="3" trace="props_BuildMps_TipsSolution" />
-      <node id="8174907532632110020" at="508,50,509,76" concept="6" />
-      <node id="8174907532632110020" at="509,76,510,47" concept="2" />
-      <node id="8174907532632110020" at="510,47,511,53" concept="2" />
-      <node id="8174907532632110020" at="512,9,513,43" concept="7" />
-      <node id="8174907532632110020" at="507,55,512,9" concept="4" />
-      <scope id="8174907532632110020" at="508,50,511,53">
+      <node id="8174907532632110020" at="510,50,511,76" concept="6" />
+      <node id="8174907532632110020" at="511,76,512,65" concept="2" />
+      <node id="8174907532632110020" at="512,65,513,47" concept="2" />
+      <node id="8174907532632110020" at="513,47,514,53" concept="2" />
+      <node id="8174907532632110020" at="515,9,516,43" concept="7" />
+      <node id="8174907532632110020" at="509,55,515,9" concept="4" />
+      <scope id="8174907532632110020" at="510,50,514,53">
         <var name="cpb" id="8174907532632110020" />
       </scope>
-      <scope id="8174907532632110020" at="507,55,513,43" />
+      <scope id="8174907532632110020" at="509,55,516,43" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="8174907532632110020" at="72,0,73,0" concept="8" trace="BuildMps_TipsSolution" />
@@ -2602,15 +2605,15 @@
   <root nodeRef="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/978600701690054692">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="978600701690054692" at="75,0,76,0" concept="3" trace="props_GeneratorInternal_String" />
-      <node id="978600701690054692" at="529,53,530,76" concept="6" />
-      <node id="978600701690054692" at="530,76,531,58" concept="2" />
-      <node id="978600701690054692" at="531,58,532,56" concept="2" />
-      <node id="978600701690054692" at="533,9,534,46" concept="7" />
-      <node id="978600701690054692" at="528,58,533,9" concept="4" />
-      <scope id="978600701690054692" at="529,53,532,56">
+      <node id="978600701690054692" at="532,53,533,76" concept="6" />
+      <node id="978600701690054692" at="533,76,534,58" concept="2" />
+      <node id="978600701690054692" at="534,58,535,56" concept="2" />
+      <node id="978600701690054692" at="536,9,537,46" concept="7" />
+      <node id="978600701690054692" at="531,58,536,9" concept="4" />
+      <scope id="978600701690054692" at="532,53,535,56">
         <var name="cpb" id="978600701690054692" />
       </scope>
-      <scope id="978600701690054692" at="528,58,534,46" />
+      <scope id="978600701690054692" at="531,58,537,46" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="978600701690054692" at="75,0,76,0" concept="8" trace="GeneratorInternal_String" />

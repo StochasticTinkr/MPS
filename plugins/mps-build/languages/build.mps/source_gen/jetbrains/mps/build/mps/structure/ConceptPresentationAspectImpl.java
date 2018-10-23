@@ -479,6 +479,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsDir:
         if (props_BuildMps_TipsDir == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("with predefined structure");
           cpb.rawPresentation("from directory");
           props_BuildMps_TipsDir = cpb.create();
         }
@@ -492,6 +493,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsMps:
         if (props_BuildMps_TipsMps == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("generic distribution");
           cpb.rawPresentation("from MPS");
           props_BuildMps_TipsMps = cpb.create();
         }
@@ -499,7 +501,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsPackage:
         if (props_BuildMps_TipsPackage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("jar tips of project element");
+          cpb.shortDesc("as jar with predefined layout");
           cpb.presentationByName();
           props_BuildMps_TipsPackage = cpb.create();
         }
@@ -507,6 +509,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_TipsSolution:
         if (props_BuildMps_TipsSolution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("containing MPSTipsAndTricks instances");
           cpb.rawPresentation("from solution");
           props_BuildMps_TipsSolution = cpb.create();
         }

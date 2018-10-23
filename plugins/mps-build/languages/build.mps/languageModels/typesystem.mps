@@ -204,6 +204,9 @@
       <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
         <child id="1207055552304" name="warningText" index="a7wSD" />
       </concept>
+      <concept id="1224760201579" name="jetbrains.mps.lang.typesystem.structure.InfoStatement" flags="nn" index="Dpp1Q">
+        <child id="1224760230762" name="infoText" index="Dpw9R" />
+      </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
@@ -2392,7 +2395,7 @@
         <node concept="3clFbS" id="8yBQgWkN2T" role="3clFbx">
           <node concept="a7r0C" id="8yBQgWkQ7y" role="3cqZAp">
             <node concept="Xl_RD" id="8yBQgWkQ7O" role="a7wSD">
-              <property role="Xl_RC" value="Duplicate imports" />
+              <property role="Xl_RC" value="Duplicated imports from MPS generic distribution" />
             </node>
             <node concept="1YBJjd" id="8yBQgWkQ9s" role="2OEOjV">
               <ref role="1YBMHb" node="8yBQgWkN2N" resolve="buildMps_TipsMps" />
@@ -2591,6 +2594,73 @@
             </node>
           </node>
           <node concept="1v1jN8" id="5_o80gNgswR" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3clFbJ" id="60F4CoOluIN" role="3cqZAp">
+        <node concept="3clFbS" id="60F4CoOluIP" role="3clFbx">
+          <node concept="Dpp1Q" id="60F4CoOmqhw" role="3cqZAp">
+            <node concept="Xl_RD" id="60F4CoOmqhM" role="Dpw9R">
+              <property role="Xl_RC" value="Tips should be packaged to build layout" />
+            </node>
+            <node concept="1YBJjd" id="60F4CoOmqi0" role="2OEOjV">
+              <ref role="1YBMHb" node="6mx7ef$AIYR" resolve="mpsTips" />
+            </node>
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="60F4CoOmpBa" role="3clFbw">
+          <node concept="2OqwBi" id="60F4CoOmpBc" role="3fr31v">
+            <node concept="2OqwBi" id="60F4CoOmpBd" role="2Oq$k0">
+              <node concept="2OqwBi" id="60F4CoOmpBe" role="2Oq$k0">
+                <node concept="2OqwBi" id="60F4CoOmpBf" role="2Oq$k0">
+                  <node concept="1YBJjd" id="60F4CoOmpBg" role="2Oq$k0">
+                    <ref role="1YBMHb" node="6mx7ef$AIYR" resolve="mpsTips" />
+                  </node>
+                  <node concept="2Xjw5R" id="60F4CoOmpBh" role="2OqNvi">
+                    <node concept="1xMEDy" id="60F4CoOmpBi" role="1xVPHs">
+                      <node concept="chp4Y" id="60F4CoOmpBj" role="ri$Ld">
+                        <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="60F4CoOmpBk" role="2OqNvi">
+                  <ref role="3Tt5mk" to="3ior:4RPz6WoY4Cs" resolve="layout" />
+                </node>
+              </node>
+              <node concept="2Rf3mk" id="60F4CoOmCXp" role="2OqNvi">
+                <node concept="1xMEDy" id="60F4CoOmCXr" role="1xVPHs">
+                  <node concept="chp4Y" id="60F4CoOmDtr" role="ri$Ld">
+                    <ref role="cht4Q" to="kdzh:5Ux$AZuOzjJ" resolve="BuildMps_TipsPackage" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2HwmR7" id="60F4CoOmpBm" role="2OqNvi">
+              <node concept="1bVj0M" id="60F4CoOmpBn" role="23t8la">
+                <node concept="3clFbS" id="60F4CoOmpBo" role="1bW5cS">
+                  <node concept="3clFbF" id="60F4CoOmpBp" role="3cqZAp">
+                    <node concept="3clFbC" id="60F4CoOqMtR" role="3clFbG">
+                      <node concept="2OqwBi" id="60F4CoOmpBt" role="3uHU7B">
+                        <node concept="37vLTw" id="60F4CoOmpBw" role="2Oq$k0">
+                          <ref role="3cqZAo" node="60F4CoOmpBA" resolve="it" />
+                        </node>
+                        <node concept="3TrEf2" id="60F4CoOmpBx" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kdzh:6mx7ef$41ej" resolve="tips" />
+                        </node>
+                      </node>
+                      <node concept="1YBJjd" id="60F4CoOmpBs" role="3uHU7w">
+                        <ref role="1YBMHb" node="6mx7ef$AIYR" resolve="mpsTips" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="60F4CoOmpBA" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="60F4CoOmpBB" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

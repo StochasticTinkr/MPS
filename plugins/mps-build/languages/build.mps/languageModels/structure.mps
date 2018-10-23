@@ -1524,6 +1524,7 @@
     <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
     <property role="TrG5h" value="BuildMps_TipsSolution" />
     <property role="34LRSv" value="from solution" />
+    <property role="R4oN_" value="containing MPSTipsAndTricks instances" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
     <node concept="1TJgyj" id="7uJAFPqNf3a" role="1TKVEi">
       <property role="IQ2ns" value="8624281949500666058" />
@@ -1544,6 +1545,7 @@
     <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
     <property role="TrG5h" value="BuildMps_TipsDir" />
     <property role="34LRSv" value="from directory" />
+    <property role="R4oN_" value="with predefined structure" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
     <node concept="1TJgyj" id="4reBHdWN7OG" role="1TKVEi">
       <property role="IQ2ns" value="5102190059026414892" />
@@ -1563,6 +1565,7 @@
     <property role="3GE5qa" value="Project.TipsAndTricks.Collect" />
     <property role="TrG5h" value="BuildMps_TipsMps" />
     <property role="34LRSv" value="from MPS" />
+    <property role="R4oN_" value="generic distribution" />
     <ref role="1TJDcQ" node="75N6Lqya9Am" resolve="BuildMps_TipsImport" />
   </node>
   <node concept="1TIwiD" id="75N6Lqy0tuW">
@@ -1594,8 +1597,8 @@
     <property role="EcuMT" value="6818892319992984815" />
     <property role="3GE5qa" value="Project.TipsAndTricks.Package" />
     <property role="TrG5h" value="BuildMps_TipsPackage" />
-    <property role="R4oN_" value="jar tips of project element" />
-    <property role="34LRSv" value="package tips" />
+    <property role="R4oN_" value="as jar with predefined layout" />
+    <property role="34LRSv" value="package tips &amp; tricks" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
     <node concept="1TJgyj" id="6mx7ef$41ej" role="1TKVEi">
       <property role="IQ2ns" value="7323166234190549907" />

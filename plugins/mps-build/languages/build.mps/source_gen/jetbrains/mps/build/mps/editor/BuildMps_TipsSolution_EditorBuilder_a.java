@@ -231,7 +231,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
     }
     protected String getNoTargetText() {
-      return "<file.xml>";
+      return "<generated Tips&Tricks file.xml>";
     }
   }
 }
