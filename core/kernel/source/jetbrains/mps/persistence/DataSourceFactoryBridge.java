@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -32,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -51,18 +52,20 @@ public final class DataSourceFactoryBridge {
 
   @Immutable
   private final FileBasedModelRoot myModelRoot;
+  private final DataSourceFactoryRuleService myDataSourceFactoryRuleService;
 
+  /**
+   * @deprecated use {@link #DataSourceFactoryBridge(FileBasedModelRoot, DataSourceFactoryRuleService)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public DataSourceFactoryBridge(@NotNull FileBasedModelRoot modelRoot) {
-    myModelRoot = modelRoot;
+    this(modelRoot, DataSourceFactoryRuleService.getInstance());
   }
 
-  @NotNull
-  private static DataSourceFactoryFromName getDataSourceFactory(@NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException {
-    DataSourceFactoryFromName factory = DataSourceFactoryRuleService.getInstance().getFactory(dataSourceType);
-    if (factory == null) {
-      throw new DataSourceFactoryNotFoundException(dataSourceType);
-    }
-    return factory;
+  public DataSourceFactoryBridge(@NotNull FileBasedModelRoot modelRoot, @NotNull DataSourceFactoryRuleService dsFactorySerice) {
+    myModelRoot = modelRoot;
+    myDataSourceFactoryRuleService = dsFactorySerice;
   }
 
   @NotNull
@@ -96,7 +99,10 @@ public final class DataSourceFactoryBridge {
                                      @NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException,
                                                                                     SourceRootDoesNotExistException,
                                                                                     NoSourceRootsInModelRootException {
-    DataSourceFactoryFromName factory = getDataSourceFactory(dataSourceType);
+    DataSourceFactoryFromName factory = myDataSourceFactoryRuleService.getFactory(dataSourceType);
+    if (factory == null) {
+      throw new DataSourceFactoryNotFoundException(dataSourceType);
+    }
     return create(modelName, sourceRoot, factory);
   }
 
@@ -135,7 +141,7 @@ public final class DataSourceFactoryBridge {
     DataSource dataSource = null;
     try {
       URL url = file.getUrl();
-      DataSourceFactoryFromURL factory = DataSourceFactoryRuleService.getInstance().getFactory(url);
+      DataSourceFactoryFromURL factory = myDataSourceFactoryRuleService.getFactory(url);
       if (factory == null) {
         throw new RuntimeException(new DataSourceFactoryNotFoundException("Could not find factory using the url " + url));
       }

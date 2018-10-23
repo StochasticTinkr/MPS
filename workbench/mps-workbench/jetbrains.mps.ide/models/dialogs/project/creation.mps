@@ -109,9 +109,6 @@
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534555686" name="jetbrains.mps.baseLanguage.structure.CharType" flags="in" index="10Pfzv" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
-        <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -2050,6 +2047,44 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="5_KwrLBtBKc" role="3cqZAp">
+          <node concept="3cpWsn" id="5_KwrLBtBKd" role="3cpWs9">
+            <property role="TrG5h" value="modelFactories" />
+            <node concept="3uibUv" id="5_KwrLBtBK7" role="1tU5fm">
+              <ref role="3uigEE" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+            </node>
+            <node concept="2OqwBi" id="5_KwrLBtBKe" role="33vP2m">
+              <node concept="37vLTw" id="5_KwrLBtBKf" role="2Oq$k0">
+                <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="5_KwrLBtBKg" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="5_KwrLBtBKh" role="37wK5m">
+                  <ref role="3VsUkX" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5_KwrLBtRdO" role="3cqZAp">
+          <node concept="3cpWsn" id="5_KwrLBtRdP" role="3cpWs9">
+            <property role="TrG5h" value="factoryTypes" />
+            <node concept="3uibUv" id="5_KwrLBtRd_" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="5_KwrLBtRdC" role="11_B2D">
+                <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5_KwrLBtRdQ" role="33vP2m">
+              <node concept="37vLTw" id="5_KwrLBtRdR" role="2Oq$k0">
+                <ref role="3cqZAo" node="5_KwrLBtBKd" resolve="modelFactories" />
+              </node>
+              <node concept="liA8E" id="5_KwrLBtRdS" role="2OqNvi">
+                <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryTypes():java.util.List" resolve="getFactoryTypes" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5f5B$0GGG$8" role="3cqZAp">
           <node concept="2OqwBi" id="5f5B$0GHnUV" role="3clFbG">
             <node concept="liA8E" id="5f5B$0GHC$N" role="2OqNvi">
@@ -2060,8 +2095,30 @@
                   <node concept="3uibUv" id="1lS_qvrj6Cu" role="1pMfVU">
                     <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
                   </node>
-                  <node concept="1rXfSq" id="5f5B$0GVaMm" role="37wK5m">
-                    <ref role="37wK5l" node="5f5B$0GPkxH" resolve="getStorageFormats" />
+                  <node concept="2OqwBi" id="5_KwrLBtX9N" role="37wK5m">
+                    <node concept="37vLTw" id="5_KwrLBtRdT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5_KwrLBtRdP" resolve="factoryTypes" />
+                    </node>
+                    <node concept="liA8E" id="5_KwrLBtXLI" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
+                      <node concept="2ShNRf" id="5_KwrLBtYru" role="37wK5m">
+                        <node concept="3$_iS1" id="5_KwrLBuaBI" role="2ShVmc">
+                          <node concept="3$GHV9" id="5_KwrLBuaBK" role="3$GQph">
+                            <node concept="2OqwBi" id="5_KwrLBudyp" role="3$I4v7">
+                              <node concept="37vLTw" id="5_KwrLBucJW" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5_KwrLBtRdP" resolve="factoryTypes" />
+                              </node>
+                              <node concept="liA8E" id="5_KwrLBueVV" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3uibUv" id="5_KwrLBuauc" role="3$_nBY">
+                            <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2150,14 +2207,8 @@
             <node concept="liA8E" id="4diCoAs6$aB" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~JComboBox.setSelectedItem(java.lang.Object):void" resolve="setSelectedItem" />
               <node concept="2OqwBi" id="1lS_qvrjLYv" role="37wK5m">
-                <node concept="2OqwBi" id="1lS_qvrjKzX" role="2Oq$k0">
-                  <node concept="2YIFZM" id="1lS_qvrjJLW" role="2Oq$k0">
-                    <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
-                    <ref role="1Pybhc" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
-                  </node>
-                  <node concept="liA8E" id="1lS_qvrjLo2" role="2OqNvi">
-                    <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryTypes():java.util.List" resolve="getFactoryTypes" />
-                  </node>
+                <node concept="37vLTw" id="5_KwrLBufCg" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5_KwrLBtRdP" resolve="factoryTypes" />
                 </node>
                 <node concept="liA8E" id="1lS_qvrjNHv" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
@@ -2208,68 +2259,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1lS_qvri3vg" role="jymVt" />
-    <node concept="3clFb_" id="5f5B$0GPkxH" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getStorageFormats" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="5f5B$0GPkxK" role="3clF47">
-        <node concept="3cpWs8" id="5f5B$0GQHqa" role="3cqZAp">
-          <node concept="3cpWsn" id="5f5B$0GQHqb" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <node concept="2OqwBi" id="1lS_qvrkbOU" role="33vP2m">
-              <node concept="2YIFZM" id="1lS_qvrkbOV" role="2Oq$k0">
-                <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
-                <ref role="1Pybhc" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
-              </node>
-              <node concept="liA8E" id="1lS_qvrkbOW" role="2OqNvi">
-                <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryTypes():java.util.List" resolve="getFactoryTypes" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="5f5B$0GQHq8" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="1lS_qvrk7Nf" role="11_B2D">
-                <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5f5B$0GSXUB" role="3cqZAp">
-          <node concept="2OqwBi" id="5f5B$0GT2oa" role="3cqZAk">
-            <node concept="liA8E" id="5f5B$0GTaqm" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
-              <node concept="2ShNRf" id="5f5B$0GTxh2" role="37wK5m">
-                <node concept="3$_iS1" id="5f5B$0GTMfP" role="2ShVmc">
-                  <node concept="3uibUv" id="1lS_qvrkvEm" role="3$_nBY">
-                    <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
-                  </node>
-                  <node concept="3$GHV9" id="5f5B$0GTMfR" role="3$GQph">
-                    <node concept="2OqwBi" id="5f5B$0GUASA" role="3$I4v7">
-                      <node concept="liA8E" id="5f5B$0GUN0_" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                      </node>
-                      <node concept="37vLTw" id="5f5B$0GUuar" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5f5B$0GQHqb" resolve="result" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="5f5B$0GT1NM" role="2Oq$k0">
-              <ref role="3cqZAo" node="5f5B$0GQHqb" resolve="result" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="5f5B$0GOFLg" role="1B3o_S" />
-      <node concept="10Q1$e" id="5f5B$0GP9Bd" role="3clF45">
-        <node concept="3uibUv" id="1lS_qvrjfQF" role="10Q1$1">
-          <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1lS_qvri3vh" role="jymVt" />
     <node concept="3clFb_" id="4tQ0$v36jM_" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doOKAction" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.vfs.FileSystem;
@@ -44,7 +43,7 @@ final class ModelSourceRootWalker {
 
   public ModelSourceRootWalker(@NotNull DefaultModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
     myModelRoot = modelRoot;
-    myCallback = new ModelRootTreeWalkCallback(modelRoot, callback);
+    myCallback = new ModelRootTreeWalkCallback(modelRoot.getDataSourceFactoryBridge(), callback, modelRoot.getModelFactoryRegistry());
   }
 
   public void traverse(@NotNull SourceRoot sourceRoot) {
@@ -85,14 +84,14 @@ final class ModelSourceRootWalker {
 
   private final static class ModelRootTreeWalkCallback implements FileTreeWalkListener {
     private final ModelRootWalkListener myCallback;
-    private final FileBasedModelRoot myModelRoot;
+    private final ModelFactoryRegistry myModelFactoryRegistry;
     private final DataSourceFactoryBridge myDataSourceFactoryBridge;
     private final Set<DataSource> myVisitedDataSources = new HashSet<>();
 
-    public ModelRootTreeWalkCallback(@NotNull FileBasedModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
+    public ModelRootTreeWalkCallback(@NotNull DataSourceFactoryBridge dsBridge, @NotNull ModelRootWalkListener callback, @NotNull ModelFactoryRegistry mfr) {
       myCallback = callback;
-      myModelRoot = modelRoot;
-      myDataSourceFactoryBridge = new DataSourceFactoryBridge(myModelRoot);
+      myModelFactoryRegistry = mfr;
+      myDataSourceFactoryBridge = dsBridge;
     }
 
     @Override
@@ -106,7 +105,7 @@ final class ModelSourceRootWalker {
           return;
         }
         if (!isVisited(dataSource)) {
-          List<ModelFactory> candidates = ModelFactoryService.getInstance().getModelFactories(dataSource.getType());
+          List<ModelFactory> candidates = myModelFactoryRegistry.getModelFactories(dataSource.getType());
           for (ModelFactory modelFactory : candidates) {
             if (modelFactory.supports(dataSource)) {
               markVisited(dataSource);

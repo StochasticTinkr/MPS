@@ -205,11 +205,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     return myModuleFacetsRegistry;
   }
 
-  @NotNull
-  public ModelFactoryRegistry getModelFactoryRegistry() {
-    return ModelFactoryService.getInstance();
-  }
-
   @Nullable
   @Override
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
@@ -232,8 +227,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (LanguageRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myLanguageRegistry);
     }
-    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass)) {
-      return componentClass.cast(getModelFactoryRegistry());
+    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass) || ModelFactoryService.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myModelFactoryService);
     }
     if (SRepositoryRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myRepositoryRegistry);
@@ -249,9 +244,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myDataSourceService);
-    }
-    if (ModelFactoryService.class.isAssignableFrom(componentClass)) {
-      return componentClass.cast(myModelFactoryService);
     }
     if (ModelsAutoImportsManager.class.equals(componentClass)) {
       return componentClass.cast(myAutoImportsManager);

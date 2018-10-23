@@ -9,17 +9,17 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
@@ -28,6 +28,7 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.persistence.DataSourceFactoryBridge;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.io.IOException;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -51,7 +52,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    ModelFactory filePerRootFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
+    ModelFactory filePerRootFactory = ((MPSProject) MapSequence.fromMap(_params).get("project")).getComponent(ModelFactoryService.class).getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
     if (filePerRootFactory == null) {
       return false;
     }
@@ -96,7 +97,8 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
         return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
       }
     });
-    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
+    final SRepository repo = mpsProject.getRepository();
 
 
     repo.getModelAccess().runWriteAction(new Runnable() {
@@ -131,9 +133,9 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
           }
 
           try {
-            DataSource newDataSource = new DataSourceFactoryBridge((FileBasedModelRoot) modelRoot).createPerRootDataSource(newModel.getName(), null).getDataSource();
+            DataSource newDataSource = new DataSourceFactoryBridge((FileBasedModelRoot) modelRoot, mpsProject.getComponent(DataSourceFactoryRuleService.class)).createPerRootDataSource(newModel.getName(), null).getDataSource();
             SModule module = smodel.getModule();
-            ModelFactory filePerRootFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
+            ModelFactory filePerRootFactory = mpsProject.getComponent(ModelFactoryService.class).getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
             if (filePerRootFactory == null) {
               throw new IOException("Could not find any per-root persistence model factory");
             }

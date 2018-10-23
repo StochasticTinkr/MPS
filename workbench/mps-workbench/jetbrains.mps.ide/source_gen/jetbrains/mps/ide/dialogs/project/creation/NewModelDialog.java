@@ -38,9 +38,9 @@ import java.util.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -212,20 +212,17 @@ public class NewModelDialog extends DialogWrapper {
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Storage format:"), constraints);
     constraints.setRow(constraints.getRow() + 1);
-    myModelStorageFormat.setModel(new DefaultComboBoxModel<ModelFactoryType>(getStorageFormats()));
+    ModelFactoryService modelFactories = myProject.getComponent(ModelFactoryService.class);
+    List<ModelFactoryType> factoryTypes = modelFactories.getFactoryTypes();
+    myModelStorageFormat.setModel(new DefaultComboBoxModel<ModelFactoryType>(factoryTypes.toArray(new ModelFactoryType[factoryTypes.size()])));
     myModelStorageFormat.setRenderer(new ColoredListCellRenderer<ModelFactoryType>() {
       protected void customizeCellRenderer(JList<? extends ModelFactoryType> p0, ModelFactoryType factoryType, int p2, boolean p3, boolean p4) {
         append(factoryType.getFormatTitle());
       }
     });
-    myModelStorageFormat.setSelectedItem(ModelFactoryService.getInstance().getFactoryTypes().get(0));
+    myModelStorageFormat.setSelectedItem(factoryTypes.get(0));
     mainPanel.add(myModelStorageFormat, constraints);
     myContentPane.add(mainPanel, BorderLayout.CENTER);
-  }
-
-  private ModelFactoryType[] getStorageFormats() {
-    List<ModelFactoryType> result = ModelFactoryService.getInstance().getFactoryTypes();
-    return result.toArray(new ModelFactoryType[result.size()]);
   }
 
   @Override

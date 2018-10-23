@@ -27,11 +27,11 @@ import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.IOException;
@@ -90,10 +91,13 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
   @Deprecated
   @ToRemove(version = 2018.2)
   public DefaultModelRoot() {
-    // do not remove
     this(ModelFactoryService.getInstance(), DataSourceFactoryRuleService.getInstance());
+    LOG.error(String.format("Class DefaultModelRoot would become final in the next release, please fix %s accordingly", getClass().getName()));
   }
 
+  /**
+   * Use {@link ModelRootFactory#create()} to obtain instance of the class
+   */
   /*package*/ DefaultModelRoot(ModelFactoryRegistry modelFactoryRegistry, DataSourceFactoryRuleService dsRegistry) {
     myModelFactoryRegistry = modelFactoryRegistry;
     myDataSourceRegistry = dsRegistry;
@@ -187,12 +191,11 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
       return false;
     }
 
-    DataSourceFactoryBridge dataSourceFactory = new DataSourceFactoryBridge(this);
     try {
       // XXX could iterate over all source roots to find the one capable to create a model, but the rest of MR API (namely, createModel) would need
       //     to figure out proper source root as well, which is not a task I'd like to tackle now. I'd use object return value instead of simple
       //     boolean here, which would keep all relevant data (model factory, source root) for model creation
-      CompositeResult<DataSource> result = dataSourceFactory.create(new SModelName(modelName), Defaults.sourceRoot(this), Defaults.DATA_SOURCE_TYPE);
+      CompositeResult<DataSource> result = getDataSourceFactoryBridge().create(new SModelName(modelName), Defaults.sourceRoot(this), Defaults.DATA_SOURCE_TYPE);
       return new ModelFactoryFacade(defaultModelFactory).canCreate(result.getDataSource(), result.getOptions());
     } catch (NoSourceRootsInModelRootException | DataSourceFactoryNotFoundException | SourceRootDoesNotExistException ignored) {
     }
@@ -312,7 +315,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
         throw new ModelFactoryNotFoundException(dataSourceType);
       }
     }
-    CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceFactory);
+    CompositeResult<DataSource> result = getDataSourceFactoryBridge().create(modelName, sourceRoot, dataSourceFactory);
     DataSource dataSource = result.getDataSource();
     ModelCreationOptions parameters = result.getOptions();
     if (!new ModelFactoryFacade(modelFactory).canCreate(dataSource, parameters)) {
@@ -352,6 +355,14 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     ModelRootDescriptor result = new ModelRootDescriptor();
     save(result.getMemento());
     return result;
+  }
+
+  /*package*/ ModelFactoryRegistry getModelFactoryRegistry() {
+    return myModelFactoryRegistry;
+  }
+
+  /*package*/ DataSourceFactoryBridge getDataSourceFactoryBridge() {
+    return new DataSourceFactoryBridge(this, myDataSourceRegistry);
   }
 
   /**

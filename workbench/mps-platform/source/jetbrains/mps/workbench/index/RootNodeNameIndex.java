@@ -51,8 +51,6 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -91,7 +89,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         if (type == null) {
           return null;
         }
-        ModelFactory factory = ModelFactoryService.getInstance().getDefaultModelFactory(type);
+        ModelFactory factory = mpsPlatform.findComponent(ModelFactoryService.class).getDefaultModelFactory(type);
         if (factory == null) {
           return null;
         }
