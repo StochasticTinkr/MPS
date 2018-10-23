@@ -63,7 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("fileName", 0x20c051df23a9da87L).type(PrimitiveTypeId.STRING).origin("2359976223560030855").done();
     b.property("id", 0x2d0ad2528389ad26L).type(PrimitiveTypeId.STRING).origin("3245637733309852966").done();
     b.property("imageFormat", 0x132781a3b11568fbL).type(PrimitiveTypeId.STRING).origin("1380214350862969083").done();
-    b.property("scale", 0x132781a3b11572e9L).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("1380214350862971625").done();
+    b.property("scale", 0x132781a3b11572e9L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("1380214350862971625").done();
     b.associate("node", 0x2d0ad25283902716L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).origin("3245637733310277398").done();
     b.alias("image");
     return b.create();

@@ -18757,7 +18757,7 @@
                 <node concept="liA8E" id="1HU" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="1HZ" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.enumerationId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="1I0" role="37wK5m">
                       <property role="1adDun" value="0x8585453e6bfb4d80L" />

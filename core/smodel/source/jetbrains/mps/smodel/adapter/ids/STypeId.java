@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.adapter.ids;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
+ * Represents type identity
+ *
  * @author Radimir.Sorokin
  * @since 2018.3
  */

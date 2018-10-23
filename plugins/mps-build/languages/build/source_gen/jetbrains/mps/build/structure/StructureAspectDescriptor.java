@@ -474,7 +474,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/8618885170173601777");
     b.version(2);
-    b.property("head", 0x779c6e65c01467f3L).type(MetaIdFactory.constrainedStringDataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c0160766L)).origin("8618885170173601779").done();
+    b.property("head", 0x779c6e65c01467f3L).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c0160766L)).origin("8618885170173601779").done();
     b.aggregate("tail", 0x779c6e65c01467f2L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L).optional(true).ordered(true).multiple(false).origin("8618885170173601778").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
@@ -745,7 +745,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.structure.BuildLayout_CopyFilter", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a39527643L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416812");
     b.version(2);
-    b.property("eol", 0x3a43b020f623c9b6L).type(MetaIdFactory.enumerationId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3a43b020f623c9aeL)).origin("4198392933254416822").done();
+    b.property("eol", 0x3a43b020f623c9b6L).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3a43b020f623c9aeL)).origin("4198392933254416822").done();
     b.property("removeEOF", 0x3a43b020f625d95cL).type(PrimitiveTypeId.BOOLEAN).origin("4198392933254551900").done();
     b.alias("fix eol");
     return b.create();
@@ -757,7 +757,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/9184644532457106504");
     b.version(2);
     b.property("pattern", 0x7f76698a3956ec49L).type(PrimitiveTypeId.STRING).origin("9184644532457106505").done();
-    b.property("flags", 0x7f76698a3956ec4cL).type(MetaIdFactory.constrainedStringDataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3956ecb5L)).origin("9184644532457106508").done();
+    b.property("flags", 0x7f76698a3956ec4cL).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3956ecb5L)).origin("9184644532457106508").done();
     b.aggregate("value", 0x7f76698a3956ec4aL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(false).ordered(true).multiple(false).origin("9184644532457106506").done();
     b.alias("replace regex");
     return b.create();
@@ -896,7 +896,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/9126048691955220717");
     b.version(2);
-    b.property("filemode", 0x7ea63ceef6e8c32bL).type(MetaIdFactory.constrainedStringDataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("9126048691955221291").done();
+    b.property("filemode", 0x7ea63ceef6e8c32bL).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("9126048691955221291").done();
     b.aggregate("path", 0x7ea63ceef6e8c11aL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("9126048691955220762").done();
     b.aggregate("parameters", 0x7ea63ceef6e8c126L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c124L).optional(true).ordered(true).multiple(true).origin("9126048691955220774").done();
     b.alias("file");
@@ -927,8 +927,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.structure.BuildLayout_TransparentContainer", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7801138212747054656");
     b.version(2);
-    b.property("filemode", 0x6c4335df4e838e44L).type(MetaIdFactory.constrainedStringDataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("7801138212747054660").done();
-    b.property("dirmode", 0x6c4335df4e838e45L).type(MetaIdFactory.constrainedStringDataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("7801138212747054661").done();
+    b.property("filemode", 0x6c4335df4e838e44L).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("7801138212747054660").done();
+    b.property("dirmode", 0x6c4335df4e838e45L).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e43L)).origin("7801138212747054661").done();
     b.alias("filemode");
     return b.create();
   }
@@ -1090,7 +1090,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0c8fbL);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/8577651205286814211");
     b.version(2);
-    b.property("compression", 0x1b76dbd13de88928L).type(MetaIdFactory.enumerationId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1b76dbd13de88924L)).origin("1979010778009209128").done();
+    b.property("compression", 0x1b76dbd13de88928L).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1b76dbd13de88924L)).origin("1979010778009209128").done();
     b.alias("tar");
     return b.create();
   }
@@ -1275,7 +1275,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/2754769020641429190");
     b.version(2);
-    b.property("kind", 0x48d5d03db92974fbL).type(MetaIdFactory.enumerationId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974f7L)).origin("5248329904288265467").done();
+    b.property("kind", 0x48d5d03db92974fbL).type(MetaIdFactory.dataTypeId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974f7L)).origin("5248329904288265467").done();
     b.property("relativePath", 0x263ae7d4319546c7L).type(PrimitiveTypeId.STRING).origin("2754769020641429191").done();
     b.alias("source");
     return b.create();

@@ -21,11 +21,13 @@ import org.jetbrains.mps.annotations.Immutable;
 import java.util.Objects;
 
 /**
+ * Represents identity for language elements
+ *
  * @author Radimir.Sorokin
  * @since 2018.3
  */
 @Immutable
-public abstract class SElementId {
+public class SElementId {
 
   @NotNull
   private final SLanguageId myLanguageId;

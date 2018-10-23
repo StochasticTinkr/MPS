@@ -1,20 +1,20 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class EnumerationDescriptorBase extends NamedElementDescriptorBase implements EnumerationDescriptor {
-  private final SEnumerationId myId;
+  private final SDataTypeId myId;
 
   public EnumerationDescriptorBase(long langIdHigh, long langIdLow, long id, String name, String srcNode) {
     super(name, srcNode);
-    myId = MetaIdFactory.enumerationId(langIdHigh, langIdLow, id);
+    myId = MetaIdFactory.dataTypeId(langIdHigh, langIdLow, id);
   }
 
   @NotNull
   @Override
-  public SEnumerationId getId() {
+  public SDataTypeId getId() {
     return myId;
   }
 }

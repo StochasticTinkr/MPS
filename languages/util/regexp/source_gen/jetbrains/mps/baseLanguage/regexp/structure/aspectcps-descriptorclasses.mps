@@ -10027,7 +10027,7 @@
                 <node concept="liA8E" id="UD" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="UI" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="UJ" role="37wK5m">
                       <property role="1adDun" value="0xdaafa647f1f74b0bL" />
@@ -11909,7 +11909,7 @@
                 <node concept="liA8E" id="15Q" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="15V" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="15W" role="37wK5m">
                       <property role="1adDun" value="0xdaafa647f1f74b0bL" />
@@ -11976,7 +11976,7 @@
                 <node concept="liA8E" id="16e" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="16j" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="16k" role="37wK5m">
                       <property role="1adDun" value="0xdaafa647f1f74b0bL" />
@@ -20041,7 +20041,7 @@
                 <node concept="liA8E" id="1PR" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="1PW" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="1PX" role="37wK5m">
                       <property role="1adDun" value="0xdaafa647f1f74b0bL" />

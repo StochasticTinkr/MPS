@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.smodel.adapter.structure.types;
 
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.SNamedElementAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SDataType;
@@ -33,9 +34,9 @@ import java.util.regex.Pattern;
  */
 public /*final*/ class SConstrainedStringDatatypeAdapter extends SNamedElementAdapter implements SDataType {
 
-  private final SConstrainedStringDatatypeId myId;
+  private final SDataTypeId myId;
 
-  public SConstrainedStringDatatypeAdapter(SConstrainedStringDatatypeId id, String fqName) {
+  public SConstrainedStringDatatypeAdapter(SDataTypeId id, String fqName) {
     super(fqName);
     myId = id;
   }
@@ -45,7 +46,11 @@ public /*final*/ class SConstrainedStringDatatypeAdapter extends SNamedElementAd
     if (registry == null) {
       return null;
     }
-    return registry.getConstrainedDatatypeDescriptor(myId);
+    final DataTypeDescriptor descriptor = registry.getDataTypeDescriptor(myId);
+    if (descriptor instanceof ConstrainedStringDatatypeDescriptor) {
+      return (ConstrainedStringDatatypeDescriptor) descriptor;
+    }
+    return null;
   }
 
   @NotNull

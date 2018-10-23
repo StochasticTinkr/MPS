@@ -212,7 +212,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L);
     b.origin("r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)/1171931851043");
     b.version(2);
-    b.property("testCaseName", 0x110dc94e925L).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc2bbf5889L)).origin("1171931851045").done();
+    b.property("testCaseName", 0x110dc94e925L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc2bbf5889L)).origin("1171931851045").done();
     b.aggregate("testMethodList", 0x110dc94e924L).target(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc95061dL).optional(false).ordered(true).multiple(false).origin("1171931851044").done();
     b.aggregate("beforeTest", 0x72682467022fd3e3L).target(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x72682467022fc039L).optional(true).ordered(true).multiple(false).origin("8243879142738613219").done();
     b.aggregate("afterTest", 0x72682467022fd3e4L).target(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x72682467022fd3ddL).optional(true).ordered(true).multiple(false).origin("8243879142738613220").done();

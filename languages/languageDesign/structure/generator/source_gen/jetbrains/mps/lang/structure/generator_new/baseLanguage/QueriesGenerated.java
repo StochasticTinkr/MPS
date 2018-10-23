@@ -435,7 +435,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x57cf4eb14c4f9ef5L, "icon"));
   }
   public static Object templateArgumentQuery_2_0(final TemplateArgumentContext _context) {
-    return MetaIdByDeclaration.getConstrainedStringDatatypeId(_context.getOriginalCopiedInputNode(_context.getNode()));
+    return MetaIdByDeclaration.getDatatypeId(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static Object templateArgumentQuery_2_1(final TemplateArgumentContext _context) {
     return MetaIdByDeclaration.getConceptId(_context.getNode());
@@ -459,13 +459,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return MetaIdByDeclaration.getConceptId(LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(LinkDeclaration__BehaviorDescriptor.getGenuineLink_idhEwIf_V.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("var:attr")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference")))));
   }
   public static Object templateArgumentQuery_10_0(final TemplateArgumentContext _context) {
-    return MetaIdByDeclaration.getConstrainedStringDatatypeId(_context.getOriginalCopiedInputNode(_context.getNode()));
-  }
-  public static Object templateArgumentQuery_10_1(final TemplateArgumentContext _context) {
-    return MetaIdByDeclaration.getEnumerationId(_context.getOriginalCopiedInputNode(_context.getNode()));
+    return MetaIdByDeclaration.getDatatypeId(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static Object templateArgumentQuery_11_0(final TemplateArgumentContext _context) {
-    return MetaIdByDeclaration.getEnumerationId(_context.getOriginalCopiedInputNode(_context.getNode()));
+    return MetaIdByDeclaration.getDatatypeId(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static Iterable<SNode> sourceNodesQuery_2_0(final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:concepts"));
@@ -872,7 +869,7 @@ public class QueriesGenerated extends QueryProviderBase {
     snsqMethods.put("8143746733697221540", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("8768039269252246206", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("4630900134062580139", new QueriesGenerated.SNsQ(i++));
-    snsqMethods.put("2282911435244475429", new QueriesGenerated.SNsQ(i++));
+    snsqMethods.put("5244914465063953135", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("2322139247075636941", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("4267113346162549690", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("4927458743547626543", new QueriesGenerated.SNsQ(i++));
@@ -1359,7 +1356,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
   {
-    caqMethods.put("4881470889273077821", new QueriesGenerated.CAQ(0));
+    caqMethods.put("5244914465064114184", new QueriesGenerated.CAQ(0));
     caqMethods.put("4267113346160571066", new QueriesGenerated.CAQ(1));
     caqMethods.put("4267113346162354796", new QueriesGenerated.CAQ(2));
     caqMethods.put("4267113346163213778", new QueriesGenerated.CAQ(3));
@@ -1367,9 +1364,8 @@ public class QueriesGenerated extends QueryProviderBase {
     caqMethods.put("4927458743554610988", new QueriesGenerated.CAQ(5));
     caqMethods.put("6565560734626917210", new QueriesGenerated.CAQ(6));
     caqMethods.put("5079902554197907419", new QueriesGenerated.CAQ(7));
-    caqMethods.put("1432599106843901570", new QueriesGenerated.CAQ(8));
-    caqMethods.put("1432599106843907906", new QueriesGenerated.CAQ(9));
-    caqMethods.put("4132549869367894032", new QueriesGenerated.CAQ(10));
+    caqMethods.put("5244914465063817048", new QueriesGenerated.CAQ(8));
+    caqMethods.put("5244914465066571996", new QueriesGenerated.CAQ(9));
   }
   @NotNull
   @Override
@@ -1407,8 +1403,6 @@ public class QueriesGenerated extends QueryProviderBase {
         case 8:
           return QueriesGenerated.templateArgumentQuery_10_0(ctx);
         case 9:
-          return QueriesGenerated.templateArgumentQuery_10_1(ctx);
-        case 10:
           return QueriesGenerated.templateArgumentQuery_11_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));

@@ -125,7 +125,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)/1186667651178");
     b.version(2);
     b.property("currency", 0x1144aebdf40L).type(PrimitiveTypeId.STRING).origin("1186667945792").done();
-    b.property("amount", 0x1144aec21fdL).type(MetaIdFactory.constrainedStringDataTypeId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144aeececfL)).origin("1186667962877").done();
+    b.property("amount", 0x1144aec21fdL).type(MetaIdFactory.dataTypeId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144aeececfL)).origin("1186667962877").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

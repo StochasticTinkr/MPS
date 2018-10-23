@@ -1482,7 +1482,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", 0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL);
     b.origin("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)/1240216724530");
     b.version(2);
-    b.property("order", 0x120c2de2559L).type(MetaIdFactory.enumerationId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2dd1862L)).origin("1240219919705").done();
+    b.property("order", 0x120c2de2559L).type(MetaIdFactory.dataTypeId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2dd1862L)).origin("1240219919705").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("linked_hashmap");
     return b.create();

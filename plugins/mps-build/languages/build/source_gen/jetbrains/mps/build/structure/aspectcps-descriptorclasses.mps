@@ -22387,7 +22387,7 @@
                 <node concept="liA8E" id="245" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="24a" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="24b" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -26973,7 +26973,7 @@
                 <node concept="liA8E" id="2v4" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="2v9" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.enumerationId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="2va" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -27240,7 +27240,7 @@
                 <node concept="liA8E" id="2wC" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="2wH" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="2wI" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -29824,7 +29824,7 @@
                 <node concept="liA8E" id="2JX" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="2K2" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="2K3" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -30456,7 +30456,7 @@
                 <node concept="liA8E" id="2NF" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="2NK" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="2NL" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -30523,7 +30523,7 @@
                 <node concept="liA8E" id="2O3" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="2O8" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="2O9" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -33463,7 +33463,7 @@
                 <node concept="liA8E" id="35p" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="35u" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.enumerationId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="35v" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />
@@ -36743,7 +36743,7 @@
                 <node concept="liA8E" id="3oG" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$PropertyBuilder" resolve="type" />
                   <node concept="2YIFZM" id="3oL" role="37wK5m">
-                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.enumerationId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
+                    <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
                     <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
                     <node concept="1adDum" id="3oM" role="37wK5m">
                       <property role="1adDun" value="0x798100da4f0a421aL" />

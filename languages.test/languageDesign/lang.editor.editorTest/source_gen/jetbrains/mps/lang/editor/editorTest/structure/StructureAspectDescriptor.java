@@ -985,7 +985,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/775415105914266118");
     b.version(2);
-    b.property("enumProperty", 0x326616b1fdb13196L).type(MetaIdFactory.enumerationId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x326616b1fdb131b2L)).origin("3631615103242154390").done();
+    b.property("enumProperty", 0x326616b1fdb13196L).type(MetaIdFactory.dataTypeId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x326616b1fdb131b2L)).origin("3631615103242154390").done();
     b.aggregate("menuTraceSubstituteChild", 0xac2d3ee357de207L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L).optional(true).ordered(true).multiple(false).origin("775415105914266119").done();
     b.aggregate("menuTraceCellMenu", 0x13376377600dd75fL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL).optional(true).ordered(true).multiple(false).origin("1384684774803494751").done();
     b.aggregate("menuTraceTransformation", 0x13376377603b60adL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776035327cL).optional(true).ordered(true).multiple(false).origin("1384684774806479021").done();
@@ -1041,7 +1041,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3631615103242227667");
     b.version(2);
-    b.property("enum", 0x326616b1fdb25473L).type(MetaIdFactory.enumerationId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x326616b1fdb131b2L)).origin("3631615103242228851").done();
+    b.property("enum", 0x326616b1fdb25473L).type(MetaIdFactory.dataTypeId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x326616b1fdb131b2L)).origin("3631615103242228851").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNonEmptyProperty() {
@@ -1279,7 +1279,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/957371990174086574");
     b.version(2);
-    b.property("myEnumProperty", 0xd4944c0b03fa02eL).type(MetaIdFactory.enumerationId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03f658cL)).origin("957371990174310446").done();
+    b.property("myEnumProperty", 0xd4944c0b03fa02eL).type(MetaIdFactory.dataTypeId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03f658cL)).origin("957371990174310446").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstTestRoot() {

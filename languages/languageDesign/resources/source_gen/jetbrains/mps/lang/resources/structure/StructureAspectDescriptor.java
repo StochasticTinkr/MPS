@@ -159,7 +159,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.resources.structure.Primitive", 0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/2756621024541675104");
     b.version(2);
-    b.property("r", 0x26417c37742e28c1L).type(MetaIdFactory.enumerationId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x15d013b3c3eb278aL)).origin("2756621024541681857").done();
+    b.property("r", 0x26417c37742e28c1L).type(MetaIdFactory.dataTypeId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x15d013b3c3eb278aL)).origin("2756621024541681857").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForColor() {
@@ -175,7 +175,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/1860120738943552477");
     b.version(2);
-    b.property("val", 0x19d079f4ec114be1L).type(MetaIdFactory.constrainedStringDataTypeId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114c10L)).origin("1860120738943552481").done();
+    b.property("val", 0x19d079f4ec114be1L).type(MetaIdFactory.dataTypeId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114c10L)).origin("1860120738943552481").done();
     b.alias("#");
     return b.create();
   }
@@ -310,7 +310,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.resources.structure.Primitive", 0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/2756621024541675105");
     b.version(2);
-    b.property("r", 0x26417c37742e0e62L).type(MetaIdFactory.enumerationId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x15d013b3c3eb278aL)).origin("2756621024541675106").done();
+    b.property("r", 0x26417c37742e0e62L).type(MetaIdFactory.dataTypeId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x15d013b3c3eb278aL)).origin("2756621024541675106").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForResource() {

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.types;
 
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import jetbrains.mps.smodel.runtime.NamedElementDescriptorBase;
 import jetbrains.mps.util.NameUtil;
@@ -26,7 +26,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.regex.Pattern;
@@ -48,7 +47,7 @@ public class SInterpretedConstrainedStringDataTypeAdapter extends SConstrainedSt
   private final InterpretedDescriptor myDescriptor;
 
   public SInterpretedConstrainedStringDataTypeAdapter(SNode /*node<ConstrainedDataTypeDeclaration>*/ declaration) {
-    super(MetaIdByDeclaration.getConstrainedStringDatatypeId(declaration), NameUtil.nodeFQName(declaration));
+    super(MetaIdByDeclaration.getDatatypeId(declaration), NameUtil.nodeFQName(declaration));
     myDescriptor = new InterpretedDescriptor(declaration);
   }
 
@@ -59,7 +58,7 @@ public class SInterpretedConstrainedStringDataTypeAdapter extends SConstrainedSt
 
   private static class InterpretedDescriptor extends NamedElementDescriptorBase implements ConstrainedStringDatatypeDescriptor {
     private final Pattern myPattern;
-    private final SConstrainedStringDatatypeId myId;
+    private final SDataTypeId myId;
 
     InterpretedDescriptor(SNode declaration) {
       super(declaration.getName(), declaration.getReference());
@@ -71,7 +70,7 @@ public class SInterpretedConstrainedStringDataTypeAdapter extends SConstrainedSt
         LOG.warn("Interpreted adapter for constrained string datatype " + NameUtil.nodeFQName(declaration) + " was created within bad regex: '" + constraint + "'");
       }
       myPattern = pattern;
-      myId = MetaIdByDeclaration.getConstrainedStringDatatypeId(declaration);
+      myId = MetaIdByDeclaration.getDatatypeId(declaration);
     }
 
     @NotNull
@@ -82,7 +81,7 @@ public class SInterpretedConstrainedStringDataTypeAdapter extends SConstrainedSt
 
     @NotNull
     @Override
-    public SConstrainedStringDatatypeId getId() {
+    public SDataTypeId getId() {
       return myId;
     }
   }

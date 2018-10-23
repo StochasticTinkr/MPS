@@ -203,7 +203,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("title", 0x11225f2354aL).type(PrimitiveTypeId.STRING).origin("1177457669450").done();
     b.property("migrationFromBuild", 0x118d28c5944L).type(PrimitiveTypeId.STRING).origin("1206123256132").done();
     b.property("category", 0x118d28cf5b3L).type(PrimitiveTypeId.STRING).origin("1206123296179").done();
-    b.property("type", 0x498b4f71ee081153L).type(MetaIdFactory.enumerationId(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x498b4f71ee081150L)).origin("5299416737274925395").done();
+    b.property("type", 0x498b4f71ee081153L).type(MetaIdFactory.dataTypeId(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x498b4f71ee081150L)).origin("5299416737274925395").done();
     b.property("toBuild", 0x498b4f71ee081155L).type(PrimitiveTypeId.STRING).origin("5299416737274925397").done();
     b.aggregate("part", 0x11225f9fb49L).target(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x60bdd7da75343e05L).optional(true).ordered(true).multiple(true).origin("1177458178889").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);

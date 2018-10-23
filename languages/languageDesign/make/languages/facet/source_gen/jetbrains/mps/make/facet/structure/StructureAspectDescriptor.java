@@ -278,7 +278,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ff8b7a0d94242e1L);
     b.origin("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/6418371274763029565");
     b.version(2);
-    b.property("resourcesPolicy", 0x1740bd43b75c4b28L).type(MetaIdFactory.enumerationId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1740bd43b75c4b23L)).origin("1675547159918562088").done();
+    b.property("resourcesPolicy", 0x1740bd43b75c4b28L).type(MetaIdFactory.dataTypeId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1740bd43b75c4b23L)).origin("1675547159918562088").done();
     b.property("optional", 0x642ffc6d854ec1c5L).type(PrimitiveTypeId.BOOLEAN).origin("7219266275016360389").done();
     b.property("weight", 0x28fa08363635e31L).type(PrimitiveTypeId.INTEGER).origin("184542595914096177").done();
     b.associate("overrides", 0x5912a2ab1cd24c55L).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL).optional(true).origin("6418371274763029589").done();
@@ -294,7 +294,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)/6418371274763029600");
     b.version(2);
-    b.property("qualifier", 0x73e720709e3139e9L).type(MetaIdFactory.enumerationId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e3139e2L)).origin("8351679702044326377").done();
+    b.property("qualifier", 0x73e720709e3139e9L).type(MetaIdFactory.dataTypeId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e3139e2L)).origin("8351679702044326377").done();
     b.associate("dependsOn", 0x5912a2ab1cd24c63L).target(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL).optional(false).origin("6418371274763029603").done();
     return b.create();
   }

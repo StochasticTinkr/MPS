@@ -133,7 +133,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d80ddecc-25d5-4844-86af-49ea7b4962af(jetbrains.mps.samples.notesOrganizer.structure)/8908453262579799874");
     b.version(2);
-    b.property("presentation", 0x7ba12f0b1640efd3L).type(MetaIdFactory.enumerationId(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b1640efd5L)).origin("8908453262580051923").done();
+    b.property("presentation", 0x7ba12f0b1640efd3L).type(MetaIdFactory.dataTypeId(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b1640efd5L)).origin("8908453262580051923").done();
     b.property("showActive", 0x36042ea3549ce25fL).type(PrimitiveTypeId.BOOLEAN).origin("3892287256989065823").done();
     b.property("selectedCategory", 0x36042ea354a85565L).type(PrimitiveTypeId.STRING).origin("3892287256989816165").done();
     b.aggregate("notes", 0x7ba12f0b163e1e47L).target(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL).optional(true).ordered(true).multiple(true).origin("8908453262579867207").done();

@@ -619,7 +619,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1169670156577");
     b.version(2);
-    b.property("messageType", 0x11055c93e57L).type(MetaIdFactory.enumerationId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c71875L)).origin("1169670356567").done();
+    b.property("messageType", 0x11055c93e57L).type(MetaIdFactory.dataTypeId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c71875L)).origin("1169670356567").done();
     b.property("messageText", 0x11055c67157L).type(PrimitiveTypeId.STRING).origin("1169670173015").done();
     b.kind(ConceptKind.IMPLEMENTATION, StaticScope.GLOBAL);
     b.alias("generator message");
@@ -886,7 +886,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1195499912406");
     b.version(2);
-    b.property("scriptKind", 0x1165f0cf1aaL).type(MetaIdFactory.enumerationId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165f07f3c1L)).origin("1195595592106").done();
+    b.property("scriptKind", 0x1165f0cf1aaL).type(MetaIdFactory.dataTypeId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165f07f3c1L)).origin("1195595592106").done();
     b.property("modifiesModel", 0x1165f0d3f2fL).type(PrimitiveTypeId.BOOLEAN).origin("1195595611951").done();
     b.aggregate("codeBlock", 0x116596b2f70L).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11659655aa8L).optional(false).ordered(true).multiple(false).origin("1195501105008").done();
     b.kind(ConceptKind.IMPLEMENTATION, StaticScope.GLOBAL);
@@ -1048,7 +1048,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1167514355419");
     b.version(2);
-    b.property("keepSourceRoot", 0x11243d5018aL).type(MetaIdFactory.enumerationId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x112442922cfL)).origin("1177959072138").done();
+    b.property("keepSourceRoot", 0x11243d5018aL).type(MetaIdFactory.dataTypeId(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x112442922cfL)).origin("1177959072138").done();
     b.associate("template", 0x10fd54746ddL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).origin("1167514355421").done();
     b.kind(ConceptKind.IMPLEMENTATION, StaticScope.GLOBAL);
     b.alias("map");

@@ -363,7 +363,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/3668957831723333672");
     b.version(2);
-    b.property("feedback", 0x32eac1b57fc1b82eL).type(MetaIdFactory.enumerationId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b82aL)).origin("3668957831723333678").done();
+    b.property("feedback", 0x32eac1b57fc1b82eL).type(MetaIdFactory.dataTypeId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b82aL)).origin("3668957831723333678").done();
     b.aggregate("message", 0x32eac1b57fc1c3e8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("3668957831723336680").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("report");
@@ -386,7 +386,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/7077360340906447917");
     b.version(2);
-    b.property("result", 0x6237d5bb8b2a942eL).type(MetaIdFactory.enumerationId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a9472daL)).origin("7077360340906447918").done();
+    b.property("result", 0x6237d5bb8b2a942eL).type(MetaIdFactory.dataTypeId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a9472daL)).origin("7077360340906447918").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -61,21 +61,22 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
   }
 
   @Override
-  public ConstrainedStringDatatypeDescriptor getConstrainedStringDatatypeDescriptor(SConstrainedStringDatatypeId id) {
-    return getConstrainedStringDatatypeDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
+  public DataTypeDescriptor getDataTypeDescriptor(SDataTypeId id) {
+    return getDataTypeDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
   }
 
   @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    final ArrayList<DataTypeDescriptor> dataTypeDescriptors = new ArrayList<>();
+    dataTypeDescriptors.addAll(getConstrainedStringDatatypeDescriptors());
+    dataTypeDescriptors.addAll(getEnumerationDescriptors());
+    return dataTypeDescriptors;
+  }
+
   public Collection<ConstrainedStringDatatypeDescriptor> getConstrainedStringDatatypeDescriptors() {
     return Collections.emptyList();
   }
 
-  @Override
-  public EnumerationDescriptor getEnumerationDescriptor(SEnumerationId id) {
-    return getEnumerationDescriptors().stream().filter(it -> it.getId().equals(id)).findFirst().orElse(null);
-  }
-
-  @Override
   public Collection<EnumerationDescriptor> getEnumerationDescriptors() {
     return Collections.emptyList();
   }

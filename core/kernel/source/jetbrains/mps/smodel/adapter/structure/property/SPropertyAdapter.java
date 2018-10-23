@@ -68,7 +68,7 @@ public abstract class SPropertyAdapter implements SProperty {
 
     final STypeId dataTypeId = pd.getDataTypeId();
     if (dataTypeId != null) {
-      final SType type = TypeRegistry.getInstance().getType(dataTypeId, null);
+      final SType type = TypeRegistry.getInstance().getType(dataTypeId);
       if (type instanceof SDataType) {
         return (SDataType) type;
       }

@@ -158,7 +158,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1111784926012");
     b.version(2);
-    b.property("value", 0x1033349beb2L).type(MetaIdFactory.constrainedStringDataTypeId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x1033347a631L)).origin("1113257000626").done();
+    b.property("value", 0x1033349beb2L).type(MetaIdFactory.dataTypeId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x1033347a631L)).origin("1113257000626").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFormula() {

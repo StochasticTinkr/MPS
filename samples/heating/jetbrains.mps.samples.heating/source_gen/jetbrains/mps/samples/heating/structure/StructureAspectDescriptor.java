@@ -126,8 +126,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.heating.structure.Applicability", 0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/4664795093170636139");
     b.version(2);
-    b.property("start", 0x40bcae6c0e6bc59fL).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636191").done();
-    b.property("end", 0x40bcae6c0e6bc5a1L).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636193").done();
+    b.property("start", 0x40bcae6c0e6bc59fL).type(MetaIdFactory.dataTypeId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636191").done();
+    b.property("end", 0x40bcae6c0e6bc5a1L).type(MetaIdFactory.dataTypeId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170636193").done();
     b.alias("range");
     return b.create();
   }
@@ -164,7 +164,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.heating.structure.Applicability", 0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL);
     b.origin("r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/4664795093170605734");
     b.version(2);
-    b.property("day", 0x40bcae6c0e6b4ea7L).type(MetaIdFactory.enumerationId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170605735").done();
+    b.property("day", 0x40bcae6c0e6b4ea7L).type(MetaIdFactory.dataTypeId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce0948664L)).origin("4664795093170605735").done();
     b.alias("specific day");
     return b.create();
   }

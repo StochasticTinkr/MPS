@@ -232,7 +232,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", 0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL);
     b.origin("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)/2073504467210944676");
     b.version(2);
-    b.property("value", 0x1cc69153b84b40a5L).type(MetaIdFactory.constrainedStringDataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("2073504467210944677").done();
+    b.property("value", 0x1cc69153b84b40a5L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10324579ea7L)).origin("2073504467210944677").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSimpleMathFloatType() {

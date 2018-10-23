@@ -830,13 +830,13 @@
             <property role="3cmrfH" value="0" />
             <node concept="5jKBG" id="4eYtY$wxYkH" role="lGtFl">
               <ref role="v9R2y" node="3GRPfFIdQel" resolve="include_ElementIdTriade" />
-              <node concept="2YIFZM" id="4eYtY$wy30X" role="v9R3O">
-                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getConstrainedStringDatatypeId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="getConstrainedStringDatatypeId" />
+              <node concept="2YIFZM" id="4z9FuFft5w8" role="v9R3O">
+                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getDatatypeId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SDataTypeId" resolve="getDatatypeId" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                <node concept="2OqwBi" id="20TTlucY5HO" role="37wK5m">
-                  <node concept="1iwH7S" id="20TTlucY288" role="2Oq$k0" />
-                  <node concept="12$id9" id="20TTlucYfe4" role="2OqNvi">
-                    <node concept="30H73N" id="20TTlucYkej" role="12$y8L" />
+                <node concept="2OqwBi" id="4z9FuFft5w9" role="37wK5m">
+                  <node concept="1iwH7S" id="4z9FuFft5wa" role="2Oq$k0" />
+                  <node concept="12$id9" id="4z9FuFft5wb" role="2OqNvi">
+                    <node concept="30H73N" id="4z9FuFft5wc" role="12$y8L" />
                   </node>
                 </node>
               </node>
@@ -1317,26 +1317,29 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1YIxXFvqOBU" role="jymVt" />
-    <node concept="3clFb_" id="1YIxXFvqStw" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getEnumerationDescriptors" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="1YIxXFvqStx" role="1B3o_S" />
-      <node concept="3clFbS" id="1YIxXFvqSt_" role="3clF47">
-        <node concept="3cpWs6" id="1YIxXFvqW2M" role="3cqZAp">
-          <node concept="2YIFZM" id="1YIxXFvr2_h" role="3cqZAk">
+    <node concept="3clFb_" id="4z9FuFfsoYY" role="jymVt">
+      <property role="TrG5h" value="getDataTypeDescriptors" />
+      <node concept="3Tm1VV" id="4z9FuFfsoYZ" role="1B3o_S" />
+      <node concept="3uibUv" id="4z9FuFfsoZ1" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="4z9FuFfsoZ2" role="11_B2D">
+          <ref role="3uigEE" to="ze1i:~DataTypeDescriptor" resolve="DataTypeDescriptor" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4z9FuFfsoZ3" role="3clF47">
+        <node concept="3cpWs6" id="4z9FuFfsuFe" role="3cqZAp">
+          <node concept="2YIFZM" id="4z9FuFfsubG" role="3cqZAk">
             <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
             <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-            <node concept="37vLTw" id="1YIxXFvr9gz" role="37wK5m">
+            <node concept="37vLTw" id="4z9FuFfsubH" role="37wK5m">
               <ref role="3cqZAo" node="1ZmaNfj92dX" resolve="myEnumeration" />
-              <node concept="1WS0z7" id="1YIxXFvr9g$" role="lGtFl">
-                <node concept="3JmXsc" id="1YIxXFvr9g_" role="3Jn$fo">
-                  <node concept="3clFbS" id="1YIxXFvr9gA" role="2VODD2">
-                    <node concept="3clFbF" id="1YIxXFvr9gB" role="3cqZAp">
-                      <node concept="2OqwBi" id="1YIxXFvr9gC" role="3clFbG">
-                        <node concept="1iwH7S" id="1YIxXFvr9gD" role="2Oq$k0" />
-                        <node concept="1bhEwm" id="1YIxXFvriGu" role="2OqNvi">
+              <node concept="1WS0z7" id="4z9FuFfsubI" role="lGtFl">
+                <node concept="3JmXsc" id="4z9FuFfsubJ" role="3Jn$fo">
+                  <node concept="3clFbS" id="4z9FuFfsubK" role="2VODD2">
+                    <node concept="3clFbF" id="4z9FuFfsubL" role="3cqZAp">
+                      <node concept="2OqwBi" id="4z9FuFfsubM" role="3clFbG">
+                        <node concept="1iwH7S" id="4z9FuFfsubN" role="2Oq$k0" />
+                        <node concept="1bhEwm" id="4z9FuFfsubO" role="2OqNvi">
                           <ref role="1bhEwl" node="1ZmaNfj8JIr" resolve="enumerations" />
                         </node>
                       </node>
@@ -1345,31 +1348,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1YIxXFvqStA" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="3uibUv" id="20TTlucV2yj" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="3uibUv" id="20TTlucV2yk" role="11_B2D">
-          <ref role="3uigEE" to="ze1i:~EnumerationDescriptor" resolve="EnumerationDescriptor" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="20TTlucVQim" role="jymVt" />
-    <node concept="3clFb_" id="20TTlucVVr6" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getConstrainedStringDatatypeDescriptors" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="20TTlucVVr7" role="1B3o_S" />
-      <node concept="3clFbS" id="20TTlucVVr8" role="3clF47">
-        <node concept="3cpWs6" id="20TTlucVVr9" role="3cqZAp">
-          <node concept="2YIFZM" id="20TTlucVVra" role="3cqZAk">
-            <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-            <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
             <node concept="37vLTw" id="20TTlucVVrb" role="37wK5m">
               <ref role="3cqZAo" node="744pC72Lkex" resolve="myCSDatatype" />
               <node concept="1WS0z7" id="20TTlucVVrc" role="lGtFl">
@@ -1390,17 +1368,10 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="20TTlucVVrj" role="2AJF6D">
+      <node concept="2AHcQZ" id="4z9FuFfsoZ4" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
-      <node concept="3uibUv" id="20TTlucVVrk" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="3uibUv" id="20TTlucWsUD" role="11_B2D">
-          <ref role="3uigEE" to="ze1i:~ConstrainedStringDatatypeDescriptor" resolve="ConstrainedStringDatatypeDescriptor" />
-        </node>
-      </node>
     </node>
-    <node concept="2tJIrI" id="20TTlucVV9v" role="jymVt" />
     <node concept="2tJIrI" id="75JUw12e04c" role="jymVt" />
     <node concept="3clFb_" id="75JUw12efNZ" role="jymVt">
       <property role="TrG5h" value="internalIndex" />
@@ -6183,48 +6154,22 @@
     </node>
     <node concept="3aamgX" id="1fxBkK$Y8aA" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpce:fKAz7CR" resolve="ConstrainedDataTypeDeclaration" />
+      <ref role="30HIoZ" to="tpce:fKAxPRU" resolve="DataTypeDeclaration" />
       <node concept="gft3U" id="1fxBkK$Y8__" role="1lVwrX">
-        <node concept="2YIFZM" id="1fxBkK$Yedb" role="gfFT$">
-          <ref role="37wK5l" to="e8bb:~MetaIdFactory.constrainedStringDataTypeId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="constrainedStringDataTypeId" />
+        <node concept="2YIFZM" id="4z9FuFfrWWz" role="gfFT$">
+          <ref role="37wK5l" to="e8bb:~MetaIdFactory.dataTypeId(long,long,long):jetbrains.mps.smodel.adapter.ids.SDataTypeId" resolve="dataTypeId" />
           <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
-          <node concept="3cmrfG" id="1fxBkK$Yedr" role="37wK5m">
+          <node concept="3cmrfG" id="4z9FuFfrWW$" role="37wK5m">
             <property role="3cmrfH" value="0" />
-            <node concept="5jKBG" id="1fxBkK$YeBC" role="lGtFl">
+            <node concept="5jKBG" id="4z9FuFfrWW_" role="lGtFl">
               <ref role="v9R2y" node="3GRPfFIdQel" resolve="include_ElementIdTriade" />
-              <node concept="2YIFZM" id="1fxBkK$YfU2" role="v9R3O">
-                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getConstrainedStringDatatypeId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId" resolve="getConstrainedStringDatatypeId" />
+              <node concept="2YIFZM" id="4z9FuFfrWXo" role="v9R3O">
+                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getDatatypeId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SDataTypeId" resolve="getDatatypeId" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                <node concept="2OqwBi" id="20TTlucZkQA" role="37wK5m">
-                  <node concept="1iwH7S" id="20TTlucZkQB" role="2Oq$k0" />
-                  <node concept="12$id9" id="20TTlucZkQC" role="2OqNvi">
-                    <node concept="30H73N" id="20TTlucZkQD" role="12$y8L" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="1fxBkK$Ygmc" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpce:fKAxPRV" resolve="EnumerationDataTypeDeclaration" />
-      <node concept="gft3U" id="1fxBkK$Ygmd" role="1lVwrX">
-        <node concept="2YIFZM" id="1fxBkK$YheD" role="gfFT$">
-          <ref role="37wK5l" to="e8bb:~MetaIdFactory.enumerationId(jetbrains.mps.smodel.adapter.ids.SLanguageId,long):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="enumerationId" />
-          <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
-          <node concept="3cmrfG" id="1fxBkK$YheE" role="37wK5m">
-            <property role="3cmrfH" value="0" />
-            <node concept="5jKBG" id="1fxBkK$YheF" role="lGtFl">
-              <ref role="v9R2y" node="3GRPfFIdQel" resolve="include_ElementIdTriade" />
-              <node concept="2YIFZM" id="1fxBkK$Yht2" role="v9R3O">
-                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getEnumerationId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="getEnumerationId" />
-                <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                <node concept="2OqwBi" id="20TTlucZjD3" role="37wK5m">
-                  <node concept="1iwH7S" id="20TTlucZjkw" role="2Oq$k0" />
-                  <node concept="12$id9" id="20TTlucZkpV" role="2OqNvi">
-                    <node concept="30H73N" id="20TTlucZkCg" role="12$y8L" />
+                <node concept="2OqwBi" id="4z9FuFfrWXp" role="37wK5m">
+                  <node concept="1iwH7S" id="4z9FuFfrWXq" role="2Oq$k0" />
+                  <node concept="12$id9" id="4z9FuFfrWXr" role="2OqNvi">
+                    <node concept="30H73N" id="4z9FuFfrWXs" role="12$y8L" />
                   </node>
                 </node>
               </node>
@@ -6252,13 +6197,13 @@
             <property role="3cmrfH" value="0" />
             <node concept="5jKBG" id="3_pL3o4gDoa" role="lGtFl">
               <ref role="v9R2y" node="3GRPfFIdQel" resolve="include_ElementIdTriade" />
-              <node concept="2YIFZM" id="3_pL3o4gE0g" role="v9R3O">
-                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getEnumerationId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SEnumerationId" resolve="getEnumerationId" />
+              <node concept="2YIFZM" id="4z9FuFfAtzs" role="v9R3O">
+                <ref role="37wK5l" to="e8bb:~MetaIdByDeclaration.getDatatypeId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SDataTypeId" resolve="getDatatypeId" />
                 <ref role="1Pybhc" to="e8bb:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                <node concept="2OqwBi" id="20TTlucXM1V" role="37wK5m">
-                  <node concept="1iwH7S" id="20TTlucXLhk" role="2Oq$k0" />
-                  <node concept="12$id9" id="20TTlucXNfU" role="2OqNvi">
-                    <node concept="30H73N" id="20TTlucXN$a" role="12$y8L" />
+                <node concept="2OqwBi" id="4z9FuFfAtzt" role="37wK5m">
+                  <node concept="1iwH7S" id="4z9FuFfAtzu" role="2Oq$k0" />
+                  <node concept="12$id9" id="4z9FuFfAtzv" role="2OqNvi">
+                    <node concept="30H73N" id="4z9FuFfAtzw" role="12$y8L" />
                   </node>
                 </node>
               </node>
@@ -6514,7 +6459,6 @@
     <node concept="3uibUv" id="3_pL3o4g_BQ" role="1zkMxy">
       <ref role="3uigEE" to="ze1i:~EnumerationDescriptorBase" resolve="EnumerationDescriptorBase" />
     </node>
-    <node concept="2tJIrI" id="744pC72_lWt" role="jymVt" />
     <node concept="2tJIrI" id="744pC72_mwP" role="jymVt" />
     <node concept="3clFb_" id="744pC72_n5k" role="jymVt">
       <property role="TrG5h" value="getDefault" />
@@ -6656,7 +6600,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="744pC72_Jm9" role="jymVt" />
     <node concept="2tJIrI" id="744pC72_Klq" role="jymVt" />
     <node concept="3clFb_" id="744pC72_LkJ" role="jymVt">
       <property role="TrG5h" value="getMember" />

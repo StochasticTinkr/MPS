@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Pattern;
@@ -26,11 +25,8 @@ import java.util.regex.Pattern;
  * @author Radimir.Sorokin
  * @since 2018.3
  */
-public interface ConstrainedStringDatatypeDescriptor extends NamedElementDescriptor {
+public interface ConstrainedStringDatatypeDescriptor extends DataTypeDescriptor {
 
   @NotNull
   Pattern getRegexPattern();
-
-  @NotNull
-  SConstrainedStringDatatypeId getId();
 }

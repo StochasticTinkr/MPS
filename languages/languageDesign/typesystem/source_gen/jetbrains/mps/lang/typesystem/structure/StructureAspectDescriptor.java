@@ -441,10 +441,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056081426");
     b.version(2);
-    b.property("inequationPriority", 0x11a342c735aL).type(MetaIdFactory.enumerationId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342d9151L)).origin("1212056105818").done();
+    b.property("inequationPriority", 0x11a342c735aL).type(MetaIdFactory.dataTypeId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342d9151L)).origin("1212056105818").done();
     b.property("label", 0x42501924d0bd6481L).type(PrimitiveTypeId.STRING).origin("4778346850551686273").done();
-    b.property("strong", 0x6b67310af31422a9L).type(MetaIdFactory.enumerationId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757103785").done();
-    b.property("orientation", 0x6b67310af31422aaL).type(MetaIdFactory.enumerationId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757103786").done();
+    b.property("strong", 0x6b67310af31422a9L).type(MetaIdFactory.dataTypeId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757103785").done();
+    b.property("orientation", 0x6b67310af31422aaL).type(MetaIdFactory.dataTypeId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757103786").done();
     b.aggregate("afterEquations", 0x42501924d0bd890dL).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L).optional(true).ordered(true).multiple(true).origin("4778346850551695629").done();
     b.aggregate("beforeEquations", 0x42501924d0bd890eL).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L).optional(true).ordered(true).multiple(true).origin("4778346850551695630").done();
     b.aggregate("afterGroups", 0x12541e5f229a75beL).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x12541e5f229acee2L).optional(true).ordered(true).multiple(true).origin("1320713984677672382").done();
@@ -542,7 +542,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1178870617262");
     b.version(2);
-    b.property("strong", 0x6b67310af315d236L).type(MetaIdFactory.enumerationId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757214262").done();
+    b.property("strong", 0x6b67310af315d236L).type(MetaIdFactory.dataTypeId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("7739208407757214262").done();
     b.aggregate("pattern", 0x1127a2e5034L).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L).optional(false).ordered(true).multiple(false).origin("1178870894644").done();
     b.aggregate("nodeToCoerce", 0x1127a2e5035L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1178870894645").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
@@ -555,7 +555,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1176558773329");
     b.version(2);
-    b.property("strong", 0x400ad468a35d63c7L).type(MetaIdFactory.enumerationId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("4614734314076988359").done();
+    b.property("strong", 0x400ad468a35d63c7L).type(MetaIdFactory.dataTypeId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6b67310af31422a4L)).origin("4614734314076988359").done();
     b.aggregate("pattern", 0x111f05fb92aL).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L).optional(false).ordered(true).multiple(false).origin("1176558876970").done();
     b.aggregate("nodeToCoerce", 0x111f0605ed0L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1176558919376").done();
     b.aggregate("body", 0x111f05f96ebL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("1176558868203").done();

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -29,7 +28,7 @@ import java.util.Collection;
  * @author Radimir.Sorokin
  * @since 2018.3
  */
-public interface EnumerationDescriptor extends NamedElementDescriptor {
+public interface EnumerationDescriptor extends DataTypeDescriptor {
 
   @NotNull
   Collection<MemberDescriptor> getMembers();
@@ -39,9 +38,6 @@ public interface EnumerationDescriptor extends NamedElementDescriptor {
 
   @Nullable
   MemberDescriptor getDefault();
-
-  @NotNull
-  SEnumerationId getId();
 
   class MemberDescriptor {
     @Nullable

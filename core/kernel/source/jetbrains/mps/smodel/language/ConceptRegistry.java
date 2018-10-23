@@ -21,14 +21,12 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -120,17 +118,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   }
 
   @Nullable
-  public ConstrainedStringDatatypeDescriptor getConstrainedDatatypeDescriptor(@NotNull SConstrainedStringDatatypeId id) {
-    ConstrainedStringDatatypeDescriptor csdd = myStructureRegistry.getConstrainedStringDatatypeDescriptor(id);
+  public DataTypeDescriptor getDataTypeDescriptor(@NotNull SDataTypeId id) {
+    DataTypeDescriptor dtd = myStructureRegistry.getDataTypeDescriptor(id);
     // TODO Introduce IllegalConstrainedStringDatatypeDescriptor in order to make this non-null
-    return csdd;
-  }
-
-  @Nullable
-  public EnumerationDescriptor getEnumerationDescriptor(@NotNull SEnumerationId id) {
-    EnumerationDescriptor ed = myStructureRegistry.getEnumerationDescriptor(id);
-    // TODO Introduce IllegalEnumerationDescriptor in order to make this non-null
-    return ed;
+    return dtd;
   }
 
   public ConceptPresentation getConceptProperties(@NotNull SAbstractConcept concept){

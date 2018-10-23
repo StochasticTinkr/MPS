@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.types;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import jetbrains.mps.smodel.runtime.NamedElementDescriptorBase;
 import jetbrains.mps.util.NameUtil;
@@ -45,7 +45,7 @@ public class SInterpretedEnumerationAdapter extends SEnumerationAdapter {
   private final InterpretedDescriptor myDescriptor;
 
   public SInterpretedEnumerationAdapter(SNode/*node<EnumerationDataTypeDeclaration>*/ enumDeclaration) {
-    super(MetaIdByDeclaration.getEnumerationId(enumDeclaration), NameUtil.nodeFQName(enumDeclaration));
+    super(MetaIdByDeclaration.getDatatypeId(enumDeclaration), NameUtil.nodeFQName(enumDeclaration));
     myDescriptor = new InterpretedDescriptor(enumDeclaration);
   }
 
@@ -59,7 +59,7 @@ public class SInterpretedEnumerationAdapter extends SEnumerationAdapter {
 
     private final List<MemberDescriptor> myMembers = new ArrayList<>();
     private final MemberDescriptor myDefaultMember;
-    private final SEnumerationId myId;
+    private final SDataTypeId myId;
 
     InterpretedDescriptor(SNode enumDeclaration) {
       super(enumDeclaration.getName(), enumDeclaration.getReference());
@@ -75,7 +75,7 @@ public class SInterpretedEnumerationAdapter extends SEnumerationAdapter {
       } else {
         myDefaultMember = myMembers.get(defaultMemberIndex);
       }
-      myId = MetaIdByDeclaration.getEnumerationId(enumDeclaration);
+      myId = MetaIdByDeclaration.getDatatypeId(enumDeclaration);
     }
 
     @NotNull
@@ -98,7 +98,7 @@ public class SInterpretedEnumerationAdapter extends SEnumerationAdapter {
 
     @NotNull
     @Override
-    public SEnumerationId getId() {
+    public SDataTypeId getId() {
       return myId;
     }
   }

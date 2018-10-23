@@ -283,7 +283,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/2722628536111969416");
     b.version(2);
-    b.property("constraintsKind", 0x25c8b83a7e4bb48aL).type(MetaIdFactory.constrainedStringDataTypeId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb489L)).origin("2722628536111969418").done();
+    b.property("constraintsKind", 0x25c8b83a7e4bb48aL).type(MetaIdFactory.dataTypeId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb489L)).origin("2722628536111969418").done();
     b.aggregate("order", 0x25c8b83a7e4e6246L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2722628536112144966").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("grid bag constraints");

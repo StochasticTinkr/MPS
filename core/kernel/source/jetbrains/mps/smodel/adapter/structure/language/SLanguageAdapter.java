@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -98,11 +99,16 @@ public abstract class SLanguageAdapter implements SLanguage {
       return Collections.emptyList();
     }
     ArrayList<SDataType> result = new ArrayList<>();
-    for (ConstrainedStringDatatypeDescriptor descriptor : structureAspect.getConstrainedStringDatatypeDescriptors()) {
-      result.add(MetaAdapterFactory.getConstrainedStringDataType(descriptor.getId(), descriptor.getName()));
-    }
-    for (EnumerationDescriptor descriptor : structureAspect.getEnumerationDescriptors()) {
-      result.add(MetaAdapterFactory.getEnumeration(descriptor.getId(), descriptor.getName()));
+    for (DataTypeDescriptor descriptor : structureAspect.getDataTypeDescriptors()) {
+      SDataType dataType = null;
+      if (descriptor instanceof EnumerationDescriptor) {
+        dataType = MetaAdapterFactory.getEnumeration(descriptor.getId(), descriptor.getName());
+      } else if (descriptor instanceof ConstrainedStringDatatypeDescriptor) {
+        dataType = MetaAdapterFactory.getConstrainedStringDataType(descriptor.getId(), descriptor.getName());
+      }
+      if (dataType != null) {
+        result.add(dataType);
+      }
     }
     return result;
   }

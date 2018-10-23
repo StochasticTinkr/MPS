@@ -21,8 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -153,7 +152,7 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
-  public static SConstrainedStringDatatypeAdapter getConstrainedStringDataType(SConstrainedStringDatatypeId id, String datatypeName) {
+  public static SConstrainedStringDatatypeAdapter getConstrainedStringDataType(SDataTypeId id, String datatypeName) {
     return getConstrainedStringDataType(id.getLanguageId().getHighBits(), id.getLanguageId().getLowBits(), id.getIdValue(), datatypeName);
   }
 
@@ -174,7 +173,7 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
-  public static SEnumeration getEnumeration(SEnumerationId id, String enumerationName) {
+  public static SEnumeration getEnumeration(SDataTypeId id, String enumerationName) {
     return getEnumeration(id.getLanguageId().getHighBits(), id.getLanguageId().getLowBits(), id.getIdValue(), enumerationName);
   }
 
@@ -394,7 +393,7 @@ public abstract class MetaAdapterFactory {
 
     public ConstrainedStringDataTypeBucket(long highBits, long lowBits, long datatype, String name) {
       super(highBits, lowBits, datatype);
-      myConstrainedStringDataType = new SConstrainedStringDatatypeAdapter(MetaIdFactory.constrainedStringDataTypeId(highBits, lowBits, datatype), name);
+      myConstrainedStringDataType = new SConstrainedStringDatatypeAdapter(MetaIdFactory.dataTypeId(highBits, lowBits, datatype), name);
     }
 
     public SConstrainedStringDatatypeAdapter get() {
@@ -407,7 +406,7 @@ public abstract class MetaAdapterFactory {
 
     public EnumerationBucket(long highBits, long lowBits, long enumm, String name) {
       super(highBits, lowBits, enumm);
-      myEnumerationAdapter = new SEnumerationAdapter(MetaIdFactory.enumerationId(highBits, lowBits, enumm), name);
+      myEnumerationAdapter = new SEnumerationAdapter(MetaIdFactory.dataTypeId(highBits, lowBits, enumm), name);
     }
 
     public SEnumerationAdapter get() {

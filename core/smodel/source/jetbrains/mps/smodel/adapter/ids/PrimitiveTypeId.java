@@ -18,6 +18,14 @@ package jetbrains.mps.smodel.adapter.ids;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
+ * Represents identities for primitive data types.
+ *
+ * Although primitive types are declared in core lang,
+ * it is not clear that is primitives will be explicitly
+ * declared in some language or not, so for now we have
+ * separate identities for primitives. Also, for same reasons,
+ * unlike {@link SDataTypeId} this enum do not inherit {@link SElementId}
+ *
  * @author Radimir.Sorokin
  * @version 2018.3
  */

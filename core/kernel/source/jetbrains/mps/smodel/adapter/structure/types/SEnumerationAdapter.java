@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.adapter.structure.types;
 
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.SNamedElementAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import jetbrains.mps.smodel.runtime.EnumerationDescriptor.MemberDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -40,9 +41,9 @@ import java.util.stream.Collectors;
  */
 public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implements SEnumeration {
 
-  private final SEnumerationId myId;
+  private final SDataTypeId myId;
 
-  public SEnumerationAdapter(SEnumerationId id, String fqName) {
+  public SEnumerationAdapter(SDataTypeId id, String fqName) {
     super(fqName);
     myId = id;
   }
@@ -54,7 +55,11 @@ public /*final*/ class SEnumerationAdapter extends SNamedElementAdapter implemen
     if (registry == null) {
       return null;
     }
-    return registry.getEnumerationDescriptor(myId);
+    final DataTypeDescriptor descriptor = registry.getDataTypeDescriptor(myId);
+    if (descriptor instanceof EnumerationDescriptor) {
+      return (EnumerationDescriptor) descriptor;
+    }
+    return null;
   }
 
   @Nullable

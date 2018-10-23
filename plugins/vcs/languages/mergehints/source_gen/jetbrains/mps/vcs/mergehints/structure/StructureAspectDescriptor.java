@@ -113,7 +113,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/7313573869697839898");
     b.version(2);
-    b.property("hint", 0x75c17d085c8e0dbaL).type(MetaIdFactory.enumerationId(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x75c17d085c8e0d91L)).origin("8485200647808748986").done();
+    b.property("hint", 0x75c17d085c8e0dbaL).type(MetaIdFactory.dataTypeId(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x75c17d085c8e0d91L)).origin("8485200647808748986").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMergeStrategy() {

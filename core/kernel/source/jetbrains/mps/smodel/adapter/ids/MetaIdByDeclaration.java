@@ -45,15 +45,8 @@ public class MetaIdByDeclaration {
     );
   }
 
-  public static SEnumerationId getEnumerationId(@NotNull SNode enumDeclaration) {
-    return new SEnumerationId(
-        getLangId(null, enumDeclaration),
-        getID(null, enumDeclaration)
-    );
-  }
-
-  public static SConstrainedStringDatatypeId getConstrainedStringDatatypeId(@NotNull SNode csDatatypeDeclaration) {
-    return new SConstrainedStringDatatypeId(
+  public static SDataTypeId getDatatypeId(@NotNull SNode csDatatypeDeclaration) {
+    return new SDataTypeId(
         getLangId(null, csDatatypeDeclaration),
         getID(null, csDatatypeDeclaration)
     );

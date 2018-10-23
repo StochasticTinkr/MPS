@@ -17,10 +17,13 @@ package jetbrains.mps.smodel.adapter.structure.types;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
-import jetbrains.mps.smodel.adapter.ids.SConstrainedStringDatatypeId;
-import jetbrains.mps.smodel.adapter.ids.SEnumerationId;
+import jetbrains.mps.smodel.adapter.ids.SDataTypeId;
 import jetbrains.mps.smodel.adapter.ids.STypeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SType;
@@ -57,7 +60,7 @@ public final class TypeRegistry implements CoreComponent {
   }
 
   @NotNull
-  public SType getType(STypeId id, @Nullable String debugName) {
+  public SType getType(STypeId id) {
     // FIXME make extensible
     if (id instanceof PrimitiveTypeId) {
       switch ((PrimitiveTypeId) id) {
@@ -66,12 +69,20 @@ public final class TypeRegistry implements CoreComponent {
         case INTEGER: return SPrimitiveTypes.INTEGER;
       }
     }
-    if (id instanceof SConstrainedStringDatatypeId) {
-      return MetaAdapterFactory.getConstrainedStringDataType((SConstrainedStringDatatypeId) id, debugName);
+    if (id instanceof SDataTypeId) {
+      final SDataTypeId dataTypeId = (SDataTypeId) id;
+      DataTypeDescriptor descriptor = ConceptRegistry.getInstance().getDataTypeDescriptor(dataTypeId);
+      if (descriptor == null) {
+        return new InvalidDataType("??? (no descriptor found)");
+      }
+      if (descriptor instanceof ConstrainedStringDatatypeDescriptor) {
+        return MetaAdapterFactory.getConstrainedStringDataType(dataTypeId, descriptor.getName());
+      }
+      if (descriptor instanceof EnumerationDescriptor) {
+        return MetaAdapterFactory.getEnumeration(dataTypeId, descriptor.getName());
+      }
+      return new InvalidDataType(descriptor.getName() + " (unknown descriptor kind)");
     }
-    if (id instanceof SEnumerationId) {
-      return MetaAdapterFactory.getEnumeration((SEnumerationId) id, debugName);
-    }
-    throw new IllegalArgumentException("Unknown type id kind");
+    return new InvalidDataType("??? (unknown type identity kind)");
   }
 }

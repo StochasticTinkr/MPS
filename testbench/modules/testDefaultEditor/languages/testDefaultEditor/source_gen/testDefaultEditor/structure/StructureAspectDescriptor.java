@@ -198,7 +198,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("age", 0xd0768d7cf132948L).type(PrimitiveTypeId.INTEGER).origin("938834323431434568").done();
     b.property("inSpb", 0xd0768d7cf13294aL).type(PrimitiveTypeId.BOOLEAN).origin("938834323431434570").done();
     b.property("lastName", 0xd0768d7cf13294fL).type(PrimitiveTypeId.STRING).origin("938834323431434575").done();
-    b.property("politicWing", 0x5318180a0a3dcaffL).type(MetaIdFactory.enumerationId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc752da8aL)).origin("5987562135989635839").done();
+    b.property("politicWing", 0x5318180a0a3dcaffL).type(MetaIdFactory.dataTypeId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc752da8aL)).origin("5987562135989635839").done();
     b.associate("bestFriend", 0xd0768d7cf132953L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L).optional(true).origin("938834323431434579").done();
     b.associate("teamHeWants", 0xd0768d7cf132955L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L).optional(true).origin("938834323431434581").done();
     b.aggregate("friend", 0xd0768d7cf13be7dL).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf13be7aL).optional(true).ordered(true).multiple(true).origin("938834323431472765").done();

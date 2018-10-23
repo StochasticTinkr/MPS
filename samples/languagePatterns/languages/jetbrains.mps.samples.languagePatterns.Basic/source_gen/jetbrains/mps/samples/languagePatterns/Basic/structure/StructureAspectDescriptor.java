@@ -431,7 +431,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL);
     b.origin("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/3803436373353347898");
     b.version(2);
-    b.property("taste", 0x34c8853ae786bbbaL).type(MetaIdFactory.enumerationId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bbbcL)).origin("3803436373353348026").done();
+    b.property("taste", 0x34c8853ae786bbbaL).type(MetaIdFactory.dataTypeId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bbbcL)).origin("3803436373353348026").done();
     b.alias("orange");
     return b.create();
   }

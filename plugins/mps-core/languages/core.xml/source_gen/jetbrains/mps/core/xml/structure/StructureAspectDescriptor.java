@@ -239,9 +239,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L);
     b.origin("r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/5228786488744996718");
     b.version(2);
-    b.property("version", 0x4c3596ee25a4a423L).type(MetaIdFactory.constrainedStringDataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4c3596ee25a4a422L)).origin("5491461270226117667").done();
-    b.property("encoding", 0x2ed40cf354295456L).type(MetaIdFactory.constrainedStringDataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2ed40cf354295457L)).origin("3374336260035925078").done();
-    b.property("standalone", 0x2ed40cf354295458L).type(MetaIdFactory.constrainedStringDataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2ed40cf354295459L)).origin("3374336260035925080").done();
+    b.property("version", 0x4c3596ee25a4a423L).type(MetaIdFactory.dataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4c3596ee25a4a422L)).origin("5491461270226117667").done();
+    b.property("encoding", 0x2ed40cf354295456L).type(MetaIdFactory.dataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2ed40cf354295457L)).origin("3374336260035925078").done();
+    b.property("standalone", 0x2ed40cf354295458L).type(MetaIdFactory.dataTypeId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2ed40cf354295459L)).origin("3374336260035925080").done();
     b.alias("<?xml");
     return b.create();
   }

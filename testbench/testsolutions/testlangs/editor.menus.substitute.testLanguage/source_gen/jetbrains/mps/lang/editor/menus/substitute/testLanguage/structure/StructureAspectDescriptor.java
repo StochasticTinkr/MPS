@@ -695,11 +695,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("defaultBooleanProperty", 0x69b757bd7bd1802L).type(PrimitiveTypeId.BOOLEAN).origin("476103360378640386").done();
     b.property("booleanPropertyWithPropertyMenuPart", 0x69b757bd7f907fcL).type(PrimitiveTypeId.BOOLEAN).origin("476103360382568444").done();
-    b.property("defaultEnumProperty", 0x69b757bd7bd1804L).type(MetaIdFactory.enumerationId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("476103360378640388").done();
-    b.property("enumPropertyWithPropertyMenuPart", 0x69b757bd7f90802L).type(MetaIdFactory.enumerationId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("476103360382568450").done();
-    b.property("enumPropertyWithIsValidConstraints", 0x1609dca8f165eaafL).type(MetaIdFactory.enumerationId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787415215").done();
-    b.property("enumPropertyWithSetter", 0x1609dca8f168f8e1L).type(MetaIdFactory.enumerationId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787615457").done();
-    b.property("enumPropertyWithGetter", 0x1609dca8f16901efL).type(MetaIdFactory.enumerationId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787617775").done();
+    b.property("defaultEnumProperty", 0x69b757bd7bd1804L).type(MetaIdFactory.dataTypeId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("476103360378640388").done();
+    b.property("enumPropertyWithPropertyMenuPart", 0x69b757bd7f90802L).type(MetaIdFactory.dataTypeId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("476103360382568450").done();
+    b.property("enumPropertyWithIsValidConstraints", 0x1609dca8f165eaafL).type(MetaIdFactory.dataTypeId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787415215").done();
+    b.property("enumPropertyWithSetter", 0x1609dca8f168f8e1L).type(MetaIdFactory.dataTypeId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787615457").done();
+    b.property("enumPropertyWithGetter", 0x1609dca8f16901efL).type(MetaIdFactory.dataTypeId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1807L)).origin("1588042961787617775").done();
     b.property("defaultStringProperty", 0x69b757bd7bd180cL).type(PrimitiveTypeId.STRING).origin("476103360378640396").done();
     b.property("stringPropertyWithPropertyMenuPart", 0x69b757bd7f90809L).type(PrimitiveTypeId.STRING).origin("476103360382568457").done();
     b.property("propertyWithCustomActions", 0x69b757bd7f8deb1L).type(PrimitiveTypeId.BOOLEAN).origin("476103360382557873").done();
