@@ -70,7 +70,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public static final String OBSOLETE_MODEL_ROOT = "obsolete";
   public static final String JAVA_CLASSES_ROOT = "java_classes";
 
-  private final ModelFactoryService MODEL_FACTORY_SERVICE = ModelFactoryService.getInstance();
+  private final ModelFactoryService myModelFactoryService;
   private final DataSourceFactoryRuleService myDataSourceRegistry;
 
   @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
@@ -83,7 +83,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   private boolean isDisabled = false;
 
-  public PersistenceRegistry(DataSourceFactoryRuleService dsRegistry) {
+  public PersistenceRegistry(ModelFactoryService modelFactoryService, DataSourceFactoryRuleService dsRegistry) {
+    myModelFactoryService = modelFactoryService;
     myDataSourceRegistry = dsRegistry;
   }
 
@@ -114,7 +115,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     if (myLegacyFileExt2ModelFactoryMap.containsKey(extension)) {
       return myLegacyFileExt2ModelFactoryMap.get(extension);
     }
-    return MODEL_FACTORY_SERVICE.getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
+    return myModelFactoryService.getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
   }
 
   @Deprecated
@@ -129,7 +130,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public void setModelFactory(String extension, ModelFactory factory) {
     if (factory == null) {
       FileExtensionDataSourceType type = FileExtensionDataSourceType.of(extension);
-      MODEL_FACTORY_SERVICE.getModelFactories(type).forEach(MODEL_FACTORY_SERVICE::unregister);
+      myModelFactoryService.getModelFactories(type).forEach(myModelFactoryService::unregister);
     } else {
       myLegacyFileExt2ModelFactoryMap.put(extension, factory);
       if (!Objects.equals(factory.getFileExtension(), extension)) {
@@ -138,7 +139,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
                   "Please fix this.", new Throwable());
         return;
       }
-      MODEL_FACTORY_SERVICE.register(factory);
+      myModelFactoryService.register(factory);
     }
   }
 
@@ -146,7 +147,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Set<String> getModelFactoryExtensions() {
     Set<String> result = new HashSet<>(myLegacyFileExt2ModelFactoryMap.keySet());
-    for (ModelFactory modelFactory : MODEL_FACTORY_SERVICE.getFactories()) {
+    for (ModelFactory modelFactory : myModelFactoryService.getFactories()) {
       List<DataSourceType> preferredDataSourceTypes = new ArrayList<>(modelFactory.getPreferredDataSourceTypes());
       result.addAll(preferredDataSourceTypes.stream()
                                             .filter(dataSourceType -> dataSourceType instanceof FileExtensionDataSourceType)
@@ -348,7 +349,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     @NotNull
     @Override
     public ModelRoot create() {
-      return new DefaultModelRoot(PersistenceRegistry.this.MODEL_FACTORY_SERVICE, PersistenceRegistry.this.myDataSourceRegistry);
+      return new DefaultModelRoot(PersistenceRegistry.this.myModelFactoryService, PersistenceRegistry.this.myDataSourceRegistry);
     }
   }
 }

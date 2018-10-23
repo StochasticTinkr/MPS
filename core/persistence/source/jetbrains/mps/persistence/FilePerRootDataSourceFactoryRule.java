@@ -18,7 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
-import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,22 +27,20 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.net.URL;
 
 /**
- * A bundled MPS rule for the data source kinds which are based on the file extensions.
- *
- * @see FileExtensionDataSourceType
+ * A default rule for file-per-root kind data sources.
+ * Registered as a core service.
  *
  * Created by apyshkin on 1/19/17.
  */
-public class FileDataSourceFactoryRule implements DataSourceFactoryRule {
-  public FileDataSourceFactoryRule() {
-    // do not remove -- it is a service
+/*package*/ class FilePerRootDataSourceFactoryRule implements DataSourceFactoryRule {
+  public FilePerRootDataSourceFactoryRule() {
   }
 
   @Nullable
   @Override
   public DataSourceFactoryFromName spawn(@NotNull DataSourceType dataSourceType) {
-    if (dataSourceType instanceof FileExtensionDataSourceType) {
-      return new RegularFileDataSourceFactory((FileExtensionDataSourceType) dataSourceType);
+    if (dataSourceType == PreinstalledDataSourceTypes.MODEL) {
+      return new FilePerRootDataSourceFactory();
     }
     return null;
   }

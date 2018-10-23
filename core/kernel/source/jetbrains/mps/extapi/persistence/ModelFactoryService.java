@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -26,13 +28,11 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Unlike the truly immutable core service {@link ModelFactoryCoreService}
+ * Unlike {@link ModelFactoryRegistry}
  * this class has special setter methods to allow workbench model factory extensions.
  * These are going to disappear as API in the 3.6 version, since the public access is unnecessary.
  *
@@ -49,22 +49,33 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 @Singleton
 @Mutable
-public final class ModelFactoryService implements ModelFactoryRegistry {
+public final class ModelFactoryService implements ModelFactoryRegistry, CoreComponent {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryService.class);
-  private static final ModelFactoryCoreService CORE_SERVICE = ModelFactoryCoreService.getInstance();
 
   private static ModelFactoryService ourInstance;
 
   private final List<ModelFactory> myCustomModelFactories = new CopyOnWriteArrayList<>();
 
-  private ModelFactoryService() {
+  public ModelFactoryService() {
   }
 
+  @Override
+  public void init() {
+    ourInstance = this;
+  }
+
+  @Override
+  public void dispose() {
+    ourInstance = null;
+  }
+
+  /**
+   * @deprecated access through {@link jetbrains.mps.components.ComponentHost#findComponent(Class)}
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.3)
   public static synchronized ModelFactoryService getInstance() {
-    if (ourInstance == null) {
-      ourInstance = new ModelFactoryService();
-    }
     return ourInstance;
   }
 
@@ -96,8 +107,8 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
   }
 
   @NotNull
-  private CompositeMFRegistry createComposite() {
-    return new CompositeMFRegistry(new ModelFactoryRegistryInt(myCustomModelFactories), CORE_SERVICE);
+  private ModelFactoryRegistry createComposite() {
+    return new ModelFactoryRegistryInt(myCustomModelFactories);
   }
 
   /**
@@ -130,63 +141,5 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
   @Override
   public List<ModelFactoryType> getFactoryTypes() {
     return createComposite().getFactoryTypes();
-  }
-
-  /**
-   * Unites two different model factory registries
-   * Looks at the first registry then at the second one.
-   */
-  private static final class CompositeMFRegistry implements ModelFactoryRegistry {
-    private final ModelFactoryRegistry myFirst;
-    private final ModelFactoryRegistry mySecond;
-
-    public CompositeMFRegistry(ModelFactoryRegistry first, ModelFactoryRegistry second) {
-      myFirst = first;
-      mySecond = second;
-    }
-
-    @NotNull
-    @Override
-    public List<ModelFactory> getFactories() {
-      List<ModelFactory> result = new ArrayList<>(myFirst.getFactories());
-      result.addAll(mySecond.getFactories());
-      return Collections.unmodifiableList(result);
-    }
-
-    @Nullable
-    @Override
-    public ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryId) {
-      ModelFactory result = myFirst.getFactoryByType(factoryId);
-      if (result == null) {
-        result = mySecond.getFactoryByType(factoryId);
-      }
-      return result;
-    }
-
-    @Nullable
-    @Override
-    public ModelFactory getDefaultModelFactory(@NotNull DataSourceType dataSourceType) {
-      ModelFactory result = myFirst.getDefaultModelFactory(dataSourceType);
-      if (result == null) {
-        result = mySecond.getDefaultModelFactory(dataSourceType);
-      }
-      return result;
-    }
-
-    @NotNull
-    @Override
-    public List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType) {
-      List<ModelFactory> result = new ArrayList<>(myFirst.getModelFactories(dataSourceType));
-      result.addAll(mySecond.getModelFactories(dataSourceType));
-      return Collections.unmodifiableList(result);
-    }
-
-    @NotNull
-    @Override
-    public List<ModelFactoryType> getFactoryTypes() {
-      List<ModelFactoryType> result = new ArrayList<>(myFirst.getFactoryTypes());
-      result.addAll(mySecond.getFactoryTypes());
-      return Collections.unmodifiableList(result);
-    }
   }
 }

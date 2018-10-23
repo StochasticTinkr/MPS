@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
+package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.persistence.FileDataSourceFactoryRule;
 import jetbrains.mps.persistence.FilePerRootDataSourceFactoryRule;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 /**
  * Service provider with MPS own data source factories.
@@ -32,8 +33,7 @@ import org.apache.log4j.Logger;
  * @author apyshkin
  * @since 12/22/16 [3.5]
  */
-public final class DataSourceFactoryRuleCoreService implements CoreComponent {
-  private static final Logger LOG = LogManager.getLogger(DataSourceFactoryRuleCoreService.class);
+/*package*/ final class DataSourceFactoryRuleCoreService implements CoreComponent {
   private final DataSourceFactoryRuleService myDataSourceRegistry;
   private DataSourceFactoryRule[] myPredefinedRules;
 

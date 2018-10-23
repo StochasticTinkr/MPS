@@ -24,7 +24,6 @@ import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -78,6 +77,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private PathMacros myPathMacros;
   private ExtensionRegistry myExtensionRegistry;
   private DataSourceFactoryRuleService myDataSourceService;
+  private ModelFactoryService myModelFactoryService;
   private ModelsAutoImportsManager myAutoImportsManager;
 
   /**
@@ -98,6 +98,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   public void dispose() {
     super.dispose();
     myAutoImportsManager = null;
+    myModelFactoryService = null;
     myClassLoaderManager = null;
     myLibraryInitializer = null;
     myPersistenceFacade = null;
@@ -115,8 +116,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     // in fact, could be part of PersistenceRegistry to minimize number of components. OTOH, complicates access
     // to the instance, findComponent(PersistenceRegistry.class).getDataSourceService() is longer than just findComponent(DataSourceFactoryRuleService.class)
     myDataSourceService = init(new DataSourceFactoryRuleService());
-    init(new DataSourceFactoryRuleCoreService(myDataSourceService));
-    myPersistenceFacade = init(new PersistenceRegistry(myDataSourceService));
+    myModelFactoryService = init(new ModelFactoryService());
+    myPersistenceFacade = init(new PersistenceRegistry(myModelFactoryService, myDataSourceService));
     myModuleFacetsRegistry = init(new FacetsRegistry());
 
     myRepositoryRegistry = init(new SRepositoryRegistry());
@@ -248,6 +249,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (DataSourceFactoryRuleService.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myDataSourceService);
+    }
+    if (ModelFactoryService.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myModelFactoryService);
     }
     if (ModelsAutoImportsManager.class.equals(componentClass)) {
       return componentClass.cast(myAutoImportsManager);
