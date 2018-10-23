@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.textGen;
 import java.util.Set;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import java.util.HashMap;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.JavaNameUtil;
 
 /*package*/ class ImportsContext {
   private final String packageName;
@@ -20,17 +21,21 @@ import jetbrains.mps.util.JavaNameUtil;
   private ContextClassifiersInRoot contextClassifiers;
 
   /*package*/ ImportsContext(SNode rootNode) {
-    this.packageName = SModelOperations.getModelName(SNodeOperations.getModel(rootNode));
+    this.packageName = JavaNameUtil.packageName(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(rootNode));
 
     contextClassifiers = new ContextClassifiersInRoot(rootNode);
 
     // init nested class bindings 
     bindings = new HashMap<String, String>();
 
-    // init package simple names 
+    // init package simple names (i.e. name of classes from the same package) 
+    // indeed, there could be other models that generate into this package, and we could have a conflict with a 'java.lang' class then if the name matches. 
     packageSimpleNames = new HashSet<String>();
     for (SNode classifier : SModelOperations.roots(SNodeOperations.getModel(rootNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      packageSimpleNames.add(SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      String fqName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(classifier);
+      if (packageName.equals(JavaNameUtil.packageName(fqName))) {
+        packageSimpleNames.add(SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      }
     }
   }
 
